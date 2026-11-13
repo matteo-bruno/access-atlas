@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "presidente-prudente",
+  "createdAt": "2026-10-08T16:06:32.119Z",
+  "updatedAt": "2026-10-08T16:06:32.119Z",
+  "meta": {
+    "name": "Presidente Prudente",
+    "nameIt": "Presidente Prudente",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Presidente Prudente.geojson",
+      "sha256": "60ae3e1bc7d614c5d35fc31c858135581c0443fa520e59333569aee7e4bccfd8",
+      "size": 558963,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "presidente-prudente",
+    "name": "Presidente Prudente",
+    "nameIt": "Presidente Prudente",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -51.40181,
+      -22.11865
+    ],
+    "zoom": 10.8,
+    "population": 191951,
+    "grid": "cities/presidente-prudente/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/presidente-prudente/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "presidente-prudente",
+        "name": "Presidente Prudente",
+        "nameIt": "Presidente Prudente",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -51.40181,
+          -22.11865
+        ],
+        "zoom": 10.8,
+        "population": 191951,
+        "cells": 480,
+        "layer": "cities/presidente-prudente/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -51.40181,
+            -22.11865
+          ]
+        },
+        "properties": {
+          "id": "presidente-prudente",
+          "name": "Presidente Prudente",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 13.8,
+          "population": 191951
+        }
+      },
+      "summary": null
+    }
+  }
+}

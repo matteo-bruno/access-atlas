@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jerusalem-israel",
+  "createdAt": "2026-10-08T15:42:19.272Z",
+  "updatedAt": "2026-10-08T15:42:19.272Z",
+  "meta": {
+    "name": "Jerusalem (Israel)",
+    "nameIt": "Jerusalem (Israel)",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jerusalem (Israel).geojson",
+      "sha256": "277ccd35e1b3bbec83df448dcab9cb98656b41673e3456e0b80d5dc7fda7ba10",
+      "size": 756519,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jerusalem-israel",
+    "name": "Jerusalem (Israel)",
+    "nameIt": "Jerusalem (Israel)",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL",
+    "center": [
+      35.19601,
+      31.77706
+    ],
+    "zoom": 10.2,
+    "population": 472552,
+    "grid": "cities/jerusalem-israel/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jerusalem-israel/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jerusalem-israel",
+        "name": "Jerusalem (Israel)",
+        "nameIt": "Jerusalem (Israel)",
+        "region": "Israel",
+        "regionIt": "Israele",
+        "country": "IL",
+        "center": [
+          35.19601,
+          31.77706
+        ],
+        "zoom": 10.2,
+        "population": 472552,
+        "cells": 659,
+        "layer": "cities/jerusalem-israel/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.19601,
+            31.77706
+          ]
+        },
+        "properties": {
+          "id": "jerusalem-israel",
+          "name": "Jerusalem (Israel)",
+          "country": "IL",
+          "isStudy": true,
+          "proximityMinutes": 11.3,
+          "population": 472552
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bandar-abbas",
+  "createdAt": "2026-10-08T15:14:33.045Z",
+  "updatedAt": "2026-10-08T15:14:33.045Z",
+  "meta": {
+    "name": "Bandar Abbas",
+    "nameIt": "Bandar Abbas",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bandar Abbas.geojson",
+      "sha256": "35acbc91e918c872080db63f096654b44f5de44c1e8250569d261480fb3617ce",
+      "size": 800624,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bandar-abbas",
+    "name": "Bandar Abbas",
+    "nameIt": "Bandar Abbas",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      56.303,
+      27.19823
+    ],
+    "zoom": 10,
+    "population": 343551,
+    "grid": "cities/bandar-abbas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bandar-abbas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bandar-abbas",
+        "name": "Bandar Abbas",
+        "nameIt": "Bandar Abbas",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          56.303,
+          27.19823
+        ],
+        "zoom": 10,
+        "population": 343551,
+        "cells": 696,
+        "layer": "cities/bandar-abbas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            56.303,
+            27.19823
+          ]
+        },
+        "properties": {
+          "id": "bandar-abbas",
+          "name": "Bandar Abbas",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 21.5,
+          "population": 343551
+        }
+      },
+      "summary": null
+    }
+  }
+}

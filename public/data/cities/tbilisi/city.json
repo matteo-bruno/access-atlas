@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tbilisi",
+  "createdAt": "2026-10-08T16:17:01.849Z",
+  "updatedAt": "2026-10-08T16:17:01.849Z",
+  "meta": {
+    "name": "Tbilisi",
+    "nameIt": "Tbilisi",
+    "region": "Georgia",
+    "regionIt": "Georgia",
+    "country": "GE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tbilisi.geojson",
+      "sha256": "0784df81a4a4a34eea7365dd62ddf3e65c9b108db9071eff6f02ab31298718cc",
+      "size": 1618466,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tbilisi",
+    "name": "Tbilisi",
+    "nameIt": "Tbilisi",
+    "region": "Georgia",
+    "regionIt": "Georgia",
+    "country": "GE",
+    "center": [
+      44.81929,
+      41.72395
+    ],
+    "zoom": 9.7,
+    "population": 813901,
+    "grid": "cities/tbilisi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tbilisi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tbilisi",
+        "name": "Tbilisi",
+        "nameIt": "Tbilisi",
+        "region": "Georgia",
+        "regionIt": "Georgia",
+        "country": "GE",
+        "center": [
+          44.81929,
+          41.72395
+        ],
+        "zoom": 9.7,
+        "population": 813901,
+        "cells": 1419,
+        "layer": "cities/tbilisi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.81929,
+            41.72395
+          ]
+        },
+        "properties": {
+          "id": "tbilisi",
+          "name": "Tbilisi",
+          "country": "GE",
+          "isStudy": true,
+          "proximityMinutes": 10.4,
+          "population": 813901
+        }
+      },
+      "summary": null
+    }
+  }
+}

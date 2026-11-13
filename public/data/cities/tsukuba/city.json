@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tsukuba",
+  "createdAt": "2026-10-08T16:18:58.359Z",
+  "updatedAt": "2026-10-08T16:18:58.359Z",
+  "meta": {
+    "name": "Tsukuba",
+    "nameIt": "Tsukuba",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tsukuba.geojson",
+      "sha256": "ff5749da1080abd5d54dcc3a182ea26f41de459e68e451781addba9b012dc36b",
+      "size": 341459,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tsukuba",
+    "name": "Tsukuba",
+    "nameIt": "Tsukuba",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      140.11333,
+      36.07818
+    ],
+    "zoom": 11.1,
+    "population": 91570,
+    "grid": "cities/tsukuba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tsukuba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tsukuba",
+        "name": "Tsukuba",
+        "nameIt": "Tsukuba",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          140.11333,
+          36.07818
+        ],
+        "zoom": 11.1,
+        "population": 91570,
+        "cells": 298,
+        "layer": "cities/tsukuba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            140.11333,
+            36.07818
+          ]
+        },
+        "properties": {
+          "id": "tsukuba",
+          "name": "Tsukuba",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 91570
+        }
+      },
+      "summary": null
+    }
+  }
+}

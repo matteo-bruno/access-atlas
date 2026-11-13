@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "neemuch",
+  "createdAt": "2026-10-08T16:00:52.682Z",
+  "updatedAt": "2026-10-08T16:00:52.682Z",
+  "meta": {
+    "name": "Neemuch",
+    "nameIt": "Neemuch",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Neemuch.geojson",
+      "sha256": "f4f2b8a733140e573d4a8ed056ea5328399d99b59cc079a2520ac8c187c407b0",
+      "size": 180818,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "neemuch",
+    "name": "Neemuch",
+    "nameIt": "Neemuch",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.86895,
+      24.46216
+    ],
+    "zoom": 11.6,
+    "population": 133885,
+    "grid": "cities/neemuch/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/neemuch/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "neemuch",
+        "name": "Neemuch",
+        "nameIt": "Neemuch",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.86895,
+          24.46216
+        ],
+        "zoom": 11.6,
+        "population": 133885,
+        "cells": 156,
+        "layer": "cities/neemuch/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.86895,
+            24.46216
+          ]
+        },
+        "properties": {
+          "id": "neemuch",
+          "name": "Neemuch",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 17.1,
+          "population": 133885
+        }
+      },
+      "summary": null
+    }
+  }
+}

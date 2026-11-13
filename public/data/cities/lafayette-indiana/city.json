@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lafayette-indiana",
+  "createdAt": "2026-10-08T15:49:31.085Z",
+  "updatedAt": "2026-10-08T15:49:31.085Z",
+  "meta": {
+    "name": "Lafayette (Indiana)",
+    "nameIt": "Lafayette (Indiana)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lafayette (Indiana).geojson",
+      "sha256": "44374226b8f031b3394fb2ddfac16ff3c387b7ac3ff991b46692746a682402de",
+      "size": 522184,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lafayette-indiana",
+    "name": "Lafayette (Indiana)",
+    "nameIt": "Lafayette (Indiana)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -86.8865,
+      40.41409
+    ],
+    "zoom": 10.8,
+    "population": 74979,
+    "grid": "cities/lafayette-indiana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lafayette-indiana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lafayette-indiana",
+        "name": "Lafayette (Indiana)",
+        "nameIt": "Lafayette (Indiana)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -86.8865,
+          40.41409
+        ],
+        "zoom": 10.8,
+        "population": 74979,
+        "cells": 454,
+        "layer": "cities/lafayette-indiana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -86.8865,
+            40.41409
+          ]
+        },
+        "properties": {
+          "id": "lafayette-indiana",
+          "name": "Lafayette (Indiana)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 74979
+        }
+      },
+      "summary": null
+    }
+  }
+}

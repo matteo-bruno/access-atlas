@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gyanpur",
+  "createdAt": "2026-10-08T15:37:00.108Z",
+  "updatedAt": "2026-10-08T15:37:00.108Z",
+  "meta": {
+    "name": "Gyanpur",
+    "nameIt": "Gyanpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gyanpur.geojson",
+      "sha256": "6c3ea3b13e5e1bc69c0971ecc45adc89acd31a73a170425637c09c1e282bcafc",
+      "size": 6463656,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gyanpur",
+    "name": "Gyanpur",
+    "nameIt": "Gyanpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      82.42917,
+      25.30936
+    ],
+    "zoom": 8.5,
+    "population": 1372684,
+    "grid": "cities/gyanpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gyanpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gyanpur",
+        "name": "Gyanpur",
+        "nameIt": "Gyanpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          82.42917,
+          25.30936
+        ],
+        "zoom": 8.5,
+        "population": 1372684,
+        "cells": 5558,
+        "layer": "cities/gyanpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            82.42917,
+            25.30936
+          ]
+        },
+        "properties": {
+          "id": "gyanpur",
+          "name": "Gyanpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 167.5,
+          "population": 1372684
+        }
+      },
+      "summary": null
+    }
+  }
+}

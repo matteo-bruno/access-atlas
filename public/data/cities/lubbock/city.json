@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lubbock",
+  "createdAt": "2026-10-08T15:52:24.033Z",
+  "updatedAt": "2026-10-08T15:52:24.033Z",
+  "meta": {
+    "name": "Lubbock",
+    "nameIt": "Lubbock",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lubbock.geojson",
+      "sha256": "e9f8a20451bdf3766329ae3b62bc1a33cd488826a26715f8e29650f5a1d61b95",
+      "size": 1130962,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lubbock",
+    "name": "Lubbock",
+    "nameIt": "Lubbock",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -101.89945,
+      33.55001
+    ],
+    "zoom": 10.2,
+    "population": 176455,
+    "grid": "cities/lubbock/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lubbock/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lubbock",
+        "name": "Lubbock",
+        "nameIt": "Lubbock",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -101.89945,
+          33.55001
+        ],
+        "zoom": 10.2,
+        "population": 176455,
+        "cells": 975,
+        "layer": "cities/lubbock/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -101.89945,
+            33.55001
+          ]
+        },
+        "properties": {
+          "id": "lubbock",
+          "name": "Lubbock",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.7,
+          "population": 176455
+        }
+      },
+      "summary": null
+    }
+  }
+}

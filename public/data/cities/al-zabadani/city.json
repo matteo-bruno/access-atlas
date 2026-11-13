@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-zabadani",
+  "createdAt": "2026-10-08T15:05:18.738Z",
+  "updatedAt": "2026-10-08T15:05:18.738Z",
+  "meta": {
+    "name": "Al-Zabadani",
+    "nameIt": "Al-Zabadani",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al-Zabadani.geojson",
+      "sha256": "fccb5c21a0832a00c94df0f89a8c3a9ba001e1566d7c648b8626fa3ad43346d3",
+      "size": 135557,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-zabadani",
+    "name": "Al-Zabadani",
+    "nameIt": "Al-Zabadani",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY",
+    "center": [
+      36.10954,
+      33.71674
+    ],
+    "zoom": 11.6,
+    "population": 57787,
+    "grid": "cities/al-zabadani/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-zabadani/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-zabadani",
+        "name": "Al-Zabadani",
+        "nameIt": "Al-Zabadani",
+        "region": "Syria",
+        "regionIt": "Siria",
+        "country": "SY",
+        "center": [
+          36.10954,
+          33.71674
+        ],
+        "zoom": 11.6,
+        "population": 57787,
+        "cells": 117,
+        "layer": "cities/al-zabadani/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.10954,
+            33.71674
+          ]
+        },
+        "properties": {
+          "id": "al-zabadani",
+          "name": "Al-Zabadani",
+          "country": "SY",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 57787
+        }
+      },
+      "summary": null
+    }
+  }
+}

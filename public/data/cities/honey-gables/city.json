@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "honey-gables",
+  "createdAt": "2026-10-08T15:38:58.195Z",
+  "updatedAt": "2026-10-08T15:38:58.195Z",
+  "meta": {
+    "name": "Honey Gables",
+    "nameIt": "Honey Gables",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Honey Gables.geojson",
+      "sha256": "eb6da5d2210f833f8350fe86642cedc6eb24e647ef0e90268c1c87c68bb1717d",
+      "size": 263074,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "honey-gables",
+    "name": "Honey Gables",
+    "nameIt": "Honey Gables",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -75.73166,
+      45.27773
+    ],
+    "zoom": 10.9,
+    "population": 91830,
+    "grid": "cities/honey-gables/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/honey-gables/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "honey-gables",
+        "name": "Honey Gables",
+        "nameIt": "Honey Gables",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -75.73166,
+          45.27773
+        ],
+        "zoom": 10.9,
+        "population": 91830,
+        "cells": 228,
+        "layer": "cities/honey-gables/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.73166,
+            45.27773
+          ]
+        },
+        "properties": {
+          "id": "honey-gables",
+          "name": "Honey Gables",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 10.1,
+          "population": 91830
+        }
+      },
+      "summary": null
+    }
+  }
+}

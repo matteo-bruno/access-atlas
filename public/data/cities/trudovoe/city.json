@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "trudovoe",
+  "createdAt": "2026-10-08T16:18:53.735Z",
+  "updatedAt": "2026-10-08T16:18:53.735Z",
+  "meta": {
+    "name": "Trudovoe",
+    "nameIt": "Trudovoe",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Trudovoe.geojson",
+      "sha256": "1486f32bc71dfe4007d54f752d676473f5e6cd2944d8c78665ef053211b4a82f",
+      "size": 522410,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "trudovoe",
+    "name": "Trudovoe",
+    "nameIt": "Trudovoe",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      132.07567,
+      43.29772
+    ],
+    "zoom": 10.8,
+    "population": 71401,
+    "grid": "cities/trudovoe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/trudovoe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "trudovoe",
+        "name": "Trudovoe",
+        "nameIt": "Trudovoe",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          132.07567,
+          43.29772
+        ],
+        "zoom": 10.8,
+        "population": 71401,
+        "cells": 450,
+        "layer": "cities/trudovoe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            132.07567,
+            43.29772
+          ]
+        },
+        "properties": {
+          "id": "trudovoe",
+          "name": "Trudovoe",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 25.4,
+          "population": 71401
+        }
+      },
+      "summary": null
+    }
+  }
+}

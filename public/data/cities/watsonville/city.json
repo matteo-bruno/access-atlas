@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "watsonville",
+  "createdAt": "2026-10-08T16:21:26.979Z",
+  "updatedAt": "2026-10-08T16:21:26.979Z",
+  "meta": {
+    "name": "Watsonville",
+    "nameIt": "Watsonville",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Watsonville.geojson",
+      "sha256": "3e935cb991ab716338a149393008ecdc89805dae37c5b3b7ef10e2a55f054605",
+      "size": 198492,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "watsonville",
+    "name": "Watsonville",
+    "nameIt": "Watsonville",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -121.76399,
+      36.9205
+    ],
+    "zoom": 11.4,
+    "population": 60195,
+    "grid": "cities/watsonville/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/watsonville/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "watsonville",
+        "name": "Watsonville",
+        "nameIt": "Watsonville",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -121.76399,
+          36.9205
+        ],
+        "zoom": 11.4,
+        "population": 60195,
+        "cells": 170,
+        "layer": "cities/watsonville/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -121.76399,
+            36.9205
+          ]
+        },
+        "properties": {
+          "id": "watsonville",
+          "name": "Watsonville",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 60195
+        }
+      },
+      "summary": null
+    }
+  }
+}

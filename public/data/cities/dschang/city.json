@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dschang",
+  "createdAt": "2026-10-08T15:31:10.509Z",
+  "updatedAt": "2026-10-08T15:31:10.509Z",
+  "meta": {
+    "name": "Dschang",
+    "nameIt": "Dschang",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dschang.geojson",
+      "sha256": "d86d2bbd94b591e812b9c13a83e7d67fe8de339d278639dc23b58dd813a724c8",
+      "size": 200660,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dschang",
+    "name": "Dschang",
+    "nameIt": "Dschang",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      10.05747,
+      5.44867
+    ],
+    "zoom": 11.6,
+    "population": 46437,
+    "grid": "cities/dschang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dschang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dschang",
+        "name": "Dschang",
+        "nameIt": "Dschang",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          10.05747,
+          5.44867
+        ],
+        "zoom": 11.6,
+        "population": 46437,
+        "cells": 173,
+        "layer": "cities/dschang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.05747,
+            5.44867
+          ]
+        },
+        "properties": {
+          "id": "dschang",
+          "name": "Dschang",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 18.5,
+          "population": 46437
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lubao",
+  "createdAt": "2026-10-08T15:52:23.522Z",
+  "updatedAt": "2026-10-08T15:52:23.522Z",
+  "meta": {
+    "name": "Lubao",
+    "nameIt": "Lubao",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lubao.geojson",
+      "sha256": "e8683844d0afce1d08f14954ed5b5615ba40c86eaa7e1c67d090f7459e174f87",
+      "size": 94563,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lubao",
+    "name": "Lubao",
+    "nameIt": "Lubao",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      25.74873,
+      -5.38526
+    ],
+    "zoom": 12,
+    "population": 59262,
+    "grid": "cities/lubao/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lubao/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lubao",
+        "name": "Lubao",
+        "nameIt": "Lubao",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          25.74873,
+          -5.38526
+        ],
+        "zoom": 12,
+        "population": 59262,
+        "cells": 81,
+        "layer": "cities/lubao/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.74873,
+            -5.38526
+          ]
+        },
+        "properties": {
+          "id": "lubao",
+          "name": "Lubao",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 59262
+        }
+      },
+      "summary": null
+    }
+  }
+}

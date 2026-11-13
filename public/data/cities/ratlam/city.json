@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ratlam",
+  "createdAt": "2026-10-08T16:08:25.063Z",
+  "updatedAt": "2026-10-08T16:08:25.063Z",
+  "meta": {
+    "name": "Ratlam",
+    "nameIt": "Ratlam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ratlam.geojson",
+      "sha256": "61032ed75ca663a752ed2d2800e67d17eb0d9b925ce068191bf2e25dfbe315d8",
+      "size": 420719,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ratlam",
+    "name": "Ratlam",
+    "nameIt": "Ratlam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.04011,
+      23.33197
+    ],
+    "zoom": 10.9,
+    "population": 265946,
+    "grid": "cities/ratlam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ratlam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ratlam",
+        "name": "Ratlam",
+        "nameIt": "Ratlam",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.04011,
+          23.33197
+        ],
+        "zoom": 10.9,
+        "population": 265946,
+        "cells": 363,
+        "layer": "cities/ratlam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.04011,
+            23.33197
+          ]
+        },
+        "properties": {
+          "id": "ratlam",
+          "name": "Ratlam",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 265946
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barmer",
+  "createdAt": "2026-10-08T15:15:39.467Z",
+  "updatedAt": "2026-10-08T15:15:39.467Z",
+  "meta": {
+    "name": "Barmer",
+    "nameIt": "Barmer",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barmer.geojson",
+      "sha256": "ec19b07c1eb4e8d6aae7ec8b0524f4cfc31dc7e6409fa05f9d2ee4e8b6aad25e",
+      "size": 343101,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barmer",
+    "name": "Barmer",
+    "nameIt": "Barmer",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      71.40457,
+      25.75007
+    ],
+    "zoom": 11.3,
+    "population": 138879,
+    "grid": "cities/barmer/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barmer/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barmer",
+        "name": "Barmer",
+        "nameIt": "Barmer",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          71.40457,
+          25.75007
+        ],
+        "zoom": 11.3,
+        "population": 138879,
+        "cells": 296,
+        "layer": "cities/barmer/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.40457,
+            25.75007
+          ]
+        },
+        "properties": {
+          "id": "barmer",
+          "name": "Barmer",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 30.9,
+          "population": 138879
+        }
+      },
+      "summary": null
+    }
+  }
+}

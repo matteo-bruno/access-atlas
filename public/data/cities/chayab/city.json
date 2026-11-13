@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chayab",
+  "createdAt": "2026-10-08T15:24:06.988Z",
+  "updatedAt": "2026-10-08T15:24:06.988Z",
+  "meta": {
+    "name": "Chayab",
+    "nameIt": "Chayab",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chayab.geojson",
+      "sha256": "7bbc2b5c66662ad6e297c1316183759232a199984c7db298d65675317c27b851",
+      "size": 92378,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chayab",
+    "name": "Chayab",
+    "nameIt": "Chayab",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF",
+    "center": [
+      69.80966,
+      37.39562
+    ],
+    "zoom": 11.9,
+    "population": 33417,
+    "grid": "cities/chayab/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chayab/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chayab",
+        "name": "Chayab",
+        "nameIt": "Chayab",
+        "region": "Afghanistan",
+        "regionIt": "Afghanistan",
+        "country": "AF",
+        "center": [
+          69.80966,
+          37.39562
+        ],
+        "zoom": 11.9,
+        "population": 33417,
+        "cells": 80,
+        "layer": "cities/chayab/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.80966,
+            37.39562
+          ]
+        },
+        "properties": {
+          "id": "chayab",
+          "name": "Chayab",
+          "country": "AF",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 33417
+        }
+      },
+      "summary": null
+    }
+  }
+}

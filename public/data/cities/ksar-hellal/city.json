@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ksar-hellal",
+  "createdAt": "2026-10-08T15:48:32.333Z",
+  "updatedAt": "2026-10-08T15:48:32.333Z",
+  "meta": {
+    "name": "Ksar Hellal",
+    "nameIt": "Ksar Hellal",
+    "region": "Tunisia",
+    "regionIt": "Tunisia",
+    "country": "TN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ksar Hellal.geojson",
+      "sha256": "d26705e61e7048838ad0982afc192d297786ee1ebaf3bde872b372e46351c633",
+      "size": 282717,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ksar-hellal",
+    "name": "Ksar Hellal",
+    "nameIt": "Ksar Hellal",
+    "region": "Tunisia",
+    "regionIt": "Tunisia",
+    "country": "TN",
+    "center": [
+      10.89212,
+      35.64666
+    ],
+    "zoom": 11.3,
+    "population": 111531,
+    "grid": "cities/ksar-hellal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ksar-hellal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ksar-hellal",
+        "name": "Ksar Hellal",
+        "nameIt": "Ksar Hellal",
+        "region": "Tunisia",
+        "regionIt": "Tunisia",
+        "country": "TN",
+        "center": [
+          10.89212,
+          35.64666
+        ],
+        "zoom": 11.3,
+        "population": 111531,
+        "cells": 246,
+        "layer": "cities/ksar-hellal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.89212,
+            35.64666
+          ]
+        },
+        "properties": {
+          "id": "ksar-hellal",
+          "name": "Ksar Hellal",
+          "country": "TN",
+          "isStudy": true,
+          "proximityMinutes": 17.8,
+          "population": 111531
+        }
+      },
+      "summary": null
+    }
+  }
+}

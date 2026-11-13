@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tikhoretsk",
+  "createdAt": "2026-10-08T16:17:51.873Z",
+  "updatedAt": "2026-10-08T16:17:51.873Z",
+  "meta": {
+    "name": "Tikhoretsk",
+    "nameIt": "Tikhoretsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tikhoretsk.geojson",
+      "sha256": "aeb8e0cb7b19b7a14720664e768f40fa0fb6b89bbb7be5e91082b572ffc92bb8",
+      "size": 244636,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tikhoretsk",
+    "name": "Tikhoretsk",
+    "nameIt": "Tikhoretsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      40.12507,
+      45.85282
+    ],
+    "zoom": 11.5,
+    "population": 49877,
+    "grid": "cities/tikhoretsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tikhoretsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tikhoretsk",
+        "name": "Tikhoretsk",
+        "nameIt": "Tikhoretsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          40.12507,
+          45.85282
+        ],
+        "zoom": 11.5,
+        "population": 49877,
+        "cells": 212,
+        "layer": "cities/tikhoretsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.12507,
+            45.85282
+          ]
+        },
+        "properties": {
+          "id": "tikhoretsk",
+          "name": "Tikhoretsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 19.4,
+          "population": 49877
+        }
+      },
+      "summary": null
+    }
+  }
+}

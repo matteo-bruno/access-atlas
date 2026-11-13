@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sattahip",
+  "createdAt": "2026-10-08T16:11:38.140Z",
+  "updatedAt": "2026-10-08T16:11:38.140Z",
+  "meta": {
+    "name": "Sattahip",
+    "nameIt": "Sattahip",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sattahip.geojson",
+      "sha256": "b43fbd079cafc56637f8a748218535b6da7cdeaf4fba7c9c0e4ebd2b86652e76",
+      "size": 372897,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sattahip",
+    "name": "Sattahip",
+    "nameIt": "Sattahip",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      100.90462,
+      12.68823
+    ],
+    "zoom": 10.6,
+    "population": 65829,
+    "grid": "cities/sattahip/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sattahip/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sattahip",
+        "name": "Sattahip",
+        "nameIt": "Sattahip",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          100.90462,
+          12.68823
+        ],
+        "zoom": 10.6,
+        "population": 65829,
+        "cells": 319,
+        "layer": "cities/sattahip/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            100.90462,
+            12.68823
+          ]
+        },
+        "properties": {
+          "id": "sattahip",
+          "name": "Sattahip",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 30.2,
+          "population": 65829
+        }
+      },
+      "summary": null
+    }
+  }
+}

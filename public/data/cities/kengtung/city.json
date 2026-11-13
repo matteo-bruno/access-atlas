@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kengtung",
+  "createdAt": "2026-10-08T15:46:09.927Z",
+  "updatedAt": "2026-10-08T15:46:09.927Z",
+  "meta": {
+    "name": "Kengtung",
+    "nameIt": "Kengtung",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kengtung.geojson",
+      "sha256": "60af758d1c0245d2298c5f166585d7250b0fb880ea76f97515d1ae08f72ddd34",
+      "size": 117010,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kengtung",
+    "name": "Kengtung",
+    "nameIt": "Kengtung",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      99.6055,
+      21.29246
+    ],
+    "zoom": 11.5,
+    "population": 90313,
+    "grid": "cities/kengtung/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kengtung/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kengtung",
+        "name": "Kengtung",
+        "nameIt": "Kengtung",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          99.6055,
+          21.29246
+        ],
+        "zoom": 11.5,
+        "population": 90313,
+        "cells": 101,
+        "layer": "cities/kengtung/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            99.6055,
+            21.29246
+          ]
+        },
+        "properties": {
+          "id": "kengtung",
+          "name": "Kengtung",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 27,
+          "population": 90313
+        }
+      },
+      "summary": null
+    }
+  }
+}

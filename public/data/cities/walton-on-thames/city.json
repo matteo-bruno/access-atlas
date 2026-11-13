@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "walton-on-thames",
+  "createdAt": "2026-10-08T16:21:16.215Z",
+  "updatedAt": "2026-10-08T16:21:16.215Z",
+  "meta": {
+    "name": "Walton-on-Thames",
+    "nameIt": "Walton-on-Thames",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Walton-on-Thames.geojson",
+      "sha256": "84a4fc13ca61a12b99faac62f27d31303987fde294ae558ea43e84499972a8d7",
+      "size": 922491,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "walton-on-thames",
+    "name": "Walton-on-Thames",
+    "nameIt": "Walton-on-Thames",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.50119,
+      51.35061
+    ],
+    "zoom": 10,
+    "population": 207921,
+    "grid": "cities/walton-on-thames/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/walton-on-thames/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "walton-on-thames",
+        "name": "Walton-on-Thames",
+        "nameIt": "Walton-on-Thames",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.50119,
+          51.35061
+        ],
+        "zoom": 10,
+        "population": 207921,
+        "cells": 798,
+        "layer": "cities/walton-on-thames/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.50119,
+            51.35061
+          ]
+        },
+        "properties": {
+          "id": "walton-on-thames",
+          "name": "Walton-on-Thames",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 207921
+        }
+      },
+      "summary": null
+    }
+  }
+}

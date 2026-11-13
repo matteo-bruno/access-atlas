@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "newport",
+  "createdAt": "2026-10-08T16:01:15.871Z",
+  "updatedAt": "2026-10-08T16:01:15.871Z",
+  "meta": {
+    "name": "Newport",
+    "nameIt": "Newport",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Newport.geojson",
+      "sha256": "25f9e01b76ed15ce7d5a97f4e42652d0de35b453e634434ad3a53f718cb4aec7",
+      "size": 546778,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "newport",
+    "name": "Newport",
+    "nameIt": "Newport",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -2.98571,
+      51.58932
+    ],
+    "zoom": 11,
+    "population": 131027,
+    "grid": "cities/newport/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/newport/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "newport",
+        "name": "Newport",
+        "nameIt": "Newport",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -2.98571,
+          51.58932
+        ],
+        "zoom": 11,
+        "population": 131027,
+        "cells": 475,
+        "layer": "cities/newport/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.98571,
+            51.58932
+          ]
+        },
+        "properties": {
+          "id": "newport",
+          "name": "Newport",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 131027
+        }
+      },
+      "summary": null
+    }
+  }
+}

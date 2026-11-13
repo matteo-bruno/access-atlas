@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "haining",
+  "createdAt": "2026-10-08T15:37:16.877Z",
+  "updatedAt": "2026-10-08T15:37:16.877Z",
+  "meta": {
+    "name": "Haining",
+    "nameIt": "Haining",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Haining.geojson",
+      "sha256": "6f1cbd0a3b8957e1db616b5ecca6f9fc04b8cbc54c62fa13445878a7123632ad",
+      "size": 860387,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "haining",
+    "name": "Haining",
+    "nameIt": "Haining",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      120.68364,
+      30.5189
+    ],
+    "zoom": 10.7,
+    "population": 289706,
+    "grid": "cities/haining/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/haining/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "haining",
+        "name": "Haining",
+        "nameIt": "Haining",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          120.68364,
+          30.5189
+        ],
+        "zoom": 10.7,
+        "population": 289706,
+        "cells": 745,
+        "layer": "cities/haining/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.68364,
+            30.5189
+          ]
+        },
+        "properties": {
+          "id": "haining",
+          "name": "Haining",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 18.3,
+          "population": 289706
+        }
+      },
+      "summary": null
+    }
+  }
+}

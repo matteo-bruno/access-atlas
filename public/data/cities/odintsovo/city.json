@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "odintsovo",
+  "createdAt": "2026-10-08T16:02:33.267Z",
+  "updatedAt": "2026-10-08T16:02:33.267Z",
+  "meta": {
+    "name": "Odintsovo",
+    "nameIt": "Odintsovo",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Odintsovo.geojson",
+      "sha256": "f311bb5551186c0abe62e3f950526bbfb7ab455e1cc3d7d5d424a8f0dbcde0ce",
+      "size": 301365,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "odintsovo",
+    "name": "Odintsovo",
+    "nameIt": "Odintsovo",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      37.27713,
+      55.67368
+    ],
+    "zoom": 11,
+    "population": 91988,
+    "grid": "cities/odintsovo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/odintsovo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "odintsovo",
+        "name": "Odintsovo",
+        "nameIt": "Odintsovo",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          37.27713,
+          55.67368
+        ],
+        "zoom": 11,
+        "population": 91988,
+        "cells": 264,
+        "layer": "cities/odintsovo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.27713,
+            55.67368
+          ]
+        },
+        "properties": {
+          "id": "odintsovo",
+          "name": "Odintsovo",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14.4,
+          "population": 91988
+        }
+      },
+      "summary": null
+    }
+  }
+}

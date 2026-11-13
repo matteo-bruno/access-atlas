@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pecs",
+  "createdAt": "2026-10-08T16:07:08.859Z",
+  "updatedAt": "2026-10-08T16:07:08.859Z",
+  "meta": {
+    "name": "Pécs",
+    "nameIt": "Pécs",
+    "region": "Hungary",
+    "regionIt": "Ungheria",
+    "country": "HU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pécs.geojson",
+      "sha256": "1a993570f34b5dfbff42a27ad15cdf054d292dc13b86d3bd0bce651fa4fe2811",
+      "size": 387295,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pecs",
+    "name": "Pécs",
+    "nameIt": "Pécs",
+    "region": "Hungary",
+    "regionIt": "Ungheria",
+    "country": "HU",
+    "center": [
+      18.22387,
+      46.07268
+    ],
+    "zoom": 10.8,
+    "population": 110691,
+    "grid": "cities/pecs/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pecs/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pecs",
+        "name": "Pécs",
+        "nameIt": "Pécs",
+        "region": "Hungary",
+        "regionIt": "Ungheria",
+        "country": "HU",
+        "center": [
+          18.22387,
+          46.07268
+        ],
+        "zoom": 10.8,
+        "population": 110691,
+        "cells": 339,
+        "layer": "cities/pecs/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.22387,
+            46.07268
+          ]
+        },
+        "properties": {
+          "id": "pecs",
+          "name": "Pécs",
+          "country": "HU",
+          "isStudy": true,
+          "proximityMinutes": 8.9,
+          "population": 110691
+        }
+      },
+      "summary": null
+    }
+  }
+}

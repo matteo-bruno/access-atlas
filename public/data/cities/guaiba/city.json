@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guaiba",
+  "createdAt": "2026-10-08T15:36:26.830Z",
+  "updatedAt": "2026-10-08T15:36:26.830Z",
+  "meta": {
+    "name": "Guaíba",
+    "nameIt": "Guaíba",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guaíba.geojson",
+      "sha256": "c0c3111a8ef7e3b31c96452f416c8fad900f40e617598dc1a198c6e0cd12df9a",
+      "size": 336977,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guaiba",
+    "name": "Guaíba",
+    "nameIt": "Guaíba",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -51.33304,
+      -30.1274
+    ],
+    "zoom": 11.2,
+    "population": 65129,
+    "grid": "cities/guaiba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guaiba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guaiba",
+        "name": "Guaíba",
+        "nameIt": "Guaíba",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -51.33304,
+          -30.1274
+        ],
+        "zoom": 11.2,
+        "population": 65129,
+        "cells": 286,
+        "layer": "cities/guaiba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -51.33304,
+            -30.1274
+          ]
+        },
+        "properties": {
+          "id": "guaiba",
+          "name": "Guaíba",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 19.8,
+          "population": 65129
+        }
+      },
+      "summary": null
+    }
+  }
+}

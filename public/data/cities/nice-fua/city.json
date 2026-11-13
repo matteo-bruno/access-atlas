@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nice-fua",
+  "createdAt": "2026-10-19T16:57:49.433Z",
+  "updatedAt": "2026-10-19T16:57:49.433Z",
+  "meta": {
+    "name": "Nice",
+    "nameIt": "Nice",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "nice-fua",
+    "name": "Nice",
+    "nameIt": "Nice",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "extent": "fua",
+    "core": "nice",
+    "center": [
+      7.11369,
+      43.64809
+    ],
+    "zoom": 8.5,
+    "population": 1215389,
+    "grid": "cities/nice-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nice-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nice-fua",
+        "name": "Nice",
+        "nameIt": "Nice",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "extent": "fua",
+        "core": "nice",
+        "center": [
+          7.11369,
+          43.64809
+        ],
+        "zoom": 8.5,
+        "population": 1215389,
+        "cells": 20007,
+        "layer": "cities/nice-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.11369,
+            43.64809
+          ]
+        },
+        "properties": {
+          "id": "nice-fua",
+          "name": "Nice",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 1215389
+        }
+      },
+      "summary": null
+    }
+  }
+}

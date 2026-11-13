@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "carora",
+  "createdAt": "2026-10-08T15:22:35.504Z",
+  "updatedAt": "2026-10-08T15:22:35.504Z",
+  "meta": {
+    "name": "Carora",
+    "nameIt": "Carora",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Carora.geojson",
+      "sha256": "ff3d408f464bd078f27334c0a0b5716c9d577213042bec0cfa451285d35e0c4d",
+      "size": 243705,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "carora",
+    "name": "Carora",
+    "nameIt": "Carora",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -70.07509,
+      10.17294
+    ],
+    "zoom": 11.6,
+    "population": 115356,
+    "grid": "cities/carora/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/carora/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "carora",
+        "name": "Carora",
+        "nameIt": "Carora",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -70.07509,
+          10.17294
+        ],
+        "zoom": 11.6,
+        "population": 115356,
+        "cells": 209,
+        "layer": "cities/carora/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -70.07509,
+            10.17294
+          ]
+        },
+        "properties": {
+          "id": "carora",
+          "name": "Carora",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 12.3,
+          "population": 115356
+        }
+      },
+      "summary": null
+    }
+  }
+}

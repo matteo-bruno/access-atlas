@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abs",
+  "createdAt": "2026-10-08T16:25:46.523Z",
+  "updatedAt": "2026-10-08T16:25:46.523Z",
+  "meta": {
+    "name": "`Abs",
+    "nameIt": "`Abs",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/`Abs.geojson",
+      "sha256": "1785f3d8d1ed933735d4002e4d7028e302536aba407294780902a74a0a790c17",
+      "size": 161635,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abs",
+    "name": "`Abs",
+    "nameIt": "`Abs",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE",
+    "center": [
+      43.19592,
+      15.99146
+    ],
+    "zoom": 11.4,
+    "population": 397004,
+    "grid": "cities/abs/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abs/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abs",
+        "name": "`Abs",
+        "nameIt": "`Abs",
+        "region": "Yemen",
+        "regionIt": "Yemen",
+        "country": "YE",
+        "center": [
+          43.19592,
+          15.99146
+        ],
+        "zoom": 11.4,
+        "population": 397004,
+        "cells": 139,
+        "layer": "cities/abs/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.19592,
+            15.99146
+          ]
+        },
+        "properties": {
+          "id": "abs",
+          "name": "`Abs",
+          "country": "YE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 397004
+        }
+      },
+      "summary": null
+    }
+  }
+}

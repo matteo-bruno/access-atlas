@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "biu",
+  "createdAt": "2026-10-08T15:19:28.959Z",
+  "updatedAt": "2026-10-08T15:19:28.959Z",
+  "meta": {
+    "name": "Biu",
+    "nameIt": "Biu",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Biu.geojson",
+      "sha256": "bc135c6a6a5f34050677bdd734e6cc19d29ad5f6ca7ac8119a7674ff8e9f3ffa",
+      "size": 273355,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "biu",
+    "name": "Biu",
+    "nameIt": "Biu",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      12.1884,
+      10.61341
+    ],
+    "zoom": 11.2,
+    "population": 119838,
+    "grid": "cities/biu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/biu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "biu",
+        "name": "Biu",
+        "nameIt": "Biu",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          12.1884,
+          10.61341
+        ],
+        "zoom": 11.2,
+        "population": 119838,
+        "cells": 234,
+        "layer": "cities/biu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.1884,
+            10.61341
+          ]
+        },
+        "properties": {
+          "id": "biu",
+          "name": "Biu",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 19.4,
+          "population": 119838
+        }
+      },
+      "summary": null
+    }
+  }
+}

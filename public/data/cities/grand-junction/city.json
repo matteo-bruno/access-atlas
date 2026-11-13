@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "grand-junction",
+  "createdAt": "2026-10-08T15:35:55.613Z",
+  "updatedAt": "2026-10-08T15:35:55.613Z",
+  "meta": {
+    "name": "Grand Junction",
+    "nameIt": "Grand Junction",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Grand Junction.geojson",
+      "sha256": "ec8126c7b2f6054c4e227fbe96e1daadcaaf1abeeacc1f750d6c543a0058cbb3",
+      "size": 559018,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "grand-junction",
+    "name": "Grand Junction",
+    "nameIt": "Grand Junction",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -108.51286,
+      39.08399
+    ],
+    "zoom": 10.2,
+    "population": 64181,
+    "grid": "cities/grand-junction/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/grand-junction/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "grand-junction",
+        "name": "Grand Junction",
+        "nameIt": "Grand Junction",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -108.51286,
+          39.08399
+        ],
+        "zoom": 10.2,
+        "population": 64181,
+        "cells": 482,
+        "layer": "cities/grand-junction/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -108.51286,
+            39.08399
+          ]
+        },
+        "properties": {
+          "id": "grand-junction",
+          "name": "Grand Junction",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 19.5,
+          "population": 64181
+        }
+      },
+      "summary": null
+    }
+  }
+}

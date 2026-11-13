@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sirvan",
+  "createdAt": "2026-10-08T16:25:59.846Z",
+  "updatedAt": "2026-10-08T16:25:59.846Z",
+  "meta": {
+    "name": "Şirvan",
+    "nameIt": "Şirvan",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Şirvan.geojson",
+      "sha256": "eae670d2b4916fbb6bf17a9c15ec454aa586f8acef8423b0e83d3c9915935e4e",
+      "size": 231755,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sirvan",
+    "name": "Şirvan",
+    "nameIt": "Şirvan",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ",
+    "center": [
+      48.93231,
+      39.94621
+    ],
+    "zoom": 11.3,
+    "population": 67119,
+    "grid": "cities/sirvan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sirvan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sirvan",
+        "name": "Şirvan",
+        "nameIt": "Şirvan",
+        "region": "Azerbaijan",
+        "regionIt": "Azerbaigian",
+        "country": "AZ",
+        "center": [
+          48.93231,
+          39.94621
+        ],
+        "zoom": 11.3,
+        "population": 67119,
+        "cells": 201,
+        "layer": "cities/sirvan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.93231,
+            39.94621
+          ]
+        },
+        "properties": {
+          "id": "sirvan",
+          "name": "Şirvan",
+          "country": "AZ",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 67119
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "prague",
+  "createdAt": "2026-10-08T16:06:29.579Z",
+  "updatedAt": "2026-10-08T16:06:29.579Z",
+  "meta": {
+    "name": "Prague",
+    "nameIt": "Prague",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Prague.geojson",
+      "sha256": "81a0c5150d5f707fa0733aeee961229abf2cc8c6204987fdf3fafd170ce71827",
+      "size": 3020080,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "prague",
+    "name": "Prague",
+    "nameIt": "Prague",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ",
+    "center": [
+      14.44599,
+      50.07289
+    ],
+    "zoom": 9.6,
+    "population": 1078763,
+    "grid": "cities/prague/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/prague/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "prague",
+        "name": "Prague",
+        "nameIt": "Prague",
+        "region": "Czech Republic",
+        "regionIt": "Repubblica Ceca",
+        "country": "CZ",
+        "center": [
+          14.44599,
+          50.07289
+        ],
+        "zoom": 9.6,
+        "population": 1078763,
+        "cells": 2640,
+        "layer": "cities/prague/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.44599,
+            50.07289
+          ]
+        },
+        "properties": {
+          "id": "prague",
+          "name": "Prague",
+          "country": "CZ",
+          "isStudy": true,
+          "proximityMinutes": 8.6,
+          "population": 1078763
+        }
+      },
+      "summary": null
+    }
+  }
+}

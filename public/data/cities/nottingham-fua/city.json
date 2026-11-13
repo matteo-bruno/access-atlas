@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nottingham-fua",
+  "createdAt": "2026-10-19T16:57:50.424Z",
+  "updatedAt": "2026-10-19T16:57:50.424Z",
+  "meta": {
+    "name": "Nottingham",
+    "nameIt": "Nottingham",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "nottingham-fua",
+    "name": "Nottingham",
+    "nameIt": "Nottingham",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "extent": "fua",
+    "core": "nottingham",
+    "center": [
+      -1.26042,
+      52.99308
+    ],
+    "zoom": 8.5,
+    "population": 1652241,
+    "grid": "cities/nottingham-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nottingham-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nottingham-fua",
+        "name": "Nottingham",
+        "nameIt": "Nottingham",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "extent": "fua",
+        "core": "nottingham",
+        "center": [
+          -1.26042,
+          52.99308
+        ],
+        "zoom": 8.5,
+        "population": 1652241,
+        "cells": 24023,
+        "layer": "cities/nottingham-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.26042,
+            52.99308
+          ]
+        },
+        "properties": {
+          "id": "nottingham-fua",
+          "name": "Nottingham",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 1652241
+        }
+      },
+      "summary": null
+    }
+  }
+}

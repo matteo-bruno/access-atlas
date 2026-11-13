@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mixquiahuala",
+  "createdAt": "2026-10-08T15:57:31.764Z",
+  "updatedAt": "2026-10-08T15:57:31.764Z",
+  "meta": {
+    "name": "Mixquiahuala",
+    "nameIt": "Mixquiahuala",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mixquiahuala.geojson",
+      "sha256": "3d81363cb6981199dd5f01be16af03b317b90a6cc6a204c27c177ef53f36ee84",
+      "size": 144878,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mixquiahuala",
+    "name": "Mixquiahuala",
+    "nameIt": "Mixquiahuala",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -99.2052,
+      20.23638
+    ],
+    "zoom": 11.3,
+    "population": 44760,
+    "grid": "cities/mixquiahuala/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mixquiahuala/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mixquiahuala",
+        "name": "Mixquiahuala",
+        "nameIt": "Mixquiahuala",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -99.2052,
+          20.23638
+        ],
+        "zoom": 11.3,
+        "population": 44760,
+        "cells": 124,
+        "layer": "cities/mixquiahuala/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -99.2052,
+            20.23638
+          ]
+        },
+        "properties": {
+          "id": "mixquiahuala",
+          "name": "Mixquiahuala",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 44760
+        }
+      },
+      "summary": null
+    }
+  }
+}

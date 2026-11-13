@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "novi-sad",
+  "createdAt": "2026-10-08T16:02:08.470Z",
+  "updatedAt": "2026-10-08T16:02:08.470Z",
+  "meta": {
+    "name": "Novi Sad",
+    "nameIt": "Novi Sad",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Novi Sad.geojson",
+      "sha256": "91c9fa6bb4b4c678a939a70af844fff2ec1637a76030251c7f05a419d3824dc2",
+      "size": 603159,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "novi-sad",
+    "name": "Novi Sad",
+    "nameIt": "Novi Sad",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS",
+    "center": [
+      19.82328,
+      45.25639
+    ],
+    "zoom": 10.6,
+    "population": 294032,
+    "grid": "cities/novi-sad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/novi-sad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "novi-sad",
+        "name": "Novi Sad",
+        "nameIt": "Novi Sad",
+        "region": "Serbia",
+        "regionIt": "Serbia",
+        "country": "RS",
+        "center": [
+          19.82328,
+          45.25639
+        ],
+        "zoom": 10.6,
+        "population": 294032,
+        "cells": 527,
+        "layer": "cities/novi-sad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.82328,
+            45.25639
+          ]
+        },
+        "properties": {
+          "id": "novi-sad",
+          "name": "Novi Sad",
+          "country": "RS",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 294032
+        }
+      },
+      "summary": null
+    }
+  }
+}

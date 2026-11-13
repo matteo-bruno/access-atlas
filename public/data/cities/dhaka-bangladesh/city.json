@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dhaka-bangladesh",
+  "createdAt": "2026-10-08T15:29:20.888Z",
+  "updatedAt": "2026-10-08T15:29:20.888Z",
+  "meta": {
+    "name": "Dhaka (Bangladesh)",
+    "nameIt": "Dhaka (Bangladesh)",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dhaka (Bangladesh).geojson",
+      "sha256": "247e4226b7ddfee659df247041c089bf01157031e2878d829776b2f77795b8ea",
+      "size": 66616225,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dhaka-bangladesh",
+    "name": "Dhaka (Bangladesh)",
+    "nameIt": "Dhaka (Bangladesh)",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      90.6734,
+      23.60086
+    ],
+    "zoom": 8.5,
+    "population": 27713338,
+    "grid": "cities/dhaka-bangladesh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dhaka-bangladesh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dhaka-bangladesh",
+        "name": "Dhaka (Bangladesh)",
+        "nameIt": "Dhaka (Bangladesh)",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          90.6734,
+          23.60086
+        ],
+        "zoom": 8.5,
+        "population": 27713338,
+        "cells": 57189,
+        "layer": "cities/dhaka-bangladesh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            90.6734,
+            23.60086
+          ]
+        },
+        "properties": {
+          "id": "dhaka-bangladesh",
+          "name": "Dhaka (Bangladesh)",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 108.7,
+          "population": 27713338
+        }
+      },
+      "summary": null
+    }
+  }
+}

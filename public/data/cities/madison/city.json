@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "madison",
+  "createdAt": "2026-10-08T15:53:25.180Z",
+  "updatedAt": "2026-10-08T15:53:25.180Z",
+  "meta": {
+    "name": "Madison",
+    "nameIt": "Madison",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Madison.geojson",
+      "sha256": "9422acc588dcef6cb9f05e6478d2584747c97b4e532ebec3148859605f7a10e4",
+      "size": 820695,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "madison",
+    "name": "Madison",
+    "nameIt": "Madison",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -89.37769,
+      43.07889
+    ],
+    "zoom": 10,
+    "population": 152335,
+    "grid": "cities/madison/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/madison/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "madison",
+        "name": "Madison",
+        "nameIt": "Madison",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -89.37769,
+          43.07889
+        ],
+        "zoom": 10,
+        "population": 152335,
+        "cells": 715,
+        "layer": "cities/madison/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -89.37769,
+            43.07889
+          ]
+        },
+        "properties": {
+          "id": "madison",
+          "name": "Madison",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 9,
+          "population": 152335
+        }
+      },
+      "summary": null
+    }
+  }
+}

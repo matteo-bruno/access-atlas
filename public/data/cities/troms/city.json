@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "troms",
+  "createdAt": "2026-10-08T16:18:52.255Z",
+  "updatedAt": "2026-10-08T16:18:52.255Z",
+  "meta": {
+    "name": "Tromsø",
+    "nameIt": "Tromsø",
+    "region": "Norway",
+    "regionIt": "Norvegia",
+    "country": "NO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tromsø.geojson",
+      "sha256": "32cdc492cb7b6bb6d24dd73b7538f62430c2484392820be89598fe6283cf516e",
+      "size": 442718,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "troms",
+    "name": "Tromsø",
+    "nameIt": "Tromsø",
+    "region": "Norway",
+    "regionIt": "Norvegia",
+    "country": "NO",
+    "center": [
+      18.95672,
+      69.65877
+    ],
+    "zoom": 10.9,
+    "population": 43323,
+    "grid": "cities/troms/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/troms/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "troms",
+        "name": "Tromsø",
+        "nameIt": "Tromsø",
+        "region": "Norway",
+        "regionIt": "Norvegia",
+        "country": "NO",
+        "center": [
+          18.95672,
+          69.65877
+        ],
+        "zoom": 10.9,
+        "population": 43323,
+        "cells": 388,
+        "layer": "cities/troms/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.95672,
+            69.65877
+          ]
+        },
+        "properties": {
+          "id": "troms",
+          "name": "Tromsø",
+          "country": "NO",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 43323
+        }
+      },
+      "summary": null
+    }
+  }
+}

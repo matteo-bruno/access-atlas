@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kulim",
+  "createdAt": "2026-10-08T15:48:41.710Z",
+  "updatedAt": "2026-10-08T15:48:41.710Z",
+  "meta": {
+    "name": "Kulim",
+    "nameIt": "Kulim",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kulim.geojson",
+      "sha256": "278caf740b5be8702b497b3c3e7dcfcd275385ddbaee58956c8ae8860b19f205",
+      "size": 523265,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kulim",
+    "name": "Kulim",
+    "nameIt": "Kulim",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      100.55124,
+      5.39045
+    ],
+    "zoom": 10.4,
+    "population": 190907,
+    "grid": "cities/kulim/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kulim/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kulim",
+        "name": "Kulim",
+        "nameIt": "Kulim",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          100.55124,
+          5.39045
+        ],
+        "zoom": 10.4,
+        "population": 190907,
+        "cells": 452,
+        "layer": "cities/kulim/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            100.55124,
+            5.39045
+          ]
+        },
+        "properties": {
+          "id": "kulim",
+          "name": "Kulim",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 24.6,
+          "population": 190907
+        }
+      },
+      "summary": null
+    }
+  }
+}

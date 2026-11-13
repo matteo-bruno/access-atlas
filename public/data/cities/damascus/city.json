@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "damascus",
+  "createdAt": "2026-10-08T15:27:52.029Z",
+  "updatedAt": "2026-10-08T15:27:52.029Z",
+  "meta": {
+    "name": "Damascus",
+    "nameIt": "Damascus",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Damascus.geojson",
+      "sha256": "61fa91c34ccea69c2ac8617f06062af851a471d977b4245c994418d8f180da2c",
+      "size": 2622348,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "damascus",
+    "name": "Damascus",
+    "nameIt": "Damascus",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY",
+    "center": [
+      36.30595,
+      33.50074
+    ],
+    "zoom": 9.5,
+    "population": 3295828,
+    "grid": "cities/damascus/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/damascus/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "damascus",
+        "name": "Damascus",
+        "nameIt": "Damascus",
+        "region": "Syria",
+        "regionIt": "Siria",
+        "country": "SY",
+        "center": [
+          36.30595,
+          33.50074
+        ],
+        "zoom": 9.5,
+        "population": 3295828,
+        "cells": 2277,
+        "layer": "cities/damascus/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.30595,
+            33.50074
+          ]
+        },
+        "properties": {
+          "id": "damascus",
+          "name": "Damascus",
+          "country": "SY",
+          "isStudy": true,
+          "proximityMinutes": 23.2,
+          "population": 3295828
+        }
+      },
+      "summary": null
+    }
+  }
+}

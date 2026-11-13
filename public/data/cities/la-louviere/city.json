@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "la-louviere",
+  "createdAt": "2026-10-08T15:49:21.087Z",
+  "updatedAt": "2026-10-08T15:49:21.087Z",
+  "meta": {
+    "name": "La Louvière",
+    "nameIt": "La Louvière",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/La Louvière.geojson",
+      "sha256": "9300cf131ae4f7ea733221c70a06be5af90e9816800e9befe10694427c134d83",
+      "size": 457451,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "la-louviere",
+    "name": "La Louvière",
+    "nameIt": "La Louvière",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE",
+    "center": [
+      4.20666,
+      50.47466
+    ],
+    "zoom": 10.9,
+    "population": 82939,
+    "grid": "cities/la-louviere/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/la-louviere/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "la-louviere",
+        "name": "La Louvière",
+        "nameIt": "La Louvière",
+        "region": "Belgium",
+        "regionIt": "Belgio",
+        "country": "BE",
+        "center": [
+          4.20666,
+          50.47466
+        ],
+        "zoom": 10.9,
+        "population": 82939,
+        "cells": 403,
+        "layer": "cities/la-louviere/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.20666,
+            50.47466
+          ]
+        },
+        "properties": {
+          "id": "la-louviere",
+          "name": "La Louvière",
+          "country": "BE",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 82939
+        }
+      },
+      "summary": null
+    }
+  }
+}

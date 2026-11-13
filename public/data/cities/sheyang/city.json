@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sheyang",
+  "createdAt": "2026-10-08T16:12:57.596Z",
+  "updatedAt": "2026-10-08T16:12:57.596Z",
+  "meta": {
+    "name": "Sheyang",
+    "nameIt": "Sheyang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sheyang.geojson",
+      "sha256": "beddb5c552581926a1ba59ebd2b8ddbf6547761a88f351ddd3f57ce9bad103b7",
+      "size": 544794,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sheyang",
+    "name": "Sheyang",
+    "nameIt": "Sheyang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      120.2574,
+      33.77112
+    ],
+    "zoom": 10.6,
+    "population": 237774,
+    "grid": "cities/sheyang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 172
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sheyang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sheyang",
+        "name": "Sheyang",
+        "nameIt": "Sheyang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          120.2574,
+          33.77112
+        ],
+        "zoom": 10.6,
+        "population": 237774,
+        "cells": 467,
+        "layer": "cities/sheyang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 172
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.2574,
+            33.77112
+          ]
+        },
+        "properties": {
+          "id": "sheyang",
+          "name": "Sheyang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 33.6,
+          "population": 237774
+        }
+      },
+      "summary": null
+    }
+  }
+}

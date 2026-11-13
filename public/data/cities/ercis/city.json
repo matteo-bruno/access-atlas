@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ercis",
+  "createdAt": "2026-10-08T15:32:22.233Z",
+  "updatedAt": "2026-10-08T15:32:22.233Z",
+  "meta": {
+    "name": "Erciş",
+    "nameIt": "Erciş",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Erciş.geojson",
+      "sha256": "3ce044526f0cb69153497a8758d319a4f39d3020917b34c0a8acc3e453bcec46",
+      "size": 197079,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ercis",
+    "name": "Erciş",
+    "nameIt": "Erciş",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      43.36018,
+      39.02922
+    ],
+    "zoom": 11.6,
+    "population": 106396,
+    "grid": "cities/ercis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ercis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ercis",
+        "name": "Erciş",
+        "nameIt": "Erciş",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          43.36018,
+          39.02922
+        ],
+        "zoom": 11.6,
+        "population": 106396,
+        "cells": 170,
+        "layer": "cities/ercis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.36018,
+            39.02922
+          ]
+        },
+        "properties": {
+          "id": "ercis",
+          "name": "Erciş",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 21.4,
+          "population": 106396
+        }
+      },
+      "summary": null
+    }
+  }
+}

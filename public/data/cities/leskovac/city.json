@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "leskovac",
+  "createdAt": "2026-10-08T15:50:47.160Z",
+  "updatedAt": "2026-10-08T15:50:47.160Z",
+  "meta": {
+    "name": "Leskovac",
+    "nameIt": "Leskovac",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Leskovac.geojson",
+      "sha256": "5c22a38902fedb02b7792386f9198e01f6b331fe2ebab0ce9cad8831887b912f",
+      "size": 132962,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "leskovac",
+    "name": "Leskovac",
+    "nameIt": "Leskovac",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS",
+    "center": [
+      21.94491,
+      42.99603
+    ],
+    "zoom": 11.8,
+    "population": 50174,
+    "grid": "cities/leskovac/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/leskovac/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "leskovac",
+        "name": "Leskovac",
+        "nameIt": "Leskovac",
+        "region": "Serbia",
+        "regionIt": "Serbia",
+        "country": "RS",
+        "center": [
+          21.94491,
+          42.99603
+        ],
+        "zoom": 11.8,
+        "population": 50174,
+        "cells": 115,
+        "layer": "cities/leskovac/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            21.94491,
+            42.99603
+          ]
+        },
+        "properties": {
+          "id": "leskovac",
+          "name": "Leskovac",
+          "country": "RS",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 50174
+        }
+      },
+      "summary": null
+    }
+  }
+}

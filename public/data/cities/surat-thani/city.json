@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "surat-thani",
+  "createdAt": "2026-10-08T16:15:22.465Z",
+  "updatedAt": "2026-10-08T16:15:22.465Z",
+  "meta": {
+    "name": "Surat Thani",
+    "nameIt": "Surat Thani",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Surat Thani.geojson",
+      "sha256": "7c134b5a838a03a17899b6018114a74f9a614ba1ffad94444e7d6be32540f8f6",
+      "size": 320540,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "surat-thani",
+    "name": "Surat Thani",
+    "nameIt": "Surat Thani",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      99.33075,
+      9.13221
+    ],
+    "zoom": 11,
+    "population": 111883,
+    "grid": "cities/surat-thani/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/surat-thani/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "surat-thani",
+        "name": "Surat Thani",
+        "nameIt": "Surat Thani",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          99.33075,
+          9.13221
+        ],
+        "zoom": 11,
+        "population": 111883,
+        "cells": 279,
+        "layer": "cities/surat-thani/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            99.33075,
+            9.13221
+          ]
+        },
+        "properties": {
+          "id": "surat-thani",
+          "name": "Surat Thani",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 27.7,
+          "population": 111883
+        }
+      },
+      "summary": null
+    }
+  }
+}

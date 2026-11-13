@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hualien",
+  "createdAt": "2026-10-08T15:39:24.804Z",
+  "updatedAt": "2026-10-08T15:39:24.804Z",
+  "meta": {
+    "name": "Hualien",
+    "nameIt": "Hualien",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hualien.geojson",
+      "sha256": "bf43eaf812ced4a2b41ef7d77be132d64c26d13cb52088eeb8f4148dbb8cdd1c",
+      "size": 647959,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hualien",
+    "name": "Hualien",
+    "nameIt": "Hualien",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW",
+    "center": [
+      121.59731,
+      23.98106
+    ],
+    "zoom": 10.6,
+    "population": 150065,
+    "grid": "cities/hualien/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hualien/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hualien",
+        "name": "Hualien",
+        "nameIt": "Hualien",
+        "region": "Taiwan",
+        "regionIt": "Taiwan",
+        "country": "TW",
+        "center": [
+          121.59731,
+          23.98106
+        ],
+        "zoom": 10.6,
+        "population": 150065,
+        "cells": 562,
+        "layer": "cities/hualien/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.59731,
+            23.98106
+          ]
+        },
+        "properties": {
+          "id": "hualien",
+          "name": "Hualien",
+          "country": "TW",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 150065
+        }
+      },
+      "summary": null
+    }
+  }
+}

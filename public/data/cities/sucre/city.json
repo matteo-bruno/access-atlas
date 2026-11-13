@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sucre",
+  "createdAt": "2026-10-08T16:14:55.874Z",
+  "updatedAt": "2026-10-08T16:14:55.874Z",
+  "meta": {
+    "name": "Sucre",
+    "nameIt": "Sucre",
+    "region": "Bolivia",
+    "regionIt": "Bolivia",
+    "country": "BO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sucre.geojson",
+      "sha256": "d29d8171a3c34537499a405d3e963c00deecfd29c8fd37449281bcfdf590f5a6",
+      "size": 377029,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sucre",
+    "name": "Sucre",
+    "nameIt": "Sucre",
+    "region": "Bolivia",
+    "regionIt": "Bolivia",
+    "country": "BO",
+    "center": [
+      -65.26172,
+      -19.03492
+    ],
+    "zoom": 11.2,
+    "population": 146908,
+    "grid": "cities/sucre/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sucre/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sucre",
+        "name": "Sucre",
+        "nameIt": "Sucre",
+        "region": "Bolivia",
+        "regionIt": "Bolivia",
+        "country": "BO",
+        "center": [
+          -65.26172,
+          -19.03492
+        ],
+        "zoom": 11.2,
+        "population": 146908,
+        "cells": 323,
+        "layer": "cities/sucre/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -65.26172,
+            -19.03492
+          ]
+        },
+        "properties": {
+          "id": "sucre",
+          "name": "Sucre",
+          "country": "BO",
+          "isStudy": true,
+          "proximityMinutes": 15.1,
+          "population": 146908
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dunaj",
+  "createdAt": "2026-10-08T15:31:19.011Z",
+  "updatedAt": "2026-10-08T15:31:19.011Z",
+  "meta": {
+    "name": "Dunaj",
+    "nameIt": "Dunaj",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dunaj.geojson",
+      "sha256": "dd59138f0cc47011effff600c396a5e17db06fed729660524871f763fce76a82",
+      "size": 171753,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dunaj",
+    "name": "Dunaj",
+    "nameIt": "Dunaj",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      30.94293,
+      59.95816
+    ],
+    "zoom": 11.9,
+    "population": 8604,
+    "grid": "cities/dunaj/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dunaj/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dunaj",
+        "name": "Dunaj",
+        "nameIt": "Dunaj",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          30.94293,
+          59.95816
+        ],
+        "zoom": 11.9,
+        "population": 8604,
+        "cells": 148,
+        "layer": "cities/dunaj/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.94293,
+            59.95816
+          ]
+        },
+        "properties": {
+          "id": "dunaj",
+          "name": "Dunaj",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 18.2,
+          "population": 8604
+        }
+      },
+      "summary": null
+    }
+  }
+}

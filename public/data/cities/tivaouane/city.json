@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tivaouane",
+  "createdAt": "2026-10-08T16:18:09.942Z",
+  "updatedAt": "2026-10-08T16:18:09.942Z",
+  "meta": {
+    "name": "Tivaouane",
+    "nameIt": "Tivaouane",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tivaouane.geojson",
+      "sha256": "20c09a1dccffa6cc342021ba2e46b4829b10e4feacf3865a28bcfe7ff2dd69cb",
+      "size": 248694,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tivaouane",
+    "name": "Tivaouane",
+    "nameIt": "Tivaouane",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN",
+    "center": [
+      -16.8169,
+      14.94806
+    ],
+    "zoom": 11.4,
+    "population": 144285,
+    "grid": "cities/tivaouane/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tivaouane/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tivaouane",
+        "name": "Tivaouane",
+        "nameIt": "Tivaouane",
+        "region": "Senegal",
+        "regionIt": "Senegal",
+        "country": "SN",
+        "center": [
+          -16.8169,
+          14.94806
+        ],
+        "zoom": 11.4,
+        "population": 144285,
+        "cells": 212,
+        "layer": "cities/tivaouane/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -16.8169,
+            14.94806
+          ]
+        },
+        "properties": {
+          "id": "tivaouane",
+          "name": "Tivaouane",
+          "country": "SN",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 144285
+        }
+      },
+      "summary": null
+    }
+  }
+}

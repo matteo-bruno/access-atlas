@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wenjiancun",
+  "createdAt": "2026-10-08T16:21:32.890Z",
+  "updatedAt": "2026-10-08T16:21:32.890Z",
+  "meta": {
+    "name": "WenJiancun",
+    "nameIt": "WenJiancun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/WenJiancun.geojson",
+      "sha256": "848b624d2694bec32023aa423557d052a67b23fdff0f7c8047db56211d1c47d1",
+      "size": 168092,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wenjiancun",
+    "name": "WenJiancun",
+    "nameIt": "WenJiancun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      121.31694,
+      30.27947
+    ],
+    "zoom": 11.4,
+    "population": 15938,
+    "grid": "cities/wenjiancun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wenjiancun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wenjiancun",
+        "name": "WenJiancun",
+        "nameIt": "WenJiancun",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          121.31694,
+          30.27947
+        ],
+        "zoom": 11.4,
+        "population": 15938,
+        "cells": 144,
+        "layer": "cities/wenjiancun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.31694,
+            30.27947
+          ]
+        },
+        "properties": {
+          "id": "wenjiancun",
+          "name": "WenJiancun",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 15938
+        }
+      },
+      "summary": null
+    }
+  }
+}

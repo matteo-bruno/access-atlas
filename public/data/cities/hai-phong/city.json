@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hai-phong",
+  "createdAt": "2026-10-08T15:40:07.981Z",
+  "updatedAt": "2026-10-08T15:40:07.981Z",
+  "meta": {
+    "name": "Hải Phòng",
+    "nameIt": "Hải Phòng",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hải Phòng.geojson",
+      "sha256": "284c56b0f3c746d8fef14d73feb8bdcf9a358927b953ef7fc313fa1b29e77cbf",
+      "size": 2227315,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hai-phong",
+    "name": "Hải Phòng",
+    "nameIt": "Hải Phòng",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      106.67312,
+      20.86072
+    ],
+    "zoom": 9.6,
+    "population": 1093449,
+    "grid": "cities/hai-phong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hai-phong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hai-phong",
+        "name": "Hải Phòng",
+        "nameIt": "Hải Phòng",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          106.67312,
+          20.86072
+        ],
+        "zoom": 9.6,
+        "population": 1093449,
+        "cells": 1915,
+        "layer": "cities/hai-phong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.67312,
+            20.86072
+          ]
+        },
+        "properties": {
+          "id": "hai-phong",
+          "name": "Hải Phòng",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 25,
+          "population": 1093449
+        }
+      },
+      "summary": null
+    }
+  }
+}

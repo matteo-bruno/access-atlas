@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ayang",
+  "createdAt": "2026-10-08T15:11:50.689Z",
+  "updatedAt": "2026-10-08T15:11:50.689Z",
+  "meta": {
+    "name": "Ayang",
+    "nameIt": "Ayang",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ayang.geojson",
+      "sha256": "f18da24984c21bb122b87d150b9840eb5bcb776a86084403187f0c31072ac508",
+      "size": 428691,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ayang",
+    "name": "Ayang",
+    "nameIt": "Ayang",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      128.70085,
+      34.88066
+    ],
+    "zoom": 11,
+    "population": 74975,
+    "grid": "cities/ayang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ayang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ayang",
+        "name": "Ayang",
+        "nameIt": "Ayang",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          128.70085,
+          34.88066
+        ],
+        "zoom": 11,
+        "population": 74975,
+        "cells": 370,
+        "layer": "cities/ayang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            128.70085,
+            34.88066
+          ]
+        },
+        "properties": {
+          "id": "ayang",
+          "name": "Ayang",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 10.7,
+          "population": 74975
+        }
+      },
+      "summary": null
+    }
+  }
+}

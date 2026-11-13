@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dnjway",
+  "createdAt": "2026-10-08T15:30:24.384Z",
+  "updatedAt": "2026-10-08T15:30:24.384Z",
+  "meta": {
+    "name": "Dnjway",
+    "nameIt": "Dnjway",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dnjway.geojson",
+      "sha256": "6e90a3e9244e6a4eec230d77a0cf44035a8dc6d07f76602071a07ce38b6fa2f2",
+      "size": 216577,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dnjway",
+    "name": "Dnjway",
+    "nameIt": "Dnjway",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      31.52816,
+      31.18885
+    ],
+    "zoom": 10.7,
+    "population": 201914,
+    "grid": "cities/dnjway/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dnjway/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dnjway",
+        "name": "Dnjway",
+        "nameIt": "Dnjway",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          31.52816,
+          31.18885
+        ],
+        "zoom": 10.7,
+        "population": 201914,
+        "cells": 186,
+        "layer": "cities/dnjway/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.52816,
+            31.18885
+          ]
+        },
+        "properties": {
+          "id": "dnjway",
+          "name": "Dnjway",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 201914
+        }
+      },
+      "summary": null
+    }
+  }
+}

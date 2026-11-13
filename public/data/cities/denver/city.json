@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "denver",
+  "createdAt": "2026-10-08T15:28:56.794Z",
+  "updatedAt": "2026-10-08T15:28:56.794Z",
+  "meta": {
+    "name": "Denver",
+    "nameIt": "Denver",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Denver.geojson",
+      "sha256": "6e2679febc9b0371f22713ad5a93e63ccaaec74be68c646edf021b47a863afe0",
+      "size": 12172392,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "denver",
+    "name": "Denver",
+    "nameIt": "Denver",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -104.96384,
+      39.7259
+    ],
+    "zoom": 8.5,
+    "population": 2064437,
+    "grid": "cities/denver/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/denver/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "denver",
+        "name": "Denver",
+        "nameIt": "Denver",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -104.96384,
+          39.7259
+        ],
+        "zoom": 8.5,
+        "population": 2064437,
+        "cells": 10472,
+        "layer": "cities/denver/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -104.96384,
+            39.7259
+          ]
+        },
+        "properties": {
+          "id": "denver",
+          "name": "Denver",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 2064437
+        }
+      },
+      "summary": null
+    }
+  }
+}

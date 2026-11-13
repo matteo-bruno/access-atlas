@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ngluwar",
+  "createdAt": "2026-10-08T16:01:20.753Z",
+  "updatedAt": "2026-10-08T16:01:20.753Z",
+  "meta": {
+    "name": "Ngluwar",
+    "nameIt": "Ngluwar",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ngluwar.geojson",
+      "sha256": "4334167fed48824778f99e4af17552a4f5bab02a61b5d94d7ddffd4e75d7c364",
+      "size": 328336,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ngluwar",
+    "name": "Ngluwar",
+    "nameIt": "Ngluwar",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      110.30432,
+      -7.65247
+    ],
+    "zoom": 10.9,
+    "population": 61152,
+    "grid": "cities/ngluwar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ngluwar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ngluwar",
+        "name": "Ngluwar",
+        "nameIt": "Ngluwar",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          110.30432,
+          -7.65247
+        ],
+        "zoom": 10.9,
+        "population": 61152,
+        "cells": 280,
+        "layer": "cities/ngluwar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.30432,
+            -7.65247
+          ]
+        },
+        "properties": {
+          "id": "ngluwar",
+          "name": "Ngluwar",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 44.1,
+          "population": 61152
+        }
+      },
+      "summary": null
+    }
+  }
+}

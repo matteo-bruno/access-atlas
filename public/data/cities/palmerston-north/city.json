@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "palmerston-north",
+  "createdAt": "2026-10-08T16:03:52.217Z",
+  "updatedAt": "2026-10-08T16:03:52.217Z",
+  "meta": {
+    "name": "Palmerston North",
+    "nameIt": "Palmerston North",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Palmerston North.geojson",
+      "sha256": "c7f3f1df930b134296711659368b6d2fcbc193a86d8d289cf9efec99f836c551",
+      "size": 393643,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "palmerston-north",
+    "name": "Palmerston North",
+    "nameIt": "Palmerston North",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ",
+    "center": [
+      175.61461,
+      -40.35188
+    ],
+    "zoom": 10.9,
+    "population": 68525,
+    "grid": "cities/palmerston-north/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/palmerston-north/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "palmerston-north",
+        "name": "Palmerston North",
+        "nameIt": "Palmerston North",
+        "region": "New Zealand",
+        "regionIt": "Nuova Zelanda",
+        "country": "NZ",
+        "center": [
+          175.61461,
+          -40.35188
+        ],
+        "zoom": 10.9,
+        "population": 68525,
+        "cells": 339,
+        "layer": "cities/palmerston-north/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            175.61461,
+            -40.35188
+          ]
+        },
+        "properties": {
+          "id": "palmerston-north",
+          "name": "Palmerston North",
+          "country": "NZ",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 68525
+        }
+      },
+      "summary": null
+    }
+  }
+}

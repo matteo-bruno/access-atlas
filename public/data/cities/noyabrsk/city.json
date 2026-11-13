@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "noyabrsk",
+  "createdAt": "2026-10-08T16:02:14.594Z",
+  "updatedAt": "2026-10-08T16:02:14.594Z",
+  "meta": {
+    "name": "Noyabrsk",
+    "nameIt": "Noyabrsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Noyabrsk.geojson",
+      "sha256": "6f66e27597f8c12243aa31289438fe2331be2a190e6d6d311065753c536bd4c8",
+      "size": 171050,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "noyabrsk",
+    "name": "Noyabrsk",
+    "nameIt": "Noyabrsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      75.4492,
+      63.19809
+    ],
+    "zoom": 11.4,
+    "population": 68698,
+    "grid": "cities/noyabrsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/noyabrsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "noyabrsk",
+        "name": "Noyabrsk",
+        "nameIt": "Noyabrsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          75.4492,
+          63.19809
+        ],
+        "zoom": 11.4,
+        "population": 68698,
+        "cells": 149,
+        "layer": "cities/noyabrsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.4492,
+            63.19809
+          ]
+        },
+        "properties": {
+          "id": "noyabrsk",
+          "name": "Noyabrsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 68698
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "phaphamau",
+  "createdAt": "2026-10-08T16:05:14.106Z",
+  "updatedAt": "2026-10-08T16:05:14.106Z",
+  "meta": {
+    "name": "Phaphamau",
+    "nameIt": "Phaphamau",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Phaphamau.geojson",
+      "sha256": "131d4bd531af5142ee7cde6a2318cf94ff4291de9cf19ea60b08babc55c2bd7f",
+      "size": 334860,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "phaphamau",
+    "name": "Phaphamau",
+    "nameIt": "Phaphamau",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.85213,
+      25.5353
+    ],
+    "zoom": 10.7,
+    "population": 169509,
+    "grid": "cities/phaphamau/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/phaphamau/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "phaphamau",
+        "name": "Phaphamau",
+        "nameIt": "Phaphamau",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.85213,
+          25.5353
+        ],
+        "zoom": 10.7,
+        "population": 169509,
+        "cells": 289,
+        "layer": "cities/phaphamau/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.85213,
+            25.5353
+          ]
+        },
+        "properties": {
+          "id": "phaphamau",
+          "name": "Phaphamau",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 169509
+        }
+      },
+      "summary": null
+    }
+  }
+}

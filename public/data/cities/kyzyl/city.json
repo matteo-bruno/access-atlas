@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kyzyl",
+  "createdAt": "2026-10-08T15:49:14.336Z",
+  "updatedAt": "2026-10-08T15:49:14.336Z",
+  "meta": {
+    "name": "Kyzyl",
+    "nameIt": "Kyzyl",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kyzyl.geojson",
+      "sha256": "cd61cdf8626863f0aa68a48a0e9a8c6fa0860e22187b11ca76e52ea5dd04a36e",
+      "size": 254104,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kyzyl",
+    "name": "Kyzyl",
+    "nameIt": "Kyzyl",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      94.43836,
+      51.70976
+    ],
+    "zoom": 11,
+    "population": 91860,
+    "grid": "cities/kyzyl/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kyzyl/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kyzyl",
+        "name": "Kyzyl",
+        "nameIt": "Kyzyl",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          94.43836,
+          51.70976
+        ],
+        "zoom": 11,
+        "population": 91860,
+        "cells": 221,
+        "layer": "cities/kyzyl/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            94.43836,
+            51.70976
+          ]
+        },
+        "properties": {
+          "id": "kyzyl",
+          "name": "Kyzyl",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 91860
+        }
+      },
+      "summary": null
+    }
+  }
+}

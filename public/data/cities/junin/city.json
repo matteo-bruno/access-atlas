@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "junin",
+  "createdAt": "2026-10-08T15:43:42.101Z",
+  "updatedAt": "2026-10-08T15:43:42.101Z",
+  "meta": {
+    "name": "Junín",
+    "nameIt": "Junín",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Junín.geojson",
+      "sha256": "67191cc636b5330faca5efdfc2bcb7a682c383e2fa1721de8c1a05829086fb52",
+      "size": 320853,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "junin",
+    "name": "Junín",
+    "nameIt": "Junín",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -60.9487,
+      -34.58567
+    ],
+    "zoom": 11.6,
+    "population": 71893,
+    "grid": "cities/junin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 173
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/junin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "junin",
+        "name": "Junín",
+        "nameIt": "Junín",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -60.9487,
+          -34.58567
+        ],
+        "zoom": 11.6,
+        "population": 71893,
+        "cells": 273,
+        "layer": "cities/junin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 173
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -60.9487,
+            -34.58567
+          ]
+        },
+        "properties": {
+          "id": "junin",
+          "name": "Junín",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 71893
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hajipur",
+  "createdAt": "2026-10-08T15:37:22.140Z",
+  "updatedAt": "2026-10-08T15:37:22.140Z",
+  "meta": {
+    "name": "Hajipur",
+    "nameIt": "Hajipur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hajipur.geojson",
+      "sha256": "297004d2a82e58319dd9072537bd99602fab1a1fbbd3906a87b38cfaf3c8cb52",
+      "size": 34350446,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hajipur",
+    "name": "Hajipur",
+    "nameIt": "Hajipur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.5021,
+      25.85137
+    ],
+    "zoom": 8.5,
+    "population": 10104778,
+    "grid": "cities/hajipur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hajipur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hajipur",
+        "name": "Hajipur",
+        "nameIt": "Hajipur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.5021,
+          25.85137
+        ],
+        "zoom": 8.5,
+        "population": 10104778,
+        "cells": 29323,
+        "layer": "cities/hajipur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.5021,
+            25.85137
+          ]
+        },
+        "properties": {
+          "id": "hajipur",
+          "name": "Hajipur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 246.1,
+          "population": 10104778
+        }
+      },
+      "summary": null
+    }
+  }
+}

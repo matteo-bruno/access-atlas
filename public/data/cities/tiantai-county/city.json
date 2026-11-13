@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tiantai-county",
+  "createdAt": "2026-10-08T16:17:45.943Z",
+  "updatedAt": "2026-10-08T16:17:45.943Z",
+  "meta": {
+    "name": "Tiantai County",
+    "nameIt": "Tiantai County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tiantai County.geojson",
+      "sha256": "3822f3f4425179d87fb6007a3ffe3bc802ee17f6463ca3c878c30c46a56782c7",
+      "size": 468623,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tiantai-county",
+    "name": "Tiantai County",
+    "nameIt": "Tiantai County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      121.0215,
+      29.14061
+    ],
+    "zoom": 11,
+    "population": 194904,
+    "grid": "cities/tiantai-county/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tiantai-county/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tiantai-county",
+        "name": "Tiantai County",
+        "nameIt": "Tiantai County",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          121.0215,
+          29.14061
+        ],
+        "zoom": 11,
+        "population": 194904,
+        "cells": 402,
+        "layer": "cities/tiantai-county/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.0215,
+            29.14061
+          ]
+        },
+        "properties": {
+          "id": "tiantai-county",
+          "name": "Tiantai County",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 19.1,
+          "population": 194904
+        }
+      },
+      "summary": null
+    }
+  }
+}

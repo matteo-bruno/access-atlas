@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "castanhal",
+  "createdAt": "2026-10-08T15:22:45.514Z",
+  "updatedAt": "2026-10-08T15:22:45.514Z",
+  "meta": {
+    "name": "Castanhal",
+    "nameIt": "Castanhal",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Castanhal.geojson",
+      "sha256": "3b9a1e583b9e4c1bd941b90fcfdf0dcfa2073473cf26b2a448d5121d483eb4a1",
+      "size": 368755,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "castanhal",
+    "name": "Castanhal",
+    "nameIt": "Castanhal",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -47.92111,
+      -1.29223
+    ],
+    "zoom": 11,
+    "population": 157570,
+    "grid": "cities/castanhal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/castanhal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "castanhal",
+        "name": "Castanhal",
+        "nameIt": "Castanhal",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -47.92111,
+          -1.29223
+        ],
+        "zoom": 11,
+        "population": 157570,
+        "cells": 313,
+        "layer": "cities/castanhal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.92111,
+            -1.29223
+          ]
+        },
+        "properties": {
+          "id": "castanhal",
+          "name": "Castanhal",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 20.5,
+          "population": 157570
+        }
+      },
+      "summary": null
+    }
+  }
+}

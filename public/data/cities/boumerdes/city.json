@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "boumerdes",
+  "createdAt": "2026-10-08T15:20:13.946Z",
+  "updatedAt": "2026-10-08T15:20:13.946Z",
+  "meta": {
+    "name": "Boumerdes",
+    "nameIt": "Boumerdes",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Boumerdes.geojson",
+      "sha256": "6711886ca2941ebb10be29f2a64afbd971021058b73052262012db615d943f52",
+      "size": 1707979,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "boumerdes",
+    "name": "Boumerdes",
+    "nameIt": "Boumerdes",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      3.36889,
+      36.72781
+    ],
+    "zoom": 9.6,
+    "population": 514809,
+    "grid": "cities/boumerdes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/boumerdes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "boumerdes",
+        "name": "Boumerdes",
+        "nameIt": "Boumerdes",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          3.36889,
+          36.72781
+        ],
+        "zoom": 9.6,
+        "population": 514809,
+        "cells": 1482,
+        "layer": "cities/boumerdes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.36889,
+            36.72781
+          ]
+        },
+        "properties": {
+          "id": "boumerdes",
+          "name": "Boumerdes",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 29.2,
+          "population": 514809
+        }
+      },
+      "summary": null
+    }
+  }
+}

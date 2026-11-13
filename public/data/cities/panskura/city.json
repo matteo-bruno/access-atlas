@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "panskura",
+  "createdAt": "2026-10-08T16:04:08.336Z",
+  "updatedAt": "2026-10-08T16:04:08.336Z",
+  "meta": {
+    "name": "Panskura",
+    "nameIt": "Panskura",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Panskura.geojson",
+      "sha256": "2bd193b9a32be6e1996316963420ccc58a869f0aab4fd91326fa9448592aaaea",
+      "size": 232944,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "panskura",
+    "name": "Panskura",
+    "nameIt": "Panskura",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.73773,
+      22.39822
+    ],
+    "zoom": 10.8,
+    "population": 104012,
+    "grid": "cities/panskura/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/panskura/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "panskura",
+        "name": "Panskura",
+        "nameIt": "Panskura",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.73773,
+          22.39822
+        ],
+        "zoom": 10.8,
+        "population": 104012,
+        "cells": 201,
+        "layer": "cities/panskura/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.73773,
+            22.39822
+          ]
+        },
+        "properties": {
+          "id": "panskura",
+          "name": "Panskura",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19.2,
+          "population": 104012
+        }
+      },
+      "summary": null
+    }
+  }
+}

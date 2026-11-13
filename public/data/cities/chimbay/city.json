@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chimbay",
+  "createdAt": "2026-10-08T15:24:48.570Z",
+  "updatedAt": "2026-10-08T15:24:48.570Z",
+  "meta": {
+    "name": "Chimbay",
+    "nameIt": "Chimbay",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chimbay.geojson",
+      "sha256": "5cb37d8e6a1c336be679a4c49968cbedddf3a89e892b1e371ad141ae7d042342",
+      "size": 172170,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chimbay",
+    "name": "Chimbay",
+    "nameIt": "Chimbay",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      59.77995,
+      42.92934
+    ],
+    "zoom": 11.6,
+    "population": 115622,
+    "grid": "cities/chimbay/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chimbay/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chimbay",
+        "name": "Chimbay",
+        "nameIt": "Chimbay",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          59.77995,
+          42.92934
+        ],
+        "zoom": 11.6,
+        "population": 115622,
+        "cells": 149,
+        "layer": "cities/chimbay/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            59.77995,
+            42.92934
+          ]
+        },
+        "properties": {
+          "id": "chimbay",
+          "name": "Chimbay",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 16.8,
+          "population": 115622
+        }
+      },
+      "summary": null
+    }
+  }
+}

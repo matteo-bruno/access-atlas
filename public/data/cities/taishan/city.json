@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "taishan",
+  "createdAt": "2026-10-08T16:16:05.782Z",
+  "updatedAt": "2026-10-08T16:16:05.782Z",
+  "meta": {
+    "name": "Taishan",
+    "nameIt": "Taishan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Taishan.geojson",
+      "sha256": "95f44aecd7121713680ff02ef888773cab2e6ad88c0d26969f3a368004eca768",
+      "size": 410337,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "taishan",
+    "name": "Taishan",
+    "nameIt": "Taishan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.79088,
+      22.24935
+    ],
+    "zoom": 10.5,
+    "population": 306142,
+    "grid": "cities/taishan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/taishan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "taishan",
+        "name": "Taishan",
+        "nameIt": "Taishan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.79088,
+          22.24935
+        ],
+        "zoom": 10.5,
+        "population": 306142,
+        "cells": 352,
+        "layer": "cities/taishan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.79088,
+            22.24935
+          ]
+        },
+        "properties": {
+          "id": "taishan",
+          "name": "Taishan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 18.9,
+          "population": 306142
+        }
+      },
+      "summary": null
+    }
+  }
+}

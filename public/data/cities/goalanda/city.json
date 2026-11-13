@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "goalanda",
+  "createdAt": "2026-10-08T15:35:25.413Z",
+  "updatedAt": "2026-10-08T15:35:25.413Z",
+  "meta": {
+    "name": "Goalanda",
+    "nameIt": "Goalanda",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Goalanda.geojson",
+      "sha256": "2cca660c7b818460d84f599171688d9126edaecb5b801b19b1d8968fbbf31fd8",
+      "size": 210972,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "goalanda",
+    "name": "Goalanda",
+    "nameIt": "Goalanda",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.7374,
+      23.70856
+    ],
+    "zoom": 11,
+    "population": 51346,
+    "grid": "cities/goalanda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/goalanda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "goalanda",
+        "name": "Goalanda",
+        "nameIt": "Goalanda",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.7374,
+          23.70856
+        ],
+        "zoom": 11,
+        "population": 51346,
+        "cells": 182,
+        "layer": "cities/goalanda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.7374,
+            23.70856
+          ]
+        },
+        "properties": {
+          "id": "goalanda",
+          "name": "Goalanda",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 51346
+        }
+      },
+      "summary": null
+    }
+  }
+}

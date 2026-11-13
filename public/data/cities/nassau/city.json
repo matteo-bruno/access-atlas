@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nassau",
+  "createdAt": "2026-10-08T16:00:32.157Z",
+  "updatedAt": "2026-10-08T16:00:32.157Z",
+  "meta": {
+    "name": "Nassau",
+    "nameIt": "Nassau",
+    "region": "The Bahamas",
+    "regionIt": "Bahamas",
+    "country": "BS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nassau.geojson",
+      "sha256": "4a5beaca3b10327de4decc6c54ad4f91ef303ab3dbaa3b238e6b56e5ff10e601",
+      "size": 1452071,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nassau",
+    "name": "Nassau",
+    "nameIt": "Nassau",
+    "region": "The Bahamas",
+    "regionIt": "Bahamas",
+    "country": "BS",
+    "center": [
+      -77.33601,
+      25.0406
+    ],
+    "zoom": 10.1,
+    "population": 263283,
+    "grid": "cities/nassau/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nassau/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nassau",
+        "name": "Nassau",
+        "nameIt": "Nassau",
+        "region": "The Bahamas",
+        "regionIt": "Bahamas",
+        "country": "BS",
+        "center": [
+          -77.33601,
+          25.0406
+        ],
+        "zoom": 10.1,
+        "population": 263283,
+        "cells": 1251,
+        "layer": "cities/nassau/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.33601,
+            25.0406
+          ]
+        },
+        "properties": {
+          "id": "nassau",
+          "name": "Nassau",
+          "country": "BS",
+          "isStudy": true,
+          "proximityMinutes": 26.9,
+          "population": 263283
+        }
+      },
+      "summary": null
+    }
+  }
+}

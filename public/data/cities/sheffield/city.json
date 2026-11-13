@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sheffield",
+  "createdAt": "2026-10-08T16:12:45.359Z",
+  "updatedAt": "2026-10-08T16:12:45.359Z",
+  "meta": {
+    "name": "Sheffield",
+    "nameIt": "Sheffield",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sheffield.geojson",
+      "sha256": "85e005b9f45b8432627dffc790b97b80fac28aec9734d337b3832203e5571aa2",
+      "size": 2706316,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sheffield",
+    "name": "Sheffield",
+    "nameIt": "Sheffield",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.43857,
+      53.38304
+    ],
+    "zoom": 9.7,
+    "population": 653836,
+    "grid": "cities/sheffield/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sheffield/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sheffield",
+        "name": "Sheffield",
+        "nameIt": "Sheffield",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.43857,
+          53.38304
+        ],
+        "zoom": 9.7,
+        "population": 653836,
+        "cells": 2345,
+        "layer": "cities/sheffield/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.43857,
+            53.38304
+          ]
+        },
+        "properties": {
+          "id": "sheffield",
+          "name": "Sheffield",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 11.4,
+          "population": 653836
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jinchengjiang",
+  "createdAt": "2026-10-08T15:42:55.516Z",
+  "updatedAt": "2026-10-08T15:42:55.516Z",
+  "meta": {
+    "name": "Jinchengjiang",
+    "nameIt": "Jinchengjiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jinchengjiang.geojson",
+      "sha256": "9031be7f111301a73125920a7f01aae9675bb5354610227ebb588f0e6dcc7666",
+      "size": 322510,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jinchengjiang",
+    "name": "Jinchengjiang",
+    "nameIt": "Jinchengjiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      108.05787,
+      24.69515
+    ],
+    "zoom": 10.6,
+    "population": 232699,
+    "grid": "cities/jinchengjiang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jinchengjiang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jinchengjiang",
+        "name": "Jinchengjiang",
+        "nameIt": "Jinchengjiang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          108.05787,
+          24.69515
+        ],
+        "zoom": 10.6,
+        "population": 232699,
+        "cells": 276,
+        "layer": "cities/jinchengjiang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.05787,
+            24.69515
+          ]
+        },
+        "properties": {
+          "id": "jinchengjiang",
+          "name": "Jinchengjiang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24.7,
+          "population": 232699
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "milton",
+  "createdAt": "2026-10-08T15:57:07.477Z",
+  "updatedAt": "2026-10-08T15:57:07.477Z",
+  "meta": {
+    "name": "Milton",
+    "nameIt": "Milton",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Milton.geojson",
+      "sha256": "87f27caa007f5a95dcc3a2d2c5da70d0f3b14eeefa57d6d7719a1a27d3cd7dcc",
+      "size": 383034,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "milton",
+    "name": "Milton",
+    "nameIt": "Milton",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -79.86672,
+      43.51479
+    ],
+    "zoom": 10.9,
+    "population": 113515,
+    "grid": "cities/milton/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/milton/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "milton",
+        "name": "Milton",
+        "nameIt": "Milton",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -79.86672,
+          43.51479
+        ],
+        "zoom": 10.9,
+        "population": 113515,
+        "cells": 331,
+        "layer": "cities/milton/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -79.86672,
+            43.51479
+          ]
+        },
+        "properties": {
+          "id": "milton",
+          "name": "Milton",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 113515
+        }
+      },
+      "summary": null
+    }
+  }
+}

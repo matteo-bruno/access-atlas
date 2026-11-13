@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jutiapa",
+  "createdAt": "2026-10-08T15:43:43.388Z",
+  "updatedAt": "2026-10-08T15:43:43.388Z",
+  "meta": {
+    "name": "Jutiapa",
+    "nameIt": "Jutiapa",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jutiapa.geojson",
+      "sha256": "1f1efa427cac8da599e6a43b70a65e8198af1d243f36f9d88042ee9643e1d3c6",
+      "size": 132142,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jutiapa",
+    "name": "Jutiapa",
+    "nameIt": "Jutiapa",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT",
+    "center": [
+      -89.90203,
+      14.29447
+    ],
+    "zoom": 11.9,
+    "population": 33558,
+    "grid": "cities/jutiapa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jutiapa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jutiapa",
+        "name": "Jutiapa",
+        "nameIt": "Jutiapa",
+        "region": "Guatemala",
+        "regionIt": "Guatemala",
+        "country": "GT",
+        "center": [
+          -89.90203,
+          14.29447
+        ],
+        "zoom": 11.9,
+        "population": 33558,
+        "cells": 113,
+        "layer": "cities/jutiapa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -89.90203,
+            14.29447
+          ]
+        },
+        "properties": {
+          "id": "jutiapa",
+          "name": "Jutiapa",
+          "country": "GT",
+          "isStudy": true,
+          "proximityMinutes": 19.8,
+          "population": 33558
+        }
+      },
+      "summary": null
+    }
+  }
+}

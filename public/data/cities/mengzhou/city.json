@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mengzhou",
+  "createdAt": "2026-10-08T15:56:36.894Z",
+  "updatedAt": "2026-10-08T15:56:36.894Z",
+  "meta": {
+    "name": "Mengzhou",
+    "nameIt": "Mengzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mengzhou.geojson",
+      "sha256": "a68690f762b603c22d0c0a000071628ee249b667d757b727a05cace2ee8b8922",
+      "size": 524914,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mengzhou",
+    "name": "Mengzhou",
+    "nameIt": "Mengzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.77325,
+      34.90662
+    ],
+    "zoom": 10.4,
+    "population": 152929,
+    "grid": "cities/mengzhou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mengzhou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mengzhou",
+        "name": "Mengzhou",
+        "nameIt": "Mengzhou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.77325,
+          34.90662
+        ],
+        "zoom": 10.4,
+        "population": 152929,
+        "cells": 450,
+        "layer": "cities/mengzhou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.77325,
+            34.90662
+          ]
+        },
+        "properties": {
+          "id": "mengzhou",
+          "name": "Mengzhou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 35.7,
+          "population": 152929
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "haditha",
+  "createdAt": "2026-10-08T15:37:08.407Z",
+  "updatedAt": "2026-10-08T15:37:08.407Z",
+  "meta": {
+    "name": "Haditha",
+    "nameIt": "Haditha",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Haditha.geojson",
+      "sha256": "126dcca48719cefb5be3cd1f8bdae31f07d6e1789e78d6ddd1ea129cce979384",
+      "size": 232787,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "haditha",
+    "name": "Haditha",
+    "nameIt": "Haditha",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      42.37441,
+      34.11559
+    ],
+    "zoom": 11,
+    "population": 73169,
+    "grid": "cities/haditha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/haditha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "haditha",
+        "name": "Haditha",
+        "nameIt": "Haditha",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          42.37441,
+          34.11559
+        ],
+        "zoom": 11,
+        "population": 73169,
+        "cells": 201,
+        "layer": "cities/haditha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            42.37441,
+            34.11559
+          ]
+        },
+        "properties": {
+          "id": "haditha",
+          "name": "Haditha",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 73169
+        }
+      },
+      "summary": null
+    }
+  }
+}

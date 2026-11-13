@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nalchik",
+  "createdAt": "2026-10-08T15:59:53.393Z",
+  "updatedAt": "2026-10-08T15:59:53.393Z",
+  "meta": {
+    "name": "Nalchik",
+    "nameIt": "Nalchik",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nalchik.geojson",
+      "sha256": "50fca25d2b0c29acbbe9f9789eee2bc467525a71370da10d174b8f03e7410047",
+      "size": 538146,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nalchik",
+    "name": "Nalchik",
+    "nameIt": "Nalchik",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      43.62121,
+      43.49174
+    ],
+    "zoom": 10.3,
+    "population": 234073,
+    "grid": "cities/nalchik/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nalchik/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nalchik",
+        "name": "Nalchik",
+        "nameIt": "Nalchik",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          43.62121,
+          43.49174
+        ],
+        "zoom": 10.3,
+        "population": 234073,
+        "cells": 471,
+        "layer": "cities/nalchik/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.62121,
+            43.49174
+          ]
+        },
+        "properties": {
+          "id": "nalchik",
+          "name": "Nalchik",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 234073
+        }
+      },
+      "summary": null
+    }
+  }
+}

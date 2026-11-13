@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "levittown",
+  "createdAt": "2026-10-08T15:50:49.158Z",
+  "updatedAt": "2026-10-08T15:50:49.158Z",
+  "meta": {
+    "name": "Levittown",
+    "nameIt": "Levittown",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Levittown.geojson",
+      "sha256": "88ffb06b73bb38ac4ef7abd878a569eb98ae866bb94979a5984338da8f7bb1be",
+      "size": 583622,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "levittown",
+    "name": "Levittown",
+    "nameIt": "Levittown",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -74.87065,
+      40.15384
+    ],
+    "zoom": 10.5,
+    "population": 89299,
+    "grid": "cities/levittown/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/levittown/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "levittown",
+        "name": "Levittown",
+        "nameIt": "Levittown",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -74.87065,
+          40.15384
+        ],
+        "zoom": 10.5,
+        "population": 89299,
+        "cells": 502,
+        "layer": "cities/levittown/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.87065,
+            40.15384
+          ]
+        },
+        "properties": {
+          "id": "levittown",
+          "name": "Levittown",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 25.9,
+          "population": 89299
+        }
+      },
+      "summary": null
+    }
+  }
+}

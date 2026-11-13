@@ -1,0 +1,98 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "istanbul-fua",
+  "createdAt": "2026-10-08T15:41:18.321Z",
+  "updatedAt": "2026-10-08T15:41:18.321Z",
+  "meta": {
+    "name": "Istanbul",
+    "nameIt": "Istanbul",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Istanbul_FUA.geojson",
+      "sha256": "47cb0a74791667eca326d5a45f26ed6d6058bfc5c169fb2499534ab8eb0fce21",
+      "size": 25082102,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "istanbul-fua",
+    "name": "Istanbul",
+    "nameIt": "Istanbul",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "extent": "fua",
+    "core": "istanbul",
+    "center": [
+      28.98256,
+      41.00773
+    ],
+    "zoom": 8.5,
+    "population": 16589456,
+    "grid": "cities/istanbul-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/istanbul-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "istanbul-fua",
+        "name": "Istanbul",
+        "nameIt": "Istanbul",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "extent": "fua",
+        "core": "istanbul",
+        "center": [
+          28.98256,
+          41.00773
+        ],
+        "zoom": 8.5,
+        "population": 16589456,
+        "cells": 21744,
+        "layer": "cities/istanbul-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.98256,
+            41.00773
+          ]
+        },
+        "properties": {
+          "id": "istanbul-fua",
+          "name": "Istanbul",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 16589456
+        }
+      },
+      "summary": null
+    }
+  }
+}

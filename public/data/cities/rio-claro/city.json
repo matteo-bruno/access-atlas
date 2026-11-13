@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rio-claro",
+  "createdAt": "2026-10-08T16:08:49.739Z",
+  "updatedAt": "2026-10-08T16:08:49.739Z",
+  "meta": {
+    "name": "Rio Claro",
+    "nameIt": "Rio Claro",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rio Claro.geojson",
+      "sha256": "7706b7c5e9d53691f93b3c42adda31e57d961860d1af2e775afd0f95c56e6dab",
+      "size": 461787,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rio-claro",
+    "name": "Rio Claro",
+    "nameIt": "Rio Claro",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -47.56646,
+      -22.40271
+    ],
+    "zoom": 10.7,
+    "population": 178448,
+    "grid": "cities/rio-claro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rio-claro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rio-claro",
+        "name": "Rio Claro",
+        "nameIt": "Rio Claro",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -47.56646,
+          -22.40271
+        ],
+        "zoom": 10.7,
+        "population": 178448,
+        "cells": 396,
+        "layer": "cities/rio-claro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.56646,
+            -22.40271
+          ]
+        },
+        "properties": {
+          "id": "rio-claro",
+          "name": "Rio Claro",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 14.2,
+          "population": 178448
+        }
+      },
+      "summary": null
+    }
+  }
+}

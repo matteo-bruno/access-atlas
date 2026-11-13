@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cumana",
+  "createdAt": "2026-10-08T15:27:03.439Z",
+  "updatedAt": "2026-10-08T15:27:03.439Z",
+  "meta": {
+    "name": "Cumana",
+    "nameIt": "Cumana",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cumana.geojson",
+      "sha256": "cb284ad144154f476d1ac03b882f1e407704102e1008733ce70803b2e2dadb02",
+      "size": 811685,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cumana",
+    "name": "Cumana",
+    "nameIt": "Cumana",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -64.16591,
+      10.44657
+    ],
+    "zoom": 10.7,
+    "population": 171101,
+    "grid": "cities/cumana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cumana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cumana",
+        "name": "Cumana",
+        "nameIt": "Cumana",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -64.16591,
+          10.44657
+        ],
+        "zoom": 10.7,
+        "population": 171101,
+        "cells": 695,
+        "layer": "cities/cumana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -64.16591,
+            10.44657
+          ]
+        },
+        "properties": {
+          "id": "cumana",
+          "name": "Cumana",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 26.5,
+          "population": 171101
+        }
+      },
+      "summary": null
+    }
+  }
+}

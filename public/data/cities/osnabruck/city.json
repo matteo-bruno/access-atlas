@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "osnabruck",
+  "createdAt": "2026-10-08T16:03:09.333Z",
+  "updatedAt": "2026-10-08T16:03:09.333Z",
+  "meta": {
+    "name": "Osnabrück",
+    "nameIt": "Osnabrück",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Osnabrück.geojson",
+      "sha256": "e53b9b8dfa4c7091b0da2666ebe1c598ba29e42c3ae3ab23c28722536221db43",
+      "size": 520807,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "osnabruck",
+    "name": "Osnabrück",
+    "nameIt": "Osnabrück",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      8.04415,
+      52.2805
+    ],
+    "zoom": 10.9,
+    "population": 119554,
+    "grid": "cities/osnabruck/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/osnabruck/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "osnabruck",
+        "name": "Osnabrück",
+        "nameIt": "Osnabrück",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          8.04415,
+          52.2805
+        ],
+        "zoom": 10.9,
+        "population": 119554,
+        "cells": 460,
+        "layer": "cities/osnabruck/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.04415,
+            52.2805
+          ]
+        },
+        "properties": {
+          "id": "osnabruck",
+          "name": "Osnabrück",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 8.8,
+          "population": 119554
+        }
+      },
+      "summary": null
+    }
+  }
+}

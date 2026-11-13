@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "phnom-penh",
+  "createdAt": "2026-10-08T16:05:16.668Z",
+  "updatedAt": "2026-10-08T16:05:16.668Z",
+  "meta": {
+    "name": "Phnom Penh",
+    "nameIt": "Phnom Penh",
+    "region": "Cambodia",
+    "regionIt": "Cambogia",
+    "country": "KH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Phnom Penh.geojson",
+      "sha256": "ac2aea263a321b85f5f40da1f6070abd84b320b72a575d807486eda034ba0275",
+      "size": 3349789,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "phnom-penh",
+    "name": "Phnom Penh",
+    "nameIt": "Phnom Penh",
+    "region": "Cambodia",
+    "regionIt": "Cambogia",
+    "country": "KH",
+    "center": [
+      104.897,
+      11.55648
+    ],
+    "zoom": 9,
+    "population": 2288505,
+    "grid": "cities/phnom-penh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/phnom-penh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "phnom-penh",
+        "name": "Phnom Penh",
+        "nameIt": "Phnom Penh",
+        "region": "Cambodia",
+        "regionIt": "Cambogia",
+        "country": "KH",
+        "center": [
+          104.897,
+          11.55648
+        ],
+        "zoom": 9,
+        "population": 2288505,
+        "cells": 2880,
+        "layer": "cities/phnom-penh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            104.897,
+            11.55648
+          ]
+        },
+        "properties": {
+          "id": "phnom-penh",
+          "name": "Phnom Penh",
+          "country": "KH",
+          "isStudy": true,
+          "proximityMinutes": 23.2,
+          "population": 2288505
+        }
+      },
+      "summary": null
+    }
+  }
+}

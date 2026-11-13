@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guriel",
+  "createdAt": "2026-10-08T15:36:48.313Z",
+  "updatedAt": "2026-10-08T15:36:48.313Z",
+  "meta": {
+    "name": "Guriel",
+    "nameIt": "Guriel",
+    "region": "Somalia",
+    "regionIt": "Somalia",
+    "country": "SO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guriel.geojson",
+      "sha256": "04452b76cc0da0266d46a1f9fec10474346c4923ddefceb4d163924722bbc4e0",
+      "size": 135089,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guriel",
+    "name": "Guriel",
+    "nameIt": "Guriel",
+    "region": "Somalia",
+    "regionIt": "Somalia",
+    "country": "SO",
+    "center": [
+      45.88029,
+      5.30823
+    ],
+    "zoom": 12,
+    "population": 56398,
+    "grid": "cities/guriel/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guriel/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guriel",
+        "name": "Guriel",
+        "nameIt": "Guriel",
+        "region": "Somalia",
+        "regionIt": "Somalia",
+        "country": "SO",
+        "center": [
+          45.88029,
+          5.30823
+        ],
+        "zoom": 12,
+        "population": 56398,
+        "cells": 117,
+        "layer": "cities/guriel/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            45.88029,
+            5.30823
+          ]
+        },
+        "properties": {
+          "id": "guriel",
+          "name": "Guriel",
+          "country": "SO",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 56398
+        }
+      },
+      "summary": null
+    }
+  }
+}

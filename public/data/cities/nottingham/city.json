@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nottingham",
+  "createdAt": "2026-10-08T16:02:05.645Z",
+  "updatedAt": "2026-10-08T16:02:05.645Z",
+  "meta": {
+    "name": "Nottingham",
+    "nameIt": "Nottingham",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nottingham.geojson",
+      "sha256": "b7baac206666caa09be9312a61d5fa025a8793b50474c81f0ba77e5244445a85",
+      "size": 2185872,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nottingham",
+    "name": "Nottingham",
+    "nameIt": "Nottingham",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.17936,
+      52.95862
+    ],
+    "zoom": 9.8,
+    "population": 628832,
+    "grid": "cities/nottingham/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nottingham/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nottingham",
+        "name": "Nottingham",
+        "nameIt": "Nottingham",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.17936,
+          52.95862
+        ],
+        "zoom": 9.8,
+        "population": 628832,
+        "cells": 1897,
+        "layer": "cities/nottingham/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.17936,
+            52.95862
+          ]
+        },
+        "properties": {
+          "id": "nottingham",
+          "name": "Nottingham",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 9.7,
+          "population": 628832
+        }
+      },
+      "summary": null
+    }
+  }
+}

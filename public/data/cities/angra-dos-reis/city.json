@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "angra-dos-reis",
+  "createdAt": "2026-10-08T15:07:41.371Z",
+  "updatedAt": "2026-10-08T15:07:41.371Z",
+  "meta": {
+    "name": "Angra dos Reis",
+    "nameIt": "Angra dos Reis",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Angra dos Reis.geojson",
+      "sha256": "444da6803b396015086a06a7e217bd6314e91c2f6f8385f20d0a64ed435cb902",
+      "size": 251028,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "angra-dos-reis",
+    "name": "Angra dos Reis",
+    "nameIt": "Angra dos Reis",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -44.30276,
+      -22.98456
+    ],
+    "zoom": 11.4,
+    "population": 63990,
+    "grid": "cities/angra-dos-reis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/angra-dos-reis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "angra-dos-reis",
+        "name": "Angra dos Reis",
+        "nameIt": "Angra dos Reis",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -44.30276,
+          -22.98456
+        ],
+        "zoom": 11.4,
+        "population": 63990,
+        "cells": 213,
+        "layer": "cities/angra-dos-reis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -44.30276,
+            -22.98456
+          ]
+        },
+        "properties": {
+          "id": "angra-dos-reis",
+          "name": "Angra dos Reis",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 63990
+        }
+      },
+      "summary": null
+    }
+  }
+}

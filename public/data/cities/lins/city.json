@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lins",
+  "createdAt": "2026-10-08T15:51:27.747Z",
+  "updatedAt": "2026-10-08T15:51:27.747Z",
+  "meta": {
+    "name": "Lins",
+    "nameIt": "Lins",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lins.geojson",
+      "sha256": "0038bba001943d7e36488ce44548b85dbf9913475b39da39fbdcfe040b6e030f",
+      "size": 199488,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lins",
+    "name": "Lins",
+    "nameIt": "Lins",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -49.74832,
+      -21.67391
+    ],
+    "zoom": 11.6,
+    "population": 62449,
+    "grid": "cities/lins/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lins/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lins",
+        "name": "Lins",
+        "nameIt": "Lins",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -49.74832,
+          -21.67391
+        ],
+        "zoom": 11.6,
+        "population": 62449,
+        "cells": 170,
+        "layer": "cities/lins/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.74832,
+            -21.67391
+          ]
+        },
+        "properties": {
+          "id": "lins",
+          "name": "Lins",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 12.8,
+          "population": 62449
+        }
+      },
+      "summary": null
+    }
+  }
+}

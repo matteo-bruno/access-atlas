@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gangarampur",
+  "createdAt": "2026-10-08T15:34:23.594Z",
+  "updatedAt": "2026-10-08T15:34:23.594Z",
+  "meta": {
+    "name": "Gangarampur",
+    "nameIt": "Gangarampur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gangarampur.geojson",
+      "sha256": "1b3143cdf2eb7936ba339db6be81f3de5cfbdb8207711921f150fb735c8d4536",
+      "size": 133271,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gangarampur",
+    "name": "Gangarampur",
+    "nameIt": "Gangarampur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.52368,
+      25.40363
+    ],
+    "zoom": 11.7,
+    "population": 83204,
+    "grid": "cities/gangarampur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gangarampur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gangarampur",
+        "name": "Gangarampur",
+        "nameIt": "Gangarampur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.52368,
+          25.40363
+        ],
+        "zoom": 11.7,
+        "population": 83204,
+        "cells": 115,
+        "layer": "cities/gangarampur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.52368,
+            25.40363
+          ]
+        },
+        "properties": {
+          "id": "gangarampur",
+          "name": "Gangarampur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 10.9,
+          "population": 83204
+        }
+      },
+      "summary": null
+    }
+  }
+}

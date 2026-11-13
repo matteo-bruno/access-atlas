@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fier",
+  "createdAt": "2026-10-08T15:33:21.779Z",
+  "updatedAt": "2026-10-08T15:33:21.779Z",
+  "meta": {
+    "name": "Fier",
+    "nameIt": "Fier",
+    "region": "Albania",
+    "regionIt": "Albania",
+    "country": "AL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fier.geojson",
+      "sha256": "58aa3cfbfcb249b2b4a306dce97398b60e4cbaacd12d88c2320a7e8a80bd6b29",
+      "size": 73658,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fier",
+    "name": "Fier",
+    "nameIt": "Fier",
+    "region": "Albania",
+    "regionIt": "Albania",
+    "country": "AL",
+    "center": [
+      19.5593,
+      40.72759
+    ],
+    "zoom": 12,
+    "population": 43924,
+    "grid": "cities/fier/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fier/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fier",
+        "name": "Fier",
+        "nameIt": "Fier",
+        "region": "Albania",
+        "regionIt": "Albania",
+        "country": "AL",
+        "center": [
+          19.5593,
+          40.72759
+        ],
+        "zoom": 12,
+        "population": 43924,
+        "cells": 64,
+        "layer": "cities/fier/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.5593,
+            40.72759
+          ]
+        },
+        "properties": {
+          "id": "fier",
+          "name": "Fier",
+          "country": "AL",
+          "isStudy": true,
+          "proximityMinutes": 7.9,
+          "population": 43924
+        }
+      },
+      "summary": null
+    }
+  }
+}

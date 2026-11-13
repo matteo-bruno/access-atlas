@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mecca",
+  "createdAt": "2026-10-08T15:56:07.897Z",
+  "updatedAt": "2026-10-08T15:56:07.897Z",
+  "meta": {
+    "name": "Mecca",
+    "nameIt": "Mecca",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mecca.geojson",
+      "sha256": "f6b380376937d8c538ec0eda75e0fbee9579ff7cbde2526b4e3cfc47ee8eca97",
+      "size": 2403084,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mecca",
+    "name": "Mecca",
+    "nameIt": "Mecca",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA",
+    "center": [
+      39.82502,
+      21.41481
+    ],
+    "zoom": 9.6,
+    "population": 1117184,
+    "grid": "cities/mecca/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mecca/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mecca",
+        "name": "Mecca",
+        "nameIt": "Mecca",
+        "region": "Saudi Arabia",
+        "regionIt": "Arabia Saudita",
+        "country": "SA",
+        "center": [
+          39.82502,
+          21.41481
+        ],
+        "zoom": 9.6,
+        "population": 1117184,
+        "cells": 2077,
+        "layer": "cities/mecca/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.82502,
+            21.41481
+          ]
+        },
+        "properties": {
+          "id": "mecca",
+          "name": "Mecca",
+          "country": "SA",
+          "isStudy": true,
+          "proximityMinutes": 45.2,
+          "population": 1117184
+        }
+      },
+      "summary": null
+    }
+  }
+}

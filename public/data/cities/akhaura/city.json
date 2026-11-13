@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "akhaura",
+  "createdAt": "2026-10-08T15:03:39.082Z",
+  "updatedAt": "2026-10-08T15:03:39.082Z",
+  "meta": {
+    "name": "Akhaura",
+    "nameIt": "Akhaura",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Akhaura.geojson",
+      "sha256": "2ba021f0ed1e5f7cdfb48b4a428ffb9bf9188ce109485f83a8a99358bdfe4d2d",
+      "size": 633081,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "akhaura",
+    "name": "Akhaura",
+    "nameIt": "Akhaura",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      91.21693,
+      23.88284
+    ],
+    "zoom": 9.9,
+    "population": 193832,
+    "grid": "cities/akhaura/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/akhaura/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "akhaura",
+        "name": "Akhaura",
+        "nameIt": "Akhaura",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          91.21693,
+          23.88284
+        ],
+        "zoom": 9.9,
+        "population": 193832,
+        "cells": 546,
+        "layer": "cities/akhaura/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.21693,
+            23.88284
+          ]
+        },
+        "properties": {
+          "id": "akhaura",
+          "name": "Akhaura",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 36,
+          "population": 193832
+        }
+      },
+      "summary": null
+    }
+  }
+}

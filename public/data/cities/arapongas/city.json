@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "arapongas",
+  "createdAt": "2026-10-08T15:09:04.167Z",
+  "updatedAt": "2026-10-08T15:09:04.167Z",
+  "meta": {
+    "name": "Arapongas",
+    "nameIt": "Arapongas",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Arapongas.geojson",
+      "sha256": "7041b4a8e8b97a84591af0dbfb021c1643ea5e1a1df4183b7c41d4241e4ff57f",
+      "size": 329821,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "arapongas",
+    "name": "Arapongas",
+    "nameIt": "Arapongas",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -51.4354,
+      -23.40785
+    ],
+    "zoom": 11.4,
+    "population": 102351,
+    "grid": "cities/arapongas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/arapongas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "arapongas",
+        "name": "Arapongas",
+        "nameIt": "Arapongas",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -51.4354,
+          -23.40785
+        ],
+        "zoom": 11.4,
+        "population": 102351,
+        "cells": 280,
+        "layer": "cities/arapongas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -51.4354,
+            -23.40785
+          ]
+        },
+        "properties": {
+          "id": "arapongas",
+          "name": "Arapongas",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 21.1,
+          "population": 102351
+        }
+      },
+      "summary": null
+    }
+  }
+}

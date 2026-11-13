@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mandya",
+  "createdAt": "2026-10-08T15:54:35.638Z",
+  "updatedAt": "2026-10-08T15:54:35.638Z",
+  "meta": {
+    "name": "Mandya",
+    "nameIt": "Mandya",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mandya.geojson",
+      "sha256": "b4f4b7c9365381c0e1017050e6288a0ff7394c3476f2eb64547a88ab56541717",
+      "size": 261257,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mandya",
+    "name": "Mandya",
+    "nameIt": "Mandya",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.89396,
+      12.52268
+    ],
+    "zoom": 11.2,
+    "population": 132089,
+    "grid": "cities/mandya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mandya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mandya",
+        "name": "Mandya",
+        "nameIt": "Mandya",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.89396,
+          12.52268
+        ],
+        "zoom": 11.2,
+        "population": 132089,
+        "cells": 226,
+        "layer": "cities/mandya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.89396,
+            12.52268
+          ]
+        },
+        "properties": {
+          "id": "mandya",
+          "name": "Mandya",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 132089
+        }
+      },
+      "summary": null
+    }
+  }
+}

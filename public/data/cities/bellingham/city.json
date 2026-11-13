@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bellingham",
+  "createdAt": "2026-10-08T15:17:10.324Z",
+  "updatedAt": "2026-10-08T15:17:10.324Z",
+  "meta": {
+    "name": "Bellingham",
+    "nameIt": "Bellingham",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bellingham.geojson",
+      "sha256": "b71cc3386bccdc34908be197d43e5cf2bc9e440b1f688f213eb7a49f25d3f12a",
+      "size": 435362,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bellingham",
+    "name": "Bellingham",
+    "nameIt": "Bellingham",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -122.47078,
+      48.74671
+    ],
+    "zoom": 11,
+    "population": 58791,
+    "grid": "cities/bellingham/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bellingham/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bellingham",
+        "name": "Bellingham",
+        "nameIt": "Bellingham",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -122.47078,
+          48.74671
+        ],
+        "zoom": 11,
+        "population": 58791,
+        "cells": 376,
+        "layer": "cities/bellingham/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.47078,
+            48.74671
+          ]
+        },
+        "properties": {
+          "id": "bellingham",
+          "name": "Bellingham",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 58791
+        }
+      },
+      "summary": null
+    }
+  }
+}

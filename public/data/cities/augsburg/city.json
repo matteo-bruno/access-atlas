@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "augsburg",
+  "createdAt": "2026-10-08T15:11:23.094Z",
+  "updatedAt": "2026-10-08T15:11:23.094Z",
+  "meta": {
+    "name": "Augsburg",
+    "nameIt": "Augsburg",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Augsburg.geojson",
+      "sha256": "65775dc3734e99b5f353dad0b5d928d33e648a442cb2940bfaf311f708777e23",
+      "size": 1129705,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "augsburg",
+    "name": "Augsburg",
+    "nameIt": "Augsburg",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      10.8914,
+      48.36257
+    ],
+    "zoom": 9.6,
+    "population": 351448,
+    "grid": "cities/augsburg/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/augsburg/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "augsburg",
+        "name": "Augsburg",
+        "nameIt": "Augsburg",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          10.8914,
+          48.36257
+        ],
+        "zoom": 9.6,
+        "population": 351448,
+        "cells": 989,
+        "layer": "cities/augsburg/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.8914,
+            48.36257
+          ]
+        },
+        "properties": {
+          "id": "augsburg",
+          "name": "Augsburg",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 8,
+          "population": 351448
+        }
+      },
+      "summary": null
+    }
+  }
+}

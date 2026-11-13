@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "honnavar",
+  "createdAt": "2026-10-08T15:39:02.941Z",
+  "updatedAt": "2026-10-08T15:39:02.941Z",
+  "meta": {
+    "name": "Honnavar",
+    "nameIt": "Honnavar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Honnavar.geojson",
+      "sha256": "df45b830e29c9c9e3b7489b5de292229cac898632a7edef972435609c42e175e",
+      "size": 133259,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "honnavar",
+    "name": "Honnavar",
+    "nameIt": "Honnavar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.44754,
+      14.2827
+    ],
+    "zoom": 11.8,
+    "population": 23323,
+    "grid": "cities/honnavar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/honnavar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "honnavar",
+        "name": "Honnavar",
+        "nameIt": "Honnavar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.44754,
+          14.2827
+        ],
+        "zoom": 11.8,
+        "population": 23323,
+        "cells": 115,
+        "layer": "cities/honnavar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.44754,
+            14.2827
+          ]
+        },
+        "properties": {
+          "id": "honnavar",
+          "name": "Honnavar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 23323
+        }
+      },
+      "summary": null
+    }
+  }
+}

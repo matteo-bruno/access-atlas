@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chita",
+  "createdAt": "2026-10-08T15:24:56.978Z",
+  "updatedAt": "2026-10-08T15:24:56.978Z",
+  "meta": {
+    "name": "Chita",
+    "nameIt": "Chita",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chita.geojson",
+      "sha256": "52cb0a4df42591c6bf64268f6c9bbb49dda7a4ac376a080ce23d3dead4e74fab",
+      "size": 568197,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chita",
+    "name": "Chita",
+    "nameIt": "Chita",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      113.48693,
+      52.03974
+    ],
+    "zoom": 10.8,
+    "population": 211015,
+    "grid": "cities/chita/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chita/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chita",
+        "name": "Chita",
+        "nameIt": "Chita",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          113.48693,
+          52.03974
+        ],
+        "zoom": 10.8,
+        "population": 211015,
+        "cells": 494,
+        "layer": "cities/chita/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.48693,
+            52.03974
+          ]
+        },
+        "properties": {
+          "id": "chita",
+          "name": "Chita",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 211015
+        }
+      },
+      "summary": null
+    }
+  }
+}

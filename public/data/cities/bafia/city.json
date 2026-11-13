@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bafia",
+  "createdAt": "2026-10-08T15:12:37.477Z",
+  "updatedAt": "2026-10-08T15:12:37.477Z",
+  "meta": {
+    "name": "Bafia",
+    "nameIt": "Bafia",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bafia.geojson",
+      "sha256": "e51814d5c1fe2c85acb298fea923850cbc3c0a1c0495025e382c5d2732cebd23",
+      "size": 203789,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bafia",
+    "name": "Bafia",
+    "nameIt": "Bafia",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      11.22664,
+      4.75021
+    ],
+    "zoom": 11.7,
+    "population": 70668,
+    "grid": "cities/bafia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bafia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bafia",
+        "name": "Bafia",
+        "nameIt": "Bafia",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          11.22664,
+          4.75021
+        ],
+        "zoom": 11.7,
+        "population": 70668,
+        "cells": 176,
+        "layer": "cities/bafia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.22664,
+            4.75021
+          ]
+        },
+        "properties": {
+          "id": "bafia",
+          "name": "Bafia",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 70668
+        }
+      },
+      "summary": null
+    }
+  }
+}

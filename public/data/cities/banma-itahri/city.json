@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "banma-itahri",
+  "createdAt": "2026-10-08T15:15:03.709Z",
+  "updatedAt": "2026-10-08T15:15:03.709Z",
+  "meta": {
+    "name": "Banma Itahri",
+    "nameIt": "Banma Itahri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Banma Itahri.geojson",
+      "sha256": "09c570091e00e5c836efe0bf2e492dc3f5d310fda141e0b8d981fdaa1a8ee9c3",
+      "size": 149452,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "banma-itahri",
+    "name": "Banma Itahri",
+    "nameIt": "Banma Itahri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.64992,
+      25.67465
+    ],
+    "zoom": 11.2,
+    "population": 34819,
+    "grid": "cities/banma-itahri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/banma-itahri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "banma-itahri",
+        "name": "Banma Itahri",
+        "nameIt": "Banma Itahri",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.64992,
+          25.67465
+        ],
+        "zoom": 11.2,
+        "population": 34819,
+        "cells": 129,
+        "layer": "cities/banma-itahri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.64992,
+            25.67465
+          ]
+        },
+        "properties": {
+          "id": "banma-itahri",
+          "name": "Banma Itahri",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 34819
+        }
+      },
+      "summary": null
+    }
+  }
+}

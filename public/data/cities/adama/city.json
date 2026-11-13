@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "adama",
+  "createdAt": "2026-10-08T15:02:17.466Z",
+  "updatedAt": "2026-10-08T15:02:17.466Z",
+  "meta": {
+    "name": "Adama",
+    "nameIt": "Adama",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Adama.geojson",
+      "sha256": "f5cffc2e1e85c99d2a1563e255fb642ae7329fe7d8f39147ea8354784a17b293",
+      "size": 739423,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "adama",
+    "name": "Adama",
+    "nameIt": "Adama",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      39.27376,
+      8.54148
+    ],
+    "zoom": 10.7,
+    "population": 376079,
+    "grid": "cities/adama/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/adama/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "adama",
+        "name": "Adama",
+        "nameIt": "Adama",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          39.27376,
+          8.54148
+        ],
+        "zoom": 10.7,
+        "population": 376079,
+        "cells": 641,
+        "layer": "cities/adama/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.27376,
+            8.54148
+          ]
+        },
+        "properties": {
+          "id": "adama",
+          "name": "Adama",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 27.8,
+          "population": 376079
+        }
+      },
+      "summary": null
+    }
+  }
+}

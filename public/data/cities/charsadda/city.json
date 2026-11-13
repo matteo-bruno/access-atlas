@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "charsadda",
+  "createdAt": "2026-10-08T15:24:02.014Z",
+  "updatedAt": "2026-10-08T15:24:02.014Z",
+  "meta": {
+    "name": "Charsadda",
+    "nameIt": "Charsadda",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Charsadda.geojson",
+      "sha256": "093a2332bb7a102660716df58995250d9b0ec5b3681b060677288dcdc2ec76ad",
+      "size": 485337,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "charsadda",
+    "name": "Charsadda",
+    "nameIt": "Charsadda",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      71.75528,
+      34.1586
+    ],
+    "zoom": 10.8,
+    "population": 304383,
+    "grid": "cities/charsadda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/charsadda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "charsadda",
+        "name": "Charsadda",
+        "nameIt": "Charsadda",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          71.75528,
+          34.1586
+        ],
+        "zoom": 10.8,
+        "population": 304383,
+        "cells": 420,
+        "layer": "cities/charsadda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.75528,
+            34.1586
+          ]
+        },
+        "properties": {
+          "id": "charsadda",
+          "name": "Charsadda",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 304383
+        }
+      },
+      "summary": null
+    }
+  }
+}

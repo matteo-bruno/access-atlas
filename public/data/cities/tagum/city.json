@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tagum",
+  "createdAt": "2026-10-08T16:15:57.930Z",
+  "updatedAt": "2026-10-08T16:15:57.930Z",
+  "meta": {
+    "name": "Tagum",
+    "nameIt": "Tagum",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tagum.geojson",
+      "sha256": "d5e747dea27cb82f8241089afc69705dbea3302faf5fef089a33f263c715daa4",
+      "size": 481004,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tagum",
+    "name": "Tagum",
+    "nameIt": "Tagum",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      125.80551,
+      7.44762
+    ],
+    "zoom": 10.9,
+    "population": 235484,
+    "grid": "cities/tagum/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tagum/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tagum",
+        "name": "Tagum",
+        "nameIt": "Tagum",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          125.80551,
+          7.44762
+        ],
+        "zoom": 10.9,
+        "population": 235484,
+        "cells": 416,
+        "layer": "cities/tagum/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.80551,
+            7.44762
+          ]
+        },
+        "properties": {
+          "id": "tagum",
+          "name": "Tagum",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 19.9,
+          "population": 235484
+        }
+      },
+      "summary": null
+    }
+  }
+}

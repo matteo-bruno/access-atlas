@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lisbon",
+  "createdAt": "2026-10-08T15:51:33.953Z",
+  "updatedAt": "2026-10-08T15:51:33.953Z",
+  "meta": {
+    "name": "Lisbon",
+    "nameIt": "Lisbon",
+    "region": "Portugal",
+    "regionIt": "Portogallo",
+    "country": "PT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lisbon.geojson",
+      "sha256": "817a791645ae477b81038d0f94f7b41b5ee7fed1409439d7359d81cbf3a4d2d7",
+      "size": 4197644,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lisbon",
+    "name": "Lisbon",
+    "nameIt": "Lisbon",
+    "region": "Portugal",
+    "regionIt": "Portogallo",
+    "country": "PT",
+    "center": [
+      -9.217,
+      38.76107
+    ],
+    "zoom": 8.8,
+    "population": 1844222,
+    "grid": "cities/lisbon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lisbon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lisbon",
+        "name": "Lisbon",
+        "nameIt": "Lisbon",
+        "region": "Portugal",
+        "regionIt": "Portogallo",
+        "country": "PT",
+        "center": [
+          -9.217,
+          38.76107
+        ],
+        "zoom": 8.8,
+        "population": 1844222,
+        "cells": 3665,
+        "layer": "cities/lisbon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -9.217,
+            38.76107
+          ]
+        },
+        "properties": {
+          "id": "lisbon",
+          "name": "Lisbon",
+          "country": "PT",
+          "isStudy": true,
+          "proximityMinutes": 8.1,
+          "population": 1844222
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ryazan",
+  "createdAt": "2026-10-08T16:09:26.942Z",
+  "updatedAt": "2026-10-08T16:09:26.942Z",
+  "meta": {
+    "name": "Ryazan",
+    "nameIt": "Ryazan",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ryazan.geojson",
+      "sha256": "106acff9bb3bfd03db78384194b6fa03be3168c9d00254d4c5130b90ef8af95c",
+      "size": 1132426,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ryazan",
+    "name": "Ryazan",
+    "nameIt": "Ryazan",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      39.7203,
+      54.62388
+    ],
+    "zoom": 9.9,
+    "population": 450217,
+    "grid": "cities/ryazan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ryazan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ryazan",
+        "name": "Ryazan",
+        "nameIt": "Ryazan",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          39.7203,
+          54.62388
+        ],
+        "zoom": 9.9,
+        "population": 450217,
+        "cells": 990,
+        "layer": "cities/ryazan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.7203,
+            54.62388
+          ]
+        },
+        "properties": {
+          "id": "ryazan",
+          "name": "Ryazan",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 450217
+        }
+      },
+      "summary": null
+    }
+  }
+}

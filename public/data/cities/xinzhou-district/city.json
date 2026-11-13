@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xinzhou-district",
+  "createdAt": "2026-10-08T16:22:55.843Z",
+  "updatedAt": "2026-10-08T16:22:55.843Z",
+  "meta": {
+    "name": "Xinzhou District",
+    "nameIt": "Xinzhou District",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xinzhou District.geojson",
+      "sha256": "79fdb70372cf3ade59c47e342625035bb4c29d2444b752733d63c8a43491e4ec",
+      "size": 207669,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xinzhou-district",
+    "name": "Xinzhou District",
+    "nameIt": "Xinzhou District",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.80107,
+      30.84052
+    ],
+    "zoom": 11.8,
+    "population": 133125,
+    "grid": "cities/xinzhou-district/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xinzhou-district/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xinzhou-district",
+        "name": "Xinzhou District",
+        "nameIt": "Xinzhou District",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.80107,
+          30.84052
+        ],
+        "zoom": 11.8,
+        "population": 133125,
+        "cells": 178,
+        "layer": "cities/xinzhou-district/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.80107,
+            30.84052
+          ]
+        },
+        "properties": {
+          "id": "xinzhou-district",
+          "name": "Xinzhou District",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 133125
+        }
+      },
+      "summary": null
+    }
+  }
+}

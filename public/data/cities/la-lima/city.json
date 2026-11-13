@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "la-lima",
+  "createdAt": "2026-10-08T15:49:20.615Z",
+  "updatedAt": "2026-10-08T15:49:20.615Z",
+  "meta": {
+    "name": "La Lima",
+    "nameIt": "La Lima",
+    "region": "Honduras",
+    "regionIt": "Honduras",
+    "country": "HN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/La Lima.geojson",
+      "sha256": "704f5ddaa1542f2c457e1ddc9812d63059904c6beed8d5f23c6f120b2651cdf2",
+      "size": 123980,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "la-lima",
+    "name": "La Lima",
+    "nameIt": "La Lima",
+    "region": "Honduras",
+    "regionIt": "Honduras",
+    "country": "HN",
+    "center": [
+      -87.91837,
+      15.43479
+    ],
+    "zoom": 11.6,
+    "population": 41870,
+    "grid": "cities/la-lima/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/la-lima/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "la-lima",
+        "name": "La Lima",
+        "nameIt": "La Lima",
+        "region": "Honduras",
+        "regionIt": "Honduras",
+        "country": "HN",
+        "center": [
+          -87.91837,
+          15.43479
+        ],
+        "zoom": 11.6,
+        "population": 41870,
+        "cells": 106,
+        "layer": "cities/la-lima/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.91837,
+            15.43479
+          ]
+        },
+        "properties": {
+          "id": "la-lima",
+          "name": "La Lima",
+          "country": "HN",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 41870
+        }
+      },
+      "summary": null
+    }
+  }
+}

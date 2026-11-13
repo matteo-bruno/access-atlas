@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "metz",
+  "createdAt": "2026-10-08T15:56:47.698Z",
+  "updatedAt": "2026-10-08T15:56:47.698Z",
+  "meta": {
+    "name": "Metz",
+    "nameIt": "Metz",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Metz.geojson",
+      "sha256": "637760b549871b72aa57d581233e0c6e2f528b1ac4acb11edea8306bd3b4eb59",
+      "size": 553256,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "metz",
+    "name": "Metz",
+    "nameIt": "Metz",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      6.17415,
+      49.11393
+    ],
+    "zoom": 10.7,
+    "population": 161589,
+    "grid": "cities/metz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/metz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "metz",
+        "name": "Metz",
+        "nameIt": "Metz",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          6.17415,
+          49.11393
+        ],
+        "zoom": 10.7,
+        "population": 161589,
+        "cells": 488,
+        "layer": "cities/metz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.17415,
+            49.11393
+          ]
+        },
+        "properties": {
+          "id": "metz",
+          "name": "Metz",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 7.4,
+          "population": 161589
+        }
+      },
+      "summary": null
+    }
+  }
+}

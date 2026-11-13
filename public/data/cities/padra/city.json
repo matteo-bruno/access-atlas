@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "padra",
+  "createdAt": "2026-10-08T16:03:34.449Z",
+  "updatedAt": "2026-10-08T16:03:34.449Z",
+  "meta": {
+    "name": "Padra",
+    "nameIt": "Padra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Padra.geojson",
+      "sha256": "ff64c98b0254e2db7b565a5b3e58c27ed25432381a5bdd27bef80b8b7a90c652",
+      "size": 57954,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "padra",
+    "name": "Padra",
+    "nameIt": "Padra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.08413,
+      22.24157
+    ],
+    "zoom": 12,
+    "population": 27967,
+    "grid": "cities/padra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/padra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "padra",
+        "name": "Padra",
+        "nameIt": "Padra",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.08413,
+          22.24157
+        ],
+        "zoom": 12,
+        "population": 27967,
+        "cells": 50,
+        "layer": "cities/padra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.08413,
+            22.24157
+          ]
+        },
+        "properties": {
+          "id": "padra",
+          "name": "Padra",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 27967
+        }
+      },
+      "summary": null
+    }
+  }
+}

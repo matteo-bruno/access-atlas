@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "igd-r",
+  "createdAt": "2026-10-08T15:41:33.914Z",
+  "updatedAt": "2026-10-08T15:41:33.914Z",
+  "meta": {
+    "name": "Iğdır",
+    "nameIt": "Iğdır",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Iğdır.geojson",
+      "sha256": "7aa01702d40b4583c2305da0a5ff274636473fed0a53ea866c8ddc587956d98f",
+      "size": 167022,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "igd-r",
+    "name": "Iğdır",
+    "nameIt": "Iğdır",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      44.04577,
+      39.92461
+    ],
+    "zoom": 11.7,
+    "population": 81136,
+    "grid": "cities/igd-r/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/igd-r/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "igd-r",
+        "name": "Iğdır",
+        "nameIt": "Iğdır",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          44.04577,
+          39.92461
+        ],
+        "zoom": 11.7,
+        "population": 81136,
+        "cells": 144,
+        "layer": "cities/igd-r/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.04577,
+            39.92461
+          ]
+        },
+        "properties": {
+          "id": "igd-r",
+          "name": "Iğdır",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 81136
+        }
+      },
+      "summary": null
+    }
+  }
+}

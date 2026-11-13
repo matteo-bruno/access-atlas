@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ponnur",
+  "createdAt": "2026-10-08T16:06:08.655Z",
+  "updatedAt": "2026-10-08T16:06:08.655Z",
+  "meta": {
+    "name": "Ponnur",
+    "nameIt": "Ponnur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ponnur.geojson",
+      "sha256": "0525ae6e483767a35277bf0063acb78b8cfb13013441fc4988d4f2ad51f13eef",
+      "size": 133161,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ponnur",
+    "name": "Ponnur",
+    "nameIt": "Ponnur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.55144,
+      16.0648
+    ],
+    "zoom": 11.7,
+    "population": 55155,
+    "grid": "cities/ponnur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ponnur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ponnur",
+        "name": "Ponnur",
+        "nameIt": "Ponnur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.55144,
+          16.0648
+        ],
+        "zoom": 11.7,
+        "population": 55155,
+        "cells": 115,
+        "layer": "cities/ponnur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.55144,
+            16.0648
+          ]
+        },
+        "properties": {
+          "id": "ponnur",
+          "name": "Ponnur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 55155
+        }
+      },
+      "summary": null
+    }
+  }
+}

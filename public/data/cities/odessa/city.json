@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "odessa",
+  "createdAt": "2026-10-08T16:02:32.951Z",
+  "updatedAt": "2026-10-08T16:02:32.951Z",
+  "meta": {
+    "name": "Odessa",
+    "nameIt": "Odessa",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Odessa.geojson",
+      "sha256": "dc82710bd4aaecc0ace3cd37212191365266af889e645d2c87a2013324aa8a95",
+      "size": 638966,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "odessa",
+    "name": "Odessa",
+    "nameIt": "Odessa",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -102.36918,
+      31.86832
+    ],
+    "zoom": 10.7,
+    "population": 78829,
+    "grid": "cities/odessa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/odessa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "odessa",
+        "name": "Odessa",
+        "nameIt": "Odessa",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -102.36918,
+          31.86832
+        ],
+        "zoom": 10.7,
+        "population": 78829,
+        "cells": 545,
+        "layer": "cities/odessa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -102.36918,
+            31.86832
+          ]
+        },
+        "properties": {
+          "id": "odessa",
+          "name": "Odessa",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20.2,
+          "population": 78829
+        }
+      },
+      "summary": null
+    }
+  }
+}

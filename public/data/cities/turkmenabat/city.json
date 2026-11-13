@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "turkmenabat",
+  "createdAt": "2026-10-08T16:19:19.877Z",
+  "updatedAt": "2026-10-08T16:19:19.877Z",
+  "meta": {
+    "name": "Turkmenabat",
+    "nameIt": "Turkmenabat",
+    "region": "Turkmenistan",
+    "regionIt": "Turkmenistan",
+    "country": "TM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Turkmenabat.geojson",
+      "sha256": "a2597f04229e0384bf536f57b43c4fb01ad5bf3ef852c056dc4e884e584cde1f",
+      "size": 579602,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "turkmenabat",
+    "name": "Turkmenabat",
+    "nameIt": "Turkmenabat",
+    "region": "Turkmenistan",
+    "regionIt": "Turkmenistan",
+    "country": "TM",
+    "center": [
+      63.57981,
+      39.07124
+    ],
+    "zoom": 10.4,
+    "population": 181773,
+    "grid": "cities/turkmenabat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/turkmenabat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "turkmenabat",
+        "name": "Turkmenabat",
+        "nameIt": "Turkmenabat",
+        "region": "Turkmenistan",
+        "regionIt": "Turkmenistan",
+        "country": "TM",
+        "center": [
+          63.57981,
+          39.07124
+        ],
+        "zoom": 10.4,
+        "population": 181773,
+        "cells": 504,
+        "layer": "cities/turkmenabat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            63.57981,
+            39.07124
+          ]
+        },
+        "properties": {
+          "id": "turkmenabat",
+          "name": "Turkmenabat",
+          "country": "TM",
+          "isStudy": true,
+          "proximityMinutes": 23.1,
+          "population": 181773
+        }
+      },
+      "summary": null
+    }
+  }
+}

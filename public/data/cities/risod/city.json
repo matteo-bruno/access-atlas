@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "risod",
+  "createdAt": "2026-10-08T16:08:54.439Z",
+  "updatedAt": "2026-10-08T16:08:54.439Z",
+  "meta": {
+    "name": "Risod",
+    "nameIt": "Risod",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Risod.geojson",
+      "sha256": "240ed7f0b15eed4d1f2213f38d45b4f19f78ea0fcc9e4917a129bb353edc1344",
+      "size": 79999,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "risod",
+    "name": "Risod",
+    "nameIt": "Risod",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.78976,
+      19.97645
+    ],
+    "zoom": 12,
+    "population": 28464,
+    "grid": "cities/risod/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/risod/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "risod",
+        "name": "Risod",
+        "nameIt": "Risod",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.78976,
+          19.97645
+        ],
+        "zoom": 12,
+        "population": 28464,
+        "cells": 69,
+        "layer": "cities/risod/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.78976,
+            19.97645
+          ]
+        },
+        "properties": {
+          "id": "risod",
+          "name": "Risod",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 28464
+        }
+      },
+      "summary": null
+    }
+  }
+}

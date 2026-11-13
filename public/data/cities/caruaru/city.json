@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "caruaru",
+  "createdAt": "2026-10-08T15:22:39.996Z",
+  "updatedAt": "2026-10-08T15:22:39.996Z",
+  "meta": {
+    "name": "Caruaru",
+    "nameIt": "Caruaru",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Caruaru.geojson",
+      "sha256": "d08887d9794b50be49e3af440f869d8ecc1637cfa0f901e89538f563d8f71e37",
+      "size": 370391,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "caruaru",
+    "name": "Caruaru",
+    "nameIt": "Caruaru",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -35.97098,
+      -8.28144
+    ],
+    "zoom": 10.8,
+    "population": 281918,
+    "grid": "cities/caruaru/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/caruaru/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "caruaru",
+        "name": "Caruaru",
+        "nameIt": "Caruaru",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -35.97098,
+          -8.28144
+        ],
+        "zoom": 10.8,
+        "population": 281918,
+        "cells": 318,
+        "layer": "cities/caruaru/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -35.97098,
+            -8.28144
+          ]
+        },
+        "properties": {
+          "id": "caruaru",
+          "name": "Caruaru",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 19.9,
+          "population": 281918
+        }
+      },
+      "summary": null
+    }
+  }
+}

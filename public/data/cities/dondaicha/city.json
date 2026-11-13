@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dondaicha",
+  "createdAt": "2026-10-08T15:30:39.158Z",
+  "updatedAt": "2026-10-08T15:30:39.158Z",
+  "meta": {
+    "name": "Dondaicha",
+    "nameIt": "Dondaicha",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dondaicha.geojson",
+      "sha256": "9c583b30e093c3e91f3e5d1ab0d9fc0f3b383163c179480ecd6ea5a20284da2b",
+      "size": 92727,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dondaicha",
+    "name": "Dondaicha",
+    "nameIt": "Dondaicha",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.56322,
+      21.32615
+    ],
+    "zoom": 12,
+    "population": 49893,
+    "grid": "cities/dondaicha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dondaicha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dondaicha",
+        "name": "Dondaicha",
+        "nameIt": "Dondaicha",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.56322,
+          21.32615
+        ],
+        "zoom": 12,
+        "population": 49893,
+        "cells": 80,
+        "layer": "cities/dondaicha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.56322,
+            21.32615
+          ]
+        },
+        "properties": {
+          "id": "dondaicha",
+          "name": "Dondaicha",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 49893
+        }
+      },
+      "summary": null
+    }
+  }
+}

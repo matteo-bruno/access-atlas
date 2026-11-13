@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fuladshahr",
+  "createdAt": "2026-10-08T15:33:56.038Z",
+  "updatedAt": "2026-10-08T15:33:56.038Z",
+  "meta": {
+    "name": "Fuladshahr",
+    "nameIt": "Fuladshahr",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fuladshahr.geojson",
+      "sha256": "9aac6fdc84e4840c3010d5bd715b29e29305e8167e4b5c80d10aa1b9608152b5",
+      "size": 162972,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fuladshahr",
+    "name": "Fuladshahr",
+    "nameIt": "Fuladshahr",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      51.40515,
+      32.48856
+    ],
+    "zoom": 11.2,
+    "population": 62734,
+    "grid": "cities/fuladshahr/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fuladshahr/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fuladshahr",
+        "name": "Fuladshahr",
+        "nameIt": "Fuladshahr",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          51.40515,
+          32.48856
+        ],
+        "zoom": 11.2,
+        "population": 62734,
+        "cells": 142,
+        "layer": "cities/fuladshahr/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            51.40515,
+            32.48856
+          ]
+        },
+        "properties": {
+          "id": "fuladshahr",
+          "name": "Fuladshahr",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 14.8,
+          "population": 62734
+        }
+      },
+      "summary": null
+    }
+  }
+}

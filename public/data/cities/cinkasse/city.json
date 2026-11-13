@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cinkasse",
+  "createdAt": "2026-10-08T15:25:33.278Z",
+  "updatedAt": "2026-10-08T15:25:33.278Z",
+  "meta": {
+    "name": "Cinkassé",
+    "nameIt": "Cinkassé",
+    "region": "Burkina Faso",
+    "regionIt": "Burkina Faso",
+    "country": "BF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cinkassé.geojson",
+      "sha256": "168204916a86fbcf3d5ec14fc3baa7c822f79f4a6c4c9ed134779ca72dcad5f5",
+      "size": 199595,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cinkasse",
+    "name": "Cinkassé",
+    "nameIt": "Cinkassé",
+    "region": "Burkina Faso",
+    "regionIt": "Burkina Faso",
+    "country": "BF",
+    "center": [
+      0.01958,
+      11.09946
+    ],
+    "zoom": 11.7,
+    "population": 65051,
+    "grid": "cities/cinkasse/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cinkasse/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cinkasse",
+        "name": "Cinkassé",
+        "nameIt": "Cinkassé",
+        "region": "Burkina Faso",
+        "regionIt": "Burkina Faso",
+        "country": "BF",
+        "center": [
+          0.01958,
+          11.09946
+        ],
+        "zoom": 11.7,
+        "population": 65051,
+        "cells": 169,
+        "layer": "cities/cinkasse/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.01958,
+            11.09946
+          ]
+        },
+        "properties": {
+          "id": "cinkasse",
+          "name": "Cinkassé",
+          "country": "BF",
+          "isStudy": true,
+          "proximityMinutes": 20.1,
+          "population": 65051
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "uc-hoa",
+  "createdAt": "2026-10-08T16:25:58.525Z",
+  "updatedAt": "2026-10-08T16:25:58.525Z",
+  "meta": {
+    "name": "Đức Hòa",
+    "nameIt": "Đức Hòa",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Đức Hòa.geojson",
+      "sha256": "bed8588344d56d349ff84b30c1d6c44522d903a3d396a854f094eaa2370a5d03",
+      "size": 361738,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "uc-hoa",
+    "name": "Đức Hòa",
+    "nameIt": "Đức Hòa",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      106.48068,
+      10.8092
+    ],
+    "zoom": 10.9,
+    "population": 95689,
+    "grid": "cities/uc-hoa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/uc-hoa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "uc-hoa",
+        "name": "Đức Hòa",
+        "nameIt": "Đức Hòa",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          106.48068,
+          10.8092
+        ],
+        "zoom": 10.9,
+        "population": 95689,
+        "cells": 309,
+        "layer": "cities/uc-hoa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.48068,
+            10.8092
+          ]
+        },
+        "properties": {
+          "id": "uc-hoa",
+          "name": "Đức Hòa",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 33.6,
+          "population": 95689
+        }
+      },
+      "summary": null
+    }
+  }
+}

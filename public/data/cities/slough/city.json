@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "slough",
+  "createdAt": "2026-10-08T16:14:11.753Z",
+  "updatedAt": "2026-10-08T16:14:11.753Z",
+  "meta": {
+    "name": "Slough",
+    "nameIt": "Slough",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Slough.geojson",
+      "sha256": "abf1116187f93f7c35d486850eadb1f0ec951964ba6663e5e1bf451cb4663bb3",
+      "size": 463498,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "slough",
+    "name": "Slough",
+    "nameIt": "Slough",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.60086,
+      51.51516
+    ],
+    "zoom": 10.7,
+    "population": 179221,
+    "grid": "cities/slough/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/slough/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "slough",
+        "name": "Slough",
+        "nameIt": "Slough",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.60086,
+          51.51516
+        ],
+        "zoom": 10.7,
+        "population": 179221,
+        "cells": 401,
+        "layer": "cities/slough/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.60086,
+            51.51516
+          ]
+        },
+        "properties": {
+          "id": "slough",
+          "name": "Slough",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 179221
+        }
+      },
+      "summary": null
+    }
+  }
+}

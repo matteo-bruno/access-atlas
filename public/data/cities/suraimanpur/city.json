@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "suraimanpur",
+  "createdAt": "2026-10-08T16:15:20.648Z",
+  "updatedAt": "2026-10-08T16:15:20.648Z",
+  "meta": {
+    "name": "Suraimanpur",
+    "nameIt": "Suraimanpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Suraimanpur.geojson",
+      "sha256": "c9ecc6d7293b074d9f1aa6a14854b39e6d0be6155032a534d533fa831f973155",
+      "size": 240848,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "suraimanpur",
+    "name": "Suraimanpur",
+    "nameIt": "Suraimanpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.47338,
+      25.78879
+    ],
+    "zoom": 11.4,
+    "population": 91737,
+    "grid": "cities/suraimanpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/suraimanpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "suraimanpur",
+        "name": "Suraimanpur",
+        "nameIt": "Suraimanpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.47338,
+          25.78879
+        ],
+        "zoom": 11.4,
+        "population": 91737,
+        "cells": 208,
+        "layer": "cities/suraimanpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.47338,
+            25.78879
+          ]
+        },
+        "properties": {
+          "id": "suraimanpur",
+          "name": "Suraimanpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 91737
+        }
+      },
+      "summary": null
+    }
+  }
+}

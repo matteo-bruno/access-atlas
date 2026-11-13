@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jundiai",
+  "createdAt": "2026-10-08T15:43:40.989Z",
+  "updatedAt": "2026-10-08T15:43:40.989Z",
+  "meta": {
+    "name": "Jundiaí",
+    "nameIt": "Jundiaí",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jundiaí.geojson",
+      "sha256": "0c8497179cb65e0d56d674af99d7c4dbe12e38466238680b075dec8de173c6ad",
+      "size": 1273073,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jundiai",
+    "name": "Jundiaí",
+    "nameIt": "Jundiaí",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -46.85854,
+      -23.19741
+    ],
+    "zoom": 9.8,
+    "population": 509172,
+    "grid": "cities/jundiai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jundiai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jundiai",
+        "name": "Jundiaí",
+        "nameIt": "Jundiaí",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -46.85854,
+          -23.19741
+        ],
+        "zoom": 9.8,
+        "population": 509172,
+        "cells": 1087,
+        "layer": "cities/jundiai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.85854,
+            -23.19741
+          ]
+        },
+        "properties": {
+          "id": "jundiai",
+          "name": "Jundiaí",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 23.1,
+          "population": 509172
+        }
+      },
+      "summary": null
+    }
+  }
+}

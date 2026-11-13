@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "attock",
+  "createdAt": "2026-10-08T15:11:11.663Z",
+  "updatedAt": "2026-10-08T15:11:11.663Z",
+  "meta": {
+    "name": "Attock",
+    "nameIt": "Attock",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Attock.geojson",
+      "sha256": "ac7ee40bc76970b67ae3f201fc17eb52b54df06429e5c3d61227f7ec6765abb9",
+      "size": 380354,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "attock",
+    "name": "Attock",
+    "nameIt": "Attock",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      72.3619,
+      33.77454
+    ],
+    "zoom": 10.9,
+    "population": 232676,
+    "grid": "cities/attock/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/attock/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "attock",
+        "name": "Attock",
+        "nameIt": "Attock",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          72.3619,
+          33.77454
+        ],
+        "zoom": 10.9,
+        "population": 232676,
+        "cells": 329,
+        "layer": "cities/attock/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.3619,
+            33.77454
+          ]
+        },
+        "properties": {
+          "id": "attock",
+          "name": "Attock",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 232676
+        }
+      },
+      "summary": null
+    }
+  }
+}

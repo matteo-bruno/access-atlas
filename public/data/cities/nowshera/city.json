@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nowshera",
+  "createdAt": "2026-10-08T16:02:13.948Z",
+  "updatedAt": "2026-10-08T16:02:13.948Z",
+  "meta": {
+    "name": "Nowshera",
+    "nameIt": "Nowshera",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nowshera.geojson",
+      "sha256": "671d3e040d146364411a2c11ffaf5dae093fd0111f19811f6b0256829098e538",
+      "size": 1147722,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nowshera",
+    "name": "Nowshera",
+    "nameIt": "Nowshera",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      72.06067,
+      34.00422
+    ],
+    "zoom": 9.3,
+    "population": 609197,
+    "grid": "cities/nowshera/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nowshera/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nowshera",
+        "name": "Nowshera",
+        "nameIt": "Nowshera",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          72.06067,
+          34.00422
+        ],
+        "zoom": 9.3,
+        "population": 609197,
+        "cells": 993,
+        "layer": "cities/nowshera/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.06067,
+            34.00422
+          ]
+        },
+        "properties": {
+          "id": "nowshera",
+          "name": "Nowshera",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 609197
+        }
+      },
+      "summary": null
+    }
+  }
+}

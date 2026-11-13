@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oulu",
+  "createdAt": "2026-10-08T16:03:21.009Z",
+  "updatedAt": "2026-10-08T16:03:21.009Z",
+  "meta": {
+    "name": "Oulu",
+    "nameIt": "Oulu",
+    "region": "Finland",
+    "regionIt": "Finlandia",
+    "country": "FI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Oulu.geojson",
+      "sha256": "e91d4b652d5d44a6e914039612ec37a3dc8c49327a898abd12230435969fa99a",
+      "size": 471028,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "oulu",
+    "name": "Oulu",
+    "nameIt": "Oulu",
+    "region": "Finland",
+    "regionIt": "Finlandia",
+    "country": "FI",
+    "center": [
+      25.48876,
+      65.01769
+    ],
+    "zoom": 11.2,
+    "population": 52748,
+    "grid": "cities/oulu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oulu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oulu",
+        "name": "Oulu",
+        "nameIt": "Oulu",
+        "region": "Finland",
+        "regionIt": "Finlandia",
+        "country": "FI",
+        "center": [
+          25.48876,
+          65.01769
+        ],
+        "zoom": 11.2,
+        "population": 52748,
+        "cells": 413,
+        "layer": "cities/oulu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.48876,
+            65.01769
+          ]
+        },
+        "properties": {
+          "id": "oulu",
+          "name": "Oulu",
+          "country": "FI",
+          "isStudy": true,
+          "proximityMinutes": 12.3,
+          "population": 52748
+        }
+      },
+      "summary": null
+    }
+  }
+}

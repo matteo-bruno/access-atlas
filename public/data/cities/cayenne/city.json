@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cayenne",
+  "createdAt": "2026-10-08T15:22:55.074Z",
+  "updatedAt": "2026-10-08T15:22:55.074Z",
+  "meta": {
+    "name": "Cayenne",
+    "nameIt": "Cayenne",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cayenne.geojson",
+      "sha256": "d6685367f4fa09eda768f1916babbbe2fd8803b8aec7c14aebc00c27e98223b6",
+      "size": 371058,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cayenne",
+    "name": "Cayenne",
+    "nameIt": "Cayenne",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      -52.30867,
+      4.92918
+    ],
+    "zoom": 10.8,
+    "population": 82890,
+    "grid": "cities/cayenne/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cayenne/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cayenne",
+        "name": "Cayenne",
+        "nameIt": "Cayenne",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -52.30867,
+          4.92918
+        ],
+        "zoom": 10.8,
+        "population": 82890,
+        "cells": 324,
+        "layer": "cities/cayenne/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -52.30867,
+            4.92918
+          ]
+        },
+        "properties": {
+          "id": "cayenne",
+          "name": "Cayenne",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 8.9,
+          "population": 82890
+        }
+      },
+      "summary": null
+    }
+  }
+}

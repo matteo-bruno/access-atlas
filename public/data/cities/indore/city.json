@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "indore",
+  "createdAt": "2026-10-08T15:40:49.442Z",
+  "updatedAt": "2026-10-08T15:40:49.442Z",
+  "meta": {
+    "name": "Indore",
+    "nameIt": "Indore",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Indore.geojson",
+      "sha256": "d8c60bae726231657ac5ae85d6686fe55bc42c3903e23bc5a8cb647f10833992",
+      "size": 3277549,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "indore",
+    "name": "Indore",
+    "nameIt": "Indore",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.85638,
+      22.70047
+    ],
+    "zoom": 9.1,
+    "population": 2322216,
+    "grid": "cities/indore/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/indore/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "indore",
+        "name": "Indore",
+        "nameIt": "Indore",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.85638,
+          22.70047
+        ],
+        "zoom": 9.1,
+        "population": 2322216,
+        "cells": 2844,
+        "layer": "cities/indore/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.85638,
+            22.70047
+          ]
+        },
+        "properties": {
+          "id": "indore",
+          "name": "Indore",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 28.2,
+          "population": 2322216
+        }
+      },
+      "summary": null
+    }
+  }
+}

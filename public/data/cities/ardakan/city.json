@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ardakan",
+  "createdAt": "2026-10-08T15:09:15.354Z",
+  "updatedAt": "2026-10-08T15:09:15.354Z",
+  "meta": {
+    "name": "Ardakan",
+    "nameIt": "Ardakan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ardakan.geojson",
+      "sha256": "c6a999f513fa0dc771aba024cc56c5f7a0ab296be796de05a20d4cca8b071659",
+      "size": 202156,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ardakan",
+    "name": "Ardakan",
+    "nameIt": "Ardakan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      54.01306,
+      32.30558
+    ],
+    "zoom": 11.4,
+    "population": 67871,
+    "grid": "cities/ardakan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ardakan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ardakan",
+        "name": "Ardakan",
+        "nameIt": "Ardakan",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          54.01306,
+          32.30558
+        ],
+        "zoom": 11.4,
+        "population": 67871,
+        "cells": 175,
+        "layer": "cities/ardakan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            54.01306,
+            32.30558
+          ]
+        },
+        "properties": {
+          "id": "ardakan",
+          "name": "Ardakan",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 19.3,
+          "population": 67871
+        }
+      },
+      "summary": null
+    }
+  }
+}

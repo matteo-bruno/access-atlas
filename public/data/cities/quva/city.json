@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "quva",
+  "createdAt": "2026-10-08T16:07:40.409Z",
+  "updatedAt": "2026-10-08T16:07:40.409Z",
+  "meta": {
+    "name": "Quva",
+    "nameIt": "Quva",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Quva.geojson",
+      "sha256": "062e499b5bf3d710564bb59b473c9a5055f79c698157dd16c64f02e98067020b",
+      "size": 376135,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "quva",
+    "name": "Quva",
+    "nameIt": "Quva",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      72.06731,
+      40.52237
+    ],
+    "zoom": 10.9,
+    "population": 26244,
+    "grid": "cities/quva/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/quva/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "quva",
+        "name": "Quva",
+        "nameIt": "Quva",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          72.06731,
+          40.52237
+        ],
+        "zoom": 10.9,
+        "population": 26244,
+        "cells": 326,
+        "layer": "cities/quva/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.06731,
+            40.52237
+          ]
+        },
+        "properties": {
+          "id": "quva",
+          "name": "Quva",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 34.3,
+          "population": 26244
+        }
+      },
+      "summary": null
+    }
+  }
+}

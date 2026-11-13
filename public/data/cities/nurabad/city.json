@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nurabad",
+  "createdAt": "2026-10-08T16:02:20.458Z",
+  "updatedAt": "2026-10-08T16:02:20.458Z",
+  "meta": {
+    "name": "Nurabad",
+    "nameIt": "Nurabad",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nurabad.geojson",
+      "sha256": "0f23be42fea493cf64f552e0243c1679610a00d0116481f6d543b83bc11e4baf",
+      "size": 102718,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nurabad",
+    "name": "Nurabad",
+    "nameIt": "Nurabad",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      47.97366,
+      34.07155
+    ],
+    "zoom": 11.8,
+    "population": 78451,
+    "grid": "cities/nurabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nurabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nurabad",
+        "name": "Nurabad",
+        "nameIt": "Nurabad",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          47.97366,
+          34.07155
+        ],
+        "zoom": 11.8,
+        "population": 78451,
+        "cells": 89,
+        "layer": "cities/nurabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            47.97366,
+            34.07155
+          ]
+        },
+        "properties": {
+          "id": "nurabad",
+          "name": "Nurabad",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 10.4,
+          "population": 78451
+        }
+      },
+      "summary": null
+    }
+  }
+}

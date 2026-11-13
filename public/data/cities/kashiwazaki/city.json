@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kashiwazaki",
+  "createdAt": "2026-10-08T15:45:28.836Z",
+  "updatedAt": "2026-10-08T15:45:28.836Z",
+  "meta": {
+    "name": "Kashiwazaki",
+    "nameIt": "Kashiwazaki",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kashiwazaki.geojson",
+      "sha256": "b4b53cb8a3b536632ed040d3e72324ef539725ef655cf2532951d96935c6683d",
+      "size": 205268,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kashiwazaki",
+    "name": "Kashiwazaki",
+    "nameIt": "Kashiwazaki",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      138.56553,
+      37.36648
+    ],
+    "zoom": 11.5,
+    "population": 48850,
+    "grid": "cities/kashiwazaki/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kashiwazaki/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kashiwazaki",
+        "name": "Kashiwazaki",
+        "nameIt": "Kashiwazaki",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          138.56553,
+          37.36648
+        ],
+        "zoom": 11.5,
+        "population": 48850,
+        "cells": 177,
+        "layer": "cities/kashiwazaki/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            138.56553,
+            37.36648
+          ]
+        },
+        "properties": {
+          "id": "kashiwazaki",
+          "name": "Kashiwazaki",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 48850
+        }
+      },
+      "summary": null
+    }
+  }
+}

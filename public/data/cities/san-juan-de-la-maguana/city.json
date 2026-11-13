@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-juan-de-la-maguana",
+  "createdAt": "2026-10-08T16:10:35.490Z",
+  "updatedAt": "2026-10-08T16:10:35.490Z",
+  "meta": {
+    "name": "San Juan de la Maguana",
+    "nameIt": "San Juan de la Maguana",
+    "region": "Dominican Republic",
+    "regionIt": "Repubblica Dominicana",
+    "country": "DO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Juan de la Maguana.geojson",
+      "sha256": "97da1c4617f44a64c245912f488193390f0ceb0f1896459db1cd45cc76636d78",
+      "size": 205359,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-juan-de-la-maguana",
+    "name": "San Juan de la Maguana",
+    "nameIt": "San Juan de la Maguana",
+    "region": "Dominican Republic",
+    "regionIt": "Repubblica Dominicana",
+    "country": "DO",
+    "center": [
+      -71.23103,
+      18.80848
+    ],
+    "zoom": 11.8,
+    "population": 47599,
+    "grid": "cities/san-juan-de-la-maguana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-juan-de-la-maguana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-juan-de-la-maguana",
+        "name": "San Juan de la Maguana",
+        "nameIt": "San Juan de la Maguana",
+        "region": "Dominican Republic",
+        "regionIt": "Repubblica Dominicana",
+        "country": "DO",
+        "center": [
+          -71.23103,
+          18.80848
+        ],
+        "zoom": 11.8,
+        "population": 47599,
+        "cells": 176,
+        "layer": "cities/san-juan-de-la-maguana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -71.23103,
+            18.80848
+          ]
+        },
+        "properties": {
+          "id": "san-juan-de-la-maguana",
+          "name": "San Juan de la Maguana",
+          "country": "DO",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 47599
+        }
+      },
+      "summary": null
+    }
+  }
+}

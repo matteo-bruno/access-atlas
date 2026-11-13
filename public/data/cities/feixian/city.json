@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "feixian",
+  "createdAt": "2026-10-08T15:33:05.278Z",
+  "updatedAt": "2026-10-08T15:33:05.278Z",
+  "meta": {
+    "name": "Feixian",
+    "nameIt": "Feixian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Feixian.geojson",
+      "sha256": "68cd3756a2a0bf29ba124c15de3ddd39b8811336f8618e6de7fc74a49cf52a3c",
+      "size": 565578,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "feixian",
+    "name": "Feixian",
+    "nameIt": "Feixian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.97121,
+      35.2671
+    ],
+    "zoom": 10.8,
+    "population": 198212,
+    "grid": "cities/feixian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 173
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/feixian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "feixian",
+        "name": "Feixian",
+        "nameIt": "Feixian",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.97121,
+          35.2671
+        ],
+        "zoom": 10.8,
+        "population": 198212,
+        "cells": 485,
+        "layer": "cities/feixian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 173
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.97121,
+            35.2671
+          ]
+        },
+        "properties": {
+          "id": "feixian",
+          "name": "Feixian",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 27,
+          "population": 198212
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "woodland",
+  "createdAt": "2026-10-08T16:21:49.996Z",
+  "updatedAt": "2026-10-08T16:21:49.996Z",
+  "meta": {
+    "name": "Woodland",
+    "nameIt": "Woodland",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Woodland.geojson",
+      "sha256": "31529d8fa9574e16cff412bf31bb0484d881a8057a7855525bf432d0ef8a278b",
+      "size": 245651,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "woodland",
+    "name": "Woodland",
+    "nameIt": "Woodland",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -121.77056,
+      38.67388
+    ],
+    "zoom": 11.2,
+    "population": 54432,
+    "grid": "cities/woodland/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/woodland/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "woodland",
+        "name": "Woodland",
+        "nameIt": "Woodland",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -121.77056,
+          38.67388
+        ],
+        "zoom": 11.2,
+        "population": 54432,
+        "cells": 210,
+        "layer": "cities/woodland/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -121.77056,
+            38.67388
+          ]
+        },
+        "properties": {
+          "id": "woodland",
+          "name": "Woodland",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 14.4,
+          "population": 54432
+        }
+      },
+      "summary": null
+    }
+  }
+}

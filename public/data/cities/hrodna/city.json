@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hrodna",
+  "createdAt": "2026-10-08T15:39:14.576Z",
+  "updatedAt": "2026-10-08T15:39:14.576Z",
+  "meta": {
+    "name": "Hrodna",
+    "nameIt": "Hrodna",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hrodna.geojson",
+      "sha256": "d8bc9529812e2cc3a1d0f0cbc8aadbd7e47332158d9bfb54478f07416fee936a",
+      "size": 671596,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hrodna",
+    "name": "Hrodna",
+    "nameIt": "Hrodna",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY",
+    "center": [
+      23.82854,
+      53.67967
+    ],
+    "zoom": 10.8,
+    "population": 253258,
+    "grid": "cities/hrodna/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hrodna/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hrodna",
+        "name": "Hrodna",
+        "nameIt": "Hrodna",
+        "region": "Belarus",
+        "regionIt": "Bielorussia",
+        "country": "BY",
+        "center": [
+          23.82854,
+          53.67967
+        ],
+        "zoom": 10.8,
+        "population": 253258,
+        "cells": 588,
+        "layer": "cities/hrodna/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.82854,
+            53.67967
+          ]
+        },
+        "properties": {
+          "id": "hrodna",
+          "name": "Hrodna",
+          "country": "BY",
+          "isStudy": true,
+          "proximityMinutes": 8.1,
+          "population": 253258
+        }
+      },
+      "summary": null
+    }
+  }
+}

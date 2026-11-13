@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nidadavolu",
+  "createdAt": "2026-10-08T16:01:29.215Z",
+  "updatedAt": "2026-10-08T16:01:29.215Z",
+  "meta": {
+    "name": "Nidadavolu",
+    "nameIt": "Nidadavolu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nidadavolu.geojson",
+      "sha256": "c2f2ae517a8a0b3c6ef6e5fe2992c0b468a245d8ef8755c8c44602245763cf82",
+      "size": 100822,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nidadavolu",
+    "name": "Nidadavolu",
+    "nameIt": "Nidadavolu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.67109,
+      16.90364
+    ],
+    "zoom": 12,
+    "population": 48210,
+    "grid": "cities/nidadavolu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nidadavolu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nidadavolu",
+        "name": "Nidadavolu",
+        "nameIt": "Nidadavolu",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.67109,
+          16.90364
+        ],
+        "zoom": 12,
+        "population": 48210,
+        "cells": 87,
+        "layer": "cities/nidadavolu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.67109,
+            16.90364
+          ]
+        },
+        "properties": {
+          "id": "nidadavolu",
+          "name": "Nidadavolu",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 30.5,
+          "population": 48210
+        }
+      },
+      "summary": null
+    }
+  }
+}

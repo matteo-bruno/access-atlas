@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "asaba",
+  "createdAt": "2026-10-08T15:09:58.850Z",
+  "updatedAt": "2026-10-08T15:09:58.850Z",
+  "meta": {
+    "name": "Asaba",
+    "nameIt": "Asaba",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Asaba.geojson",
+      "sha256": "e63e6bad0706ce3fbca2df4c314aeca18277d8bd622498b0631a2aa0aa829a68",
+      "size": 884563,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "asaba",
+    "name": "Asaba",
+    "nameIt": "Asaba",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      6.70448,
+      6.2052
+    ],
+    "zoom": 10.3,
+    "population": 417364,
+    "grid": "cities/asaba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/asaba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "asaba",
+        "name": "Asaba",
+        "nameIt": "Asaba",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          6.70448,
+          6.2052
+        ],
+        "zoom": 10.3,
+        "population": 417364,
+        "cells": 768,
+        "layer": "cities/asaba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.70448,
+            6.2052
+          ]
+        },
+        "properties": {
+          "id": "asaba",
+          "name": "Asaba",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 80.7,
+          "population": 417364
+        }
+      },
+      "summary": null
+    }
+  }
+}

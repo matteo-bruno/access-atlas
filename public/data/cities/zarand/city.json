@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zarand",
+  "createdAt": "2026-10-08T16:24:52.709Z",
+  "updatedAt": "2026-10-08T16:24:52.709Z",
+  "meta": {
+    "name": "Zarand",
+    "nameIt": "Zarand",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zarand.geojson",
+      "sha256": "dde1d9b24a4e28cb970b985b5f1fb877f49ca7318423e4d510fcb870e3bf1424",
+      "size": 149811,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zarand",
+    "name": "Zarand",
+    "nameIt": "Zarand",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      56.56439,
+      30.81028
+    ],
+    "zoom": 11.9,
+    "population": 51639,
+    "grid": "cities/zarand/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zarand/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zarand",
+        "name": "Zarand",
+        "nameIt": "Zarand",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          56.56439,
+          30.81028
+        ],
+        "zoom": 11.9,
+        "population": 51639,
+        "cells": 129,
+        "layer": "cities/zarand/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            56.56439,
+            30.81028
+          ]
+        },
+        "properties": {
+          "id": "zarand",
+          "name": "Zarand",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 51639
+        }
+      },
+      "summary": null
+    }
+  }
+}

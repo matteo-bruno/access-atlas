@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hpa-an",
+  "createdAt": "2026-10-08T15:39:13.378Z",
+  "updatedAt": "2026-10-08T15:39:13.378Z",
+  "meta": {
+    "name": "Hpa-An",
+    "nameIt": "Hpa-An",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hpa-An.geojson",
+      "sha256": "8fc06c52bca85705e56fd84b70a84412068b25462e1e59a67316fcc25af78ed2",
+      "size": 291597,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hpa-an",
+    "name": "Hpa-An",
+    "nameIt": "Hpa-An",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      97.64063,
+      16.87628
+    ],
+    "zoom": 10.8,
+    "population": 187888,
+    "grid": "cities/hpa-an/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hpa-an/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hpa-an",
+        "name": "Hpa-An",
+        "nameIt": "Hpa-An",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          97.64063,
+          16.87628
+        ],
+        "zoom": 10.8,
+        "population": 187888,
+        "cells": 252,
+        "layer": "cities/hpa-an/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            97.64063,
+            16.87628
+          ]
+        },
+        "properties": {
+          "id": "hpa-an",
+          "name": "Hpa-An",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 23.4,
+          "population": 187888
+        }
+      },
+      "summary": null
+    }
+  }
+}

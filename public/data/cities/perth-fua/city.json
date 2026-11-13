@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "perth-fua",
+  "createdAt": "2026-10-19T16:58:01.416Z",
+  "updatedAt": "2026-10-19T16:58:01.416Z",
+  "meta": {
+    "name": "Perth",
+    "nameIt": "Perth",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "perth-fua",
+    "name": "Perth",
+    "nameIt": "Perth",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "extent": "fua",
+    "core": "perth",
+    "center": [
+      115.87051,
+      -31.936
+    ],
+    "zoom": 8.5,
+    "population": 1919471,
+    "grid": "cities/perth-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/perth-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "perth-fua",
+        "name": "Perth",
+        "nameIt": "Perth",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "extent": "fua",
+        "core": "perth",
+        "center": [
+          115.87051,
+          -31.936
+        ],
+        "zoom": 8.5,
+        "population": 1919471,
+        "cells": 35751,
+        "layer": "cities/perth-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.87051,
+            -31.936
+          ]
+        },
+        "properties": {
+          "id": "perth-fua",
+          "name": "Perth",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 20.3,
+          "population": 1919471
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "berasia",
+  "createdAt": "2026-10-08T15:17:36.411Z",
+  "updatedAt": "2026-10-08T15:17:36.411Z",
+  "meta": {
+    "name": "Berasia",
+    "nameIt": "Berasia",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Berasia.geojson",
+      "sha256": "437b9cab0900cd936aaf9c9589165116ae7de81e0c8418946a43fb73f5e75536",
+      "size": 89222,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "berasia",
+    "name": "Berasia",
+    "nameIt": "Berasia",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.43279,
+      23.62557
+    ],
+    "zoom": 12,
+    "population": 30078,
+    "grid": "cities/berasia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/berasia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "berasia",
+        "name": "Berasia",
+        "nameIt": "Berasia",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.43279,
+          23.62557
+        ],
+        "zoom": 12,
+        "population": 30078,
+        "cells": 77,
+        "layer": "cities/berasia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.43279,
+            23.62557
+          ]
+        },
+        "properties": {
+          "id": "berasia",
+          "name": "Berasia",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 30078
+        }
+      },
+      "summary": null
+    }
+  }
+}

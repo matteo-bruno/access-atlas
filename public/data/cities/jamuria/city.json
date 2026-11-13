@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jamuria",
+  "createdAt": "2026-10-08T15:41:57.355Z",
+  "updatedAt": "2026-10-08T15:41:57.355Z",
+  "meta": {
+    "name": "Jamuria",
+    "nameIt": "Jamuria",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jamuria.geojson",
+      "sha256": "34a5158f9912438271bcbcfbc1463ecb27beae5634645441f4d88957c6d809bf",
+      "size": 183001,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jamuria",
+    "name": "Jamuria",
+    "nameIt": "Jamuria",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.08933,
+      23.69948
+    ],
+    "zoom": 11.4,
+    "population": 71310,
+    "grid": "cities/jamuria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jamuria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jamuria",
+        "name": "Jamuria",
+        "nameIt": "Jamuria",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.08933,
+          23.69948
+        ],
+        "zoom": 11.4,
+        "population": 71310,
+        "cells": 158,
+        "layer": "cities/jamuria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.08933,
+            23.69948
+          ]
+        },
+        "properties": {
+          "id": "jamuria",
+          "name": "Jamuria",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 71310
+        }
+      },
+      "summary": null
+    }
+  }
+}

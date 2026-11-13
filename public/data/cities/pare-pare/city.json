@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pare-pare",
+  "createdAt": "2026-10-08T16:04:20.709Z",
+  "updatedAt": "2026-10-08T16:04:20.709Z",
+  "meta": {
+    "name": "Pare-Pare",
+    "nameIt": "Pare-Pare",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pare-Pare.geojson",
+      "sha256": "eca0bf320d5a749d917d23d8a837e7c48b976c4618d0d4fb9a2884c5a7613afb",
+      "size": 401028,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pare-pare",
+    "name": "Pare-Pare",
+    "nameIt": "Pare-Pare",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      119.63406,
+      -4.01578
+    ],
+    "zoom": 10.7,
+    "population": 128605,
+    "grid": "cities/pare-pare/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pare-pare/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pare-pare",
+        "name": "Pare-Pare",
+        "nameIt": "Pare-Pare",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          119.63406,
+          -4.01578
+        ],
+        "zoom": 10.7,
+        "population": 128605,
+        "cells": 344,
+        "layer": "cities/pare-pare/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.63406,
+            -4.01578
+          ]
+        },
+        "properties": {
+          "id": "pare-pare",
+          "name": "Pare-Pare",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 20.6,
+          "population": 128605
+        }
+      },
+      "summary": null
+    }
+  }
+}

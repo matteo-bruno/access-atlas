@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "atmakur",
+  "createdAt": "2026-10-08T15:11:03.729Z",
+  "updatedAt": "2026-10-08T15:11:03.729Z",
+  "meta": {
+    "name": "Atmakur",
+    "nameIt": "Atmakur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Atmakur.geojson",
+      "sha256": "02f9d7f6bb0486c36f3c27bc4ea5f832d8d8930eb5f65a1b644c82c5eb206c7c",
+      "size": 51067,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "atmakur",
+    "name": "Atmakur",
+    "nameIt": "Atmakur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.58454,
+      15.87947
+    ],
+    "zoom": 12,
+    "population": 22085,
+    "grid": "cities/atmakur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/atmakur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "atmakur",
+        "name": "Atmakur",
+        "nameIt": "Atmakur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.58454,
+          15.87947
+        ],
+        "zoom": 12,
+        "population": 22085,
+        "cells": 44,
+        "layer": "cities/atmakur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.58454,
+            15.87947
+          ]
+        },
+        "properties": {
+          "id": "atmakur",
+          "name": "Atmakur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 22085
+        }
+      },
+      "summary": null
+    }
+  }
+}

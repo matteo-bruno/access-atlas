@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "donetsk",
+  "createdAt": "2026-10-08T15:30:40.635Z",
+  "updatedAt": "2026-10-08T15:30:40.635Z",
+  "meta": {
+    "name": "Donetsk",
+    "nameIt": "Donetsk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Donetsk.geojson",
+      "sha256": "18c60a8b6c3d32e7311cb192d2b74962e83b9a46f539ce534e7d67dfb94813a8",
+      "size": 2160355,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "donetsk",
+    "name": "Donetsk",
+    "nameIt": "Donetsk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      37.80654,
+      47.9944
+    ],
+    "zoom": 9.7,
+    "population": 663792,
+    "grid": "cities/donetsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/donetsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "donetsk",
+        "name": "Donetsk",
+        "nameIt": "Donetsk",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          37.80654,
+          47.9944
+        ],
+        "zoom": 9.7,
+        "population": 663792,
+        "cells": 1886,
+        "layer": "cities/donetsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.80654,
+            47.9944
+          ]
+        },
+        "properties": {
+          "id": "donetsk",
+          "name": "Donetsk",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 16.6,
+          "population": 663792
+        }
+      },
+      "summary": null
+    }
+  }
+}

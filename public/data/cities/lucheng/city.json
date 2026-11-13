@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lucheng",
+  "createdAt": "2026-10-08T15:52:29.550Z",
+  "updatedAt": "2026-10-08T15:52:29.550Z",
+  "meta": {
+    "name": "Lucheng",
+    "nameIt": "Lucheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lucheng.geojson",
+      "sha256": "e37b3eae7122bea9b56bc3e4354ab4ce6ce5c171c47777d8f7ddb663699bc20c",
+      "size": 359004,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lucheng",
+    "name": "Lucheng",
+    "nameIt": "Lucheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.23171,
+      36.32844
+    ],
+    "zoom": 10.5,
+    "population": 86746,
+    "grid": "cities/lucheng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lucheng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lucheng",
+        "name": "Lucheng",
+        "nameIt": "Lucheng",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.23171,
+          36.32844
+        ],
+        "zoom": 10.5,
+        "population": 86746,
+        "cells": 308,
+        "layer": "cities/lucheng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.23171,
+            36.32844
+          ]
+        },
+        "properties": {
+          "id": "lucheng",
+          "name": "Lucheng",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 29.1,
+          "population": 86746
+        }
+      },
+      "summary": null
+    }
+  }
+}

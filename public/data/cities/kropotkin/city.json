@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kropotkin",
+  "createdAt": "2026-10-08T15:48:29.139Z",
+  "updatedAt": "2026-10-08T15:48:29.139Z",
+  "meta": {
+    "name": "Kropotkin",
+    "nameIt": "Kropotkin",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kropotkin.geojson",
+      "sha256": "2ce5f3358a20eb6245b82fbf70453cec37d5a41db4c74cd6ed5e708e9cbb4ac8",
+      "size": 211902,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kropotkin",
+    "name": "Kropotkin",
+    "nameIt": "Kropotkin",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      40.56758,
+      45.43697
+    ],
+    "zoom": 11.5,
+    "population": 51040,
+    "grid": "cities/kropotkin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kropotkin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kropotkin",
+        "name": "Kropotkin",
+        "nameIt": "Kropotkin",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          40.56758,
+          45.43697
+        ],
+        "zoom": 11.5,
+        "population": 51040,
+        "cells": 185,
+        "layer": "cities/kropotkin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.56758,
+            45.43697
+          ]
+        },
+        "properties": {
+          "id": "kropotkin",
+          "name": "Kropotkin",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 51040
+        }
+      },
+      "summary": null
+    }
+  }
+}

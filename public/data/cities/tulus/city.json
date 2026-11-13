@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tulus",
+  "createdAt": "2026-10-08T16:19:09.611Z",
+  "updatedAt": "2026-10-08T16:19:09.611Z",
+  "meta": {
+    "name": "Tulus",
+    "nameIt": "Tulus",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tulus.geojson",
+      "sha256": "e9af5d2de6eac1bb4b1d6381c02a587ddda8198021e439a366230dfb31175436",
+      "size": 135175,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tulus",
+    "name": "Tulus",
+    "nameIt": "Tulus",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      24.53272,
+      11.09158
+    ],
+    "zoom": 11.7,
+    "population": 40954,
+    "grid": "cities/tulus/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tulus/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tulus",
+        "name": "Tulus",
+        "nameIt": "Tulus",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          24.53272,
+          11.09158
+        ],
+        "zoom": 11.7,
+        "population": 40954,
+        "cells": 116,
+        "layer": "cities/tulus/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            24.53272,
+            11.09158
+          ]
+        },
+        "properties": {
+          "id": "tulus",
+          "name": "Tulus",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 40954
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cabaret",
+  "createdAt": "2026-10-08T15:21:30.811Z",
+  "updatedAt": "2026-10-08T15:21:30.811Z",
+  "meta": {
+    "name": "Cabaret",
+    "nameIt": "Cabaret",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cabaret.geojson",
+      "sha256": "50be8700cd9c82331c4c3ebba04976c4caec2e108bc88bb032923b6f1c228138",
+      "size": 189311,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cabaret",
+    "name": "Cabaret",
+    "nameIt": "Cabaret",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT",
+    "center": [
+      -72.41378,
+      18.7386
+    ],
+    "zoom": 12,
+    "population": 17801,
+    "grid": "cities/cabaret/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cabaret/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cabaret",
+        "name": "Cabaret",
+        "nameIt": "Cabaret",
+        "region": "Haiti",
+        "regionIt": "Haiti",
+        "country": "HT",
+        "center": [
+          -72.41378,
+          18.7386
+        ],
+        "zoom": 12,
+        "population": 17801,
+        "cells": 162,
+        "layer": "cities/cabaret/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.41378,
+            18.7386
+          ]
+        },
+        "properties": {
+          "id": "cabaret",
+          "name": "Cabaret",
+          "country": "HT",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 17801
+        }
+      },
+      "summary": null
+    }
+  }
+}

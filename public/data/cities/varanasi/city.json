@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "varanasi",
+  "createdAt": "2026-10-08T16:20:29.337Z",
+  "updatedAt": "2026-10-08T16:20:29.337Z",
+  "meta": {
+    "name": "Varanasi",
+    "nameIt": "Varanasi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Varanasi.geojson",
+      "sha256": "9344f5dca82d3848b494cb99d3675aad0f8481f09ae1c774fbdd76c9716e5e4c",
+      "size": 4146413,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "varanasi",
+    "name": "Varanasi",
+    "nameIt": "Varanasi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.00868,
+      25.3121
+    ],
+    "zoom": 9.2,
+    "population": 3963124,
+    "grid": "cities/varanasi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/varanasi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "varanasi",
+        "name": "Varanasi",
+        "nameIt": "Varanasi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.00868,
+          25.3121
+        ],
+        "zoom": 9.2,
+        "population": 3963124,
+        "cells": 3586,
+        "layer": "cities/varanasi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.00868,
+            25.3121
+          ]
+        },
+        "properties": {
+          "id": "varanasi",
+          "name": "Varanasi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 43.9,
+          "population": 3963124
+        }
+      },
+      "summary": null
+    }
+  }
+}

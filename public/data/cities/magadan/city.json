@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "magadan",
+  "createdAt": "2026-10-08T15:53:28.777Z",
+  "updatedAt": "2026-10-08T15:53:28.777Z",
+  "meta": {
+    "name": "Magadan",
+    "nameIt": "Magadan",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Magadan.geojson",
+      "sha256": "7d78bb44dfecc13f6d017089f3d3bf8723c41225a8adf57d22d39a674111fe95",
+      "size": 201924,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "magadan",
+    "name": "Magadan",
+    "nameIt": "Magadan",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      150.80658,
+      59.56073
+    ],
+    "zoom": 11.2,
+    "population": 59828,
+    "grid": "cities/magadan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/magadan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "magadan",
+        "name": "Magadan",
+        "nameIt": "Magadan",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          150.80658,
+          59.56073
+        ],
+        "zoom": 11.2,
+        "population": 59828,
+        "cells": 176,
+        "layer": "cities/magadan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            150.80658,
+            59.56073
+          ]
+        },
+        "properties": {
+          "id": "magadan",
+          "name": "Magadan",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 9.9,
+          "population": 59828
+        }
+      },
+      "summary": null
+    }
+  }
+}

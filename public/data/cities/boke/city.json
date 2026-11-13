@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "boke",
+  "createdAt": "2026-10-08T15:19:56.242Z",
+  "updatedAt": "2026-10-08T15:19:56.242Z",
+  "meta": {
+    "name": "Boké",
+    "nameIt": "Boké",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Boké.geojson",
+      "sha256": "13db4eff3991f97fbe85884e5386d51a5356b61bfcdc665d985ed08e22beffc8",
+      "size": 187338,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "boke",
+    "name": "Boké",
+    "nameIt": "Boké",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN",
+    "center": [
+      -14.28535,
+      10.93779
+    ],
+    "zoom": 11.1,
+    "population": 78652,
+    "grid": "cities/boke/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/boke/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "boke",
+        "name": "Boké",
+        "nameIt": "Boké",
+        "region": "Guinea",
+        "regionIt": "Guinea",
+        "country": "GN",
+        "center": [
+          -14.28535,
+          10.93779
+        ],
+        "zoom": 11.1,
+        "population": 78652,
+        "cells": 159,
+        "layer": "cities/boke/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -14.28535,
+            10.93779
+          ]
+        },
+        "properties": {
+          "id": "boke",
+          "name": "Boké",
+          "country": "GN",
+          "isStudy": true,
+          "proximityMinutes": 30.9,
+          "population": 78652
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bo",
+  "createdAt": "2026-10-08T15:19:41.692Z",
+  "updatedAt": "2026-10-08T15:19:41.692Z",
+  "meta": {
+    "name": "Bo",
+    "nameIt": "Bo",
+    "region": "Sierra Leone",
+    "regionIt": "Sierra Leone",
+    "country": "SL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bo.geojson",
+      "sha256": "001ef27dcf9cb494e1a5c4225f9a8876319042e9c46563fd06bdea6bc6db30bc",
+      "size": 636545,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bo",
+    "name": "Bo",
+    "nameIt": "Bo",
+    "region": "Sierra Leone",
+    "regionIt": "Sierra Leone",
+    "country": "SL",
+    "center": [
+      -11.73665,
+      7.95578
+    ],
+    "zoom": 11.1,
+    "population": 384524,
+    "grid": "cities/bo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bo",
+        "name": "Bo",
+        "nameIt": "Bo",
+        "region": "Sierra Leone",
+        "regionIt": "Sierra Leone",
+        "country": "SL",
+        "center": [
+          -11.73665,
+          7.95578
+        ],
+        "zoom": 11.1,
+        "population": 384524,
+        "cells": 544,
+        "layer": "cities/bo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -11.73665,
+            7.95578
+          ]
+        },
+        "properties": {
+          "id": "bo",
+          "name": "Bo",
+          "country": "SL",
+          "isStudy": true,
+          "proximityMinutes": 31.1,
+          "population": 384524
+        }
+      },
+      "summary": null
+    }
+  }
+}

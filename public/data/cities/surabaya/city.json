@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "surabaya",
+  "createdAt": "2026-10-08T16:15:20.348Z",
+  "updatedAt": "2026-10-08T16:15:20.348Z",
+  "meta": {
+    "name": "Surabaya",
+    "nameIt": "Surabaya",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Surabaya.geojson",
+      "sha256": "c21acb37f75f4260e12894c260de7e55e8acc876c690a9ded23acacea0bd143b",
+      "size": 15660702,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "surabaya",
+    "name": "Surabaya",
+    "nameIt": "Surabaya",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      112.68237,
+      -7.38181
+    ],
+    "zoom": 8.5,
+    "population": 6769196,
+    "grid": "cities/surabaya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/surabaya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "surabaya",
+        "name": "Surabaya",
+        "nameIt": "Surabaya",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          112.68237,
+          -7.38181
+        ],
+        "zoom": 8.5,
+        "population": 6769196,
+        "cells": 13392,
+        "layer": "cities/surabaya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.68237,
+            -7.38181
+          ]
+        },
+        "properties": {
+          "id": "surabaya",
+          "name": "Surabaya",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 39.2,
+          "population": 6769196
+        }
+      },
+      "summary": null
+    }
+  }
+}

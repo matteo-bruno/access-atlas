@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lyon-fua",
+  "createdAt": "2026-10-19T16:57:12.960Z",
+  "updatedAt": "2026-10-19T16:57:12.960Z",
+  "meta": {
+    "name": "Lyon",
+    "nameIt": "Lyon",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "lyon-fua",
+    "name": "Lyon",
+    "nameIt": "Lyon",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "extent": "fua",
+    "core": "lyon",
+    "center": [
+      4.87109,
+      45.74955
+    ],
+    "zoom": 8.5,
+    "population": 2227433,
+    "grid": "cities/lyon-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lyon-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lyon-fua",
+        "name": "Lyon",
+        "nameIt": "Lyon",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "extent": "fua",
+        "core": "lyon",
+        "center": [
+          4.87109,
+          45.74955
+        ],
+        "zoom": 8.5,
+        "population": 2227433,
+        "cells": 35139,
+        "layer": "cities/lyon-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.87109,
+            45.74955
+          ]
+        },
+        "properties": {
+          "id": "lyon-fua",
+          "name": "Lyon",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 9.5,
+          "population": 2227433
+        }
+      },
+      "summary": null
+    }
+  }
+}

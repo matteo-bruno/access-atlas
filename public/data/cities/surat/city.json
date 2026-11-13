@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "surat",
+  "createdAt": "2026-10-08T16:15:23.057Z",
+  "updatedAt": "2026-10-08T16:15:23.057Z",
+  "meta": {
+    "name": "Surat",
+    "nameIt": "Surat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Surat.geojson",
+      "sha256": "269d9fad1888ff51e341f3cf79c5da772e8f4c02d3d6a8a0ec50e5ed89fc2b1d",
+      "size": 3603126,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "surat",
+    "name": "Surat",
+    "nameIt": "Surat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.80891,
+      21.18494
+    ],
+    "zoom": 9.1,
+    "population": 1802909,
+    "grid": "cities/surat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/surat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "surat",
+        "name": "Surat",
+        "nameIt": "Surat",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.80891,
+          21.18494
+        ],
+        "zoom": 9.1,
+        "population": 1802909,
+        "cells": 3113,
+        "layer": "cities/surat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.80891,
+            21.18494
+          ]
+        },
+        "properties": {
+          "id": "surat",
+          "name": "Surat",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 40.9,
+          "population": 1802909
+        }
+      },
+      "summary": null
+    }
+  }
+}

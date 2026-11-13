@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ramgarhwa",
+  "createdAt": "2026-10-08T16:08:07.646Z",
+  "updatedAt": "2026-10-08T16:08:07.646Z",
+  "meta": {
+    "name": "Ramgarhwa",
+    "nameIt": "Ramgarhwa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ramgarhwa.geojson",
+      "sha256": "70c11552d51fba6536a55d9f456f4748f9e5513b53739d494d12283c5b94fe7f",
+      "size": 231665,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ramgarhwa",
+    "name": "Ramgarhwa",
+    "nameIt": "Ramgarhwa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.81013,
+      26.89476
+    ],
+    "zoom": 10.9,
+    "population": 55045,
+    "grid": "cities/ramgarhwa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ramgarhwa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ramgarhwa",
+        "name": "Ramgarhwa",
+        "nameIt": "Ramgarhwa",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.81013,
+          26.89476
+        ],
+        "zoom": 10.9,
+        "population": 55045,
+        "cells": 200,
+        "layer": "cities/ramgarhwa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.81013,
+            26.89476
+          ]
+        },
+        "properties": {
+          "id": "ramgarhwa",
+          "name": "Ramgarhwa",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 55045
+        }
+      },
+      "summary": null
+    }
+  }
+}

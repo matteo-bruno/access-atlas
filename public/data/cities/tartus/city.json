@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tartus",
+  "createdAt": "2026-10-08T16:16:51.794Z",
+  "updatedAt": "2026-10-08T16:16:51.794Z",
+  "meta": {
+    "name": "Tartus",
+    "nameIt": "Tartus",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tartus.geojson",
+      "sha256": "60a4da30970d6b4ac28681a1b4cf6ad37d792d0df20f50b874e581282d59d2c8",
+      "size": 177281,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tartus",
+    "name": "Tartus",
+    "nameIt": "Tartus",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY",
+    "center": [
+      35.88692,
+      34.89318
+    ],
+    "zoom": 11.6,
+    "population": 284306,
+    "grid": "cities/tartus/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tartus/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tartus",
+        "name": "Tartus",
+        "nameIt": "Tartus",
+        "region": "Syria",
+        "regionIt": "Siria",
+        "country": "SY",
+        "center": [
+          35.88692,
+          34.89318
+        ],
+        "zoom": 11.6,
+        "population": 284306,
+        "cells": 154,
+        "layer": "cities/tartus/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.88692,
+            34.89318
+          ]
+        },
+        "properties": {
+          "id": "tartus",
+          "name": "Tartus",
+          "country": "SY",
+          "isStudy": true,
+          "proximityMinutes": 9.3,
+          "population": 284306
+        }
+      },
+      "summary": null
+    }
+  }
+}

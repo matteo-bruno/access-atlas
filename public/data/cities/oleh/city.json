@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oleh",
+  "createdAt": "2026-10-08T16:02:46.186Z",
+  "updatedAt": "2026-10-08T16:02:46.186Z",
+  "meta": {
+    "name": "Oleh",
+    "nameIt": "Oleh",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Oleh.geojson",
+      "sha256": "2f9168d9bd11855e037c76e102ed687ff100193fe73828daa3b3cf2fdbfa3d35",
+      "size": 239619,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "oleh",
+    "name": "Oleh",
+    "nameIt": "Oleh",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      6.20711,
+      5.45656
+    ],
+    "zoom": 11.3,
+    "population": 88737,
+    "grid": "cities/oleh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oleh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oleh",
+        "name": "Oleh",
+        "nameIt": "Oleh",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          6.20711,
+          5.45656
+        ],
+        "zoom": 11.3,
+        "population": 88737,
+        "cells": 208,
+        "layer": "cities/oleh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.20711,
+            5.45656
+          ]
+        },
+        "properties": {
+          "id": "oleh",
+          "name": "Oleh",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 24.1,
+          "population": 88737
+        }
+      },
+      "summary": null
+    }
+  }
+}

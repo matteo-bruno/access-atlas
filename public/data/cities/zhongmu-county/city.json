@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhongmu-county",
+  "createdAt": "2026-10-08T16:25:19.878Z",
+  "updatedAt": "2026-10-08T16:25:19.878Z",
+  "meta": {
+    "name": "Zhongmu County",
+    "nameIt": "Zhongmu County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhongmu County.geojson",
+      "sha256": "c7fc072bd73f72472f338b9d657094b98b0634466114a1b99d582692252fac20",
+      "size": 475958,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhongmu-county",
+    "name": "Zhongmu County",
+    "nameIt": "Zhongmu County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.00331,
+      34.72064
+    ],
+    "zoom": 10.9,
+    "population": 319993,
+    "grid": "cities/zhongmu-county/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhongmu-county/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhongmu-county",
+        "name": "Zhongmu County",
+        "nameIt": "Zhongmu County",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.00331,
+          34.72064
+        ],
+        "zoom": 10.9,
+        "population": 319993,
+        "cells": 408,
+        "layer": "cities/zhongmu-county/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.00331,
+            34.72064
+          ]
+        },
+        "properties": {
+          "id": "zhongmu-county",
+          "name": "Zhongmu County",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24.5,
+          "population": 319993
+        }
+      },
+      "summary": null
+    }
+  }
+}

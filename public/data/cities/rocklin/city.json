@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rocklin",
+  "createdAt": "2026-10-08T16:09:01.179Z",
+  "updatedAt": "2026-10-08T16:09:01.179Z",
+  "meta": {
+    "name": "Rocklin",
+    "nameIt": "Rocklin",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rocklin.geojson",
+      "sha256": "9a8dbde6f594cbe5511b655c30107b6be75f0d2f33d18d3fd647ddc9b935c980",
+      "size": 276285,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rocklin",
+    "name": "Rocklin",
+    "nameIt": "Rocklin",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -121.26844,
+      38.80588
+    ],
+    "zoom": 10.8,
+    "population": 65279,
+    "grid": "cities/rocklin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rocklin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rocklin",
+        "name": "Rocklin",
+        "nameIt": "Rocklin",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -121.26844,
+          38.80588
+        ],
+        "zoom": 10.8,
+        "population": 65279,
+        "cells": 236,
+        "layer": "cities/rocklin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -121.26844,
+            38.80588
+          ]
+        },
+        "properties": {
+          "id": "rocklin",
+          "name": "Rocklin",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.4,
+          "population": 65279
+        }
+      },
+      "summary": null
+    }
+  }
+}

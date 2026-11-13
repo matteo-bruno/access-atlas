@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kropyvnytskyi",
+  "createdAt": "2026-10-08T15:48:29.543Z",
+  "updatedAt": "2026-10-08T15:48:29.543Z",
+  "meta": {
+    "name": "Kropyvnytskyi",
+    "nameIt": "Kropyvnytskyi",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kropyvnytskyi.geojson",
+      "sha256": "2cffc39be66c1826815c0271aa88a9ca51ee58c922a2954ad9a63ee5c4ab1806",
+      "size": 543838,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kropyvnytskyi",
+    "name": "Kropyvnytskyi",
+    "nameIt": "Kropyvnytskyi",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      32.25767,
+      48.50971
+    ],
+    "zoom": 10.9,
+    "population": 125039,
+    "grid": "cities/kropyvnytskyi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kropyvnytskyi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kropyvnytskyi",
+        "name": "Kropyvnytskyi",
+        "nameIt": "Kropyvnytskyi",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          32.25767,
+          48.50971
+        ],
+        "zoom": 10.9,
+        "population": 125039,
+        "cells": 477,
+        "layer": "cities/kropyvnytskyi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.25767,
+            48.50971
+          ]
+        },
+        "properties": {
+          "id": "kropyvnytskyi",
+          "name": "Kropyvnytskyi",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 125039
+        }
+      },
+      "summary": null
+    }
+  }
+}

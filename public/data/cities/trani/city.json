@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "trani",
+  "createdAt": "2026-10-08T16:18:44.445Z",
+  "updatedAt": "2026-10-08T16:18:44.445Z",
+  "meta": {
+    "name": "Trani",
+    "nameIt": "Trani",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Trani.geojson",
+      "sha256": "8400ff6f9782f1f6daa0d94b304f50c86036f6a88dea2ec46994b5457594783e",
+      "size": 128280,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "trani",
+    "name": "Trani",
+    "nameIt": "Trani",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      16.41773,
+      41.27337
+    ],
+    "zoom": 11.6,
+    "population": 34070,
+    "grid": "cities/trani/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/trani/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "trani",
+        "name": "Trani",
+        "nameIt": "Trani",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          16.41773,
+          41.27337
+        ],
+        "zoom": 11.6,
+        "population": 34070,
+        "cells": 111,
+        "layer": "cities/trani/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.41773,
+            41.27337
+          ]
+        },
+        "properties": {
+          "id": "trani",
+          "name": "Trani",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 34070
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "natore",
+  "createdAt": "2026-10-08T16:00:35.418Z",
+  "updatedAt": "2026-10-08T16:00:35.418Z",
+  "meta": {
+    "name": "Natore",
+    "nameIt": "Natore",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Natore.geojson",
+      "sha256": "c98b011abee3b829e9637b7eb3bd8077d26a6efffbd2f1aa9fe9346f7920800e",
+      "size": 316318,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "natore",
+    "name": "Natore",
+    "nameIt": "Natore",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      88.98358,
+      24.41234
+    ],
+    "zoom": 10.9,
+    "population": 120872,
+    "grid": "cities/natore/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/natore/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "natore",
+        "name": "Natore",
+        "nameIt": "Natore",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          88.98358,
+          24.41234
+        ],
+        "zoom": 10.9,
+        "population": 120872,
+        "cells": 273,
+        "layer": "cities/natore/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.98358,
+            24.41234
+          ]
+        },
+        "properties": {
+          "id": "natore",
+          "name": "Natore",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 41.5,
+          "population": 120872
+        }
+      },
+      "summary": null
+    }
+  }
+}

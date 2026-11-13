@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "azs",
+  "createdAt": "2026-10-08T15:12:05.986Z",
+  "updatedAt": "2026-10-08T15:12:05.986Z",
+  "meta": {
+    "name": "Azs",
+    "nameIt": "Azs",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Azs.geojson",
+      "sha256": "5781b9755a9c2a655213aae3eed8924b7b6d571fa1afe5a81ebf318d8e11b0ce",
+      "size": 456089,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "azs",
+    "name": "Azs",
+    "nameIt": "Azs",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      158.63578,
+      53.05983
+    ],
+    "zoom": 10.7,
+    "population": 114285,
+    "grid": "cities/azs/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/azs/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "azs",
+        "name": "Azs",
+        "nameIt": "Azs",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          158.63578,
+          53.05983
+        ],
+        "zoom": 10.7,
+        "population": 114285,
+        "cells": 397,
+        "layer": "cities/azs/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            158.63578,
+            53.05983
+          ]
+        },
+        "properties": {
+          "id": "azs",
+          "name": "Azs",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 13.9,
+          "population": 114285
+        }
+      },
+      "summary": null
+    }
+  }
+}

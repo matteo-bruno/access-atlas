@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kailahun",
+  "createdAt": "2026-10-08T15:44:12.116Z",
+  "updatedAt": "2026-10-08T15:44:12.116Z",
+  "meta": {
+    "name": "Kailahun",
+    "nameIt": "Kailahun",
+    "region": "Sierra Leone",
+    "regionIt": "Sierra Leone",
+    "country": "SL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kailahun.geojson",
+      "sha256": "4b7e6d5f16c3b2ab0bc23198e27dd0490977a2d13c90e9a8a182d6030b43948f",
+      "size": 124623,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kailahun",
+    "name": "Kailahun",
+    "nameIt": "Kailahun",
+    "region": "Sierra Leone",
+    "regionIt": "Sierra Leone",
+    "country": "SL",
+    "center": [
+      -10.57181,
+      8.27802
+    ],
+    "zoom": 12,
+    "population": 53244,
+    "grid": "cities/kailahun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kailahun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kailahun",
+        "name": "Kailahun",
+        "nameIt": "Kailahun",
+        "region": "Sierra Leone",
+        "regionIt": "Sierra Leone",
+        "country": "SL",
+        "center": [
+          -10.57181,
+          8.27802
+        ],
+        "zoom": 12,
+        "population": 53244,
+        "cells": 107,
+        "layer": "cities/kailahun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -10.57181,
+            8.27802
+          ]
+        },
+        "properties": {
+          "id": "kailahun",
+          "name": "Kailahun",
+          "country": "SL",
+          "isStudy": true,
+          "proximityMinutes": 10.4,
+          "population": 53244
+        }
+      },
+      "summary": null
+    }
+  }
+}

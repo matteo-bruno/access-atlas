@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yuyao",
+  "createdAt": "2026-10-08T16:24:37.013Z",
+  "updatedAt": "2026-10-08T16:24:37.013Z",
+  "meta": {
+    "name": "Yuyao",
+    "nameIt": "Yuyao",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yuyao.geojson",
+      "sha256": "27507577bc53d1c5cad5a6326a77380b277c5e19730333a06d7e02f2cf13f316",
+      "size": 2127448,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yuyao",
+    "name": "Yuyao",
+    "nameIt": "Yuyao",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      121.15288,
+      30.04598
+    ],
+    "zoom": 9.9,
+    "population": 583788,
+    "grid": "cities/yuyao/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yuyao/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yuyao",
+        "name": "Yuyao",
+        "nameIt": "Yuyao",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          121.15288,
+          30.04598
+        ],
+        "zoom": 9.9,
+        "population": 583788,
+        "cells": 1818,
+        "layer": "cities/yuyao/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.15288,
+            30.04598
+          ]
+        },
+        "properties": {
+          "id": "yuyao",
+          "name": "Yuyao",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 40.6,
+          "population": 583788
+        }
+      },
+      "summary": null
+    }
+  }
+}

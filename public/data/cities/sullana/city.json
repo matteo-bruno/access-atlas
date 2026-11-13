@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sullana",
+  "createdAt": "2026-10-08T16:15:06.743Z",
+  "updatedAt": "2026-10-08T16:15:06.743Z",
+  "meta": {
+    "name": "Sullana",
+    "nameIt": "Sullana",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sullana.geojson",
+      "sha256": "1d820b65f19cb1931f2b88826f09df306247292db7ebcd081b1e7d4df8c4a36e",
+      "size": 227492,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sullana",
+    "name": "Sullana",
+    "nameIt": "Sullana",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -80.6862,
+      -4.90252
+    ],
+    "zoom": 11,
+    "population": 190507,
+    "grid": "cities/sullana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sullana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sullana",
+        "name": "Sullana",
+        "nameIt": "Sullana",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -80.6862,
+          -4.90252
+        ],
+        "zoom": 11,
+        "population": 190507,
+        "cells": 195,
+        "layer": "cities/sullana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.6862,
+            -4.90252
+          ]
+        },
+        "properties": {
+          "id": "sullana",
+          "name": "Sullana",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 13.8,
+          "population": 190507
+        }
+      },
+      "summary": null
+    }
+  }
+}

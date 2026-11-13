@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "karimpur",
+  "createdAt": "2026-10-08T15:45:20.265Z",
+  "updatedAt": "2026-10-08T15:45:20.265Z",
+  "meta": {
+    "name": "Karimpur",
+    "nameIt": "Karimpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Karimpur.geojson",
+      "sha256": "5e61a2bff33bdd5968500848738647c70b85148c01333e3035c70bb4d709c123",
+      "size": 152834,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "karimpur",
+    "name": "Karimpur",
+    "nameIt": "Karimpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.63765,
+      23.98374
+    ],
+    "zoom": 11.3,
+    "population": 64948,
+    "grid": "cities/karimpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/karimpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "karimpur",
+        "name": "Karimpur",
+        "nameIt": "Karimpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.63765,
+          23.98374
+        ],
+        "zoom": 11.3,
+        "population": 64948,
+        "cells": 132,
+        "layer": "cities/karimpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.63765,
+            23.98374
+          ]
+        },
+        "properties": {
+          "id": "karimpur",
+          "name": "Karimpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 64948
+        }
+      },
+      "summary": null
+    }
+  }
+}

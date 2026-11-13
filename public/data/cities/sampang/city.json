@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sampang",
+  "createdAt": "2026-10-08T16:10:19.790Z",
+  "updatedAt": "2026-10-08T16:10:19.790Z",
+  "meta": {
+    "name": "Sampang",
+    "nameIt": "Sampang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sampang.geojson",
+      "sha256": "14e34f9f481264b174758c711503b46874d3dce6606b2f98ab2319104dc5dab4",
+      "size": 363846,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sampang",
+    "name": "Sampang",
+    "nameIt": "Sampang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      113.24726,
+      -7.1964
+    ],
+    "zoom": 11,
+    "population": 69842,
+    "grid": "cities/sampang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sampang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sampang",
+        "name": "Sampang",
+        "nameIt": "Sampang",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          113.24726,
+          -7.1964
+        ],
+        "zoom": 11,
+        "population": 69842,
+        "cells": 311,
+        "layer": "cities/sampang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.24726,
+            -7.1964
+          ]
+        },
+        "properties": {
+          "id": "sampang",
+          "name": "Sampang",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 16.1,
+          "population": 69842
+        }
+      },
+      "summary": null
+    }
+  }
+}

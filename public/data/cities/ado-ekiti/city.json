@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ado-ekiti",
+  "createdAt": "2026-10-08T15:02:27.819Z",
+  "updatedAt": "2026-10-08T15:02:27.819Z",
+  "meta": {
+    "name": "Ado Ekiti",
+    "nameIt": "Ado Ekiti",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ado Ekiti.geojson",
+      "sha256": "50ba1a715df9b0e0653e0098d67f4c93f8a7ba6c45d7c580dacd1f92a807d627",
+      "size": 1348304,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ado-ekiti",
+    "name": "Ado Ekiti",
+    "nameIt": "Ado Ekiti",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      5.22255,
+      7.62575
+    ],
+    "zoom": 10.2,
+    "population": 1217660,
+    "grid": "cities/ado-ekiti/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ado-ekiti/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ado-ekiti",
+        "name": "Ado Ekiti",
+        "nameIt": "Ado Ekiti",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          5.22255,
+          7.62575
+        ],
+        "zoom": 10.2,
+        "population": 1217660,
+        "cells": 1170,
+        "layer": "cities/ado-ekiti/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.22255,
+            7.62575
+          ]
+        },
+        "properties": {
+          "id": "ado-ekiti",
+          "name": "Ado Ekiti",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 1217660
+        }
+      },
+      "summary": null
+    }
+  }
+}

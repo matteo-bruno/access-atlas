@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pathankot",
+  "createdAt": "2026-10-08T16:04:38.251Z",
+  "updatedAt": "2026-10-08T16:04:38.251Z",
+  "meta": {
+    "name": "Pathankot",
+    "nameIt": "Pathankot",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pathankot.geojson",
+      "sha256": "4b41f815f5ec3afbfec0190b101e319afe7c11f250ea2b957fbef4dab44c8e71",
+      "size": 425720,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pathankot",
+    "name": "Pathankot",
+    "nameIt": "Pathankot",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.64514,
+      32.26931
+    ],
+    "zoom": 10.3,
+    "population": 180469,
+    "grid": "cities/pathankot/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pathankot/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pathankot",
+        "name": "Pathankot",
+        "nameIt": "Pathankot",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.64514,
+          32.26931
+        ],
+        "zoom": 10.3,
+        "population": 180469,
+        "cells": 368,
+        "layer": "cities/pathankot/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.64514,
+            32.26931
+          ]
+        },
+        "properties": {
+          "id": "pathankot",
+          "name": "Pathankot",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.1,
+          "population": 180469
+        }
+      },
+      "summary": null
+    }
+  }
+}

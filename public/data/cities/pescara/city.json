@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pescara",
+  "createdAt": "2026-10-08T16:05:06.564Z",
+  "updatedAt": "2026-10-08T16:05:06.564Z",
+  "meta": {
+    "name": "Pescara",
+    "nameIt": "Pescara",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pescara.geojson",
+      "sha256": "50446d729f578b239fad72938f4a5bddd3158aff441d6bc4a6f56442caad4734",
+      "size": 780510,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pescara",
+    "name": "Pescara",
+    "nameIt": "Pescara",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      14.19451,
+      42.46909
+    ],
+    "zoom": 10.1,
+    "population": 206612,
+    "grid": "cities/pescara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pescara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pescara",
+        "name": "Pescara",
+        "nameIt": "Pescara",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          14.19451,
+          42.46909
+        ],
+        "zoom": 10.1,
+        "population": 206612,
+        "cells": 683,
+        "layer": "cities/pescara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.19451,
+            42.46909
+          ]
+        },
+        "properties": {
+          "id": "pescara",
+          "name": "Pescara",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 8.6,
+          "population": 206612
+        }
+      },
+      "summary": null
+    }
+  }
+}

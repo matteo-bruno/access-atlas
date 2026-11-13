@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "masaurhi",
+  "createdAt": "2026-10-08T15:55:27.287Z",
+  "updatedAt": "2026-10-08T15:55:27.287Z",
+  "meta": {
+    "name": "Masaurhi",
+    "nameIt": "Masaurhi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Masaurhi.geojson",
+      "sha256": "3f2f5e0c7d0b8ed3f19d3399632e350df3e8e4906c17b5326cbfcf1c1d2f823e",
+      "size": 813201,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "masaurhi",
+    "name": "Masaurhi",
+    "nameIt": "Masaurhi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.06606,
+      25.36089
+    ],
+    "zoom": 10,
+    "population": 173107,
+    "grid": "cities/masaurhi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/masaurhi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "masaurhi",
+        "name": "Masaurhi",
+        "nameIt": "Masaurhi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.06606,
+          25.36089
+        ],
+        "zoom": 10,
+        "population": 173107,
+        "cells": 702,
+        "layer": "cities/masaurhi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.06606,
+            25.36089
+          ]
+        },
+        "properties": {
+          "id": "masaurhi",
+          "name": "Masaurhi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 173107
+        }
+      },
+      "summary": null
+    }
+  }
+}

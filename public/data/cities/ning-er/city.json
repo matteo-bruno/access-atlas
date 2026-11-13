@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ning-er",
+  "createdAt": "2026-10-08T16:01:37.056Z",
+  "updatedAt": "2026-10-08T16:01:37.056Z",
+  "meta": {
+    "name": "Ning'er",
+    "nameIt": "Ning'er",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ning'er.geojson",
+      "sha256": "e54959c231eaa86c58c3a4ebab89625ebb51e4435a50bdf915e72e3f36e5b87c",
+      "size": 142509,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ning-er",
+    "name": "Ning'er",
+    "nameIt": "Ning'er",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      101.04533,
+      23.06365
+    ],
+    "zoom": 11.6,
+    "population": 79370,
+    "grid": "cities/ning-er/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ning-er/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ning-er",
+        "name": "Ning'er",
+        "nameIt": "Ning'er",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          101.04533,
+          23.06365
+        ],
+        "zoom": 11.6,
+        "population": 79370,
+        "cells": 122,
+        "layer": "cities/ning-er/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            101.04533,
+            23.06365
+          ]
+        },
+        "properties": {
+          "id": "ning-er",
+          "name": "Ning'er",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 79370
+        }
+      },
+      "summary": null
+    }
+  }
+}

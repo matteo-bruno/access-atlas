@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "renshou",
+  "createdAt": "2026-10-08T16:08:40.439Z",
+  "updatedAt": "2026-10-08T16:08:40.439Z",
+  "meta": {
+    "name": "Renshou",
+    "nameIt": "Renshou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Renshou.geojson",
+      "sha256": "469374aa46e6c2a0265f8985eadf4b2390d0a28e0511c479072b48261c2d038a",
+      "size": 172995,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "renshou",
+    "name": "Renshou",
+    "nameIt": "Renshou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      104.14748,
+      29.99721
+    ],
+    "zoom": 11.6,
+    "population": 190035,
+    "grid": "cities/renshou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/renshou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "renshou",
+        "name": "Renshou",
+        "nameIt": "Renshou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          104.14748,
+          29.99721
+        ],
+        "zoom": 11.6,
+        "population": 190035,
+        "cells": 148,
+        "layer": "cities/renshou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            104.14748,
+            29.99721
+          ]
+        },
+        "properties": {
+          "id": "renshou",
+          "name": "Renshou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 190035
+        }
+      },
+      "summary": null
+    }
+  }
+}

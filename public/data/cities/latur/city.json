@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "latur",
+  "createdAt": "2026-10-08T15:50:21.019Z",
+  "updatedAt": "2026-10-08T15:50:21.019Z",
+  "meta": {
+    "name": "Latur",
+    "nameIt": "Latur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Latur.geojson",
+      "sha256": "820711ed5c31a2b4342fd603028649650b4ef0a18831e325e968ec58c5ab6afa",
+      "size": 496067,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "latur",
+    "name": "Latur",
+    "nameIt": "Latur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.56706,
+      18.402
+    ],
+    "zoom": 10.8,
+    "population": 306503,
+    "grid": "cities/latur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/latur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "latur",
+        "name": "Latur",
+        "nameIt": "Latur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.56706,
+          18.402
+        ],
+        "zoom": 10.8,
+        "population": 306503,
+        "cells": 429,
+        "layer": "cities/latur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.56706,
+            18.402
+          ]
+        },
+        "properties": {
+          "id": "latur",
+          "name": "Latur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 22.1,
+          "population": 306503
+        }
+      },
+      "summary": null
+    }
+  }
+}

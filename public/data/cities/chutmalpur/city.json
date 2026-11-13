@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chutmalpur",
+  "createdAt": "2026-10-08T15:25:21.465Z",
+  "updatedAt": "2026-10-08T15:25:21.465Z",
+  "meta": {
+    "name": "Chutmalpur",
+    "nameIt": "Chutmalpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chutmalpur.geojson",
+      "sha256": "dda22726c8d7ffe4889c6c5fcb4d1310b59b78d9a588c73293292766fbe80ded",
+      "size": 93797,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chutmalpur",
+    "name": "Chutmalpur",
+    "nameIt": "Chutmalpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.75151,
+      30.03597
+    ],
+    "zoom": 11.9,
+    "population": 39341,
+    "grid": "cities/chutmalpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chutmalpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chutmalpur",
+        "name": "Chutmalpur",
+        "nameIt": "Chutmalpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.75151,
+          30.03597
+        ],
+        "zoom": 11.9,
+        "population": 39341,
+        "cells": 81,
+        "layer": "cities/chutmalpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.75151,
+            30.03597
+          ]
+        },
+        "properties": {
+          "id": "chutmalpur",
+          "name": "Chutmalpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 39341
+        }
+      },
+      "summary": null
+    }
+  }
+}

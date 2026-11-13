@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rafsanjan",
+  "createdAt": "2026-10-08T16:07:49.882Z",
+  "updatedAt": "2026-10-08T16:07:49.882Z",
+  "meta": {
+    "name": "Rafsanjan",
+    "nameIt": "Rafsanjan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rafsanjan.geojson",
+      "sha256": "870d9f2e85b9e93d61752d1b5efb78990feca29b05d6d7c6a86ff80dfe3dd9ea",
+      "size": 360384,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rafsanjan",
+    "name": "Rafsanjan",
+    "nameIt": "Rafsanjan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      55.98817,
+      30.40443
+    ],
+    "zoom": 11.4,
+    "population": 138780,
+    "grid": "cities/rafsanjan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rafsanjan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rafsanjan",
+        "name": "Rafsanjan",
+        "nameIt": "Rafsanjan",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          55.98817,
+          30.40443
+        ],
+        "zoom": 11.4,
+        "population": 138780,
+        "cells": 311,
+        "layer": "cities/rafsanjan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            55.98817,
+            30.40443
+          ]
+        },
+        "properties": {
+          "id": "rafsanjan",
+          "name": "Rafsanjan",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 21.7,
+          "population": 138780
+        }
+      },
+      "summary": null
+    }
+  }
+}

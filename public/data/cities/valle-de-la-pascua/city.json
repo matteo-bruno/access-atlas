@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "valle-de-la-pascua",
+  "createdAt": "2026-10-08T16:20:22.267Z",
+  "updatedAt": "2026-10-08T16:20:22.267Z",
+  "meta": {
+    "name": "Valle de La Pascua",
+    "nameIt": "Valle de La Pascua",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Valle de La Pascua.geojson",
+      "sha256": "41386d15f14cb8917b41c80ed4c5a0992b463b574d0ed7ccfc9db82737b3e67d",
+      "size": 254190,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "valle-de-la-pascua",
+    "name": "Valle de La Pascua",
+    "nameIt": "Valle de La Pascua",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -66.00444,
+      9.2138
+    ],
+    "zoom": 11.4,
+    "population": 104173,
+    "grid": "cities/valle-de-la-pascua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/valle-de-la-pascua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "valle-de-la-pascua",
+        "name": "Valle de La Pascua",
+        "nameIt": "Valle de La Pascua",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -66.00444,
+          9.2138
+        ],
+        "zoom": 11.4,
+        "population": 104173,
+        "cells": 219,
+        "layer": "cities/valle-de-la-pascua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -66.00444,
+            9.2138
+          ]
+        },
+        "properties": {
+          "id": "valle-de-la-pascua",
+          "name": "Valle de La Pascua",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 22.5,
+          "population": 104173
+        }
+      },
+      "summary": null
+    }
+  }
+}

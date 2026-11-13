@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nakhon-pathom",
+  "createdAt": "2026-10-08T15:59:51.012Z",
+  "updatedAt": "2026-10-08T15:59:51.012Z",
+  "meta": {
+    "name": "Nakhon Pathom",
+    "nameIt": "Nakhon Pathom",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nakhon Pathom.geojson",
+      "sha256": "c1a09a76d91b5ce238f4757cfd7132b3e4057a26a39c08e63b79e9f82b008558",
+      "size": 580011,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nakhon-pathom",
+    "name": "Nakhon Pathom",
+    "nameIt": "Nakhon Pathom",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      100.05937,
+      13.82038
+    ],
+    "zoom": 10.5,
+    "population": 134563,
+    "grid": "cities/nakhon-pathom/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nakhon-pathom/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nakhon-pathom",
+        "name": "Nakhon Pathom",
+        "nameIt": "Nakhon Pathom",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          100.05937,
+          13.82038
+        ],
+        "zoom": 10.5,
+        "population": 134563,
+        "cells": 497,
+        "layer": "cities/nakhon-pathom/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            100.05937,
+            13.82038
+          ]
+        },
+        "properties": {
+          "id": "nakhon-pathom",
+          "name": "Nakhon Pathom",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 26.6,
+          "population": 134563
+        }
+      },
+      "summary": null
+    }
+  }
+}

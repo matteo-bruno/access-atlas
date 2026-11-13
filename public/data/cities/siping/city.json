@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "siping",
+  "createdAt": "2026-10-08T16:13:56.864Z",
+  "updatedAt": "2026-10-08T16:13:56.864Z",
+  "meta": {
+    "name": "Siping",
+    "nameIt": "Siping",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Siping.geojson",
+      "sha256": "a8fec9a1429e1d0dccd54bd5eca1083db67cb836a0012d1f77cb4c3ac41b867d",
+      "size": 1248090,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "siping",
+    "name": "Siping",
+    "nameIt": "Siping",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      124.37227,
+      43.16256
+    ],
+    "zoom": 10.3,
+    "population": 482107,
+    "grid": "cities/siping/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/siping/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "siping",
+        "name": "Siping",
+        "nameIt": "Siping",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          124.37227,
+          43.16256
+        ],
+        "zoom": 10.3,
+        "population": 482107,
+        "cells": 1070,
+        "layer": "cities/siping/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            124.37227,
+            43.16256
+          ]
+        },
+        "properties": {
+          "id": "siping",
+          "name": "Siping",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 35.5,
+          "population": 482107
+        }
+      },
+      "summary": null
+    }
+  }
+}

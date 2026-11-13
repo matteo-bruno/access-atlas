@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "point-cook",
+  "createdAt": "2026-10-08T16:05:59.014Z",
+  "updatedAt": "2026-10-08T16:05:59.014Z",
+  "meta": {
+    "name": "Point Cook",
+    "nameIt": "Point Cook",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Point Cook.geojson",
+      "sha256": "304c994826d769de8d7dda026f46d2400bed4a1a25d8e31a98edb20135aab1ed",
+      "size": 1183437,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "point-cook",
+    "name": "Point Cook",
+    "nameIt": "Point Cook",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      144.70115,
+      -37.87485
+    ],
+    "zoom": 9.8,
+    "population": 290892,
+    "grid": "cities/point-cook/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/point-cook/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "point-cook",
+        "name": "Point Cook",
+        "nameIt": "Point Cook",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          144.70115,
+          -37.87485
+        ],
+        "zoom": 9.8,
+        "population": 290892,
+        "cells": 1020,
+        "layer": "cities/point-cook/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            144.70115,
+            -37.87485
+          ]
+        },
+        "properties": {
+          "id": "point-cook",
+          "name": "Point Cook",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 22.7,
+          "population": 290892
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wenatchee",
+  "createdAt": "2026-10-08T16:21:33.319Z",
+  "updatedAt": "2026-10-08T16:21:33.319Z",
+  "meta": {
+    "name": "Wenatchee",
+    "nameIt": "Wenatchee",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wenatchee.geojson",
+      "sha256": "5c1791b41e49fbf9a538e19ea4b951740aa00d0a01d0675fc44e30fb44628edb",
+      "size": 426551,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wenatchee",
+    "name": "Wenatchee",
+    "nameIt": "Wenatchee",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -120.30736,
+      47.41927
+    ],
+    "zoom": 10.9,
+    "population": 51753,
+    "grid": "cities/wenatchee/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wenatchee/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wenatchee",
+        "name": "Wenatchee",
+        "nameIt": "Wenatchee",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -120.30736,
+          47.41927
+        ],
+        "zoom": 10.9,
+        "population": 51753,
+        "cells": 367,
+        "layer": "cities/wenatchee/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -120.30736,
+            47.41927
+          ]
+        },
+        "properties": {
+          "id": "wenatchee",
+          "name": "Wenatchee",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 17.6,
+          "population": 51753
+        }
+      },
+      "summary": null
+    }
+  }
+}

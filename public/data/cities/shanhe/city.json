@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shanhe",
+  "createdAt": "2026-10-08T16:12:33.737Z",
+  "updatedAt": "2026-10-08T16:12:33.737Z",
+  "meta": {
+    "name": "Shanhe",
+    "nameIt": "Shanhe",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shanhe.geojson",
+      "sha256": "48d50d17c706d647f70731d995d185d9fb879e23f86c14611985757d5e2294fd",
+      "size": 130622,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shanhe",
+    "name": "Shanhe",
+    "nameIt": "Shanhe",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      127.21046,
+      44.70557
+    ],
+    "zoom": 12,
+    "population": 34032,
+    "grid": "cities/shanhe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shanhe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shanhe",
+        "name": "Shanhe",
+        "nameIt": "Shanhe",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          127.21046,
+          44.70557
+        ],
+        "zoom": 12,
+        "population": 34032,
+        "cells": 112,
+        "layer": "cities/shanhe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            127.21046,
+            44.70557
+          ]
+        },
+        "properties": {
+          "id": "shanhe",
+          "name": "Shanhe",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 34032
+        }
+      },
+      "summary": null
+    }
+  }
+}

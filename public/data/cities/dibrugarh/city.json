@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dibrugarh",
+  "createdAt": "2026-10-08T15:29:50.020Z",
+  "updatedAt": "2026-10-08T15:29:50.020Z",
+  "meta": {
+    "name": "Dibrugarh",
+    "nameIt": "Dibrugarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dibrugarh.geojson",
+      "sha256": "fe7b0c91f19f6963ad7a00a2892fe50343d3bfe39b3772c71cb3a958045f7988",
+      "size": 381300,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dibrugarh",
+    "name": "Dibrugarh",
+    "nameIt": "Dibrugarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      94.9173,
+      27.47146
+    ],
+    "zoom": 10.9,
+    "population": 181771,
+    "grid": "cities/dibrugarh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dibrugarh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dibrugarh",
+        "name": "Dibrugarh",
+        "nameIt": "Dibrugarh",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          94.9173,
+          27.47146
+        ],
+        "zoom": 10.9,
+        "population": 181771,
+        "cells": 329,
+        "layer": "cities/dibrugarh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            94.9173,
+            27.47146
+          ]
+        },
+        "properties": {
+          "id": "dibrugarh",
+          "name": "Dibrugarh",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 23.3,
+          "population": 181771
+        }
+      },
+      "summary": null
+    }
+  }
+}

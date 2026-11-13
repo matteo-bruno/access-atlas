@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "honghuagang",
+  "createdAt": "2026-10-08T15:39:00.752Z",
+  "updatedAt": "2026-10-08T15:39:00.752Z",
+  "meta": {
+    "name": "Honghuagang",
+    "nameIt": "Honghuagang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Honghuagang.geojson",
+      "sha256": "783dbe718ecff0755d6e58900ce0d8e89e2d42c1db7330724352ef58008727ec",
+      "size": 1296430,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "honghuagang",
+    "name": "Honghuagang",
+    "nameIt": "Honghuagang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      106.92539,
+      27.68918
+    ],
+    "zoom": 9.8,
+    "population": 963827,
+    "grid": "cities/honghuagang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/honghuagang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "honghuagang",
+        "name": "Honghuagang",
+        "nameIt": "Honghuagang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          106.92539,
+          27.68918
+        ],
+        "zoom": 9.8,
+        "population": 963827,
+        "cells": 1111,
+        "layer": "cities/honghuagang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.92539,
+            27.68918
+          ]
+        },
+        "properties": {
+          "id": "honghuagang",
+          "name": "Honghuagang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 34.6,
+          "population": 963827
+        }
+      },
+      "summary": null
+    }
+  }
+}

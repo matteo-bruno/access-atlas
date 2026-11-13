@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nice",
+  "createdAt": "2026-10-08T16:01:27.438Z",
+  "updatedAt": "2026-10-08T16:01:27.438Z",
+  "meta": {
+    "name": "Nice",
+    "nameIt": "Nice",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nice.geojson",
+      "sha256": "8bf073e4dfbc355357010de6d7fcc9e86583226e86aa8b39b218d1e7b51ef265",
+      "size": 1161686,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nice",
+    "name": "Nice",
+    "nameIt": "Nice",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      7.23589,
+      43.69863
+    ],
+    "zoom": 10,
+    "population": 464357,
+    "grid": "cities/nice/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nice/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nice",
+        "name": "Nice",
+        "nameIt": "Nice",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          7.23589,
+          43.69863
+        ],
+        "zoom": 10,
+        "population": 464357,
+        "cells": 1022,
+        "layer": "cities/nice/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.23589,
+            43.69863
+          ]
+        },
+        "properties": {
+          "id": "nice",
+          "name": "Nice",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 8.4,
+          "population": 464357
+        }
+      },
+      "summary": null
+    }
+  }
+}

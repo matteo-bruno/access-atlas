@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jamui",
+  "createdAt": "2026-10-08T15:41:56.544Z",
+  "updatedAt": "2026-10-08T15:41:56.544Z",
+  "meta": {
+    "name": "Jamui",
+    "nameIt": "Jamui",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jamui.geojson",
+      "sha256": "5040e9239437760b971b3baa43befde23d0ff84e6f1530e699fd71bc01033cba",
+      "size": 209763,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jamui",
+    "name": "Jamui",
+    "nameIt": "Jamui",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.22379,
+      24.9263
+    ],
+    "zoom": 11.2,
+    "population": 171009,
+    "grid": "cities/jamui/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jamui/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jamui",
+        "name": "Jamui",
+        "nameIt": "Jamui",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.22379,
+          24.9263
+        ],
+        "zoom": 11.2,
+        "population": 171009,
+        "cells": 181,
+        "layer": "cities/jamui/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.22379,
+            24.9263
+          ]
+        },
+        "properties": {
+          "id": "jamui",
+          "name": "Jamui",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 171009
+        }
+      },
+      "summary": null
+    }
+  }
+}

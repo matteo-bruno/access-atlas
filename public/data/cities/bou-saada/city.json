@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bou-saada",
+  "createdAt": "2026-10-08T15:20:11.557Z",
+  "updatedAt": "2026-10-08T15:20:11.557Z",
+  "meta": {
+    "name": "Bou Saada",
+    "nameIt": "Bou Saada",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bou Saada.geojson",
+      "sha256": "b5e624b96b8d4c0f6f6e8e4f57904c7447d9b0d9d1caabf98f3c7324b98e2e0e",
+      "size": 346069,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bou-saada",
+    "name": "Bou Saada",
+    "nameIt": "Bou Saada",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      4.17327,
+      35.21757
+    ],
+    "zoom": 11,
+    "population": 152876,
+    "grid": "cities/bou-saada/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bou-saada/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bou-saada",
+        "name": "Bou Saada",
+        "nameIt": "Bou Saada",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          4.17327,
+          35.21757
+        ],
+        "zoom": 11,
+        "population": 152876,
+        "cells": 300,
+        "layer": "cities/bou-saada/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.17327,
+            35.21757
+          ]
+        },
+        "properties": {
+          "id": "bou-saada",
+          "name": "Bou Saada",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 20.6,
+          "population": 152876
+        }
+      },
+      "summary": null
+    }
+  }
+}

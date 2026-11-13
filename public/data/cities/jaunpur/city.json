@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jaunpur",
+  "createdAt": "2026-10-08T15:42:07.978Z",
+  "updatedAt": "2026-10-08T15:42:07.978Z",
+  "meta": {
+    "name": "Jaunpur",
+    "nameIt": "Jaunpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jaunpur.geojson",
+      "sha256": "7e0e99430361c82c53c11343e6b986727aefd13807a58f746d92bc25dcf1a2cc",
+      "size": 674873,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jaunpur",
+    "name": "Jaunpur",
+    "nameIt": "Jaunpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      82.68477,
+      25.75067
+    ],
+    "zoom": 10.5,
+    "population": 484008,
+    "grid": "cities/jaunpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jaunpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jaunpur",
+        "name": "Jaunpur",
+        "nameIt": "Jaunpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          82.68477,
+          25.75067
+        ],
+        "zoom": 10.5,
+        "population": 484008,
+        "cells": 582,
+        "layer": "cities/jaunpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            82.68477,
+            25.75067
+          ]
+        },
+        "properties": {
+          "id": "jaunpur",
+          "name": "Jaunpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 484008
+        }
+      },
+      "summary": null
+    }
+  }
+}

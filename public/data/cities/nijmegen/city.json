@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nijmegen",
+  "createdAt": "2026-10-08T16:01:30.886Z",
+  "updatedAt": "2026-10-08T16:01:30.886Z",
+  "meta": {
+    "name": "Nijmegen",
+    "nameIt": "Nijmegen",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nijmegen.geojson",
+      "sha256": "27dd77095b2536aa509841b17091e35c9ccb60ca0a2b33c18445de6493b063a7",
+      "size": 656536,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nijmegen",
+    "name": "Nijmegen",
+    "nameIt": "Nijmegen",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      5.81974,
+      51.82728
+    ],
+    "zoom": 10.4,
+    "population": 184262,
+    "grid": "cities/nijmegen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nijmegen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nijmegen",
+        "name": "Nijmegen",
+        "nameIt": "Nijmegen",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          5.81974,
+          51.82728
+        ],
+        "zoom": 10.4,
+        "population": 184262,
+        "cells": 577,
+        "layer": "cities/nijmegen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.81974,
+            51.82728
+          ]
+        },
+        "properties": {
+          "id": "nijmegen",
+          "name": "Nijmegen",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 184262
+        }
+      },
+      "summary": null
+    }
+  }
+}

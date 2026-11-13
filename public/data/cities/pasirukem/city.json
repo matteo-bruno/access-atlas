@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pasirukem",
+  "createdAt": "2026-10-08T16:04:34.500Z",
+  "updatedAt": "2026-10-08T16:04:34.500Z",
+  "meta": {
+    "name": "Pasirukem",
+    "nameIt": "Pasirukem",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pasirukem.geojson",
+      "sha256": "d1c56e8ab691564b55b824ddca194d851c6afcdc53a46ba2a827d9dc72c5be69",
+      "size": 277685,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pasirukem",
+    "name": "Pasirukem",
+    "nameIt": "Pasirukem",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      107.4654,
+      -6.1898
+    ],
+    "zoom": 10.6,
+    "population": 90088,
+    "grid": "cities/pasirukem/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pasirukem/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pasirukem",
+        "name": "Pasirukem",
+        "nameIt": "Pasirukem",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          107.4654,
+          -6.1898
+        ],
+        "zoom": 10.6,
+        "population": 90088,
+        "cells": 237,
+        "layer": "cities/pasirukem/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.4654,
+            -6.1898
+          ]
+        },
+        "properties": {
+          "id": "pasirukem",
+          "name": "Pasirukem",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 30.5,
+          "population": 90088
+        }
+      },
+      "summary": null
+    }
+  }
+}

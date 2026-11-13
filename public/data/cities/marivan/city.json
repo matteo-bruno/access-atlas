@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "marivan",
+  "createdAt": "2026-10-08T15:55:16.618Z",
+  "updatedAt": "2026-10-08T15:55:16.618Z",
+  "meta": {
+    "name": "Marivan",
+    "nameIt": "Marivan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Marivan.geojson",
+      "sha256": "aebf3e78a0c1664b5545784f3f605381d12746bed5f073ec53379112826d0419",
+      "size": 166132,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "marivan",
+    "name": "Marivan",
+    "nameIt": "Marivan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      46.18235,
+      35.5205
+    ],
+    "zoom": 11.7,
+    "population": 149062,
+    "grid": "cities/marivan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/marivan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "marivan",
+        "name": "Marivan",
+        "nameIt": "Marivan",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          46.18235,
+          35.5205
+        ],
+        "zoom": 11.7,
+        "population": 149062,
+        "cells": 144,
+        "layer": "cities/marivan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            46.18235,
+            35.5205
+          ]
+        },
+        "properties": {
+          "id": "marivan",
+          "name": "Marivan",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 149062
+        }
+      },
+      "summary": null
+    }
+  }
+}

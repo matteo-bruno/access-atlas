@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wushengguan",
+  "createdAt": "2026-10-08T16:22:04.526Z",
+  "updatedAt": "2026-10-08T16:22:04.526Z",
+  "meta": {
+    "name": "Wushengguan",
+    "nameIt": "Wushengguan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wushengguan.geojson",
+      "sha256": "79d8955706ce1ae8a4f748fa682d9590427e6be7edbbc56eee4dcb02caaaa077",
+      "size": 146009,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wushengguan",
+    "name": "Wushengguan",
+    "nameIt": "Wushengguan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.00162,
+      31.61994
+    ],
+    "zoom": 11.6,
+    "population": 92985,
+    "grid": "cities/wushengguan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wushengguan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wushengguan",
+        "name": "Wushengguan",
+        "nameIt": "Wushengguan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.00162,
+          31.61994
+        ],
+        "zoom": 11.6,
+        "population": 92985,
+        "cells": 125,
+        "layer": "cities/wushengguan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.00162,
+            31.61994
+          ]
+        },
+        "properties": {
+          "id": "wushengguan",
+          "name": "Wushengguan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 92985
+        }
+      },
+      "summary": null
+    }
+  }
+}

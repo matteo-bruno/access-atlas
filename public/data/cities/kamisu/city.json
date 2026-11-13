@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kamisu",
+  "createdAt": "2026-10-08T15:44:42.426Z",
+  "updatedAt": "2026-10-08T15:44:42.426Z",
+  "meta": {
+    "name": "Kamisu",
+    "nameIt": "Kamisu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kamisu.geojson",
+      "sha256": "1c13af5b085c5bd11a0a46e4044917d13145cdc21d8384c6701d2ad9a091312b",
+      "size": 786296,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kamisu",
+    "name": "Kamisu",
+    "nameIt": "Kamisu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      140.67673,
+      35.90569
+    ],
+    "zoom": 10.6,
+    "population": 75109,
+    "grid": "cities/kamisu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kamisu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kamisu",
+        "name": "Kamisu",
+        "nameIt": "Kamisu",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          140.67673,
+          35.90569
+        ],
+        "zoom": 10.6,
+        "population": 75109,
+        "cells": 677,
+        "layer": "cities/kamisu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            140.67673,
+            35.90569
+          ]
+        },
+        "properties": {
+          "id": "kamisu",
+          "name": "Kamisu",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 26.2,
+          "population": 75109
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xia",
+  "createdAt": "2026-10-08T16:22:14.159Z",
+  "updatedAt": "2026-10-08T16:22:14.159Z",
+  "meta": {
+    "name": "Xia",
+    "nameIt": "Xia",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xia.geojson",
+      "sha256": "3d77ab09c783518e2c87bc3a20db3528c18d49effd8c1d46dbb0765048f71463",
+      "size": 188784,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xia",
+    "name": "Xia",
+    "nameIt": "Xia",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      111.21669,
+      35.13865
+    ],
+    "zoom": 11.6,
+    "population": 58441,
+    "grid": "cities/xia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 182
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xia",
+        "name": "Xia",
+        "nameIt": "Xia",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          111.21669,
+          35.13865
+        ],
+        "zoom": 11.6,
+        "population": 58441,
+        "cells": 162,
+        "layer": "cities/xia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 182
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.21669,
+            35.13865
+          ]
+        },
+        "properties": {
+          "id": "xia",
+          "name": "Xia",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 58441
+        }
+      },
+      "summary": null
+    }
+  }
+}

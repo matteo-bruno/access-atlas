@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "addis-ababa",
+  "createdAt": "2026-10-08T15:02:19.545Z",
+  "updatedAt": "2026-10-08T15:02:19.545Z",
+  "meta": {
+    "name": "Addis Ababa",
+    "nameIt": "Addis Ababa",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Addis Ababa.geojson",
+      "sha256": "48f9b115debe19e16a1c50d70019cc3f4888f1cac683585bb303d844a91192b1",
+      "size": 5520002,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "addis-ababa",
+    "name": "Addis Ababa",
+    "nameIt": "Addis Ababa",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      38.75044,
+      8.99704
+    ],
+    "zoom": 8.9,
+    "population": 4982284,
+    "grid": "cities/addis-ababa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/addis-ababa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "addis-ababa",
+        "name": "Addis Ababa",
+        "nameIt": "Addis Ababa",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          38.75044,
+          8.99704
+        ],
+        "zoom": 8.9,
+        "population": 4982284,
+        "cells": 4815,
+        "layer": "cities/addis-ababa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.75044,
+            8.99704
+          ]
+        },
+        "properties": {
+          "id": "addis-ababa",
+          "name": "Addis Ababa",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 26.6,
+          "population": 4982284
+        }
+      },
+      "summary": null
+    }
+  }
+}

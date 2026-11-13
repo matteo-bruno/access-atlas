@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "arganda-del-rey",
+  "createdAt": "2026-10-08T15:09:20.106Z",
+  "updatedAt": "2026-10-08T15:09:20.106Z",
+  "meta": {
+    "name": "Arganda del Rey",
+    "nameIt": "Arganda del Rey",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Arganda del Rey.geojson",
+      "sha256": "4bc813100a19abd726807b8118b5f7751e5724d0fef5013bfbacfe4094f7315c",
+      "size": 116183,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "arganda-del-rey",
+    "name": "Arganda del Rey",
+    "nameIt": "Arganda del Rey",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -3.45118,
+      40.30505
+    ],
+    "zoom": 11.8,
+    "population": 48822,
+    "grid": "cities/arganda-del-rey/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/arganda-del-rey/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "arganda-del-rey",
+        "name": "Arganda del Rey",
+        "nameIt": "Arganda del Rey",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -3.45118,
+          40.30505
+        ],
+        "zoom": 11.8,
+        "population": 48822,
+        "cells": 100,
+        "layer": "cities/arganda-del-rey/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -3.45118,
+            40.30505
+          ]
+        },
+        "properties": {
+          "id": "arganda-del-rey",
+          "name": "Arganda del Rey",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 10,
+          "population": 48822
+        }
+      },
+      "summary": null
+    }
+  }
+}

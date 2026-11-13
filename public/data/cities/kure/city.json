@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kure",
+  "createdAt": "2026-10-08T15:48:54.312Z",
+  "updatedAt": "2026-10-08T15:48:54.312Z",
+  "meta": {
+    "name": "Kure",
+    "nameIt": "Kure",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kure.geojson",
+      "sha256": "7707d257e51507ff724eff24170892df58528cfdf662b8788537110a69f419a4",
+      "size": 306231,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kure",
+    "name": "Kure",
+    "nameIt": "Kure",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      132.56115,
+      34.24203
+    ],
+    "zoom": 11.2,
+    "population": 78149,
+    "grid": "cities/kure/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kure/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kure",
+        "name": "Kure",
+        "nameIt": "Kure",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          132.56115,
+          34.24203
+        ],
+        "zoom": 11.2,
+        "population": 78149,
+        "cells": 266,
+        "layer": "cities/kure/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            132.56115,
+            34.24203
+          ]
+        },
+        "properties": {
+          "id": "kure",
+          "name": "Kure",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 78149
+        }
+      },
+      "summary": null
+    }
+  }
+}

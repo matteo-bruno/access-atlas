@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "szombathely",
+  "createdAt": "2026-10-08T16:15:36.415Z",
+  "updatedAt": "2026-10-08T16:15:36.415Z",
+  "meta": {
+    "name": "Szombathely",
+    "nameIt": "Szombathely",
+    "region": "Hungary",
+    "regionIt": "Ungheria",
+    "country": "HU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Szombathely.geojson",
+      "sha256": "2d5d887f62010bdbb9343d26e9beb3f335e056c716126c619718085b88a4c9a4",
+      "size": 172251,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "szombathely",
+    "name": "Szombathely",
+    "nameIt": "Szombathely",
+    "region": "Hungary",
+    "regionIt": "Ungheria",
+    "country": "HU",
+    "center": [
+      16.61897,
+      47.23434
+    ],
+    "zoom": 11.6,
+    "population": 57647,
+    "grid": "cities/szombathely/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/szombathely/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "szombathely",
+        "name": "Szombathely",
+        "nameIt": "Szombathely",
+        "region": "Hungary",
+        "regionIt": "Ungheria",
+        "country": "HU",
+        "center": [
+          16.61897,
+          47.23434
+        ],
+        "zoom": 11.6,
+        "population": 57647,
+        "cells": 151,
+        "layer": "cities/szombathely/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.61897,
+            47.23434
+          ]
+        },
+        "properties": {
+          "id": "szombathely",
+          "name": "Szombathely",
+          "country": "HU",
+          "isStudy": true,
+          "proximityMinutes": 8.5,
+          "population": 57647
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "benipur",
+  "createdAt": "2026-10-08T15:17:30.419Z",
+  "updatedAt": "2026-10-08T15:17:30.419Z",
+  "meta": {
+    "name": "Benipur",
+    "nameIt": "Benipur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Benipur.geojson",
+      "sha256": "1a6b4f6cb4d356d9fa826533090896b805a313b06b80ce05f9e39758e7b85d38",
+      "size": 730044,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "benipur",
+    "name": "Benipur",
+    "nameIt": "Benipur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.16349,
+      26.09409
+    ],
+    "zoom": 10.3,
+    "population": 218833,
+    "grid": "cities/benipur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/benipur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "benipur",
+        "name": "Benipur",
+        "nameIt": "Benipur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.16349,
+          26.09409
+        ],
+        "zoom": 10.3,
+        "population": 218833,
+        "cells": 630,
+        "layer": "cities/benipur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.16349,
+            26.09409
+          ]
+        },
+        "properties": {
+          "id": "benipur",
+          "name": "Benipur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 218833
+        }
+      },
+      "summary": null
+    }
+  }
+}

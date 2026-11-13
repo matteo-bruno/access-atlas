@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pekkabata",
+  "createdAt": "2026-10-08T16:04:54.904Z",
+  "updatedAt": "2026-10-08T16:04:54.904Z",
+  "meta": {
+    "name": "Pekkabata",
+    "nameIt": "Pekkabata",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pekkabata.geojson",
+      "sha256": "b8136007365a761a76b229306675b487dfd05cb63ff970e6010aeca93626fcf8",
+      "size": 123176,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pekkabata",
+    "name": "Pekkabata",
+    "nameIt": "Pekkabata",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      119.31134,
+      -3.40766
+    ],
+    "zoom": 11.7,
+    "population": 51099,
+    "grid": "cities/pekkabata/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pekkabata/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pekkabata",
+        "name": "Pekkabata",
+        "nameIt": "Pekkabata",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          119.31134,
+          -3.40766
+        ],
+        "zoom": 11.7,
+        "population": 51099,
+        "cells": 105,
+        "layer": "cities/pekkabata/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.31134,
+            -3.40766
+          ]
+        },
+        "properties": {
+          "id": "pekkabata",
+          "name": "Pekkabata",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 15.2,
+          "population": 51099
+        }
+      },
+      "summary": null
+    }
+  }
+}

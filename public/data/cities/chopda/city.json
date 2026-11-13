@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chopda",
+  "createdAt": "2026-10-08T15:25:12.288Z",
+  "updatedAt": "2026-10-08T15:25:12.288Z",
+  "meta": {
+    "name": "Chopda",
+    "nameIt": "Chopda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chopda.geojson",
+      "sha256": "bb12795326c590b0944a204ee9f281040f9b805e1c03a0670011ff06ac0a93ae",
+      "size": 116972,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chopda",
+    "name": "Chopda",
+    "nameIt": "Chopda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.29923,
+      21.24487
+    ],
+    "zoom": 11.8,
+    "population": 58133,
+    "grid": "cities/chopda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chopda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chopda",
+        "name": "Chopda",
+        "nameIt": "Chopda",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.29923,
+          21.24487
+        ],
+        "zoom": 11.8,
+        "population": 58133,
+        "cells": 101,
+        "layer": "cities/chopda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.29923,
+            21.24487
+          ]
+        },
+        "properties": {
+          "id": "chopda",
+          "name": "Chopda",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 58133
+        }
+      },
+      "summary": null
+    }
+  }
+}

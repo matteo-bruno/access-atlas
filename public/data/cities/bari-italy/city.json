@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bari-italy",
+  "createdAt": "2026-10-08T15:15:36.844Z",
+  "updatedAt": "2026-10-08T15:15:36.844Z",
+  "meta": {
+    "name": "Bari (Italy)",
+    "nameIt": "Bari (Italy)",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bari (Italy).geojson",
+      "sha256": "48ca3af59ae61edcb474ce84697ea3c31d4a780ccf2674a004b8b82ff8cb20a4",
+      "size": 789563,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bari-italy",
+    "name": "Bari (Italy)",
+    "nameIt": "Bari (Italy)",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      16.84919,
+      41.10598
+    ],
+    "zoom": 10.2,
+    "population": 279524,
+    "grid": "cities/bari-italy/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bari-italy/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bari-italy",
+        "name": "Bari (Italy)",
+        "nameIt": "Bari (Italy)",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          16.84919,
+          41.10598
+        ],
+        "zoom": 10.2,
+        "population": 279524,
+        "cells": 689,
+        "layer": "cities/bari-italy/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.84919,
+            41.10598
+          ]
+        },
+        "properties": {
+          "id": "bari-italy",
+          "name": "Bari (Italy)",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 10.1,
+          "population": 279524
+        }
+      },
+      "summary": null
+    }
+  }
+}

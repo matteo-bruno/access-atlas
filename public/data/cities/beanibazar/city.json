@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "beanibazar",
+  "createdAt": "2026-10-08T15:16:31.637Z",
+  "updatedAt": "2026-10-08T15:16:31.637Z",
+  "meta": {
+    "name": "Beanibazar",
+    "nameIt": "Beanibazar",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Beanibazar.geojson",
+      "sha256": "bead2d2cc223328c2753b8219d20332b7c5fc9d055bceff8b7ec355bdd4e8a26",
+      "size": 446284,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "beanibazar",
+    "name": "Beanibazar",
+    "nameIt": "Beanibazar",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      92.15959,
+      24.81993
+    ],
+    "zoom": 10.5,
+    "population": 143895,
+    "grid": "cities/beanibazar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/beanibazar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "beanibazar",
+        "name": "Beanibazar",
+        "nameIt": "Beanibazar",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          92.15959,
+          24.81993
+        ],
+        "zoom": 10.5,
+        "population": 143895,
+        "cells": 385,
+        "layer": "cities/beanibazar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            92.15959,
+            24.81993
+          ]
+        },
+        "properties": {
+          "id": "beanibazar",
+          "name": "Beanibazar",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 39.2,
+          "population": 143895
+        }
+      },
+      "summary": null
+    }
+  }
+}

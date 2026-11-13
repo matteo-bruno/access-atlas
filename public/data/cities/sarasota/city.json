@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sarasota",
+  "createdAt": "2026-10-08T16:11:25.723Z",
+  "updatedAt": "2026-10-08T16:11:25.723Z",
+  "meta": {
+    "name": "Sarasota",
+    "nameIt": "Sarasota",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sarasota.geojson",
+      "sha256": "51f979cd64ab6adab13dc1aaea25c72b8f8614d92bc724dce020670e86c891d3",
+      "size": 1710359,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sarasota",
+    "name": "Sarasota",
+    "nameIt": "Sarasota",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -82.50847,
+      27.31181
+    ],
+    "zoom": 10,
+    "population": 171964,
+    "grid": "cities/sarasota/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sarasota/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sarasota",
+        "name": "Sarasota",
+        "nameIt": "Sarasota",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -82.50847,
+          27.31181
+        ],
+        "zoom": 10,
+        "population": 171964,
+        "cells": 1468,
+        "layer": "cities/sarasota/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.50847,
+            27.31181
+          ]
+        },
+        "properties": {
+          "id": "sarasota",
+          "name": "Sarasota",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 30.6,
+          "population": 171964
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-khalis",
+  "createdAt": "2026-10-08T15:04:26.662Z",
+  "updatedAt": "2026-10-08T15:04:26.662Z",
+  "meta": {
+    "name": "Al Khalis",
+    "nameIt": "Al Khalis",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Khalis.geojson",
+      "sha256": "7cf49eb1369fcc43020bc05bc2031ea36042388daf2ac2c0d423dfbb4e013078",
+      "size": 150672,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-khalis",
+    "name": "Al Khalis",
+    "nameIt": "Al Khalis",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      44.51932,
+      33.85193
+    ],
+    "zoom": 11.3,
+    "population": 71974,
+    "grid": "cities/al-khalis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-khalis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-khalis",
+        "name": "Al Khalis",
+        "nameIt": "Al Khalis",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          44.51932,
+          33.85193
+        ],
+        "zoom": 11.3,
+        "population": 71974,
+        "cells": 130,
+        "layer": "cities/al-khalis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.51932,
+            33.85193
+          ]
+        },
+        "properties": {
+          "id": "al-khalis",
+          "name": "Al Khalis",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 71974
+        }
+      },
+      "summary": null
+    }
+  }
+}

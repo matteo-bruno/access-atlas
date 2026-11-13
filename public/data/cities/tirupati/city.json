@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tirupati",
+  "createdAt": "2026-10-08T16:18:05.273Z",
+  "updatedAt": "2026-10-08T16:18:05.273Z",
+  "meta": {
+    "name": "Tirupati",
+    "nameIt": "Tirupati",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tirupati.geojson",
+      "sha256": "fa06a1b04bf2cef61e29f41b31f05bd1aab65d110fce6d5dc9fc98bc0b22f8b1",
+      "size": 778874,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tirupati",
+    "name": "Tirupati",
+    "nameIt": "Tirupati",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.43258,
+      13.62772
+    ],
+    "zoom": 9.9,
+    "population": 502958,
+    "grid": "cities/tirupati/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tirupati/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tirupati",
+        "name": "Tirupati",
+        "nameIt": "Tirupati",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.43258,
+          13.62772
+        ],
+        "zoom": 9.9,
+        "population": 502958,
+        "cells": 672,
+        "layer": "cities/tirupati/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.43258,
+            13.62772
+          ]
+        },
+        "properties": {
+          "id": "tirupati",
+          "name": "Tirupati",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 29.1,
+          "population": 502958
+        }
+      },
+      "summary": null
+    }
+  }
+}

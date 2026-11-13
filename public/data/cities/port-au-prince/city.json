@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "port-au-prince",
+  "createdAt": "2026-10-08T16:06:17.851Z",
+  "updatedAt": "2026-10-08T16:06:17.851Z",
+  "meta": {
+    "name": "Port-au-Prince",
+    "nameIt": "Port-au-Prince",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Port-au-Prince.geojson",
+      "sha256": "84896a0e0275d72e5e41122d2bbc6597d9a376f53f211cd07fdbb30512c88a9a",
+      "size": 3934591,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "port-au-prince",
+    "name": "Port-au-Prince",
+    "nameIt": "Port-au-Prince",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT",
+    "center": [
+      -72.3246,
+      18.54696
+    ],
+    "zoom": 9.2,
+    "population": 2980041,
+    "grid": "cities/port-au-prince/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/port-au-prince/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "port-au-prince",
+        "name": "Port-au-Prince",
+        "nameIt": "Port-au-Prince",
+        "region": "Haiti",
+        "regionIt": "Haiti",
+        "country": "HT",
+        "center": [
+          -72.3246,
+          18.54696
+        ],
+        "zoom": 9.2,
+        "population": 2980041,
+        "cells": 3393,
+        "layer": "cities/port-au-prince/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.3246,
+            18.54696
+          ]
+        },
+        "properties": {
+          "id": "port-au-prince",
+          "name": "Port-au-Prince",
+          "country": "HT",
+          "isStudy": true,
+          "proximityMinutes": 21.7,
+          "population": 2980041
+        }
+      },
+      "summary": null
+    }
+  }
+}

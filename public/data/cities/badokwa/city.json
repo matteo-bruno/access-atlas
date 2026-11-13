@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "badokwa",
+  "createdAt": "2026-10-08T15:12:31.908Z",
+  "updatedAt": "2026-10-08T15:12:31.908Z",
+  "meta": {
+    "name": "Badokwa",
+    "nameIt": "Badokwa",
+    "region": "Central African Republic",
+    "regionIt": "Repubblica Centrafricana",
+    "country": "CF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Badokwa.geojson",
+      "sha256": "aa6589a9938a8cf2096e8f7ff6324d7212e01440360e03baf12fe7377f88c3a6",
+      "size": 143541,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "badokwa",
+    "name": "Badokwa",
+    "nameIt": "Badokwa",
+    "region": "Central African Republic",
+    "regionIt": "Repubblica Centrafricana",
+    "country": "CF",
+    "center": [
+      18.61519,
+      4.37511
+    ],
+    "zoom": 11.6,
+    "population": 85243,
+    "grid": "cities/badokwa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/badokwa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "badokwa",
+        "name": "Badokwa",
+        "nameIt": "Badokwa",
+        "region": "Central African Republic",
+        "regionIt": "Repubblica Centrafricana",
+        "country": "CF",
+        "center": [
+          18.61519,
+          4.37511
+        ],
+        "zoom": 11.6,
+        "population": 85243,
+        "cells": 124,
+        "layer": "cities/badokwa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.61519,
+            4.37511
+          ]
+        },
+        "properties": {
+          "id": "badokwa",
+          "name": "Badokwa",
+          "country": "CF",
+          "isStudy": true,
+          "proximityMinutes": 20.9,
+          "population": 85243
+        }
+      },
+      "summary": null
+    }
+  }
+}

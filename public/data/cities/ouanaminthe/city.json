@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ouanaminthe",
+  "createdAt": "2026-10-08T16:03:16.750Z",
+  "updatedAt": "2026-10-08T16:03:16.750Z",
+  "meta": {
+    "name": "Ouanaminthe",
+    "nameIt": "Ouanaminthe",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ouanaminthe.geojson",
+      "sha256": "b56ead8e4d1b277bf9506bf55ec03b79910eb3155806910a6a74b3fad6a643c3",
+      "size": 196381,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ouanaminthe",
+    "name": "Ouanaminthe",
+    "nameIt": "Ouanaminthe",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT",
+    "center": [
+      -71.72642,
+      19.54826
+    ],
+    "zoom": 11.9,
+    "population": 72992,
+    "grid": "cities/ouanaminthe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ouanaminthe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ouanaminthe",
+        "name": "Ouanaminthe",
+        "nameIt": "Ouanaminthe",
+        "region": "Haiti",
+        "regionIt": "Haiti",
+        "country": "HT",
+        "center": [
+          -71.72642,
+          19.54826
+        ],
+        "zoom": 11.9,
+        "population": 72992,
+        "cells": 169,
+        "layer": "cities/ouanaminthe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -71.72642,
+            19.54826
+          ]
+        },
+        "properties": {
+          "id": "ouanaminthe",
+          "name": "Ouanaminthe",
+          "country": "HT",
+          "isStudy": true,
+          "proximityMinutes": 9.9,
+          "population": 72992
+        }
+      },
+      "summary": null
+    }
+  }
+}

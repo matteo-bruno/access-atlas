@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "as-suwayrah",
+  "createdAt": "2026-10-08T15:09:57.945Z",
+  "updatedAt": "2026-10-08T15:09:57.945Z",
+  "meta": {
+    "name": "As Suwayrah",
+    "nameIt": "As Suwayrah",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/As Suwayrah.geojson",
+      "sha256": "542643a7b18dc4421cc302b0053c780b971502dcdf671aacd32a9190e8b1fee9",
+      "size": 118087,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "as-suwayrah",
+    "name": "As Suwayrah",
+    "nameIt": "As Suwayrah",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      44.77569,
+      32.92656
+    ],
+    "zoom": 12,
+    "population": 81612,
+    "grid": "cities/as-suwayrah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/as-suwayrah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "as-suwayrah",
+        "name": "As Suwayrah",
+        "nameIt": "As Suwayrah",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          44.77569,
+          32.92656
+        ],
+        "zoom": 12,
+        "population": 81612,
+        "cells": 102,
+        "layer": "cities/as-suwayrah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.77569,
+            32.92656
+          ]
+        },
+        "properties": {
+          "id": "as-suwayrah",
+          "name": "As Suwayrah",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 15.9,
+          "population": 81612
+        }
+      },
+      "summary": null
+    }
+  }
+}

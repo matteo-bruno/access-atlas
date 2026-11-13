@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shrewsbury",
+  "createdAt": "2026-10-08T16:13:14.104Z",
+  "updatedAt": "2026-10-08T16:13:14.104Z",
+  "meta": {
+    "name": "Shrewsbury",
+    "nameIt": "Shrewsbury",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shrewsbury.geojson",
+      "sha256": "8edb305a2162d5d5c4259ad4046c74b3641f4861e995a7f06933d2d00533de2a",
+      "size": 325248,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shrewsbury",
+    "name": "Shrewsbury",
+    "nameIt": "Shrewsbury",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -2.74962,
+      52.71204
+    ],
+    "zoom": 11.2,
+    "population": 73639,
+    "grid": "cities/shrewsbury/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shrewsbury/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shrewsbury",
+        "name": "Shrewsbury",
+        "nameIt": "Shrewsbury",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -2.74962,
+          52.71204
+        ],
+        "zoom": 11.2,
+        "population": 73639,
+        "cells": 283,
+        "layer": "cities/shrewsbury/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.74962,
+            52.71204
+          ]
+        },
+        "properties": {
+          "id": "shrewsbury",
+          "name": "Shrewsbury",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 11.7,
+          "population": 73639
+        }
+      },
+      "summary": null
+    }
+  }
+}

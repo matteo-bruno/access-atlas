@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "matagalpa",
+  "createdAt": "2026-10-08T15:55:37.560Z",
+  "updatedAt": "2026-10-08T15:55:37.560Z",
+  "meta": {
+    "name": "Matagalpa",
+    "nameIt": "Matagalpa",
+    "region": "Nicaragua",
+    "regionIt": "Nicaragua",
+    "country": "NI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Matagalpa.geojson",
+      "sha256": "60c5df82c3be3d188d789dbc7ea391667041f859ac1ab01a3c038ef47d915e11",
+      "size": 159660,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "matagalpa",
+    "name": "Matagalpa",
+    "nameIt": "Matagalpa",
+    "region": "Nicaragua",
+    "regionIt": "Nicaragua",
+    "country": "NI",
+    "center": [
+      -85.91955,
+      12.92957
+    ],
+    "zoom": 11.8,
+    "population": 52751,
+    "grid": "cities/matagalpa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/matagalpa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "matagalpa",
+        "name": "Matagalpa",
+        "nameIt": "Matagalpa",
+        "region": "Nicaragua",
+        "regionIt": "Nicaragua",
+        "country": "NI",
+        "center": [
+          -85.91955,
+          12.92957
+        ],
+        "zoom": 11.8,
+        "population": 52751,
+        "cells": 138,
+        "layer": "cities/matagalpa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.91955,
+            12.92957
+          ]
+        },
+        "properties": {
+          "id": "matagalpa",
+          "name": "Matagalpa",
+          "country": "NI",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 52751
+        }
+      },
+      "summary": null
+    }
+  }
+}

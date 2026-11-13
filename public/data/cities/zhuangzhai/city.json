@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhuangzhai",
+  "createdAt": "2026-10-08T16:25:25.238Z",
+  "updatedAt": "2026-10-08T16:25:25.238Z",
+  "meta": {
+    "name": "Zhuangzhai",
+    "nameIt": "Zhuangzhai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhuangzhai.geojson",
+      "sha256": "7d33dabe2fc7ce66d82b68ab868c45346bd548d5bfa04a87ce3ecfbc33a86b35",
+      "size": 602429,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhuangzhai",
+    "name": "Zhuangzhai",
+    "nameIt": "Zhuangzhai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      115.20115,
+      35.0105
+    ],
+    "zoom": 10.7,
+    "population": 127318,
+    "grid": "cities/zhuangzhai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhuangzhai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhuangzhai",
+        "name": "Zhuangzhai",
+        "nameIt": "Zhuangzhai",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          115.20115,
+          35.0105
+        ],
+        "zoom": 10.7,
+        "population": 127318,
+        "cells": 517,
+        "layer": "cities/zhuangzhai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.20115,
+            35.0105
+          ]
+        },
+        "properties": {
+          "id": "zhuangzhai",
+          "name": "Zhuangzhai",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 127318
+        }
+      },
+      "summary": null
+    }
+  }
+}

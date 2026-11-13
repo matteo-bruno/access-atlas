@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "korba",
+  "createdAt": "2026-10-08T15:47:55.859Z",
+  "updatedAt": "2026-10-08T15:47:55.859Z",
+  "meta": {
+    "name": "Korba",
+    "nameIt": "Korba",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Korba.geojson",
+      "sha256": "003c6ba6cd4365ef2c4504b06caed249cc068f620aa2899576d48e98e8a32c95",
+      "size": 512596,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "korba",
+    "name": "Korba",
+    "nameIt": "Korba",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      82.72541,
+      22.36757
+    ],
+    "zoom": 10.8,
+    "population": 286012,
+    "grid": "cities/korba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/korba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "korba",
+        "name": "Korba",
+        "nameIt": "Korba",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          82.72541,
+          22.36757
+        ],
+        "zoom": 10.8,
+        "population": 286012,
+        "cells": 442,
+        "layer": "cities/korba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            82.72541,
+            22.36757
+          ]
+        },
+        "properties": {
+          "id": "korba",
+          "name": "Korba",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 35.2,
+          "population": 286012
+        }
+      },
+      "summary": null
+    }
+  }
+}

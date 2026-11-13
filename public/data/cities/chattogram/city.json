@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chattogram",
+  "createdAt": "2026-10-08T15:24:04.444Z",
+  "updatedAt": "2026-10-08T15:24:04.444Z",
+  "meta": {
+    "name": "Chattogram",
+    "nameIt": "Chattogram",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chattogram.geojson",
+      "sha256": "0e41f694191d543b7bb5f29fefd65dbfc12f3e7592b2c374c098b60141ce98cd",
+      "size": 5087649,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chattogram",
+    "name": "Chattogram",
+    "nameIt": "Chattogram",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      91.80608,
+      22.39915
+    ],
+    "zoom": 8.5,
+    "population": 3006563,
+    "grid": "cities/chattogram/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chattogram/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chattogram",
+        "name": "Chattogram",
+        "nameIt": "Chattogram",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          91.80608,
+          22.39915
+        ],
+        "zoom": 8.5,
+        "population": 3006563,
+        "cells": 4418,
+        "layer": "cities/chattogram/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.80608,
+            22.39915
+          ]
+        },
+        "properties": {
+          "id": "chattogram",
+          "name": "Chattogram",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 31.8,
+          "population": 3006563
+        }
+      },
+      "summary": null
+    }
+  }
+}

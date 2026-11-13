@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhelin",
+  "createdAt": "2026-10-08T16:25:11.015Z",
+  "updatedAt": "2026-10-08T16:25:11.015Z",
+  "meta": {
+    "name": "Zhelin",
+    "nameIt": "Zhelin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhelin.geojson",
+      "sha256": "4e30cfef26217326ab9e757c534e0b19b92d7dc196aa43feb3aa862b29c9f2fe",
+      "size": 572697,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhelin",
+    "name": "Zhelin",
+    "nameIt": "Zhelin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      121.49092,
+      30.83746
+    ],
+    "zoom": 10.2,
+    "population": 109101,
+    "grid": "cities/zhelin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhelin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhelin",
+        "name": "Zhelin",
+        "nameIt": "Zhelin",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          121.49092,
+          30.83746
+        ],
+        "zoom": 10.2,
+        "population": 109101,
+        "cells": 491,
+        "layer": "cities/zhelin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.49092,
+            30.83746
+          ]
+        },
+        "properties": {
+          "id": "zhelin",
+          "name": "Zhelin",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 46.7,
+          "population": 109101
+        }
+      },
+      "summary": null
+    }
+  }
+}

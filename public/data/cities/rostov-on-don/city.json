@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rostov-on-don",
+  "createdAt": "2026-10-08T16:09:10.904Z",
+  "updatedAt": "2026-10-08T16:09:10.904Z",
+  "meta": {
+    "name": "Rostov-on-Don",
+    "nameIt": "Rostov-on-Don",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rostov-on-Don.geojson",
+      "sha256": "6d104252f02c756b80b08385e10ef076266cc744802abaefc0689ebd79cb499d",
+      "size": 2127542,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rostov-on-don",
+    "name": "Rostov-on-Don",
+    "nameIt": "Rostov-on-Don",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      39.7079,
+      47.24566
+    ],
+    "zoom": 9.7,
+    "population": 1105374,
+    "grid": "cities/rostov-on-don/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rostov-on-don/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rostov-on-don",
+        "name": "Rostov-on-Don",
+        "nameIt": "Rostov-on-Don",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          39.7079,
+          47.24566
+        ],
+        "zoom": 9.7,
+        "population": 1105374,
+        "cells": 1860,
+        "layer": "cities/rostov-on-don/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.7079,
+            47.24566
+          ]
+        },
+        "properties": {
+          "id": "rostov-on-don",
+          "name": "Rostov-on-Don",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 1105374
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "malanville",
+  "createdAt": "2026-10-08T15:54:06.982Z",
+  "updatedAt": "2026-10-08T15:54:06.982Z",
+  "meta": {
+    "name": "Malanville",
+    "nameIt": "Malanville",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Malanville.geojson",
+      "sha256": "bc69a5ecf208018be5a01a835551fcf7faeadeb90e941a80c901c754d093069c",
+      "size": 150154,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "malanville",
+    "name": "Malanville",
+    "nameIt": "Malanville",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ",
+    "center": [
+      3.38566,
+      11.85747
+    ],
+    "zoom": 12,
+    "population": 52302,
+    "grid": "cities/malanville/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/malanville/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "malanville",
+        "name": "Malanville",
+        "nameIt": "Malanville",
+        "region": "Benin",
+        "regionIt": "Benin",
+        "country": "BJ",
+        "center": [
+          3.38566,
+          11.85747
+        ],
+        "zoom": 12,
+        "population": 52302,
+        "cells": 129,
+        "layer": "cities/malanville/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.38566,
+            11.85747
+          ]
+        },
+        "properties": {
+          "id": "malanville",
+          "name": "Malanville",
+          "country": "BJ",
+          "isStudy": true,
+          "proximityMinutes": 19.7,
+          "population": 52302
+        }
+      },
+      "summary": null
+    }
+  }
+}

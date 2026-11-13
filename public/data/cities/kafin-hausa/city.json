@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kafin-hausa",
+  "createdAt": "2026-10-08T15:44:01.080Z",
+  "updatedAt": "2026-10-08T15:44:01.080Z",
+  "meta": {
+    "name": "Kafin Hausa",
+    "nameIt": "Kafin Hausa",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kafin Hausa.geojson",
+      "sha256": "00a3a309e9d37a636141dbf41434d51e26a06d545620027a9af21205fa849aae",
+      "size": 54549,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kafin-hausa",
+    "name": "Kafin Hausa",
+    "nameIt": "Kafin Hausa",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      9.90934,
+      12.23872
+    ],
+    "zoom": 12,
+    "population": 59211,
+    "grid": "cities/kafin-hausa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kafin-hausa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kafin-hausa",
+        "name": "Kafin Hausa",
+        "nameIt": "Kafin Hausa",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          9.90934,
+          12.23872
+        ],
+        "zoom": 12,
+        "population": 59211,
+        "cells": 47,
+        "layer": "cities/kafin-hausa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.90934,
+            12.23872
+          ]
+        },
+        "properties": {
+          "id": "kafin-hausa",
+          "name": "Kafin Hausa",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 59211
+        }
+      },
+      "summary": null
+    }
+  }
+}

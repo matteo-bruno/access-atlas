@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "perpignan",
+  "createdAt": "2026-10-08T16:05:03.840Z",
+  "updatedAt": "2026-10-08T16:05:03.840Z",
+  "meta": {
+    "name": "Perpignan",
+    "nameIt": "Perpignan",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Perpignan.geojson",
+      "sha256": "0a2ca959484e38876519a78cbf939c534dbd4e4ba24964bfe89270ee37dc92df",
+      "size": 402949,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "perpignan",
+    "name": "Perpignan",
+    "nameIt": "Perpignan",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      2.89813,
+      42.69967
+    ],
+    "zoom": 10.9,
+    "population": 127132,
+    "grid": "cities/perpignan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/perpignan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "perpignan",
+        "name": "Perpignan",
+        "nameIt": "Perpignan",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          2.89813,
+          42.69967
+        ],
+        "zoom": 10.9,
+        "population": 127132,
+        "cells": 354,
+        "layer": "cities/perpignan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.89813,
+            42.69967
+          ]
+        },
+        "properties": {
+          "id": "perpignan",
+          "name": "Perpignan",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 7.7,
+          "population": 127132
+        }
+      },
+      "summary": null
+    }
+  }
+}

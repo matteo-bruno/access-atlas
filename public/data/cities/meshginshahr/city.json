@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "meshginshahr",
+  "createdAt": "2026-10-08T15:56:43.411Z",
+  "updatedAt": "2026-10-08T15:56:43.411Z",
+  "meta": {
+    "name": "Meshginshahr",
+    "nameIt": "Meshginshahr",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Meshginshahr.geojson",
+      "sha256": "95fdc9b280895b410251d773527e16907ff8db40ec8c471115877c68fb8f806a",
+      "size": 129679,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "meshginshahr",
+    "name": "Meshginshahr",
+    "nameIt": "Meshginshahr",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      47.67387,
+      38.39418
+    ],
+    "zoom": 11.9,
+    "population": 82315,
+    "grid": "cities/meshginshahr/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/meshginshahr/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "meshginshahr",
+        "name": "Meshginshahr",
+        "nameIt": "Meshginshahr",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          47.67387,
+          38.39418
+        ],
+        "zoom": 11.9,
+        "population": 82315,
+        "cells": 112,
+        "layer": "cities/meshginshahr/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            47.67387,
+            38.39418
+          ]
+        },
+        "properties": {
+          "id": "meshginshahr",
+          "name": "Meshginshahr",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 15.1,
+          "population": 82315
+        }
+      },
+      "summary": null
+    }
+  }
+}

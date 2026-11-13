@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gadoon",
+  "createdAt": "2026-10-08T15:34:12.451Z",
+  "updatedAt": "2026-10-08T15:34:12.451Z",
+  "meta": {
+    "name": "Gadoon",
+    "nameIt": "Gadoon",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gadoon.geojson",
+      "sha256": "2ceed7485988aabcb21159d99ed7a7a8403bc3266774388bd3f0bbcf65f177a0",
+      "size": 95880,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gadoon",
+    "name": "Gadoon",
+    "nameIt": "Gadoon",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      72.64565,
+      34.11401
+    ],
+    "zoom": 11.9,
+    "population": 37453,
+    "grid": "cities/gadoon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gadoon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gadoon",
+        "name": "Gadoon",
+        "nameIt": "Gadoon",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          72.64565,
+          34.11401
+        ],
+        "zoom": 11.9,
+        "population": 37453,
+        "cells": 83,
+        "layer": "cities/gadoon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.64565,
+            34.11401
+          ]
+        },
+        "properties": {
+          "id": "gadoon",
+          "name": "Gadoon",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 37453
+        }
+      },
+      "summary": null
+    }
+  }
+}

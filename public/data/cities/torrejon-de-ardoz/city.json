@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "torrejon-de-ardoz",
+  "createdAt": "2026-10-08T16:18:35.334Z",
+  "updatedAt": "2026-10-08T16:18:35.334Z",
+  "meta": {
+    "name": "Torrejón de Ardoz",
+    "nameIt": "Torrejón de Ardoz",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Torrejón de Ardoz.geojson",
+      "sha256": "6ee82255c454f8e54a8593179932aec350fc24e75ee5644085cef2938b701db0",
+      "size": 254406,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "torrejon-de-ardoz",
+    "name": "Torrejón de Ardoz",
+    "nameIt": "Torrejón de Ardoz",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -3.46688,
+      40.45591
+    ],
+    "zoom": 11.3,
+    "population": 140997,
+    "grid": "cities/torrejon-de-ardoz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/torrejon-de-ardoz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "torrejon-de-ardoz",
+        "name": "Torrejón de Ardoz",
+        "nameIt": "Torrejón de Ardoz",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -3.46688,
+          40.45591
+        ],
+        "zoom": 11.3,
+        "population": 140997,
+        "cells": 221,
+        "layer": "cities/torrejon-de-ardoz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -3.46688,
+            40.45591
+          ]
+        },
+        "properties": {
+          "id": "torrejon-de-ardoz",
+          "name": "Torrejón de Ardoz",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 6.7,
+          "population": 140997
+        }
+      },
+      "summary": null
+    }
+  }
+}

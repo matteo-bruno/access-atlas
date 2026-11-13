@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "etah",
+  "createdAt": "2026-10-08T15:32:35.514Z",
+  "updatedAt": "2026-10-08T15:32:35.514Z",
+  "meta": {
+    "name": "Etah",
+    "nameIt": "Etah",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Etah.geojson",
+      "sha256": "8a4c1911f023298805f2c5a05ad10f9917ad515ac7a24014ae28bf07204c280c",
+      "size": 303564,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "etah",
+    "name": "Etah",
+    "nameIt": "Etah",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.65726,
+      27.55871
+    ],
+    "zoom": 11.2,
+    "population": 256442,
+    "grid": "cities/etah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/etah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "etah",
+        "name": "Etah",
+        "nameIt": "Etah",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.65726,
+          27.55871
+        ],
+        "zoom": 11.2,
+        "population": 256442,
+        "cells": 262,
+        "layer": "cities/etah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.65726,
+            27.55871
+          ]
+        },
+        "properties": {
+          "id": "etah",
+          "name": "Etah",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 256442
+        }
+      },
+      "summary": null
+    }
+  }
+}

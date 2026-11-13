@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gjakova",
+  "createdAt": "2026-10-08T15:35:21.729Z",
+  "updatedAt": "2026-10-08T15:35:21.729Z",
+  "meta": {
+    "name": "Gjakova",
+    "nameIt": "Gjakova",
+    "region": "Kosovo",
+    "regionIt": "Kosovo",
+    "country": "XK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gjakova.geojson",
+      "sha256": "aeb9ea0565d93fed27a0b16a77072c471543cb8549bac0f75371604a2d163917",
+      "size": 119321,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gjakova",
+    "name": "Gjakova",
+    "nameIt": "Gjakova",
+    "region": "Kosovo",
+    "regionIt": "Kosovo",
+    "country": "XK",
+    "center": [
+      20.43028,
+      42.38124
+    ],
+    "zoom": 11.9,
+    "population": 34862,
+    "grid": "cities/gjakova/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gjakova/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gjakova",
+        "name": "Gjakova",
+        "nameIt": "Gjakova",
+        "region": "Kosovo",
+        "regionIt": "Kosovo",
+        "country": "XK",
+        "center": [
+          20.43028,
+          42.38124
+        ],
+        "zoom": 11.9,
+        "population": 34862,
+        "cells": 104,
+        "layer": "cities/gjakova/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.43028,
+            42.38124
+          ]
+        },
+        "properties": {
+          "id": "gjakova",
+          "name": "Gjakova",
+          "country": "XK",
+          "isStudy": true,
+          "proximityMinutes": 10.1,
+          "population": 34862
+        }
+      },
+      "summary": null
+    }
+  }
+}

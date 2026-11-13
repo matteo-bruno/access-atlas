@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pyongsong",
+  "createdAt": "2026-10-08T16:07:08.227Z",
+  "updatedAt": "2026-10-08T16:07:08.227Z",
+  "meta": {
+    "name": "Pyŏngsŏng",
+    "nameIt": "Pyŏngsŏng",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pyŏngsŏng.geojson",
+      "sha256": "0886c470f28d67688584347557bfeffdf366452e6eccbd42c1518bfddc7312e3",
+      "size": 668428,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pyongsong",
+    "name": "Pyŏngsŏng",
+    "nameIt": "Pyŏngsŏng",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP",
+    "center": [
+      125.86573,
+      39.25289
+    ],
+    "zoom": 10.8,
+    "population": 278961,
+    "grid": "cities/pyongsong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 166
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pyongsong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pyongsong",
+        "name": "Pyŏngsŏng",
+        "nameIt": "Pyŏngsŏng",
+        "region": "North Korea",
+        "regionIt": "Corea del Nord",
+        "country": "KP",
+        "center": [
+          125.86573,
+          39.25289
+        ],
+        "zoom": 10.8,
+        "population": 278961,
+        "cells": 573,
+        "layer": "cities/pyongsong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 166
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.86573,
+            39.25289
+          ]
+        },
+        "properties": {
+          "id": "pyongsong",
+          "name": "Pyŏngsŏng",
+          "country": "KP",
+          "isStudy": true,
+          "proximityMinutes": 24.1,
+          "population": 278961
+        }
+      },
+      "summary": null
+    }
+  }
+}

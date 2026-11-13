@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tiznit",
+  "createdAt": "2026-10-08T16:18:11.254Z",
+  "updatedAt": "2026-10-08T16:18:11.254Z",
+  "meta": {
+    "name": "Tiznit",
+    "nameIt": "Tiznit",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tiznit.geojson",
+      "sha256": "5eefff929b51252912778b49ecaeb1a40651b98b0de978fd563f75c45f7750c2",
+      "size": 150288,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tiznit",
+    "name": "Tiznit",
+    "nameIt": "Tiznit",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -9.73118,
+      29.69223
+    ],
+    "zoom": 11.7,
+    "population": 10764,
+    "grid": "cities/tiznit/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tiznit/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tiznit",
+        "name": "Tiznit",
+        "nameIt": "Tiznit",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -9.73118,
+          29.69223
+        ],
+        "zoom": 11.7,
+        "population": 10764,
+        "cells": 129,
+        "layer": "cities/tiznit/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -9.73118,
+            29.69223
+          ]
+        },
+        "properties": {
+          "id": "tiznit",
+          "name": "Tiznit",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 18.4,
+          "population": 10764
+        }
+      },
+      "summary": null
+    }
+  }
+}

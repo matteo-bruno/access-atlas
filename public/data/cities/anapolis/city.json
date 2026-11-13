@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "anapolis",
+  "createdAt": "2026-10-08T15:08:42.220Z",
+  "updatedAt": "2026-10-08T15:08:42.220Z",
+  "meta": {
+    "name": "Anápolis",
+    "nameIt": "Anápolis",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Anápolis.geojson",
+      "sha256": "47c4223532560b9a48a9d3ef2cbe85cc333b7450a6582fae07d37cde9e466e3b",
+      "size": 979922,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "anapolis",
+    "name": "Anápolis",
+    "nameIt": "Anápolis",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -48.94992,
+      -16.32678
+    ],
+    "zoom": 10.2,
+    "population": 367501,
+    "grid": "cities/anapolis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/anapolis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "anapolis",
+        "name": "Anápolis",
+        "nameIt": "Anápolis",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -48.94992,
+          -16.32678
+        ],
+        "zoom": 10.2,
+        "population": 367501,
+        "cells": 835,
+        "layer": "cities/anapolis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.94992,
+            -16.32678
+          ]
+        },
+        "properties": {
+          "id": "anapolis",
+          "name": "Anápolis",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 32.3,
+          "population": 367501
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tulua",
+  "createdAt": "2026-10-08T16:19:09.928Z",
+  "updatedAt": "2026-10-08T16:19:09.928Z",
+  "meta": {
+    "name": "Tuluá",
+    "nameIt": "Tuluá",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tuluá.geojson",
+      "sha256": "b0368740de8a115b6b42b45541a6cab1302871c5167c6dc71551d92475096b18",
+      "size": 200892,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tulua",
+    "name": "Tuluá",
+    "nameIt": "Tuluá",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -76.20141,
+      4.09186
+    ],
+    "zoom": 11.5,
+    "population": 201823,
+    "grid": "cities/tulua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tulua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tulua",
+        "name": "Tuluá",
+        "nameIt": "Tuluá",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -76.20141,
+          4.09186
+        ],
+        "zoom": 11.5,
+        "population": 201823,
+        "cells": 174,
+        "layer": "cities/tulua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.20141,
+            4.09186
+          ]
+        },
+        "properties": {
+          "id": "tulua",
+          "name": "Tuluá",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 201823
+        }
+      },
+      "summary": null
+    }
+  }
+}

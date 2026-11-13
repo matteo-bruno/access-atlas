@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mechelen",
+  "createdAt": "2026-10-08T15:56:08.670Z",
+  "updatedAt": "2026-10-08T15:56:08.670Z",
+  "meta": {
+    "name": "Mechelen",
+    "nameIt": "Mechelen",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mechelen.geojson",
+      "sha256": "af78696da3d2f190985358a9e98742e84e6275338a071aa9a702d5d3d107424b",
+      "size": 225931,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mechelen",
+    "name": "Mechelen",
+    "nameIt": "Mechelen",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE",
+    "center": [
+      4.48171,
+      51.02741
+    ],
+    "zoom": 11.7,
+    "population": 66626,
+    "grid": "cities/mechelen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mechelen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mechelen",
+        "name": "Mechelen",
+        "nameIt": "Mechelen",
+        "region": "Belgium",
+        "regionIt": "Belgio",
+        "country": "BE",
+        "center": [
+          4.48171,
+          51.02741
+        ],
+        "zoom": 11.7,
+        "population": 66626,
+        "cells": 199,
+        "layer": "cities/mechelen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.48171,
+            51.02741
+          ]
+        },
+        "properties": {
+          "id": "mechelen",
+          "name": "Mechelen",
+          "country": "BE",
+          "isStudy": true,
+          "proximityMinutes": 9.1,
+          "population": 66626
+        }
+      },
+      "summary": null
+    }
+  }
+}

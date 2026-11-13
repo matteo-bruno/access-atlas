@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tacuarembo",
+  "createdAt": "2026-10-08T16:15:53.020Z",
+  "updatedAt": "2026-10-08T16:15:53.020Z",
+  "meta": {
+    "name": "Tacuarembó",
+    "nameIt": "Tacuarembó",
+    "region": "Uruguay",
+    "regionIt": "Uruguay",
+    "country": "UY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tacuarembó.geojson",
+      "sha256": "d0f4efe832b35ede41345fcc79775e375641bf2cebcf8d4c9658d15d3460ea8a",
+      "size": 255639,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tacuarembo",
+    "name": "Tacuarembó",
+    "nameIt": "Tacuarembó",
+    "region": "Uruguay",
+    "regionIt": "Uruguay",
+    "country": "UY",
+    "center": [
+      -55.98123,
+      -31.71606
+    ],
+    "zoom": 11.6,
+    "population": 57665,
+    "grid": "cities/tacuarembo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tacuarembo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tacuarembo",
+        "name": "Tacuarembó",
+        "nameIt": "Tacuarembó",
+        "region": "Uruguay",
+        "regionIt": "Uruguay",
+        "country": "UY",
+        "center": [
+          -55.98123,
+          -31.71606
+        ],
+        "zoom": 11.6,
+        "population": 57665,
+        "cells": 217,
+        "layer": "cities/tacuarembo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -55.98123,
+            -31.71606
+          ]
+        },
+        "properties": {
+          "id": "tacuarembo",
+          "name": "Tacuarembó",
+          "country": "UY",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 57665
+        }
+      },
+      "summary": null
+    }
+  }
+}

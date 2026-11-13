@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khartoum-fua",
+  "createdAt": "2026-10-19T16:56:45.958Z",
+  "updatedAt": "2026-10-19T16:56:45.958Z",
+  "meta": {
+    "name": "Khartoum",
+    "nameIt": "Khartoum",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "khartoum-fua",
+    "name": "Khartoum",
+    "nameIt": "Khartoum",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "extent": "fua",
+    "core": "khartoum",
+    "center": [
+      32.5165,
+      15.60454
+    ],
+    "zoom": 8.5,
+    "population": 8395578,
+    "grid": "cities/khartoum-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khartoum-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khartoum-fua",
+        "name": "Khartoum",
+        "nameIt": "Khartoum",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "extent": "fua",
+        "core": "khartoum",
+        "center": [
+          32.5165,
+          15.60454
+        ],
+        "zoom": 8.5,
+        "population": 8395578,
+        "cells": 11926,
+        "layer": "cities/khartoum-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.5165,
+            15.60454
+          ]
+        },
+        "properties": {
+          "id": "khartoum-fua",
+          "name": "Khartoum",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 41.5,
+          "population": 8395578
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ikere-ekiti",
+  "createdAt": "2026-10-08T15:40:30.311Z",
+  "updatedAt": "2026-10-08T15:40:30.311Z",
+  "meta": {
+    "name": "Ikere-Ekiti",
+    "nameIt": "Ikere-Ekiti",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ikere-Ekiti.geojson",
+      "sha256": "1316a56871f7ce016f45c4179b6b866b9095e22c8e5c5d32204f1622d0dfcc0e",
+      "size": 360402,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ikere-ekiti",
+    "name": "Ikere-Ekiti",
+    "nameIt": "Ikere-Ekiti",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      5.22706,
+      7.49455
+    ],
+    "zoom": 11.1,
+    "population": 267481,
+    "grid": "cities/ikere-ekiti/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ikere-ekiti/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ikere-ekiti",
+        "name": "Ikere-Ekiti",
+        "nameIt": "Ikere-Ekiti",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          5.22706,
+          7.49455
+        ],
+        "zoom": 11.1,
+        "population": 267481,
+        "cells": 313,
+        "layer": "cities/ikere-ekiti/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.22706,
+            7.49455
+          ]
+        },
+        "properties": {
+          "id": "ikere-ekiti",
+          "name": "Ikere-Ekiti",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 267481
+        }
+      },
+      "summary": null
+    }
+  }
+}

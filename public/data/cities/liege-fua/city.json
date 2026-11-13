@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "liege-fua",
+  "createdAt": "2026-10-19T16:57:04.251Z",
+  "updatedAt": "2026-10-19T16:57:04.251Z",
+  "meta": {
+    "name": "Liège",
+    "nameIt": "Liège",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "liege-fua",
+    "name": "Liège",
+    "nameIt": "Liège",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE",
+    "extent": "fua",
+    "core": "liege",
+    "center": [
+      5.56179,
+      50.6431
+    ],
+    "zoom": 8.5,
+    "population": 1151089,
+    "grid": "cities/liege-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/liege-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "liege-fua",
+        "name": "Liège",
+        "nameIt": "Liège",
+        "region": "Belgium",
+        "regionIt": "Belgio",
+        "country": "BE",
+        "extent": "fua",
+        "core": "liege",
+        "center": [
+          5.56179,
+          50.6431
+        ],
+        "zoom": 8.5,
+        "population": 1151089,
+        "cells": 29355,
+        "layer": "cities/liege-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.56179,
+            50.6431
+          ]
+        },
+        "properties": {
+          "id": "liege-fua",
+          "name": "Liège",
+          "country": "BE",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 1151089
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nandail",
+  "createdAt": "2026-10-08T16:00:00.469Z",
+  "updatedAt": "2026-10-08T16:00:00.469Z",
+  "meta": {
+    "name": "Nandail",
+    "nameIt": "Nandail",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nandail.geojson",
+      "sha256": "5a5e6741527e0d3c86dd3e9d133fcdfcc4b2c6a288ec05d822236df4b37f5df3",
+      "size": 865173,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nandail",
+    "name": "Nandail",
+    "nameIt": "Nandail",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      90.72639,
+      24.5929
+    ],
+    "zoom": 10.5,
+    "population": 138735,
+    "grid": "cities/nandail/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nandail/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nandail",
+        "name": "Nandail",
+        "nameIt": "Nandail",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          90.72639,
+          24.5929
+        ],
+        "zoom": 10.5,
+        "population": 138735,
+        "cells": 746,
+        "layer": "cities/nandail/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            90.72639,
+            24.5929
+          ]
+        },
+        "properties": {
+          "id": "nandail",
+          "name": "Nandail",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 50.3,
+          "population": 138735
+        }
+      },
+      "summary": null
+    }
+  }
+}

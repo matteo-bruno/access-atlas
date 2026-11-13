@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "palm-desert",
+  "createdAt": "2026-10-08T16:03:50.203Z",
+  "updatedAt": "2026-10-08T16:03:50.203Z",
+  "meta": {
+    "name": "Palm Desert",
+    "nameIt": "Palm Desert",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Palm Desert.geojson",
+      "sha256": "a18dae02fd8c56b7603f0faf1410fd81adc699b10e58fc5a131a1cb48f9bebe1",
+      "size": 757171,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "palm-desert",
+    "name": "Palm Desert",
+    "nameIt": "Palm Desert",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -116.42298,
+      33.77658
+    ],
+    "zoom": 9.9,
+    "population": 86020,
+    "grid": "cities/palm-desert/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/palm-desert/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "palm-desert",
+        "name": "Palm Desert",
+        "nameIt": "Palm Desert",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -116.42298,
+          33.77658
+        ],
+        "zoom": 9.9,
+        "population": 86020,
+        "cells": 646,
+        "layer": "cities/palm-desert/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -116.42298,
+            33.77658
+          ]
+        },
+        "properties": {
+          "id": "palm-desert",
+          "name": "Palm Desert",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 48.7,
+          "population": 86020
+        }
+      },
+      "summary": null
+    }
+  }
+}

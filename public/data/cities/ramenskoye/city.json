@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ramenskoye",
+  "createdAt": "2026-10-08T16:08:06.364Z",
+  "updatedAt": "2026-10-08T16:08:06.364Z",
+  "meta": {
+    "name": "Ramenskoye",
+    "nameIt": "Ramenskoye",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ramenskoye.geojson",
+      "sha256": "4f0a20d283ac2fab64356621ef49797543277003f91f3970533b4142910455ff",
+      "size": 272930,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ramenskoye",
+    "name": "Ramenskoye",
+    "nameIt": "Ramenskoye",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      38.22738,
+      55.5705
+    ],
+    "zoom": 11.4,
+    "population": 62386,
+    "grid": "cities/ramenskoye/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ramenskoye/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ramenskoye",
+        "name": "Ramenskoye",
+        "nameIt": "Ramenskoye",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          38.22738,
+          55.5705
+        ],
+        "zoom": 11.4,
+        "population": 62386,
+        "cells": 239,
+        "layer": "cities/ramenskoye/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.22738,
+            55.5705
+          ]
+        },
+        "properties": {
+          "id": "ramenskoye",
+          "name": "Ramenskoye",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 62386
+        }
+      },
+      "summary": null
+    }
+  }
+}

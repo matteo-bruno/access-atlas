@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "artush",
+  "createdAt": "2026-10-08T15:09:42.560Z",
+  "updatedAt": "2026-10-08T15:09:42.560Z",
+  "meta": {
+    "name": "Artush",
+    "nameIt": "Artush",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Artush.geojson",
+      "sha256": "3b9d30966da16e66cf2dde28138c0e2ec246dfea7c6b81efb1b53c56fc397a7b",
+      "size": 196625,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "artush",
+    "name": "Artush",
+    "nameIt": "Artush",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      76.17304,
+      39.71171
+    ],
+    "zoom": 11.3,
+    "population": 185841,
+    "grid": "cities/artush/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/artush/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "artush",
+        "name": "Artush",
+        "nameIt": "Artush",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          76.17304,
+          39.71171
+        ],
+        "zoom": 11.3,
+        "population": 185841,
+        "cells": 170,
+        "layer": "cities/artush/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.17304,
+            39.71171
+          ]
+        },
+        "properties": {
+          "id": "artush",
+          "name": "Artush",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 15.2,
+          "population": 185841
+        }
+      },
+      "summary": null
+    }
+  }
+}

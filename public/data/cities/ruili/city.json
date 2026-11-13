@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ruili",
+  "createdAt": "2026-10-08T16:09:19.738Z",
+  "updatedAt": "2026-10-08T16:09:19.738Z",
+  "meta": {
+    "name": "Ruili",
+    "nameIt": "Ruili",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ruili.geojson",
+      "sha256": "d4992f2076edceffb2de6e18711d3dd1dfdbfaf3ab45f8039fe3a76f9e779249",
+      "size": 272426,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ruili",
+    "name": "Ruili",
+    "nameIt": "Ruili",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      97.86549,
+      24.00876
+    ],
+    "zoom": 11.2,
+    "population": 161390,
+    "grid": "cities/ruili/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ruili/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ruili",
+        "name": "Ruili",
+        "nameIt": "Ruili",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          97.86549,
+          24.00876
+        ],
+        "zoom": 11.2,
+        "population": 161390,
+        "cells": 235,
+        "layer": "cities/ruili/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            97.86549,
+            24.00876
+          ]
+        },
+        "properties": {
+          "id": "ruili",
+          "name": "Ruili",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 23.7,
+          "population": 161390
+        }
+      },
+      "summary": null
+    }
+  }
+}

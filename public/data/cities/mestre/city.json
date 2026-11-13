@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mestre",
+  "createdAt": "2026-10-08T15:56:45.354Z",
+  "updatedAt": "2026-10-08T15:56:45.354Z",
+  "meta": {
+    "name": "Mestre",
+    "nameIt": "Mestre",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mestre.geojson",
+      "sha256": "9bc177623331e1bc05141e65d5ec2d3e0ad1435fee1898d8947e480dbf71b4e2",
+      "size": 698537,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mestre",
+    "name": "Mestre",
+    "nameIt": "Mestre",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      12.22942,
+      45.48343
+    ],
+    "zoom": 10.4,
+    "population": 184337,
+    "grid": "cities/mestre/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mestre/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mestre",
+        "name": "Mestre",
+        "nameIt": "Mestre",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          12.22942,
+          45.48343
+        ],
+        "zoom": 10.4,
+        "population": 184337,
+        "cells": 608,
+        "layer": "cities/mestre/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.22942,
+            45.48343
+          ]
+        },
+        "properties": {
+          "id": "mestre",
+          "name": "Mestre",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 184337
+        }
+      },
+      "summary": null
+    }
+  }
+}

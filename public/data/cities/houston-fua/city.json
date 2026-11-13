@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "houston-fua",
+  "createdAt": "2026-10-19T21:11:09.629Z",
+  "updatedAt": "2026-10-19T21:11:09.629Z",
+  "meta": {
+    "name": "Houston",
+    "nameIt": "Houston",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "houston-fua",
+    "name": "Houston",
+    "nameIt": "Houston",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "extent": "fua",
+    "core": "houston",
+    "center": [
+      -95.44955,
+      29.80181
+    ],
+    "zoom": 8.5,
+    "population": 7467174,
+    "grid": "cities/houston-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/houston-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "houston-fua",
+        "name": "Houston",
+        "nameIt": "Houston",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "extent": "fua",
+        "core": "houston",
+        "center": [
+          -95.44955,
+          29.80181
+        ],
+        "zoom": 8.5,
+        "population": 7467174,
+        "cells": 127484,
+        "layer": "cities/houston-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -95.44955,
+            29.80181
+          ]
+        },
+        "properties": {
+          "id": "houston-fua",
+          "name": "Houston",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 40.3,
+          "population": 7467174
+        }
+      },
+      "summary": null
+    }
+  }
+}

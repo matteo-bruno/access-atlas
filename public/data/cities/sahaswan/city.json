@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sahaswan",
+  "createdAt": "2026-10-08T16:09:47.239Z",
+  "updatedAt": "2026-10-08T16:09:47.239Z",
+  "meta": {
+    "name": "Sahaswan",
+    "nameIt": "Sahaswan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sahaswan.geojson",
+      "sha256": "ce72d361e712ab876d5b3635799db7f9496ded1b556731b0de61c595ec489efd",
+      "size": 86932,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sahaswan",
+    "name": "Sahaswan",
+    "nameIt": "Sahaswan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.75491,
+      28.06886
+    ],
+    "zoom": 12,
+    "population": 54987,
+    "grid": "cities/sahaswan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sahaswan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sahaswan",
+        "name": "Sahaswan",
+        "nameIt": "Sahaswan",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.75491,
+          28.06886
+        ],
+        "zoom": 12,
+        "population": 54987,
+        "cells": 75,
+        "layer": "cities/sahaswan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.75491,
+            28.06886
+          ]
+        },
+        "properties": {
+          "id": "sahaswan",
+          "name": "Sahaswan",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 54987
+        }
+      },
+      "summary": null
+    }
+  }
+}

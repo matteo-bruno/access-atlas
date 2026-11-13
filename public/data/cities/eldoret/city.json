@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "eldoret",
+  "createdAt": "2026-10-08T15:32:07.445Z",
+  "updatedAt": "2026-10-08T15:32:07.445Z",
+  "meta": {
+    "name": "Eldoret",
+    "nameIt": "Eldoret",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Eldoret.geojson",
+      "sha256": "465ac1262df0bd9df317b2087cec4e78c2ae523bc20e63c993d0c359c78b8143",
+      "size": 922078,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "eldoret",
+    "name": "Eldoret",
+    "nameIt": "Eldoret",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE",
+    "center": [
+      35.26858,
+      0.52112
+    ],
+    "zoom": 10.3,
+    "population": 405813,
+    "grid": "cities/eldoret/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/eldoret/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "eldoret",
+        "name": "Eldoret",
+        "nameIt": "Eldoret",
+        "region": "Kenya",
+        "regionIt": "Kenya",
+        "country": "KE",
+        "center": [
+          35.26858,
+          0.52112
+        ],
+        "zoom": 10.3,
+        "population": 405813,
+        "cells": 793,
+        "layer": "cities/eldoret/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.26858,
+            0.52112
+          ]
+        },
+        "properties": {
+          "id": "eldoret",
+          "name": "Eldoret",
+          "country": "KE",
+          "isStudy": true,
+          "proximityMinutes": 51.4,
+          "population": 405813
+        }
+      },
+      "summary": null
+    }
+  }
+}

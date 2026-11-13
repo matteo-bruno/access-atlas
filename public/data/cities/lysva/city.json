@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lysva",
+  "createdAt": "2026-10-08T15:53:00.828Z",
+  "updatedAt": "2026-10-08T15:53:00.828Z",
+  "meta": {
+    "name": "Lysva",
+    "nameIt": "Lysva",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lysva.geojson",
+      "sha256": "8a0f870569277ec05cf08067c5bff9179b5399f9f0b79018a81c9cc551c99547",
+      "size": 190624,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lysva",
+    "name": "Lysva",
+    "nameIt": "Lysva",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      57.8049,
+      58.10431
+    ],
+    "zoom": 11.6,
+    "population": 38940,
+    "grid": "cities/lysva/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lysva/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lysva",
+        "name": "Lysva",
+        "nameIt": "Lysva",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          57.8049,
+          58.10431
+        ],
+        "zoom": 11.6,
+        "population": 38940,
+        "cells": 165,
+        "layer": "cities/lysva/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            57.8049,
+            58.10431
+          ]
+        },
+        "properties": {
+          "id": "lysva",
+          "name": "Lysva",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 38940
+        }
+      },
+      "summary": null
+    }
+  }
+}

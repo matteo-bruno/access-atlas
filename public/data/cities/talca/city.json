@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "talca",
+  "createdAt": "2026-10-08T16:16:15.939Z",
+  "updatedAt": "2026-10-08T16:16:15.939Z",
+  "meta": {
+    "name": "Talca",
+    "nameIt": "Talca",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Talca.geojson",
+      "sha256": "b2d866d3488f42cddf4df0da26091e74b4b616b19643510b51290ca26c17002f",
+      "size": 574861,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "talca",
+    "name": "Talca",
+    "nameIt": "Talca",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL",
+    "center": [
+      -71.65378,
+      -35.43163
+    ],
+    "zoom": 10.7,
+    "population": 231805,
+    "grid": "cities/talca/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/talca/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "talca",
+        "name": "Talca",
+        "nameIt": "Talca",
+        "region": "Chile",
+        "regionIt": "Cile",
+        "country": "CL",
+        "center": [
+          -71.65378,
+          -35.43163
+        ],
+        "zoom": 10.7,
+        "population": 231805,
+        "cells": 496,
+        "layer": "cities/talca/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -71.65378,
+            -35.43163
+          ]
+        },
+        "properties": {
+          "id": "talca",
+          "name": "Talca",
+          "country": "CL",
+          "isStudy": true,
+          "proximityMinutes": 13.7,
+          "population": 231805
+        }
+      },
+      "summary": null
+    }
+  }
+}

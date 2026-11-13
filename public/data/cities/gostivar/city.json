@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gostivar",
+  "createdAt": "2026-10-08T15:35:48.962Z",
+  "updatedAt": "2026-10-08T15:35:48.962Z",
+  "meta": {
+    "name": "Gostivar",
+    "nameIt": "Gostivar",
+    "region": "North Macedonia",
+    "regionIt": "Macedonia del Nord",
+    "country": "MK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gostivar.geojson",
+      "sha256": "d565d86ef53b96fcec78c374dee0cf5b7fbc08fa01952806cbff92c799576a9a",
+      "size": 124037,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gostivar",
+    "name": "Gostivar",
+    "nameIt": "Gostivar",
+    "region": "North Macedonia",
+    "regionIt": "Macedonia del Nord",
+    "country": "MK",
+    "center": [
+      20.90783,
+      41.79336
+    ],
+    "zoom": 11.8,
+    "population": 38428,
+    "grid": "cities/gostivar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gostivar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gostivar",
+        "name": "Gostivar",
+        "nameIt": "Gostivar",
+        "region": "North Macedonia",
+        "regionIt": "Macedonia del Nord",
+        "country": "MK",
+        "center": [
+          20.90783,
+          41.79336
+        ],
+        "zoom": 11.8,
+        "population": 38428,
+        "cells": 107,
+        "layer": "cities/gostivar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.90783,
+            41.79336
+          ]
+        },
+        "properties": {
+          "id": "gostivar",
+          "name": "Gostivar",
+          "country": "MK",
+          "isStudy": true,
+          "proximityMinutes": 12.7,
+          "population": 38428
+        }
+      },
+      "summary": null
+    }
+  }
+}

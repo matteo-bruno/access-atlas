@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lampang",
+  "createdAt": "2026-10-08T15:49:58.798Z",
+  "updatedAt": "2026-10-08T15:49:58.798Z",
+  "meta": {
+    "name": "Lampang",
+    "nameIt": "Lampang",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lampang.geojson",
+      "sha256": "a95a2700b9f11e84ff1cf6f4e0c5c694f033bd07edd64e60c6e8735d0e481a9a",
+      "size": 405498,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lampang",
+    "name": "Lampang",
+    "nameIt": "Lampang",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      99.48718,
+      18.28621
+    ],
+    "zoom": 10.6,
+    "population": 105341,
+    "grid": "cities/lampang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lampang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lampang",
+        "name": "Lampang",
+        "nameIt": "Lampang",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          99.48718,
+          18.28621
+        ],
+        "zoom": 10.6,
+        "population": 105341,
+        "cells": 351,
+        "layer": "cities/lampang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            99.48718,
+            18.28621
+          ]
+        },
+        "properties": {
+          "id": "lampang",
+          "name": "Lampang",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 22,
+          "population": 105341
+        }
+      },
+      "summary": null
+    }
+  }
+}

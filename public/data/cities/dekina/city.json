@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dekina",
+  "createdAt": "2026-10-08T15:28:50.704Z",
+  "updatedAt": "2026-10-08T15:28:50.704Z",
+  "meta": {
+    "name": "Dekina",
+    "nameIt": "Dekina",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dekina.geojson",
+      "sha256": "db89ee02221a5ff4058fd8011c72bb65822cc4d9a7db8992de84b5552922ee45",
+      "size": 96711,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dekina",
+    "name": "Dekina",
+    "nameIt": "Dekina",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      7.04496,
+      7.68896
+    ],
+    "zoom": 12,
+    "population": 31967,
+    "grid": "cities/dekina/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dekina/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dekina",
+        "name": "Dekina",
+        "nameIt": "Dekina",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          7.04496,
+          7.68896
+        ],
+        "zoom": 12,
+        "population": 31967,
+        "cells": 84,
+        "layer": "cities/dekina/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.04496,
+            7.68896
+          ]
+        },
+        "properties": {
+          "id": "dekina",
+          "name": "Dekina",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 31967
+        }
+      },
+      "summary": null
+    }
+  }
+}

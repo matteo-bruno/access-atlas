@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rouen",
+  "createdAt": "2026-10-08T16:09:12.395Z",
+  "updatedAt": "2026-10-08T16:09:12.395Z",
+  "meta": {
+    "name": "Rouen",
+    "nameIt": "Rouen",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rouen.geojson",
+      "sha256": "e0a9a0f8e7a2660bb69c69f75f7476a3321339613d4bef9e214951ab931d6870",
+      "size": 1196066,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rouen",
+    "name": "Rouen",
+    "nameIt": "Rouen",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      1.08306,
+      49.43229
+    ],
+    "zoom": 10.2,
+    "population": 330195,
+    "grid": "cities/rouen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rouen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rouen",
+        "name": "Rouen",
+        "nameIt": "Rouen",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          1.08306,
+          49.43229
+        ],
+        "zoom": 10.2,
+        "population": 330195,
+        "cells": 1047,
+        "layer": "cities/rouen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.08306,
+            49.43229
+          ]
+        },
+        "properties": {
+          "id": "rouen",
+          "name": "Rouen",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 9.1,
+          "population": 330195
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "balkanabat",
+  "createdAt": "2026-10-08T15:14:05.409Z",
+  "updatedAt": "2026-10-08T15:14:05.409Z",
+  "meta": {
+    "name": "Balkanabat",
+    "nameIt": "Balkanabat",
+    "region": "Turkmenistan",
+    "regionIt": "Turkmenistan",
+    "country": "TM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Balkanabat.geojson",
+      "sha256": "bc86aacae53637cc35a3ec760d5e452d970b62df820ac320ae6c8d02888ba4e3",
+      "size": 175338,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "balkanabat",
+    "name": "Balkanabat",
+    "nameIt": "Balkanabat",
+    "region": "Turkmenistan",
+    "regionIt": "Turkmenistan",
+    "country": "TM",
+    "center": [
+      54.36103,
+      39.51142
+    ],
+    "zoom": 11.5,
+    "population": 50030,
+    "grid": "cities/balkanabat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/balkanabat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "balkanabat",
+        "name": "Balkanabat",
+        "nameIt": "Balkanabat",
+        "region": "Turkmenistan",
+        "regionIt": "Turkmenistan",
+        "country": "TM",
+        "center": [
+          54.36103,
+          39.51142
+        ],
+        "zoom": 11.5,
+        "population": 50030,
+        "cells": 152,
+        "layer": "cities/balkanabat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            54.36103,
+            39.51142
+          ]
+        },
+        "properties": {
+          "id": "balkanabat",
+          "name": "Balkanabat",
+          "country": "TM",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 50030
+        }
+      },
+      "summary": null
+    }
+  }
+}

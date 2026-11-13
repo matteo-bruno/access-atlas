@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "meru",
+  "createdAt": "2026-10-08T15:56:41.774Z",
+  "updatedAt": "2026-10-08T15:56:41.774Z",
+  "meta": {
+    "name": "Meru",
+    "nameIt": "Meru",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Meru.geojson",
+      "sha256": "70ebcdeeb5ab1327942faf82672c43b151774b174e41fad86c15bba7376df60d",
+      "size": 203944,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "meru",
+    "name": "Meru",
+    "nameIt": "Meru",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE",
+    "center": [
+      37.64834,
+      0.05203
+    ],
+    "zoom": 11.7,
+    "population": 82357,
+    "grid": "cities/meru/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/meru/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "meru",
+        "name": "Meru",
+        "nameIt": "Meru",
+        "region": "Kenya",
+        "regionIt": "Kenya",
+        "country": "KE",
+        "center": [
+          37.64834,
+          0.05203
+        ],
+        "zoom": 11.7,
+        "population": 82357,
+        "cells": 174,
+        "layer": "cities/meru/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.64834,
+            0.05203
+          ]
+        },
+        "properties": {
+          "id": "meru",
+          "name": "Meru",
+          "country": "KE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 82357
+        }
+      },
+      "summary": null
+    }
+  }
+}

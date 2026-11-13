@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dresden",
+  "createdAt": "2026-10-08T15:31:08.492Z",
+  "updatedAt": "2026-10-08T15:31:08.492Z",
+  "meta": {
+    "name": "Dresden",
+    "nameIt": "Dresden",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dresden.geojson",
+      "sha256": "5210694da62a111e4627ff0d63a7045dab515fd86107e31498ced960e6226dc9",
+      "size": 1892475,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dresden",
+    "name": "Dresden",
+    "nameIt": "Dresden",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      13.74965,
+      51.04012
+    ],
+    "zoom": 9.9,
+    "population": 514227,
+    "grid": "cities/dresden/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dresden/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dresden",
+        "name": "Dresden",
+        "nameIt": "Dresden",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          13.74965,
+          51.04012
+        ],
+        "zoom": 9.9,
+        "population": 514227,
+        "cells": 1656,
+        "layer": "cities/dresden/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.74965,
+            51.04012
+          ]
+        },
+        "properties": {
+          "id": "dresden",
+          "name": "Dresden",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 7.6,
+          "population": 514227
+        }
+      },
+      "summary": null
+    }
+  }
+}

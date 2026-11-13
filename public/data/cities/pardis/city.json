@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pardis",
+  "createdAt": "2026-10-08T16:04:20.058Z",
+  "updatedAt": "2026-10-08T16:04:20.058Z",
+  "meta": {
+    "name": "Pardis",
+    "nameIt": "Pardis",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pardis.geojson",
+      "sha256": "b27d141eb1cf546afdd616203aab2ec296adadb696b523c16a275e93b81b7c7a",
+      "size": 478006,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pardis",
+    "name": "Pardis",
+    "nameIt": "Pardis",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      51.83934,
+      35.7357
+    ],
+    "zoom": 10.1,
+    "population": 175884,
+    "grid": "cities/pardis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pardis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pardis",
+        "name": "Pardis",
+        "nameIt": "Pardis",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          51.83934,
+          35.7357
+        ],
+        "zoom": 10.1,
+        "population": 175884,
+        "cells": 413,
+        "layer": "cities/pardis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            51.83934,
+            35.7357
+          ]
+        },
+        "properties": {
+          "id": "pardis",
+          "name": "Pardis",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 35.5,
+          "population": 175884
+        }
+      },
+      "summary": null
+    }
+  }
+}

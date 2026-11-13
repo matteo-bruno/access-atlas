@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "giteranyi",
+  "createdAt": "2026-10-08T15:35:21.391Z",
+  "updatedAt": "2026-10-08T15:35:21.391Z",
+  "meta": {
+    "name": "Giteranyi",
+    "nameIt": "Giteranyi",
+    "region": "Burundi",
+    "regionIt": "Burundi",
+    "country": "BI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Giteranyi.geojson",
+      "sha256": "0bf17e2297092598123d8cfd5fd3bf548e98de3162d71ffcf2bf369d27709c44",
+      "size": 211018,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "giteranyi",
+    "name": "Giteranyi",
+    "nameIt": "Giteranyi",
+    "region": "Burundi",
+    "regionIt": "Burundi",
+    "country": "BI",
+    "center": [
+      30.46018,
+      -2.49116
+    ],
+    "zoom": 11,
+    "population": 51279,
+    "grid": "cities/giteranyi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/giteranyi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "giteranyi",
+        "name": "Giteranyi",
+        "nameIt": "Giteranyi",
+        "region": "Burundi",
+        "regionIt": "Burundi",
+        "country": "BI",
+        "center": [
+          30.46018,
+          -2.49116
+        ],
+        "zoom": 11,
+        "population": 51279,
+        "cells": 180,
+        "layer": "cities/giteranyi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.46018,
+            -2.49116
+          ]
+        },
+        "properties": {
+          "id": "giteranyi",
+          "name": "Giteranyi",
+          "country": "BI",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 51279
+        }
+      },
+      "summary": null
+    }
+  }
+}

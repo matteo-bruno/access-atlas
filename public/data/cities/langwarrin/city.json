@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "langwarrin",
+  "createdAt": "2026-10-08T15:50:04.205Z",
+  "updatedAt": "2026-10-08T15:50:04.205Z",
+  "meta": {
+    "name": "Langwarrin",
+    "nameIt": "Langwarrin",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Langwarrin.geojson",
+      "sha256": "b526ff33efd56f5bf0ccfaf67212e320fbc31e625b4472b02c3d9bb65f2bd847",
+      "size": 712282,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "langwarrin",
+    "name": "Langwarrin",
+    "nameIt": "Langwarrin",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      145.15816,
+      -38.13177
+    ],
+    "zoom": 10.7,
+    "population": 115859,
+    "grid": "cities/langwarrin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/langwarrin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "langwarrin",
+        "name": "Langwarrin",
+        "nameIt": "Langwarrin",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          145.15816,
+          -38.13177
+        ],
+        "zoom": 10.7,
+        "population": 115859,
+        "cells": 614,
+        "layer": "cities/langwarrin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            145.15816,
+            -38.13177
+          ]
+        },
+        "properties": {
+          "id": "langwarrin",
+          "name": "Langwarrin",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 18.9,
+          "population": 115859
+        }
+      },
+      "summary": null
+    }
+  }
+}

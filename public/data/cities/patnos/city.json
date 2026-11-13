@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "patnos",
+  "createdAt": "2026-10-08T16:04:41.448Z",
+  "updatedAt": "2026-10-08T16:04:41.448Z",
+  "meta": {
+    "name": "Patnos",
+    "nameIt": "Patnos",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Patnos.geojson",
+      "sha256": "8f0bf465bce9859fb15171865101fd566b0bc22cfc1eac87d14fc9f35db85e0f",
+      "size": 162096,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "patnos",
+    "name": "Patnos",
+    "nameIt": "Patnos",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      42.8604,
+      39.2361
+    ],
+    "zoom": 11.6,
+    "population": 76103,
+    "grid": "cities/patnos/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/patnos/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "patnos",
+        "name": "Patnos",
+        "nameIt": "Patnos",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          42.8604,
+          39.2361
+        ],
+        "zoom": 11.6,
+        "population": 76103,
+        "cells": 140,
+        "layer": "cities/patnos/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            42.8604,
+            39.2361
+          ]
+        },
+        "properties": {
+          "id": "patnos",
+          "name": "Patnos",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 76103
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "poissy",
+  "createdAt": "2026-10-08T16:06:00.472Z",
+  "updatedAt": "2026-10-08T16:06:00.472Z",
+  "meta": {
+    "name": "Poissy",
+    "nameIt": "Poissy",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Poissy.geojson",
+      "sha256": "3f458e7a47d882b4844f1632bf1bf9ccc240ab62efb5e0c15bfd69fccfac43f4",
+      "size": 291538,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "poissy",
+    "name": "Poissy",
+    "nameIt": "Poissy",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      2.04531,
+      48.93765
+    ],
+    "zoom": 11.2,
+    "population": 79768,
+    "grid": "cities/poissy/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/poissy/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "poissy",
+        "name": "Poissy",
+        "nameIt": "Poissy",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          2.04531,
+          48.93765
+        ],
+        "zoom": 11.2,
+        "population": 79768,
+        "cells": 256,
+        "layer": "cities/poissy/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.04531,
+            48.93765
+          ]
+        },
+        "properties": {
+          "id": "poissy",
+          "name": "Poissy",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 9.3,
+          "population": 79768
+        }
+      },
+      "summary": null
+    }
+  }
+}

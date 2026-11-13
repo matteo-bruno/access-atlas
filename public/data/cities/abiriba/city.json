@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abiriba",
+  "createdAt": "2026-10-08T15:01:31.871Z",
+  "updatedAt": "2026-10-08T15:01:31.871Z",
+  "meta": {
+    "name": "Abiriba",
+    "nameIt": "Abiriba",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abiriba.geojson",
+      "sha256": "a97d16d5327d2aa56ecda8e88373f2d43d259efdc47aa3a2c51072eb09e15a6d",
+      "size": 199239,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abiriba",
+    "name": "Abiriba",
+    "nameIt": "Abiriba",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      7.73521,
+      5.70162
+    ],
+    "zoom": 11.7,
+    "population": 101386,
+    "grid": "cities/abiriba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abiriba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abiriba",
+        "name": "Abiriba",
+        "nameIt": "Abiriba",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          7.73521,
+          5.70162
+        ],
+        "zoom": 11.7,
+        "population": 101386,
+        "cells": 173,
+        "layer": "cities/abiriba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.73521,
+            5.70162
+          ]
+        },
+        "properties": {
+          "id": "abiriba",
+          "name": "Abiriba",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 101386
+        }
+      },
+      "summary": null
+    }
+  }
+}

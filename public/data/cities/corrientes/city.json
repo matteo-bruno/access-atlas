@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "corrientes",
+  "createdAt": "2026-10-08T15:26:38.677Z",
+  "updatedAt": "2026-10-08T15:26:38.677Z",
+  "meta": {
+    "name": "Corrientes",
+    "nameIt": "Corrientes",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Corrientes.geojson",
+      "sha256": "ed0a32fce5daa674d1e404de047bbea36dec555b2f39ebe125c165c58993e9fb",
+      "size": 906697,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "corrientes",
+    "name": "Corrientes",
+    "nameIt": "Corrientes",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -58.81052,
+      -27.4848
+    ],
+    "zoom": 10.6,
+    "population": 387689,
+    "grid": "cities/corrientes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/corrientes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "corrientes",
+        "name": "Corrientes",
+        "nameIt": "Corrientes",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -58.81052,
+          -27.4848
+        ],
+        "zoom": 10.6,
+        "population": 387689,
+        "cells": 779,
+        "layer": "cities/corrientes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -58.81052,
+            -27.4848
+          ]
+        },
+        "properties": {
+          "id": "corrientes",
+          "name": "Corrientes",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 387689
+        }
+      },
+      "summary": null
+    }
+  }
+}

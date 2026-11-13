@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mysuru",
+  "createdAt": "2026-10-08T15:59:22.813Z",
+  "updatedAt": "2026-10-08T15:59:22.813Z",
+  "meta": {
+    "name": "Mysuru",
+    "nameIt": "Mysuru",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mysuru.geojson",
+      "sha256": "484b2d2ce5c0af89003d6098c1d8bab8e7b2d2e5815209b2eed1ac0538cde03f",
+      "size": 1527457,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mysuru",
+    "name": "Mysuru",
+    "nameIt": "Mysuru",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.63428,
+      12.31559
+    ],
+    "zoom": 10,
+    "population": 908197,
+    "grid": "cities/mysuru/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mysuru/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mysuru",
+        "name": "Mysuru",
+        "nameIt": "Mysuru",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.63428,
+          12.31559
+        ],
+        "zoom": 10,
+        "population": 908197,
+        "cells": 1329,
+        "layer": "cities/mysuru/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.63428,
+            12.31559
+          ]
+        },
+        "properties": {
+          "id": "mysuru",
+          "name": "Mysuru",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 24.6,
+          "population": 908197
+        }
+      },
+      "summary": null
+    }
+  }
+}

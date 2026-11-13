@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "whydah",
+  "createdAt": "2026-10-08T16:21:39.269Z",
+  "updatedAt": "2026-10-08T16:21:39.269Z",
+  "meta": {
+    "name": "Whydah",
+    "nameIt": "Whydah",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Whydah.geojson",
+      "sha256": "d1be675265c6f0f94746f9df9bd628f6770d696838df7622bbea5afb7ae768a5",
+      "size": 320189,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "whydah",
+    "name": "Whydah",
+    "nameIt": "Whydah",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ",
+    "center": [
+      2.0819,
+      6.36511
+    ],
+    "zoom": 11.4,
+    "population": 124392,
+    "grid": "cities/whydah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/whydah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "whydah",
+        "name": "Whydah",
+        "nameIt": "Whydah",
+        "region": "Benin",
+        "regionIt": "Benin",
+        "country": "BJ",
+        "center": [
+          2.0819,
+          6.36511
+        ],
+        "zoom": 11.4,
+        "population": 124392,
+        "cells": 278,
+        "layer": "cities/whydah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.0819,
+            6.36511
+          ]
+        },
+        "properties": {
+          "id": "whydah",
+          "name": "Whydah",
+          "country": "BJ",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 124392
+        }
+      },
+      "summary": null
+    }
+  }
+}

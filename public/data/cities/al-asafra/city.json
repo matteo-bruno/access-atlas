@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-asafra",
+  "createdAt": "2026-10-08T15:04:57.923Z",
+  "updatedAt": "2026-10-08T15:04:57.923Z",
+  "meta": {
+    "name": "Al-Asafra",
+    "nameIt": "Al-Asafra",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al-Asafra.geojson",
+      "sha256": "0b8fe4be5137c415b0aa7fbc67d73a199751b65c2db775c25c26f67acf6fcd73",
+      "size": 508638,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-asafra",
+    "name": "Al-Asafra",
+    "nameIt": "Al-Asafra",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      31.98207,
+      31.17053
+    ],
+    "zoom": 10.3,
+    "population": 495592,
+    "grid": "cities/al-asafra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-asafra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-asafra",
+        "name": "Al-Asafra",
+        "nameIt": "Al-Asafra",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          31.98207,
+          31.17053
+        ],
+        "zoom": 10.3,
+        "population": 495592,
+        "cells": 437,
+        "layer": "cities/al-asafra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.98207,
+            31.17053
+          ]
+        },
+        "properties": {
+          "id": "al-asafra",
+          "name": "Al-Asafra",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 495592
+        }
+      },
+      "summary": null
+    }
+  }
+}

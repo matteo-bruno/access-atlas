@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "malmo",
+  "createdAt": "2026-10-08T15:54:13.736Z",
+  "updatedAt": "2026-10-08T15:54:13.736Z",
+  "meta": {
+    "name": "Malmo",
+    "nameIt": "Malmo",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Malmo.geojson",
+      "sha256": "12c3a4d26f56758e106bd14a406ea24331ed85c06571d8d1d66a6a31577d5dff",
+      "size": 1112091,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "malmo",
+    "name": "Malmo",
+    "nameIt": "Malmo",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE",
+    "center": [
+      13.00624,
+      55.58922
+    ],
+    "zoom": 10.5,
+    "population": 323996,
+    "grid": "cities/malmo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/malmo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "malmo",
+        "name": "Malmo",
+        "nameIt": "Malmo",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          13.00624,
+          55.58922
+        ],
+        "zoom": 10.5,
+        "population": 323996,
+        "cells": 971,
+        "layer": "cities/malmo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.00624,
+            55.58922
+          ]
+        },
+        "properties": {
+          "id": "malmo",
+          "name": "Malmo",
+          "country": "SE",
+          "isStudy": true,
+          "proximityMinutes": 9,
+          "population": 323996
+        }
+      },
+      "summary": null
+    }
+  }
+}

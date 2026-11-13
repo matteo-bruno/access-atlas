@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "leeds-fua",
+  "createdAt": "2026-10-19T16:56:58.349Z",
+  "updatedAt": "2026-10-19T16:56:58.349Z",
+  "meta": {
+    "name": "Leeds",
+    "nameIt": "Leeds",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "leeds-fua",
+    "name": "Leeds",
+    "nameIt": "Leeds",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "extent": "fua",
+    "core": "leeds",
+    "center": [
+      -1.56304,
+      53.71511
+    ],
+    "zoom": 8.5,
+    "population": 3119991,
+    "grid": "cities/leeds-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/leeds-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "leeds-fua",
+        "name": "Leeds",
+        "nameIt": "Leeds",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "extent": "fua",
+        "core": "leeds",
+        "center": [
+          -1.56304,
+          53.71511
+        ],
+        "zoom": 8.5,
+        "population": 3119991,
+        "cells": 32743,
+        "layer": "cities/leeds-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.56304,
+            53.71511
+          ]
+        },
+        "properties": {
+          "id": "leeds-fua",
+          "name": "Leeds",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 3119991
+        }
+      },
+      "summary": null
+    }
+  }
+}

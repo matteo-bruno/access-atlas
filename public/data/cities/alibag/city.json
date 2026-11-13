@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "alibag",
+  "createdAt": "2026-10-08T15:05:52.310Z",
+  "updatedAt": "2026-10-08T15:05:52.310Z",
+  "meta": {
+    "name": "Alibag",
+    "nameIt": "Alibag",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Alibag.geojson",
+      "sha256": "2515ffc064f9ce38171f9d068a13a6635b1ca6292a5b00d97d2ca77ab9c9e7dd",
+      "size": 225897,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "alibag",
+    "name": "Alibag",
+    "nameIt": "Alibag",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.87988,
+      18.65386
+    ],
+    "zoom": 11.6,
+    "population": 62515,
+    "grid": "cities/alibag/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/alibag/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "alibag",
+        "name": "Alibag",
+        "nameIt": "Alibag",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.87988,
+          18.65386
+        ],
+        "zoom": 11.6,
+        "population": 62515,
+        "cells": 195,
+        "layer": "cities/alibag/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.87988,
+            18.65386
+          ]
+        },
+        "properties": {
+          "id": "alibag",
+          "name": "Alibag",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 62515
+        }
+      },
+      "summary": null
+    }
+  }
+}

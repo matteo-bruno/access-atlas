@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rochester-minnesota",
+  "createdAt": "2026-10-08T16:08:59.652Z",
+  "updatedAt": "2026-10-08T16:08:59.652Z",
+  "meta": {
+    "name": "Rochester (Minnesota)",
+    "nameIt": "Rochester (Minnesota)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rochester (Minnesota).geojson",
+      "sha256": "46618d4e65253b85ce237e1370544b2deb2900bb4868f309fd5acddce10268df",
+      "size": 396354,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rochester-minnesota",
+    "name": "Rochester (Minnesota)",
+    "nameIt": "Rochester (Minnesota)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -92.47915,
+      44.03919
+    ],
+    "zoom": 10.8,
+    "population": 62078,
+    "grid": "cities/rochester-minnesota/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rochester-minnesota/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rochester-minnesota",
+        "name": "Rochester (Minnesota)",
+        "nameIt": "Rochester (Minnesota)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -92.47915,
+          44.03919
+        ],
+        "zoom": 10.8,
+        "population": 62078,
+        "cells": 344,
+        "layer": "cities/rochester-minnesota/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -92.47915,
+            44.03919
+          ]
+        },
+        "properties": {
+          "id": "rochester-minnesota",
+          "name": "Rochester (Minnesota)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.4,
+          "population": 62078
+        }
+      },
+      "summary": null
+    }
+  }
+}

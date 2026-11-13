@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kaman",
+  "createdAt": "2026-10-08T15:44:36.658Z",
+  "updatedAt": "2026-10-08T15:44:36.658Z",
+  "meta": {
+    "name": "Kaman",
+    "nameIt": "Kaman",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kaman.geojson",
+      "sha256": "133e730725a935ee43f27926c3654d2f9276ae25ba23001e83dde143a7909d79",
+      "size": 42948,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kaman",
+    "name": "Kaman",
+    "nameIt": "Kaman",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.26959,
+      27.65275
+    ],
+    "zoom": 12,
+    "population": 24457,
+    "grid": "cities/kaman/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kaman/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kaman",
+        "name": "Kaman",
+        "nameIt": "Kaman",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.26959,
+          27.65275
+        ],
+        "zoom": 12,
+        "population": 24457,
+        "cells": 37,
+        "layer": "cities/kaman/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.26959,
+            27.65275
+          ]
+        },
+        "properties": {
+          "id": "kaman",
+          "name": "Kaman",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 24457
+        }
+      },
+      "summary": null
+    }
+  }
+}

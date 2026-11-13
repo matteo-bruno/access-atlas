@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lviv",
+  "createdAt": "2026-10-08T15:52:56.823Z",
+  "updatedAt": "2026-10-08T15:52:56.823Z",
+  "meta": {
+    "name": "Lviv",
+    "nameIt": "Lviv",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lviv.geojson",
+      "sha256": "083bccc4acca62ed35a3563fcfa558f80361a94e6e90299ca94ae96d74b24d4e",
+      "size": 1105656,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lviv",
+    "name": "Lviv",
+    "nameIt": "Lviv",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      24.02119,
+      49.83054
+    ],
+    "zoom": 10.2,
+    "population": 447721,
+    "grid": "cities/lviv/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lviv/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lviv",
+        "name": "Lviv",
+        "nameIt": "Lviv",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          24.02119,
+          49.83054
+        ],
+        "zoom": 10.2,
+        "population": 447721,
+        "cells": 968,
+        "layer": "cities/lviv/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            24.02119,
+            49.83054
+          ]
+        },
+        "properties": {
+          "id": "lviv",
+          "name": "Lviv",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 8.4,
+          "population": 447721
+        }
+      },
+      "summary": null
+    }
+  }
+}

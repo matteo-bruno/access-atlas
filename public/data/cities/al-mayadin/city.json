@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-mayadin",
+  "createdAt": "2026-10-08T15:04:34.734Z",
+  "updatedAt": "2026-10-08T15:04:34.734Z",
+  "meta": {
+    "name": "Al Mayadin",
+    "nameIt": "Al Mayadin",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Mayadin.geojson",
+      "sha256": "83eb6e3adae45ad0d67a5fb125b5f6e78c1f2112a2501b09803f89b3c04f7b42",
+      "size": 144750,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-mayadin",
+    "name": "Al Mayadin",
+    "nameIt": "Al Mayadin",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY",
+    "center": [
+      40.44878,
+      35.01826
+    ],
+    "zoom": 11.8,
+    "population": 104572,
+    "grid": "cities/al-mayadin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-mayadin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-mayadin",
+        "name": "Al Mayadin",
+        "nameIt": "Al Mayadin",
+        "region": "Syria",
+        "regionIt": "Siria",
+        "country": "SY",
+        "center": [
+          40.44878,
+          35.01826
+        ],
+        "zoom": 11.8,
+        "population": 104572,
+        "cells": 125,
+        "layer": "cities/al-mayadin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.44878,
+            35.01826
+          ]
+        },
+        "properties": {
+          "id": "al-mayadin",
+          "name": "Al Mayadin",
+          "country": "SY",
+          "isStudy": true,
+          "proximityMinutes": 22.2,
+          "population": 104572
+        }
+      },
+      "summary": null
+    }
+  }
+}

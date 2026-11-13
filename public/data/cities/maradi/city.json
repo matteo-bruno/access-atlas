@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "maradi",
+  "createdAt": "2026-10-08T15:55:06.455Z",
+  "updatedAt": "2026-10-08T15:55:06.455Z",
+  "meta": {
+    "name": "Maradi",
+    "nameIt": "Maradi",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Maradi.geojson",
+      "sha256": "4779a880552d9ccf21f69b805d3e6415f6309770d214477605ee708b844a3386",
+      "size": 743909,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "maradi",
+    "name": "Maradi",
+    "nameIt": "Maradi",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE",
+    "center": [
+      7.10581,
+      13.51041
+    ],
+    "zoom": 10,
+    "population": 602828,
+    "grid": "cities/maradi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/maradi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "maradi",
+        "name": "Maradi",
+        "nameIt": "Maradi",
+        "region": "Niger",
+        "regionIt": "Niger",
+        "country": "NE",
+        "center": [
+          7.10581,
+          13.51041
+        ],
+        "zoom": 10,
+        "population": 602828,
+        "cells": 642,
+        "layer": "cities/maradi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.10581,
+            13.51041
+          ]
+        },
+        "properties": {
+          "id": "maradi",
+          "name": "Maradi",
+          "country": "NE",
+          "isStudy": true,
+          "proximityMinutes": 29.7,
+          "population": 602828
+        }
+      },
+      "summary": null
+    }
+  }
+}

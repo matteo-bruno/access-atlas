@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "taourirt",
+  "createdAt": "2026-10-08T16:16:41.449Z",
+  "updatedAt": "2026-10-08T16:16:41.449Z",
+  "meta": {
+    "name": "Taourirt",
+    "nameIt": "Taourirt",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Taourirt.geojson",
+      "sha256": "4e5c69eac409befcba4d4b277fc39dbac648390a0173730dd5bfedaa6fbee580",
+      "size": 163146,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "taourirt",
+    "name": "Taourirt",
+    "nameIt": "Taourirt",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -2.89961,
+      34.40497
+    ],
+    "zoom": 11.9,
+    "population": 119365,
+    "grid": "cities/taourirt/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/taourirt/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "taourirt",
+        "name": "Taourirt",
+        "nameIt": "Taourirt",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -2.89961,
+          34.40497
+        ],
+        "zoom": 11.9,
+        "population": 119365,
+        "cells": 140,
+        "layer": "cities/taourirt/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.89961,
+            34.40497
+          ]
+        },
+        "properties": {
+          "id": "taourirt",
+          "name": "Taourirt",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 119365
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "silvassa",
+  "createdAt": "2026-10-08T16:13:42.962Z",
+  "updatedAt": "2026-10-08T16:13:42.962Z",
+  "meta": {
+    "name": "Silvassa",
+    "nameIt": "Silvassa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Silvassa.geojson",
+      "sha256": "400e405365440d1a9a524ced780e9bdfd93b13ae74d908c7bdbdf328967adfaa",
+      "size": 702323,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "silvassa",
+    "name": "Silvassa",
+    "nameIt": "Silvassa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.01617,
+      20.25924
+    ],
+    "zoom": 10.6,
+    "population": 270450,
+    "grid": "cities/silvassa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/silvassa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "silvassa",
+        "name": "Silvassa",
+        "nameIt": "Silvassa",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.01617,
+          20.25924
+        ],
+        "zoom": 10.6,
+        "population": 270450,
+        "cells": 606,
+        "layer": "cities/silvassa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.01617,
+            20.25924
+          ]
+        },
+        "properties": {
+          "id": "silvassa",
+          "name": "Silvassa",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 36,
+          "population": 270450
+        }
+      },
+      "summary": null
+    }
+  }
+}

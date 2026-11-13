@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "helsinki-fua",
+  "createdAt": "2026-10-19T16:56:25.683Z",
+  "updatedAt": "2026-10-19T16:56:25.683Z",
+  "meta": {
+    "name": "Helsinki",
+    "nameIt": "Helsinki",
+    "region": "Finland",
+    "regionIt": "Finlandia",
+    "country": "FI"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "helsinki-fua",
+    "name": "Helsinki",
+    "nameIt": "Helsinki",
+    "region": "Finland",
+    "regionIt": "Finlandia",
+    "country": "FI",
+    "extent": "fua",
+    "core": "helsinki",
+    "center": [
+      24.923,
+      60.26443
+    ],
+    "zoom": 8.5,
+    "population": 1537417,
+    "grid": "cities/helsinki-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/helsinki-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "helsinki-fua",
+        "name": "Helsinki",
+        "nameIt": "Helsinki",
+        "region": "Finland",
+        "regionIt": "Finlandia",
+        "country": "FI",
+        "extent": "fua",
+        "core": "helsinki",
+        "center": [
+          24.923,
+          60.26443
+        ],
+        "zoom": 8.5,
+        "population": 1537417,
+        "cells": 37670,
+        "layer": "cities/helsinki-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            24.923,
+            60.26443
+          ]
+        },
+        "properties": {
+          "id": "helsinki-fua",
+          "name": "Helsinki",
+          "country": "FI",
+          "isStudy": true,
+          "proximityMinutes": 12.8,
+          "population": 1537417
+        }
+      },
+      "summary": null
+    }
+  }
+}

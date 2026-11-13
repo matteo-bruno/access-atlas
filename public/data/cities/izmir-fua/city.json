@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "izmir-fua",
+  "createdAt": "2026-10-19T16:56:33.355Z",
+  "updatedAt": "2026-10-19T16:56:33.355Z",
+  "meta": {
+    "name": "Izmir",
+    "nameIt": "Izmir",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "izmir-fua",
+    "name": "Izmir",
+    "nameIt": "Izmir",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "extent": "fua",
+    "core": "izmir",
+    "center": [
+      27.13809,
+      38.42648
+    ],
+    "zoom": 8.5,
+    "population": 3311608,
+    "grid": "cities/izmir-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/izmir-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "izmir-fua",
+        "name": "Izmir",
+        "nameIt": "Izmir",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "extent": "fua",
+        "core": "izmir",
+        "center": [
+          27.13809,
+          38.42648
+        ],
+        "zoom": 8.5,
+        "population": 3311608,
+        "cells": 9328,
+        "layer": "cities/izmir-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.13809,
+            38.42648
+          ]
+        },
+        "properties": {
+          "id": "izmir-fua",
+          "name": "Izmir",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 3311608
+        }
+      },
+      "summary": null
+    }
+  }
+}

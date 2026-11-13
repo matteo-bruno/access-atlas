@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chengannur",
+  "createdAt": "2026-10-08T15:24:14.407Z",
+  "updatedAt": "2026-10-08T15:24:14.407Z",
+  "meta": {
+    "name": "Chengannur",
+    "nameIt": "Chengannur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chengannur.geojson",
+      "sha256": "fcee89713fc98e587facc82d9ccadddd68094a818c2148aa1d77dbc58fe7f833",
+      "size": 162401,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chengannur",
+    "name": "Chengannur",
+    "nameIt": "Chengannur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.61588,
+      9.3183
+    ],
+    "zoom": 11.7,
+    "population": 64982,
+    "grid": "cities/chengannur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chengannur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chengannur",
+        "name": "Chengannur",
+        "nameIt": "Chengannur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.61588,
+          9.3183
+        ],
+        "zoom": 11.7,
+        "population": 64982,
+        "cells": 142,
+        "layer": "cities/chengannur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.61588,
+            9.3183
+          ]
+        },
+        "properties": {
+          "id": "chengannur",
+          "name": "Chengannur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 64982
+        }
+      },
+      "summary": null
+    }
+  }
+}

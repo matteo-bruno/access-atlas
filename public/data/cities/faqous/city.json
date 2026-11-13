@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "faqous",
+  "createdAt": "2026-10-08T15:32:51.479Z",
+  "updatedAt": "2026-10-08T15:32:51.479Z",
+  "meta": {
+    "name": "Faqous",
+    "nameIt": "Faqous",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Faqous.geojson",
+      "sha256": "91df2e3ebf2a263d63ebbb2bcbee8cafa7275ffc5220a876c2c780cf168001dc",
+      "size": 614855,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "faqous",
+    "name": "Faqous",
+    "nameIt": "Faqous",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      31.78773,
+      30.72513
+    ],
+    "zoom": 10.6,
+    "population": 308384,
+    "grid": "cities/faqous/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/faqous/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "faqous",
+        "name": "Faqous",
+        "nameIt": "Faqous",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          31.78773,
+          30.72513
+        ],
+        "zoom": 10.6,
+        "population": 308384,
+        "cells": 528,
+        "layer": "cities/faqous/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.78773,
+            30.72513
+          ]
+        },
+        "properties": {
+          "id": "faqous",
+          "name": "Faqous",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 308384
+        }
+      },
+      "summary": null
+    }
+  }
+}

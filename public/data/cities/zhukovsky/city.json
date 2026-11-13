@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhukovsky",
+  "createdAt": "2026-10-08T16:25:27.581Z",
+  "updatedAt": "2026-10-08T16:25:27.581Z",
+  "meta": {
+    "name": "Zhukovsky",
+    "nameIt": "Zhukovsky",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhukovsky.geojson",
+      "sha256": "e642604dcfb9a8482b7b2af33f913dc9f44f2dd7a2ee484014e3a0614043cb3e",
+      "size": 240410,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhukovsky",
+    "name": "Zhukovsky",
+    "nameIt": "Zhukovsky",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      38.10939,
+      55.59785
+    ],
+    "zoom": 11.2,
+    "population": 105445,
+    "grid": "cities/zhukovsky/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhukovsky/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhukovsky",
+        "name": "Zhukovsky",
+        "nameIt": "Zhukovsky",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          38.10939,
+          55.59785
+        ],
+        "zoom": 11.2,
+        "population": 105445,
+        "cells": 211,
+        "layer": "cities/zhukovsky/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.10939,
+            55.59785
+          ]
+        },
+        "properties": {
+          "id": "zhukovsky",
+          "name": "Zhukovsky",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 7.8,
+          "population": 105445
+        }
+      },
+      "summary": null
+    }
+  }
+}

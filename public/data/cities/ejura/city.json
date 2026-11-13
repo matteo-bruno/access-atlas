@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ejura",
+  "createdAt": "2026-10-08T15:31:48.648Z",
+  "updatedAt": "2026-10-08T15:31:48.648Z",
+  "meta": {
+    "name": "Ejura",
+    "nameIt": "Ejura",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ejura.geojson",
+      "sha256": "6c276337027cd9ac53da8245fad2b44d7058859990f375b8520016d0f78b855b",
+      "size": 150536,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ejura",
+    "name": "Ejura",
+    "nameIt": "Ejura",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH",
+    "center": [
+      -1.35744,
+      7.38434
+    ],
+    "zoom": 12,
+    "population": 72298,
+    "grid": "cities/ejura/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ejura/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ejura",
+        "name": "Ejura",
+        "nameIt": "Ejura",
+        "region": "Ghana",
+        "regionIt": "Ghana",
+        "country": "GH",
+        "center": [
+          -1.35744,
+          7.38434
+        ],
+        "zoom": 12,
+        "population": 72298,
+        "cells": 129,
+        "layer": "cities/ejura/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.35744,
+            7.38434
+          ]
+        },
+        "properties": {
+          "id": "ejura",
+          "name": "Ejura",
+          "country": "GH",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 72298
+        }
+      },
+      "summary": null
+    }
+  }
+}

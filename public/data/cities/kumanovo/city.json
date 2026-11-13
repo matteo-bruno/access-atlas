@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kumanovo",
+  "createdAt": "2026-10-08T15:48:43.881Z",
+  "updatedAt": "2026-10-08T15:48:43.881Z",
+  "meta": {
+    "name": "Kumanovo",
+    "nameIt": "Kumanovo",
+    "region": "North Macedonia",
+    "regionIt": "Macedonia del Nord",
+    "country": "MK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kumanovo.geojson",
+      "sha256": "bf0d088322a40794ed10ac9f128dbe98aae2e37220e025e01fe2aed98214caf0",
+      "size": 176967,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kumanovo",
+    "name": "Kumanovo",
+    "nameIt": "Kumanovo",
+    "region": "North Macedonia",
+    "regionIt": "Macedonia del Nord",
+    "country": "MK",
+    "center": [
+      21.72316,
+      42.13429
+    ],
+    "zoom": 11.5,
+    "population": 65176,
+    "grid": "cities/kumanovo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kumanovo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kumanovo",
+        "name": "Kumanovo",
+        "nameIt": "Kumanovo",
+        "region": "North Macedonia",
+        "regionIt": "Macedonia del Nord",
+        "country": "MK",
+        "center": [
+          21.72316,
+          42.13429
+        ],
+        "zoom": 11.5,
+        "population": 65176,
+        "cells": 153,
+        "layer": "cities/kumanovo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            21.72316,
+            42.13429
+          ]
+        },
+        "properties": {
+          "id": "kumanovo",
+          "name": "Kumanovo",
+          "country": "MK",
+          "isStudy": true,
+          "proximityMinutes": 15.9,
+          "population": 65176
+        }
+      },
+      "summary": null
+    }
+  }
+}

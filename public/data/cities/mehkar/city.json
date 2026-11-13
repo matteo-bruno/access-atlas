@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mehkar",
+  "createdAt": "2026-10-08T15:56:17.271Z",
+  "updatedAt": "2026-10-08T15:56:17.271Z",
+  "meta": {
+    "name": "Mehkar",
+    "nameIt": "Mehkar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mehkar.geojson",
+      "sha256": "b8a70d6d69c26c4acbb72becce58795b0862dafb77508e5e1067f01d1f0e181a",
+      "size": 80015,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mehkar",
+    "name": "Mehkar",
+    "nameIt": "Mehkar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.5747,
+      20.15153
+    ],
+    "zoom": 12,
+    "population": 40115,
+    "grid": "cities/mehkar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mehkar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mehkar",
+        "name": "Mehkar",
+        "nameIt": "Mehkar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.5747,
+          20.15153
+        ],
+        "zoom": 12,
+        "population": 40115,
+        "cells": 69,
+        "layer": "cities/mehkar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.5747,
+            20.15153
+          ]
+        },
+        "properties": {
+          "id": "mehkar",
+          "name": "Mehkar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 40115
+        }
+      },
+      "summary": null
+    }
+  }
+}

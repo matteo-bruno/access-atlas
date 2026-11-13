@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "le-mee-sur-seine",
+  "createdAt": "2026-10-08T15:50:30.396Z",
+  "updatedAt": "2026-10-08T15:50:30.396Z",
+  "meta": {
+    "name": "Le Mée-sur-Seine",
+    "nameIt": "Le Mée-sur-Seine",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Le Mée-sur-Seine.geojson",
+      "sha256": "9b79cf438f0e96238b64edf8b48184ca27edc1b8d5c2276881b8bce1f554cb28",
+      "size": 329874,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "le-mee-sur-seine",
+    "name": "Le Mée-sur-Seine",
+    "nameIt": "Le Mée-sur-Seine",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      2.65195,
+      48.53457
+    ],
+    "zoom": 11.4,
+    "population": 100310,
+    "grid": "cities/le-mee-sur-seine/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/le-mee-sur-seine/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "le-mee-sur-seine",
+        "name": "Le Mée-sur-Seine",
+        "nameIt": "Le Mée-sur-Seine",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          2.65195,
+          48.53457
+        ],
+        "zoom": 11.4,
+        "population": 100310,
+        "cells": 289,
+        "layer": "cities/le-mee-sur-seine/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.65195,
+            48.53457
+          ]
+        },
+        "properties": {
+          "id": "le-mee-sur-seine",
+          "name": "Le Mée-sur-Seine",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 10.1,
+          "population": 100310
+        }
+      },
+      "summary": null
+    }
+  }
+}

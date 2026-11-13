@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gumaca",
+  "createdAt": "2026-10-08T15:36:41.034Z",
+  "updatedAt": "2026-10-08T15:36:41.034Z",
+  "meta": {
+    "name": "Gumaca",
+    "nameIt": "Gumaca",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gumaca.geojson",
+      "sha256": "1fd840d7972407d4a9bb517e44c2f72e1d071db15ea91b0f1f96b8e69b6b9cfb",
+      "size": 232629,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gumaca",
+    "name": "Gumaca",
+    "nameIt": "Gumaca",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      122.09834,
+      13.92274
+    ],
+    "zoom": 10.5,
+    "population": 44441,
+    "grid": "cities/gumaca/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gumaca/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gumaca",
+        "name": "Gumaca",
+        "nameIt": "Gumaca",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          122.09834,
+          13.92274
+        ],
+        "zoom": 10.5,
+        "population": 44441,
+        "cells": 199,
+        "layer": "cities/gumaca/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            122.09834,
+            13.92274
+          ]
+        },
+        "properties": {
+          "id": "gumaca",
+          "name": "Gumaca",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 10.8,
+          "population": 44441
+        }
+      },
+      "summary": null
+    }
+  }
+}

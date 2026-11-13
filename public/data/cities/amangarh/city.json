@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "amangarh",
+  "createdAt": "2026-10-08T15:06:32.511Z",
+  "updatedAt": "2026-10-08T15:06:32.511Z",
+  "meta": {
+    "name": "Amangarh",
+    "nameIt": "Amangarh",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Amangarh.geojson",
+      "sha256": "fa363a4ce77090e623c16eb2fef7e379977caf95d60c1fa6692648c24c820039",
+      "size": 86660,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "amangarh",
+    "name": "Amangarh",
+    "nameIt": "Amangarh",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      71.9057,
+      33.99765
+    ],
+    "zoom": 11.6,
+    "population": 49515,
+    "grid": "cities/amangarh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/amangarh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "amangarh",
+        "name": "Amangarh",
+        "nameIt": "Amangarh",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          71.9057,
+          33.99765
+        ],
+        "zoom": 11.6,
+        "population": 49515,
+        "cells": 75,
+        "layer": "cities/amangarh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.9057,
+            33.99765
+          ]
+        },
+        "properties": {
+          "id": "amangarh",
+          "name": "Amangarh",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 49515
+        }
+      },
+      "summary": null
+    }
+  }
+}

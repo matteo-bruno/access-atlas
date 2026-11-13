@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "los-angeles-united-states-of-america",
+  "createdAt": "2026-10-08T15:52:09.503Z",
+  "updatedAt": "2026-10-08T15:52:09.503Z",
+  "meta": {
+    "name": "Los Angeles United States of America",
+    "nameIt": "Los Angeles United States of America",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Los Angeles.geojson",
+      "sha256": "e7482909a7d907516a9eceef3a3846aad89a564d8578cddd66d7b2709c3ae670",
+      "size": 44315683,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "los-angeles-united-states-of-america",
+    "name": "Los Angeles United States of America",
+    "nameIt": "Los Angeles United States of America",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -118.08123,
+      33.98622
+    ],
+    "zoom": 8.5,
+    "population": 14110280,
+    "grid": "cities/los-angeles-united-states-of-america/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/los-angeles-united-states-of-america/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "los-angeles-united-states-of-america",
+        "name": "Los Angeles United States of America",
+        "nameIt": "Los Angeles United States of America",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -118.08123,
+          33.98622
+        ],
+        "zoom": 8.5,
+        "population": 14110280,
+        "cells": 38076,
+        "layer": "cities/los-angeles-united-states-of-america/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -118.08123,
+            33.98622
+          ]
+        },
+        "properties": {
+          "id": "los-angeles-united-states-of-america",
+          "name": "Los Angeles United States of America",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 16.2,
+          "population": 14110280
+        }
+      },
+      "summary": null
+    }
+  }
+}

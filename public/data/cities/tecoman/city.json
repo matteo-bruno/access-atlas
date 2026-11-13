@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tecoman",
+  "createdAt": "2026-10-08T16:17:04.976Z",
+  "updatedAt": "2026-10-08T16:17:04.976Z",
+  "meta": {
+    "name": "Tecoman",
+    "nameIt": "Tecoman",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tecoman.geojson",
+      "sha256": "5edc126082a8166c7b32656881fad0ac09d11d7b4ec262791ac8c31d25b0a78d",
+      "size": 176000,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tecoman",
+    "name": "Tecoman",
+    "nameIt": "Tecoman",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -103.87861,
+      18.91445
+    ],
+    "zoom": 11.6,
+    "population": 80159,
+    "grid": "cities/tecoman/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tecoman/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tecoman",
+        "name": "Tecoman",
+        "nameIt": "Tecoman",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -103.87861,
+          18.91445
+        ],
+        "zoom": 11.6,
+        "population": 80159,
+        "cells": 150,
+        "layer": "cities/tecoman/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -103.87861,
+            18.91445
+          ]
+        },
+        "properties": {
+          "id": "tecoman",
+          "name": "Tecoman",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 80159
+        }
+      },
+      "summary": null
+    }
+  }
+}

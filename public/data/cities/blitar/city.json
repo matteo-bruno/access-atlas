@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "blitar",
+  "createdAt": "2026-10-08T15:19:36.544Z",
+  "updatedAt": "2026-10-08T15:19:36.544Z",
+  "meta": {
+    "name": "Blitar",
+    "nameIt": "Blitar",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Blitar.geojson",
+      "sha256": "fdc3c5c8a69a842eda5423f01bae88180b2ebab410d34b5df56402774c7fea1a",
+      "size": 1802080,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "blitar",
+    "name": "Blitar",
+    "nameIt": "Blitar",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      112.17761,
+      -8.09837
+    ],
+    "zoom": 10,
+    "population": 391942,
+    "grid": "cities/blitar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/blitar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "blitar",
+        "name": "Blitar",
+        "nameIt": "Blitar",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          112.17761,
+          -8.09837
+        ],
+        "zoom": 10,
+        "population": 391942,
+        "cells": 1542,
+        "layer": "cities/blitar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.17761,
+            -8.09837
+          ]
+        },
+        "properties": {
+          "id": "blitar",
+          "name": "Blitar",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 52.7,
+          "population": 391942
+        }
+      },
+      "summary": null
+    }
+  }
+}

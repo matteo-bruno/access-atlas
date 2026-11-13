@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sagaing",
+  "createdAt": "2026-10-08T16:09:42.019Z",
+  "updatedAt": "2026-10-08T16:09:42.019Z",
+  "meta": {
+    "name": "Sagaing",
+    "nameIt": "Sagaing",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sagaing.geojson",
+      "sha256": "568d15e70c06576d7d5e12a0ed3f39fff79648e1bf5e124e04dc917faa0d1f45",
+      "size": 318269,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sagaing",
+    "name": "Sagaing",
+    "nameIt": "Sagaing",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      95.97929,
+      21.89698
+    ],
+    "zoom": 11,
+    "population": 173987,
+    "grid": "cities/sagaing/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sagaing/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sagaing",
+        "name": "Sagaing",
+        "nameIt": "Sagaing",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          95.97929,
+          21.89698
+        ],
+        "zoom": 11,
+        "population": 173987,
+        "cells": 275,
+        "layer": "cities/sagaing/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            95.97929,
+            21.89698
+          ]
+        },
+        "properties": {
+          "id": "sagaing",
+          "name": "Sagaing",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 22.5,
+          "population": 173987
+        }
+      },
+      "summary": null
+    }
+  }
+}

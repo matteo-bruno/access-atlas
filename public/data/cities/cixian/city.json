@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cixian",
+  "createdAt": "2026-10-08T15:25:46.147Z",
+  "updatedAt": "2026-10-08T15:25:46.147Z",
+  "meta": {
+    "name": "Cixian",
+    "nameIt": "Cixian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cixian.geojson",
+      "sha256": "fe0c8b399282d29611723823a761b16d4d9fd59a1d6c7137f525d172c3b24866",
+      "size": 918619,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cixian",
+    "name": "Cixian",
+    "nameIt": "Cixian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.38234,
+      36.36353
+    ],
+    "zoom": 10.1,
+    "population": 185002,
+    "grid": "cities/cixian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cixian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cixian",
+        "name": "Cixian",
+        "nameIt": "Cixian",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.38234,
+          36.36353
+        ],
+        "zoom": 10.1,
+        "population": 185002,
+        "cells": 788,
+        "layer": "cities/cixian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.38234,
+            36.36353
+          ]
+        },
+        "properties": {
+          "id": "cixian",
+          "name": "Cixian",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 26.2,
+          "population": 185002
+        }
+      },
+      "summary": null
+    }
+  }
+}

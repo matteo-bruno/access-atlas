@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "coventry",
+  "createdAt": "2026-10-08T15:26:44.008Z",
+  "updatedAt": "2026-10-08T15:26:44.008Z",
+  "meta": {
+    "name": "Coventry",
+    "nameIt": "Coventry",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Coventry.geojson",
+      "sha256": "ba6f74db15348460f127d8894cb060e83af4961e64ca8f160bc4e48dcf600240",
+      "size": 1216497,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "coventry",
+    "name": "Coventry",
+    "nameIt": "Coventry",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.50503,
+      52.41994
+    ],
+    "zoom": 10.3,
+    "population": 394241,
+    "grid": "cities/coventry/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/coventry/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "coventry",
+        "name": "Coventry",
+        "nameIt": "Coventry",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.50503,
+          52.41994
+        ],
+        "zoom": 10.3,
+        "population": 394241,
+        "cells": 1055,
+        "layer": "cities/coventry/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.50503,
+            52.41994
+          ]
+        },
+        "properties": {
+          "id": "coventry",
+          "name": "Coventry",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 394241
+        }
+      },
+      "summary": null
+    }
+  }
+}

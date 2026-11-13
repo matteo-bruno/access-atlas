@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mannheim-fua",
+  "createdAt": "2026-10-19T16:57:17.632Z",
+  "updatedAt": "2026-10-19T16:57:17.632Z",
+  "meta": {
+    "name": "Mannheim",
+    "nameIt": "Mannheim",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "mannheim-fua",
+    "name": "Mannheim",
+    "nameIt": "Mannheim",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "extent": "fua",
+    "core": "mannheim",
+    "center": [
+      8.49795,
+      49.45806
+    ],
+    "zoom": 8.5,
+    "population": 1818176,
+    "grid": "cities/mannheim-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mannheim-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mannheim-fua",
+        "name": "Mannheim",
+        "nameIt": "Mannheim",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "extent": "fua",
+        "core": "mannheim",
+        "center": [
+          8.49795,
+          49.45806
+        ],
+        "zoom": 8.5,
+        "population": 1818176,
+        "cells": 22266,
+        "layer": "cities/mannheim-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.49795,
+            49.45806
+          ]
+        },
+        "properties": {
+          "id": "mannheim-fua",
+          "name": "Mannheim",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 10.6,
+          "population": 1818176
+        }
+      },
+      "summary": null
+    }
+  }
+}

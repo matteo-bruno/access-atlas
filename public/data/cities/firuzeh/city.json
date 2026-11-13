@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "firuzeh",
+  "createdAt": "2026-10-08T15:33:24.975Z",
+  "updatedAt": "2026-10-08T15:33:24.975Z",
+  "meta": {
+    "name": "Firuzeh",
+    "nameIt": "Firuzeh",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Firuzeh.geojson",
+      "sha256": "a76a8b7eab562dd4dc83d505691e2f97ec95bd20a9ae84028e6b64340ad04d24",
+      "size": 137738,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "firuzeh",
+    "name": "Firuzeh",
+    "nameIt": "Firuzeh",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      58.59045,
+      36.28745
+    ],
+    "zoom": 11.4,
+    "population": 10593,
+    "grid": "cities/firuzeh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/firuzeh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "firuzeh",
+        "name": "Firuzeh",
+        "nameIt": "Firuzeh",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          58.59045,
+          36.28745
+        ],
+        "zoom": 11.4,
+        "population": 10593,
+        "cells": 119,
+        "layer": "cities/firuzeh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            58.59045,
+            36.28745
+          ]
+        },
+        "properties": {
+          "id": "firuzeh",
+          "name": "Firuzeh",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 10593
+        }
+      },
+      "summary": null
+    }
+  }
+}

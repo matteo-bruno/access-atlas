@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kuchiamora",
+  "createdAt": "2026-10-08T15:48:37.519Z",
+  "updatedAt": "2026-10-08T15:48:37.519Z",
+  "meta": {
+    "name": "Kuchiamora",
+    "nameIt": "Kuchiamora",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kuchiamora.geojson",
+      "sha256": "2717af7d4aaa6eaff5a66d8ede38aed209861f3a60a38337afd8dea5136bd57f",
+      "size": 428708,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kuchiamora",
+    "name": "Kuchiamora",
+    "nameIt": "Kuchiamora",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      88.94804,
+      24.0991
+    ],
+    "zoom": 10.6,
+    "population": 79468,
+    "grid": "cities/kuchiamora/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kuchiamora/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kuchiamora",
+        "name": "Kuchiamora",
+        "nameIt": "Kuchiamora",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          88.94804,
+          24.0991
+        ],
+        "zoom": 10.6,
+        "population": 79468,
+        "cells": 370,
+        "layer": "cities/kuchiamora/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.94804,
+            24.0991
+          ]
+        },
+        "properties": {
+          "id": "kuchiamora",
+          "name": "Kuchiamora",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 49.1,
+          "population": 79468
+        }
+      },
+      "summary": null
+    }
+  }
+}

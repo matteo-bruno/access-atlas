@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cam-ranh",
+  "createdAt": "2026-10-08T15:21:59.636Z",
+  "updatedAt": "2026-10-08T15:21:59.636Z",
+  "meta": {
+    "name": "Cam Ranh",
+    "nameIt": "Cam Ranh",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cam Ranh.geojson",
+      "sha256": "9e67e3cc49365abebdf8919c9ad4a187f83c8c5a3686405542a87ada78a7d4eb",
+      "size": 237664,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cam-ranh",
+    "name": "Cam Ranh",
+    "nameIt": "Cam Ranh",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      109.15144,
+      11.91781
+    ],
+    "zoom": 11.2,
+    "population": 72814,
+    "grid": "cities/cam-ranh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cam-ranh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cam-ranh",
+        "name": "Cam Ranh",
+        "nameIt": "Cam Ranh",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          109.15144,
+          11.91781
+        ],
+        "zoom": 11.2,
+        "population": 72814,
+        "cells": 203,
+        "layer": "cities/cam-ranh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.15144,
+            11.91781
+          ]
+        },
+        "properties": {
+          "id": "cam-ranh",
+          "name": "Cam Ranh",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 22.8,
+          "population": 72814
+        }
+      },
+      "summary": null
+    }
+  }
+}

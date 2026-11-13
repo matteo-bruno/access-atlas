@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "johannesburg",
+  "createdAt": "2026-10-08T15:43:26.270Z",
+  "updatedAt": "2026-10-08T15:43:26.270Z",
+  "meta": {
+    "name": "Johannesburg",
+    "nameIt": "Johannesburg",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Johannesburg.geojson",
+      "sha256": "1edbe436e84ffd91e333fb15c077a05f1ab752d77c22892cba35a93e02b79cb1",
+      "size": 17419152,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "johannesburg",
+    "name": "Johannesburg",
+    "nameIt": "Johannesburg",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      28.05964,
+      -26.16876
+    ],
+    "zoom": 8.5,
+    "population": 6892270,
+    "grid": "cities/johannesburg/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/johannesburg/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "johannesburg",
+        "name": "Johannesburg",
+        "nameIt": "Johannesburg",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          28.05964,
+          -26.16876
+        ],
+        "zoom": 8.5,
+        "population": 6892270,
+        "cells": 14904,
+        "layer": "cities/johannesburg/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.05964,
+            -26.16876
+          ]
+        },
+        "properties": {
+          "id": "johannesburg",
+          "name": "Johannesburg",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 38.2,
+          "population": 6892270
+        }
+      },
+      "summary": null
+    }
+  }
+}

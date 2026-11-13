@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "go-cong",
+  "createdAt": "2026-10-08T15:35:24.685Z",
+  "updatedAt": "2026-10-08T15:35:24.685Z",
+  "meta": {
+    "name": "Go Cong",
+    "nameIt": "Go Cong",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Go Cong.geojson",
+      "sha256": "46398bf36b5fd79f9aae7ffc1cdc7d8488a794189ed4a4e7ca4d3efddad82e49",
+      "size": 127480,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "go-cong",
+    "name": "Go Cong",
+    "nameIt": "Go Cong",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      106.67572,
+      10.36151
+    ],
+    "zoom": 11.7,
+    "population": 53991,
+    "grid": "cities/go-cong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/go-cong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "go-cong",
+        "name": "Go Cong",
+        "nameIt": "Go Cong",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          106.67572,
+          10.36151
+        ],
+        "zoom": 11.7,
+        "population": 53991,
+        "cells": 109,
+        "layer": "cities/go-cong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.67572,
+            10.36151
+          ]
+        },
+        "properties": {
+          "id": "go-cong",
+          "name": "Go Cong",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 53991
+        }
+      },
+      "summary": null
+    }
+  }
+}

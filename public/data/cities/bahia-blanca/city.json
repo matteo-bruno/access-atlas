@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bahia-blanca",
+  "createdAt": "2026-10-08T15:13:21.857Z",
+  "updatedAt": "2026-10-08T15:13:21.857Z",
+  "meta": {
+    "name": "Bahía Blanca",
+    "nameIt": "Bahía Blanca",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bahía Blanca.geojson",
+      "sha256": "a76e0386c19e03055006117164c94fd0f5b531d292ddc182d36b080b155d8b6b",
+      "size": 1581741,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bahia-blanca",
+    "name": "Bahía Blanca",
+    "nameIt": "Bahía Blanca",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -62.2654,
+      -38.72305
+    ],
+    "zoom": 10.3,
+    "population": 272792,
+    "grid": "cities/bahia-blanca/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 167
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bahia-blanca/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bahia-blanca",
+        "name": "Bahía Blanca",
+        "nameIt": "Bahía Blanca",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -62.2654,
+          -38.72305
+        ],
+        "zoom": 10.3,
+        "population": 272792,
+        "cells": 1357,
+        "layer": "cities/bahia-blanca/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 167
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -62.2654,
+            -38.72305
+          ]
+        },
+        "properties": {
+          "id": "bahia-blanca",
+          "name": "Bahía Blanca",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 272792
+        }
+      },
+      "summary": null
+    }
+  }
+}

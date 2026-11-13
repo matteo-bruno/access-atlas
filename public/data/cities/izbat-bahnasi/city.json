@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "izbat-bahnasi",
+  "createdAt": "2026-10-08T15:41:31.342Z",
+  "updatedAt": "2026-10-08T15:41:31.342Z",
+  "meta": {
+    "name": "Izbat Bahnasi",
+    "nameIt": "Izbat Bahnasi",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Izbat Bahnasi.geojson",
+      "sha256": "585f6b2d7dc06050834f880980c792167f750fdacfd9c76512a31e731df5264f",
+      "size": 111770,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "izbat-bahnasi",
+    "name": "Izbat Bahnasi",
+    "nameIt": "Izbat Bahnasi",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      30.39449,
+      31.44506
+    ],
+    "zoom": 11.7,
+    "population": 56019,
+    "grid": "cities/izbat-bahnasi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/izbat-bahnasi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "izbat-bahnasi",
+        "name": "Izbat Bahnasi",
+        "nameIt": "Izbat Bahnasi",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          30.39449,
+          31.44506
+        ],
+        "zoom": 11.7,
+        "population": 56019,
+        "cells": 96,
+        "layer": "cities/izbat-bahnasi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.39449,
+            31.44506
+          ]
+        },
+        "properties": {
+          "id": "izbat-bahnasi",
+          "name": "Izbat Bahnasi",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 56019
+        }
+      },
+      "summary": null
+    }
+  }
+}

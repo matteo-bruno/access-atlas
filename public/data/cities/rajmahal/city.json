@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rajmahal",
+  "createdAt": "2026-10-08T16:07:59.832Z",
+  "updatedAt": "2026-10-08T16:07:59.832Z",
+  "meta": {
+    "name": "Rajmahal",
+    "nameIt": "Rajmahal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rajmahal.geojson",
+      "sha256": "f1dfa9cd23d13bf86eaeb1119097a81668fc38f031f40f957abcd61dc938346e",
+      "size": 979747,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rajmahal",
+    "name": "Rajmahal",
+    "nameIt": "Rajmahal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.85773,
+      24.98325
+    ],
+    "zoom": 9.8,
+    "population": 179111,
+    "grid": "cities/rajmahal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rajmahal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rajmahal",
+        "name": "Rajmahal",
+        "nameIt": "Rajmahal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.85773,
+          24.98325
+        ],
+        "zoom": 9.8,
+        "population": 179111,
+        "cells": 845,
+        "layer": "cities/rajmahal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.85773,
+            24.98325
+          ]
+        },
+        "properties": {
+          "id": "rajmahal",
+          "name": "Rajmahal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 34.3,
+          "population": 179111
+        }
+      },
+      "summary": null
+    }
+  }
+}

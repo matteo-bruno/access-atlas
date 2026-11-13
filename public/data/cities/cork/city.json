@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cork",
+  "createdAt": "2026-10-08T15:26:35.163Z",
+  "updatedAt": "2026-10-08T15:26:35.163Z",
+  "meta": {
+    "name": "Cork",
+    "nameIt": "Cork",
+    "region": "Ireland",
+    "regionIt": "Irlanda",
+    "country": "IE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cork.geojson",
+      "sha256": "edbd07f0b7cb35586d4cd123f068f30fb51307ae5d6bccddcb346a8fc2968f57",
+      "size": 582604,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cork",
+    "name": "Cork",
+    "nameIt": "Cork",
+    "region": "Ireland",
+    "regionIt": "Irlanda",
+    "country": "IE",
+    "center": [
+      -8.46463,
+      51.89253
+    ],
+    "zoom": 10.8,
+    "population": 162528,
+    "grid": "cities/cork/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cork/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cork",
+        "name": "Cork",
+        "nameIt": "Cork",
+        "region": "Ireland",
+        "regionIt": "Irlanda",
+        "country": "IE",
+        "center": [
+          -8.46463,
+          51.89253
+        ],
+        "zoom": 10.8,
+        "population": 162528,
+        "cells": 509,
+        "layer": "cities/cork/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -8.46463,
+            51.89253
+          ]
+        },
+        "properties": {
+          "id": "cork",
+          "name": "Cork",
+          "country": "IE",
+          "isStudy": true,
+          "proximityMinutes": 10.3,
+          "population": 162528
+        }
+      },
+      "summary": null
+    }
+  }
+}

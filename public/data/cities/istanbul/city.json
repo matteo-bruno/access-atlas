@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "istanbul",
+  "createdAt": "2026-10-08T15:41:16.479Z",
+  "updatedAt": "2026-10-08T15:41:16.479Z",
+  "meta": {
+    "name": "Istanbul",
+    "nameIt": "Istanbul",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Istanbul.geojson",
+      "sha256": "5dbc51fd367417038b4cfe210a611e32cf83df33a101a41c1c277a476d0f4185",
+      "size": 12469697,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "istanbul",
+    "name": "Istanbul",
+    "nameIt": "Istanbul",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      28.98641,
+      41.00556
+    ],
+    "zoom": 8.5,
+    "population": 15865932,
+    "grid": "cities/istanbul/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/istanbul/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "istanbul",
+        "name": "Istanbul",
+        "nameIt": "Istanbul",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          28.98641,
+          41.00556
+        ],
+        "zoom": 8.5,
+        "population": 15865932,
+        "cells": 10863,
+        "layer": "cities/istanbul/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.98641,
+            41.00556
+          ]
+        },
+        "properties": {
+          "id": "istanbul",
+          "name": "Istanbul",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 11.4,
+          "population": 15865932
+        }
+      },
+      "summary": null
+    }
+  }
+}

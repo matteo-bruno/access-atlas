@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "igangan",
+  "createdAt": "2026-10-08T15:40:21.587Z",
+  "updatedAt": "2026-10-08T15:40:21.587Z",
+  "meta": {
+    "name": "Igangan",
+    "nameIt": "Igangan",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Igangan.geojson",
+      "sha256": "27bfeeae67738bf74f5968ade4058891372cd490716bc66e2ebe89cf917952d6",
+      "size": 116547,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "igangan",
+    "name": "Igangan",
+    "nameIt": "Igangan",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      3.18398,
+      7.68141
+    ],
+    "zoom": 12,
+    "population": 20936,
+    "grid": "cities/igangan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/igangan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "igangan",
+        "name": "Igangan",
+        "nameIt": "Igangan",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          3.18398,
+          7.68141
+        ],
+        "zoom": 12,
+        "population": 20936,
+        "cells": 101,
+        "layer": "cities/igangan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.18398,
+            7.68141
+          ]
+        },
+        "properties": {
+          "id": "igangan",
+          "name": "Igangan",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 20936
+        }
+      },
+      "summary": null
+    }
+  }
+}

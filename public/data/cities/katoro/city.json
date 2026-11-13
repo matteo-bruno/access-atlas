@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "katoro",
+  "createdAt": "2026-10-08T15:45:42.375Z",
+  "updatedAt": "2026-10-08T15:45:42.375Z",
+  "meta": {
+    "name": "Katoro",
+    "nameIt": "Katoro",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Katoro.geojson",
+      "sha256": "0c97aec19c316184dc85dd1cb4d9d1678aab50c2234af8556356be03b22dc4aa",
+      "size": 317926,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "katoro",
+    "name": "Katoro",
+    "nameIt": "Katoro",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      31.92975,
+      -3.00651
+    ],
+    "zoom": 11.2,
+    "population": 159437,
+    "grid": "cities/katoro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/katoro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "katoro",
+        "name": "Katoro",
+        "nameIt": "Katoro",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          31.92975,
+          -3.00651
+        ],
+        "zoom": 11.2,
+        "population": 159437,
+        "cells": 271,
+        "layer": "cities/katoro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.92975,
+            -3.00651
+          ]
+        },
+        "properties": {
+          "id": "katoro",
+          "name": "Katoro",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 13.8,
+          "population": 159437
+        }
+      },
+      "summary": null
+    }
+  }
+}

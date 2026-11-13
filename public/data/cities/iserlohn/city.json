@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "iserlohn",
+  "createdAt": "2026-10-08T15:41:07.104Z",
+  "updatedAt": "2026-10-08T15:41:07.104Z",
+  "meta": {
+    "name": "Iserlohn",
+    "nameIt": "Iserlohn",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Iserlohn.geojson",
+      "sha256": "99cb242aa42699ed9fc3a4d7cb63455168751e571a4613cc1876efc6b4ba3778",
+      "size": 249094,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "iserlohn",
+    "name": "Iserlohn",
+    "nameIt": "Iserlohn",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      7.68527,
+      51.37958
+    ],
+    "zoom": 11.2,
+    "population": 47569,
+    "grid": "cities/iserlohn/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/iserlohn/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "iserlohn",
+        "name": "Iserlohn",
+        "nameIt": "Iserlohn",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          7.68527,
+          51.37958
+        ],
+        "zoom": 11.2,
+        "population": 47569,
+        "cells": 219,
+        "layer": "cities/iserlohn/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.68527,
+            51.37958
+          ]
+        },
+        "properties": {
+          "id": "iserlohn",
+          "name": "Iserlohn",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 47569
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mopeia",
+  "createdAt": "2026-10-08T15:58:11.921Z",
+  "updatedAt": "2026-10-08T15:58:11.921Z",
+  "meta": {
+    "name": "Mopeia",
+    "nameIt": "Mopeia",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mopeia.geojson",
+      "sha256": "d9210160c04bd9793e1e256861fc1f1859264acb9ea85b711fd3152ed3c62cda",
+      "size": 89042,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mopeia",
+    "name": "Mopeia",
+    "nameIt": "Mopeia",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ",
+    "center": [
+      35.71334,
+      -17.97736
+    ],
+    "zoom": 11.4,
+    "population": 37698,
+    "grid": "cities/mopeia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mopeia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mopeia",
+        "name": "Mopeia",
+        "nameIt": "Mopeia",
+        "region": "Mozambique",
+        "regionIt": "Mozambico",
+        "country": "MZ",
+        "center": [
+          35.71334,
+          -17.97736
+        ],
+        "zoom": 11.4,
+        "population": 37698,
+        "cells": 76,
+        "layer": "cities/mopeia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.71334,
+            -17.97736
+          ]
+        },
+        "properties": {
+          "id": "mopeia",
+          "name": "Mopeia",
+          "country": "MZ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 37698
+        }
+      },
+      "summary": null
+    }
+  }
+}

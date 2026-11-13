@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "beni-mellal",
+  "createdAt": "2026-10-08T15:17:26.248Z",
+  "updatedAt": "2026-10-08T15:17:26.248Z",
+  "meta": {
+    "name": "Beni Mellal",
+    "nameIt": "Beni Mellal",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Beni Mellal.geojson",
+      "sha256": "c5ca6f0066ce703735d5a58d817c800efed099eacada21459cf0e92cabdaccc6",
+      "size": 228632,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "beni-mellal",
+    "name": "Beni Mellal",
+    "nameIt": "Beni Mellal",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -6.36096,
+      32.33488
+    ],
+    "zoom": 11.4,
+    "population": 110141,
+    "grid": "cities/beni-mellal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/beni-mellal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "beni-mellal",
+        "name": "Beni Mellal",
+        "nameIt": "Beni Mellal",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -6.36096,
+          32.33488
+        ],
+        "zoom": 11.4,
+        "population": 110141,
+        "cells": 197,
+        "layer": "cities/beni-mellal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -6.36096,
+            32.33488
+          ]
+        },
+        "properties": {
+          "id": "beni-mellal",
+          "name": "Beni Mellal",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 18.2,
+          "population": 110141
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oaxaca-de-juarez",
+  "createdAt": "2026-10-08T16:02:27.154Z",
+  "updatedAt": "2026-10-08T16:02:27.154Z",
+  "meta": {
+    "name": "Oaxaca de Juárez",
+    "nameIt": "Oaxaca de Juárez",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Oaxaca de Juárez.geojson",
+      "sha256": "65820d4e3ac21a48ab02b50fd31d5726697bc307e1206faceaa6a5f85a25fcb9",
+      "size": 1218249,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "oaxaca-de-juarez",
+    "name": "Oaxaca de Juárez",
+    "nameIt": "Oaxaca de Juárez",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -96.72916,
+      17.065
+    ],
+    "zoom": 10.1,
+    "population": 549572,
+    "grid": "cities/oaxaca-de-juarez/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oaxaca-de-juarez/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oaxaca-de-juarez",
+        "name": "Oaxaca de Juárez",
+        "nameIt": "Oaxaca de Juárez",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -96.72916,
+          17.065
+        ],
+        "zoom": 10.1,
+        "population": 549572,
+        "cells": 1056,
+        "layer": "cities/oaxaca-de-juarez/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -96.72916,
+            17.065
+          ]
+        },
+        "properties": {
+          "id": "oaxaca-de-juarez",
+          "name": "Oaxaca de Juárez",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 549572
+        }
+      },
+      "summary": null
+    }
+  }
+}

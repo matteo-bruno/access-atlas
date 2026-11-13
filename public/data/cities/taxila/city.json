@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "taxila",
+  "createdAt": "2026-10-08T16:17:00.389Z",
+  "updatedAt": "2026-10-08T16:17:00.389Z",
+  "meta": {
+    "name": "Taxila",
+    "nameIt": "Taxila",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Taxila.geojson",
+      "sha256": "e0ee6a6f5406afef8d5b9b5ce73e158c2b3074b1a8495fce4c14e1a849d126b9",
+      "size": 1366491,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "taxila",
+    "name": "Taxila",
+    "nameIt": "Taxila",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      72.75982,
+      33.77358
+    ],
+    "zoom": 9.6,
+    "population": 729913,
+    "grid": "cities/taxila/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/taxila/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "taxila",
+        "name": "Taxila",
+        "nameIt": "Taxila",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          72.75982,
+          33.77358
+        ],
+        "zoom": 9.6,
+        "population": 729913,
+        "cells": 1181,
+        "layer": "cities/taxila/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.75982,
+            33.77358
+          ]
+        },
+        "properties": {
+          "id": "taxila",
+          "name": "Taxila",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 64.2,
+          "population": 729913
+        }
+      },
+      "summary": null
+    }
+  }
+}

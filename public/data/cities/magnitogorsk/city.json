@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "magnitogorsk",
+  "createdAt": "2026-10-08T15:53:33.300Z",
+  "updatedAt": "2026-10-08T15:53:33.300Z",
+  "meta": {
+    "name": "Magnitogorsk",
+    "nameIt": "Magnitogorsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Magnitogorsk.geojson",
+      "sha256": "7883539728e50e881408a9ae514827a60399b3770c65a6946e81e35ee3cf9f96",
+      "size": 1229610,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "magnitogorsk",
+    "name": "Magnitogorsk",
+    "nameIt": "Magnitogorsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      59.01008,
+      53.40566
+    ],
+    "zoom": 10,
+    "population": 336920,
+    "grid": "cities/magnitogorsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/magnitogorsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "magnitogorsk",
+        "name": "Magnitogorsk",
+        "nameIt": "Magnitogorsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          59.01008,
+          53.40566
+        ],
+        "zoom": 10,
+        "population": 336920,
+        "cells": 1072,
+        "layer": "cities/magnitogorsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            59.01008,
+            53.40566
+          ]
+        },
+        "properties": {
+          "id": "magnitogorsk",
+          "name": "Magnitogorsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 21.9,
+          "population": 336920
+        }
+      },
+      "summary": null
+    }
+  }
+}

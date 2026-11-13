@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bydgoszcz",
+  "createdAt": "2026-10-08T15:21:23.132Z",
+  "updatedAt": "2026-10-08T15:21:23.132Z",
+  "meta": {
+    "name": "Bydgoszcz",
+    "nameIt": "Bydgoszcz",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bydgoszcz.geojson",
+      "sha256": "c4e7be672cecf90903f123c4deb23c4be586756fa10285b08f2ffc7fc50e018a",
+      "size": 668198,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bydgoszcz",
+    "name": "Bydgoszcz",
+    "nameIt": "Bydgoszcz",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      17.99879,
+      53.12555
+    ],
+    "zoom": 10.4,
+    "population": 246508,
+    "grid": "cities/bydgoszcz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bydgoszcz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bydgoszcz",
+        "name": "Bydgoszcz",
+        "nameIt": "Bydgoszcz",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          17.99879,
+          53.12555
+        ],
+        "zoom": 10.4,
+        "population": 246508,
+        "cells": 585,
+        "layer": "cities/bydgoszcz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            17.99879,
+            53.12555
+          ]
+        },
+        "properties": {
+          "id": "bydgoszcz",
+          "name": "Bydgoszcz",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 8,
+          "population": 246508
+        }
+      },
+      "summary": null
+    }
+  }
+}

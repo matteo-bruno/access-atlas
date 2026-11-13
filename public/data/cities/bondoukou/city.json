@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bondoukou",
+  "createdAt": "2026-10-08T15:20:02.930Z",
+  "updatedAt": "2026-10-08T15:20:02.930Z",
+  "meta": {
+    "name": "Bondoukou",
+    "nameIt": "Bondoukou",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bondoukou.geojson",
+      "sha256": "0747706f4051bb15097db24837b9c481611afcc299c077a66aa284d6137f6ebd",
+      "size": 293317,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bondoukou",
+    "name": "Bondoukou",
+    "nameIt": "Bondoukou",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI",
+    "center": [
+      -2.80266,
+      8.04145
+    ],
+    "zoom": 11.7,
+    "population": 115413,
+    "grid": "cities/bondoukou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bondoukou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bondoukou",
+        "name": "Bondoukou",
+        "nameIt": "Bondoukou",
+        "region": "Ivory Coast",
+        "regionIt": "Costa d'Avorio",
+        "country": "CI",
+        "center": [
+          -2.80266,
+          8.04145
+        ],
+        "zoom": 11.7,
+        "population": 115413,
+        "cells": 252,
+        "layer": "cities/bondoukou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.80266,
+            8.04145
+          ]
+        },
+        "properties": {
+          "id": "bondoukou",
+          "name": "Bondoukou",
+          "country": "CI",
+          "isStudy": true,
+          "proximityMinutes": 20,
+          "population": 115413
+        }
+      },
+      "summary": null
+    }
+  }
+}

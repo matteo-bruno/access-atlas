@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yangkou",
+  "createdAt": "2026-10-08T16:23:23.286Z",
+  "updatedAt": "2026-10-08T16:23:23.286Z",
+  "meta": {
+    "name": "Yangkou",
+    "nameIt": "Yangkou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yangkou.geojson",
+      "sha256": "aaf0ccb3597d32946cd0f919af341f0155421708707791ed9faf3fc4a7b4f94b",
+      "size": 541650,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yangkou",
+    "name": "Yangkou",
+    "nameIt": "Yangkou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.16547,
+      28.43181
+    ],
+    "zoom": 10.3,
+    "population": 331159,
+    "grid": "cities/yangkou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yangkou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yangkou",
+        "name": "Yangkou",
+        "nameIt": "Yangkou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.16547,
+          28.43181
+        ],
+        "zoom": 10.3,
+        "population": 331159,
+        "cells": 464,
+        "layer": "cities/yangkou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.16547,
+            28.43181
+          ]
+        },
+        "properties": {
+          "id": "yangkou",
+          "name": "Yangkou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 25,
+          "population": 331159
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "qa-mal",
+  "createdAt": "2026-10-08T16:07:10.068Z",
+  "updatedAt": "2026-10-08T16:07:10.068Z",
+  "meta": {
+    "name": "Qa`mal",
+    "nameIt": "Qa`mal",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Qa`mal.geojson",
+      "sha256": "d2b9bad98c9445041fcdefd826792d06eac336324ca78f7fbfa007a1ebf64082",
+      "size": 205608,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "qa-mal",
+    "name": "Qa`mal",
+    "nameIt": "Qa`mal",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE",
+    "center": [
+      43.67267,
+      17.01434
+    ],
+    "zoom": 11.4,
+    "population": 121845,
+    "grid": "cities/qa-mal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/qa-mal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "qa-mal",
+        "name": "Qa`mal",
+        "nameIt": "Qa`mal",
+        "region": "Yemen",
+        "regionIt": "Yemen",
+        "country": "YE",
+        "center": [
+          43.67267,
+          17.01434
+        ],
+        "zoom": 11.4,
+        "population": 121845,
+        "cells": 177,
+        "layer": "cities/qa-mal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.67267,
+            17.01434
+          ]
+        },
+        "properties": {
+          "id": "qa-mal",
+          "name": "Qa`mal",
+          "country": "YE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 121845
+        }
+      },
+      "summary": null
+    }
+  }
+}

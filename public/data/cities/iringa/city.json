@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "iringa",
+  "createdAt": "2026-10-08T15:41:02.785Z",
+  "updatedAt": "2026-10-08T15:41:02.785Z",
+  "meta": {
+    "name": "Iringa",
+    "nameIt": "Iringa",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Iringa.geojson",
+      "sha256": "884952aacdedf36f32a44606a78c08bff90c190bd63572465f8d385e6171340f",
+      "size": 478608,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "iringa",
+    "name": "Iringa",
+    "nameIt": "Iringa",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      35.69434,
+      -7.76786
+    ],
+    "zoom": 10.8,
+    "population": 161483,
+    "grid": "cities/iringa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/iringa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "iringa",
+        "name": "Iringa",
+        "nameIt": "Iringa",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          35.69434,
+          -7.76786
+        ],
+        "zoom": 10.8,
+        "population": 161483,
+        "cells": 411,
+        "layer": "cities/iringa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.69434,
+            -7.76786
+          ]
+        },
+        "properties": {
+          "id": "iringa",
+          "name": "Iringa",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 30.1,
+          "population": 161483
+        }
+      },
+      "summary": null
+    }
+  }
+}

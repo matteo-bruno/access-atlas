@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lunavada",
+  "createdAt": "2026-10-08T15:52:40.683Z",
+  "updatedAt": "2026-10-08T15:52:40.683Z",
+  "meta": {
+    "name": "Lunavada",
+    "nameIt": "Lunavada",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lunavada.geojson",
+      "sha256": "b7e4c6c980553101eb00d5ff2408d477f01807cbc430c1dca8cf92d15d82f49b",
+      "size": 79951,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lunavada",
+    "name": "Lunavada",
+    "nameIt": "Lunavada",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.60712,
+      23.12616
+    ],
+    "zoom": 12,
+    "population": 34097,
+    "grid": "cities/lunavada/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lunavada/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lunavada",
+        "name": "Lunavada",
+        "nameIt": "Lunavada",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.60712,
+          23.12616
+        ],
+        "zoom": 12,
+        "population": 34097,
+        "cells": 69,
+        "layer": "cities/lunavada/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.60712,
+            23.12616
+          ]
+        },
+        "properties": {
+          "id": "lunavada",
+          "name": "Lunavada",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 34097
+        }
+      },
+      "summary": null
+    }
+  }
+}

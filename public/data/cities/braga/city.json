@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "braga",
+  "createdAt": "2026-10-08T15:20:18.808Z",
+  "updatedAt": "2026-10-08T15:20:18.808Z",
+  "meta": {
+    "name": "Braga",
+    "nameIt": "Braga",
+    "region": "Portugal",
+    "regionIt": "Portogallo",
+    "country": "PT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Braga.geojson",
+      "sha256": "41c372a68d63bb8a69241410001f4f0caea3f9d024f02b46cb1ca97dd6742500",
+      "size": 189572,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "braga",
+    "name": "Braga",
+    "nameIt": "Braga",
+    "region": "Portugal",
+    "regionIt": "Portogallo",
+    "country": "PT",
+    "center": [
+      -8.41764,
+      41.54836
+    ],
+    "zoom": 11.8,
+    "population": 107577,
+    "grid": "cities/braga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/braga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "braga",
+        "name": "Braga",
+        "nameIt": "Braga",
+        "region": "Portugal",
+        "regionIt": "Portogallo",
+        "country": "PT",
+        "center": [
+          -8.41764,
+          41.54836
+        ],
+        "zoom": 11.8,
+        "population": 107577,
+        "cells": 166,
+        "layer": "cities/braga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -8.41764,
+            41.54836
+          ]
+        },
+        "properties": {
+          "id": "braga",
+          "name": "Braga",
+          "country": "PT",
+          "isStudy": true,
+          "proximityMinutes": 7.2,
+          "population": 107577
+        }
+      },
+      "summary": null
+    }
+  }
+}

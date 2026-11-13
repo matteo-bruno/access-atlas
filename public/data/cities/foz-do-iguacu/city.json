@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "foz-do-iguacu",
+  "createdAt": "2026-10-08T15:33:39.415Z",
+  "updatedAt": "2026-10-08T15:33:39.415Z",
+  "meta": {
+    "name": "Foz do Iguaçu",
+    "nameIt": "Foz do Iguaçu",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Foz do Iguaçu.geojson",
+      "sha256": "fbbe9175595bc50195881a4e5c8f611edde720454821d43e9ca5eaef3df6db0f",
+      "size": 863237,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "foz-do-iguacu",
+    "name": "Foz do Iguaçu",
+    "nameIt": "Foz do Iguaçu",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -54.55737,
+      -25.52349
+    ],
+    "zoom": 10.4,
+    "population": 239400,
+    "grid": "cities/foz-do-iguacu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/foz-do-iguacu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "foz-do-iguacu",
+        "name": "Foz do Iguaçu",
+        "nameIt": "Foz do Iguaçu",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -54.55737,
+          -25.52349
+        ],
+        "zoom": 10.4,
+        "population": 239400,
+        "cells": 734,
+        "layer": "cities/foz-do-iguacu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -54.55737,
+            -25.52349
+          ]
+        },
+        "properties": {
+          "id": "foz-do-iguacu",
+          "name": "Foz do Iguaçu",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 23.7,
+          "population": 239400
+        }
+      },
+      "summary": null
+    }
+  }
+}

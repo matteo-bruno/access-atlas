@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "harihara",
+  "createdAt": "2026-10-08T15:37:52.485Z",
+  "updatedAt": "2026-10-08T15:37:52.485Z",
+  "meta": {
+    "name": "Harihara",
+    "nameIt": "Harihara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Harihara.geojson",
+      "sha256": "d80c75678cc6319ab011939c302954dafb7ac4598390818dda12438cbadee7e8",
+      "size": 256455,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "harihara",
+    "name": "Harihara",
+    "nameIt": "Harihara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.80467,
+      14.51767
+    ],
+    "zoom": 11.4,
+    "population": 79502,
+    "grid": "cities/harihara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/harihara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "harihara",
+        "name": "Harihara",
+        "nameIt": "Harihara",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.80467,
+          14.51767
+        ],
+        "zoom": 11.4,
+        "population": 79502,
+        "cells": 221,
+        "layer": "cities/harihara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.80467,
+            14.51767
+          ]
+        },
+        "properties": {
+          "id": "harihara",
+          "name": "Harihara",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 79502
+        }
+      },
+      "summary": null
+    }
+  }
+}

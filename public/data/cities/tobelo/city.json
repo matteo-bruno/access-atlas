@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tobelo",
+  "createdAt": "2026-10-08T16:18:13.662Z",
+  "updatedAt": "2026-10-08T16:18:13.662Z",
+  "meta": {
+    "name": "Tobelo",
+    "nameIt": "Tobelo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tobelo.geojson",
+      "sha256": "c68a2e8230c47ea89ff3aa52d28af5e3de09d05699bde2afde4a7ca0610f60b5",
+      "size": 218087,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tobelo",
+    "name": "Tobelo",
+    "nameIt": "Tobelo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      128.00571,
+      1.72111
+    ],
+    "zoom": 11.1,
+    "population": 65618,
+    "grid": "cities/tobelo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tobelo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tobelo",
+        "name": "Tobelo",
+        "nameIt": "Tobelo",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          128.00571,
+          1.72111
+        ],
+        "zoom": 11.1,
+        "population": 65618,
+        "cells": 187,
+        "layer": "cities/tobelo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            128.00571,
+            1.72111
+          ]
+        },
+        "properties": {
+          "id": "tobelo",
+          "name": "Tobelo",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 65618
+        }
+      },
+      "summary": null
+    }
+  }
+}

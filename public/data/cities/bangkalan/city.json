@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bangkalan",
+  "createdAt": "2026-10-08T15:14:46.073Z",
+  "updatedAt": "2026-10-08T15:14:46.073Z",
+  "meta": {
+    "name": "Bangkalan",
+    "nameIt": "Bangkalan",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bangkalan.geojson",
+      "sha256": "1fe91e7982a091ff248061fb3f2d8685578aa031bf41a4047cd3ae7d045a4f6f",
+      "size": 229545,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bangkalan",
+    "name": "Bangkalan",
+    "nameIt": "Bangkalan",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      112.74828,
+      -7.02947
+    ],
+    "zoom": 11.4,
+    "population": 66958,
+    "grid": "cities/bangkalan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bangkalan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bangkalan",
+        "name": "Bangkalan",
+        "nameIt": "Bangkalan",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          112.74828,
+          -7.02947
+        ],
+        "zoom": 11.4,
+        "population": 66958,
+        "cells": 196,
+        "layer": "cities/bangkalan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.74828,
+            -7.02947
+          ]
+        },
+        "properties": {
+          "id": "bangkalan",
+          "name": "Bangkalan",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 32.2,
+          "population": 66958
+        }
+      },
+      "summary": null
+    }
+  }
+}

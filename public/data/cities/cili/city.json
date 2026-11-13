@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cili",
+  "createdAt": "2026-10-08T15:25:31.614Z",
+  "updatedAt": "2026-10-08T15:25:31.614Z",
+  "meta": {
+    "name": "Cili",
+    "nameIt": "Cili",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cili.geojson",
+      "sha256": "cb16d3aef4d1006d108144ef46ee1aa5fc1f506e759584ccf7da43cf1e6c238d",
+      "size": 205599,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cili",
+    "name": "Cili",
+    "nameIt": "Cili",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      111.12545,
+      29.42691
+    ],
+    "zoom": 11.2,
+    "population": 161830,
+    "grid": "cities/cili/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cili/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cili",
+        "name": "Cili",
+        "nameIt": "Cili",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          111.12545,
+          29.42691
+        ],
+        "zoom": 11.2,
+        "population": 161830,
+        "cells": 176,
+        "layer": "cities/cili/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.12545,
+            29.42691
+          ]
+        },
+        "properties": {
+          "id": "cili",
+          "name": "Cili",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 19.1,
+          "population": 161830
+        }
+      },
+      "summary": null
+    }
+  }
+}

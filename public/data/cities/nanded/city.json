@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nanded",
+  "createdAt": "2026-10-08T16:00:00.947Z",
+  "updatedAt": "2026-10-08T16:00:00.947Z",
+  "meta": {
+    "name": "Nanded",
+    "nameIt": "Nanded",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nanded.geojson",
+      "sha256": "7acd4fdb7abe914ef54ff733f5da3bdee7d6a0f229c1690eccd9f24364f5c24b",
+      "size": 813652,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nanded",
+    "name": "Nanded",
+    "nameIt": "Nanded",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.31567,
+      19.15654
+    ],
+    "zoom": 10.4,
+    "population": 470992,
+    "grid": "cities/nanded/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nanded/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nanded",
+        "name": "Nanded",
+        "nameIt": "Nanded",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.31567,
+          19.15654
+        ],
+        "zoom": 10.4,
+        "population": 470992,
+        "cells": 702,
+        "layer": "cities/nanded/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.31567,
+            19.15654
+          ]
+        },
+        "properties": {
+          "id": "nanded",
+          "name": "Nanded",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 32.4,
+          "population": 470992
+        }
+      },
+      "summary": null
+    }
+  }
+}

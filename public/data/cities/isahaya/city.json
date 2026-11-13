@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "isahaya",
+  "createdAt": "2026-10-08T15:41:05.184Z",
+  "updatedAt": "2026-10-08T15:41:05.184Z",
+  "meta": {
+    "name": "Isahaya",
+    "nameIt": "Isahaya",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Isahaya.geojson",
+      "sha256": "772c15e40f129f3a881e60b8046185768ce210799ffac3cb6119f79f061fc2e3",
+      "size": 385165,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "isahaya",
+    "name": "Isahaya",
+    "nameIt": "Isahaya",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      130.03492,
+      32.84156
+    ],
+    "zoom": 10.7,
+    "population": 77508,
+    "grid": "cities/isahaya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/isahaya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "isahaya",
+        "name": "Isahaya",
+        "nameIt": "Isahaya",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          130.03492,
+          32.84156
+        ],
+        "zoom": 10.7,
+        "population": 77508,
+        "cells": 332,
+        "layer": "cities/isahaya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            130.03492,
+            32.84156
+          ]
+        },
+        "properties": {
+          "id": "isahaya",
+          "name": "Isahaya",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 22.8,
+          "population": 77508
+        }
+      },
+      "summary": null
+    }
+  }
+}

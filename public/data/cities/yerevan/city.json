@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yerevan",
+  "createdAt": "2026-10-08T16:23:45.612Z",
+  "updatedAt": "2026-10-08T16:23:45.612Z",
+  "meta": {
+    "name": "Yerevan",
+    "nameIt": "Yerevan",
+    "region": "Armenia",
+    "regionIt": "Armenia",
+    "country": "AM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yerevan.geojson",
+      "sha256": "4b901f8ce38f9be317ee7374822fe2bf6a826a19f9fa0c21b65d9890c901de6d",
+      "size": 2116632,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yerevan",
+    "name": "Yerevan",
+    "nameIt": "Yerevan",
+    "region": "Armenia",
+    "regionIt": "Armenia",
+    "country": "AM",
+    "center": [
+      44.50341,
+      40.17673
+    ],
+    "zoom": 9.8,
+    "population": 1148026,
+    "grid": "cities/yerevan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yerevan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yerevan",
+        "name": "Yerevan",
+        "nameIt": "Yerevan",
+        "region": "Armenia",
+        "regionIt": "Armenia",
+        "country": "AM",
+        "center": [
+          44.50341,
+          40.17673
+        ],
+        "zoom": 9.8,
+        "population": 1148026,
+        "cells": 1850,
+        "layer": "cities/yerevan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.50341,
+            40.17673
+          ]
+        },
+        "properties": {
+          "id": "yerevan",
+          "name": "Yerevan",
+          "country": "AM",
+          "isStudy": true,
+          "proximityMinutes": 10.7,
+          "population": 1148026
+        }
+      },
+      "summary": null
+    }
+  }
+}

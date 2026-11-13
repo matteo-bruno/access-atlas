@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lahti",
+  "createdAt": "2026-10-08T15:49:40.450Z",
+  "updatedAt": "2026-10-08T15:49:40.450Z",
+  "meta": {
+    "name": "Lahti",
+    "nameIt": "Lahti",
+    "region": "Finland",
+    "regionIt": "Finlandia",
+    "country": "FI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lahti.geojson",
+      "sha256": "8c44ac42401bd86204550332ed8d24e5bfde7b8f6791b6b860e4c5c7110bad8f",
+      "size": 306342,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lahti",
+    "name": "Lahti",
+    "nameIt": "Lahti",
+    "region": "Finland",
+    "regionIt": "Finlandia",
+    "country": "FI",
+    "center": [
+      25.64691,
+      60.9799
+    ],
+    "zoom": 11.3,
+    "population": 30368,
+    "grid": "cities/lahti/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lahti/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lahti",
+        "name": "Lahti",
+        "nameIt": "Lahti",
+        "region": "Finland",
+        "regionIt": "Finlandia",
+        "country": "FI",
+        "center": [
+          25.64691,
+          60.9799
+        ],
+        "zoom": 11.3,
+        "population": 30368,
+        "cells": 268,
+        "layer": "cities/lahti/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.64691,
+            60.9799
+          ]
+        },
+        "properties": {
+          "id": "lahti",
+          "name": "Lahti",
+          "country": "FI",
+          "isStudy": true,
+          "proximityMinutes": 12.8,
+          "population": 30368
+        }
+      },
+      "summary": null
+    }
+  }
+}

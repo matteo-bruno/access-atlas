@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "montreux",
+  "createdAt": "2026-10-08T15:58:10.191Z",
+  "updatedAt": "2026-10-08T15:58:10.191Z",
+  "meta": {
+    "name": "Montreux",
+    "nameIt": "Montreux",
+    "region": "Switzerland",
+    "regionIt": "Svizzera",
+    "country": "CH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Montreux.geojson",
+      "sha256": "0e8c6fce86767a9fff799853a8d06729145d89873973438dcc6014d20d611c0e",
+      "size": 294963,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "montreux",
+    "name": "Montreux",
+    "nameIt": "Montreux",
+    "region": "Switzerland",
+    "regionIt": "Svizzera",
+    "country": "CH",
+    "center": [
+      6.87101,
+      46.4568
+    ],
+    "zoom": 11.2,
+    "population": 68105,
+    "grid": "cities/montreux/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/montreux/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "montreux",
+        "name": "Montreux",
+        "nameIt": "Montreux",
+        "region": "Switzerland",
+        "regionIt": "Svizzera",
+        "country": "CH",
+        "center": [
+          6.87101,
+          46.4568
+        ],
+        "zoom": 11.2,
+        "population": 68105,
+        "cells": 260,
+        "layer": "cities/montreux/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.87101,
+            46.4568
+          ]
+        },
+        "properties": {
+          "id": "montreux",
+          "name": "Montreux",
+          "country": "CH",
+          "isStudy": true,
+          "proximityMinutes": 7.8,
+          "population": 68105
+        }
+      },
+      "summary": null
+    }
+  }
+}

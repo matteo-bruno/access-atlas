@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cuiaba",
+  "createdAt": "2026-10-08T15:27:01.220Z",
+  "updatedAt": "2026-10-08T15:27:01.220Z",
+  "meta": {
+    "name": "Cuiabá",
+    "nameIt": "Cuiabá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cuiabá.geojson",
+      "sha256": "67061ca2eadda6b701bf038073f27dce792a94308f5f1e3651434273d8eac089",
+      "size": 2510801,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cuiaba",
+    "name": "Cuiabá",
+    "nameIt": "Cuiabá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -56.08817,
+      -15.61534
+    ],
+    "zoom": 9.6,
+    "population": 847324,
+    "grid": "cities/cuiaba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cuiaba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cuiaba",
+        "name": "Cuiabá",
+        "nameIt": "Cuiabá",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -56.08817,
+          -15.61534
+        ],
+        "zoom": 9.6,
+        "population": 847324,
+        "cells": 2144,
+        "layer": "cities/cuiaba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -56.08817,
+            -15.61534
+          ]
+        },
+        "properties": {
+          "id": "cuiaba",
+          "name": "Cuiabá",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 20.5,
+          "population": 847324
+        }
+      },
+      "summary": null
+    }
+  }
+}

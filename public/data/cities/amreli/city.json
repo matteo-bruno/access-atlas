@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "amreli",
+  "createdAt": "2026-10-08T15:07:06.215Z",
+  "updatedAt": "2026-10-08T15:07:06.215Z",
+  "meta": {
+    "name": "Amreli",
+    "nameIt": "Amreli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Amreli.geojson",
+      "sha256": "9876d5d74d46e61f8a5976064ff734ff7ae3f6ef1025e51f025699daebbdd442",
+      "size": 253969,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "amreli",
+    "name": "Amreli",
+    "nameIt": "Amreli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      71.2202,
+      21.60232
+    ],
+    "zoom": 11.4,
+    "population": 119268,
+    "grid": "cities/amreli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/amreli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "amreli",
+        "name": "Amreli",
+        "nameIt": "Amreli",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          71.2202,
+          21.60232
+        ],
+        "zoom": 11.4,
+        "population": 119268,
+        "cells": 219,
+        "layer": "cities/amreli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.2202,
+            21.60232
+          ]
+        },
+        "properties": {
+          "id": "amreli",
+          "name": "Amreli",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 119268
+        }
+      },
+      "summary": null
+    }
+  }
+}

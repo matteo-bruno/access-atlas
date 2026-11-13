@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ad-yaman",
+  "createdAt": "2026-10-08T15:02:34.672Z",
+  "updatedAt": "2026-10-08T15:02:34.672Z",
+  "meta": {
+    "name": "Adıyaman",
+    "nameIt": "Adıyaman",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Adıyaman.geojson",
+      "sha256": "c5bad478da2840e37cc413bec4a2ad020f8926d300821d35940b98a80b7f44a5",
+      "size": 354228,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ad-yaman",
+    "name": "Adıyaman",
+    "nameIt": "Adıyaman",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      38.26674,
+      37.76181
+    ],
+    "zoom": 10.8,
+    "population": 256743,
+    "grid": "cities/ad-yaman/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ad-yaman/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ad-yaman",
+        "name": "Adıyaman",
+        "nameIt": "Adıyaman",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          38.26674,
+          37.76181
+        ],
+        "zoom": 10.8,
+        "population": 256743,
+        "cells": 307,
+        "layer": "cities/ad-yaman/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.26674,
+            37.76181
+          ]
+        },
+        "properties": {
+          "id": "ad-yaman",
+          "name": "Adıyaman",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 14.8,
+          "population": 256743
+        }
+      },
+      "summary": null
+    }
+  }
+}

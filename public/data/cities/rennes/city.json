@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rennes",
+  "createdAt": "2026-10-08T16:08:39.307Z",
+  "updatedAt": "2026-10-08T16:08:39.307Z",
+  "meta": {
+    "name": "Rennes",
+    "nameIt": "Rennes",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rennes.geojson",
+      "sha256": "20640cc79749c5ad2b1570e44e598055c3fb8aa98f5b0683aba06393178b15ad",
+      "size": 657156,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rennes",
+    "name": "Rennes",
+    "nameIt": "Rennes",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      -1.67017,
+      48.10849
+    ],
+    "zoom": 10.6,
+    "population": 257228,
+    "grid": "cities/rennes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rennes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rennes",
+        "name": "Rennes",
+        "nameIt": "Rennes",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -1.67017,
+          48.10849
+        ],
+        "zoom": 10.6,
+        "population": 257228,
+        "cells": 572,
+        "layer": "cities/rennes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.67017,
+            48.10849
+          ]
+        },
+        "properties": {
+          "id": "rennes",
+          "name": "Rennes",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 5.8,
+          "population": 257228
+        }
+      },
+      "summary": null
+    }
+  }
+}

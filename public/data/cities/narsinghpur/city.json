@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "narsinghpur",
+  "createdAt": "2026-10-08T16:00:26.010Z",
+  "updatedAt": "2026-10-08T16:00:26.010Z",
+  "meta": {
+    "name": "Narsinghpur",
+    "nameIt": "Narsinghpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Narsinghpur.geojson",
+      "sha256": "cf8fcf333c78c50a05ee610aa54a8123bb924d75ceb52fad5a095fb226f03b61",
+      "size": 163578,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "narsinghpur",
+    "name": "Narsinghpur",
+    "nameIt": "Narsinghpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.19612,
+      22.94699
+    ],
+    "zoom": 11.5,
+    "population": 89619,
+    "grid": "cities/narsinghpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/narsinghpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "narsinghpur",
+        "name": "Narsinghpur",
+        "nameIt": "Narsinghpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.19612,
+          22.94699
+        ],
+        "zoom": 11.5,
+        "population": 89619,
+        "cells": 141,
+        "layer": "cities/narsinghpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.19612,
+            22.94699
+          ]
+        },
+        "properties": {
+          "id": "narsinghpur",
+          "name": "Narsinghpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 89619
+        }
+      },
+      "summary": null
+    }
+  }
+}

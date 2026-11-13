@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ciudad-del-carmen",
+  "createdAt": "2026-10-08T15:25:44.190Z",
+  "updatedAt": "2026-10-08T15:25:44.190Z",
+  "meta": {
+    "name": "Ciudad del Carmen",
+    "nameIt": "Ciudad del Carmen",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ciudad del Carmen.geojson",
+      "sha256": "47fd5bc1ddb6fb3597d6ed7256c850475ff7879d538ccef3d443450535168e44",
+      "size": 475534,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ciudad-del-carmen",
+    "name": "Ciudad del Carmen",
+    "nameIt": "Ciudad del Carmen",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -91.81038,
+      18.6494
+    ],
+    "zoom": 10.7,
+    "population": 176935,
+    "grid": "cities/ciudad-del-carmen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ciudad-del-carmen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ciudad-del-carmen",
+        "name": "Ciudad del Carmen",
+        "nameIt": "Ciudad del Carmen",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -91.81038,
+          18.6494
+        ],
+        "zoom": 10.7,
+        "population": 176935,
+        "cells": 408,
+        "layer": "cities/ciudad-del-carmen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -91.81038,
+            18.6494
+          ]
+        },
+        "properties": {
+          "id": "ciudad-del-carmen",
+          "name": "Ciudad del Carmen",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 21.1,
+          "population": 176935
+        }
+      },
+      "summary": null
+    }
+  }
+}

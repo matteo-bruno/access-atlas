@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "allayi",
+  "createdAt": "2026-10-08T15:06:08.913Z",
+  "updatedAt": "2026-10-08T15:06:08.913Z",
+  "meta": {
+    "name": "Allayi",
+    "nameIt": "Allayi",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Allayi.geojson",
+      "sha256": "8eb34a5cd14a50e323c2ef8dd4528cae9597c9f694f788a6434edd79fb1192d7",
+      "size": 296662,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "allayi",
+    "name": "Allayi",
+    "nameIt": "Allayi",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      45.17178,
+      35.56414
+    ],
+    "zoom": 11,
+    "population": 26473,
+    "grid": "cities/allayi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/allayi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "allayi",
+        "name": "Allayi",
+        "nameIt": "Allayi",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          45.17178,
+          35.56414
+        ],
+        "zoom": 11,
+        "population": 26473,
+        "cells": 256,
+        "layer": "cities/allayi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            45.17178,
+            35.56414
+          ]
+        },
+        "properties": {
+          "id": "allayi",
+          "name": "Allayi",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 42.5,
+          "population": 26473
+        }
+      },
+      "summary": null
+    }
+  }
+}

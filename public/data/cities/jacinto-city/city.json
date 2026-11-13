@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jacinto-city",
+  "createdAt": "2026-10-08T15:41:36.098Z",
+  "updatedAt": "2026-10-08T15:41:36.098Z",
+  "meta": {
+    "name": "Jacinto City",
+    "nameIt": "Jacinto City",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jacinto City.geojson",
+      "sha256": "569073cb2576901787d7ddce0984cc86401f0f6284a4c997e13c9da60a153552",
+      "size": 782569,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jacinto-city",
+    "name": "Jacinto City",
+    "nameIt": "Jacinto City",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -95.17786,
+      29.79176
+    ],
+    "zoom": 10.2,
+    "population": 125458,
+    "grid": "cities/jacinto-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jacinto-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jacinto-city",
+        "name": "Jacinto City",
+        "nameIt": "Jacinto City",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -95.17786,
+          29.79176
+        ],
+        "zoom": 10.2,
+        "population": 125458,
+        "cells": 671,
+        "layer": "cities/jacinto-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -95.17786,
+            29.79176
+          ]
+        },
+        "properties": {
+          "id": "jacinto-city",
+          "name": "Jacinto City",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 27,
+          "population": 125458
+        }
+      },
+      "summary": null
+    }
+  }
+}

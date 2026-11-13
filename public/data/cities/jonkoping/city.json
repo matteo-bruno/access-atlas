@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jonkoping",
+  "createdAt": "2026-10-08T15:43:46.872Z",
+  "updatedAt": "2026-10-08T15:43:46.872Z",
+  "meta": {
+    "name": "Jönköping",
+    "nameIt": "Jönköping",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jönköping.geojson",
+      "sha256": "de851c4cbfe9395457a44c39335fe855a57c837852fa555a5ec4905568747c1b",
+      "size": 419585,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jonkoping",
+    "name": "Jönköping",
+    "nameIt": "Jönköping",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE",
+    "center": [
+      14.20597,
+      57.77866
+    ],
+    "zoom": 10.8,
+    "population": 61794,
+    "grid": "cities/jonkoping/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jonkoping/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jonkoping",
+        "name": "Jönköping",
+        "nameIt": "Jönköping",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          14.20597,
+          57.77866
+        ],
+        "zoom": 10.8,
+        "population": 61794,
+        "cells": 364,
+        "layer": "cities/jonkoping/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.20597,
+            57.77866
+          ]
+        },
+        "properties": {
+          "id": "jonkoping",
+          "name": "Jönköping",
+          "country": "SE",
+          "isStudy": true,
+          "proximityMinutes": 10.9,
+          "population": 61794
+        }
+      },
+      "summary": null
+    }
+  }
+}

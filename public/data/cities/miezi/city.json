@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "miezi",
+  "createdAt": "2026-10-08T15:57:33.935Z",
+  "updatedAt": "2026-10-08T15:57:33.935Z",
+  "meta": {
+    "name": "Miézi",
+    "nameIt": "Miézi",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Miézi.geojson",
+      "sha256": "c45efbb9fde7638ef7786327fab524bb2c95df40cf9495145b817ff182640b90",
+      "size": 42279,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "miezi",
+    "name": "Miézi",
+    "nameIt": "Miézi",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ",
+    "center": [
+      40.45397,
+      -13.10526
+    ],
+    "zoom": 12,
+    "population": 33320,
+    "grid": "cities/miezi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/miezi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "miezi",
+        "name": "Miézi",
+        "nameIt": "Miézi",
+        "region": "Mozambique",
+        "regionIt": "Mozambico",
+        "country": "MZ",
+        "center": [
+          40.45397,
+          -13.10526
+        ],
+        "zoom": 12,
+        "population": 33320,
+        "cells": 36,
+        "layer": "cities/miezi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.45397,
+            -13.10526
+          ]
+        },
+        "properties": {
+          "id": "miezi",
+          "name": "Miézi",
+          "country": "MZ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 33320
+        }
+      },
+      "summary": null
+    }
+  }
+}

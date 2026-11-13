@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fall-river",
+  "createdAt": "2026-10-08T15:32:46.022Z",
+  "updatedAt": "2026-10-08T15:32:46.022Z",
+  "meta": {
+    "name": "Fall River",
+    "nameIt": "Fall River",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fall River.geojson",
+      "sha256": "b4ff0c61ae7d7e781d408bf6507dc781742d8cab4e52cc69ff28d267b8d64fb7",
+      "size": 453111,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fall-river",
+    "name": "Fall River",
+    "nameIt": "Fall River",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -71.15241,
+      41.70018
+    ],
+    "zoom": 10.7,
+    "population": 91360,
+    "grid": "cities/fall-river/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fall-river/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fall-river",
+        "name": "Fall River",
+        "nameIt": "Fall River",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -71.15241,
+          41.70018
+        ],
+        "zoom": 10.7,
+        "population": 91360,
+        "cells": 390,
+        "layer": "cities/fall-river/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -71.15241,
+            41.70018
+          ]
+        },
+        "properties": {
+          "id": "fall-river",
+          "name": "Fall River",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20.5,
+          "population": 91360
+        }
+      },
+      "summary": null
+    }
+  }
+}

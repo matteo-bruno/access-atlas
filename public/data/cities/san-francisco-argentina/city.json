@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-francisco-argentina",
+  "createdAt": "2026-10-08T16:10:29.109Z",
+  "updatedAt": "2026-10-08T16:10:29.109Z",
+  "meta": {
+    "name": "San Francisco (Argentina)",
+    "nameIt": "San Francisco (Argentina)",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Francisco (Argentina).geojson",
+      "sha256": "268946cb0c59b42d9326242edc429c5782950ff6184d725cadc280a01d31ee81",
+      "size": 254768,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-francisco-argentina",
+    "name": "San Francisco (Argentina)",
+    "nameIt": "San Francisco (Argentina)",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -62.08526,
+      -31.42988
+    ],
+    "zoom": 11.3,
+    "population": 50456,
+    "grid": "cities/san-francisco-argentina/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-francisco-argentina/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-francisco-argentina",
+        "name": "San Francisco (Argentina)",
+        "nameIt": "San Francisco (Argentina)",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -62.08526,
+          -31.42988
+        ],
+        "zoom": 11.3,
+        "population": 50456,
+        "cells": 216,
+        "layer": "cities/san-francisco-argentina/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -62.08526,
+            -31.42988
+          ]
+        },
+        "properties": {
+          "id": "san-francisco-argentina",
+          "name": "San Francisco (Argentina)",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 17.1,
+          "population": 50456
+        }
+      },
+      "summary": null
+    }
+  }
+}

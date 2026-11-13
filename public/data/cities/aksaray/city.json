@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aksaray",
+  "createdAt": "2026-10-08T15:03:51.286Z",
+  "updatedAt": "2026-10-08T15:03:51.286Z",
+  "meta": {
+    "name": "Aksaray",
+    "nameIt": "Aksaray",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aksaray.geojson",
+      "sha256": "63ba91ff3ec1b08e0eb50711bbb80a059a309a78b080518846fbccb04d634fed",
+      "size": 195741,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aksaray",
+    "name": "Aksaray",
+    "nameIt": "Aksaray",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      34.02123,
+      38.37068
+    ],
+    "zoom": 11.6,
+    "population": 153597,
+    "grid": "cities/aksaray/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aksaray/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aksaray",
+        "name": "Aksaray",
+        "nameIt": "Aksaray",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          34.02123,
+          38.37068
+        ],
+        "zoom": 11.6,
+        "population": 153597,
+        "cells": 170,
+        "layer": "cities/aksaray/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.02123,
+            38.37068
+          ]
+        },
+        "properties": {
+          "id": "aksaray",
+          "name": "Aksaray",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 14.4,
+          "population": 153597
+        }
+      },
+      "summary": null
+    }
+  }
+}

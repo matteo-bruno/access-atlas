@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bila-tserkva",
+  "createdAt": "2026-10-08T15:18:50.845Z",
+  "updatedAt": "2026-10-08T15:18:50.845Z",
+  "meta": {
+    "name": "Bila Tserkva",
+    "nameIt": "Bila Tserkva",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bila Tserkva.geojson",
+      "sha256": "67ba60794006c1771b8e7643b2048a54a614c860cd0fcb023dbcc92e27fd9a32",
+      "size": 408624,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bila-tserkva",
+    "name": "Bila Tserkva",
+    "nameIt": "Bila Tserkva",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      30.12336,
+      49.79988
+    ],
+    "zoom": 10.8,
+    "population": 92367,
+    "grid": "cities/bila-tserkva/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bila-tserkva/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bila-tserkva",
+        "name": "Bila Tserkva",
+        "nameIt": "Bila Tserkva",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          30.12336,
+          49.79988
+        ],
+        "zoom": 10.8,
+        "population": 92367,
+        "cells": 357,
+        "layer": "cities/bila-tserkva/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.12336,
+            49.79988
+          ]
+        },
+        "properties": {
+          "id": "bila-tserkva",
+          "name": "Bila Tserkva",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 12.3,
+          "population": 92367
+        }
+      },
+      "summary": null
+    }
+  }
+}

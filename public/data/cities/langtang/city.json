@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "langtang",
+  "createdAt": "2026-10-08T15:50:03.746Z",
+  "updatedAt": "2026-10-08T15:50:03.746Z",
+  "meta": {
+    "name": "Langtang",
+    "nameIt": "Langtang",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Langtang.geojson",
+      "sha256": "dc7de50634a4bd7ffc2292ec971bb20fa8950bc0bc41fd716c3486152c40fc18",
+      "size": 244401,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "langtang",
+    "name": "Langtang",
+    "nameIt": "Langtang",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      9.79702,
+      9.14961
+    ],
+    "zoom": 11.1,
+    "population": 56446,
+    "grid": "cities/langtang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/langtang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "langtang",
+        "name": "Langtang",
+        "nameIt": "Langtang",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          9.79702,
+          9.14961
+        ],
+        "zoom": 11.1,
+        "population": 56446,
+        "cells": 213,
+        "layer": "cities/langtang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.79702,
+            9.14961
+          ]
+        },
+        "properties": {
+          "id": "langtang",
+          "name": "Langtang",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 56446
+        }
+      },
+      "summary": null
+    }
+  }
+}

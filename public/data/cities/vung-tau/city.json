@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vung-tau",
+  "createdAt": "2026-10-08T16:21:07.720Z",
+  "updatedAt": "2026-10-08T16:21:07.720Z",
+  "meta": {
+    "name": "Vũng Tàu",
+    "nameIt": "Vũng Tàu",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vũng Tàu.geojson",
+      "sha256": "a62e718b7a6ee0ea9a4601f02bfd075a596e6512f868f45ab6ccd0e3062f6536",
+      "size": 947369,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vung-tau",
+    "name": "Vũng Tàu",
+    "nameIt": "Vũng Tàu",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      107.12335,
+      10.38158
+    ],
+    "zoom": 9.7,
+    "population": 439254,
+    "grid": "cities/vung-tau/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vung-tau/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vung-tau",
+        "name": "Vũng Tàu",
+        "nameIt": "Vũng Tàu",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          107.12335,
+          10.38158
+        ],
+        "zoom": 9.7,
+        "population": 439254,
+        "cells": 817,
+        "layer": "cities/vung-tau/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.12335,
+            10.38158
+          ]
+        },
+        "properties": {
+          "id": "vung-tau",
+          "name": "Vũng Tàu",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 21.5,
+          "population": 439254
+        }
+      },
+      "summary": null
+    }
+  }
+}

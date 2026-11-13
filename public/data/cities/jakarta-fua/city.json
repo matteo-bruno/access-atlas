@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jakarta-fua",
+  "createdAt": "2026-10-19T16:56:38.212Z",
+  "updatedAt": "2026-10-19T16:56:38.212Z",
+  "meta": {
+    "name": "Jakarta",
+    "nameIt": "Jakarta",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "jakarta-fua",
+    "name": "Jakarta",
+    "nameIt": "Jakarta",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "extent": "fua",
+    "core": "jakarta",
+    "center": [
+      106.88944,
+      -6.36244
+    ],
+    "zoom": 8.5,
+    "population": 40223851,
+    "grid": "cities/jakarta-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jakarta-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jakarta-fua",
+        "name": "Jakarta",
+        "nameIt": "Jakarta",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "extent": "fua",
+        "core": "jakarta",
+        "center": [
+          106.88944,
+          -6.36244
+        ],
+        "zoom": 8.5,
+        "population": 40223851,
+        "cells": 112857,
+        "layer": "cities/jakarta-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.88944,
+            -6.36244
+          ]
+        },
+        "properties": {
+          "id": "jakarta-fua",
+          "name": "Jakarta",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 34.5,
+          "population": 40223851
+        }
+      },
+      "summary": null
+    }
+  }
+}

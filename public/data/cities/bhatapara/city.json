@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bhatapara",
+  "createdAt": "2026-10-08T15:18:19.064Z",
+  "updatedAt": "2026-10-08T15:18:19.064Z",
+  "meta": {
+    "name": "Bhatapara",
+    "nameIt": "Bhatapara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bhatapara.geojson",
+      "sha256": "1a1985896ca8c0f45369a685c3cef8fc6434fbdcd2af0ed353760a2d2352e724",
+      "size": 149403,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bhatapara",
+    "name": "Bhatapara",
+    "nameIt": "Bhatapara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.94648,
+      21.73581
+    ],
+    "zoom": 11.9,
+    "population": 62288,
+    "grid": "cities/bhatapara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bhatapara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bhatapara",
+        "name": "Bhatapara",
+        "nameIt": "Bhatapara",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.94648,
+          21.73581
+        ],
+        "zoom": 11.9,
+        "population": 62288,
+        "cells": 129,
+        "layer": "cities/bhatapara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.94648,
+            21.73581
+          ]
+        },
+        "properties": {
+          "id": "bhatapara",
+          "name": "Bhatapara",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 62288
+        }
+      },
+      "summary": null
+    }
+  }
+}

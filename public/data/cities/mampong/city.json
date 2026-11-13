@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mampong",
+  "createdAt": "2026-10-08T15:54:18.963Z",
+  "updatedAt": "2026-10-08T15:54:18.963Z",
+  "meta": {
+    "name": "Mampong",
+    "nameIt": "Mampong",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mampong.geojson",
+      "sha256": "1de65a75b0115ad871d7c125c875dc6f789220ef202e1c4ef12c6b3188dee0db",
+      "size": 232259,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mampong",
+    "name": "Mampong",
+    "nameIt": "Mampong",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH",
+    "center": [
+      -1.40188,
+      7.05864
+    ],
+    "zoom": 11.7,
+    "population": 74531,
+    "grid": "cities/mampong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mampong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mampong",
+        "name": "Mampong",
+        "nameIt": "Mampong",
+        "region": "Ghana",
+        "regionIt": "Ghana",
+        "country": "GH",
+        "center": [
+          -1.40188,
+          7.05864
+        ],
+        "zoom": 11.7,
+        "population": 74531,
+        "cells": 199,
+        "layer": "cities/mampong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.40188,
+            7.05864
+          ]
+        },
+        "properties": {
+          "id": "mampong",
+          "name": "Mampong",
+          "country": "GH",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 74531
+        }
+      },
+      "summary": null
+    }
+  }
+}

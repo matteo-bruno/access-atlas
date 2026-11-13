@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rockford",
+  "createdAt": "2026-10-08T16:09:00.472Z",
+  "updatedAt": "2026-10-08T16:09:00.472Z",
+  "meta": {
+    "name": "Rockford",
+    "nameIt": "Rockford",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rockford.geojson",
+      "sha256": "cff94c1f510b32493548fed556b933d1c413835905e6f3c01b5c847d52e3c2c2",
+      "size": 1090022,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rockford",
+    "name": "Rockford",
+    "nameIt": "Rockford",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -89.06405,
+      42.27788
+    ],
+    "zoom": 10.2,
+    "population": 132236,
+    "grid": "cities/rockford/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rockford/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rockford",
+        "name": "Rockford",
+        "nameIt": "Rockford",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -89.06405,
+          42.27788
+        ],
+        "zoom": 10.2,
+        "population": 132236,
+        "cells": 940,
+        "layer": "cities/rockford/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -89.06405,
+            42.27788
+          ]
+        },
+        "properties": {
+          "id": "rockford",
+          "name": "Rockford",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 23,
+          "population": 132236
+        }
+      },
+      "summary": null
+    }
+  }
+}

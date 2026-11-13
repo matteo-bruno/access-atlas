@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "roxas",
+  "createdAt": "2026-10-08T16:09:13.785Z",
+  "updatedAt": "2026-10-08T16:09:13.785Z",
+  "meta": {
+    "name": "Roxas",
+    "nameIt": "Roxas",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Roxas.geojson",
+      "sha256": "cff6537402ab7ed2a56758930818fba8e5379c422a78b0bfe7e41b704fe16aaf",
+      "size": 548134,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "roxas",
+    "name": "Roxas",
+    "nameIt": "Roxas",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      122.75062,
+      11.58607
+    ],
+    "zoom": 10.5,
+    "population": 127302,
+    "grid": "cities/roxas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/roxas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "roxas",
+        "name": "Roxas",
+        "nameIt": "Roxas",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          122.75062,
+          11.58607
+        ],
+        "zoom": 10.5,
+        "population": 127302,
+        "cells": 470,
+        "layer": "cities/roxas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            122.75062,
+            11.58607
+          ]
+        },
+        "properties": {
+          "id": "roxas",
+          "name": "Roxas",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 23,
+          "population": 127302
+        }
+      },
+      "summary": null
+    }
+  }
+}

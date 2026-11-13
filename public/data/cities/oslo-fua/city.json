@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oslo-fua",
+  "createdAt": "2026-10-19T16:57:57.720Z",
+  "updatedAt": "2026-10-19T16:57:57.720Z",
+  "meta": {
+    "name": "Oslo",
+    "nameIt": "Oslo",
+    "region": "Norway",
+    "regionIt": "Norvegia",
+    "country": "NO"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "oslo-fua",
+    "name": "Oslo",
+    "nameIt": "Oslo",
+    "region": "Norway",
+    "regionIt": "Norvegia",
+    "country": "NO",
+    "extent": "fua",
+    "core": "oslo",
+    "center": [
+      10.73594,
+      59.89324
+    ],
+    "zoom": 8.5,
+    "population": 1536736,
+    "grid": "cities/oslo-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 172
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oslo-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oslo-fua",
+        "name": "Oslo",
+        "nameIt": "Oslo",
+        "region": "Norway",
+        "regionIt": "Norvegia",
+        "country": "NO",
+        "extent": "fua",
+        "core": "oslo",
+        "center": [
+          10.73594,
+          59.89324
+        ],
+        "zoom": 8.5,
+        "population": 1536736,
+        "cells": 56511,
+        "layer": "cities/oslo-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 172
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.73594,
+            59.89324
+          ]
+        },
+        "properties": {
+          "id": "oslo-fua",
+          "name": "Oslo",
+          "country": "NO",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 1536736
+        }
+      },
+      "summary": null
+    }
+  }
+}

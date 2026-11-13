@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "navsari",
+  "createdAt": "2026-10-08T16:00:41.083Z",
+  "updatedAt": "2026-10-08T16:00:41.083Z",
+  "meta": {
+    "name": "Navsari",
+    "nameIt": "Navsari",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Navsari.geojson",
+      "sha256": "607b53c729236b14e1e8c11062480e62dcbb58cced5b1b1945644f7fa9ae038a",
+      "size": 428008,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "navsari",
+    "name": "Navsari",
+    "nameIt": "Navsari",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.93304,
+      20.94254
+    ],
+    "zoom": 10.8,
+    "population": 220126,
+    "grid": "cities/navsari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/navsari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "navsari",
+        "name": "Navsari",
+        "nameIt": "Navsari",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.93304,
+          20.94254
+        ],
+        "zoom": 10.8,
+        "population": 220126,
+        "cells": 369,
+        "layer": "cities/navsari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.93304,
+            20.94254
+          ]
+        },
+        "properties": {
+          "id": "navsari",
+          "name": "Navsari",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 26.3,
+          "population": 220126
+        }
+      },
+      "summary": null
+    }
+  }
+}

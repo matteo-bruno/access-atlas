@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yumbe",
+  "createdAt": "2026-10-08T16:24:28.240Z",
+  "updatedAt": "2026-10-08T16:24:28.240Z",
+  "meta": {
+    "name": "Yumbe",
+    "nameIt": "Yumbe",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yumbe.geojson",
+      "sha256": "59b2e9012f104d79305e2bbca0ff29c68ee48b774231026d5b9993810a1191eb",
+      "size": 175330,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yumbe",
+    "name": "Yumbe",
+    "nameIt": "Yumbe",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG",
+    "center": [
+      31.24541,
+      3.46327
+    ],
+    "zoom": 11.6,
+    "population": 33776,
+    "grid": "cities/yumbe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yumbe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yumbe",
+        "name": "Yumbe",
+        "nameIt": "Yumbe",
+        "region": "Uganda",
+        "regionIt": "Uganda",
+        "country": "UG",
+        "center": [
+          31.24541,
+          3.46327
+        ],
+        "zoom": 11.6,
+        "population": 33776,
+        "cells": 151,
+        "layer": "cities/yumbe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.24541,
+            3.46327
+          ]
+        },
+        "properties": {
+          "id": "yumbe",
+          "name": "Yumbe",
+          "country": "UG",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 33776
+        }
+      },
+      "summary": null
+    }
+  }
+}

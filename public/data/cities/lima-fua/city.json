@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lima-fua",
+  "createdAt": "2026-10-19T16:57:01.063Z",
+  "updatedAt": "2026-10-19T16:57:01.063Z",
+  "meta": {
+    "name": "Lima",
+    "nameIt": "Lima",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "lima-fua",
+    "name": "Lima",
+    "nameIt": "Lima",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "extent": "fua",
+    "core": "lima",
+    "center": [
+      -77.00514,
+      -12.03737
+    ],
+    "zoom": 8.5,
+    "population": 11036790,
+    "grid": "cities/lima-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lima-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lima-fua",
+        "name": "Lima",
+        "nameIt": "Lima",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "extent": "fua",
+        "core": "lima",
+        "center": [
+          -77.00514,
+          -12.03737
+        ],
+        "zoom": 8.5,
+        "population": 11036790,
+        "cells": 17044,
+        "layer": "cities/lima-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.00514,
+            -12.03737
+          ]
+        },
+        "properties": {
+          "id": "lima-fua",
+          "name": "Lima",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 10.4,
+          "population": 11036790
+        }
+      },
+      "summary": null
+    }
+  }
+}

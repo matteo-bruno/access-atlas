@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "arpora",
+  "createdAt": "2026-10-08T15:09:37.950Z",
+  "updatedAt": "2026-10-08T15:09:37.950Z",
+  "meta": {
+    "name": "Arpora",
+    "nameIt": "Arpora",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Arpora.geojson",
+      "sha256": "0504fea7a7b51288a7e2c3c4b09de93201a3435809c0999a7ee3afd501cf67bc",
+      "size": 267718,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "arpora",
+    "name": "Arpora",
+    "nameIt": "Arpora",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.76391,
+      15.53906
+    ],
+    "zoom": 10.8,
+    "population": 54677,
+    "grid": "cities/arpora/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/arpora/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "arpora",
+        "name": "Arpora",
+        "nameIt": "Arpora",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.76391,
+          15.53906
+        ],
+        "zoom": 10.8,
+        "population": 54677,
+        "cells": 232,
+        "layer": "cities/arpora/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.76391,
+            15.53906
+          ]
+        },
+        "properties": {
+          "id": "arpora",
+          "name": "Arpora",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 54677
+        }
+      },
+      "summary": null
+    }
+  }
+}

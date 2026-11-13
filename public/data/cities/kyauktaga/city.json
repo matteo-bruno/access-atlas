@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kyauktaga",
+  "createdAt": "2026-10-08T15:49:10.070Z",
+  "updatedAt": "2026-10-08T15:49:10.070Z",
+  "meta": {
+    "name": "Kyauktaga",
+    "nameIt": "Kyauktaga",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kyauktaga.geojson",
+      "sha256": "6f41d530085b06b71057826b1eef95f3b0aeaf802ca18327a115efaeff5cafe6",
+      "size": 61387,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kyauktaga",
+    "name": "Kyauktaga",
+    "nameIt": "Kyauktaga",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      96.61351,
+      18.15439
+    ],
+    "zoom": 12,
+    "population": 30222,
+    "grid": "cities/kyauktaga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kyauktaga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kyauktaga",
+        "name": "Kyauktaga",
+        "nameIt": "Kyauktaga",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          96.61351,
+          18.15439
+        ],
+        "zoom": 12,
+        "population": 30222,
+        "cells": 53,
+        "layer": "cities/kyauktaga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.61351,
+            18.15439
+          ]
+        },
+        "properties": {
+          "id": "kyauktaga",
+          "name": "Kyauktaga",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 30222
+        }
+      },
+      "summary": null
+    }
+  }
+}

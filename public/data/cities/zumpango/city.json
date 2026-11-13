@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zumpango",
+  "createdAt": "2026-10-08T16:25:40.863Z",
+  "updatedAt": "2026-10-08T16:25:40.863Z",
+  "meta": {
+    "name": "Zumpango",
+    "nameIt": "Zumpango",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zumpango.geojson",
+      "sha256": "f5b4965b3df3203f9ed1b7ede6449e810fc7bdd35ee25a9b76534788de27f5fc",
+      "size": 218077,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zumpango",
+    "name": "Zumpango",
+    "nameIt": "Zumpango",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -99.08895,
+      19.79536
+    ],
+    "zoom": 11,
+    "population": 97913,
+    "grid": "cities/zumpango/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zumpango/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zumpango",
+        "name": "Zumpango",
+        "nameIt": "Zumpango",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -99.08895,
+          19.79536
+        ],
+        "zoom": 11,
+        "population": 97913,
+        "cells": 187,
+        "layer": "cities/zumpango/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -99.08895,
+            19.79536
+          ]
+        },
+        "properties": {
+          "id": "zumpango",
+          "name": "Zumpango",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 20.5,
+          "population": 97913
+        }
+      },
+      "summary": null
+    }
+  }
+}

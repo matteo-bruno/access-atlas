@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chinhoyi",
+  "createdAt": "2026-10-08T15:24:51.602Z",
+  "updatedAt": "2026-10-08T15:24:51.602Z",
+  "meta": {
+    "name": "Chinhoyi",
+    "nameIt": "Chinhoyi",
+    "region": "Zimbabwe",
+    "regionIt": "Zimbabwe",
+    "country": "ZW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chinhoyi.geojson",
+      "sha256": "08e96c4510321ff3a19c9a74d4cfff7c8f0ff6c36a4aaf2276d847c79b798ac4",
+      "size": 217383,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chinhoyi",
+    "name": "Chinhoyi",
+    "nameIt": "Chinhoyi",
+    "region": "Zimbabwe",
+    "regionIt": "Zimbabwe",
+    "country": "ZW",
+    "center": [
+      30.19498,
+      -17.38279
+    ],
+    "zoom": 11.6,
+    "population": 97131,
+    "grid": "cities/chinhoyi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chinhoyi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chinhoyi",
+        "name": "Chinhoyi",
+        "nameIt": "Chinhoyi",
+        "region": "Zimbabwe",
+        "regionIt": "Zimbabwe",
+        "country": "ZW",
+        "center": [
+          30.19498,
+          -17.38279
+        ],
+        "zoom": 11.6,
+        "population": 97131,
+        "cells": 186,
+        "layer": "cities/chinhoyi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.19498,
+            -17.38279
+          ]
+        },
+        "properties": {
+          "id": "chinhoyi",
+          "name": "Chinhoyi",
+          "country": "ZW",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 97131
+        }
+      },
+      "summary": null
+    }
+  }
+}

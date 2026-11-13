@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "piedras-negras",
+  "createdAt": "2026-10-08T16:05:30.282Z",
+  "updatedAt": "2026-10-08T16:05:30.282Z",
+  "meta": {
+    "name": "Piedras Negras",
+    "nameIt": "Piedras Negras",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Piedras Negras.geojson",
+      "sha256": "99dd714134c8501c955c09fc38e6cfe39c95d0d1d29ef8437feaae092eb9c066",
+      "size": 315702,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "piedras-negras",
+    "name": "Piedras Negras",
+    "nameIt": "Piedras Negras",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -100.54337,
+      28.69542
+    ],
+    "zoom": 11,
+    "population": 140447,
+    "grid": "cities/piedras-negras/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/piedras-negras/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "piedras-negras",
+        "name": "Piedras Negras",
+        "nameIt": "Piedras Negras",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -100.54337,
+          28.69542
+        ],
+        "zoom": 11,
+        "population": 140447,
+        "cells": 268,
+        "layer": "cities/piedras-negras/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -100.54337,
+            28.69542
+          ]
+        },
+        "properties": {
+          "id": "piedras-negras",
+          "name": "Piedras Negras",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 22.8,
+          "population": 140447
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zacatecoluca",
+  "createdAt": "2026-10-08T16:24:41.260Z",
+  "updatedAt": "2026-10-08T16:24:41.260Z",
+  "meta": {
+    "name": "Zacatecoluca",
+    "nameIt": "Zacatecoluca",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zacatecoluca.geojson",
+      "sha256": "aa69b8dc38a5bed182332fa323759bd07491ceeefb94b56916069d68fe9abce5",
+      "size": 124716,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zacatecoluca",
+    "name": "Zacatecoluca",
+    "nameIt": "Zacatecoluca",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV",
+    "center": [
+      -88.87496,
+      13.50704
+    ],
+    "zoom": 11.9,
+    "population": 49550,
+    "grid": "cities/zacatecoluca/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zacatecoluca/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zacatecoluca",
+        "name": "Zacatecoluca",
+        "nameIt": "Zacatecoluca",
+        "region": "El Salvador",
+        "regionIt": "El Salvador",
+        "country": "SV",
+        "center": [
+          -88.87496,
+          13.50704
+        ],
+        "zoom": 11.9,
+        "population": 49550,
+        "cells": 107,
+        "layer": "cities/zacatecoluca/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.87496,
+            13.50704
+          ]
+        },
+        "properties": {
+          "id": "zacatecoluca",
+          "name": "Zacatecoluca",
+          "country": "SV",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 49550
+        }
+      },
+      "summary": null
+    }
+  }
+}

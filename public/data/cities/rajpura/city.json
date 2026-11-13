@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rajpura",
+  "createdAt": "2026-10-08T16:08:01.783Z",
+  "updatedAt": "2026-10-08T16:08:01.783Z",
+  "meta": {
+    "name": "Rajpura",
+    "nameIt": "Rajpura",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rajpura.geojson",
+      "sha256": "4fc7cc5619742390b4cd89651207f9686cdfea9d8356993756dfe17e3e4b30d7",
+      "size": 258544,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rajpura",
+    "name": "Rajpura",
+    "nameIt": "Rajpura",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.59032,
+      30.47643
+    ],
+    "zoom": 11.2,
+    "population": 137819,
+    "grid": "cities/rajpura/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rajpura/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rajpura",
+        "name": "Rajpura",
+        "nameIt": "Rajpura",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.59032,
+          30.47643
+        ],
+        "zoom": 11.2,
+        "population": 137819,
+        "cells": 223,
+        "layer": "cities/rajpura/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.59032,
+            30.47643
+          ]
+        },
+        "properties": {
+          "id": "rajpura",
+          "name": "Rajpura",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 22.9,
+          "population": 137819
+        }
+      },
+      "summary": null
+    }
+  }
+}

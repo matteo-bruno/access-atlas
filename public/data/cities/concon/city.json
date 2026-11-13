@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "concon",
+  "createdAt": "2026-10-08T15:26:23.464Z",
+  "updatedAt": "2026-10-08T15:26:23.464Z",
+  "meta": {
+    "name": "Concón",
+    "nameIt": "Concón",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Concón.geojson",
+      "sha256": "38c97c34ff98b86bb6020859846b561f6889d39538262521c757c5b4e23f1312",
+      "size": 238243,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "concon",
+    "name": "Concón",
+    "nameIt": "Concón",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL",
+    "center": [
+      -71.52561,
+      -32.93261
+    ],
+    "zoom": 10.9,
+    "population": 40883,
+    "grid": "cities/concon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/concon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "concon",
+        "name": "Concón",
+        "nameIt": "Concón",
+        "region": "Chile",
+        "regionIt": "Cile",
+        "country": "CL",
+        "center": [
+          -71.52561,
+          -32.93261
+        ],
+        "zoom": 10.9,
+        "population": 40883,
+        "cells": 204,
+        "layer": "cities/concon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -71.52561,
+            -32.93261
+          ]
+        },
+        "properties": {
+          "id": "concon",
+          "name": "Concón",
+          "country": "CL",
+          "isStudy": true,
+          "proximityMinutes": 10.3,
+          "population": 40883
+        }
+      },
+      "summary": null
+    }
+  }
+}

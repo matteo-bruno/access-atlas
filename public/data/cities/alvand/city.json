@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "alvand",
+  "createdAt": "2026-10-08T15:06:25.341Z",
+  "updatedAt": "2026-10-08T15:06:25.341Z",
+  "meta": {
+    "name": "Alvand",
+    "nameIt": "Alvand",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Alvand.geojson",
+      "sha256": "cec6c6321f4175469988866db1f10c8243e05ba38aec606d4b5444283e1a9ccf",
+      "size": 184265,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "alvand",
+    "name": "Alvand",
+    "nameIt": "Alvand",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      50.07197,
+      36.18671
+    ],
+    "zoom": 11.6,
+    "population": 85992,
+    "grid": "cities/alvand/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/alvand/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "alvand",
+        "name": "Alvand",
+        "nameIt": "Alvand",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          50.07197,
+          36.18671
+        ],
+        "zoom": 11.6,
+        "population": 85992,
+        "cells": 159,
+        "layer": "cities/alvand/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            50.07197,
+            36.18671
+          ]
+        },
+        "properties": {
+          "id": "alvand",
+          "name": "Alvand",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 85992
+        }
+      },
+      "summary": null
+    }
+  }
+}

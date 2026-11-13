@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yongchuan",
+  "createdAt": "2026-10-08T16:24:07.671Z",
+  "updatedAt": "2026-10-08T16:24:07.671Z",
+  "meta": {
+    "name": "Yongchuan",
+    "nameIt": "Yongchuan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yongchuan.geojson",
+      "sha256": "86fd0d78725effdd240c6b29ed7007c4e0727126aca09656a76e1714d5d3ad33",
+      "size": 750870,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yongchuan",
+    "name": "Yongchuan",
+    "nameIt": "Yongchuan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      105.91095,
+      29.35166
+    ],
+    "zoom": 10.1,
+    "population": 499604,
+    "grid": "cities/yongchuan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yongchuan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yongchuan",
+        "name": "Yongchuan",
+        "nameIt": "Yongchuan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          105.91095,
+          29.35166
+        ],
+        "zoom": 10.1,
+        "population": 499604,
+        "cells": 642,
+        "layer": "cities/yongchuan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.91095,
+            29.35166
+          ]
+        },
+        "properties": {
+          "id": "yongchuan",
+          "name": "Yongchuan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 39.4,
+          "population": 499604
+        }
+      },
+      "summary": null
+    }
+  }
+}

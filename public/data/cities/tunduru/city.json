@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tunduru",
+  "createdAt": "2026-10-08T16:19:13.630Z",
+  "updatedAt": "2026-10-08T16:19:13.630Z",
+  "meta": {
+    "name": "Tunduru",
+    "nameIt": "Tunduru",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tunduru.geojson",
+      "sha256": "7a93752b64a251af4cc37f06b45d78717b590779e0a197f4b19b7124ff1dfb10",
+      "size": 113683,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tunduru",
+    "name": "Tunduru",
+    "nameIt": "Tunduru",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      37.33385,
+      -11.04516
+    ],
+    "zoom": 12,
+    "population": 58006,
+    "grid": "cities/tunduru/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tunduru/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tunduru",
+        "name": "Tunduru",
+        "nameIt": "Tunduru",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          37.33385,
+          -11.04516
+        ],
+        "zoom": 12,
+        "population": 58006,
+        "cells": 97,
+        "layer": "cities/tunduru/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.33385,
+            -11.04516
+          ]
+        },
+        "properties": {
+          "id": "tunduru",
+          "name": "Tunduru",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 10.9,
+          "population": 58006
+        }
+      },
+      "summary": null
+    }
+  }
+}

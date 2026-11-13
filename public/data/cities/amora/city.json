@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "amora",
+  "createdAt": "2026-10-08T15:07:02.528Z",
+  "updatedAt": "2026-10-08T15:07:02.528Z",
+  "meta": {
+    "name": "Amora",
+    "nameIt": "Amora",
+    "region": "Portugal",
+    "regionIt": "Portogallo",
+    "country": "PT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Amora.geojson",
+      "sha256": "30e6fa315a369a746dda8f5dd2ad3c84f06e9b4980ee99a62bc360280fb13d9d",
+      "size": 225861,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "amora",
+    "name": "Amora",
+    "nameIt": "Amora",
+    "region": "Portugal",
+    "regionIt": "Portogallo",
+    "country": "PT",
+    "center": [
+      -9.10797,
+      38.61934
+    ],
+    "zoom": 11.3,
+    "population": 83331,
+    "grid": "cities/amora/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/amora/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "amora",
+        "name": "Amora",
+        "nameIt": "Amora",
+        "region": "Portugal",
+        "regionIt": "Portogallo",
+        "country": "PT",
+        "center": [
+          -9.10797,
+          38.61934
+        ],
+        "zoom": 11.3,
+        "population": 83331,
+        "cells": 197,
+        "layer": "cities/amora/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -9.10797,
+            38.61934
+          ]
+        },
+        "properties": {
+          "id": "amora",
+          "name": "Amora",
+          "country": "PT",
+          "isStudy": true,
+          "proximityMinutes": 10.3,
+          "population": 83331
+        }
+      },
+      "summary": null
+    }
+  }
+}

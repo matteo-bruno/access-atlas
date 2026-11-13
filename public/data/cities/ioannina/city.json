@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ioannina",
+  "createdAt": "2026-10-08T15:40:53.874Z",
+  "updatedAt": "2026-10-08T15:40:53.874Z",
+  "meta": {
+    "name": "Ioannina",
+    "nameIt": "Ioannina",
+    "region": "Greece",
+    "regionIt": "Grecia",
+    "country": "GR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ioannina.geojson",
+      "sha256": "6776eaad9676370433b189d725772d62cea82271365ef5ead0d9b5a6cde55748",
+      "size": 193227,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ioannina",
+    "name": "Ioannina",
+    "nameIt": "Ioannina",
+    "region": "Greece",
+    "regionIt": "Grecia",
+    "country": "GR",
+    "center": [
+      20.84952,
+      39.65963
+    ],
+    "zoom": 11.4,
+    "population": 59809,
+    "grid": "cities/ioannina/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ioannina/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ioannina",
+        "name": "Ioannina",
+        "nameIt": "Ioannina",
+        "region": "Greece",
+        "regionIt": "Grecia",
+        "country": "GR",
+        "center": [
+          20.84952,
+          39.65963
+        ],
+        "zoom": 11.4,
+        "population": 59809,
+        "cells": 169,
+        "layer": "cities/ioannina/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.84952,
+            39.65963
+          ]
+        },
+        "properties": {
+          "id": "ioannina",
+          "name": "Ioannina",
+          "country": "GR",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 59809
+        }
+      },
+      "summary": null
+    }
+  }
+}

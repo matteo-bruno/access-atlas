@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "colina",
+  "createdAt": "2026-10-08T15:26:01.444Z",
+  "updatedAt": "2026-10-08T15:26:01.444Z",
+  "meta": {
+    "name": "Colina",
+    "nameIt": "Colina",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Colina.geojson",
+      "sha256": "5d16fd778229a4492cf389b3a16894c19cfe5a2010b280c6517f5c98ddd9672d",
+      "size": 114513,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "colina",
+    "name": "Colina",
+    "nameIt": "Colina",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL",
+    "center": [
+      -70.67121,
+      -33.19777
+    ],
+    "zoom": 11.9,
+    "population": 40383,
+    "grid": "cities/colina/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/colina/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "colina",
+        "name": "Colina",
+        "nameIt": "Colina",
+        "region": "Chile",
+        "regionIt": "Cile",
+        "country": "CL",
+        "center": [
+          -70.67121,
+          -33.19777
+        ],
+        "zoom": 11.9,
+        "population": 40383,
+        "cells": 98,
+        "layer": "cities/colina/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -70.67121,
+            -33.19777
+          ]
+        },
+        "properties": {
+          "id": "colina",
+          "name": "Colina",
+          "country": "CL",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 40383
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-kut",
+  "createdAt": "2026-10-08T15:05:04.690Z",
+  "updatedAt": "2026-10-08T15:05:04.690Z",
+  "meta": {
+    "name": "Al-Kut",
+    "nameIt": "Al-Kut",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al-Kut.geojson",
+      "sha256": "dbd7d919ef4920e0d686cce67a237019485cb2b61d65d087986f2370dc7f11da",
+      "size": 650021,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-kut",
+    "name": "Al-Kut",
+    "nameIt": "Al-Kut",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      45.82839,
+      32.51489
+    ],
+    "zoom": 10.8,
+    "population": 387481,
+    "grid": "cities/al-kut/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-kut/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-kut",
+        "name": "Al-Kut",
+        "nameIt": "Al-Kut",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          45.82839,
+          32.51489
+        ],
+        "zoom": 10.8,
+        "population": 387481,
+        "cells": 562,
+        "layer": "cities/al-kut/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            45.82839,
+            32.51489
+          ]
+        },
+        "properties": {
+          "id": "al-kut",
+          "name": "Al-Kut",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 27.5,
+          "population": 387481
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huaning",
+  "createdAt": "2026-10-08T15:39:33.241Z",
+  "updatedAt": "2026-10-08T15:39:33.241Z",
+  "meta": {
+    "name": "Huaning",
+    "nameIt": "Huaning",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huaning.geojson",
+      "sha256": "b38eedf733eaf0f60969442252e24407c160f8fbea58ee52651f7337b3cee2cf",
+      "size": 72506,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huaning",
+    "name": "Huaning",
+    "nameIt": "Huaning",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      102.92957,
+      24.19369
+    ],
+    "zoom": 12,
+    "population": 75504,
+    "grid": "cities/huaning/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huaning/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huaning",
+        "name": "Huaning",
+        "nameIt": "Huaning",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          102.92957,
+          24.19369
+        ],
+        "zoom": 12,
+        "population": 75504,
+        "cells": 62,
+        "layer": "cities/huaning/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            102.92957,
+            24.19369
+          ]
+        },
+        "properties": {
+          "id": "huaning",
+          "name": "Huaning",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 75504
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pishin",
+  "createdAt": "2026-10-08T16:05:50.493Z",
+  "updatedAt": "2026-10-08T16:05:50.493Z",
+  "meta": {
+    "name": "Pishin",
+    "nameIt": "Pishin",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pishin.geojson",
+      "sha256": "e200e4299c4b1721d75831f98befd9ea73a0a9573aafe0a373aad701966ce2c4",
+      "size": 134357,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pishin",
+    "name": "Pishin",
+    "nameIt": "Pishin",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      67.01242,
+      30.58626
+    ],
+    "zoom": 11.4,
+    "population": 60506,
+    "grid": "cities/pishin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pishin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pishin",
+        "name": "Pishin",
+        "nameIt": "Pishin",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          67.01242,
+          30.58626
+        ],
+        "zoom": 11.4,
+        "population": 60506,
+        "cells": 116,
+        "layer": "cities/pishin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            67.01242,
+            30.58626
+          ]
+        },
+        "properties": {
+          "id": "pishin",
+          "name": "Pishin",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 60506
+        }
+      },
+      "summary": null
+    }
+  }
+}

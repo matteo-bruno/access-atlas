@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kortrijk",
+  "createdAt": "2026-10-08T15:47:58.894Z",
+  "updatedAt": "2026-10-08T15:47:58.894Z",
+  "meta": {
+    "name": "Kortrijk",
+    "nameIt": "Kortrijk",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kortrijk.geojson",
+      "sha256": "8e5c54b4810dc1ffe42634e4a6b868bdac7496b4066d28a2609db0d483e4a017",
+      "size": 475476,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kortrijk",
+    "name": "Kortrijk",
+    "nameIt": "Kortrijk",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE",
+    "center": [
+      3.27226,
+      50.83679
+    ],
+    "zoom": 11,
+    "population": 87990,
+    "grid": "cities/kortrijk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kortrijk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kortrijk",
+        "name": "Kortrijk",
+        "nameIt": "Kortrijk",
+        "region": "Belgium",
+        "regionIt": "Belgio",
+        "country": "BE",
+        "center": [
+          3.27226,
+          50.83679
+        ],
+        "zoom": 11,
+        "population": 87990,
+        "cells": 417,
+        "layer": "cities/kortrijk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.27226,
+            50.83679
+          ]
+        },
+        "properties": {
+          "id": "kortrijk",
+          "name": "Kortrijk",
+          "country": "BE",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 87990
+        }
+      },
+      "summary": null
+    }
+  }
+}

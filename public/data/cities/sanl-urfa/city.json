@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sanl-urfa",
+  "createdAt": "2026-10-08T16:25:59.638Z",
+  "updatedAt": "2026-10-08T16:25:59.638Z",
+  "meta": {
+    "name": "Şanlıurfa",
+    "nameIt": "Şanlıurfa",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Şanlıurfa.geojson",
+      "sha256": "db2d6ebe6aef2b7e6b3e305663051785adbf0c67e85e65649ced2718165e87fb",
+      "size": 697267,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sanl-urfa",
+    "name": "Şanlıurfa",
+    "nameIt": "Şanlıurfa",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      38.7995,
+      37.16558
+    ],
+    "zoom": 10,
+    "population": 724209,
+    "grid": "cities/sanl-urfa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sanl-urfa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sanl-urfa",
+        "name": "Şanlıurfa",
+        "nameIt": "Şanlıurfa",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          38.7995,
+          37.16558
+        ],
+        "zoom": 10,
+        "population": 724209,
+        "cells": 604,
+        "layer": "cities/sanl-urfa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.7995,
+            37.16558
+          ]
+        },
+        "properties": {
+          "id": "sanl-urfa",
+          "name": "Şanlıurfa",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 21.9,
+          "population": 724209
+        }
+      },
+      "summary": null
+    }
+  }
+}

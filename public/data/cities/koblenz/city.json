@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "koblenz",
+  "createdAt": "2026-10-08T15:47:30.693Z",
+  "updatedAt": "2026-10-08T15:47:30.693Z",
+  "meta": {
+    "name": "Koblenz",
+    "nameIt": "Koblenz",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Koblenz.geojson",
+      "sha256": "8199e73c11455979070cf41525afbaa84f54f976afe906a4d4e95466e52ee557",
+      "size": 638656,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "koblenz",
+    "name": "Koblenz",
+    "nameIt": "Koblenz",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      7.59177,
+      50.35528
+    ],
+    "zoom": 10.2,
+    "population": 121350,
+    "grid": "cities/koblenz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/koblenz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "koblenz",
+        "name": "Koblenz",
+        "nameIt": "Koblenz",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          7.59177,
+          50.35528
+        ],
+        "zoom": 10.2,
+        "population": 121350,
+        "cells": 562,
+        "layer": "cities/koblenz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.59177,
+            50.35528
+          ]
+        },
+        "properties": {
+          "id": "koblenz",
+          "name": "Koblenz",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 11.7,
+          "population": 121350
+        }
+      },
+      "summary": null
+    }
+  }
+}

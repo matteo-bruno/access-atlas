@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mambasa",
+  "createdAt": "2026-10-08T15:54:17.446Z",
+  "updatedAt": "2026-10-08T15:54:17.446Z",
+  "meta": {
+    "name": "Mambasa",
+    "nameIt": "Mambasa",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mambasa.geojson",
+      "sha256": "afb13f1467ecc13b883a66b50b544fc587d935a71ab5b776adc46d08ae0cab12",
+      "size": 108284,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mambasa",
+    "name": "Mambasa",
+    "nameIt": "Mambasa",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      29.03612,
+      1.36001
+    ],
+    "zoom": 12,
+    "population": 94130,
+    "grid": "cities/mambasa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mambasa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mambasa",
+        "name": "Mambasa",
+        "nameIt": "Mambasa",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          29.03612,
+          1.36001
+        ],
+        "zoom": 12,
+        "population": 94130,
+        "cells": 93,
+        "layer": "cities/mambasa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.03612,
+            1.36001
+          ]
+        },
+        "properties": {
+          "id": "mambasa",
+          "name": "Mambasa",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 94130
+        }
+      },
+      "summary": null
+    }
+  }
+}

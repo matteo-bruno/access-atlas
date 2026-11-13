@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jhang",
+  "createdAt": "2026-10-08T15:42:23.249Z",
+  "updatedAt": "2026-10-08T15:42:23.249Z",
+  "meta": {
+    "name": "Jhang",
+    "nameIt": "Jhang",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jhang.geojson",
+      "sha256": "b77afef82cb2367a5d196a05bb3bd76529e4076a45aa39edfe41360617a2f113",
+      "size": 561137,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jhang",
+    "name": "Jhang",
+    "nameIt": "Jhang",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      72.32868,
+      31.27389
+    ],
+    "zoom": 10.7,
+    "population": 417055,
+    "grid": "cities/jhang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jhang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jhang",
+        "name": "Jhang",
+        "nameIt": "Jhang",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          72.32868,
+          31.27389
+        ],
+        "zoom": 10.7,
+        "population": 417055,
+        "cells": 484,
+        "layer": "cities/jhang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.32868,
+            31.27389
+          ]
+        },
+        "properties": {
+          "id": "jhang",
+          "name": "Jhang",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 417055
+        }
+      },
+      "summary": null
+    }
+  }
+}

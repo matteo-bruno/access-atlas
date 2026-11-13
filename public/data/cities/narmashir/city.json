@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "narmashir",
+  "createdAt": "2026-10-08T16:00:24.336Z",
+  "updatedAt": "2026-10-08T16:00:24.336Z",
+  "meta": {
+    "name": "Narmashir",
+    "nameIt": "Narmashir",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Narmashir.geojson",
+      "sha256": "2246805d0c1e8fd26a5ee89a9f3a9c150d09cb9a3a72156c31a114c33ca51cbc",
+      "size": 468727,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "narmashir",
+    "name": "Narmashir",
+    "nameIt": "Narmashir",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      58.69463,
+      28.94168
+    ],
+    "zoom": 10.5,
+    "population": 5024,
+    "grid": "cities/narmashir/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/narmashir/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "narmashir",
+        "name": "Narmashir",
+        "nameIt": "Narmashir",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          58.69463,
+          28.94168
+        ],
+        "zoom": 10.5,
+        "population": 5024,
+        "cells": 404,
+        "layer": "cities/narmashir/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            58.69463,
+            28.94168
+          ]
+        },
+        "properties": {
+          "id": "narmashir",
+          "name": "Narmashir",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 5024
+        }
+      },
+      "summary": null
+    }
+  }
+}

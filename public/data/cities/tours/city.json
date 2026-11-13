@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tours",
+  "createdAt": "2026-10-08T16:18:41.137Z",
+  "updatedAt": "2026-10-08T16:18:41.137Z",
+  "meta": {
+    "name": "Tours",
+    "nameIt": "Tours",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tours.geojson",
+      "sha256": "349d3f01ebcc9ef63ed6386c7155b18ea9bd1c439c01487e4d747ff95b365fec",
+      "size": 927245,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tours",
+    "name": "Tours",
+    "nameIt": "Tours",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      0.68825,
+      47.38319
+    ],
+    "zoom": 10.5,
+    "population": 244172,
+    "grid": "cities/tours/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tours/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tours",
+        "name": "Tours",
+        "nameIt": "Tours",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          0.68825,
+          47.38319
+        ],
+        "zoom": 10.5,
+        "population": 244172,
+        "cells": 813,
+        "layer": "cities/tours/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.68825,
+            47.38319
+          ]
+        },
+        "properties": {
+          "id": "tours",
+          "name": "Tours",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 6.5,
+          "population": 244172
+        }
+      },
+      "summary": null
+    }
+  }
+}

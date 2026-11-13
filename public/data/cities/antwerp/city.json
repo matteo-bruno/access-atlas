@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "antwerp",
+  "createdAt": "2026-10-08T15:08:32.982Z",
+  "updatedAt": "2026-10-08T15:08:32.982Z",
+  "meta": {
+    "name": "Antwerp",
+    "nameIt": "Antwerp",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Antwerp.geojson",
+      "sha256": "5dec7fd185cabbc7e0489bae847e53ed7935fa58015e0e228173c7938281e05e",
+      "size": 4137786,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "antwerp",
+    "name": "Antwerp",
+    "nameIt": "Antwerp",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE",
+    "center": [
+      4.42041,
+      51.20148
+    ],
+    "zoom": 8.9,
+    "population": 764958,
+    "grid": "cities/antwerp/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/antwerp/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "antwerp",
+        "name": "Antwerp",
+        "nameIt": "Antwerp",
+        "region": "Belgium",
+        "regionIt": "Belgio",
+        "country": "BE",
+        "center": [
+          4.42041,
+          51.20148
+        ],
+        "zoom": 8.9,
+        "population": 764958,
+        "cells": 3625,
+        "layer": "cities/antwerp/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.42041,
+            51.20148
+          ]
+        },
+        "properties": {
+          "id": "antwerp",
+          "name": "Antwerp",
+          "country": "BE",
+          "isStudy": true,
+          "proximityMinutes": 8.5,
+          "population": 764958
+        }
+      },
+      "summary": null
+    }
+  }
+}

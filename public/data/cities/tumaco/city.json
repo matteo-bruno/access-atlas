@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tumaco",
+  "createdAt": "2026-10-08T16:19:10.243Z",
+  "updatedAt": "2026-10-08T16:19:10.243Z",
+  "meta": {
+    "name": "Tumaco",
+    "nameIt": "Tumaco",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tumaco.geojson",
+      "sha256": "794904357442433674006402e84bb3a9bdef58737e2f462642c80c51b66b0bf5",
+      "size": 244919,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tumaco",
+    "name": "Tumaco",
+    "nameIt": "Tumaco",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -78.77329,
+      1.80444
+    ],
+    "zoom": 11,
+    "population": 89170,
+    "grid": "cities/tumaco/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tumaco/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tumaco",
+        "name": "Tumaco",
+        "nameIt": "Tumaco",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -78.77329,
+          1.80444
+        ],
+        "zoom": 11,
+        "population": 89170,
+        "cells": 210,
+        "layer": "cities/tumaco/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -78.77329,
+            1.80444
+          ]
+        },
+        "properties": {
+          "id": "tumaco",
+          "name": "Tumaco",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 89170
+        }
+      },
+      "summary": null
+    }
+  }
+}

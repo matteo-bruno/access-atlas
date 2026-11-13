@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-wadi",
+  "createdAt": "2026-10-08T15:04:54.157Z",
+  "updatedAt": "2026-10-08T15:04:54.157Z",
+  "meta": {
+    "name": "Al Wadi",
+    "nameIt": "Al Wadi",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Wadi.geojson",
+      "sha256": "35bd63f375ca30db00b96f0025b299008f5bb7237355d4421aa57252d61a55d2",
+      "size": 998374,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-wadi",
+    "name": "Al Wadi",
+    "nameIt": "Al Wadi",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      29.80225,
+      31.02823
+    ],
+    "zoom": 10.2,
+    "population": 484139,
+    "grid": "cities/al-wadi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-wadi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-wadi",
+        "name": "Al Wadi",
+        "nameIt": "Al Wadi",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          29.80225,
+          31.02823
+        ],
+        "zoom": 10.2,
+        "population": 484139,
+        "cells": 857,
+        "layer": "cities/al-wadi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.80225,
+            31.02823
+          ]
+        },
+        "properties": {
+          "id": "al-wadi",
+          "name": "Al Wadi",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 82,
+          "population": 484139
+        }
+      },
+      "summary": null
+    }
+  }
+}

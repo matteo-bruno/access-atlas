@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "houten",
+  "createdAt": "2026-10-08T15:39:12.225Z",
+  "updatedAt": "2026-10-08T15:39:12.225Z",
+  "meta": {
+    "name": "Houten",
+    "nameIt": "Houten",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Houten.geojson",
+      "sha256": "f46ae97d8bb761e25f302a9ae37b43d06562dae8fa4847cc094912a8768dfe5a",
+      "size": 192268,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "houten",
+    "name": "Houten",
+    "nameIt": "Houten",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      5.16927,
+      52.02699
+    ],
+    "zoom": 11.9,
+    "population": 39660,
+    "grid": "cities/houten/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/houten/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "houten",
+        "name": "Houten",
+        "nameIt": "Houten",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          5.16927,
+          52.02699
+        ],
+        "zoom": 11.9,
+        "population": 39660,
+        "cells": 168,
+        "layer": "cities/houten/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.16927,
+            52.02699
+          ]
+        },
+        "properties": {
+          "id": "houten",
+          "name": "Houten",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 39660
+        }
+      },
+      "summary": null
+    }
+  }
+}

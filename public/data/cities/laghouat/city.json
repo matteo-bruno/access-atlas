@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "laghouat",
+  "createdAt": "2026-10-08T15:49:34.225Z",
+  "updatedAt": "2026-10-08T15:49:34.225Z",
+  "meta": {
+    "name": "Laghouat",
+    "nameIt": "Laghouat",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Laghouat.geojson",
+      "sha256": "3e0202979876db655864ce6dafbae4c556d61f38796966b3473288000e1079e4",
+      "size": 261336,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "laghouat",
+    "name": "Laghouat",
+    "nameIt": "Laghouat",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      2.86054,
+      33.80084
+    ],
+    "zoom": 11.4,
+    "population": 175233,
+    "grid": "cities/laghouat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/laghouat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "laghouat",
+        "name": "Laghouat",
+        "nameIt": "Laghouat",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          2.86054,
+          33.80084
+        ],
+        "zoom": 11.4,
+        "population": 175233,
+        "cells": 227,
+        "layer": "cities/laghouat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.86054,
+            33.80084
+          ]
+        },
+        "properties": {
+          "id": "laghouat",
+          "name": "Laghouat",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 175233
+        }
+      },
+      "summary": null
+    }
+  }
+}

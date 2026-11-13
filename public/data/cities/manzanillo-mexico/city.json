@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "manzanillo-mexico",
+  "createdAt": "2026-10-08T15:54:59.548Z",
+  "updatedAt": "2026-10-08T15:54:59.548Z",
+  "meta": {
+    "name": "Manzanillo (Mexico)",
+    "nameIt": "Manzanillo (Mexico)",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Manzanillo (Mexico).geojson",
+      "sha256": "bb5d907fb39c332b6b0f423217be113c5b0a82fdf2427f0867a7725cd33c3be5",
+      "size": 509934,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "manzanillo-mexico",
+    "name": "Manzanillo (Mexico)",
+    "nameIt": "Manzanillo (Mexico)",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -104.31592,
+      19.09547
+    ],
+    "zoom": 10.4,
+    "population": 135891,
+    "grid": "cities/manzanillo-mexico/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/manzanillo-mexico/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "manzanillo-mexico",
+        "name": "Manzanillo (Mexico)",
+        "nameIt": "Manzanillo (Mexico)",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -104.31592,
+          19.09547
+        ],
+        "zoom": 10.4,
+        "population": 135891,
+        "cells": 435,
+        "layer": "cities/manzanillo-mexico/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -104.31592,
+            19.09547
+          ]
+        },
+        "properties": {
+          "id": "manzanillo-mexico",
+          "name": "Manzanillo (Mexico)",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 18.6,
+          "population": 135891
+        }
+      },
+      "summary": null
+    }
+  }
+}

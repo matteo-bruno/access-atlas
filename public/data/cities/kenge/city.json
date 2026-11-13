@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kenge",
+  "createdAt": "2026-10-08T15:46:09.530Z",
+  "updatedAt": "2026-10-08T15:46:09.530Z",
+  "meta": {
+    "name": "Kenge",
+    "nameIt": "Kenge",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kenge.geojson",
+      "sha256": "d97aae6807f78407f98e11a8a5e4979a65bc7151fc62b1a35642e019352fced7",
+      "size": 198517,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kenge",
+    "name": "Kenge",
+    "nameIt": "Kenge",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      17.03982,
+      -4.81644
+    ],
+    "zoom": 11.4,
+    "population": 115437,
+    "grid": "cities/kenge/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kenge/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kenge",
+        "name": "Kenge",
+        "nameIt": "Kenge",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          17.03982,
+          -4.81644
+        ],
+        "zoom": 11.4,
+        "population": 115437,
+        "cells": 170,
+        "layer": "cities/kenge/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            17.03982,
+            -4.81644
+          ]
+        },
+        "properties": {
+          "id": "kenge",
+          "name": "Kenge",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 115437
+        }
+      },
+      "summary": null
+    }
+  }
+}

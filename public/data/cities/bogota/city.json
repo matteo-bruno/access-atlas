@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bogota",
+  "createdAt": "2026-10-08T15:19:49.458Z",
+  "updatedAt": "2026-10-08T15:19:49.458Z",
+  "meta": {
+    "name": "Bogota",
+    "nameIt": "Bogota",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bogota.geojson",
+      "sha256": "cb7152abb1ba6f99c701447e214cd3336ef37d146466b4dd849736a4061fdf4c",
+      "size": 5535446,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bogota",
+    "name": "Bogota",
+    "nameIt": "Bogota",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -74.12957,
+      4.64151
+    ],
+    "zoom": 8.9,
+    "population": 9780161,
+    "grid": "cities/bogota/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bogota/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bogota",
+        "name": "Bogota",
+        "nameIt": "Bogota",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -74.12957,
+          4.64151
+        ],
+        "zoom": 8.9,
+        "population": 9780161,
+        "cells": 4828,
+        "layer": "cities/bogota/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.12957,
+            4.64151
+          ]
+        },
+        "properties": {
+          "id": "bogota",
+          "name": "Bogota",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 10.3,
+          "population": 9780161
+        }
+      },
+      "summary": null
+    }
+  }
+}

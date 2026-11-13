@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "palermo",
+  "createdAt": "2026-10-08T16:03:47.177Z",
+  "updatedAt": "2026-10-08T16:03:47.177Z",
+  "meta": {
+    "name": "Palermo",
+    "nameIt": "Palermo",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Palermo.geojson",
+      "sha256": "46cf8d7656b22c0f71bf861a20be039e7d34e8474f0af043a172b85b557a0838",
+      "size": 1197557,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "palermo",
+    "name": "Palermo",
+    "nameIt": "Palermo",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      13.34632,
+      38.12333
+    ],
+    "zoom": 10,
+    "population": 649449,
+    "grid": "cities/palermo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/palermo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "palermo",
+        "name": "Palermo",
+        "nameIt": "Palermo",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          13.34632,
+          38.12333
+        ],
+        "zoom": 10,
+        "population": 649449,
+        "cells": 1043,
+        "layer": "cities/palermo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.34632,
+            38.12333
+          ]
+        },
+        "properties": {
+          "id": "palermo",
+          "name": "Palermo",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 649449
+        }
+      },
+      "summary": null
+    }
+  }
+}

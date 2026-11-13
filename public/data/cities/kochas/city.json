@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kochas",
+  "createdAt": "2026-10-08T15:47:32.317Z",
+  "updatedAt": "2026-10-08T15:47:32.317Z",
+  "meta": {
+    "name": "Kochas",
+    "nameIt": "Kochas",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kochas.geojson",
+      "sha256": "54310f620e080ec41ef7faa298df32f30d40e37d43c6be9b0daa732204aba18a",
+      "size": 97269,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kochas",
+    "name": "Kochas",
+    "nameIt": "Kochas",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.91816,
+      25.23268
+    ],
+    "zoom": 11.8,
+    "population": 43147,
+    "grid": "cities/kochas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kochas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kochas",
+        "name": "Kochas",
+        "nameIt": "Kochas",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.91816,
+          25.23268
+        ],
+        "zoom": 11.8,
+        "population": 43147,
+        "cells": 84,
+        "layer": "cities/kochas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.91816,
+            25.23268
+          ]
+        },
+        "properties": {
+          "id": "kochas",
+          "name": "Kochas",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 43147
+        }
+      },
+      "summary": null
+    }
+  }
+}

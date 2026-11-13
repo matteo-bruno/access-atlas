@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "babruysk",
+  "createdAt": "2026-10-08T15:12:20.550Z",
+  "updatedAt": "2026-10-08T15:12:20.550Z",
+  "meta": {
+    "name": "Babruysk",
+    "nameIt": "Babruysk",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Babruysk.geojson",
+      "sha256": "de60aef7835a83a17b8b585874687a188785b89639c7109e96790c5040876ec3",
+      "size": 657600,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "babruysk",
+    "name": "Babruysk",
+    "nameIt": "Babruysk",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY",
+    "center": [
+      29.20856,
+      53.15347
+    ],
+    "zoom": 10.4,
+    "population": 185213,
+    "grid": "cities/babruysk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/babruysk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "babruysk",
+        "name": "Babruysk",
+        "nameIt": "Babruysk",
+        "region": "Belarus",
+        "regionIt": "Bielorussia",
+        "country": "BY",
+        "center": [
+          29.20856,
+          53.15347
+        ],
+        "zoom": 10.4,
+        "population": 185213,
+        "cells": 574,
+        "layer": "cities/babruysk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.20856,
+            53.15347
+          ]
+        },
+        "properties": {
+          "id": "babruysk",
+          "name": "Babruysk",
+          "country": "BY",
+          "isStudy": true,
+          "proximityMinutes": 14.8,
+          "population": 185213
+        }
+      },
+      "summary": null
+    }
+  }
+}

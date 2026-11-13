@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "honggu",
+  "createdAt": "2026-10-08T15:38:59.939Z",
+  "updatedAt": "2026-10-08T15:38:59.939Z",
+  "meta": {
+    "name": "Honggu",
+    "nameIt": "Honggu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Honggu.geojson",
+      "sha256": "7910ab1b6cdd5702ae14a93bf6dfcffbab791036e0c69159d114223e4cc015bf",
+      "size": 124738,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "honggu",
+    "name": "Honggu",
+    "nameIt": "Honggu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      102.86031,
+      36.34497
+    ],
+    "zoom": 11.6,
+    "population": 71947,
+    "grid": "cities/honggu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/honggu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "honggu",
+        "name": "Honggu",
+        "nameIt": "Honggu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          102.86031,
+          36.34497
+        ],
+        "zoom": 11.6,
+        "population": 71947,
+        "cells": 107,
+        "layer": "cities/honggu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            102.86031,
+            36.34497
+          ]
+        },
+        "properties": {
+          "id": "honggu",
+          "name": "Honggu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 71947
+        }
+      },
+      "summary": null
+    }
+  }
+}

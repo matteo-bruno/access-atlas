@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sakon-nakhon",
+  "createdAt": "2026-10-08T16:09:59.861Z",
+  "updatedAt": "2026-10-08T16:09:59.861Z",
+  "meta": {
+    "name": "Sakon Nakhon",
+    "nameIt": "Sakon Nakhon",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sakon Nakhon.geojson",
+      "sha256": "607b8d1f67852003b5de952aa87971a5b2e30087ab20ecaab6650f274800cdb5",
+      "size": 163551,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sakon-nakhon",
+    "name": "Sakon Nakhon",
+    "nameIt": "Sakon Nakhon",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      104.14043,
+      17.15573
+    ],
+    "zoom": 11.5,
+    "population": 40548,
+    "grid": "cities/sakon-nakhon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sakon-nakhon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sakon-nakhon",
+        "name": "Sakon Nakhon",
+        "nameIt": "Sakon Nakhon",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          104.14043,
+          17.15573
+        ],
+        "zoom": 11.5,
+        "population": 40548,
+        "cells": 140,
+        "layer": "cities/sakon-nakhon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            104.14043,
+            17.15573
+          ]
+        },
+        "properties": {
+          "id": "sakon-nakhon",
+          "name": "Sakon Nakhon",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 19.7,
+          "population": 40548
+        }
+      },
+      "summary": null
+    }
+  }
+}

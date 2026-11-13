@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sodo",
+  "createdAt": "2026-10-08T16:14:14.484Z",
+  "updatedAt": "2026-10-08T16:14:14.484Z",
+  "meta": {
+    "name": "Sodo",
+    "nameIt": "Sodo",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sodo.geojson",
+      "sha256": "424e3336eea61dd3679ab410f34e5f510eb00ab330e891d91d54fa7bf9e15cee",
+      "size": 305057,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sodo",
+    "name": "Sodo",
+    "nameIt": "Sodo",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      37.76042,
+      6.85571
+    ],
+    "zoom": 11.3,
+    "population": 115063,
+    "grid": "cities/sodo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sodo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sodo",
+        "name": "Sodo",
+        "nameIt": "Sodo",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          37.76042,
+          6.85571
+        ],
+        "zoom": 11.3,
+        "population": 115063,
+        "cells": 264,
+        "layer": "cities/sodo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.76042,
+            6.85571
+          ]
+        },
+        "properties": {
+          "id": "sodo",
+          "name": "Sodo",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 21.5,
+          "population": 115063
+        }
+      },
+      "summary": null
+    }
+  }
+}

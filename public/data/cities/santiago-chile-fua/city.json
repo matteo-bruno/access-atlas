@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santiago-chile-fua",
+  "createdAt": "2026-10-19T16:58:17.940Z",
+  "updatedAt": "2026-10-19T16:58:17.940Z",
+  "meta": {
+    "name": "Santiago (Chile)",
+    "nameIt": "Santiago (Chile)",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "santiago-chile-fua",
+    "name": "Santiago (Chile)",
+    "nameIt": "Santiago (Chile)",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL",
+    "extent": "fua",
+    "core": "santiago-chile",
+    "center": [
+      -70.66469,
+      -33.48869
+    ],
+    "zoom": 8.5,
+    "population": 7703366,
+    "grid": "cities/santiago-chile-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santiago-chile-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santiago-chile-fua",
+        "name": "Santiago (Chile)",
+        "nameIt": "Santiago (Chile)",
+        "region": "Chile",
+        "regionIt": "Cile",
+        "country": "CL",
+        "extent": "fua",
+        "core": "santiago-chile",
+        "center": [
+          -70.66469,
+          -33.48869
+        ],
+        "zoom": 8.5,
+        "population": 7703366,
+        "cells": 32026,
+        "layer": "cities/santiago-chile-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -70.66469,
+            -33.48869
+          ]
+        },
+        "properties": {
+          "id": "santiago-chile-fua",
+          "name": "Santiago (Chile)",
+          "country": "CL",
+          "isStudy": true,
+          "proximityMinutes": 10.8,
+          "population": 7703366
+        }
+      },
+      "summary": null
+    }
+  }
+}

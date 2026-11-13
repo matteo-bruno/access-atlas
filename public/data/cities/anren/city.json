@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "anren",
+  "createdAt": "2026-10-08T15:08:12.650Z",
+  "updatedAt": "2026-10-08T15:08:12.650Z",
+  "meta": {
+    "name": "Anren",
+    "nameIt": "Anren",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Anren.geojson",
+      "sha256": "df02956ccb2361913c9119dd30f16be8488ff45b65b7d86dc5f5eb2dce55463a",
+      "size": 190374,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "anren",
+    "name": "Anren",
+    "nameIt": "Anren",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.2611,
+      26.71377
+    ],
+    "zoom": 11.4,
+    "population": 81408,
+    "grid": "cities/anren/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/anren/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "anren",
+        "name": "Anren",
+        "nameIt": "Anren",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.2611,
+          26.71377
+        ],
+        "zoom": 11.4,
+        "population": 81408,
+        "cells": 163,
+        "layer": "cities/anren/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.2611,
+            26.71377
+          ]
+        },
+        "properties": {
+          "id": "anren",
+          "name": "Anren",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 81408
+        }
+      },
+      "summary": null
+    }
+  }
+}

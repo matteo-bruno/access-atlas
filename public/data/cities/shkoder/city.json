@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shkoder",
+  "createdAt": "2026-10-08T16:13:11.099Z",
+  "updatedAt": "2026-10-08T16:13:11.099Z",
+  "meta": {
+    "name": "Shkoder",
+    "nameIt": "Shkoder",
+    "region": "Albania",
+    "regionIt": "Albania",
+    "country": "AL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shkoder.geojson",
+      "sha256": "892792005925fffbaa9c7d6bea03a330e7ccac06f96de7901ba946dc9cd0c38a",
+      "size": 168091,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shkoder",
+    "name": "Shkoder",
+    "nameIt": "Shkoder",
+    "region": "Albania",
+    "regionIt": "Albania",
+    "country": "AL",
+    "center": [
+      19.51331,
+      42.06902
+    ],
+    "zoom": 11.9,
+    "population": 69981,
+    "grid": "cities/shkoder/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shkoder/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shkoder",
+        "name": "Shkoder",
+        "nameIt": "Shkoder",
+        "region": "Albania",
+        "regionIt": "Albania",
+        "country": "AL",
+        "center": [
+          19.51331,
+          42.06902
+        ],
+        "zoom": 11.9,
+        "population": 69981,
+        "cells": 147,
+        "layer": "cities/shkoder/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.51331,
+            42.06902
+          ]
+        },
+        "properties": {
+          "id": "shkoder",
+          "name": "Shkoder",
+          "country": "AL",
+          "isStudy": true,
+          "proximityMinutes": 6.9,
+          "population": 69981
+        }
+      },
+      "summary": null
+    }
+  }
+}

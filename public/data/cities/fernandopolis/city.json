@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fernandopolis",
+  "createdAt": "2026-10-08T15:33:18.476Z",
+  "updatedAt": "2026-10-08T15:33:18.476Z",
+  "meta": {
+    "name": "Fernandópolis",
+    "nameIt": "Fernandópolis",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fernandópolis.geojson",
+      "sha256": "17a689ee81848aaa56ec6f038890b425536a2f5d4e5610d6289936ea90d3fc06",
+      "size": 180975,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fernandopolis",
+    "name": "Fernandópolis",
+    "nameIt": "Fernandópolis",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -50.24935,
+      -20.2836
+    ],
+    "zoom": 11.6,
+    "population": 59294,
+    "grid": "cities/fernandopolis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fernandopolis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fernandopolis",
+        "name": "Fernandópolis",
+        "nameIt": "Fernandópolis",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -50.24935,
+          -20.2836
+        ],
+        "zoom": 11.6,
+        "population": 59294,
+        "cells": 154,
+        "layer": "cities/fernandopolis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.24935,
+            -20.2836
+          ]
+        },
+        "properties": {
+          "id": "fernandopolis",
+          "name": "Fernandópolis",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 59294
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zarate",
+  "createdAt": "2026-10-08T16:25:45.451Z",
+  "updatedAt": "2026-10-08T16:25:45.451Z",
+  "meta": {
+    "name": "Zárate",
+    "nameIt": "Zárate",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zárate.geojson",
+      "sha256": "3517b06b9297d684dd38193dcc142796d0912676da5630f534985756ed0ac42e",
+      "size": 359422,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zarate",
+    "name": "Zárate",
+    "nameIt": "Zárate",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -59.03289,
+      -34.10338
+    ],
+    "zoom": 11.4,
+    "population": 76363,
+    "grid": "cities/zarate/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 170
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zarate/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zarate",
+        "name": "Zárate",
+        "nameIt": "Zárate",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -59.03289,
+          -34.10338
+        ],
+        "zoom": 11.4,
+        "population": 76363,
+        "cells": 307,
+        "layer": "cities/zarate/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 170
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -59.03289,
+            -34.10338
+          ]
+        },
+        "properties": {
+          "id": "zarate",
+          "name": "Zárate",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 13.9,
+          "population": 76363
+        }
+      },
+      "summary": null
+    }
+  }
+}

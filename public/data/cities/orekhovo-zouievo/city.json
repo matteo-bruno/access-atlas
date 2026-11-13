@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "orekhovo-zouievo",
+  "createdAt": "2026-10-08T16:02:58.837Z",
+  "updatedAt": "2026-10-08T16:02:58.837Z",
+  "meta": {
+    "name": "Orekhovo-Zouïevo",
+    "nameIt": "Orekhovo-Zouïevo",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Orekhovo-Zouïevo.geojson",
+      "sha256": "47be64cf190499b2ff1d0d7032d19d078adfc860389ef18711881c86b1a1e4d5",
+      "size": 262956,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "orekhovo-zouievo",
+    "name": "Orekhovo-Zouïevo",
+    "nameIt": "Orekhovo-Zouïevo",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      38.9757,
+      55.80577
+    ],
+    "zoom": 11.4,
+    "population": 73285,
+    "grid": "cities/orekhovo-zouievo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/orekhovo-zouievo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "orekhovo-zouievo",
+        "name": "Orekhovo-Zouïevo",
+        "nameIt": "Orekhovo-Zouïevo",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          38.9757,
+          55.80577
+        ],
+        "zoom": 11.4,
+        "population": 73285,
+        "cells": 230,
+        "layer": "cities/orekhovo-zouievo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.9757,
+            55.80577
+          ]
+        },
+        "properties": {
+          "id": "orekhovo-zouievo",
+          "name": "Orekhovo-Zouïevo",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 10.1,
+          "population": 73285
+        }
+      },
+      "summary": null
+    }
+  }
+}

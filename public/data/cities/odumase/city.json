@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "odumase",
+  "createdAt": "2026-10-08T16:02:33.614Z",
+  "updatedAt": "2026-10-08T16:02:33.614Z",
+  "meta": {
+    "name": "Odumase",
+    "nameIt": "Odumase",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Odumase.geojson",
+      "sha256": "a05851aa61414a46402c4898791c67581c9f18ff6c77b7d81c88aa5443d4a8ad",
+      "size": 477345,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "odumase",
+    "name": "Odumase",
+    "nameIt": "Odumase",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH",
+    "center": [
+      0.00728,
+      6.12961
+    ],
+    "zoom": 10.6,
+    "population": 159087,
+    "grid": "cities/odumase/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/odumase/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "odumase",
+        "name": "Odumase",
+        "nameIt": "Odumase",
+        "region": "Ghana",
+        "regionIt": "Ghana",
+        "country": "GH",
+        "center": [
+          0.00728,
+          6.12961
+        ],
+        "zoom": 10.6,
+        "population": 159087,
+        "cells": 405,
+        "layer": "cities/odumase/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.00728,
+            6.12961
+          ]
+        },
+        "properties": {
+          "id": "odumase",
+          "name": "Odumase",
+          "country": "GH",
+          "isStudy": true,
+          "proximityMinutes": 40.2,
+          "population": 159087
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mirassol",
+  "createdAt": "2026-10-08T15:57:21.091Z",
+  "updatedAt": "2026-10-08T15:57:21.091Z",
+  "meta": {
+    "name": "Mirassol",
+    "nameIt": "Mirassol",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mirassol.geojson",
+      "sha256": "6c509b7caa835c51007270970862c6142f1ee98913a42ba66759895dbaa1b7ec",
+      "size": 135448,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mirassol",
+    "name": "Mirassol",
+    "nameIt": "Mirassol",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -49.50672,
+      -20.81403
+    ],
+    "zoom": 11.7,
+    "population": 49714,
+    "grid": "cities/mirassol/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mirassol/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mirassol",
+        "name": "Mirassol",
+        "nameIt": "Mirassol",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -49.50672,
+          -20.81403
+        ],
+        "zoom": 11.7,
+        "population": 49714,
+        "cells": 115,
+        "layer": "cities/mirassol/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.50672,
+            -20.81403
+          ]
+        },
+        "properties": {
+          "id": "mirassol",
+          "name": "Mirassol",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 16.8,
+          "population": 49714
+        }
+      },
+      "summary": null
+    }
+  }
+}

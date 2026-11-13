@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bouira",
+  "createdAt": "2026-10-08T15:20:12.730Z",
+  "updatedAt": "2026-10-08T15:20:12.730Z",
+  "meta": {
+    "name": "Bouira",
+    "nameIt": "Bouira",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bouira.geojson",
+      "sha256": "735cc595a15ee5172870ef5346f579a72409c1b75becb2e0713d9dee4783b0a6",
+      "size": 148887,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bouira",
+    "name": "Bouira",
+    "nameIt": "Bouira",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      3.89224,
+      36.37682
+    ],
+    "zoom": 11.8,
+    "population": 94650,
+    "grid": "cities/bouira/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bouira/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bouira",
+        "name": "Bouira",
+        "nameIt": "Bouira",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          3.89224,
+          36.37682
+        ],
+        "zoom": 11.8,
+        "population": 94650,
+        "cells": 130,
+        "layer": "cities/bouira/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.89224,
+            36.37682
+          ]
+        },
+        "properties": {
+          "id": "bouira",
+          "name": "Bouira",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 10.4,
+          "population": 94650
+        }
+      },
+      "summary": null
+    }
+  }
+}

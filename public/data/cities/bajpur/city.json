@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bajpur",
+  "createdAt": "2026-10-08T15:13:45.596Z",
+  "updatedAt": "2026-10-08T15:13:45.596Z",
+  "meta": {
+    "name": "Bajpur",
+    "nameIt": "Bajpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bajpur.geojson",
+      "sha256": "807ea2c558b5b78b3827d82294e7f168798b1cb55ca1fc3ee5a3c43fbf095110",
+      "size": 62605,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bajpur",
+    "name": "Bajpur",
+    "nameIt": "Bajpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.14794,
+      29.1601
+    ],
+    "zoom": 12,
+    "population": 40159,
+    "grid": "cities/bajpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bajpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bajpur",
+        "name": "Bajpur",
+        "nameIt": "Bajpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.14794,
+          29.1601
+        ],
+        "zoom": 12,
+        "population": 40159,
+        "cells": 54,
+        "layer": "cities/bajpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.14794,
+            29.1601
+          ]
+        },
+        "properties": {
+          "id": "bajpur",
+          "name": "Bajpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 13.2,
+          "population": 40159
+        }
+      },
+      "summary": null
+    }
+  }
+}

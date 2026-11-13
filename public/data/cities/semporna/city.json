@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "semporna",
+  "createdAt": "2026-10-08T16:11:55.244Z",
+  "updatedAt": "2026-10-08T16:11:55.244Z",
+  "meta": {
+    "name": "Semporna",
+    "nameIt": "Semporna",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Semporna.geojson",
+      "sha256": "04fda0a4ac755df8980b60319084706f765a697b80de316cc41a31ed8aa18dc2",
+      "size": 205381,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "semporna",
+    "name": "Semporna",
+    "nameIt": "Semporna",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      118.60429,
+      4.47012
+    ],
+    "zoom": 11.6,
+    "population": 62712,
+    "grid": "cities/semporna/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/semporna/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "semporna",
+        "name": "Semporna",
+        "nameIt": "Semporna",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          118.60429,
+          4.47012
+        ],
+        "zoom": 11.6,
+        "population": 62712,
+        "cells": 177,
+        "layer": "cities/semporna/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.60429,
+            4.47012
+          ]
+        },
+        "properties": {
+          "id": "semporna",
+          "name": "Semporna",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 21.4,
+          "population": 62712
+        }
+      },
+      "summary": null
+    }
+  }
+}

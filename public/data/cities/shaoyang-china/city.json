@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shaoyang-china",
+  "createdAt": "2026-10-08T16:12:40.018Z",
+  "updatedAt": "2026-10-08T16:12:40.018Z",
+  "meta": {
+    "name": "Shaoyang (China)",
+    "nameIt": "Shaoyang (China)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shaoyang (China).geojson",
+      "sha256": "93b9132f6adc8ca32408838e1f5ce2901257790744aad93e6f35f1ff6b56df72",
+      "size": 3787498,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shaoyang-china",
+    "name": "Shaoyang (China)",
+    "nameIt": "Shaoyang (China)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      111.43264,
+      27.19426
+    ],
+    "zoom": 9.1,
+    "population": 797808,
+    "grid": "cities/shaoyang-china/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shaoyang-china/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shaoyang-china",
+        "name": "Shaoyang (China)",
+        "nameIt": "Shaoyang (China)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          111.43264,
+          27.19426
+        ],
+        "zoom": 9.1,
+        "population": 797808,
+        "cells": 3233,
+        "layer": "cities/shaoyang-china/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.43264,
+            27.19426
+          ]
+        },
+        "properties": {
+          "id": "shaoyang-china",
+          "name": "Shaoyang (China)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 41.3,
+          "population": 797808
+        }
+      },
+      "summary": null
+    }
+  }
+}

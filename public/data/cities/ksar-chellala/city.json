@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ksar-chellala",
+  "createdAt": "2026-10-08T15:48:31.591Z",
+  "updatedAt": "2026-10-08T15:48:31.591Z",
+  "meta": {
+    "name": "Ksar Chellala",
+    "nameIt": "Ksar Chellala",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ksar Chellala.geojson",
+      "sha256": "9c864afcdc0ae45fcc4e6b8fe53d51f5328b9f01d02ef0402850e5fa4446e05d",
+      "size": 75346,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ksar-chellala",
+    "name": "Ksar Chellala",
+    "nameIt": "Ksar Chellala",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      2.31398,
+      35.21627
+    ],
+    "zoom": 12,
+    "population": 61420,
+    "grid": "cities/ksar-chellala/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ksar-chellala/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ksar-chellala",
+        "name": "Ksar Chellala",
+        "nameIt": "Ksar Chellala",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          2.31398,
+          35.21627
+        ],
+        "zoom": 12,
+        "population": 61420,
+        "cells": 65,
+        "layer": "cities/ksar-chellala/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.31398,
+            35.21627
+          ]
+        },
+        "properties": {
+          "id": "ksar-chellala",
+          "name": "Ksar Chellala",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 9.3,
+          "population": 61420
+        }
+      },
+      "summary": null
+    }
+  }
+}

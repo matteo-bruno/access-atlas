@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yangxin",
+  "createdAt": "2026-10-08T16:23:27.364Z",
+  "updatedAt": "2026-10-08T16:23:27.364Z",
+  "meta": {
+    "name": "Yangxin",
+    "nameIt": "Yangxin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yangxin.geojson",
+      "sha256": "645574f03569c452ec545b42f7b800905728225226867a9c09544205ac903490",
+      "size": 273697,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yangxin",
+    "name": "Yangxin",
+    "nameIt": "Yangxin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      115.19963,
+      29.8541
+    ],
+    "zoom": 11.5,
+    "population": 201371,
+    "grid": "cities/yangxin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yangxin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yangxin",
+        "name": "Yangxin",
+        "nameIt": "Yangxin",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          115.19963,
+          29.8541
+        ],
+        "zoom": 11.5,
+        "population": 201371,
+        "cells": 234,
+        "layer": "cities/yangxin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.19963,
+            29.8541
+          ]
+        },
+        "properties": {
+          "id": "yangxin",
+          "name": "Yangxin",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 16.5,
+          "population": 201371
+        }
+      },
+      "summary": null
+    }
+  }
+}

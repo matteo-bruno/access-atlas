@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "camacupa",
+  "createdAt": "2026-10-08T15:22:00.129Z",
+  "updatedAt": "2026-10-08T15:22:00.129Z",
+  "meta": {
+    "name": "Camacupa",
+    "nameIt": "Camacupa",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Camacupa.geojson",
+      "sha256": "5762f13067492a05f51f69dc64ddb65588f1a8a05c7c4607e46090c33a269be8",
+      "size": 119876,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "camacupa",
+    "name": "Camacupa",
+    "nameIt": "Camacupa",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO",
+    "center": [
+      17.47894,
+      -12.02017
+    ],
+    "zoom": 12,
+    "population": 73773,
+    "grid": "cities/camacupa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/camacupa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "camacupa",
+        "name": "Camacupa",
+        "nameIt": "Camacupa",
+        "region": "Angola",
+        "regionIt": "Angola",
+        "country": "AO",
+        "center": [
+          17.47894,
+          -12.02017
+        ],
+        "zoom": 12,
+        "population": 73773,
+        "cells": 102,
+        "layer": "cities/camacupa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            17.47894,
+            -12.02017
+          ]
+        },
+        "properties": {
+          "id": "camacupa",
+          "name": "Camacupa",
+          "country": "AO",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 73773
+        }
+      },
+      "summary": null
+    }
+  }
+}

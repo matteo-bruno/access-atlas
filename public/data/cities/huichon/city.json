@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huichon",
+  "createdAt": "2026-10-08T15:39:44.148Z",
+  "updatedAt": "2026-10-08T15:39:44.148Z",
+  "meta": {
+    "name": "Huichon",
+    "nameIt": "Huichon",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huichon.geojson",
+      "sha256": "de008331b840ccd6839094d56bc3c01c5fd80685b7e8c971ed46042e95f98796",
+      "size": 145593,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huichon",
+    "name": "Huichon",
+    "nameIt": "Huichon",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP",
+    "center": [
+      126.27129,
+      40.17235
+    ],
+    "zoom": 11.6,
+    "population": 101541,
+    "grid": "cities/huichon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 168
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huichon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huichon",
+        "name": "Huichon",
+        "nameIt": "Huichon",
+        "region": "North Korea",
+        "regionIt": "Corea del Nord",
+        "country": "KP",
+        "center": [
+          126.27129,
+          40.17235
+        ],
+        "zoom": 11.6,
+        "population": 101541,
+        "cells": 125,
+        "layer": "cities/huichon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 168
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            126.27129,
+            40.17235
+          ]
+        },
+        "properties": {
+          "id": "huichon",
+          "name": "Huichon",
+          "country": "KP",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 101541
+        }
+      },
+      "summary": null
+    }
+  }
+}

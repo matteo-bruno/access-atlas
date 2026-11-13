@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "criciuma",
+  "createdAt": "2026-10-08T15:26:52.109Z",
+  "updatedAt": "2026-10-08T15:26:52.109Z",
+  "meta": {
+    "name": "Criciúma",
+    "nameIt": "Criciúma",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Criciúma.geojson",
+      "sha256": "b10ffb7481baf3bd0e60878f6c02b07227a333dffb73777ce1febf18b87a0226",
+      "size": 733402,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "criciuma",
+    "name": "Criciúma",
+    "nameIt": "Criciúma",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -49.38809,
+      -28.6845
+    ],
+    "zoom": 10.3,
+    "population": 177685,
+    "grid": "cities/criciuma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/criciuma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "criciuma",
+        "name": "Criciúma",
+        "nameIt": "Criciúma",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -49.38809,
+          -28.6845
+        ],
+        "zoom": 10.3,
+        "population": 177685,
+        "cells": 628,
+        "layer": "cities/criciuma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.38809,
+            -28.6845
+          ]
+        },
+        "properties": {
+          "id": "criciuma",
+          "name": "Criciúma",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 19.4,
+          "population": 177685
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shiroli",
+  "createdAt": "2026-10-08T16:13:08.094Z",
+  "updatedAt": "2026-10-08T16:13:08.094Z",
+  "meta": {
+    "name": "Shiroli",
+    "nameIt": "Shiroli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shiroli.geojson",
+      "sha256": "a10caf30989b5f2beda0f7ca38a179cf7fed82a44896b35652f9e7b5eeff0893",
+      "size": 202660,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shiroli",
+    "name": "Shiroli",
+    "nameIt": "Shiroli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.27784,
+      16.76056
+    ],
+    "zoom": 10.9,
+    "population": 80416,
+    "grid": "cities/shiroli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shiroli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shiroli",
+        "name": "Shiroli",
+        "nameIt": "Shiroli",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.27784,
+          16.76056
+        ],
+        "zoom": 10.9,
+        "population": 80416,
+        "cells": 175,
+        "layer": "cities/shiroli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.27784,
+            16.76056
+          ]
+        },
+        "properties": {
+          "id": "shiroli",
+          "name": "Shiroli",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 80416
+        }
+      },
+      "summary": null
+    }
+  }
+}

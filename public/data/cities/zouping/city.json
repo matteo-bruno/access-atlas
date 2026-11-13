@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zouping",
+  "createdAt": "2026-10-08T16:25:39.292Z",
+  "updatedAt": "2026-10-08T16:25:39.292Z",
+  "meta": {
+    "name": "Zouping",
+    "nameIt": "Zouping",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zouping.geojson",
+      "sha256": "7b8414d7cbaf302e4622a0bd4a74e8314e1e21a83b631e429f44c5d0428c7401",
+      "size": 1640177,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zouping",
+    "name": "Zouping",
+    "nameIt": "Zouping",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.75418,
+      36.89229
+    ],
+    "zoom": 10.3,
+    "population": 321904,
+    "grid": "cities/zouping/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 170
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zouping/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zouping",
+        "name": "Zouping",
+        "nameIt": "Zouping",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.75418,
+          36.89229
+        ],
+        "zoom": 10.3,
+        "population": 321904,
+        "cells": 1406,
+        "layer": "cities/zouping/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 170
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.75418,
+            36.89229
+          ]
+        },
+        "properties": {
+          "id": "zouping",
+          "name": "Zouping",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 41.4,
+          "population": 321904
+        }
+      },
+      "summary": null
+    }
+  }
+}

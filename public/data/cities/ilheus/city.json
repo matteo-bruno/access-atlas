@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ilheus",
+  "createdAt": "2026-10-08T15:40:39.309Z",
+  "updatedAt": "2026-10-08T15:40:39.309Z",
+  "meta": {
+    "name": "Ilhéus",
+    "nameIt": "Ilhéus",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ilhéus.geojson",
+      "sha256": "d54e395b5a6ac46019566ce15636034dfcb4aa362fe8e2692e6859e0f2f4ec16",
+      "size": 148874,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ilheus",
+    "name": "Ilhéus",
+    "nameIt": "Ilhéus",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -39.04829,
+      -14.79135
+    ],
+    "zoom": 11.7,
+    "population": 63161,
+    "grid": "cities/ilheus/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ilheus/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ilheus",
+        "name": "Ilhéus",
+        "nameIt": "Ilhéus",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -39.04829,
+          -14.79135
+        ],
+        "zoom": 11.7,
+        "population": 63161,
+        "cells": 126,
+        "layer": "cities/ilheus/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -39.04829,
+            -14.79135
+          ]
+        },
+        "properties": {
+          "id": "ilheus",
+          "name": "Ilhéus",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 17.6,
+          "population": 63161
+        }
+      },
+      "summary": null
+    }
+  }
+}

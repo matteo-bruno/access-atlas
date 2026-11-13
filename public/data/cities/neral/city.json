@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "neral",
+  "createdAt": "2026-10-08T16:01:00.033Z",
+  "updatedAt": "2026-10-08T16:01:00.033Z",
+  "meta": {
+    "name": "Neral",
+    "nameIt": "Neral",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Neral.geojson",
+      "sha256": "303585f79edbd36bfc11495b97cea1f7552424e5643fe0d8b1a23230208d543d",
+      "size": 107741,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "neral",
+    "name": "Neral",
+    "nameIt": "Neral",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.31746,
+      19.03002
+    ],
+    "zoom": 12,
+    "population": 31500,
+    "grid": "cities/neral/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/neral/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "neral",
+        "name": "Neral",
+        "nameIt": "Neral",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.31746,
+          19.03002
+        ],
+        "zoom": 12,
+        "population": 31500,
+        "cells": 93,
+        "layer": "cities/neral/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.31746,
+            19.03002
+          ]
+        },
+        "properties": {
+          "id": "neral",
+          "name": "Neral",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 31500
+        }
+      },
+      "summary": null
+    }
+  }
+}

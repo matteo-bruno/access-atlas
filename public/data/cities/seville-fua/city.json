@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "seville-fua",
+  "createdAt": "2026-10-19T16:58:26.858Z",
+  "updatedAt": "2026-10-19T16:58:26.858Z",
+  "meta": {
+    "name": "Seville",
+    "nameIt": "Seville",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "seville-fua",
+    "name": "Seville",
+    "nameIt": "Seville",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "extent": "fua",
+    "core": "seville",
+    "center": [
+      -5.98149,
+      37.37081
+    ],
+    "zoom": 8.5,
+    "population": 1339606,
+    "grid": "cities/seville-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/seville-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "seville-fua",
+        "name": "Seville",
+        "nameIt": "Seville",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "extent": "fua",
+        "core": "seville",
+        "center": [
+          -5.98149,
+          37.37081
+        ],
+        "zoom": 8.5,
+        "population": 1339606,
+        "cells": 8273,
+        "layer": "cities/seville-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.98149,
+            37.37081
+          ]
+        },
+        "properties": {
+          "id": "seville-fua",
+          "name": "Seville",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 9.5,
+          "population": 1339606
+        }
+      },
+      "summary": null
+    }
+  }
+}

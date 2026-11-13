@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "apsheronsk",
+  "createdAt": "2026-10-08T15:08:51.168Z",
+  "updatedAt": "2026-10-08T15:08:51.168Z",
+  "meta": {
+    "name": "Apsheronsk",
+    "nameIt": "Apsheronsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Apsheronsk.geojson",
+      "sha256": "d03930c9101ffbdbcafbb673b1a6d8e6649a48e67685256bf095566f7427c5dd",
+      "size": 212360,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "apsheronsk",
+    "name": "Apsheronsk",
+    "nameIt": "Apsheronsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      39.7324,
+      44.45897
+    ],
+    "zoom": 11.7,
+    "population": 42880,
+    "grid": "cities/apsheronsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/apsheronsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "apsheronsk",
+        "name": "Apsheronsk",
+        "nameIt": "Apsheronsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          39.7324,
+          44.45897
+        ],
+        "zoom": 11.7,
+        "population": 42880,
+        "cells": 184,
+        "layer": "cities/apsheronsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.7324,
+            44.45897
+          ]
+        },
+        "properties": {
+          "id": "apsheronsk",
+          "name": "Apsheronsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 42880
+        }
+      },
+      "summary": null
+    }
+  }
+}

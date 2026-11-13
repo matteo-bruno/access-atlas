@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gamboru",
+  "createdAt": "2026-10-08T15:34:20.043Z",
+  "updatedAt": "2026-10-08T15:34:20.043Z",
+  "meta": {
+    "name": "Gamboru",
+    "nameIt": "Gamboru",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gamboru.geojson",
+      "sha256": "1acd54a09600fc8940b6bd1b3db336da48c12fa2241de9bade84da15843de01b",
+      "size": 234679,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gamboru",
+    "name": "Gamboru",
+    "nameIt": "Gamboru",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      14.19698,
+      12.36474
+    ],
+    "zoom": 11.4,
+    "population": 106923,
+    "grid": "cities/gamboru/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gamboru/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gamboru",
+        "name": "Gamboru",
+        "nameIt": "Gamboru",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          14.19698,
+          12.36474
+        ],
+        "zoom": 11.4,
+        "population": 106923,
+        "cells": 201,
+        "layer": "cities/gamboru/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.19698,
+            12.36474
+          ]
+        },
+        "properties": {
+          "id": "gamboru",
+          "name": "Gamboru",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 106923
+        }
+      },
+      "summary": null
+    }
+  }
+}

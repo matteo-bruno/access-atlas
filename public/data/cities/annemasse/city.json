@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "annemasse",
+  "createdAt": "2026-10-08T15:08:02.937Z",
+  "updatedAt": "2026-10-08T15:08:02.937Z",
+  "meta": {
+    "name": "Annemasse",
+    "nameIt": "Annemasse",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Annemasse.geojson",
+      "sha256": "afad5709e2632e70c849f86c3e0f4a6341498635f70400f266fb3c711b079c77",
+      "size": 146147,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "annemasse",
+    "name": "Annemasse",
+    "nameIt": "Annemasse",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      6.23769,
+      46.19141
+    ],
+    "zoom": 11.6,
+    "population": 59456,
+    "grid": "cities/annemasse/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/annemasse/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "annemasse",
+        "name": "Annemasse",
+        "nameIt": "Annemasse",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          6.23769,
+          46.19141
+        ],
+        "zoom": 11.6,
+        "population": 59456,
+        "cells": 129,
+        "layer": "cities/annemasse/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.23769,
+            46.19141
+          ]
+        },
+        "properties": {
+          "id": "annemasse",
+          "name": "Annemasse",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 5.8,
+          "population": 59456
+        }
+      },
+      "summary": null
+    }
+  }
+}

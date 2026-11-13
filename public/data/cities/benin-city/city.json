@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "benin-city",
+  "createdAt": "2026-10-08T15:17:29.936Z",
+  "updatedAt": "2026-10-08T15:17:29.936Z",
+  "meta": {
+    "name": "Benin City",
+    "nameIt": "Benin City",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Benin City.geojson",
+      "sha256": "1181858e74b7779664431e35166a84b281133e36f537787dae768f1ded9cbe54",
+      "size": 4973042,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "benin-city",
+    "name": "Benin City",
+    "nameIt": "Benin City",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      5.62981,
+      6.33602
+    ],
+    "zoom": 9.2,
+    "population": 1423464,
+    "grid": "cities/benin-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/benin-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "benin-city",
+        "name": "Benin City",
+        "nameIt": "Benin City",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          5.62981,
+          6.33602
+        ],
+        "zoom": 9.2,
+        "population": 1423464,
+        "cells": 4309,
+        "layer": "cities/benin-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.62981,
+            6.33602
+          ]
+        },
+        "properties": {
+          "id": "benin-city",
+          "name": "Benin City",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 65.9,
+          "population": 1423464
+        }
+      },
+      "summary": null
+    }
+  }
+}

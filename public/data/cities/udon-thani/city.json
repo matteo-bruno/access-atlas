@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "udon-thani",
+  "createdAt": "2026-10-08T16:19:36.811Z",
+  "updatedAt": "2026-10-08T16:19:36.811Z",
+  "meta": {
+    "name": "Udon Thani",
+    "nameIt": "Udon Thani",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Udon Thani.geojson",
+      "sha256": "e6dc2e1878ff79d3e6add75f19f88bcfa1dc10865e718dba5affef7ae97773b4",
+      "size": 310661,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "udon-thani",
+    "name": "Udon Thani",
+    "nameIt": "Udon Thani",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      102.79346,
+      17.40825
+    ],
+    "zoom": 10.9,
+    "population": 112895,
+    "grid": "cities/udon-thani/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/udon-thani/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "udon-thani",
+        "name": "Udon Thani",
+        "nameIt": "Udon Thani",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          102.79346,
+          17.40825
+        ],
+        "zoom": 10.9,
+        "population": 112895,
+        "cells": 267,
+        "layer": "cities/udon-thani/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            102.79346,
+            17.40825
+          ]
+        },
+        "properties": {
+          "id": "udon-thani",
+          "name": "Udon Thani",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 19.9,
+          "population": 112895
+        }
+      },
+      "summary": null
+    }
+  }
+}

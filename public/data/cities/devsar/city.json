@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "devsar",
+  "createdAt": "2026-10-08T15:29:09.571Z",
+  "updatedAt": "2026-10-08T15:29:09.571Z",
+  "meta": {
+    "name": "Devsar",
+    "nameIt": "Devsar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Devsar.geojson",
+      "sha256": "ee19fdd7c62677252878ca9cb1840112864c4acbabedda7ad2c22a2703e7f00c",
+      "size": 292210,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "devsar",
+    "name": "Devsar",
+    "nameIt": "Devsar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.10554,
+      33.66469
+    ],
+    "zoom": 10.8,
+    "population": 50610,
+    "grid": "cities/devsar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/devsar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "devsar",
+        "name": "Devsar",
+        "nameIt": "Devsar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.10554,
+          33.66469
+        ],
+        "zoom": 10.8,
+        "population": 50610,
+        "cells": 253,
+        "layer": "cities/devsar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.10554,
+            33.66469
+          ]
+        },
+        "properties": {
+          "id": "devsar",
+          "name": "Devsar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 50610
+        }
+      },
+      "summary": null
+    }
+  }
+}

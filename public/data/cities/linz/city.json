@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "linz",
+  "createdAt": "2026-10-08T15:51:30.973Z",
+  "updatedAt": "2026-10-08T15:51:30.973Z",
+  "meta": {
+    "name": "Linz",
+    "nameIt": "Linz",
+    "region": "Austria",
+    "regionIt": "Austria",
+    "country": "AT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Linz.geojson",
+      "sha256": "bf462d6089ef76d184428d55d9e023defacd14ea8330f6490594c26d98420f27",
+      "size": 738430,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "linz",
+    "name": "Linz",
+    "nameIt": "Linz",
+    "region": "Austria",
+    "regionIt": "Austria",
+    "country": "AT",
+    "center": [
+      14.29149,
+      48.28184
+    ],
+    "zoom": 10.3,
+    "population": 229384,
+    "grid": "cities/linz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/linz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "linz",
+        "name": "Linz",
+        "nameIt": "Linz",
+        "region": "Austria",
+        "regionIt": "Austria",
+        "country": "AT",
+        "center": [
+          14.29149,
+          48.28184
+        ],
+        "zoom": 10.3,
+        "population": 229384,
+        "cells": 646,
+        "layer": "cities/linz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.29149,
+            48.28184
+          ]
+        },
+        "properties": {
+          "id": "linz",
+          "name": "Linz",
+          "country": "AT",
+          "isStudy": true,
+          "proximityMinutes": 8.7,
+          "population": 229384
+        }
+      },
+      "summary": null
+    }
+  }
+}

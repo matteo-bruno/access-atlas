@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jastrzebie-zdroj",
+  "createdAt": "2026-10-08T15:42:05.210Z",
+  "updatedAt": "2026-10-08T15:42:05.210Z",
+  "meta": {
+    "name": "Jastrzębie-Zdrój",
+    "nameIt": "Jastrzębie-Zdrój",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jastrzębie-Zdrój.geojson",
+      "sha256": "ce2349f4cecaf214516655cf23fdd15400e00c8ac0638422467f3cd2b3593ef6",
+      "size": 203593,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jastrzebie-zdroj",
+    "name": "Jastrzębie-Zdrój",
+    "nameIt": "Jastrzębie-Zdrój",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      18.59088,
+      49.95162
+    ],
+    "zoom": 11.3,
+    "population": 51200,
+    "grid": "cities/jastrzebie-zdroj/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jastrzebie-zdroj/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jastrzebie-zdroj",
+        "name": "Jastrzębie-Zdrój",
+        "nameIt": "Jastrzębie-Zdrój",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          18.59088,
+          49.95162
+        ],
+        "zoom": 11.3,
+        "population": 51200,
+        "cells": 178,
+        "layer": "cities/jastrzebie-zdroj/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.59088,
+            49.95162
+          ]
+        },
+        "properties": {
+          "id": "jastrzebie-zdroj",
+          "name": "Jastrzębie-Zdrój",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 12,
+          "population": 51200
+        }
+      },
+      "summary": null
+    }
+  }
+}

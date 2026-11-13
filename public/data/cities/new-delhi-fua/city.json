@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "new-delhi-fua",
+  "createdAt": "2026-10-19T16:57:39.976Z",
+  "updatedAt": "2026-10-19T16:57:39.976Z",
+  "meta": {
+    "name": "New Delhi",
+    "nameIt": "New Delhi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "new-delhi-fua",
+    "name": "New Delhi",
+    "nameIt": "New Delhi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "extent": "fua",
+    "core": "new-delhi",
+    "center": [
+      77.23149,
+      28.62445
+    ],
+    "zoom": 8.5,
+    "population": 40178366,
+    "grid": "cities/new-delhi-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/new-delhi-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "new-delhi-fua",
+        "name": "New Delhi",
+        "nameIt": "New Delhi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "extent": "fua",
+        "core": "new-delhi",
+        "center": [
+          77.23149,
+          28.62445
+        ],
+        "zoom": 8.5,
+        "population": 40178366,
+        "cells": 50788,
+        "layer": "cities/new-delhi-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.23149,
+            28.62445
+          ]
+        },
+        "properties": {
+          "id": "new-delhi-fua",
+          "name": "New Delhi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 30.8,
+          "population": 40178366
+        }
+      },
+      "summary": null
+    }
+  }
+}

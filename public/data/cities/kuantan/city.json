@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kuantan",
+  "createdAt": "2026-10-08T15:48:36.697Z",
+  "updatedAt": "2026-10-08T15:48:36.697Z",
+  "meta": {
+    "name": "Kuantan",
+    "nameIt": "Kuantan",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kuantan.geojson",
+      "sha256": "1ccd86d3d42d87a02882055356df817361d369240c5b0a8f185a530a1dc65ca2",
+      "size": 560801,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kuantan",
+    "name": "Kuantan",
+    "nameIt": "Kuantan",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      103.31894,
+      3.82204
+    ],
+    "zoom": 10.5,
+    "population": 182288,
+    "grid": "cities/kuantan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kuantan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kuantan",
+        "name": "Kuantan",
+        "nameIt": "Kuantan",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          103.31894,
+          3.82204
+        ],
+        "zoom": 10.5,
+        "population": 182288,
+        "cells": 485,
+        "layer": "cities/kuantan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.31894,
+            3.82204
+          ]
+        },
+        "properties": {
+          "id": "kuantan",
+          "name": "Kuantan",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 24.2,
+          "population": 182288
+        }
+      },
+      "summary": null
+    }
+  }
+}

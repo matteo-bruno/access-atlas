@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "novo-hamburgo",
+  "createdAt": "2026-10-08T16:02:08.943Z",
+  "updatedAt": "2026-10-08T16:02:08.943Z",
+  "meta": {
+    "name": "Novo Hamburgo",
+    "nameIt": "Novo Hamburgo",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Novo Hamburgo.geojson",
+      "sha256": "e887565b634bc2c1fdad32d4acbf7739f3d24c6c4ea4d19019e0d572a2c49924",
+      "size": 2020540,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "novo-hamburgo",
+    "name": "Novo Hamburgo",
+    "nameIt": "Novo Hamburgo",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -51.12598,
+      -29.71338
+    ],
+    "zoom": 9.8,
+    "population": 507643,
+    "grid": "cities/novo-hamburgo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/novo-hamburgo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "novo-hamburgo",
+        "name": "Novo Hamburgo",
+        "nameIt": "Novo Hamburgo",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -51.12598,
+          -29.71338
+        ],
+        "zoom": 9.8,
+        "population": 507643,
+        "cells": 1726,
+        "layer": "cities/novo-hamburgo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -51.12598,
+            -29.71338
+          ]
+        },
+        "properties": {
+          "id": "novo-hamburgo",
+          "name": "Novo Hamburgo",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 23.7,
+          "population": 507643
+        }
+      },
+      "summary": null
+    }
+  }
+}

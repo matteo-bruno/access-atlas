@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "birnin-gwari",
+  "createdAt": "2026-10-08T15:19:15.943Z",
+  "updatedAt": "2026-10-08T15:19:15.943Z",
+  "meta": {
+    "name": "Birnin Gwari",
+    "nameIt": "Birnin Gwari",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Birnin Gwari.geojson",
+      "sha256": "f6c52b41ae879722786510bd4f6f1f556016ac5b363cc8c3f2152c84bf90f588",
+      "size": 97427,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "birnin-gwari",
+    "name": "Birnin Gwari",
+    "nameIt": "Birnin Gwari",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      6.54068,
+      10.66648
+    ],
+    "zoom": 12,
+    "population": 51450,
+    "grid": "cities/birnin-gwari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/birnin-gwari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "birnin-gwari",
+        "name": "Birnin Gwari",
+        "nameIt": "Birnin Gwari",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          6.54068,
+          10.66648
+        ],
+        "zoom": 12,
+        "population": 51450,
+        "cells": 84,
+        "layer": "cities/birnin-gwari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.54068,
+            10.66648
+          ]
+        },
+        "properties": {
+          "id": "birnin-gwari",
+          "name": "Birnin Gwari",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 51450
+        }
+      },
+      "summary": null
+    }
+  }
+}

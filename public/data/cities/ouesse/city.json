@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ouesse",
+  "createdAt": "2026-10-08T16:03:22.536Z",
+  "updatedAt": "2026-10-08T16:03:22.536Z",
+  "meta": {
+    "name": "Ouèssè",
+    "nameIt": "Ouèssè",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ouèssè.geojson",
+      "sha256": "1a83f8e8610efdfe537500fcf2237e8335923dd2033b4b97cc06aabe6da60dd7",
+      "size": 107233,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ouesse",
+    "name": "Ouèssè",
+    "nameIt": "Ouèssè",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ",
+    "center": [
+      2.42381,
+      8.4933
+    ],
+    "zoom": 12,
+    "population": 30574,
+    "grid": "cities/ouesse/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ouesse/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ouesse",
+        "name": "Ouèssè",
+        "nameIt": "Ouèssè",
+        "region": "Benin",
+        "regionIt": "Benin",
+        "country": "BJ",
+        "center": [
+          2.42381,
+          8.4933
+        ],
+        "zoom": 12,
+        "population": 30574,
+        "cells": 93,
+        "layer": "cities/ouesse/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.42381,
+            8.4933
+          ]
+        },
+        "properties": {
+          "id": "ouesse",
+          "name": "Ouèssè",
+          "country": "BJ",
+          "isStudy": true,
+          "proximityMinutes": 8.7,
+          "population": 30574
+        }
+      },
+      "summary": null
+    }
+  }
+}

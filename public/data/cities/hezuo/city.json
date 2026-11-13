@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hezuo",
+  "createdAt": "2026-10-08T15:38:36.355Z",
+  "updatedAt": "2026-10-08T15:38:36.355Z",
+  "meta": {
+    "name": "Hezuo",
+    "nameIt": "Hezuo",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hezuo.geojson",
+      "sha256": "70d6fb5a784c7de68f4e38b78ac34d2e892cdbbf3da3eb2c187e3d4e34ad6060",
+      "size": 159566,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hezuo",
+    "name": "Hezuo",
+    "nameIt": "Hezuo",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      102.91073,
+      34.98911
+    ],
+    "zoom": 11.6,
+    "population": 93860,
+    "grid": "cities/hezuo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hezuo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hezuo",
+        "name": "Hezuo",
+        "nameIt": "Hezuo",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          102.91073,
+          34.98911
+        ],
+        "zoom": 11.6,
+        "population": 93860,
+        "cells": 137,
+        "layer": "cities/hezuo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            102.91073,
+            34.98911
+          ]
+        },
+        "properties": {
+          "id": "hezuo",
+          "name": "Hezuo",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 93860
+        }
+      },
+      "summary": null
+    }
+  }
+}

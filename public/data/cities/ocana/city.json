@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ocana",
+  "createdAt": "2026-10-08T16:02:29.942Z",
+  "updatedAt": "2026-10-08T16:02:29.942Z",
+  "meta": {
+    "name": "Ocaña",
+    "nameIt": "Ocaña",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ocaña.geojson",
+      "sha256": "04a366c7c4496810ac6462f5c1e3a67c0c738600ee1b7c57ed2e04d3b035aced",
+      "size": 145450,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ocana",
+    "name": "Ocaña",
+    "nameIt": "Ocaña",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -73.35591,
+      8.24556
+    ],
+    "zoom": 11.5,
+    "population": 115040,
+    "grid": "cities/ocana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ocana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ocana",
+        "name": "Ocaña",
+        "nameIt": "Ocaña",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -73.35591,
+          8.24556
+        ],
+        "zoom": 11.5,
+        "population": 115040,
+        "cells": 126,
+        "layer": "cities/ocana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.35591,
+            8.24556
+          ]
+        },
+        "properties": {
+          "id": "ocana",
+          "name": "Ocaña",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 13.3,
+          "population": 115040
+        }
+      },
+      "summary": null
+    }
+  }
+}

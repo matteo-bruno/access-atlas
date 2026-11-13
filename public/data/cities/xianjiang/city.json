@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xianjiang",
+  "createdAt": "2026-10-08T16:22:22.790Z",
+  "updatedAt": "2026-10-08T16:22:22.790Z",
+  "meta": {
+    "name": "Xianjiang",
+    "nameIt": "Xianjiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xianjiang.geojson",
+      "sha256": "feb6d8b3e45e1bd7b3f5712282415396550c4a5834b4ce9071caa95ec6eff04d",
+      "size": 281406,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xianjiang",
+    "name": "Xianjiang",
+    "nameIt": "Xianjiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      120.56046,
+      27.78726
+    ],
+    "zoom": 11.2,
+    "population": 67570,
+    "grid": "cities/xianjiang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xianjiang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xianjiang",
+        "name": "Xianjiang",
+        "nameIt": "Xianjiang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          120.56046,
+          27.78726
+        ],
+        "zoom": 11.2,
+        "population": 67570,
+        "cells": 241,
+        "layer": "cities/xianjiang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.56046,
+            27.78726
+          ]
+        },
+        "properties": {
+          "id": "xianjiang",
+          "name": "Xianjiang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 67570
+        }
+      },
+      "summary": null
+    }
+  }
+}

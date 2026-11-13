@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "catbalogan",
+  "createdAt": "2026-10-08T15:22:51.279Z",
+  "updatedAt": "2026-10-08T15:22:51.279Z",
+  "meta": {
+    "name": "Catbalogan",
+    "nameIt": "Catbalogan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Catbalogan.geojson",
+      "sha256": "6a0ff36ef17d9f4223efb8c0d846250e5f8fa2d05794eae49109ef62c33835f1",
+      "size": 191657,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "catbalogan",
+    "name": "Catbalogan",
+    "nameIt": "Catbalogan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      124.88238,
+      11.77827
+    ],
+    "zoom": 11.2,
+    "population": 77924,
+    "grid": "cities/catbalogan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/catbalogan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "catbalogan",
+        "name": "Catbalogan",
+        "nameIt": "Catbalogan",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          124.88238,
+          11.77827
+        ],
+        "zoom": 11.2,
+        "population": 77924,
+        "cells": 165,
+        "layer": "cities/catbalogan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            124.88238,
+            11.77827
+          ]
+        },
+        "properties": {
+          "id": "catbalogan",
+          "name": "Catbalogan",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 77924
+        }
+      },
+      "summary": null
+    }
+  }
+}

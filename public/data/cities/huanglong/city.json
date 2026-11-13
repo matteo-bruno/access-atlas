@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huanglong",
+  "createdAt": "2026-10-08T15:39:29.869Z",
+  "updatedAt": "2026-10-08T15:39:29.869Z",
+  "meta": {
+    "name": "Huanglong",
+    "nameIt": "Huanglong",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huanglong.geojson",
+      "sha256": "bed8798b8d7d4660bfa4e77ea14b41ceed39fa9f248698b6906ab799e21f670e",
+      "size": 282620,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huanglong",
+    "name": "Huanglong",
+    "nameIt": "Huanglong",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      109.53597,
+      19.91332
+    ],
+    "zoom": 10.6,
+    "population": 38997,
+    "grid": "cities/huanglong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huanglong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huanglong",
+        "name": "Huanglong",
+        "nameIt": "Huanglong",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          109.53597,
+          19.91332
+        ],
+        "zoom": 10.6,
+        "population": 38997,
+        "cells": 242,
+        "layer": "cities/huanglong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.53597,
+            19.91332
+          ]
+        },
+        "properties": {
+          "id": "huanglong",
+          "name": "Huanglong",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 35.6,
+          "population": 38997
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guangzhou-fua",
+  "createdAt": "2026-10-19T21:10:44.853Z",
+  "updatedAt": "2026-10-19T21:10:44.853Z",
+  "meta": {
+    "name": "Guangzhou",
+    "nameIt": "Guangzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "guangzhou-fua",
+    "name": "Guangzhou",
+    "nameIt": "Guangzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "extent": "fua",
+    "core": "guangzhou",
+    "center": [
+      113.57829,
+      22.89326
+    ],
+    "zoom": 8.5,
+    "population": 64064740,
+    "grid": "cities/guangzhou-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guangzhou-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guangzhou-fua",
+        "name": "Guangzhou",
+        "nameIt": "Guangzhou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "extent": "fua",
+        "core": "guangzhou",
+        "center": [
+          113.57829,
+          22.89326
+        ],
+        "zoom": 8.5,
+        "population": 64064740,
+        "cells": 171844,
+        "layer": "cities/guangzhou-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.57829,
+            22.89326
+          ]
+        },
+        "properties": {
+          "id": "guangzhou-fua",
+          "name": "Guangzhou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 38.5,
+          "population": 64064740
+        }
+      },
+      "summary": null
+    }
+  }
+}

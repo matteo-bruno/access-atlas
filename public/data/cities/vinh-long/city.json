@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vinh-long",
+  "createdAt": "2026-10-08T16:20:50.326Z",
+  "updatedAt": "2026-10-08T16:20:50.326Z",
+  "meta": {
+    "name": "Vinh Long",
+    "nameIt": "Vinh Long",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vinh Long.geojson",
+      "sha256": "affd8e67d7a66db64938665d3bd32be20f0eb911ae2222beef16ce7e653bae4a",
+      "size": 897757,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vinh-long",
+    "name": "Vinh Long",
+    "nameIt": "Vinh Long",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      105.95668,
+      10.23659
+    ],
+    "zoom": 9.9,
+    "population": 253030,
+    "grid": "cities/vinh-long/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vinh-long/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vinh-long",
+        "name": "Vinh Long",
+        "nameIt": "Vinh Long",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          105.95668,
+          10.23659
+        ],
+        "zoom": 9.9,
+        "population": 253030,
+        "cells": 767,
+        "layer": "cities/vinh-long/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.95668,
+            10.23659
+          ]
+        },
+        "properties": {
+          "id": "vinh-long",
+          "name": "Vinh Long",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 49.8,
+          "population": 253030
+        }
+      },
+      "summary": null
+    }
+  }
+}

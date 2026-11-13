@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sanjaypur",
+  "createdAt": "2026-10-08T16:10:57.161Z",
+  "updatedAt": "2026-10-08T16:10:57.161Z",
+  "meta": {
+    "name": "Sanjaypur",
+    "nameIt": "Sanjaypur",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sanjaypur.geojson",
+      "sha256": "4cebaa3a9aecda535b252311c743eedc3fbf4fba76dc7787dc412b65811ac6de",
+      "size": 307200,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sanjaypur",
+    "name": "Sanjaypur",
+    "nameIt": "Sanjaypur",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      90.30174,
+      22.78532
+    ],
+    "zoom": 10.7,
+    "population": 87054,
+    "grid": "cities/sanjaypur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sanjaypur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sanjaypur",
+        "name": "Sanjaypur",
+        "nameIt": "Sanjaypur",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          90.30174,
+          22.78532
+        ],
+        "zoom": 10.7,
+        "population": 87054,
+        "cells": 265,
+        "layer": "cities/sanjaypur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            90.30174,
+            22.78532
+          ]
+        },
+        "properties": {
+          "id": "sanjaypur",
+          "name": "Sanjaypur",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 25.8,
+          "population": 87054
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "saramabila",
+  "createdAt": "2026-10-08T16:11:24.292Z",
+  "updatedAt": "2026-10-08T16:11:24.292Z",
+  "meta": {
+    "name": "Saramabila",
+    "nameIt": "Saramabila",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Saramabila.geojson",
+      "sha256": "76e8c46b14b142ed2e802be51831fd34febd6cddc31c451844198a45a917b00c",
+      "size": 88846,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "saramabila",
+    "name": "Saramabila",
+    "nameIt": "Saramabila",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      27.5253,
+      -4.05482
+    ],
+    "zoom": 12,
+    "population": 56607,
+    "grid": "cities/saramabila/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/saramabila/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "saramabila",
+        "name": "Saramabila",
+        "nameIt": "Saramabila",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          27.5253,
+          -4.05482
+        ],
+        "zoom": 12,
+        "population": 56607,
+        "cells": 76,
+        "layer": "cities/saramabila/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.5253,
+            -4.05482
+          ]
+        },
+        "properties": {
+          "id": "saramabila",
+          "name": "Saramabila",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 56607
+        }
+      },
+      "summary": null
+    }
+  }
+}

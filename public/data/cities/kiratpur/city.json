@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kiratpur",
+  "createdAt": "2026-10-08T15:47:11.601Z",
+  "updatedAt": "2026-10-08T15:47:11.601Z",
+  "meta": {
+    "name": "Kiratpur",
+    "nameIt": "Kiratpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kiratpur.geojson",
+      "sha256": "20accaf58555cac1342935898ec9a1286522c0482e51c4109993bd1e1d295b72",
+      "size": 62587,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kiratpur",
+    "name": "Kiratpur",
+    "nameIt": "Kiratpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.20421,
+      29.5041
+    ],
+    "zoom": 12,
+    "population": 54534,
+    "grid": "cities/kiratpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kiratpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kiratpur",
+        "name": "Kiratpur",
+        "nameIt": "Kiratpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.20421,
+          29.5041
+        ],
+        "zoom": 12,
+        "population": 54534,
+        "cells": 54,
+        "layer": "cities/kiratpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.20421,
+            29.5041
+          ]
+        },
+        "properties": {
+          "id": "kiratpur",
+          "name": "Kiratpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 54534
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bountiful",
+  "createdAt": "2026-10-08T15:20:14.411Z",
+  "updatedAt": "2026-10-08T15:20:14.411Z",
+  "meta": {
+    "name": "Bountiful",
+    "nameIt": "Bountiful",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bountiful.geojson",
+      "sha256": "ef58d257fbcfda5930d547d28e2e51882bf2cee47f9c6b9d30941a88d6775114",
+      "size": 484336,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bountiful",
+    "name": "Bountiful",
+    "nameIt": "Bountiful",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -111.8894,
+      40.87931
+    ],
+    "zoom": 10.5,
+    "population": 73379,
+    "grid": "cities/bountiful/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bountiful/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bountiful",
+        "name": "Bountiful",
+        "nameIt": "Bountiful",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -111.8894,
+          40.87931
+        ],
+        "zoom": 10.5,
+        "population": 73379,
+        "cells": 417,
+        "layer": "cities/bountiful/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -111.8894,
+            40.87931
+          ]
+        },
+        "properties": {
+          "id": "bountiful",
+          "name": "Bountiful",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 19.8,
+          "population": 73379
+        }
+      },
+      "summary": null
+    }
+  }
+}

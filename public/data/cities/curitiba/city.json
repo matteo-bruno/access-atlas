@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "curitiba",
+  "createdAt": "2026-10-08T15:27:06.206Z",
+  "updatedAt": "2026-10-08T15:27:06.206Z",
+  "meta": {
+    "name": "Curitiba",
+    "nameIt": "Curitiba",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Curitiba.geojson",
+      "sha256": "55897810148b80d76ecc94afa8088bed1a9b6cb37fb3a6b52c1e4b9bb6d94f1d",
+      "size": 6528735,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "curitiba",
+    "name": "Curitiba",
+    "nameIt": "Curitiba",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -49.25119,
+      -25.45503
+    ],
+    "zoom": 9.1,
+    "population": 2520573,
+    "grid": "cities/curitiba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/curitiba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "curitiba",
+        "name": "Curitiba",
+        "nameIt": "Curitiba",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -49.25119,
+          -25.45503
+        ],
+        "zoom": 9.1,
+        "population": 2520573,
+        "cells": 5584,
+        "layer": "cities/curitiba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.25119,
+            -25.45503
+          ]
+        },
+        "properties": {
+          "id": "curitiba",
+          "name": "Curitiba",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 17.2,
+          "population": 2520573
+        }
+      },
+      "summary": null
+    }
+  }
+}

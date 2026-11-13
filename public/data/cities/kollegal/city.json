@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kollegal",
+  "createdAt": "2026-10-08T15:47:46.336Z",
+  "updatedAt": "2026-10-08T15:47:46.336Z",
+  "meta": {
+    "name": "Kollegal",
+    "nameIt": "Kollegal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kollegal.geojson",
+      "sha256": "80a63caa454bcaa9b2cf137dd3282190694eb52b797e3b676d554e2c8e071223",
+      "size": 86988,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kollegal",
+    "name": "Kollegal",
+    "nameIt": "Kollegal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.11,
+      12.15378
+    ],
+    "zoom": 12,
+    "population": 33831,
+    "grid": "cities/kollegal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kollegal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kollegal",
+        "name": "Kollegal",
+        "nameIt": "Kollegal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.11,
+          12.15378
+        ],
+        "zoom": 12,
+        "population": 33831,
+        "cells": 75,
+        "layer": "cities/kollegal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.11,
+            12.15378
+          ]
+        },
+        "properties": {
+          "id": "kollegal",
+          "name": "Kollegal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 33831
+        }
+      },
+      "summary": null
+    }
+  }
+}

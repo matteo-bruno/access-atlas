@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "campbelltown",
+  "createdAt": "2026-10-08T15:22:05.146Z",
+  "updatedAt": "2026-10-08T15:22:05.146Z",
+  "meta": {
+    "name": "Campbelltown",
+    "nameIt": "Campbelltown",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Campbelltown.geojson",
+      "sha256": "22ac97622b4355471cf8dfb84f2b1130d1d455c641ce38315427fbd944453634",
+      "size": 461348,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "campbelltown",
+    "name": "Campbelltown",
+    "nameIt": "Campbelltown",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      150.81886,
+      -34.06207
+    ],
+    "zoom": 10.6,
+    "population": 104925,
+    "grid": "cities/campbelltown/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/campbelltown/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "campbelltown",
+        "name": "Campbelltown",
+        "nameIt": "Campbelltown",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          150.81886,
+          -34.06207
+        ],
+        "zoom": 10.6,
+        "population": 104925,
+        "cells": 396,
+        "layer": "cities/campbelltown/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            150.81886,
+            -34.06207
+          ]
+        },
+        "properties": {
+          "id": "campbelltown",
+          "name": "Campbelltown",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 25,
+          "population": 104925
+        }
+      },
+      "summary": null
+    }
+  }
+}

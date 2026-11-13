@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "villanueva",
+  "createdAt": "2026-10-08T16:20:47.849Z",
+  "updatedAt": "2026-10-08T16:20:47.849Z",
+  "meta": {
+    "name": "Villanueva",
+    "nameIt": "Villanueva",
+    "region": "Honduras",
+    "regionIt": "Honduras",
+    "country": "HN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Villanueva.geojson",
+      "sha256": "d2286a60adcfcc3b5d0767409159cba67e2012f9bae5659e7f6f21a3b19607df",
+      "size": 206043,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "villanueva",
+    "name": "Villanueva",
+    "nameIt": "Villanueva",
+    "region": "Honduras",
+    "regionIt": "Honduras",
+    "country": "HN",
+    "center": [
+      -87.97422,
+      15.31807
+    ],
+    "zoom": 11.2,
+    "population": 54548,
+    "grid": "cities/villanueva/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/villanueva/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "villanueva",
+        "name": "Villanueva",
+        "nameIt": "Villanueva",
+        "region": "Honduras",
+        "regionIt": "Honduras",
+        "country": "HN",
+        "center": [
+          -87.97422,
+          15.31807
+        ],
+        "zoom": 11.2,
+        "population": 54548,
+        "cells": 176,
+        "layer": "cities/villanueva/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.97422,
+            15.31807
+          ]
+        },
+        "properties": {
+          "id": "villanueva",
+          "name": "Villanueva",
+          "country": "HN",
+          "isStudy": true,
+          "proximityMinutes": 22.8,
+          "population": 54548
+        }
+      },
+      "summary": null
+    }
+  }
+}

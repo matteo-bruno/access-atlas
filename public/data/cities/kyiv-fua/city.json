@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kyiv-fua",
+  "createdAt": "2026-10-19T16:56:53.776Z",
+  "updatedAt": "2026-10-19T16:56:53.776Z",
+  "meta": {
+    "name": "Kyiv",
+    "nameIt": "Kyiv",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "kyiv-fua",
+    "name": "Kyiv",
+    "nameIt": "Kyiv",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "extent": "fua",
+    "core": "kyiv",
+    "center": [
+      30.51259,
+      50.44575
+    ],
+    "zoom": 8.5,
+    "population": 3246098,
+    "grid": "cities/kyiv-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kyiv-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kyiv-fua",
+        "name": "Kyiv",
+        "nameIt": "Kyiv",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "extent": "fua",
+        "core": "kyiv",
+        "center": [
+          30.51259,
+          50.44575
+        ],
+        "zoom": 8.5,
+        "population": 3246098,
+        "cells": 34059,
+        "layer": "cities/kyiv-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.51259,
+            50.44575
+          ]
+        },
+        "properties": {
+          "id": "kyiv-fua",
+          "name": "Kyiv",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 9.7,
+          "population": 3246098
+        }
+      },
+      "summary": null
+    }
+  }
+}

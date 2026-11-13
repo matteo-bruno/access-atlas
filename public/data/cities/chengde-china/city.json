@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chengde-china",
+  "createdAt": "2026-10-08T15:24:15.949Z",
+  "updatedAt": "2026-10-08T15:24:15.949Z",
+  "meta": {
+    "name": "Chengde (China)",
+    "nameIt": "Chengde (China)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chengde (China).geojson",
+      "sha256": "15a209ea37169d39acd3b3680339a0f49b4c66416b5aedc8c16d7806ac37e67c",
+      "size": 1226785,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chengde-china",
+    "name": "Chengde (China)",
+    "nameIt": "Chengde (China)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.93393,
+      40.97992
+    ],
+    "zoom": 10.1,
+    "population": 263780,
+    "grid": "cities/chengde-china/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 170
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chengde-china/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chengde-china",
+        "name": "Chengde (China)",
+        "nameIt": "Chengde (China)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.93393,
+          40.97992
+        ],
+        "zoom": 10.1,
+        "population": 263780,
+        "cells": 1052,
+        "layer": "cities/chengde-china/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 170
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.93393,
+            40.97992
+          ]
+        },
+        "properties": {
+          "id": "chengde-china",
+          "name": "Chengde (China)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 31.9,
+          "population": 263780
+        }
+      },
+      "summary": null
+    }
+  }
+}

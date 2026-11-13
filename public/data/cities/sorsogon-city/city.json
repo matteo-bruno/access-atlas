@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sorsogon-city",
+  "createdAt": "2026-10-08T16:14:32.396Z",
+  "updatedAt": "2026-10-08T16:14:32.396Z",
+  "meta": {
+    "name": "Sorsogon City",
+    "nameIt": "Sorsogon City",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sorsogon City.geojson",
+      "sha256": "efe5f8dff6f99ff5739ac6a92b9edd6b132b3cfafe16fbd2389436982ffb5db1",
+      "size": 269274,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sorsogon-city",
+    "name": "Sorsogon City",
+    "nameIt": "Sorsogon City",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      123.99828,
+      12.97793
+    ],
+    "zoom": 10.8,
+    "population": 97058,
+    "grid": "cities/sorsogon-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sorsogon-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sorsogon-city",
+        "name": "Sorsogon City",
+        "nameIt": "Sorsogon City",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          123.99828,
+          12.97793
+        ],
+        "zoom": 10.8,
+        "population": 97058,
+        "cells": 231,
+        "layer": "cities/sorsogon-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.99828,
+            12.97793
+          ]
+        },
+        "properties": {
+          "id": "sorsogon-city",
+          "name": "Sorsogon City",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 17.3,
+          "population": 97058
+        }
+      },
+      "summary": null
+    }
+  }
+}

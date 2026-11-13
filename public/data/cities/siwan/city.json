@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "siwan",
+  "createdAt": "2026-10-08T16:14:08.319Z",
+  "updatedAt": "2026-10-08T16:14:08.319Z",
+  "meta": {
+    "name": "Siwan",
+    "nameIt": "Siwan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Siwan.geojson",
+      "sha256": "912e07f6ae2171dfeef0c8e9bc7fa5c6edb4901ebc3b34d666c3036e9ad00393",
+      "size": 347749,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "siwan",
+    "name": "Siwan",
+    "nameIt": "Siwan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.35982,
+      26.22254
+    ],
+    "zoom": 10.9,
+    "population": 338991,
+    "grid": "cities/siwan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/siwan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "siwan",
+        "name": "Siwan",
+        "nameIt": "Siwan",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.35982,
+          26.22254
+        ],
+        "zoom": 10.9,
+        "population": 338991,
+        "cells": 300,
+        "layer": "cities/siwan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.35982,
+            26.22254
+          ]
+        },
+        "properties": {
+          "id": "siwan",
+          "name": "Siwan",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 338991
+        }
+      },
+      "summary": null
+    }
+  }
+}

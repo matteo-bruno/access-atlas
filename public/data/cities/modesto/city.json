@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "modesto",
+  "createdAt": "2026-10-08T15:57:41.072Z",
+  "updatedAt": "2026-10-08T15:57:41.072Z",
+  "meta": {
+    "name": "Modesto",
+    "nameIt": "Modesto",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Modesto.geojson",
+      "sha256": "f60b289e5f1ffce0ca536f1d87a97ce587a55b67aa815b2ccf76fc7025263ea0",
+      "size": 1518654,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "modesto",
+    "name": "Modesto",
+    "nameIt": "Modesto",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -120.98749,
+      37.65078
+    ],
+    "zoom": 10,
+    "population": 328211,
+    "grid": "cities/modesto/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/modesto/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "modesto",
+        "name": "Modesto",
+        "nameIt": "Modesto",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -120.98749,
+          37.65078
+        ],
+        "zoom": 10,
+        "population": 328211,
+        "cells": 1305,
+        "layer": "cities/modesto/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -120.98749,
+            37.65078
+          ]
+        },
+        "properties": {
+          "id": "modesto",
+          "name": "Modesto",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 30.2,
+          "population": 328211
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ciudad-arce",
+  "createdAt": "2026-10-08T15:25:36.674Z",
+  "updatedAt": "2026-10-08T15:25:36.674Z",
+  "meta": {
+    "name": "Ciudad Arce",
+    "nameIt": "Ciudad Arce",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ciudad Arce.geojson",
+      "sha256": "6cbbf7b11b1bf60ac120949f75f861d6d4022825c2c7a80b529cbc6028d3f625",
+      "size": 156698,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ciudad-arce",
+    "name": "Ciudad Arce",
+    "nameIt": "Ciudad Arce",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV",
+    "center": [
+      -89.43256,
+      13.83039
+    ],
+    "zoom": 11.5,
+    "population": 37313,
+    "grid": "cities/ciudad-arce/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ciudad-arce/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ciudad-arce",
+        "name": "Ciudad Arce",
+        "nameIt": "Ciudad Arce",
+        "region": "El Salvador",
+        "regionIt": "El Salvador",
+        "country": "SV",
+        "center": [
+          -89.43256,
+          13.83039
+        ],
+        "zoom": 11.5,
+        "population": 37313,
+        "cells": 134,
+        "layer": "cities/ciudad-arce/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -89.43256,
+            13.83039
+          ]
+        },
+        "properties": {
+          "id": "ciudad-arce",
+          "name": "Ciudad Arce",
+          "country": "SV",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 37313
+        }
+      },
+      "summary": null
+    }
+  }
+}

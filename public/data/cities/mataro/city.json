@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mataro",
+  "createdAt": "2026-10-08T15:55:41.025Z",
+  "updatedAt": "2026-10-08T15:55:41.025Z",
+  "meta": {
+    "name": "Mataró",
+    "nameIt": "Mataró",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mataró.geojson",
+      "sha256": "8ab42886bb2ff8a328e34d4da94001625a691f69de63c6d4aa2a0dd40d2eafac",
+      "size": 176501,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mataro",
+    "name": "Mataró",
+    "nameIt": "Mataró",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      2.43757,
+      41.54231
+    ],
+    "zoom": 11.8,
+    "population": 128137,
+    "grid": "cities/mataro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mataro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mataro",
+        "name": "Mataró",
+        "nameIt": "Mataró",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          2.43757,
+          41.54231
+        ],
+        "zoom": 11.8,
+        "population": 128137,
+        "cells": 155,
+        "layer": "cities/mataro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.43757,
+            41.54231
+          ]
+        },
+        "properties": {
+          "id": "mataro",
+          "name": "Mataró",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 7,
+          "population": 128137
+        }
+      },
+      "summary": null
+    }
+  }
+}

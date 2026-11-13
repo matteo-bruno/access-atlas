@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "haripur",
+  "createdAt": "2026-10-08T15:37:53.659Z",
+  "updatedAt": "2026-10-08T15:37:53.659Z",
+  "meta": {
+    "name": "Haripur",
+    "nameIt": "Haripur",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Haripur.geojson",
+      "sha256": "9fa419ec5005823a3995bae163a13f7f6b564579f028df9d743c821cc1307a25",
+      "size": 592196,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "haripur",
+    "name": "Haripur",
+    "nameIt": "Haripur",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      72.92961,
+      34.00082
+    ],
+    "zoom": 10.7,
+    "population": 312479,
+    "grid": "cities/haripur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/haripur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "haripur",
+        "name": "Haripur",
+        "nameIt": "Haripur",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          72.92961,
+          34.00082
+        ],
+        "zoom": 10.7,
+        "population": 312479,
+        "cells": 512,
+        "layer": "cities/haripur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.92961,
+            34.00082
+          ]
+        },
+        "properties": {
+          "id": "haripur",
+          "name": "Haripur",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 41.2,
+          "population": 312479
+        }
+      },
+      "summary": null
+    }
+  }
+}

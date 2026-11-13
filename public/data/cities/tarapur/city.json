@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tarapur",
+  "createdAt": "2026-10-08T16:16:44.237Z",
+  "updatedAt": "2026-10-08T16:16:44.237Z",
+  "meta": {
+    "name": "Tarapur",
+    "nameIt": "Tarapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tarapur.geojson",
+      "sha256": "bc304b20ea116d87f34923bef21729b5faabb6ef052412801f8ae40ff9b8adc6",
+      "size": 487616,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tarapur",
+    "name": "Tarapur",
+    "nameIt": "Tarapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.6724,
+      25.08855
+    ],
+    "zoom": 10.7,
+    "population": 105441,
+    "grid": "cities/tarapur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tarapur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tarapur",
+        "name": "Tarapur",
+        "nameIt": "Tarapur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.6724,
+          25.08855
+        ],
+        "zoom": 10.7,
+        "population": 105441,
+        "cells": 421,
+        "layer": "cities/tarapur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.6724,
+            25.08855
+          ]
+        },
+        "properties": {
+          "id": "tarapur",
+          "name": "Tarapur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 105441
+        }
+      },
+      "summary": null
+    }
+  }
+}

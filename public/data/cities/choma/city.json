@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "choma",
+  "createdAt": "2026-10-08T15:25:05.405Z",
+  "updatedAt": "2026-10-08T15:25:05.405Z",
+  "meta": {
+    "name": "Choma",
+    "nameIt": "Choma",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Choma.geojson",
+      "sha256": "8ab5fddc6d99c3209bbf7c4134b93b52d90db0866e093848a9d6c573f49bc521",
+      "size": 252472,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "choma",
+    "name": "Choma",
+    "nameIt": "Choma",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM",
+    "center": [
+      26.98388,
+      -16.80977
+    ],
+    "zoom": 11.4,
+    "population": 61203,
+    "grid": "cities/choma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/choma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "choma",
+        "name": "Choma",
+        "nameIt": "Choma",
+        "region": "Zambia",
+        "regionIt": "Zambia",
+        "country": "ZM",
+        "center": [
+          26.98388,
+          -16.80977
+        ],
+        "zoom": 11.4,
+        "population": 61203,
+        "cells": 215,
+        "layer": "cities/choma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.98388,
+            -16.80977
+          ]
+        },
+        "properties": {
+          "id": "choma",
+          "name": "Choma",
+          "country": "ZM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 61203
+        }
+      },
+      "summary": null
+    }
+  }
+}

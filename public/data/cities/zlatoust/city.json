@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zlatoust",
+  "createdAt": "2026-10-08T16:25:36.890Z",
+  "updatedAt": "2026-10-08T16:25:36.890Z",
+  "meta": {
+    "name": "Zlatoust",
+    "nameIt": "Zlatoust",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zlatoust.geojson",
+      "sha256": "0056891fde60c5d41a4c22b393d0fcc3f1f85aefbe9e5927432495e36a40c3a9",
+      "size": 189440,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zlatoust",
+    "name": "Zlatoust",
+    "nameIt": "Zlatoust",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      59.65833,
+      55.17198
+    ],
+    "zoom": 11.2,
+    "population": 58998,
+    "grid": "cities/zlatoust/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zlatoust/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zlatoust",
+        "name": "Zlatoust",
+        "nameIt": "Zlatoust",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          59.65833,
+          55.17198
+        ],
+        "zoom": 11.2,
+        "population": 58998,
+        "cells": 165,
+        "layer": "cities/zlatoust/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            59.65833,
+            55.17198
+          ]
+        },
+        "properties": {
+          "id": "zlatoust",
+          "name": "Zlatoust",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 58998
+        }
+      },
+      "summary": null
+    }
+  }
+}

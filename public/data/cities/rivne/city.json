@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rivne",
+  "createdAt": "2026-10-08T16:08:56.499Z",
+  "updatedAt": "2026-10-08T16:08:56.499Z",
+  "meta": {
+    "name": "Rivne",
+    "nameIt": "Rivne",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rivne.geojson",
+      "sha256": "eb669c77d6ae6720ef4542079adc465e52ca3c514198bc3702da24d1f0109f40",
+      "size": 394294,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rivne",
+    "name": "Rivne",
+    "nameIt": "Rivne",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      26.24608,
+      50.62394
+    ],
+    "zoom": 11.2,
+    "population": 139189,
+    "grid": "cities/rivne/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rivne/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rivne",
+        "name": "Rivne",
+        "nameIt": "Rivne",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          26.24608,
+          50.62394
+        ],
+        "zoom": 11.2,
+        "population": 139189,
+        "cells": 345,
+        "layer": "cities/rivne/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.24608,
+            50.62394
+          ]
+        },
+        "properties": {
+          "id": "rivne",
+          "name": "Rivne",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 10.7,
+          "population": 139189
+        }
+      },
+      "summary": null
+    }
+  }
+}

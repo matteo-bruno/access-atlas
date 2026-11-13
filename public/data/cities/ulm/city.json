@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ulm",
+  "createdAt": "2026-10-08T16:19:45.509Z",
+  "updatedAt": "2026-10-08T16:19:45.509Z",
+  "meta": {
+    "name": "Ulm",
+    "nameIt": "Ulm",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ulm.geojson",
+      "sha256": "16e1c8f8393a6d06af362503b6c2aaa0455cd885e36fbe68d1041c8045649d8c",
+      "size": 455579,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ulm",
+    "name": "Ulm",
+    "nameIt": "Ulm",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      9.98602,
+      48.39919
+    ],
+    "zoom": 10.7,
+    "population": 117777,
+    "grid": "cities/ulm/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ulm/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ulm",
+        "name": "Ulm",
+        "nameIt": "Ulm",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.98602,
+          48.39919
+        ],
+        "zoom": 10.7,
+        "population": 117777,
+        "cells": 401,
+        "layer": "cities/ulm/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.98602,
+            48.39919
+          ]
+        },
+        "properties": {
+          "id": "ulm",
+          "name": "Ulm",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 7.6,
+          "population": 117777
+        }
+      },
+      "summary": null
+    }
+  }
+}

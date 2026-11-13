@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "soro",
+  "createdAt": "2026-10-08T16:14:30.460Z",
+  "updatedAt": "2026-10-08T16:14:30.460Z",
+  "meta": {
+    "name": "Soro",
+    "nameIt": "Soro",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Soro.geojson",
+      "sha256": "6259bee3e66b55a3ac9b85b39a7580e9f98423c9bcaafc0c41fd851a632095d1",
+      "size": 133176,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "soro",
+    "name": "Soro",
+    "nameIt": "Soro",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.68823,
+      21.28245
+    ],
+    "zoom": 11.6,
+    "population": 45510,
+    "grid": "cities/soro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/soro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "soro",
+        "name": "Soro",
+        "nameIt": "Soro",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.68823,
+          21.28245
+        ],
+        "zoom": 11.6,
+        "population": 45510,
+        "cells": 115,
+        "layer": "cities/soro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.68823,
+            21.28245
+          ]
+        },
+        "properties": {
+          "id": "soro",
+          "name": "Soro",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 45510
+        }
+      },
+      "summary": null
+    }
+  }
+}

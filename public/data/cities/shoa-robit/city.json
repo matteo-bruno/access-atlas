@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shoa-robit",
+  "createdAt": "2026-10-08T16:13:11.518Z",
+  "updatedAt": "2026-10-08T16:13:11.518Z",
+  "meta": {
+    "name": "Shoa Robit",
+    "nameIt": "Shoa Robit",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shoa Robit.geojson",
+      "sha256": "9e844e5cb94952aa7ecb9e815604fce8e9f47a4d41189511859c1dabe6378322",
+      "size": 189980,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shoa-robit",
+    "name": "Shoa Robit",
+    "nameIt": "Shoa Robit",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      39.90139,
+      9.99874
+    ],
+    "zoom": 11.7,
+    "population": 47916,
+    "grid": "cities/shoa-robit/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shoa-robit/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shoa-robit",
+        "name": "Shoa Robit",
+        "nameIt": "Shoa Robit",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          39.90139,
+          9.99874
+        ],
+        "zoom": 11.7,
+        "population": 47916,
+        "cells": 164,
+        "layer": "cities/shoa-robit/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.90139,
+            9.99874
+          ]
+        },
+        "properties": {
+          "id": "shoa-robit",
+          "name": "Shoa Robit",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 47916
+        }
+      },
+      "summary": null
+    }
+  }
+}

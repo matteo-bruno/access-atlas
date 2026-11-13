@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mianwali",
+  "createdAt": "2026-10-08T15:56:55.654Z",
+  "updatedAt": "2026-10-08T15:56:55.654Z",
+  "meta": {
+    "name": "Mianwali",
+    "nameIt": "Mianwali",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mianwali.geojson",
+      "sha256": "7901669db3144f0ae6c4a585528de36f751cf9b46bf1f47ecf6f9799f83edebc",
+      "size": 335079,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mianwali",
+    "name": "Mianwali",
+    "nameIt": "Mianwali",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      71.5421,
+      32.58229
+    ],
+    "zoom": 11.1,
+    "population": 163243,
+    "grid": "cities/mianwali/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mianwali/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mianwali",
+        "name": "Mianwali",
+        "nameIt": "Mianwali",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          71.5421,
+          32.58229
+        ],
+        "zoom": 11.1,
+        "population": 163243,
+        "cells": 290,
+        "layer": "cities/mianwali/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.5421,
+            32.58229
+          ]
+        },
+        "properties": {
+          "id": "mianwali",
+          "name": "Mianwali",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 163243
+        }
+      },
+      "summary": null
+    }
+  }
+}

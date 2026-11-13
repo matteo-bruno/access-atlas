@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "labuan-bajo",
+  "createdAt": "2026-10-08T15:49:27.815Z",
+  "updatedAt": "2026-10-08T15:49:27.815Z",
+  "meta": {
+    "name": "Labuan Bajo",
+    "nameIt": "Labuan Bajo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Labuan Bajo.geojson",
+      "sha256": "621766d0d28854e2817abcabb06dc29183915ac1668cc14e0a0cf86ea4b25859",
+      "size": 171501,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "labuan-bajo",
+    "name": "Labuan Bajo",
+    "nameIt": "Labuan Bajo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      119.8919,
+      -8.49559
+    ],
+    "zoom": 11.8,
+    "population": 40656,
+    "grid": "cities/labuan-bajo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/labuan-bajo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "labuan-bajo",
+        "name": "Labuan Bajo",
+        "nameIt": "Labuan Bajo",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          119.8919,
+          -8.49559
+        ],
+        "zoom": 11.8,
+        "population": 40656,
+        "cells": 147,
+        "layer": "cities/labuan-bajo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.8919,
+            -8.49559
+          ]
+        },
+        "properties": {
+          "id": "labuan-bajo",
+          "name": "Labuan Bajo",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 16.6,
+          "population": 40656
+        }
+      },
+      "summary": null
+    }
+  }
+}

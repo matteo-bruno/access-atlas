@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kuala-tungkal",
+  "createdAt": "2026-10-08T15:48:35.494Z",
+  "updatedAt": "2026-10-08T15:48:35.494Z",
+  "meta": {
+    "name": "Kuala Tungkal",
+    "nameIt": "Kuala Tungkal",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kuala Tungkal.geojson",
+      "sha256": "108b7751c26ab67cd2331717ca861bf01d3989b03525869ed6ec57f32b66d88f",
+      "size": 81354,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kuala-tungkal",
+    "name": "Kuala Tungkal",
+    "nameIt": "Kuala Tungkal",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      103.46475,
+      -0.82163
+    ],
+    "zoom": 12,
+    "population": 59817,
+    "grid": "cities/kuala-tungkal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kuala-tungkal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kuala-tungkal",
+        "name": "Kuala Tungkal",
+        "nameIt": "Kuala Tungkal",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          103.46475,
+          -0.82163
+        ],
+        "zoom": 12,
+        "population": 59817,
+        "cells": 69,
+        "layer": "cities/kuala-tungkal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.46475,
+            -0.82163
+          ]
+        },
+        "properties": {
+          "id": "kuala-tungkal",
+          "name": "Kuala Tungkal",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 59817
+        }
+      },
+      "summary": null
+    }
+  }
+}

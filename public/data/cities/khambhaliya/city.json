@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khambhaliya",
+  "createdAt": "2026-10-08T15:46:25.488Z",
+  "updatedAt": "2026-10-08T15:46:25.488Z",
+  "meta": {
+    "name": "Khambhaliya",
+    "nameIt": "Khambhaliya",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khambhaliya.geojson",
+      "sha256": "c08117f0d64d1c3549db6618c7ab12a65d0ff295ce69f03b0a0fb69763dd4b3a",
+      "size": 213323,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khambhaliya",
+    "name": "Khambhaliya",
+    "nameIt": "Khambhaliya",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      69.65361,
+      22.20924
+    ],
+    "zoom": 11.9,
+    "population": 75084,
+    "grid": "cities/khambhaliya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khambhaliya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khambhaliya",
+        "name": "Khambhaliya",
+        "nameIt": "Khambhaliya",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          69.65361,
+          22.20924
+        ],
+        "zoom": 11.9,
+        "population": 75084,
+        "cells": 184,
+        "layer": "cities/khambhaliya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.65361,
+            22.20924
+          ]
+        },
+        "properties": {
+          "id": "khambhaliya",
+          "name": "Khambhaliya",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 75084
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "auckland",
+  "createdAt": "2026-10-08T15:11:21.169Z",
+  "updatedAt": "2026-10-08T15:11:21.169Z",
+  "meta": {
+    "name": "Auckland",
+    "nameIt": "Auckland",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Auckland.geojson",
+      "sha256": "a27be599f7571c8e7c8d8e72f2066405f596e8a7b88c6c1651d4469e5e08d0a9",
+      "size": 6622824,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "auckland",
+    "name": "Auckland",
+    "nameIt": "Auckland",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ",
+    "center": [
+      174.78549,
+      -36.89687
+    ],
+    "zoom": 8.6,
+    "population": 1426863,
+    "grid": "cities/auckland/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/auckland/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "auckland",
+        "name": "Auckland",
+        "nameIt": "Auckland",
+        "region": "New Zealand",
+        "regionIt": "Nuova Zelanda",
+        "country": "NZ",
+        "center": [
+          174.78549,
+          -36.89687
+        ],
+        "zoom": 8.6,
+        "population": 1426863,
+        "cells": 5717,
+        "layer": "cities/auckland/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            174.78549,
+            -36.89687
+          ]
+        },
+        "properties": {
+          "id": "auckland",
+          "name": "Auckland",
+          "country": "NZ",
+          "isStudy": true,
+          "proximityMinutes": 12.8,
+          "population": 1426863
+        }
+      },
+      "summary": null
+    }
+  }
+}

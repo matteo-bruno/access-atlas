@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "musan",
+  "createdAt": "2026-10-08T15:59:06.598Z",
+  "updatedAt": "2026-10-08T15:59:06.598Z",
+  "meta": {
+    "name": "Musan",
+    "nameIt": "Musan",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Musan.geojson",
+      "sha256": "a79a8dfe1a8963457b972e433b7f138861d5a7aabd27febccc169241933eca1e",
+      "size": 254852,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "musan",
+    "name": "Musan",
+    "nameIt": "Musan",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP",
+    "center": [
+      129.22898,
+      42.22739
+    ],
+    "zoom": 11,
+    "population": 72565,
+    "grid": "cities/musan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/musan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "musan",
+        "name": "Musan",
+        "nameIt": "Musan",
+        "region": "North Korea",
+        "regionIt": "Corea del Nord",
+        "country": "KP",
+        "center": [
+          129.22898,
+          42.22739
+        ],
+        "zoom": 11,
+        "population": 72565,
+        "cells": 219,
+        "layer": "cities/musan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            129.22898,
+            42.22739
+          ]
+        },
+        "properties": {
+          "id": "musan",
+          "name": "Musan",
+          "country": "KP",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 72565
+        }
+      },
+      "summary": null
+    }
+  }
+}

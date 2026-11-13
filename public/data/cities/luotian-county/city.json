@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "luotian-county",
+  "createdAt": "2026-10-08T15:52:46.355Z",
+  "updatedAt": "2026-10-08T15:52:46.355Z",
+  "meta": {
+    "name": "Luotian County",
+    "nameIt": "Luotian County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Luotian County.geojson",
+      "sha256": "943e140ca3cc225aac9b12443a9e9d7d7eb78733cc17ecd1721cdad825169537",
+      "size": 143726,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "luotian-county",
+    "name": "Luotian County",
+    "nameIt": "Luotian County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      115.39297,
+      30.78155
+    ],
+    "zoom": 11.9,
+    "population": 80077,
+    "grid": "cities/luotian-county/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/luotian-county/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "luotian-county",
+        "name": "Luotian County",
+        "nameIt": "Luotian County",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          115.39297,
+          30.78155
+        ],
+        "zoom": 11.9,
+        "population": 80077,
+        "cells": 123,
+        "layer": "cities/luotian-county/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.39297,
+            30.78155
+          ]
+        },
+        "properties": {
+          "id": "luotian-county",
+          "name": "Luotian County",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 80077
+        }
+      },
+      "summary": null
+    }
+  }
+}

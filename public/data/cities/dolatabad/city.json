@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dolatabad",
+  "createdAt": "2026-10-08T15:30:33.176Z",
+  "updatedAt": "2026-10-08T15:30:33.176Z",
+  "meta": {
+    "name": "Dolatabad",
+    "nameIt": "Dolatabad",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dolatabad.geojson",
+      "sha256": "75fdf94ce2b0b301d9ff126a66697aa0ebe3f687eaa9d3bcd477640412c53154",
+      "size": 329670,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dolatabad",
+    "name": "Dolatabad",
+    "nameIt": "Dolatabad",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      51.67345,
+      32.79655
+    ],
+    "zoom": 11.1,
+    "population": 79125,
+    "grid": "cities/dolatabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dolatabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dolatabad",
+        "name": "Dolatabad",
+        "nameIt": "Dolatabad",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          51.67345,
+          32.79655
+        ],
+        "zoom": 11.1,
+        "population": 79125,
+        "cells": 285,
+        "layer": "cities/dolatabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            51.67345,
+            32.79655
+          ]
+        },
+        "properties": {
+          "id": "dolatabad",
+          "name": "Dolatabad",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 22,
+          "population": 79125
+        }
+      },
+      "summary": null
+    }
+  }
+}

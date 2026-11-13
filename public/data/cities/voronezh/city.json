@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "voronezh",
+  "createdAt": "2026-10-08T16:21:03.421Z",
+  "updatedAt": "2026-10-08T16:21:03.421Z",
+  "meta": {
+    "name": "Voronezh",
+    "nameIt": "Voronezh",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Voronezh.geojson",
+      "sha256": "ecc32e781d556d261f66863e89ee513fbcb4c8b06aead945e08c3f8286960f7c",
+      "size": 2051760,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "voronezh",
+    "name": "Voronezh",
+    "nameIt": "Voronezh",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      39.20111,
+      51.67376
+    ],
+    "zoom": 9.9,
+    "population": 935784,
+    "grid": "cities/voronezh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/voronezh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "voronezh",
+        "name": "Voronezh",
+        "nameIt": "Voronezh",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          39.20111,
+          51.67376
+        ],
+        "zoom": 9.9,
+        "population": 935784,
+        "cells": 1795,
+        "layer": "cities/voronezh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.20111,
+            51.67376
+          ]
+        },
+        "properties": {
+          "id": "voronezh",
+          "name": "Voronezh",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 11.3,
+          "population": 935784
+        }
+      },
+      "summary": null
+    }
+  }
+}

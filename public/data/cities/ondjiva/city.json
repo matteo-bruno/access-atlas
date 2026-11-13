@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ondjiva",
+  "createdAt": "2026-10-08T16:02:51.537Z",
+  "updatedAt": "2026-10-08T16:02:51.537Z",
+  "meta": {
+    "name": "Ondjiva",
+    "nameIt": "Ondjiva",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ondjiva.geojson",
+      "sha256": "4748583b3e49ca4a3c4c79ae81d43192c4b7ddb3d346a06cc17fdf457ed881a1",
+      "size": 409643,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ondjiva",
+    "name": "Ondjiva",
+    "nameIt": "Ondjiva",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO",
+    "center": [
+      15.72304,
+      -17.07183
+    ],
+    "zoom": 11,
+    "population": 146683,
+    "grid": "cities/ondjiva/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ondjiva/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ondjiva",
+        "name": "Ondjiva",
+        "nameIt": "Ondjiva",
+        "region": "Angola",
+        "regionIt": "Angola",
+        "country": "AO",
+        "center": [
+          15.72304,
+          -17.07183
+        ],
+        "zoom": 11,
+        "population": 146683,
+        "cells": 348,
+        "layer": "cities/ondjiva/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            15.72304,
+            -17.07183
+          ]
+        },
+        "properties": {
+          "id": "ondjiva",
+          "name": "Ondjiva",
+          "country": "AO",
+          "isStudy": true,
+          "proximityMinutes": 30.1,
+          "population": 146683
+        }
+      },
+      "summary": null
+    }
+  }
+}

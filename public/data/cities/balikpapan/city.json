@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "balikpapan",
+  "createdAt": "2026-10-08T15:14:02.113Z",
+  "updatedAt": "2026-10-08T15:14:02.113Z",
+  "meta": {
+    "name": "Balikpapan",
+    "nameIt": "Balikpapan",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Balikpapan.geojson",
+      "sha256": "06ecf4142bfb7f964d453409fbd92d4dbb88d4c569c33d822d47611565eb1a29",
+      "size": 1326140,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "balikpapan",
+    "name": "Balikpapan",
+    "nameIt": "Balikpapan",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      116.86473,
+      -1.24335
+    ],
+    "zoom": 9.6,
+    "population": 631283,
+    "grid": "cities/balikpapan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/balikpapan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "balikpapan",
+        "name": "Balikpapan",
+        "nameIt": "Balikpapan",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          116.86473,
+          -1.24335
+        ],
+        "zoom": 9.6,
+        "population": 631283,
+        "cells": 1134,
+        "layer": "cities/balikpapan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.86473,
+            -1.24335
+          ]
+        },
+        "properties": {
+          "id": "balikpapan",
+          "name": "Balikpapan",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 25.6,
+          "population": 631283
+        }
+      },
+      "summary": null
+    }
+  }
+}

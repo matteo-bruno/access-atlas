@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dzerzhinsk",
+  "createdAt": "2026-10-08T15:31:34.935Z",
+  "updatedAt": "2026-10-08T15:31:34.935Z",
+  "meta": {
+    "name": "Dzerzhinsk",
+    "nameIt": "Dzerzhinsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dzerzhinsk.geojson",
+      "sha256": "3c92fecd7808ba4d63620597f4e19e1fdac29416dfbd94ad90a933a192af2cb9",
+      "size": 344636,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dzerzhinsk",
+    "name": "Dzerzhinsk",
+    "nameIt": "Dzerzhinsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      43.43992,
+      56.23838
+    ],
+    "zoom": 10.9,
+    "population": 128151,
+    "grid": "cities/dzerzhinsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dzerzhinsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dzerzhinsk",
+        "name": "Dzerzhinsk",
+        "nameIt": "Dzerzhinsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          43.43992,
+          56.23838
+        ],
+        "zoom": 10.9,
+        "population": 128151,
+        "cells": 302,
+        "layer": "cities/dzerzhinsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.43992,
+            56.23838
+          ]
+        },
+        "properties": {
+          "id": "dzerzhinsk",
+          "name": "Dzerzhinsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 128151
+        }
+      },
+      "summary": null
+    }
+  }
+}

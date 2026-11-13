@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barreiras",
+  "createdAt": "2026-10-08T15:15:43.249Z",
+  "updatedAt": "2026-10-08T15:15:43.249Z",
+  "meta": {
+    "name": "Barreiras",
+    "nameIt": "Barreiras",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barreiras.geojson",
+      "sha256": "66e46d07829dd77bf0d52e71911d03de6361f984e154a2c3fdcb53b4fb1e92e3",
+      "size": 276306,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barreiras",
+    "name": "Barreiras",
+    "nameIt": "Barreiras",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -44.9929,
+      -12.13967
+    ],
+    "zoom": 11.2,
+    "population": 113389,
+    "grid": "cities/barreiras/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barreiras/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barreiras",
+        "name": "Barreiras",
+        "nameIt": "Barreiras",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -44.9929,
+          -12.13967
+        ],
+        "zoom": 11.2,
+        "population": 113389,
+        "cells": 234,
+        "layer": "cities/barreiras/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -44.9929,
+            -12.13967
+          ]
+        },
+        "properties": {
+          "id": "barreiras",
+          "name": "Barreiras",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 19.2,
+          "population": 113389
+        }
+      },
+      "summary": null
+    }
+  }
+}

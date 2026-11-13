@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tanjung-balai",
+  "createdAt": "2026-10-08T16:16:36.883Z",
+  "updatedAt": "2026-10-08T16:16:36.883Z",
+  "meta": {
+    "name": "Tanjung Balai",
+    "nameIt": "Tanjung Balai",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tanjung Balai.geojson",
+      "sha256": "d505e94f7a7f5061b5613c4389e3f6752ec00b249283af9982e9b1df4f750619",
+      "size": 305215,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tanjung-balai",
+    "name": "Tanjung Balai",
+    "nameIt": "Tanjung Balai",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      99.79768,
+      2.96568
+    ],
+    "zoom": 10.9,
+    "population": 182436,
+    "grid": "cities/tanjung-balai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tanjung-balai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tanjung-balai",
+        "name": "Tanjung Balai",
+        "nameIt": "Tanjung Balai",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          99.79768,
+          2.96568
+        ],
+        "zoom": 10.9,
+        "population": 182436,
+        "cells": 264,
+        "layer": "cities/tanjung-balai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            99.79768,
+            2.96568
+          ]
+        },
+        "properties": {
+          "id": "tanjung-balai",
+          "name": "Tanjung Balai",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 182436
+        }
+      },
+      "summary": null
+    }
+  }
+}

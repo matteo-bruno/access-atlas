@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guayaquil",
+  "createdAt": "2026-10-08T15:36:26.045Z",
+  "updatedAt": "2026-10-08T15:36:26.045Z",
+  "meta": {
+    "name": "Guayaquil",
+    "nameIt": "Guayaquil",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guayaquil.geojson",
+      "sha256": "aaa07f2d57545b0a079abcbf0a875b442ccea7d2212bdb3e7e1ab12ab3d22af2",
+      "size": 2983588,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guayaquil",
+    "name": "Guayaquil",
+    "nameIt": "Guayaquil",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC",
+    "center": [
+      -79.91313,
+      -2.15913
+    ],
+    "zoom": 9.2,
+    "population": 2893304,
+    "grid": "cities/guayaquil/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guayaquil/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guayaquil",
+        "name": "Guayaquil",
+        "nameIt": "Guayaquil",
+        "region": "Ecuador",
+        "regionIt": "Ecuador",
+        "country": "EC",
+        "center": [
+          -79.91313,
+          -2.15913
+        ],
+        "zoom": 9.2,
+        "population": 2893304,
+        "cells": 2564,
+        "layer": "cities/guayaquil/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -79.91313,
+            -2.15913
+          ]
+        },
+        "properties": {
+          "id": "guayaquil",
+          "name": "Guayaquil",
+          "country": "EC",
+          "isStudy": true,
+          "proximityMinutes": 15.9,
+          "population": 2893304
+        }
+      },
+      "summary": null
+    }
+  }
+}

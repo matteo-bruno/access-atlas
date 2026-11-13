@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jinshan",
+  "createdAt": "2026-10-08T15:43:10.118Z",
+  "updatedAt": "2026-10-08T15:43:10.118Z",
+  "meta": {
+    "name": "Jinshan",
+    "nameIt": "Jinshan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jinshan.geojson",
+      "sha256": "93103ba473fc4bbf64295263606b8342beaa7c8048c7a4058000936b4838fdc8",
+      "size": 1089870,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jinshan",
+    "name": "Jinshan",
+    "nameIt": "Jinshan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      121.32533,
+      30.7317
+    ],
+    "zoom": 10.4,
+    "population": 315131,
+    "grid": "cities/jinshan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jinshan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jinshan",
+        "name": "Jinshan",
+        "nameIt": "Jinshan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          121.32533,
+          30.7317
+        ],
+        "zoom": 10.4,
+        "population": 315131,
+        "cells": 934,
+        "layer": "cities/jinshan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.32533,
+            30.7317
+          ]
+        },
+        "properties": {
+          "id": "jinshan",
+          "name": "Jinshan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24.5,
+          "population": 315131
+        }
+      },
+      "summary": null
+    }
+  }
+}

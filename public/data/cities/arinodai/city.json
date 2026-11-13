@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "arinodai",
+  "createdAt": "2026-10-08T15:09:23.168Z",
+  "updatedAt": "2026-10-08T15:09:23.168Z",
+  "meta": {
+    "name": "Arinodai",
+    "nameIt": "Arinodai",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Arinodai.geojson",
+      "sha256": "f0d7a9139fc7033dd0cfb6b48afdea916257914d503db126473741068a457753",
+      "size": 233288,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "arinodai",
+    "name": "Arinodai",
+    "nameIt": "Arinodai",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      135.22902,
+      34.82604
+    ],
+    "zoom": 11.6,
+    "population": 60562,
+    "grid": "cities/arinodai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/arinodai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "arinodai",
+        "name": "Arinodai",
+        "nameIt": "Arinodai",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          135.22902,
+          34.82604
+        ],
+        "zoom": 11.6,
+        "population": 60562,
+        "cells": 203,
+        "layer": "cities/arinodai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            135.22902,
+            34.82604
+          ]
+        },
+        "properties": {
+          "id": "arinodai",
+          "name": "Arinodai",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 60562
+        }
+      },
+      "summary": null
+    }
+  }
+}

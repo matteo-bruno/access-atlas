@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rajgan",
+  "createdAt": "2026-10-08T16:07:57.516Z",
+  "updatedAt": "2026-10-08T16:07:57.516Z",
+  "meta": {
+    "name": "Rajgan",
+    "nameIt": "Rajgan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rajgan.geojson",
+      "sha256": "ba2218e90e2d41db9b64812966a4a9a7d8619aec756d9d563991191df5c0a0e0",
+      "size": 179625,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rajgan",
+    "name": "Rajgan",
+    "nameIt": "Rajgan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.88392,
+      24.5493
+    ],
+    "zoom": 10.9,
+    "population": 42714,
+    "grid": "cities/rajgan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rajgan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rajgan",
+        "name": "Rajgan",
+        "nameIt": "Rajgan",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.88392,
+          24.5493
+        ],
+        "zoom": 10.9,
+        "population": 42714,
+        "cells": 155,
+        "layer": "cities/rajgan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.88392,
+            24.5493
+          ]
+        },
+        "properties": {
+          "id": "rajgan",
+          "name": "Rajgan",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 26.7,
+          "population": 42714
+        }
+      },
+      "summary": null
+    }
+  }
+}

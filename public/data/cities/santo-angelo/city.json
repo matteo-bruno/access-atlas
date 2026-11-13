@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santo-angelo",
+  "createdAt": "2026-10-08T16:11:17.314Z",
+  "updatedAt": "2026-10-08T16:11:17.314Z",
+  "meta": {
+    "name": "Santo Ângelo",
+    "nameIt": "Santo Ângelo",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santo Ângelo.geojson",
+      "sha256": "bc230d11322301e37e937a70d5f9cce6b08c17c1c3cb277d76c1e048242a08d4",
+      "size": 219516,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santo-angelo",
+    "name": "Santo Ângelo",
+    "nameIt": "Santo Ângelo",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -54.25978,
+      -28.29818
+    ],
+    "zoom": 11.6,
+    "population": 57080,
+    "grid": "cities/santo-angelo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santo-angelo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santo-angelo",
+        "name": "Santo Ângelo",
+        "nameIt": "Santo Ângelo",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -54.25978,
+          -28.29818
+        ],
+        "zoom": 11.6,
+        "population": 57080,
+        "cells": 187,
+        "layer": "cities/santo-angelo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -54.25978,
+            -28.29818
+          ]
+        },
+        "properties": {
+          "id": "santo-angelo",
+          "name": "Santo Ângelo",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 14.6,
+          "population": 57080
+        }
+      },
+      "summary": null
+    }
+  }
+}

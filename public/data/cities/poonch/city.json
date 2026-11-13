@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "poonch",
+  "createdAt": "2026-10-08T16:06:11.058Z",
+  "updatedAt": "2026-10-08T16:06:11.058Z",
+  "meta": {
+    "name": "Poonch",
+    "nameIt": "Poonch",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Poonch.geojson",
+      "sha256": "e2a60dabda1e34aec2de4412e0092fdd43a92c74d1614ca906a4b222e43e1dc3",
+      "size": 67044,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "poonch",
+    "name": "Poonch",
+    "nameIt": "Poonch",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.09615,
+      33.76886
+    ],
+    "zoom": 12,
+    "population": 29517,
+    "grid": "cities/poonch/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/poonch/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "poonch",
+        "name": "Poonch",
+        "nameIt": "Poonch",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.09615,
+          33.76886
+        ],
+        "zoom": 12,
+        "population": 29517,
+        "cells": 58,
+        "layer": "cities/poonch/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.09615,
+            33.76886
+          ]
+        },
+        "properties": {
+          "id": "poonch",
+          "name": "Poonch",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 29517
+        }
+      },
+      "summary": null
+    }
+  }
+}

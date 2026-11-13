@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bardoli",
+  "createdAt": "2026-10-08T15:15:34.230Z",
+  "updatedAt": "2026-10-08T15:15:34.230Z",
+  "meta": {
+    "name": "Bardoli",
+    "nameIt": "Bardoli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bardoli.geojson",
+      "sha256": "91595d3e359d7abe6350883954485ec57817f94adce6dfd661e5a883ac8c86e2",
+      "size": 183142,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bardoli",
+    "name": "Bardoli",
+    "nameIt": "Bardoli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.10772,
+      21.12742
+    ],
+    "zoom": 11.8,
+    "population": 79498,
+    "grid": "cities/bardoli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bardoli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bardoli",
+        "name": "Bardoli",
+        "nameIt": "Bardoli",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.10772,
+          21.12742
+        ],
+        "zoom": 11.8,
+        "population": 79498,
+        "cells": 158,
+        "layer": "cities/bardoli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.10772,
+            21.12742
+          ]
+        },
+        "properties": {
+          "id": "bardoli",
+          "name": "Bardoli",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 13.3,
+          "population": 79498
+        }
+      },
+      "summary": null
+    }
+  }
+}

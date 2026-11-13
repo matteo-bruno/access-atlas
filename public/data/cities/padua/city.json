@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "padua",
+  "createdAt": "2026-10-08T16:03:35.258Z",
+  "updatedAt": "2026-10-08T16:03:35.258Z",
+  "meta": {
+    "name": "Padua",
+    "nameIt": "Padua",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Padua.geojson",
+      "sha256": "648c0b9e7e5a2c897231682aea0900da4c13582a7ebc7c759ca6dee63ba48341",
+      "size": 952612,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "padua",
+    "name": "Padua",
+    "nameIt": "Padua",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      11.89625,
+      45.40912
+    ],
+    "zoom": 10.3,
+    "population": 230497,
+    "grid": "cities/padua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/padua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "padua",
+        "name": "Padua",
+        "nameIt": "Padua",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          11.89625,
+          45.40912
+        ],
+        "zoom": 10.3,
+        "population": 230497,
+        "cells": 831,
+        "layer": "cities/padua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.89625,
+            45.40912
+          ]
+        },
+        "properties": {
+          "id": "padua",
+          "name": "Padua",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 11.4,
+          "population": 230497
+        }
+      },
+      "summary": null
+    }
+  }
+}

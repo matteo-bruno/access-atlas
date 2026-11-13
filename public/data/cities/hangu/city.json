@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hangu",
+  "createdAt": "2026-10-08T15:37:39.855Z",
+  "updatedAt": "2026-10-08T15:37:39.855Z",
+  "meta": {
+    "name": "Hangu",
+    "nameIt": "Hangu",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hangu.geojson",
+      "sha256": "f128e7fb17ef9488ae0faddd4b3fa879a80eb90629a9cd43758be79e9d4b8281",
+      "size": 207987,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hangu",
+    "name": "Hangu",
+    "nameIt": "Hangu",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      71.05779,
+      33.52692
+    ],
+    "zoom": 11.2,
+    "population": 93089,
+    "grid": "cities/hangu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hangu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hangu",
+        "name": "Hangu",
+        "nameIt": "Hangu",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          71.05779,
+          33.52692
+        ],
+        "zoom": 11.2,
+        "population": 93089,
+        "cells": 180,
+        "layer": "cities/hangu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.05779,
+            33.52692
+          ]
+        },
+        "properties": {
+          "id": "hangu",
+          "name": "Hangu",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 93089
+        }
+      },
+      "summary": null
+    }
+  }
+}

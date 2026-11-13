@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "amsterdam-fua",
+  "createdAt": "2026-10-19T16:55:09.843Z",
+  "updatedAt": "2026-10-19T16:55:09.843Z",
+  "meta": {
+    "name": "Amsterdam",
+    "nameIt": "Amsterdam",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "amsterdam-fua",
+    "name": "Amsterdam",
+    "nameIt": "Amsterdam",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "extent": "fua",
+    "core": "amsterdam",
+    "center": [
+      4.82276,
+      52.38028
+    ],
+    "zoom": 8.5,
+    "population": 2177330,
+    "grid": "cities/amsterdam-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/amsterdam-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "amsterdam-fua",
+        "name": "Amsterdam",
+        "nameIt": "Amsterdam",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "extent": "fua",
+        "core": "amsterdam",
+        "center": [
+          4.82276,
+          52.38028
+        ],
+        "zoom": 8.5,
+        "population": 2177330,
+        "cells": 14656,
+        "layer": "cities/amsterdam-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.82276,
+            52.38028
+          ]
+        },
+        "properties": {
+          "id": "amsterdam-fua",
+          "name": "Amsterdam",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 11.7,
+          "population": 2177330
+        }
+      },
+      "summary": null
+    }
+  }
+}

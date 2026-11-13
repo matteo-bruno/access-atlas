@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rajshahi",
+  "createdAt": "2026-10-08T16:08:02.596Z",
+  "updatedAt": "2026-10-08T16:08:02.596Z",
+  "meta": {
+    "name": "Rajshahi",
+    "nameIt": "Rajshahi",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rajshahi.geojson",
+      "sha256": "0cd86931eff0c8a29625df5d0972de57cebd41d74dc22d9c83ab10c2651fa815",
+      "size": 1425024,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rajshahi",
+    "name": "Rajshahi",
+    "nameIt": "Rajshahi",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      88.61421,
+      24.38954
+    ],
+    "zoom": 9.7,
+    "population": 524788,
+    "grid": "cities/rajshahi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rajshahi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rajshahi",
+        "name": "Rajshahi",
+        "nameIt": "Rajshahi",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          88.61421,
+          24.38954
+        ],
+        "zoom": 9.7,
+        "population": 524788,
+        "cells": 1236,
+        "layer": "cities/rajshahi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.61421,
+            24.38954
+          ]
+        },
+        "properties": {
+          "id": "rajshahi",
+          "name": "Rajshahi",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 38.2,
+          "population": 524788
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chumphon",
+  "createdAt": "2026-10-08T15:25:16.531Z",
+  "updatedAt": "2026-10-08T15:25:16.531Z",
+  "meta": {
+    "name": "Chumphon",
+    "nameIt": "Chumphon",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chumphon.geojson",
+      "sha256": "5576b4380ba336b213526da09f27e8e4afd3f998aa7e55237447d9ba7b25d467",
+      "size": 143873,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chumphon",
+    "name": "Chumphon",
+    "nameIt": "Chumphon",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      99.17844,
+      10.49687
+    ],
+    "zoom": 11,
+    "population": 34148,
+    "grid": "cities/chumphon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chumphon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chumphon",
+        "name": "Chumphon",
+        "nameIt": "Chumphon",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          99.17844,
+          10.49687
+        ],
+        "zoom": 11,
+        "population": 34148,
+        "cells": 124,
+        "layer": "cities/chumphon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            99.17844,
+            10.49687
+          ]
+        },
+        "properties": {
+          "id": "chumphon",
+          "name": "Chumphon",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 34148
+        }
+      },
+      "summary": null
+    }
+  }
+}

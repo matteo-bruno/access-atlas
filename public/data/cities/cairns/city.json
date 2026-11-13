@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cairns",
+  "createdAt": "2026-10-08T15:21:46.448Z",
+  "updatedAt": "2026-10-08T15:21:46.448Z",
+  "meta": {
+    "name": "Cairns",
+    "nameIt": "Cairns",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cairns.geojson",
+      "sha256": "f9b29794a1ee5cad4446f44c9f352bb7465898b130480f47d803dba6c13aebad",
+      "size": 399685,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cairns",
+    "name": "Cairns",
+    "nameIt": "Cairns",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      145.74538,
+      -16.92615
+    ],
+    "zoom": 11.1,
+    "population": 56776,
+    "grid": "cities/cairns/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cairns/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cairns",
+        "name": "Cairns",
+        "nameIt": "Cairns",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          145.74538,
+          -16.92615
+        ],
+        "zoom": 11.1,
+        "population": 56776,
+        "cells": 343,
+        "layer": "cities/cairns/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            145.74538,
+            -16.92615
+          ]
+        },
+        "properties": {
+          "id": "cairns",
+          "name": "Cairns",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 16.9,
+          "population": 56776
+        }
+      },
+      "summary": null
+    }
+  }
+}

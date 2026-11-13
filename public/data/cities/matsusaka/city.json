@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "matsusaka",
+  "createdAt": "2026-10-08T15:55:48.146Z",
+  "updatedAt": "2026-10-08T15:55:48.146Z",
+  "meta": {
+    "name": "Matsusaka",
+    "nameIt": "Matsusaka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Matsusaka.geojson",
+      "sha256": "4575535e810167e4905f916f241012eaf0d3a6764636a98fcd1275a98e1d3c57",
+      "size": 409333,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "matsusaka",
+    "name": "Matsusaka",
+    "nameIt": "Matsusaka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      136.53369,
+      34.5703
+    ],
+    "zoom": 10.8,
+    "population": 78385,
+    "grid": "cities/matsusaka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/matsusaka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "matsusaka",
+        "name": "Matsusaka",
+        "nameIt": "Matsusaka",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          136.53369,
+          34.5703
+        ],
+        "zoom": 10.8,
+        "population": 78385,
+        "cells": 353,
+        "layer": "cities/matsusaka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            136.53369,
+            34.5703
+          ]
+        },
+        "properties": {
+          "id": "matsusaka",
+          "name": "Matsusaka",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 16.8,
+          "population": 78385
+        }
+      },
+      "summary": null
+    }
+  }
+}

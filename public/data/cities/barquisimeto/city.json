@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barquisimeto",
+  "createdAt": "2026-10-08T15:15:41.298Z",
+  "updatedAt": "2026-10-08T15:15:41.298Z",
+  "meta": {
+    "name": "Barquisimeto",
+    "nameIt": "Barquisimeto",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barquisimeto.geojson",
+      "sha256": "6da9403da7be00d5d19ec8c2bc8fb7b2018701ffc2bf22123d7628dfc8f353f5",
+      "size": 1687942,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barquisimeto",
+    "name": "Barquisimeto",
+    "nameIt": "Barquisimeto",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -69.35329,
+      10.06117
+    ],
+    "zoom": 9.5,
+    "population": 649224,
+    "grid": "cities/barquisimeto/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barquisimeto/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barquisimeto",
+        "name": "Barquisimeto",
+        "nameIt": "Barquisimeto",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -69.35329,
+          10.06117
+        ],
+        "zoom": 9.5,
+        "population": 649224,
+        "cells": 1453,
+        "layer": "cities/barquisimeto/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -69.35329,
+            10.06117
+          ]
+        },
+        "properties": {
+          "id": "barquisimeto",
+          "name": "Barquisimeto",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 32.1,
+          "population": 649224
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "harbin",
+  "createdAt": "2026-10-08T15:37:50.058Z",
+  "updatedAt": "2026-10-08T15:37:50.058Z",
+  "meta": {
+    "name": "Harbin",
+    "nameIt": "Harbin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Harbin.geojson",
+      "sha256": "237e48aeae49b9d3258be65fc546a2ae450783de61925f72310685f8eaa3d1dd",
+      "size": 6684459,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "harbin",
+    "name": "Harbin",
+    "nameIt": "Harbin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      126.63771,
+      45.72498
+    ],
+    "zoom": 9,
+    "population": 4222245,
+    "grid": "cities/harbin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/harbin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "harbin",
+        "name": "Harbin",
+        "nameIt": "Harbin",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          126.63771,
+          45.72498
+        ],
+        "zoom": 9,
+        "population": 4222245,
+        "cells": 5755,
+        "layer": "cities/harbin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            126.63771,
+            45.72498
+          ]
+        },
+        "properties": {
+          "id": "harbin",
+          "name": "Harbin",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 27.8,
+          "population": 4222245
+        }
+      },
+      "summary": null
+    }
+  }
+}

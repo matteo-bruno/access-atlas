@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cafunfo",
+  "createdAt": "2026-10-08T15:21:41.637Z",
+  "updatedAt": "2026-10-08T15:21:41.637Z",
+  "meta": {
+    "name": "Cafunfo",
+    "nameIt": "Cafunfo",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cafunfo.geojson",
+      "sha256": "fdf428ff177323fd56d99e9943c93784a477c2138f56853e1e9617be9bcd627a",
+      "size": 145763,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cafunfo",
+    "name": "Cafunfo",
+    "nameIt": "Cafunfo",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO",
+    "center": [
+      17.99907,
+      -8.76802
+    ],
+    "zoom": 11.6,
+    "population": 160562,
+    "grid": "cities/cafunfo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cafunfo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cafunfo",
+        "name": "Cafunfo",
+        "nameIt": "Cafunfo",
+        "region": "Angola",
+        "regionIt": "Angola",
+        "country": "AO",
+        "center": [
+          17.99907,
+          -8.76802
+        ],
+        "zoom": 11.6,
+        "population": 160562,
+        "cells": 125,
+        "layer": "cities/cafunfo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            17.99907,
+            -8.76802
+          ]
+        },
+        "properties": {
+          "id": "cafunfo",
+          "name": "Cafunfo",
+          "country": "AO",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 160562
+        }
+      },
+      "summary": null
+    }
+  }
+}

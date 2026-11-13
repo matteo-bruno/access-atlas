@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "colorado-springs",
+  "createdAt": "2026-10-08T15:26:08.566Z",
+  "updatedAt": "2026-10-08T15:26:08.566Z",
+  "meta": {
+    "name": "Colorado Springs",
+    "nameIt": "Colorado Springs",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Colorado Springs.geojson",
+      "sha256": "61a1f30e413fb94b25c3a8c9b8aa3f1bb3632b9260055051b687f03a9a3acec6",
+      "size": 2311373,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "colorado-springs",
+    "name": "Colorado Springs",
+    "nameIt": "Colorado Springs",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -104.76347,
+      38.87315
+    ],
+    "zoom": 9.5,
+    "population": 338027,
+    "grid": "cities/colorado-springs/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/colorado-springs/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "colorado-springs",
+        "name": "Colorado Springs",
+        "nameIt": "Colorado Springs",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -104.76347,
+          38.87315
+        ],
+        "zoom": 9.5,
+        "population": 338027,
+        "cells": 1989,
+        "layer": "cities/colorado-springs/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -104.76347,
+            38.87315
+          ]
+        },
+        "properties": {
+          "id": "colorado-springs",
+          "name": "Colorado Springs",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 21.3,
+          "population": 338027
+        }
+      },
+      "summary": null
+    }
+  }
+}

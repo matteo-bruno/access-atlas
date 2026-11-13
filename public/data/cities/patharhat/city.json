@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "patharhat",
+  "createdAt": "2026-10-08T16:04:38.597Z",
+  "updatedAt": "2026-10-08T16:04:38.597Z",
+  "meta": {
+    "name": "Patharhat",
+    "nameIt": "Patharhat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Patharhat.geojson",
+      "sha256": "84f7fbc28381abeef0766df2f23fa65bf2c5c14ff200cecc93c37ee7712e5e82",
+      "size": 312783,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "patharhat",
+    "name": "Patharhat",
+    "nameIt": "Patharhat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.659,
+      26.59019
+    ],
+    "zoom": 11.2,
+    "population": 79653,
+    "grid": "cities/patharhat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/patharhat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "patharhat",
+        "name": "Patharhat",
+        "nameIt": "Patharhat",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.659,
+          26.59019
+        ],
+        "zoom": 11.2,
+        "population": 79653,
+        "cells": 270,
+        "layer": "cities/patharhat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.659,
+            26.59019
+          ]
+        },
+        "properties": {
+          "id": "patharhat",
+          "name": "Patharhat",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 79653
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "marugame",
+  "createdAt": "2026-10-08T15:55:23.257Z",
+  "updatedAt": "2026-10-08T15:55:23.257Z",
+  "meta": {
+    "name": "Marugame",
+    "nameIt": "Marugame",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Marugame.geojson",
+      "sha256": "660dfbe70cdeb97a14ee458088e7c9189f6cadd89cc00c25c2fbccd53d9de44c",
+      "size": 1694037,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "marugame",
+    "name": "Marugame",
+    "nameIt": "Marugame",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      133.80957,
+      34.28326
+    ],
+    "zoom": 10.1,
+    "population": 183807,
+    "grid": "cities/marugame/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 182
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/marugame/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "marugame",
+        "name": "Marugame",
+        "nameIt": "Marugame",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          133.80957,
+          34.28326
+        ],
+        "zoom": 10.1,
+        "population": 183807,
+        "cells": 1473,
+        "layer": "cities/marugame/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 182
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            133.80957,
+            34.28326
+          ]
+        },
+        "properties": {
+          "id": "marugame",
+          "name": "Marugame",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 183807
+        }
+      },
+      "summary": null
+    }
+  }
+}

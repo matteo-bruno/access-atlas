@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "basel",
+  "createdAt": "2026-10-08T15:15:47.379Z",
+  "updatedAt": "2026-10-08T15:15:47.379Z",
+  "meta": {
+    "name": "Basel",
+    "nameIt": "Basel",
+    "region": "Switzerland",
+    "regionIt": "Svizzera",
+    "country": "CH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Basel.geojson",
+      "sha256": "0c59dda3702131476cbca6a5d87c7ad0e2c69c3cf65459bf2d2f66b87beb5299",
+      "size": 775587,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "basel",
+    "name": "Basel",
+    "nameIt": "Basel",
+    "region": "Switzerland",
+    "regionIt": "Svizzera",
+    "country": "CH",
+    "center": [
+      7.58991,
+      47.5416
+    ],
+    "zoom": 10.2,
+    "population": 309667,
+    "grid": "cities/basel/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/basel/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "basel",
+        "name": "Basel",
+        "nameIt": "Basel",
+        "region": "Switzerland",
+        "regionIt": "Svizzera",
+        "country": "CH",
+        "center": [
+          7.58991,
+          47.5416
+        ],
+        "zoom": 10.2,
+        "population": 309667,
+        "cells": 684,
+        "layer": "cities/basel/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.58991,
+            47.5416
+          ]
+        },
+        "properties": {
+          "id": "basel",
+          "name": "Basel",
+          "country": "CH",
+          "isStudy": true,
+          "proximityMinutes": 7.3,
+          "population": 309667
+        }
+      },
+      "summary": null
+    }
+  }
+}

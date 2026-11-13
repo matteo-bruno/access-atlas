@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kharkiv-fua",
+  "createdAt": "2026-10-19T16:56:45.174Z",
+  "updatedAt": "2026-10-19T16:56:45.174Z",
+  "meta": {
+    "name": "Kharkiv",
+    "nameIt": "Kharkiv",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "kharkiv-fua",
+    "name": "Kharkiv",
+    "nameIt": "Kharkiv",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "extent": "fua",
+    "core": "kharkiv",
+    "center": [
+      36.24487,
+      49.97456
+    ],
+    "zoom": 8.5,
+    "population": 1441003,
+    "grid": "cities/kharkiv-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kharkiv-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kharkiv-fua",
+        "name": "Kharkiv",
+        "nameIt": "Kharkiv",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "extent": "fua",
+        "core": "kharkiv",
+        "center": [
+          36.24487,
+          49.97456
+        ],
+        "zoom": 8.5,
+        "population": 1441003,
+        "cells": 17799,
+        "layer": "cities/kharkiv-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.24487,
+            49.97456
+          ]
+        },
+        "properties": {
+          "id": "kharkiv-fua",
+          "name": "Kharkiv",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 1441003
+        }
+      },
+      "summary": null
+    }
+  }
+}

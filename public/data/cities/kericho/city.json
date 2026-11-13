@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kericho",
+  "createdAt": "2026-10-08T15:46:13.614Z",
+  "updatedAt": "2026-10-08T15:46:13.614Z",
+  "meta": {
+    "name": "Kericho",
+    "nameIt": "Kericho",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kericho.geojson",
+      "sha256": "fdadc2375d652f2ab6da862b5c30460281854df40ccca6a58b7376d23d00b639",
+      "size": 141135,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kericho",
+    "name": "Kericho",
+    "nameIt": "Kericho",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE",
+    "center": [
+      35.28042,
+      -0.36433
+    ],
+    "zoom": 11.7,
+    "population": 46561,
+    "grid": "cities/kericho/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kericho/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kericho",
+        "name": "Kericho",
+        "nameIt": "Kericho",
+        "region": "Kenya",
+        "regionIt": "Kenya",
+        "country": "KE",
+        "center": [
+          35.28042,
+          -0.36433
+        ],
+        "zoom": 11.7,
+        "population": 46561,
+        "cells": 120,
+        "layer": "cities/kericho/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.28042,
+            -0.36433
+          ]
+        },
+        "properties": {
+          "id": "kericho",
+          "name": "Kericho",
+          "country": "KE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 46561
+        }
+      },
+      "summary": null
+    }
+  }
+}

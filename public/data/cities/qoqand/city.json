@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "qoqand",
+  "createdAt": "2026-10-08T16:07:32.133Z",
+  "updatedAt": "2026-10-08T16:07:32.133Z",
+  "meta": {
+    "name": "Qoqand",
+    "nameIt": "Qoqand",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Qoqand.geojson",
+      "sha256": "1e37eb049156b1577628b9dc40a6a8d86ea92aedeacb0a848a0639424823c303",
+      "size": 748153,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "qoqand",
+    "name": "Qoqand",
+    "nameIt": "Qoqand",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      70.92362,
+      40.53969
+    ],
+    "zoom": 10.5,
+    "population": 129238,
+    "grid": "cities/qoqand/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/qoqand/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "qoqand",
+        "name": "Qoqand",
+        "nameIt": "Qoqand",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          70.92362,
+          40.53969
+        ],
+        "zoom": 10.5,
+        "population": 129238,
+        "cells": 650,
+        "layer": "cities/qoqand/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            70.92362,
+            40.53969
+          ]
+        },
+        "properties": {
+          "id": "qoqand",
+          "name": "Qoqand",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 46.4,
+          "population": 129238
+        }
+      },
+      "summary": null
+    }
+  }
+}

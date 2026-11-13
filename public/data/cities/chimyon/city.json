@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chimyon",
+  "createdAt": "2026-10-08T15:24:49.520Z",
+  "updatedAt": "2026-10-08T15:24:49.520Z",
+  "meta": {
+    "name": "Chimyon",
+    "nameIt": "Chimyon",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chimyon.geojson",
+      "sha256": "e961e81dd398b60940fc6f03ed35cab38d6c90778809a2bea9b01425dd8ea3f5",
+      "size": 220715,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chimyon",
+    "name": "Chimyon",
+    "nameIt": "Chimyon",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      71.5671,
+      40.24573
+    ],
+    "zoom": 11.5,
+    "population": 32801,
+    "grid": "cities/chimyon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chimyon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chimyon",
+        "name": "Chimyon",
+        "nameIt": "Chimyon",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          71.5671,
+          40.24573
+        ],
+        "zoom": 11.5,
+        "population": 32801,
+        "cells": 191,
+        "layer": "cities/chimyon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.5671,
+            40.24573
+          ]
+        },
+        "properties": {
+          "id": "chimyon",
+          "name": "Chimyon",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 32.3,
+          "population": 32801
+        }
+      },
+      "summary": null
+    }
+  }
+}

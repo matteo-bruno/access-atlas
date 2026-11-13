@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "serui-kota",
+  "createdAt": "2026-10-08T16:12:05.942Z",
+  "updatedAt": "2026-10-08T16:12:05.942Z",
+  "meta": {
+    "name": "Serui Kota",
+    "nameIt": "Serui Kota",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Serui Kota.geojson",
+      "sha256": "381e296cd37ba705126ec69c419c30cbdeb203c867936cf0eb67510ba0ef5858",
+      "size": 171670,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "serui-kota",
+    "name": "Serui Kota",
+    "nameIt": "Serui Kota",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      136.24006,
+      -1.87674
+    ],
+    "zoom": 11.5,
+    "population": 72162,
+    "grid": "cities/serui-kota/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/serui-kota/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "serui-kota",
+        "name": "Serui Kota",
+        "nameIt": "Serui Kota",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          136.24006,
+          -1.87674
+        ],
+        "zoom": 11.5,
+        "population": 72162,
+        "cells": 146,
+        "layer": "cities/serui-kota/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            136.24006,
+            -1.87674
+          ]
+        },
+        "properties": {
+          "id": "serui-kota",
+          "name": "Serui Kota",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 72162
+        }
+      },
+      "summary": null
+    }
+  }
+}

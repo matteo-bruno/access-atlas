@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dongxiang",
+  "createdAt": "2026-10-08T15:30:56.842Z",
+  "updatedAt": "2026-10-08T15:30:56.842Z",
+  "meta": {
+    "name": "Dongxiang",
+    "nameIt": "Dongxiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dongxiang.geojson",
+      "sha256": "f008b04b14eb5e9f6f0f431e5ac95a06e4ffdd1da666b93d526a0b62b47b76cd",
+      "size": 175285,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dongxiang",
+    "name": "Dongxiang",
+    "nameIt": "Dongxiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.60294,
+      28.23996
+    ],
+    "zoom": 11.7,
+    "population": 134387,
+    "grid": "cities/dongxiang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dongxiang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dongxiang",
+        "name": "Dongxiang",
+        "nameIt": "Dongxiang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.60294,
+          28.23996
+        ],
+        "zoom": 11.7,
+        "population": 134387,
+        "cells": 150,
+        "layer": "cities/dongxiang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.60294,
+            28.23996
+          ]
+        },
+        "properties": {
+          "id": "dongxiang",
+          "name": "Dongxiang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 134387
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wangjiang",
+  "createdAt": "2026-10-08T16:21:18.235Z",
+  "updatedAt": "2026-10-08T16:21:18.235Z",
+  "meta": {
+    "name": "Wangjiang",
+    "nameIt": "Wangjiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wangjiang.geojson",
+      "sha256": "4212a3cd07799c9aa01cf9d2f007ebf60732f94a4f2659e3608fad175cf6e28d",
+      "size": 224366,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wangjiang",
+    "name": "Wangjiang",
+    "nameIt": "Wangjiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.68943,
+      30.12755
+    ],
+    "zoom": 11.6,
+    "population": 111291,
+    "grid": "cities/wangjiang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wangjiang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wangjiang",
+        "name": "Wangjiang",
+        "nameIt": "Wangjiang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.68943,
+          30.12755
+        ],
+        "zoom": 11.6,
+        "population": 111291,
+        "cells": 192,
+        "layer": "cities/wangjiang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.68943,
+            30.12755
+          ]
+        },
+        "properties": {
+          "id": "wangjiang",
+          "name": "Wangjiang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 111291
+        }
+      },
+      "summary": null
+    }
+  }
+}

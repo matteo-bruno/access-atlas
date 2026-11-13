@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "paracatu",
+  "createdAt": "2026-10-08T16:04:12.487Z",
+  "updatedAt": "2026-10-08T16:04:12.487Z",
+  "meta": {
+    "name": "Paracatu",
+    "nameIt": "Paracatu",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Paracatu.geojson",
+      "sha256": "b02d9f0a8522b06e06dbb7d825c2416bfda5ff8b201abdcff1c693081acc49bc",
+      "size": 140198,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "paracatu",
+    "name": "Paracatu",
+    "nameIt": "Paracatu",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -46.87352,
+      -17.22495
+    ],
+    "zoom": 11.9,
+    "population": 52218,
+    "grid": "cities/paracatu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/paracatu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "paracatu",
+        "name": "Paracatu",
+        "nameIt": "Paracatu",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -46.87352,
+          -17.22495
+        ],
+        "zoom": 11.9,
+        "population": 52218,
+        "cells": 119,
+        "layer": "cities/paracatu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.87352,
+            -17.22495
+          ]
+        },
+        "properties": {
+          "id": "paracatu",
+          "name": "Paracatu",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 13.8,
+          "population": 52218
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zacapu",
+  "createdAt": "2026-10-08T16:24:40.578Z",
+  "updatedAt": "2026-10-08T16:24:40.578Z",
+  "meta": {
+    "name": "Zacapu",
+    "nameIt": "Zacapu",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zacapu.geojson",
+      "sha256": "2a73f94228a77b5ca45cc802120b40bc7a1a307e954f45149d1c3fb8ae1d2973",
+      "size": 104728,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zacapu",
+    "name": "Zacapu",
+    "nameIt": "Zacapu",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -101.79293,
+      19.81276
+    ],
+    "zoom": 11.9,
+    "population": 41942,
+    "grid": "cities/zacapu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zacapu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zacapu",
+        "name": "Zacapu",
+        "nameIt": "Zacapu",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -101.79293,
+          19.81276
+        ],
+        "zoom": 11.9,
+        "population": 41942,
+        "cells": 89,
+        "layer": "cities/zacapu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -101.79293,
+            19.81276
+          ]
+        },
+        "properties": {
+          "id": "zacapu",
+          "name": "Zacapu",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 10.9,
+          "population": 41942
+        }
+      },
+      "summary": null
+    }
+  }
+}

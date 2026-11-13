@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jiexi",
+  "createdAt": "2026-10-08T15:42:48.605Z",
+  "updatedAt": "2026-10-08T15:42:48.605Z",
+  "meta": {
+    "name": "Jiexi",
+    "nameIt": "Jiexi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jiexi.geojson",
+      "sha256": "78727b024a753728d22ed0b09682e1ebc1a758e0cbbf1a6261076032257e9820",
+      "size": 204493,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jiexi",
+    "name": "Jiexi",
+    "nameIt": "Jiexi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      115.83281,
+      23.43368
+    ],
+    "zoom": 11.6,
+    "population": 142928,
+    "grid": "cities/jiexi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jiexi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jiexi",
+        "name": "Jiexi",
+        "nameIt": "Jiexi",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          115.83281,
+          23.43368
+        ],
+        "zoom": 11.6,
+        "population": 142928,
+        "cells": 175,
+        "layer": "cities/jiexi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.83281,
+            23.43368
+          ]
+        },
+        "properties": {
+          "id": "jiexi",
+          "name": "Jiexi",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 142928
+        }
+      },
+      "summary": null
+    }
+  }
+}

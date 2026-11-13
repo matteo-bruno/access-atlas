@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bonao",
+  "createdAt": "2026-10-08T15:20:02.076Z",
+  "updatedAt": "2026-10-08T15:20:02.076Z",
+  "meta": {
+    "name": "Bonao",
+    "nameIt": "Bonao",
+    "region": "Dominican Republic",
+    "regionIt": "Repubblica Dominicana",
+    "country": "DO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bonao.geojson",
+      "sha256": "f7b3c23368214b95d4e0f84a0b027583cd0d0e16e2223d45121fda445a5847cf",
+      "size": 306210,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bonao",
+    "name": "Bonao",
+    "nameIt": "Bonao",
+    "region": "Dominican Republic",
+    "regionIt": "Repubblica Dominicana",
+    "country": "DO",
+    "center": [
+      -70.40498,
+      18.93005
+    ],
+    "zoom": 11.4,
+    "population": 76541,
+    "grid": "cities/bonao/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bonao/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bonao",
+        "name": "Bonao",
+        "nameIt": "Bonao",
+        "region": "Dominican Republic",
+        "regionIt": "Repubblica Dominicana",
+        "country": "DO",
+        "center": [
+          -70.40498,
+          18.93005
+        ],
+        "zoom": 11.4,
+        "population": 76541,
+        "cells": 263,
+        "layer": "cities/bonao/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -70.40498,
+            18.93005
+          ]
+        },
+        "properties": {
+          "id": "bonao",
+          "name": "Bonao",
+          "country": "DO",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 76541
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "naogaon",
+  "createdAt": "2026-10-08T16:00:16.274Z",
+  "updatedAt": "2026-10-08T16:00:16.274Z",
+  "meta": {
+    "name": "Naogaon",
+    "nameIt": "Naogaon",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Naogaon.geojson",
+      "sha256": "de1310dc96292fd6a329cd0f7092715c913f10aab14f0414ec552f3d436f5813",
+      "size": 559299,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "naogaon",
+    "name": "Naogaon",
+    "nameIt": "Naogaon",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      88.95775,
+      24.80527
+    ],
+    "zoom": 10.7,
+    "population": 171683,
+    "grid": "cities/naogaon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/naogaon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "naogaon",
+        "name": "Naogaon",
+        "nameIt": "Naogaon",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          88.95775,
+          24.80527
+        ],
+        "zoom": 10.7,
+        "population": 171683,
+        "cells": 483,
+        "layer": "cities/naogaon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.95775,
+            24.80527
+          ]
+        },
+        "properties": {
+          "id": "naogaon",
+          "name": "Naogaon",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 51.4,
+          "population": 171683
+        }
+      },
+      "summary": null
+    }
+  }
+}

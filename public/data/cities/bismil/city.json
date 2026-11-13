@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bismil",
+  "createdAt": "2026-10-08T15:19:24.997Z",
+  "updatedAt": "2026-10-08T15:19:24.997Z",
+  "meta": {
+    "name": "Bismil",
+    "nameIt": "Bismil",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bismil.geojson",
+      "sha256": "6428d63838afc9d095e3587d8134b74aaa27f761ec6227d761e3000c11aa1440",
+      "size": 93699,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bismil",
+    "name": "Bismil",
+    "nameIt": "Bismil",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      40.66555,
+      37.85034
+    ],
+    "zoom": 12,
+    "population": 66149,
+    "grid": "cities/bismil/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bismil/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bismil",
+        "name": "Bismil",
+        "nameIt": "Bismil",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          40.66555,
+          37.85034
+        ],
+        "zoom": 12,
+        "population": 66149,
+        "cells": 81,
+        "layer": "cities/bismil/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.66555,
+            37.85034
+          ]
+        },
+        "properties": {
+          "id": "bismil",
+          "name": "Bismil",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 11.3,
+          "population": 66149
+        }
+      },
+      "summary": null
+    }
+  }
+}

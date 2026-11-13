@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dublin-fua",
+  "createdAt": "2026-10-19T16:56:05.352Z",
+  "updatedAt": "2026-10-19T16:56:05.352Z",
+  "meta": {
+    "name": "Dublin",
+    "nameIt": "Dublin",
+    "region": "Ireland",
+    "regionIt": "Irlanda",
+    "country": "IE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "dublin-fua",
+    "name": "Dublin",
+    "nameIt": "Dublin",
+    "region": "Ireland",
+    "regionIt": "Irlanda",
+    "country": "IE",
+    "extent": "fua",
+    "core": "dublin",
+    "center": [
+      -6.31052,
+      53.33656
+    ],
+    "zoom": 8.5,
+    "population": 1831661,
+    "grid": "cities/dublin-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dublin-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dublin-fua",
+        "name": "Dublin",
+        "nameIt": "Dublin",
+        "region": "Ireland",
+        "regionIt": "Irlanda",
+        "country": "IE",
+        "extent": "fua",
+        "core": "dublin",
+        "center": [
+          -6.31052,
+          53.33656
+        ],
+        "zoom": 8.5,
+        "population": 1831661,
+        "cells": 22781,
+        "layer": "cities/dublin-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -6.31052,
+            53.33656
+          ]
+        },
+        "properties": {
+          "id": "dublin-fua",
+          "name": "Dublin",
+          "country": "IE",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 1831661
+        }
+      },
+      "summary": null
+    }
+  }
+}

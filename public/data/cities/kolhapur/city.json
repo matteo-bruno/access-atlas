@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kolhapur",
+  "createdAt": "2026-10-08T15:47:42.623Z",
+  "updatedAt": "2026-10-08T15:47:42.623Z",
+  "meta": {
+    "name": "Kolhapur",
+    "nameIt": "Kolhapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kolhapur.geojson",
+      "sha256": "d91bc0d775eb15b184f25c9b6faa1bd29c4cf1dee96eb60b7e865915b61f9836",
+      "size": 998596,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kolhapur",
+    "name": "Kolhapur",
+    "nameIt": "Kolhapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.23903,
+      16.69179
+    ],
+    "zoom": 10.2,
+    "population": 539977,
+    "grid": "cities/kolhapur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kolhapur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kolhapur",
+        "name": "Kolhapur",
+        "nameIt": "Kolhapur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.23903,
+          16.69179
+        ],
+        "zoom": 10.2,
+        "population": 539977,
+        "cells": 863,
+        "layer": "cities/kolhapur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.23903,
+            16.69179
+          ]
+        },
+        "properties": {
+          "id": "kolhapur",
+          "name": "Kolhapur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 29.9,
+          "population": 539977
+        }
+      },
+      "summary": null
+    }
+  }
+}

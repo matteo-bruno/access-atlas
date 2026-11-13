@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mubi",
+  "createdAt": "2026-10-08T15:58:41.652Z",
+  "updatedAt": "2026-10-08T15:58:41.652Z",
+  "meta": {
+    "name": "Mubi",
+    "nameIt": "Mubi",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mubi.geojson",
+      "sha256": "cc4600478310356a1224f562dbfa6c16b80aeea7741e08042c353aa6956794cb",
+      "size": 423966,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mubi",
+    "name": "Mubi",
+    "nameIt": "Mubi",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      13.26969,
+      10.26604
+    ],
+    "zoom": 11,
+    "population": 142343,
+    "grid": "cities/mubi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mubi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mubi",
+        "name": "Mubi",
+        "nameIt": "Mubi",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          13.26969,
+          10.26604
+        ],
+        "zoom": 11,
+        "population": 142343,
+        "cells": 363,
+        "layer": "cities/mubi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.26969,
+            10.26604
+          ]
+        },
+        "properties": {
+          "id": "mubi",
+          "name": "Mubi",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 142343
+        }
+      },
+      "summary": null
+    }
+  }
+}

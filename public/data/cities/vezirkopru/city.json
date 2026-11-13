@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vezirkopru",
+  "createdAt": "2026-10-08T16:20:38.276Z",
+  "updatedAt": "2026-10-08T16:20:38.276Z",
+  "meta": {
+    "name": "Vezirköprü",
+    "nameIt": "Vezirköprü",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vezirköprü.geojson",
+      "sha256": "e6f1c221e86c36a1e9bafa6343f6e9cb1347a49d0c6bbd4f03b19b894fe835bd",
+      "size": 93703,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vezirkopru",
+    "name": "Vezirköprü",
+    "nameIt": "Vezirköprü",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      35.46265,
+      41.14084
+    ],
+    "zoom": 12,
+    "population": 45519,
+    "grid": "cities/vezirkopru/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vezirkopru/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vezirkopru",
+        "name": "Vezirköprü",
+        "nameIt": "Vezirköprü",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          35.46265,
+          41.14084
+        ],
+        "zoom": 12,
+        "population": 45519,
+        "cells": 81,
+        "layer": "cities/vezirkopru/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.46265,
+            41.14084
+          ]
+        },
+        "properties": {
+          "id": "vezirkopru",
+          "name": "Vezirköprü",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 45519
+        }
+      },
+      "summary": null
+    }
+  }
+}

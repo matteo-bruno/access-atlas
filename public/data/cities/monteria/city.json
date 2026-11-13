@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "monteria",
+  "createdAt": "2026-10-08T15:58:05.907Z",
+  "updatedAt": "2026-10-08T15:58:05.907Z",
+  "meta": {
+    "name": "Montería",
+    "nameIt": "Montería",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Montería.geojson",
+      "sha256": "1717fa5ae74a5a34b1eb0f8639ee0fe89b0e5dec684ba484e464cc9e97535afa",
+      "size": 442740,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "monteria",
+    "name": "Montería",
+    "nameIt": "Montería",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -75.88362,
+      8.74206
+    ],
+    "zoom": 11.1,
+    "population": 402272,
+    "grid": "cities/monteria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/monteria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "monteria",
+        "name": "Montería",
+        "nameIt": "Montería",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -75.88362,
+          8.74206
+        ],
+        "zoom": 11.1,
+        "population": 402272,
+        "cells": 383,
+        "layer": "cities/monteria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.88362,
+            8.74206
+          ]
+        },
+        "properties": {
+          "id": "monteria",
+          "name": "Montería",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 22,
+          "population": 402272
+        }
+      },
+      "summary": null
+    }
+  }
+}

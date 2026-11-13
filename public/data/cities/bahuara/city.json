@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bahuara",
+  "createdAt": "2026-10-08T15:13:19.321Z",
+  "updatedAt": "2026-10-08T15:13:19.321Z",
+  "meta": {
+    "name": "Bahuara",
+    "nameIt": "Bahuara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bahuara.geojson",
+      "sha256": "62e58e40941f801a65f82295cea7765e56449c00954a8ed1cab03c22150b8c21",
+      "size": 293117,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bahuara",
+    "name": "Bahuara",
+    "nameIt": "Bahuara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.49372,
+      25.73034
+    ],
+    "zoom": 11.1,
+    "population": 55380,
+    "grid": "cities/bahuara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bahuara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bahuara",
+        "name": "Bahuara",
+        "nameIt": "Bahuara",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.49372,
+          25.73034
+        ],
+        "zoom": 11.1,
+        "population": 55380,
+        "cells": 253,
+        "layer": "cities/bahuara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.49372,
+            25.73034
+          ]
+        },
+        "properties": {
+          "id": "bahuara",
+          "name": "Bahuara",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 55380
+        }
+      },
+      "summary": null
+    }
+  }
+}

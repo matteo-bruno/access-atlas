@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhongshan",
+  "createdAt": "2026-10-08T16:25:20.520Z",
+  "updatedAt": "2026-10-08T16:25:20.520Z",
+  "meta": {
+    "name": "Zhongshan",
+    "nameIt": "Zhongshan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhongshan.geojson",
+      "sha256": "df50978a01e9c3afb78236c321e9fbf8c95807485b4c186f8183cf71ae4bdff1",
+      "size": 108616,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhongshan",
+    "name": "Zhongshan",
+    "nameIt": "Zhongshan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      111.29997,
+      24.53244
+    ],
+    "zoom": 11.8,
+    "population": 101916,
+    "grid": "cities/zhongshan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhongshan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhongshan",
+        "name": "Zhongshan",
+        "nameIt": "Zhongshan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          111.29997,
+          24.53244
+        ],
+        "zoom": 11.8,
+        "population": 101916,
+        "cells": 93,
+        "layer": "cities/zhongshan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.29997,
+            24.53244
+          ]
+        },
+        "properties": {
+          "id": "zhongshan",
+          "name": "Zhongshan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 101916
+        }
+      },
+      "summary": null
+    }
+  }
+}

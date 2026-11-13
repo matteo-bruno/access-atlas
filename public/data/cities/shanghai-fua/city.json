@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shanghai-fua",
+  "createdAt": "2026-10-19T16:58:30.530Z",
+  "updatedAt": "2026-10-19T16:58:30.530Z",
+  "meta": {
+    "name": "Shanghai",
+    "nameIt": "Shanghai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "shanghai-fua",
+    "name": "Shanghai",
+    "nameIt": "Shanghai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "extent": "fua",
+    "core": "shanghai",
+    "center": [
+      121.4247,
+      31.19416
+    ],
+    "zoom": 8.5,
+    "population": 25153616,
+    "grid": "cities/shanghai-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shanghai-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shanghai-fua",
+        "name": "Shanghai",
+        "nameIt": "Shanghai",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "extent": "fua",
+        "core": "shanghai",
+        "center": [
+          121.4247,
+          31.19416
+        ],
+        "zoom": 8.5,
+        "population": 25153616,
+        "cells": 72916,
+        "layer": "cities/shanghai-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.4247,
+            31.19416
+          ]
+        },
+        "properties": {
+          "id": "shanghai-fua",
+          "name": "Shanghai",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 26.1,
+          "population": 25153616
+        }
+      },
+      "summary": null
+    }
+  }
+}

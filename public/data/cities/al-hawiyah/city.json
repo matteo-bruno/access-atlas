@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-hawiyah",
+  "createdAt": "2026-10-08T15:04:14.636Z",
+  "updatedAt": "2026-10-08T15:04:14.636Z",
+  "meta": {
+    "name": "Al Hawiyah",
+    "nameIt": "Al Hawiyah",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Hawiyah.geojson",
+      "sha256": "fb55c1dac8de32d3aa315b1a971103f03e101a535827e4977a50c71cf87ffa93",
+      "size": 608972,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-hawiyah",
+    "name": "Al Hawiyah",
+    "nameIt": "Al Hawiyah",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA",
+    "center": [
+      40.48175,
+      21.45714
+    ],
+    "zoom": 10.6,
+    "population": 111951,
+    "grid": "cities/al-hawiyah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-hawiyah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-hawiyah",
+        "name": "Al Hawiyah",
+        "nameIt": "Al Hawiyah",
+        "region": "Saudi Arabia",
+        "regionIt": "Arabia Saudita",
+        "country": "SA",
+        "center": [
+          40.48175,
+          21.45714
+        ],
+        "zoom": 10.6,
+        "population": 111951,
+        "cells": 524,
+        "layer": "cities/al-hawiyah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.48175,
+            21.45714
+          ]
+        },
+        "properties": {
+          "id": "al-hawiyah",
+          "name": "Al Hawiyah",
+          "country": "SA",
+          "isStudy": true,
+          "proximityMinutes": 50.8,
+          "population": 111951
+        }
+      },
+      "summary": null
+    }
+  }
+}

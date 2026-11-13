@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "umuarama",
+  "createdAt": "2026-10-08T16:19:53.431Z",
+  "updatedAt": "2026-10-08T16:19:53.431Z",
+  "meta": {
+    "name": "Umuarama",
+    "nameIt": "Umuarama",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Umuarama.geojson",
+      "sha256": "6c55511b837190fb821893412a9ee3f4ddc63b5ca6a2298bc6b10b59a96b7e75",
+      "size": 310627,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "umuarama",
+    "name": "Umuarama",
+    "nameIt": "Umuarama",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -53.31076,
+      -23.76587
+    ],
+    "zoom": 11.3,
+    "population": 92051,
+    "grid": "cities/umuarama/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/umuarama/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "umuarama",
+        "name": "Umuarama",
+        "nameIt": "Umuarama",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -53.31076,
+          -23.76587
+        ],
+        "zoom": 11.3,
+        "population": 92051,
+        "cells": 264,
+        "layer": "cities/umuarama/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -53.31076,
+            -23.76587
+          ]
+        },
+        "properties": {
+          "id": "umuarama",
+          "name": "Umuarama",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 92051
+        }
+      },
+      "summary": null
+    }
+  }
+}

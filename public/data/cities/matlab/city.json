@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "matlab",
+  "createdAt": "2026-10-08T15:55:45.219Z",
+  "updatedAt": "2026-10-08T15:55:45.219Z",
+  "meta": {
+    "name": "Matlab",
+    "nameIt": "Matlab",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Matlab.geojson",
+      "sha256": "86db6e62e1e08be6bd6844b4a795ad97097f2eb9a1f03f691269df149e2d6f08",
+      "size": 89248,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "matlab",
+    "name": "Matlab",
+    "nameIt": "Matlab",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      90.70941,
+      23.34453
+    ],
+    "zoom": 12,
+    "population": 35330,
+    "grid": "cities/matlab/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/matlab/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "matlab",
+        "name": "Matlab",
+        "nameIt": "Matlab",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          90.70941,
+          23.34453
+        ],
+        "zoom": 12,
+        "population": 35330,
+        "cells": 77,
+        "layer": "cities/matlab/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            90.70941,
+            23.34453
+          ]
+        },
+        "properties": {
+          "id": "matlab",
+          "name": "Matlab",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 35330
+        }
+      },
+      "summary": null
+    }
+  }
+}

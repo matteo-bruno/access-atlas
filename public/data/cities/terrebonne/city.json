@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "terrebonne",
+  "createdAt": "2026-10-08T16:17:24.348Z",
+  "updatedAt": "2026-10-08T16:17:24.348Z",
+  "meta": {
+    "name": "Terrebonne",
+    "nameIt": "Terrebonne",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Terrebonne.geojson",
+      "sha256": "0eb20d6cf7930015a01bce380bd1986c690438a245ddcac70b965325a48cdf89",
+      "size": 395818,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "terrebonne",
+    "name": "Terrebonne",
+    "nameIt": "Terrebonne",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -73.63953,
+      45.71964
+    ],
+    "zoom": 10.8,
+    "population": 95574,
+    "grid": "cities/terrebonne/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/terrebonne/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "terrebonne",
+        "name": "Terrebonne",
+        "nameIt": "Terrebonne",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -73.63953,
+          45.71964
+        ],
+        "zoom": 10.8,
+        "population": 95574,
+        "cells": 342,
+        "layer": "cities/terrebonne/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.63953,
+            45.71964
+          ]
+        },
+        "properties": {
+          "id": "terrebonne",
+          "name": "Terrebonne",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 17.2,
+          "population": 95574
+        }
+      },
+      "summary": null
+    }
+  }
+}

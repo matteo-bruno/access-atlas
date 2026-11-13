@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mtwara",
+  "createdAt": "2026-10-08T15:58:38.441Z",
+  "updatedAt": "2026-10-08T15:58:38.441Z",
+  "meta": {
+    "name": "Mtwara",
+    "nameIt": "Mtwara",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mtwara.geojson",
+      "sha256": "023f05809976f82ebde0e151e397788b25d4329a4a1e0e0530fa4024d2ecfc6f",
+      "size": 353098,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mtwara",
+    "name": "Mtwara",
+    "nameIt": "Mtwara",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      40.17855,
+      -10.28573
+    ],
+    "zoom": 11.2,
+    "population": 130786,
+    "grid": "cities/mtwara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mtwara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mtwara",
+        "name": "Mtwara",
+        "nameIt": "Mtwara",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          40.17855,
+          -10.28573
+        ],
+        "zoom": 11.2,
+        "population": 130786,
+        "cells": 301,
+        "layer": "cities/mtwara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.17855,
+            -10.28573
+          ]
+        },
+        "properties": {
+          "id": "mtwara",
+          "name": "Mtwara",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 22.4,
+          "population": 130786
+        }
+      },
+      "summary": null
+    }
+  }
+}

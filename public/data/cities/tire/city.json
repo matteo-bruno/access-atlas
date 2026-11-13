@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tire",
+  "createdAt": "2026-10-08T16:18:02.036Z",
+  "updatedAt": "2026-10-08T16:18:02.036Z",
+  "meta": {
+    "name": "Tire",
+    "nameIt": "Tire",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tire.geojson",
+      "sha256": "e604899ada0a4691a31a718a9243ce8a542aa57855e09ddb401e259fc2292978",
+      "size": 67332,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tire",
+    "name": "Tire",
+    "nameIt": "Tire",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      27.73124,
+      38.09159
+    ],
+    "zoom": 12,
+    "population": 49551,
+    "grid": "cities/tire/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tire/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tire",
+        "name": "Tire",
+        "nameIt": "Tire",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          27.73124,
+          38.09159
+        ],
+        "zoom": 12,
+        "population": 49551,
+        "cells": 58,
+        "layer": "cities/tire/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.73124,
+            38.09159
+          ]
+        },
+        "properties": {
+          "id": "tire",
+          "name": "Tire",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 10.4,
+          "population": 49551
+        }
+      },
+      "summary": null
+    }
+  }
+}

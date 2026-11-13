@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cikijing",
+  "createdAt": "2026-10-08T15:25:29.232Z",
+  "updatedAt": "2026-10-08T15:25:29.232Z",
+  "meta": {
+    "name": "Cikijing",
+    "nameIt": "Cikijing",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cikijing.geojson",
+      "sha256": "bdd263e42c260caab140548505182515d15908192a2095df2f799f4a61154379",
+      "size": 234236,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cikijing",
+    "name": "Cikijing",
+    "nameIt": "Cikijing",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      108.34346,
+      -7.00139
+    ],
+    "zoom": 10.9,
+    "population": 80944,
+    "grid": "cities/cikijing/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cikijing/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cikijing",
+        "name": "Cikijing",
+        "nameIt": "Cikijing",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          108.34346,
+          -7.00139
+        ],
+        "zoom": 10.9,
+        "population": 80944,
+        "cells": 200,
+        "layer": "cities/cikijing/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.34346,
+            -7.00139
+          ]
+        },
+        "properties": {
+          "id": "cikijing",
+          "name": "Cikijing",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 80944
+        }
+      },
+      "summary": null
+    }
+  }
+}

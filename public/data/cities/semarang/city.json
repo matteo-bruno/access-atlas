@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "semarang",
+  "createdAt": "2026-10-08T16:11:53.737Z",
+  "updatedAt": "2026-10-08T16:11:53.737Z",
+  "meta": {
+    "name": "Semarang",
+    "nameIt": "Semarang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Semarang.geojson",
+      "sha256": "3a964c60c0749a6d81646d21961148236bc4116c01cf2f7efec1959da40db562",
+      "size": 6936334,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "semarang",
+    "name": "Semarang",
+    "nameIt": "Semarang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      110.37724,
+      -7.00974
+    ],
+    "zoom": 8.5,
+    "population": 2776527,
+    "grid": "cities/semarang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/semarang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "semarang",
+        "name": "Semarang",
+        "nameIt": "Semarang",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          110.37724,
+          -7.00974
+        ],
+        "zoom": 8.5,
+        "population": 2776527,
+        "cells": 5944,
+        "layer": "cities/semarang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.37724,
+            -7.00974
+          ]
+        },
+        "properties": {
+          "id": "semarang",
+          "name": "Semarang",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 26,
+          "population": 2776527
+        }
+      },
+      "summary": null
+    }
+  }
+}

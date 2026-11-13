@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "catarman",
+  "createdAt": "2026-10-08T15:22:50.827Z",
+  "updatedAt": "2026-10-08T15:22:50.827Z",
+  "meta": {
+    "name": "Catarman",
+    "nameIt": "Catarman",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Catarman.geojson",
+      "sha256": "d67dc17ba347dcad3593cd9dc912fe94d32adfef8b4637e202dce1f335b5d1a2",
+      "size": 139927,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "catarman",
+    "name": "Catarman",
+    "nameIt": "Catarman",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      124.64919,
+      12.50423
+    ],
+    "zoom": 10.6,
+    "population": 58240,
+    "grid": "cities/catarman/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/catarman/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "catarman",
+        "name": "Catarman",
+        "nameIt": "Catarman",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          124.64919,
+          12.50423
+        ],
+        "zoom": 10.6,
+        "population": 58240,
+        "cells": 120,
+        "layer": "cities/catarman/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            124.64919,
+            12.50423
+          ]
+        },
+        "properties": {
+          "id": "catarman",
+          "name": "Catarman",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 58240
+        }
+      },
+      "summary": null
+    }
+  }
+}

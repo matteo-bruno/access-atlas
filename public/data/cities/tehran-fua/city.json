@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tehran-fua",
+  "createdAt": "2026-10-19T16:58:44.091Z",
+  "updatedAt": "2026-10-19T16:58:44.091Z",
+  "meta": {
+    "name": "Tehran",
+    "nameIt": "Tehran",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "tehran-fua",
+    "name": "Tehran",
+    "nameIt": "Tehran",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "extent": "fua",
+    "core": "tehran",
+    "center": [
+      51.26928,
+      35.70349
+    ],
+    "zoom": 8.5,
+    "population": 16241250,
+    "grid": "cities/tehran-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tehran-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tehran-fua",
+        "name": "Tehran",
+        "nameIt": "Tehran",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "extent": "fua",
+        "core": "tehran",
+        "center": [
+          51.26928,
+          35.70349
+        ],
+        "zoom": 8.5,
+        "population": 16241250,
+        "cells": 30634,
+        "layer": "cities/tehran-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            51.26928,
+            35.70349
+          ]
+        },
+        "properties": {
+          "id": "tehran-fua",
+          "name": "Tehran",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 17.3,
+          "population": 16241250
+        }
+      },
+      "summary": null
+    }
+  }
+}

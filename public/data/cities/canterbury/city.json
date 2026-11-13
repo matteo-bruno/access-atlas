@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "canterbury",
+  "createdAt": "2026-10-08T15:22:18.493Z",
+  "updatedAt": "2026-10-08T15:22:18.493Z",
+  "meta": {
+    "name": "Canterbury",
+    "nameIt": "Canterbury",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Canterbury.geojson",
+      "sha256": "8b757770afed34b7279d4fc5fbe8384582102c52540b54d8b0100f250dddec46",
+      "size": 181516,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "canterbury",
+    "name": "Canterbury",
+    "nameIt": "Canterbury",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      1.07898,
+      51.28212
+    ],
+    "zoom": 11.9,
+    "population": 50187,
+    "grid": "cities/canterbury/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/canterbury/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "canterbury",
+        "name": "Canterbury",
+        "nameIt": "Canterbury",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          1.07898,
+          51.28212
+        ],
+        "zoom": 11.9,
+        "population": 50187,
+        "cells": 159,
+        "layer": "cities/canterbury/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.07898,
+            51.28212
+          ]
+        },
+        "properties": {
+          "id": "canterbury",
+          "name": "Canterbury",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 50187
+        }
+      },
+      "summary": null
+    }
+  }
+}

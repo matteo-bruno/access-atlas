@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kakina",
+  "createdAt": "2026-10-08T15:44:20.298Z",
+  "updatedAt": "2026-10-08T15:44:20.298Z",
+  "meta": {
+    "name": "Kakina",
+    "nameIt": "Kakina",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kakina.geojson",
+      "sha256": "b2eaf43e16902be89716434cac78e4be6bcca31d6ef8d6955e108d1299b00ae0",
+      "size": 361524,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kakina",
+    "name": "Kakina",
+    "nameIt": "Kakina",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.26555,
+      25.90705
+    ],
+    "zoom": 10.9,
+    "population": 56438,
+    "grid": "cities/kakina/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kakina/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kakina",
+        "name": "Kakina",
+        "nameIt": "Kakina",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.26555,
+          25.90705
+        ],
+        "zoom": 10.9,
+        "population": 56438,
+        "cells": 312,
+        "layer": "cities/kakina/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.26555,
+            25.90705
+          ]
+        },
+        "properties": {
+          "id": "kakina",
+          "name": "Kakina",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 14.4,
+          "population": 56438
+        }
+      },
+      "summary": null
+    }
+  }
+}

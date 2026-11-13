@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ratia",
+  "createdAt": "2026-10-08T16:08:24.713Z",
+  "updatedAt": "2026-10-08T16:08:24.713Z",
+  "meta": {
+    "name": "Ratia",
+    "nameIt": "Ratia",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ratia.geojson",
+      "sha256": "e24cc589dea3dd0bc6db93d837910a5b981018995d4c7e3d1d248a03a01e76ae",
+      "size": 82345,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ratia",
+    "name": "Ratia",
+    "nameIt": "Ratia",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.57417,
+      29.68183
+    ],
+    "zoom": 12,
+    "population": 42801,
+    "grid": "cities/ratia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ratia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ratia",
+        "name": "Ratia",
+        "nameIt": "Ratia",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.57417,
+          29.68183
+        ],
+        "zoom": 12,
+        "population": 42801,
+        "cells": 71,
+        "layer": "cities/ratia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.57417,
+            29.68183
+          ]
+        },
+        "properties": {
+          "id": "ratia",
+          "name": "Ratia",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 42801
+        }
+      },
+      "summary": null
+    }
+  }
+}

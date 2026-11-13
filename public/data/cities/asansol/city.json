@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "asansol",
+  "createdAt": "2026-10-08T15:10:05.643Z",
+  "updatedAt": "2026-10-08T15:10:05.643Z",
+  "meta": {
+    "name": "Asansol",
+    "nameIt": "Asansol",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Asansol.geojson",
+      "sha256": "ddc1f0aa3f46ca3583da07eb0ee99039e1938bcd43d4518ed530538679d54a05",
+      "size": 2571733,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "asansol",
+    "name": "Asansol",
+    "nameIt": "Asansol",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.90149,
+      23.70636
+    ],
+    "zoom": 9.1,
+    "population": 1387068,
+    "grid": "cities/asansol/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/asansol/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "asansol",
+        "name": "Asansol",
+        "nameIt": "Asansol",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.90149,
+          23.70636
+        ],
+        "zoom": 9.1,
+        "population": 1387068,
+        "cells": 2212,
+        "layer": "cities/asansol/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.90149,
+            23.70636
+          ]
+        },
+        "properties": {
+          "id": "asansol",
+          "name": "Asansol",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 75.1,
+          "population": 1387068
+        }
+      },
+      "summary": null
+    }
+  }
+}

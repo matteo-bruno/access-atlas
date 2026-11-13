@@ -3,7 +3,7 @@
   "version": 1,
   "id": "zurich",
   "createdAt": "2026-08-28T13:51:44.000Z",
-  "updatedAt": "2026-10-08T14:05:37.176Z",
+  "updatedAt": "2026-10-19T17:05:25.518Z",
   "meta": {
     "name": "Zurich",
     "nameIt": "Zurigo",
@@ -18,27 +18,6 @@
       "size": 2105758,
       "importer": "f89b1c3a2bf4d92d",
       "importedAt": "2026-09-28T12:04:05.007Z"
-    },
-    "citychrone": {
-      "file": "citychrone/Zurich.zip",
-      "sha256": "98766bdc7850f77211121fc6f52fc71a89fa5067541e60ae7189a0e4eabcd3a8",
-      "size": 27631492,
-      "importer": "2bb86427a02920af",
-      "importedAt": "2026-09-28T12:04:05.007Z"
-    },
-    "cardep": {
-      "file": "cdi/zurich_cdi.zip",
-      "sha256": "e844b1b66846545939db98b640c2a331d377f6d87b6cece4d45dc249cecdf14d",
-      "size": 220160,
-      "importer": "ce93c04cf1b4a609",
-      "importedAt": "2026-09-28T12:04:05.007Z"
-    },
-    "pov": {
-      "file": "pov/zurich_pov.zip",
-      "sha256": "ed0ca7d0ec8dfdf36c77b76d20e91b789123d9d386ee8af7953505c89089587b",
-      "size": 259174,
-      "importer": "0cd87214d2ef5457",
-      "importedAt": "2026-09-28T12:04:05.007Z"
     }
   },
   "atlas": {
@@ -49,11 +28,11 @@
     "regionIt": "Svizzera",
     "country": "CH",
     "center": [
-      8.53579,
-      47.38022
+      8.56833,
+      47.37192
     ],
-    "zoom": 9.5,
-    "population": 697916,
+    "zoom": 8.5,
+    "population": 2235366,
     "grid": "cities/zurich/grid.json.gz",
     "cell": {
       "h3Resolution": 9,
@@ -79,8 +58,7 @@
     },
     "hourly": {
       "hours": 24,
-      "cells": 909,
-      "times": "cities/zurich/citychrone/times{hh}.npy.gz"
+      "cells": 25632
     }
   },
   "platforms": {
@@ -134,12 +112,12 @@
         "regionIt": "Svizzera",
         "country": "CH",
         "center": [
-          8.52928,
-          47.38479
+          8.56833,
+          47.37192
         ],
-        "zoom": 10.4,
-        "population": 404151,
-        "cells": 909,
+        "zoom": 8.5,
+        "population": 2235366,
+        "cells": 25632,
         "layer": "cities/zurich/citychrone.json.gz",
         "cell": {
           "h3Resolution": 9,
@@ -147,8 +125,7 @@
         },
         "hourly": {
           "hours": 24,
-          "cells": 909,
-          "times": "cities/zurich/citychrone/times{hh}.npy.gz"
+          "cells": 25632
         }
       },
       "marker": {
@@ -156,8 +133,8 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            8.52928,
-            47.38479
+            8.56833,
+            47.37192
           ]
         },
         "properties": {
@@ -165,8 +142,8 @@
           "name": "Zurich",
           "country": "CH",
           "isStudy": true,
-          "velocityScore": 5.64,
-          "population": 404151
+          "velocityScore": 5.25,
+          "population": 2235366
         }
       },
       "summary": null
@@ -180,12 +157,12 @@
         "regionIt": "Svizzera",
         "country": "CH",
         "center": [
-          8.52928,
-          47.38479
+          8.56833,
+          47.37192
         ],
-        "zoom": 10.4,
-        "population": 404151,
-        "cells": 909,
+        "zoom": 8.5,
+        "population": 2235366,
+        "cells": 25632,
         "layer": "cities/zurich/cardep.json.gz",
         "cell": {
           "h3Resolution": 9,
@@ -197,8 +174,8 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            8.52928,
-            47.38479
+            8.56833,
+            47.37192
           ]
         },
         "properties": {
@@ -206,20 +183,20 @@
           "name": "Zurich",
           "country": "CH",
           "isStudy": true,
-          "cdi": -0.032,
-          "population": 404151
+          "cdi": 0.328,
+          "population": 2235366
         }
       },
       "summary": {
         "id": "zurich",
-        "cells": 909,
-        "population": 404151,
-        "medianCdi": -0.032,
-        "weightedCdi": -0.02,
-        "ptShare": 16,
-        "carShare": 38.7,
-        "weightedByCar": 1711.2,
-        "weightedByTransit": 1803,
+        "cells": 25632,
+        "population": 2235366,
+        "medianCdi": 0.328,
+        "weightedCdi": 0.359,
+        "ptShare": 0,
+        "carShare": 99.9,
+        "weightedByCar": 3409.2,
+        "weightedByTransit": 1816.9,
         "cdf": [
           [
             -1,
@@ -259,47 +236,47 @@
           ],
           [
             -0.1,
-            0.019
+            0
           ],
           [
             0,
-            0.734
+            0.001
           ],
           [
             0.1,
-            0.969
+            0.024
           ],
           [
             0.2,
-            0.996
+            0.218
           ],
           [
             0.3,
-            0.998
+            0.422
           ],
           [
             0.4,
-            0.998
+            0.664
           ],
           [
             0.5,
-            0.998
+            0.822
           ],
           [
             0.6,
-            0.998
+            0.896
           ],
           [
             0.7,
-            0.998
+            0.944
           ],
           [
             0.8,
-            0.998
+            0.963
           ],
           [
             0.9,
-            0.998
+            0.97
           ],
           [
             1,
@@ -317,20 +294,20 @@
         "regionIt": "Svizzera",
         "country": "CH",
         "center": [
-          8.52928,
-          47.38479
+          8.56833,
+          47.37192
         ],
-        "zoom": 10.5,
-        "population": 404151,
-        "cells": 733,
+        "zoom": 8.5,
+        "population": 2235366,
+        "cells": 25632,
         "layer": "cities/zurich/pov.json.gz",
         "cell": {
           "h3Resolution": 9,
           "cellRadiusM": 197
         },
         "thresholds": {
-          "proximity": 7358.9,
-          "opportunity": 17314.2
+          "proximity": 296.5,
+          "opportunity": 1497.6
         }
       },
       "marker": {
@@ -338,8 +315,8 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            8.52928,
-            47.38479
+            8.56833,
+            47.37192
           ]
         },
         "properties": {
@@ -348,33 +325,33 @@
           "country": "CH",
           "isStudy": true,
           "zone": 0,
-          "population": 404153,
-          "inclusionShare": 25.9
+          "population": 2235366,
+          "inclusionShare": 9.5
         }
       },
       "summary": {
         "id": "zurich",
-        "cells": 733,
-        "population": 404153,
-        "medianProximity": 7358.9,
-        "medianOpportunity": 17314.2,
-        "weightedProximity": 7365.8,
-        "weightedOpportunity": 16862.5,
+        "cells": 25632,
+        "population": 2235366,
+        "medianProximity": 296.5,
+        "medianOpportunity": 1497.6,
+        "weightedProximity": 482.7,
+        "weightedOpportunity": 1787.2,
         "zoneShares": [
-          25.9,
-          8,
-          6.1,
-          59.9
+          9.5,
+          8.7,
+          2.9,
+          78.9
         ],
         "zonePopulationShares": [
-          41.8,
-          8.4,
-          8.3,
-          41.5
+          41.3,
+          8.8,
+          8.7,
+          41.2
         ],
         "thresholds": {
-          "proximity": 7358.9,
-          "opportunity": 17314.2
+          "proximity": 296.5,
+          "opportunity": 1497.6
         }
       }
     }

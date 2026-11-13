@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mityana",
+  "createdAt": "2026-10-08T15:57:31.411Z",
+  "updatedAt": "2026-10-08T15:57:31.411Z",
+  "meta": {
+    "name": "Mityana",
+    "nameIt": "Mityana",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mityana.geojson",
+      "sha256": "0aed6d2202115fd8f66c9a9c0fef6909975d4e9318206709de61827d9a148309",
+      "size": 121318,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mityana",
+    "name": "Mityana",
+    "nameIt": "Mityana",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG",
+    "center": [
+      32.05011,
+      0.39908
+    ],
+    "zoom": 11.7,
+    "population": 31487,
+    "grid": "cities/mityana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mityana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mityana",
+        "name": "Mityana",
+        "nameIt": "Mityana",
+        "region": "Uganda",
+        "regionIt": "Uganda",
+        "country": "UG",
+        "center": [
+          32.05011,
+          0.39908
+        ],
+        "zoom": 11.7,
+        "population": 31487,
+        "cells": 104,
+        "layer": "cities/mityana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.05011,
+            0.39908
+          ]
+        },
+        "properties": {
+          "id": "mityana",
+          "name": "Mityana",
+          "country": "UG",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 31487
+        }
+      },
+      "summary": null
+    }
+  }
+}

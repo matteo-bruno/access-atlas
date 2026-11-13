@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lourdes",
+  "createdAt": "2026-10-08T15:52:14.972Z",
+  "updatedAt": "2026-10-08T15:52:14.972Z",
+  "meta": {
+    "name": "Lourdes",
+    "nameIt": "Lourdes",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lourdes.geojson",
+      "sha256": "2d0ab7dd434700d7164092dbf5c4e4dccbc69d9838387a872964a470b93c29c2",
+      "size": 290878,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lourdes",
+    "name": "Lourdes",
+    "nameIt": "Lourdes",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV",
+    "center": [
+      -89.36902,
+      13.72954
+    ],
+    "zoom": 11.1,
+    "population": 117557,
+    "grid": "cities/lourdes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lourdes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lourdes",
+        "name": "Lourdes",
+        "nameIt": "Lourdes",
+        "region": "El Salvador",
+        "regionIt": "El Salvador",
+        "country": "SV",
+        "center": [
+          -89.36902,
+          13.72954
+        ],
+        "zoom": 11.1,
+        "population": 117557,
+        "cells": 249,
+        "layer": "cities/lourdes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -89.36902,
+            13.72954
+          ]
+        },
+        "properties": {
+          "id": "lourdes",
+          "name": "Lourdes",
+          "country": "SV",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 117557
+        }
+      },
+      "summary": null
+    }
+  }
+}

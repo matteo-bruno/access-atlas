@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barshi",
+  "createdAt": "2026-10-08T15:15:44.709Z",
+  "updatedAt": "2026-10-08T15:15:44.709Z",
+  "meta": {
+    "name": "Barshi",
+    "nameIt": "Barshi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barshi.geojson",
+      "sha256": "ed193589848cd75c0e1c49bbbb472f3e398ab6f788bbaaf86d52c2c3ba5e0f2a",
+      "size": 192408,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barshi",
+    "name": "Barshi",
+    "nameIt": "Barshi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.68916,
+      18.23635
+    ],
+    "zoom": 11.7,
+    "population": 100297,
+    "grid": "cities/barshi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barshi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barshi",
+        "name": "Barshi",
+        "nameIt": "Barshi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.68916,
+          18.23635
+        ],
+        "zoom": 11.7,
+        "population": 100297,
+        "cells": 166,
+        "layer": "cities/barshi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.68916,
+            18.23635
+          ]
+        },
+        "properties": {
+          "id": "barshi",
+          "name": "Barshi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18.3,
+          "population": 100297
+        }
+      },
+      "summary": null
+    }
+  }
+}

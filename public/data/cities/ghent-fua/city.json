@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ghent-fua",
+  "createdAt": "2026-10-19T16:56:12.949Z",
+  "updatedAt": "2026-10-19T16:56:12.949Z",
+  "meta": {
+    "name": "Ghent",
+    "nameIt": "Ghent",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "ghent-fua",
+    "name": "Ghent",
+    "nameIt": "Ghent",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE",
+    "extent": "fua",
+    "core": "ghent",
+    "center": [
+      3.76492,
+      51.03341
+    ],
+    "zoom": 8.5,
+    "population": 950978,
+    "grid": "cities/ghent-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ghent-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ghent-fua",
+        "name": "Ghent",
+        "nameIt": "Ghent",
+        "region": "Belgium",
+        "regionIt": "Belgio",
+        "country": "BE",
+        "extent": "fua",
+        "core": "ghent",
+        "center": [
+          3.76492,
+          51.03341
+        ],
+        "zoom": 8.5,
+        "population": 950978,
+        "cells": 20141,
+        "layer": "cities/ghent-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.76492,
+            51.03341
+          ]
+        },
+        "properties": {
+          "id": "ghent-fua",
+          "name": "Ghent",
+          "country": "BE",
+          "isStudy": true,
+          "proximityMinutes": 15.2,
+          "population": 950978
+        }
+      },
+      "summary": null
+    }
+  }
+}

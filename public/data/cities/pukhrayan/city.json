@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pukhrayan",
+  "createdAt": "2026-10-08T16:06:48.069Z",
+  "updatedAt": "2026-10-08T16:06:48.069Z",
+  "meta": {
+    "name": "Pukhrayan",
+    "nameIt": "Pukhrayan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pukhrayan.geojson",
+      "sha256": "b9920895cdff931f6957eb9c8c30599ff5a54c2a6f24b118da891890fd6d86f6",
+      "size": 178338,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pukhrayan",
+    "name": "Pukhrayan",
+    "nameIt": "Pukhrayan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.83178,
+      26.21941
+    ],
+    "zoom": 11.5,
+    "population": 91763,
+    "grid": "cities/pukhrayan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pukhrayan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pukhrayan",
+        "name": "Pukhrayan",
+        "nameIt": "Pukhrayan",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.83178,
+          26.21941
+        ],
+        "zoom": 11.5,
+        "population": 91763,
+        "cells": 154,
+        "layer": "cities/pukhrayan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.83178,
+            26.21941
+          ]
+        },
+        "properties": {
+          "id": "pukhrayan",
+          "name": "Pukhrayan",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 91763
+        }
+      },
+      "summary": null
+    }
+  }
+}

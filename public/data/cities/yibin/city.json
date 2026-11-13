@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yibin",
+  "createdAt": "2026-10-08T16:23:48.723Z",
+  "updatedAt": "2026-10-08T16:23:48.723Z",
+  "meta": {
+    "name": "Yibin",
+    "nameIt": "Yibin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yibin.geojson",
+      "sha256": "1e7c08ec0c8b428b2a887ed8c796814e695e685771c24ba075df15832bbb806f",
+      "size": 412663,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yibin",
+    "name": "Yibin",
+    "nameIt": "Yibin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      104.62962,
+      28.7604
+    ],
+    "zoom": 10.8,
+    "population": 469388,
+    "grid": "cities/yibin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yibin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yibin",
+        "name": "Yibin",
+        "nameIt": "Yibin",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          104.62962,
+          28.7604
+        ],
+        "zoom": 10.8,
+        "population": 469388,
+        "cells": 353,
+        "layer": "cities/yibin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            104.62962,
+            28.7604
+          ]
+        },
+        "properties": {
+          "id": "yibin",
+          "name": "Yibin",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 26.8,
+          "population": 469388
+        }
+      },
+      "summary": null
+    }
+  }
+}

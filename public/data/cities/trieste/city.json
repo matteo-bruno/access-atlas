@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "trieste",
+  "createdAt": "2026-10-08T16:18:47.894Z",
+  "updatedAt": "2026-10-08T16:18:47.894Z",
+  "meta": {
+    "name": "Trieste",
+    "nameIt": "Trieste",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Trieste.geojson",
+      "sha256": "20d84dcf187637e8a05ce558fbff19205c600895132d0d15e07cef56fe6706fc",
+      "size": 494948,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "trieste",
+    "name": "Trieste",
+    "nameIt": "Trieste",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      13.7888,
+      45.64125
+    ],
+    "zoom": 10.9,
+    "population": 174101,
+    "grid": "cities/trieste/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/trieste/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "trieste",
+        "name": "Trieste",
+        "nameIt": "Trieste",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          13.7888,
+          45.64125
+        ],
+        "zoom": 10.9,
+        "population": 174101,
+        "cells": 432,
+        "layer": "cities/trieste/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.7888,
+            45.64125
+          ]
+        },
+        "properties": {
+          "id": "trieste",
+          "name": "Trieste",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 8.4,
+          "population": 174101
+        }
+      },
+      "summary": null
+    }
+  }
+}

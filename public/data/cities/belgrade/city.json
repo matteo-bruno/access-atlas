@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "belgrade",
+  "createdAt": "2026-10-08T15:17:08.098Z",
+  "updatedAt": "2026-10-08T15:17:08.098Z",
+  "meta": {
+    "name": "Belgrade",
+    "nameIt": "Belgrade",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Belgrade.geojson",
+      "sha256": "e413e6f7d08827929d26b484817dca0712d4418312ba6b0b4d903b20df8239f3",
+      "size": 1957024,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "belgrade",
+    "name": "Belgrade",
+    "nameIt": "Belgrade",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS",
+    "center": [
+      20.4524,
+      44.79029
+    ],
+    "zoom": 9.7,
+    "population": 1115178,
+    "grid": "cities/belgrade/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/belgrade/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "belgrade",
+        "name": "Belgrade",
+        "nameIt": "Belgrade",
+        "region": "Serbia",
+        "regionIt": "Serbia",
+        "country": "RS",
+        "center": [
+          20.4524,
+          44.79029
+        ],
+        "zoom": 9.7,
+        "population": 1115178,
+        "cells": 1710,
+        "layer": "cities/belgrade/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.4524,
+            44.79029
+          ]
+        },
+        "properties": {
+          "id": "belgrade",
+          "name": "Belgrade",
+          "country": "RS",
+          "isStudy": true,
+          "proximityMinutes": 9.1,
+          "population": 1115178
+        }
+      },
+      "summary": null
+    }
+  }
+}

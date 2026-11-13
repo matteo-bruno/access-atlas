@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "digha",
+  "createdAt": "2026-10-08T15:29:53.127Z",
+  "updatedAt": "2026-10-08T15:29:53.127Z",
+  "meta": {
+    "name": "Digha",
+    "nameIt": "Digha",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Digha.geojson",
+      "sha256": "c33b69026e04e2eb80a0e1da58115f0f3e32d32bf081fb602c412747a06614bf",
+      "size": 207390,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "digha",
+    "name": "Digha",
+    "nameIt": "Digha",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.51014,
+      21.62791
+    ],
+    "zoom": 11.2,
+    "population": 56741,
+    "grid": "cities/digha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/digha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "digha",
+        "name": "Digha",
+        "nameIt": "Digha",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.51014,
+          21.62791
+        ],
+        "zoom": 11.2,
+        "population": 56741,
+        "cells": 179,
+        "layer": "cities/digha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.51014,
+            21.62791
+          ]
+        },
+        "properties": {
+          "id": "digha",
+          "name": "Digha",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 16.9,
+          "population": 56741
+        }
+      },
+      "summary": null
+    }
+  }
+}

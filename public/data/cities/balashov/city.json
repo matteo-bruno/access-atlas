@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "balashov",
+  "createdAt": "2026-10-08T15:13:56.758Z",
+  "updatedAt": "2026-10-08T15:13:56.758Z",
+  "meta": {
+    "name": "Balashov",
+    "nameIt": "Balashov",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Balashov.geojson",
+      "sha256": "f7eca5eaa60751a8f320e86520d3a3acbcaa3f36914e97917efdb4a4d16bae09",
+      "size": 239536,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "balashov",
+    "name": "Balashov",
+    "nameIt": "Balashov",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      43.16932,
+      51.54624
+    ],
+    "zoom": 11.2,
+    "population": 56763,
+    "grid": "cities/balashov/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/balashov/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "balashov",
+        "name": "Balashov",
+        "nameIt": "Balashov",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          43.16932,
+          51.54624
+        ],
+        "zoom": 11.2,
+        "population": 56763,
+        "cells": 208,
+        "layer": "cities/balashov/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.16932,
+            51.54624
+          ]
+        },
+        "properties": {
+          "id": "balashov",
+          "name": "Balashov",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 16.5,
+          "population": 56763
+        }
+      },
+      "summary": null
+    }
+  }
+}

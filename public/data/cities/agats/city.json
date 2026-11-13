@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "agats",
+  "createdAt": "2026-10-08T15:02:50.784Z",
+  "updatedAt": "2026-10-08T15:02:50.784Z",
+  "meta": {
+    "name": "Agats",
+    "nameIt": "Agats",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Agats.geojson",
+      "sha256": "698dae753f21b6b48f4e92e2f10ecab6da9679a2e302c2e0f80b6df45c463e54",
+      "size": 64430,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "agats",
+    "name": "Agats",
+    "nameIt": "Agats",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      138.13713,
+      -5.53911
+    ],
+    "zoom": 12,
+    "population": 37577,
+    "grid": "cities/agats/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/agats/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "agats",
+        "name": "Agats",
+        "nameIt": "Agats",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          138.13713,
+          -5.53911
+        ],
+        "zoom": 12,
+        "population": 37577,
+        "cells": 55,
+        "layer": "cities/agats/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            138.13713,
+            -5.53911
+          ]
+        },
+        "properties": {
+          "id": "agats",
+          "name": "Agats",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 8.2,
+          "population": 37577
+        }
+      },
+      "summary": null
+    }
+  }
+}

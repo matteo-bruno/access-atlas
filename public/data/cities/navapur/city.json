@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "navapur",
+  "createdAt": "2026-10-08T16:00:39.338Z",
+  "updatedAt": "2026-10-08T16:00:39.338Z",
+  "meta": {
+    "name": "Navapur",
+    "nameIt": "Navapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Navapur.geojson",
+      "sha256": "c553a92768af6aaac3cb2398cf5221651043c7b8ee10167d1e4b4424fa583599",
+      "size": 142457,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "navapur",
+    "name": "Navapur",
+    "nameIt": "Navapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.78924,
+      21.1636
+    ],
+    "zoom": 11.7,
+    "population": 40639,
+    "grid": "cities/navapur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/navapur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "navapur",
+        "name": "Navapur",
+        "nameIt": "Navapur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.78924,
+          21.1636
+        ],
+        "zoom": 11.7,
+        "population": 40639,
+        "cells": 123,
+        "layer": "cities/navapur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.78924,
+            21.1636
+          ]
+        },
+        "properties": {
+          "id": "navapur",
+          "name": "Navapur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 40639
+        }
+      },
+      "summary": null
+    }
+  }
+}

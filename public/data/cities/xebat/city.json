@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xebat",
+  "createdAt": "2026-10-08T16:22:12.655Z",
+  "updatedAt": "2026-10-08T16:22:12.655Z",
+  "meta": {
+    "name": "Xebat",
+    "nameIt": "Xebat",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xebat.geojson",
+      "sha256": "0f428f51e33e56fcde3a943e9aa212dff5f7651b072d23777fa5927d3cc2d307",
+      "size": 74015,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xebat",
+    "name": "Xebat",
+    "nameIt": "Xebat",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      43.67343,
+      36.27651
+    ],
+    "zoom": 12,
+    "population": 33771,
+    "grid": "cities/xebat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xebat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xebat",
+        "name": "Xebat",
+        "nameIt": "Xebat",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          43.67343,
+          36.27651
+        ],
+        "zoom": 12,
+        "population": 33771,
+        "cells": 64,
+        "layer": "cities/xebat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.67343,
+            36.27651
+          ]
+        },
+        "properties": {
+          "id": "xebat",
+          "name": "Xebat",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 11.7,
+          "population": 33771
+        }
+      },
+      "summary": null
+    }
+  }
+}

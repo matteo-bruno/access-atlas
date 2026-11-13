@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pelotas",
+  "createdAt": "2026-10-08T16:04:55.586Z",
+  "updatedAt": "2026-10-08T16:04:55.586Z",
+  "meta": {
+    "name": "Pelotas",
+    "nameIt": "Pelotas",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pelotas.geojson",
+      "sha256": "57db71977abbb7583a62a723c7470b1bc750f1c80801425251f3dda54c19b1b2",
+      "size": 925578,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pelotas",
+    "name": "Pelotas",
+    "nameIt": "Pelotas",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -52.34307,
+      -31.74687
+    ],
+    "zoom": 10.6,
+    "population": 246864,
+    "grid": "cities/pelotas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 182
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pelotas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pelotas",
+        "name": "Pelotas",
+        "nameIt": "Pelotas",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -52.34307,
+          -31.74687
+        ],
+        "zoom": 10.6,
+        "population": 246864,
+        "cells": 793,
+        "layer": "cities/pelotas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 182
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -52.34307,
+            -31.74687
+          ]
+        },
+        "properties": {
+          "id": "pelotas",
+          "name": "Pelotas",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 246864
+        }
+      },
+      "summary": null
+    }
+  }
+}

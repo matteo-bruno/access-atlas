@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gimpo",
+  "createdAt": "2026-10-08T15:35:16.665Z",
+  "updatedAt": "2026-10-08T15:35:16.665Z",
+  "meta": {
+    "name": "Gimpo",
+    "nameIt": "Gimpo",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gimpo.geojson",
+      "sha256": "b726bf989330e9902260a3aa9ba731d9d22dc6b11e8d515f69dfa12de09660a1",
+      "size": 771968,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gimpo",
+    "name": "Gimpo",
+    "nameIt": "Gimpo",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      126.69233,
+      37.60673
+    ],
+    "zoom": 10.3,
+    "population": 282311,
+    "grid": "cities/gimpo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 168
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gimpo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gimpo",
+        "name": "Gimpo",
+        "nameIt": "Gimpo",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          126.69233,
+          37.60673
+        ],
+        "zoom": 10.3,
+        "population": 282311,
+        "cells": 669,
+        "layer": "cities/gimpo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 168
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            126.69233,
+            37.60673
+          ]
+        },
+        "properties": {
+          "id": "gimpo",
+          "name": "Gimpo",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 282311
+        }
+      },
+      "summary": null
+    }
+  }
+}

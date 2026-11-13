@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mirzapur",
+  "createdAt": "2026-10-08T15:57:24.446Z",
+  "updatedAt": "2026-10-08T15:57:24.446Z",
+  "meta": {
+    "name": "Mirzapur",
+    "nameIt": "Mirzapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mirzapur.geojson",
+      "sha256": "e7a69b1fd8cd1d6f00b0d6c22c63c3e1d1be24f9e8aa1b095a084d9678ac6612",
+      "size": 1406460,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mirzapur",
+    "name": "Mirzapur",
+    "nameIt": "Mirzapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      82.56907,
+      25.14441
+    ],
+    "zoom": 9.9,
+    "population": 714955,
+    "grid": "cities/mirzapur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mirzapur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mirzapur",
+        "name": "Mirzapur",
+        "nameIt": "Mirzapur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          82.56907,
+          25.14441
+        ],
+        "zoom": 9.9,
+        "population": 714955,
+        "cells": 1212,
+        "layer": "cities/mirzapur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            82.56907,
+            25.14441
+          ]
+        },
+        "properties": {
+          "id": "mirzapur",
+          "name": "Mirzapur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 42.6,
+          "population": 714955
+        }
+      },
+      "summary": null
+    }
+  }
+}

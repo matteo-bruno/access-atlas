@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "birampur",
+  "createdAt": "2026-10-08T15:19:09.470Z",
+  "updatedAt": "2026-10-08T15:19:09.470Z",
+  "meta": {
+    "name": "Birampur",
+    "nameIt": "Birampur",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Birampur.geojson",
+      "sha256": "d5b66b91f12dac6af4471047bdc035b1bc442989c134e19f4c5d11497bbf6311",
+      "size": 113239,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "birampur",
+    "name": "Birampur",
+    "nameIt": "Birampur",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      88.99028,
+      25.38863
+    ],
+    "zoom": 11.9,
+    "population": 36385,
+    "grid": "cities/birampur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/birampur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "birampur",
+        "name": "Birampur",
+        "nameIt": "Birampur",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          88.99028,
+          25.38863
+        ],
+        "zoom": 11.9,
+        "population": 36385,
+        "cells": 98,
+        "layer": "cities/birampur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.99028,
+            25.38863
+          ]
+        },
+        "properties": {
+          "id": "birampur",
+          "name": "Birampur",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 36385
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kothagudem",
+  "createdAt": "2026-10-08T15:48:08.613Z",
+  "updatedAt": "2026-10-08T15:48:08.613Z",
+  "meta": {
+    "name": "Kothagudem",
+    "nameIt": "Kothagudem",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kothagudem.geojson",
+      "sha256": "91f33f0d684bc1253761ad23a7f3a5af8b4cead24619cffc25e88624a9803435",
+      "size": 145859,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kothagudem",
+    "name": "Kothagudem",
+    "nameIt": "Kothagudem",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.61823,
+      17.54838
+    ],
+    "zoom": 11.7,
+    "population": 110117,
+    "grid": "cities/kothagudem/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kothagudem/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kothagudem",
+        "name": "Kothagudem",
+        "nameIt": "Kothagudem",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.61823,
+          17.54838
+        ],
+        "zoom": 11.7,
+        "population": 110117,
+        "cells": 126,
+        "layer": "cities/kothagudem/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.61823,
+            17.54838
+          ]
+        },
+        "properties": {
+          "id": "kothagudem",
+          "name": "Kothagudem",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 13.2,
+          "population": 110117
+        }
+      },
+      "summary": null
+    }
+  }
+}

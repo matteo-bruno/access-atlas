@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wikong",
+  "createdAt": "2026-10-08T16:21:40.998Z",
+  "updatedAt": "2026-10-08T16:21:40.998Z",
+  "meta": {
+    "name": "Wikong",
+    "nameIt": "Wikong",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wikong.geojson",
+      "sha256": "aff40d58795955c98c0732d32016b546db0935eae758bedc6ec6f320651e5f1d",
+      "size": 103890,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wikong",
+    "name": "Wikong",
+    "nameIt": "Wikong",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      23.37462,
+      -7.79746
+    ],
+    "zoom": 11.9,
+    "population": 52324,
+    "grid": "cities/wikong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wikong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wikong",
+        "name": "Wikong",
+        "nameIt": "Wikong",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          23.37462,
+          -7.79746
+        ],
+        "zoom": 11.9,
+        "population": 52324,
+        "cells": 89,
+        "layer": "cities/wikong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.37462,
+            -7.79746
+          ]
+        },
+        "properties": {
+          "id": "wikong",
+          "name": "Wikong",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 52324
+        }
+      },
+      "summary": null
+    }
+  }
+}

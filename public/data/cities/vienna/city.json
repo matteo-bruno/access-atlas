@@ -3,7 +3,7 @@
   "version": 1,
   "id": "vienna",
   "createdAt": "2026-08-28T13:51:44.000Z",
-  "updatedAt": "2026-10-08T14:05:37.124Z",
+  "updatedAt": "2026-10-19T21:12:24.813Z",
   "meta": {
     "name": "Vienna",
     "nameIt": "Vienna",
@@ -20,30 +20,128 @@
     "regionIt": "Austria",
     "country": "AT",
     "center": [
-      16.3743,
-      48.20471
+      16.37225,
+      48.20063
     ],
-    "zoom": 9.2,
-    "population": 1920660,
+    "zoom": 9.1,
+    "population": 2006135,
     "grid": "cities/vienna/grid.json.gz",
     "cell": {
       "h3Resolution": 9,
       "cellRadiusM": 201
     },
     "layers": [
+      "fifteen",
+      "citychrone",
       "cardep",
       "pov"
     ],
     "layerData": {
+      "fifteen": "cities/vienna/fifteen.json.gz",
+      "citychrone": "cities/vienna/citychrone.json.gz",
       "cardep": "cities/vienna/cardep.json.gz",
       "pov": "cities/vienna/pov.json.gz"
     },
     "cartogramSources": {
+      "fifteen": "derived",
+      "citychrone": "derived",
       "cardep": "derived",
       "pov": "derived"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 3980,
+      "times": "cities/vienna/citychrone/times{hh}.bin"
     }
   },
   "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vienna",
+        "name": "Vienna",
+        "nameIt": "Vienna",
+        "region": "Austria",
+        "regionIt": "Austria",
+        "country": "AT",
+        "center": [
+          16.36512,
+          48.20175
+        ],
+        "zoom": 9.2,
+        "population": 2059737,
+        "cells": 3119,
+        "layer": "cities/vienna/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.36512,
+            48.20175
+          ]
+        },
+        "properties": {
+          "id": "vienna",
+          "name": "Vienna",
+          "country": "AT",
+          "isStudy": true,
+          "proximityMinutes": 5.8,
+          "population": 2059737
+        }
+      },
+      "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "vienna",
+        "name": "Vienna",
+        "nameIt": "Vienna",
+        "region": "Austria",
+        "regionIt": "Austria",
+        "country": "AT",
+        "center": [
+          16.3743,
+          48.20471
+        ],
+        "zoom": 9.2,
+        "population": 1920660,
+        "cells": 3980,
+        "layer": "cities/vienna/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 3980,
+          "times": "cities/vienna/citychrone/times{hh}.bin"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.3743,
+            48.20471
+          ]
+        },
+        "properties": {
+          "id": "vienna",
+          "name": "Vienna",
+          "country": "AT",
+          "isStudy": true,
+          "velocityScore": 6,
+          "population": 1920660
+        }
+      },
+      "summary": null
+    },
     "cardep": {
       "row": {
         "id": "vienna",

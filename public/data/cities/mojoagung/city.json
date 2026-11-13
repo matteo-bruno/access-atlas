@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mojoagung",
+  "createdAt": "2026-10-08T15:57:51.410Z",
+  "updatedAt": "2026-10-08T15:57:51.410Z",
+  "meta": {
+    "name": "Mojoagung",
+    "nameIt": "Mojoagung",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mojoagung.geojson",
+      "sha256": "abd693058f6f0516b0722acfccf658ca0e07b5f83320931fe4522d1bd34757bf",
+      "size": 276689,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mojoagung",
+    "name": "Mojoagung",
+    "nameIt": "Mojoagung",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      112.35995,
+      -7.56706
+    ],
+    "zoom": 11.2,
+    "population": 72702,
+    "grid": "cities/mojoagung/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mojoagung/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mojoagung",
+        "name": "Mojoagung",
+        "nameIt": "Mojoagung",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          112.35995,
+          -7.56706
+        ],
+        "zoom": 11.2,
+        "population": 72702,
+        "cells": 236,
+        "layer": "cities/mojoagung/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.35995,
+            -7.56706
+          ]
+        },
+        "properties": {
+          "id": "mojoagung",
+          "name": "Mojoagung",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 51.4,
+          "population": 72702
+        }
+      },
+      "summary": null
+    }
+  }
+}

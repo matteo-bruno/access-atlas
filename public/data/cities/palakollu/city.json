@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "palakollu",
+  "createdAt": "2026-10-08T16:03:44.515Z",
+  "updatedAt": "2026-10-08T16:03:44.515Z",
+  "meta": {
+    "name": "Palakollu",
+    "nameIt": "Palakollu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Palakollu.geojson",
+      "sha256": "d097b70534442801651df01d21dc6f745a0f58646104db72a7932d8cc2020837",
+      "size": 212072,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "palakollu",
+    "name": "Palakollu",
+    "nameIt": "Palakollu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.72676,
+      16.52069
+    ],
+    "zoom": 11.2,
+    "population": 90939,
+    "grid": "cities/palakollu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/palakollu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "palakollu",
+        "name": "Palakollu",
+        "nameIt": "Palakollu",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.72676,
+          16.52069
+        ],
+        "zoom": 11.2,
+        "population": 90939,
+        "cells": 183,
+        "layer": "cities/palakollu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.72676,
+            16.52069
+          ]
+        },
+        "properties": {
+          "id": "palakollu",
+          "name": "Palakollu",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 16.4,
+          "population": 90939
+        }
+      },
+      "summary": null
+    }
+  }
+}

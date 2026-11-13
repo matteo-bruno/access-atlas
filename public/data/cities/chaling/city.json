@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chaling",
+  "createdAt": "2026-10-08T15:23:18.910Z",
+  "updatedAt": "2026-10-08T15:23:18.910Z",
+  "meta": {
+    "name": "Chaling",
+    "nameIt": "Chaling",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chaling.geojson",
+      "sha256": "e73586445deb681785bd7bba083393adb95633fb201c3a30735cd59119105ba1",
+      "size": 204540,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chaling",
+    "name": "Chaling",
+    "nameIt": "Chaling",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.53347,
+      26.7856
+    ],
+    "zoom": 11.5,
+    "population": 84337,
+    "grid": "cities/chaling/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chaling/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chaling",
+        "name": "Chaling",
+        "nameIt": "Chaling",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.53347,
+          26.7856
+        ],
+        "zoom": 11.5,
+        "population": 84337,
+        "cells": 175,
+        "layer": "cities/chaling/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.53347,
+            26.7856
+          ]
+        },
+        "properties": {
+          "id": "chaling",
+          "name": "Chaling",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 84337
+        }
+      },
+      "summary": null
+    }
+  }
+}

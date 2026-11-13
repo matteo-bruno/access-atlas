@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pattoki",
+  "createdAt": "2026-10-08T16:04:45.470Z",
+  "updatedAt": "2026-10-08T16:04:45.470Z",
+  "meta": {
+    "name": "Pattoki",
+    "nameIt": "Pattoki",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pattoki.geojson",
+      "sha256": "2db04496a6f755a1a91a601542151034fdc31aa3ea3f1b16a45af3943829bde2",
+      "size": 255999,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pattoki",
+    "name": "Pattoki",
+    "nameIt": "Pattoki",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      73.85123,
+      31.02401
+    ],
+    "zoom": 11.2,
+    "population": 193246,
+    "grid": "cities/pattoki/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pattoki/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pattoki",
+        "name": "Pattoki",
+        "nameIt": "Pattoki",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          73.85123,
+          31.02401
+        ],
+        "zoom": 11.2,
+        "population": 193246,
+        "cells": 221,
+        "layer": "cities/pattoki/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.85123,
+            31.02401
+          ]
+        },
+        "properties": {
+          "id": "pattoki",
+          "name": "Pattoki",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 193246
+        }
+      },
+      "summary": null
+    }
+  }
+}

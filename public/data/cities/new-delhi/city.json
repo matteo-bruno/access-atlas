@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "new-delhi",
+  "createdAt": "2026-10-08T16:01:07.498Z",
+  "updatedAt": "2026-10-08T16:01:07.498Z",
+  "meta": {
+    "name": "New Delhi",
+    "nameIt": "New Delhi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/New Delhi.geojson",
+      "sha256": "507d9eef17d9d04e90d8873f45be4d4eeb285a498b6163e8c43dee69d3ea2eb6",
+      "size": 22521581,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "new-delhi",
+    "name": "New Delhi",
+    "nameIt": "New Delhi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.22273,
+      28.61513
+    ],
+    "zoom": 8.5,
+    "population": 32981076,
+    "grid": "cities/new-delhi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/new-delhi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "new-delhi",
+        "name": "New Delhi",
+        "nameIt": "New Delhi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.22273,
+          28.61513
+        ],
+        "zoom": 8.5,
+        "population": 32981076,
+        "cells": 19523,
+        "layer": "cities/new-delhi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.22273,
+            28.61513
+          ]
+        },
+        "properties": {
+          "id": "new-delhi",
+          "name": "New Delhi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 25.2,
+          "population": 32981076
+        }
+      },
+      "summary": null
+    }
+  }
+}

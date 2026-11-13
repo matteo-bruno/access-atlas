@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "beledweyne",
+  "createdAt": "2026-10-08T15:17:05.308Z",
+  "updatedAt": "2026-10-08T15:17:05.308Z",
+  "meta": {
+    "name": "Beledweyne",
+    "nameIt": "Beledweyne",
+    "region": "Somalia",
+    "regionIt": "Somalia",
+    "country": "SO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Beledweyne.geojson",
+      "sha256": "7bfd4b924f1a7721aa720ef1d40c2fc69d9ce9877b1c97dac7688c7283049ca8",
+      "size": 240376,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "beledweyne",
+    "name": "Beledweyne",
+    "nameIt": "Beledweyne",
+    "region": "Somalia",
+    "regionIt": "Somalia",
+    "country": "SO",
+    "center": [
+      45.20481,
+      4.73917
+    ],
+    "zoom": 11.6,
+    "population": 148687,
+    "grid": "cities/beledweyne/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/beledweyne/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "beledweyne",
+        "name": "Beledweyne",
+        "nameIt": "Beledweyne",
+        "region": "Somalia",
+        "regionIt": "Somalia",
+        "country": "SO",
+        "center": [
+          45.20481,
+          4.73917
+        ],
+        "zoom": 11.6,
+        "population": 148687,
+        "cells": 208,
+        "layer": "cities/beledweyne/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            45.20481,
+            4.73917
+          ]
+        },
+        "properties": {
+          "id": "beledweyne",
+          "name": "Beledweyne",
+          "country": "SO",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 148687
+        }
+      },
+      "summary": null
+    }
+  }
+}

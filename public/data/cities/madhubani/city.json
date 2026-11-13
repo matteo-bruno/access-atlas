@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "madhubani",
+  "createdAt": "2026-10-08T15:53:23.186Z",
+  "updatedAt": "2026-10-08T15:53:23.186Z",
+  "meta": {
+    "name": "Madhubani",
+    "nameIt": "Madhubani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Madhubani.geojson",
+      "sha256": "aa7a8973c901da7fb51559c32e772e79c117d27353615ef6f44d05749e93149e",
+      "size": 418471,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "madhubani",
+    "name": "Madhubani",
+    "nameIt": "Madhubani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.07147,
+      26.34743
+    ],
+    "zoom": 10.6,
+    "population": 290363,
+    "grid": "cities/madhubani/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/madhubani/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "madhubani",
+        "name": "Madhubani",
+        "nameIt": "Madhubani",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.07147,
+          26.34743
+        ],
+        "zoom": 10.6,
+        "population": 290363,
+        "cells": 361,
+        "layer": "cities/madhubani/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.07147,
+            26.34743
+          ]
+        },
+        "properties": {
+          "id": "madhubani",
+          "name": "Madhubani",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 22,
+          "population": 290363
+        }
+      },
+      "summary": null
+    }
+  }
+}

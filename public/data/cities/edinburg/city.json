@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "edinburg",
+  "createdAt": "2026-10-08T15:31:42.678Z",
+  "updatedAt": "2026-10-08T15:31:42.678Z",
+  "meta": {
+    "name": "Edinburg",
+    "nameIt": "Edinburg",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Edinburg.geojson",
+      "sha256": "642aa83118cb726fedd4521248996b22f9459c58a7b2b0608d4d83f83dce211c",
+      "size": 283983,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "edinburg",
+    "name": "Edinburg",
+    "nameIt": "Edinburg",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -98.17651,
+      26.30022
+    ],
+    "zoom": 11,
+    "population": 49759,
+    "grid": "cities/edinburg/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/edinburg/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "edinburg",
+        "name": "Edinburg",
+        "nameIt": "Edinburg",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -98.17651,
+          26.30022
+        ],
+        "zoom": 11,
+        "population": 49759,
+        "cells": 244,
+        "layer": "cities/edinburg/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -98.17651,
+            26.30022
+          ]
+        },
+        "properties": {
+          "id": "edinburg",
+          "name": "Edinburg",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 19.6,
+          "population": 49759
+        }
+      },
+      "summary": null
+    }
+  }
+}

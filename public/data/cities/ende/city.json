@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ende",
+  "createdAt": "2026-10-08T15:32:16.413Z",
+  "updatedAt": "2026-10-08T15:32:16.413Z",
+  "meta": {
+    "name": "Ende",
+    "nameIt": "Ende",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ende.geojson",
+      "sha256": "db98a85b2fddbda818dd7141f6118869ff78d2c3823eb119cbdfe7c6213c5c59",
+      "size": 259570,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ende",
+    "name": "Ende",
+    "nameIt": "Ende",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      121.65763,
+      -8.84279
+    ],
+    "zoom": 11.4,
+    "population": 104897,
+    "grid": "cities/ende/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ende/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ende",
+        "name": "Ende",
+        "nameIt": "Ende",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          121.65763,
+          -8.84279
+        ],
+        "zoom": 11.4,
+        "population": 104897,
+        "cells": 222,
+        "layer": "cities/ende/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.65763,
+            -8.84279
+          ]
+        },
+        "properties": {
+          "id": "ende",
+          "name": "Ende",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 23.1,
+          "population": 104897
+        }
+      },
+      "summary": null
+    }
+  }
+}

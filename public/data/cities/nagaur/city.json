@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nagaur",
+  "createdAt": "2026-10-08T15:59:40.484Z",
+  "updatedAt": "2026-10-08T15:59:40.484Z",
+  "meta": {
+    "name": "Nagaur",
+    "nameIt": "Nagaur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nagaur.geojson",
+      "sha256": "720e33a2b9dbb0ffc85d437c93e8c38edabc10f2af8adace305b44374b3efcee",
+      "size": 311870,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nagaur",
+    "name": "Nagaur",
+    "nameIt": "Nagaur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.73586,
+      27.19758
+    ],
+    "zoom": 11.2,
+    "population": 165220,
+    "grid": "cities/nagaur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nagaur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nagaur",
+        "name": "Nagaur",
+        "nameIt": "Nagaur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.73586,
+          27.19758
+        ],
+        "zoom": 11.2,
+        "population": 165220,
+        "cells": 269,
+        "layer": "cities/nagaur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.73586,
+            27.19758
+          ]
+        },
+        "properties": {
+          "id": "nagaur",
+          "name": "Nagaur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 24.4,
+          "population": 165220
+        }
+      },
+      "summary": null
+    }
+  }
+}

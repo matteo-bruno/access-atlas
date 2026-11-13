@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "maastricht",
+  "createdAt": "2026-10-08T15:53:11.173Z",
+  "updatedAt": "2026-10-08T15:53:11.173Z",
+  "meta": {
+    "name": "Maastricht",
+    "nameIt": "Maastricht",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Maastricht.geojson",
+      "sha256": "c26d799a3559a078fe68eb51e14023c10292e157a7439be6d98ec358a2789cc0",
+      "size": 458461,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "maastricht",
+    "name": "Maastricht",
+    "nameIt": "Maastricht",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      5.69801,
+      50.84864
+    ],
+    "zoom": 11,
+    "population": 110192,
+    "grid": "cities/maastricht/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/maastricht/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "maastricht",
+        "name": "Maastricht",
+        "nameIt": "Maastricht",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          5.69801,
+          50.84864
+        ],
+        "zoom": 11,
+        "population": 110192,
+        "cells": 403,
+        "layer": "cities/maastricht/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.69801,
+            50.84864
+          ]
+        },
+        "properties": {
+          "id": "maastricht",
+          "name": "Maastricht",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 110192
+        }
+      },
+      "summary": null
+    }
+  }
+}

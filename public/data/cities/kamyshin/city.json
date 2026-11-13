@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kamyshin",
+  "createdAt": "2026-10-08T15:44:47.161Z",
+  "updatedAt": "2026-10-08T15:44:47.161Z",
+  "meta": {
+    "name": "Kamyshin",
+    "nameIt": "Kamyshin",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kamyshin.geojson",
+      "sha256": "f92c8e2113bed13babddae2008fd1d5385c9dc8bce12858f333e1d050bfc2951",
+      "size": 291959,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kamyshin",
+    "name": "Kamyshin",
+    "nameIt": "Kamyshin",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      45.40798,
+      50.09354
+    ],
+    "zoom": 11.1,
+    "population": 86800,
+    "grid": "cities/kamyshin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kamyshin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kamyshin",
+        "name": "Kamyshin",
+        "nameIt": "Kamyshin",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          45.40798,
+          50.09354
+        ],
+        "zoom": 11.1,
+        "population": 86800,
+        "cells": 255,
+        "layer": "cities/kamyshin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            45.40798,
+            50.09354
+          ]
+        },
+        "properties": {
+          "id": "kamyshin",
+          "name": "Kamyshin",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 17,
+          "population": 86800
+        }
+      },
+      "summary": null
+    }
+  }
+}

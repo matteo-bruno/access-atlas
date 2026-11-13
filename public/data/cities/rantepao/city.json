@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rantepao",
+  "createdAt": "2026-10-08T16:08:18.258Z",
+  "updatedAt": "2026-10-08T16:08:18.258Z",
+  "meta": {
+    "name": "Rantepao",
+    "nameIt": "Rantepao",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rantepao.geojson",
+      "sha256": "dd56e42c485126124ae9eaf38bf15d46be76763c4fc3163c79dd9a7f96969691",
+      "size": 117300,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rantepao",
+    "name": "Rantepao",
+    "nameIt": "Rantepao",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      119.90256,
+      -2.96748
+    ],
+    "zoom": 11.9,
+    "population": 50015,
+    "grid": "cities/rantepao/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rantepao/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rantepao",
+        "name": "Rantepao",
+        "nameIt": "Rantepao",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          119.90256,
+          -2.96748
+        ],
+        "zoom": 11.9,
+        "population": 50015,
+        "cells": 100,
+        "layer": "cities/rantepao/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.90256,
+            -2.96748
+          ]
+        },
+        "properties": {
+          "id": "rantepao",
+          "name": "Rantepao",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 16.2,
+          "population": 50015
+        }
+      },
+      "summary": null
+    }
+  }
+}

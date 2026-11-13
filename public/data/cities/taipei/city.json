@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "taipei",
+  "createdAt": "2026-10-08T16:16:04.822Z",
+  "updatedAt": "2026-10-08T16:16:04.822Z",
+  "meta": {
+    "name": "Taipei",
+    "nameIt": "Taipei",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Taipei.geojson",
+      "sha256": "66e87452718fee712c2a215705689771672244faa56e0ec7c88d746735530449",
+      "size": 12104941,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "taipei",
+    "name": "Taipei",
+    "nameIt": "Taipei",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW",
+    "center": [
+      121.45885,
+      25.02493
+    ],
+    "zoom": 8.5,
+    "population": 8589289,
+    "grid": "cities/taipei/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/taipei/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "taipei",
+        "name": "Taipei",
+        "nameIt": "Taipei",
+        "region": "Taiwan",
+        "regionIt": "Taiwan",
+        "country": "TW",
+        "center": [
+          121.45885,
+          25.02493
+        ],
+        "zoom": 8.5,
+        "population": 8589289,
+        "cells": 10494,
+        "layer": "cities/taipei/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.45885,
+            25.02493
+          ]
+        },
+        "properties": {
+          "id": "taipei",
+          "name": "Taipei",
+          "country": "TW",
+          "isStudy": true,
+          "proximityMinutes": 7.5,
+          "population": 8589289
+        }
+      },
+      "summary": null
+    }
+  }
+}

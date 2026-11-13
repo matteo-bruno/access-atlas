@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guangde",
+  "createdAt": "2026-10-08T15:36:11.228Z",
+  "updatedAt": "2026-10-08T15:36:11.228Z",
+  "meta": {
+    "name": "Guangde",
+    "nameIt": "Guangde",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guangde.geojson",
+      "sha256": "bf6956487d22e4d55db38d0981aad3f1d13a645bf2a6544052feecc24807686c",
+      "size": 474139,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guangde",
+    "name": "Guangde",
+    "nameIt": "Guangde",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.42698,
+      30.89169
+    ],
+    "zoom": 10.5,
+    "population": 207908,
+    "grid": "cities/guangde/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guangde/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guangde",
+        "name": "Guangde",
+        "nameIt": "Guangde",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.42698,
+          30.89169
+        ],
+        "zoom": 10.5,
+        "population": 207908,
+        "cells": 406,
+        "layer": "cities/guangde/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.42698,
+            30.89169
+          ]
+        },
+        "properties": {
+          "id": "guangde",
+          "name": "Guangde",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 20.9,
+          "population": 207908
+        }
+      },
+      "summary": null
+    }
+  }
+}

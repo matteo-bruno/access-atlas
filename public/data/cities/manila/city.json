@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "manila",
+  "createdAt": "2026-10-08T15:54:46.060Z",
+  "updatedAt": "2026-10-08T15:54:46.060Z",
+  "meta": {
+    "name": "Manila",
+    "nameIt": "Manila",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Manila.geojson",
+      "sha256": "7e02d410d24e83f5b2beba1819900ceee93ca5f2f3fcb007e0e1b2e8cda785a5",
+      "size": 27789423,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "manila",
+    "name": "Manila",
+    "nameIt": "Manila",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      121.01928,
+      14.57512
+    ],
+    "zoom": 8.5,
+    "population": 26726755,
+    "grid": "cities/manila/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/manila/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "manila",
+        "name": "Manila",
+        "nameIt": "Manila",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          121.01928,
+          14.57512
+        ],
+        "zoom": 8.5,
+        "population": 26726755,
+        "cells": 23938,
+        "layer": "cities/manila/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.01928,
+            14.57512
+          ]
+        },
+        "properties": {
+          "id": "manila",
+          "name": "Manila",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 26726755
+        }
+      },
+      "summary": null
+    }
+  }
+}

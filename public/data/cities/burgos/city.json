@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "burgos",
+  "createdAt": "2026-10-08T15:21:01.551Z",
+  "updatedAt": "2026-10-08T15:21:01.551Z",
+  "meta": {
+    "name": "Burgos",
+    "nameIt": "Burgos",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Burgos.geojson",
+      "sha256": "521569114b985461ae4c8c04a5e3b4baca1a1f7e4102e83ee71aebe0b54d960f",
+      "size": 244252,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "burgos",
+    "name": "Burgos",
+    "nameIt": "Burgos",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -3.68646,
+      42.34818
+    ],
+    "zoom": 11,
+    "population": 142422,
+    "grid": "cities/burgos/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/burgos/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "burgos",
+        "name": "Burgos",
+        "nameIt": "Burgos",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -3.68646,
+          42.34818
+        ],
+        "zoom": 11,
+        "population": 142422,
+        "cells": 213,
+        "layer": "cities/burgos/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -3.68646,
+            42.34818
+          ]
+        },
+        "properties": {
+          "id": "burgos",
+          "name": "Burgos",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 4.2,
+          "population": 142422
+        }
+      },
+      "summary": null
+    }
+  }
+}

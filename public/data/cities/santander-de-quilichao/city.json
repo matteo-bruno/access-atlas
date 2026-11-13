@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santander-de-quilichao",
+  "createdAt": "2026-10-08T16:11:11.261Z",
+  "updatedAt": "2026-10-08T16:11:11.261Z",
+  "meta": {
+    "name": "Santander de Quilichao",
+    "nameIt": "Santander de Quilichao",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santander de Quilichao.geojson",
+      "sha256": "30d5279ab623b74463d7538f238014693e3146335faba1de3c27448d01c39f5b",
+      "size": 69606,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santander-de-quilichao",
+    "name": "Santander de Quilichao",
+    "nameIt": "Santander de Quilichao",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -76.48542,
+      3.0085
+    ],
+    "zoom": 12,
+    "population": 58813,
+    "grid": "cities/santander-de-quilichao/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santander-de-quilichao/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santander-de-quilichao",
+        "name": "Santander de Quilichao",
+        "nameIt": "Santander de Quilichao",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -76.48542,
+          3.0085
+        ],
+        "zoom": 12,
+        "population": 58813,
+        "cells": 60,
+        "layer": "cities/santander-de-quilichao/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.48542,
+            3.0085
+          ]
+        },
+        "properties": {
+          "id": "santander-de-quilichao",
+          "name": "Santander de Quilichao",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 10.1,
+          "population": 58813
+        }
+      },
+      "summary": null
+    }
+  }
+}

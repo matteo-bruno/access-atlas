@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "colchester",
+  "createdAt": "2026-10-08T15:25:59.297Z",
+  "updatedAt": "2026-10-08T15:25:59.297Z",
+  "meta": {
+    "name": "Colchester",
+    "nameIt": "Colchester",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Colchester.geojson",
+      "sha256": "955469d63833b126c7039f0489c67d010077abd9b858a21ece4166269c7bb044",
+      "size": 491746,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "colchester",
+    "name": "Colchester",
+    "nameIt": "Colchester",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      0.89981,
+      51.88783
+    ],
+    "zoom": 10.9,
+    "population": 131868,
+    "grid": "cities/colchester/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/colchester/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "colchester",
+        "name": "Colchester",
+        "nameIt": "Colchester",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          0.89981,
+          51.88783
+        ],
+        "zoom": 10.9,
+        "population": 131868,
+        "cells": 430,
+        "layer": "cities/colchester/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.89981,
+            51.88783
+          ]
+        },
+        "properties": {
+          "id": "colchester",
+          "name": "Colchester",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 12.7,
+          "population": 131868
+        }
+      },
+      "summary": null
+    }
+  }
+}

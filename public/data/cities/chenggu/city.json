@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chenggu",
+  "createdAt": "2026-10-08T15:24:17.952Z",
+  "updatedAt": "2026-10-08T15:24:17.952Z",
+  "meta": {
+    "name": "Chenggu",
+    "nameIt": "Chenggu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chenggu.geojson",
+      "sha256": "345ec3916dd0ad6634039478c906748251995059a2190d858d1b0edd7556d7da",
+      "size": 174897,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chenggu",
+    "name": "Chenggu",
+    "nameIt": "Chenggu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      107.32282,
+      33.15299
+    ],
+    "zoom": 11.6,
+    "population": 160221,
+    "grid": "cities/chenggu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chenggu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chenggu",
+        "name": "Chenggu",
+        "nameIt": "Chenggu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          107.32282,
+          33.15299
+        ],
+        "zoom": 11.6,
+        "population": 160221,
+        "cells": 150,
+        "layer": "cities/chenggu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.32282,
+            33.15299
+          ]
+        },
+        "properties": {
+          "id": "chenggu",
+          "name": "Chenggu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 160221
+        }
+      },
+      "summary": null
+    }
+  }
+}

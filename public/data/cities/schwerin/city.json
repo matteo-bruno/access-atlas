@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "schwerin",
+  "createdAt": "2026-10-08T16:11:45.697Z",
+  "updatedAt": "2026-10-08T16:11:45.697Z",
+  "meta": {
+    "name": "Schwerin",
+    "nameIt": "Schwerin",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Schwerin.geojson",
+      "sha256": "7adfac1e8c83d1ebd70c707a4c6180629f55af877354a48bf22d8ac8f332ce5d",
+      "size": 198971,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "schwerin",
+    "name": "Schwerin",
+    "nameIt": "Schwerin",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      11.39415,
+      53.63676
+    ],
+    "zoom": 11.5,
+    "population": 41745,
+    "grid": "cities/schwerin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/schwerin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "schwerin",
+        "name": "Schwerin",
+        "nameIt": "Schwerin",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          11.39415,
+          53.63676
+        ],
+        "zoom": 11.5,
+        "population": 41745,
+        "cells": 174,
+        "layer": "cities/schwerin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.39415,
+            53.63676
+          ]
+        },
+        "properties": {
+          "id": "schwerin",
+          "name": "Schwerin",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 41745
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nankang-china",
+  "createdAt": "2026-10-08T16:00:05.330Z",
+  "updatedAt": "2026-10-08T16:00:05.330Z",
+  "meta": {
+    "name": "Nankang (China)",
+    "nameIt": "Nankang (China)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nankang (China).geojson",
+      "sha256": "3b30725c934b088cdf59077196b457b8d68d8a93ad58d24775f2ba85dfda9956",
+      "size": 1065085,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nankang-china",
+    "name": "Nankang (China)",
+    "nameIt": "Nankang (China)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.7755,
+      25.68589
+    ],
+    "zoom": 9.9,
+    "population": 492251,
+    "grid": "cities/nankang-china/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nankang-china/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nankang-china",
+        "name": "Nankang (China)",
+        "nameIt": "Nankang (China)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.7755,
+          25.68589
+        ],
+        "zoom": 9.9,
+        "population": 492251,
+        "cells": 912,
+        "layer": "cities/nankang-china/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.7755,
+            25.68589
+          ]
+        },
+        "properties": {
+          "id": "nankang-china",
+          "name": "Nankang (China)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 35.4,
+          "population": 492251
+        }
+      },
+      "summary": null
+    }
+  }
+}

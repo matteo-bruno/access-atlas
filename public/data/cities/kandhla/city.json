@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kandhla",
+  "createdAt": "2026-10-08T15:44:52.385Z",
+  "updatedAt": "2026-10-08T15:44:52.385Z",
+  "meta": {
+    "name": "Kandhla",
+    "nameIt": "Kandhla",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kandhla.geojson",
+      "sha256": "19271c3513f8ef7f5063070b538c3dfdbfc55b584c35a8b3f717ae353a789842",
+      "size": 51067,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kandhla",
+    "name": "Kandhla",
+    "nameIt": "Kandhla",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.27006,
+      29.32268
+    ],
+    "zoom": 12,
+    "population": 45133,
+    "grid": "cities/kandhla/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kandhla/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kandhla",
+        "name": "Kandhla",
+        "nameIt": "Kandhla",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.27006,
+          29.32268
+        ],
+        "zoom": 12,
+        "population": 45133,
+        "cells": 44,
+        "layer": "cities/kandhla/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.27006,
+            29.32268
+          ]
+        },
+        "properties": {
+          "id": "kandhla",
+          "name": "Kandhla",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 45133
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yun",
+  "createdAt": "2026-10-08T16:24:28.980Z",
+  "updatedAt": "2026-10-08T16:24:28.980Z",
+  "meta": {
+    "name": "Yun",
+    "nameIt": "Yun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yun.geojson",
+      "sha256": "5d89cb3a2e41b5b3c4edbd87f8226c0c80a4ffcda504eb74832ea47338e9e7fa",
+      "size": 122767,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yun",
+    "name": "Yun",
+    "nameIt": "Yun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      100.13366,
+      24.44265
+    ],
+    "zoom": 12,
+    "population": 162138,
+    "grid": "cities/yun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yun",
+        "name": "Yun",
+        "nameIt": "Yun",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          100.13366,
+          24.44265
+        ],
+        "zoom": 12,
+        "population": 162138,
+        "cells": 105,
+        "layer": "cities/yun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            100.13366,
+            24.44265
+          ]
+        },
+        "properties": {
+          "id": "yun",
+          "name": "Yun",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 162138
+        }
+      },
+      "summary": null
+    }
+  }
+}

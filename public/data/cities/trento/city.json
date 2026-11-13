@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "trento",
+  "createdAt": "2026-10-08T16:18:46.130Z",
+  "updatedAt": "2026-10-08T16:18:46.130Z",
+  "meta": {
+    "name": "Trento",
+    "nameIt": "Trento",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Trento.geojson",
+      "sha256": "8e14a0fb2df7fd5a2a79832bbe8d6ff1940f871aefdc89a37188dcd9ca43bd60",
+      "size": 283792,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "trento",
+    "name": "Trento",
+    "nameIt": "Trento",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      11.12238,
+      46.07355
+    ],
+    "zoom": 10.7,
+    "population": 81812,
+    "grid": "cities/trento/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/trento/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "trento",
+        "name": "Trento",
+        "nameIt": "Trento",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          11.12238,
+          46.07355
+        ],
+        "zoom": 10.7,
+        "population": 81812,
+        "cells": 248,
+        "layer": "cities/trento/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.12238,
+            46.07355
+          ]
+        },
+        "properties": {
+          "id": "trento",
+          "name": "Trento",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 8.3,
+          "population": 81812
+        }
+      },
+      "summary": null
+    }
+  }
+}

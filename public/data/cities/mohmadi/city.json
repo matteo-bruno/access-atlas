@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mohmadi",
+  "createdAt": "2026-10-08T15:57:48.670Z",
+  "updatedAt": "2026-10-08T15:57:48.670Z",
+  "meta": {
+    "name": "Mohmadi",
+    "nameIt": "Mohmadi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mohmadi.geojson",
+      "sha256": "0b7568e5c7742241247390d44125be23c8b457b610031b1ea35ec75c3769b90b",
+      "size": 107732,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mohmadi",
+    "name": "Mohmadi",
+    "nameIt": "Mohmadi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.2124,
+      27.95112
+    ],
+    "zoom": 11.9,
+    "population": 57291,
+    "grid": "cities/mohmadi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mohmadi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mohmadi",
+        "name": "Mohmadi",
+        "nameIt": "Mohmadi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.2124,
+          27.95112
+        ],
+        "zoom": 11.9,
+        "population": 57291,
+        "cells": 93,
+        "layer": "cities/mohmadi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.2124,
+            27.95112
+          ]
+        },
+        "properties": {
+          "id": "mohmadi",
+          "name": "Mohmadi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 57291
+        }
+      },
+      "summary": null
+    }
+  }
+}

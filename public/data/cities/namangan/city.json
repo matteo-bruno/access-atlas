@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "namangan",
+  "createdAt": "2026-10-08T15:59:55.246Z",
+  "updatedAt": "2026-10-08T15:59:55.246Z",
+  "meta": {
+    "name": "Namangan",
+    "nameIt": "Namangan",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Namangan.geojson",
+      "sha256": "3133e70f95c5a3bdf86063cf118c9f4cddc175b12cda4240e1f81b877dc73ed2",
+      "size": 2119147,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "namangan",
+    "name": "Namangan",
+    "nameIt": "Namangan",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      71.67793,
+      40.99797
+    ],
+    "zoom": 9.2,
+    "population": 639798,
+    "grid": "cities/namangan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/namangan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "namangan",
+        "name": "Namangan",
+        "nameIt": "Namangan",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          71.67793,
+          40.99797
+        ],
+        "zoom": 9.2,
+        "population": 639798,
+        "cells": 1841,
+        "layer": "cities/namangan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.67793,
+            40.99797
+          ]
+        },
+        "properties": {
+          "id": "namangan",
+          "name": "Namangan",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 54.5,
+          "population": 639798
+        }
+      },
+      "summary": null
+    }
+  }
+}

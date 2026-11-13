@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "argungu",
+  "createdAt": "2026-10-08T15:09:20.723Z",
+  "updatedAt": "2026-10-08T15:09:20.723Z",
+  "meta": {
+    "name": "Argungu",
+    "nameIt": "Argungu",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Argungu.geojson",
+      "sha256": "fca8df9e0f976faf56282f238df784cbc0298f9f75c22b8c0f3f0e4c30d478e9",
+      "size": 240027,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "argungu",
+    "name": "Argungu",
+    "nameIt": "Argungu",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      4.53536,
+      12.74362
+    ],
+    "zoom": 11.3,
+    "population": 110474,
+    "grid": "cities/argungu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/argungu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "argungu",
+        "name": "Argungu",
+        "nameIt": "Argungu",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          4.53536,
+          12.74362
+        ],
+        "zoom": 11.3,
+        "population": 110474,
+        "cells": 207,
+        "layer": "cities/argungu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.53536,
+            12.74362
+          ]
+        },
+        "properties": {
+          "id": "argungu",
+          "name": "Argungu",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 110474
+        }
+      },
+      "summary": null
+    }
+  }
+}

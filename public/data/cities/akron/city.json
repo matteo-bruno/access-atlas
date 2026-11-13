@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "akron",
+  "createdAt": "2026-10-08T15:03:50.478Z",
+  "updatedAt": "2026-10-08T15:03:50.478Z",
+  "meta": {
+    "name": "Akron",
+    "nameIt": "Akron",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Akron.geojson",
+      "sha256": "dbc0482078a013cec3b6a494f5c8c64896f126372d25740fa207f79632940fa2",
+      "size": 681525,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "akron",
+    "name": "Akron",
+    "nameIt": "Akron",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -81.52008,
+      41.06741
+    ],
+    "zoom": 10.3,
+    "population": 95929,
+    "grid": "cities/akron/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/akron/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "akron",
+        "name": "Akron",
+        "nameIt": "Akron",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -81.52008,
+          41.06741
+        ],
+        "zoom": 10.3,
+        "population": 95929,
+        "cells": 592,
+        "layer": "cities/akron/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.52008,
+            41.06741
+          ]
+        },
+        "properties": {
+          "id": "akron",
+          "name": "Akron",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 21.8,
+          "population": 95929
+        }
+      },
+      "summary": null
+    }
+  }
+}

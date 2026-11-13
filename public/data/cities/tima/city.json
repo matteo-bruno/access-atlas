@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tima",
+  "createdAt": "2026-10-08T16:17:54.777Z",
+  "updatedAt": "2026-10-08T16:17:54.777Z",
+  "meta": {
+    "name": "Tima",
+    "nameIt": "Tima",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tima.geojson",
+      "sha256": "aa5bfb1659a3b3394c8e659098b93d2254a2eaf7f134e6adc23fa5b9bbd14418",
+      "size": 358658,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tima",
+    "name": "Tima",
+    "nameIt": "Tima",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      31.45187,
+      26.90525
+    ],
+    "zoom": 10.5,
+    "population": 291982,
+    "grid": "cities/tima/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tima/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tima",
+        "name": "Tima",
+        "nameIt": "Tima",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          31.45187,
+          26.90525
+        ],
+        "zoom": 10.5,
+        "population": 291982,
+        "cells": 308,
+        "layer": "cities/tima/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.45187,
+            26.90525
+          ]
+        },
+        "properties": {
+          "id": "tima",
+          "name": "Tima",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 291982
+        }
+      },
+      "summary": null
+    }
+  }
+}

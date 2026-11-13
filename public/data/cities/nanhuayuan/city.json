@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nanhuayuan",
+  "createdAt": "2026-10-08T16:00:03.165Z",
+  "updatedAt": "2026-10-08T16:00:03.165Z",
+  "meta": {
+    "name": "Nanhuayuan",
+    "nameIt": "Nanhuayuan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nanhuayuan.geojson",
+      "sha256": "4f18c4a133e869e63a44f6fef5edef13cc114abdf9b80fb6e7be02bce1fd8b00",
+      "size": 423024,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nanhuayuan",
+    "name": "Nanhuayuan",
+    "nameIt": "Nanhuayuan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      123.93174,
+      41.83147
+    ],
+    "zoom": 11,
+    "population": 65263,
+    "grid": "cities/nanhuayuan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 167
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nanhuayuan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nanhuayuan",
+        "name": "Nanhuayuan",
+        "nameIt": "Nanhuayuan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          123.93174,
+          41.83147
+        ],
+        "zoom": 11,
+        "population": 65263,
+        "cells": 363,
+        "layer": "cities/nanhuayuan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 167
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.93174,
+            41.83147
+          ]
+        },
+        "properties": {
+          "id": "nanhuayuan",
+          "name": "Nanhuayuan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 10.9,
+          "population": 65263
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kisaran",
+  "createdAt": "2026-10-08T15:47:16.068Z",
+  "updatedAt": "2026-10-08T15:47:16.068Z",
+  "meta": {
+    "name": "Kisaran",
+    "nameIt": "Kisaran",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kisaran.geojson",
+      "sha256": "40dfe4b0b20aee2a9da16d217fed04131db543c38c1f7d6c4c70b0ca45742df0",
+      "size": 280899,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kisaran",
+    "name": "Kisaran",
+    "nameIt": "Kisaran",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      99.63826,
+      2.9778
+    ],
+    "zoom": 10.9,
+    "population": 162349,
+    "grid": "cities/kisaran/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kisaran/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kisaran",
+        "name": "Kisaran",
+        "nameIt": "Kisaran",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          99.63826,
+          2.9778
+        ],
+        "zoom": 10.9,
+        "population": 162349,
+        "cells": 243,
+        "layer": "cities/kisaran/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            99.63826,
+            2.9778
+          ]
+        },
+        "properties": {
+          "id": "kisaran",
+          "name": "Kisaran",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 41.3,
+          "population": 162349
+        }
+      },
+      "summary": null
+    }
+  }
+}

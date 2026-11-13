@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "puerto-maldonado",
+  "createdAt": "2026-10-08T16:06:45.093Z",
+  "updatedAt": "2026-10-08T16:06:45.093Z",
+  "meta": {
+    "name": "Puerto Maldonado",
+    "nameIt": "Puerto Maldonado",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Puerto Maldonado.geojson",
+      "sha256": "ce40ca7c3d451813c98c50dd014399667e2b8d68b0f7c6fbdf113cbdd8ddc53f",
+      "size": 174216,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "puerto-maldonado",
+    "name": "Puerto Maldonado",
+    "nameIt": "Puerto Maldonado",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -69.1952,
+      -12.59205
+    ],
+    "zoom": 11.6,
+    "population": 82666,
+    "grid": "cities/puerto-maldonado/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/puerto-maldonado/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "puerto-maldonado",
+        "name": "Puerto Maldonado",
+        "nameIt": "Puerto Maldonado",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -69.1952,
+          -12.59205
+        ],
+        "zoom": 11.6,
+        "population": 82666,
+        "cells": 148,
+        "layer": "cities/puerto-maldonado/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -69.1952,
+            -12.59205
+          ]
+        },
+        "properties": {
+          "id": "puerto-maldonado",
+          "name": "Puerto Maldonado",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 13.9,
+          "population": 82666
+        }
+      },
+      "summary": null
+    }
+  }
+}

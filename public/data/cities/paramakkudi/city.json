@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "paramakkudi",
+  "createdAt": "2026-10-08T16:04:15.405Z",
+  "updatedAt": "2026-10-08T16:04:15.405Z",
+  "meta": {
+    "name": "Paramakkudi",
+    "nameIt": "Paramakkudi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Paramakkudi.geojson",
+      "sha256": "19af227b442863f6e8abaf057a4b085f757454d9c4c9a6849b45aa02b16553b5",
+      "size": 168008,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "paramakkudi",
+    "name": "Paramakkudi",
+    "nameIt": "Paramakkudi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.59134,
+      9.54613
+    ],
+    "zoom": 11.2,
+    "population": 45163,
+    "grid": "cities/paramakkudi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/paramakkudi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "paramakkudi",
+        "name": "Paramakkudi",
+        "nameIt": "Paramakkudi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.59134,
+          9.54613
+        ],
+        "zoom": 11.2,
+        "population": 45163,
+        "cells": 146,
+        "layer": "cities/paramakkudi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.59134,
+            9.54613
+          ]
+        },
+        "properties": {
+          "id": "paramakkudi",
+          "name": "Paramakkudi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 45163
+        }
+      },
+      "summary": null
+    }
+  }
+}

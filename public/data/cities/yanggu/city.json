@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yanggu",
+  "createdAt": "2026-10-08T16:23:21.818Z",
+  "updatedAt": "2026-10-08T16:23:21.818Z",
+  "meta": {
+    "name": "Yanggu",
+    "nameIt": "Yanggu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yanggu.geojson",
+      "sha256": "0cffd01e09896525bfcff3f60f54dfefb20a3f8342ea651e448ec10332b3b67a",
+      "size": 727858,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yanggu",
+    "name": "Yanggu",
+    "nameIt": "Yanggu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      115.78177,
+      36.11353
+    ],
+    "zoom": 10.5,
+    "population": 216682,
+    "grid": "cities/yanggu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yanggu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yanggu",
+        "name": "Yanggu",
+        "nameIt": "Yanggu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          115.78177,
+          36.11353
+        ],
+        "zoom": 10.5,
+        "population": 216682,
+        "cells": 624,
+        "layer": "cities/yanggu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.78177,
+            36.11353
+          ]
+        },
+        "properties": {
+          "id": "yanggu",
+          "name": "Yanggu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 29.4,
+          "population": 216682
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "utraula",
+  "createdAt": "2026-10-08T16:20:09.684Z",
+  "updatedAt": "2026-10-08T16:20:09.684Z",
+  "meta": {
+    "name": "Utraula",
+    "nameIt": "Utraula",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Utraula.geojson",
+      "sha256": "f0be73006315d24f454a27c1d89af288983e5c39afbc20a534ef74a419cdcac4",
+      "size": 165689,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "utraula",
+    "name": "Utraula",
+    "nameIt": "Utraula",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      82.41112,
+      27.31626
+    ],
+    "zoom": 11.7,
+    "population": 65607,
+    "grid": "cities/utraula/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/utraula/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "utraula",
+        "name": "Utraula",
+        "nameIt": "Utraula",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          82.41112,
+          27.31626
+        ],
+        "zoom": 11.7,
+        "population": 65607,
+        "cells": 143,
+        "layer": "cities/utraula/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            82.41112,
+            27.31626
+          ]
+        },
+        "properties": {
+          "id": "utraula",
+          "name": "Utraula",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 65607
+        }
+      },
+      "summary": null
+    }
+  }
+}

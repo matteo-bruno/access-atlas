@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gushiegu",
+  "createdAt": "2026-10-08T15:36:51.988Z",
+  "updatedAt": "2026-10-08T15:36:51.988Z",
+  "meta": {
+    "name": "Gushiegu",
+    "nameIt": "Gushiegu",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gushiegu.geojson",
+      "sha256": "2561e847bdb4f2a6d11da9b7b9ef9868a3ec4851121aaaf7d3fe065c2818aede",
+      "size": 94983,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gushiegu",
+    "name": "Gushiegu",
+    "nameIt": "Gushiegu",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH",
+    "center": [
+      -0.21993,
+      9.92136
+    ],
+    "zoom": 12,
+    "population": 42316,
+    "grid": "cities/gushiegu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gushiegu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gushiegu",
+        "name": "Gushiegu",
+        "nameIt": "Gushiegu",
+        "region": "Ghana",
+        "regionIt": "Ghana",
+        "country": "GH",
+        "center": [
+          -0.21993,
+          9.92136
+        ],
+        "zoom": 12,
+        "population": 42316,
+        "cells": 81,
+        "layer": "cities/gushiegu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.21993,
+            9.92136
+          ]
+        },
+        "properties": {
+          "id": "gushiegu",
+          "name": "Gushiegu",
+          "country": "GH",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 42316
+        }
+      },
+      "summary": null
+    }
+  }
+}

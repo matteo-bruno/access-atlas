@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cairo-fua",
+  "createdAt": "2026-10-19T16:55:43.948Z",
+  "updatedAt": "2026-10-19T16:55:43.948Z",
+  "meta": {
+    "name": "Cairo",
+    "nameIt": "Cairo",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "cairo-fua",
+    "name": "Cairo",
+    "nameIt": "Cairo",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "extent": "fua",
+    "core": "cairo",
+    "center": [
+      31.26319,
+      30.07129
+    ],
+    "zoom": 8.5,
+    "population": 29761463,
+    "grid": "cities/cairo-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cairo-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cairo-fua",
+        "name": "Cairo",
+        "nameIt": "Cairo",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "extent": "fua",
+        "core": "cairo",
+        "center": [
+          31.26319,
+          30.07129
+        ],
+        "zoom": 8.5,
+        "population": 29761463,
+        "cells": 35017,
+        "layer": "cities/cairo-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.26319,
+            30.07129
+          ]
+        },
+        "properties": {
+          "id": "cairo-fua",
+          "name": "Cairo",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 46.9,
+          "population": 29761463
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abbotsford",
+  "createdAt": "2026-10-08T15:01:17.749Z",
+  "updatedAt": "2026-10-08T15:01:17.749Z",
+  "meta": {
+    "name": "Abbotsford",
+    "nameIt": "Abbotsford",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abbotsford.geojson",
+      "sha256": "07ef0ee3c3b550e1ca17bbb93eb29bd7c52115a5a4eb3760748410274bd52391",
+      "size": 498479,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abbotsford",
+    "name": "Abbotsford",
+    "nameIt": "Abbotsford",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -122.31143,
+      49.05052
+    ],
+    "zoom": 10.5,
+    "population": 96766,
+    "grid": "cities/abbotsford/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abbotsford/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abbotsford",
+        "name": "Abbotsford",
+        "nameIt": "Abbotsford",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -122.31143,
+          49.05052
+        ],
+        "zoom": 10.5,
+        "population": 96766,
+        "cells": 431,
+        "layer": "cities/abbotsford/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.31143,
+            49.05052
+          ]
+        },
+        "properties": {
+          "id": "abbotsford",
+          "name": "Abbotsford",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 96766
+        }
+      },
+      "summary": null
+    }
+  }
+}

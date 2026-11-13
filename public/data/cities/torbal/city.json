@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "torbal",
+  "createdAt": "2026-10-08T16:18:32.207Z",
+  "updatedAt": "2026-10-08T16:18:32.207Z",
+  "meta": {
+    "name": "Torbalı",
+    "nameIt": "Torbalı",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Torbalı.geojson",
+      "sha256": "7a4382fe08a49a867700d6858d3bf11d57305f9adc2862a99c49e33faa9ea557",
+      "size": 125138,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "torbal",
+    "name": "Torbalı",
+    "nameIt": "Torbalı",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      27.35849,
+      38.16209
+    ],
+    "zoom": 11.5,
+    "population": 84779,
+    "grid": "cities/torbal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/torbal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "torbal",
+        "name": "Torbalı",
+        "nameIt": "Torbalı",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          27.35849,
+          38.16209
+        ],
+        "zoom": 11.5,
+        "population": 84779,
+        "cells": 108,
+        "layer": "cities/torbal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.35849,
+            38.16209
+          ]
+        },
+        "properties": {
+          "id": "torbal",
+          "name": "Torbalı",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 84779
+        }
+      },
+      "summary": null
+    }
+  }
+}

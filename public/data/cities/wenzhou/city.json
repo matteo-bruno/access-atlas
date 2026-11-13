@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wenzhou",
+  "createdAt": "2026-10-08T16:21:37.038Z",
+  "updatedAt": "2026-10-08T16:21:37.038Z",
+  "meta": {
+    "name": "Wenzhou",
+    "nameIt": "Wenzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wenzhou.geojson",
+      "sha256": "648c353065a3535bbc93be78cb105bc2f5caaa098000ec71bf88a5f18738a6de",
+      "size": 6961741,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wenzhou",
+    "name": "Wenzhou",
+    "nameIt": "Wenzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      120.67428,
+      27.92091
+    ],
+    "zoom": 8.7,
+    "population": 3992057,
+    "grid": "cities/wenzhou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wenzhou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wenzhou",
+        "name": "Wenzhou",
+        "nameIt": "Wenzhou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          120.67428,
+          27.92091
+        ],
+        "zoom": 8.7,
+        "population": 3992057,
+        "cells": 5962,
+        "layer": "cities/wenzhou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.67428,
+            27.92091
+          ]
+        },
+        "properties": {
+          "id": "wenzhou",
+          "name": "Wenzhou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 72.9,
+          "population": 3992057
+        }
+      },
+      "summary": null
+    }
+  }
+}

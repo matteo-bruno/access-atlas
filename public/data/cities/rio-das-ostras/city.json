@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rio-das-ostras",
+  "createdAt": "2026-10-08T16:08:51.156Z",
+  "updatedAt": "2026-10-08T16:08:51.156Z",
+  "meta": {
+    "name": "Rio das Ostras",
+    "nameIt": "Rio das Ostras",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rio das Ostras.geojson",
+      "sha256": "b2c9e5a44ec80d13ac8db9f828cc06d3304de43d1125f7e0b123bf9d452c4d47",
+      "size": 706624,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rio-das-ostras",
+    "name": "Rio das Ostras",
+    "nameIt": "Rio das Ostras",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -41.9615,
+      -22.54999
+    ],
+    "zoom": 9.6,
+    "population": 233556,
+    "grid": "cities/rio-das-ostras/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rio-das-ostras/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rio-das-ostras",
+        "name": "Rio das Ostras",
+        "nameIt": "Rio das Ostras",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -41.9615,
+          -22.54999
+        ],
+        "zoom": 9.6,
+        "population": 233556,
+        "cells": 601,
+        "layer": "cities/rio-das-ostras/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -41.9615,
+            -22.54999
+          ]
+        },
+        "properties": {
+          "id": "rio-das-ostras",
+          "name": "Rio das Ostras",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 32.5,
+          "population": 233556
+        }
+      },
+      "summary": null
+    }
+  }
+}

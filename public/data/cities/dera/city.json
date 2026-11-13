@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dera",
+  "createdAt": "2026-10-08T15:29:00.132Z",
+  "updatedAt": "2026-10-08T15:29:00.132Z",
+  "meta": {
+    "name": "Dera",
+    "nameIt": "Dera",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dera.geojson",
+      "sha256": "e328ec1f292e283d9e3659704c0b391f606e125f02d0e337ee50a62c2ea9723e",
+      "size": 116406,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dera",
+    "name": "Dera",
+    "nameIt": "Dera",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      39.32045,
+      8.32548
+    ],
+    "zoom": 12,
+    "population": 53238,
+    "grid": "cities/dera/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dera/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dera",
+        "name": "Dera",
+        "nameIt": "Dera",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          39.32045,
+          8.32548
+        ],
+        "zoom": 12,
+        "population": 53238,
+        "cells": 101,
+        "layer": "cities/dera/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.32045,
+            8.32548
+          ]
+        },
+        "properties": {
+          "id": "dera",
+          "name": "Dera",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 53238
+        }
+      },
+      "summary": null
+    }
+  }
+}

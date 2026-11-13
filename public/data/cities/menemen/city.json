@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "menemen",
+  "createdAt": "2026-10-08T15:56:34.618Z",
+  "updatedAt": "2026-10-08T15:56:34.618Z",
+  "meta": {
+    "name": "Menemen",
+    "nameIt": "Menemen",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Menemen.geojson",
+      "sha256": "e00c5a67fabaa513e1386e1bb1ff6aa7ea995b99cabb716216a163777857c572",
+      "size": 107774,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "menemen",
+    "name": "Menemen",
+    "nameIt": "Menemen",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      27.07592,
+      38.59689
+    ],
+    "zoom": 11.8,
+    "population": 89362,
+    "grid": "cities/menemen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/menemen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "menemen",
+        "name": "Menemen",
+        "nameIt": "Menemen",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          27.07592,
+          38.59689
+        ],
+        "zoom": 11.8,
+        "population": 89362,
+        "cells": 93,
+        "layer": "cities/menemen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.07592,
+            38.59689
+          ]
+        },
+        "properties": {
+          "id": "menemen",
+          "name": "Menemen",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 89362
+        }
+      },
+      "summary": null
+    }
+  }
+}

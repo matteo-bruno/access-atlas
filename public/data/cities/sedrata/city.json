@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sedrata",
+  "createdAt": "2026-10-08T16:11:47.786Z",
+  "updatedAt": "2026-10-08T16:11:47.786Z",
+  "meta": {
+    "name": "Sedrata",
+    "nameIt": "Sedrata",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sedrata.geojson",
+      "sha256": "9b3153895653dcba2b80ec4513ade136c85622b4de5ce3fe11be2f660e204d3c",
+      "size": 59870,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sedrata",
+    "name": "Sedrata",
+    "nameIt": "Sedrata",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      7.53071,
+      36.13054
+    ],
+    "zoom": 12,
+    "population": 52340,
+    "grid": "cities/sedrata/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sedrata/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sedrata",
+        "name": "Sedrata",
+        "nameIt": "Sedrata",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          7.53071,
+          36.13054
+        ],
+        "zoom": 12,
+        "population": 52340,
+        "cells": 52,
+        "layer": "cities/sedrata/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.53071,
+            36.13054
+          ]
+        },
+        "properties": {
+          "id": "sedrata",
+          "name": "Sedrata",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 9.5,
+          "population": 52340
+        }
+      },
+      "summary": null
+    }
+  }
+}

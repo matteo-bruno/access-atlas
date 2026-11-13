@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santiago-del-estero",
+  "createdAt": "2026-10-08T16:11:14.424Z",
+  "updatedAt": "2026-10-08T16:11:14.424Z",
+  "meta": {
+    "name": "Santiago del Estero",
+    "nameIt": "Santiago del Estero",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santiago del Estero.geojson",
+      "sha256": "6b081b26e2b8fbc94995ced3cdeb5db1c7d134e6cbaec956c1e4d5c2d90da121",
+      "size": 1218254,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santiago-del-estero",
+    "name": "Santiago del Estero",
+    "nameIt": "Santiago del Estero",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -64.26132,
+      -27.78766
+    ],
+    "zoom": 10.1,
+    "population": 373617,
+    "grid": "cities/santiago-del-estero/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santiago-del-estero/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santiago-del-estero",
+        "name": "Santiago del Estero",
+        "nameIt": "Santiago del Estero",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -64.26132,
+          -27.78766
+        ],
+        "zoom": 10.1,
+        "population": 373617,
+        "cells": 1043,
+        "layer": "cities/santiago-del-estero/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -64.26132,
+            -27.78766
+          ]
+        },
+        "properties": {
+          "id": "santiago-del-estero",
+          "name": "Santiago del Estero",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 27.9,
+          "population": 373617
+        }
+      },
+      "summary": null
+    }
+  }
+}

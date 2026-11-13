@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lamphun",
+  "createdAt": "2026-10-08T15:49:59.183Z",
+  "updatedAt": "2026-10-08T15:49:59.183Z",
+  "meta": {
+    "name": "Lamphun",
+    "nameIt": "Lamphun",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lamphun.geojson",
+      "sha256": "240fcedbf870233aec7c1aff26fe0ec6e80780986bea5e99ac3f6f503a371c3a",
+      "size": 315928,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lamphun",
+    "name": "Lamphun",
+    "nameIt": "Lamphun",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      99.02776,
+      18.57955
+    ],
+    "zoom": 10.9,
+    "population": 65284,
+    "grid": "cities/lamphun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lamphun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lamphun",
+        "name": "Lamphun",
+        "nameIt": "Lamphun",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          99.02776,
+          18.57955
+        ],
+        "zoom": 10.9,
+        "population": 65284,
+        "cells": 273,
+        "layer": "cities/lamphun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            99.02776,
+            18.57955
+          ]
+        },
+        "properties": {
+          "id": "lamphun",
+          "name": "Lamphun",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 22.5,
+          "population": 65284
+        }
+      },
+      "summary": null
+    }
+  }
+}

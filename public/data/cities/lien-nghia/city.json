@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lien-nghia",
+  "createdAt": "2026-10-08T15:51:40.983Z",
+  "updatedAt": "2026-10-08T15:51:40.983Z",
+  "meta": {
+    "name": "Liên Nghĩa",
+    "nameIt": "Liên Nghĩa",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Liên Nghĩa.geojson",
+      "sha256": "45c9ec47c43c510bee30c2f0a4cf9941a832012ac13195530b575cc35129cd97",
+      "size": 315918,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lien-nghia",
+    "name": "Liên Nghĩa",
+    "nameIt": "Liên Nghĩa",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      108.37938,
+      11.74281
+    ],
+    "zoom": 10.7,
+    "population": 81747,
+    "grid": "cities/lien-nghia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lien-nghia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lien-nghia",
+        "name": "Liên Nghĩa",
+        "nameIt": "Liên Nghĩa",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          108.37938,
+          11.74281
+        ],
+        "zoom": 10.7,
+        "population": 81747,
+        "cells": 270,
+        "layer": "cities/lien-nghia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.37938,
+            11.74281
+          ]
+        },
+        "properties": {
+          "id": "lien-nghia",
+          "name": "Liên Nghĩa",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 81747
+        }
+      },
+      "summary": null
+    }
+  }
+}

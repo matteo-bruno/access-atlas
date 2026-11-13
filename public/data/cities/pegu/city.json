@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pegu",
+  "createdAt": "2026-10-08T16:04:52.677Z",
+  "updatedAt": "2026-10-08T16:04:52.677Z",
+  "meta": {
+    "name": "Pegu",
+    "nameIt": "Pegu",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pegu.geojson",
+      "sha256": "c0b733c9f8c98b0325a4535f3d53993a017107590183a0d9dd3963c10407b210",
+      "size": 411015,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pegu",
+    "name": "Pegu",
+    "nameIt": "Pegu",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      96.47945,
+      17.33007
+    ],
+    "zoom": 10.8,
+    "population": 296472,
+    "grid": "cities/pegu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pegu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pegu",
+        "name": "Pegu",
+        "nameIt": "Pegu",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          96.47945,
+          17.33007
+        ],
+        "zoom": 10.8,
+        "population": 296472,
+        "cells": 355,
+        "layer": "cities/pegu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.47945,
+            17.33007
+          ]
+        },
+        "properties": {
+          "id": "pegu",
+          "name": "Pegu",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 32.5,
+          "population": 296472
+        }
+      },
+      "summary": null
+    }
+  }
+}

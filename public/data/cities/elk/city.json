@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "elk",
+  "createdAt": "2026-10-08T15:32:10.353Z",
+  "updatedAt": "2026-10-08T15:32:10.353Z",
+  "meta": {
+    "name": "Elk",
+    "nameIt": "Elk",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Elk.geojson",
+      "sha256": "ad6457a2159bbef42ef1196b5c0b0937a335121dd31afea2361ad18642cf739a",
+      "size": 155136,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "elk",
+    "name": "Elk",
+    "nameIt": "Elk",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      22.35987,
+      53.82403
+    ],
+    "zoom": 11.7,
+    "population": 53053,
+    "grid": "cities/elk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/elk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "elk",
+        "name": "Elk",
+        "nameIt": "Elk",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          22.35987,
+          53.82403
+        ],
+        "zoom": 11.7,
+        "population": 53053,
+        "cells": 136,
+        "layer": "cities/elk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            22.35987,
+            53.82403
+          ]
+        },
+        "properties": {
+          "id": "elk",
+          "name": "Elk",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 7.9,
+          "population": 53053
+        }
+      },
+      "summary": null
+    }
+  }
+}

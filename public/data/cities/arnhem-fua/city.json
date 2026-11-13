@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "arnhem-fua",
+  "createdAt": "2026-10-19T16:55:13.545Z",
+  "updatedAt": "2026-10-19T16:55:13.545Z",
+  "meta": {
+    "name": "Arnhem",
+    "nameIt": "Arnhem",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "arnhem-fua",
+    "name": "Arnhem",
+    "nameIt": "Arnhem",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "extent": "fua",
+    "core": "arnhem",
+    "center": [
+      5.89236,
+      51.88779
+    ],
+    "zoom": 8.5,
+    "population": 1019010,
+    "grid": "cities/arnhem-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/arnhem-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "arnhem-fua",
+        "name": "Arnhem",
+        "nameIt": "Arnhem",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "extent": "fua",
+        "core": "arnhem",
+        "center": [
+          5.89236,
+          51.88779
+        ],
+        "zoom": 8.5,
+        "population": 1019010,
+        "cells": 18575,
+        "layer": "cities/arnhem-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.89236,
+            51.88779
+          ]
+        },
+        "properties": {
+          "id": "arnhem-fua",
+          "name": "Arnhem",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 19.4,
+          "population": 1019010
+        }
+      },
+      "summary": null
+    }
+  }
+}

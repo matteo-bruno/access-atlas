@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shishou",
+  "createdAt": "2026-10-08T16:13:08.946Z",
+  "updatedAt": "2026-10-08T16:13:08.946Z",
+  "meta": {
+    "name": "Shishou",
+    "nameIt": "Shishou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shishou.geojson",
+      "sha256": "5dfdcbcbe73c192796509faf117681c61e2dafba7526e3aa6a2500cdb702139f",
+      "size": 382237,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shishou",
+    "name": "Shishou",
+    "nameIt": "Shishou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.40911,
+      29.7191
+    ],
+    "zoom": 10.9,
+    "population": 166054,
+    "grid": "cities/shishou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shishou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shishou",
+        "name": "Shishou",
+        "nameIt": "Shishou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.40911,
+          29.7191
+        ],
+        "zoom": 10.9,
+        "population": 166054,
+        "cells": 327,
+        "layer": "cities/shishou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.40911,
+            29.7191
+          ]
+        },
+        "properties": {
+          "id": "shishou",
+          "name": "Shishou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24.8,
+          "population": 166054
+        }
+      },
+      "summary": null
+    }
+  }
+}

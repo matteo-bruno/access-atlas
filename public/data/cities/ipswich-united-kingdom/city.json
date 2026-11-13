@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ipswich-united-kingdom",
+  "createdAt": "2026-10-08T15:40:58.157Z",
+  "updatedAt": "2026-10-08T15:40:58.157Z",
+  "meta": {
+    "name": "Ipswich (United Kingdom)",
+    "nameIt": "Ipswich (United Kingdom)",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ipswich (United Kingdom).geojson",
+      "sha256": "2aed786654e92a6b39f1925f7500bb08a00394329c54b62c63834fcd3c3ac8e1",
+      "size": 608945,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ipswich-united-kingdom",
+    "name": "Ipswich (United Kingdom)",
+    "nameIt": "Ipswich (United Kingdom)",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      1.16626,
+      52.05559
+    ],
+    "zoom": 10.4,
+    "population": 168533,
+    "grid": "cities/ipswich-united-kingdom/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ipswich-united-kingdom/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ipswich-united-kingdom",
+        "name": "Ipswich (United Kingdom)",
+        "nameIt": "Ipswich (United Kingdom)",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          1.16626,
+          52.05559
+        ],
+        "zoom": 10.4,
+        "population": 168533,
+        "cells": 533,
+        "layer": "cities/ipswich-united-kingdom/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.16626,
+            52.05559
+          ]
+        },
+        "properties": {
+          "id": "ipswich-united-kingdom",
+          "name": "Ipswich (United Kingdom)",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 168533
+        }
+      },
+      "summary": null
+    }
+  }
+}

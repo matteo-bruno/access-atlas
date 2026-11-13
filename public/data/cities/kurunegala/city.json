@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kurunegala",
+  "createdAt": "2026-10-08T15:48:57.734Z",
+  "updatedAt": "2026-10-08T15:48:57.734Z",
+  "meta": {
+    "name": "Kurunegala",
+    "nameIt": "Kurunegala",
+    "region": "Sri Lanka",
+    "regionIt": "Sri Lanka",
+    "country": "LK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kurunegala.geojson",
+      "sha256": "d2bc931e5ba0429f95a306c001e41108372864dc4f6dce454080220a2cec15b8",
+      "size": 285347,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kurunegala",
+    "name": "Kurunegala",
+    "nameIt": "Kurunegala",
+    "region": "Sri Lanka",
+    "regionIt": "Sri Lanka",
+    "country": "LK",
+    "center": [
+      80.36338,
+      7.48395
+    ],
+    "zoom": 10.8,
+    "population": 74107,
+    "grid": "cities/kurunegala/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kurunegala/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kurunegala",
+        "name": "Kurunegala",
+        "nameIt": "Kurunegala",
+        "region": "Sri Lanka",
+        "regionIt": "Sri Lanka",
+        "country": "LK",
+        "center": [
+          80.36338,
+          7.48395
+        ],
+        "zoom": 10.8,
+        "population": 74107,
+        "cells": 248,
+        "layer": "cities/kurunegala/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.36338,
+            7.48395
+          ]
+        },
+        "properties": {
+          "id": "kurunegala",
+          "name": "Kurunegala",
+          "country": "LK",
+          "isStudy": true,
+          "proximityMinutes": 30.4,
+          "population": 74107
+        }
+      },
+      "summary": null
+    }
+  }
+}

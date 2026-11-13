@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mumbai",
+  "createdAt": "2026-10-08T15:58:54.730Z",
+  "updatedAt": "2026-10-08T15:58:54.730Z",
+  "meta": {
+    "name": "Mumbai",
+    "nameIt": "Mumbai",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mumbai.geojson",
+      "sha256": "75a0101727bf00c39b9b0df558e887773b968314298783c927e34b6a837485c1",
+      "size": 8771340,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mumbai",
+    "name": "Mumbai",
+    "nameIt": "Mumbai",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.90894,
+      19.13317
+    ],
+    "zoom": 8.5,
+    "population": 6218937,
+    "grid": "cities/mumbai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mumbai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mumbai",
+        "name": "Mumbai",
+        "nameIt": "Mumbai",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.90894,
+          19.13317
+        ],
+        "zoom": 8.5,
+        "population": 6218937,
+        "cells": 7639,
+        "layer": "cities/mumbai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.90894,
+            19.13317
+          ]
+        },
+        "properties": {
+          "id": "mumbai",
+          "name": "Mumbai",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 16.6,
+          "population": 6218937
+        }
+      },
+      "summary": null
+    }
+  }
+}

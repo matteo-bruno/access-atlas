@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sainagar",
+  "createdAt": "2026-10-08T16:09:51.508Z",
+  "updatedAt": "2026-10-08T16:09:51.508Z",
+  "meta": {
+    "name": "Sainagar",
+    "nameIt": "Sainagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sainagar.geojson",
+      "sha256": "5b02ca473c098570caeb9e5fc6aec77bd39ba617e62e466a502739fa99a3657b",
+      "size": 152964,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sainagar",
+    "name": "Sainagar",
+    "nameIt": "Sainagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.47535,
+      19.76597
+    ],
+    "zoom": 11.9,
+    "population": 75830,
+    "grid": "cities/sainagar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sainagar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sainagar",
+        "name": "Sainagar",
+        "nameIt": "Sainagar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.47535,
+          19.76597
+        ],
+        "zoom": 11.9,
+        "population": 75830,
+        "cells": 132,
+        "layer": "cities/sainagar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.47535,
+            19.76597
+          ]
+        },
+        "properties": {
+          "id": "sainagar",
+          "name": "Sainagar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 75830
+        }
+      },
+      "summary": null
+    }
+  }
+}

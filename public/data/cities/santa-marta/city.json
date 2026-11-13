@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santa-marta",
+  "createdAt": "2026-10-08T16:11:07.747Z",
+  "updatedAt": "2026-10-08T16:11:07.747Z",
+  "meta": {
+    "name": "Santa Marta",
+    "nameIt": "Santa Marta",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santa Marta.geojson",
+      "sha256": "718013e9267820044fcce46210e1e9ddd921e533e780bceb12b9085ec7fb7292",
+      "size": 644241,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santa-marta",
+    "name": "Santa Marta",
+    "nameIt": "Santa Marta",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -74.18291,
+      11.23215
+    ],
+    "zoom": 10.6,
+    "population": 464234,
+    "grid": "cities/santa-marta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santa-marta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santa-marta",
+        "name": "Santa Marta",
+        "nameIt": "Santa Marta",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -74.18291,
+          11.23215
+        ],
+        "zoom": 10.6,
+        "population": 464234,
+        "cells": 556,
+        "layer": "cities/santa-marta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.18291,
+            11.23215
+          ]
+        },
+        "properties": {
+          "id": "santa-marta",
+          "name": "Santa Marta",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 19.5,
+          "population": 464234
+        }
+      },
+      "summary": null
+    }
+  }
+}

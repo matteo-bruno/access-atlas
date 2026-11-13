@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "atlixco",
+  "createdAt": "2026-10-08T15:11:02.887Z",
+  "updatedAt": "2026-10-08T15:11:02.887Z",
+  "meta": {
+    "name": "Atlixco",
+    "nameIt": "Atlixco",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Atlixco.geojson",
+      "sha256": "75b052a30b4c2dda8cc423d7715561e8bc81ef36dec14611b65c187b2a711118",
+      "size": 152994,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "atlixco",
+    "name": "Atlixco",
+    "nameIt": "Atlixco",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -98.43453,
+      18.90798
+    ],
+    "zoom": 11.5,
+    "population": 62219,
+    "grid": "cities/atlixco/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/atlixco/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "atlixco",
+        "name": "Atlixco",
+        "nameIt": "Atlixco",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -98.43453,
+          18.90798
+        ],
+        "zoom": 11.5,
+        "population": 62219,
+        "cells": 131,
+        "layer": "cities/atlixco/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -98.43453,
+            18.90798
+          ]
+        },
+        "properties": {
+          "id": "atlixco",
+          "name": "Atlixco",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 62219
+        }
+      },
+      "summary": null
+    }
+  }
+}

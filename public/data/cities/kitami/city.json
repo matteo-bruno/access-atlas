@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kitami",
+  "createdAt": "2026-10-08T15:47:23.317Z",
+  "updatedAt": "2026-10-08T15:47:23.317Z",
+  "meta": {
+    "name": "Kitami",
+    "nameIt": "Kitami",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kitami.geojson",
+      "sha256": "6f0752ff96f8b224e84edf53d09ebbb59a3c949f5ad1dbff41925c3fc7cfa9f4",
+      "size": 298899,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kitami",
+    "name": "Kitami",
+    "nameIt": "Kitami",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      143.88165,
+      43.8075
+    ],
+    "zoom": 10.8,
+    "population": 81888,
+    "grid": "cities/kitami/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kitami/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kitami",
+        "name": "Kitami",
+        "nameIt": "Kitami",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          143.88165,
+          43.8075
+        ],
+        "zoom": 10.8,
+        "population": 81888,
+        "cells": 261,
+        "layer": "cities/kitami/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            143.88165,
+            43.8075
+          ]
+        },
+        "properties": {
+          "id": "kitami",
+          "name": "Kitami",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 81888
+        }
+      },
+      "summary": null
+    }
+  }
+}

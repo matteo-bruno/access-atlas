@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bagdad",
+  "createdAt": "2026-10-08T15:12:45.048Z",
+  "updatedAt": "2026-10-08T15:12:45.048Z",
+  "meta": {
+    "name": "Bagdad",
+    "nameIt": "Bagdad",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bagdad.geojson",
+      "sha256": "9b609a8de09b666b78dfa2449c786d6124098df20ce81f789f24d1a8c2cc41c4",
+      "size": 218312,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bagdad",
+    "name": "Bagdad",
+    "nameIt": "Bagdad",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      71.20743,
+      40.46045
+    ],
+    "zoom": 11.2,
+    "population": 3705,
+    "grid": "cities/bagdad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bagdad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bagdad",
+        "name": "Bagdad",
+        "nameIt": "Bagdad",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          71.20743,
+          40.46045
+        ],
+        "zoom": 11.2,
+        "population": 3705,
+        "cells": 189,
+        "layer": "cities/bagdad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.20743,
+            40.46045
+          ]
+        },
+        "properties": {
+          "id": "bagdad",
+          "name": "Bagdad",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 37,
+          "population": 3705
+        }
+      },
+      "summary": null
+    }
+  }
+}

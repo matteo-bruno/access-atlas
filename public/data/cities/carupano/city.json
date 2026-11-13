@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "carupano",
+  "createdAt": "2026-10-08T15:22:41.751Z",
+  "updatedAt": "2026-10-08T15:22:41.751Z",
+  "meta": {
+    "name": "Carúpano",
+    "nameIt": "Carúpano",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Carúpano.geojson",
+      "sha256": "0a853cb558b5ef108e9a7be4fc67f57b4d5db4c6f1736ff0c750cce9f84bb82f",
+      "size": 352857,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "carupano",
+    "name": "Carúpano",
+    "nameIt": "Carúpano",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -63.25073,
+      10.64827
+    ],
+    "zoom": 11.2,
+    "population": 61224,
+    "grid": "cities/carupano/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/carupano/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "carupano",
+        "name": "Carúpano",
+        "nameIt": "Carúpano",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -63.25073,
+          10.64827
+        ],
+        "zoom": 11.2,
+        "population": 61224,
+        "cells": 302,
+        "layer": "cities/carupano/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -63.25073,
+            10.64827
+          ]
+        },
+        "properties": {
+          "id": "carupano",
+          "name": "Carúpano",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 16.1,
+          "population": 61224
+        }
+      },
+      "summary": null
+    }
+  }
+}

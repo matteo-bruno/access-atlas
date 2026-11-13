@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lake-ronkonkoma",
+  "createdAt": "2026-10-08T15:49:45.268Z",
+  "updatedAt": "2026-10-08T15:49:45.268Z",
+  "meta": {
+    "name": "Lake Ronkonkoma",
+    "nameIt": "Lake Ronkonkoma",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lake Ronkonkoma.geojson",
+      "sha256": "cd58e144442c77cf6db4c35ada1886e605311909acee00b3192e77a09a44c081",
+      "size": 678716,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lake-ronkonkoma",
+    "name": "Lake Ronkonkoma",
+    "nameIt": "Lake Ronkonkoma",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -73.10793,
+      40.82074
+    ],
+    "zoom": 10.8,
+    "population": 75477,
+    "grid": "cities/lake-ronkonkoma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lake-ronkonkoma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lake-ronkonkoma",
+        "name": "Lake Ronkonkoma",
+        "nameIt": "Lake Ronkonkoma",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -73.10793,
+          40.82074
+        ],
+        "zoom": 10.8,
+        "population": 75477,
+        "cells": 584,
+        "layer": "cities/lake-ronkonkoma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.10793,
+            40.82074
+          ]
+        },
+        "properties": {
+          "id": "lake-ronkonkoma",
+          "name": "Lake Ronkonkoma",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 24.4,
+          "population": 75477
+        }
+      },
+      "summary": null
+    }
+  }
+}

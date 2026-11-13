@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chimaltenango",
+  "createdAt": "2026-10-08T15:24:48.265Z",
+  "updatedAt": "2026-10-08T15:24:48.265Z",
+  "meta": {
+    "name": "Chimaltenango",
+    "nameIt": "Chimaltenango",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chimaltenango.geojson",
+      "sha256": "f36ce02e639e63ae3f0fbbb39987ea7fd836f8bbb3a38b934e96519a8726569f",
+      "size": 263471,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chimaltenango",
+    "name": "Chimaltenango",
+    "nameIt": "Chimaltenango",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT",
+    "center": [
+      -90.81263,
+      14.65806
+    ],
+    "zoom": 10.8,
+    "population": 105892,
+    "grid": "cities/chimaltenango/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chimaltenango/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chimaltenango",
+        "name": "Chimaltenango",
+        "nameIt": "Chimaltenango",
+        "region": "Guatemala",
+        "regionIt": "Guatemala",
+        "country": "GT",
+        "center": [
+          -90.81263,
+          14.65806
+        ],
+        "zoom": 10.8,
+        "population": 105892,
+        "cells": 226,
+        "layer": "cities/chimaltenango/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -90.81263,
+            14.65806
+          ]
+        },
+        "properties": {
+          "id": "chimaltenango",
+          "name": "Chimaltenango",
+          "country": "GT",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 105892
+        }
+      },
+      "summary": null
+    }
+  }
+}

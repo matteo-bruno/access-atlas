@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mantes-la-ville",
+  "createdAt": "2026-10-08T15:54:58.024Z",
+  "updatedAt": "2026-10-08T15:54:58.024Z",
+  "meta": {
+    "name": "Mantes-la-Ville",
+    "nameIt": "Mantes-la-Ville",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mantes-la-Ville.geojson",
+      "sha256": "19033f9f61ba28e8c35a722b24a724c762c906ce1b6c4805b73e5a8fe9f9634f",
+      "size": 261888,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mantes-la-ville",
+    "name": "Mantes-la-Ville",
+    "nameIt": "Mantes-la-Ville",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      1.7102,
+      48.9892
+    ],
+    "zoom": 11.4,
+    "population": 84848,
+    "grid": "cities/mantes-la-ville/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mantes-la-ville/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mantes-la-ville",
+        "name": "Mantes-la-Ville",
+        "nameIt": "Mantes-la-Ville",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          1.7102,
+          48.9892
+        ],
+        "zoom": 11.4,
+        "population": 84848,
+        "cells": 229,
+        "layer": "cities/mantes-la-ville/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.7102,
+            48.9892
+          ]
+        },
+        "properties": {
+          "id": "mantes-la-ville",
+          "name": "Mantes-la-Ville",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 10,
+          "population": 84848
+        }
+      },
+      "summary": null
+    }
+  }
+}

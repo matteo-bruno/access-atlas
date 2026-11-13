@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bharuch",
+  "createdAt": "2026-10-08T15:18:17.234Z",
+  "updatedAt": "2026-10-08T15:18:17.234Z",
+  "meta": {
+    "name": "Bharuch",
+    "nameIt": "Bharuch",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bharuch.geojson",
+      "sha256": "0182f1e4eef0e2ebda4e58ac70baa0749ec9b3a1ddc6ab8f07750b51383e27bb",
+      "size": 520637,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bharuch",
+    "name": "Bharuch",
+    "nameIt": "Bharuch",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.99782,
+      21.71346
+    ],
+    "zoom": 10.8,
+    "population": 260637,
+    "grid": "cities/bharuch/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bharuch/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bharuch",
+        "name": "Bharuch",
+        "nameIt": "Bharuch",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.99782,
+          21.71346
+        ],
+        "zoom": 10.8,
+        "population": 260637,
+        "cells": 449,
+        "layer": "cities/bharuch/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.99782,
+            21.71346
+          ]
+        },
+        "properties": {
+          "id": "bharuch",
+          "name": "Bharuch",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 25.9,
+          "population": 260637
+        }
+      },
+      "summary": null
+    }
+  }
+}

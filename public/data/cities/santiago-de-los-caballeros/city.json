@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santiago-de-los-caballeros",
+  "createdAt": "2026-10-08T16:11:14.052Z",
+  "updatedAt": "2026-10-08T16:11:14.052Z",
+  "meta": {
+    "name": "Santiago de los Caballeros",
+    "nameIt": "Santiago de los Caballeros",
+    "region": "Dominican Republic",
+    "regionIt": "Repubblica Dominicana",
+    "country": "DO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santiago de los Caballeros.geojson",
+      "sha256": "6dcb5669f8514cb45ca5a32098cb24fd4f8a7144e3027204a29a2c253f882c10",
+      "size": 1747390,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santiago-de-los-caballeros",
+    "name": "Santiago de los Caballeros",
+    "nameIt": "Santiago de los Caballeros",
+    "region": "Dominican Republic",
+    "regionIt": "Repubblica Dominicana",
+    "country": "DO",
+    "center": [
+      -70.69427,
+      19.4594
+    ],
+    "zoom": 10.2,
+    "population": 512928,
+    "grid": "cities/santiago-de-los-caballeros/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santiago-de-los-caballeros/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santiago-de-los-caballeros",
+        "name": "Santiago de los Caballeros",
+        "nameIt": "Santiago de los Caballeros",
+        "region": "Dominican Republic",
+        "regionIt": "Repubblica Dominicana",
+        "country": "DO",
+        "center": [
+          -70.69427,
+          19.4594
+        ],
+        "zoom": 10.2,
+        "population": 512928,
+        "cells": 1510,
+        "layer": "cities/santiago-de-los-caballeros/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -70.69427,
+            19.4594
+          ]
+        },
+        "properties": {
+          "id": "santiago-de-los-caballeros",
+          "name": "Santiago de los Caballeros",
+          "country": "DO",
+          "isStudy": true,
+          "proximityMinutes": 24.2,
+          "population": 512928
+        }
+      },
+      "summary": null
+    }
+  }
+}

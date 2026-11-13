@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "krefeld",
+  "createdAt": "2026-10-08T15:48:26.009Z",
+  "updatedAt": "2026-10-08T15:48:26.009Z",
+  "meta": {
+    "name": "Krefeld",
+    "nameIt": "Krefeld",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Krefeld.geojson",
+      "sha256": "a0b220bfffb3b68747f6c1367acc889ee3889ca5caa6f978979df2e20d8d8eec",
+      "size": 902304,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "krefeld",
+    "name": "Krefeld",
+    "nameIt": "Krefeld",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      6.5813,
+      51.33296
+    ],
+    "zoom": 10.2,
+    "population": 200107,
+    "grid": "cities/krefeld/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/krefeld/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "krefeld",
+        "name": "Krefeld",
+        "nameIt": "Krefeld",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          6.5813,
+          51.33296
+        ],
+        "zoom": 10.2,
+        "population": 200107,
+        "cells": 794,
+        "layer": "cities/krefeld/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.5813,
+            51.33296
+          ]
+        },
+        "properties": {
+          "id": "krefeld",
+          "name": "Krefeld",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 10.6,
+          "population": 200107
+        }
+      },
+      "summary": null
+    }
+  }
+}

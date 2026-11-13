@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jiangjing",
+  "createdAt": "2026-10-08T15:42:33.842Z",
+  "updatedAt": "2026-10-08T15:42:33.842Z",
+  "meta": {
+    "name": "Jiangjing",
+    "nameIt": "Jiangjing",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jiangjing.geojson",
+      "sha256": "39bdd461c93514f37cd008c9dd729b537812fd1fc49a625913272b2f9881cf71",
+      "size": 654267,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jiangjing",
+    "name": "Jiangjing",
+    "nameIt": "Jiangjing",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.44701,
+      25.60133
+    ],
+    "zoom": 10.6,
+    "population": 140278,
+    "grid": "cities/jiangjing/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jiangjing/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jiangjing",
+        "name": "Jiangjing",
+        "nameIt": "Jiangjing",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.44701,
+          25.60133
+        ],
+        "zoom": 10.6,
+        "population": 140278,
+        "cells": 560,
+        "layer": "cities/jiangjing/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.44701,
+            25.60133
+          ]
+        },
+        "properties": {
+          "id": "jiangjing",
+          "name": "Jiangjing",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 140278
+        }
+      },
+      "summary": null
+    }
+  }
+}

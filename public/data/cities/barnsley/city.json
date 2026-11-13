@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barnsley",
+  "createdAt": "2026-10-08T15:15:40.196Z",
+  "updatedAt": "2026-10-08T15:15:40.196Z",
+  "meta": {
+    "name": "Barnsley",
+    "nameIt": "Barnsley",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barnsley.geojson",
+      "sha256": "e097e909559c0fffcea43c0057dfcef5af2665c57743caa6fa1046a8b2265ba6",
+      "size": 505241,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barnsley",
+    "name": "Barnsley",
+    "nameIt": "Barnsley",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.48221,
+      53.56015
+    ],
+    "zoom": 11,
+    "population": 104422,
+    "grid": "cities/barnsley/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barnsley/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barnsley",
+        "name": "Barnsley",
+        "nameIt": "Barnsley",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.48221,
+          53.56015
+        ],
+        "zoom": 11,
+        "population": 104422,
+        "cells": 437,
+        "layer": "cities/barnsley/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.48221,
+            53.56015
+          ]
+        },
+        "properties": {
+          "id": "barnsley",
+          "name": "Barnsley",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 104422
+        }
+      },
+      "summary": null
+    }
+  }
+}

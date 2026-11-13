@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tramandai",
+  "createdAt": "2026-10-08T16:18:43.478Z",
+  "updatedAt": "2026-10-08T16:18:43.478Z",
+  "meta": {
+    "name": "Tramandaí",
+    "nameIt": "Tramandaí",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tramandaí.geojson",
+      "sha256": "cbb08a64c1bc1f99d61620743abcfc4421bd63912dbe50213aa087734c11ae65",
+      "size": 623089,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tramandai",
+    "name": "Tramandaí",
+    "nameIt": "Tramandaí",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -50.13534,
+      -29.99127
+    ],
+    "zoom": 9.8,
+    "population": 76221,
+    "grid": "cities/tramandai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tramandai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tramandai",
+        "name": "Tramandaí",
+        "nameIt": "Tramandaí",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -50.13534,
+          -29.99127
+        ],
+        "zoom": 9.8,
+        "population": 76221,
+        "cells": 529,
+        "layer": "cities/tramandai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.13534,
+            -29.99127
+          ]
+        },
+        "properties": {
+          "id": "tramandai",
+          "name": "Tramandaí",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 33.8,
+          "population": 76221
+        }
+      },
+      "summary": null
+    }
+  }
+}

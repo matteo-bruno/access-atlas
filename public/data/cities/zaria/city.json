@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zaria",
+  "createdAt": "2026-10-08T16:24:54.030Z",
+  "updatedAt": "2026-10-08T16:24:54.030Z",
+  "meta": {
+    "name": "Zaria",
+    "nameIt": "Zaria",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zaria.geojson",
+      "sha256": "4679278531f93dd0a3206c0f4e770071478c2bc421bf0aa7086048ee66f50023",
+      "size": 1169707,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zaria",
+    "name": "Zaria",
+    "nameIt": "Zaria",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      7.70857,
+      11.08899
+    ],
+    "zoom": 10.4,
+    "population": 805333,
+    "grid": "cities/zaria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zaria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zaria",
+        "name": "Zaria",
+        "nameIt": "Zaria",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          7.70857,
+          11.08899
+        ],
+        "zoom": 10.4,
+        "population": 805333,
+        "cells": 1008,
+        "layer": "cities/zaria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.70857,
+            11.08899
+          ]
+        },
+        "properties": {
+          "id": "zaria",
+          "name": "Zaria",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 805333
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pipra",
+  "createdAt": "2026-10-08T16:05:46.414Z",
+  "updatedAt": "2026-10-08T16:05:46.414Z",
+  "meta": {
+    "name": "Pipra",
+    "nameIt": "Pipra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pipra.geojson",
+      "sha256": "41334526afe47d9b917d90983ac156e623e70ca28b77b143174381fb95c343e1",
+      "size": 275513,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pipra",
+    "name": "Pipra",
+    "nameIt": "Pipra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.20304,
+      24.45772
+    ],
+    "zoom": 10.8,
+    "population": 24151,
+    "grid": "cities/pipra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pipra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pipra",
+        "name": "Pipra",
+        "nameIt": "Pipra",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.20304,
+          24.45772
+        ],
+        "zoom": 10.8,
+        "population": 24151,
+        "cells": 238,
+        "layer": "cities/pipra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.20304,
+            24.45772
+          ]
+        },
+        "properties": {
+          "id": "pipra",
+          "name": "Pipra",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 24151
+        }
+      },
+      "summary": null
+    }
+  }
+}

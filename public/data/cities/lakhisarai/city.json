@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lakhisarai",
+  "createdAt": "2026-10-08T15:49:48.945Z",
+  "updatedAt": "2026-10-08T15:49:48.945Z",
+  "meta": {
+    "name": "Lakhisarai",
+    "nameIt": "Lakhisarai",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lakhisarai.geojson",
+      "sha256": "bbd6eada562f25038ef314d721e112bbed05e22a24f4cb30d072aa40fe9625d9",
+      "size": 253872,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lakhisarai",
+    "name": "Lakhisarai",
+    "nameIt": "Lakhisarai",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.09795,
+      25.17195
+    ],
+    "zoom": 10.9,
+    "population": 196761,
+    "grid": "cities/lakhisarai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lakhisarai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lakhisarai",
+        "name": "Lakhisarai",
+        "nameIt": "Lakhisarai",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.09795,
+          25.17195
+        ],
+        "zoom": 10.9,
+        "population": 196761,
+        "cells": 219,
+        "layer": "cities/lakhisarai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.09795,
+            25.17195
+          ]
+        },
+        "properties": {
+          "id": "lakhisarai",
+          "name": "Lakhisarai",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 196761
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "limoges",
+  "createdAt": "2026-10-08T15:51:12.486Z",
+  "updatedAt": "2026-10-08T15:51:12.486Z",
+  "meta": {
+    "name": "Limoges",
+    "nameIt": "Limoges",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Limoges.geojson",
+      "sha256": "c0876c4514b89b8ae5b5f554534b3e4b507cdbb3f9062fed1afc3652bd8f24d0",
+      "size": 356669,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "limoges",
+    "name": "Limoges",
+    "nameIt": "Limoges",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      1.25694,
+      45.83296
+    ],
+    "zoom": 11.1,
+    "population": 126240,
+    "grid": "cities/limoges/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/limoges/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "limoges",
+        "name": "Limoges",
+        "nameIt": "Limoges",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          1.25694,
+          45.83296
+        ],
+        "zoom": 11.1,
+        "population": 126240,
+        "cells": 313,
+        "layer": "cities/limoges/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.25694,
+            45.83296
+          ]
+        },
+        "properties": {
+          "id": "limoges",
+          "name": "Limoges",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 8.3,
+          "population": 126240
+        }
+      },
+      "summary": null
+    }
+  }
+}

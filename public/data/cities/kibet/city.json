@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kibet",
+  "createdAt": "2026-10-08T15:46:58.961Z",
+  "updatedAt": "2026-10-08T15:46:58.961Z",
+  "meta": {
+    "name": "Kibet",
+    "nameIt": "Kibet",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kibet.geojson",
+      "sha256": "a1bd6eb10e3186e81cb484a4f4e3538c81d4a5da7c83879131720341447a2e3a",
+      "size": 93406,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kibet",
+    "name": "Kibet",
+    "nameIt": "Kibet",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      38.3282,
+      8.02292
+    ],
+    "zoom": 12,
+    "population": 55711,
+    "grid": "cities/kibet/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kibet/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kibet",
+        "name": "Kibet",
+        "nameIt": "Kibet",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          38.3282,
+          8.02292
+        ],
+        "zoom": 12,
+        "population": 55711,
+        "cells": 81,
+        "layer": "cities/kibet/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.3282,
+            8.02292
+          ]
+        },
+        "properties": {
+          "id": "kibet",
+          "name": "Kibet",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 55711
+        }
+      },
+      "summary": null
+    }
+  }
+}

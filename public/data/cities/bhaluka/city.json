@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bhaluka",
+  "createdAt": "2026-10-08T15:18:09.634Z",
+  "updatedAt": "2026-10-08T15:18:09.634Z",
+  "meta": {
+    "name": "Bhaluka",
+    "nameIt": "Bhaluka",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bhaluka.geojson",
+      "sha256": "f90a70f96e1e7c016d58f8681e6d229509dbd3aee92ff5a6def92e5729ac4ecf",
+      "size": 140052,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bhaluka",
+    "name": "Bhaluka",
+    "nameIt": "Bhaluka",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      90.38358,
+      24.39182
+    ],
+    "zoom": 11.4,
+    "population": 62608,
+    "grid": "cities/bhaluka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bhaluka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bhaluka",
+        "name": "Bhaluka",
+        "nameIt": "Bhaluka",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          90.38358,
+          24.39182
+        ],
+        "zoom": 11.4,
+        "population": 62608,
+        "cells": 121,
+        "layer": "cities/bhaluka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            90.38358,
+            24.39182
+          ]
+        },
+        "properties": {
+          "id": "bhaluka",
+          "name": "Bhaluka",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 62608
+        }
+      },
+      "summary": null
+    }
+  }
+}

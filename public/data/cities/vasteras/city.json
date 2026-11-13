@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vasteras",
+  "createdAt": "2026-10-08T16:21:06.310Z",
+  "updatedAt": "2026-10-08T16:21:06.310Z",
+  "meta": {
+    "name": "Västerås",
+    "nameIt": "Västerås",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Västerås.geojson",
+      "sha256": "e9305e23507387a8cd8981aab02a335864e38170b4adea8706fcc0755f84c4c9",
+      "size": 661381,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vasteras",
+    "name": "Västerås",
+    "nameIt": "Västerås",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE",
+    "center": [
+      16.54562,
+      59.61657
+    ],
+    "zoom": 10.8,
+    "population": 110510,
+    "grid": "cities/vasteras/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vasteras/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vasteras",
+        "name": "Västerås",
+        "nameIt": "Västerås",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          16.54562,
+          59.61657
+        ],
+        "zoom": 10.8,
+        "population": 110510,
+        "cells": 576,
+        "layer": "cities/vasteras/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.54562,
+            59.61657
+          ]
+        },
+        "properties": {
+          "id": "vasteras",
+          "name": "Västerås",
+          "country": "SE",
+          "isStudy": true,
+          "proximityMinutes": 17.3,
+          "population": 110510
+        }
+      },
+      "summary": null
+    }
+  }
+}

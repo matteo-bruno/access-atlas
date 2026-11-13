@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "buram",
+  "createdAt": "2026-10-08T15:20:56.228Z",
+  "updatedAt": "2026-10-08T15:20:56.228Z",
+  "meta": {
+    "name": "Buram",
+    "nameIt": "Buram",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Buram.geojson",
+      "sha256": "b6e832d3508beca6d220e84875a4c5fd1356121143a9ecf92ba5e162f6cdad4b",
+      "size": 268126,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "buram",
+    "name": "Buram",
+    "nameIt": "Buram",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      25.15901,
+      10.85507
+    ],
+    "zoom": 11.3,
+    "population": 63296,
+    "grid": "cities/buram/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/buram/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "buram",
+        "name": "Buram",
+        "nameIt": "Buram",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          25.15901,
+          10.85507
+        ],
+        "zoom": 11.3,
+        "population": 63296,
+        "cells": 230,
+        "layer": "cities/buram/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.15901,
+            10.85507
+          ]
+        },
+        "properties": {
+          "id": "buram",
+          "name": "Buram",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 63296
+        }
+      },
+      "summary": null
+    }
+  }
+}

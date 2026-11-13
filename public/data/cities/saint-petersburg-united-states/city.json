@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "saint-petersburg-united-states",
+  "createdAt": "2026-10-08T16:09:53.686Z",
+  "updatedAt": "2026-10-08T16:09:53.686Z",
+  "meta": {
+    "name": "Saint Petersburg (United States)",
+    "nameIt": "Saint Petersburg (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Saint Petersburg (United States).geojson",
+      "sha256": "de59a9d7509047524d9c4cdc55e6c68e2992bfe483c85e73163522b024bfd642",
+      "size": 8229296,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "saint-petersburg-united-states",
+    "name": "Saint Petersburg (United States)",
+    "nameIt": "Saint Petersburg (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -82.72923,
+      27.88356
+    ],
+    "zoom": 8.5,
+    "population": 991040,
+    "grid": "cities/saint-petersburg-united-states/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/saint-petersburg-united-states/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "saint-petersburg-united-states",
+        "name": "Saint Petersburg (United States)",
+        "nameIt": "Saint Petersburg (United States)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -82.72923,
+          27.88356
+        ],
+        "zoom": 8.5,
+        "population": 991040,
+        "cells": 7111,
+        "layer": "cities/saint-petersburg-united-states/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.72923,
+            27.88356
+          ]
+        },
+        "properties": {
+          "id": "saint-petersburg-united-states",
+          "name": "Saint Petersburg (United States)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 23,
+          "population": 991040
+        }
+      },
+      "summary": null
+    }
+  }
+}

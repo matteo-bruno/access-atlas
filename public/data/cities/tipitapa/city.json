@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tipitapa",
+  "createdAt": "2026-10-08T16:18:00.239Z",
+  "updatedAt": "2026-10-08T16:18:00.239Z",
+  "meta": {
+    "name": "Tipitapa",
+    "nameIt": "Tipitapa",
+    "region": "Nicaragua",
+    "regionIt": "Nicaragua",
+    "country": "NI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tipitapa.geojson",
+      "sha256": "268efbe02cd3d1c687667d2c69357b29f06cb47a6796ef4c86fea957f30d049c",
+      "size": 243318,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tipitapa",
+    "name": "Tipitapa",
+    "nameIt": "Tipitapa",
+    "region": "Nicaragua",
+    "regionIt": "Nicaragua",
+    "country": "NI",
+    "center": [
+      -86.09706,
+      12.18662
+    ],
+    "zoom": 11.6,
+    "population": 43859,
+    "grid": "cities/tipitapa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tipitapa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tipitapa",
+        "name": "Tipitapa",
+        "nameIt": "Tipitapa",
+        "region": "Nicaragua",
+        "regionIt": "Nicaragua",
+        "country": "NI",
+        "center": [
+          -86.09706,
+          12.18662
+        ],
+        "zoom": 11.6,
+        "population": 43859,
+        "cells": 209,
+        "layer": "cities/tipitapa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -86.09706,
+            12.18662
+          ]
+        },
+        "properties": {
+          "id": "tipitapa",
+          "name": "Tipitapa",
+          "country": "NI",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 43859
+        }
+      },
+      "summary": null
+    }
+  }
+}

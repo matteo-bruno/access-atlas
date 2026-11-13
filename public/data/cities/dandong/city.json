@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dandong",
+  "createdAt": "2026-10-08T15:28:07.511Z",
+  "updatedAt": "2026-10-08T15:28:07.511Z",
+  "meta": {
+    "name": "Dandong",
+    "nameIt": "Dandong",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dandong.geojson",
+      "sha256": "4033ba68e7bdf52c4ec348cbbc4f2a577362de6c79e5d0036ce5379a6c5847b5",
+      "size": 1488819,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dandong",
+    "name": "Dandong",
+    "nameIt": "Dandong",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      124.37632,
+      40.13366
+    ],
+    "zoom": 9.8,
+    "population": 469422,
+    "grid": "cities/dandong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 163
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dandong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dandong",
+        "name": "Dandong",
+        "nameIt": "Dandong",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          124.37632,
+          40.13366
+        ],
+        "zoom": 9.8,
+        "population": 469422,
+        "cells": 1277,
+        "layer": "cities/dandong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 163
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            124.37632,
+            40.13366
+          ]
+        },
+        "properties": {
+          "id": "dandong",
+          "name": "Dandong",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 32,
+          "population": 469422
+        }
+      },
+      "summary": null
+    }
+  }
+}

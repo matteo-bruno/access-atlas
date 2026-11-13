@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ilo",
+  "createdAt": "2026-10-08T15:40:41.223Z",
+  "updatedAt": "2026-10-08T15:40:41.223Z",
+  "meta": {
+    "name": "Ilo",
+    "nameIt": "Ilo",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ilo.geojson",
+      "sha256": "c8661a05c097f596437ed55438ba722daa7b7375233a382e085649bab068d4b1",
+      "size": 163081,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ilo",
+    "name": "Ilo",
+    "nameIt": "Ilo",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -71.33144,
+      -17.64666
+    ],
+    "zoom": 11.7,
+    "population": 65237,
+    "grid": "cities/ilo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ilo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ilo",
+        "name": "Ilo",
+        "nameIt": "Ilo",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -71.33144,
+          -17.64666
+        ],
+        "zoom": 11.7,
+        "population": 65237,
+        "cells": 139,
+        "layer": "cities/ilo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -71.33144,
+            -17.64666
+          ]
+        },
+        "properties": {
+          "id": "ilo",
+          "name": "Ilo",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 10.8,
+          "population": 65237
+        }
+      },
+      "summary": null
+    }
+  }
+}

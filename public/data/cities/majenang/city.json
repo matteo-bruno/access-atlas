@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "majenang",
+  "createdAt": "2026-10-08T15:53:54.695Z",
+  "updatedAt": "2026-10-08T15:53:54.695Z",
+  "meta": {
+    "name": "Majenang",
+    "nameIt": "Majenang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Majenang.geojson",
+      "sha256": "4cd7bf1ca947f616a47e929c5c14a8a5507a23cc1be021b03fa842347317e865",
+      "size": 340946,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "majenang",
+    "name": "Majenang",
+    "nameIt": "Majenang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      108.76736,
+      -7.30771
+    ],
+    "zoom": 10.7,
+    "population": 104742,
+    "grid": "cities/majenang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/majenang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "majenang",
+        "name": "Majenang",
+        "nameIt": "Majenang",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          108.76736,
+          -7.30771
+        ],
+        "zoom": 10.7,
+        "population": 104742,
+        "cells": 291,
+        "layer": "cities/majenang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.76736,
+            -7.30771
+          ]
+        },
+        "properties": {
+          "id": "majenang",
+          "name": "Majenang",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 104742
+        }
+      },
+      "summary": null
+    }
+  }
+}

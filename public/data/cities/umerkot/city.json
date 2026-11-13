@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "umerkot",
+  "createdAt": "2026-10-08T16:19:49.596Z",
+  "updatedAt": "2026-10-08T16:19:49.596Z",
+  "meta": {
+    "name": "Umerkot",
+    "nameIt": "Umerkot",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Umerkot.geojson",
+      "sha256": "e79bcf9685811d708845626e89329099b92ba2eac8112f4daafbda2cf299da7e",
+      "size": 188877,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "umerkot",
+    "name": "Umerkot",
+    "nameIt": "Umerkot",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      69.73999,
+      25.36307
+    ],
+    "zoom": 11.6,
+    "population": 147230,
+    "grid": "cities/umerkot/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/umerkot/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "umerkot",
+        "name": "Umerkot",
+        "nameIt": "Umerkot",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          69.73999,
+          25.36307
+        ],
+        "zoom": 11.6,
+        "population": 147230,
+        "cells": 163,
+        "layer": "cities/umerkot/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.73999,
+            25.36307
+          ]
+        },
+        "properties": {
+          "id": "umerkot",
+          "name": "Umerkot",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 147230
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baraka",
+  "createdAt": "2026-10-08T15:15:25.554Z",
+  "updatedAt": "2026-10-08T15:15:25.554Z",
+  "meta": {
+    "name": "Baraka",
+    "nameIt": "Baraka",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baraka.geojson",
+      "sha256": "95baa58999a9b8f3b5eff4f69dcf88b2c5695d9505d5235dd2276b80014c8806",
+      "size": 206799,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baraka",
+    "name": "Baraka",
+    "nameIt": "Baraka",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      29.08843,
+      -4.11529
+    ],
+    "zoom": 11.1,
+    "population": 177445,
+    "grid": "cities/baraka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baraka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baraka",
+        "name": "Baraka",
+        "nameIt": "Baraka",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          29.08843,
+          -4.11529
+        ],
+        "zoom": 11.1,
+        "population": 177445,
+        "cells": 177,
+        "layer": "cities/baraka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.08843,
+            -4.11529
+          ]
+        },
+        "properties": {
+          "id": "baraka",
+          "name": "Baraka",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 20.5,
+          "population": 177445
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cordoba",
+  "createdAt": "2026-10-08T15:26:34.633Z",
+  "updatedAt": "2026-10-08T15:26:34.633Z",
+  "meta": {
+    "name": "Cordoba",
+    "nameIt": "Cordoba",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cordoba.geojson",
+      "sha256": "b86635933ede2f99796908036ef9a4138619d7120f68d3c54ff65d0391a1d878",
+      "size": 4267902,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cordoba",
+    "name": "Cordoba",
+    "nameIt": "Cordoba",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -64.20706,
+      -31.39867
+    ],
+    "zoom": 9.3,
+    "population": 1538035,
+    "grid": "cities/cordoba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cordoba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cordoba",
+        "name": "Cordoba",
+        "nameIt": "Cordoba",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -64.20706,
+          -31.39867
+        ],
+        "zoom": 9.3,
+        "population": 1538035,
+        "cells": 3661,
+        "layer": "cities/cordoba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -64.20706,
+            -31.39867
+          ]
+        },
+        "properties": {
+          "id": "cordoba",
+          "name": "Cordoba",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 17.6,
+          "population": 1538035
+        }
+      },
+      "summary": null
+    }
+  }
+}

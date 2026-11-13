@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vaikom",
+  "createdAt": "2026-10-08T16:20:17.203Z",
+  "updatedAt": "2026-10-08T16:20:17.203Z",
+  "meta": {
+    "name": "Vaikom",
+    "nameIt": "Vaikom",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vaikom.geojson",
+      "sha256": "49c632009f73bbb8092e1b75d1d1852bae369e77244a6a3ba76ff56f2ffc14ed",
+      "size": 186179,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vaikom",
+    "name": "Vaikom",
+    "nameIt": "Vaikom",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.39847,
+      9.75462
+    ],
+    "zoom": 11.2,
+    "population": 55884,
+    "grid": "cities/vaikom/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vaikom/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vaikom",
+        "name": "Vaikom",
+        "nameIt": "Vaikom",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.39847,
+          9.75462
+        ],
+        "zoom": 11.2,
+        "population": 55884,
+        "cells": 163,
+        "layer": "cities/vaikom/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.39847,
+            9.75462
+          ]
+        },
+        "properties": {
+          "id": "vaikom",
+          "name": "Vaikom",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 12.9,
+          "population": 55884
+        }
+      },
+      "summary": null
+    }
+  }
+}

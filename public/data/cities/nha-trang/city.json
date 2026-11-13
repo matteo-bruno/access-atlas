@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nha-trang",
+  "createdAt": "2026-10-08T16:01:24.596Z",
+  "updatedAt": "2026-10-08T16:01:24.596Z",
+  "meta": {
+    "name": "Nha Trang",
+    "nameIt": "Nha Trang",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nha Trang.geojson",
+      "sha256": "aa67f300ddce7e5bf3f39f98791012fb6b155b866d713e5b8d585afc71decd6f",
+      "size": 972211,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nha-trang",
+    "name": "Nha Trang",
+    "nameIt": "Nha Trang",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      109.16573,
+      12.25336
+    ],
+    "zoom": 9.8,
+    "population": 474040,
+    "grid": "cities/nha-trang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nha-trang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nha-trang",
+        "name": "Nha Trang",
+        "nameIt": "Nha Trang",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          109.16573,
+          12.25336
+        ],
+        "zoom": 9.8,
+        "population": 474040,
+        "cells": 838,
+        "layer": "cities/nha-trang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.16573,
+            12.25336
+          ]
+        },
+        "properties": {
+          "id": "nha-trang",
+          "name": "Nha Trang",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 22.6,
+          "population": 474040
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kasai-oriental",
+  "createdAt": "2026-10-08T15:45:25.709Z",
+  "updatedAt": "2026-10-08T15:45:25.709Z",
+  "meta": {
+    "name": "Kasaï-Oriental",
+    "nameIt": "Kasaï-Oriental",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kasaï-Oriental.geojson",
+      "sha256": "c676e00161b8aa4070437af5cb672e4dfed557f4dadcb21b849c4ff60f6f00a3",
+      "size": 1272066,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kasai-oriental",
+    "name": "Kasaï-Oriental",
+    "nameIt": "Kasaï-Oriental",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      23.6009,
+      -6.1227
+    ],
+    "zoom": 9.6,
+    "population": 2036141,
+    "grid": "cities/kasai-oriental/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kasai-oriental/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kasai-oriental",
+        "name": "Kasaï-Oriental",
+        "nameIt": "Kasaï-Oriental",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          23.6009,
+          -6.1227
+        ],
+        "zoom": 9.6,
+        "population": 2036141,
+        "cells": 1087,
+        "layer": "cities/kasai-oriental/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.6009,
+            -6.1227
+          ]
+        },
+        "properties": {
+          "id": "kasai-oriental",
+          "name": "Kasaï-Oriental",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 43.1,
+          "population": 2036141
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kemerovo",
+  "createdAt": "2026-10-08T15:46:06.022Z",
+  "updatedAt": "2026-10-08T15:46:06.022Z",
+  "meta": {
+    "name": "Kemerovo",
+    "nameIt": "Kemerovo",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kemerovo.geojson",
+      "sha256": "6fd2e0af148cc0387b78e6b4eecb51f5de443ff9dcf0ec6c6a69730db54ca70b",
+      "size": 988965,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kemerovo",
+    "name": "Kemerovo",
+    "nameIt": "Kemerovo",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      86.09648,
+      55.35245
+    ],
+    "zoom": 10.3,
+    "population": 440452,
+    "grid": "cities/kemerovo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kemerovo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kemerovo",
+        "name": "Kemerovo",
+        "nameIt": "Kemerovo",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          86.09648,
+          55.35245
+        ],
+        "zoom": 10.3,
+        "population": 440452,
+        "cells": 866,
+        "layer": "cities/kemerovo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.09648,
+            55.35245
+          ]
+        },
+        "properties": {
+          "id": "kemerovo",
+          "name": "Kemerovo",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 17,
+          "population": 440452
+        }
+      },
+      "summary": null
+    }
+  }
+}

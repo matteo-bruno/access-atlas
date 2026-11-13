@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kitengela",
+  "createdAt": "2026-10-08T15:47:24.921Z",
+  "updatedAt": "2026-10-08T15:47:24.921Z",
+  "meta": {
+    "name": "Kitengela",
+    "nameIt": "Kitengela",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kitengela.geojson",
+      "sha256": "1f22ffe49281407082810c33158fb0b6cf5c79db0b7bfd9051686f6a9e83eab2",
+      "size": 333744,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kitengela",
+    "name": "Kitengela",
+    "nameIt": "Kitengela",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE",
+    "center": [
+      36.96648,
+      -1.469
+    ],
+    "zoom": 11.1,
+    "population": 210547,
+    "grid": "cities/kitengela/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kitengela/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kitengela",
+        "name": "Kitengela",
+        "nameIt": "Kitengela",
+        "region": "Kenya",
+        "regionIt": "Kenya",
+        "country": "KE",
+        "center": [
+          36.96648,
+          -1.469
+        ],
+        "zoom": 11.1,
+        "population": 210547,
+        "cells": 285,
+        "layer": "cities/kitengela/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.96648,
+            -1.469
+          ]
+        },
+        "properties": {
+          "id": "kitengela",
+          "name": "Kitengela",
+          "country": "KE",
+          "isStudy": true,
+          "proximityMinutes": 32.1,
+          "population": 210547
+        }
+      },
+      "summary": null
+    }
+  }
+}

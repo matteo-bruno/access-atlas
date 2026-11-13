@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "brussels-fua",
+  "createdAt": "2026-10-19T16:55:38.624Z",
+  "updatedAt": "2026-10-19T16:55:38.624Z",
+  "meta": {
+    "name": "Brussels",
+    "nameIt": "Brussels",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "brussels-fua",
+    "name": "Brussels",
+    "nameIt": "Brussels",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE",
+    "extent": "fua",
+    "core": "brussels",
+    "center": [
+      4.33155,
+      50.83294
+    ],
+    "zoom": 8.5,
+    "population": 2393453,
+    "grid": "cities/brussels-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/brussels-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "brussels-fua",
+        "name": "Brussels",
+        "nameIt": "Brussels",
+        "region": "Belgium",
+        "regionIt": "Belgio",
+        "country": "BE",
+        "extent": "fua",
+        "core": "brussels",
+        "center": [
+          4.33155,
+          50.83294
+        ],
+        "zoom": 8.5,
+        "population": 2393453,
+        "cells": 20375,
+        "layer": "cities/brussels-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.33155,
+            50.83294
+          ]
+        },
+        "properties": {
+          "id": "brussels-fua",
+          "name": "Brussels",
+          "country": "BE",
+          "isStudy": true,
+          "proximityMinutes": 7.7,
+          "population": 2393453
+        }
+      },
+      "summary": null
+    }
+  }
+}

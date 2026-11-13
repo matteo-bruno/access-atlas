@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dutse",
+  "createdAt": "2026-10-08T15:31:33.092Z",
+  "updatedAt": "2026-10-08T15:31:33.092Z",
+  "meta": {
+    "name": "Dutse",
+    "nameIt": "Dutse",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dutse.geojson",
+      "sha256": "f718223e92e90907ed5b6e549b513e02a3bced4670b45fc95d3b963bf07a7da3",
+      "size": 420204,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dutse",
+    "name": "Dutse",
+    "nameIt": "Dutse",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      9.34659,
+      11.70716
+    ],
+    "zoom": 10.4,
+    "population": 166163,
+    "grid": "cities/dutse/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dutse/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dutse",
+        "name": "Dutse",
+        "nameIt": "Dutse",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          9.34659,
+          11.70716
+        ],
+        "zoom": 10.4,
+        "population": 166163,
+        "cells": 363,
+        "layer": "cities/dutse/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.34659,
+            11.70716
+          ]
+        },
+        "properties": {
+          "id": "dutse",
+          "name": "Dutse",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 166163
+        }
+      },
+      "summary": null
+    }
+  }
+}

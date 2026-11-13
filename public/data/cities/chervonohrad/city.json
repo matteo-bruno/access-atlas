@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chervonohrad",
+  "createdAt": "2026-10-08T15:24:30.704Z",
+  "updatedAt": "2026-10-08T15:24:30.704Z",
+  "meta": {
+    "name": "Chervonohrad",
+    "nameIt": "Chervonohrad",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chervonohrad.geojson",
+      "sha256": "a75b69b851c2e3790c3656ed2513a819398e48f948c5a0d3a83fb8cc57ee0502",
+      "size": 145072,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chervonohrad",
+    "name": "Chervonohrad",
+    "nameIt": "Chervonohrad",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      24.23284,
+      50.39199
+    ],
+    "zoom": 11.7,
+    "population": 27015,
+    "grid": "cities/chervonohrad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chervonohrad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chervonohrad",
+        "name": "Chervonohrad",
+        "nameIt": "Chervonohrad",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          24.23284,
+          50.39199
+        ],
+        "zoom": 11.7,
+        "population": 27015,
+        "cells": 126,
+        "layer": "cities/chervonohrad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            24.23284,
+            50.39199
+          ]
+        },
+        "properties": {
+          "id": "chervonohrad",
+          "name": "Chervonohrad",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 27015
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "goiana",
+  "createdAt": "2026-10-08T15:35:30.413Z",
+  "updatedAt": "2026-10-08T15:35:30.413Z",
+  "meta": {
+    "name": "Goiana",
+    "nameIt": "Goiana",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Goiana.geojson",
+      "sha256": "3eff7f1ab0d589947c46b3a5913c79de92e7dbabcff6d4bae7045b291839509f",
+      "size": 62236,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "goiana",
+    "name": "Goiana",
+    "nameIt": "Goiana",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -35.00713,
+      -7.56273
+    ],
+    "zoom": 12,
+    "population": 40247,
+    "grid": "cities/goiana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/goiana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "goiana",
+        "name": "Goiana",
+        "nameIt": "Goiana",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -35.00713,
+          -7.56273
+        ],
+        "zoom": 12,
+        "population": 40247,
+        "cells": 53,
+        "layer": "cities/goiana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -35.00713,
+            -7.56273
+          ]
+        },
+        "properties": {
+          "id": "goiana",
+          "name": "Goiana",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 8.4,
+          "population": 40247
+        }
+      },
+      "summary": null
+    }
+  }
+}

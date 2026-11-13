@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "texmelucan",
+  "createdAt": "2026-10-08T16:17:26.647Z",
+  "updatedAt": "2026-10-08T16:17:26.647Z",
+  "meta": {
+    "name": "Texmelucan",
+    "nameIt": "Texmelucan",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Texmelucan.geojson",
+      "sha256": "792c78a518ed85d040790506ee26f61f4e7a6ef5c3c70fdfb6e1d12b75744aa2",
+      "size": 540690,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "texmelucan",
+    "name": "Texmelucan",
+    "nameIt": "Texmelucan",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -98.43047,
+      19.27739
+    ],
+    "zoom": 10.4,
+    "population": 171063,
+    "grid": "cities/texmelucan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/texmelucan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "texmelucan",
+        "name": "Texmelucan",
+        "nameIt": "Texmelucan",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -98.43047,
+          19.27739
+        ],
+        "zoom": 10.4,
+        "population": 171063,
+        "cells": 463,
+        "layer": "cities/texmelucan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -98.43047,
+            19.27739
+          ]
+        },
+        "properties": {
+          "id": "texmelucan",
+          "name": "Texmelucan",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 32.6,
+          "population": 171063
+        }
+      },
+      "summary": null
+    }
+  }
+}

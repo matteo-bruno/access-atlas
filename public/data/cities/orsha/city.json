@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "orsha",
+  "createdAt": "2026-10-08T16:03:03.348Z",
+  "updatedAt": "2026-10-08T16:03:03.348Z",
+  "meta": {
+    "name": "Orsha",
+    "nameIt": "Orsha",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Orsha.geojson",
+      "sha256": "c5ae251816c4b7a7f95acf8c02443d3411578764297e401c1eb3b2f3ceea560b",
+      "size": 367930,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "orsha",
+    "name": "Orsha",
+    "nameIt": "Orsha",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY",
+    "center": [
+      30.40814,
+      54.51098
+    ],
+    "zoom": 11.2,
+    "population": 62997,
+    "grid": "cities/orsha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/orsha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "orsha",
+        "name": "Orsha",
+        "nameIt": "Orsha",
+        "region": "Belarus",
+        "regionIt": "Bielorussia",
+        "country": "BY",
+        "center": [
+          30.40814,
+          54.51098
+        ],
+        "zoom": 11.2,
+        "population": 62997,
+        "cells": 321,
+        "layer": "cities/orsha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.40814,
+            54.51098
+          ]
+        },
+        "properties": {
+          "id": "orsha",
+          "name": "Orsha",
+          "country": "BY",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 62997
+        }
+      },
+      "summary": null
+    }
+  }
+}

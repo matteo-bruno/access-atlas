@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "trenggalek",
+  "createdAt": "2026-10-08T16:18:45.777Z",
+  "updatedAt": "2026-10-08T16:18:45.777Z",
+  "meta": {
+    "name": "Trenggalek",
+    "nameIt": "Trenggalek",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Trenggalek.geojson",
+      "sha256": "d68e71727445182614c7a0455cd5e577f1c86f76bfc3e12f3b7bb38436e3033e",
+      "size": 589619,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "trenggalek",
+    "name": "Trenggalek",
+    "nameIt": "Trenggalek",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      111.687,
+      -8.06279
+    ],
+    "zoom": 10.7,
+    "population": 127703,
+    "grid": "cities/trenggalek/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/trenggalek/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "trenggalek",
+        "name": "Trenggalek",
+        "nameIt": "Trenggalek",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          111.687,
+          -8.06279
+        ],
+        "zoom": 10.7,
+        "population": 127703,
+        "cells": 504,
+        "layer": "cities/trenggalek/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.687,
+            -8.06279
+          ]
+        },
+        "properties": {
+          "id": "trenggalek",
+          "name": "Trenggalek",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 37.4,
+          "population": 127703
+        }
+      },
+      "summary": null
+    }
+  }
+}

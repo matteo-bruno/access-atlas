@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "banalia",
+  "createdAt": "2026-10-08T15:14:29.222Z",
+  "updatedAt": "2026-10-08T15:14:29.222Z",
+  "meta": {
+    "name": "Banalia",
+    "nameIt": "Banalia",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Banalia.geojson",
+      "sha256": "6db678cb641acce6468e7f5950dfe198c0ee4062cced37e1077ad158f5329586",
+      "size": 51233,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "banalia",
+    "name": "Banalia",
+    "nameIt": "Banalia",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      25.32009,
+      1.55691
+    ],
+    "zoom": 12,
+    "population": 26908,
+    "grid": "cities/banalia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/banalia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "banalia",
+        "name": "Banalia",
+        "nameIt": "Banalia",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          25.32009,
+          1.55691
+        ],
+        "zoom": 12,
+        "population": 26908,
+        "cells": 44,
+        "layer": "cities/banalia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.32009,
+            1.55691
+          ]
+        },
+        "properties": {
+          "id": "banalia",
+          "name": "Banalia",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 26908
+        }
+      },
+      "summary": null
+    }
+  }
+}

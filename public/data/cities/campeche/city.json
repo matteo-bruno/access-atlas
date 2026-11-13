@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "campeche",
+  "createdAt": "2026-10-08T15:22:05.708Z",
+  "updatedAt": "2026-10-08T15:22:05.708Z",
+  "meta": {
+    "name": "Campeche",
+    "nameIt": "Campeche",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Campeche.geojson",
+      "sha256": "418e4b3b790340647f1166d4787022121b697ce849699acc9c854206ff3c15b6",
+      "size": 539615,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "campeche",
+    "name": "Campeche",
+    "nameIt": "Campeche",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -90.518,
+      19.83915
+    ],
+    "zoom": 10.7,
+    "population": 247280,
+    "grid": "cities/campeche/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/campeche/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "campeche",
+        "name": "Campeche",
+        "nameIt": "Campeche",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -90.518,
+          19.83915
+        ],
+        "zoom": 10.7,
+        "population": 247280,
+        "cells": 467,
+        "layer": "cities/campeche/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -90.518,
+            19.83915
+          ]
+        },
+        "properties": {
+          "id": "campeche",
+          "name": "Campeche",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 19.1,
+          "population": 247280
+        }
+      },
+      "summary": null
+    }
+  }
+}

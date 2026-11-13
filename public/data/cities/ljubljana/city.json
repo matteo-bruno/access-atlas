@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ljubljana",
+  "createdAt": "2026-10-08T15:51:41.259Z",
+  "updatedAt": "2026-10-08T15:51:41.259Z",
+  "meta": {
+    "name": "Ljubljana",
+    "nameIt": "Ljubljana",
+    "region": "Slovenia",
+    "regionIt": "Slovenia",
+    "country": "SI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ljubljana.geojson",
+      "sha256": "870efa8874c87c593242493036ea7286c8c52eacf42879c5b9a8ca8122fed59e",
+      "size": 687092,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ljubljana",
+    "name": "Ljubljana",
+    "nameIt": "Ljubljana",
+    "region": "Slovenia",
+    "regionIt": "Slovenia",
+    "country": "SI",
+    "center": [
+      14.50937,
+      46.06042
+    ],
+    "zoom": 10.5,
+    "population": 201528,
+    "grid": "cities/ljubljana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ljubljana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ljubljana",
+        "name": "Ljubljana",
+        "nameIt": "Ljubljana",
+        "region": "Slovenia",
+        "regionIt": "Slovenia",
+        "country": "SI",
+        "center": [
+          14.50937,
+          46.06042
+        ],
+        "zoom": 10.5,
+        "population": 201528,
+        "cells": 601,
+        "layer": "cities/ljubljana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.50937,
+            46.06042
+          ]
+        },
+        "properties": {
+          "id": "ljubljana",
+          "name": "Ljubljana",
+          "country": "SI",
+          "isStudy": true,
+          "proximityMinutes": 9,
+          "population": 201528
+        }
+      },
+      "summary": null
+    }
+  }
+}

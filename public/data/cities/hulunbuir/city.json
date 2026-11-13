@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hulunbuir",
+  "createdAt": "2026-10-08T15:39:51.803Z",
+  "updatedAt": "2026-10-08T15:39:51.803Z",
+  "meta": {
+    "name": "Hulunbuir",
+    "nameIt": "Hulunbuir",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hulunbuir.geojson",
+      "sha256": "670fa30aaac9c3919af4b4c24f5783cd78f1a43150601dfbbd1aff1425f60c3e",
+      "size": 515000,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hulunbuir",
+    "name": "Hulunbuir",
+    "nameIt": "Hulunbuir",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.74849,
+      49.21254
+    ],
+    "zoom": 10.7,
+    "population": 260668,
+    "grid": "cities/hulunbuir/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hulunbuir/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hulunbuir",
+        "name": "Hulunbuir",
+        "nameIt": "Hulunbuir",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.74849,
+          49.21254
+        ],
+        "zoom": 10.7,
+        "population": 260668,
+        "cells": 442,
+        "layer": "cities/hulunbuir/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.74849,
+            49.21254
+          ]
+        },
+        "properties": {
+          "id": "hulunbuir",
+          "name": "Hulunbuir",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 26.4,
+          "population": 260668
+        }
+      },
+      "summary": null
+    }
+  }
+}

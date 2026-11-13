@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lago-norte",
+  "createdAt": "2026-10-08T15:49:34.635Z",
+  "updatedAt": "2026-10-08T15:49:34.635Z",
+  "meta": {
+    "name": "Lago Norte",
+    "nameIt": "Lago Norte",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lago Norte.geojson",
+      "sha256": "5851b0306d061ced243340bf764d8d39a338aaea5d5a72809030dc227fdc1e0a",
+      "size": 444152,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lago-norte",
+    "name": "Lago Norte",
+    "nameIt": "Lago Norte",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -47.87087,
+      -15.74281
+    ],
+    "zoom": 10.9,
+    "population": 88334,
+    "grid": "cities/lago-norte/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lago-norte/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lago-norte",
+        "name": "Lago Norte",
+        "nameIt": "Lago Norte",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -47.87087,
+          -15.74281
+        ],
+        "zoom": 10.9,
+        "population": 88334,
+        "cells": 379,
+        "layer": "cities/lago-norte/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.87087,
+            -15.74281
+          ]
+        },
+        "properties": {
+          "id": "lago-norte",
+          "name": "Lago Norte",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 24.4,
+          "population": 88334
+        }
+      },
+      "summary": null
+    }
+  }
+}

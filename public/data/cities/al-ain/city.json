@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-ain",
+  "createdAt": "2026-10-08T15:04:04.312Z",
+  "updatedAt": "2026-10-08T15:04:04.312Z",
+  "meta": {
+    "name": "Al Ain",
+    "nameIt": "Al Ain",
+    "region": "United Arab Emirates",
+    "regionIt": "Emirati Arabi Uniti",
+    "country": "AE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Ain.geojson",
+      "sha256": "1af79619486dd9c4d3bac47e531cafdf0506377871240776638ef895b1828b7f",
+      "size": 2529342,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-ain",
+    "name": "Al Ain",
+    "nameIt": "Al Ain",
+    "region": "United Arab Emirates",
+    "regionIt": "Emirati Arabi Uniti",
+    "country": "AE",
+    "center": [
+      55.71547,
+      24.20628
+    ],
+    "zoom": 9.6,
+    "population": 423281,
+    "grid": "cities/al-ain/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-ain/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-ain",
+        "name": "Al Ain",
+        "nameIt": "Al Ain",
+        "region": "United Arab Emirates",
+        "regionIt": "Emirati Arabi Uniti",
+        "country": "AE",
+        "center": [
+          55.71547,
+          24.20628
+        ],
+        "zoom": 9.6,
+        "population": 423281,
+        "cells": 2187,
+        "layer": "cities/al-ain/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            55.71547,
+            24.20628
+          ]
+        },
+        "properties": {
+          "id": "al-ain",
+          "name": "Al Ain",
+          "country": "AE",
+          "isStudy": true,
+          "proximityMinutes": 47.5,
+          "population": 423281
+        }
+      },
+      "summary": null
+    }
+  }
+}

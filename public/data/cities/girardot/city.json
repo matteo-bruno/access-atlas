@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "girardot",
+  "createdAt": "2026-10-08T15:35:18.039Z",
+  "updatedAt": "2026-10-08T15:35:18.039Z",
+  "meta": {
+    "name": "Girardot",
+    "nameIt": "Girardot",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Girardot.geojson",
+      "sha256": "af88d4187a9b8ccd09d2265840806d3889b1dc307fe68d347bd51a50f5913c6f",
+      "size": 217076,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "girardot",
+    "name": "Girardot",
+    "nameIt": "Girardot",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -74.80547,
+      4.29876
+    ],
+    "zoom": 11.3,
+    "population": 117134,
+    "grid": "cities/girardot/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/girardot/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "girardot",
+        "name": "Girardot",
+        "nameIt": "Girardot",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -74.80547,
+          4.29876
+        ],
+        "zoom": 11.3,
+        "population": 117134,
+        "cells": 188,
+        "layer": "cities/girardot/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.80547,
+            4.29876
+          ]
+        },
+        "properties": {
+          "id": "girardot",
+          "name": "Girardot",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 14.2,
+          "population": 117134
+        }
+      },
+      "summary": null
+    }
+  }
+}

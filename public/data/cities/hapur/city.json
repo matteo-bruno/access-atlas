@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hapur",
+  "createdAt": "2026-10-08T15:37:46.980Z",
+  "updatedAt": "2026-10-08T15:37:46.980Z",
+  "meta": {
+    "name": "Hapur",
+    "nameIt": "Hapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hapur.geojson",
+      "sha256": "e9c0bda16b75e55d9810fa81bbe3a356acb76d3d42aa84533d36688a8e947b90",
+      "size": 518576,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hapur",
+    "name": "Hapur",
+    "nameIt": "Hapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.78252,
+      28.73144
+    ],
+    "zoom": 10.4,
+    "population": 394748,
+    "grid": "cities/hapur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hapur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hapur",
+        "name": "Hapur",
+        "nameIt": "Hapur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.78252,
+          28.73144
+        ],
+        "zoom": 10.4,
+        "population": 394748,
+        "cells": 447,
+        "layer": "cities/hapur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.78252,
+            28.73144
+          ]
+        },
+        "properties": {
+          "id": "hapur",
+          "name": "Hapur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 26.4,
+          "population": 394748
+        }
+      },
+      "summary": null
+    }
+  }
+}

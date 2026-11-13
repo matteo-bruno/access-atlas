@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sibu",
+  "createdAt": "2026-10-08T16:13:23.802Z",
+  "updatedAt": "2026-10-08T16:13:23.802Z",
+  "meta": {
+    "name": "Sibu",
+    "nameIt": "Sibu",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sibu.geojson",
+      "sha256": "54227555f6e89516600d294d242a4686bf6c54023617a42518bef189887e55cd",
+      "size": 421406,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sibu",
+    "name": "Sibu",
+    "nameIt": "Sibu",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      111.8421,
+      2.30422
+    ],
+    "zoom": 10.6,
+    "population": 124697,
+    "grid": "cities/sibu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sibu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sibu",
+        "name": "Sibu",
+        "nameIt": "Sibu",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          111.8421,
+          2.30422
+        ],
+        "zoom": 10.6,
+        "population": 124697,
+        "cells": 362,
+        "layer": "cities/sibu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.8421,
+            2.30422
+          ]
+        },
+        "properties": {
+          "id": "sibu",
+          "name": "Sibu",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 26.1,
+          "population": 124697
+        }
+      },
+      "summary": null
+    }
+  }
+}

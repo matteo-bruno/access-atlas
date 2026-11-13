@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gyumri",
+  "createdAt": "2026-10-08T15:37:01.552Z",
+  "updatedAt": "2026-10-08T15:37:01.552Z",
+  "meta": {
+    "name": "Gyumri",
+    "nameIt": "Gyumri",
+    "region": "Armenia",
+    "regionIt": "Armenia",
+    "country": "AM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gyumri.geojson",
+      "sha256": "5d4710a8ba90e979cea6572af96d0c74b8c8c07b6e30a539c9471718151ec2df",
+      "size": 252315,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gyumri",
+    "name": "Gyumri",
+    "nameIt": "Gyumri",
+    "region": "Armenia",
+    "regionIt": "Armenia",
+    "country": "AM",
+    "center": [
+      43.84424,
+      40.79457
+    ],
+    "zoom": 10.9,
+    "population": 124329,
+    "grid": "cities/gyumri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gyumri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gyumri",
+        "name": "Gyumri",
+        "nameIt": "Gyumri",
+        "region": "Armenia",
+        "regionIt": "Armenia",
+        "country": "AM",
+        "center": [
+          43.84424,
+          40.79457
+        ],
+        "zoom": 10.9,
+        "population": 124329,
+        "cells": 220,
+        "layer": "cities/gyumri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.84424,
+            40.79457
+          ]
+        },
+        "properties": {
+          "id": "gyumri",
+          "name": "Gyumri",
+          "country": "AM",
+          "isStudy": true,
+          "proximityMinutes": 15.9,
+          "population": 124329
+        }
+      },
+      "summary": null
+    }
+  }
+}

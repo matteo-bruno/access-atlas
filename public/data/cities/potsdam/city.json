@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "potsdam",
+  "createdAt": "2026-10-08T16:06:25.369Z",
+  "updatedAt": "2026-10-08T16:06:25.369Z",
+  "meta": {
+    "name": "Potsdam",
+    "nameIt": "Potsdam",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Potsdam.geojson",
+      "sha256": "cc38f9efbf01855057efbb945b5866e021967176a8b7d069c0fa1cc331a42fcd",
+      "size": 596026,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "potsdam",
+    "name": "Potsdam",
+    "nameIt": "Potsdam",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      13.08424,
+      52.38894
+    ],
+    "zoom": 10.7,
+    "population": 154131,
+    "grid": "cities/potsdam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/potsdam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "potsdam",
+        "name": "Potsdam",
+        "nameIt": "Potsdam",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          13.08424,
+          52.38894
+        ],
+        "zoom": 10.7,
+        "population": 154131,
+        "cells": 522,
+        "layer": "cities/potsdam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.08424,
+            52.38894
+          ]
+        },
+        "properties": {
+          "id": "potsdam",
+          "name": "Potsdam",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 7.2,
+          "population": 154131
+        }
+      },
+      "summary": null
+    }
+  }
+}

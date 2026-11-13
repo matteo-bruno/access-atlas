@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "saurimo",
+  "createdAt": "2026-10-08T16:11:39.984Z",
+  "updatedAt": "2026-10-08T16:11:39.984Z",
+  "meta": {
+    "name": "Saurimo",
+    "nameIt": "Saurimo",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Saurimo.geojson",
+      "sha256": "9c6732b1e459c0521eba38bd8d5e174b7038a28cef8db4416ad56140f0c9f925",
+      "size": 513350,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "saurimo",
+    "name": "Saurimo",
+    "nameIt": "Saurimo",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO",
+    "center": [
+      20.39277,
+      -9.6675
+    ],
+    "zoom": 10.6,
+    "population": 517828,
+    "grid": "cities/saurimo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/saurimo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "saurimo",
+        "name": "Saurimo",
+        "nameIt": "Saurimo",
+        "region": "Angola",
+        "regionIt": "Angola",
+        "country": "AO",
+        "center": [
+          20.39277,
+          -9.6675
+        ],
+        "zoom": 10.6,
+        "population": 517828,
+        "cells": 440,
+        "layer": "cities/saurimo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.39277,
+            -9.6675
+          ]
+        },
+        "properties": {
+          "id": "saurimo",
+          "name": "Saurimo",
+          "country": "AO",
+          "isStudy": true,
+          "proximityMinutes": 27.7,
+          "population": 517828
+        }
+      },
+      "summary": null
+    }
+  }
+}

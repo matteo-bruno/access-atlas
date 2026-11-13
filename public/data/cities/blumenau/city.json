@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "blumenau",
+  "createdAt": "2026-10-08T15:19:40.567Z",
+  "updatedAt": "2026-10-08T15:19:40.567Z",
+  "meta": {
+    "name": "Blumenau",
+    "nameIt": "Blumenau",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Blumenau.geojson",
+      "sha256": "47ffae2a9577daf29366687ec539002b6478738c783406fa2de758c5a27d3550",
+      "size": 945050,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "blumenau",
+    "name": "Blumenau",
+    "nameIt": "Blumenau",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -49.08816,
+      -26.90887
+    ],
+    "zoom": 10.3,
+    "population": 237276,
+    "grid": "cities/blumenau/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/blumenau/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "blumenau",
+        "name": "Blumenau",
+        "nameIt": "Blumenau",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -49.08816,
+          -26.90887
+        ],
+        "zoom": 10.3,
+        "population": 237276,
+        "cells": 811,
+        "layer": "cities/blumenau/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.08816,
+            -26.90887
+          ]
+        },
+        "properties": {
+          "id": "blumenau",
+          "name": "Blumenau",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 15.8,
+          "population": 237276
+        }
+      },
+      "summary": null
+    }
+  }
+}

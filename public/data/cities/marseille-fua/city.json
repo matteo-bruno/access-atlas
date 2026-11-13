@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "marseille-fua",
+  "createdAt": "2026-10-19T16:57:18.546Z",
+  "updatedAt": "2026-10-19T16:57:18.546Z",
+  "meta": {
+    "name": "Marseille",
+    "nameIt": "Marseille",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "marseille-fua",
+    "name": "Marseille",
+    "nameIt": "Marseille",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "extent": "fua",
+    "core": "marseille",
+    "center": [
+      5.39856,
+      43.3323
+    ],
+    "zoom": 8.5,
+    "population": 1410199,
+    "grid": "cities/marseille-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/marseille-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "marseille-fua",
+        "name": "Marseille",
+        "nameIt": "Marseille",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "extent": "fua",
+        "core": "marseille",
+        "center": [
+          5.39856,
+          43.3323
+        ],
+        "zoom": 8.5,
+        "population": 1410199,
+        "cells": 15365,
+        "layer": "cities/marseille-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.39856,
+            43.3323
+          ]
+        },
+        "properties": {
+          "id": "marseille-fua",
+          "name": "Marseille",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 8.8,
+          "population": 1410199
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kaya",
+  "createdAt": "2026-10-08T15:45:50.390Z",
+  "updatedAt": "2026-10-08T15:45:50.390Z",
+  "meta": {
+    "name": "Kaya",
+    "nameIt": "Kaya",
+    "region": "Burkina Faso",
+    "regionIt": "Burkina Faso",
+    "country": "BF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kaya.geojson",
+      "sha256": "4c7b67d88a9f6f2451035666c7844070e5755efccc07bf93f74edee2b50c95b7",
+      "size": 398765,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kaya",
+    "name": "Kaya",
+    "nameIt": "Kaya",
+    "region": "Burkina Faso",
+    "regionIt": "Burkina Faso",
+    "country": "BF",
+    "center": [
+      -1.08286,
+      13.08154
+    ],
+    "zoom": 11.2,
+    "population": 113525,
+    "grid": "cities/kaya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kaya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kaya",
+        "name": "Kaya",
+        "nameIt": "Kaya",
+        "region": "Burkina Faso",
+        "regionIt": "Burkina Faso",
+        "country": "BF",
+        "center": [
+          -1.08286,
+          13.08154
+        ],
+        "zoom": 11.2,
+        "population": 113525,
+        "cells": 339,
+        "layer": "cities/kaya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.08286,
+            13.08154
+          ]
+        },
+        "properties": {
+          "id": "kaya",
+          "name": "Kaya",
+          "country": "BF",
+          "isStudy": true,
+          "proximityMinutes": 32.6,
+          "population": 113525
+        }
+      },
+      "summary": null
+    }
+  }
+}

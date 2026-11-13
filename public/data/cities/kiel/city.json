@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kiel",
+  "createdAt": "2026-10-08T15:47:01.287Z",
+  "updatedAt": "2026-10-08T15:47:01.287Z",
+  "meta": {
+    "name": "Kiel",
+    "nameIt": "Kiel",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kiel.geojson",
+      "sha256": "738edbc45a321bbc07882369c7a7fdefaf284499523034977d11b7d508b777cb",
+      "size": 946742,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kiel",
+    "name": "Kiel",
+    "nameIt": "Kiel",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      10.13732,
+      54.32215
+    ],
+    "zoom": 10.5,
+    "population": 214096,
+    "grid": "cities/kiel/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kiel/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kiel",
+        "name": "Kiel",
+        "nameIt": "Kiel",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          10.13732,
+          54.32215
+        ],
+        "zoom": 10.5,
+        "population": 214096,
+        "cells": 828,
+        "layer": "cities/kiel/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.13732,
+            54.32215
+          ]
+        },
+        "properties": {
+          "id": "kiel",
+          "name": "Kiel",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 9.3,
+          "population": 214096
+        }
+      },
+      "summary": null
+    }
+  }
+}

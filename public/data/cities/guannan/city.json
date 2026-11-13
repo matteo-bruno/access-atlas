@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guannan",
+  "createdAt": "2026-10-08T15:36:20.628Z",
+  "updatedAt": "2026-10-08T15:36:20.628Z",
+  "meta": {
+    "name": "Guannan",
+    "nameIt": "Guannan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guannan.geojson",
+      "sha256": "4f863a7bf0c29dbc99bd5647c0cad22080b015933a132a3f0cef682da2bbbf88",
+      "size": 544375,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guannan",
+    "name": "Guannan",
+    "nameIt": "Guannan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.3365,
+      34.09342
+    ],
+    "zoom": 10.5,
+    "population": 197556,
+    "grid": "cities/guannan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 173
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guannan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guannan",
+        "name": "Guannan",
+        "nameIt": "Guannan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.3365,
+          34.09342
+        ],
+        "zoom": 10.5,
+        "population": 197556,
+        "cells": 467,
+        "layer": "cities/guannan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 173
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.3365,
+            34.09342
+          ]
+        },
+        "properties": {
+          "id": "guannan",
+          "name": "Guannan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 197556
+        }
+      },
+      "summary": null
+    }
+  }
+}

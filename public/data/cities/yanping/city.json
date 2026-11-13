@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yanping",
+  "createdAt": "2026-10-08T16:23:30.437Z",
+  "updatedAt": "2026-10-08T16:23:30.437Z",
+  "meta": {
+    "name": "Yanping",
+    "nameIt": "Yanping",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yanping.geojson",
+      "sha256": "a8d197eb0e8298ee8a18f4f995de71715a15e35d7680e78d70beb8752a1a01ff",
+      "size": 331821,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yanping",
+    "name": "Yanping",
+    "nameIt": "Yanping",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.17101,
+      26.63995
+    ],
+    "zoom": 11.2,
+    "population": 198081,
+    "grid": "cities/yanping/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yanping/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yanping",
+        "name": "Yanping",
+        "nameIt": "Yanping",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.17101,
+          26.63995
+        ],
+        "zoom": 11.2,
+        "population": 198081,
+        "cells": 284,
+        "layer": "cities/yanping/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.17101,
+            26.63995
+          ]
+        },
+        "properties": {
+          "id": "yanping",
+          "name": "Yanping",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 198081
+        }
+      },
+      "summary": null
+    }
+  }
+}

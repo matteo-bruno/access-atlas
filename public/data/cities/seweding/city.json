@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "seweding",
+  "createdAt": "2026-10-08T16:12:09.411Z",
+  "updatedAt": "2026-10-08T16:12:09.411Z",
+  "meta": {
+    "name": "Seweding",
+    "nameIt": "Seweding",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Seweding.geojson",
+      "sha256": "e4db1456c5da08c48c3f050481c6c0713c832d1ef8bb175c81ff60fd9969518a",
+      "size": 957503,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "seweding",
+    "name": "Seweding",
+    "nameIt": "Seweding",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      25.62183,
+      -25.86826
+    ],
+    "zoom": 10.3,
+    "population": 193072,
+    "grid": "cities/seweding/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/seweding/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "seweding",
+        "name": "Seweding",
+        "nameIt": "Seweding",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          25.62183,
+          -25.86826
+        ],
+        "zoom": 10.3,
+        "population": 193072,
+        "cells": 815,
+        "layer": "cities/seweding/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.62183,
+            -25.86826
+          ]
+        },
+        "properties": {
+          "id": "seweding",
+          "name": "Seweding",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 40.1,
+          "population": 193072
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ouazzane",
+  "createdAt": "2026-10-08T16:03:17.974Z",
+  "updatedAt": "2026-10-08T16:03:17.974Z",
+  "meta": {
+    "name": "Ouazzane",
+    "nameIt": "Ouazzane",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ouazzane.geojson",
+      "sha256": "c9af99ee14487c8b70b5e6daad398b4a3e3fa5fb4f3988a30e200f377bd3f848",
+      "size": 73236,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ouazzane",
+    "name": "Ouazzane",
+    "nameIt": "Ouazzane",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -5.57637,
+      34.79786
+    ],
+    "zoom": 12,
+    "population": 16945,
+    "grid": "cities/ouazzane/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ouazzane/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ouazzane",
+        "name": "Ouazzane",
+        "nameIt": "Ouazzane",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -5.57637,
+          34.79786
+        ],
+        "zoom": 12,
+        "population": 16945,
+        "cells": 63,
+        "layer": "cities/ouazzane/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.57637,
+            34.79786
+          ]
+        },
+        "properties": {
+          "id": "ouazzane",
+          "name": "Ouazzane",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 16945
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jodhpur",
+  "createdAt": "2026-10-08T15:43:23.330Z",
+  "updatedAt": "2026-10-08T15:43:23.330Z",
+  "meta": {
+    "name": "Jodhpur",
+    "nameIt": "Jodhpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jodhpur.geojson",
+      "sha256": "805b55be69d9582fc9b93aaa0fc3d664e148dc3d78f48ddfa9a38a3682b1eab5",
+      "size": 2528248,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jodhpur",
+    "name": "Jodhpur",
+    "nameIt": "Jodhpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.02042,
+      26.26756
+    ],
+    "zoom": 9.5,
+    "population": 1366014,
+    "grid": "cities/jodhpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jodhpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jodhpur",
+        "name": "Jodhpur",
+        "nameIt": "Jodhpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.02042,
+          26.26756
+        ],
+        "zoom": 9.5,
+        "population": 1366014,
+        "cells": 2186,
+        "layer": "cities/jodhpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.02042,
+            26.26756
+          ]
+        },
+        "properties": {
+          "id": "jodhpur",
+          "name": "Jodhpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 57.1,
+          "population": 1366014
+        }
+      },
+      "summary": null
+    }
+  }
+}

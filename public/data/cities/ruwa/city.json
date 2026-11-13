@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ruwa",
+  "createdAt": "2026-10-08T16:09:25.318Z",
+  "updatedAt": "2026-10-08T16:09:25.318Z",
+  "meta": {
+    "name": "Ruwa",
+    "nameIt": "Ruwa",
+    "region": "Zimbabwe",
+    "regionIt": "Zimbabwe",
+    "country": "ZW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ruwa.geojson",
+      "sha256": "4ddfb97cfd0b9a2a0b2b0f281363b600a49a1a111d0f90870a51083016f371f0",
+      "size": 611128,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ruwa",
+    "name": "Ruwa",
+    "nameIt": "Ruwa",
+    "region": "Zimbabwe",
+    "regionIt": "Zimbabwe",
+    "country": "ZW",
+    "center": [
+      31.22387,
+      -17.8541
+    ],
+    "zoom": 10.6,
+    "population": 247540,
+    "grid": "cities/ruwa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ruwa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ruwa",
+        "name": "Ruwa",
+        "nameIt": "Ruwa",
+        "region": "Zimbabwe",
+        "regionIt": "Zimbabwe",
+        "country": "ZW",
+        "center": [
+          31.22387,
+          -17.8541
+        ],
+        "zoom": 10.6,
+        "population": 247540,
+        "cells": 520,
+        "layer": "cities/ruwa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.22387,
+            -17.8541
+          ]
+        },
+        "properties": {
+          "id": "ruwa",
+          "name": "Ruwa",
+          "country": "ZW",
+          "isStudy": true,
+          "proximityMinutes": 56.4,
+          "population": 247540
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barysaw",
+  "createdAt": "2026-10-08T15:15:45.969Z",
+  "updatedAt": "2026-10-08T15:15:45.969Z",
+  "meta": {
+    "name": "Barysaw",
+    "nameIt": "Barysaw",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barysaw.geojson",
+      "sha256": "f3b6b7f6acfbf0d865a1eae301057ab380955097d9c1430f6f441b4f320864b8",
+      "size": 364447,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barysaw",
+    "name": "Barysaw",
+    "nameIt": "Barysaw",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY",
+    "center": [
+      28.50495,
+      54.22479
+    ],
+    "zoom": 11,
+    "population": 68739,
+    "grid": "cities/barysaw/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barysaw/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barysaw",
+        "name": "Barysaw",
+        "nameIt": "Barysaw",
+        "region": "Belarus",
+        "regionIt": "Bielorussia",
+        "country": "BY",
+        "center": [
+          28.50495,
+          54.22479
+        ],
+        "zoom": 11,
+        "population": 68739,
+        "cells": 318,
+        "layer": "cities/barysaw/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.50495,
+            54.22479
+          ]
+        },
+        "properties": {
+          "id": "barysaw",
+          "name": "Barysaw",
+          "country": "BY",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 68739
+        }
+      },
+      "summary": null
+    }
+  }
+}

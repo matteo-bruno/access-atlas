@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhangjiawan",
+  "createdAt": "2026-10-08T16:25:00.545Z",
+  "updatedAt": "2026-10-08T16:25:00.545Z",
+  "meta": {
+    "name": "Zhangjiawan",
+    "nameIt": "Zhangjiawan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhangjiawan.geojson",
+      "sha256": "9cd803d264f9a631dda0b43fcc555bbe4b08a0c71c565c41225d8246901bdcd8",
+      "size": 414941,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhangjiawan",
+    "name": "Zhangjiawan",
+    "nameIt": "Zhangjiawan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.71503,
+      39.84356
+    ],
+    "zoom": 11.2,
+    "population": 74761,
+    "grid": "cities/zhangjiawan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 170
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhangjiawan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhangjiawan",
+        "name": "Zhangjiawan",
+        "nameIt": "Zhangjiawan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.71503,
+          39.84356
+        ],
+        "zoom": 11.2,
+        "population": 74761,
+        "cells": 356,
+        "layer": "cities/zhangjiawan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 170
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.71503,
+            39.84356
+          ]
+        },
+        "properties": {
+          "id": "zhangjiawan",
+          "name": "Zhangjiawan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 21.2,
+          "population": 74761
+        }
+      },
+      "summary": null
+    }
+  }
+}

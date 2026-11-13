@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "coari",
+  "createdAt": "2026-10-08T15:25:50.202Z",
+  "updatedAt": "2026-10-08T15:25:50.202Z",
+  "meta": {
+    "name": "Coari",
+    "nameIt": "Coari",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Coari.geojson",
+      "sha256": "9bf4c91b448a270d67055d1b4f7968a6c7d8e30235c927dc8c6387881a1a6e94",
+      "size": 118269,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "coari",
+    "name": "Coari",
+    "nameIt": "Coari",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -63.14118,
+      -4.09182
+    ],
+    "zoom": 11.9,
+    "population": 44578,
+    "grid": "cities/coari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/coari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "coari",
+        "name": "Coari",
+        "nameIt": "Coari",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -63.14118,
+          -4.09182
+        ],
+        "zoom": 11.9,
+        "population": 44578,
+        "cells": 101,
+        "layer": "cities/coari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -63.14118,
+            -4.09182
+          ]
+        },
+        "properties": {
+          "id": "coari",
+          "name": "Coari",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 44578
+        }
+      },
+      "summary": null
+    }
+  }
+}

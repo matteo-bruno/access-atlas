@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "solok",
+  "createdAt": "2026-10-08T16:14:19.560Z",
+  "updatedAt": "2026-10-08T16:14:19.560Z",
+  "meta": {
+    "name": "Solok",
+    "nameIt": "Solok",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Solok.geojson",
+      "sha256": "51fd731777f3cf23c49e9e8fa3194a05986f0803aecdc132383e196d6185caee",
+      "size": 226161,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "solok",
+    "name": "Solok",
+    "nameIt": "Solok",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      100.65932,
+      -0.79862
+    ],
+    "zoom": 11.4,
+    "population": 75506,
+    "grid": "cities/solok/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/solok/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "solok",
+        "name": "Solok",
+        "nameIt": "Solok",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          100.65932,
+          -0.79862
+        ],
+        "zoom": 11.4,
+        "population": 75506,
+        "cells": 192,
+        "layer": "cities/solok/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            100.65932,
+            -0.79862
+          ]
+        },
+        "properties": {
+          "id": "solok",
+          "name": "Solok",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 75506
+        }
+      },
+      "summary": null
+    }
+  }
+}

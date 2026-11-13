@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "idku",
+  "createdAt": "2026-10-08T15:40:18.323Z",
+  "updatedAt": "2026-10-08T15:40:18.323Z",
+  "meta": {
+    "name": "Idku",
+    "nameIt": "Idku",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Idku.geojson",
+      "sha256": "8caef910b01aa6462c86d3f77410de833f381b3c636f7011c8ced46f14b83a24",
+      "size": 102516,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "idku",
+    "name": "Idku",
+    "nameIt": "Idku",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      30.29853,
+      31.30568
+    ],
+    "zoom": 12,
+    "population": 187284,
+    "grid": "cities/idku/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/idku/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "idku",
+        "name": "Idku",
+        "nameIt": "Idku",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          30.29853,
+          31.30568
+        ],
+        "zoom": 12,
+        "population": 187284,
+        "cells": 88,
+        "layer": "cities/idku/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.29853,
+            31.30568
+          ]
+        },
+        "properties": {
+          "id": "idku",
+          "name": "Idku",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 187284
+        }
+      },
+      "summary": null
+    }
+  }
+}

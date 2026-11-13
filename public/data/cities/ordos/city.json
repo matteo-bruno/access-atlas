@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ordos",
+  "createdAt": "2026-10-08T16:02:57.856Z",
+  "updatedAt": "2026-10-08T16:02:57.856Z",
+  "meta": {
+    "name": "Ordos",
+    "nameIt": "Ordos",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ordos.geojson",
+      "sha256": "a618be41b5233914d3b37e8d0231cc58ae1d9d9072de3753b54787a1596f4368",
+      "size": 522952,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ordos",
+    "name": "Ordos",
+    "nameIt": "Ordos",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      109.7629,
+      39.59172
+    ],
+    "zoom": 10.5,
+    "population": 153716,
+    "grid": "cities/ordos/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ordos/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ordos",
+        "name": "Ordos",
+        "nameIt": "Ordos",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          109.7629,
+          39.59172
+        ],
+        "zoom": 10.5,
+        "population": 153716,
+        "cells": 449,
+        "layer": "cities/ordos/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.7629,
+            39.59172
+          ]
+        },
+        "properties": {
+          "id": "ordos",
+          "name": "Ordos",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 18.9,
+          "population": 153716
+        }
+      },
+      "summary": null
+    }
+  }
+}

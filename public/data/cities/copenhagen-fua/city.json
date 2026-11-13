@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "copenhagen-fua",
+  "createdAt": "2026-10-19T16:55:57.715Z",
+  "updatedAt": "2026-10-19T16:55:57.715Z",
+  "meta": {
+    "name": "Copenhagen",
+    "nameIt": "Copenhagen",
+    "region": "Denmark",
+    "regionIt": "Danimarca",
+    "country": "DK"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "copenhagen-fua",
+    "name": "Copenhagen",
+    "nameIt": "Copenhagen",
+    "region": "Denmark",
+    "regionIt": "Danimarca",
+    "country": "DK",
+    "extent": "fua",
+    "core": "copenhagen",
+    "center": [
+      12.39889,
+      55.70234
+    ],
+    "zoom": 8.5,
+    "population": 2167125,
+    "grid": "cities/copenhagen-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/copenhagen-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "copenhagen-fua",
+        "name": "Copenhagen",
+        "nameIt": "Copenhagen",
+        "region": "Denmark",
+        "regionIt": "Danimarca",
+        "country": "DK",
+        "extent": "fua",
+        "core": "copenhagen",
+        "center": [
+          12.39889,
+          55.70234
+        ],
+        "zoom": 8.5,
+        "population": 2167125,
+        "cells": 39509,
+        "layer": "cities/copenhagen-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.39889,
+            55.70234
+          ]
+        },
+        "properties": {
+          "id": "copenhagen-fua",
+          "name": "Copenhagen",
+          "country": "DK",
+          "isStudy": true,
+          "proximityMinutes": 12,
+          "population": 2167125
+        }
+      },
+      "summary": null
+    }
+  }
+}

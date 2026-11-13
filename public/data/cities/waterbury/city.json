@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "waterbury",
+  "createdAt": "2026-10-08T16:21:26.573Z",
+  "updatedAt": "2026-10-08T16:21:26.573Z",
+  "meta": {
+    "name": "Waterbury",
+    "nameIt": "Waterbury",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Waterbury.geojson",
+      "sha256": "96ba9d51e6c82b94c824c5eb57ba08798b6bcd3415412bf7cf42b4b1708f9c68",
+      "size": 462068,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "waterbury",
+    "name": "Waterbury",
+    "nameIt": "Waterbury",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -73.03643,
+      41.55728
+    ],
+    "zoom": 10.7,
+    "population": 99400,
+    "grid": "cities/waterbury/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/waterbury/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "waterbury",
+        "name": "Waterbury",
+        "nameIt": "Waterbury",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -73.03643,
+          41.55728
+        ],
+        "zoom": 10.7,
+        "population": 99400,
+        "cells": 398,
+        "layer": "cities/waterbury/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.03643,
+            41.55728
+          ]
+        },
+        "properties": {
+          "id": "waterbury",
+          "name": "Waterbury",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 23.5,
+          "population": 99400
+        }
+      },
+      "summary": null
+    }
+  }
+}

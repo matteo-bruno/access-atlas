@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shanxian",
+  "createdAt": "2026-10-08T16:12:37.215Z",
+  "updatedAt": "2026-10-08T16:12:37.215Z",
+  "meta": {
+    "name": "Shanxian",
+    "nameIt": "Shanxian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shanxian.geojson",
+      "sha256": "5f0a21de23e638c3077f009fb1946026fd7ac78d809377bfcf2a0212149ed482",
+      "size": 891416,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shanxian",
+    "name": "Shanxian",
+    "nameIt": "Shanxian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.08904,
+      34.78854
+    ],
+    "zoom": 10.6,
+    "population": 336062,
+    "grid": "cities/shanxian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shanxian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shanxian",
+        "name": "Shanxian",
+        "nameIt": "Shanxian",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.08904,
+          34.78854
+        ],
+        "zoom": 10.6,
+        "population": 336062,
+        "cells": 772,
+        "layer": "cities/shanxian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.08904,
+            34.78854
+          ]
+        },
+        "properties": {
+          "id": "shanxian",
+          "name": "Shanxian",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 18.4,
+          "population": 336062
+        }
+      },
+      "summary": null
+    }
+  }
+}

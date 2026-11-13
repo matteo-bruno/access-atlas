@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "weihe",
+  "createdAt": "2026-10-08T16:21:29.509Z",
+  "updatedAt": "2026-10-08T16:21:29.509Z",
+  "meta": {
+    "name": "Weihe",
+    "nameIt": "Weihe",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Weihe.geojson",
+      "sha256": "dc6101437987d730445354494988aa549cc0dc7f4954889973685f443dafc5ad",
+      "size": 143151,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "weihe",
+    "name": "Weihe",
+    "nameIt": "Weihe",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      128.37859,
+      44.94516
+    ],
+    "zoom": 11.7,
+    "population": 29763,
+    "grid": "cities/weihe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/weihe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "weihe",
+        "name": "Weihe",
+        "nameIt": "Weihe",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          128.37859,
+          44.94516
+        ],
+        "zoom": 11.7,
+        "population": 29763,
+        "cells": 123,
+        "layer": "cities/weihe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            128.37859,
+            44.94516
+          ]
+        },
+        "properties": {
+          "id": "weihe",
+          "name": "Weihe",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 29763
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zamosc",
+  "createdAt": "2026-10-08T16:24:48.270Z",
+  "updatedAt": "2026-10-08T16:24:48.270Z",
+  "meta": {
+    "name": "Zamość",
+    "nameIt": "Zamość",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zamość.geojson",
+      "sha256": "59923efe0b11b3ec0183dac341366945a7892e8c250073a7933836353f71902a",
+      "size": 171258,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zamosc",
+    "name": "Zamość",
+    "nameIt": "Zamość",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      23.26089,
+      50.72143
+    ],
+    "zoom": 11.6,
+    "population": 49418,
+    "grid": "cities/zamosc/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zamosc/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zamosc",
+        "name": "Zamość",
+        "nameIt": "Zamość",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          23.26089,
+          50.72143
+        ],
+        "zoom": 11.6,
+        "population": 49418,
+        "cells": 150,
+        "layer": "cities/zamosc/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.26089,
+            50.72143
+          ]
+        },
+        "properties": {
+          "id": "zamosc",
+          "name": "Zamość",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 9.5,
+          "population": 49418
+        }
+      },
+      "summary": null
+    }
+  }
+}

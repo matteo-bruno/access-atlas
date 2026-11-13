@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "adra",
+  "createdAt": "2026-10-08T16:25:47.622Z",
+  "updatedAt": "2026-10-08T16:25:47.622Z",
+  "meta": {
+    "name": "`Adra",
+    "nameIt": "`Adra",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/`Adra.geojson",
+      "sha256": "b3ee7b9458d21143d9810d869518be825cad61bb77d1cd7bbfa97c32f04f13b7",
+      "size": 148207,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "adra",
+    "name": "`Adra",
+    "nameIt": "`Adra",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY",
+    "center": [
+      36.50738,
+      33.6099
+    ],
+    "zoom": 11.3,
+    "population": 38238,
+    "grid": "cities/adra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/adra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "adra",
+        "name": "`Adra",
+        "nameIt": "`Adra",
+        "region": "Syria",
+        "regionIt": "Siria",
+        "country": "SY",
+        "center": [
+          36.50738,
+          33.6099
+        ],
+        "zoom": 11.3,
+        "population": 38238,
+        "cells": 128,
+        "layer": "cities/adra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.50738,
+            33.6099
+          ]
+        },
+        "properties": {
+          "id": "adra",
+          "name": "`Adra",
+          "country": "SY",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 38238
+        }
+      },
+      "summary": null
+    }
+  }
+}

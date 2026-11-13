@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "piro",
+  "createdAt": "2026-10-08T16:05:49.286Z",
+  "updatedAt": "2026-10-08T16:05:49.286Z",
+  "meta": {
+    "name": "Piro",
+    "nameIt": "Piro",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Piro.geojson",
+      "sha256": "e5f0e6dc2215c61069971315b8c4fc0bcc70350cee7d67d2d8df4e2b7f5abb72",
+      "size": 108898,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "piro",
+    "name": "Piro",
+    "nameIt": "Piro",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.4013,
+      25.3286
+    ],
+    "zoom": 11.9,
+    "population": 50675,
+    "grid": "cities/piro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/piro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "piro",
+        "name": "Piro",
+        "nameIt": "Piro",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.4013,
+          25.3286
+        ],
+        "zoom": 11.9,
+        "population": 50675,
+        "cells": 94,
+        "layer": "cities/piro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.4013,
+            25.3286
+          ]
+        },
+        "properties": {
+          "id": "piro",
+          "name": "Piro",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 50675
+        }
+      },
+      "summary": null
+    }
+  }
+}

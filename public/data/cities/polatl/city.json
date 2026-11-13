@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "polatl",
+  "createdAt": "2026-10-08T16:06:03.593Z",
+  "updatedAt": "2026-10-08T16:06:03.593Z",
+  "meta": {
+    "name": "Polatlı",
+    "nameIt": "Polatlı",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Polatlı.geojson",
+      "sha256": "9a1d5df2fbf23a4eb4d83f4323ae4d0fc7db826efa402738ab15b0a8796ecec2",
+      "size": 117848,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "polatl",
+    "name": "Polatlı",
+    "nameIt": "Polatlı",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      32.13605,
+      39.57902
+    ],
+    "zoom": 11.8,
+    "population": 70969,
+    "grid": "cities/polatl/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/polatl/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "polatl",
+        "name": "Polatlı",
+        "nameIt": "Polatlı",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          32.13605,
+          39.57902
+        ],
+        "zoom": 11.8,
+        "population": 70969,
+        "cells": 102,
+        "layer": "cities/polatl/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.13605,
+            39.57902
+          ]
+        },
+        "properties": {
+          "id": "polatl",
+          "name": "Polatlı",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 13.9,
+          "population": 70969
+        }
+      },
+      "summary": null
+    }
+  }
+}

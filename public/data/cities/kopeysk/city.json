@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kopeysk",
+  "createdAt": "2026-10-08T15:47:55.028Z",
+  "updatedAt": "2026-10-08T15:47:55.028Z",
+  "meta": {
+    "name": "Kopeysk",
+    "nameIt": "Kopeysk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kopeysk.geojson",
+      "sha256": "115143d8cbc3671ef6d729f425bd0f508e1a1dcfb53a610ae05b4a388ba95efe",
+      "size": 162549,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kopeysk",
+    "name": "Kopeysk",
+    "nameIt": "Kopeysk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      61.62847,
+      55.11877
+    ],
+    "zoom": 11.2,
+    "population": 56706,
+    "grid": "cities/kopeysk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kopeysk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kopeysk",
+        "name": "Kopeysk",
+        "nameIt": "Kopeysk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          61.62847,
+          55.11877
+        ],
+        "zoom": 11.2,
+        "population": 56706,
+        "cells": 142,
+        "layer": "cities/kopeysk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            61.62847,
+            55.11877
+          ]
+        },
+        "properties": {
+          "id": "kopeysk",
+          "name": "Kopeysk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 13.2,
+          "population": 56706
+        }
+      },
+      "summary": null
+    }
+  }
+}

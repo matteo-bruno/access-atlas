@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ban-phaeo",
+  "createdAt": "2026-10-08T15:14:28.808Z",
+  "updatedAt": "2026-10-08T15:14:28.808Z",
+  "meta": {
+    "name": "Ban Phaeo",
+    "nameIt": "Ban Phaeo",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ban Phaeo.geojson",
+      "sha256": "b7474d85493164769e345127fa9f1455cd0f6f44ed3855a6891d053d3ccc0ed7",
+      "size": 496372,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ban-phaeo",
+    "name": "Ban Phaeo",
+    "nameIt": "Ban Phaeo",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      100.10924,
+      13.56927
+    ],
+    "zoom": 10.4,
+    "population": 31644,
+    "grid": "cities/ban-phaeo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ban-phaeo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ban-phaeo",
+        "name": "Ban Phaeo",
+        "nameIt": "Ban Phaeo",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          100.10924,
+          13.56927
+        ],
+        "zoom": 10.4,
+        "population": 31644,
+        "cells": 424,
+        "layer": "cities/ban-phaeo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            100.10924,
+            13.56927
+          ]
+        },
+        "properties": {
+          "id": "ban-phaeo",
+          "name": "Ban Phaeo",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 61.4,
+          "population": 31644
+        }
+      },
+      "summary": null
+    }
+  }
+}

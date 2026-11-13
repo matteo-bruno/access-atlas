@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "samaguri",
+  "createdAt": "2026-10-08T16:10:13.526Z",
+  "updatedAt": "2026-10-08T16:10:13.526Z",
+  "meta": {
+    "name": "Samaguri",
+    "nameIt": "Samaguri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Samaguri.geojson",
+      "sha256": "caa5d6bb4cdc4a10b4658d595f950ada9a82ed6fca381627f041c4b98ba7511c",
+      "size": 713817,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "samaguri",
+    "name": "Samaguri",
+    "nameIt": "Samaguri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      92.83744,
+      26.44852
+    ],
+    "zoom": 10.5,
+    "population": 125835,
+    "grid": "cities/samaguri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/samaguri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "samaguri",
+        "name": "Samaguri",
+        "nameIt": "Samaguri",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          92.83744,
+          26.44852
+        ],
+        "zoom": 10.5,
+        "population": 125835,
+        "cells": 616,
+        "layer": "cities/samaguri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            92.83744,
+            26.44852
+          ]
+        },
+        "properties": {
+          "id": "samaguri",
+          "name": "Samaguri",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 125835
+        }
+      },
+      "summary": null
+    }
+  }
+}

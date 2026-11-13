@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kamarkuchi",
+  "createdAt": "2026-10-08T15:44:38.272Z",
+  "updatedAt": "2026-10-08T15:44:38.272Z",
+  "meta": {
+    "name": "Kamarkuchi",
+    "nameIt": "Kamarkuchi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kamarkuchi.geojson",
+      "sha256": "a0910a019b0cac426b3e0a0f85f03d3bd6c9fb949e34826f37bb3c13a3410dff",
+      "size": 738942,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kamarkuchi",
+    "name": "Kamarkuchi",
+    "nameIt": "Kamarkuchi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      91.49102,
+      26.36337
+    ],
+    "zoom": 10.2,
+    "population": 79081,
+    "grid": "cities/kamarkuchi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kamarkuchi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kamarkuchi",
+        "name": "Kamarkuchi",
+        "nameIt": "Kamarkuchi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          91.49102,
+          26.36337
+        ],
+        "zoom": 10.2,
+        "population": 79081,
+        "cells": 638,
+        "layer": "cities/kamarkuchi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.49102,
+            26.36337
+          ]
+        },
+        "properties": {
+          "id": "kamarkuchi",
+          "name": "Kamarkuchi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 79081
+        }
+      },
+      "summary": null
+    }
+  }
+}

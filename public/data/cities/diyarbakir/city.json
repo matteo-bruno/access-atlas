@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "diyarbakir",
+  "createdAt": "2026-10-08T15:30:18.012Z",
+  "updatedAt": "2026-10-08T15:30:18.012Z",
+  "meta": {
+    "name": "Diyarbakir",
+    "nameIt": "Diyarbakir",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Diyarbakir.geojson",
+      "sha256": "893bb02b677559ffe5f39902ae61458fa8a16a650150f71f616fdc2c7bd5e53f",
+      "size": 778197,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "diyarbakir",
+    "name": "Diyarbakir",
+    "nameIt": "Diyarbakir",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      40.18615,
+      37.93068
+    ],
+    "zoom": 10.2,
+    "population": 890456,
+    "grid": "cities/diyarbakir/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/diyarbakir/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "diyarbakir",
+        "name": "Diyarbakir",
+        "nameIt": "Diyarbakir",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          40.18615,
+          37.93068
+        ],
+        "zoom": 10.2,
+        "population": 890456,
+        "cells": 679,
+        "layer": "cities/diyarbakir/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.18615,
+            37.93068
+          ]
+        },
+        "properties": {
+          "id": "diyarbakir",
+          "name": "Diyarbakir",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 890456
+        }
+      },
+      "summary": null
+    }
+  }
+}

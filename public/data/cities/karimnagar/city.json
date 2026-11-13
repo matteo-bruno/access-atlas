@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "karimnagar",
+  "createdAt": "2026-10-08T15:45:19.879Z",
+  "updatedAt": "2026-10-08T15:45:19.879Z",
+  "meta": {
+    "name": "Karimnagar",
+    "nameIt": "Karimnagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Karimnagar.geojson",
+      "sha256": "8350953c4605c967ed1fcfeedfc6b235306cbbc0051ea42c2d4b7fce3631db83",
+      "size": 500479,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "karimnagar",
+    "name": "Karimnagar",
+    "nameIt": "Karimnagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.12707,
+      18.44097
+    ],
+    "zoom": 10.8,
+    "population": 405491,
+    "grid": "cities/karimnagar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/karimnagar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "karimnagar",
+        "name": "Karimnagar",
+        "nameIt": "Karimnagar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.12707,
+          18.44097
+        ],
+        "zoom": 10.8,
+        "population": 405491,
+        "cells": 432,
+        "layer": "cities/karimnagar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.12707,
+            18.44097
+          ]
+        },
+        "properties": {
+          "id": "karimnagar",
+          "name": "Karimnagar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 21.8,
+          "population": 405491
+        }
+      },
+      "summary": null
+    }
+  }
+}

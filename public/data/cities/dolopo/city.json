@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dolopo",
+  "createdAt": "2026-10-08T15:30:34.199Z",
+  "updatedAt": "2026-10-08T15:30:34.199Z",
+  "meta": {
+    "name": "Dolopo",
+    "nameIt": "Dolopo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dolopo.geojson",
+      "sha256": "e03cbb893e73843d3630969fc0de8f10ac26e027a1642f9ffa2d1e16d6c85782",
+      "size": 655739,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dolopo",
+    "name": "Dolopo",
+    "nameIt": "Dolopo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      111.52524,
+      -7.74599
+    ],
+    "zoom": 10.2,
+    "population": 138497,
+    "grid": "cities/dolopo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dolopo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dolopo",
+        "name": "Dolopo",
+        "nameIt": "Dolopo",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          111.52524,
+          -7.74599
+        ],
+        "zoom": 10.2,
+        "population": 138497,
+        "cells": 559,
+        "layer": "cities/dolopo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.52524,
+            -7.74599
+          ]
+        },
+        "properties": {
+          "id": "dolopo",
+          "name": "Dolopo",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 83.4,
+          "population": 138497
+        }
+      },
+      "summary": null
+    }
+  }
+}

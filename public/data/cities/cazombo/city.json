@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cazombo",
+  "createdAt": "2026-10-08T15:22:55.570Z",
+  "updatedAt": "2026-10-08T15:22:55.570Z",
+  "meta": {
+    "name": "Cazombo",
+    "nameIt": "Cazombo",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cazombo.geojson",
+      "sha256": "cd1db35a04dccd779056a6a715264ef168915ecc440fffd4266b8c2e721aaca4",
+      "size": 143531,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cazombo",
+    "name": "Cazombo",
+    "nameIt": "Cazombo",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO",
+    "center": [
+      22.90194,
+      -11.897
+    ],
+    "zoom": 11.6,
+    "population": 60793,
+    "grid": "cities/cazombo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cazombo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cazombo",
+        "name": "Cazombo",
+        "nameIt": "Cazombo",
+        "region": "Angola",
+        "regionIt": "Angola",
+        "country": "AO",
+        "center": [
+          22.90194,
+          -11.897
+        ],
+        "zoom": 11.6,
+        "population": 60793,
+        "cells": 122,
+        "layer": "cities/cazombo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            22.90194,
+            -11.897
+          ]
+        },
+        "properties": {
+          "id": "cazombo",
+          "name": "Cazombo",
+          "country": "AO",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 60793
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ludhiana",
+  "createdAt": "2026-10-08T15:52:31.408Z",
+  "updatedAt": "2026-10-08T15:52:31.408Z",
+  "meta": {
+    "name": "Ludhiana",
+    "nameIt": "Ludhiana",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ludhiana.geojson",
+      "sha256": "c85354d5d476727e578b1696ade585a8fec67330d6d82a9ee97794cc23f1de54",
+      "size": 2292519,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ludhiana",
+    "name": "Ludhiana",
+    "nameIt": "Ludhiana",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.86845,
+      30.89545
+    ],
+    "zoom": 9.5,
+    "population": 1585752,
+    "grid": "cities/ludhiana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ludhiana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ludhiana",
+        "name": "Ludhiana",
+        "nameIt": "Ludhiana",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.86845,
+          30.89545
+        ],
+        "zoom": 9.5,
+        "population": 1585752,
+        "cells": 1987,
+        "layer": "cities/ludhiana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.86845,
+            30.89545
+          ]
+        },
+        "properties": {
+          "id": "ludhiana",
+          "name": "Ludhiana",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 36.5,
+          "population": 1585752
+        }
+      },
+      "summary": null
+    }
+  }
+}

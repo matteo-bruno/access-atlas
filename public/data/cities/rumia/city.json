@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rumia",
+  "createdAt": "2026-10-08T16:09:20.344Z",
+  "updatedAt": "2026-10-08T16:09:20.344Z",
+  "meta": {
+    "name": "Rumia",
+    "nameIt": "Rumia",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rumia.geojson",
+      "sha256": "9908c61191ec390ff64e5f13aeaf334813d026bbdcf70e55188b8440f302c0b0",
+      "size": 152338,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rumia",
+    "name": "Rumia",
+    "nameIt": "Rumia",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      18.39729,
+      54.57296
+    ],
+    "zoom": 12,
+    "population": 47052,
+    "grid": "cities/rumia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rumia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rumia",
+        "name": "Rumia",
+        "nameIt": "Rumia",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          18.39729,
+          54.57296
+        ],
+        "zoom": 12,
+        "population": 47052,
+        "cells": 133,
+        "layer": "cities/rumia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.39729,
+            54.57296
+          ]
+        },
+        "properties": {
+          "id": "rumia",
+          "name": "Rumia",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 9.8,
+          "population": 47052
+        }
+      },
+      "summary": null
+    }
+  }
+}

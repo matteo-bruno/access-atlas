@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "daliyat-al-karmel",
+  "createdAt": "2026-10-08T15:27:43.291Z",
+  "updatedAt": "2026-10-08T15:27:43.291Z",
+  "meta": {
+    "name": "Daliyat al-Karmel",
+    "nameIt": "Daliyat al-Karmel",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Daliyat al-Karmel.geojson",
+      "sha256": "30d7269db8f5ebfd92634397f96845120a8ee136b4f86fe999b46770f9dfad58",
+      "size": 151982,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "daliyat-al-karmel",
+    "name": "Daliyat al-Karmel",
+    "nameIt": "Daliyat al-Karmel",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL",
+    "center": [
+      35.05678,
+      32.70293
+    ],
+    "zoom": 11.6,
+    "population": 26908,
+    "grid": "cities/daliyat-al-karmel/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/daliyat-al-karmel/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "daliyat-al-karmel",
+        "name": "Daliyat al-Karmel",
+        "nameIt": "Daliyat al-Karmel",
+        "region": "Israel",
+        "regionIt": "Israele",
+        "country": "IL",
+        "center": [
+          35.05678,
+          32.70293
+        ],
+        "zoom": 11.6,
+        "population": 26908,
+        "cells": 132,
+        "layer": "cities/daliyat-al-karmel/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.05678,
+            32.70293
+          ]
+        },
+        "properties": {
+          "id": "daliyat-al-karmel",
+          "name": "Daliyat al-Karmel",
+          "country": "IL",
+          "isStudy": true,
+          "proximityMinutes": 16.2,
+          "population": 26908
+        }
+      },
+      "summary": null
+    }
+  }
+}

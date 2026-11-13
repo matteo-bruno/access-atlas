@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "donghe",
+  "createdAt": "2026-10-08T15:30:50.582Z",
+  "updatedAt": "2026-10-08T15:30:50.582Z",
+  "meta": {
+    "name": "Donghe",
+    "nameIt": "Donghe",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Donghe.geojson",
+      "sha256": "a1a95b7f22ecb1e4674b1732937846709526144da1617a145d7909ff76ffe9ae",
+      "size": 1645962,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "donghe",
+    "name": "Donghe",
+    "nameIt": "Donghe",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      110.00614,
+      40.58623
+    ],
+    "zoom": 9.5,
+    "population": 568378,
+    "grid": "cities/donghe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/donghe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "donghe",
+        "name": "Donghe",
+        "nameIt": "Donghe",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          110.00614,
+          40.58623
+        ],
+        "zoom": 9.5,
+        "population": 568378,
+        "cells": 1412,
+        "layer": "cities/donghe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.00614,
+            40.58623
+          ]
+        },
+        "properties": {
+          "id": "donghe",
+          "name": "Donghe",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 36.7,
+          "population": 568378
+        }
+      },
+      "summary": null
+    }
+  }
+}

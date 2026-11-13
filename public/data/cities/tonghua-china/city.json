@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tonghua-china",
+  "createdAt": "2026-10-08T16:18:25.738Z",
+  "updatedAt": "2026-10-08T16:18:25.738Z",
+  "meta": {
+    "name": "Tonghua (China)",
+    "nameIt": "Tonghua (China)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tonghua (China).geojson",
+      "sha256": "1b3a20f4dfa8d496d59315fcb4be64c8766ebf1538d067c7f42368d0164db241",
+      "size": 1727669,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tonghua-china",
+    "name": "Tonghua (China)",
+    "nameIt": "Tonghua (China)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      125.91545,
+      41.72044
+    ],
+    "zoom": 9.6,
+    "population": 349079,
+    "grid": "cities/tonghua-china/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 167
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tonghua-china/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tonghua-china",
+        "name": "Tonghua (China)",
+        "nameIt": "Tonghua (China)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          125.91545,
+          41.72044
+        ],
+        "zoom": 9.6,
+        "population": 349079,
+        "cells": 1480,
+        "layer": "cities/tonghua-china/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 167
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.91545,
+            41.72044
+          ]
+        },
+        "properties": {
+          "id": "tonghua-china",
+          "name": "Tonghua (China)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 54.1,
+          "population": 349079
+        }
+      },
+      "summary": null
+    }
+  }
+}

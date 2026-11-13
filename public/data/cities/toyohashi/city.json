@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "toyohashi",
+  "createdAt": "2026-10-08T16:18:42.078Z",
+  "updatedAt": "2026-10-08T16:18:42.078Z",
+  "meta": {
+    "name": "Toyohashi",
+    "nameIt": "Toyohashi",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Toyohashi.geojson",
+      "sha256": "4d37c0a4ad5edf78c7640f10444aa9fd3dbde925e7f29ff310b638c2a6102f22",
+      "size": 2849254,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "toyohashi",
+    "name": "Toyohashi",
+    "nameIt": "Toyohashi",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      137.38673,
+      34.77302
+    ],
+    "zoom": 9.7,
+    "population": 488029,
+    "grid": "cities/toyohashi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/toyohashi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "toyohashi",
+        "name": "Toyohashi",
+        "nameIt": "Toyohashi",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          137.38673,
+          34.77302
+        ],
+        "zoom": 9.7,
+        "population": 488029,
+        "cells": 2474,
+        "layer": "cities/toyohashi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            137.38673,
+            34.77302
+          ]
+        },
+        "properties": {
+          "id": "toyohashi",
+          "name": "Toyohashi",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 488029
+        }
+      },
+      "summary": null
+    }
+  }
+}

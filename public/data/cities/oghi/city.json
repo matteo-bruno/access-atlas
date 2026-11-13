@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oghi",
+  "createdAt": "2026-10-08T16:02:35.326Z",
+  "updatedAt": "2026-10-08T16:02:35.326Z",
+  "meta": {
+    "name": "Oghi",
+    "nameIt": "Oghi",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Oghi.geojson",
+      "sha256": "84fddbb38ce22a6767c1679995da5315ca3bc21dfd034d5396b0fd73ed382cfb",
+      "size": 397513,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "oghi",
+    "name": "Oghi",
+    "nameIt": "Oghi",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      73.02889,
+      34.50518
+    ],
+    "zoom": 10.6,
+    "population": 102141,
+    "grid": "cities/oghi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oghi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oghi",
+        "name": "Oghi",
+        "nameIt": "Oghi",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          73.02889,
+          34.50518
+        ],
+        "zoom": 10.6,
+        "population": 102141,
+        "cells": 344,
+        "layer": "cities/oghi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.02889,
+            34.50518
+          ]
+        },
+        "properties": {
+          "id": "oghi",
+          "name": "Oghi",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 102141
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cottbus-chosebuz",
+  "createdAt": "2026-10-08T15:26:42.650Z",
+  "updatedAt": "2026-10-08T15:26:42.650Z",
+  "meta": {
+    "name": "Cottbus - Chóśebuz",
+    "nameIt": "Cottbus - Chóśebuz",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cottbus - Chóśebuz.geojson",
+      "sha256": "d2b1cbeffdb04dc983fcedc261eaf3845577ba2d4dad504249f7f206e1874ea0",
+      "size": 308414,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cottbus-chosebuz",
+    "name": "Cottbus - Chóśebuz",
+    "nameIt": "Cottbus - Chóśebuz",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      14.33379,
+      51.75472
+    ],
+    "zoom": 11.2,
+    "population": 59686,
+    "grid": "cities/cottbus-chosebuz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cottbus-chosebuz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cottbus-chosebuz",
+        "name": "Cottbus - Chóśebuz",
+        "nameIt": "Cottbus - Chóśebuz",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          14.33379,
+          51.75472
+        ],
+        "zoom": 11.2,
+        "population": 59686,
+        "cells": 270,
+        "layer": "cities/cottbus-chosebuz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.33379,
+            51.75472
+          ]
+        },
+        "properties": {
+          "id": "cottbus-chosebuz",
+          "name": "Cottbus - Chóśebuz",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 8,
+          "population": 59686
+        }
+      },
+      "summary": null
+    }
+  }
+}

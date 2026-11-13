@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ksar-el-kebir",
+  "createdAt": "2026-10-08T15:48:32.703Z",
+  "updatedAt": "2026-10-08T15:48:32.703Z",
+  "meta": {
+    "name": "Ksar el-Kebir",
+    "nameIt": "Ksar el-Kebir",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ksar el-Kebir.geojson",
+      "sha256": "2b3601984194b09a995ed32e80f22cad8de6bcf393ff4bca31acd26d2037d8c0",
+      "size": 142092,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ksar-el-kebir",
+    "name": "Ksar el-Kebir",
+    "nameIt": "Ksar el-Kebir",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -5.90677,
+      35.00443
+    ],
+    "zoom": 11.8,
+    "population": 29233,
+    "grid": "cities/ksar-el-kebir/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ksar-el-kebir/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ksar-el-kebir",
+        "name": "Ksar el-Kebir",
+        "nameIt": "Ksar el-Kebir",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -5.90677,
+          35.00443
+        ],
+        "zoom": 11.8,
+        "population": 29233,
+        "cells": 122,
+        "layer": "cities/ksar-el-kebir/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.90677,
+            35.00443
+          ]
+        },
+        "properties": {
+          "id": "ksar-el-kebir",
+          "name": "Ksar el-Kebir",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 19.8,
+          "population": 29233
+        }
+      },
+      "summary": null
+    }
+  }
+}

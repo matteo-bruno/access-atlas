@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pollachi",
+  "createdAt": "2026-10-08T16:06:04.556Z",
+  "updatedAt": "2026-10-08T16:06:04.556Z",
+  "meta": {
+    "name": "Pollachi",
+    "nameIt": "Pollachi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pollachi.geojson",
+      "sha256": "e416ffc9989395bb48eb311c0b48657a19a5b6143f30afa92bea219615677f7d",
+      "size": 495746,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pollachi",
+    "name": "Pollachi",
+    "nameIt": "Pollachi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.01361,
+      10.65867
+    ],
+    "zoom": 10.8,
+    "population": 172728,
+    "grid": "cities/pollachi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pollachi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pollachi",
+        "name": "Pollachi",
+        "nameIt": "Pollachi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.01361,
+          10.65867
+        ],
+        "zoom": 10.8,
+        "population": 172728,
+        "cells": 427,
+        "layer": "cities/pollachi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.01361,
+            10.65867
+          ]
+        },
+        "properties": {
+          "id": "pollachi",
+          "name": "Pollachi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 35.4,
+          "population": 172728
+        }
+      },
+      "summary": null
+    }
+  }
+}

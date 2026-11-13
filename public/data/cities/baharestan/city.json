@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baharestan",
+  "createdAt": "2026-10-08T15:13:06.407Z",
+  "updatedAt": "2026-10-08T15:13:06.407Z",
+  "meta": {
+    "name": "Baharestan",
+    "nameIt": "Baharestan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baharestan.geojson",
+      "sha256": "0cb2116233276c7406854bea8adb9a491572d57d37af5ef86401cfa8887a2808",
+      "size": 143214,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baharestan",
+    "name": "Baharestan",
+    "nameIt": "Baharestan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      51.77802,
+      32.4874
+    ],
+    "zoom": 11.8,
+    "population": 94336,
+    "grid": "cities/baharestan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baharestan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baharestan",
+        "name": "Baharestan",
+        "nameIt": "Baharestan",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          51.77802,
+          32.4874
+        ],
+        "zoom": 11.8,
+        "population": 94336,
+        "cells": 124,
+        "layer": "cities/baharestan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            51.77802,
+            32.4874
+          ]
+        },
+        "properties": {
+          "id": "baharestan",
+          "name": "Baharestan",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 14.4,
+          "population": 94336
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sheraro",
+  "createdAt": "2026-10-08T16:12:53.755Z",
+  "updatedAt": "2026-10-08T16:12:53.755Z",
+  "meta": {
+    "name": "Sheraro",
+    "nameIt": "Sheraro",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sheraro.geojson",
+      "sha256": "475824e449441aadf588b91daeee13704ba4d72573bf167b22dc11c1612d28cc",
+      "size": 53560,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sheraro",
+    "name": "Sheraro",
+    "nameIt": "Sheraro",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      37.77139,
+      14.39421
+    ],
+    "zoom": 12,
+    "population": 27112,
+    "grid": "cities/sheraro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sheraro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sheraro",
+        "name": "Sheraro",
+        "nameIt": "Sheraro",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          37.77139,
+          14.39421
+        ],
+        "zoom": 12,
+        "population": 27112,
+        "cells": 46,
+        "layer": "cities/sheraro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.77139,
+            14.39421
+          ]
+        },
+        "properties": {
+          "id": "sheraro",
+          "name": "Sheraro",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 27112
+        }
+      },
+      "summary": null
+    }
+  }
+}

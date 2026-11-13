@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lu",
+  "createdAt": "2026-10-08T15:52:19.124Z",
+  "updatedAt": "2026-10-08T15:52:19.124Z",
+  "meta": {
+    "name": "Lu",
+    "nameIt": "Lu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lu.geojson",
+      "sha256": "b2e0ee1f03a2cbb55d8e2816efb9846a6ee0d6a589914bc3ab4a5cebf49b2cd4",
+      "size": 147236,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lu",
+    "name": "Lu",
+    "nameIt": "Lu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      105.36965,
+      29.1534
+    ],
+    "zoom": 11.6,
+    "population": 83131,
+    "grid": "cities/lu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lu",
+        "name": "Lu",
+        "nameIt": "Lu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          105.36965,
+          29.1534
+        ],
+        "zoom": 11.6,
+        "population": 83131,
+        "cells": 126,
+        "layer": "cities/lu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.36965,
+            29.1534
+          ]
+        },
+        "properties": {
+          "id": "lu",
+          "name": "Lu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 17.6,
+          "population": 83131
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "monclova",
+  "createdAt": "2026-10-08T15:57:58.836Z",
+  "updatedAt": "2026-10-08T15:57:58.836Z",
+  "meta": {
+    "name": "Monclova",
+    "nameIt": "Monclova",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Monclova.geojson",
+      "sha256": "611e70890eccda63e1d7b7f3313b723ea0a97547d9fa68fe005ba27b52dc4193",
+      "size": 619451,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "monclova",
+    "name": "Monclova",
+    "nameIt": "Monclova",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -101.43074,
+      26.90935
+    ],
+    "zoom": 10.4,
+    "population": 282632,
+    "grid": "cities/monclova/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/monclova/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "monclova",
+        "name": "Monclova",
+        "nameIt": "Monclova",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -101.43074,
+          26.90935
+        ],
+        "zoom": 10.4,
+        "population": 282632,
+        "cells": 527,
+        "layer": "cities/monclova/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -101.43074,
+            26.90935
+          ]
+        },
+        "properties": {
+          "id": "monclova",
+          "name": "Monclova",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 24.7,
+          "population": 282632
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "garissa",
+  "createdAt": "2026-10-08T15:34:40.656Z",
+  "updatedAt": "2026-10-08T15:34:40.656Z",
+  "meta": {
+    "name": "Garissa",
+    "nameIt": "Garissa",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Garissa.geojson",
+      "sha256": "74baad026dc2a7ae3f011270f300b0979582c554df1de76e2a7fc03504a002e9",
+      "size": 452057,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "garissa",
+    "name": "Garissa",
+    "nameIt": "Garissa",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE",
+    "center": [
+      39.65074,
+      -0.45567
+    ],
+    "zoom": 10.8,
+    "population": 246031,
+    "grid": "cities/garissa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/garissa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "garissa",
+        "name": "Garissa",
+        "nameIt": "Garissa",
+        "region": "Kenya",
+        "regionIt": "Kenya",
+        "country": "KE",
+        "center": [
+          39.65074,
+          -0.45567
+        ],
+        "zoom": 10.8,
+        "population": 246031,
+        "cells": 384,
+        "layer": "cities/garissa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.65074,
+            -0.45567
+          ]
+        },
+        "properties": {
+          "id": "garissa",
+          "name": "Garissa",
+          "country": "KE",
+          "isStudy": true,
+          "proximityMinutes": 31.5,
+          "population": 246031
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sacramento",
+  "createdAt": "2026-10-08T16:09:37.399Z",
+  "updatedAt": "2026-10-08T16:09:37.399Z",
+  "meta": {
+    "name": "Sacramento",
+    "nameIt": "Sacramento",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sacramento.geojson",
+      "sha256": "1e0e7228b98cf8b8a1cf53d5ec57533d67466888c065c4c30372214e1f441428",
+      "size": 8059039,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sacramento",
+    "name": "Sacramento",
+    "nameIt": "Sacramento",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -121.39715,
+      38.58574
+    ],
+    "zoom": 8.5,
+    "population": 1746029,
+    "grid": "cities/sacramento/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sacramento/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sacramento",
+        "name": "Sacramento",
+        "nameIt": "Sacramento",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -121.39715,
+          38.58574
+        ],
+        "zoom": 8.5,
+        "population": 1746029,
+        "cells": 6919,
+        "layer": "cities/sacramento/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -121.39715,
+            38.58574
+          ]
+        },
+        "properties": {
+          "id": "sacramento",
+          "name": "Sacramento",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 24.9,
+          "population": 1746029
+        }
+      },
+      "summary": null
+    }
+  }
+}

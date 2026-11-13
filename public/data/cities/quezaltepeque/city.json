@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "quezaltepeque",
+  "createdAt": "2026-10-08T16:07:36.734Z",
+  "updatedAt": "2026-10-08T16:07:36.734Z",
+  "meta": {
+    "name": "Quezaltepeque",
+    "nameIt": "Quezaltepeque",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Quezaltepeque.geojson",
+      "sha256": "661c57b5718f54974ec8a3b453ad86abd2afec4b284d1077c38e963a8f07703e",
+      "size": 101467,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "quezaltepeque",
+    "name": "Quezaltepeque",
+    "nameIt": "Quezaltepeque",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV",
+    "center": [
+      -89.26932,
+      13.82933
+    ],
+    "zoom": 11.9,
+    "population": 46020,
+    "grid": "cities/quezaltepeque/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/quezaltepeque/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "quezaltepeque",
+        "name": "Quezaltepeque",
+        "nameIt": "Quezaltepeque",
+        "region": "El Salvador",
+        "regionIt": "El Salvador",
+        "country": "SV",
+        "center": [
+          -89.26932,
+          13.82933
+        ],
+        "zoom": 11.9,
+        "population": 46020,
+        "cells": 87,
+        "layer": "cities/quezaltepeque/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -89.26932,
+            13.82933
+          ]
+        },
+        "properties": {
+          "id": "quezaltepeque",
+          "name": "Quezaltepeque",
+          "country": "SV",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 46020
+        }
+      },
+      "summary": null
+    }
+  }
+}

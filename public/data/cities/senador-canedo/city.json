@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "senador-canedo",
+  "createdAt": "2026-10-08T16:11:55.605Z",
+  "updatedAt": "2026-10-08T16:11:55.605Z",
+  "meta": {
+    "name": "Senador Canedo",
+    "nameIt": "Senador Canedo",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Senador Canedo.geojson",
+      "sha256": "bacda6c0f203fee7b285f211ae2b09a93a410e3cf3949c5cee6ddcd40bdf6997",
+      "size": 168737,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "senador-canedo",
+    "name": "Senador Canedo",
+    "nameIt": "Senador Canedo",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -49.10229,
+      -16.69803
+    ],
+    "zoom": 11.4,
+    "population": 88688,
+    "grid": "cities/senador-canedo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/senador-canedo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "senador-canedo",
+        "name": "Senador Canedo",
+        "nameIt": "Senador Canedo",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -49.10229,
+          -16.69803
+        ],
+        "zoom": 11.4,
+        "population": 88688,
+        "cells": 143,
+        "layer": "cities/senador-canedo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.10229,
+            -16.69803
+          ]
+        },
+        "properties": {
+          "id": "senador-canedo",
+          "name": "Senador Canedo",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 16.9,
+          "population": 88688
+        }
+      },
+      "summary": null
+    }
+  }
+}

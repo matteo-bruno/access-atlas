@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "panzhou",
+  "createdAt": "2026-10-08T16:04:10.659Z",
+  "updatedAt": "2026-10-08T16:04:10.659Z",
+  "meta": {
+    "name": "Panzhou",
+    "nameIt": "Panzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Panzhou.geojson",
+      "sha256": "5b8a415e129d895cb333d3687272d7926e0e5fbe1cb5550dc92ceac9c5254ef2",
+      "size": 169493,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "panzhou",
+    "name": "Panzhou",
+    "nameIt": "Panzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      104.47247,
+      25.7144
+    ],
+    "zoom": 11.6,
+    "population": 188789,
+    "grid": "cities/panzhou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/panzhou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "panzhou",
+        "name": "Panzhou",
+        "nameIt": "Panzhou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          104.47247,
+          25.7144
+        ],
+        "zoom": 11.6,
+        "population": 188789,
+        "cells": 145,
+        "layer": "cities/panzhou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            104.47247,
+            25.7144
+          ]
+        },
+        "properties": {
+          "id": "panzhou",
+          "name": "Panzhou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 188789
+        }
+      },
+      "summary": null
+    }
+  }
+}

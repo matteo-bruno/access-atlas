@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mahdasht",
+  "createdAt": "2026-10-08T15:53:41.188Z",
+  "updatedAt": "2026-10-08T15:53:41.188Z",
+  "meta": {
+    "name": "Mahdasht",
+    "nameIt": "Mahdasht",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mahdasht.geojson",
+      "sha256": "17631f0b17914d990e0ef7cf62f84d63ece59c3e1a4776895675338e367b13a8",
+      "size": 161140,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mahdasht",
+    "name": "Mahdasht",
+    "nameIt": "Mahdasht",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      50.80246,
+      35.72588
+    ],
+    "zoom": 11.3,
+    "population": 124477,
+    "grid": "cities/mahdasht/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mahdasht/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mahdasht",
+        "name": "Mahdasht",
+        "nameIt": "Mahdasht",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          50.80246,
+          35.72588
+        ],
+        "zoom": 11.3,
+        "population": 124477,
+        "cells": 139,
+        "layer": "cities/mahdasht/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            50.80246,
+            35.72588
+          ]
+        },
+        "properties": {
+          "id": "mahdasht",
+          "name": "Mahdasht",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 19.4,
+          "population": 124477
+        }
+      },
+      "summary": null
+    }
+  }
+}

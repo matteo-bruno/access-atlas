@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "buyukp-nar",
+  "createdAt": "2026-10-08T15:21:25.715Z",
+  "updatedAt": "2026-10-08T15:21:25.715Z",
+  "meta": {
+    "name": "Büyükpınar",
+    "nameIt": "Büyükpınar",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Büyükpınar.geojson",
+      "sha256": "3123e4b52ddf7d6adb312696cfb20efe8872012fd5cc707ae4fa60853ec6e474",
+      "size": 191050,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "buyukp-nar",
+    "name": "Büyükpınar",
+    "nameIt": "Büyükpınar",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      37.31016,
+      37.1615
+    ],
+    "zoom": 11.4,
+    "population": 60313,
+    "grid": "cities/buyukp-nar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/buyukp-nar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "buyukp-nar",
+        "name": "Büyükpınar",
+        "nameIt": "Büyükpınar",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          37.31016,
+          37.1615
+        ],
+        "zoom": 11.4,
+        "population": 60313,
+        "cells": 165,
+        "layer": "cities/buyukp-nar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.31016,
+            37.1615
+          ]
+        },
+        "properties": {
+          "id": "buyukp-nar",
+          "name": "Büyükpınar",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 60313
+        }
+      },
+      "summary": null
+    }
+  }
+}

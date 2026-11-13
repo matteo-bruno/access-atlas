@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhangzhou",
+  "createdAt": "2026-10-08T16:25:03.459Z",
+  "updatedAt": "2026-10-08T16:25:03.459Z",
+  "meta": {
+    "name": "Zhangzhou",
+    "nameIt": "Zhangzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhangzhou.geojson",
+      "sha256": "13cebe4e99cca6d78873f9f7ce3233f6a4f002e1566d78b38d6e757736e79875",
+      "size": 5187202,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhangzhou",
+    "name": "Zhangzhou",
+    "nameIt": "Zhangzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.77802,
+      24.49633
+    ],
+    "zoom": 8.6,
+    "population": 1685354,
+    "grid": "cities/zhangzhou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhangzhou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhangzhou",
+        "name": "Zhangzhou",
+        "nameIt": "Zhangzhou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.77802,
+          24.49633
+        ],
+        "zoom": 8.6,
+        "population": 1685354,
+        "cells": 4424,
+        "layer": "cities/zhangzhou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.77802,
+            24.49633
+          ]
+        },
+        "properties": {
+          "id": "zhangzhou",
+          "name": "Zhangzhou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 66.4,
+          "population": 1685354
+        }
+      },
+      "summary": null
+    }
+  }
+}

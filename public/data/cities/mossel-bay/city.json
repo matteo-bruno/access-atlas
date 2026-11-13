@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mossel-bay",
+  "createdAt": "2026-10-08T15:58:28.621Z",
+  "updatedAt": "2026-10-08T15:58:28.621Z",
+  "meta": {
+    "name": "Mossel Bay",
+    "nameIt": "Mossel Bay",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mossel Bay.geojson",
+      "sha256": "70da7d82bd03e53df040bb47cd26bbc0a0dca0afbf9b72a3939710788f9e2b7b",
+      "size": 374905,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mossel-bay",
+    "name": "Mossel Bay",
+    "nameIt": "Mossel Bay",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      22.11088,
+      -34.16737
+    ],
+    "zoom": 10.9,
+    "population": 57138,
+    "grid": "cities/mossel-bay/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mossel-bay/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mossel-bay",
+        "name": "Mossel Bay",
+        "nameIt": "Mossel Bay",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          22.11088,
+          -34.16737
+        ],
+        "zoom": 10.9,
+        "population": 57138,
+        "cells": 321,
+        "layer": "cities/mossel-bay/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            22.11088,
+            -34.16737
+          ]
+        },
+        "properties": {
+          "id": "mossel-bay",
+          "name": "Mossel Bay",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 26.6,
+          "population": 57138
+        }
+      },
+      "summary": null
+    }
+  }
+}

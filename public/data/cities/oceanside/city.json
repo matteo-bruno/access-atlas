@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oceanside",
+  "createdAt": "2026-10-08T16:02:30.322Z",
+  "updatedAt": "2026-10-08T16:02:30.322Z",
+  "meta": {
+    "name": "Oceanside",
+    "nameIt": "Oceanside",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Oceanside.geojson",
+      "sha256": "57c7a1a7fcc3100ae1d1acf914c1d27888f4d7d525dd5e3c640471d0025812a2",
+      "size": 667317,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "oceanside",
+    "name": "Oceanside",
+    "nameIt": "Oceanside",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -117.34463,
+      33.17701
+    ],
+    "zoom": 10.2,
+    "population": 112512,
+    "grid": "cities/oceanside/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oceanside/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oceanside",
+        "name": "Oceanside",
+        "nameIt": "Oceanside",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -117.34463,
+          33.17701
+        ],
+        "zoom": 10.2,
+        "population": 112512,
+        "cells": 574,
+        "layer": "cities/oceanside/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -117.34463,
+            33.17701
+          ]
+        },
+        "properties": {
+          "id": "oceanside",
+          "name": "Oceanside",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 24.2,
+          "population": 112512
+        }
+      },
+      "summary": null
+    }
+  }
+}

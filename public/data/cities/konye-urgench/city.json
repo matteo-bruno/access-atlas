@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "konye-urgench",
+  "createdAt": "2026-10-08T15:47:53.950Z",
+  "updatedAt": "2026-10-08T15:47:53.950Z",
+  "meta": {
+    "name": "Konye-Urgench",
+    "nameIt": "Konye-Urgench",
+    "region": "Turkmenistan",
+    "regionIt": "Turkmenistan",
+    "country": "TM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Konye-Urgench.geojson",
+      "sha256": "55c048056ad9e6b0428c0deddb4c9ff1ae65aa8870348f99ac760a8b66f5270d",
+      "size": 150502,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "konye-urgench",
+    "name": "Konye-Urgench",
+    "nameIt": "Konye-Urgench",
+    "region": "Turkmenistan",
+    "regionIt": "Turkmenistan",
+    "country": "TM",
+    "center": [
+      59.15485,
+      42.32597
+    ],
+    "zoom": 11.4,
+    "population": 49237,
+    "grid": "cities/konye-urgench/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/konye-urgench/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "konye-urgench",
+        "name": "Konye-Urgench",
+        "nameIt": "Konye-Urgench",
+        "region": "Turkmenistan",
+        "regionIt": "Turkmenistan",
+        "country": "TM",
+        "center": [
+          59.15485,
+          42.32597
+        ],
+        "zoom": 11.4,
+        "population": 49237,
+        "cells": 130,
+        "layer": "cities/konye-urgench/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            59.15485,
+            42.32597
+          ]
+        },
+        "properties": {
+          "id": "konye-urgench",
+          "name": "Konye-Urgench",
+          "country": "TM",
+          "isStudy": true,
+          "proximityMinutes": 18.9,
+          "population": 49237
+        }
+      },
+      "summary": null
+    }
+  }
+}

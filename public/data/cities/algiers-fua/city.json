@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "algiers-fua",
+  "createdAt": "2026-10-19T16:55:08.933Z",
+  "updatedAt": "2026-10-19T16:55:08.933Z",
+  "meta": {
+    "name": "Algiers",
+    "nameIt": "Algiers",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "algiers-fua",
+    "name": "Algiers",
+    "nameIt": "Algiers",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "extent": "fua",
+    "core": "algiers",
+    "center": [
+      3.10329,
+      36.71039
+    ],
+    "zoom": 8.5,
+    "population": 5539122,
+    "grid": "cities/algiers-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/algiers-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "algiers-fua",
+        "name": "Algiers",
+        "nameIt": "Algiers",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "extent": "fua",
+        "core": "algiers",
+        "center": [
+          3.10329,
+          36.71039
+        ],
+        "zoom": 8.5,
+        "population": 5539122,
+        "cells": 16672,
+        "layer": "cities/algiers-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.10329,
+            36.71039
+          ]
+        },
+        "properties": {
+          "id": "algiers-fua",
+          "name": "Algiers",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 19.8,
+          "population": 5539122
+        }
+      },
+      "summary": null
+    }
+  }
+}

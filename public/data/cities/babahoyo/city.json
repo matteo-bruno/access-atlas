@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "babahoyo",
+  "createdAt": "2026-10-08T15:12:13.734Z",
+  "updatedAt": "2026-10-08T15:12:13.734Z",
+  "meta": {
+    "name": "Babahoyo",
+    "nameIt": "Babahoyo",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Babahoyo.geojson",
+      "sha256": "376ae606a15a3ad8e30ee1984e79294f2773692817027a938eed1fe0086b7379",
+      "size": 133806,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "babahoyo",
+    "name": "Babahoyo",
+    "nameIt": "Babahoyo",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC",
+    "center": [
+      -79.52439,
+      -1.80506
+    ],
+    "zoom": 11.6,
+    "population": 83984,
+    "grid": "cities/babahoyo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/babahoyo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "babahoyo",
+        "name": "Babahoyo",
+        "nameIt": "Babahoyo",
+        "region": "Ecuador",
+        "regionIt": "Ecuador",
+        "country": "EC",
+        "center": [
+          -79.52439,
+          -1.80506
+        ],
+        "zoom": 11.6,
+        "population": 83984,
+        "cells": 114,
+        "layer": "cities/babahoyo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -79.52439,
+            -1.80506
+          ]
+        },
+        "properties": {
+          "id": "babahoyo",
+          "name": "Babahoyo",
+          "country": "EC",
+          "isStudy": true,
+          "proximityMinutes": 15.8,
+          "population": 83984
+        }
+      },
+      "summary": null
+    }
+  }
+}

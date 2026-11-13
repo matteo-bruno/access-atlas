@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shevgaon",
+  "createdAt": "2026-10-08T16:12:56.596Z",
+  "updatedAt": "2026-10-08T16:12:56.596Z",
+  "meta": {
+    "name": "Shevgaon",
+    "nameIt": "Shevgaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shevgaon.geojson",
+      "sha256": "8613a139f3bab4a85484691feb26b40f12e7f89d3b1981e7335332899807b1e9",
+      "size": 101960,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shevgaon",
+    "name": "Shevgaon",
+    "nameIt": "Shevgaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.21975,
+      19.35261
+    ],
+    "zoom": 12,
+    "population": 43537,
+    "grid": "cities/shevgaon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shevgaon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shevgaon",
+        "name": "Shevgaon",
+        "nameIt": "Shevgaon",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.21975,
+          19.35261
+        ],
+        "zoom": 12,
+        "population": 43537,
+        "cells": 88,
+        "layer": "cities/shevgaon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.21975,
+            19.35261
+          ]
+        },
+        "properties": {
+          "id": "shevgaon",
+          "name": "Shevgaon",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 43537
+        }
+      },
+      "summary": null
+    }
+  }
+}

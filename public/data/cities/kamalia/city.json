@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kamalia",
+  "createdAt": "2026-10-08T15:44:36.312Z",
+  "updatedAt": "2026-10-08T15:44:36.312Z",
+  "meta": {
+    "name": "Kamalia",
+    "nameIt": "Kamalia",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kamalia.geojson",
+      "sha256": "4bb6dd6c8f64b6faadfbb2aa7f665892c6dbed908856b194b1af36ea31d1fd63",
+      "size": 179538,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kamalia",
+    "name": "Kamalia",
+    "nameIt": "Kamalia",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      72.64802,
+      30.72602
+    ],
+    "zoom": 11.6,
+    "population": 118788,
+    "grid": "cities/kamalia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kamalia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kamalia",
+        "name": "Kamalia",
+        "nameIt": "Kamalia",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          72.64802,
+          30.72602
+        ],
+        "zoom": 11.6,
+        "population": 118788,
+        "cells": 155,
+        "layer": "cities/kamalia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.64802,
+            30.72602
+          ]
+        },
+        "properties": {
+          "id": "kamalia",
+          "name": "Kamalia",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 118788
+        }
+      },
+      "summary": null
+    }
+  }
+}

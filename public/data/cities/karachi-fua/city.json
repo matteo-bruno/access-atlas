@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "karachi-fua",
+  "createdAt": "2026-10-19T16:56:41.057Z",
+  "updatedAt": "2026-10-19T16:56:41.057Z",
+  "meta": {
+    "name": "Karachi",
+    "nameIt": "Karachi",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "karachi-fua",
+    "name": "Karachi",
+    "nameIt": "Karachi",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "extent": "fua",
+    "core": "karachi",
+    "center": [
+      67.08368,
+      24.89863
+    ],
+    "zoom": 8.5,
+    "population": 18894873,
+    "grid": "cities/karachi-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/karachi-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "karachi-fua",
+        "name": "Karachi",
+        "nameIt": "Karachi",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "extent": "fua",
+        "core": "karachi",
+        "center": [
+          67.08368,
+          24.89863
+        ],
+        "zoom": 8.5,
+        "population": 18894873,
+        "cells": 13118,
+        "layer": "cities/karachi-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            67.08368,
+            24.89863
+          ]
+        },
+        "properties": {
+          "id": "karachi-fua",
+          "name": "Karachi",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 20.6,
+          "population": 18894873
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dhule",
+  "createdAt": "2026-10-08T15:29:40.040Z",
+  "updatedAt": "2026-10-08T15:29:40.040Z",
+  "meta": {
+    "name": "Dhule",
+    "nameIt": "Dhule",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dhule.geojson",
+      "sha256": "adc8cde28af93174e55c3ea359e73011a752a53bbf46e9cb90bea042eae85eac",
+      "size": 624088,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dhule",
+    "name": "Dhule",
+    "nameIt": "Dhule",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.76967,
+      20.8991
+    ],
+    "zoom": 10.4,
+    "population": 422817,
+    "grid": "cities/dhule/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dhule/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dhule",
+        "name": "Dhule",
+        "nameIt": "Dhule",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.76967,
+          20.8991
+        ],
+        "zoom": 10.4,
+        "population": 422817,
+        "cells": 538,
+        "layer": "cities/dhule/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.76967,
+            20.8991
+          ]
+        },
+        "properties": {
+          "id": "dhule",
+          "name": "Dhule",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.2,
+          "population": 422817
+        }
+      },
+      "summary": null
+    }
+  }
+}

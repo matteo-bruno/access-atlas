@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shegaon",
+  "createdAt": "2026-10-08T16:12:45.658Z",
+  "updatedAt": "2026-10-08T16:12:45.658Z",
+  "meta": {
+    "name": "Shegaon",
+    "nameIt": "Shegaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shegaon.geojson",
+      "sha256": "9ca310cc44de7900243fa74a5d59ca34c111544143ee11a2fd3832dc6c3db33e",
+      "size": 150567,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shegaon",
+    "name": "Shegaon",
+    "nameIt": "Shegaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.69122,
+      20.79135
+    ],
+    "zoom": 12,
+    "population": 80496,
+    "grid": "cities/shegaon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shegaon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shegaon",
+        "name": "Shegaon",
+        "nameIt": "Shegaon",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.69122,
+          20.79135
+        ],
+        "zoom": 12,
+        "population": 80496,
+        "cells": 130,
+        "layer": "cities/shegaon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.69122,
+            20.79135
+          ]
+        },
+        "properties": {
+          "id": "shegaon",
+          "name": "Shegaon",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 80496
+        }
+      },
+      "summary": null
+    }
+  }
+}

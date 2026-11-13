@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bhandara",
+  "createdAt": "2026-10-08T15:18:11.533Z",
+  "updatedAt": "2026-10-08T15:18:11.533Z",
+  "meta": {
+    "name": "Bhandara",
+    "nameIt": "Bhandara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bhandara.geojson",
+      "sha256": "2b63c948dad35ddbe55ed06f9ef9f27092487ec39f2a4d56909b479f4880b4e8",
+      "size": 230625,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bhandara",
+    "name": "Bhandara",
+    "nameIt": "Bhandara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.64736,
+      21.16828
+    ],
+    "zoom": 11.4,
+    "population": 128855,
+    "grid": "cities/bhandara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bhandara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bhandara",
+        "name": "Bhandara",
+        "nameIt": "Bhandara",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.64736,
+          21.16828
+        ],
+        "zoom": 11.4,
+        "population": 128855,
+        "cells": 199,
+        "layer": "cities/bhandara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.64736,
+            21.16828
+          ]
+        },
+        "properties": {
+          "id": "bhandara",
+          "name": "Bhandara",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19.5,
+          "population": 128855
+        }
+      },
+      "summary": null
+    }
+  }
+}

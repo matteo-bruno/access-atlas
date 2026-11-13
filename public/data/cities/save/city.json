@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "save",
+  "createdAt": "2026-10-08T16:11:42.903Z",
+  "updatedAt": "2026-10-08T16:11:42.903Z",
+  "meta": {
+    "name": "Savè",
+    "nameIt": "Savè",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Savè.geojson",
+      "sha256": "c9ab8f1af29409109c4ed230b3c225f2b98cfb21d2262ba537aeef20e8229a49",
+      "size": 170664,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "save",
+    "name": "Savè",
+    "nameIt": "Savè",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ",
+    "center": [
+      2.48851,
+      8.03224
+    ],
+    "zoom": 12,
+    "population": 47625,
+    "grid": "cities/save/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/save/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "save",
+        "name": "Savè",
+        "nameIt": "Savè",
+        "region": "Benin",
+        "regionIt": "Benin",
+        "country": "BJ",
+        "center": [
+          2.48851,
+          8.03224
+        ],
+        "zoom": 12,
+        "population": 47625,
+        "cells": 148,
+        "layer": "cities/save/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.48851,
+            8.03224
+          ]
+        },
+        "properties": {
+          "id": "save",
+          "name": "Savè",
+          "country": "BJ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 47625
+        }
+      },
+      "summary": null
+    }
+  }
+}

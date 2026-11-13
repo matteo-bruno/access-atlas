@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "naudero",
+  "createdAt": "2026-10-08T16:00:36.678Z",
+  "updatedAt": "2026-10-08T16:00:36.678Z",
+  "meta": {
+    "name": "Naudero",
+    "nameIt": "Naudero",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Naudero.geojson",
+      "sha256": "6b5ee87f7244b47e7fdd40f0bd29db33ab600d5dba27e2b978290f9531a7e6b0",
+      "size": 92582,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "naudero",
+    "name": "Naudero",
+    "nameIt": "Naudero",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      68.36013,
+      27.66686
+    ],
+    "zoom": 11.9,
+    "population": 56889,
+    "grid": "cities/naudero/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/naudero/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "naudero",
+        "name": "Naudero",
+        "nameIt": "Naudero",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          68.36013,
+          27.66686
+        ],
+        "zoom": 11.9,
+        "population": 56889,
+        "cells": 80,
+        "layer": "cities/naudero/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            68.36013,
+            27.66686
+          ]
+        },
+        "properties": {
+          "id": "naudero",
+          "name": "Naudero",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 56889
+        }
+      },
+      "summary": null
+    }
+  }
+}

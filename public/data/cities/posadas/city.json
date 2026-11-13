@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "posadas",
+  "createdAt": "2026-10-08T16:06:23.404Z",
+  "updatedAt": "2026-10-08T16:06:23.404Z",
+  "meta": {
+    "name": "Posadas",
+    "nameIt": "Posadas",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Posadas.geojson",
+      "sha256": "15b8a57be5247e6e728252b3058a463434a92dc0afd3e32d881f214da715a069",
+      "size": 1307893,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "posadas",
+    "name": "Posadas",
+    "nameIt": "Posadas",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -55.91118,
+      -27.40013
+    ],
+    "zoom": 10.3,
+    "population": 358901,
+    "grid": "cities/posadas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/posadas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "posadas",
+        "name": "Posadas",
+        "nameIt": "Posadas",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -55.91118,
+          -27.40013
+        ],
+        "zoom": 10.3,
+        "population": 358901,
+        "cells": 1124,
+        "layer": "cities/posadas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -55.91118,
+            -27.40013
+          ]
+        },
+        "properties": {
+          "id": "posadas",
+          "name": "Posadas",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 10.7,
+          "population": 358901
+        }
+      },
+      "summary": null
+    }
+  }
+}

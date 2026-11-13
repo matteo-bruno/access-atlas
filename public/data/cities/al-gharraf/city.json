@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-gharraf",
+  "createdAt": "2026-10-08T15:04:10.281Z",
+  "updatedAt": "2026-10-08T15:04:10.281Z",
+  "meta": {
+    "name": "Al Gharraf",
+    "nameIt": "Al Gharraf",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Gharraf.geojson",
+      "sha256": "307c49e3144e2466b21d2dd8693d7c3f09131534ca6a229cfd02aed848c18a34",
+      "size": 81265,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-gharraf",
+    "name": "Al Gharraf",
+    "nameIt": "Al Gharraf",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      46.24323,
+      31.29643
+    ],
+    "zoom": 12,
+    "population": 57634,
+    "grid": "cities/al-gharraf/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-gharraf/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-gharraf",
+        "name": "Al Gharraf",
+        "nameIt": "Al Gharraf",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          46.24323,
+          31.29643
+        ],
+        "zoom": 12,
+        "population": 57634,
+        "cells": 70,
+        "layer": "cities/al-gharraf/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            46.24323,
+            31.29643
+          ]
+        },
+        "properties": {
+          "id": "al-gharraf",
+          "name": "Al Gharraf",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 57634
+        }
+      },
+      "summary": null
+    }
+  }
+}

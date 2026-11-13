@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tambov",
+  "createdAt": "2026-10-08T16:16:22.979Z",
+  "updatedAt": "2026-10-08T16:16:22.979Z",
+  "meta": {
+    "name": "Tambov",
+    "nameIt": "Tambov",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tambov.geojson",
+      "sha256": "498d7061261722e8d5fe08f1383f22299b421aa75ddb2ba6e6f96ac3c3948b7d",
+      "size": 733153,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tambov",
+    "name": "Tambov",
+    "nameIt": "Tambov",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      41.43009,
+      52.73403
+    ],
+    "zoom": 10.4,
+    "population": 235372,
+    "grid": "cities/tambov/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tambov/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tambov",
+        "name": "Tambov",
+        "nameIt": "Tambov",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          41.43009,
+          52.73403
+        ],
+        "zoom": 10.4,
+        "population": 235372,
+        "cells": 642,
+        "layer": "cities/tambov/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            41.43009,
+            52.73403
+          ]
+        },
+        "properties": {
+          "id": "tambov",
+          "name": "Tambov",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 235372
+        }
+      },
+      "summary": null
+    }
+  }
+}

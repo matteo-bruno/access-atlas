@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "batouri",
+  "createdAt": "2026-10-08T15:16:09.236Z",
+  "updatedAt": "2026-10-08T15:16:09.236Z",
+  "meta": {
+    "name": "Batouri",
+    "nameIt": "Batouri",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Batouri.geojson",
+      "sha256": "733e5c4150e40f52e56067d04f5209e46312e421815ee6d05cdeaf47bdd01764",
+      "size": 144939,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "batouri",
+    "name": "Batouri",
+    "nameIt": "Batouri",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      14.36329,
+      4.43607
+    ],
+    "zoom": 11.9,
+    "population": 70351,
+    "grid": "cities/batouri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/batouri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "batouri",
+        "name": "Batouri",
+        "nameIt": "Batouri",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          14.36329,
+          4.43607
+        ],
+        "zoom": 11.9,
+        "population": 70351,
+        "cells": 125,
+        "layer": "cities/batouri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.36329,
+            4.43607
+          ]
+        },
+        "properties": {
+          "id": "batouri",
+          "name": "Batouri",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 70351
+        }
+      },
+      "summary": null
+    }
+  }
+}

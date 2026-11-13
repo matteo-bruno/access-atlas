@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "el-eulma",
+  "createdAt": "2026-10-08T15:31:55.130Z",
+  "updatedAt": "2026-10-08T15:31:55.130Z",
+  "meta": {
+    "name": "El Eulma",
+    "nameIt": "El Eulma",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/El Eulma.geojson",
+      "sha256": "6379fc2bcb018697b2f7b21dadec34a1f920e6783c1c3cd7cf0dd2a3900dc857",
+      "size": 279746,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "el-eulma",
+    "name": "El Eulma",
+    "nameIt": "El Eulma",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      5.6864,
+      36.15478
+    ],
+    "zoom": 11.3,
+    "population": 193910,
+    "grid": "cities/el-eulma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/el-eulma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "el-eulma",
+        "name": "El Eulma",
+        "nameIt": "El Eulma",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          5.6864,
+          36.15478
+        ],
+        "zoom": 11.3,
+        "population": 193910,
+        "cells": 243,
+        "layer": "cities/el-eulma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.6864,
+            36.15478
+          ]
+        },
+        "properties": {
+          "id": "el-eulma",
+          "name": "El Eulma",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 193910
+        }
+      },
+      "summary": null
+    }
+  }
+}

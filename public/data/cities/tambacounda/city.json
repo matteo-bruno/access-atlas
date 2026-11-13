@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tambacounda",
+  "createdAt": "2026-10-08T16:16:21.970Z",
+  "updatedAt": "2026-10-08T16:16:21.970Z",
+  "meta": {
+    "name": "Tambacounda",
+    "nameIt": "Tambacounda",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tambacounda.geojson",
+      "sha256": "13075ba03d213e81a2f75bc3252ce962559969357eabaeca7cfc6941e99e02d4",
+      "size": 348680,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tambacounda",
+    "name": "Tambacounda",
+    "nameIt": "Tambacounda",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN",
+    "center": [
+      -13.67027,
+      13.76975
+    ],
+    "zoom": 11.2,
+    "population": 216843,
+    "grid": "cities/tambacounda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tambacounda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tambacounda",
+        "name": "Tambacounda",
+        "nameIt": "Tambacounda",
+        "region": "Senegal",
+        "regionIt": "Senegal",
+        "country": "SN",
+        "center": [
+          -13.67027,
+          13.76975
+        ],
+        "zoom": 11.2,
+        "population": 216843,
+        "cells": 296,
+        "layer": "cities/tambacounda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -13.67027,
+            13.76975
+          ]
+        },
+        "properties": {
+          "id": "tambacounda",
+          "name": "Tambacounda",
+          "country": "SN",
+          "isStudy": true,
+          "proximityMinutes": 22.1,
+          "population": 216843
+        }
+      },
+      "summary": null
+    }
+  }
+}

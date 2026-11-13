@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mingora",
+  "createdAt": "2026-10-08T15:57:14.268Z",
+  "updatedAt": "2026-10-08T15:57:14.268Z",
+  "meta": {
+    "name": "Mingora",
+    "nameIt": "Mingora",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mingora.geojson",
+      "sha256": "4ee1ae3c92f92279112fde3acc95298fdd03baa8e65dc277682eb7f029b13a4c",
+      "size": 1082237,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mingora",
+    "name": "Mingora",
+    "nameIt": "Mingora",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      72.34429,
+      34.77699
+    ],
+    "zoom": 10.1,
+    "population": 711386,
+    "grid": "cities/mingora/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mingora/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mingora",
+        "name": "Mingora",
+        "nameIt": "Mingora",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          72.34429,
+          34.77699
+        ],
+        "zoom": 10.1,
+        "population": 711386,
+        "cells": 936,
+        "layer": "cities/mingora/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.34429,
+            34.77699
+          ]
+        },
+        "properties": {
+          "id": "mingora",
+          "name": "Mingora",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 39.9,
+          "population": 711386
+        }
+      },
+      "summary": null
+    }
+  }
+}

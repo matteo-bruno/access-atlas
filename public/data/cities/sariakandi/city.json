@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sariakandi",
+  "createdAt": "2026-10-08T16:11:29.361Z",
+  "updatedAt": "2026-10-08T16:11:29.361Z",
+  "meta": {
+    "name": "Sariakandi",
+    "nameIt": "Sariakandi",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sariakandi.geojson",
+      "sha256": "a6502ddef1106d9c4d515faad3fb3537b14aa9c6b72f50646126d60e26c9c9c9",
+      "size": 631491,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sariakandi",
+    "name": "Sariakandi",
+    "nameIt": "Sariakandi",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.53417,
+      24.87538
+    ],
+    "zoom": 10.5,
+    "population": 104691,
+    "grid": "cities/sariakandi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sariakandi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sariakandi",
+        "name": "Sariakandi",
+        "nameIt": "Sariakandi",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.53417,
+          24.87538
+        ],
+        "zoom": 10.5,
+        "population": 104691,
+        "cells": 545,
+        "layer": "cities/sariakandi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.53417,
+            24.87538
+          ]
+        },
+        "properties": {
+          "id": "sariakandi",
+          "name": "Sariakandi",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 104691
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "blantyre-malawi",
+  "createdAt": "2026-10-08T15:19:33.987Z",
+  "updatedAt": "2026-10-08T15:19:33.987Z",
+  "meta": {
+    "name": "Blantyre (Malawi)",
+    "nameIt": "Blantyre (Malawi)",
+    "region": "Malawi",
+    "regionIt": "Malawi",
+    "country": "MW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Blantyre (Malawi).geojson",
+      "sha256": "2db49166897a7f8d44f907dea1dba8f1f5ad1a597032626346004aee0f0304b1",
+      "size": 1787302,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "blantyre-malawi",
+    "name": "Blantyre (Malawi)",
+    "nameIt": "Blantyre (Malawi)",
+    "region": "Malawi",
+    "regionIt": "Malawi",
+    "country": "MW",
+    "center": [
+      35.03628,
+      -15.78901
+    ],
+    "zoom": 10,
+    "population": 968797,
+    "grid": "cities/blantyre-malawi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/blantyre-malawi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "blantyre-malawi",
+        "name": "Blantyre (Malawi)",
+        "nameIt": "Blantyre (Malawi)",
+        "region": "Malawi",
+        "regionIt": "Malawi",
+        "country": "MW",
+        "center": [
+          35.03628,
+          -15.78901
+        ],
+        "zoom": 10,
+        "population": 968797,
+        "cells": 1523,
+        "layer": "cities/blantyre-malawi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.03628,
+            -15.78901
+          ]
+        },
+        "properties": {
+          "id": "blantyre-malawi",
+          "name": "Blantyre (Malawi)",
+          "country": "MW",
+          "isStudy": true,
+          "proximityMinutes": 42.1,
+          "population": 968797
+        }
+      },
+      "summary": null
+    }
+  }
+}

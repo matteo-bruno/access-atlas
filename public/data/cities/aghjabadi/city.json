@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aghjabadi",
+  "createdAt": "2026-10-08T15:02:56.595Z",
+  "updatedAt": "2026-10-08T15:02:56.595Z",
+  "meta": {
+    "name": "Aghjabadi",
+    "nameIt": "Aghjabadi",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aghjabadi.geojson",
+      "sha256": "c57271ead41a155889a03d275fc600bec595cae0c9f7aebe7007db4c3712b99c",
+      "size": 191893,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aghjabadi",
+    "name": "Aghjabadi",
+    "nameIt": "Aghjabadi",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ",
+    "center": [
+      47.45416,
+      40.04653
+    ],
+    "zoom": 11.7,
+    "population": 48091,
+    "grid": "cities/aghjabadi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aghjabadi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aghjabadi",
+        "name": "Aghjabadi",
+        "nameIt": "Aghjabadi",
+        "region": "Azerbaijan",
+        "regionIt": "Azerbaigian",
+        "country": "AZ",
+        "center": [
+          47.45416,
+          40.04653
+        ],
+        "zoom": 11.7,
+        "population": 48091,
+        "cells": 166,
+        "layer": "cities/aghjabadi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            47.45416,
+            40.04653
+          ]
+        },
+        "properties": {
+          "id": "aghjabadi",
+          "name": "Aghjabadi",
+          "country": "AZ",
+          "isStudy": true,
+          "proximityMinutes": 15.9,
+          "population": 48091
+        }
+      },
+      "summary": null
+    }
+  }
+}

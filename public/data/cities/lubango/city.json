@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lubango",
+  "createdAt": "2026-10-08T15:52:23.162Z",
+  "updatedAt": "2026-10-08T15:52:23.162Z",
+  "meta": {
+    "name": "Lubango",
+    "nameIt": "Lubango",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lubango.geojson",
+      "sha256": "99fd6eee00a63b68a32cbf8867e8b1b9846a233c9e255a44b0e3014fcc42f84a",
+      "size": 1486352,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lubango",
+    "name": "Lubango",
+    "nameIt": "Lubango",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO",
+    "center": [
+      13.5182,
+      -14.90522
+    ],
+    "zoom": 9.9,
+    "population": 769865,
+    "grid": "cities/lubango/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lubango/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lubango",
+        "name": "Lubango",
+        "nameIt": "Lubango",
+        "region": "Angola",
+        "regionIt": "Angola",
+        "country": "AO",
+        "center": [
+          13.5182,
+          -14.90522
+        ],
+        "zoom": 9.9,
+        "population": 769865,
+        "cells": 1271,
+        "layer": "cities/lubango/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.5182,
+            -14.90522
+          ]
+        },
+        "properties": {
+          "id": "lubango",
+          "name": "Lubango",
+          "country": "AO",
+          "isStudy": true,
+          "proximityMinutes": 21.9,
+          "population": 769865
+        }
+      },
+      "summary": null
+    }
+  }
+}

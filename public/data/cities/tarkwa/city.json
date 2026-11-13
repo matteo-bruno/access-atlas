@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tarkwa",
+  "createdAt": "2026-10-08T16:16:47.783Z",
+  "updatedAt": "2026-10-08T16:16:47.783Z",
+  "meta": {
+    "name": "Tarkwa",
+    "nameIt": "Tarkwa",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tarkwa.geojson",
+      "sha256": "4b3133e7d77b453f629b61501fd15eccf2f53603fe0b56628db68dc8da535de3",
+      "size": 289481,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tarkwa",
+    "name": "Tarkwa",
+    "nameIt": "Tarkwa",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH",
+    "center": [
+      -1.99127,
+      5.29721
+    ],
+    "zoom": 11,
+    "population": 139826,
+    "grid": "cities/tarkwa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tarkwa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tarkwa",
+        "name": "Tarkwa",
+        "nameIt": "Tarkwa",
+        "region": "Ghana",
+        "regionIt": "Ghana",
+        "country": "GH",
+        "center": [
+          -1.99127,
+          5.29721
+        ],
+        "zoom": 11,
+        "population": 139826,
+        "cells": 249,
+        "layer": "cities/tarkwa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.99127,
+            5.29721
+          ]
+        },
+        "properties": {
+          "id": "tarkwa",
+          "name": "Tarkwa",
+          "country": "GH",
+          "isStudy": true,
+          "proximityMinutes": 21,
+          "population": 139826
+        }
+      },
+      "summary": null
+    }
+  }
+}

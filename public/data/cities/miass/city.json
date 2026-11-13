@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "miass",
+  "createdAt": "2026-10-08T15:56:57.752Z",
+  "updatedAt": "2026-10-08T15:56:57.752Z",
+  "meta": {
+    "name": "Miass",
+    "nameIt": "Miass",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Miass.geojson",
+      "sha256": "b8afa83b4654e9477f081c9ff68944f5ad25e30486588e6139022dc1b06d4815",
+      "size": 235874,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "miass",
+    "name": "Miass",
+    "nameIt": "Miass",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      60.1108,
+      55.06275
+    ],
+    "zoom": 10.9,
+    "population": 72017,
+    "grid": "cities/miass/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/miass/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "miass",
+        "name": "Miass",
+        "nameIt": "Miass",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          60.1108,
+          55.06275
+        ],
+        "zoom": 10.9,
+        "population": 72017,
+        "cells": 206,
+        "layer": "cities/miass/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            60.1108,
+            55.06275
+          ]
+        },
+        "properties": {
+          "id": "miass",
+          "name": "Miass",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 17.5,
+          "population": 72017
+        }
+      },
+      "summary": null
+    }
+  }
+}

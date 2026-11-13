@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "banmankhi",
+  "createdAt": "2026-10-08T15:15:04.184Z",
+  "updatedAt": "2026-10-08T15:15:04.184Z",
+  "meta": {
+    "name": "Banmankhi",
+    "nameIt": "Banmankhi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Banmankhi.geojson",
+      "sha256": "a6f2ebdd036c8fb9819de5299fdb39f44542e53b3ce9945d61e921e6830bb437",
+      "size": 253628,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "banmankhi",
+    "name": "Banmankhi",
+    "nameIt": "Banmankhi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.18993,
+      25.892
+    ],
+    "zoom": 11.2,
+    "population": 80323,
+    "grid": "cities/banmankhi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/banmankhi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "banmankhi",
+        "name": "Banmankhi",
+        "nameIt": "Banmankhi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.18993,
+          25.892
+        ],
+        "zoom": 11.2,
+        "population": 80323,
+        "cells": 219,
+        "layer": "cities/banmankhi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.18993,
+            25.892
+          ]
+        },
+        "properties": {
+          "id": "banmankhi",
+          "name": "Banmankhi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 80323
+        }
+      },
+      "summary": null
+    }
+  }
+}

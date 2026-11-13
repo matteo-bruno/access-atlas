@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ordu",
+  "createdAt": "2026-10-08T16:02:58.180Z",
+  "updatedAt": "2026-10-08T16:02:58.180Z",
+  "meta": {
+    "name": "Ordu",
+    "nameIt": "Ordu",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ordu.geojson",
+      "sha256": "f75b8091943d459e1c02257f6cce026ffcbb421b08106f0be9eaef9446993c07",
+      "size": 248916,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ordu",
+    "name": "Ordu",
+    "nameIt": "Ordu",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      37.90489,
+      40.97525
+    ],
+    "zoom": 10.9,
+    "population": 184671,
+    "grid": "cities/ordu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ordu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ordu",
+        "name": "Ordu",
+        "nameIt": "Ordu",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          37.90489,
+          40.97525
+        ],
+        "zoom": 10.9,
+        "population": 184671,
+        "cells": 216,
+        "layer": "cities/ordu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.90489,
+            40.97525
+          ]
+        },
+        "properties": {
+          "id": "ordu",
+          "name": "Ordu",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 184671
+        }
+      },
+      "summary": null
+    }
+  }
+}

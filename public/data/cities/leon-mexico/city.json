@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "leon-mexico",
+  "createdAt": "2026-10-08T15:50:51.929Z",
+  "updatedAt": "2026-10-08T15:50:51.929Z",
+  "meta": {
+    "name": "León (Mexico)",
+    "nameIt": "León (Mexico)",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/León (Mexico).geojson",
+      "sha256": "335ed16bc51ce435ed02a548b185ffdd938779c70b36520a6d084fe67c19376f",
+      "size": 1899143,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "leon-mexico",
+    "name": "León (Mexico)",
+    "nameIt": "León (Mexico)",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -101.66792,
+      21.12725
+    ],
+    "zoom": 9.8,
+    "population": 1557249,
+    "grid": "cities/leon-mexico/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/leon-mexico/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "leon-mexico",
+        "name": "León (Mexico)",
+        "nameIt": "León (Mexico)",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -101.66792,
+          21.12725
+        ],
+        "zoom": 9.8,
+        "population": 1557249,
+        "cells": 1622,
+        "layer": "cities/leon-mexico/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -101.66792,
+            21.12725
+          ]
+        },
+        "properties": {
+          "id": "leon-mexico",
+          "name": "León (Mexico)",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 28.8,
+          "population": 1557249
+        }
+      },
+      "summary": null
+    }
+  }
+}

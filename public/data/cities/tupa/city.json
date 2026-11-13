@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tupa",
+  "createdAt": "2026-10-08T16:19:16.193Z",
+  "updatedAt": "2026-10-08T16:19:16.193Z",
+  "meta": {
+    "name": "Tupã",
+    "nameIt": "Tupã",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tupã.geojson",
+      "sha256": "4631b09d468938ff1c5aa5531bc70853a4eb6f64e556c530d9eeddfbb991f08c",
+      "size": 147270,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tupa",
+    "name": "Tupã",
+    "nameIt": "Tupã",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -50.51116,
+      -21.93293
+    ],
+    "zoom": 11.8,
+    "population": 52341,
+    "grid": "cities/tupa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tupa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tupa",
+        "name": "Tupã",
+        "nameIt": "Tupã",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -50.51116,
+          -21.93293
+        ],
+        "zoom": 11.8,
+        "population": 52341,
+        "cells": 125,
+        "layer": "cities/tupa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.51116,
+            -21.93293
+          ]
+        },
+        "properties": {
+          "id": "tupa",
+          "name": "Tupã",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 52341
+        }
+      },
+      "summary": null
+    }
+  }
+}

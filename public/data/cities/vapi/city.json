@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vapi",
+  "createdAt": "2026-10-08T16:20:28.314Z",
+  "updatedAt": "2026-10-08T16:20:28.314Z",
+  "meta": {
+    "name": "Vapi",
+    "nameIt": "Vapi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vapi.geojson",
+      "sha256": "a394ff5e0129d344c47144543cdfbae1e664d670934faea755ade3438481ca9d",
+      "size": 1336199,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vapi",
+    "name": "Vapi",
+    "nameIt": "Vapi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.92024,
+      20.39509
+    ],
+    "zoom": 9.5,
+    "population": 575145,
+    "grid": "cities/vapi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vapi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vapi",
+        "name": "Vapi",
+        "nameIt": "Vapi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.92024,
+          20.39509
+        ],
+        "zoom": 9.5,
+        "population": 575145,
+        "cells": 1151,
+        "layer": "cities/vapi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.92024,
+            20.39509
+          ]
+        },
+        "properties": {
+          "id": "vapi",
+          "name": "Vapi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 52,
+          "population": 575145
+        }
+      },
+      "summary": null
+    }
+  }
+}

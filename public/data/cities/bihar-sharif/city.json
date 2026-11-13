@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bihar-sharif",
+  "createdAt": "2026-10-08T15:18:45.459Z",
+  "updatedAt": "2026-10-08T15:18:45.459Z",
+  "meta": {
+    "name": "Bihar Sharif",
+    "nameIt": "Bihar Sharif",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bihar Sharif.geojson",
+      "sha256": "304993c54f80cabe22b847def8cea816014ee6e2449f23cd83ed2f5b9e6addd3",
+      "size": 442626,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bihar-sharif",
+    "name": "Bihar Sharif",
+    "nameIt": "Bihar Sharif",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.51934,
+      25.19793
+    ],
+    "zoom": 10.9,
+    "population": 462803,
+    "grid": "cities/bihar-sharif/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bihar-sharif/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bihar-sharif",
+        "name": "Bihar Sharif",
+        "nameIt": "Bihar Sharif",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.51934,
+          25.19793
+        ],
+        "zoom": 10.9,
+        "population": 462803,
+        "cells": 382,
+        "layer": "cities/bihar-sharif/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.51934,
+            25.19793
+          ]
+        },
+        "properties": {
+          "id": "bihar-sharif",
+          "name": "Bihar Sharif",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 462803
+        }
+      },
+      "summary": null
+    }
+  }
+}

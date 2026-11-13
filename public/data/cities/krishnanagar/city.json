@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "krishnanagar",
+  "createdAt": "2026-10-08T15:48:28.008Z",
+  "updatedAt": "2026-10-08T15:48:28.008Z",
+  "meta": {
+    "name": "Krishnanagar",
+    "nameIt": "Krishnanagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Krishnanagar.geojson",
+      "sha256": "137cbc1c29932c1be5d289a24ef8c6bfd531080864a791ba6a0efe169fc885dd",
+      "size": 717805,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "krishnanagar",
+    "name": "Krishnanagar",
+    "nameIt": "Krishnanagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.49481,
+      23.39415
+    ],
+    "zoom": 10,
+    "population": 353436,
+    "grid": "cities/krishnanagar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/krishnanagar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "krishnanagar",
+        "name": "Krishnanagar",
+        "nameIt": "Krishnanagar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.49481,
+          23.39415
+        ],
+        "zoom": 10,
+        "population": 353436,
+        "cells": 619,
+        "layer": "cities/krishnanagar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.49481,
+            23.39415
+          ]
+        },
+        "properties": {
+          "id": "krishnanagar",
+          "name": "Krishnanagar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 17.6,
+          "population": 353436
+        }
+      },
+      "summary": null
+    }
+  }
+}

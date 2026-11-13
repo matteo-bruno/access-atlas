@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khatauli",
+  "createdAt": "2026-10-08T15:46:40.238Z",
+  "updatedAt": "2026-10-08T15:46:40.238Z",
+  "meta": {
+    "name": "Khatauli",
+    "nameIt": "Khatauli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khatauli.geojson",
+      "sha256": "1335b0a85c44c3c79b8d67a7c824f33a1d997925697d304f0b7be2ca5dbc08fa",
+      "size": 147077,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khatauli",
+    "name": "Khatauli",
+    "nameIt": "Khatauli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.73266,
+      29.2785
+    ],
+    "zoom": 11.4,
+    "population": 121034,
+    "grid": "cities/khatauli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khatauli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khatauli",
+        "name": "Khatauli",
+        "nameIt": "Khatauli",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.73266,
+          29.2785
+        ],
+        "zoom": 11.4,
+        "population": 121034,
+        "cells": 127,
+        "layer": "cities/khatauli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.73266,
+            29.2785
+          ]
+        },
+        "properties": {
+          "id": "khatauli",
+          "name": "Khatauli",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 121034
+        }
+      },
+      "summary": null
+    }
+  }
+}

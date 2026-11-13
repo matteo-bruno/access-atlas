@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sao-joao-del-rei",
+  "createdAt": "2026-10-08T16:15:38.981Z",
+  "updatedAt": "2026-10-08T16:15:38.981Z",
+  "meta": {
+    "name": "São João del-Rei",
+    "nameIt": "São João del-Rei",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/São João del-Rei.geojson",
+      "sha256": "fa74c835a88d926a86a6e0285994a104cc81d8e0eb7da9948a61160d78f9fd36",
+      "size": 189243,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sao-joao-del-rei",
+    "name": "São João del-Rei",
+    "nameIt": "São João del-Rei",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -44.24835,
+      -21.13011
+    ],
+    "zoom": 11.3,
+    "population": 66628,
+    "grid": "cities/sao-joao-del-rei/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sao-joao-del-rei/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sao-joao-del-rei",
+        "name": "São João del-Rei",
+        "nameIt": "São João del-Rei",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -44.24835,
+          -21.13011
+        ],
+        "zoom": 11.3,
+        "population": 66628,
+        "cells": 162,
+        "layer": "cities/sao-joao-del-rei/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -44.24835,
+            -21.13011
+          ]
+        },
+        "properties": {
+          "id": "sao-joao-del-rei",
+          "name": "São João del-Rei",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 14.4,
+          "population": 66628
+        }
+      },
+      "summary": null
+    }
+  }
+}

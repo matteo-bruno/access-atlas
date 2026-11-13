@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "caofeidian",
+  "createdAt": "2026-10-08T15:22:20.991Z",
+  "updatedAt": "2026-10-08T15:22:20.991Z",
+  "meta": {
+    "name": "Caofeidian",
+    "nameIt": "Caofeidian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Caofeidian.geojson",
+      "sha256": "b0464205c01870fac76fa54bca5fbe63e2e94924e53083366c06835d0f9187b3",
+      "size": 263933,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "caofeidian",
+    "name": "Caofeidian",
+    "nameIt": "Caofeidian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.43813,
+      39.27666
+    ],
+    "zoom": 11.2,
+    "population": 83640,
+    "grid": "cities/caofeidian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 166
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/caofeidian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "caofeidian",
+        "name": "Caofeidian",
+        "nameIt": "Caofeidian",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.43813,
+          39.27666
+        ],
+        "zoom": 11.2,
+        "population": 83640,
+        "cells": 227,
+        "layer": "cities/caofeidian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 166
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.43813,
+            39.27666
+          ]
+        },
+        "properties": {
+          "id": "caofeidian",
+          "name": "Caofeidian",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 83640
+        }
+      },
+      "summary": null
+    }
+  }
+}

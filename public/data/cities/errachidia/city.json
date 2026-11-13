@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "errachidia",
+  "createdAt": "2026-10-08T15:32:27.233Z",
+  "updatedAt": "2026-10-08T15:32:27.233Z",
+  "meta": {
+    "name": "Errachidia",
+    "nameIt": "Errachidia",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Errachidia.geojson",
+      "sha256": "4122077f47b5ea12641ff535cecf556fd22ee94ffc5369ed955166a594df2cff",
+      "size": 201807,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "errachidia",
+    "name": "Errachidia",
+    "nameIt": "Errachidia",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -4.43212,
+      31.9308
+    ],
+    "zoom": 11.5,
+    "population": 21007,
+    "grid": "cities/errachidia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/errachidia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "errachidia",
+        "name": "Errachidia",
+        "nameIt": "Errachidia",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -4.43212,
+          31.9308
+        ],
+        "zoom": 11.5,
+        "population": 21007,
+        "cells": 173,
+        "layer": "cities/errachidia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -4.43212,
+            31.9308
+          ]
+        },
+        "properties": {
+          "id": "errachidia",
+          "name": "Errachidia",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 22.3,
+          "population": 21007
+        }
+      },
+      "summary": null
+    }
+  }
+}

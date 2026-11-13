@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "canton",
+  "createdAt": "2026-10-08T15:22:19.312Z",
+  "updatedAt": "2026-10-08T15:22:19.312Z",
+  "meta": {
+    "name": "Canton",
+    "nameIt": "Canton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Canton.geojson",
+      "sha256": "77cd84f095184f6abbd15c03de4bd820157e55e1e8edfc56fe8c173e6e739a50",
+      "size": 427841,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "canton",
+    "name": "Canton",
+    "nameIt": "Canton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -81.38777,
+      40.8083
+    ],
+    "zoom": 10.9,
+    "population": 53801,
+    "grid": "cities/canton/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/canton/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "canton",
+        "name": "Canton",
+        "nameIt": "Canton",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -81.38777,
+          40.8083
+        ],
+        "zoom": 10.9,
+        "population": 53801,
+        "cells": 370,
+        "layer": "cities/canton/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.38777,
+            40.8083
+          ]
+        },
+        "properties": {
+          "id": "canton",
+          "name": "Canton",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.4,
+          "population": 53801
+        }
+      },
+      "summary": null
+    }
+  }
+}

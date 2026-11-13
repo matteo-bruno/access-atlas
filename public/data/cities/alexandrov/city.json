@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "alexandrov",
+  "createdAt": "2026-10-08T15:05:43.005Z",
+  "updatedAt": "2026-10-08T15:05:43.005Z",
+  "meta": {
+    "name": "Alexandrov",
+    "nameIt": "Alexandrov",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Alexandrov.geojson",
+      "sha256": "14aa6f3945c2d0f7056f7e6d9693d27e9999d1a60d7a2325bd894fb84cb64f35",
+      "size": 173990,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "alexandrov",
+    "name": "Alexandrov",
+    "nameIt": "Alexandrov",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      38.71669,
+      56.39284
+    ],
+    "zoom": 11.6,
+    "population": 39531,
+    "grid": "cities/alexandrov/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/alexandrov/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "alexandrov",
+        "name": "Alexandrov",
+        "nameIt": "Alexandrov",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          38.71669,
+          56.39284
+        ],
+        "zoom": 11.6,
+        "population": 39531,
+        "cells": 151,
+        "layer": "cities/alexandrov/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.71669,
+            56.39284
+          ]
+        },
+        "properties": {
+          "id": "alexandrov",
+          "name": "Alexandrov",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 15.9,
+          "population": 39531
+        }
+      },
+      "summary": null
+    }
+  }
+}

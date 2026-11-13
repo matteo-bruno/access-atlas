@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wonsan",
+  "createdAt": "2026-10-08T16:21:49.585Z",
+  "updatedAt": "2026-10-08T16:21:49.585Z",
+  "meta": {
+    "name": "Wonsan",
+    "nameIt": "Wonsan",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wonsan.geojson",
+      "sha256": "c96745bf095531f55e887b160c064bce91736de042f783400c9c8a4d88ebb549",
+      "size": 535951,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wonsan",
+    "name": "Wonsan",
+    "nameIt": "Wonsan",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP",
+    "center": [
+      127.44689,
+      39.14791
+    ],
+    "zoom": 10.9,
+    "population": 274035,
+    "grid": "cities/wonsan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 170
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wonsan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wonsan",
+        "name": "Wonsan",
+        "nameIt": "Wonsan",
+        "region": "North Korea",
+        "regionIt": "Corea del Nord",
+        "country": "KP",
+        "center": [
+          127.44689,
+          39.14791
+        ],
+        "zoom": 10.9,
+        "population": 274035,
+        "cells": 460,
+        "layer": "cities/wonsan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 170
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            127.44689,
+            39.14791
+          ]
+        },
+        "properties": {
+          "id": "wonsan",
+          "name": "Wonsan",
+          "country": "KP",
+          "isStudy": true,
+          "proximityMinutes": 45.5,
+          "population": 274035
+        }
+      },
+      "summary": null
+    }
+  }
+}

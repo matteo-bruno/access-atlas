@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "korem",
+  "createdAt": "2026-10-08T15:47:56.195Z",
+  "updatedAt": "2026-10-08T15:47:56.195Z",
+  "meta": {
+    "name": "Korem",
+    "nameIt": "Korem",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Korem.geojson",
+      "sha256": "c9b6a06ab9654eab342f897949ef70d2a2fe1deff6f4a9ce1143f8dbdcd25d6f",
+      "size": 68663,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "korem",
+    "name": "Korem",
+    "nameIt": "Korem",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      39.51864,
+      12.50919
+    ],
+    "zoom": 12,
+    "population": 41839,
+    "grid": "cities/korem/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/korem/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "korem",
+        "name": "Korem",
+        "nameIt": "Korem",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          39.51864,
+          12.50919
+        ],
+        "zoom": 12,
+        "population": 41839,
+        "cells": 59,
+        "layer": "cities/korem/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.51864,
+            12.50919
+          ]
+        },
+        "properties": {
+          "id": "korem",
+          "name": "Korem",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 41839
+        }
+      },
+      "summary": null
+    }
+  }
+}

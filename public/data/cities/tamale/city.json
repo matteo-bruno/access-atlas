@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tamale",
+  "createdAt": "2026-10-08T16:16:20.740Z",
+  "updatedAt": "2026-10-08T16:16:20.740Z",
+  "meta": {
+    "name": "Tamale",
+    "nameIt": "Tamale",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tamale.geojson",
+      "sha256": "23df490863e3015338d0abd212e18fc983e5c98a6307fd02aa04279aee67a9bf",
+      "size": 1822121,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tamale",
+    "name": "Tamale",
+    "nameIt": "Tamale",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH",
+    "center": [
+      -0.8471,
+      9.41103
+    ],
+    "zoom": 10.2,
+    "population": 688943,
+    "grid": "cities/tamale/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tamale/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tamale",
+        "name": "Tamale",
+        "nameIt": "Tamale",
+        "region": "Ghana",
+        "regionIt": "Ghana",
+        "country": "GH",
+        "center": [
+          -0.8471,
+          9.41103
+        ],
+        "zoom": 10.2,
+        "population": 688943,
+        "cells": 1566,
+        "layer": "cities/tamale/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.8471,
+            9.41103
+          ]
+        },
+        "properties": {
+          "id": "tamale",
+          "name": "Tamale",
+          "country": "GH",
+          "isStudy": true,
+          "proximityMinutes": 37.1,
+          "population": 688943
+        }
+      },
+      "summary": null
+    }
+  }
+}

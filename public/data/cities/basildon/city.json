@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "basildon",
+  "createdAt": "2026-10-08T15:15:49.098Z",
+  "updatedAt": "2026-10-08T15:15:49.098Z",
+  "meta": {
+    "name": "Basildon",
+    "nameIt": "Basildon",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Basildon.geojson",
+      "sha256": "6b22659c593918dfd1402e593911befc48b8870fe20a954623dcd2b025104ad5",
+      "size": 345941,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "basildon",
+    "name": "Basildon",
+    "nameIt": "Basildon",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      0.46409,
+      51.5724
+    ],
+    "zoom": 11,
+    "population": 113142,
+    "grid": "cities/basildon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/basildon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "basildon",
+        "name": "Basildon",
+        "nameIt": "Basildon",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          0.46409,
+          51.5724
+        ],
+        "zoom": 11,
+        "population": 113142,
+        "cells": 300,
+        "layer": "cities/basildon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.46409,
+            51.5724
+          ]
+        },
+        "properties": {
+          "id": "basildon",
+          "name": "Basildon",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 113142
+        }
+      },
+      "summary": null
+    }
+  }
+}

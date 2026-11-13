@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "marawi",
+  "createdAt": "2026-10-08T15:55:09.631Z",
+  "updatedAt": "2026-10-08T15:55:09.631Z",
+  "meta": {
+    "name": "Marawi",
+    "nameIt": "Marawi",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Marawi.geojson",
+      "sha256": "628b9597dff455b455e0109eef65bd4c8d03c257c302eb70f2b33b3d15328cbc",
+      "size": 317956,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "marawi",
+    "name": "Marawi",
+    "nameIt": "Marawi",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      124.2873,
+      8.00247
+    ],
+    "zoom": 10.9,
+    "population": 195225,
+    "grid": "cities/marawi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/marawi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "marawi",
+        "name": "Marawi",
+        "nameIt": "Marawi",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          124.2873,
+          8.00247
+        ],
+        "zoom": 10.9,
+        "population": 195225,
+        "cells": 274,
+        "layer": "cities/marawi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            124.2873,
+            8.00247
+          ]
+        },
+        "properties": {
+          "id": "marawi",
+          "name": "Marawi",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 195225
+        }
+      },
+      "summary": null
+    }
+  }
+}

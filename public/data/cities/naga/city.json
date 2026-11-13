@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "naga",
+  "createdAt": "2026-10-08T15:59:36.330Z",
+  "updatedAt": "2026-10-08T15:59:36.330Z",
+  "meta": {
+    "name": "Naga",
+    "nameIt": "Naga",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Naga.geojson",
+      "sha256": "709389ea8555e2b04d6930c6dc0ed1e1c6793aea0fc275fce9d72eec05519423",
+      "size": 703413,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "naga",
+    "name": "Naga",
+    "nameIt": "Naga",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      123.19214,
+      13.62857
+    ],
+    "zoom": 10.2,
+    "population": 285128,
+    "grid": "cities/naga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/naga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "naga",
+        "name": "Naga",
+        "nameIt": "Naga",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          123.19214,
+          13.62857
+        ],
+        "zoom": 10.2,
+        "population": 285128,
+        "cells": 605,
+        "layer": "cities/naga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.19214,
+            13.62857
+          ]
+        },
+        "properties": {
+          "id": "naga",
+          "name": "Naga",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 21.9,
+          "population": 285128
+        }
+      },
+      "summary": null
+    }
+  }
+}

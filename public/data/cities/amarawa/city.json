@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "amarawa",
+  "createdAt": "2026-10-08T15:06:34.094Z",
+  "updatedAt": "2026-10-08T15:06:34.094Z",
+  "meta": {
+    "name": "Amarawa",
+    "nameIt": "Amarawa",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Amarawa.geojson",
+      "sha256": "9dabae498eb09f90935348390d559ca82fc0888fa47018ac465fa9ba9e5a20b8",
+      "size": 136721,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "amarawa",
+    "name": "Amarawa",
+    "nameIt": "Amarawa",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      5.29866,
+      13.72909
+    ],
+    "zoom": 11.7,
+    "population": 69131,
+    "grid": "cities/amarawa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/amarawa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "amarawa",
+        "name": "Amarawa",
+        "nameIt": "Amarawa",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          5.29866,
+          13.72909
+        ],
+        "zoom": 11.7,
+        "population": 69131,
+        "cells": 118,
+        "layer": "cities/amarawa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.29866,
+            13.72909
+          ]
+        },
+        "properties": {
+          "id": "amarawa",
+          "name": "Amarawa",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 69131
+        }
+      },
+      "summary": null
+    }
+  }
+}

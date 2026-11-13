@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "torodi",
+  "createdAt": "2026-10-08T16:18:33.466Z",
+  "updatedAt": "2026-10-08T16:18:33.466Z",
+  "meta": {
+    "name": "Torodi",
+    "nameIt": "Torodi",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Torodi.geojson",
+      "sha256": "03911ddbfb1cb59c968f99de4531ddd62f501c781f5735363b66ed6f6a52882c",
+      "size": 93205,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "torodi",
+    "name": "Torodi",
+    "nameIt": "Torodi",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE",
+    "center": [
+      1.79862,
+      13.11975
+    ],
+    "zoom": 12,
+    "population": 15650,
+    "grid": "cities/torodi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/torodi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "torodi",
+        "name": "Torodi",
+        "nameIt": "Torodi",
+        "region": "Niger",
+        "regionIt": "Niger",
+        "country": "NE",
+        "center": [
+          1.79862,
+          13.11975
+        ],
+        "zoom": 12,
+        "population": 15650,
+        "cells": 80,
+        "layer": "cities/torodi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.79862,
+            13.11975
+          ]
+        },
+        "properties": {
+          "id": "torodi",
+          "name": "Torodi",
+          "country": "NE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 15650
+        }
+      },
+      "summary": null
+    }
+  }
+}

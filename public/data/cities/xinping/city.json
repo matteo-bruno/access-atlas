@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xinping",
+  "createdAt": "2026-10-08T16:22:49.253Z",
+  "updatedAt": "2026-10-08T16:22:49.253Z",
+  "meta": {
+    "name": "Xinping",
+    "nameIt": "Xinping",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xinping.geojson",
+      "sha256": "2a05453703834dd34f318b35f15b531ee1ae6d4f64eeb099f1d395d29b2301bf",
+      "size": 87684,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xinping",
+    "name": "Xinping",
+    "nameIt": "Xinping",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      101.98879,
+      24.06924
+    ],
+    "zoom": 12,
+    "population": 97935,
+    "grid": "cities/xinping/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xinping/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xinping",
+        "name": "Xinping",
+        "nameIt": "Xinping",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          101.98879,
+          24.06924
+        ],
+        "zoom": 12,
+        "population": 97935,
+        "cells": 75,
+        "layer": "cities/xinping/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            101.98879,
+            24.06924
+          ]
+        },
+        "properties": {
+          "id": "xinping",
+          "name": "Xinping",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 97935
+        }
+      },
+      "summary": null
+    }
+  }
+}

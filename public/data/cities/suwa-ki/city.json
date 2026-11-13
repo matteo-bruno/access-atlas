@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "suwa-ki",
+  "createdAt": "2026-10-08T16:15:26.347Z",
+  "updatedAt": "2026-10-08T16:15:26.347Z",
+  "meta": {
+    "name": "Suwałki",
+    "nameIt": "Suwałki",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Suwałki.geojson",
+      "sha256": "3db4cfde4b5a8dd36873a958ac60e1add6caeef0f16a2b820ca0642ffd1c647e",
+      "size": 244551,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "suwa-ki",
+    "name": "Suwałki",
+    "nameIt": "Suwałki",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      22.93226,
+      54.10363
+    ],
+    "zoom": 11.4,
+    "population": 59322,
+    "grid": "cities/suwa-ki/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/suwa-ki/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "suwa-ki",
+        "name": "Suwałki",
+        "nameIt": "Suwałki",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          22.93226,
+          54.10363
+        ],
+        "zoom": 11.4,
+        "population": 59322,
+        "cells": 214,
+        "layer": "cities/suwa-ki/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            22.93226,
+            54.10363
+          ]
+        },
+        "properties": {
+          "id": "suwa-ki",
+          "name": "Suwałki",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 59322
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chara",
+  "createdAt": "2026-10-08T15:23:56.298Z",
+  "updatedAt": "2026-10-08T15:23:56.298Z",
+  "meta": {
+    "name": "Chara",
+    "nameIt": "Chara",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chara.geojson",
+      "sha256": "12395571af17974069b10ee2cbc92681c098351d792f4d678fbe4d2c52c953f8",
+      "size": 330550,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chara",
+    "name": "Chara",
+    "nameIt": "Chara",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      7.22262,
+      4.74346
+    ],
+    "zoom": 10.8,
+    "population": 78751,
+    "grid": "cities/chara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chara",
+        "name": "Chara",
+        "nameIt": "Chara",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          7.22262,
+          4.74346
+        ],
+        "zoom": 10.8,
+        "population": 78751,
+        "cells": 287,
+        "layer": "cities/chara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.22262,
+            4.74346
+          ]
+        },
+        "properties": {
+          "id": "chara",
+          "name": "Chara",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 37.1,
+          "population": 78751
+        }
+      },
+      "summary": null
+    }
+  }
+}

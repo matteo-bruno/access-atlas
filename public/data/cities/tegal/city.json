@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tegal",
+  "createdAt": "2026-10-08T16:17:06.209Z",
+  "updatedAt": "2026-10-08T16:17:06.209Z",
+  "meta": {
+    "name": "Tegal",
+    "nameIt": "Tegal",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tegal.geojson",
+      "sha256": "099c1449e3b1d373d2028df331e907c9aac2e15d09d8bf24e767a1b4bb9169d2",
+      "size": 4203654,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tegal",
+    "name": "Tegal",
+    "nameIt": "Tegal",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      109.11348,
+      -6.92043
+    ],
+    "zoom": 9.2,
+    "population": 1752967,
+    "grid": "cities/tegal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tegal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tegal",
+        "name": "Tegal",
+        "nameIt": "Tegal",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          109.11348,
+          -6.92043
+        ],
+        "zoom": 9.2,
+        "population": 1752967,
+        "cells": 3576,
+        "layer": "cities/tegal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.11348,
+            -6.92043
+          ]
+        },
+        "properties": {
+          "id": "tegal",
+          "name": "Tegal",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 67.9,
+          "population": 1752967
+        }
+      },
+      "summary": null
+    }
+  }
+}

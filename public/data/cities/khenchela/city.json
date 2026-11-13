@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khenchela",
+  "createdAt": "2026-10-08T15:46:42.493Z",
+  "updatedAt": "2026-10-08T15:46:42.493Z",
+  "meta": {
+    "name": "Khenchela",
+    "nameIt": "Khenchela",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khenchela.geojson",
+      "sha256": "94ae0caf487f01b0f1d63c7dfd40915a2be8f4a8722e1e8107760d974953785c",
+      "size": 248759,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khenchela",
+    "name": "Khenchela",
+    "nameIt": "Khenchela",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      7.14372,
+      35.42651
+    ],
+    "zoom": 11.1,
+    "population": 155847,
+    "grid": "cities/khenchela/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khenchela/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khenchela",
+        "name": "Khenchela",
+        "nameIt": "Khenchela",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          7.14372,
+          35.42651
+        ],
+        "zoom": 11.1,
+        "population": 155847,
+        "cells": 218,
+        "layer": "cities/khenchela/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.14372,
+            35.42651
+          ]
+        },
+        "properties": {
+          "id": "khenchela",
+          "name": "Khenchela",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 155847
+        }
+      },
+      "summary": null
+    }
+  }
+}

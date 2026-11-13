@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "goroimari",
+  "createdAt": "2026-10-08T15:35:46.483Z",
+  "updatedAt": "2026-10-08T15:35:46.483Z",
+  "meta": {
+    "name": "Goroimari",
+    "nameIt": "Goroimari",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Goroimari.geojson",
+      "sha256": "b9f8cb294421adf02f03f212d08a66eecd5d5399ab89e271928b42f66fae0fb6",
+      "size": 662622,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "goroimari",
+    "name": "Goroimari",
+    "nameIt": "Goroimari",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      91.25959,
+      26.09866
+    ],
+    "zoom": 9.7,
+    "population": 76879,
+    "grid": "cities/goroimari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/goroimari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "goroimari",
+        "name": "Goroimari",
+        "nameIt": "Goroimari",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          91.25959,
+          26.09866
+        ],
+        "zoom": 9.7,
+        "population": 76879,
+        "cells": 572,
+        "layer": "cities/goroimari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.25959,
+            26.09866
+          ]
+        },
+        "properties": {
+          "id": "goroimari",
+          "name": "Goroimari",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 76879
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "linyi-china",
+  "createdAt": "2026-10-08T15:51:30.189Z",
+  "updatedAt": "2026-10-08T15:51:30.189Z",
+  "meta": {
+    "name": "Linyi (China)",
+    "nameIt": "Linyi (China)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Linyi (China).geojson",
+      "sha256": "5e796170c04e3c27ffa1bdbd3faab4262a08d824fda0e32d9ef1018ab363c03f",
+      "size": 12532669,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "linyi-china",
+    "name": "Linyi (China)",
+    "nameIt": "Linyi (China)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.31102,
+      35.06954
+    ],
+    "zoom": 8.7,
+    "population": 2851969,
+    "grid": "cities/linyi-china/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 173
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/linyi-china/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "linyi-china",
+        "name": "Linyi (China)",
+        "nameIt": "Linyi (China)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.31102,
+          35.06954
+        ],
+        "zoom": 8.7,
+        "population": 2851969,
+        "cells": 10764,
+        "layer": "cities/linyi-china/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 173
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.31102,
+            35.06954
+          ]
+        },
+        "properties": {
+          "id": "linyi-china",
+          "name": "Linyi (China)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 51.9,
+          "population": 2851969
+        }
+      },
+      "summary": null
+    }
+  }
+}

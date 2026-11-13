@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rubio",
+  "createdAt": "2026-10-08T16:09:15.415Z",
+  "updatedAt": "2026-10-08T16:09:15.415Z",
+  "meta": {
+    "name": "Rubio",
+    "nameIt": "Rubio",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rubio.geojson",
+      "sha256": "facecacceb2eab397ae8b5aa00f4661407227758c2a2f0da750c958054e0e905",
+      "size": 165940,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rubio",
+    "name": "Rubio",
+    "nameIt": "Rubio",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -72.36402,
+      7.69311
+    ],
+    "zoom": 11.7,
+    "population": 57817,
+    "grid": "cities/rubio/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rubio/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rubio",
+        "name": "Rubio",
+        "nameIt": "Rubio",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -72.36402,
+          7.69311
+        ],
+        "zoom": 11.7,
+        "population": 57817,
+        "cells": 143,
+        "layer": "cities/rubio/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.36402,
+            7.69311
+          ]
+        },
+        "properties": {
+          "id": "rubio",
+          "name": "Rubio",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 22.1,
+          "population": 57817
+        }
+      },
+      "summary": null
+    }
+  }
+}

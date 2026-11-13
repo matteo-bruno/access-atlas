@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khamgaon",
+  "createdAt": "2026-10-08T15:46:26.241Z",
+  "updatedAt": "2026-10-08T15:46:26.241Z",
+  "meta": {
+    "name": "Khamgaon",
+    "nameIt": "Khamgaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khamgaon.geojson",
+      "sha256": "10951d34db5ad19b333e2ffbe07c106588bfdc67e09b6c027c7c90940e14e92d",
+      "size": 302350,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khamgaon",
+    "name": "Khamgaon",
+    "nameIt": "Khamgaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.5641,
+      20.71212
+    ],
+    "zoom": 11.3,
+    "population": 117129,
+    "grid": "cities/khamgaon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khamgaon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khamgaon",
+        "name": "Khamgaon",
+        "nameIt": "Khamgaon",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.5641,
+          20.71212
+        ],
+        "zoom": 11.3,
+        "population": 117129,
+        "cells": 261,
+        "layer": "cities/khamgaon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.5641,
+            20.71212
+          ]
+        },
+        "properties": {
+          "id": "khamgaon",
+          "name": "Khamgaon",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 117129
+        }
+      },
+      "summary": null
+    }
+  }
+}

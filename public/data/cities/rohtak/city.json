@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rohtak",
+  "createdAt": "2026-10-08T16:09:03.121Z",
+  "updatedAt": "2026-10-08T16:09:03.121Z",
+  "meta": {
+    "name": "Rohtak",
+    "nameIt": "Rohtak",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rohtak.geojson",
+      "sha256": "9051e2a5d46c99f3387cae1174991911c45b3c8a6ca09bbdefd48cd702fc1660",
+      "size": 626921,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rohtak",
+    "name": "Rohtak",
+    "nameIt": "Rohtak",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.59764,
+      28.89298
+    ],
+    "zoom": 10.6,
+    "population": 402244,
+    "grid": "cities/rohtak/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rohtak/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rohtak",
+        "name": "Rohtak",
+        "nameIt": "Rohtak",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.59764,
+          28.89298
+        ],
+        "zoom": 10.6,
+        "population": 402244,
+        "cells": 541,
+        "layer": "cities/rohtak/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.59764,
+            28.89298
+          ]
+        },
+        "properties": {
+          "id": "rohtak",
+          "name": "Rohtak",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 27.4,
+          "population": 402244
+        }
+      },
+      "summary": null
+    }
+  }
+}

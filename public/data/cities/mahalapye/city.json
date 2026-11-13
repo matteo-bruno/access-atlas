@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mahalapye",
+  "createdAt": "2026-10-08T15:53:38.002Z",
+  "updatedAt": "2026-10-08T15:53:38.002Z",
+  "meta": {
+    "name": "Mahalapye",
+    "nameIt": "Mahalapye",
+    "region": "Botswana",
+    "regionIt": "Botswana",
+    "country": "BW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mahalapye.geojson",
+      "sha256": "3c00a287bedf05a99cf529b2ba12f4e840386f3da5c382e3fcd3760ebfe8eb27",
+      "size": 334782,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mahalapye",
+    "name": "Mahalapye",
+    "nameIt": "Mahalapye",
+    "region": "Botswana",
+    "regionIt": "Botswana",
+    "country": "BW",
+    "center": [
+      26.82076,
+      -23.11322
+    ],
+    "zoom": 11,
+    "population": 32615,
+    "grid": "cities/mahalapye/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mahalapye/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mahalapye",
+        "name": "Mahalapye",
+        "nameIt": "Mahalapye",
+        "region": "Botswana",
+        "regionIt": "Botswana",
+        "country": "BW",
+        "center": [
+          26.82076,
+          -23.11322
+        ],
+        "zoom": 11,
+        "population": 32615,
+        "cells": 285,
+        "layer": "cities/mahalapye/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.82076,
+            -23.11322
+          ]
+        },
+        "properties": {
+          "id": "mahalapye",
+          "name": "Mahalapye",
+          "country": "BW",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 32615
+        }
+      },
+      "summary": null
+    }
+  }
+}

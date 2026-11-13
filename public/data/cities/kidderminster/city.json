@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kidderminster",
+  "createdAt": "2026-10-08T15:47:00.767Z",
+  "updatedAt": "2026-10-08T15:47:00.767Z",
+  "meta": {
+    "name": "Kidderminster",
+    "nameIt": "Kidderminster",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kidderminster.geojson",
+      "sha256": "b1a2a52ac5b4b22f8ced694f6ef851ad617d1bcc8bce98dd255018df7dc78736",
+      "size": 216995,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kidderminster",
+    "name": "Kidderminster",
+    "nameIt": "Kidderminster",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -2.25058,
+      52.38666
+    ],
+    "zoom": 11.9,
+    "population": 55775,
+    "grid": "cities/kidderminster/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kidderminster/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kidderminster",
+        "name": "Kidderminster",
+        "nameIt": "Kidderminster",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -2.25058,
+          52.38666
+        ],
+        "zoom": 11.9,
+        "population": 55775,
+        "cells": 187,
+        "layer": "cities/kidderminster/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.25058,
+            52.38666
+          ]
+        },
+        "properties": {
+          "id": "kidderminster",
+          "name": "Kidderminster",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 15.8,
+          "population": 55775
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "new-haven",
+  "createdAt": "2026-10-08T16:01:08.733Z",
+  "updatedAt": "2026-10-08T16:01:08.733Z",
+  "meta": {
+    "name": "New Haven",
+    "nameIt": "New Haven",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/New Haven.geojson",
+      "sha256": "21efaef5358c37597dee56910d395edbefcc1c793c06106b8aa8ea66c3df5411",
+      "size": 530183,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "new-haven",
+    "name": "New Haven",
+    "nameIt": "New Haven",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -72.92399,
+      41.31544
+    ],
+    "zoom": 10.7,
+    "population": 148022,
+    "grid": "cities/new-haven/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/new-haven/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "new-haven",
+        "name": "New Haven",
+        "nameIt": "New Haven",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -72.92399,
+          41.31544
+        ],
+        "zoom": 10.7,
+        "population": 148022,
+        "cells": 461,
+        "layer": "cities/new-haven/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.92399,
+            41.31544
+          ]
+        },
+        "properties": {
+          "id": "new-haven",
+          "name": "New Haven",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 13.3,
+          "population": 148022
+        }
+      },
+      "summary": null
+    }
+  }
+}

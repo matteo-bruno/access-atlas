@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "las-tunas",
+  "createdAt": "2026-10-08T15:50:17.593Z",
+  "updatedAt": "2026-10-08T15:50:17.593Z",
+  "meta": {
+    "name": "Las Tunas",
+    "nameIt": "Las Tunas",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Las Tunas.geojson",
+      "sha256": "f9e3fd66814c88c116a53f804042956d0a0a4d0a0862ec6c90de8993c17953c2",
+      "size": 367170,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "las-tunas",
+    "name": "Las Tunas",
+    "nameIt": "Las Tunas",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU",
+    "center": [
+      -76.95273,
+      20.96349
+    ],
+    "zoom": 10.8,
+    "population": 166498,
+    "grid": "cities/las-tunas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 182
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/las-tunas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "las-tunas",
+        "name": "Las Tunas",
+        "nameIt": "Las Tunas",
+        "region": "Cuba",
+        "regionIt": "Cuba",
+        "country": "CU",
+        "center": [
+          -76.95273,
+          20.96349
+        ],
+        "zoom": 10.8,
+        "population": 166498,
+        "cells": 318,
+        "layer": "cities/las-tunas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 182
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.95273,
+            20.96349
+          ]
+        },
+        "properties": {
+          "id": "las-tunas",
+          "name": "Las Tunas",
+          "country": "CU",
+          "isStudy": true,
+          "proximityMinutes": 13.9,
+          "population": 166498
+        }
+      },
+      "summary": null
+    }
+  }
+}

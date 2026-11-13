@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "itabuna",
+  "createdAt": "2026-10-08T15:41:19.717Z",
+  "updatedAt": "2026-10-08T15:41:19.717Z",
+  "meta": {
+    "name": "Itabuna",
+    "nameIt": "Itabuna",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Itabuna.geojson",
+      "sha256": "d6026960ecc1d33751c80fa654f99b2fef7b00c6f0f8901451530684500dd274",
+      "size": 329638,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "itabuna",
+    "name": "Itabuna",
+    "nameIt": "Itabuna",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -39.27633,
+      -14.79424
+    ],
+    "zoom": 11.2,
+    "population": 158079,
+    "grid": "cities/itabuna/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/itabuna/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "itabuna",
+        "name": "Itabuna",
+        "nameIt": "Itabuna",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -39.27633,
+          -14.79424
+        ],
+        "zoom": 11.2,
+        "population": 158079,
+        "cells": 279,
+        "layer": "cities/itabuna/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -39.27633,
+            -14.79424
+          ]
+        },
+        "properties": {
+          "id": "itabuna",
+          "name": "Itabuna",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 21.3,
+          "population": 158079
+        }
+      },
+      "summary": null
+    }
+  }
+}

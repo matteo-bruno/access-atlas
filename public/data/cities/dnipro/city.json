@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dnipro",
+  "createdAt": "2026-10-08T15:30:23.947Z",
+  "updatedAt": "2026-10-08T15:30:23.947Z",
+  "meta": {
+    "name": "Dnipro",
+    "nameIt": "Dnipro",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dnipro.geojson",
+      "sha256": "f84f6fc7fbd525fdeaba616d21b58794877cd3fe4b2083c16c2b1cda2868b12e",
+      "size": 2280316,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dnipro",
+    "name": "Dnipro",
+    "nameIt": "Dnipro",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      35.02154,
+      48.46683
+    ],
+    "zoom": 9.6,
+    "population": 584078,
+    "grid": "cities/dnipro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dnipro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dnipro",
+        "name": "Dnipro",
+        "nameIt": "Dnipro",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          35.02154,
+          48.46683
+        ],
+        "zoom": 9.6,
+        "population": 584078,
+        "cells": 1993,
+        "layer": "cities/dnipro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.02154,
+            48.46683
+          ]
+        },
+        "properties": {
+          "id": "dnipro",
+          "name": "Dnipro",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 13.9,
+          "population": 584078
+        }
+      },
+      "summary": null
+    }
+  }
+}

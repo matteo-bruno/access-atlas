@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhengdian",
+  "createdAt": "2026-10-08T16:25:11.393Z",
+  "updatedAt": "2026-10-08T16:25:11.393Z",
+  "meta": {
+    "name": "Zhengdian",
+    "nameIt": "Zhengdian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhengdian.geojson",
+      "sha256": "931a28843f65c4d0697c10b319249e860733aa584fa82934f3530bb751c56491",
+      "size": 384756,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhengdian",
+    "name": "Zhengdian",
+    "nameIt": "Zhengdian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.31468,
+      30.35573
+    ],
+    "zoom": 10.6,
+    "population": 283752,
+    "grid": "cities/zhengdian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhengdian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhengdian",
+        "name": "Zhengdian",
+        "nameIt": "Zhengdian",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.31468,
+          30.35573
+        ],
+        "zoom": 10.6,
+        "population": 283752,
+        "cells": 329,
+        "layer": "cities/zhengdian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.31468,
+            30.35573
+          ]
+        },
+        "properties": {
+          "id": "zhengdian",
+          "name": "Zhengdian",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 25.9,
+          "population": 283752
+        }
+      },
+      "summary": null
+    }
+  }
+}

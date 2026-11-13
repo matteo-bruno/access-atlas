@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pishva",
+  "createdAt": "2026-10-08T16:05:50.835Z",
+  "updatedAt": "2026-10-08T16:05:50.835Z",
+  "meta": {
+    "name": "Pishva",
+    "nameIt": "Pishva",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pishva.geojson",
+      "sha256": "8fa5b6e951875717281da93c51147e38afc289c1f1426e769e2e96d476e65892",
+      "size": 285094,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pishva",
+    "name": "Pishva",
+    "nameIt": "Pishva",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      51.71087,
+      35.32352
+    ],
+    "zoom": 11,
+    "population": 54239,
+    "grid": "cities/pishva/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pishva/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pishva",
+        "name": "Pishva",
+        "nameIt": "Pishva",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          51.71087,
+          35.32352
+        ],
+        "zoom": 11,
+        "population": 54239,
+        "cells": 247,
+        "layer": "cities/pishva/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            51.71087,
+            35.32352
+          ]
+        },
+        "properties": {
+          "id": "pishva",
+          "name": "Pishva",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 54239
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhangpu-jiangsu-province",
+  "createdAt": "2026-10-08T16:25:01.614Z",
+  "updatedAt": "2026-10-08T16:25:01.614Z",
+  "meta": {
+    "name": "Zhangpu (Jiangsu Province)",
+    "nameIt": "Zhangpu (Jiangsu Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhangpu (Jiangsu Province).geojson",
+      "sha256": "6907bce49a6b8b3d30cbfafc3b021ee3f9b6154be7843fe95cb1d78bd42a27ee",
+      "size": 1047371,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhangpu-jiangsu-province",
+    "name": "Zhangpu (Jiangsu Province)",
+    "nameIt": "Zhangpu (Jiangsu Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      120.64183,
+      31.49362
+    ],
+    "zoom": 10.4,
+    "population": 204981,
+    "grid": "cities/zhangpu-jiangsu-province/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhangpu-jiangsu-province/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhangpu-jiangsu-province",
+        "name": "Zhangpu (Jiangsu Province)",
+        "nameIt": "Zhangpu (Jiangsu Province)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          120.64183,
+          31.49362
+        ],
+        "zoom": 10.4,
+        "population": 204981,
+        "cells": 896,
+        "layer": "cities/zhangpu-jiangsu-province/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.64183,
+            31.49362
+          ]
+        },
+        "properties": {
+          "id": "zhangpu-jiangsu-province",
+          "name": "Zhangpu (Jiangsu Province)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 204981
+        }
+      },
+      "summary": null
+    }
+  }
+}

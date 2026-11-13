@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ozgon",
+  "createdAt": "2026-10-08T16:25:54.818Z",
+  "updatedAt": "2026-10-08T16:25:54.818Z",
+  "meta": {
+    "name": "Özgön",
+    "nameIt": "Özgön",
+    "region": "Kyrgyzstan",
+    "regionIt": "Kirghizistan",
+    "country": "KG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Özgön.geojson",
+      "sha256": "c6ce20845b62d63eaf8c891e3f2896f1f6f9fd7e490319e9492fa0998fd02468",
+      "size": 175625,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ozgon",
+    "name": "Özgön",
+    "nameIt": "Özgön",
+    "region": "Kyrgyzstan",
+    "regionIt": "Kirghizistan",
+    "country": "KG",
+    "center": [
+      73.29964,
+      40.76912
+    ],
+    "zoom": 11.2,
+    "population": 57771,
+    "grid": "cities/ozgon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ozgon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ozgon",
+        "name": "Özgön",
+        "nameIt": "Özgön",
+        "region": "Kyrgyzstan",
+        "regionIt": "Kirghizistan",
+        "country": "KG",
+        "center": [
+          73.29964,
+          40.76912
+        ],
+        "zoom": 11.2,
+        "population": 57771,
+        "cells": 152,
+        "layer": "cities/ozgon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.29964,
+            40.76912
+          ]
+        },
+        "properties": {
+          "id": "ozgon",
+          "name": "Özgön",
+          "country": "KG",
+          "isStudy": true,
+          "proximityMinutes": 20.9,
+          "population": 57771
+        }
+      },
+      "summary": null
+    }
+  }
+}

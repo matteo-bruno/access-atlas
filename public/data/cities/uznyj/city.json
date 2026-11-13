@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "uznyj",
+  "createdAt": "2026-10-08T16:20:13.095Z",
+  "updatedAt": "2026-10-08T16:20:13.095Z",
+  "meta": {
+    "name": "Uznyj",
+    "nameIt": "Uznyj",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Uznyj.geojson",
+      "sha256": "ccabd5907efbbe46f69110a100fc401ed554343cad4214530d1a935980fe8d88",
+      "size": 127505,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "uznyj",
+    "name": "Uznyj",
+    "nameIt": "Uznyj",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      61.949,
+      56.3841
+    ],
+    "zoom": 11.8,
+    "population": 47654,
+    "grid": "cities/uznyj/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/uznyj/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "uznyj",
+        "name": "Uznyj",
+        "nameIt": "Uznyj",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          61.949,
+          56.3841
+        ],
+        "zoom": 11.8,
+        "population": 47654,
+        "cells": 111,
+        "layer": "cities/uznyj/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            61.949,
+            56.3841
+          ]
+        },
+        "properties": {
+          "id": "uznyj",
+          "name": "Uznyj",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 10,
+          "population": 47654
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barika",
+  "createdAt": "2026-10-08T15:15:37.466Z",
+  "updatedAt": "2026-10-08T15:15:37.466Z",
+  "meta": {
+    "name": "Barika",
+    "nameIt": "Barika",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barika.geojson",
+      "sha256": "593149ee6830357055a5a9843b58d6c500550a652026247daa95dea723e987c0",
+      "size": 195781,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barika",
+    "name": "Barika",
+    "nameIt": "Barika",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      5.36721,
+      35.39038
+    ],
+    "zoom": 11.5,
+    "population": 119378,
+    "grid": "cities/barika/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barika/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barika",
+        "name": "Barika",
+        "nameIt": "Barika",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          5.36721,
+          35.39038
+        ],
+        "zoom": 11.5,
+        "population": 119378,
+        "cells": 170,
+        "layer": "cities/barika/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.36721,
+            35.39038
+          ]
+        },
+        "properties": {
+          "id": "barika",
+          "name": "Barika",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 17.8,
+          "population": 119378
+        }
+      },
+      "summary": null
+    }
+  }
+}

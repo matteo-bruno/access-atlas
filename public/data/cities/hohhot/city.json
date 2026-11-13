@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hohhot",
+  "createdAt": "2026-10-08T15:38:54.138Z",
+  "updatedAt": "2026-10-08T15:38:54.138Z",
+  "meta": {
+    "name": "Hohhot",
+    "nameIt": "Hohhot",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hohhot.geojson",
+      "sha256": "1ef0d505273cef3f277adc33e12794a83bb33c5f5608e44c81783ec001be0e2d",
+      "size": 4327142,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hohhot",
+    "name": "Hohhot",
+    "nameIt": "Hohhot",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      111.66883,
+      40.813
+    ],
+    "zoom": 9.4,
+    "population": 2242391,
+    "grid": "cities/hohhot/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hohhot/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hohhot",
+        "name": "Hohhot",
+        "nameIt": "Hohhot",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          111.66883,
+          40.813
+        ],
+        "zoom": 9.4,
+        "population": 2242391,
+        "cells": 3730,
+        "layer": "cities/hohhot/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.66883,
+            40.813
+          ]
+        },
+        "properties": {
+          "id": "hohhot",
+          "name": "Hohhot",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 39.1,
+          "population": 2242391
+        }
+      },
+      "summary": null
+    }
+  }
+}

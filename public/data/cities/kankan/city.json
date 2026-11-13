@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kankan",
+  "createdAt": "2026-10-08T15:44:56.940Z",
+  "updatedAt": "2026-10-08T15:44:56.940Z",
+  "meta": {
+    "name": "Kankan",
+    "nameIt": "Kankan",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kankan.geojson",
+      "sha256": "fe55cd11b8d5d4ea4aeda1eb610d75b1ba5b46a667cd60aa6926c21f146bb8a6",
+      "size": 648556,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kankan",
+    "name": "Kankan",
+    "nameIt": "Kankan",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN",
+    "center": [
+      -9.30496,
+      10.38258
+    ],
+    "zoom": 10.8,
+    "population": 298270,
+    "grid": "cities/kankan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kankan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kankan",
+        "name": "Kankan",
+        "nameIt": "Kankan",
+        "region": "Guinea",
+        "regionIt": "Guinea",
+        "country": "GN",
+        "center": [
+          -9.30496,
+          10.38258
+        ],
+        "zoom": 10.8,
+        "population": 298270,
+        "cells": 555,
+        "layer": "cities/kankan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -9.30496,
+            10.38258
+          ]
+        },
+        "properties": {
+          "id": "kankan",
+          "name": "Kankan",
+          "country": "GN",
+          "isStudy": true,
+          "proximityMinutes": 32.3,
+          "population": 298270
+        }
+      },
+      "summary": null
+    }
+  }
+}

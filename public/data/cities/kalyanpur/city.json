@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kalyanpur",
+  "createdAt": "2026-10-08T15:44:35.952Z",
+  "updatedAt": "2026-10-08T15:44:35.952Z",
+  "meta": {
+    "name": "Kalyanpur",
+    "nameIt": "Kalyanpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kalyanpur.geojson",
+      "sha256": "041653a7851344aedb62e5a1bec545a29884ae5da05316d60f8a7ab00edcab8a",
+      "size": 2431556,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kalyanpur",
+    "name": "Kalyanpur",
+    "nameIt": "Kalyanpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.13608,
+      26.03416
+    ],
+    "zoom": 9.5,
+    "population": 579157,
+    "grid": "cities/kalyanpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kalyanpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kalyanpur",
+        "name": "Kalyanpur",
+        "nameIt": "Kalyanpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.13608,
+          26.03416
+        ],
+        "zoom": 9.5,
+        "population": 579157,
+        "cells": 2097,
+        "layer": "cities/kalyanpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.13608,
+            26.03416
+          ]
+        },
+        "properties": {
+          "id": "kalyanpur",
+          "name": "Kalyanpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 579157
+        }
+      },
+      "summary": null
+    }
+  }
+}

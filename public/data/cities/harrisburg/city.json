@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "harrisburg",
+  "createdAt": "2026-10-08T15:37:55.646Z",
+  "updatedAt": "2026-10-08T15:37:55.646Z",
+  "meta": {
+    "name": "Harrisburg",
+    "nameIt": "Harrisburg",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Harrisburg.geojson",
+      "sha256": "6d86a33a70a1e66ce211750941ed47ae6611cf2949879424048d239b5c51d81d",
+      "size": 460280,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "harrisburg",
+    "name": "Harrisburg",
+    "nameIt": "Harrisburg",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -76.86614,
+      40.27248
+    ],
+    "zoom": 10.6,
+    "population": 77117,
+    "grid": "cities/harrisburg/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/harrisburg/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "harrisburg",
+        "name": "Harrisburg",
+        "nameIt": "Harrisburg",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -76.86614,
+          40.27248
+        ],
+        "zoom": 10.6,
+        "population": 77117,
+        "cells": 399,
+        "layer": "cities/harrisburg/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.86614,
+            40.27248
+          ]
+        },
+        "properties": {
+          "id": "harrisburg",
+          "name": "Harrisburg",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 19.4,
+          "population": 77117
+        }
+      },
+      "summary": null
+    }
+  }
+}

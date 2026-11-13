@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "suixi",
+  "createdAt": "2026-10-08T16:15:01.623Z",
+  "updatedAt": "2026-10-08T16:15:01.623Z",
+  "meta": {
+    "name": "Suixi",
+    "nameIt": "Suixi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Suixi.geojson",
+      "sha256": "af1b0e7d3236f47476799fe97b95aa2d2aaef1000e91c4d4350246add332cd08",
+      "size": 178879,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "suixi",
+    "name": "Suixi",
+    "nameIt": "Suixi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      110.25146,
+      21.37775
+    ],
+    "zoom": 11.2,
+    "population": 195519,
+    "grid": "cities/suixi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/suixi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "suixi",
+        "name": "Suixi",
+        "nameIt": "Suixi",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          110.25146,
+          21.37775
+        ],
+        "zoom": 11.2,
+        "population": 195519,
+        "cells": 153,
+        "layer": "cities/suixi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.25146,
+            21.37775
+          ]
+        },
+        "properties": {
+          "id": "suixi",
+          "name": "Suixi",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 23.7,
+          "population": 195519
+        }
+      },
+      "summary": null
+    }
+  }
+}

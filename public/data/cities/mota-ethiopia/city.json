@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mota-ethiopia",
+  "createdAt": "2026-10-08T15:58:30.409Z",
+  "updatedAt": "2026-10-08T15:58:30.409Z",
+  "meta": {
+    "name": "Mota (Ethiopia)",
+    "nameIt": "Mota (Ethiopia)",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mota (Ethiopia).geojson",
+      "sha256": "4834df776165cdc7ed83b745c5a355ce9082433a29a182cc7ce13abc5ecc86a4",
+      "size": 149977,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mota-ethiopia",
+    "name": "Mota (Ethiopia)",
+    "nameIt": "Mota (Ethiopia)",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      37.88048,
+      11.08031
+    ],
+    "zoom": 12,
+    "population": 69217,
+    "grid": "cities/mota-ethiopia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mota-ethiopia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mota-ethiopia",
+        "name": "Mota (Ethiopia)",
+        "nameIt": "Mota (Ethiopia)",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          37.88048,
+          11.08031
+        ],
+        "zoom": 12,
+        "population": 69217,
+        "cells": 129,
+        "layer": "cities/mota-ethiopia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.88048,
+            11.08031
+          ]
+        },
+        "properties": {
+          "id": "mota-ethiopia",
+          "name": "Mota (Ethiopia)",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 69217
+        }
+      },
+      "summary": null
+    }
+  }
+}

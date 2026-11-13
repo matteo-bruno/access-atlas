@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kishoreganj",
+  "createdAt": "2026-10-08T15:47:18.870Z",
+  "updatedAt": "2026-10-08T15:47:18.870Z",
+  "meta": {
+    "name": "Kishoreganj",
+    "nameIt": "Kishoreganj",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kishoreganj.geojson",
+      "sha256": "b2cea6f371ed53690b07dcc057e73ad48a31bc99aa460c023a23f15128c95f96",
+      "size": 6048214,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kishoreganj",
+    "name": "Kishoreganj",
+    "nameIt": "Kishoreganj",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      90.73504,
+      24.35518
+    ],
+    "zoom": 8.7,
+    "population": 1586531,
+    "grid": "cities/kishoreganj/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kishoreganj/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kishoreganj",
+        "name": "Kishoreganj",
+        "nameIt": "Kishoreganj",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          90.73504,
+          24.35518
+        ],
+        "zoom": 8.7,
+        "population": 1586531,
+        "cells": 5196,
+        "layer": "cities/kishoreganj/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            90.73504,
+            24.35518
+          ]
+        },
+        "properties": {
+          "id": "kishoreganj",
+          "name": "Kishoreganj",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 103.5,
+          "population": 1586531
+        }
+      },
+      "summary": null
+    }
+  }
+}

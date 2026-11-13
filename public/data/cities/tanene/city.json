@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tanene",
+  "createdAt": "2026-10-08T16:16:30.061Z",
+  "updatedAt": "2026-10-08T16:16:30.061Z",
+  "meta": {
+    "name": "Tanene",
+    "nameIt": "Tanene",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tanene.geojson",
+      "sha256": "c203f4f018951d9dce9159cdb8e13c843ac51c894d72174f66574fea9fd1f5b6",
+      "size": 88321,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tanene",
+    "name": "Tanene",
+    "nameIt": "Tanene",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN",
+    "center": [
+      -13.69487,
+      10.08073
+    ],
+    "zoom": 12,
+    "population": 47969,
+    "grid": "cities/tanene/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tanene/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tanene",
+        "name": "Tanene",
+        "nameIt": "Tanene",
+        "region": "Guinea",
+        "regionIt": "Guinea",
+        "country": "GN",
+        "center": [
+          -13.69487,
+          10.08073
+        ],
+        "zoom": 12,
+        "population": 47969,
+        "cells": 75,
+        "layer": "cities/tanene/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -13.69487,
+            10.08073
+          ]
+        },
+        "properties": {
+          "id": "tanene",
+          "name": "Tanene",
+          "country": "GN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 47969
+        }
+      },
+      "summary": null
+    }
+  }
+}

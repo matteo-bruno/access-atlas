@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "north-lakes",
+  "createdAt": "2026-10-08T16:02:01.573Z",
+  "updatedAt": "2026-10-08T16:02:01.573Z",
+  "meta": {
+    "name": "North Lakes",
+    "nameIt": "North Lakes",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/North Lakes.geojson",
+      "sha256": "08334a14aff4b47b16ffa68bc018b8bd2abedf609c2a911589d1828ea4b55745",
+      "size": 582096,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "north-lakes",
+    "name": "North Lakes",
+    "nameIt": "North Lakes",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      153.01195,
+      -27.23265
+    ],
+    "zoom": 10.4,
+    "population": 114159,
+    "grid": "cities/north-lakes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/north-lakes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "north-lakes",
+        "name": "North Lakes",
+        "nameIt": "North Lakes",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          153.01195,
+          -27.23265
+        ],
+        "zoom": 10.4,
+        "population": 114159,
+        "cells": 498,
+        "layer": "cities/north-lakes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            153.01195,
+            -27.23265
+          ]
+        },
+        "properties": {
+          "id": "north-lakes",
+          "name": "North Lakes",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 16.7,
+          "population": 114159
+        }
+      },
+      "summary": null
+    }
+  }
+}

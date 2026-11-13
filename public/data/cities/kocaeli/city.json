@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kocaeli",
+  "createdAt": "2026-10-08T15:47:31.936Z",
+  "updatedAt": "2026-10-08T15:47:31.936Z",
+  "meta": {
+    "name": "Kocaeli",
+    "nameIt": "Kocaeli",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kocaeli.geojson",
+      "sha256": "3d59390f252f6e58adc647529b8e423e09c7bf52237c799b0935bc39c9925ee0",
+      "size": 1486932,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kocaeli",
+    "name": "Kocaeli",
+    "nameIt": "Kocaeli",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      29.89903,
+      40.76117
+    ],
+    "zoom": 9.1,
+    "population": 770004,
+    "grid": "cities/kocaeli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kocaeli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kocaeli",
+        "name": "Kocaeli",
+        "nameIt": "Kocaeli",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          29.89903,
+          40.76117
+        ],
+        "zoom": 9.1,
+        "population": 770004,
+        "cells": 1294,
+        "layer": "cities/kocaeli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.89903,
+            40.76117
+          ]
+        },
+        "properties": {
+          "id": "kocaeli",
+          "name": "Kocaeli",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 16.6,
+          "population": 770004
+        }
+      },
+      "summary": null
+    }
+  }
+}

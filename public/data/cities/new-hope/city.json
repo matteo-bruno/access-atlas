@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "new-hope",
+  "createdAt": "2026-10-08T16:01:09.318Z",
+  "updatedAt": "2026-10-08T16:01:09.318Z",
+  "meta": {
+    "name": "New Hope",
+    "nameIt": "New Hope",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/New Hope.geojson",
+      "sha256": "bd6da21938ab1560aed21ca86a4b1e56e54d87c5b7e993499b4778e6a721862c",
+      "size": 1177251,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "new-hope",
+    "name": "New Hope",
+    "nameIt": "New Hope",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -78.64316,
+      35.8606
+    ],
+    "zoom": 9.8,
+    "population": 147687,
+    "grid": "cities/new-hope/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/new-hope/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "new-hope",
+        "name": "New Hope",
+        "nameIt": "New Hope",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -78.64316,
+          35.8606
+        ],
+        "zoom": 9.8,
+        "population": 147687,
+        "cells": 1018,
+        "layer": "cities/new-hope/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -78.64316,
+            35.8606
+          ]
+        },
+        "properties": {
+          "id": "new-hope",
+          "name": "New Hope",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 23.4,
+          "population": 147687
+        }
+      },
+      "summary": null
+    }
+  }
+}

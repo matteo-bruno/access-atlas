@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tonghai",
+  "createdAt": "2026-10-08T16:18:24.936Z",
+  "updatedAt": "2026-10-08T16:18:24.936Z",
+  "meta": {
+    "name": "Tonghai",
+    "nameIt": "Tonghai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tonghai.geojson",
+      "sha256": "978f342c419f3f2d85fd7711dd2346ebcc48dd01cf106e02d01893b1e6b064dd",
+      "size": 254779,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tonghai",
+    "name": "Tonghai",
+    "nameIt": "Tonghai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      102.75129,
+      24.11929
+    ],
+    "zoom": 10.5,
+    "population": 126536,
+    "grid": "cities/tonghai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tonghai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tonghai",
+        "name": "Tonghai",
+        "nameIt": "Tonghai",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          102.75129,
+          24.11929
+        ],
+        "zoom": 10.5,
+        "population": 126536,
+        "cells": 218,
+        "layer": "cities/tonghai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            102.75129,
+            24.11929
+          ]
+        },
+        "properties": {
+          "id": "tonghai",
+          "name": "Tonghai",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 126536
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "douai",
+  "createdAt": "2026-10-08T15:31:04.057Z",
+  "updatedAt": "2026-10-08T15:31:04.057Z",
+  "meta": {
+    "name": "Douai",
+    "nameIt": "Douai",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Douai.geojson",
+      "sha256": "a32126d28fd68af9865cad4c63341fe309fd296e0649d2c9cc2f160c34d77177",
+      "size": 297479,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "douai",
+    "name": "Douai",
+    "nameIt": "Douai",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      3.08574,
+      50.37351
+    ],
+    "zoom": 11.4,
+    "population": 66213,
+    "grid": "cities/douai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/douai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "douai",
+        "name": "Douai",
+        "nameIt": "Douai",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          3.08574,
+          50.37351
+        ],
+        "zoom": 11.4,
+        "population": 66213,
+        "cells": 261,
+        "layer": "cities/douai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.08574,
+            50.37351
+          ]
+        },
+        "properties": {
+          "id": "douai",
+          "name": "Douai",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 66213
+        }
+      },
+      "summary": null
+    }
+  }
+}

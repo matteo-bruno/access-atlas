@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ponce",
+  "createdAt": "2026-10-08T16:06:06.621Z",
+  "updatedAt": "2026-10-08T16:06:06.621Z",
+  "meta": {
+    "name": "Ponce",
+    "nameIt": "Ponce",
+    "region": "Puerto Rico",
+    "regionIt": "Porto Rico",
+    "country": "PR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ponce.geojson",
+      "sha256": "015a2eb9c419fd1a231e28ba7188f2d08f3edba877a6ed97231e68c24d1f147b",
+      "size": 674709,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ponce",
+    "name": "Ponce",
+    "nameIt": "Ponce",
+    "region": "Puerto Rico",
+    "regionIt": "Porto Rico",
+    "country": "PR",
+    "center": [
+      -66.622,
+      18.00939
+    ],
+    "zoom": 10.9,
+    "population": 82503,
+    "grid": "cities/ponce/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 172
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ponce/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ponce",
+        "name": "Ponce",
+        "nameIt": "Ponce",
+        "region": "Puerto Rico",
+        "regionIt": "Porto Rico",
+        "country": "PR",
+        "center": [
+          -66.622,
+          18.00939
+        ],
+        "zoom": 10.9,
+        "population": 82503,
+        "cells": 580,
+        "layer": "cities/ponce/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 172
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -66.622,
+            18.00939
+          ]
+        },
+        "properties": {
+          "id": "ponce",
+          "name": "Ponce",
+          "country": "PR",
+          "isStudy": true,
+          "proximityMinutes": 17.5,
+          "population": 82503
+        }
+      },
+      "summary": null
+    }
+  }
+}

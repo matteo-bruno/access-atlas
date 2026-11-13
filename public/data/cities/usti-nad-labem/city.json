@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "usti-nad-labem",
+  "createdAt": "2026-10-08T16:25:55.017Z",
+  "updatedAt": "2026-10-08T16:25:55.017Z",
+  "meta": {
+    "name": "Ústí nad Labem",
+    "nameIt": "Ústí nad Labem",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ústí nad Labem.geojson",
+      "sha256": "e99852be69d18378e46de24003f2256e45a4177040f8d9626e88168e2c2ccc13",
+      "size": 222337,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "usti-nad-labem",
+    "name": "Ústí nad Labem",
+    "nameIt": "Ústí nad Labem",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ",
+    "center": [
+      14.03307,
+      50.67278
+    ],
+    "zoom": 11,
+    "population": 49468,
+    "grid": "cities/usti-nad-labem/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/usti-nad-labem/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "usti-nad-labem",
+        "name": "Ústí nad Labem",
+        "nameIt": "Ústí nad Labem",
+        "region": "Czech Republic",
+        "regionIt": "Repubblica Ceca",
+        "country": "CZ",
+        "center": [
+          14.03307,
+          50.67278
+        ],
+        "zoom": 11,
+        "population": 49468,
+        "cells": 194,
+        "layer": "cities/usti-nad-labem/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.03307,
+            50.67278
+          ]
+        },
+        "properties": {
+          "id": "usti-nad-labem",
+          "name": "Ústí nad Labem",
+          "country": "CZ",
+          "isStudy": true,
+          "proximityMinutes": 12.3,
+          "population": 49468
+        }
+      },
+      "summary": null
+    }
+  }
+}

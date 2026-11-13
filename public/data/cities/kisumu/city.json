@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kisumu",
+  "createdAt": "2026-10-08T15:47:21.310Z",
+  "updatedAt": "2026-10-08T15:47:21.310Z",
+  "meta": {
+    "name": "Kisumu",
+    "nameIt": "Kisumu",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kisumu.geojson",
+      "sha256": "22112a1968af9d428df5d217456ee2fd4d299f44d7125536464e83bed386242d",
+      "size": 684343,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kisumu",
+    "name": "Kisumu",
+    "nameIt": "Kisumu",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE",
+    "center": [
+      34.77363,
+      -0.0901
+    ],
+    "zoom": 10.6,
+    "population": 371440,
+    "grid": "cities/kisumu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kisumu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kisumu",
+        "name": "Kisumu",
+        "nameIt": "Kisumu",
+        "region": "Kenya",
+        "regionIt": "Kenya",
+        "country": "KE",
+        "center": [
+          34.77363,
+          -0.0901
+        ],
+        "zoom": 10.6,
+        "population": 371440,
+        "cells": 582,
+        "layer": "cities/kisumu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.77363,
+            -0.0901
+          ]
+        },
+        "properties": {
+          "id": "kisumu",
+          "name": "Kisumu",
+          "country": "KE",
+          "isStudy": true,
+          "proximityMinutes": 18.3,
+          "population": 371440
+        }
+      },
+      "summary": null
+    }
+  }
+}

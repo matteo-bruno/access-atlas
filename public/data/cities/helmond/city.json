@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "helmond",
+  "createdAt": "2026-10-08T15:38:19.421Z",
+  "updatedAt": "2026-10-08T15:38:19.421Z",
+  "meta": {
+    "name": "Helmond",
+    "nameIt": "Helmond",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Helmond.geojson",
+      "sha256": "363697e30e136c157b7ccaaeb82aa8850287c297754ab95f7c55df430f1e5c03",
+      "size": 401493,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "helmond",
+    "name": "Helmond",
+    "nameIt": "Helmond",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      5.66027,
+      51.47031
+    ],
+    "zoom": 11.2,
+    "population": 89530,
+    "grid": "cities/helmond/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/helmond/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "helmond",
+        "name": "Helmond",
+        "nameIt": "Helmond",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          5.66027,
+          51.47031
+        ],
+        "zoom": 11.2,
+        "population": 89530,
+        "cells": 352,
+        "layer": "cities/helmond/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.66027,
+            51.47031
+          ]
+        },
+        "properties": {
+          "id": "helmond",
+          "name": "Helmond",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 89530
+        }
+      },
+      "summary": null
+    }
+  }
+}

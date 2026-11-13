@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chucko",
+  "createdAt": "2026-10-08T15:25:15.128Z",
+  "updatedAt": "2026-10-08T15:25:15.128Z",
+  "meta": {
+    "name": "Chucko",
+    "nameIt": "Chucko",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chucko.geojson",
+      "sha256": "ac3a15f3eebba132f3bf51f8c38ce6a78d65d223b71d660544d816a3249bca33",
+      "size": 110781,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chucko",
+    "name": "Chucko",
+    "nameIt": "Chucko",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      38.33432,
+      6.58505
+    ],
+    "zoom": 12,
+    "population": 53169,
+    "grid": "cities/chucko/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chucko/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chucko",
+        "name": "Chucko",
+        "nameIt": "Chucko",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          38.33432,
+          6.58505
+        ],
+        "zoom": 12,
+        "population": 53169,
+        "cells": 96,
+        "layer": "cities/chucko/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.33432,
+            6.58505
+          ]
+        },
+        "properties": {
+          "id": "chucko",
+          "name": "Chucko",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 53169
+        }
+      },
+      "summary": null
+    }
+  }
+}

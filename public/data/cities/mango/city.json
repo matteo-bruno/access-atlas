@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mango",
+  "createdAt": "2026-10-08T15:54:39.739Z",
+  "updatedAt": "2026-10-08T15:54:39.739Z",
+  "meta": {
+    "name": "Mango",
+    "nameIt": "Mango",
+    "region": "Togo",
+    "regionIt": "Togo",
+    "country": "TG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mango.geojson",
+      "sha256": "bfde49e5882426677544d53aad98c85719133fc4bf4bf31c1f5023be6bd24ab0",
+      "size": 106058,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mango",
+    "name": "Mango",
+    "nameIt": "Mango",
+    "region": "Togo",
+    "regionIt": "Togo",
+    "country": "TG",
+    "center": [
+      0.47376,
+      10.35188
+    ],
+    "zoom": 12,
+    "population": 22193,
+    "grid": "cities/mango/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mango/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mango",
+        "name": "Mango",
+        "nameIt": "Mango",
+        "region": "Togo",
+        "regionIt": "Togo",
+        "country": "TG",
+        "center": [
+          0.47376,
+          10.35188
+        ],
+        "zoom": 12,
+        "population": 22193,
+        "cells": 91,
+        "layer": "cities/mango/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.47376,
+            10.35188
+          ]
+        },
+        "properties": {
+          "id": "mango",
+          "name": "Mango",
+          "country": "TG",
+          "isStudy": true,
+          "proximityMinutes": 8.7,
+          "population": 22193
+        }
+      },
+      "summary": null
+    }
+  }
+}

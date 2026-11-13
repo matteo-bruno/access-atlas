@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sodertalje",
+  "createdAt": "2026-10-08T16:15:45.830Z",
+  "updatedAt": "2026-10-08T16:15:45.830Z",
+  "meta": {
+    "name": "Södertälje",
+    "nameIt": "Södertälje",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Södertälje.geojson",
+      "sha256": "dd2e9a99c5820409ee716dba86f5c634d8d451c535c29a706a4a4d5405b4210d",
+      "size": 396664,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sodertalje",
+    "name": "Södertälje",
+    "nameIt": "Södertälje",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE",
+    "center": [
+      17.61619,
+      59.1959
+    ],
+    "zoom": 11.3,
+    "population": 66290,
+    "grid": "cities/sodertalje/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sodertalje/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sodertalje",
+        "name": "Södertälje",
+        "nameIt": "Södertälje",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          17.61619,
+          59.1959
+        ],
+        "zoom": 11.3,
+        "population": 66290,
+        "cells": 345,
+        "layer": "cities/sodertalje/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            17.61619,
+            59.1959
+          ]
+        },
+        "properties": {
+          "id": "sodertalje",
+          "name": "Södertälje",
+          "country": "SE",
+          "isStudy": true,
+          "proximityMinutes": 18.6,
+          "population": 66290
+        }
+      },
+      "summary": null
+    }
+  }
+}

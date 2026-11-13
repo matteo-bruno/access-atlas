@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-luis-de-la-paz",
+  "createdAt": "2026-10-08T16:10:38.838Z",
+  "updatedAt": "2026-10-08T16:10:38.838Z",
+  "meta": {
+    "name": "San Luis de la Paz",
+    "nameIt": "San Luis de la Paz",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Luis de la Paz.geojson",
+      "sha256": "5383617116775369dc43782444ccd6dfede493e18a823548992c0857ce734048",
+      "size": 159713,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-luis-de-la-paz",
+    "name": "San Luis de la Paz",
+    "nameIt": "San Luis de la Paz",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -100.51532,
+      21.29405
+    ],
+    "zoom": 11.3,
+    "population": 66948,
+    "grid": "cities/san-luis-de-la-paz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-luis-de-la-paz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-luis-de-la-paz",
+        "name": "San Luis de la Paz",
+        "nameIt": "San Luis de la Paz",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -100.51532,
+          21.29405
+        ],
+        "zoom": 11.3,
+        "population": 66948,
+        "cells": 136,
+        "layer": "cities/san-luis-de-la-paz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -100.51532,
+            21.29405
+          ]
+        },
+        "properties": {
+          "id": "san-luis-de-la-paz",
+          "name": "San Luis de la Paz",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 66948
+        }
+      },
+      "summary": null
+    }
+  }
+}

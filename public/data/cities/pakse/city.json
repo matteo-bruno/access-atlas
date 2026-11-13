@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pakse",
+  "createdAt": "2026-10-08T16:03:42.938Z",
+  "updatedAt": "2026-10-08T16:03:42.938Z",
+  "meta": {
+    "name": "Pakse",
+    "nameIt": "Pakse",
+    "region": "Laos",
+    "regionIt": "Laos",
+    "country": "LA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pakse.geojson",
+      "sha256": "07601f91594695c0043ef23b5464809d2e9acdbbb709b7740af0e8fc514a306e",
+      "size": 334137,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pakse",
+    "name": "Pakse",
+    "nameIt": "Pakse",
+    "region": "Laos",
+    "regionIt": "Laos",
+    "country": "LA",
+    "center": [
+      105.81248,
+      15.11746
+    ],
+    "zoom": 10.7,
+    "population": 63028,
+    "grid": "cities/pakse/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pakse/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pakse",
+        "name": "Pakse",
+        "nameIt": "Pakse",
+        "region": "Laos",
+        "regionIt": "Laos",
+        "country": "LA",
+        "center": [
+          105.81248,
+          15.11746
+        ],
+        "zoom": 10.7,
+        "population": 63028,
+        "cells": 286,
+        "layer": "cities/pakse/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.81248,
+            15.11746
+          ]
+        },
+        "properties": {
+          "id": "pakse",
+          "name": "Pakse",
+          "country": "LA",
+          "isStudy": true,
+          "proximityMinutes": 20.6,
+          "population": 63028
+        }
+      },
+      "summary": null
+    }
+  }
+}

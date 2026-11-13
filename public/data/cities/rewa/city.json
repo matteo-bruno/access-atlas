@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rewa",
+  "createdAt": "2026-10-08T16:08:43.479Z",
+  "updatedAt": "2026-10-08T16:08:43.479Z",
+  "meta": {
+    "name": "Rewa",
+    "nameIt": "Rewa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rewa.geojson",
+      "sha256": "cd58d33955b882f5a7ff98161221c8b608ad56be45477ccaf0503230f5ddedec",
+      "size": 602774,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rewa",
+    "name": "Rewa",
+    "nameIt": "Rewa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.30188,
+      24.54064
+    ],
+    "zoom": 10.4,
+    "population": 423022,
+    "grid": "cities/rewa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rewa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rewa",
+        "name": "Rewa",
+        "nameIt": "Rewa",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.30188,
+          24.54064
+        ],
+        "zoom": 10.4,
+        "population": 423022,
+        "cells": 520,
+        "layer": "cities/rewa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.30188,
+            24.54064
+          ]
+        },
+        "properties": {
+          "id": "rewa",
+          "name": "Rewa",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 32.8,
+          "population": 423022
+        }
+      },
+      "summary": null
+    }
+  }
+}

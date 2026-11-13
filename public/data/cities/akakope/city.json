@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "akakope",
+  "createdAt": "2026-10-08T15:03:34.006Z",
+  "updatedAt": "2026-10-08T15:03:34.006Z",
+  "meta": {
+    "name": "Akakopé",
+    "nameIt": "Akakopé",
+    "region": "Togo",
+    "regionIt": "Togo",
+    "country": "TG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Akakopé.geojson",
+      "sha256": "cbd545453891da987b3bca231f56bf7c6a5612a57dbb60bd0195b9b1ec238aa3",
+      "size": 319279,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "akakope",
+    "name": "Akakopé",
+    "nameIt": "Akakopé",
+    "region": "Togo",
+    "regionIt": "Togo",
+    "country": "TG",
+    "center": [
+      1.27971,
+      6.25989
+    ],
+    "zoom": 11.4,
+    "population": 81903,
+    "grid": "cities/akakope/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/akakope/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "akakope",
+        "name": "Akakopé",
+        "nameIt": "Akakopé",
+        "region": "Togo",
+        "regionIt": "Togo",
+        "country": "TG",
+        "center": [
+          1.27971,
+          6.25989
+        ],
+        "zoom": 11.4,
+        "population": 81903,
+        "cells": 276,
+        "layer": "cities/akakope/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.27971,
+            6.25989
+          ]
+        },
+        "properties": {
+          "id": "akakope",
+          "name": "Akakopé",
+          "country": "TG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 81903
+        }
+      },
+      "summary": null
+    }
+  }
+}

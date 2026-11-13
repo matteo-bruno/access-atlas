@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bayannur",
+  "createdAt": "2026-10-08T15:16:20.898Z",
+  "updatedAt": "2026-10-08T15:16:20.898Z",
+  "meta": {
+    "name": "Bayannur",
+    "nameIt": "Bayannur",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bayannur.geojson",
+      "sha256": "f8eea11edcecc4d8c4e3fa67235242e747ebac3c9d0f0b8fff4b550d7c217754",
+      "size": 657646,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bayannur",
+    "name": "Bayannur",
+    "nameIt": "Bayannur",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      107.39991,
+      40.75835
+    ],
+    "zoom": 10.7,
+    "population": 299570,
+    "grid": "cities/bayannur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bayannur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bayannur",
+        "name": "Bayannur",
+        "nameIt": "Bayannur",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          107.39991,
+          40.75835
+        ],
+        "zoom": 10.7,
+        "population": 299570,
+        "cells": 564,
+        "layer": "cities/bayannur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.39991,
+            40.75835
+          ]
+        },
+        "properties": {
+          "id": "bayannur",
+          "name": "Bayannur",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24.5,
+          "population": 299570
+        }
+      },
+      "summary": null
+    }
+  }
+}

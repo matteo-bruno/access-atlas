@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bondowoso",
+  "createdAt": "2026-10-08T15:20:03.379Z",
+  "updatedAt": "2026-10-08T15:20:03.379Z",
+  "meta": {
+    "name": "Bondowoso",
+    "nameIt": "Bondowoso",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bondowoso.geojson",
+      "sha256": "3c71707c24cb30e9789434e242b02d8399caf6d2a4a214c2551a98cb1418228f",
+      "size": 411547,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bondowoso",
+    "name": "Bondowoso",
+    "nameIt": "Bondowoso",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      113.8218,
+      -7.91903
+    ],
+    "zoom": 10.8,
+    "population": 121468,
+    "grid": "cities/bondowoso/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bondowoso/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bondowoso",
+        "name": "Bondowoso",
+        "nameIt": "Bondowoso",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          113.8218,
+          -7.91903
+        ],
+        "zoom": 10.8,
+        "population": 121468,
+        "cells": 351,
+        "layer": "cities/bondowoso/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.8218,
+            -7.91903
+          ]
+        },
+        "properties": {
+          "id": "bondowoso",
+          "name": "Bondowoso",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 22.4,
+          "population": 121468
+        }
+      },
+      "summary": null
+    }
+  }
+}

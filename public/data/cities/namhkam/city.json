@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "namhkam",
+  "createdAt": "2026-10-08T15:59:55.723Z",
+  "updatedAt": "2026-10-08T15:59:55.723Z",
+  "meta": {
+    "name": "Namhkam",
+    "nameIt": "Namhkam",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Namhkam.geojson",
+      "sha256": "a4fd05d447ca0a5c01667ba214d8bfb18e38bff4e3a655e7dc5dedcbae70299e",
+      "size": 111149,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "namhkam",
+    "name": "Namhkam",
+    "nameIt": "Namhkam",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      97.68387,
+      23.83381
+    ],
+    "zoom": 11.5,
+    "population": 60527,
+    "grid": "cities/namhkam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/namhkam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "namhkam",
+        "name": "Namhkam",
+        "nameIt": "Namhkam",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          97.68387,
+          23.83381
+        ],
+        "zoom": 11.5,
+        "population": 60527,
+        "cells": 96,
+        "layer": "cities/namhkam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            97.68387,
+            23.83381
+          ]
+        },
+        "properties": {
+          "id": "namhkam",
+          "name": "Namhkam",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 60527
+        }
+      },
+      "summary": null
+    }
+  }
+}

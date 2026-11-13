@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khon-kaen",
+  "createdAt": "2026-10-08T15:46:47.793Z",
+  "updatedAt": "2026-10-08T15:46:47.793Z",
+  "meta": {
+    "name": "Khon Kaen",
+    "nameIt": "Khon Kaen",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khon Kaen.geojson",
+      "sha256": "01334fca24f80acac57c1a4edaffdb170305ca364428cb2982083cf73c3fca64",
+      "size": 856927,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khon-kaen",
+    "name": "Khon Kaen",
+    "nameIt": "Khon Kaen",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      102.83108,
+      16.43506
+    ],
+    "zoom": 10.2,
+    "population": 366751,
+    "grid": "cities/khon-kaen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khon-kaen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khon-kaen",
+        "name": "Khon Kaen",
+        "nameIt": "Khon Kaen",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          102.83108,
+          16.43506
+        ],
+        "zoom": 10.2,
+        "population": 366751,
+        "cells": 740,
+        "layer": "cities/khon-kaen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            102.83108,
+            16.43506
+          ]
+        },
+        "properties": {
+          "id": "khon-kaen",
+          "name": "Khon Kaen",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 21.4,
+          "population": 366751
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "utsunomiya",
+  "createdAt": "2026-10-08T16:20:10.583Z",
+  "updatedAt": "2026-10-08T16:20:10.583Z",
+  "meta": {
+    "name": "Utsunomiya",
+    "nameIt": "Utsunomiya",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Utsunomiya.geojson",
+      "sha256": "5742d5bc1c80e6cb2ccdee93166fdafa441e5dd5b1bf884de4a644712b1a3dc2",
+      "size": 1241282,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "utsunomiya",
+    "name": "Utsunomiya",
+    "nameIt": "Utsunomiya",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      139.88546,
+      36.55103
+    ],
+    "zoom": 10,
+    "population": 388490,
+    "grid": "cities/utsunomiya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/utsunomiya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "utsunomiya",
+        "name": "Utsunomiya",
+        "nameIt": "Utsunomiya",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          139.88546,
+          36.55103
+        ],
+        "zoom": 10,
+        "population": 388490,
+        "cells": 1082,
+        "layer": "cities/utsunomiya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.88546,
+            36.55103
+          ]
+        },
+        "properties": {
+          "id": "utsunomiya",
+          "name": "Utsunomiya",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 388490
+        }
+      },
+      "summary": null
+    }
+  }
+}

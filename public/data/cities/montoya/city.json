@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "montoya",
+  "createdAt": "2026-10-08T15:58:08.064Z",
+  "updatedAt": "2026-10-08T15:58:08.064Z",
+  "meta": {
+    "name": "Montoya",
+    "nameIt": "Montoya",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Montoya.geojson",
+      "sha256": "63576a6ea48219086ff66185542ddfb0fb1ef364cd7a27286c9d3cc3b3ca3317",
+      "size": 417168,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "montoya",
+    "name": "Montoya",
+    "nameIt": "Montoya",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -106.54383,
+      31.84868
+    ],
+    "zoom": 10.9,
+    "population": 77073,
+    "grid": "cities/montoya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/montoya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "montoya",
+        "name": "Montoya",
+        "nameIt": "Montoya",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -106.54383,
+          31.84868
+        ],
+        "zoom": 10.9,
+        "population": 77073,
+        "cells": 355,
+        "layer": "cities/montoya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.54383,
+            31.84868
+          ]
+        },
+        "properties": {
+          "id": "montoya",
+          "name": "Montoya",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 25.6,
+          "population": 77073
+        }
+      },
+      "summary": null
+    }
+  }
+}

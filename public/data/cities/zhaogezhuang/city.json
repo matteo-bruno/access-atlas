@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhaogezhuang",
+  "createdAt": "2026-10-08T16:25:06.264Z",
+  "updatedAt": "2026-10-08T16:25:06.264Z",
+  "meta": {
+    "name": "Zhaogezhuang",
+    "nameIt": "Zhaogezhuang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhaogezhuang.geojson",
+      "sha256": "ff00684b38895e51673d01ddd1703dc098a3f5bb86d5ad9af9976e6981041dda",
+      "size": 149098,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhaogezhuang",
+    "name": "Zhaogezhuang",
+    "nameIt": "Zhaogezhuang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.41462,
+      39.76623
+    ],
+    "zoom": 12,
+    "population": 28751,
+    "grid": "cities/zhaogezhuang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 167
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhaogezhuang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhaogezhuang",
+        "name": "Zhaogezhuang",
+        "nameIt": "Zhaogezhuang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.41462,
+          39.76623
+        ],
+        "zoom": 12,
+        "population": 28751,
+        "cells": 128,
+        "layer": "cities/zhaogezhuang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 167
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.41462,
+            39.76623
+          ]
+        },
+        "properties": {
+          "id": "zhaogezhuang",
+          "name": "Zhaogezhuang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 10.4,
+          "population": 28751
+        }
+      },
+      "summary": null
+    }
+  }
+}

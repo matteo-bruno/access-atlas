@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ouled-teima",
+  "createdAt": "2026-10-08T16:03:20.685Z",
+  "updatedAt": "2026-10-08T16:03:20.685Z",
+  "meta": {
+    "name": "Ouled-Teima",
+    "nameIt": "Ouled-Teima",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ouled-Teima.geojson",
+      "sha256": "928ba1b9b8174a3afd050dd9b00581de4646cedf2b97aab00ec9d6c8658b93cf",
+      "size": 92067,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ouled-teima",
+    "name": "Ouled-Teima",
+    "nameIt": "Ouled-Teima",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -9.21911,
+      30.39469
+    ],
+    "zoom": 12,
+    "population": 7168,
+    "grid": "cities/ouled-teima/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ouled-teima/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ouled-teima",
+        "name": "Ouled-Teima",
+        "nameIt": "Ouled-Teima",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -9.21911,
+          30.39469
+        ],
+        "zoom": 12,
+        "population": 7168,
+        "cells": 79,
+        "layer": "cities/ouled-teima/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -9.21911,
+            30.39469
+          ]
+        },
+        "properties": {
+          "id": "ouled-teima",
+          "name": "Ouled-Teima",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 7168
+        }
+      },
+      "summary": null
+    }
+  }
+}

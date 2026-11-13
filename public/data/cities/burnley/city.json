@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "burnley",
+  "createdAt": "2026-10-08T15:21:06.096Z",
+  "updatedAt": "2026-10-08T15:21:06.096Z",
+  "meta": {
+    "name": "Burnley",
+    "nameIt": "Burnley",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Burnley.geojson",
+      "sha256": "07144a83a5786493166a7a1c9bf881afe57c5e4dd7d37558e1ab4e00df5c59fd",
+      "size": 562593,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "burnley",
+    "name": "Burnley",
+    "nameIt": "Burnley",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -2.23092,
+      53.81375
+    ],
+    "zoom": 10.5,
+    "population": 154674,
+    "grid": "cities/burnley/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/burnley/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "burnley",
+        "name": "Burnley",
+        "nameIt": "Burnley",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -2.23092,
+          53.81375
+        ],
+        "zoom": 10.5,
+        "population": 154674,
+        "cells": 488,
+        "layer": "cities/burnley/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.23092,
+            53.81375
+          ]
+        },
+        "properties": {
+          "id": "burnley",
+          "name": "Burnley",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 14.8,
+          "population": 154674
+        }
+      },
+      "summary": null
+    }
+  }
+}

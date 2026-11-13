@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sundargarh",
+  "createdAt": "2026-10-08T16:15:14.126Z",
+  "updatedAt": "2026-10-08T16:15:14.126Z",
+  "meta": {
+    "name": "Sundargarh",
+    "nameIt": "Sundargarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sundargarh.geojson",
+      "sha256": "601dd0a1892d5bb9b7a7301ab5516c9d338d9a91732653e1a09c654cce5bb797",
+      "size": 121722,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sundargarh",
+    "name": "Sundargarh",
+    "nameIt": "Sundargarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.03979,
+      22.11598
+    ],
+    "zoom": 11.9,
+    "population": 84716,
+    "grid": "cities/sundargarh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sundargarh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sundargarh",
+        "name": "Sundargarh",
+        "nameIt": "Sundargarh",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.03979,
+          22.11598
+        ],
+        "zoom": 11.9,
+        "population": 84716,
+        "cells": 105,
+        "layer": "cities/sundargarh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.03979,
+            22.11598
+          ]
+        },
+        "properties": {
+          "id": "sundargarh",
+          "name": "Sundargarh",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 84716
+        }
+      },
+      "summary": null
+    }
+  }
+}

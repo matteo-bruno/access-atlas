@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fakfak",
+  "createdAt": "2026-10-08T15:32:44.278Z",
+  "updatedAt": "2026-10-08T15:32:44.278Z",
+  "meta": {
+    "name": "Fakfak",
+    "nameIt": "Fakfak",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fakfak.geojson",
+      "sha256": "7cf095f1847d496061c0a89e5d95717bbd8595c8fbc92912c14dca3742c7f91a",
+      "size": 84309,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fakfak",
+    "name": "Fakfak",
+    "nameIt": "Fakfak",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      132.30172,
+      -2.92722
+    ],
+    "zoom": 11.9,
+    "population": 46175,
+    "grid": "cities/fakfak/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fakfak/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fakfak",
+        "name": "Fakfak",
+        "nameIt": "Fakfak",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          132.30172,
+          -2.92722
+        ],
+        "zoom": 11.9,
+        "population": 46175,
+        "cells": 72,
+        "layer": "cities/fakfak/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            132.30172,
+            -2.92722
+          ]
+        },
+        "properties": {
+          "id": "fakfak",
+          "name": "Fakfak",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 10.9,
+          "population": 46175
+        }
+      },
+      "summary": null
+    }
+  }
+}

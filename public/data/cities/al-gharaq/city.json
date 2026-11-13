@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-gharaq",
+  "createdAt": "2026-10-08T15:05:01.156Z",
+  "updatedAt": "2026-10-08T15:05:01.156Z",
+  "meta": {
+    "name": "Al-Gharaq",
+    "nameIt": "Al-Gharaq",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al-Gharaq.geojson",
+      "sha256": "7f9d84811fa6344d61f0c2644c769c96345f976057a19b29f0c708d68d80f398",
+      "size": 292101,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-gharaq",
+    "name": "Al-Gharaq",
+    "nameIt": "Al-Gharaq",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      30.69913,
+      29.14674
+    ],
+    "zoom": 10.5,
+    "population": 155609,
+    "grid": "cities/al-gharaq/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-gharaq/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-gharaq",
+        "name": "Al-Gharaq",
+        "nameIt": "Al-Gharaq",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          30.69913,
+          29.14674
+        ],
+        "zoom": 10.5,
+        "population": 155609,
+        "cells": 251,
+        "layer": "cities/al-gharaq/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.69913,
+            29.14674
+          ]
+        },
+        "properties": {
+          "id": "al-gharaq",
+          "name": "Al-Gharaq",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 155609
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lalmonirhat",
+  "createdAt": "2026-10-08T15:49:56.038Z",
+  "updatedAt": "2026-10-08T15:49:56.038Z",
+  "meta": {
+    "name": "Lalmonirhat",
+    "nameIt": "Lalmonirhat",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lalmonirhat.geojson",
+      "sha256": "92fde98c16fec039c1083c1cbfcce13c0cc92b2f7feb5b40d88ae6f3fdd62ed4",
+      "size": 501753,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lalmonirhat",
+    "name": "Lalmonirhat",
+    "nameIt": "Lalmonirhat",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.44236,
+      25.91533
+    ],
+    "zoom": 10.2,
+    "population": 115418,
+    "grid": "cities/lalmonirhat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lalmonirhat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lalmonirhat",
+        "name": "Lalmonirhat",
+        "nameIt": "Lalmonirhat",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.44236,
+          25.91533
+        ],
+        "zoom": 10.2,
+        "population": 115418,
+        "cells": 433,
+        "layer": "cities/lalmonirhat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.44236,
+            25.91533
+          ]
+        },
+        "properties": {
+          "id": "lalmonirhat",
+          "name": "Lalmonirhat",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 29.3,
+          "population": 115418
+        }
+      },
+      "summary": null
+    }
+  }
+}

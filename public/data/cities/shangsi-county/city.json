@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shangsi-county",
+  "createdAt": "2026-10-08T16:12:32.007Z",
+  "updatedAt": "2026-10-08T16:12:32.007Z",
+  "meta": {
+    "name": "Shangsi County",
+    "nameIt": "Shangsi County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shangsi County.geojson",
+      "sha256": "f351179a3855ed67d1a25a2537ef70868395ab0b119c76a36cfe95f604855377",
+      "size": 93546,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shangsi-county",
+    "name": "Shangsi County",
+    "nameIt": "Shangsi County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      107.97852,
+      22.15504
+    ],
+    "zoom": 12,
+    "population": 75701,
+    "grid": "cities/shangsi-county/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shangsi-county/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shangsi-county",
+        "name": "Shangsi County",
+        "nameIt": "Shangsi County",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          107.97852,
+          22.15504
+        ],
+        "zoom": 12,
+        "population": 75701,
+        "cells": 80,
+        "layer": "cities/shangsi-county/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.97852,
+            22.15504
+          ]
+        },
+        "properties": {
+          "id": "shangsi-county",
+          "name": "Shangsi County",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 75701
+        }
+      },
+      "summary": null
+    }
+  }
+}

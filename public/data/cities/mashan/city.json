@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mashan",
+  "createdAt": "2026-10-08T15:55:30.309Z",
+  "updatedAt": "2026-10-08T15:55:30.309Z",
+  "meta": {
+    "name": "Mashan",
+    "nameIt": "Mashan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mashan.geojson",
+      "sha256": "bcb1e4196c8d51323d5ef90f346d70e72e2def4db5958afd280ffbf076f12509",
+      "size": 414083,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mashan",
+    "name": "Mashan",
+    "nameIt": "Mashan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      121.50541,
+      37.42554
+    ],
+    "zoom": 11.3,
+    "population": 64164,
+    "grid": "cities/mashan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 163
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mashan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mashan",
+        "name": "Mashan",
+        "nameIt": "Mashan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          121.50541,
+          37.42554
+        ],
+        "zoom": 11.3,
+        "population": 64164,
+        "cells": 356,
+        "layer": "cities/mashan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 163
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.50541,
+            37.42554
+          ]
+        },
+        "properties": {
+          "id": "mashan",
+          "name": "Mashan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 20.1,
+          "population": 64164
+        }
+      },
+      "summary": null
+    }
+  }
+}

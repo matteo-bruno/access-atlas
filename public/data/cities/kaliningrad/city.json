@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kaliningrad",
+  "createdAt": "2026-10-08T15:44:29.154Z",
+  "updatedAt": "2026-10-08T15:44:29.154Z",
+  "meta": {
+    "name": "Kaliningrad",
+    "nameIt": "Kaliningrad",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kaliningrad.geojson",
+      "sha256": "19acb5f12a69496083b684fe1dd85efd16cf4b259ea9ee2419a648a791a2acd3",
+      "size": 1293654,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kaliningrad",
+    "name": "Kaliningrad",
+    "nameIt": "Kaliningrad",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      20.50803,
+      54.71586
+    ],
+    "zoom": 10.5,
+    "population": 451237,
+    "grid": "cities/kaliningrad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kaliningrad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kaliningrad",
+        "name": "Kaliningrad",
+        "nameIt": "Kaliningrad",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          20.50803,
+          54.71586
+        ],
+        "zoom": 10.5,
+        "population": 451237,
+        "cells": 1129,
+        "layer": "cities/kaliningrad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.50803,
+            54.71586
+          ]
+        },
+        "properties": {
+          "id": "kaliningrad",
+          "name": "Kaliningrad",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 11.7,
+          "population": 451237
+        }
+      },
+      "summary": null
+    }
+  }
+}

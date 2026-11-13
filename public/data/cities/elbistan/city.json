@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "elbistan",
+  "createdAt": "2026-10-08T15:32:05.953Z",
+  "updatedAt": "2026-10-08T15:32:05.953Z",
+  "meta": {
+    "name": "Elbistan",
+    "nameIt": "Elbistan",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Elbistan.geojson",
+      "sha256": "9e9d31a05213594cb23b9f4e6d806b9f0b3357a318e9cf485a9c5b7de5dae4e8",
+      "size": 194156,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "elbistan",
+    "name": "Elbistan",
+    "nameIt": "Elbistan",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      37.19862,
+      38.20193
+    ],
+    "zoom": 11.5,
+    "population": 99295,
+    "grid": "cities/elbistan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/elbistan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "elbistan",
+        "name": "Elbistan",
+        "nameIt": "Elbistan",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          37.19862,
+          38.20193
+        ],
+        "zoom": 11.5,
+        "population": 99295,
+        "cells": 168,
+        "layer": "cities/elbistan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.19862,
+            38.20193
+          ]
+        },
+        "properties": {
+          "id": "elbistan",
+          "name": "Elbistan",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 16.8,
+          "population": 99295
+        }
+      },
+      "summary": null
+    }
+  }
+}

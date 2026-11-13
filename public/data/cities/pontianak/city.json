@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pontianak",
+  "createdAt": "2026-10-08T16:06:10.504Z",
+  "updatedAt": "2026-10-08T16:06:10.504Z",
+  "meta": {
+    "name": "Pontianak",
+    "nameIt": "Pontianak",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pontianak.geojson",
+      "sha256": "1feb3e27c0292c2da620be05d9cf1dada5753c3d23f0fd34c6f5e1b0873822d2",
+      "size": 1680196,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pontianak",
+    "name": "Pontianak",
+    "nameIt": "Pontianak",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      109.34216,
+      -0.04686
+    ],
+    "zoom": 9.5,
+    "population": 937285,
+    "grid": "cities/pontianak/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pontianak/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pontianak",
+        "name": "Pontianak",
+        "nameIt": "Pontianak",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          109.34216,
+          -0.04686
+        ],
+        "zoom": 9.5,
+        "population": 937285,
+        "cells": 1412,
+        "layer": "cities/pontianak/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.34216,
+            -0.04686
+          ]
+        },
+        "properties": {
+          "id": "pontianak",
+          "name": "Pontianak",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 34.7,
+          "population": 937285
+        }
+      },
+      "summary": null
+    }
+  }
+}

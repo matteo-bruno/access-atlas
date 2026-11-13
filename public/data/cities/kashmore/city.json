@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kashmore",
+  "createdAt": "2026-10-08T15:45:29.553Z",
+  "updatedAt": "2026-10-08T15:45:29.553Z",
+  "meta": {
+    "name": "Kashmore",
+    "nameIt": "Kashmore",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kashmore.geojson",
+      "sha256": "9087cc11fd88d3b9f40c722a638d6473452b9d23517dd5906603a1a037a0a759",
+      "size": 128562,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kashmore",
+    "name": "Kashmore",
+    "nameIt": "Kashmore",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      69.58658,
+      28.43375
+    ],
+    "zoom": 11.6,
+    "population": 74511,
+    "grid": "cities/kashmore/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kashmore/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kashmore",
+        "name": "Kashmore",
+        "nameIt": "Kashmore",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          69.58658,
+          28.43375
+        ],
+        "zoom": 11.6,
+        "population": 74511,
+        "cells": 111,
+        "layer": "cities/kashmore/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.58658,
+            28.43375
+          ]
+        },
+        "properties": {
+          "id": "kashmore",
+          "name": "Kashmore",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 74511
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wenling",
+  "createdAt": "2026-10-08T16:21:35.267Z",
+  "updatedAt": "2026-10-08T16:21:35.267Z",
+  "meta": {
+    "name": "Wenling",
+    "nameIt": "Wenling",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wenling.geojson",
+      "sha256": "7c70bd4f9ac690b9c874c98a5e0adfea016af6edd9bc33b759d18fa8ebccfc0e",
+      "size": 1007085,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wenling",
+    "name": "Wenling",
+    "nameIt": "Wenling",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      121.36003,
+      28.3995
+    ],
+    "zoom": 10.4,
+    "population": 434406,
+    "grid": "cities/wenling/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wenling/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wenling",
+        "name": "Wenling",
+        "nameIt": "Wenling",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          121.36003,
+          28.3995
+        ],
+        "zoom": 10.4,
+        "population": 434406,
+        "cells": 861,
+        "layer": "cities/wenling/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.36003,
+            28.3995
+          ]
+        },
+        "properties": {
+          "id": "wenling",
+          "name": "Wenling",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 39.1,
+          "population": 434406
+        }
+      },
+      "summary": null
+    }
+  }
+}

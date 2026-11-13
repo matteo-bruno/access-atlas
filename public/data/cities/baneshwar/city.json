@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baneshwar",
+  "createdAt": "2026-10-08T15:14:43.301Z",
+  "updatedAt": "2026-10-08T15:14:43.301Z",
+  "meta": {
+    "name": "Baneshwar",
+    "nameIt": "Baneshwar",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baneshwar.geojson",
+      "sha256": "8ab1d6d97bd1160fe81a2be216852475e95e0df7d8834e116fd0952d52ad2d3b",
+      "size": 423130,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baneshwar",
+    "name": "Baneshwar",
+    "nameIt": "Baneshwar",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      88.74305,
+      24.34509
+    ],
+    "zoom": 10.6,
+    "population": 90758,
+    "grid": "cities/baneshwar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baneshwar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baneshwar",
+        "name": "Baneshwar",
+        "nameIt": "Baneshwar",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          88.74305,
+          24.34509
+        ],
+        "zoom": 10.6,
+        "population": 90758,
+        "cells": 365,
+        "layer": "cities/baneshwar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.74305,
+            24.34509
+          ]
+        },
+        "properties": {
+          "id": "baneshwar",
+          "name": "Baneshwar",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 81.6,
+          "population": 90758
+        }
+      },
+      "summary": null
+    }
+  }
+}

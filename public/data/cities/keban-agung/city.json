@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "keban-agung",
+  "createdAt": "2026-10-08T15:45:56.905Z",
+  "updatedAt": "2026-10-08T15:45:56.905Z",
+  "meta": {
+    "name": "Keban Agung",
+    "nameIt": "Keban Agung",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Keban Agung.geojson",
+      "sha256": "0029befa3a701be192694ca4ab8751113d4abe50ed34bf0874597082f287ed7e",
+      "size": 154037,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "keban-agung",
+    "name": "Keban Agung",
+    "nameIt": "Keban Agung",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      103.80038,
+      -3.75903
+    ],
+    "zoom": 11.4,
+    "population": 70131,
+    "grid": "cities/keban-agung/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/keban-agung/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "keban-agung",
+        "name": "Keban Agung",
+        "nameIt": "Keban Agung",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          103.80038,
+          -3.75903
+        ],
+        "zoom": 11.4,
+        "population": 70131,
+        "cells": 131,
+        "layer": "cities/keban-agung/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.80038,
+            -3.75903
+          ]
+        },
+        "properties": {
+          "id": "keban-agung",
+          "name": "Keban Agung",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 70131
+        }
+      },
+      "summary": null
+    }
+  }
+}

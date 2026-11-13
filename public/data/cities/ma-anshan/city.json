@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ma-anshan",
+  "createdAt": "2026-10-08T15:53:10.074Z",
+  "updatedAt": "2026-10-08T15:53:10.074Z",
+  "meta": {
+    "name": "Ma'anshan",
+    "nameIt": "Ma'anshan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ma'anshan.geojson",
+      "sha256": "09161dde59083c15b804ac2c909c9a283a011241958fd6166e46d764f09f46fd",
+      "size": 1881304,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ma-anshan",
+    "name": "Ma'anshan",
+    "nameIt": "Ma'anshan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.50374,
+      31.69445
+    ],
+    "zoom": 10.2,
+    "population": 706303,
+    "grid": "cities/ma-anshan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ma-anshan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ma-anshan",
+        "name": "Ma'anshan",
+        "nameIt": "Ma'anshan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.50374,
+          31.69445
+        ],
+        "zoom": 10.2,
+        "population": 706303,
+        "cells": 1612,
+        "layer": "cities/ma-anshan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.50374,
+            31.69445
+          ]
+        },
+        "properties": {
+          "id": "ma-anshan",
+          "name": "Ma'anshan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 34.4,
+          "population": 706303
+        }
+      },
+      "summary": null
+    }
+  }
+}

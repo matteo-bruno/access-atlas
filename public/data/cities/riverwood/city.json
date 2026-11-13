@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "riverwood",
+  "createdAt": "2026-10-08T16:08:56.185Z",
+  "updatedAt": "2026-10-08T16:08:56.185Z",
+  "meta": {
+    "name": "Riverwood",
+    "nameIt": "Riverwood",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Riverwood.geojson",
+      "sha256": "f0859aaa0753f95286d7f048597863af0a59834d8200005c8564193352d63872",
+      "size": 392899,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "riverwood",
+    "name": "Riverwood",
+    "nameIt": "Riverwood",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -84.47981,
+      33.89966
+    ],
+    "zoom": 11,
+    "population": 72414,
+    "grid": "cities/riverwood/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/riverwood/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "riverwood",
+        "name": "Riverwood",
+        "nameIt": "Riverwood",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -84.47981,
+          33.89966
+        ],
+        "zoom": 11,
+        "population": 72414,
+        "cells": 339,
+        "layer": "cities/riverwood/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -84.47981,
+            33.89966
+          ]
+        },
+        "properties": {
+          "id": "riverwood",
+          "name": "Riverwood",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 19.5,
+          "population": 72414
+        }
+      },
+      "summary": null
+    }
+  }
+}

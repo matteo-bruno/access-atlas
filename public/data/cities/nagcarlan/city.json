@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nagcarlan",
+  "createdAt": "2026-10-08T15:59:40.929Z",
+  "updatedAt": "2026-10-08T15:59:40.929Z",
+  "meta": {
+    "name": "Nagcarlan",
+    "nameIt": "Nagcarlan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nagcarlan.geojson",
+      "sha256": "6110ea54bf67d730ee05bf0de28f22a9b98b61c2ec0265ecb8659792243fdf00",
+      "size": 320382,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nagcarlan",
+    "name": "Nagcarlan",
+    "nameIt": "Nagcarlan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      121.42665,
+      14.12748
+    ],
+    "zoom": 10.6,
+    "population": 97496,
+    "grid": "cities/nagcarlan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nagcarlan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nagcarlan",
+        "name": "Nagcarlan",
+        "nameIt": "Nagcarlan",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          121.42665,
+          14.12748
+        ],
+        "zoom": 10.6,
+        "population": 97496,
+        "cells": 274,
+        "layer": "cities/nagcarlan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.42665,
+            14.12748
+          ]
+        },
+        "properties": {
+          "id": "nagcarlan",
+          "name": "Nagcarlan",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 26.2,
+          "population": 97496
+        }
+      },
+      "summary": null
+    }
+  }
+}

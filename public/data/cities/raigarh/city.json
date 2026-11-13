@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "raigarh",
+  "createdAt": "2026-10-08T16:07:53.327Z",
+  "updatedAt": "2026-10-08T16:07:53.327Z",
+  "meta": {
+    "name": "Raigarh",
+    "nameIt": "Raigarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Raigarh.geojson",
+      "sha256": "b89ae724c0f382b19c3b5b10dde9cb4c89db6e399086602a5c04e348f50a1728",
+      "size": 251704,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "raigarh",
+    "name": "Raigarh",
+    "nameIt": "Raigarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.39471,
+      21.89712
+    ],
+    "zoom": 11.4,
+    "population": 184321,
+    "grid": "cities/raigarh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/raigarh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "raigarh",
+        "name": "Raigarh",
+        "nameIt": "Raigarh",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.39471,
+          21.89712
+        ],
+        "zoom": 11.4,
+        "population": 184321,
+        "cells": 217,
+        "layer": "cities/raigarh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.39471,
+            21.89712
+          ]
+        },
+        "properties": {
+          "id": "raigarh",
+          "name": "Raigarh",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 21,
+          "population": 184321
+        }
+      },
+      "summary": null
+    }
+  }
+}

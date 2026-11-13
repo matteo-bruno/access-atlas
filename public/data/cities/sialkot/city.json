@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sialkot",
+  "createdAt": "2026-10-08T16:13:22.238Z",
+  "updatedAt": "2026-10-08T16:13:22.238Z",
+  "meta": {
+    "name": "Sialkot",
+    "nameIt": "Sialkot",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sialkot.geojson",
+      "sha256": "3db5c646da0241bfcf49dcf801947a5fb40c23938a1087c70819add69422bcaa",
+      "size": 1780900,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sialkot",
+    "name": "Sialkot",
+    "nameIt": "Sialkot",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      74.52545,
+      32.49747
+    ],
+    "zoom": 9.7,
+    "population": 1593411,
+    "grid": "cities/sialkot/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sialkot/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sialkot",
+        "name": "Sialkot",
+        "nameIt": "Sialkot",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          74.52545,
+          32.49747
+        ],
+        "zoom": 9.7,
+        "population": 1593411,
+        "cells": 1539,
+        "layer": "cities/sialkot/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.52545,
+            32.49747
+          ]
+        },
+        "properties": {
+          "id": "sialkot",
+          "name": "Sialkot",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 36.3,
+          "population": 1593411
+        }
+      },
+      "summary": null
+    }
+  }
+}

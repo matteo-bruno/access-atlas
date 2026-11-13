@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ishim",
+  "createdAt": "2026-10-08T15:41:10.095Z",
+  "updatedAt": "2026-10-08T15:41:10.095Z",
+  "meta": {
+    "name": "Ishim",
+    "nameIt": "Ishim",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ishim.geojson",
+      "sha256": "7f277ef5acc4946f417313a9c416c953928a8fc63322b8d2824133e8faa6b174",
+      "size": 176873,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ishim",
+    "name": "Ishim",
+    "nameIt": "Ishim",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      69.49524,
+      56.11491
+    ],
+    "zoom": 11.2,
+    "population": 55003,
+    "grid": "cities/ishim/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ishim/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ishim",
+        "name": "Ishim",
+        "nameIt": "Ishim",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          69.49524,
+          56.11491
+        ],
+        "zoom": 11.2,
+        "population": 55003,
+        "cells": 155,
+        "layer": "cities/ishim/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.49524,
+            56.11491
+          ]
+        },
+        "properties": {
+          "id": "ishim",
+          "name": "Ishim",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 20.5,
+          "population": 55003
+        }
+      },
+      "summary": null
+    }
+  }
+}

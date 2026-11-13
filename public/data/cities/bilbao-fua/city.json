@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bilbao-fua",
+  "createdAt": "2026-10-19T16:55:30.736Z",
+  "updatedAt": "2026-10-19T16:55:30.736Z",
+  "meta": {
+    "name": "Bilbao",
+    "nameIt": "Bilbao",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "bilbao-fua",
+    "name": "Bilbao",
+    "nameIt": "Bilbao",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "extent": "fua",
+    "core": "bilbao",
+    "center": [
+      -2.96049,
+      43.28404
+    ],
+    "zoom": 8.5,
+    "population": 1035533,
+    "grid": "cities/bilbao-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bilbao-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bilbao-fua",
+        "name": "Bilbao",
+        "nameIt": "Bilbao",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "extent": "fua",
+        "core": "bilbao",
+        "center": [
+          -2.96049,
+          43.28404
+        ],
+        "zoom": 8.5,
+        "population": 1035533,
+        "cells": 9456,
+        "layer": "cities/bilbao-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.96049,
+            43.28404
+          ]
+        },
+        "properties": {
+          "id": "bilbao-fua",
+          "name": "Bilbao",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 7.6,
+          "population": 1035533
+        }
+      },
+      "summary": null
+    }
+  }
+}

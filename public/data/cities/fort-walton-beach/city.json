@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fort-walton-beach",
+  "createdAt": "2026-10-08T15:33:34.769Z",
+  "updatedAt": "2026-10-08T15:33:34.769Z",
+  "meta": {
+    "name": "Fort Walton Beach",
+    "nameIt": "Fort Walton Beach",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fort Walton Beach.geojson",
+      "sha256": "189727840a78715c6cea8bfcba600b62e526b2ddd5a3e3c72892ad2bee74fbc2",
+      "size": 553372,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fort-walton-beach",
+    "name": "Fort Walton Beach",
+    "nameIt": "Fort Walton Beach",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -86.62681,
+      30.4321
+    ],
+    "zoom": 11,
+    "population": 64755,
+    "grid": "cities/fort-walton-beach/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fort-walton-beach/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fort-walton-beach",
+        "name": "Fort Walton Beach",
+        "nameIt": "Fort Walton Beach",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -86.62681,
+          30.4321
+        ],
+        "zoom": 11,
+        "population": 64755,
+        "cells": 476,
+        "layer": "cities/fort-walton-beach/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -86.62681,
+            30.4321
+          ]
+        },
+        "properties": {
+          "id": "fort-walton-beach",
+          "name": "Fort Walton Beach",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 64755
+        }
+      },
+      "summary": null
+    }
+  }
+}

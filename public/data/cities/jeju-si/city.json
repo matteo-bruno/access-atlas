@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jeju-si",
+  "createdAt": "2026-10-08T15:42:13.881Z",
+  "updatedAt": "2026-10-08T15:42:13.881Z",
+  "meta": {
+    "name": "Jeju-si",
+    "nameIt": "Jeju-si",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jeju-si.geojson",
+      "sha256": "0990e6c14efda5a3e1d9c813cab64bb75ed600252b0946a00db87b3f51a93639",
+      "size": 687190,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jeju-si",
+    "name": "Jeju-si",
+    "nameIt": "Jeju-si",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      126.52355,
+      33.49961
+    ],
+    "zoom": 10.1,
+    "population": 283984,
+    "grid": "cities/jeju-si/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jeju-si/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jeju-si",
+        "name": "Jeju-si",
+        "nameIt": "Jeju-si",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          126.52355,
+          33.49961
+        ],
+        "zoom": 10.1,
+        "population": 283984,
+        "cells": 598,
+        "layer": "cities/jeju-si/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            126.52355,
+            33.49961
+          ]
+        },
+        "properties": {
+          "id": "jeju-si",
+          "name": "Jeju-si",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 283984
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "adigrat",
+  "createdAt": "2026-10-08T15:02:23.072Z",
+  "updatedAt": "2026-10-08T15:02:23.072Z",
+  "meta": {
+    "name": "Adigrat",
+    "nameIt": "Adigrat",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Adigrat.geojson",
+      "sha256": "0d81f5110dc2104ce9c8fefcbcdaf89ad9568172dc37f673be800896269b1cec",
+      "size": 166018,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "adigrat",
+    "name": "Adigrat",
+    "nameIt": "Adigrat",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      39.46414,
+      14.28173
+    ],
+    "zoom": 11.7,
+    "population": 76200,
+    "grid": "cities/adigrat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/adigrat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "adigrat",
+        "name": "Adigrat",
+        "nameIt": "Adigrat",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          39.46414,
+          14.28173
+        ],
+        "zoom": 11.7,
+        "population": 76200,
+        "cells": 143,
+        "layer": "cities/adigrat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.46414,
+            14.28173
+          ]
+        },
+        "properties": {
+          "id": "adigrat",
+          "name": "Adigrat",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 15.1,
+          "population": 76200
+        }
+      },
+      "summary": null
+    }
+  }
+}

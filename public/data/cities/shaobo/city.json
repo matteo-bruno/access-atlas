@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shaobo",
+  "createdAt": "2026-10-08T16:12:38.438Z",
+  "updatedAt": "2026-10-08T16:12:38.438Z",
+  "meta": {
+    "name": "Shaobo",
+    "nameIt": "Shaobo",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shaobo.geojson",
+      "sha256": "071e13633448cf0c101a8fa12b3a7a947dee6ae5ef9b3f133dc8b8b899b38adb",
+      "size": 187541,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shaobo",
+    "name": "Shaobo",
+    "nameIt": "Shaobo",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.51314,
+      32.52553
+    ],
+    "zoom": 11.9,
+    "population": 34125,
+    "grid": "cities/shaobo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shaobo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shaobo",
+        "name": "Shaobo",
+        "nameIt": "Shaobo",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.51314,
+          32.52553
+        ],
+        "zoom": 11.9,
+        "population": 34125,
+        "cells": 161,
+        "layer": "cities/shaobo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.51314,
+            32.52553
+          ]
+        },
+        "properties": {
+          "id": "shaobo",
+          "name": "Shaobo",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 34125
+        }
+      },
+      "summary": null
+    }
+  }
+}

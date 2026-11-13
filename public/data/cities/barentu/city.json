@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barentu",
+  "createdAt": "2026-10-08T15:15:34.842Z",
+  "updatedAt": "2026-10-08T15:15:34.842Z",
+  "meta": {
+    "name": "Barentu",
+    "nameIt": "Barentu",
+    "region": "Eritrea",
+    "regionIt": "Eritrea",
+    "country": "ER"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barentu.geojson",
+      "sha256": "21e84f74650c4a2ebeff3904e0142ce58d3e3b1e8535af67181af6fb509a30c9",
+      "size": 138268,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barentu",
+    "name": "Barentu",
+    "nameIt": "Barentu",
+    "region": "Eritrea",
+    "regionIt": "Eritrea",
+    "country": "ER",
+    "center": [
+      37.5902,
+      15.10642
+    ],
+    "zoom": 11.6,
+    "population": 25982,
+    "grid": "cities/barentu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barentu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barentu",
+        "name": "Barentu",
+        "nameIt": "Barentu",
+        "region": "Eritrea",
+        "regionIt": "Eritrea",
+        "country": "ER",
+        "center": [
+          37.5902,
+          15.10642
+        ],
+        "zoom": 11.6,
+        "population": 25982,
+        "cells": 119,
+        "layer": "cities/barentu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.5902,
+            15.10642
+          ]
+        },
+        "properties": {
+          "id": "barentu",
+          "name": "Barentu",
+          "country": "ER",
+          "isStudy": true,
+          "proximityMinutes": 21.3,
+          "population": 25982
+        }
+      },
+      "summary": null
+    }
+  }
+}

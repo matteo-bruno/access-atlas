@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "salima",
+  "createdAt": "2026-10-08T16:10:07.597Z",
+  "updatedAt": "2026-10-08T16:10:07.597Z",
+  "meta": {
+    "name": "Salima",
+    "nameIt": "Salima",
+    "region": "Malawi",
+    "regionIt": "Malawi",
+    "country": "MW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Salima.geojson",
+      "sha256": "665ccd69492a1c85e994feeccf85b1a38a6a2cf598cbb2abc290f187ca9388b2",
+      "size": 174705,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "salima",
+    "name": "Salima",
+    "nameIt": "Salima",
+    "region": "Malawi",
+    "regionIt": "Malawi",
+    "country": "MW",
+    "center": [
+      34.4485,
+      -13.777
+    ],
+    "zoom": 10.9,
+    "population": 58986,
+    "grid": "cities/salima/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/salima/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "salima",
+        "name": "Salima",
+        "nameIt": "Salima",
+        "region": "Malawi",
+        "regionIt": "Malawi",
+        "country": "MW",
+        "center": [
+          34.4485,
+          -13.777
+        ],
+        "zoom": 10.9,
+        "population": 58986,
+        "cells": 149,
+        "layer": "cities/salima/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.4485,
+            -13.777
+          ]
+        },
+        "properties": {
+          "id": "salima",
+          "name": "Salima",
+          "country": "MW",
+          "isStudy": true,
+          "proximityMinutes": 30.2,
+          "population": 58986
+        }
+      },
+      "summary": null
+    }
+  }
+}

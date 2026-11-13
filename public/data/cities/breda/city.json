@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "breda",
+  "createdAt": "2026-10-08T15:20:23.686Z",
+  "updatedAt": "2026-10-08T15:20:23.686Z",
+  "meta": {
+    "name": "Breda",
+    "nameIt": "Breda",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Breda.geojson",
+      "sha256": "54b7c23627f95e626d05474553aea52db8f453df9c6bbf5a301c68ff19a459e6",
+      "size": 697149,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "breda",
+    "name": "Breda",
+    "nameIt": "Breda",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      4.77317,
+      51.59117
+    ],
+    "zoom": 10.9,
+    "population": 162244,
+    "grid": "cities/breda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/breda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "breda",
+        "name": "Breda",
+        "nameIt": "Breda",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          4.77317,
+          51.59117
+        ],
+        "zoom": 10.9,
+        "population": 162244,
+        "cells": 613,
+        "layer": "cities/breda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.77317,
+            51.59117
+          ]
+        },
+        "properties": {
+          "id": "breda",
+          "name": "Breda",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 162244
+        }
+      },
+      "summary": null
+    }
+  }
+}

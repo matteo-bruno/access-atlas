@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kabalo",
+  "createdAt": "2026-10-08T15:43:49.477Z",
+  "updatedAt": "2026-10-08T15:43:49.477Z",
+  "meta": {
+    "name": "Kabalo",
+    "nameIt": "Kabalo",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kabalo.geojson",
+      "sha256": "bc80dd82eed0d53bdca0b6ed5784a9f644a6a192ea2da0b0173e628fa0b985e1",
+      "size": 133063,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kabalo",
+    "name": "Kabalo",
+    "nameIt": "Kabalo",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      26.9279,
+      -6.05127
+    ],
+    "zoom": 11.7,
+    "population": 54151,
+    "grid": "cities/kabalo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kabalo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kabalo",
+        "name": "Kabalo",
+        "nameIt": "Kabalo",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          26.9279,
+          -6.05127
+        ],
+        "zoom": 11.7,
+        "population": 54151,
+        "cells": 114,
+        "layer": "cities/kabalo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.9279,
+            -6.05127
+          ]
+        },
+        "properties": {
+          "id": "kabalo",
+          "name": "Kabalo",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 54151
+        }
+      },
+      "summary": null
+    }
+  }
+}

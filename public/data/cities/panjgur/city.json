@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "panjgur",
+  "createdAt": "2026-10-08T16:04:05.787Z",
+  "updatedAt": "2026-10-08T16:04:05.787Z",
+  "meta": {
+    "name": "Panjgur",
+    "nameIt": "Panjgur",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Panjgur.geojson",
+      "sha256": "7ef49183a4af2435dc063d4a87a993542d84cc48bd46faf2873937b459b62c49",
+      "size": 251438,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "panjgur",
+    "name": "Panjgur",
+    "nameIt": "Panjgur",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      64.09309,
+      26.96588
+    ],
+    "zoom": 10.7,
+    "population": 120864,
+    "grid": "cities/panjgur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/panjgur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "panjgur",
+        "name": "Panjgur",
+        "nameIt": "Panjgur",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          64.09309,
+          26.96588
+        ],
+        "zoom": 10.7,
+        "population": 120864,
+        "cells": 217,
+        "layer": "cities/panjgur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            64.09309,
+            26.96588
+          ]
+        },
+        "properties": {
+          "id": "panjgur",
+          "name": "Panjgur",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 120864
+        }
+      },
+      "summary": null
+    }
+  }
+}

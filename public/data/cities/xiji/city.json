@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xiji",
+  "createdAt": "2026-10-08T16:22:32.430Z",
+  "updatedAt": "2026-10-08T16:22:32.430Z",
+  "meta": {
+    "name": "Xiji",
+    "nameIt": "Xiji",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xiji.geojson",
+      "sha256": "6ce199464bcf2a92929217099a4efb3682cab21a895081655524e0fb98abce2e",
+      "size": 158451,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xiji",
+    "name": "Xiji",
+    "nameIt": "Xiji",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      105.73089,
+      35.96775
+    ],
+    "zoom": 11.1,
+    "population": 96688,
+    "grid": "cities/xiji/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xiji/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xiji",
+        "name": "Xiji",
+        "nameIt": "Xiji",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          105.73089,
+          35.96775
+        ],
+        "zoom": 11.1,
+        "population": 96688,
+        "cells": 136,
+        "layer": "cities/xiji/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.73089,
+            35.96775
+          ]
+        },
+        "properties": {
+          "id": "xiji",
+          "name": "Xiji",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 18.6,
+          "population": 96688
+        }
+      },
+      "summary": null
+    }
+  }
+}

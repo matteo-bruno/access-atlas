@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "arambagh",
+  "createdAt": "2026-10-08T15:09:00.155Z",
+  "updatedAt": "2026-10-08T15:09:00.155Z",
+  "meta": {
+    "name": "Arambagh",
+    "nameIt": "Arambagh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Arambagh.geojson",
+      "sha256": "da5f9b1bf3b8d39d25916d5a7db71d7c6b518caf104f85d14e5c59fc4fcb8c46",
+      "size": 139001,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "arambagh",
+    "name": "Arambagh",
+    "nameIt": "Arambagh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.79213,
+      22.88054
+    ],
+    "zoom": 11.9,
+    "population": 79082,
+    "grid": "cities/arambagh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/arambagh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "arambagh",
+        "name": "Arambagh",
+        "nameIt": "Arambagh",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.79213,
+          22.88054
+        ],
+        "zoom": 11.9,
+        "population": 79082,
+        "cells": 120,
+        "layer": "cities/arambagh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.79213,
+            22.88054
+          ]
+        },
+        "properties": {
+          "id": "arambagh",
+          "name": "Arambagh",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 79082
+        }
+      },
+      "summary": null
+    }
+  }
+}

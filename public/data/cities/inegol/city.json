@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "inegol",
+  "createdAt": "2026-10-08T16:25:58.741Z",
+  "updatedAt": "2026-10-08T16:25:58.741Z",
+  "meta": {
+    "name": "İnegöl",
+    "nameIt": "İnegöl",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/İnegöl.geojson",
+      "sha256": "1f06fd1b76891954a837d5ed2c05c14c39b0392b104e563bfc1494b3ef648dad",
+      "size": 334616,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "inegol",
+    "name": "İnegöl",
+    "nameIt": "İnegöl",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      29.50525,
+      40.08862
+    ],
+    "zoom": 11.1,
+    "population": 217199,
+    "grid": "cities/inegol/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/inegol/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "inegol",
+        "name": "İnegöl",
+        "nameIt": "İnegöl",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          29.50525,
+          40.08862
+        ],
+        "zoom": 11.1,
+        "population": 217199,
+        "cells": 289,
+        "layer": "cities/inegol/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.50525,
+            40.08862
+          ]
+        },
+        "properties": {
+          "id": "inegol",
+          "name": "İnegöl",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 16.6,
+          "population": 217199
+        }
+      },
+      "summary": null
+    }
+  }
+}

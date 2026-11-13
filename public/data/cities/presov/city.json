@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "presov",
+  "createdAt": "2026-10-08T16:06:33.446Z",
+  "updatedAt": "2026-10-08T16:06:33.446Z",
+  "meta": {
+    "name": "Prešov",
+    "nameIt": "Prešov",
+    "region": "Slovakia",
+    "regionIt": "Slovacchia",
+    "country": "SK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Prešov.geojson",
+      "sha256": "37bc841de6c4a21bb8d561e02dd950a114f11f85d0d4d8db0d08c593c712fa24",
+      "size": 244915,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "presov",
+    "name": "Prešov",
+    "nameIt": "Prešov",
+    "region": "Slovakia",
+    "regionIt": "Slovacchia",
+    "country": "SK",
+    "center": [
+      21.24709,
+      48.99291
+    ],
+    "zoom": 11.2,
+    "population": 63213,
+    "grid": "cities/presov/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/presov/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "presov",
+        "name": "Prešov",
+        "nameIt": "Prešov",
+        "region": "Slovakia",
+        "regionIt": "Slovacchia",
+        "country": "SK",
+        "center": [
+          21.24709,
+          48.99291
+        ],
+        "zoom": 11.2,
+        "population": 63213,
+        "cells": 215,
+        "layer": "cities/presov/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            21.24709,
+            48.99291
+          ]
+        },
+        "properties": {
+          "id": "presov",
+          "name": "Prešov",
+          "country": "SK",
+          "isStudy": true,
+          "proximityMinutes": 5.7,
+          "population": 63213
+        }
+      },
+      "summary": null
+    }
+  }
+}

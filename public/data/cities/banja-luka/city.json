@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "banja-luka",
+  "createdAt": "2026-10-08T15:14:56.500Z",
+  "updatedAt": "2026-10-08T15:14:56.500Z",
+  "meta": {
+    "name": "Banja Luka",
+    "nameIt": "Banja Luka",
+    "region": "Bosnia and Herzegovina",
+    "regionIt": "Bosnia ed Erzegovina",
+    "country": "BA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Banja Luka.geojson",
+      "sha256": "b29008d2f9a3a2ab6d702838bebada62111077228ae9c5aac7cd25f1a522a6b0",
+      "size": 292583,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "banja-luka",
+    "name": "Banja Luka",
+    "nameIt": "Banja Luka",
+    "region": "Bosnia and Herzegovina",
+    "regionIt": "Bosnia ed Erzegovina",
+    "country": "BA",
+    "center": [
+      17.19785,
+      44.78155
+    ],
+    "zoom": 10.9,
+    "population": 90991,
+    "grid": "cities/banja-luka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/banja-luka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "banja-luka",
+        "name": "Banja Luka",
+        "nameIt": "Banja Luka",
+        "region": "Bosnia and Herzegovina",
+        "regionIt": "Bosnia ed Erzegovina",
+        "country": "BA",
+        "center": [
+          17.19785,
+          44.78155
+        ],
+        "zoom": 10.9,
+        "population": 90991,
+        "cells": 256,
+        "layer": "cities/banja-luka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            17.19785,
+            44.78155
+          ]
+        },
+        "properties": {
+          "id": "banja-luka",
+          "name": "Banja Luka",
+          "country": "BA",
+          "isStudy": true,
+          "proximityMinutes": 10.4,
+          "population": 90991
+        }
+      },
+      "summary": null
+    }
+  }
+}

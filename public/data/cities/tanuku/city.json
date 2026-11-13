@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tanuku",
+  "createdAt": "2026-10-08T16:16:40.056Z",
+  "updatedAt": "2026-10-08T16:16:40.056Z",
+  "meta": {
+    "name": "Tanuku",
+    "nameIt": "Tanuku",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tanuku.geojson",
+      "sha256": "67f0ce335596aa068ad579a9dafea2ae074f670d2bca89f16bf23529ebfeb4fa",
+      "size": 162048,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tanuku",
+    "name": "Tanuku",
+    "nameIt": "Tanuku",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.68336,
+      16.75464
+    ],
+    "zoom": 11.7,
+    "population": 112270,
+    "grid": "cities/tanuku/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tanuku/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tanuku",
+        "name": "Tanuku",
+        "nameIt": "Tanuku",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.68336,
+          16.75464
+        ],
+        "zoom": 11.7,
+        "population": 112270,
+        "cells": 140,
+        "layer": "cities/tanuku/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.68336,
+            16.75464
+          ]
+        },
+        "properties": {
+          "id": "tanuku",
+          "name": "Tanuku",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 17.3,
+          "population": 112270
+        }
+      },
+      "summary": null
+    }
+  }
+}

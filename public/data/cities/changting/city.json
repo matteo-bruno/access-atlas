@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "changting",
+  "createdAt": "2026-10-08T15:23:45.054Z",
+  "updatedAt": "2026-10-08T15:23:45.054Z",
+  "meta": {
+    "name": "Changting",
+    "nameIt": "Changting",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Changting.geojson",
+      "sha256": "16e9f06e4cdfefe4f3cc77ecdd42fa8271eef9bea18cdbf02170bab0005b696c",
+      "size": 223130,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "changting",
+    "name": "Changting",
+    "nameIt": "Changting",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.35707,
+      25.84269
+    ],
+    "zoom": 11.6,
+    "population": 159335,
+    "grid": "cities/changting/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/changting/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "changting",
+        "name": "Changting",
+        "nameIt": "Changting",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.35707,
+          25.84269
+        ],
+        "zoom": 11.6,
+        "population": 159335,
+        "cells": 191,
+        "layer": "cities/changting/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.35707,
+            25.84269
+          ]
+        },
+        "properties": {
+          "id": "changting",
+          "name": "Changting",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 16.5,
+          "population": 159335
+        }
+      },
+      "summary": null
+    }
+  }
+}

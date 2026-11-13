@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chistopol",
+  "createdAt": "2026-10-08T15:24:56.582Z",
+  "updatedAt": "2026-10-08T15:24:56.582Z",
+  "meta": {
+    "name": "Chistopol",
+    "nameIt": "Chistopol",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chistopol.geojson",
+      "sha256": "2e1c03efc44a334001b038c55323916e696d8ee10d7745fcf5f05255859f4511",
+      "size": 222853,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chistopol",
+    "name": "Chistopol",
+    "nameIt": "Chistopol",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      50.64118,
+      55.36312
+    ],
+    "zoom": 11.4,
+    "population": 42331,
+    "grid": "cities/chistopol/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chistopol/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chistopol",
+        "name": "Chistopol",
+        "nameIt": "Chistopol",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          50.64118,
+          55.36312
+        ],
+        "zoom": 11.4,
+        "population": 42331,
+        "cells": 193,
+        "layer": "cities/chistopol/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            50.64118,
+            55.36312
+          ]
+        },
+        "properties": {
+          "id": "chistopol",
+          "name": "Chistopol",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 17.1,
+          "population": 42331
+        }
+      },
+      "summary": null
+    }
+  }
+}

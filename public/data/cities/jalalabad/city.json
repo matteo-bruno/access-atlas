@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jalalabad",
+  "createdAt": "2026-10-08T15:41:47.265Z",
+  "updatedAt": "2026-10-08T15:41:47.265Z",
+  "meta": {
+    "name": "Jalalabad",
+    "nameIt": "Jalalabad",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jalalabad.geojson",
+      "sha256": "6c3a7b786b07cea41f149cb1b3ba051f29cc8fc81734bcf2a80b7430fc64d90c",
+      "size": 1178374,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jalalabad",
+    "name": "Jalalabad",
+    "nameIt": "Jalalabad",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF",
+    "center": [
+      70.44679,
+      34.42825
+    ],
+    "zoom": 9.7,
+    "population": 422841,
+    "grid": "cities/jalalabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jalalabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jalalabad",
+        "name": "Jalalabad",
+        "nameIt": "Jalalabad",
+        "region": "Afghanistan",
+        "regionIt": "Afghanistan",
+        "country": "AF",
+        "center": [
+          70.44679,
+          34.42825
+        ],
+        "zoom": 9.7,
+        "population": 422841,
+        "cells": 1019,
+        "layer": "cities/jalalabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            70.44679,
+            34.42825
+          ]
+        },
+        "properties": {
+          "id": "jalalabad",
+          "name": "Jalalabad",
+          "country": "AF",
+          "isStudy": true,
+          "proximityMinutes": 53.4,
+          "population": 422841
+        }
+      },
+      "summary": null
+    }
+  }
+}

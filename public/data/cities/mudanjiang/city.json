@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mudanjiang",
+  "createdAt": "2026-10-08T15:58:42.289Z",
+  "updatedAt": "2026-10-08T15:58:42.289Z",
+  "meta": {
+    "name": "Mudanjiang",
+    "nameIt": "Mudanjiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mudanjiang.geojson",
+      "sha256": "d81935d6d0cbe6584f24b87cb70b1bbace528c3af1d95ef4dda5e43cf1e15548",
+      "size": 1738569,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mudanjiang",
+    "name": "Mudanjiang",
+    "nameIt": "Mudanjiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      129.60675,
+      44.58045
+    ],
+    "zoom": 10.1,
+    "population": 747867,
+    "grid": "cities/mudanjiang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mudanjiang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mudanjiang",
+        "name": "Mudanjiang",
+        "nameIt": "Mudanjiang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          129.60675,
+          44.58045
+        ],
+        "zoom": 10.1,
+        "population": 747867,
+        "cells": 1501,
+        "layer": "cities/mudanjiang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            129.60675,
+            44.58045
+          ]
+        },
+        "properties": {
+          "id": "mudanjiang",
+          "name": "Mudanjiang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 28.5,
+          "population": 747867
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sunbat",
+  "createdAt": "2026-10-08T16:15:12.449Z",
+  "updatedAt": "2026-10-08T16:15:12.449Z",
+  "meta": {
+    "name": "Sunbat",
+    "nameIt": "Sunbat",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sunbat.geojson",
+      "sha256": "44a7bd0098f35687a4086ea4b9bfb572a64cb4442353fce030cac3ac29970624",
+      "size": 132571,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sunbat",
+    "name": "Sunbat",
+    "nameIt": "Sunbat",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      31.16311,
+      30.78349
+    ],
+    "zoom": 11.8,
+    "population": 58940,
+    "grid": "cities/sunbat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sunbat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sunbat",
+        "name": "Sunbat",
+        "nameIt": "Sunbat",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          31.16311,
+          30.78349
+        ],
+        "zoom": 11.8,
+        "population": 58940,
+        "cells": 114,
+        "layer": "cities/sunbat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.16311,
+            30.78349
+          ]
+        },
+        "properties": {
+          "id": "sunbat",
+          "name": "Sunbat",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 58940
+        }
+      },
+      "summary": null
+    }
+  }
+}

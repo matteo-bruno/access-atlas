@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sinop",
+  "createdAt": "2026-10-08T16:13:54.685Z",
+  "updatedAt": "2026-10-08T16:13:54.685Z",
+  "meta": {
+    "name": "Sinop",
+    "nameIt": "Sinop",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sinop.geojson",
+      "sha256": "7c8e290bf29dac5a9e748f830b757e9783342f92e65fe2e9b313de485ffe4a20",
+      "size": 395652,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sinop",
+    "name": "Sinop",
+    "nameIt": "Sinop",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -55.50958,
+      -11.85195
+    ],
+    "zoom": 10.7,
+    "population": 154990,
+    "grid": "cities/sinop/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sinop/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sinop",
+        "name": "Sinop",
+        "nameIt": "Sinop",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -55.50958,
+          -11.85195
+        ],
+        "zoom": 10.7,
+        "population": 154990,
+        "cells": 335,
+        "layer": "cities/sinop/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -55.50958,
+            -11.85195
+          ]
+        },
+        "properties": {
+          "id": "sinop",
+          "name": "Sinop",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 24.3,
+          "population": 154990
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nashik",
+  "createdAt": "2026-10-08T16:00:27.880Z",
+  "updatedAt": "2026-10-08T16:00:27.880Z",
+  "meta": {
+    "name": "Nashik",
+    "nameIt": "Nashik",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nashik.geojson",
+      "sha256": "f31e8c65b5339b528686afbfca77aa1ba4f224dee451fe26603b28ba9485c32d",
+      "size": 2273858,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nashik",
+    "name": "Nashik",
+    "nameIt": "Nashik",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.78812,
+      19.98352
+    ],
+    "zoom": 9.7,
+    "population": 1578876,
+    "grid": "cities/nashik/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nashik/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nashik",
+        "name": "Nashik",
+        "nameIt": "Nashik",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.78812,
+          19.98352
+        ],
+        "zoom": 9.7,
+        "population": 1578876,
+        "cells": 1970,
+        "layer": "cities/nashik/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.78812,
+            19.98352
+          ]
+        },
+        "properties": {
+          "id": "nashik",
+          "name": "Nashik",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 44.5,
+          "population": 1578876
+        }
+      },
+      "summary": null
+    }
+  }
+}

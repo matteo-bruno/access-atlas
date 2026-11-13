@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "salamanca-spain",
+  "createdAt": "2026-10-08T16:10:02.641Z",
+  "updatedAt": "2026-10-08T16:10:02.641Z",
+  "meta": {
+    "name": "Salamanca (Spain)",
+    "nameIt": "Salamanca (Spain)",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Salamanca (Spain).geojson",
+      "sha256": "b4aed98b3229bc36b7ebd55231fee0ce30eecc78d3c349cfa9717ff85bd0b627",
+      "size": 184960,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "salamanca-spain",
+    "name": "Salamanca (Spain)",
+    "nameIt": "Salamanca (Spain)",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -5.66346,
+      40.96624
+    ],
+    "zoom": 11.8,
+    "population": 134820,
+    "grid": "cities/salamanca-spain/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/salamanca-spain/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "salamanca-spain",
+        "name": "Salamanca (Spain)",
+        "nameIt": "Salamanca (Spain)",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -5.66346,
+          40.96624
+        ],
+        "zoom": 11.8,
+        "population": 134820,
+        "cells": 162,
+        "layer": "cities/salamanca-spain/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.66346,
+            40.96624
+          ]
+        },
+        "properties": {
+          "id": "salamanca-spain",
+          "name": "Salamanca (Spain)",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 4.9,
+          "population": 134820
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chongqing",
+  "createdAt": "2026-10-08T15:25:09.828Z",
+  "updatedAt": "2026-10-08T15:25:09.828Z",
+  "meta": {
+    "name": "Chongqing",
+    "nameIt": "Chongqing",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chongqing.geojson",
+      "sha256": "1ccfd730b137fc9fc5cc4876dee1736938a173f3b6bb1c2f3972d5c0b28422f3",
+      "size": 7467103,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chongqing",
+    "name": "Chongqing",
+    "nameIt": "Chongqing",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      106.517,
+      29.55491
+    ],
+    "zoom": 8.5,
+    "population": 7077708,
+    "grid": "cities/chongqing/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chongqing/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chongqing",
+        "name": "Chongqing",
+        "nameIt": "Chongqing",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          106.517,
+          29.55491
+        ],
+        "zoom": 8.5,
+        "population": 7077708,
+        "cells": 6413,
+        "layer": "cities/chongqing/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.517,
+            29.55491
+          ]
+        },
+        "properties": {
+          "id": "chongqing",
+          "name": "Chongqing",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 33.4,
+          "population": 7077708
+        }
+      },
+      "summary": null
+    }
+  }
+}

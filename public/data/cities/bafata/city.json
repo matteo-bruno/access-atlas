@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bafata",
+  "createdAt": "2026-10-08T15:12:35.390Z",
+  "updatedAt": "2026-10-08T15:12:35.390Z",
+  "meta": {
+    "name": "Bafatá",
+    "nameIt": "Bafatá",
+    "region": "Guinea-Bissau",
+    "regionIt": "Guinea-Bissau",
+    "country": "GW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bafatá.geojson",
+      "sha256": "859cb8ebc93bf4504cfaafb18746f192e93d9dc7c2b78108b8a3b80720d4f490",
+      "size": 120057,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bafata",
+    "name": "Bafatá",
+    "nameIt": "Bafatá",
+    "region": "Guinea-Bissau",
+    "regionIt": "Guinea-Bissau",
+    "country": "GW",
+    "center": [
+      -14.65379,
+      12.17457
+    ],
+    "zoom": 12,
+    "population": 57050,
+    "grid": "cities/bafata/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bafata/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bafata",
+        "name": "Bafatá",
+        "nameIt": "Bafatá",
+        "region": "Guinea-Bissau",
+        "regionIt": "Guinea-Bissau",
+        "country": "GW",
+        "center": [
+          -14.65379,
+          12.17457
+        ],
+        "zoom": 12,
+        "population": 57050,
+        "cells": 102,
+        "layer": "cities/bafata/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -14.65379,
+            12.17457
+          ]
+        },
+        "properties": {
+          "id": "bafata",
+          "name": "Bafatá",
+          "country": "GW",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 57050
+        }
+      },
+      "summary": null
+    }
+  }
+}

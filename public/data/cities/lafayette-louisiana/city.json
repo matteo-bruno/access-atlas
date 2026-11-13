@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lafayette-louisiana",
+  "createdAt": "2026-10-08T15:49:31.552Z",
+  "updatedAt": "2026-10-08T15:49:31.552Z",
+  "meta": {
+    "name": "Lafayette (Louisiana)",
+    "nameIt": "Lafayette (Louisiana)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lafayette (Louisiana).geojson",
+      "sha256": "6b690061330787754457ce723dd53428f32ee332a488bd8137185daec79a018b",
+      "size": 935361,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lafayette-louisiana",
+    "name": "Lafayette (Louisiana)",
+    "nameIt": "Lafayette (Louisiana)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -92.03188,
+      30.20056
+    ],
+    "zoom": 10.4,
+    "population": 92944,
+    "grid": "cities/lafayette-louisiana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lafayette-louisiana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lafayette-louisiana",
+        "name": "Lafayette (Louisiana)",
+        "nameIt": "Lafayette (Louisiana)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -92.03188,
+          30.20056
+        ],
+        "zoom": 10.4,
+        "population": 92944,
+        "cells": 805,
+        "layer": "cities/lafayette-louisiana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -92.03188,
+            30.20056
+          ]
+        },
+        "properties": {
+          "id": "lafayette-louisiana",
+          "name": "Lafayette (Louisiana)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 29.5,
+          "population": 92944
+        }
+      },
+      "summary": null
+    }
+  }
+}

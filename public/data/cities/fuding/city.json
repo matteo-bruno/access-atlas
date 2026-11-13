@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fuding",
+  "createdAt": "2026-10-08T15:33:48.067Z",
+  "updatedAt": "2026-10-08T15:33:48.067Z",
+  "meta": {
+    "name": "Fuding",
+    "nameIt": "Fuding",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fuding.geojson",
+      "sha256": "3a762637c905db5790e510e883e05158c81acf6d406443f4b4e03249a7d9f4ff",
+      "size": 231266,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fuding",
+    "name": "Fuding",
+    "nameIt": "Fuding",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      120.21045,
+      27.32314
+    ],
+    "zoom": 11.2,
+    "population": 234380,
+    "grid": "cities/fuding/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fuding/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fuding",
+        "name": "Fuding",
+        "nameIt": "Fuding",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          120.21045,
+          27.32314
+        ],
+        "zoom": 11.2,
+        "population": 234380,
+        "cells": 198,
+        "layer": "cities/fuding/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.21045,
+            27.32314
+          ]
+        },
+        "properties": {
+          "id": "fuding",
+          "name": "Fuding",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 14.4,
+          "population": 234380
+        }
+      },
+      "summary": null
+    }
+  }
+}

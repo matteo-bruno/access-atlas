@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nuevitas",
+  "createdAt": "2026-10-08T16:02:16.580Z",
+  "updatedAt": "2026-10-08T16:02:16.580Z",
+  "meta": {
+    "name": "Nuevitas",
+    "nameIt": "Nuevitas",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nuevitas.geojson",
+      "sha256": "11e9ebccd5d6f00e2daf4f41cb35ac142806d3c21c3c08b6ee10ece1c393ab2a",
+      "size": 172462,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nuevitas",
+    "name": "Nuevitas",
+    "nameIt": "Nuevitas",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU",
+    "center": [
+      -77.26775,
+      21.548
+    ],
+    "zoom": 11.9,
+    "population": 28251,
+    "grid": "cities/nuevitas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nuevitas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nuevitas",
+        "name": "Nuevitas",
+        "nameIt": "Nuevitas",
+        "region": "Cuba",
+        "regionIt": "Cuba",
+        "country": "CU",
+        "center": [
+          -77.26775,
+          21.548
+        ],
+        "zoom": 11.9,
+        "population": 28251,
+        "cells": 150,
+        "layer": "cities/nuevitas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.26775,
+            21.548
+          ]
+        },
+        "properties": {
+          "id": "nuevitas",
+          "name": "Nuevitas",
+          "country": "CU",
+          "isStudy": true,
+          "proximityMinutes": 4.9,
+          "population": 28251
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chitose",
+  "createdAt": "2026-10-08T15:24:57.377Z",
+  "updatedAt": "2026-10-08T15:24:57.377Z",
+  "meta": {
+    "name": "Chitose",
+    "nameIt": "Chitose",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chitose.geojson",
+      "sha256": "7461861eccc5c76e4c014d84d26b05629241c4e84f9c4463c96af566a07d30a8",
+      "size": 222888,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chitose",
+    "name": "Chitose",
+    "nameIt": "Chitose",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      141.64318,
+      42.83464
+    ],
+    "zoom": 11.2,
+    "population": 66177,
+    "grid": "cities/chitose/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chitose/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chitose",
+        "name": "Chitose",
+        "nameIt": "Chitose",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          141.64318,
+          42.83464
+        ],
+        "zoom": 11.2,
+        "population": 66177,
+        "cells": 193,
+        "layer": "cities/chitose/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            141.64318,
+            42.83464
+          ]
+        },
+        "properties": {
+          "id": "chitose",
+          "name": "Chitose",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 11.4,
+          "population": 66177
+        }
+      },
+      "summary": null
+    }
+  }
+}

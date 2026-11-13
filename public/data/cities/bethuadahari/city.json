@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bethuadahari",
+  "createdAt": "2026-10-08T15:17:57.851Z",
+  "updatedAt": "2026-10-08T15:17:57.851Z",
+  "meta": {
+    "name": "Bethuadahari",
+    "nameIt": "Bethuadahari",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bethuadahari.geojson",
+      "sha256": "53a8e46be8f11193c3ddced08ba9de0e536c4514c4d556b6e092f0803c5cd93e",
+      "size": 87990,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bethuadahari",
+    "name": "Bethuadahari",
+    "nameIt": "Bethuadahari",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.38546,
+      23.60955
+    ],
+    "zoom": 12,
+    "population": 50796,
+    "grid": "cities/bethuadahari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bethuadahari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bethuadahari",
+        "name": "Bethuadahari",
+        "nameIt": "Bethuadahari",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.38546,
+          23.60955
+        ],
+        "zoom": 12,
+        "population": 50796,
+        "cells": 76,
+        "layer": "cities/bethuadahari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.38546,
+            23.60955
+          ]
+        },
+        "properties": {
+          "id": "bethuadahari",
+          "name": "Bethuadahari",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 50796
+        }
+      },
+      "summary": null
+    }
+  }
+}

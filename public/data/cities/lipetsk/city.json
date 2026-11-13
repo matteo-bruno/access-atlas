@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lipetsk",
+  "createdAt": "2026-10-08T15:51:32.381Z",
+  "updatedAt": "2026-10-08T15:51:32.381Z",
+  "meta": {
+    "name": "Lipetsk",
+    "nameIt": "Lipetsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lipetsk.geojson",
+      "sha256": "4227cda7192318084f362f620afcd250b581cd96b67c5f13d5e4660c91c43698",
+      "size": 782142,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lipetsk",
+    "name": "Lipetsk",
+    "nameIt": "Lipetsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      39.56646,
+      52.60645
+    ],
+    "zoom": 10,
+    "population": 278255,
+    "grid": "cities/lipetsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lipetsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lipetsk",
+        "name": "Lipetsk",
+        "nameIt": "Lipetsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          39.56646,
+          52.60645
+        ],
+        "zoom": 10,
+        "population": 278255,
+        "cells": 685,
+        "layer": "cities/lipetsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.56646,
+            52.60645
+          ]
+        },
+        "properties": {
+          "id": "lipetsk",
+          "name": "Lipetsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 278255
+        }
+      },
+      "summary": null
+    }
+  }
+}

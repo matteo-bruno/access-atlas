@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "suva",
+  "createdAt": "2026-10-08T16:15:25.663Z",
+  "updatedAt": "2026-10-08T16:15:25.663Z",
+  "meta": {
+    "name": "Suva",
+    "nameIt": "Suva",
+    "region": "Fiji",
+    "regionIt": "Figi",
+    "country": "FJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Suva.geojson",
+      "sha256": "19f383c98614e12a613eee80373c7de4c338b985d93a399004497c985fe04aba",
+      "size": 940956,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "suva",
+    "name": "Suva",
+    "nameIt": "Suva",
+    "region": "Fiji",
+    "regionIt": "Figi",
+    "country": "FJ",
+    "center": [
+      178.46465,
+      -18.10287
+    ],
+    "zoom": 10.1,
+    "population": 163470,
+    "grid": "cities/suva/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/suva/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "suva",
+        "name": "Suva",
+        "nameIt": "Suva",
+        "region": "Fiji",
+        "regionIt": "Figi",
+        "country": "FJ",
+        "center": [
+          178.46465,
+          -18.10287
+        ],
+        "zoom": 10.1,
+        "population": 163470,
+        "cells": 804,
+        "layer": "cities/suva/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            178.46465,
+            -18.10287
+          ]
+        },
+        "properties": {
+          "id": "suva",
+          "name": "Suva",
+          "country": "FJ",
+          "isStudy": true,
+          "proximityMinutes": 36.5,
+          "population": 163470
+        }
+      },
+      "summary": null
+    }
+  }
+}

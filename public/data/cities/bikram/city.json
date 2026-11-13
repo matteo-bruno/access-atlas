@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bikram",
+  "createdAt": "2026-10-08T15:18:49.942Z",
+  "updatedAt": "2026-10-08T15:18:49.942Z",
+  "meta": {
+    "name": "Bikram",
+    "nameIt": "Bikram",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bikram.geojson",
+      "sha256": "131c4bacaa0a59ace41692bd6a4b90992102f2597141508ecba44008eadb59f2",
+      "size": 228135,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bikram",
+    "name": "Bikram",
+    "nameIt": "Bikram",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.83785,
+      25.43566
+    ],
+    "zoom": 10.4,
+    "population": 61857,
+    "grid": "cities/bikram/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bikram/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bikram",
+        "name": "Bikram",
+        "nameIt": "Bikram",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.83785,
+          25.43566
+        ],
+        "zoom": 10.4,
+        "population": 61857,
+        "cells": 197,
+        "layer": "cities/bikram/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.83785,
+            25.43566
+          ]
+        },
+        "properties": {
+          "id": "bikram",
+          "name": "Bikram",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 61857
+        }
+      },
+      "summary": null
+    }
+  }
+}

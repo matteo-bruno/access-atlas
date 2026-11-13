@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "darab",
+  "createdAt": "2026-10-08T15:28:21.525Z",
+  "updatedAt": "2026-10-08T15:28:21.525Z",
+  "meta": {
+    "name": "Darab",
+    "nameIt": "Darab",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Darab.geojson",
+      "sha256": "c48083a293c4e4af77d7aebf4fc6c4b2dc7dfaee4da4f89a85cf63a6a3d45b07",
+      "size": 181153,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "darab",
+    "name": "Darab",
+    "nameIt": "Darab",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      54.55292,
+      28.75543
+    ],
+    "zoom": 11.5,
+    "population": 87840,
+    "grid": "cities/darab/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/darab/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "darab",
+        "name": "Darab",
+        "nameIt": "Darab",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          54.55292,
+          28.75543
+        ],
+        "zoom": 11.5,
+        "population": 87840,
+        "cells": 156,
+        "layer": "cities/darab/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            54.55292,
+            28.75543
+          ]
+        },
+        "properties": {
+          "id": "darab",
+          "name": "Darab",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 21,
+          "population": 87840
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ekangala",
+  "createdAt": "2026-10-08T15:31:48.972Z",
+  "updatedAt": "2026-10-08T15:31:48.972Z",
+  "meta": {
+    "name": "Ekangala",
+    "nameIt": "Ekangala",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ekangala.geojson",
+      "sha256": "e7979b61e6e06aed29c253ea0b3494ceb4839f7c6ecc5a83709133546d4663fb",
+      "size": 166720,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ekangala",
+    "name": "Ekangala",
+    "nameIt": "Ekangala",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      28.73844,
+      -25.67527
+    ],
+    "zoom": 11.6,
+    "population": 35248,
+    "grid": "cities/ekangala/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ekangala/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ekangala",
+        "name": "Ekangala",
+        "nameIt": "Ekangala",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          28.73844,
+          -25.67527
+        ],
+        "zoom": 11.6,
+        "population": 35248,
+        "cells": 142,
+        "layer": "cities/ekangala/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.73844,
+            -25.67527
+          ]
+        },
+        "properties": {
+          "id": "ekangala",
+          "name": "Ekangala",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 35248
+        }
+      },
+      "summary": null
+    }
+  }
+}

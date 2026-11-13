@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "belfort",
+  "createdAt": "2026-10-08T15:17:06.469Z",
+  "updatedAt": "2026-10-08T15:17:06.469Z",
+  "meta": {
+    "name": "Belfort",
+    "nameIt": "Belfort",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Belfort.geojson",
+      "sha256": "3ed306b62480efe36e5131eaef1881bc6142edc816213cfa679af455a127a9b5",
+      "size": 205161,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "belfort",
+    "name": "Belfort",
+    "nameIt": "Belfort",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      6.84903,
+      47.64224
+    ],
+    "zoom": 11.5,
+    "population": 60513,
+    "grid": "cities/belfort/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/belfort/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "belfort",
+        "name": "Belfort",
+        "nameIt": "Belfort",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          6.84903,
+          47.64224
+        ],
+        "zoom": 11.5,
+        "population": 60513,
+        "cells": 181,
+        "layer": "cities/belfort/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.84903,
+            47.64224
+          ]
+        },
+        "properties": {
+          "id": "belfort",
+          "name": "Belfort",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 7.9,
+          "population": 60513
+        }
+      },
+      "summary": null
+    }
+  }
+}

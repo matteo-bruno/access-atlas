@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "villa-mercedes",
+  "createdAt": "2026-10-08T16:20:46.528Z",
+  "updatedAt": "2026-10-08T16:20:46.528Z",
+  "meta": {
+    "name": "Villa Mercedes",
+    "nameIt": "Villa Mercedes",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Villa Mercedes.geojson",
+      "sha256": "eb88fb623f2d2bca83e5cf4296cbbc8963d15e5c9a11277e74295820ac36ddbf",
+      "size": 424887,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "villa-mercedes",
+    "name": "Villa Mercedes",
+    "nameIt": "Villa Mercedes",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -65.4646,
+      -33.6774
+    ],
+    "zoom": 11.1,
+    "population": 97173,
+    "grid": "cities/villa-mercedes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/villa-mercedes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "villa-mercedes",
+        "name": "Villa Mercedes",
+        "nameIt": "Villa Mercedes",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -65.4646,
+          -33.6774
+        ],
+        "zoom": 11.1,
+        "population": 97173,
+        "cells": 366,
+        "layer": "cities/villa-mercedes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -65.4646,
+            -33.6774
+          ]
+        },
+        "properties": {
+          "id": "villa-mercedes",
+          "name": "Villa Mercedes",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 97173
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dahua",
+  "createdAt": "2026-10-08T15:27:31.447Z",
+  "updatedAt": "2026-10-08T15:27:31.447Z",
+  "meta": {
+    "name": "Dahua",
+    "nameIt": "Dahua",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dahua.geojson",
+      "sha256": "d7b774bd22329b71cf6cdc39b21dba1569fed15aca1851e2236814635a4cf1ca",
+      "size": 127460,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dahua",
+    "name": "Dahua",
+    "nameIt": "Dahua",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      107.98817,
+      23.73614
+    ],
+    "zoom": 11.6,
+    "population": 179661,
+    "grid": "cities/dahua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dahua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dahua",
+        "name": "Dahua",
+        "nameIt": "Dahua",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          107.98817,
+          23.73614
+        ],
+        "zoom": 11.6,
+        "population": 179661,
+        "cells": 109,
+        "layer": "cities/dahua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.98817,
+            23.73614
+          ]
+        },
+        "properties": {
+          "id": "dahua",
+          "name": "Dahua",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 179661
+        }
+      },
+      "summary": null
+    }
+  }
+}

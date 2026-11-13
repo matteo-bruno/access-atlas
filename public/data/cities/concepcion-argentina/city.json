@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "concepcion-argentina",
+  "createdAt": "2026-10-08T15:26:17.638Z",
+  "updatedAt": "2026-10-08T15:26:17.638Z",
+  "meta": {
+    "name": "Concepción (Argentina)",
+    "nameIt": "Concepción (Argentina)",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Concepción (Argentina).geojson",
+      "sha256": "b4fc5ef4d9eef6f3c04f51b0ad9548d6e5a6691863319642fbae0c53d442e7e5",
+      "size": 159574,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "concepcion-argentina",
+    "name": "Concepción (Argentina)",
+    "nameIt": "Concepción (Argentina)",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -65.59265,
+      -27.34772
+    ],
+    "zoom": 12,
+    "population": 50195,
+    "grid": "cities/concepcion-argentina/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/concepcion-argentina/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "concepcion-argentina",
+        "name": "Concepción (Argentina)",
+        "nameIt": "Concepción (Argentina)",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -65.59265,
+          -27.34772
+        ],
+        "zoom": 12,
+        "population": 50195,
+        "cells": 136,
+        "layer": "cities/concepcion-argentina/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -65.59265,
+            -27.34772
+          ]
+        },
+        "properties": {
+          "id": "concepcion-argentina",
+          "name": "Concepción (Argentina)",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 50195
+        }
+      },
+      "summary": null
+    }
+  }
+}

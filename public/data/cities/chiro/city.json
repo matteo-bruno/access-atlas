@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chiro",
+  "createdAt": "2026-10-08T15:24:55.798Z",
+  "updatedAt": "2026-10-08T15:24:55.798Z",
+  "meta": {
+    "name": "Chiro",
+    "nameIt": "Chiro",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chiro.geojson",
+      "sha256": "f7e3f4bf784201f1bc1d9136d3607cdf0a05bc7abd8a4665e7517d692b213a0b",
+      "size": 147632,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chiro",
+    "name": "Chiro",
+    "nameIt": "Chiro",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      40.86748,
+      9.07687
+    ],
+    "zoom": 11.7,
+    "population": 68188,
+    "grid": "cities/chiro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chiro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chiro",
+        "name": "Chiro",
+        "nameIt": "Chiro",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          40.86748,
+          9.07687
+        ],
+        "zoom": 11.7,
+        "population": 68188,
+        "cells": 128,
+        "layer": "cities/chiro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.86748,
+            9.07687
+          ]
+        },
+        "properties": {
+          "id": "chiro",
+          "name": "Chiro",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 68188
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bechar",
+  "createdAt": "2026-10-08T15:16:34.224Z",
+  "updatedAt": "2026-10-08T15:16:34.224Z",
+  "meta": {
+    "name": "Bechar",
+    "nameIt": "Bechar",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bechar.geojson",
+      "sha256": "5b41f9b1e548e9cb02985fdb1a8b4b9ebb39d6d75d85c90c68383b04f5093ef4",
+      "size": 331359,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bechar",
+    "name": "Bechar",
+    "nameIt": "Bechar",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      -2.22223,
+      31.60222
+    ],
+    "zoom": 10.8,
+    "population": 191894,
+    "grid": "cities/bechar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bechar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bechar",
+        "name": "Bechar",
+        "nameIt": "Bechar",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          -2.22223,
+          31.60222
+        ],
+        "zoom": 10.8,
+        "population": 191894,
+        "cells": 284,
+        "layer": "cities/bechar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.22223,
+            31.60222
+          ]
+        },
+        "properties": {
+          "id": "bechar",
+          "name": "Bechar",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 19.1,
+          "population": 191894
+        }
+      },
+      "summary": null
+    }
+  }
+}

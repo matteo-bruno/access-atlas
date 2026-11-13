@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ciudad-guzman",
+  "createdAt": "2026-10-08T15:25:38.588Z",
+  "updatedAt": "2026-10-08T15:25:38.588Z",
+  "meta": {
+    "name": "Ciudad Guzmán",
+    "nameIt": "Ciudad Guzmán",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ciudad Guzmán.geojson",
+      "sha256": "11bb515fbe77628ea23c3d9efbfcf67315aeea6e13ff32bab0ff1282b8873700",
+      "size": 157910,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ciudad-guzman",
+    "name": "Ciudad Guzmán",
+    "nameIt": "Ciudad Guzmán",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -103.46727,
+      19.70051
+    ],
+    "zoom": 11.4,
+    "population": 83961,
+    "grid": "cities/ciudad-guzman/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ciudad-guzman/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ciudad-guzman",
+        "name": "Ciudad Guzmán",
+        "nameIt": "Ciudad Guzmán",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -103.46727,
+          19.70051
+        ],
+        "zoom": 11.4,
+        "population": 83961,
+        "cells": 135,
+        "layer": "cities/ciudad-guzman/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -103.46727,
+            19.70051
+          ]
+        },
+        "properties": {
+          "id": "ciudad-guzman",
+          "name": "Ciudad Guzmán",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 12,
+          "population": 83961
+        }
+      },
+      "summary": null
+    }
+  }
+}

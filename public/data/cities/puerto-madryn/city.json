@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "puerto-madryn",
+  "createdAt": "2026-10-08T16:06:44.772Z",
+  "updatedAt": "2026-10-08T16:06:44.772Z",
+  "meta": {
+    "name": "Puerto Madryn",
+    "nameIt": "Puerto Madryn",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Puerto Madryn.geojson",
+      "sha256": "4777ced68c2ee23bb30215b1ad29227ec01720aa214b8d570b0b7f3a3ab15c71",
+      "size": 407394,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "puerto-madryn",
+    "name": "Puerto Madryn",
+    "nameIt": "Puerto Madryn",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -65.04619,
+      -42.77087
+    ],
+    "zoom": 11.3,
+    "population": 85482,
+    "grid": "cities/puerto-madryn/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/puerto-madryn/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "puerto-madryn",
+        "name": "Puerto Madryn",
+        "nameIt": "Puerto Madryn",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -65.04619,
+          -42.77087
+        ],
+        "zoom": 11.3,
+        "population": 85482,
+        "cells": 351,
+        "layer": "cities/puerto-madryn/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -65.04619,
+            -42.77087
+          ]
+        },
+        "properties": {
+          "id": "puerto-madryn",
+          "name": "Puerto Madryn",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 85482
+        }
+      },
+      "summary": null
+    }
+  }
+}

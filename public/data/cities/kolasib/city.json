@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kolasib",
+  "createdAt": "2026-10-08T15:47:41.767Z",
+  "updatedAt": "2026-10-08T15:47:41.767Z",
+  "meta": {
+    "name": "Kolasib",
+    "nameIt": "Kolasib",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kolasib.geojson",
+      "sha256": "8a22e59ac2fda5f9f1c44c77c794bbcc398e5080b29d28005b0b7aaccb6d487c",
+      "size": 51018,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kolasib",
+    "name": "Kolasib",
+    "nameIt": "Kolasib",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      92.6784,
+      24.22509
+    ],
+    "zoom": 12,
+    "population": 28017,
+    "grid": "cities/kolasib/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kolasib/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kolasib",
+        "name": "Kolasib",
+        "nameIt": "Kolasib",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          92.6784,
+          24.22509
+        ],
+        "zoom": 12,
+        "population": 28017,
+        "cells": 44,
+        "layer": "cities/kolasib/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            92.6784,
+            24.22509
+          ]
+        },
+        "properties": {
+          "id": "kolasib",
+          "name": "Kolasib",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 28017
+        }
+      },
+      "summary": null
+    }
+  }
+}

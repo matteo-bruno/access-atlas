@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "osaka-fua",
+  "createdAt": "2026-10-19T16:57:55.554Z",
+  "updatedAt": "2026-10-19T16:57:55.554Z",
+  "meta": {
+    "name": "Osaka",
+    "nameIt": "Osaka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "osaka-fua",
+    "name": "Osaka",
+    "nameIt": "Osaka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "extent": "fua",
+    "core": "osaka",
+    "center": [
+      135.45124,
+      34.72362
+    ],
+    "zoom": 8.5,
+    "population": 17184517,
+    "grid": "cities/osaka-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/osaka-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "osaka-fua",
+        "name": "Osaka",
+        "nameIt": "Osaka",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "extent": "fua",
+        "core": "osaka",
+        "center": [
+          135.45124,
+          34.72362
+        ],
+        "zoom": 8.5,
+        "population": 17184517,
+        "cells": 114263,
+        "layer": "cities/osaka-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            135.45124,
+            34.72362
+          ]
+        },
+        "properties": {
+          "id": "osaka-fua",
+          "name": "Osaka",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 9.2,
+          "population": 17184517
+        }
+      },
+      "summary": null
+    }
+  }
+}

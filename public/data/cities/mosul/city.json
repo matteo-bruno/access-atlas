@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mosul",
+  "createdAt": "2026-10-08T15:58:30.051Z",
+  "updatedAt": "2026-10-08T15:58:30.051Z",
+  "meta": {
+    "name": "Mosul",
+    "nameIt": "Mosul",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mosul.geojson",
+      "sha256": "7b164238dbe7a136b9e1983d5b7da16d08a48f313cc73a678f101baa042f67d7",
+      "size": 1624781,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mosul",
+    "name": "Mosul",
+    "nameIt": "Mosul",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      43.14835,
+      36.34836
+    ],
+    "zoom": 9.8,
+    "population": 1503476,
+    "grid": "cities/mosul/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mosul/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mosul",
+        "name": "Mosul",
+        "nameIt": "Mosul",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          43.14835,
+          36.34836
+        ],
+        "zoom": 9.8,
+        "population": 1503476,
+        "cells": 1412,
+        "layer": "cities/mosul/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.14835,
+            36.34836
+          ]
+        },
+        "properties": {
+          "id": "mosul",
+          "name": "Mosul",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 23.6,
+          "population": 1503476
+        }
+      },
+      "summary": null
+    }
+  }
+}

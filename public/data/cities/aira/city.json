@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aira",
+  "createdAt": "2026-10-08T15:03:18.265Z",
+  "updatedAt": "2026-10-08T15:03:18.265Z",
+  "meta": {
+    "name": "Aira",
+    "nameIt": "Aira",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aira.geojson",
+      "sha256": "c645e9a892024ac45ceb1c467b4e2890e6a425dd22c41462d5ef40b79cf6f95b",
+      "size": 315779,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aira",
+    "name": "Aira",
+    "nameIt": "Aira",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      130.63271,
+      31.72848
+    ],
+    "zoom": 11.1,
+    "population": 56142,
+    "grid": "cities/aira/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aira/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aira",
+        "name": "Aira",
+        "nameIt": "Aira",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          130.63271,
+          31.72848
+        ],
+        "zoom": 11.1,
+        "population": 56142,
+        "cells": 274,
+        "layer": "cities/aira/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            130.63271,
+            31.72848
+          ]
+        },
+        "properties": {
+          "id": "aira",
+          "name": "Aira",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 56142
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wa",
+  "createdAt": "2026-10-08T16:21:08.098Z",
+  "updatedAt": "2026-10-08T16:21:08.098Z",
+  "meta": {
+    "name": "Wa",
+    "nameIt": "Wa",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wa.geojson",
+      "sha256": "1388b27e8f8e4c49be6702f1403c37b75825ee38f115e213492d0b8099b2264c",
+      "size": 461072,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wa",
+    "name": "Wa",
+    "nameIt": "Wa",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH",
+    "center": [
+      -2.5116,
+      10.06
+    ],
+    "zoom": 11.2,
+    "population": 147687,
+    "grid": "cities/wa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wa",
+        "name": "Wa",
+        "nameIt": "Wa",
+        "region": "Ghana",
+        "regionIt": "Ghana",
+        "country": "GH",
+        "center": [
+          -2.5116,
+          10.06
+        ],
+        "zoom": 11.2,
+        "population": 147687,
+        "cells": 393,
+        "layer": "cities/wa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.5116,
+            10.06
+          ]
+        },
+        "properties": {
+          "id": "wa",
+          "name": "Wa",
+          "country": "GH",
+          "isStudy": true,
+          "proximityMinutes": 24.7,
+          "population": 147687
+        }
+      },
+      "summary": null
+    }
+  }
+}

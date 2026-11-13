@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rumbek",
+  "createdAt": "2026-10-08T16:09:20.042Z",
+  "updatedAt": "2026-10-08T16:09:20.042Z",
+  "meta": {
+    "name": "Rumbek",
+    "nameIt": "Rumbek",
+    "region": "South Sudan",
+    "regionIt": "Sudan del Sud",
+    "country": "SS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rumbek.geojson",
+      "sha256": "b3ee2b1811acdf31adb90dd475373fc3afc03875566e98c8c750966657ee8106",
+      "size": 158644,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rumbek",
+    "name": "Rumbek",
+    "nameIt": "Rumbek",
+    "region": "South Sudan",
+    "regionIt": "Sudan del Sud",
+    "country": "SS",
+    "center": [
+      29.67789,
+      6.80826
+    ],
+    "zoom": 11.7,
+    "population": 69531,
+    "grid": "cities/rumbek/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rumbek/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rumbek",
+        "name": "Rumbek",
+        "nameIt": "Rumbek",
+        "region": "South Sudan",
+        "regionIt": "Sudan del Sud",
+        "country": "SS",
+        "center": [
+          29.67789,
+          6.80826
+        ],
+        "zoom": 11.7,
+        "population": 69531,
+        "cells": 137,
+        "layer": "cities/rumbek/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.67789,
+            6.80826
+          ]
+        },
+        "properties": {
+          "id": "rumbek",
+          "name": "Rumbek",
+          "country": "SS",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 69531
+        }
+      },
+      "summary": null
+    }
+  }
+}

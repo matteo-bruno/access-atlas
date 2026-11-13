@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hassan",
+  "createdAt": "2026-10-08T15:37:59.972Z",
+  "updatedAt": "2026-10-08T15:37:59.972Z",
+  "meta": {
+    "name": "Hassan",
+    "nameIt": "Hassan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hassan.geojson",
+      "sha256": "9f7c7f13c796988d1440df71bc50f86c5124a69ede70650651c30e1cb1c608bc",
+      "size": 459785,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hassan",
+    "name": "Hassan",
+    "nameIt": "Hassan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.10482,
+      13.00412
+    ],
+    "zoom": 10.9,
+    "population": 201284,
+    "grid": "cities/hassan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hassan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hassan",
+        "name": "Hassan",
+        "nameIt": "Hassan",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.10482,
+          13.00412
+        ],
+        "zoom": 10.9,
+        "population": 201284,
+        "cells": 399,
+        "layer": "cities/hassan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.10482,
+            13.00412
+          ]
+        },
+        "properties": {
+          "id": "hassan",
+          "name": "Hassan",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 201284
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "piura",
+  "createdAt": "2026-10-08T16:05:53.502Z",
+  "updatedAt": "2026-10-08T16:05:53.502Z",
+  "meta": {
+    "name": "Piura",
+    "nameIt": "Piura",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Piura.geojson",
+      "sha256": "8ab835c3aae6ad4cf325168a1ada581458d3c6aec66b2306eb1e54743ca4e0fc",
+      "size": 670936,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "piura",
+    "name": "Piura",
+    "nameIt": "Piura",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -80.63928,
+      -5.18972
+    ],
+    "zoom": 10.4,
+    "population": 495772,
+    "grid": "cities/piura/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/piura/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "piura",
+        "name": "Piura",
+        "nameIt": "Piura",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -80.63928,
+          -5.18972
+        ],
+        "zoom": 10.4,
+        "population": 495772,
+        "cells": 578,
+        "layer": "cities/piura/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.63928,
+            -5.18972
+          ]
+        },
+        "properties": {
+          "id": "piura",
+          "name": "Piura",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 19.4,
+          "population": 495772
+        }
+      },
+      "summary": null
+    }
+  }
+}

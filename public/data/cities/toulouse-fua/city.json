@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "toulouse-fua",
+  "createdAt": "2026-10-19T16:58:49.657Z",
+  "updatedAt": "2026-10-19T16:58:49.657Z",
+  "meta": {
+    "name": "Toulouse",
+    "nameIt": "Toulouse",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "toulouse-fua",
+    "name": "Toulouse",
+    "nameIt": "Toulouse",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "extent": "fua",
+    "core": "toulouse",
+    "center": [
+      1.42242,
+      43.60329
+    ],
+    "zoom": 8.5,
+    "population": 1349904,
+    "grid": "cities/toulouse-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/toulouse-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "toulouse-fua",
+        "name": "Toulouse",
+        "nameIt": "Toulouse",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "extent": "fua",
+        "core": "toulouse",
+        "center": [
+          1.42242,
+          43.60329
+        ],
+        "zoom": 8.5,
+        "population": 1349904,
+        "cells": 33397,
+        "layer": "cities/toulouse-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.42242,
+            43.60329
+          ]
+        },
+        "properties": {
+          "id": "toulouse-fua",
+          "name": "Toulouse",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 11.7,
+          "population": 1349904
+        }
+      },
+      "summary": null
+    }
+  }
+}

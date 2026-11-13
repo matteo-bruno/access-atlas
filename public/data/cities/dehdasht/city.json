@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dehdasht",
+  "createdAt": "2026-10-08T15:28:47.846Z",
+  "updatedAt": "2026-10-08T15:28:47.846Z",
+  "meta": {
+    "name": "Dehdasht",
+    "nameIt": "Dehdasht",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dehdasht.geojson",
+      "sha256": "6c45c4761bb9b48876c7b450ed4d98c9b0a9a8cb3a86ad1db082e5ec7bd5014e",
+      "size": 104557,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dehdasht",
+    "name": "Dehdasht",
+    "nameIt": "Dehdasht",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      50.56703,
+      30.79495
+    ],
+    "zoom": 12,
+    "population": 68316,
+    "grid": "cities/dehdasht/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dehdasht/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dehdasht",
+        "name": "Dehdasht",
+        "nameIt": "Dehdasht",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          50.56703,
+          30.79495
+        ],
+        "zoom": 12,
+        "population": 68316,
+        "cells": 90,
+        "layer": "cities/dehdasht/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            50.56703,
+            30.79495
+          ]
+        },
+        "properties": {
+          "id": "dehdasht",
+          "name": "Dehdasht",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 68316
+        }
+      },
+      "summary": null
+    }
+  }
+}

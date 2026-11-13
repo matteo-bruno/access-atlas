@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sasni",
+  "createdAt": "2026-10-08T16:11:33.683Z",
+  "updatedAt": "2026-10-08T16:11:33.683Z",
+  "meta": {
+    "name": "Sasni",
+    "nameIt": "Sasni",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sasni.geojson",
+      "sha256": "df64cf1e032954797798ab253423a23e4307a5d2eaaf45b85ac6b656613cf82d",
+      "size": 85650,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sasni",
+    "name": "Sasni",
+    "nameIt": "Sasni",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.07994,
+      27.70208
+    ],
+    "zoom": 12,
+    "population": 44692,
+    "grid": "cities/sasni/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sasni/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sasni",
+        "name": "Sasni",
+        "nameIt": "Sasni",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.07994,
+          27.70208
+        ],
+        "zoom": 12,
+        "population": 44692,
+        "cells": 74,
+        "layer": "cities/sasni/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.07994,
+            27.70208
+          ]
+        },
+        "properties": {
+          "id": "sasni",
+          "name": "Sasni",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 44692
+        }
+      },
+      "summary": null
+    }
+  }
+}

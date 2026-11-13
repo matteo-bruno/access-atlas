@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lund",
+  "createdAt": "2026-10-08T15:52:41.474Z",
+  "updatedAt": "2026-10-08T15:52:41.474Z",
+  "meta": {
+    "name": "Lund",
+    "nameIt": "Lund",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lund.geojson",
+      "sha256": "b1aaad28a4b0cd710f40a89d18d932531c7266fd1df0cca83711210ffd77f7c3",
+      "size": 355131,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lund",
+    "name": "Lund",
+    "nameIt": "Lund",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE",
+    "center": [
+      13.19722,
+      55.70833
+    ],
+    "zoom": 11.5,
+    "population": 88607,
+    "grid": "cities/lund/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lund/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lund",
+        "name": "Lund",
+        "nameIt": "Lund",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          13.19722,
+          55.70833
+        ],
+        "zoom": 11.5,
+        "population": 88607,
+        "cells": 311,
+        "layer": "cities/lund/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.19722,
+            55.70833
+          ]
+        },
+        "properties": {
+          "id": "lund",
+          "name": "Lund",
+          "country": "SE",
+          "isStudy": true,
+          "proximityMinutes": 8.8,
+          "population": 88607
+        }
+      },
+      "summary": null
+    }
+  }
+}

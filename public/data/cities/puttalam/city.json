@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "puttalam",
+  "createdAt": "2026-10-08T16:07:03.435Z",
+  "updatedAt": "2026-10-08T16:07:03.435Z",
+  "meta": {
+    "name": "Puttalam",
+    "nameIt": "Puttalam",
+    "region": "Sri Lanka",
+    "regionIt": "Sri Lanka",
+    "country": "LK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Puttalam.geojson",
+      "sha256": "940d9a7326760fed603f1c452801200d286e14ae390964109b6244197ea91c18",
+      "size": 179314,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "puttalam",
+    "name": "Puttalam",
+    "nameIt": "Puttalam",
+    "region": "Sri Lanka",
+    "regionIt": "Sri Lanka",
+    "country": "LK",
+    "center": [
+      79.83277,
+      8.03006
+    ],
+    "zoom": 11.3,
+    "population": 51193,
+    "grid": "cities/puttalam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/puttalam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "puttalam",
+        "name": "Puttalam",
+        "nameIt": "Puttalam",
+        "region": "Sri Lanka",
+        "regionIt": "Sri Lanka",
+        "country": "LK",
+        "center": [
+          79.83277,
+          8.03006
+        ],
+        "zoom": 11.3,
+        "population": 51193,
+        "cells": 156,
+        "layer": "cities/puttalam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.83277,
+            8.03006
+          ]
+        },
+        "properties": {
+          "id": "puttalam",
+          "name": "Puttalam",
+          "country": "LK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 51193
+        }
+      },
+      "summary": null
+    }
+  }
+}

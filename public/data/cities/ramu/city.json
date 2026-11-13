@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ramu",
+  "createdAt": "2026-10-08T16:08:10.912Z",
+  "updatedAt": "2026-10-08T16:08:10.912Z",
+  "meta": {
+    "name": "Ramu",
+    "nameIt": "Ramu",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ramu.geojson",
+      "sha256": "a5ea9d3705ea242df90d3adb5ee9a906cf81ef7b814434c7b147e6ff0ac1d5d8",
+      "size": 934728,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ramu",
+    "name": "Ramu",
+    "nameIt": "Ramu",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      92.02825,
+      21.44589
+    ],
+    "zoom": 9.9,
+    "population": 327909,
+    "grid": "cities/ramu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ramu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ramu",
+        "name": "Ramu",
+        "nameIt": "Ramu",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          92.02825,
+          21.44589
+        ],
+        "zoom": 9.9,
+        "population": 327909,
+        "cells": 808,
+        "layer": "cities/ramu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            92.02825,
+            21.44589
+          ]
+        },
+        "properties": {
+          "id": "ramu",
+          "name": "Ramu",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 34.3,
+          "population": 327909
+        }
+      },
+      "summary": null
+    }
+  }
+}

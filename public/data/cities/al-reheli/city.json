@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-reheli",
+  "createdAt": "2026-10-08T15:04:49.815Z",
+  "updatedAt": "2026-10-08T15:04:49.815Z",
+  "meta": {
+    "name": "Al Reheli",
+    "nameIt": "Al Reheli",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Reheli.geojson",
+      "sha256": "3c806a90f801870b4ffa481222368271c4c0a70365a5ac7e2b8f17cd454ac6cc",
+      "size": 102123,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-reheli",
+    "name": "Al Reheli",
+    "nameIt": "Al Reheli",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA",
+    "center": [
+      39.13855,
+      21.80171
+    ],
+    "zoom": 12,
+    "population": 46297,
+    "grid": "cities/al-reheli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-reheli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-reheli",
+        "name": "Al Reheli",
+        "nameIt": "Al Reheli",
+        "region": "Saudi Arabia",
+        "regionIt": "Arabia Saudita",
+        "country": "SA",
+        "center": [
+          39.13855,
+          21.80171
+        ],
+        "zoom": 12,
+        "population": 46297,
+        "cells": 88,
+        "layer": "cities/al-reheli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.13855,
+            21.80171
+          ]
+        },
+        "properties": {
+          "id": "al-reheli",
+          "name": "Al Reheli",
+          "country": "SA",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 46297
+        }
+      },
+      "summary": null
+    }
+  }
+}

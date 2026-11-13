@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sevare",
+  "createdAt": "2026-10-08T16:15:45.185Z",
+  "updatedAt": "2026-10-08T16:15:45.185Z",
+  "meta": {
+    "name": "Sévaré",
+    "nameIt": "Sévaré",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sévaré.geojson",
+      "sha256": "d76713815ebde436a589c0dc74b519797edbf549d36efab1b70ef397b4e5555d",
+      "size": 297296,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sevare",
+    "name": "Sévaré",
+    "nameIt": "Sévaré",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML",
+    "center": [
+      -4.09555,
+      14.53104
+    ],
+    "zoom": 11.4,
+    "population": 193981,
+    "grid": "cities/sevare/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sevare/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sevare",
+        "name": "Sévaré",
+        "nameIt": "Sévaré",
+        "region": "Mali",
+        "regionIt": "Mali",
+        "country": "ML",
+        "center": [
+          -4.09555,
+          14.53104
+        ],
+        "zoom": 11.4,
+        "population": 193981,
+        "cells": 254,
+        "layer": "cities/sevare/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -4.09555,
+            14.53104
+          ]
+        },
+        "properties": {
+          "id": "sevare",
+          "name": "Sévaré",
+          "country": "ML",
+          "isStudy": true,
+          "proximityMinutes": 18.7,
+          "population": 193981
+        }
+      },
+      "summary": null
+    }
+  }
+}

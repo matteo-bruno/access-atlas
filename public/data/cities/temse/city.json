@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "temse",
+  "createdAt": "2026-10-08T16:17:14.699Z",
+  "updatedAt": "2026-10-08T16:17:14.699Z",
+  "meta": {
+    "name": "Temse",
+    "nameIt": "Temse",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Temse.geojson",
+      "sha256": "0f951a28686e1b4cb94e745d6494e51d750357489998f10ed90e8d7a4f5f45e8",
+      "size": 366209,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "temse",
+    "name": "Temse",
+    "nameIt": "Temse",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE",
+    "center": [
+      4.16105,
+      51.1569
+    ],
+    "zoom": 11,
+    "population": 69245,
+    "grid": "cities/temse/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/temse/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "temse",
+        "name": "Temse",
+        "nameIt": "Temse",
+        "region": "Belgium",
+        "regionIt": "Belgio",
+        "country": "BE",
+        "center": [
+          4.16105,
+          51.1569
+        ],
+        "zoom": 11,
+        "population": 69245,
+        "cells": 322,
+        "layer": "cities/temse/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.16105,
+            51.1569
+          ]
+        },
+        "properties": {
+          "id": "temse",
+          "name": "Temse",
+          "country": "BE",
+          "isStudy": true,
+          "proximityMinutes": 10.2,
+          "population": 69245
+        }
+      },
+      "summary": null
+    }
+  }
+}

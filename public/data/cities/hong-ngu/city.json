@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hong-ngu",
+  "createdAt": "2026-10-08T15:40:08.367Z",
+  "updatedAt": "2026-10-08T15:40:08.367Z",
+  "meta": {
+    "name": "Hồng Ngự",
+    "nameIt": "Hồng Ngự",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hồng Ngự.geojson",
+      "sha256": "bad8136f2d2914e9b910c8b7868e0c7d9058d00f7ad3badd9b88bb5bb3c6849b",
+      "size": 300722,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hong-ngu",
+    "name": "Hồng Ngự",
+    "nameIt": "Hồng Ngự",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      105.34166,
+      10.80144
+    ],
+    "zoom": 10.9,
+    "population": 77560,
+    "grid": "cities/hong-ngu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hong-ngu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hong-ngu",
+        "name": "Hồng Ngự",
+        "nameIt": "Hồng Ngự",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          105.34166,
+          10.80144
+        ],
+        "zoom": 10.9,
+        "population": 77560,
+        "cells": 257,
+        "layer": "cities/hong-ngu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.34166,
+            10.80144
+          ]
+        },
+        "properties": {
+          "id": "hong-ngu",
+          "name": "Hồng Ngự",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 21,
+          "population": 77560
+        }
+      },
+      "summary": null
+    }
+  }
+}

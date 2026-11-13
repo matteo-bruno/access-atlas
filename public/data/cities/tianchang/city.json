@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tianchang",
+  "createdAt": "2026-10-08T16:17:42.701Z",
+  "updatedAt": "2026-10-08T16:17:42.701Z",
+  "meta": {
+    "name": "Tianchang",
+    "nameIt": "Tianchang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tianchang.geojson",
+      "sha256": "1e8f703c2d7284fbbea65b678db09f954960fa6b0332939f2ac840c9f76b00bd",
+      "size": 410442,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tianchang",
+    "name": "Tianchang",
+    "nameIt": "Tianchang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.00678,
+      32.68102
+    ],
+    "zoom": 11.2,
+    "population": 182343,
+    "grid": "cities/tianchang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tianchang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tianchang",
+        "name": "Tianchang",
+        "nameIt": "Tianchang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.00678,
+          32.68102
+        ],
+        "zoom": 11.2,
+        "population": 182343,
+        "cells": 352,
+        "layer": "cities/tianchang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.00678,
+            32.68102
+          ]
+        },
+        "properties": {
+          "id": "tianchang",
+          "name": "Tianchang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 23.3,
+          "population": 182343
+        }
+      },
+      "summary": null
+    }
+  }
+}

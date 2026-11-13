@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mohammadia",
+  "createdAt": "2026-10-08T15:57:46.608Z",
+  "updatedAt": "2026-10-08T15:57:46.608Z",
+  "meta": {
+    "name": "Mohammadia",
+    "nameIt": "Mohammadia",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mohammadia.geojson",
+      "sha256": "177c06965e3aaa573111f8d205f7429c553359207af8b4fc7bbc6e4fb459f165",
+      "size": 156158,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mohammadia",
+    "name": "Mohammadia",
+    "nameIt": "Mohammadia",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      0.07249,
+      35.58551
+    ],
+    "zoom": 11.8,
+    "population": 78052,
+    "grid": "cities/mohammadia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mohammadia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mohammadia",
+        "name": "Mohammadia",
+        "nameIt": "Mohammadia",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          0.07249,
+          35.58551
+        ],
+        "zoom": 11.8,
+        "population": 78052,
+        "cells": 134,
+        "layer": "cities/mohammadia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.07249,
+            35.58551
+          ]
+        },
+        "properties": {
+          "id": "mohammadia",
+          "name": "Mohammadia",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 10.7,
+          "population": 78052
+        }
+      },
+      "summary": null
+    }
+  }
+}

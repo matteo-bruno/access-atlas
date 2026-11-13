@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ciudad-de-la-costa",
+  "createdAt": "2026-10-08T15:25:43.715Z",
+  "updatedAt": "2026-10-08T15:25:43.715Z",
+  "meta": {
+    "name": "Ciudad de la Costa",
+    "nameIt": "Ciudad de la Costa",
+    "region": "Uruguay",
+    "regionIt": "Uruguay",
+    "country": "UY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ciudad de la Costa.geojson",
+      "sha256": "5567b214075cfdd9aa79dbb8b57b7595dd56447c2af953a82bb50906bb4ecb63",
+      "size": 746562,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ciudad-de-la-costa",
+    "name": "Ciudad de la Costa",
+    "nameIt": "Ciudad de la Costa",
+    "region": "Uruguay",
+    "regionIt": "Uruguay",
+    "country": "UY",
+    "center": [
+      -55.95932,
+      -34.82183
+    ],
+    "zoom": 10.6,
+    "population": 96689,
+    "grid": "cities/ciudad-de-la-costa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ciudad-de-la-costa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ciudad-de-la-costa",
+        "name": "Ciudad de la Costa",
+        "nameIt": "Ciudad de la Costa",
+        "region": "Uruguay",
+        "regionIt": "Uruguay",
+        "country": "UY",
+        "center": [
+          -55.95932,
+          -34.82183
+        ],
+        "zoom": 10.6,
+        "population": 96689,
+        "cells": 637,
+        "layer": "cities/ciudad-de-la-costa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -55.95932,
+            -34.82183
+          ]
+        },
+        "properties": {
+          "id": "ciudad-de-la-costa",
+          "name": "Ciudad de la Costa",
+          "country": "UY",
+          "isStudy": true,
+          "proximityMinutes": 17.2,
+          "population": 96689
+        }
+      },
+      "summary": null
+    }
+  }
+}

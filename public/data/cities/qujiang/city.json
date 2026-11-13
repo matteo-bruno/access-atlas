@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "qujiang",
+  "createdAt": "2026-10-08T16:07:39.137Z",
+  "updatedAt": "2026-10-08T16:07:39.137Z",
+  "meta": {
+    "name": "Qujiang",
+    "nameIt": "Qujiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Qujiang.geojson",
+      "sha256": "79cf934ec0c809e500025c028ff82cad33b4e4265ec8b4ab77ae5bf38128252b",
+      "size": 251091,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "qujiang",
+    "name": "Qujiang",
+    "nameIt": "Qujiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.61004,
+      24.69253
+    ],
+    "zoom": 11,
+    "population": 136931,
+    "grid": "cities/qujiang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/qujiang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "qujiang",
+        "name": "Qujiang",
+        "nameIt": "Qujiang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.61004,
+          24.69253
+        ],
+        "zoom": 11,
+        "population": 136931,
+        "cells": 215,
+        "layer": "cities/qujiang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.61004,
+            24.69253
+          ]
+        },
+        "properties": {
+          "id": "qujiang",
+          "name": "Qujiang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 21,
+          "population": 136931
+        }
+      },
+      "summary": null
+    }
+  }
+}

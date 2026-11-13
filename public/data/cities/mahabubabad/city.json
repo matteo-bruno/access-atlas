@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mahabubabad",
+  "createdAt": "2026-10-08T15:53:36.027Z",
+  "updatedAt": "2026-10-08T15:53:36.027Z",
+  "meta": {
+    "name": "Mahabubabad",
+    "nameIt": "Mahabubabad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mahabubabad.geojson",
+      "sha256": "ffb98d65d5e53991403af3a28eaed36a584fd300eba8e52599e7e311fec0e0a2",
+      "size": 113491,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mahabubabad",
+    "name": "Mahabubabad",
+    "nameIt": "Mahabubabad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.00211,
+      17.59977
+    ],
+    "zoom": 11.9,
+    "population": 64037,
+    "grid": "cities/mahabubabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mahabubabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mahabubabad",
+        "name": "Mahabubabad",
+        "nameIt": "Mahabubabad",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.00211,
+          17.59977
+        ],
+        "zoom": 11.9,
+        "population": 64037,
+        "cells": 98,
+        "layer": "cities/mahabubabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.00211,
+            17.59977
+          ]
+        },
+        "properties": {
+          "id": "mahabubabad",
+          "name": "Mahabubabad",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 64037
+        }
+      },
+      "summary": null
+    }
+  }
+}

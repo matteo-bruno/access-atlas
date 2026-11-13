@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bayamon-san-juan",
+  "createdAt": "2026-10-08T15:16:19.613Z",
+  "updatedAt": "2026-10-08T15:16:19.613Z",
+  "meta": {
+    "name": "Bayamón [San Juan]",
+    "nameIt": "Bayamón [San Juan]",
+    "region": "Puerto Rico",
+    "regionIt": "Porto Rico",
+    "country": "PR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bayamón [San Juan].geojson",
+      "sha256": "dc3fb47e52d29fde89a26f0208e0dfe86b6eede488413b46a4abdbb764d72855",
+      "size": 4752319,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bayamon-san-juan",
+    "name": "Bayamón [San Juan]",
+    "nameIt": "Bayamón [San Juan]",
+    "region": "Puerto Rico",
+    "regionIt": "Porto Rico",
+    "country": "PR",
+    "center": [
+      -66.08758,
+      18.39652
+    ],
+    "zoom": 9.1,
+    "population": 801666,
+    "grid": "cities/bayamon-san-juan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bayamon-san-juan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bayamon-san-juan",
+        "name": "Bayamón [San Juan]",
+        "nameIt": "Bayamón [San Juan]",
+        "region": "Puerto Rico",
+        "regionIt": "Porto Rico",
+        "country": "PR",
+        "center": [
+          -66.08758,
+          18.39652
+        ],
+        "zoom": 9.1,
+        "population": 801666,
+        "cells": 4110,
+        "layer": "cities/bayamon-san-juan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -66.08758,
+            18.39652
+          ]
+        },
+        "properties": {
+          "id": "bayamon-san-juan",
+          "name": "Bayamón [San Juan]",
+          "country": "PR",
+          "isStudy": true,
+          "proximityMinutes": 19.2,
+          "population": 801666
+        }
+      },
+      "summary": null
+    }
+  }
+}

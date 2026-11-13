@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jakhim",
+  "createdAt": "2026-10-08T15:41:46.082Z",
+  "updatedAt": "2026-10-08T15:41:46.082Z",
+  "meta": {
+    "name": "Jakhim",
+    "nameIt": "Jakhim",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jakhim.geojson",
+      "sha256": "a033eca99429b47744d5b1202fd29df92b971b6c811107ea21dbfae5665b6084",
+      "size": 331136,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jakhim",
+    "name": "Jakhim",
+    "nameIt": "Jakhim",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.52987,
+      24.84003
+    ],
+    "zoom": 11,
+    "population": 30791,
+    "grid": "cities/jakhim/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jakhim/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jakhim",
+        "name": "Jakhim",
+        "nameIt": "Jakhim",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.52987,
+          24.84003
+        ],
+        "zoom": 11,
+        "population": 30791,
+        "cells": 286,
+        "layer": "cities/jakhim/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.52987,
+            24.84003
+          ]
+        },
+        "properties": {
+          "id": "jakhim",
+          "name": "Jakhim",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 30791
+        }
+      },
+      "summary": null
+    }
+  }
+}

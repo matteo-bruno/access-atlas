@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wuhan",
+  "createdAt": "2026-10-08T16:21:57.569Z",
+  "updatedAt": "2026-10-08T16:21:57.569Z",
+  "meta": {
+    "name": "Wuhan",
+    "nameIt": "Wuhan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wuhan.geojson",
+      "sha256": "0bbc5c642c8e6e49016d01842ccc4c1f3447c21659bf7af12ea30627756fb3da",
+      "size": 9888259,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wuhan",
+    "name": "Wuhan",
+    "nameIt": "Wuhan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.29961,
+      30.56218
+    ],
+    "zoom": 8.8,
+    "population": 8084176,
+    "grid": "cities/wuhan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wuhan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wuhan",
+        "name": "Wuhan",
+        "nameIt": "Wuhan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.29961,
+          30.56218
+        ],
+        "zoom": 8.8,
+        "population": 8084176,
+        "cells": 8508,
+        "layer": "cities/wuhan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.29961,
+            30.56218
+          ]
+        },
+        "properties": {
+          "id": "wuhan",
+          "name": "Wuhan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 28.1,
+          "population": 8084176
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "suzhou-anhui-province",
+  "createdAt": "2026-10-08T16:15:27.459Z",
+  "updatedAt": "2026-10-08T16:15:27.459Z",
+  "meta": {
+    "name": "Suzhou (Anhui Province)",
+    "nameIt": "Suzhou (Anhui Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Suzhou (Anhui Province).geojson",
+      "sha256": "08fdfe3332707265c74dd4158e46b46b0476af4df1964c9c184471b871daa70b",
+      "size": 1368887,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "suzhou-anhui-province",
+    "name": "Suzhou (Anhui Province)",
+    "nameIt": "Suzhou (Anhui Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.97591,
+      33.63116
+    ],
+    "zoom": 10.1,
+    "population": 764163,
+    "grid": "cities/suzhou-anhui-province/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/suzhou-anhui-province/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "suzhou-anhui-province",
+        "name": "Suzhou (Anhui Province)",
+        "nameIt": "Suzhou (Anhui Province)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.97591,
+          33.63116
+        ],
+        "zoom": 10.1,
+        "population": 764163,
+        "cells": 1174,
+        "layer": "cities/suzhou-anhui-province/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.97591,
+            33.63116
+          ]
+        },
+        "properties": {
+          "id": "suzhou-anhui-province",
+          "name": "Suzhou (Anhui Province)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 29.2,
+          "population": 764163
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abu-tig",
+  "createdAt": "2026-10-08T15:01:56.121Z",
+  "updatedAt": "2026-10-08T15:01:56.121Z",
+  "meta": {
+    "name": "Abu Tig",
+    "nameIt": "Abu Tig",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abu Tig.geojson",
+      "sha256": "b34ebf689eeabbd8ddca0f2b5dd61bce5e50ddd6239eaa36eeb2d4bb37945cc3",
+      "size": 394944,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abu-tig",
+    "name": "Abu Tig",
+    "nameIt": "Abu Tig",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      31.29523,
+      27.04428
+    ],
+    "zoom": 10.7,
+    "population": 234778,
+    "grid": "cities/abu-tig/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abu-tig/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abu-tig",
+        "name": "Abu Tig",
+        "nameIt": "Abu Tig",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          31.29523,
+          27.04428
+        ],
+        "zoom": 10.7,
+        "population": 234778,
+        "cells": 339,
+        "layer": "cities/abu-tig/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.29523,
+            27.04428
+          ]
+        },
+        "properties": {
+          "id": "abu-tig",
+          "name": "Abu Tig",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 234778
+        }
+      },
+      "summary": null
+    }
+  }
+}

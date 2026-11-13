@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "louisville",
+  "createdAt": "2026-10-08T15:52:14.552Z",
+  "updatedAt": "2026-10-08T15:52:14.552Z",
+  "meta": {
+    "name": "Louisville",
+    "nameIt": "Louisville",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Louisville.geojson",
+      "sha256": "2e0177ea034726876815339b3c7d0bf53b668c4c0b6b72747197c7f069611fd2",
+      "size": 4081759,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "louisville",
+    "name": "Louisville",
+    "nameIt": "Louisville",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -85.69308,
+      38.21025
+    ],
+    "zoom": 9.2,
+    "population": 463440,
+    "grid": "cities/louisville/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/louisville/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "louisville",
+        "name": "Louisville",
+        "nameIt": "Louisville",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -85.69308,
+          38.21025
+        ],
+        "zoom": 9.2,
+        "population": 463440,
+        "cells": 3536,
+        "layer": "cities/louisville/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.69308,
+            38.21025
+          ]
+        },
+        "properties": {
+          "id": "louisville",
+          "name": "Louisville",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 25.2,
+          "population": 463440
+        }
+      },
+      "summary": null
+    }
+  }
+}

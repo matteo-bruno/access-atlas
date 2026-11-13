@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "uberaba",
+  "createdAt": "2026-10-08T16:19:31.329Z",
+  "updatedAt": "2026-10-08T16:19:31.329Z",
+  "meta": {
+    "name": "Uberaba",
+    "nameIt": "Uberaba",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Uberaba.geojson",
+      "sha256": "9c064468a9e102b1430d16c2e12d9a6f6452e8a541da8d3adae1f57ffd3c4cac",
+      "size": 836601,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "uberaba",
+    "name": "Uberaba",
+    "nameIt": "Uberaba",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -47.93425,
+      -19.75403
+    ],
+    "zoom": 10.3,
+    "population": 302253,
+    "grid": "cities/uberaba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/uberaba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "uberaba",
+        "name": "Uberaba",
+        "nameIt": "Uberaba",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -47.93425,
+          -19.75403
+        ],
+        "zoom": 10.3,
+        "population": 302253,
+        "cells": 710,
+        "layer": "cities/uberaba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.93425,
+            -19.75403
+          ]
+        },
+        "properties": {
+          "id": "uberaba",
+          "name": "Uberaba",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 24.8,
+          "population": 302253
+        }
+      },
+      "summary": null
+    }
+  }
+}

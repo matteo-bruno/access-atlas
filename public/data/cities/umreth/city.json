@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "umreth",
+  "createdAt": "2026-10-08T16:19:52.377Z",
+  "updatedAt": "2026-10-08T16:19:52.377Z",
+  "meta": {
+    "name": "Umreth",
+    "nameIt": "Umreth",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Umreth.geojson",
+      "sha256": "4dc74d8e0d2dcc44ec8d92dc4cda2594f3002d7c77de0313204f621c540b36f0",
+      "size": 69522,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "umreth",
+    "name": "Umreth",
+    "nameIt": "Umreth",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.11595,
+      22.69875
+    ],
+    "zoom": 12,
+    "population": 24743,
+    "grid": "cities/umreth/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/umreth/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "umreth",
+        "name": "Umreth",
+        "nameIt": "Umreth",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.11595,
+          22.69875
+        ],
+        "zoom": 12,
+        "population": 24743,
+        "cells": 60,
+        "layer": "cities/umreth/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.11595,
+            22.69875
+          ]
+        },
+        "properties": {
+          "id": "umreth",
+          "name": "Umreth",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 24743
+        }
+      },
+      "summary": null
+    }
+  }
+}

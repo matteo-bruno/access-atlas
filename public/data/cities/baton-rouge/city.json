@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baton-rouge",
+  "createdAt": "2026-10-08T15:16:08.611Z",
+  "updatedAt": "2026-10-08T15:16:08.611Z",
+  "meta": {
+    "name": "Baton Rouge",
+    "nameIt": "Baton Rouge",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baton Rouge.geojson",
+      "sha256": "cb73c0cf7585147276a1a4bd7769daf704577bb0076e1aa548736bdf94039c7d",
+      "size": 1401418,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baton-rouge",
+    "name": "Baton Rouge",
+    "nameIt": "Baton Rouge",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -91.11574,
+      30.43981
+    ],
+    "zoom": 9.7,
+    "population": 172746,
+    "grid": "cities/baton-rouge/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baton-rouge/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baton-rouge",
+        "name": "Baton Rouge",
+        "nameIt": "Baton Rouge",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -91.11574,
+          30.43981
+        ],
+        "zoom": 9.7,
+        "population": 172746,
+        "cells": 1212,
+        "layer": "cities/baton-rouge/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -91.11574,
+            30.43981
+          ]
+        },
+        "properties": {
+          "id": "baton-rouge",
+          "name": "Baton Rouge",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 27.7,
+          "population": 172746
+        }
+      },
+      "summary": null
+    }
+  }
+}

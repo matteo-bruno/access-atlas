@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "m-bour",
+  "createdAt": "2026-10-08T15:53:09.038Z",
+  "updatedAt": "2026-10-08T15:53:09.038Z",
+  "meta": {
+    "name": "M'bour",
+    "nameIt": "M'bour",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/M'bour.geojson",
+      "sha256": "6208b9f26a92a902840bf2565c15edacdb3c994051c4f8dcca80d2c69da16d5b",
+      "size": 926454,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "m-bour",
+    "name": "M'bour",
+    "nameIt": "M'bour",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN",
+    "center": [
+      -16.98077,
+      14.43023
+    ],
+    "zoom": 9.9,
+    "population": 504000,
+    "grid": "cities/m-bour/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/m-bour/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "m-bour",
+        "name": "M'bour",
+        "nameIt": "M'bour",
+        "region": "Senegal",
+        "regionIt": "Senegal",
+        "country": "SN",
+        "center": [
+          -16.98077,
+          14.43023
+        ],
+        "zoom": 9.9,
+        "population": 504000,
+        "cells": 789,
+        "layer": "cities/m-bour/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -16.98077,
+            14.43023
+          ]
+        },
+        "properties": {
+          "id": "m-bour",
+          "name": "M'bour",
+          "country": "SN",
+          "isStudy": true,
+          "proximityMinutes": 27.9,
+          "population": 504000
+        }
+      },
+      "summary": null
+    }
+  }
+}

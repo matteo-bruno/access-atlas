@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lyon",
+  "createdAt": "2026-10-08T15:53:00.386Z",
+  "updatedAt": "2026-10-08T15:53:00.386Z",
+  "meta": {
+    "name": "Lyon",
+    "nameIt": "Lyon",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lyon.geojson",
+      "sha256": "029a3aaf63b30bd24d8d3f435e008ca607448cf8dbdd7f59613cb0809d377038",
+      "size": 2906567,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lyon",
+    "name": "Lyon",
+    "nameIt": "Lyon",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      4.8608,
+      45.75149
+    ],
+    "zoom": 9.4,
+    "population": 1267492,
+    "grid": "cities/lyon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lyon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lyon",
+        "name": "Lyon",
+        "nameIt": "Lyon",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          4.8608,
+          45.75149
+        ],
+        "zoom": 9.4,
+        "population": 1267492,
+        "cells": 2559,
+        "layer": "cities/lyon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.8608,
+            45.75149
+          ]
+        },
+        "properties": {
+          "id": "lyon",
+          "name": "Lyon",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 6.3,
+          "population": 1267492
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vinces",
+  "createdAt": "2026-10-08T16:20:49.932Z",
+  "updatedAt": "2026-10-08T16:20:49.932Z",
+  "meta": {
+    "name": "Vinces",
+    "nameIt": "Vinces",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vinces.geojson",
+      "sha256": "e7668d56469b46c51d013e19eb7c9d145fbe62c46221df28876f11665c9a6600",
+      "size": 65952,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vinces",
+    "name": "Vinces",
+    "nameIt": "Vinces",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC",
+    "center": [
+      -79.75108,
+      -1.5578
+    ],
+    "zoom": 12,
+    "population": 29373,
+    "grid": "cities/vinces/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vinces/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vinces",
+        "name": "Vinces",
+        "nameIt": "Vinces",
+        "region": "Ecuador",
+        "regionIt": "Ecuador",
+        "country": "EC",
+        "center": [
+          -79.75108,
+          -1.5578
+        ],
+        "zoom": 12,
+        "population": 29373,
+        "cells": 56,
+        "layer": "cities/vinces/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -79.75108,
+            -1.5578
+          ]
+        },
+        "properties": {
+          "id": "vinces",
+          "name": "Vinces",
+          "country": "EC",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 29373
+        }
+      },
+      "summary": null
+    }
+  }
+}

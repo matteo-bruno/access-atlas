@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "deoria",
+  "createdAt": "2026-10-08T15:28:58.008Z",
+  "updatedAt": "2026-10-08T15:28:58.008Z",
+  "meta": {
+    "name": "Deoria",
+    "nameIt": "Deoria",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Deoria.geojson",
+      "sha256": "cf7b00e9c04d686d333e1fe5b46e8da6020746040e1418bc496fe98ae220391d",
+      "size": 739264,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "deoria",
+    "name": "Deoria",
+    "nameIt": "Deoria",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.78455,
+      26.49851
+    ],
+    "zoom": 10.6,
+    "population": 450613,
+    "grid": "cities/deoria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/deoria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "deoria",
+        "name": "Deoria",
+        "nameIt": "Deoria",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.78455,
+          26.49851
+        ],
+        "zoom": 10.6,
+        "population": 450613,
+        "cells": 638,
+        "layer": "cities/deoria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.78455,
+            26.49851
+          ]
+        },
+        "properties": {
+          "id": "deoria",
+          "name": "Deoria",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 450613
+        }
+      },
+      "summary": null
+    }
+  }
+}

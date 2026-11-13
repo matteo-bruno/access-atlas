@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dortyol",
+  "createdAt": "2026-10-08T15:31:36.070Z",
+  "updatedAt": "2026-10-08T15:31:36.070Z",
+  "meta": {
+    "name": "Dörtyol",
+    "nameIt": "Dörtyol",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dörtyol.geojson",
+      "sha256": "791edba70be01e61cb82253c51897281e7c0d0c144e7dc5f1569f9668364a995",
+      "size": 118217,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dortyol",
+    "name": "Dörtyol",
+    "nameIt": "Dörtyol",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      36.22156,
+      36.83644
+    ],
+    "zoom": 11.8,
+    "population": 73106,
+    "grid": "cities/dortyol/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dortyol/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dortyol",
+        "name": "Dörtyol",
+        "nameIt": "Dörtyol",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          36.22156,
+          36.83644
+        ],
+        "zoom": 11.8,
+        "population": 73106,
+        "cells": 102,
+        "layer": "cities/dortyol/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.22156,
+            36.83644
+          ]
+        },
+        "properties": {
+          "id": "dortyol",
+          "name": "Dörtyol",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 13.3,
+          "population": 73106
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yuanbaoshan",
+  "createdAt": "2026-10-08T16:24:16.684Z",
+  "updatedAt": "2026-10-08T16:24:16.684Z",
+  "meta": {
+    "name": "Yuanbaoshan",
+    "nameIt": "Yuanbaoshan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yuanbaoshan.geojson",
+      "sha256": "86fe7407c7a3eef0978d088748fe4860092ad0bb8694a245cf1dc9a817bab1f5",
+      "size": 418423,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yuanbaoshan",
+    "name": "Yuanbaoshan",
+    "nameIt": "Yuanbaoshan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.27768,
+      42.03914
+    ],
+    "zoom": 10.9,
+    "population": 101867,
+    "grid": "cities/yuanbaoshan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 168
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yuanbaoshan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yuanbaoshan",
+        "name": "Yuanbaoshan",
+        "nameIt": "Yuanbaoshan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.27768,
+          42.03914
+        ],
+        "zoom": 10.9,
+        "population": 101867,
+        "cells": 359,
+        "layer": "cities/yuanbaoshan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 168
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.27768,
+            42.03914
+          ]
+        },
+        "properties": {
+          "id": "yuanbaoshan",
+          "name": "Yuanbaoshan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24.8,
+          "population": 101867
+        }
+      },
+      "summary": null
+    }
+  }
+}

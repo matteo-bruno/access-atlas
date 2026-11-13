@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bia-ystok",
+  "createdAt": "2026-10-08T15:18:40.287Z",
+  "updatedAt": "2026-10-08T15:18:40.287Z",
+  "meta": {
+    "name": "Białystok",
+    "nameIt": "Białystok",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Białystok.geojson",
+      "sha256": "9a447d8e3edab05504726cd4e9bb88c2fa50f9336669bc3db5439a08b4b79d65",
+      "size": 769728,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bia-ystok",
+    "name": "Białystok",
+    "nameIt": "Białystok",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      23.1497,
+      53.13356
+    ],
+    "zoom": 10.6,
+    "population": 270035,
+    "grid": "cities/bia-ystok/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bia-ystok/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bia-ystok",
+        "name": "Białystok",
+        "nameIt": "Białystok",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          23.1497,
+          53.13356
+        ],
+        "zoom": 10.6,
+        "population": 270035,
+        "cells": 674,
+        "layer": "cities/bia-ystok/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.1497,
+            53.13356
+          ]
+        },
+        "properties": {
+          "id": "bia-ystok",
+          "name": "Białystok",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 8.9,
+          "population": 270035
+        }
+      },
+      "summary": null
+    }
+  }
+}

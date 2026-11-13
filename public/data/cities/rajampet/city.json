@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rajampet",
+  "createdAt": "2026-10-08T16:07:55.517Z",
+  "updatedAt": "2026-10-08T16:07:55.517Z",
+  "meta": {
+    "name": "Rajampet",
+    "nameIt": "Rajampet",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rajampet.geojson",
+      "sha256": "fe143201f1fd45fe012abb75b19e9efa2ff36324500346c76abbe1fd3236e150",
+      "size": 71981,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rajampet",
+    "name": "Rajampet",
+    "nameIt": "Rajampet",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.15651,
+      14.19415
+    ],
+    "zoom": 12,
+    "population": 48687,
+    "grid": "cities/rajampet/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rajampet/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rajampet",
+        "name": "Rajampet",
+        "nameIt": "Rajampet",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.15651,
+          14.19415
+        ],
+        "zoom": 12,
+        "population": 48687,
+        "cells": 62,
+        "layer": "cities/rajampet/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.15651,
+            14.19415
+          ]
+        },
+        "properties": {
+          "id": "rajampet",
+          "name": "Rajampet",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 13.8,
+          "population": 48687
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "patzcuaro",
+  "createdAt": "2026-10-08T16:07:08.510Z",
+  "updatedAt": "2026-10-08T16:07:08.510Z",
+  "meta": {
+    "name": "Pátzcuaro",
+    "nameIt": "Pátzcuaro",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pátzcuaro.geojson",
+      "sha256": "8bdff353e47147000371229379671a2a10dce6065b0c92f2f5ae9d18a8195821",
+      "size": 154050,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "patzcuaro",
+    "name": "Pátzcuaro",
+    "nameIt": "Pátzcuaro",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -101.60943,
+      19.51316
+    ],
+    "zoom": 11.4,
+    "population": 64410,
+    "grid": "cities/patzcuaro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/patzcuaro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "patzcuaro",
+        "name": "Pátzcuaro",
+        "nameIt": "Pátzcuaro",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -101.60943,
+          19.51316
+        ],
+        "zoom": 11.4,
+        "population": 64410,
+        "cells": 131,
+        "layer": "cities/patzcuaro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -101.60943,
+            19.51316
+          ]
+        },
+        "properties": {
+          "id": "patzcuaro",
+          "name": "Pátzcuaro",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 64410
+        }
+      },
+      "summary": null
+    }
+  }
+}

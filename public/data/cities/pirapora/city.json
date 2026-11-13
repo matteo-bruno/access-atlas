@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pirapora",
+  "createdAt": "2026-10-08T16:05:48.378Z",
+  "updatedAt": "2026-10-08T16:05:48.378Z",
+  "meta": {
+    "name": "Pirapora",
+    "nameIt": "Pirapora",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pirapora.geojson",
+      "sha256": "54caa23bd7817ead1dccd53ce31e9f2d486b3ce876e74d9deb082ab5b15d0a8f",
+      "size": 252393,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pirapora",
+    "name": "Pirapora",
+    "nameIt": "Pirapora",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -44.93907,
+      -17.34563
+    ],
+    "zoom": 11.2,
+    "population": 52532,
+    "grid": "cities/pirapora/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pirapora/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pirapora",
+        "name": "Pirapora",
+        "nameIt": "Pirapora",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -44.93907,
+          -17.34563
+        ],
+        "zoom": 11.2,
+        "population": 52532,
+        "cells": 214,
+        "layer": "cities/pirapora/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -44.93907,
+            -17.34563
+          ]
+        },
+        "properties": {
+          "id": "pirapora",
+          "name": "Pirapora",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 20.1,
+          "population": 52532
+        }
+      },
+      "summary": null
+    }
+  }
+}

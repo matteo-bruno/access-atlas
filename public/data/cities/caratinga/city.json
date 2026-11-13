@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "caratinga",
+  "createdAt": "2026-10-08T15:22:31.599Z",
+  "updatedAt": "2026-10-08T15:22:31.599Z",
+  "meta": {
+    "name": "Caratinga",
+    "nameIt": "Caratinga",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Caratinga.geojson",
+      "sha256": "d3aed52a102f1db61686df6a307393c9416d7ce2cda946880073a5e122d5e899",
+      "size": 115036,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "caratinga",
+    "name": "Caratinga",
+    "nameIt": "Caratinga",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -42.14207,
+      -19.78787
+    ],
+    "zoom": 12,
+    "population": 40784,
+    "grid": "cities/caratinga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/caratinga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "caratinga",
+        "name": "Caratinga",
+        "nameIt": "Caratinga",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -42.14207,
+          -19.78787
+        ],
+        "zoom": 12,
+        "population": 40784,
+        "cells": 98,
+        "layer": "cities/caratinga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -42.14207,
+            -19.78787
+          ]
+        },
+        "properties": {
+          "id": "caratinga",
+          "name": "Caratinga",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 40784
+        }
+      },
+      "summary": null
+    }
+  }
+}

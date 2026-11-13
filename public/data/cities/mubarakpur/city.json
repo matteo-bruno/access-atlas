@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mubarakpur",
+  "createdAt": "2026-10-08T15:58:40.843Z",
+  "updatedAt": "2026-10-08T15:58:40.843Z",
+  "meta": {
+    "name": "Mubarakpur",
+    "nameIt": "Mubarakpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mubarakpur.geojson",
+      "sha256": "be5b0e7fb5db52c4151f2e60ed8c8e9c38661e8cd0cf2ffdaa784a6a3df09e54",
+      "size": 398530,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mubarakpur",
+    "name": "Mubarakpur",
+    "nameIt": "Mubarakpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.29546,
+      26.08776
+    ],
+    "zoom": 10.9,
+    "population": 207907,
+    "grid": "cities/mubarakpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mubarakpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mubarakpur",
+        "name": "Mubarakpur",
+        "nameIt": "Mubarakpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.29546,
+          26.08776
+        ],
+        "zoom": 10.9,
+        "population": 207907,
+        "cells": 344,
+        "layer": "cities/mubarakpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.29546,
+            26.08776
+          ]
+        },
+        "properties": {
+          "id": "mubarakpur",
+          "name": "Mubarakpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 207907
+        }
+      },
+      "summary": null
+    }
+  }
+}

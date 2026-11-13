@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kassel",
+  "createdAt": "2026-10-08T15:45:31.676Z",
+  "updatedAt": "2026-10-08T15:45:31.676Z",
+  "meta": {
+    "name": "Kassel",
+    "nameIt": "Kassel",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kassel.geojson",
+      "sha256": "ebc0c018e645d8d187157f6fd1eb365915cd779521fb5f0cc58b0ec64c86e3d3",
+      "size": 1034696,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kassel",
+    "name": "Kassel",
+    "nameIt": "Kassel",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      9.48833,
+      51.31426
+    ],
+    "zoom": 10.5,
+    "population": 234724,
+    "grid": "cities/kassel/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kassel/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kassel",
+        "name": "Kassel",
+        "nameIt": "Kassel",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.48833,
+          51.31426
+        ],
+        "zoom": 10.5,
+        "population": 234724,
+        "cells": 913,
+        "layer": "cities/kassel/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.48833,
+            51.31426
+          ]
+        },
+        "properties": {
+          "id": "kassel",
+          "name": "Kassel",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 9.7,
+          "population": 234724
+        }
+      },
+      "summary": null
+    }
+  }
+}

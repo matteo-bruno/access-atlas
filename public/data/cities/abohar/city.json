@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abohar",
+  "createdAt": "2026-10-08T15:01:38.330Z",
+  "updatedAt": "2026-10-08T15:01:38.330Z",
+  "meta": {
+    "name": "Abohar",
+    "nameIt": "Abohar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abohar.geojson",
+      "sha256": "e96ac04a141878b917e3cb3ab0b7d9e0af2048c23c99bc610a1a142e4b3ae7fd",
+      "size": 183008,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abohar",
+    "name": "Abohar",
+    "nameIt": "Abohar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.20132,
+      30.1445
+    ],
+    "zoom": 11.6,
+    "population": 104912,
+    "grid": "cities/abohar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abohar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abohar",
+        "name": "Abohar",
+        "nameIt": "Abohar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.20132,
+          30.1445
+        ],
+        "zoom": 11.6,
+        "population": 104912,
+        "cells": 158,
+        "layer": "cities/abohar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.20132,
+            30.1445
+          ]
+        },
+        "properties": {
+          "id": "abohar",
+          "name": "Abohar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 104912
+        }
+      },
+      "summary": null
+    }
+  }
+}

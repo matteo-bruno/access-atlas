@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "k-rsehir",
+  "createdAt": "2026-10-08T15:49:17.133Z",
+  "updatedAt": "2026-10-08T15:49:17.133Z",
+  "meta": {
+    "name": "Kırşehir",
+    "nameIt": "Kırşehir",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kırşehir.geojson",
+      "sha256": "8907b77a08b2af76619bef6e1571119b3c5622e82450978ff8cb8b913ade64d2",
+      "size": 136202,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "k-rsehir",
+    "name": "Kırşehir",
+    "nameIt": "Kırşehir",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      34.16045,
+      39.14547
+    ],
+    "zoom": 11.8,
+    "population": 96483,
+    "grid": "cities/k-rsehir/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/k-rsehir/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "k-rsehir",
+        "name": "Kırşehir",
+        "nameIt": "Kırşehir",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          34.16045,
+          39.14547
+        ],
+        "zoom": 11.8,
+        "population": 96483,
+        "cells": 118,
+        "layer": "cities/k-rsehir/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.16045,
+            39.14547
+          ]
+        },
+        "properties": {
+          "id": "k-rsehir",
+          "name": "Kırşehir",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 13.3,
+          "population": 96483
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lahore-fua",
+  "createdAt": "2026-10-19T16:56:56.593Z",
+  "updatedAt": "2026-10-19T16:56:56.593Z",
+  "meta": {
+    "name": "Lahore",
+    "nameIt": "Lahore",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "lahore-fua",
+    "name": "Lahore",
+    "nameIt": "Lahore",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "extent": "fua",
+    "core": "lahore",
+    "center": [
+      74.28606,
+      31.53425
+    ],
+    "zoom": 8.5,
+    "population": 16550782,
+    "grid": "cities/lahore-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lahore-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lahore-fua",
+        "name": "Lahore",
+        "nameIt": "Lahore",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "extent": "fua",
+        "core": "lahore",
+        "center": [
+          74.28606,
+          31.53425
+        ],
+        "zoom": 8.5,
+        "population": 16550782,
+        "cells": 27335,
+        "layer": "cities/lahore-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.28606,
+            31.53425
+          ]
+        },
+        "properties": {
+          "id": "lahore-fua",
+          "name": "Lahore",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 40.7,
+          "population": 16550782
+        }
+      },
+      "summary": null
+    }
+  }
+}

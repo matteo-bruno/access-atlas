@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ponda",
+  "createdAt": "2026-10-08T16:06:07.254Z",
+  "updatedAt": "2026-10-08T16:06:07.254Z",
+  "meta": {
+    "name": "Ponda",
+    "nameIt": "Ponda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ponda.geojson",
+      "sha256": "33a58aabc0f652d851f25ec7f33bbfa0a22a1a38b3b6ddf0ede21740d73d46ed",
+      "size": 142435,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ponda",
+    "name": "Ponda",
+    "nameIt": "Ponda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.0072,
+      15.4012
+    ],
+    "zoom": 11.9,
+    "population": 35869,
+    "grid": "cities/ponda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ponda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ponda",
+        "name": "Ponda",
+        "nameIt": "Ponda",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.0072,
+          15.4012
+        ],
+        "zoom": 11.9,
+        "population": 35869,
+        "cells": 123,
+        "layer": "cities/ponda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.0072,
+            15.4012
+          ]
+        },
+        "properties": {
+          "id": "ponda",
+          "name": "Ponda",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 13.2,
+          "population": 35869
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yawal",
+  "createdAt": "2026-10-08T16:23:38.274Z",
+  "updatedAt": "2026-10-08T16:23:38.274Z",
+  "meta": {
+    "name": "Yawal",
+    "nameIt": "Yawal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yawal.geojson",
+      "sha256": "277ebfba99d8aabcadd02cfc1d467491dead199f1838f8347999e4d4b567c0b4",
+      "size": 56802,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yawal",
+    "name": "Yawal",
+    "nameIt": "Yawal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.69893,
+      21.16867
+    ],
+    "zoom": 12,
+    "population": 23930,
+    "grid": "cities/yawal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yawal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yawal",
+        "name": "Yawal",
+        "nameIt": "Yawal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.69893,
+          21.16867
+        ],
+        "zoom": 12,
+        "population": 23930,
+        "cells": 49,
+        "layer": "cities/yawal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.69893,
+            21.16867
+          ]
+        },
+        "properties": {
+          "id": "yawal",
+          "name": "Yawal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 23930
+        }
+      },
+      "summary": null
+    }
+  }
+}

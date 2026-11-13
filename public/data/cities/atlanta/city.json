@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "atlanta",
+  "createdAt": "2026-10-08T15:11:00.667Z",
+  "updatedAt": "2026-10-08T15:11:00.667Z",
+  "meta": {
+    "name": "Atlanta",
+    "nameIt": "Atlanta",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Atlanta.geojson",
+      "sha256": "c1940fa5ebbf06f20924133948d0b87d43052909c0ffdc461ecc99beedecb020",
+      "size": 3362843,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "atlanta",
+    "name": "Atlanta",
+    "nameIt": "Atlanta",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -84.33907,
+      33.79057
+    ],
+    "zoom": 9.2,
+    "population": 639581,
+    "grid": "cities/atlanta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/atlanta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "atlanta",
+        "name": "Atlanta",
+        "nameIt": "Atlanta",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -84.33907,
+          33.79057
+        ],
+        "zoom": 9.2,
+        "population": 639581,
+        "cells": 2916,
+        "layer": "cities/atlanta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -84.33907,
+            33.79057
+          ]
+        },
+        "properties": {
+          "id": "atlanta",
+          "name": "Atlanta",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 639581
+        }
+      },
+      "summary": null
+    }
+  }
+}

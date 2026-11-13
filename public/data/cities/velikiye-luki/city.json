@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "velikiye-luki",
+  "createdAt": "2026-10-08T16:20:33.047Z",
+  "updatedAt": "2026-10-08T16:20:33.047Z",
+  "meta": {
+    "name": "Velikiye Luki",
+    "nameIt": "Velikiye Luki",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Velikiye Luki.geojson",
+      "sha256": "9ba8b57f467d05d576cc422a56ceb2f1e2d07dbfd50920c05b027d9f570e92b0",
+      "size": 258753,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "velikiye-luki",
+    "name": "Velikiye Luki",
+    "nameIt": "Velikiye Luki",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      30.53891,
+      56.34255
+    ],
+    "zoom": 11.4,
+    "population": 59760,
+    "grid": "cities/velikiye-luki/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/velikiye-luki/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "velikiye-luki",
+        "name": "Velikiye Luki",
+        "nameIt": "Velikiye Luki",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          30.53891,
+          56.34255
+        ],
+        "zoom": 11.4,
+        "population": 59760,
+        "cells": 226,
+        "layer": "cities/velikiye-luki/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.53891,
+            56.34255
+          ]
+        },
+        "properties": {
+          "id": "velikiye-luki",
+          "name": "Velikiye Luki",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 59760
+        }
+      },
+      "summary": null
+    }
+  }
+}

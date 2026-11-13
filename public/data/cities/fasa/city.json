@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fasa",
+  "createdAt": "2026-10-08T15:32:56.334Z",
+  "updatedAt": "2026-10-08T15:32:56.334Z",
+  "meta": {
+    "name": "Fasa",
+    "nameIt": "Fasa",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fasa.geojson",
+      "sha256": "0d91b6c0f82e7a6be0efb0360d9c8355d5af92e56a97c2262e941312c0d0802f",
+      "size": 194732,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fasa",
+    "name": "Fasa",
+    "nameIt": "Fasa",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      53.63895,
+      28.94407
+    ],
+    "zoom": 11.6,
+    "population": 88278,
+    "grid": "cities/fasa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fasa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fasa",
+        "name": "Fasa",
+        "nameIt": "Fasa",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          53.63895,
+          28.94407
+        ],
+        "zoom": 11.6,
+        "population": 88278,
+        "cells": 168,
+        "layer": "cities/fasa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            53.63895,
+            28.94407
+          ]
+        },
+        "properties": {
+          "id": "fasa",
+          "name": "Fasa",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 18.6,
+          "population": 88278
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gijon",
+  "createdAt": "2026-10-08T15:35:14.219Z",
+  "updatedAt": "2026-10-08T15:35:14.219Z",
+  "meta": {
+    "name": "Gijón",
+    "nameIt": "Gijón",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gijón.geojson",
+      "sha256": "3381504b862a7449027fb61271390fbee486e8ed52f133f15576de89d3a88520",
+      "size": 532653,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gijon",
+    "name": "Gijón",
+    "nameIt": "Gijón",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -5.67101,
+      43.53096
+    ],
+    "zoom": 10.6,
+    "population": 235020,
+    "grid": "cities/gijon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gijon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gijon",
+        "name": "Gijón",
+        "nameIt": "Gijón",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -5.67101,
+          43.53096
+        ],
+        "zoom": 10.6,
+        "population": 235020,
+        "cells": 464,
+        "layer": "cities/gijon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.67101,
+            43.53096
+          ]
+        },
+        "properties": {
+          "id": "gijon",
+          "name": "Gijón",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 6.6,
+          "population": 235020
+        }
+      },
+      "summary": null
+    }
+  }
+}

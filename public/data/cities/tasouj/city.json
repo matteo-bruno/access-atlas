@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tasouj",
+  "createdAt": "2026-10-08T16:16:54.882Z",
+  "updatedAt": "2026-10-08T16:16:54.882Z",
+  "meta": {
+    "name": "Tasouj",
+    "nameIt": "Tasouj",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tasouj.geojson",
+      "sha256": "faec0691296c4bdb8692ab825a247f43450eb8fb66068fdfc9c21646994db029",
+      "size": 251933,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tasouj",
+    "name": "Tasouj",
+    "nameIt": "Tasouj",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      52.71525,
+      29.26669
+    ],
+    "zoom": 11.2,
+    "population": 10130,
+    "grid": "cities/tasouj/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tasouj/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tasouj",
+        "name": "Tasouj",
+        "nameIt": "Tasouj",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          52.71525,
+          29.26669
+        ],
+        "zoom": 11.2,
+        "population": 10130,
+        "cells": 217,
+        "layer": "cities/tasouj/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            52.71525,
+            29.26669
+          ]
+        },
+        "properties": {
+          "id": "tasouj",
+          "name": "Tasouj",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 10130
+        }
+      },
+      "summary": null
+    }
+  }
+}

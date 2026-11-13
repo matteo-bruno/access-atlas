@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ulsan",
+  "createdAt": "2026-10-08T16:19:46.056Z",
+  "updatedAt": "2026-10-08T16:19:46.056Z",
+  "meta": {
+    "name": "Ulsan",
+    "nameIt": "Ulsan",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ulsan.geojson",
+      "sha256": "849ab6afc9790e0bcb3b06793b19851e4c59fd237da5218dfa0a1c7bb541bd94",
+      "size": 2957654,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ulsan",
+    "name": "Ulsan",
+    "nameIt": "Ulsan",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      129.34255,
+      35.53845
+    ],
+    "zoom": 9.6,
+    "population": 804279,
+    "grid": "cities/ulsan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ulsan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ulsan",
+        "name": "Ulsan",
+        "nameIt": "Ulsan",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          129.34255,
+          35.53845
+        ],
+        "zoom": 9.6,
+        "population": 804279,
+        "cells": 2561,
+        "layer": "cities/ulsan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            129.34255,
+            35.53845
+          ]
+        },
+        "properties": {
+          "id": "ulsan",
+          "name": "Ulsan",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 804279
+        }
+      },
+      "summary": null
+    }
+  }
+}

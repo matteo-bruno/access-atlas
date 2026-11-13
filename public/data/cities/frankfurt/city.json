@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "frankfurt",
+  "createdAt": "2026-10-08T15:33:43.137Z",
+  "updatedAt": "2026-10-08T15:33:43.137Z",
+  "meta": {
+    "name": "Frankfurt",
+    "nameIt": "Frankfurt",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Frankfurt.geojson",
+      "sha256": "c43a412089afd3385f70d4dc023dc8cb0a9a1f28891e77ffc7e8a9ab6eac0e04",
+      "size": 2280667,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "frankfurt",
+    "name": "Frankfurt",
+    "nameIt": "Frankfurt",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      8.6717,
+      50.12076
+    ],
+    "zoom": 9.6,
+    "population": 867417,
+    "grid": "cities/frankfurt/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/frankfurt/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "frankfurt",
+        "name": "Frankfurt",
+        "nameIt": "Frankfurt",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          8.6717,
+          50.12076
+        ],
+        "zoom": 9.6,
+        "population": 867417,
+        "cells": 2012,
+        "layer": "cities/frankfurt/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.6717,
+            50.12076
+          ]
+        },
+        "properties": {
+          "id": "frankfurt",
+          "name": "Frankfurt",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 8,
+          "population": 867417
+        }
+      },
+      "summary": null
+    }
+  }
+}

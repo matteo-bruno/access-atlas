@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yalova",
+  "createdAt": "2026-10-08T16:23:15.342Z",
+  "updatedAt": "2026-10-08T16:23:15.342Z",
+  "meta": {
+    "name": "Yalova",
+    "nameIt": "Yalova",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yalova.geojson",
+      "sha256": "6a70aecc224b9aba395d5b67cf163b831f7d30f6569de996facf167a043f93f1",
+      "size": 334149,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yalova",
+    "name": "Yalova",
+    "nameIt": "Yalova",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      29.28077,
+      40.65151
+    ],
+    "zoom": 10.8,
+    "population": 161853,
+    "grid": "cities/yalova/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yalova/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yalova",
+        "name": "Yalova",
+        "nameIt": "Yalova",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          29.28077,
+          40.65151
+        ],
+        "zoom": 10.8,
+        "population": 161853,
+        "cells": 290,
+        "layer": "cities/yalova/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.28077,
+            40.65151
+          ]
+        },
+        "properties": {
+          "id": "yalova",
+          "name": "Yalova",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 161853
+        }
+      },
+      "summary": null
+    }
+  }
+}

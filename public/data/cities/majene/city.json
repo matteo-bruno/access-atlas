@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "majene",
+  "createdAt": "2026-10-08T15:53:55.107Z",
+  "updatedAt": "2026-10-08T15:53:55.107Z",
+  "meta": {
+    "name": "Majene",
+    "nameIt": "Majene",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Majene.geojson",
+      "sha256": "7fff604220bc8554b4589439b2cdf471b1c2c6e35d3b5309737ecd49de755410",
+      "size": 281148,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "majene",
+    "name": "Majene",
+    "nameIt": "Majene",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      118.96901,
+      -3.54607
+    ],
+    "zoom": 10.9,
+    "population": 64019,
+    "grid": "cities/majene/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/majene/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "majene",
+        "name": "Majene",
+        "nameIt": "Majene",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          118.96901,
+          -3.54607
+        ],
+        "zoom": 10.9,
+        "population": 64019,
+        "cells": 239,
+        "layer": "cities/majene/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.96901,
+            -3.54607
+          ]
+        },
+        "properties": {
+          "id": "majene",
+          "name": "Majene",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 28,
+          "population": 64019
+        }
+      },
+      "summary": null
+    }
+  }
+}

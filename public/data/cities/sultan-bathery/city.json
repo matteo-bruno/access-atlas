@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sultan-bathery",
+  "createdAt": "2026-10-08T16:15:07.094Z",
+  "updatedAt": "2026-10-08T16:15:07.094Z",
+  "meta": {
+    "name": "Sultan Bathery",
+    "nameIt": "Sultan Bathery",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sultan Bathery.geojson",
+      "sha256": "9d892914c1693642f41cb1137612208999d38bbfe35c172c805b9de4569a303a",
+      "size": 537032,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sultan-bathery",
+    "name": "Sultan Bathery",
+    "nameIt": "Sultan Bathery",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.26195,
+      11.65882
+    ],
+    "zoom": 10.8,
+    "population": 60326,
+    "grid": "cities/sultan-bathery/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sultan-bathery/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sultan-bathery",
+        "name": "Sultan Bathery",
+        "nameIt": "Sultan Bathery",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.26195,
+          11.65882
+        ],
+        "zoom": 10.8,
+        "population": 60326,
+        "cells": 465,
+        "layer": "cities/sultan-bathery/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.26195,
+            11.65882
+          ]
+        },
+        "properties": {
+          "id": "sultan-bathery",
+          "name": "Sultan Bathery",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.7,
+          "population": 60326
+        }
+      },
+      "summary": null
+    }
+  }
+}

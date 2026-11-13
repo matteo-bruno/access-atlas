@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sapporo",
+  "createdAt": "2026-10-08T16:11:20.784Z",
+  "updatedAt": "2026-10-08T16:11:20.784Z",
+  "meta": {
+    "name": "Sapporo",
+    "nameIt": "Sapporo",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sapporo.geojson",
+      "sha256": "fac82c0993ccd6028a800a0e1cd877eb23c5487f2fdc6e2d9c70c04e657dd08b",
+      "size": 4090230,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sapporo",
+    "name": "Sapporo",
+    "nameIt": "Sapporo",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      141.36851,
+      43.06743
+    ],
+    "zoom": 9.1,
+    "population": 2035154,
+    "grid": "cities/sapporo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sapporo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sapporo",
+        "name": "Sapporo",
+        "nameIt": "Sapporo",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          141.36851,
+          43.06743
+        ],
+        "zoom": 9.1,
+        "population": 2035154,
+        "cells": 3562,
+        "layer": "cities/sapporo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            141.36851,
+            43.06743
+          ]
+        },
+        "properties": {
+          "id": "sapporo",
+          "name": "Sapporo",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 2035154
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "borisoglebsk",
+  "createdAt": "2026-10-08T15:20:08.338Z",
+  "updatedAt": "2026-10-08T15:20:08.338Z",
+  "meta": {
+    "name": "Borisoglebsk",
+    "nameIt": "Borisoglebsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Borisoglebsk.geojson",
+      "sha256": "1222cf9cc88eef6cfdff3d12c1ab70bca53455cbc51df70ce539d73990e2878c",
+      "size": 193621,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "borisoglebsk",
+    "name": "Borisoglebsk",
+    "nameIt": "Borisoglebsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      42.09105,
+      51.36486
+    ],
+    "zoom": 11.7,
+    "population": 40254,
+    "grid": "cities/borisoglebsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/borisoglebsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "borisoglebsk",
+        "name": "Borisoglebsk",
+        "nameIt": "Borisoglebsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          42.09105,
+          51.36486
+        ],
+        "zoom": 11.7,
+        "population": 40254,
+        "cells": 168,
+        "layer": "cities/borisoglebsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            42.09105,
+            51.36486
+          ]
+        },
+        "properties": {
+          "id": "borisoglebsk",
+          "name": "Borisoglebsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 17.8,
+          "population": 40254
+        }
+      },
+      "summary": null
+    }
+  }
+}

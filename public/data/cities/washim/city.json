@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "washim",
+  "createdAt": "2026-10-08T16:21:25.252Z",
+  "updatedAt": "2026-10-08T16:21:25.252Z",
+  "meta": {
+    "name": "Washim",
+    "nameIt": "Washim",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Washim.geojson",
+      "sha256": "4888f929711b15c06a2cff94d6fe260bc73d1232ffbc471972c75a48715ac8e5",
+      "size": 190109,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "washim",
+    "name": "Washim",
+    "nameIt": "Washim",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.1349,
+      20.1118
+    ],
+    "zoom": 11.6,
+    "population": 101381,
+    "grid": "cities/washim/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/washim/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "washim",
+        "name": "Washim",
+        "nameIt": "Washim",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.1349,
+          20.1118
+        ],
+        "zoom": 11.6,
+        "population": 101381,
+        "cells": 164,
+        "layer": "cities/washim/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.1349,
+            20.1118
+          ]
+        },
+        "properties": {
+          "id": "washim",
+          "name": "Washim",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 16.2,
+          "population": 101381
+        }
+      },
+      "summary": null
+    }
+  }
+}

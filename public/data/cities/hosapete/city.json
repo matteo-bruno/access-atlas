@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hosapete",
+  "createdAt": "2026-10-08T15:39:06.891Z",
+  "updatedAt": "2026-10-08T15:39:06.891Z",
+  "meta": {
+    "name": "Hosapete",
+    "nameIt": "Hosapete",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hosapete.geojson",
+      "sha256": "62726f8d4d9aec01a237f669b1149353b3eb52bc0405c3919d30accba260c443",
+      "size": 219088,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hosapete",
+    "name": "Hosapete",
+    "nameIt": "Hosapete",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.38769,
+      15.26858
+    ],
+    "zoom": 11.2,
+    "population": 114816,
+    "grid": "cities/hosapete/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hosapete/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hosapete",
+        "name": "Hosapete",
+        "nameIt": "Hosapete",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.38769,
+          15.26858
+        ],
+        "zoom": 11.2,
+        "population": 114816,
+        "cells": 189,
+        "layer": "cities/hosapete/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.38769,
+            15.26858
+          ]
+        },
+        "properties": {
+          "id": "hosapete",
+          "name": "Hosapete",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19.2,
+          "population": 114816
+        }
+      },
+      "summary": null
+    }
+  }
+}

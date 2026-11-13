@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "torquay",
+  "createdAt": "2026-10-08T16:18:35.018Z",
+  "updatedAt": "2026-10-08T16:18:35.018Z",
+  "meta": {
+    "name": "Torquay",
+    "nameIt": "Torquay",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Torquay.geojson",
+      "sha256": "a69dc38ed22d5e41724f244f33b102b00dfa8662126950c253f3762a76d78b89",
+      "size": 506845,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "torquay",
+    "name": "Torquay",
+    "nameIt": "Torquay",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -3.55202,
+      50.45813
+    ],
+    "zoom": 10.7,
+    "population": 118989,
+    "grid": "cities/torquay/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/torquay/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "torquay",
+        "name": "Torquay",
+        "nameIt": "Torquay",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -3.55202,
+          50.45813
+        ],
+        "zoom": 10.7,
+        "population": 118989,
+        "cells": 440,
+        "layer": "cities/torquay/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -3.55202,
+            50.45813
+          ]
+        },
+        "properties": {
+          "id": "torquay",
+          "name": "Torquay",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 118989
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "loveland",
+  "createdAt": "2026-10-08T15:52:16.104Z",
+  "updatedAt": "2026-10-08T15:52:16.104Z",
+  "meta": {
+    "name": "Loveland",
+    "nameIt": "Loveland",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Loveland.geojson",
+      "sha256": "5eb1b48fdb416d2a384aa0c2f5d1952c8e3b801037c4b3b49eae2e5d37814fa7",
+      "size": 371709,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "loveland",
+    "name": "Loveland",
+    "nameIt": "Loveland",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -105.07924,
+      40.4188
+    ],
+    "zoom": 11.2,
+    "population": 42707,
+    "grid": "cities/loveland/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/loveland/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "loveland",
+        "name": "Loveland",
+        "nameIt": "Loveland",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -105.07924,
+          40.4188
+        ],
+        "zoom": 11.2,
+        "population": 42707,
+        "cells": 318,
+        "layer": "cities/loveland/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -105.07924,
+            40.4188
+          ]
+        },
+        "properties": {
+          "id": "loveland",
+          "name": "Loveland",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 42707
+        }
+      },
+      "summary": null
+    }
+  }
+}

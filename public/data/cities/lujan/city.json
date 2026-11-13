@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lujan",
+  "createdAt": "2026-10-08T15:52:36.248Z",
+  "updatedAt": "2026-10-08T15:52:36.248Z",
+  "meta": {
+    "name": "Luján",
+    "nameIt": "Luján",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Luján.geojson",
+      "sha256": "703ffb1b504ae5f2f195c958f07d64c61b85dc2581494ef476f9ca8a5b6acb70",
+      "size": 298003,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lujan",
+    "name": "Luján",
+    "nameIt": "Luján",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -59.10883,
+      -34.56686
+    ],
+    "zoom": 11.4,
+    "population": 55282,
+    "grid": "cities/lujan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 170
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lujan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lujan",
+        "name": "Luján",
+        "nameIt": "Luján",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -59.10883,
+          -34.56686
+        ],
+        "zoom": 11.4,
+        "population": 55282,
+        "cells": 257,
+        "layer": "cities/lujan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 170
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -59.10883,
+            -34.56686
+          ]
+        },
+        "properties": {
+          "id": "lujan",
+          "name": "Luján",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 55282
+        }
+      },
+      "summary": null
+    }
+  }
+}

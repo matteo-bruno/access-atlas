@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "minusinsk",
+  "createdAt": "2026-10-08T15:57:19.179Z",
+  "updatedAt": "2026-10-08T15:57:19.179Z",
+  "meta": {
+    "name": "Minusinsk",
+    "nameIt": "Minusinsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Minusinsk.geojson",
+      "sha256": "5b14a7067f37a520940594638078b9603e336766c2d3b0e4f7efd65ba48da487",
+      "size": 191713,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "minusinsk",
+    "name": "Minusinsk",
+    "nameIt": "Minusinsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      91.69405,
+      53.69973
+    ],
+    "zoom": 11.4,
+    "population": 54677,
+    "grid": "cities/minusinsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/minusinsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "minusinsk",
+        "name": "Minusinsk",
+        "nameIt": "Minusinsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          91.69405,
+          53.69973
+        ],
+        "zoom": 11.4,
+        "population": 54677,
+        "cells": 167,
+        "layer": "cities/minusinsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.69405,
+            53.69973
+          ]
+        },
+        "properties": {
+          "id": "minusinsk",
+          "name": "Minusinsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 13.7,
+          "population": 54677
+        }
+      },
+      "summary": null
+    }
+  }
+}

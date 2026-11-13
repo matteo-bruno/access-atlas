@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sao-jose-dos-campos",
+  "createdAt": "2026-10-08T16:11:19.252Z",
+  "updatedAt": "2026-10-08T16:11:19.252Z",
+  "meta": {
+    "name": "Sao Jose dos Campos",
+    "nameIt": "Sao Jose dos Campos",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sao Jose dos Campos.geojson",
+      "sha256": "2b4e48881455f926bfe514cdb7b6c57ac37609f52e660027a0389756d13e9e56",
+      "size": 2082120,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sao-jose-dos-campos",
+    "name": "Sao Jose dos Campos",
+    "nameIt": "Sao Jose dos Campos",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -45.90151,
+      -23.23656
+    ],
+    "zoom": 9.4,
+    "population": 773461,
+    "grid": "cities/sao-jose-dos-campos/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sao-jose-dos-campos/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sao-jose-dos-campos",
+        "name": "Sao Jose dos Campos",
+        "nameIt": "Sao Jose dos Campos",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -45.90151,
+          -23.23656
+        ],
+        "zoom": 9.4,
+        "population": 773461,
+        "cells": 1779,
+        "layer": "cities/sao-jose-dos-campos/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -45.90151,
+            -23.23656
+          ]
+        },
+        "properties": {
+          "id": "sao-jose-dos-campos",
+          "name": "Sao Jose dos Campos",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 20,
+          "population": 773461
+        }
+      },
+      "summary": null
+    }
+  }
+}

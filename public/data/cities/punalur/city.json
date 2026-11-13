@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "punalur",
+  "createdAt": "2026-10-08T16:06:51.343Z",
+  "updatedAt": "2026-10-08T16:06:51.343Z",
+  "meta": {
+    "name": "Punalur",
+    "nameIt": "Punalur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Punalur.geojson",
+      "sha256": "42709acb430b7dbf434ffa95eb6fb92f134b541d5b0e174394a44b23f4b66c74",
+      "size": 132912,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "punalur",
+    "name": "Punalur",
+    "nameIt": "Punalur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.92299,
+      9.01767
+    ],
+    "zoom": 11.8,
+    "population": 49070,
+    "grid": "cities/punalur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/punalur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "punalur",
+        "name": "Punalur",
+        "nameIt": "Punalur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.92299,
+          9.01767
+        ],
+        "zoom": 11.8,
+        "population": 49070,
+        "cells": 116,
+        "layer": "cities/punalur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.92299,
+            9.01767
+          ]
+        },
+        "properties": {
+          "id": "punalur",
+          "name": "Punalur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 14.5,
+          "population": 49070
+        }
+      },
+      "summary": null
+    }
+  }
+}

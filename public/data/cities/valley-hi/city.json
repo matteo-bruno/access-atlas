@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "valley-hi",
+  "createdAt": "2026-10-08T16:20:23.747Z",
+  "updatedAt": "2026-10-08T16:20:23.747Z",
+  "meta": {
+    "name": "Valley Hi",
+    "nameIt": "Valley Hi",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Valley Hi.geojson",
+      "sha256": "51e7976e35a8c119dff86022169537b9a015b8ab4c219aba1494abb36b3ae4dd",
+      "size": 798406,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "valley-hi",
+    "name": "Valley Hi",
+    "nameIt": "Valley Hi",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -98.6592,
+      29.40274
+    ],
+    "zoom": 10.3,
+    "population": 164830,
+    "grid": "cities/valley-hi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/valley-hi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "valley-hi",
+        "name": "Valley Hi",
+        "nameIt": "Valley Hi",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -98.6592,
+          29.40274
+        ],
+        "zoom": 10.3,
+        "population": 164830,
+        "cells": 689,
+        "layer": "cities/valley-hi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -98.6592,
+            29.40274
+          ]
+        },
+        "properties": {
+          "id": "valley-hi",
+          "name": "Valley Hi",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 27.3,
+          "population": 164830
+        }
+      },
+      "summary": null
+    }
+  }
+}

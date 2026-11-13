@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bijali",
+  "createdAt": "2026-10-08T15:18:46.779Z",
+  "updatedAt": "2026-10-08T15:18:46.779Z",
+  "meta": {
+    "name": "Bijali",
+    "nameIt": "Bijali",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bijali.geojson",
+      "sha256": "b51e580f94040f32fcb5751a537d4906893aab99434cef3701e4c7c9978523fd",
+      "size": 311594,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bijali",
+    "name": "Bijali",
+    "nameIt": "Bijali",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.00678,
+      25.27369
+    ],
+    "zoom": 10.8,
+    "population": 57800,
+    "grid": "cities/bijali/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bijali/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bijali",
+        "name": "Bijali",
+        "nameIt": "Bijali",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.00678,
+          25.27369
+        ],
+        "zoom": 10.8,
+        "population": 57800,
+        "cells": 269,
+        "layer": "cities/bijali/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.00678,
+            25.27369
+          ]
+        },
+        "properties": {
+          "id": "bijali",
+          "name": "Bijali",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 57800
+        }
+      },
+      "summary": null
+    }
+  }
+}

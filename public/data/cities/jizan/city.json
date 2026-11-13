@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jizan",
+  "createdAt": "2026-10-08T15:43:21.020Z",
+  "updatedAt": "2026-10-08T15:43:21.020Z",
+  "meta": {
+    "name": "Jizan",
+    "nameIt": "Jizan",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jizan.geojson",
+      "sha256": "038ab2c1c67e0a7ac18b09fd5311a5e373ab0cf3190cc81d10c8542551275bcc",
+      "size": 235341,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jizan",
+    "name": "Jizan",
+    "nameIt": "Jizan",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA",
+    "center": [
+      42.56115,
+      16.90039
+    ],
+    "zoom": 11.4,
+    "population": 69614,
+    "grid": "cities/jizan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jizan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jizan",
+        "name": "Jizan",
+        "nameIt": "Jizan",
+        "region": "Saudi Arabia",
+        "regionIt": "Arabia Saudita",
+        "country": "SA",
+        "center": [
+          42.56115,
+          16.90039
+        ],
+        "zoom": 11.4,
+        "population": 69614,
+        "cells": 203,
+        "layer": "cities/jizan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            42.56115,
+            16.90039
+          ]
+        },
+        "properties": {
+          "id": "jizan",
+          "name": "Jizan",
+          "country": "SA",
+          "isStudy": true,
+          "proximityMinutes": 24.8,
+          "population": 69614
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "saint-jean-sur-richelieu",
+  "createdAt": "2026-10-08T16:09:54.606Z",
+  "updatedAt": "2026-10-08T16:09:54.606Z",
+  "meta": {
+    "name": "Saint-Jean-sur-Richelieu",
+    "nameIt": "Saint-Jean-sur-Richelieu",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Saint-Jean-sur-Richelieu.geojson",
+      "sha256": "363ca8797b9b4c4615e7eb7153daeedea4f7269d6b795f48dfc80e894ece1ffa",
+      "size": 370829,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "saint-jean-sur-richelieu",
+    "name": "Saint-Jean-sur-Richelieu",
+    "nameIt": "Saint-Jean-sur-Richelieu",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -73.27045,
+      45.32348
+    ],
+    "zoom": 10.9,
+    "population": 75840,
+    "grid": "cities/saint-jean-sur-richelieu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/saint-jean-sur-richelieu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "saint-jean-sur-richelieu",
+        "name": "Saint-Jean-sur-Richelieu",
+        "nameIt": "Saint-Jean-sur-Richelieu",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -73.27045,
+          45.32348
+        ],
+        "zoom": 10.9,
+        "population": 75840,
+        "cells": 320,
+        "layer": "cities/saint-jean-sur-richelieu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.27045,
+            45.32348
+          ]
+        },
+        "properties": {
+          "id": "saint-jean-sur-richelieu",
+          "name": "Saint-Jean-sur-Richelieu",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 23.8,
+          "population": 75840
+        }
+      },
+      "summary": null
+    }
+  }
+}

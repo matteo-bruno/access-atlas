@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dewas",
+  "createdAt": "2026-10-08T15:29:10.202Z",
+  "updatedAt": "2026-10-08T15:29:10.202Z",
+  "meta": {
+    "name": "Dewas",
+    "nameIt": "Dewas",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dewas.geojson",
+      "sha256": "1c1d0148e6ce0c1a21523531732fcf345c96429c19e537cebabebe73da3be7c6",
+      "size": 491674,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dewas",
+    "name": "Dewas",
+    "nameIt": "Dewas",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.04575,
+      22.96028
+    ],
+    "zoom": 11,
+    "population": 302705,
+    "grid": "cities/dewas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dewas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dewas",
+        "name": "Dewas",
+        "nameIt": "Dewas",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.04575,
+          22.96028
+        ],
+        "zoom": 11,
+        "population": 302705,
+        "cells": 424,
+        "layer": "cities/dewas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.04575,
+            22.96028
+          ]
+        },
+        "properties": {
+          "id": "dewas",
+          "name": "Dewas",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 302705
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "novovolynsk",
+  "createdAt": "2026-10-08T16:02:12.350Z",
+  "updatedAt": "2026-10-08T16:02:12.350Z",
+  "meta": {
+    "name": "Novovolynsk",
+    "nameIt": "Novovolynsk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Novovolynsk.geojson",
+      "sha256": "6011069478d077ba4a400fb04e2d35326caf5261f353fe6a0e0d763adeb1c2f7",
+      "size": 136410,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "novovolynsk",
+    "name": "Novovolynsk",
+    "nameIt": "Novovolynsk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      24.16763,
+      50.73073
+    ],
+    "zoom": 11.7,
+    "population": 25992,
+    "grid": "cities/novovolynsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/novovolynsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "novovolynsk",
+        "name": "Novovolynsk",
+        "nameIt": "Novovolynsk",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          24.16763,
+          50.73073
+        ],
+        "zoom": 11.7,
+        "population": 25992,
+        "cells": 118,
+        "layer": "cities/novovolynsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            24.16763,
+            50.73073
+          ]
+        },
+        "properties": {
+          "id": "novovolynsk",
+          "name": "Novovolynsk",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 25992
+        }
+      },
+      "summary": null
+    }
+  }
+}

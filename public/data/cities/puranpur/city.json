@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "puranpur",
+  "createdAt": "2026-10-08T16:06:56.628Z",
+  "updatedAt": "2026-10-08T16:06:56.628Z",
+  "meta": {
+    "name": "Puranpur",
+    "nameIt": "Puranpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Puranpur.geojson",
+      "sha256": "6334109a09e3ab1941f17cb7ac7029ed28defe6522db02d35fdf97a526ce9bf8",
+      "size": 128631,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "puranpur",
+    "name": "Puranpur",
+    "nameIt": "Puranpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.14574,
+      28.51093
+    ],
+    "zoom": 11.9,
+    "population": 95297,
+    "grid": "cities/puranpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/puranpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "puranpur",
+        "name": "Puranpur",
+        "nameIt": "Puranpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.14574,
+          28.51093
+        ],
+        "zoom": 11.9,
+        "population": 95297,
+        "cells": 111,
+        "layer": "cities/puranpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.14574,
+            28.51093
+          ]
+        },
+        "properties": {
+          "id": "puranpur",
+          "name": "Puranpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 95297
+        }
+      },
+      "summary": null
+    }
+  }
+}

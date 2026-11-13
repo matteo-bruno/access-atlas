@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hoorn",
+  "createdAt": "2026-10-08T15:39:04.247Z",
+  "updatedAt": "2026-10-08T15:39:04.247Z",
+  "meta": {
+    "name": "Hoorn",
+    "nameIt": "Hoorn",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hoorn.geojson",
+      "sha256": "b72de5a0b50eeb36977020581242cf9b61f5f8f962667d03f913c42b17ccb91d",
+      "size": 325029,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hoorn",
+    "name": "Hoorn",
+    "nameIt": "Hoorn",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      5.06955,
+      52.65563
+    ],
+    "zoom": 11.4,
+    "population": 73456,
+    "grid": "cities/hoorn/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hoorn/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hoorn",
+        "name": "Hoorn",
+        "nameIt": "Hoorn",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          5.06955,
+          52.65563
+        ],
+        "zoom": 11.4,
+        "population": 73456,
+        "cells": 286,
+        "layer": "cities/hoorn/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.06955,
+            52.65563
+          ]
+        },
+        "properties": {
+          "id": "hoorn",
+          "name": "Hoorn",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 11.3,
+          "population": 73456
+        }
+      },
+      "summary": null
+    }
+  }
+}

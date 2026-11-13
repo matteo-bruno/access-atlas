@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pardubice",
+  "createdAt": "2026-10-08T16:04:20.379Z",
+  "updatedAt": "2026-10-08T16:04:20.379Z",
+  "meta": {
+    "name": "Pardubice",
+    "nameIt": "Pardubice",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pardubice.geojson",
+      "sha256": "89093f00e68b32452a79d1c846686a2a32414af8afa4f51f244a33d16e46f908",
+      "size": 262584,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pardubice",
+    "name": "Pardubice",
+    "nameIt": "Pardubice",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ",
+    "center": [
+      15.7715,
+      50.03523
+    ],
+    "zoom": 11.2,
+    "population": 58915,
+    "grid": "cities/pardubice/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pardubice/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pardubice",
+        "name": "Pardubice",
+        "nameIt": "Pardubice",
+        "region": "Czech Republic",
+        "regionIt": "Repubblica Ceca",
+        "country": "CZ",
+        "center": [
+          15.7715,
+          50.03523
+        ],
+        "zoom": 11.2,
+        "population": 58915,
+        "cells": 230,
+        "layer": "cities/pardubice/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            15.7715,
+            50.03523
+          ]
+        },
+        "properties": {
+          "id": "pardubice",
+          "name": "Pardubice",
+          "country": "CZ",
+          "isStudy": true,
+          "proximityMinutes": 7.7,
+          "population": 58915
+        }
+      },
+      "summary": null
+    }
+  }
+}

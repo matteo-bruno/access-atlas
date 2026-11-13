@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khabarovsk",
+  "createdAt": "2026-10-08T15:46:18.937Z",
+  "updatedAt": "2026-10-08T15:46:18.937Z",
+  "meta": {
+    "name": "Khabarovsk",
+    "nameIt": "Khabarovsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khabarovsk.geojson",
+      "sha256": "6970a71b29102e726d749d7db3eaebbcf45c13c83e62e597a53ac3c3c4cfd62e",
+      "size": 2111278,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khabarovsk",
+    "name": "Khabarovsk",
+    "nameIt": "Khabarovsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      135.09076,
+      48.46652
+    ],
+    "zoom": 9.3,
+    "population": 571819,
+    "grid": "cities/khabarovsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khabarovsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khabarovsk",
+        "name": "Khabarovsk",
+        "nameIt": "Khabarovsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          135.09076,
+          48.46652
+        ],
+        "zoom": 9.3,
+        "population": 571819,
+        "cells": 1832,
+        "layer": "cities/khabarovsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            135.09076,
+            48.46652
+          ]
+        },
+        "properties": {
+          "id": "khabarovsk",
+          "name": "Khabarovsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 18.5,
+          "population": 571819
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-miguel-de-tucuman",
+  "createdAt": "2026-10-08T16:10:40.942Z",
+  "updatedAt": "2026-10-08T16:10:40.942Z",
+  "meta": {
+    "name": "San Miguel de Tucumán",
+    "nameIt": "San Miguel de Tucumán",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Miguel de Tucumán.geojson",
+      "sha256": "4673e0ec62ac9a3a7659fdfa7c8bc3caa132b037ce7b292fa896ae473809a6aa",
+      "size": 2061474,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-miguel-de-tucuman",
+    "name": "San Miguel de Tucumán",
+    "nameIt": "San Miguel de Tucumán",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -65.21782,
+      -26.82428
+    ],
+    "zoom": 9.7,
+    "population": 902585,
+    "grid": "cities/san-miguel-de-tucuman/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-miguel-de-tucuman/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-miguel-de-tucuman",
+        "name": "San Miguel de Tucumán",
+        "nameIt": "San Miguel de Tucumán",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -65.21782,
+          -26.82428
+        ],
+        "zoom": 9.7,
+        "population": 902585,
+        "cells": 1767,
+        "layer": "cities/san-miguel-de-tucuman/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -65.21782,
+            -26.82428
+          ]
+        },
+        "properties": {
+          "id": "san-miguel-de-tucuman",
+          "name": "San Miguel de Tucumán",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 23.2,
+          "population": 902585
+        }
+      },
+      "summary": null
+    }
+  }
+}

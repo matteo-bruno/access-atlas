@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lintou",
+  "createdAt": "2026-10-08T15:51:28.958Z",
+  "updatedAt": "2026-10-08T15:51:28.958Z",
+  "meta": {
+    "name": "Lintou",
+    "nameIt": "Lintou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lintou.geojson",
+      "sha256": "452091234a146d074b79887bf31faf0653b66e802f755f11389be807d301c7ba",
+      "size": 421720,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lintou",
+    "name": "Lintou",
+    "nameIt": "Lintou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      111.05738,
+      21.66909
+    ],
+    "zoom": 10.9,
+    "population": 49156,
+    "grid": "cities/lintou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lintou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lintou",
+        "name": "Lintou",
+        "nameIt": "Lintou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          111.05738,
+          21.66909
+        ],
+        "zoom": 10.9,
+        "population": 49156,
+        "cells": 361,
+        "layer": "cities/lintou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.05738,
+            21.66909
+          ]
+        },
+        "properties": {
+          "id": "lintou",
+          "name": "Lintou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 49156
+        }
+      },
+      "summary": null
+    }
+  }
+}

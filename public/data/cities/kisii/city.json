@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kisii",
+  "createdAt": "2026-10-08T15:47:19.303Z",
+  "updatedAt": "2026-10-08T15:47:19.303Z",
+  "meta": {
+    "name": "Kisii",
+    "nameIt": "Kisii",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kisii.geojson",
+      "sha256": "fd4b1835eeba87d98e188554b8a588c41810f8413b76b83e8062354822bb302e",
+      "size": 651578,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kisii",
+    "name": "Kisii",
+    "nameIt": "Kisii",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE",
+    "center": [
+      34.76105,
+      -0.67417
+    ],
+    "zoom": 10.1,
+    "population": 203972,
+    "grid": "cities/kisii/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kisii/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kisii",
+        "name": "Kisii",
+        "nameIt": "Kisii",
+        "region": "Kenya",
+        "regionIt": "Kenya",
+        "country": "KE",
+        "center": [
+          34.76105,
+          -0.67417
+        ],
+        "zoom": 10.1,
+        "population": 203972,
+        "cells": 556,
+        "layer": "cities/kisii/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.76105,
+            -0.67417
+          ]
+        },
+        "properties": {
+          "id": "kisii",
+          "name": "Kisii",
+          "country": "KE",
+          "isStudy": true,
+          "proximityMinutes": 40.1,
+          "population": 203972
+        }
+      },
+      "summary": null
+    }
+  }
+}

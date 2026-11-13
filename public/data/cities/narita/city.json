@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "narita",
+  "createdAt": "2026-10-08T16:00:23.001Z",
+  "updatedAt": "2026-10-08T16:00:23.001Z",
+  "meta": {
+    "name": "Narita",
+    "nameIt": "Narita",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Narita.geojson",
+      "sha256": "ed379c9d5b57411bc08da351370e1e13b8c5182dc3486c527dbc1931ffdcdd44",
+      "size": 202192,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "narita",
+    "name": "Narita",
+    "nameIt": "Narita",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      140.30595,
+      35.77376
+    ],
+    "zoom": 11.6,
+    "population": 71954,
+    "grid": "cities/narita/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/narita/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "narita",
+        "name": "Narita",
+        "nameIt": "Narita",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          140.30595,
+          35.77376
+        ],
+        "zoom": 11.6,
+        "population": 71954,
+        "cells": 176,
+        "layer": "cities/narita/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            140.30595,
+            35.77376
+          ]
+        },
+        "properties": {
+          "id": "narita",
+          "name": "Narita",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 71954
+        }
+      },
+      "summary": null
+    }
+  }
+}

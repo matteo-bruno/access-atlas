@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santa-barbara",
+  "createdAt": "2026-10-08T16:11:01.303Z",
+  "updatedAt": "2026-10-08T16:11:01.303Z",
+  "meta": {
+    "name": "Santa Barbara",
+    "nameIt": "Santa Barbara",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santa Barbara.geojson",
+      "sha256": "f3f9cf57de1caf257348cd7553a641c38cb1412323e31c3380106e03dc344bc7",
+      "size": 410362,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santa-barbara",
+    "name": "Santa Barbara",
+    "nameIt": "Santa Barbara",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -119.71367,
+      34.42585
+    ],
+    "zoom": 10.6,
+    "population": 89139,
+    "grid": "cities/santa-barbara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santa-barbara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santa-barbara",
+        "name": "Santa Barbara",
+        "nameIt": "Santa Barbara",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -119.71367,
+          34.42585
+        ],
+        "zoom": 10.6,
+        "population": 89139,
+        "cells": 354,
+        "layer": "cities/santa-barbara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -119.71367,
+            34.42585
+          ]
+        },
+        "properties": {
+          "id": "santa-barbara",
+          "name": "Santa Barbara",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 14.5,
+          "population": 89139
+        }
+      },
+      "summary": null
+    }
+  }
+}

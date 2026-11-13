@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pingjiang",
+  "createdAt": "2026-10-08T16:05:37.165Z",
+  "updatedAt": "2026-10-08T16:05:37.165Z",
+  "meta": {
+    "name": "Pingjiang",
+    "nameIt": "Pingjiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pingjiang.geojson",
+      "sha256": "decaf067703863d33b59b3fa371dc3539ab30a8515dbfc3574e7d9649034f097",
+      "size": 232458,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pingjiang",
+    "name": "Pingjiang",
+    "nameIt": "Pingjiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.58404,
+      28.70074
+    ],
+    "zoom": 11,
+    "population": 172514,
+    "grid": "cities/pingjiang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pingjiang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pingjiang",
+        "name": "Pingjiang",
+        "nameIt": "Pingjiang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.58404,
+          28.70074
+        ],
+        "zoom": 11,
+        "population": 172514,
+        "cells": 199,
+        "layer": "cities/pingjiang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.58404,
+            28.70074
+          ]
+        },
+        "properties": {
+          "id": "pingjiang",
+          "name": "Pingjiang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 172514
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "miluo",
+  "createdAt": "2026-10-08T15:57:07.981Z",
+  "updatedAt": "2026-10-08T15:57:07.981Z",
+  "meta": {
+    "name": "Miluo",
+    "nameIt": "Miluo",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Miluo.geojson",
+      "sha256": "cff6a7de6121165ca6669e1c9a91e67fc5a40cba3b45d31cb8a3e0755f98e0e5",
+      "size": 964897,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "miluo",
+    "name": "Miluo",
+    "nameIt": "Miluo",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.10012,
+      28.79618
+    ],
+    "zoom": 9.9,
+    "population": 223207,
+    "grid": "cities/miluo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/miluo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "miluo",
+        "name": "Miluo",
+        "nameIt": "Miluo",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.10012,
+          28.79618
+        ],
+        "zoom": 9.9,
+        "population": 223207,
+        "cells": 830,
+        "layer": "cities/miluo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.10012,
+            28.79618
+          ]
+        },
+        "properties": {
+          "id": "miluo",
+          "name": "Miluo",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 18.3,
+          "population": 223207
+        }
+      },
+      "summary": null
+    }
+  }
+}

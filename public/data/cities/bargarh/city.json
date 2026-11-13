@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bargarh",
+  "createdAt": "2026-10-08T15:15:35.064Z",
+  "updatedAt": "2026-10-08T15:15:35.064Z",
+  "meta": {
+    "name": "Bargarh",
+    "nameIt": "Bargarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bargarh.geojson",
+      "sha256": "ec774faf86a19f800add7fd4187579641ca3a665ef0ae0e69cbfd118586225df",
+      "size": 259636,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bargarh",
+    "name": "Bargarh",
+    "nameIt": "Bargarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.62174,
+      21.34385
+    ],
+    "zoom": 11.4,
+    "population": 141874,
+    "grid": "cities/bargarh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bargarh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bargarh",
+        "name": "Bargarh",
+        "nameIt": "Bargarh",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.62174,
+          21.34385
+        ],
+        "zoom": 11.4,
+        "population": 141874,
+        "cells": 224,
+        "layer": "cities/bargarh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.62174,
+            21.34385
+          ]
+        },
+        "properties": {
+          "id": "bargarh",
+          "name": "Bargarh",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 141874
+        }
+      },
+      "summary": null
+    }
+  }
+}

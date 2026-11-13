@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fukui",
+  "createdAt": "2026-10-08T15:33:53.245Z",
+  "updatedAt": "2026-10-08T15:33:53.245Z",
+  "meta": {
+    "name": "Fukui",
+    "nameIt": "Fukui",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fukui.geojson",
+      "sha256": "9bceed83c335c53c9feeb7e56cbf8a892318875c0b500706a3db7f831bd71450",
+      "size": 808456,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fukui",
+    "name": "Fukui",
+    "nameIt": "Fukui",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      136.22183,
+      36.07155
+    ],
+    "zoom": 10.4,
+    "population": 214544,
+    "grid": "cities/fukui/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fukui/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fukui",
+        "name": "Fukui",
+        "nameIt": "Fukui",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          136.22183,
+          36.07155
+        ],
+        "zoom": 10.4,
+        "population": 214544,
+        "cells": 705,
+        "layer": "cities/fukui/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            136.22183,
+            36.07155
+          ]
+        },
+        "properties": {
+          "id": "fukui",
+          "name": "Fukui",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 214544
+        }
+      },
+      "summary": null
+    }
+  }
+}

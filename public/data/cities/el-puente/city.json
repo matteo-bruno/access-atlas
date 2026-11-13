@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "el-puente",
+  "createdAt": "2026-10-08T15:32:01.563Z",
+  "updatedAt": "2026-10-08T15:32:01.563Z",
+  "meta": {
+    "name": "El Puente",
+    "nameIt": "El Puente",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/El Puente.geojson",
+      "sha256": "d69f5ee0b59613c4e4937fa6cbe16ada97a972b7bfccd750c94c775263604591",
+      "size": 151579,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "el-puente",
+    "name": "El Puente",
+    "nameIt": "El Puente",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -100.17204,
+      25.90604
+    ],
+    "zoom": 11.4,
+    "population": 61906,
+    "grid": "cities/el-puente/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/el-puente/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "el-puente",
+        "name": "El Puente",
+        "nameIt": "El Puente",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -100.17204,
+          25.90604
+        ],
+        "zoom": 11.4,
+        "population": 61906,
+        "cells": 129,
+        "layer": "cities/el-puente/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -100.17204,
+            25.90604
+          ]
+        },
+        "properties": {
+          "id": "el-puente",
+          "name": "El Puente",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 9.9,
+          "population": 61906
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sochi",
+  "createdAt": "2026-10-08T16:14:13.809Z",
+  "updatedAt": "2026-10-08T16:14:13.809Z",
+  "meta": {
+    "name": "Sochi",
+    "nameIt": "Sochi",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sochi.geojson",
+      "sha256": "71edf6988f943907622fea9770c159f2b5bb6bf6f359793167be952be073f6af",
+      "size": 599430,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sochi",
+    "name": "Sochi",
+    "nameIt": "Sochi",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      39.73531,
+      43.60016
+    ],
+    "zoom": 10.5,
+    "population": 213326,
+    "grid": "cities/sochi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sochi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sochi",
+        "name": "Sochi",
+        "nameIt": "Sochi",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          39.73531,
+          43.60016
+        ],
+        "zoom": 10.5,
+        "population": 213326,
+        "cells": 525,
+        "layer": "cities/sochi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.73531,
+            43.60016
+          ]
+        },
+        "properties": {
+          "id": "sochi",
+          "name": "Sochi",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 213326
+        }
+      },
+      "summary": null
+    }
+  }
+}

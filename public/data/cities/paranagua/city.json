@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "paranagua",
+  "createdAt": "2026-10-08T16:04:16.159Z",
+  "updatedAt": "2026-10-08T16:04:16.159Z",
+  "meta": {
+    "name": "Paranaguá",
+    "nameIt": "Paranaguá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Paranaguá.geojson",
+      "sha256": "de6fe274a9a1b09720f3bae267f52aaca212a65a9272d526424b6823d90757f7",
+      "size": 498112,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "paranagua",
+    "name": "Paranaguá",
+    "nameIt": "Paranaguá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -48.53495,
+      -25.5368
+    ],
+    "zoom": 10.7,
+    "population": 132709,
+    "grid": "cities/paranagua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/paranagua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "paranagua",
+        "name": "Paranaguá",
+        "nameIt": "Paranaguá",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -48.53495,
+          -25.5368
+        ],
+        "zoom": 10.7,
+        "population": 132709,
+        "cells": 422,
+        "layer": "cities/paranagua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.53495,
+            -25.5368
+          ]
+        },
+        "properties": {
+          "id": "paranagua",
+          "name": "Paranaguá",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 35.3,
+          "population": 132709
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "phalia",
+  "createdAt": "2026-10-08T16:05:12.457Z",
+  "updatedAt": "2026-10-08T16:05:12.457Z",
+  "meta": {
+    "name": "Phalia",
+    "nameIt": "Phalia",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Phalia.geojson",
+      "sha256": "173cdd7f037890d306ccfdc3ab4494f1b28de47fae6931d1d536d180a71e0e14",
+      "size": 158243,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "phalia",
+    "name": "Phalia",
+    "nameIt": "Phalia",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      73.58144,
+      32.43058
+    ],
+    "zoom": 11.6,
+    "population": 74546,
+    "grid": "cities/phalia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/phalia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "phalia",
+        "name": "Phalia",
+        "nameIt": "Phalia",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          73.58144,
+          32.43058
+        ],
+        "zoom": 11.6,
+        "population": 74546,
+        "cells": 137,
+        "layer": "cities/phalia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.58144,
+            32.43058
+          ]
+        },
+        "properties": {
+          "id": "phalia",
+          "name": "Phalia",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 74546
+        }
+      },
+      "summary": null
+    }
+  }
+}

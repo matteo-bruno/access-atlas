@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-qurayyat",
+  "createdAt": "2026-10-08T15:04:44.972Z",
+  "updatedAt": "2026-10-08T15:04:44.972Z",
+  "meta": {
+    "name": "Al Qurayyat",
+    "nameIt": "Al Qurayyat",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Qurayyat.geojson",
+      "sha256": "f1d2183eca6f9223ca0ac251c97ee5c76049548ce4e943a5adfe396ac143abfb",
+      "size": 266017,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-qurayyat",
+    "name": "Al Qurayyat",
+    "nameIt": "Al Qurayyat",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA",
+    "center": [
+      37.34729,
+      31.32613
+    ],
+    "zoom": 11.4,
+    "population": 64651,
+    "grid": "cities/al-qurayyat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-qurayyat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-qurayyat",
+        "name": "Al Qurayyat",
+        "nameIt": "Al Qurayyat",
+        "region": "Saudi Arabia",
+        "regionIt": "Arabia Saudita",
+        "country": "SA",
+        "center": [
+          37.34729,
+          31.32613
+        ],
+        "zoom": 11.4,
+        "population": 64651,
+        "cells": 229,
+        "layer": "cities/al-qurayyat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.34729,
+            31.32613
+          ]
+        },
+        "properties": {
+          "id": "al-qurayyat",
+          "name": "Al Qurayyat",
+          "country": "SA",
+          "isStudy": true,
+          "proximityMinutes": 25.2,
+          "population": 64651
+        }
+      },
+      "summary": null
+    }
+  }
+}

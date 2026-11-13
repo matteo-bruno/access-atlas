@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hung-yen",
+  "createdAt": "2026-10-08T15:40:06.563Z",
+  "updatedAt": "2026-10-08T15:40:06.563Z",
+  "meta": {
+    "name": "Hưng Yên",
+    "nameIt": "Hưng Yên",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hưng Yên.geojson",
+      "sha256": "aa62ad9c2db3fbd941ebfa7744d0cd1e896a9695ecf9e0fd8d88d47287d7d72e",
+      "size": 191203,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hung-yen",
+    "name": "Hưng Yên",
+    "nameIt": "Hưng Yên",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      106.06013,
+      20.66208
+    ],
+    "zoom": 11.4,
+    "population": 71958,
+    "grid": "cities/hung-yen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hung-yen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hung-yen",
+        "name": "Hưng Yên",
+        "nameIt": "Hưng Yên",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          106.06013,
+          20.66208
+        ],
+        "zoom": 11.4,
+        "population": 71958,
+        "cells": 164,
+        "layer": "cities/hung-yen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.06013,
+            20.66208
+          ]
+        },
+        "properties": {
+          "id": "hung-yen",
+          "name": "Hưng Yên",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 71958
+        }
+      },
+      "summary": null
+    }
+  }
+}

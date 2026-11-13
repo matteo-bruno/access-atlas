@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "izeh",
+  "createdAt": "2026-10-08T15:41:31.725Z",
+  "updatedAt": "2026-10-08T15:41:31.725Z",
+  "meta": {
+    "name": "Izeh",
+    "nameIt": "Izeh",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Izeh.geojson",
+      "sha256": "3503ad69cd7a556a914b0826c8ea497a15a3eb424ac0459d5df5485ffd732e38",
+      "size": 231395,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "izeh",
+    "name": "Izeh",
+    "nameIt": "Izeh",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      49.8672,
+      31.83026
+    ],
+    "zoom": 11.6,
+    "population": 153425,
+    "grid": "cities/izeh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/izeh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "izeh",
+        "name": "Izeh",
+        "nameIt": "Izeh",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          49.8672,
+          31.83026
+        ],
+        "zoom": 11.6,
+        "population": 153425,
+        "cells": 199,
+        "layer": "cities/izeh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            49.8672,
+            31.83026
+          ]
+        },
+        "properties": {
+          "id": "izeh",
+          "name": "Izeh",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 21.6,
+          "population": 153425
+        }
+      },
+      "summary": null
+    }
+  }
+}

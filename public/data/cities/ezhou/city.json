@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ezhou",
+  "createdAt": "2026-10-08T15:32:39.587Z",
+  "updatedAt": "2026-10-08T15:32:39.587Z",
+  "meta": {
+    "name": "Ezhou",
+    "nameIt": "Ezhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ezhou.geojson",
+      "sha256": "2129babb72fb331e64935ae7cb1d3811b39aea24d77d73751152cb41ac8c86a1",
+      "size": 1405184,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ezhou",
+    "name": "Ezhou",
+    "nameIt": "Ezhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.87932,
+      30.41899
+    ],
+    "zoom": 9.8,
+    "population": 648919,
+    "grid": "cities/ezhou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ezhou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ezhou",
+        "name": "Ezhou",
+        "nameIt": "Ezhou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.87932,
+          30.41899
+        ],
+        "zoom": 9.8,
+        "population": 648919,
+        "cells": 1204,
+        "layer": "cities/ezhou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.87932,
+            30.41899
+          ]
+        },
+        "properties": {
+          "id": "ezhou",
+          "name": "Ezhou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 22.8,
+          "population": 648919
+        }
+      },
+      "summary": null
+    }
+  }
+}

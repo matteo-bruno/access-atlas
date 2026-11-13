@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "karaikal",
+  "createdAt": "2026-10-08T15:45:11.562Z",
+  "updatedAt": "2026-10-08T15:45:11.562Z",
+  "meta": {
+    "name": "Karaikal",
+    "nameIt": "Karaikal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Karaikal.geojson",
+      "sha256": "b75af11b18fe546c33b8d767158978dc308e885d8f12720405661558bd73c87a",
+      "size": 270373,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "karaikal",
+    "name": "Karaikal",
+    "nameIt": "Karaikal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.83282,
+      10.93577
+    ],
+    "zoom": 10.9,
+    "population": 146573,
+    "grid": "cities/karaikal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/karaikal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "karaikal",
+        "name": "Karaikal",
+        "nameIt": "Karaikal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.83282,
+          10.93577
+        ],
+        "zoom": 10.9,
+        "population": 146573,
+        "cells": 233,
+        "layer": "cities/karaikal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.83282,
+            10.93577
+          ]
+        },
+        "properties": {
+          "id": "karaikal",
+          "name": "Karaikal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 32.5,
+          "population": 146573
+        }
+      },
+      "summary": null
+    }
+  }
+}

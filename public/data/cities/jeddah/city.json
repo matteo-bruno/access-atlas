@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jeddah",
+  "createdAt": "2026-10-08T15:42:12.732Z",
+  "updatedAt": "2026-10-08T15:42:12.732Z",
+  "meta": {
+    "name": "Jeddah",
+    "nameIt": "Jeddah",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jeddah.geojson",
+      "sha256": "6b76be0a4a7cabc4482ab6f74fae25e08424f301de1d193d283d0bd5d4ff4ee2",
+      "size": 7178697,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jeddah",
+    "name": "Jeddah",
+    "nameIt": "Jeddah",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA",
+    "center": [
+      39.22031,
+      21.51483
+    ],
+    "zoom": 8.5,
+    "population": 2810077,
+    "grid": "cities/jeddah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jeddah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jeddah",
+        "name": "Jeddah",
+        "nameIt": "Jeddah",
+        "region": "Saudi Arabia",
+        "regionIt": "Arabia Saudita",
+        "country": "SA",
+        "center": [
+          39.22031,
+          21.51483
+        ],
+        "zoom": 8.5,
+        "population": 2810077,
+        "cells": 6161,
+        "layer": "cities/jeddah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.22031,
+            21.51483
+          ]
+        },
+        "properties": {
+          "id": "jeddah",
+          "name": "Jeddah",
+          "country": "SA",
+          "isStudy": true,
+          "proximityMinutes": 47.8,
+          "population": 2810077
+        }
+      },
+      "summary": null
+    }
+  }
+}

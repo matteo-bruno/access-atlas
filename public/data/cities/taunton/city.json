@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "taunton",
+  "createdAt": "2026-10-08T16:16:58.560Z",
+  "updatedAt": "2026-10-08T16:16:58.560Z",
+  "meta": {
+    "name": "Taunton",
+    "nameIt": "Taunton",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Taunton.geojson",
+      "sha256": "f3d165d96b144ac326cde171a7f1edd1729ea8892be1140098e604f239234bb8",
+      "size": 225223,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "taunton",
+    "name": "Taunton",
+    "nameIt": "Taunton",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -3.10009,
+      51.01753
+    ],
+    "zoom": 11.6,
+    "population": 60314,
+    "grid": "cities/taunton/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/taunton/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "taunton",
+        "name": "Taunton",
+        "nameIt": "Taunton",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -3.10009,
+          51.01753
+        ],
+        "zoom": 11.6,
+        "population": 60314,
+        "cells": 196,
+        "layer": "cities/taunton/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -3.10009,
+            51.01753
+          ]
+        },
+        "properties": {
+          "id": "taunton",
+          "name": "Taunton",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 11,
+          "population": 60314
+        }
+      },
+      "summary": null
+    }
+  }
+}

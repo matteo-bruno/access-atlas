@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lumeje",
+  "createdAt": "2026-10-08T15:52:40.354Z",
+  "updatedAt": "2026-10-08T15:52:40.354Z",
+  "meta": {
+    "name": "Lumeje",
+    "nameIt": "Lumeje",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lumeje.geojson",
+      "sha256": "fe938aac93e42d173aff076f1b64967f7484d7d2dc9598d8e1f88bc369f8d740",
+      "size": 65898,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lumeje",
+    "name": "Lumeje",
+    "nameIt": "Lumeje",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO",
+    "center": [
+      20.77805,
+      -11.56039
+    ],
+    "zoom": 12,
+    "population": 27335,
+    "grid": "cities/lumeje/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lumeje/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lumeje",
+        "name": "Lumeje",
+        "nameIt": "Lumeje",
+        "region": "Angola",
+        "regionIt": "Angola",
+        "country": "AO",
+        "center": [
+          20.77805,
+          -11.56039
+        ],
+        "zoom": 12,
+        "population": 27335,
+        "cells": 56,
+        "layer": "cities/lumeje/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.77805,
+            -11.56039
+          ]
+        },
+        "properties": {
+          "id": "lumeje",
+          "name": "Lumeje",
+          "country": "AO",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 27335
+        }
+      },
+      "summary": null
+    }
+  }
+}

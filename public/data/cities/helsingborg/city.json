@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "helsingborg",
+  "createdAt": "2026-10-08T15:38:20.228Z",
+  "updatedAt": "2026-10-08T15:38:20.228Z",
+  "meta": {
+    "name": "Helsingborg",
+    "nameIt": "Helsingborg",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Helsingborg.geojson",
+      "sha256": "2ac2565c0ad89d141de691323d7d8d3c77fdb6fc2c27311092c69411625730d5",
+      "size": 506445,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "helsingborg",
+    "name": "Helsingborg",
+    "nameIt": "Helsingborg",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE",
+    "center": [
+      12.71504,
+      56.04835
+    ],
+    "zoom": 10.8,
+    "population": 101553,
+    "grid": "cities/helsingborg/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 182
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/helsingborg/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "helsingborg",
+        "name": "Helsingborg",
+        "nameIt": "Helsingborg",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          12.71504,
+          56.04835
+        ],
+        "zoom": 10.8,
+        "population": 101553,
+        "cells": 442,
+        "layer": "cities/helsingborg/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 182
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.71504,
+            56.04835
+          ]
+        },
+        "properties": {
+          "id": "helsingborg",
+          "name": "Helsingborg",
+          "country": "SE",
+          "isStudy": true,
+          "proximityMinutes": 11,
+          "population": 101553
+        }
+      },
+      "summary": null
+    }
+  }
+}

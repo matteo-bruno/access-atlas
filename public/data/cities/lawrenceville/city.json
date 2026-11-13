@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lawrenceville",
+  "createdAt": "2026-10-08T15:50:26.843Z",
+  "updatedAt": "2026-10-08T15:50:26.843Z",
+  "meta": {
+    "name": "Lawrenceville",
+    "nameIt": "Lawrenceville",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lawrenceville.geojson",
+      "sha256": "80606a23d6b0e0fe9ddc84561758fcd78ec0beedc26d1803650a76ad80121721",
+      "size": 559020,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lawrenceville",
+    "name": "Lawrenceville",
+    "nameIt": "Lawrenceville",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -84.00872,
+      33.96983
+    ],
+    "zoom": 10.5,
+    "population": 64254,
+    "grid": "cities/lawrenceville/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lawrenceville/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lawrenceville",
+        "name": "Lawrenceville",
+        "nameIt": "Lawrenceville",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -84.00872,
+          33.96983
+        ],
+        "zoom": 10.5,
+        "population": 64254,
+        "cells": 483,
+        "layer": "cities/lawrenceville/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -84.00872,
+            33.96983
+          ]
+        },
+        "properties": {
+          "id": "lawrenceville",
+          "name": "Lawrenceville",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 35.1,
+          "population": 64254
+        }
+      },
+      "summary": null
+    }
+  }
+}

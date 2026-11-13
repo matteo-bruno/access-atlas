@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bute-town",
+  "createdAt": "2026-10-08T15:21:14.235Z",
+  "updatedAt": "2026-10-08T15:21:14.235Z",
+  "meta": {
+    "name": "Bute Town",
+    "nameIt": "Bute Town",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bute Town.geojson",
+      "sha256": "0ac9ff10b9b564f39463c986e61b6706556eeee9ff9879fe853720cdf84ec881",
+      "size": 45253,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bute-town",
+    "name": "Bute Town",
+    "nameIt": "Bute Town",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE",
+    "center": [
+      39.41938,
+      3.36167
+    ],
+    "zoom": 12,
+    "population": 29053,
+    "grid": "cities/bute-town/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bute-town/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bute-town",
+        "name": "Bute Town",
+        "nameIt": "Bute Town",
+        "region": "Kenya",
+        "regionIt": "Kenya",
+        "country": "KE",
+        "center": [
+          39.41938,
+          3.36167
+        ],
+        "zoom": 12,
+        "population": 29053,
+        "cells": 39,
+        "layer": "cities/bute-town/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.41938,
+            3.36167
+          ]
+        },
+        "properties": {
+          "id": "bute-town",
+          "name": "Bute Town",
+          "country": "KE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 29053
+        }
+      },
+      "summary": null
+    }
+  }
+}

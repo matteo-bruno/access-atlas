@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "batman",
+  "createdAt": "2026-10-08T15:16:06.892Z",
+  "updatedAt": "2026-10-08T15:16:06.892Z",
+  "meta": {
+    "name": "Batman",
+    "nameIt": "Batman",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Batman.geojson",
+      "sha256": "0e0ca977c90c2ba15851041d9ab274ea9033bced8039753ee2b9141cd281a892",
+      "size": 426388,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "batman",
+    "name": "Batman",
+    "nameIt": "Batman",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      41.13012,
+      37.88798
+    ],
+    "zoom": 11,
+    "population": 433342,
+    "grid": "cities/batman/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/batman/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "batman",
+        "name": "Batman",
+        "nameIt": "Batman",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          41.13012,
+          37.88798
+        ],
+        "zoom": 11,
+        "population": 433342,
+        "cells": 374,
+        "layer": "cities/batman/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            41.13012,
+            37.88798
+          ]
+        },
+        "properties": {
+          "id": "batman",
+          "name": "Batman",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 9.8,
+          "population": 433342
+        }
+      },
+      "summary": null
+    }
+  }
+}

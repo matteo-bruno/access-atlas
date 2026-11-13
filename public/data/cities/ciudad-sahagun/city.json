@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ciudad-sahagun",
+  "createdAt": "2026-10-08T15:25:42.203Z",
+  "updatedAt": "2026-10-08T15:25:42.203Z",
+  "meta": {
+    "name": "Ciudad Sahagún",
+    "nameIt": "Ciudad Sahagún",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ciudad Sahagún.geojson",
+      "sha256": "df64cab40d3d35d90a129faee4ac297b945e0351d904d4de1dc0ba8774cfec4c",
+      "size": 115405,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ciudad-sahagun",
+    "name": "Ciudad Sahagún",
+    "nameIt": "Ciudad Sahagún",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -98.56939,
+      19.77562
+    ],
+    "zoom": 11.7,
+    "population": 39879,
+    "grid": "cities/ciudad-sahagun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ciudad-sahagun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ciudad-sahagun",
+        "name": "Ciudad Sahagún",
+        "nameIt": "Ciudad Sahagún",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -98.56939,
+          19.77562
+        ],
+        "zoom": 11.7,
+        "population": 39879,
+        "cells": 99,
+        "layer": "cities/ciudad-sahagun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -98.56939,
+            19.77562
+          ]
+        },
+        "properties": {
+          "id": "ciudad-sahagun",
+          "name": "Ciudad Sahagún",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 39879
+        }
+      },
+      "summary": null
+    }
+  }
+}

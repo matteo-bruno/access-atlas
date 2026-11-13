@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "berlin-fua",
+  "createdAt": "2026-10-19T16:55:30.102Z",
+  "updatedAt": "2026-10-19T16:55:30.102Z",
+  "meta": {
+    "name": "Berlin",
+    "nameIt": "Berlino",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "berlin-fua",
+    "name": "Berlin",
+    "nameIt": "Berlino",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "extent": "fua",
+    "core": "berlin",
+    "center": [
+      13.38789,
+      52.49915
+    ],
+    "zoom": 8.5,
+    "population": 4915340,
+    "grid": "cities/berlin-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/berlin-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "berlin-fua",
+        "name": "Berlin",
+        "nameIt": "Berlino",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "extent": "fua",
+        "core": "berlin",
+        "center": [
+          13.38789,
+          52.49915
+        ],
+        "zoom": 8.5,
+        "population": 4915340,
+        "cells": 38010,
+        "layer": "cities/berlin-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.38789,
+            52.49915
+          ]
+        },
+        "properties": {
+          "id": "berlin-fua",
+          "name": "Berlin",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 8.9,
+          "population": 4915340
+        }
+      },
+      "summary": null
+    }
+  }
+}

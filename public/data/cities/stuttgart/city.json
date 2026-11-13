@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "stuttgart",
+  "createdAt": "2026-10-08T16:14:53.639Z",
+  "updatedAt": "2026-10-08T16:14:53.639Z",
+  "meta": {
+    "name": "Stuttgart",
+    "nameIt": "Stuttgart",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Stuttgart.geojson",
+      "sha256": "849fdc5db5ff33827af181d5b5f71933ad8329fa8b726c49440d0a47ed504f94",
+      "size": 2950827,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "stuttgart",
+    "name": "Stuttgart",
+    "nameIt": "Stuttgart",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      9.20639,
+      48.79216
+    ],
+    "zoom": 9.3,
+    "population": 898840,
+    "grid": "cities/stuttgart/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/stuttgart/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "stuttgart",
+        "name": "Stuttgart",
+        "nameIt": "Stuttgart",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.20639,
+          48.79216
+        ],
+        "zoom": 9.3,
+        "population": 898840,
+        "cells": 2602,
+        "layer": "cities/stuttgart/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.20639,
+            48.79216
+          ]
+        },
+        "properties": {
+          "id": "stuttgart",
+          "name": "Stuttgart",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 8.4,
+          "population": 898840
+        }
+      },
+      "summary": null
+    }
+  }
+}

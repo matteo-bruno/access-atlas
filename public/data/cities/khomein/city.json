@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khomein",
+  "createdAt": "2026-10-08T15:46:47.260Z",
+  "updatedAt": "2026-10-08T15:46:47.260Z",
+  "meta": {
+    "name": "Khomein",
+    "nameIt": "Khomein",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khomein.geojson",
+      "sha256": "148dc58f16b24ac96bd30fa213f0a8ba5eb4ebde9c64c90d4c6dc29070350fec",
+      "size": 162730,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khomein",
+    "name": "Khomein",
+    "nameIt": "Khomein",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      50.08345,
+      33.6376
+    ],
+    "zoom": 11.7,
+    "population": 60639,
+    "grid": "cities/khomein/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khomein/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khomein",
+        "name": "Khomein",
+        "nameIt": "Khomein",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          50.08345,
+          33.6376
+        ],
+        "zoom": 11.7,
+        "population": 60639,
+        "cells": 141,
+        "layer": "cities/khomein/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            50.08345,
+            33.6376
+          ]
+        },
+        "properties": {
+          "id": "khomein",
+          "name": "Khomein",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 12.8,
+          "population": 60639
+        }
+      },
+      "summary": null
+    }
+  }
+}

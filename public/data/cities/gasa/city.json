@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gasa",
+  "createdAt": "2026-10-08T15:34:42.844Z",
+  "updatedAt": "2026-10-08T15:34:42.844Z",
+  "meta": {
+    "name": "Gasa",
+    "nameIt": "Gasa",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gasa.geojson",
+      "sha256": "173caa81f90b082d6b12fc2d0d68423d889e5cd67d2daed0e5f6dd5c261edb77",
+      "size": 139081,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gasa",
+    "name": "Gasa",
+    "nameIt": "Gasa",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      100.78235,
+      21.96885
+    ],
+    "zoom": 11.7,
+    "population": 64973,
+    "grid": "cities/gasa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gasa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gasa",
+        "name": "Gasa",
+        "nameIt": "Gasa",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          100.78235,
+          21.96885
+        ],
+        "zoom": 11.7,
+        "population": 64973,
+        "cells": 119,
+        "layer": "cities/gasa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            100.78235,
+            21.96885
+          ]
+        },
+        "properties": {
+          "id": "gasa",
+          "name": "Gasa",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 64973
+        }
+      },
+      "summary": null
+    }
+  }
+}

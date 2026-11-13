@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tongyeong-si",
+  "createdAt": "2026-10-08T16:18:30.537Z",
+  "updatedAt": "2026-10-08T16:18:30.537Z",
+  "meta": {
+    "name": "Tongyeong-si",
+    "nameIt": "Tongyeong-si",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tongyeong-si.geojson",
+      "sha256": "c141bfa7d8017c873fa380ff85cd030773a52ab6255a628def8035e04d3d94ae",
+      "size": 279861,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tongyeong-si",
+    "name": "Tongyeong-si",
+    "nameIt": "Tongyeong-si",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      128.4225,
+      34.8457
+    ],
+    "zoom": 11.4,
+    "population": 71290,
+    "grid": "cities/tongyeong-si/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tongyeong-si/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tongyeong-si",
+        "name": "Tongyeong-si",
+        "nameIt": "Tongyeong-si",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          128.4225,
+          34.8457
+        ],
+        "zoom": 11.4,
+        "population": 71290,
+        "cells": 243,
+        "layer": "cities/tongyeong-si/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            128.4225,
+            34.8457
+          ]
+        },
+        "properties": {
+          "id": "tongyeong-si",
+          "name": "Tongyeong-si",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 71290
+        }
+      },
+      "summary": null
+    }
+  }
+}

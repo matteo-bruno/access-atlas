@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kragujevac",
+  "createdAt": "2026-10-08T15:48:21.807Z",
+  "updatedAt": "2026-10-08T15:48:21.807Z",
+  "meta": {
+    "name": "Kragujevac",
+    "nameIt": "Kragujevac",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kragujevac.geojson",
+      "sha256": "094e90ff2480912595e7a66dbf9375c6e0564850970936d494d81f6a9af8bdd0",
+      "size": 405826,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kragujevac",
+    "name": "Kragujevac",
+    "nameIt": "Kragujevac",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS",
+    "center": [
+      20.90525,
+      44.00999
+    ],
+    "zoom": 10.9,
+    "population": 129575,
+    "grid": "cities/kragujevac/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kragujevac/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kragujevac",
+        "name": "Kragujevac",
+        "nameIt": "Kragujevac",
+        "region": "Serbia",
+        "regionIt": "Serbia",
+        "country": "RS",
+        "center": [
+          20.90525,
+          44.00999
+        ],
+        "zoom": 10.9,
+        "population": 129575,
+        "cells": 354,
+        "layer": "cities/kragujevac/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.90525,
+            44.00999
+          ]
+        },
+        "properties": {
+          "id": "kragujevac",
+          "name": "Kragujevac",
+          "country": "RS",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 129575
+        }
+      },
+      "summary": null
+    }
+  }
+}

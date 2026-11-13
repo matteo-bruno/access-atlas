@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barra-do-garcas",
+  "createdAt": "2026-10-08T15:15:41.936Z",
+  "updatedAt": "2026-10-08T15:15:41.936Z",
+  "meta": {
+    "name": "Barra do Garças",
+    "nameIt": "Barra do Garças",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barra do Garças.geojson",
+      "sha256": "184232a16c6a3ebb298cab470bc543e323822cad1f4eb763ec06350b28d227fc",
+      "size": 223244,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barra-do-garcas",
+    "name": "Barra do Garças",
+    "nameIt": "Barra do Garças",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -52.26133,
+      -15.89088
+    ],
+    "zoom": 11.2,
+    "population": 60814,
+    "grid": "cities/barra-do-garcas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barra-do-garcas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barra-do-garcas",
+        "name": "Barra do Garças",
+        "nameIt": "Barra do Garças",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -52.26133,
+          -15.89088
+        ],
+        "zoom": 11.2,
+        "population": 60814,
+        "cells": 189,
+        "layer": "cities/barra-do-garcas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -52.26133,
+            -15.89088
+          ]
+        },
+        "properties": {
+          "id": "barra-do-garcas",
+          "name": "Barra do Garças",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 25,
+          "population": 60814
+        }
+      },
+      "summary": null
+    }
+  }
+}

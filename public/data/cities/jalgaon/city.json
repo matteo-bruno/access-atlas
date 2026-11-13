@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jalgaon",
+  "createdAt": "2026-10-08T15:41:50.136Z",
+  "updatedAt": "2026-10-08T15:41:50.136Z",
+  "meta": {
+    "name": "Jalgaon",
+    "nameIt": "Jalgaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jalgaon.geojson",
+      "sha256": "4c90cd71a757e47bd9d8b52c19b5df2e748d83a81451c4f2a116a27f961a0d06",
+      "size": 683201,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jalgaon",
+    "name": "Jalgaon",
+    "nameIt": "Jalgaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.56166,
+      21.00183
+    ],
+    "zoom": 10.4,
+    "population": 435442,
+    "grid": "cities/jalgaon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jalgaon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jalgaon",
+        "name": "Jalgaon",
+        "nameIt": "Jalgaon",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.56166,
+          21.00183
+        ],
+        "zoom": 10.4,
+        "population": 435442,
+        "cells": 589,
+        "layer": "cities/jalgaon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.56166,
+            21.00183
+          ]
+        },
+        "properties": {
+          "id": "jalgaon",
+          "name": "Jalgaon",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 21.7,
+          "population": 435442
+        }
+      },
+      "summary": null
+    }
+  }
+}

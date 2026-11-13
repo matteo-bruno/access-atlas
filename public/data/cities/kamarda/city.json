@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kamarda",
+  "createdAt": "2026-10-08T15:44:37.462Z",
+  "updatedAt": "2026-10-08T15:44:37.462Z",
+  "meta": {
+    "name": "Kamarda",
+    "nameIt": "Kamarda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kamarda.geojson",
+      "sha256": "faca116a3969604f5d29c8daeb09dfdfe955b158769d6c85ff7f3a3cc50da50b",
+      "size": 842123,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kamarda",
+    "name": "Kamarda",
+    "nameIt": "Kamarda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.96924,
+      21.9431
+    ],
+    "zoom": 10.1,
+    "population": 71098,
+    "grid": "cities/kamarda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kamarda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kamarda",
+        "name": "Kamarda",
+        "nameIt": "Kamarda",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.96924,
+          21.9431
+        ],
+        "zoom": 10.1,
+        "population": 71098,
+        "cells": 727,
+        "layer": "cities/kamarda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.96924,
+            21.9431
+          ]
+        },
+        "properties": {
+          "id": "kamarda",
+          "name": "Kamarda",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 71098
+        }
+      },
+      "summary": null
+    }
+  }
+}

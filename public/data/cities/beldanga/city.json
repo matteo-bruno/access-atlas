@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "beldanga",
+  "createdAt": "2026-10-08T15:17:04.387Z",
+  "updatedAt": "2026-10-08T15:17:04.387Z",
+  "meta": {
+    "name": "Beldanga",
+    "nameIt": "Beldanga",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Beldanga.geojson",
+      "sha256": "51cfc9788de06b7315203d61899eceb2b188f8de5874bcde89f65ecc070a6eb5",
+      "size": 498371,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "beldanga",
+    "name": "Beldanga",
+    "nameIt": "Beldanga",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.25116,
+      23.93316
+    ],
+    "zoom": 10.8,
+    "population": 183846,
+    "grid": "cities/beldanga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/beldanga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "beldanga",
+        "name": "Beldanga",
+        "nameIt": "Beldanga",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.25116,
+          23.93316
+        ],
+        "zoom": 10.8,
+        "population": 183846,
+        "cells": 430,
+        "layer": "cities/beldanga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.25116,
+            23.93316
+          ]
+        },
+        "properties": {
+          "id": "beldanga",
+          "name": "Beldanga",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 183846
+        }
+      },
+      "summary": null
+    }
+  }
+}

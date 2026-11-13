@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wuhu",
+  "createdAt": "2026-10-08T16:21:58.438Z",
+  "updatedAt": "2026-10-08T16:21:58.438Z",
+  "meta": {
+    "name": "Wuhu",
+    "nameIt": "Wuhu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wuhu.geojson",
+      "sha256": "100eeb2af8ebd40ab2b1bd8e129df1ebfd97eb89b032dab18f7725eedc395a17",
+      "size": 2767607,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wuhu",
+    "name": "Wuhu",
+    "nameIt": "Wuhu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.38091,
+      31.35837
+    ],
+    "zoom": 9.4,
+    "population": 1179244,
+    "grid": "cities/wuhu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wuhu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wuhu",
+        "name": "Wuhu",
+        "nameIt": "Wuhu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.38091,
+          31.35837
+        ],
+        "zoom": 9.4,
+        "population": 1179244,
+        "cells": 2365,
+        "layer": "cities/wuhu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.38091,
+            31.35837
+          ]
+        },
+        "properties": {
+          "id": "wuhu",
+          "name": "Wuhu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 40.4,
+          "population": 1179244
+        }
+      },
+      "summary": null
+    }
+  }
+}

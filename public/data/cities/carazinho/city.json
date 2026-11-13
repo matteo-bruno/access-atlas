@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "carazinho",
+  "createdAt": "2026-10-08T15:22:32.116Z",
+  "updatedAt": "2026-10-08T15:22:32.116Z",
+  "meta": {
+    "name": "Carazinho",
+    "nameIt": "Carazinho",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Carazinho.geojson",
+      "sha256": "181ffd945502f42af27c8e46b7d7a915d22d6f6dc39e63d8070d1391bf9b69eb",
+      "size": 243374,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "carazinho",
+    "name": "Carazinho",
+    "nameIt": "Carazinho",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -52.79181,
+      -28.29379
+    ],
+    "zoom": 11.6,
+    "population": 53470,
+    "grid": "cities/carazinho/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/carazinho/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "carazinho",
+        "name": "Carazinho",
+        "nameIt": "Carazinho",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -52.79181,
+          -28.29379
+        ],
+        "zoom": 11.6,
+        "population": 53470,
+        "cells": 207,
+        "layer": "cities/carazinho/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -52.79181,
+            -28.29379
+          ]
+        },
+        "properties": {
+          "id": "carazinho",
+          "name": "Carazinho",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 53470
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tondano",
+  "createdAt": "2026-10-08T16:18:22.236Z",
+  "updatedAt": "2026-10-08T16:18:22.236Z",
+  "meta": {
+    "name": "Tondano",
+    "nameIt": "Tondano",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tondano.geojson",
+      "sha256": "9c1a6e175601b54ac8e339b18df612c778fe3277bba40c232e91d58b063bf7a9",
+      "size": 147959,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tondano",
+    "name": "Tondano",
+    "nameIt": "Tondano",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      124.90679,
+      1.30297
+    ],
+    "zoom": 11.4,
+    "population": 57302,
+    "grid": "cities/tondano/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tondano/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tondano",
+        "name": "Tondano",
+        "nameIt": "Tondano",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          124.90679,
+          1.30297
+        ],
+        "zoom": 11.4,
+        "population": 57302,
+        "cells": 127,
+        "layer": "cities/tondano/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            124.90679,
+            1.30297
+          ]
+        },
+        "properties": {
+          "id": "tondano",
+          "name": "Tondano",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 7.6,
+          "population": 57302
+        }
+      },
+      "summary": null
+    }
+  }
+}

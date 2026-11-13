@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "appleton",
+  "createdAt": "2026-10-08T15:08:50.634Z",
+  "updatedAt": "2026-10-08T15:08:50.634Z",
+  "meta": {
+    "name": "Appleton",
+    "nameIt": "Appleton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Appleton.geojson",
+      "sha256": "e76a172ab0d4ce63d51e2c12bc5c61c5af91d012f7b7ed90bbf0080ac1114227",
+      "size": 496121,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "appleton",
+    "name": "Appleton",
+    "nameIt": "Appleton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -88.40642,
+      44.2636
+    ],
+    "zoom": 10.9,
+    "population": 72759,
+    "grid": "cities/appleton/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/appleton/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "appleton",
+        "name": "Appleton",
+        "nameIt": "Appleton",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -88.40642,
+          44.2636
+        ],
+        "zoom": 10.9,
+        "population": 72759,
+        "cells": 432,
+        "layer": "cities/appleton/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.40642,
+            44.2636
+          ]
+        },
+        "properties": {
+          "id": "appleton",
+          "name": "Appleton",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 72759
+        }
+      },
+      "summary": null
+    }
+  }
+}

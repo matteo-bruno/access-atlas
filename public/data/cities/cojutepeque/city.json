@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cojutepeque",
+  "createdAt": "2026-10-08T15:25:57.143Z",
+  "updatedAt": "2026-10-08T15:25:57.143Z",
+  "meta": {
+    "name": "Cojutepeque",
+    "nameIt": "Cojutepeque",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cojutepeque.geojson",
+      "sha256": "4037a93d38cb84cb5caa3c760be9232dab0505d3285e70fc537cf3730336c64c",
+      "size": 111882,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cojutepeque",
+    "name": "Cojutepeque",
+    "nameIt": "Cojutepeque",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV",
+    "center": [
+      -88.93036,
+      13.71987
+    ],
+    "zoom": 11.7,
+    "population": 48803,
+    "grid": "cities/cojutepeque/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cojutepeque/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cojutepeque",
+        "name": "Cojutepeque",
+        "nameIt": "Cojutepeque",
+        "region": "El Salvador",
+        "regionIt": "El Salvador",
+        "country": "SV",
+        "center": [
+          -88.93036,
+          13.71987
+        ],
+        "zoom": 11.7,
+        "population": 48803,
+        "cells": 96,
+        "layer": "cities/cojutepeque/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.93036,
+            13.71987
+          ]
+        },
+        "properties": {
+          "id": "cojutepeque",
+          "name": "Cojutepeque",
+          "country": "SV",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 48803
+        }
+      },
+      "summary": null
+    }
+  }
+}

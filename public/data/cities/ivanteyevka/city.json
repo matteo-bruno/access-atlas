@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ivanteyevka",
+  "createdAt": "2026-10-08T15:41:29.471Z",
+  "updatedAt": "2026-10-08T15:41:29.471Z",
+  "meta": {
+    "name": "Ivanteyevka",
+    "nameIt": "Ivanteyevka",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ivanteyevka.geojson",
+      "sha256": "9631417eb6a8df2605ea85efb3793bb827baaf4bc082181ad102c836feea4316",
+      "size": 187220,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ivanteyevka",
+    "name": "Ivanteyevka",
+    "nameIt": "Ivanteyevka",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      37.92466,
+      55.96839
+    ],
+    "zoom": 11.6,
+    "population": 37331,
+    "grid": "cities/ivanteyevka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ivanteyevka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ivanteyevka",
+        "name": "Ivanteyevka",
+        "nameIt": "Ivanteyevka",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          37.92466,
+          55.96839
+        ],
+        "zoom": 11.6,
+        "population": 37331,
+        "cells": 163,
+        "layer": "cities/ivanteyevka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.92466,
+            55.96839
+          ]
+        },
+        "properties": {
+          "id": "ivanteyevka",
+          "name": "Ivanteyevka",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 12.3,
+          "population": 37331
+        }
+      },
+      "summary": null
+    }
+  }
+}

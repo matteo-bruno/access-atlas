@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rosario-argentina",
+  "createdAt": "2026-10-08T16:09:08.117Z",
+  "updatedAt": "2026-10-08T16:09:08.117Z",
+  "meta": {
+    "name": "Rosario (Argentina)",
+    "nameIt": "Rosario (Argentina)",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rosario (Argentina).geojson",
+      "sha256": "b86928ca6e25a808f41b794e97e038ce52e8d19e2b475d478de37babde69a308",
+      "size": 2924211,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rosario-argentina",
+    "name": "Rosario (Argentina)",
+    "nameIt": "Rosario (Argentina)",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -60.68019,
+      -32.94855
+    ],
+    "zoom": 9.3,
+    "population": 1016833,
+    "grid": "cities/rosario-argentina/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rosario-argentina/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rosario-argentina",
+        "name": "Rosario (Argentina)",
+        "nameIt": "Rosario (Argentina)",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -60.68019,
+          -32.94855
+        ],
+        "zoom": 9.3,
+        "population": 1016833,
+        "cells": 2517,
+        "layer": "cities/rosario-argentina/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -60.68019,
+            -32.94855
+          ]
+        },
+        "properties": {
+          "id": "rosario-argentina",
+          "name": "Rosario (Argentina)",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 1016833
+        }
+      },
+      "summary": null
+    }
+  }
+}

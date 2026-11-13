@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nuremberg-fua",
+  "createdAt": "2026-10-19T16:57:51.237Z",
+  "updatedAt": "2026-10-19T16:57:51.237Z",
+  "meta": {
+    "name": "Nuremberg",
+    "nameIt": "Nuremberg",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "nuremberg-fua",
+    "name": "Nuremberg",
+    "nameIt": "Nuremberg",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "extent": "fua",
+    "core": "nuremberg",
+    "center": [
+      11.06273,
+      49.46989
+    ],
+    "zoom": 8.5,
+    "population": 1320134,
+    "grid": "cities/nuremberg-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nuremberg-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nuremberg-fua",
+        "name": "Nuremberg",
+        "nameIt": "Nuremberg",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "extent": "fua",
+        "core": "nuremberg",
+        "center": [
+          11.06273,
+          49.46989
+        ],
+        "zoom": 8.5,
+        "population": 1320134,
+        "cells": 18934,
+        "layer": "cities/nuremberg-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.06273,
+            49.46989
+          ]
+        },
+        "properties": {
+          "id": "nuremberg-fua",
+          "name": "Nuremberg",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 12,
+          "population": 1320134
+        }
+      },
+      "summary": null
+    }
+  }
+}

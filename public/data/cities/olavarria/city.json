@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "olavarria",
+  "createdAt": "2026-10-08T16:02:45.217Z",
+  "updatedAt": "2026-10-08T16:02:45.217Z",
+  "meta": {
+    "name": "Olavarría",
+    "nameIt": "Olavarría",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Olavarría.geojson",
+      "sha256": "c226240f8223b65d4a33ef60b93786a1633613a7876d4bf351877343f8ffc901",
+      "size": 396748,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "olavarria",
+    "name": "Olavarría",
+    "nameIt": "Olavarría",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -60.31863,
+      -36.89691
+    ],
+    "zoom": 11.5,
+    "population": 74703,
+    "grid": "cities/olavarria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 167
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/olavarria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "olavarria",
+        "name": "Olavarría",
+        "nameIt": "Olavarría",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -60.31863,
+          -36.89691
+        ],
+        "zoom": 11.5,
+        "population": 74703,
+        "cells": 338,
+        "layer": "cities/olavarria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 167
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -60.31863,
+            -36.89691
+          ]
+        },
+        "properties": {
+          "id": "olavarria",
+          "name": "Olavarría",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 74703
+        }
+      },
+      "summary": null
+    }
+  }
+}

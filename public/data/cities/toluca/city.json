@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "toluca",
+  "createdAt": "2026-10-08T16:18:19.878Z",
+  "updatedAt": "2026-10-08T16:18:19.878Z",
+  "meta": {
+    "name": "Toluca",
+    "nameIt": "Toluca",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Toluca.geojson",
+      "sha256": "efd642aabdbdd1c1099ee834a097b49f67d0686c5581185aa38e2d488a3a7999",
+      "size": 3736926,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "toluca",
+    "name": "Toluca",
+    "nameIt": "Toluca",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -99.62477,
+      19.29003
+    ],
+    "zoom": 8.8,
+    "population": 1549068,
+    "grid": "cities/toluca/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/toluca/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "toluca",
+        "name": "Toluca",
+        "nameIt": "Toluca",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -99.62477,
+          19.29003
+        ],
+        "zoom": 8.8,
+        "population": 1549068,
+        "cells": 3231,
+        "layer": "cities/toluca/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -99.62477,
+            19.29003
+          ]
+        },
+        "properties": {
+          "id": "toluca",
+          "name": "Toluca",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 19.1,
+          "population": 1549068
+        }
+      },
+      "summary": null
+    }
+  }
+}

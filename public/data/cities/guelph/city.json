@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guelph",
+  "createdAt": "2026-10-08T15:36:30.852Z",
+  "updatedAt": "2026-10-08T15:36:30.852Z",
+  "meta": {
+    "name": "Guelph",
+    "nameIt": "Guelph",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guelph.geojson",
+      "sha256": "661382d6701d14fddef7120752d8cfb37393560a772aac0d215b903546f2343c",
+      "size": 572062,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guelph",
+    "name": "Guelph",
+    "nameIt": "Guelph",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -80.25328,
+      43.54271
+    ],
+    "zoom": 10.8,
+    "population": 133204,
+    "grid": "cities/guelph/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guelph/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guelph",
+        "name": "Guelph",
+        "nameIt": "Guelph",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -80.25328,
+          43.54271
+        ],
+        "zoom": 10.8,
+        "population": 133204,
+        "cells": 498,
+        "layer": "cities/guelph/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.25328,
+            43.54271
+          ]
+        },
+        "properties": {
+          "id": "guelph",
+          "name": "Guelph",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 133204
+        }
+      },
+      "summary": null
+    }
+  }
+}

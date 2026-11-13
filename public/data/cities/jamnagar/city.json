@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jamnagar",
+  "createdAt": "2026-10-08T15:41:54.397Z",
+  "updatedAt": "2026-10-08T15:41:54.397Z",
+  "meta": {
+    "name": "Jamnagar",
+    "nameIt": "Jamnagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jamnagar.geojson",
+      "sha256": "a2e520fd5d191d1f6d6e1965af5587fc5719f49f28fddd97c0817d6560a32e7a",
+      "size": 899966,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jamnagar",
+    "name": "Jamnagar",
+    "nameIt": "Jamnagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      70.061,
+      22.46372
+    ],
+    "zoom": 10.3,
+    "population": 490388,
+    "grid": "cities/jamnagar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jamnagar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jamnagar",
+        "name": "Jamnagar",
+        "nameIt": "Jamnagar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          70.061,
+          22.46372
+        ],
+        "zoom": 10.3,
+        "population": 490388,
+        "cells": 777,
+        "layer": "cities/jamnagar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            70.061,
+            22.46372
+          ]
+        },
+        "properties": {
+          "id": "jamnagar",
+          "name": "Jamnagar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 32.4,
+          "population": 490388
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-mateo",
+  "createdAt": "2026-10-08T16:10:39.610Z",
+  "updatedAt": "2026-10-08T16:10:39.610Z",
+  "meta": {
+    "name": "San Mateo",
+    "nameIt": "San Mateo",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Mateo.geojson",
+      "sha256": "2277e1161ed378220d125a15950bb8f586c1edde2b78c508b0826ee63abc06e6",
+      "size": 101734,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-mateo",
+    "name": "San Mateo",
+    "nameIt": "San Mateo",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -67.42025,
+      10.21469
+    ],
+    "zoom": 12,
+    "population": 25793,
+    "grid": "cities/san-mateo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-mateo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-mateo",
+        "name": "San Mateo",
+        "nameIt": "San Mateo",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -67.42025,
+          10.21469
+        ],
+        "zoom": 12,
+        "population": 25793,
+        "cells": 87,
+        "layer": "cities/san-mateo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -67.42025,
+            10.21469
+          ]
+        },
+        "properties": {
+          "id": "san-mateo",
+          "name": "San Mateo",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 25793
+        }
+      },
+      "summary": null
+    }
+  }
+}

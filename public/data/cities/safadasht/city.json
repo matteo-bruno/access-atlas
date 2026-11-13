@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "safadasht",
+  "createdAt": "2026-10-08T16:09:39.228Z",
+  "updatedAt": "2026-10-08T16:09:39.228Z",
+  "meta": {
+    "name": "Safadasht",
+    "nameIt": "Safadasht",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Safadasht.geojson",
+      "sha256": "43ee77e41a954d4c931a8606a0442699faf27136b581d2bb569c57103f9375ef",
+      "size": 462063,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "safadasht",
+    "name": "Safadasht",
+    "nameIt": "Safadasht",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      50.82746,
+      35.68507
+    ],
+    "zoom": 10.8,
+    "population": 49355,
+    "grid": "cities/safadasht/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/safadasht/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "safadasht",
+        "name": "Safadasht",
+        "nameIt": "Safadasht",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          50.82746,
+          35.68507
+        ],
+        "zoom": 10.8,
+        "population": 49355,
+        "cells": 399,
+        "layer": "cities/safadasht/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            50.82746,
+            35.68507
+          ]
+        },
+        "properties": {
+          "id": "safadasht",
+          "name": "Safadasht",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 56.2,
+          "population": 49355
+        }
+      },
+      "summary": null
+    }
+  }
+}

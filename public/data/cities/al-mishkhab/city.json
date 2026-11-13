@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-mishkhab",
+  "createdAt": "2026-10-08T15:04:39.279Z",
+  "updatedAt": "2026-10-08T15:04:39.279Z",
+  "meta": {
+    "name": "Al Mishkhab",
+    "nameIt": "Al Mishkhab",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Mishkhab.geojson",
+      "sha256": "7104fd22fe8d1415723ae5e5c2d13bf931ef65e2eb3f32410d799ac9052f3d22",
+      "size": 117277,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-mishkhab",
+    "name": "Al Mishkhab",
+    "nameIt": "Al Mishkhab",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      44.49173,
+      31.80345
+    ],
+    "zoom": 11.9,
+    "population": 60489,
+    "grid": "cities/al-mishkhab/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-mishkhab/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-mishkhab",
+        "name": "Al Mishkhab",
+        "nameIt": "Al Mishkhab",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          44.49173,
+          31.80345
+        ],
+        "zoom": 11.9,
+        "population": 60489,
+        "cells": 101,
+        "layer": "cities/al-mishkhab/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.49173,
+            31.80345
+          ]
+        },
+        "properties": {
+          "id": "al-mishkhab",
+          "name": "Al Mishkhab",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 25.2,
+          "population": 60489
+        }
+      },
+      "summary": null
+    }
+  }
+}

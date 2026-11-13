@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "silopi",
+  "createdAt": "2026-10-08T16:13:41.985Z",
+  "updatedAt": "2026-10-08T16:13:41.985Z",
+  "meta": {
+    "name": "Silopi",
+    "nameIt": "Silopi",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Silopi.geojson",
+      "sha256": "c9f470215def8306fae531344d8c9255525a74a80b26d1f933e93d163dc49085",
+      "size": 117986,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "silopi",
+    "name": "Silopi",
+    "nameIt": "Silopi",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      42.46732,
+      37.2491
+    ],
+    "zoom": 11.9,
+    "population": 95666,
+    "grid": "cities/silopi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/silopi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "silopi",
+        "name": "Silopi",
+        "nameIt": "Silopi",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          42.46732,
+          37.2491
+        ],
+        "zoom": 11.9,
+        "population": 95666,
+        "cells": 102,
+        "layer": "cities/silopi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            42.46732,
+            37.2491
+          ]
+        },
+        "properties": {
+          "id": "silopi",
+          "name": "Silopi",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 12.7,
+          "population": 95666
+        }
+      },
+      "summary": null
+    }
+  }
+}

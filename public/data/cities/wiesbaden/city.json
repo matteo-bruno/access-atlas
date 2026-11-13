@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wiesbaden",
+  "createdAt": "2026-10-08T16:21:39.990Z",
+  "updatedAt": "2026-10-08T16:21:39.990Z",
+  "meta": {
+    "name": "Wiesbaden",
+    "nameIt": "Wiesbaden",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wiesbaden.geojson",
+      "sha256": "b1ffd75a8b28756f445fe0ba215f0f6e1faf2f92563728069e3a99eed81eb782",
+      "size": 1274203,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wiesbaden",
+    "name": "Wiesbaden",
+    "nameIt": "Wiesbaden",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      8.24458,
+      50.02955
+    ],
+    "zoom": 10.1,
+    "population": 406667,
+    "grid": "cities/wiesbaden/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wiesbaden/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wiesbaden",
+        "name": "Wiesbaden",
+        "nameIt": "Wiesbaden",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          8.24458,
+          50.02955
+        ],
+        "zoom": 10.1,
+        "population": 406667,
+        "cells": 1125,
+        "layer": "cities/wiesbaden/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.24458,
+            50.02955
+          ]
+        },
+        "properties": {
+          "id": "wiesbaden",
+          "name": "Wiesbaden",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 8.3,
+          "population": 406667
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ondo",
+  "createdAt": "2026-10-08T16:02:51.894Z",
+  "updatedAt": "2026-10-08T16:02:51.894Z",
+  "meta": {
+    "name": "Ondo",
+    "nameIt": "Ondo",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ondo.geojson",
+      "sha256": "d1a9a2d24d6d8c6e3974b44891cd710ca40aa324a1c4bb69df3e3ed797cdb583",
+      "size": 893780,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ondo",
+    "name": "Ondo",
+    "nameIt": "Ondo",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      4.83627,
+      7.09653
+    ],
+    "zoom": 10.6,
+    "population": 542830,
+    "grid": "cities/ondo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ondo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ondo",
+        "name": "Ondo",
+        "nameIt": "Ondo",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          4.83627,
+          7.09653
+        ],
+        "zoom": 10.6,
+        "population": 542830,
+        "cells": 776,
+        "layer": "cities/ondo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.83627,
+            7.09653
+          ]
+        },
+        "properties": {
+          "id": "ondo",
+          "name": "Ondo",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 542830
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nohar",
+  "createdAt": "2026-10-08T16:01:54.465Z",
+  "updatedAt": "2026-10-08T16:01:54.465Z",
+  "meta": {
+    "name": "Nohar",
+    "nameIt": "Nohar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nohar.geojson",
+      "sha256": "faa20c29f5e354c812322bf363db173bd24591d8b1a3bce0ad6d08841493bd8c",
+      "size": 101997,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nohar",
+    "name": "Nohar",
+    "nameIt": "Nohar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.7711,
+      29.18463
+    ],
+    "zoom": 12,
+    "population": 56419,
+    "grid": "cities/nohar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nohar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nohar",
+        "name": "Nohar",
+        "nameIt": "Nohar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.7711,
+          29.18463
+        ],
+        "zoom": 12,
+        "population": 56419,
+        "cells": 88,
+        "layer": "cities/nohar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.7711,
+            29.18463
+          ]
+        },
+        "properties": {
+          "id": "nohar",
+          "name": "Nohar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 56419
+        }
+      },
+      "summary": null
+    }
+  }
+}

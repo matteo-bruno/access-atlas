@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "heidelberg",
+  "createdAt": "2026-10-08T15:38:15.241Z",
+  "updatedAt": "2026-10-08T15:38:15.241Z",
+  "meta": {
+    "name": "Heidelberg",
+    "nameIt": "Heidelberg",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Heidelberg.geojson",
+      "sha256": "43a8916512c887bc5e76188de85c05f4e090efaea2a889b4244873569a9c0635",
+      "size": 512382,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "heidelberg",
+    "name": "Heidelberg",
+    "nameIt": "Heidelberg",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      8.66999,
+      49.38926
+    ],
+    "zoom": 10.6,
+    "population": 173116,
+    "grid": "cities/heidelberg/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/heidelberg/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "heidelberg",
+        "name": "Heidelberg",
+        "nameIt": "Heidelberg",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          8.66999,
+          49.38926
+        ],
+        "zoom": 10.6,
+        "population": 173116,
+        "cells": 453,
+        "layer": "cities/heidelberg/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.66999,
+            49.38926
+          ]
+        },
+        "properties": {
+          "id": "heidelberg",
+          "name": "Heidelberg",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 6.8,
+          "population": 173116
+        }
+      },
+      "summary": null
+    }
+  }
+}

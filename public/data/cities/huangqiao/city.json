@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huangqiao",
+  "createdAt": "2026-10-08T15:39:31.001Z",
+  "updatedAt": "2026-10-08T15:39:31.001Z",
+  "meta": {
+    "name": "Huangqiao",
+    "nameIt": "Huangqiao",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huangqiao.geojson",
+      "sha256": "8aaeadbd94999a9fcb6a4646fd488d837e6b4e0a72ef3f5742ba73f777d8f502",
+      "size": 527883,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huangqiao",
+    "name": "Huangqiao",
+    "nameIt": "Huangqiao",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      120.22454,
+      32.2415
+    ],
+    "zoom": 10.8,
+    "population": 84466,
+    "grid": "cities/huangqiao/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huangqiao/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huangqiao",
+        "name": "Huangqiao",
+        "nameIt": "Huangqiao",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          120.22454,
+          32.2415
+        ],
+        "zoom": 10.8,
+        "population": 84466,
+        "cells": 453,
+        "layer": "cities/huangqiao/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.22454,
+            32.2415
+          ]
+        },
+        "properties": {
+          "id": "huangqiao",
+          "name": "Huangqiao",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 84466
+        }
+      },
+      "summary": null
+    }
+  }
+}

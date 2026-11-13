@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pingxiang",
+  "createdAt": "2026-10-08T16:05:41.197Z",
+  "updatedAt": "2026-10-08T16:05:41.197Z",
+  "meta": {
+    "name": "Pingxiang",
+    "nameIt": "Pingxiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pingxiang.geojson",
+      "sha256": "35ec4f39c43617b19d2ce31bbedf1594b8730eda31bfefac0ae8cb342e10224a",
+      "size": 1055152,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pingxiang",
+    "name": "Pingxiang",
+    "nameIt": "Pingxiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.85898,
+      27.63727
+    ],
+    "zoom": 10.2,
+    "population": 503372,
+    "grid": "cities/pingxiang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pingxiang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pingxiang",
+        "name": "Pingxiang",
+        "nameIt": "Pingxiang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.85898,
+          27.63727
+        ],
+        "zoom": 10.2,
+        "population": 503372,
+        "cells": 902,
+        "layer": "cities/pingxiang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.85898,
+            27.63727
+          ]
+        },
+        "properties": {
+          "id": "pingxiang",
+          "name": "Pingxiang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 39.9,
+          "population": 503372
+        }
+      },
+      "summary": null
+    }
+  }
+}

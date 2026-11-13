@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kuytun",
+  "createdAt": "2026-10-08T15:49:03.375Z",
+  "updatedAt": "2026-10-08T15:49:03.375Z",
+  "meta": {
+    "name": "Kuytun",
+    "nameIt": "Kuytun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kuytun.geojson",
+      "sha256": "56a00a1b9dc23cb044cf55bb19ad411ba599c8934c4c5ae321e0ead6e62e148c",
+      "size": 472933,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kuytun",
+    "name": "Kuytun",
+    "nameIt": "Kuytun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      84.89931,
+      44.41678
+    ],
+    "zoom": 10.5,
+    "population": 170088,
+    "grid": "cities/kuytun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kuytun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kuytun",
+        "name": "Kuytun",
+        "nameIt": "Kuytun",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          84.89931,
+          44.41678
+        ],
+        "zoom": 10.5,
+        "population": 170088,
+        "cells": 409,
+        "layer": "cities/kuytun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.89931,
+            44.41678
+          ]
+        },
+        "properties": {
+          "id": "kuytun",
+          "name": "Kuytun",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 21.8,
+          "population": 170088
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "caldas-novas",
+  "createdAt": "2026-10-08T15:21:54.365Z",
+  "updatedAt": "2026-10-08T15:21:54.365Z",
+  "meta": {
+    "name": "Caldas Novas",
+    "nameIt": "Caldas Novas",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Caldas Novas.geojson",
+      "sha256": "d180e8fc84d192cc2f90f8b2f0d532354c5b1fc2f46baa4ca4110143949f21f9",
+      "size": 205360,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "caldas-novas",
+    "name": "Caldas Novas",
+    "nameIt": "Caldas Novas",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -48.61772,
+      -17.75088
+    ],
+    "zoom": 11.4,
+    "population": 69523,
+    "grid": "cities/caldas-novas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/caldas-novas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "caldas-novas",
+        "name": "Caldas Novas",
+        "nameIt": "Caldas Novas",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -48.61772,
+          -17.75088
+        ],
+        "zoom": 11.4,
+        "population": 69523,
+        "cells": 174,
+        "layer": "cities/caldas-novas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.61772,
+            -17.75088
+          ]
+        },
+        "properties": {
+          "id": "caldas-novas",
+          "name": "Caldas Novas",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 21.3,
+          "population": 69523
+        }
+      },
+      "summary": null
+    }
+  }
+}

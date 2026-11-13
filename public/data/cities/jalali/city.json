@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jalali",
+  "createdAt": "2026-10-08T15:41:47.702Z",
+  "updatedAt": "2026-10-08T15:41:47.702Z",
+  "meta": {
+    "name": "Jalali",
+    "nameIt": "Jalali",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jalali.geojson",
+      "sha256": "df978c1db6bf3200d915b6844765622ea5bd3015c9ad6ca420e7cb29f9230933",
+      "size": 366347,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jalali",
+    "name": "Jalali",
+    "nameIt": "Jalali",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      50.8458,
+      28.91012
+    ],
+    "zoom": 10.9,
+    "population": 109217,
+    "grid": "cities/jalali/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jalali/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jalali",
+        "name": "Jalali",
+        "nameIt": "Jalali",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          50.8458,
+          28.91012
+        ],
+        "zoom": 10.9,
+        "population": 109217,
+        "cells": 316,
+        "layer": "cities/jalali/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            50.8458,
+            28.91012
+          ]
+        },
+        "properties": {
+          "id": "jalali",
+          "name": "Jalali",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 23.7,
+          "population": 109217
+        }
+      },
+      "summary": null
+    }
+  }
+}

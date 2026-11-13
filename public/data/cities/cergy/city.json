@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cergy",
+  "createdAt": "2026-10-08T15:23:01.944Z",
+  "updatedAt": "2026-10-08T15:23:01.944Z",
+  "meta": {
+    "name": "Cergy",
+    "nameIt": "Cergy",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cergy.geojson",
+      "sha256": "e0f8123a321a2662ab648e7142004b20b1241cbc194fa8bd54a4e7303b902df3",
+      "size": 864803,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cergy",
+    "name": "Cergy",
+    "nameIt": "Cergy",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      2.07258,
+      49.03066
+    ],
+    "zoom": 10.7,
+    "population": 248102,
+    "grid": "cities/cergy/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cergy/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cergy",
+        "name": "Cergy",
+        "nameIt": "Cergy",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          2.07258,
+          49.03066
+        ],
+        "zoom": 10.7,
+        "population": 248102,
+        "cells": 759,
+        "layer": "cities/cergy/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.07258,
+            49.03066
+          ]
+        },
+        "properties": {
+          "id": "cergy",
+          "name": "Cergy",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 9.9,
+          "population": 248102
+        }
+      },
+      "summary": null
+    }
+  }
+}

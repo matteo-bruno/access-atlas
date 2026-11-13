@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "thakurgaon",
+  "createdAt": "2026-10-08T16:17:29.036Z",
+  "updatedAt": "2026-10-08T16:17:29.036Z",
+  "meta": {
+    "name": "Thakurgaon",
+    "nameIt": "Thakurgaon",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Thakurgaon.geojson",
+      "sha256": "da945782ee4dd7a4eb6eb9d4c3c2ce95e4855447ca3a1d8a464069e8dba93ceb",
+      "size": 293919,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "thakurgaon",
+    "name": "Thakurgaon",
+    "nameIt": "Thakurgaon",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      88.45735,
+      26.03382
+    ],
+    "zoom": 10.5,
+    "population": 115339,
+    "grid": "cities/thakurgaon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/thakurgaon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "thakurgaon",
+        "name": "Thakurgaon",
+        "nameIt": "Thakurgaon",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          88.45735,
+          26.03382
+        ],
+        "zoom": 10.5,
+        "population": 115339,
+        "cells": 254,
+        "layer": "cities/thakurgaon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.45735,
+            26.03382
+          ]
+        },
+        "properties": {
+          "id": "thakurgaon",
+          "name": "Thakurgaon",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 23.7,
+          "population": 115339
+        }
+      },
+      "summary": null
+    }
+  }
+}

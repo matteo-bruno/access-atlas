@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "katwa",
+  "createdAt": "2026-10-08T15:45:46.215Z",
+  "updatedAt": "2026-10-08T15:45:46.215Z",
+  "meta": {
+    "name": "Katwa",
+    "nameIt": "Katwa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Katwa.geojson",
+      "sha256": "43ddcc428043e839902278dec106c9d9cd160a3fbbeb1a95f6eeab27e8e7c77e",
+      "size": 183137,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "katwa",
+    "name": "Katwa",
+    "nameIt": "Katwa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.13075,
+      23.63956
+    ],
+    "zoom": 11.6,
+    "population": 118495,
+    "grid": "cities/katwa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/katwa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "katwa",
+        "name": "Katwa",
+        "nameIt": "Katwa",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.13075,
+          23.63956
+        ],
+        "zoom": 11.6,
+        "population": 118495,
+        "cells": 158,
+        "layer": "cities/katwa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.13075,
+            23.63956
+          ]
+        },
+        "properties": {
+          "id": "katwa",
+          "name": "Katwa",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 8.2,
+          "population": 118495
+        }
+      },
+      "summary": null
+    }
+  }
+}

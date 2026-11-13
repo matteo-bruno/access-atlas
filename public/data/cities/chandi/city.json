@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chandi",
+  "createdAt": "2026-10-08T15:23:28.196Z",
+  "updatedAt": "2026-10-08T15:23:28.196Z",
+  "meta": {
+    "name": "Chandi",
+    "nameIt": "Chandi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chandi.geojson",
+      "sha256": "266a36b457bc601c2dbbac450def8242abc0de50c4005a23cc76d4a445581594",
+      "size": 426209,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chandi",
+    "name": "Chandi",
+    "nameIt": "Chandi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.42056,
+      25.33451
+    ],
+    "zoom": 10.5,
+    "population": 84423,
+    "grid": "cities/chandi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chandi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chandi",
+        "name": "Chandi",
+        "nameIt": "Chandi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.42056,
+          25.33451
+        ],
+        "zoom": 10.5,
+        "population": 84423,
+        "cells": 368,
+        "layer": "cities/chandi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.42056,
+            25.33451
+          ]
+        },
+        "properties": {
+          "id": "chandi",
+          "name": "Chandi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 84423
+        }
+      },
+      "summary": null
+    }
+  }
+}

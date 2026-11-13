@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kaliganj",
+  "createdAt": "2026-10-08T15:44:28.071Z",
+  "updatedAt": "2026-10-08T15:44:28.071Z",
+  "meta": {
+    "name": "Kaliganj",
+    "nameIt": "Kaliganj",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kaliganj.geojson",
+      "sha256": "5a28fb3d6980a47d9d8777327b60872856218cdad29f76c39aa0923a31345058",
+      "size": 83442,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kaliganj",
+    "name": "Kaliganj",
+    "nameIt": "Kaliganj",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.13485,
+      23.40717
+    ],
+    "zoom": 12,
+    "population": 40599,
+    "grid": "cities/kaliganj/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kaliganj/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kaliganj",
+        "name": "Kaliganj",
+        "nameIt": "Kaliganj",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.13485,
+          23.40717
+        ],
+        "zoom": 12,
+        "population": 40599,
+        "cells": 72,
+        "layer": "cities/kaliganj/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.13485,
+            23.40717
+          ]
+        },
+        "properties": {
+          "id": "kaliganj",
+          "name": "Kaliganj",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 17.5,
+          "population": 40599
+        }
+      },
+      "summary": null
+    }
+  }
+}

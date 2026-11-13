@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baltimore",
+  "createdAt": "2026-10-08T15:14:17.341Z",
+  "updatedAt": "2026-10-08T15:14:17.341Z",
+  "meta": {
+    "name": "Baltimore",
+    "nameIt": "Baltimore",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baltimore.geojson",
+      "sha256": "0ef131689a3c8bda0940dbf75c427b5d52e0bb0a1b58bb42136aaa0c36a8d4dc",
+      "size": 4989183,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baltimore",
+    "name": "Baltimore",
+    "nameIt": "Baltimore",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -76.62418,
+      39.32387
+    ],
+    "zoom": 9.1,
+    "population": 1077079,
+    "grid": "cities/baltimore/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baltimore/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baltimore",
+        "name": "Baltimore",
+        "nameIt": "Baltimore",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -76.62418,
+          39.32387
+        ],
+        "zoom": 9.1,
+        "population": 1077079,
+        "cells": 4335,
+        "layer": "cities/baltimore/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.62418,
+            39.32387
+          ]
+        },
+        "properties": {
+          "id": "baltimore",
+          "name": "Baltimore",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 1077079
+        }
+      },
+      "summary": null
+    }
+  }
+}

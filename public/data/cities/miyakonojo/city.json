@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "miyakonojo",
+  "createdAt": "2026-10-08T15:57:32.226Z",
+  "updatedAt": "2026-10-08T15:57:32.226Z",
+  "meta": {
+    "name": "Miyakonojo",
+    "nameIt": "Miyakonojo",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Miyakonojo.geojson",
+      "sha256": "d5c9867a5f49eb455e46a5e4a02f7d9d5ab777f5b024ce2967bc03999b6701bf",
+      "size": 540234,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "miyakonojo",
+    "name": "Miyakonojo",
+    "nameIt": "Miyakonojo",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      131.07607,
+      31.7336
+    ],
+    "zoom": 10.7,
+    "population": 104146,
+    "grid": "cities/miyakonojo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/miyakonojo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "miyakonojo",
+        "name": "Miyakonojo",
+        "nameIt": "Miyakonojo",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          131.07607,
+          31.7336
+        ],
+        "zoom": 10.7,
+        "population": 104146,
+        "cells": 468,
+        "layer": "cities/miyakonojo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            131.07607,
+            31.7336
+          ]
+        },
+        "properties": {
+          "id": "miyakonojo",
+          "name": "Miyakonojo",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 18.7,
+          "population": 104146
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khenifra",
+  "createdAt": "2026-10-08T15:46:42.854Z",
+  "updatedAt": "2026-10-08T15:46:42.854Z",
+  "meta": {
+    "name": "Khenifra",
+    "nameIt": "Khenifra",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khenifra.geojson",
+      "sha256": "07a61401272a5422b120775901359b3d6a274116ac9c1512cfda766c2e0401ee",
+      "size": 154796,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khenifra",
+    "name": "Khenifra",
+    "nameIt": "Khenifra",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -5.66505,
+      32.93811
+    ],
+    "zoom": 11.9,
+    "population": 45734,
+    "grid": "cities/khenifra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khenifra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khenifra",
+        "name": "Khenifra",
+        "nameIt": "Khenifra",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -5.66505,
+          32.93811
+        ],
+        "zoom": 11.9,
+        "population": 45734,
+        "cells": 133,
+        "layer": "cities/khenifra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.66505,
+            32.93811
+          ]
+        },
+        "properties": {
+          "id": "khenifra",
+          "name": "Khenifra",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 45734
+        }
+      },
+      "summary": null
+    }
+  }
+}

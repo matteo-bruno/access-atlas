@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "beni-adi",
+  "createdAt": "2026-10-08T15:17:25.337Z",
+  "updatedAt": "2026-10-08T15:17:25.337Z",
+  "meta": {
+    "name": "Beni Adi",
+    "nameIt": "Beni Adi",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Beni Adi.geojson",
+      "sha256": "7026c831985690f3adb1e152d701e48381d6f38a394824746ac53f651a6bd8e7",
+      "size": 82670,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "beni-adi",
+    "name": "Beni Adi",
+    "nameIt": "Beni Adi",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      30.92884,
+      27.24969
+    ],
+    "zoom": 12,
+    "population": 63803,
+    "grid": "cities/beni-adi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/beni-adi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "beni-adi",
+        "name": "Beni Adi",
+        "nameIt": "Beni Adi",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          30.92884,
+          27.24969
+        ],
+        "zoom": 12,
+        "population": 63803,
+        "cells": 71,
+        "layer": "cities/beni-adi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.92884,
+            27.24969
+          ]
+        },
+        "properties": {
+          "id": "beni-adi",
+          "name": "Beni Adi",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 63803
+        }
+      },
+      "summary": null
+    }
+  }
+}

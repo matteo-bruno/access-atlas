@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tachileik",
+  "createdAt": "2026-10-08T16:15:51.480Z",
+  "updatedAt": "2026-10-08T16:15:51.480Z",
+  "meta": {
+    "name": "Tachileik",
+    "nameIt": "Tachileik",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tachileik.geojson",
+      "sha256": "f96e7a443c5b6be4af5cc311273c23f48eb39639b1de242497df1af40dff7437",
+      "size": 164384,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tachileik",
+    "name": "Tachileik",
+    "nameIt": "Tachileik",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      99.90227,
+      20.45755
+    ],
+    "zoom": 11.1,
+    "population": 106909,
+    "grid": "cities/tachileik/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tachileik/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tachileik",
+        "name": "Tachileik",
+        "nameIt": "Tachileik",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          99.90227,
+          20.45755
+        ],
+        "zoom": 11.1,
+        "population": 106909,
+        "cells": 142,
+        "layer": "cities/tachileik/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            99.90227,
+            20.45755
+          ]
+        },
+        "properties": {
+          "id": "tachileik",
+          "name": "Tachileik",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 28.2,
+          "population": 106909
+        }
+      },
+      "summary": null
+    }
+  }
+}

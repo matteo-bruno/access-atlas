@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abha",
+  "createdAt": "2026-10-08T15:01:24.807Z",
+  "updatedAt": "2026-10-08T15:01:24.807Z",
+  "meta": {
+    "name": "Abha",
+    "nameIt": "Abha",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abha.geojson",
+      "sha256": "a5eb320f9d62678586a4d4fa9bae01f8567a6df5222b9f000ee5b3ebf1f3ed3c",
+      "size": 320571,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abha",
+    "name": "Abha",
+    "nameIt": "Abha",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA",
+    "center": [
+      42.51674,
+      18.21891
+    ],
+    "zoom": 10.8,
+    "population": 60914,
+    "grid": "cities/abha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abha",
+        "name": "Abha",
+        "nameIt": "Abha",
+        "region": "Saudi Arabia",
+        "regionIt": "Arabia Saudita",
+        "country": "SA",
+        "center": [
+          42.51674,
+          18.21891
+        ],
+        "zoom": 10.8,
+        "population": 60914,
+        "cells": 276,
+        "layer": "cities/abha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            42.51674,
+            18.21891
+          ]
+        },
+        "properties": {
+          "id": "abha",
+          "name": "Abha",
+          "country": "SA",
+          "isStudy": true,
+          "proximityMinutes": 25.6,
+          "population": 60914
+        }
+      },
+      "summary": null
+    }
+  }
+}

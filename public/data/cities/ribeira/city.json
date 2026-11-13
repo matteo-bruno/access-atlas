@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ribeira",
+  "createdAt": "2026-10-08T16:08:45.281Z",
+  "updatedAt": "2026-10-08T16:08:45.281Z",
+  "meta": {
+    "name": "Ribeira",
+    "nameIt": "Ribeira",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ribeira.geojson",
+      "sha256": "9bbe6a67f07e358c6342e78c1db19a73f2b7b094675c191a7c0e16789cccc21f",
+      "size": 447723,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ribeira",
+    "name": "Ribeira",
+    "nameIt": "Ribeira",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -43.1931,
+      -22.80571
+    ],
+    "zoom": 10.8,
+    "population": 207371,
+    "grid": "cities/ribeira/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ribeira/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ribeira",
+        "name": "Ribeira",
+        "nameIt": "Ribeira",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -43.1931,
+          -22.80571
+        ],
+        "zoom": 10.8,
+        "population": 207371,
+        "cells": 383,
+        "layer": "cities/ribeira/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -43.1931,
+            -22.80571
+          ]
+        },
+        "properties": {
+          "id": "ribeira",
+          "name": "Ribeira",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 16.4,
+          "population": 207371
+        }
+      },
+      "summary": null
+    }
+  }
+}

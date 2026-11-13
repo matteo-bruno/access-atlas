@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "narayanpet",
+  "createdAt": "2026-10-08T16:00:21.666Z",
+  "updatedAt": "2026-10-08T16:00:21.666Z",
+  "meta": {
+    "name": "Narayanpet",
+    "nameIt": "Narayanpet",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Narayanpet.geojson",
+      "sha256": "8e2585d36ed14bd808c51852ef086304420fe1e406150318c3c8d21434d7d6eb",
+      "size": 76422,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "narayanpet",
+    "name": "Narayanpet",
+    "nameIt": "Narayanpet",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.49751,
+      16.74546
+    ],
+    "zoom": 12,
+    "population": 35037,
+    "grid": "cities/narayanpet/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/narayanpet/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "narayanpet",
+        "name": "Narayanpet",
+        "nameIt": "Narayanpet",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.49751,
+          16.74546
+        ],
+        "zoom": 12,
+        "population": 35037,
+        "cells": 66,
+        "layer": "cities/narayanpet/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.49751,
+            16.74546
+          ]
+        },
+        "properties": {
+          "id": "narayanpet",
+          "name": "Narayanpet",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 35037
+        }
+      },
+      "summary": null
+    }
+  }
+}

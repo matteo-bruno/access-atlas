@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "toronto-fua",
+  "createdAt": "2026-10-19T16:58:47.991Z",
+  "updatedAt": "2026-10-19T16:58:47.991Z",
+  "meta": {
+    "name": "Toronto",
+    "nameIt": "Toronto",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "toronto-fua",
+    "name": "Toronto",
+    "nameIt": "Toronto",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "extent": "fua",
+    "core": "toronto",
+    "center": [
+      -79.49419,
+      43.69181
+    ],
+    "zoom": 8.5,
+    "population": 7976121,
+    "grid": "cities/toronto-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/toronto-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "toronto-fua",
+        "name": "Toronto",
+        "nameIt": "Toronto",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "extent": "fua",
+        "core": "toronto",
+        "center": [
+          -79.49419,
+          43.69181
+        ],
+        "zoom": 8.5,
+        "population": 7976121,
+        "cells": 73607,
+        "layer": "cities/toronto-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -79.49419,
+            43.69181
+          ]
+        },
+        "properties": {
+          "id": "toronto-fua",
+          "name": "Toronto",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 15.1,
+          "population": 7976121
+        }
+      },
+      "summary": null
+    }
+  }
+}

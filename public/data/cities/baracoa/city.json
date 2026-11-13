@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baracoa",
+  "createdAt": "2026-10-08T15:15:23.829Z",
+  "updatedAt": "2026-10-08T15:15:23.829Z",
+  "meta": {
+    "name": "Baracoa",
+    "nameIt": "Baracoa",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baracoa.geojson",
+      "sha256": "2b5dcebf874b9feecbc7df9d4ae6e4fcc968f9fa3c4794b8295719b25dbd1b59",
+      "size": 205877,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baracoa",
+    "name": "Baracoa",
+    "nameIt": "Baracoa",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU",
+    "center": [
+      -74.49186,
+      20.33445
+    ],
+    "zoom": 11.4,
+    "population": 40038,
+    "grid": "cities/baracoa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baracoa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baracoa",
+        "name": "Baracoa",
+        "nameIt": "Baracoa",
+        "region": "Cuba",
+        "regionIt": "Cuba",
+        "country": "CU",
+        "center": [
+          -74.49186,
+          20.33445
+        ],
+        "zoom": 11.4,
+        "population": 40038,
+        "cells": 177,
+        "layer": "cities/baracoa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.49186,
+            20.33445
+          ]
+        },
+        "properties": {
+          "id": "baracoa",
+          "name": "Baracoa",
+          "country": "CU",
+          "isStudy": true,
+          "proximityMinutes": 19.6,
+          "population": 40038
+        }
+      },
+      "summary": null
+    }
+  }
+}

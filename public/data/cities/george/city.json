@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "george",
+  "createdAt": "2026-10-08T15:34:59.959Z",
+  "updatedAt": "2026-10-08T15:34:59.959Z",
+  "meta": {
+    "name": "George",
+    "nameIt": "George",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/George.geojson",
+      "sha256": "2d837ff40a59dd684860e481cb4c3c67f7c403b38c9913bad20048ebb247ef13",
+      "size": 465405,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "george",
+    "name": "George",
+    "nameIt": "George",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      22.47332,
+      -33.98326
+    ],
+    "zoom": 10.7,
+    "population": 135321,
+    "grid": "cities/george/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/george/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "george",
+        "name": "George",
+        "nameIt": "George",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          22.47332,
+          -33.98326
+        ],
+        "zoom": 10.7,
+        "population": 135321,
+        "cells": 398,
+        "layer": "cities/george/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            22.47332,
+            -33.98326
+          ]
+        },
+        "properties": {
+          "id": "george",
+          "name": "George",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 29.9,
+          "population": 135321
+        }
+      },
+      "summary": null
+    }
+  }
+}

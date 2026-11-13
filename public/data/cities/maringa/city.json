@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "maringa",
+  "createdAt": "2026-10-08T15:55:15.725Z",
+  "updatedAt": "2026-10-08T15:55:15.725Z",
+  "meta": {
+    "name": "Maringá",
+    "nameIt": "Maringá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Maringá.geojson",
+      "sha256": "c3b03feae128df60e9078005661fe7917bf3bf439b80bdee1349378f4b496cbe",
+      "size": 1365450,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "maringa",
+    "name": "Maringá",
+    "nameIt": "Maringá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -51.91626,
+      -23.42087
+    ],
+    "zoom": 10.1,
+    "population": 519515,
+    "grid": "cities/maringa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/maringa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "maringa",
+        "name": "Maringá",
+        "nameIt": "Maringá",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -51.91626,
+          -23.42087
+        ],
+        "zoom": 10.1,
+        "population": 519515,
+        "cells": 1170,
+        "layer": "cities/maringa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -51.91626,
+            -23.42087
+          ]
+        },
+        "properties": {
+          "id": "maringa",
+          "name": "Maringá",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 19.7,
+          "population": 519515
+        }
+      },
+      "summary": null
+    }
+  }
+}

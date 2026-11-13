@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "littlehampton",
+  "createdAt": "2026-10-08T15:51:35.664Z",
+  "updatedAt": "2026-10-08T15:51:35.664Z",
+  "meta": {
+    "name": "Littlehampton",
+    "nameIt": "Littlehampton",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Littlehampton.geojson",
+      "sha256": "0e3004b0963c5324af76027a58cef86df87be3bdec87ccfcf1640dd4ee618995",
+      "size": 237680,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "littlehampton",
+    "name": "Littlehampton",
+    "nameIt": "Littlehampton",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.51817,
+      50.815
+    ],
+    "zoom": 11.4,
+    "population": 57485,
+    "grid": "cities/littlehampton/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/littlehampton/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "littlehampton",
+        "name": "Littlehampton",
+        "nameIt": "Littlehampton",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.51817,
+          50.815
+        ],
+        "zoom": 11.4,
+        "population": 57485,
+        "cells": 205,
+        "layer": "cities/littlehampton/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.51817,
+            50.815
+          ]
+        },
+        "properties": {
+          "id": "littlehampton",
+          "name": "Littlehampton",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 57485
+        }
+      },
+      "summary": null
+    }
+  }
+}

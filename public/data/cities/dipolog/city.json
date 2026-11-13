@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dipolog",
+  "createdAt": "2026-10-08T15:30:11.490Z",
+  "updatedAt": "2026-10-08T15:30:11.490Z",
+  "meta": {
+    "name": "Dipolog",
+    "nameIt": "Dipolog",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dipolog.geojson",
+      "sha256": "46ba781effc47b7d6b9a3cc3055061b877173ad98e50e992aad9d42f59c2a7fd",
+      "size": 473813,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dipolog",
+    "name": "Dipolog",
+    "nameIt": "Dipolog",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      123.33771,
+      8.56905
+    ],
+    "zoom": 10.1,
+    "population": 125825,
+    "grid": "cities/dipolog/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dipolog/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dipolog",
+        "name": "Dipolog",
+        "nameIt": "Dipolog",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          123.33771,
+          8.56905
+        ],
+        "zoom": 10.1,
+        "population": 125825,
+        "cells": 410,
+        "layer": "cities/dipolog/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.33771,
+            8.56905
+          ]
+        },
+        "properties": {
+          "id": "dipolog",
+          "name": "Dipolog",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 29.9,
+          "population": 125825
+        }
+      },
+      "summary": null
+    }
+  }
+}

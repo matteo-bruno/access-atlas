@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "danyang-city",
+  "createdAt": "2026-10-08T15:28:15.253Z",
+  "updatedAt": "2026-10-08T15:28:15.253Z",
+  "meta": {
+    "name": "Danyang City",
+    "nameIt": "Danyang City",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Danyang City.geojson",
+      "sha256": "ccc5178ea47710d6398350642b2670b6c8586d0f5997175eaf82878d9ffbbf34",
+      "size": 965776,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "danyang-city",
+    "name": "Danyang City",
+    "nameIt": "Danyang City",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.58136,
+      32.00143
+    ],
+    "zoom": 10.7,
+    "population": 351223,
+    "grid": "cities/danyang-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/danyang-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "danyang-city",
+        "name": "Danyang City",
+        "nameIt": "Danyang City",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.58136,
+          32.00143
+        ],
+        "zoom": 10.7,
+        "population": 351223,
+        "cells": 828,
+        "layer": "cities/danyang-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.58136,
+            32.00143
+          ]
+        },
+        "properties": {
+          "id": "danyang-city",
+          "name": "Danyang City",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 29.2,
+          "population": 351223
+        }
+      },
+      "summary": null
+    }
+  }
+}

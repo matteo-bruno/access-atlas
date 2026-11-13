@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baduria",
+  "createdAt": "2026-10-08T15:12:33.795Z",
+  "updatedAt": "2026-10-08T15:12:33.795Z",
+  "meta": {
+    "name": "Baduria",
+    "nameIt": "Baduria",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baduria.geojson",
+      "sha256": "96f3b3d630bc9643c567330d99c1376d36bc9d38fbcf08f051df693472454f8f",
+      "size": 1217625,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baduria",
+    "name": "Baduria",
+    "nameIt": "Baduria",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.74379,
+      22.70349
+    ],
+    "zoom": 9.4,
+    "population": 165517,
+    "grid": "cities/baduria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baduria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baduria",
+        "name": "Baduria",
+        "nameIt": "Baduria",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.74379,
+          22.70349
+        ],
+        "zoom": 9.4,
+        "population": 165517,
+        "cells": 1051,
+        "layer": "cities/baduria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.74379,
+            22.70349
+          ]
+        },
+        "properties": {
+          "id": "baduria",
+          "name": "Baduria",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 165517
+        }
+      },
+      "summary": null
+    }
+  }
+}

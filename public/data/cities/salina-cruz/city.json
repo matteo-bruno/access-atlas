@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "salina-cruz",
+  "createdAt": "2026-10-08T16:10:07.898Z",
+  "updatedAt": "2026-10-08T16:10:07.898Z",
+  "meta": {
+    "name": "Salina Cruz",
+    "nameIt": "Salina Cruz",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Salina Cruz.geojson",
+      "sha256": "dca4797fa64184c413374a3f94b52843ce360aad41fe7ba30670c02e739bd1ba",
+      "size": 232447,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "salina-cruz",
+    "name": "Salina Cruz",
+    "nameIt": "Salina Cruz",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -95.20058,
+      16.19355
+    ],
+    "zoom": 11.2,
+    "population": 69664,
+    "grid": "cities/salina-cruz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/salina-cruz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "salina-cruz",
+        "name": "Salina Cruz",
+        "nameIt": "Salina Cruz",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -95.20058,
+          16.19355
+        ],
+        "zoom": 11.2,
+        "population": 69664,
+        "cells": 200,
+        "layer": "cities/salina-cruz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -95.20058,
+            16.19355
+          ]
+        },
+        "properties": {
+          "id": "salina-cruz",
+          "name": "Salina Cruz",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 69664
+        }
+      },
+      "summary": null
+    }
+  }
+}

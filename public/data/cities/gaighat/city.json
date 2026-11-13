@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gaighat",
+  "createdAt": "2026-10-08T15:34:15.078Z",
+  "updatedAt": "2026-10-08T15:34:15.078Z",
+  "meta": {
+    "name": "Gaighat",
+    "nameIt": "Gaighat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gaighat.geojson",
+      "sha256": "6a87c3c7a6bace56b63bdecd8a24161c091581d0f6220e853934421186c51144",
+      "size": 363882,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gaighat",
+    "name": "Gaighat",
+    "nameIt": "Gaighat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.65088,
+      26.14293
+    ],
+    "zoom": 10.7,
+    "population": 77305,
+    "grid": "cities/gaighat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gaighat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gaighat",
+        "name": "Gaighat",
+        "nameIt": "Gaighat",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.65088,
+          26.14293
+        ],
+        "zoom": 10.7,
+        "population": 77305,
+        "cells": 314,
+        "layer": "cities/gaighat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.65088,
+            26.14293
+          ]
+        },
+        "properties": {
+          "id": "gaighat",
+          "name": "Gaighat",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 77305
+        }
+      },
+      "summary": null
+    }
+  }
+}

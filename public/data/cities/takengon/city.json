@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "takengon",
+  "createdAt": "2026-10-08T16:16:11.086Z",
+  "updatedAt": "2026-10-08T16:16:11.086Z",
+  "meta": {
+    "name": "Takengon",
+    "nameIt": "Takengon",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Takengon.geojson",
+      "sha256": "a40e65ca8ede36bfa8e7f51bda7c4d48cce3f21f05c8165615401553dfc1a068",
+      "size": 109408,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "takengon",
+    "name": "Takengon",
+    "nameIt": "Takengon",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      96.84544,
+      4.62844
+    ],
+    "zoom": 12,
+    "population": 58415,
+    "grid": "cities/takengon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/takengon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "takengon",
+        "name": "Takengon",
+        "nameIt": "Takengon",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          96.84544,
+          4.62844
+        ],
+        "zoom": 12,
+        "population": 58415,
+        "cells": 95,
+        "layer": "cities/takengon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.84544,
+            4.62844
+          ]
+        },
+        "properties": {
+          "id": "takengon",
+          "name": "Takengon",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 58415
+        }
+      },
+      "summary": null
+    }
+  }
+}

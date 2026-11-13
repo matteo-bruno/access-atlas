@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pavlovo",
+  "createdAt": "2026-10-08T16:04:48.591Z",
+  "updatedAt": "2026-10-08T16:04:48.591Z",
+  "meta": {
+    "name": "Pavlovo",
+    "nameIt": "Pavlovo",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pavlovo.geojson",
+      "sha256": "e824e5a5d0d8883b537c1e814e74425ab747cb8b8c9fbb62e3b384e28089fec9",
+      "size": 216436,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pavlovo",
+    "name": "Pavlovo",
+    "nameIt": "Pavlovo",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      43.08276,
+      55.96269
+    ],
+    "zoom": 11.1,
+    "population": 48096,
+    "grid": "cities/pavlovo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pavlovo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pavlovo",
+        "name": "Pavlovo",
+        "nameIt": "Pavlovo",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          43.08276,
+          55.96269
+        ],
+        "zoom": 11.1,
+        "population": 48096,
+        "cells": 189,
+        "layer": "cities/pavlovo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.08276,
+            55.96269
+          ]
+        },
+        "properties": {
+          "id": "pavlovo",
+          "name": "Pavlovo",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 17.4,
+          "population": 48096
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "asahikawa",
+  "createdAt": "2026-10-08T15:10:01.357Z",
+  "updatedAt": "2026-10-08T15:10:01.357Z",
+  "meta": {
+    "name": "Asahikawa",
+    "nameIt": "Asahikawa",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Asahikawa.geojson",
+      "sha256": "3aed94d677cdb0e2772b43477ebcd7900b60cd66b79e13e4928b889bfb299800",
+      "size": 1051192,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "asahikawa",
+    "name": "Asahikawa",
+    "nameIt": "Asahikawa",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      142.38297,
+      43.77501
+    ],
+    "zoom": 10.3,
+    "population": 300546,
+    "grid": "cities/asahikawa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/asahikawa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "asahikawa",
+        "name": "Asahikawa",
+        "nameIt": "Asahikawa",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          142.38297,
+          43.77501
+        ],
+        "zoom": 10.3,
+        "population": 300546,
+        "cells": 915,
+        "layer": "cities/asahikawa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            142.38297,
+            43.77501
+          ]
+        },
+        "properties": {
+          "id": "asahikawa",
+          "name": "Asahikawa",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 17.4,
+          "population": 300546
+        }
+      },
+      "summary": null
+    }
+  }
+}

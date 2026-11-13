@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aguascalientes",
+  "createdAt": "2026-10-08T15:03:02.948Z",
+  "updatedAt": "2026-10-08T15:03:02.948Z",
+  "meta": {
+    "name": "Aguascalientes",
+    "nameIt": "Aguascalientes",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aguascalientes.geojson",
+      "sha256": "675c9acf485cbd91568bd0aee271074f10d3c494ae6be1971b09c08d1aa1202a",
+      "size": 1318204,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aguascalientes",
+    "name": "Aguascalientes",
+    "nameIt": "Aguascalientes",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -102.28523,
+      21.88864
+    ],
+    "zoom": 9.7,
+    "population": 877173,
+    "grid": "cities/aguascalientes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aguascalientes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aguascalientes",
+        "name": "Aguascalientes",
+        "nameIt": "Aguascalientes",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -102.28523,
+          21.88864
+        ],
+        "zoom": 9.7,
+        "population": 877173,
+        "cells": 1130,
+        "layer": "cities/aguascalientes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -102.28523,
+            21.88864
+          ]
+        },
+        "properties": {
+          "id": "aguascalientes",
+          "name": "Aguascalientes",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 20.7,
+          "population": 877173
+        }
+      },
+      "summary": null
+    }
+  }
+}

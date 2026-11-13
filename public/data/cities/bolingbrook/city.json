@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bolingbrook",
+  "createdAt": "2026-10-08T15:19:57.668Z",
+  "updatedAt": "2026-10-08T15:19:57.668Z",
+  "meta": {
+    "name": "Bolingbrook",
+    "nameIt": "Bolingbrook",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bolingbrook.geojson",
+      "sha256": "5f3f6d1dd6b156a8e93f531b1a9e526f15b375898e5ff9e60ab2e5ef05e52565",
+      "size": 2014832,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bolingbrook",
+    "name": "Bolingbrook",
+    "nameIt": "Bolingbrook",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -88.04001,
+      41.72914
+    ],
+    "zoom": 9.4,
+    "population": 270111,
+    "grid": "cities/bolingbrook/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bolingbrook/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bolingbrook",
+        "name": "Bolingbrook",
+        "nameIt": "Bolingbrook",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -88.04001,
+          41.72914
+        ],
+        "zoom": 9.4,
+        "population": 270111,
+        "cells": 1746,
+        "layer": "cities/bolingbrook/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.04001,
+            41.72914
+          ]
+        },
+        "properties": {
+          "id": "bolingbrook",
+          "name": "Bolingbrook",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 24.5,
+          "population": 270111
+        }
+      },
+      "summary": null
+    }
+  }
+}

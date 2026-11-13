@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lodz-fua",
+  "createdAt": "2026-10-19T16:57:05.414Z",
+  "updatedAt": "2026-10-19T16:57:05.414Z",
+  "meta": {
+    "name": "Lodz",
+    "nameIt": "Lodz",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "lodz-fua",
+    "name": "Lodz",
+    "nameIt": "Lodz",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "extent": "fua",
+    "core": "lodz",
+    "center": [
+      19.45597,
+      51.76728
+    ],
+    "zoom": 8.5,
+    "population": 1052144,
+    "grid": "cities/lodz-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lodz-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lodz-fua",
+        "name": "Lodz",
+        "nameIt": "Lodz",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "extent": "fua",
+        "core": "lodz",
+        "center": [
+          19.45597,
+          51.76728
+        ],
+        "zoom": 8.5,
+        "population": 1052144,
+        "cells": 20428,
+        "layer": "cities/lodz-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.45597,
+            51.76728
+          ]
+        },
+        "properties": {
+          "id": "lodz-fua",
+          "name": "Lodz",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 1052144
+        }
+      },
+      "summary": null
+    }
+  }
+}

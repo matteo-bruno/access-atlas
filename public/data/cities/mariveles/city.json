@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mariveles",
+  "createdAt": "2026-10-08T15:55:16.996Z",
+  "updatedAt": "2026-10-08T15:55:16.996Z",
+  "meta": {
+    "name": "Mariveles",
+    "nameIt": "Mariveles",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mariveles.geojson",
+      "sha256": "363a602c415651deb74bb960bc5fd5a67c107f15ccbdecde00c058e104c3591f",
+      "size": 131945,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mariveles",
+    "name": "Mariveles",
+    "nameIt": "Mariveles",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      120.48645,
+      14.43689
+    ],
+    "zoom": 11.8,
+    "population": 64168,
+    "grid": "cities/mariveles/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mariveles/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mariveles",
+        "name": "Mariveles",
+        "nameIt": "Mariveles",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          120.48645,
+          14.43689
+        ],
+        "zoom": 11.8,
+        "population": 64168,
+        "cells": 113,
+        "layer": "cities/mariveles/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.48645,
+            14.43689
+          ]
+        },
+        "properties": {
+          "id": "mariveles",
+          "name": "Mariveles",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 11.1,
+          "population": 64168
+        }
+      },
+      "summary": null
+    }
+  }
+}

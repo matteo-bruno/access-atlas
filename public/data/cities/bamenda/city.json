@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bamenda",
+  "createdAt": "2026-10-08T15:14:27.773Z",
+  "updatedAt": "2026-10-08T15:14:27.773Z",
+  "meta": {
+    "name": "Bamenda",
+    "nameIt": "Bamenda",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bamenda.geojson",
+      "sha256": "775f8a0a5cf6c843f1b9fed1bcbda407058471c16ed8d416cd8ac3e40174df33",
+      "size": 1008531,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bamenda",
+    "name": "Bamenda",
+    "nameIt": "Bamenda",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      10.15706,
+      5.9655
+    ],
+    "zoom": 10.6,
+    "population": 351765,
+    "grid": "cities/bamenda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bamenda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bamenda",
+        "name": "Bamenda",
+        "nameIt": "Bamenda",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          10.15706,
+          5.9655
+        ],
+        "zoom": 10.6,
+        "population": 351765,
+        "cells": 869,
+        "layer": "cities/bamenda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.15706,
+            5.9655
+          ]
+        },
+        "properties": {
+          "id": "bamenda",
+          "name": "Bamenda",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 40,
+          "population": 351765
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dili",
+  "createdAt": "2026-10-08T15:29:58.884Z",
+  "updatedAt": "2026-10-08T15:29:58.884Z",
+  "meta": {
+    "name": "Dili",
+    "nameIt": "Dili",
+    "region": "East Timor",
+    "regionIt": "Timor Est",
+    "country": "TL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dili.geojson",
+      "sha256": "ad988c10a7d567d7134b1f475663a76d365e6b0c1cacb8c01b4e691313ab46a8",
+      "size": 484457,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dili",
+    "name": "Dili",
+    "nameIt": "Dili",
+    "region": "East Timor",
+    "regionIt": "Timor Est",
+    "country": "TL",
+    "center": [
+      125.56272,
+      -8.56019
+    ],
+    "zoom": 10.2,
+    "population": 294794,
+    "grid": "cities/dili/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dili/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dili",
+        "name": "Dili",
+        "nameIt": "Dili",
+        "region": "East Timor",
+        "regionIt": "Timor Est",
+        "country": "TL",
+        "center": [
+          125.56272,
+          -8.56019
+        ],
+        "zoom": 10.2,
+        "population": 294794,
+        "cells": 419,
+        "layer": "cities/dili/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.56272,
+            -8.56019
+          ]
+        },
+        "properties": {
+          "id": "dili",
+          "name": "Dili",
+          "country": "TL",
+          "isStudy": true,
+          "proximityMinutes": 17.7,
+          "population": 294794
+        }
+      },
+      "summary": null
+    }
+  }
+}

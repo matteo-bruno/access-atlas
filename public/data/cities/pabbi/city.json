@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pabbi",
+  "createdAt": "2026-10-08T16:03:30.196Z",
+  "updatedAt": "2026-10-08T16:03:30.196Z",
+  "meta": {
+    "name": "Pabbi",
+    "nameIt": "Pabbi",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pabbi.geojson",
+      "sha256": "54ccc62d7c5f8389b752c307f4d09d6b5cdc95c4ec7ebc6ce9c99c7ecb3869e7",
+      "size": 319991,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pabbi",
+    "name": "Pabbi",
+    "nameIt": "Pabbi",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      71.79167,
+      34.01098
+    ],
+    "zoom": 11,
+    "population": 145535,
+    "grid": "cities/pabbi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pabbi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pabbi",
+        "name": "Pabbi",
+        "nameIt": "Pabbi",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          71.79167,
+          34.01098
+        ],
+        "zoom": 11,
+        "population": 145535,
+        "cells": 277,
+        "layer": "cities/pabbi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.79167,
+            34.01098
+          ]
+        },
+        "properties": {
+          "id": "pabbi",
+          "name": "Pabbi",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 145535
+        }
+      },
+      "summary": null
+    }
+  }
+}

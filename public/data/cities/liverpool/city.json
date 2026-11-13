@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "liverpool",
+  "createdAt": "2026-10-08T15:51:38.407Z",
+  "updatedAt": "2026-10-08T15:51:38.407Z",
+  "meta": {
+    "name": "Liverpool",
+    "nameIt": "Liverpool",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Liverpool.geojson",
+      "sha256": "29f2898b6830f7948aee36fb35314e82f27e60a0f115f0e33e785c3af96f0ace",
+      "size": 4727166,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "liverpool",
+    "name": "Liverpool",
+    "nameIt": "Liverpool",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -2.91857,
+      53.42242
+    ],
+    "zoom": 8.9,
+    "population": 1242075,
+    "grid": "cities/liverpool/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/liverpool/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "liverpool",
+        "name": "Liverpool",
+        "nameIt": "Liverpool",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -2.91857,
+          53.42242
+        ],
+        "zoom": 8.9,
+        "population": 1242075,
+        "cells": 4098,
+        "layer": "cities/liverpool/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.91857,
+            53.42242
+          ]
+        },
+        "properties": {
+          "id": "liverpool",
+          "name": "Liverpool",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 1242075
+        }
+      },
+      "summary": null
+    }
+  }
+}

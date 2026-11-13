@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bisauli",
+  "createdAt": "2026-10-08T15:19:19.481Z",
+  "updatedAt": "2026-10-08T15:19:19.481Z",
+  "meta": {
+    "name": "Bisauli",
+    "nameIt": "Bisauli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bisauli.geojson",
+      "sha256": "858ecf72582c06b2a6129125915f8f987a8bd54e17ad41d44d2b6667a0abe88e",
+      "size": 96155,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bisauli",
+    "name": "Bisauli",
+    "nameIt": "Bisauli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.93567,
+      28.30769
+    ],
+    "zoom": 11.9,
+    "population": 44798,
+    "grid": "cities/bisauli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bisauli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bisauli",
+        "name": "Bisauli",
+        "nameIt": "Bisauli",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.93567,
+          28.30769
+        ],
+        "zoom": 11.9,
+        "population": 44798,
+        "cells": 83,
+        "layer": "cities/bisauli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.93567,
+            28.30769
+          ]
+        },
+        "properties": {
+          "id": "bisauli",
+          "name": "Bisauli",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 44798
+        }
+      },
+      "summary": null
+    }
+  }
+}

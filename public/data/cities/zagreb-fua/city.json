@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zagreb-fua",
+  "createdAt": "2026-10-19T16:59:02.709Z",
+  "updatedAt": "2026-10-19T16:59:02.709Z",
+  "meta": {
+    "name": "Zagreb",
+    "nameIt": "Zagreb",
+    "region": "Croatia",
+    "regionIt": "Croazia",
+    "country": "HR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "zagreb-fua",
+    "name": "Zagreb",
+    "nameIt": "Zagreb",
+    "region": "Croatia",
+    "regionIt": "Croazia",
+    "country": "HR",
+    "extent": "fua",
+    "core": "zagreb",
+    "center": [
+      15.98055,
+      45.81104
+    ],
+    "zoom": 8.5,
+    "population": 980621,
+    "grid": "cities/zagreb-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zagreb-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zagreb-fua",
+        "name": "Zagreb",
+        "nameIt": "Zagreb",
+        "region": "Croatia",
+        "regionIt": "Croazia",
+        "country": "HR",
+        "extent": "fua",
+        "core": "zagreb",
+        "center": [
+          15.98055,
+          45.81104
+        ],
+        "zoom": 8.5,
+        "population": 980621,
+        "cells": 14467,
+        "layer": "cities/zagreb-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            15.98055,
+            45.81104
+          ]
+        },
+        "properties": {
+          "id": "zagreb-fua",
+          "name": "Zagreb",
+          "country": "HR",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 980621
+        }
+      },
+      "summary": null
+    }
+  }
+}

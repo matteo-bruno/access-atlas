@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kalaiya",
+  "createdAt": "2026-10-08T15:44:22.743Z",
+  "updatedAt": "2026-10-08T15:44:22.743Z",
+  "meta": {
+    "name": "Kalaiya",
+    "nameIt": "Kalaiya",
+    "region": "Nepal",
+    "regionIt": "Nepal",
+    "country": "NP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kalaiya.geojson",
+      "sha256": "ce385ef5d4740c99993af371cf0275eea1b9dc5d7f1482345e45638ae32800b1",
+      "size": 123829,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kalaiya",
+    "name": "Kalaiya",
+    "nameIt": "Kalaiya",
+    "region": "Nepal",
+    "regionIt": "Nepal",
+    "country": "NP",
+    "center": [
+      84.99885,
+      27.02819
+    ],
+    "zoom": 11.6,
+    "population": 52359,
+    "grid": "cities/kalaiya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kalaiya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kalaiya",
+        "name": "Kalaiya",
+        "nameIt": "Kalaiya",
+        "region": "Nepal",
+        "regionIt": "Nepal",
+        "country": "NP",
+        "center": [
+          84.99885,
+          27.02819
+        ],
+        "zoom": 11.6,
+        "population": 52359,
+        "cells": 107,
+        "layer": "cities/kalaiya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.99885,
+            27.02819
+          ]
+        },
+        "properties": {
+          "id": "kalaiya",
+          "name": "Kalaiya",
+          "country": "NP",
+          "isStudy": true,
+          "proximityMinutes": 9.7,
+          "population": 52359
+        }
+      },
+      "summary": null
+    }
+  }
+}

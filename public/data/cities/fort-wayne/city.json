@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fort-wayne",
+  "createdAt": "2026-10-08T15:33:35.254Z",
+  "updatedAt": "2026-10-08T15:33:35.254Z",
+  "meta": {
+    "name": "Fort Wayne",
+    "nameIt": "Fort Wayne",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fort Wayne.geojson",
+      "sha256": "45fa337f0d0f923dea380bb04be8ed87e07a831faf1e85a3b504e9435c537d99",
+      "size": 825381,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fort-wayne",
+    "name": "Fort Wayne",
+    "nameIt": "Fort Wayne",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -85.13025,
+      41.07139
+    ],
+    "zoom": 10.4,
+    "population": 99601,
+    "grid": "cities/fort-wayne/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fort-wayne/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fort-wayne",
+        "name": "Fort Wayne",
+        "nameIt": "Fort Wayne",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -85.13025,
+          41.07139
+        ],
+        "zoom": 10.4,
+        "population": 99601,
+        "cells": 716,
+        "layer": "cities/fort-wayne/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.13025,
+            41.07139
+          ]
+        },
+        "properties": {
+          "id": "fort-wayne",
+          "name": "Fort Wayne",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 23,
+          "population": 99601
+        }
+      },
+      "summary": null
+    }
+  }
+}

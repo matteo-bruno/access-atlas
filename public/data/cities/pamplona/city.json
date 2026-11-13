@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pamplona",
+  "createdAt": "2026-10-08T16:03:55.741Z",
+  "updatedAt": "2026-10-08T16:03:55.741Z",
+  "meta": {
+    "name": "Pamplona",
+    "nameIt": "Pamplona",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pamplona.geojson",
+      "sha256": "3ebac9819e54658aefa6e01a63accbf268450d56d908ef58d36865be5aaf38b7",
+      "size": 505410,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pamplona",
+    "name": "Pamplona",
+    "nameIt": "Pamplona",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -1.6478,
+      42.8167
+    ],
+    "zoom": 10.8,
+    "population": 323748,
+    "grid": "cities/pamplona/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pamplona/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pamplona",
+        "name": "Pamplona",
+        "nameIt": "Pamplona",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -1.6478,
+          42.8167
+        ],
+        "zoom": 10.8,
+        "population": 323748,
+        "cells": 439,
+        "layer": "cities/pamplona/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.6478,
+            42.8167
+          ]
+        },
+        "properties": {
+          "id": "pamplona",
+          "name": "Pamplona",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 7.3,
+          "population": 323748
+        }
+      },
+      "summary": null
+    }
+  }
+}

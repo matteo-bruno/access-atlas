@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dedaye",
+  "createdAt": "2026-10-08T15:28:46.274Z",
+  "updatedAt": "2026-10-08T15:28:46.274Z",
+  "meta": {
+    "name": "Dedaye",
+    "nameIt": "Dedaye",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dedaye.geojson",
+      "sha256": "ca7ada93d2a02de725a14f4b7f121df4b17e181465b879d23020a93b88fbc457",
+      "size": 73026,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dedaye",
+    "name": "Dedaye",
+    "nameIt": "Dedaye",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      95.88799,
+      16.40694
+    ],
+    "zoom": 11.7,
+    "population": 29157,
+    "grid": "cities/dedaye/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dedaye/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dedaye",
+        "name": "Dedaye",
+        "nameIt": "Dedaye",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          95.88799,
+          16.40694
+        ],
+        "zoom": 11.7,
+        "population": 29157,
+        "cells": 63,
+        "layer": "cities/dedaye/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            95.88799,
+            16.40694
+          ]
+        },
+        "properties": {
+          "id": "dedaye",
+          "name": "Dedaye",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 29157
+        }
+      },
+      "summary": null
+    }
+  }
+}

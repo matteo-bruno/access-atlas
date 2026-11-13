@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kyabe",
+  "createdAt": "2026-10-08T15:49:07.557Z",
+  "updatedAt": "2026-10-08T15:49:07.557Z",
+  "meta": {
+    "name": "Kyabé",
+    "nameIt": "Kyabé",
+    "region": "Chad",
+    "regionIt": "Ciad",
+    "country": "TD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kyabé.geojson",
+      "sha256": "5c4cf890beb29fd253c92b6fc973407a8c080ad2278b558e662c8c3d15f541bd",
+      "size": 85557,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kyabe",
+    "name": "Kyabé",
+    "nameIt": "Kyabé",
+    "region": "Chad",
+    "regionIt": "Ciad",
+    "country": "TD",
+    "center": [
+      18.94532,
+      9.45371
+    ],
+    "zoom": 12,
+    "population": 52221,
+    "grid": "cities/kyabe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kyabe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kyabe",
+        "name": "Kyabé",
+        "nameIt": "Kyabé",
+        "region": "Chad",
+        "regionIt": "Ciad",
+        "country": "TD",
+        "center": [
+          18.94532,
+          9.45371
+        ],
+        "zoom": 12,
+        "population": 52221,
+        "cells": 74,
+        "layer": "cities/kyabe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.94532,
+            9.45371
+          ]
+        },
+        "properties": {
+          "id": "kyabe",
+          "name": "Kyabé",
+          "country": "TD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 52221
+        }
+      },
+      "summary": null
+    }
+  }
+}

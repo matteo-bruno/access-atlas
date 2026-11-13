@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yalta",
+  "createdAt": "2026-10-08T16:23:15.697Z",
+  "updatedAt": "2026-10-08T16:23:15.697Z",
+  "meta": {
+    "name": "Yalta",
+    "nameIt": "Yalta",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yalta.geojson",
+      "sha256": "e57f3a66004fa4706cfbdc7463c4566559f89aaabe1d84b50b6422d37630c08d",
+      "size": 197486,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yalta",
+    "name": "Yalta",
+    "nameIt": "Yalta",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      34.1599,
+      44.49875
+    ],
+    "zoom": 11.5,
+    "population": 45879,
+    "grid": "cities/yalta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yalta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yalta",
+        "name": "Yalta",
+        "nameIt": "Yalta",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          34.1599,
+          44.49875
+        ],
+        "zoom": 11.5,
+        "population": 45879,
+        "cells": 173,
+        "layer": "cities/yalta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.1599,
+            44.49875
+          ]
+        },
+        "properties": {
+          "id": "yalta",
+          "name": "Yalta",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 11.4,
+          "population": 45879
+        }
+      },
+      "summary": null
+    }
+  }
+}

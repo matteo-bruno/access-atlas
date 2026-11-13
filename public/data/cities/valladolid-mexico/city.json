@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "valladolid-mexico",
+  "createdAt": "2026-10-08T16:20:21.587Z",
+  "updatedAt": "2026-10-08T16:20:21.587Z",
+  "meta": {
+    "name": "Valladolid (Mexico)",
+    "nameIt": "Valladolid (Mexico)",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Valladolid (Mexico).geojson",
+      "sha256": "6a51107b6b154fdfa981f55782ba501260b1e95d69d2f7fb026cf6a47d281e05",
+      "size": 159309,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "valladolid-mexico",
+    "name": "Valladolid (Mexico)",
+    "nameIt": "Valladolid (Mexico)",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -88.19947,
+      20.69196
+    ],
+    "zoom": 11.7,
+    "population": 62870,
+    "grid": "cities/valladolid-mexico/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/valladolid-mexico/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "valladolid-mexico",
+        "name": "Valladolid (Mexico)",
+        "nameIt": "Valladolid (Mexico)",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -88.19947,
+          20.69196
+        ],
+        "zoom": 11.7,
+        "population": 62870,
+        "cells": 139,
+        "layer": "cities/valladolid-mexico/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.19947,
+            20.69196
+          ]
+        },
+        "properties": {
+          "id": "valladolid-mexico",
+          "name": "Valladolid (Mexico)",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 7.3,
+          "population": 62870
+        }
+      },
+      "summary": null
+    }
+  }
+}

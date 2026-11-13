@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sheiria",
+  "createdAt": "2026-10-08T16:12:46.570Z",
+  "updatedAt": "2026-10-08T16:12:46.570Z",
+  "meta": {
+    "name": "Sheiria",
+    "nameIt": "Sheiria",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sheiria.geojson",
+      "sha256": "e7f3865b68a5842293774ddb8431e9124544c1e6458e266eaf458832978c14e5",
+      "size": 153841,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sheiria",
+    "name": "Sheiria",
+    "nameIt": "Sheiria",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      25.57947,
+      12.43662
+    ],
+    "zoom": 11.5,
+    "population": 41222,
+    "grid": "cities/sheiria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sheiria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sheiria",
+        "name": "Sheiria",
+        "nameIt": "Sheiria",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          25.57947,
+          12.43662
+        ],
+        "zoom": 11.5,
+        "population": 41222,
+        "cells": 132,
+        "layer": "cities/sheiria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.57947,
+            12.43662
+          ]
+        },
+        "properties": {
+          "id": "sheiria",
+          "name": "Sheiria",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 41222
+        }
+      },
+      "summary": null
+    }
+  }
+}

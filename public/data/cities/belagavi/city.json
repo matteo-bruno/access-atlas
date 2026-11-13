@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "belagavi",
+  "createdAt": "2026-10-08T15:17:03.870Z",
+  "updatedAt": "2026-10-08T15:17:03.870Z",
+  "meta": {
+    "name": "Belagavi",
+    "nameIt": "Belagavi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Belagavi.geojson",
+      "sha256": "ed7fd7e011d2ae3dbf7a025f4c905ca71d5d1cf47038c44fcc71bd8812ffb12c",
+      "size": 1000023,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "belagavi",
+    "name": "Belagavi",
+    "nameIt": "Belagavi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.50947,
+      15.85649
+    ],
+    "zoom": 10.2,
+    "population": 394559,
+    "grid": "cities/belagavi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/belagavi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "belagavi",
+        "name": "Belagavi",
+        "nameIt": "Belagavi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.50947,
+          15.85649
+        ],
+        "zoom": 10.2,
+        "population": 394559,
+        "cells": 864,
+        "layer": "cities/belagavi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.50947,
+            15.85649
+          ]
+        },
+        "properties": {
+          "id": "belagavi",
+          "name": "Belagavi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 28.1,
+          "population": 394559
+        }
+      },
+      "summary": null
+    }
+  }
+}

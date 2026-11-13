@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "leninskij",
+  "createdAt": "2026-10-08T15:50:43.882Z",
+  "updatedAt": "2026-10-08T15:50:43.882Z",
+  "meta": {
+    "name": "Leninskij",
+    "nameIt": "Leninskij",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Leninskij.geojson",
+      "sha256": "44912357083641fed93fa9e8b6953c37156beb065b952abea92a61834ac2d3c3",
+      "size": 327064,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "leninskij",
+    "name": "Leninskij",
+    "nameIt": "Leninskij",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      48.57634,
+      54.36543
+    ],
+    "zoom": 11.1,
+    "population": 162487,
+    "grid": "cities/leninskij/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/leninskij/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "leninskij",
+        "name": "Leninskij",
+        "nameIt": "Leninskij",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          48.57634,
+          54.36543
+        ],
+        "zoom": 11.1,
+        "population": 162487,
+        "cells": 286,
+        "layer": "cities/leninskij/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.57634,
+            54.36543
+          ]
+        },
+        "properties": {
+          "id": "leninskij",
+          "name": "Leninskij",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14.2,
+          "population": 162487
+        }
+      },
+      "summary": null
+    }
+  }
+}

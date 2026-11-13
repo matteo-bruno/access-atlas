@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ancona",
+  "createdAt": "2026-10-08T15:07:25.094Z",
+  "updatedAt": "2026-10-08T15:07:25.094Z",
+  "meta": {
+    "name": "Ancona",
+    "nameIt": "Ancona",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ancona.geojson",
+      "sha256": "f3f4fedd7bba28ac50215db2d46ea28840b0eac61dfe0dd076294493e7328587",
+      "size": 296773,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ancona",
+    "name": "Ancona",
+    "nameIt": "Ancona",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      13.51184,
+      43.59651
+    ],
+    "zoom": 10.5,
+    "population": 75120,
+    "grid": "cities/ancona/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ancona/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ancona",
+        "name": "Ancona",
+        "nameIt": "Ancona",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          13.51184,
+          43.59651
+        ],
+        "zoom": 10.5,
+        "population": 75120,
+        "cells": 259,
+        "layer": "cities/ancona/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.51184,
+            43.59651
+          ]
+        },
+        "properties": {
+          "id": "ancona",
+          "name": "Ancona",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 8.2,
+          "population": 75120
+        }
+      },
+      "summary": null
+    }
+  }
+}

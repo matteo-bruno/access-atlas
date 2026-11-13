@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chiniot",
+  "createdAt": "2026-10-08T15:24:52.009Z",
+  "updatedAt": "2026-10-08T15:24:52.009Z",
+  "meta": {
+    "name": "Chiniot",
+    "nameIt": "Chiniot",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chiniot.geojson",
+      "sha256": "bb775f7ed7c6a5e3c867b1890d13f54f7d726c70fcc6f82cad960ae048840022",
+      "size": 213182,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chiniot",
+    "name": "Chiniot",
+    "nameIt": "Chiniot",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      72.98281,
+      31.71891
+    ],
+    "zoom": 11.4,
+    "population": 261557,
+    "grid": "cities/chiniot/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chiniot/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chiniot",
+        "name": "Chiniot",
+        "nameIt": "Chiniot",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          72.98281,
+          31.71891
+        ],
+        "zoom": 11.4,
+        "population": 261557,
+        "cells": 184,
+        "layer": "cities/chiniot/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.98281,
+            31.71891
+          ]
+        },
+        "properties": {
+          "id": "chiniot",
+          "name": "Chiniot",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 261557
+        }
+      },
+      "summary": null
+    }
+  }
+}

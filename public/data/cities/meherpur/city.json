@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "meherpur",
+  "createdAt": "2026-10-08T15:56:16.554Z",
+  "updatedAt": "2026-10-08T15:56:16.554Z",
+  "meta": {
+    "name": "Meherpur",
+    "nameIt": "Meherpur",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Meherpur.geojson",
+      "sha256": "6380ffaaf09cda3edc6fddf59da8a3d1fae1e3ed819d7eeee7ed2ab1a3a0e4ca",
+      "size": 162148,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "meherpur",
+    "name": "Meherpur",
+    "nameIt": "Meherpur",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      88.632,
+      23.76937
+    ],
+    "zoom": 11.6,
+    "population": 61344,
+    "grid": "cities/meherpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/meherpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "meherpur",
+        "name": "Meherpur",
+        "nameIt": "Meherpur",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          88.632,
+          23.76937
+        ],
+        "zoom": 11.6,
+        "population": 61344,
+        "cells": 140,
+        "layer": "cities/meherpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.632,
+            23.76937
+          ]
+        },
+        "properties": {
+          "id": "meherpur",
+          "name": "Meherpur",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 61344
+        }
+      },
+      "summary": null
+    }
+  }
+}

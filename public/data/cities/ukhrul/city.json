@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ukhrul",
+  "createdAt": "2026-10-08T16:19:42.159Z",
+  "updatedAt": "2026-10-08T16:19:42.159Z",
+  "meta": {
+    "name": "Ukhrul",
+    "nameIt": "Ukhrul",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ukhrul.geojson",
+      "sha256": "ee137d9339ec7d5dcb78dc3e7ae420beb1d2b2926c2ce83484391ddd31cd3068",
+      "size": 90334,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ukhrul",
+    "name": "Ukhrul",
+    "nameIt": "Ukhrul",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      94.36197,
+      25.09858
+    ],
+    "zoom": 11.6,
+    "population": 26517,
+    "grid": "cities/ukhrul/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ukhrul/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ukhrul",
+        "name": "Ukhrul",
+        "nameIt": "Ukhrul",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          94.36197,
+          25.09858
+        ],
+        "zoom": 11.6,
+        "population": 26517,
+        "cells": 78,
+        "layer": "cities/ukhrul/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            94.36197,
+            25.09858
+          ]
+        },
+        "properties": {
+          "id": "ukhrul",
+          "name": "Ukhrul",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 26517
+        }
+      },
+      "summary": null
+    }
+  }
+}

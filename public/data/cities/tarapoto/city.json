@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tarapoto",
+  "createdAt": "2026-10-08T16:16:43.860Z",
+  "updatedAt": "2026-10-08T16:16:43.860Z",
+  "meta": {
+    "name": "Tarapoto",
+    "nameIt": "Tarapoto",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tarapoto.geojson",
+      "sha256": "a6ab6c4d43c1105a1e0f591a1e57964e7484039b4c843045add96b769e75217c",
+      "size": 207314,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tarapoto",
+    "name": "Tarapoto",
+    "nameIt": "Tarapoto",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -76.36673,
+      -6.48723
+    ],
+    "zoom": 11.2,
+    "population": 154122,
+    "grid": "cities/tarapoto/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tarapoto/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tarapoto",
+        "name": "Tarapoto",
+        "nameIt": "Tarapoto",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -76.36673,
+          -6.48723
+        ],
+        "zoom": 11.2,
+        "population": 154122,
+        "cells": 178,
+        "layer": "cities/tarapoto/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.36673,
+            -6.48723
+          ]
+        },
+        "properties": {
+          "id": "tarapoto",
+          "name": "Tarapoto",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 13.9,
+          "population": 154122
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "maha-sarakham",
+  "createdAt": "2026-10-08T15:53:35.250Z",
+  "updatedAt": "2026-10-08T15:53:35.250Z",
+  "meta": {
+    "name": "Maha Sarakham",
+    "nameIt": "Maha Sarakham",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Maha Sarakham.geojson",
+      "sha256": "42c34acf533f88d3b4583a33e8d46e77d260380cffbe44e55ae8967c5b533d4e",
+      "size": 179897,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "maha-sarakham",
+    "name": "Maha Sarakham",
+    "nameIt": "Maha Sarakham",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      103.2909,
+      16.18901
+    ],
+    "zoom": 11.4,
+    "population": 33396,
+    "grid": "cities/maha-sarakham/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/maha-sarakham/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "maha-sarakham",
+        "name": "Maha Sarakham",
+        "nameIt": "Maha Sarakham",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          103.2909,
+          16.18901
+        ],
+        "zoom": 11.4,
+        "population": 33396,
+        "cells": 154,
+        "layer": "cities/maha-sarakham/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.2909,
+            16.18901
+          ]
+        },
+        "properties": {
+          "id": "maha-sarakham",
+          "name": "Maha Sarakham",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 33396
+        }
+      },
+      "summary": null
+    }
+  }
+}

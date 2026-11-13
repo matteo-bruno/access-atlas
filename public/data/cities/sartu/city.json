@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sartu",
+  "createdAt": "2026-10-08T16:11:31.664Z",
+  "updatedAt": "2026-10-08T16:11:31.664Z",
+  "meta": {
+    "name": "Sartu",
+    "nameIt": "Sartu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sartu.geojson",
+      "sha256": "600fa1cebbfae5930fb9be5cbcdcdbbeb832e495cd82410be4c9b722d6b64ca9",
+      "size": 434701,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sartu",
+    "name": "Sartu",
+    "nameIt": "Sartu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      125.01312,
+      46.59745
+    ],
+    "zoom": 11,
+    "population": 98902,
+    "grid": "cities/sartu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sartu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sartu",
+        "name": "Sartu",
+        "nameIt": "Sartu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          125.01312,
+          46.59745
+        ],
+        "zoom": 11,
+        "population": 98902,
+        "cells": 373,
+        "layer": "cities/sartu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.01312,
+            46.59745
+          ]
+        },
+        "properties": {
+          "id": "sartu",
+          "name": "Sartu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 98902
+        }
+      },
+      "summary": null
+    }
+  }
+}

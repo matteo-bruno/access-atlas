@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zliten",
+  "createdAt": "2026-10-08T16:25:37.247Z",
+  "updatedAt": "2026-10-08T16:25:37.247Z",
+  "meta": {
+    "name": "Zliten",
+    "nameIt": "Zliten",
+    "region": "Libya",
+    "regionIt": "Libia",
+    "country": "LY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zliten.geojson",
+      "sha256": "9ae6c600d6f947879a8284aa98141980be3617692fdd5c84731ccdee0081b298",
+      "size": 482506,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zliten",
+    "name": "Zliten",
+    "nameIt": "Zliten",
+    "region": "Libya",
+    "regionIt": "Libia",
+    "country": "LY",
+    "center": [
+      14.57227,
+      32.46331
+    ],
+    "zoom": 10.8,
+    "population": 73672,
+    "grid": "cities/zliten/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zliten/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zliten",
+        "name": "Zliten",
+        "nameIt": "Zliten",
+        "region": "Libya",
+        "regionIt": "Libia",
+        "country": "LY",
+        "center": [
+          14.57227,
+          32.46331
+        ],
+        "zoom": 10.8,
+        "population": 73672,
+        "cells": 415,
+        "layer": "cities/zliten/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.57227,
+            32.46331
+          ]
+        },
+        "properties": {
+          "id": "zliten",
+          "name": "Zliten",
+          "country": "LY",
+          "isStudy": true,
+          "proximityMinutes": 31.4,
+          "population": 73672
+        }
+      },
+      "summary": null
+    }
+  }
+}

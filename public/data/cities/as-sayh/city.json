@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "as-sayh",
+  "createdAt": "2026-10-08T15:09:55.933Z",
+  "updatedAt": "2026-10-08T15:09:55.933Z",
+  "meta": {
+    "name": "As Sayh",
+    "nameIt": "As Sayh",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/As Sayh.geojson",
+      "sha256": "79c304bcdbe0ba233d4d82cf5eb6e301124bb37090c1cf3249b3c9c77857ce18",
+      "size": 688030,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "as-sayh",
+    "name": "As Sayh",
+    "nameIt": "As Sayh",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA",
+    "center": [
+      47.3183,
+      24.14551
+    ],
+    "zoom": 10.5,
+    "population": 113434,
+    "grid": "cities/as-sayh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/as-sayh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "as-sayh",
+        "name": "As Sayh",
+        "nameIt": "As Sayh",
+        "region": "Saudi Arabia",
+        "regionIt": "Arabia Saudita",
+        "country": "SA",
+        "center": [
+          47.3183,
+          24.14551
+        ],
+        "zoom": 10.5,
+        "population": 113434,
+        "cells": 592,
+        "layer": "cities/as-sayh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            47.3183,
+            24.14551
+          ]
+        },
+        "properties": {
+          "id": "as-sayh",
+          "name": "As Sayh",
+          "country": "SA",
+          "isStudy": true,
+          "proximityMinutes": 35.8,
+          "population": 113434
+        }
+      },
+      "summary": null
+    }
+  }
+}

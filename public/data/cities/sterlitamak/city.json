@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sterlitamak",
+  "createdAt": "2026-10-08T16:14:49.771Z",
+  "updatedAt": "2026-10-08T16:14:49.771Z",
+  "meta": {
+    "name": "Sterlitamak",
+    "nameIt": "Sterlitamak",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sterlitamak.geojson",
+      "sha256": "6de98fe0a3230d6f9d22da1b125c184ec79eb4b53a2c2e8682010f505e155a56",
+      "size": 504184,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sterlitamak",
+    "name": "Sterlitamak",
+    "nameIt": "Sterlitamak",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      55.93794,
+      53.62688
+    ],
+    "zoom": 10.8,
+    "population": 233352,
+    "grid": "cities/sterlitamak/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sterlitamak/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sterlitamak",
+        "name": "Sterlitamak",
+        "nameIt": "Sterlitamak",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          55.93794,
+          53.62688
+        ],
+        "zoom": 10.8,
+        "population": 233352,
+        "cells": 441,
+        "layer": "cities/sterlitamak/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            55.93794,
+            53.62688
+          ]
+        },
+        "properties": {
+          "id": "sterlitamak",
+          "name": "Sterlitamak",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 233352
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "parsabad",
+  "createdAt": "2026-10-08T16:04:31.220Z",
+  "updatedAt": "2026-10-08T16:04:31.220Z",
+  "meta": {
+    "name": "Parsabad",
+    "nameIt": "Parsabad",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Parsabad.geojson",
+      "sha256": "99afe5f9af482652956c49cd3b1782644d966e20f1183e8d3d0cfb058d961791",
+      "size": 159566,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "parsabad",
+    "name": "Parsabad",
+    "nameIt": "Parsabad",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      47.91083,
+      39.64289
+    ],
+    "zoom": 11.8,
+    "population": 88892,
+    "grid": "cities/parsabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/parsabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "parsabad",
+        "name": "Parsabad",
+        "nameIt": "Parsabad",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          47.91083,
+          39.64289
+        ],
+        "zoom": 11.8,
+        "population": 88892,
+        "cells": 138,
+        "layer": "cities/parsabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            47.91083,
+            39.64289
+          ]
+        },
+        "properties": {
+          "id": "parsabad",
+          "name": "Parsabad",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 88892
+        }
+      },
+      "summary": null
+    }
+  }
+}

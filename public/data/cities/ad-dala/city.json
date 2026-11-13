@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ad-dala",
+  "createdAt": "2026-10-08T15:02:13.794Z",
+  "updatedAt": "2026-10-08T15:02:13.794Z",
+  "meta": {
+    "name": "Ad Dala",
+    "nameIt": "Ad Dala",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ad Dala.geojson",
+      "sha256": "bd61fb0f6b5eb57899a778248e10cd908ab93d497b76d60e973dd6b9213d98ae",
+      "size": 86109,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ad-dala",
+    "name": "Ad Dala",
+    "nameIt": "Ad Dala",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE",
+    "center": [
+      44.7329,
+      13.70323
+    ],
+    "zoom": 12,
+    "population": 76612,
+    "grid": "cities/ad-dala/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ad-dala/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ad-dala",
+        "name": "Ad Dala",
+        "nameIt": "Ad Dala",
+        "region": "Yemen",
+        "regionIt": "Yemen",
+        "country": "YE",
+        "center": [
+          44.7329,
+          13.70323
+        ],
+        "zoom": 12,
+        "population": 76612,
+        "cells": 74,
+        "layer": "cities/ad-dala/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.7329,
+            13.70323
+          ]
+        },
+        "properties": {
+          "id": "ad-dala",
+          "name": "Ad Dala",
+          "country": "YE",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 76612
+        }
+      },
+      "summary": null
+    }
+  }
+}

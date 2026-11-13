@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lages",
+  "createdAt": "2026-10-08T15:49:33.851Z",
+  "updatedAt": "2026-10-08T15:49:33.851Z",
+  "meta": {
+    "name": "Lages",
+    "nameIt": "Lages",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lages.geojson",
+      "sha256": "f8bd5d877dc1e1fbfd997251f2051ce3f166d59d47f59e005161e11ad65f49a1",
+      "size": 511879,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lages",
+    "name": "Lages",
+    "nameIt": "Lages",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -50.31999,
+      -27.81461
+    ],
+    "zoom": 10.9,
+    "population": 138994,
+    "grid": "cities/lages/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lages/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lages",
+        "name": "Lages",
+        "nameIt": "Lages",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -50.31999,
+          -27.81461
+        ],
+        "zoom": 10.9,
+        "population": 138994,
+        "cells": 438,
+        "layer": "cities/lages/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.31999,
+            -27.81461
+          ]
+        },
+        "properties": {
+          "id": "lages",
+          "name": "Lages",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 16.2,
+          "population": 138994
+        }
+      },
+      "summary": null
+    }
+  }
+}

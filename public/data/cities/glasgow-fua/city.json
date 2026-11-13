@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "glasgow-fua",
+  "createdAt": "2026-10-19T16:56:13.932Z",
+  "updatedAt": "2026-10-19T16:56:13.932Z",
+  "meta": {
+    "name": "Glasgow",
+    "nameIt": "Glasgow",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "glasgow-fua",
+    "name": "Glasgow",
+    "nameIt": "Glasgow",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "extent": "fua",
+    "core": "glasgow",
+    "center": [
+      -4.21756,
+      55.83895
+    ],
+    "zoom": 8.5,
+    "population": 1793603,
+    "grid": "cities/glasgow-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/glasgow-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "glasgow-fua",
+        "name": "Glasgow",
+        "nameIt": "Glasgow",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "extent": "fua",
+        "core": "glasgow",
+        "center": [
+          -4.21756,
+          55.83895
+        ],
+        "zoom": 8.5,
+        "population": 1793603,
+        "cells": 25459,
+        "layer": "cities/glasgow-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -4.21756,
+            55.83895
+          ]
+        },
+        "properties": {
+          "id": "glasgow-fua",
+          "name": "Glasgow",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 1793603
+        }
+      },
+      "summary": null
+    }
+  }
+}

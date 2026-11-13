@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tana-paser",
+  "createdAt": "2026-10-08T16:16:26.170Z",
+  "updatedAt": "2026-10-08T16:16:26.170Z",
+  "meta": {
+    "name": "Tana Paser",
+    "nameIt": "Tana Paser",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tana Paser.geojson",
+      "sha256": "df7939ae4ac2213a67e4fd62d41c2f82d77682ce17a69d2e53f935e272d45692",
+      "size": 165896,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tana-paser",
+    "name": "Tana Paser",
+    "nameIt": "Tana Paser",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      116.19673,
+      -1.90841
+    ],
+    "zoom": 11.9,
+    "population": 47280,
+    "grid": "cities/tana-paser/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tana-paser/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tana-paser",
+        "name": "Tana Paser",
+        "nameIt": "Tana Paser",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          116.19673,
+          -1.90841
+        ],
+        "zoom": 11.9,
+        "population": 47280,
+        "cells": 141,
+        "layer": "cities/tana-paser/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.19673,
+            -1.90841
+          ]
+        },
+        "properties": {
+          "id": "tana-paser",
+          "name": "Tana Paser",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 47280
+        }
+      },
+      "summary": null
+    }
+  }
+}

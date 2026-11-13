@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sujangarh",
+  "createdAt": "2026-10-08T16:15:03.311Z",
+  "updatedAt": "2026-10-08T16:15:03.311Z",
+  "meta": {
+    "name": "Sujangarh",
+    "nameIt": "Sujangarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sujangarh.geojson",
+      "sha256": "8bf43086ce1b05dd7a878a98805c17b943bb8d0ccf494ad8baf6e85bc9e58be9",
+      "size": 180750,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sujangarh",
+    "name": "Sujangarh",
+    "nameIt": "Sujangarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.46687,
+      27.70113
+    ],
+    "zoom": 11.6,
+    "population": 114449,
+    "grid": "cities/sujangarh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sujangarh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sujangarh",
+        "name": "Sujangarh",
+        "nameIt": "Sujangarh",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.46687,
+          27.70113
+        ],
+        "zoom": 11.6,
+        "population": 114449,
+        "cells": 156,
+        "layer": "cities/sujangarh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.46687,
+            27.70113
+          ]
+        },
+        "properties": {
+          "id": "sujangarh",
+          "name": "Sujangarh",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 114449
+        }
+      },
+      "summary": null
+    }
+  }
+}

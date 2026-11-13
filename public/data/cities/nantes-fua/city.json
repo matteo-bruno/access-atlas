@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nantes-fua",
+  "createdAt": "2026-10-19T16:57:36.480Z",
+  "updatedAt": "2026-10-19T16:57:36.480Z",
+  "meta": {
+    "name": "Nantes",
+    "nameIt": "Nantes",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "nantes-fua",
+    "name": "Nantes",
+    "nameIt": "Nantes",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "extent": "fua",
+    "core": "nantes",
+    "center": [
+      -1.5422,
+      47.21723
+    ],
+    "zoom": 8.5,
+    "population": 994920,
+    "grid": "cities/nantes-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nantes-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nantes-fua",
+        "name": "Nantes",
+        "nameIt": "Nantes",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "extent": "fua",
+        "core": "nantes",
+        "center": [
+          -1.5422,
+          47.21723
+        ],
+        "zoom": 8.5,
+        "population": 994920,
+        "cells": 26562,
+        "layer": "cities/nantes-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.5422,
+            47.21723
+          ]
+        },
+        "properties": {
+          "id": "nantes-fua",
+          "name": "Nantes",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 994920
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "beijing",
+  "createdAt": "2026-10-08T15:16:51.647Z",
+  "updatedAt": "2026-10-08T15:16:51.647Z",
+  "meta": {
+    "name": "Beijing",
+    "nameIt": "Beijing",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Beijing.geojson",
+      "sha256": "7683c572aaf60901b1cd0b14e8e97cd48210b085c0021f87252fac2cc3dd1fb5",
+      "size": 33500866,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "beijing",
+    "name": "Beijing",
+    "nameIt": "Beijing",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.38697,
+      39.93939
+    ],
+    "zoom": 8.5,
+    "population": 15721771,
+    "grid": "cities/beijing/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/beijing/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "beijing",
+        "name": "Beijing",
+        "nameIt": "Beijing",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.38697,
+          39.93939
+        ],
+        "zoom": 8.5,
+        "population": 15721771,
+        "cells": 28929,
+        "layer": "cities/beijing/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.38697,
+            39.93939
+          ]
+        },
+        "properties": {
+          "id": "beijing",
+          "name": "Beijing",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 20.2,
+          "population": 15721771
+        }
+      },
+      "summary": null
+    }
+  }
+}

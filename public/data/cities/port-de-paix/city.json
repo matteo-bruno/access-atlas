@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "port-de-paix",
+  "createdAt": "2026-10-08T16:06:18.203Z",
+  "updatedAt": "2026-10-08T16:06:18.203Z",
+  "meta": {
+    "name": "Port-de-Paix",
+    "nameIt": "Port-de-Paix",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Port-de-Paix.geojson",
+      "sha256": "31c5ae76881e7b391819d5d81a8c5cfd77e6e8215dafcc0a36107f456a89c633",
+      "size": 740834,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "port-de-paix",
+    "name": "Port-de-Paix",
+    "nameIt": "Port-de-Paix",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT",
+    "center": [
+      -72.76518,
+      19.93084
+    ],
+    "zoom": 9.6,
+    "population": 157742,
+    "grid": "cities/port-de-paix/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/port-de-paix/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "port-de-paix",
+        "name": "Port-de-Paix",
+        "nameIt": "Port-de-Paix",
+        "region": "Haiti",
+        "regionIt": "Haiti",
+        "country": "HT",
+        "center": [
+          -72.76518,
+          19.93084
+        ],
+        "zoom": 9.6,
+        "population": 157742,
+        "cells": 634,
+        "layer": "cities/port-de-paix/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.76518,
+            19.93084
+          ]
+        },
+        "properties": {
+          "id": "port-de-paix",
+          "name": "Port-de-Paix",
+          "country": "HT",
+          "isStudy": true,
+          "proximityMinutes": 75.7,
+          "population": 157742
+        }
+      },
+      "summary": null
+    }
+  }
+}

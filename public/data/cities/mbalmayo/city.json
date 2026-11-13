@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mbalmayo",
+  "createdAt": "2026-10-08T15:56:03.451Z",
+  "updatedAt": "2026-10-08T15:56:03.451Z",
+  "meta": {
+    "name": "Mbalmayo",
+    "nameIt": "Mbalmayo",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mbalmayo.geojson",
+      "sha256": "1a7b325eccd5d79b3aeeac0a29d8be7b78a8eec761894d7e0bebfdebaa703a5a",
+      "size": 171037,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mbalmayo",
+    "name": "Mbalmayo",
+    "nameIt": "Mbalmayo",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      11.50775,
+      3.52161
+    ],
+    "zoom": 11.7,
+    "population": 44302,
+    "grid": "cities/mbalmayo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mbalmayo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mbalmayo",
+        "name": "Mbalmayo",
+        "nameIt": "Mbalmayo",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          11.50775,
+          3.52161
+        ],
+        "zoom": 11.7,
+        "population": 44302,
+        "cells": 147,
+        "layer": "cities/mbalmayo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.50775,
+            3.52161
+          ]
+        },
+        "properties": {
+          "id": "mbalmayo",
+          "name": "Mbalmayo",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 44302
+        }
+      },
+      "summary": null
+    }
+  }
+}

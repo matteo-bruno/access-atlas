@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "laoag",
+  "createdAt": "2026-10-08T15:50:09.878Z",
+  "updatedAt": "2026-10-08T15:50:09.878Z",
+  "meta": {
+    "name": "Laoag",
+    "nameIt": "Laoag",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Laoag.geojson",
+      "sha256": "4124a589e5d95d87fc23be3b3d0e3703d3cbc09fe97564f744303c311832d6ce",
+      "size": 321431,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "laoag",
+    "name": "Laoag",
+    "nameIt": "Laoag",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      120.587,
+      18.1884
+    ],
+    "zoom": 10.7,
+    "population": 84964,
+    "grid": "cities/laoag/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/laoag/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "laoag",
+        "name": "Laoag",
+        "nameIt": "Laoag",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          120.587,
+          18.1884
+        ],
+        "zoom": 10.7,
+        "population": 84964,
+        "cells": 277,
+        "layer": "cities/laoag/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.587,
+            18.1884
+          ]
+        },
+        "properties": {
+          "id": "laoag",
+          "name": "Laoag",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 13.2,
+          "population": 84964
+        }
+      },
+      "summary": null
+    }
+  }
+}

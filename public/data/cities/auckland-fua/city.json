@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "auckland-fua",
+  "createdAt": "2026-10-19T16:55:15.726Z",
+  "updatedAt": "2026-10-19T16:55:15.726Z",
+  "meta": {
+    "name": "Auckland",
+    "nameIt": "Auckland",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "auckland-fua",
+    "name": "Auckland",
+    "nameIt": "Auckland",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ",
+    "extent": "fua",
+    "core": "auckland",
+    "center": [
+      174.78179,
+      -36.89806
+    ],
+    "zoom": 8.5,
+    "population": 1663822,
+    "grid": "cities/auckland-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/auckland-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "auckland-fua",
+        "name": "Auckland",
+        "nameIt": "Auckland",
+        "region": "New Zealand",
+        "regionIt": "Nuova Zelanda",
+        "country": "NZ",
+        "extent": "fua",
+        "core": "auckland",
+        "center": [
+          174.78179,
+          -36.89806
+        ],
+        "zoom": 8.5,
+        "population": 1663822,
+        "cells": 19347,
+        "layer": "cities/auckland-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            174.78179,
+            -36.89806
+          ]
+        },
+        "properties": {
+          "id": "auckland-fua",
+          "name": "Auckland",
+          "country": "NZ",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 1663822
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "faizabad",
+  "createdAt": "2026-10-08T15:32:43.459Z",
+  "updatedAt": "2026-10-08T15:32:43.459Z",
+  "meta": {
+    "name": "Faizabad",
+    "nameIt": "Faizabad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Faizabad.geojson",
+      "sha256": "5832667e0f5db95c031cdb67648e9639eb2d392e2ca8a9adffa5513fb7e6a309",
+      "size": 884272,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "faizabad",
+    "name": "Faizabad",
+    "nameIt": "Faizabad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      82.1561,
+      26.77461
+    ],
+    "zoom": 10.2,
+    "population": 786421,
+    "grid": "cities/faizabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/faizabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "faizabad",
+        "name": "Faizabad",
+        "nameIt": "Faizabad",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          82.1561,
+          26.77461
+        ],
+        "zoom": 10.2,
+        "population": 786421,
+        "cells": 762,
+        "layer": "cities/faizabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            82.1561,
+            26.77461
+          ]
+        },
+        "properties": {
+          "id": "faizabad",
+          "name": "Faizabad",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 38,
+          "population": 786421
+        }
+      },
+      "summary": null
+    }
+  }
+}

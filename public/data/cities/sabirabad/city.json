@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sabirabad",
+  "createdAt": "2026-10-08T16:09:35.650Z",
+  "updatedAt": "2026-10-08T16:09:35.650Z",
+  "meta": {
+    "name": "Sabirabad",
+    "nameIt": "Sabirabad",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sabirabad.geojson",
+      "sha256": "c7220281d2ad1c9f1f3705dec797e75470bbfb7613b19cac954cee118ea3fda3",
+      "size": 147080,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sabirabad",
+    "name": "Sabirabad",
+    "nameIt": "Sabirabad",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ",
+    "center": [
+      48.47142,
+      40.00019
+    ],
+    "zoom": 11.5,
+    "population": 30326,
+    "grid": "cities/sabirabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sabirabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sabirabad",
+        "name": "Sabirabad",
+        "nameIt": "Sabirabad",
+        "region": "Azerbaijan",
+        "regionIt": "Azerbaigian",
+        "country": "AZ",
+        "center": [
+          48.47142,
+          40.00019
+        ],
+        "zoom": 11.5,
+        "population": 30326,
+        "cells": 127,
+        "layer": "cities/sabirabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.47142,
+            40.00019
+          ]
+        },
+        "properties": {
+          "id": "sabirabad",
+          "name": "Sabirabad",
+          "country": "AZ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 30326
+        }
+      },
+      "summary": null
+    }
+  }
+}

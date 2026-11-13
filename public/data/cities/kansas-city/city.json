@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kansas-city",
+  "createdAt": "2026-10-08T15:45:01.084Z",
+  "updatedAt": "2026-10-08T15:45:01.084Z",
+  "meta": {
+    "name": "Kansas City",
+    "nameIt": "Kansas City",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kansas City.geojson",
+      "sha256": "979cf03c8b28024822f3e14f464a22050c611c493752953c1dbbec590a36b9c1",
+      "size": 2591125,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kansas-city",
+    "name": "Kansas City",
+    "nameIt": "Kansas City",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -94.62034,
+      39.02609
+    ],
+    "zoom": 9.4,
+    "population": 379820,
+    "grid": "cities/kansas-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kansas-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kansas-city",
+        "name": "Kansas City",
+        "nameIt": "Kansas City",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -94.62034,
+          39.02609
+        ],
+        "zoom": 9.4,
+        "population": 379820,
+        "cells": 2252,
+        "layer": "cities/kansas-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -94.62034,
+            39.02609
+          ]
+        },
+        "properties": {
+          "id": "kansas-city",
+          "name": "Kansas City",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 16.6,
+          "population": 379820
+        }
+      },
+      "summary": null
+    }
+  }
+}

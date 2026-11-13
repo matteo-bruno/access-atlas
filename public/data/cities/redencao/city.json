@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "redencao",
+  "createdAt": "2026-10-08T16:08:33.287Z",
+  "updatedAt": "2026-10-08T16:08:33.287Z",
+  "meta": {
+    "name": "Redenção",
+    "nameIt": "Redenção",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Redenção.geojson",
+      "sha256": "a85be0956879e846020be51a54ed77fb603885de08a617da96bbff2d71c53938",
+      "size": 182960,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "redencao",
+    "name": "Redenção",
+    "nameIt": "Redenção",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -50.03014,
+      -8.03852
+    ],
+    "zoom": 11.6,
+    "population": 67238,
+    "grid": "cities/redencao/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/redencao/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "redencao",
+        "name": "Redenção",
+        "nameIt": "Redenção",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -50.03014,
+          -8.03852
+        ],
+        "zoom": 11.6,
+        "population": 67238,
+        "cells": 156,
+        "layer": "cities/redencao/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.03014,
+            -8.03852
+          ]
+        },
+        "properties": {
+          "id": "redencao",
+          "name": "Redenção",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 19.3,
+          "population": 67238
+        }
+      },
+      "summary": null
+    }
+  }
+}

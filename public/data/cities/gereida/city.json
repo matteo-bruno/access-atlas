@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gereida",
+  "createdAt": "2026-10-08T15:35:01.744Z",
+  "updatedAt": "2026-10-08T15:35:01.744Z",
+  "meta": {
+    "name": "Gereida",
+    "nameIt": "Gereida",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gereida.geojson",
+      "sha256": "b371253e7b82956bb9fcba355bfa8e9aaf7d4fc40f263b4dc3271383503812f9",
+      "size": 156262,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gereida",
+    "name": "Gereida",
+    "nameIt": "Gereida",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      25.14663,
+      11.26818
+    ],
+    "zoom": 11.7,
+    "population": 43921,
+    "grid": "cities/gereida/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gereida/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gereida",
+        "name": "Gereida",
+        "nameIt": "Gereida",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          25.14663,
+          11.26818
+        ],
+        "zoom": 11.7,
+        "population": 43921,
+        "cells": 134,
+        "layer": "cities/gereida/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.14663,
+            11.26818
+          ]
+        },
+        "properties": {
+          "id": "gereida",
+          "name": "Gereida",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 43921
+        }
+      },
+      "summary": null
+    }
+  }
+}

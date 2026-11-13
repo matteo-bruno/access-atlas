@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vientiane",
+  "createdAt": "2026-10-08T16:20:41.139Z",
+  "updatedAt": "2026-10-08T16:20:41.139Z",
+  "meta": {
+    "name": "Vientiane",
+    "nameIt": "Vientiane",
+    "region": "Laos",
+    "regionIt": "Laos",
+    "country": "LA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vientiane.geojson",
+      "sha256": "ba3557f74ff417394fb2a8774e48846cf635178f57b7094e7b3a0328d5dcd763",
+      "size": 725692,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vientiane",
+    "name": "Vientiane",
+    "nameIt": "Vientiane",
+    "region": "Laos",
+    "regionIt": "Laos",
+    "country": "LA",
+    "center": [
+      102.6184,
+      17.98011
+    ],
+    "zoom": 10.1,
+    "population": 305675,
+    "grid": "cities/vientiane/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vientiane/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vientiane",
+        "name": "Vientiane",
+        "nameIt": "Vientiane",
+        "region": "Laos",
+        "regionIt": "Laos",
+        "country": "LA",
+        "center": [
+          102.6184,
+          17.98011
+        ],
+        "zoom": 10.1,
+        "population": 305675,
+        "cells": 628,
+        "layer": "cities/vientiane/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            102.6184,
+            17.98011
+          ]
+        },
+        "properties": {
+          "id": "vientiane",
+          "name": "Vientiane",
+          "country": "LA",
+          "isStudy": true,
+          "proximityMinutes": 19.7,
+          "population": 305675
+        }
+      },
+      "summary": null
+    }
+  }
+}

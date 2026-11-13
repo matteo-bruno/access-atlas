@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oroquieta",
+  "createdAt": "2026-10-08T16:03:02.997Z",
+  "updatedAt": "2026-10-08T16:03:02.997Z",
+  "meta": {
+    "name": "Oroquieta",
+    "nameIt": "Oroquieta",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Oroquieta.geojson",
+      "sha256": "661aea581aa6bfca1849d0c701f7e333d51307b3f52e504992de551bd4211ccc",
+      "size": 220924,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "oroquieta",
+    "name": "Oroquieta",
+    "nameIt": "Oroquieta",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      123.79951,
+      8.47853
+    ],
+    "zoom": 11.5,
+    "population": 53653,
+    "grid": "cities/oroquieta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oroquieta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oroquieta",
+        "name": "Oroquieta",
+        "nameIt": "Oroquieta",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          123.79951,
+          8.47853
+        ],
+        "zoom": 11.5,
+        "population": 53653,
+        "cells": 191,
+        "layer": "cities/oroquieta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.79951,
+            8.47853
+          ]
+        },
+        "properties": {
+          "id": "oroquieta",
+          "name": "Oroquieta",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 53653
+        }
+      },
+      "summary": null
+    }
+  }
+}

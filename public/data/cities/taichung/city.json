@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "taichung",
+  "createdAt": "2026-10-08T16:16:01.048Z",
+  "updatedAt": "2026-10-08T16:16:01.048Z",
+  "meta": {
+    "name": "Taichung",
+    "nameIt": "Taichung",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Taichung.geojson",
+      "sha256": "1bdaa33af04d187e5fa0a5b48c9c0b3358fd4827001b4d42481c83fc7ce055c7",
+      "size": 3877572,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "taichung",
+    "name": "Taichung",
+    "nameIt": "Taichung",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW",
+    "center": [
+      120.67536,
+      24.16034
+    ],
+    "zoom": 9.4,
+    "population": 2247810,
+    "grid": "cities/taichung/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/taichung/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "taichung",
+        "name": "Taichung",
+        "nameIt": "Taichung",
+        "region": "Taiwan",
+        "regionIt": "Taiwan",
+        "country": "TW",
+        "center": [
+          120.67536,
+          24.16034
+        ],
+        "zoom": 9.4,
+        "population": 2247810,
+        "cells": 3363,
+        "layer": "cities/taichung/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.67536,
+            24.16034
+          ]
+        },
+        "properties": {
+          "id": "taichung",
+          "name": "Taichung",
+          "country": "TW",
+          "isStudy": true,
+          "proximityMinutes": 9,
+          "population": 2247810
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ahar",
+  "createdAt": "2026-10-08T15:03:04.115Z",
+  "updatedAt": "2026-10-08T15:03:04.115Z",
+  "meta": {
+    "name": "Ahar",
+    "nameIt": "Ahar",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ahar.geojson",
+      "sha256": "dd230107e17580cfcb110035556a45ee91ee0dd4de0937aae9a41631cb368eba",
+      "size": 142389,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ahar",
+    "name": "Ahar",
+    "nameIt": "Ahar",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      47.06865,
+      38.47925
+    ],
+    "zoom": 12,
+    "population": 109190,
+    "grid": "cities/ahar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ahar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ahar",
+        "name": "Ahar",
+        "nameIt": "Ahar",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          47.06865,
+          38.47925
+        ],
+        "zoom": 12,
+        "population": 109190,
+        "cells": 123,
+        "layer": "cities/ahar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            47.06865,
+            38.47925
+          ]
+        },
+        "properties": {
+          "id": "ahar",
+          "name": "Ahar",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 109190
+        }
+      },
+      "summary": null
+    }
+  }
+}

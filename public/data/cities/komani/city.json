@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "komani",
+  "createdAt": "2026-10-08T15:47:48.749Z",
+  "updatedAt": "2026-10-08T15:47:48.749Z",
+  "meta": {
+    "name": "Komani",
+    "nameIt": "Komani",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Komani.geojson",
+      "sha256": "fe2325e32ca60e0b1d4c30745ffabc511136d34e2792ac720ba02c43068c732d",
+      "size": 173877,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "komani",
+    "name": "Komani",
+    "nameIt": "Komani",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      26.86774,
+      -31.90909
+    ],
+    "zoom": 11.8,
+    "population": 41082,
+    "grid": "cities/komani/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/komani/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "komani",
+        "name": "Komani",
+        "nameIt": "Komani",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          26.86774,
+          -31.90909
+        ],
+        "zoom": 11.8,
+        "population": 41082,
+        "cells": 148,
+        "layer": "cities/komani/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.86774,
+            -31.90909
+          ]
+        },
+        "properties": {
+          "id": "komani",
+          "name": "Komani",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 19.4,
+          "population": 41082
+        }
+      },
+      "summary": null
+    }
+  }
+}

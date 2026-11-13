@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kothamangalam",
+  "createdAt": "2026-10-08T15:48:08.982Z",
+  "updatedAt": "2026-10-08T15:48:08.982Z",
+  "meta": {
+    "name": "Kothamangalam",
+    "nameIt": "Kothamangalam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kothamangalam.geojson",
+      "sha256": "c9f4ca4cc73d28dd2006425c520d2b9f0ea52a34941eed85ccc6ce47e0b4522a",
+      "size": 267710,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kothamangalam",
+    "name": "Kothamangalam",
+    "nameIt": "Kothamangalam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.61499,
+      10.06668
+    ],
+    "zoom": 10.8,
+    "population": 91104,
+    "grid": "cities/kothamangalam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kothamangalam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kothamangalam",
+        "name": "Kothamangalam",
+        "nameIt": "Kothamangalam",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.61499,
+          10.06668
+        ],
+        "zoom": 10.8,
+        "population": 91104,
+        "cells": 233,
+        "layer": "cities/kothamangalam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.61499,
+            10.06668
+          ]
+        },
+        "properties": {
+          "id": "kothamangalam",
+          "name": "Kothamangalam",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 91104
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sarawa",
+  "createdAt": "2026-10-08T16:11:26.431Z",
+  "updatedAt": "2026-10-08T16:11:26.431Z",
+  "meta": {
+    "name": "Sarawa",
+    "nameIt": "Sarawa",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sarawa.geojson",
+      "sha256": "b52e28af635502988dc378bdb0bf6f5bd2514cc25a8af48795556bd6899aced1",
+      "size": 75749,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sarawa",
+    "name": "Sarawa",
+    "nameIt": "Sarawa",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      30.84595,
+      31.0475
+    ],
+    "zoom": 12,
+    "population": 74639,
+    "grid": "cities/sarawa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sarawa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sarawa",
+        "name": "Sarawa",
+        "nameIt": "Sarawa",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          30.84595,
+          31.0475
+        ],
+        "zoom": 12,
+        "population": 74639,
+        "cells": 65,
+        "layer": "cities/sarawa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.84595,
+            31.0475
+          ]
+        },
+        "properties": {
+          "id": "sarawa",
+          "name": "Sarawa",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 9.1,
+          "population": 74639
+        }
+      },
+      "summary": null
+    }
+  }
+}

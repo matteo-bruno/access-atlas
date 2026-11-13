@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "panna",
+  "createdAt": "2026-10-08T16:04:07.124Z",
+  "updatedAt": "2026-10-08T16:04:07.124Z",
+  "meta": {
+    "name": "Panna",
+    "nameIt": "Panna",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Panna.geojson",
+      "sha256": "a912ac94ecf5d28479c26f61a34b42465b36dce6aa0f4f3fb2bcdc0d9bb9d23e",
+      "size": 113581,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "panna",
+    "name": "Panna",
+    "nameIt": "Panna",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.18544,
+      24.71826
+    ],
+    "zoom": 11.9,
+    "population": 64962,
+    "grid": "cities/panna/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/panna/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "panna",
+        "name": "Panna",
+        "nameIt": "Panna",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.18544,
+          24.71826
+        ],
+        "zoom": 11.9,
+        "population": 64962,
+        "cells": 98,
+        "layer": "cities/panna/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.18544,
+            24.71826
+          ]
+        },
+        "properties": {
+          "id": "panna",
+          "name": "Panna",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 16.6,
+          "population": 64962
+        }
+      },
+      "summary": null
+    }
+  }
+}

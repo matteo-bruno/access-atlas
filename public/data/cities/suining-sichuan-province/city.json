@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "suining-sichuan-province",
+  "createdAt": "2026-10-08T16:15:00.992Z",
+  "updatedAt": "2026-10-08T16:15:00.992Z",
+  "meta": {
+    "name": "Suining (Sichuan Province)",
+    "nameIt": "Suining (Sichuan Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Suining (Sichuan Province).geojson",
+      "sha256": "9c7c878e502addc3273cef8ee1906275082c5ef7f24952ee862a5662c28645e9",
+      "size": 870942,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "suining-sichuan-province",
+    "name": "Suining (Sichuan Province)",
+    "nameIt": "Suining (Sichuan Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      105.57976,
+      30.51172
+    ],
+    "zoom": 10.3,
+    "population": 593481,
+    "grid": "cities/suining-sichuan-province/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/suining-sichuan-province/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "suining-sichuan-province",
+        "name": "Suining (Sichuan Province)",
+        "nameIt": "Suining (Sichuan Province)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          105.57976,
+          30.51172
+        ],
+        "zoom": 10.3,
+        "population": 593481,
+        "cells": 745,
+        "layer": "cities/suining-sichuan-province/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.57976,
+            30.51172
+          ]
+        },
+        "properties": {
+          "id": "suining-sichuan-province",
+          "name": "Suining (Sichuan Province)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24,
+          "population": 593481
+        }
+      },
+      "summary": null
+    }
+  }
+}

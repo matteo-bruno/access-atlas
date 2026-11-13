@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "salalah",
+  "createdAt": "2026-10-08T16:10:02.046Z",
+  "updatedAt": "2026-10-08T16:10:02.046Z",
+  "meta": {
+    "name": "Salalah",
+    "nameIt": "Salalah",
+    "region": "Oman",
+    "regionIt": "Oman",
+    "country": "OM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Salalah.geojson",
+      "sha256": "ccf72ef11b3840d68de60484d43e726790f0c0fa7a57442ed12386fd2a6c01cb",
+      "size": 711315,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "salalah",
+    "name": "Salalah",
+    "nameIt": "Salalah",
+    "region": "Oman",
+    "regionIt": "Oman",
+    "country": "OM",
+    "center": [
+      54.0609,
+      17.01487
+    ],
+    "zoom": 10.3,
+    "population": 90953,
+    "grid": "cities/salalah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/salalah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "salalah",
+        "name": "Salalah",
+        "nameIt": "Salalah",
+        "region": "Oman",
+        "regionIt": "Oman",
+        "country": "OM",
+        "center": [
+          54.0609,
+          17.01487
+        ],
+        "zoom": 10.3,
+        "population": 90953,
+        "cells": 614,
+        "layer": "cities/salalah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            54.0609,
+            17.01487
+          ]
+        },
+        "properties": {
+          "id": "salalah",
+          "name": "Salalah",
+          "country": "OM",
+          "isStudy": true,
+          "proximityMinutes": 30.3,
+          "population": 90953
+        }
+      },
+      "summary": null
+    }
+  }
+}

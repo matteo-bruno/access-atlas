@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "visnagar",
+  "createdAt": "2026-10-08T16:20:54.854Z",
+  "updatedAt": "2026-10-08T16:20:54.854Z",
+  "meta": {
+    "name": "Visnagar",
+    "nameIt": "Visnagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Visnagar.geojson",
+      "sha256": "2fb5d7ce9c166ac26eec9a88e6cf1d2d3fee40e639432ee58820f9648b6dbfe7",
+      "size": 196980,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "visnagar",
+    "name": "Visnagar",
+    "nameIt": "Visnagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.54072,
+      23.70007
+    ],
+    "zoom": 11.5,
+    "population": 92258,
+    "grid": "cities/visnagar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/visnagar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "visnagar",
+        "name": "Visnagar",
+        "nameIt": "Visnagar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.54072,
+          23.70007
+        ],
+        "zoom": 11.5,
+        "population": 92258,
+        "cells": 170,
+        "layer": "cities/visnagar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.54072,
+            23.70007
+          ]
+        },
+        "properties": {
+          "id": "visnagar",
+          "name": "Visnagar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 23.5,
+          "population": 92258
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sidon",
+  "createdAt": "2026-10-08T16:13:30.122Z",
+  "updatedAt": "2026-10-08T16:13:30.122Z",
+  "meta": {
+    "name": "Sidon",
+    "nameIt": "Sidon",
+    "region": "Lebanon",
+    "regionIt": "Libano",
+    "country": "LB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sidon.geojson",
+      "sha256": "19d79512a91801534a604f4c5a7ddfafc5fd922153d38a51d0cce4f91efef5e6",
+      "size": 309331,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sidon",
+    "name": "Sidon",
+    "nameIt": "Sidon",
+    "region": "Lebanon",
+    "regionIt": "Libano",
+    "country": "LB",
+    "center": [
+      35.3812,
+      33.55138
+    ],
+    "zoom": 11,
+    "population": 228425,
+    "grid": "cities/sidon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sidon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sidon",
+        "name": "Sidon",
+        "nameIt": "Sidon",
+        "region": "Lebanon",
+        "regionIt": "Libano",
+        "country": "LB",
+        "center": [
+          35.3812,
+          33.55138
+        ],
+        "zoom": 11,
+        "population": 228425,
+        "cells": 268,
+        "layer": "cities/sidon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.3812,
+            33.55138
+          ]
+        },
+        "properties": {
+          "id": "sidon",
+          "name": "Sidon",
+          "country": "LB",
+          "isStudy": true,
+          "proximityMinutes": 16.7,
+          "population": 228425
+        }
+      },
+      "summary": null
+    }
+  }
+}

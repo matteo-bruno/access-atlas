@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tuguegarao",
+  "createdAt": "2026-10-08T16:19:04.744Z",
+  "updatedAt": "2026-10-08T16:19:04.744Z",
+  "meta": {
+    "name": "Tuguegarao",
+    "nameIt": "Tuguegarao",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tuguegarao.geojson",
+      "sha256": "e062ebe2fd1710c86d6890a314ea8b38b5bafd6ea8415c8ebf06fbcd2646c7d5",
+      "size": 324514,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tuguegarao",
+    "name": "Tuguegarao",
+    "nameIt": "Tuguegarao",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      121.72122,
+      17.62544
+    ],
+    "zoom": 11.2,
+    "population": 140815,
+    "grid": "cities/tuguegarao/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tuguegarao/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tuguegarao",
+        "name": "Tuguegarao",
+        "nameIt": "Tuguegarao",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          121.72122,
+          17.62544
+        ],
+        "zoom": 11.2,
+        "population": 140815,
+        "cells": 279,
+        "layer": "cities/tuguegarao/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.72122,
+            17.62544
+          ]
+        },
+        "properties": {
+          "id": "tuguegarao",
+          "name": "Tuguegarao",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 21.2,
+          "population": 140815
+        }
+      },
+      "summary": null
+    }
+  }
+}

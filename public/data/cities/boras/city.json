@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "boras",
+  "createdAt": "2026-10-08T15:20:09.229Z",
+  "updatedAt": "2026-10-08T15:20:09.229Z",
+  "meta": {
+    "name": "Borås",
+    "nameIt": "Borås",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Borås.geojson",
+      "sha256": "9e5ed86c10fe9f7c34e45c19591c444e96b8328d4acc6184c6dfd7c534f9928a",
+      "size": 199238,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "boras",
+    "name": "Borås",
+    "nameIt": "Borås",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE",
+    "center": [
+      12.94996,
+      57.7196
+    ],
+    "zoom": 11.5,
+    "population": 45253,
+    "grid": "cities/boras/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/boras/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "boras",
+        "name": "Borås",
+        "nameIt": "Borås",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          12.94996,
+          57.7196
+        ],
+        "zoom": 11.5,
+        "population": 45253,
+        "cells": 174,
+        "layer": "cities/boras/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.94996,
+            57.7196
+          ]
+        },
+        "properties": {
+          "id": "boras",
+          "name": "Borås",
+          "country": "SE",
+          "isStudy": true,
+          "proximityMinutes": 11.4,
+          "population": 45253
+        }
+      },
+      "summary": null
+    }
+  }
+}

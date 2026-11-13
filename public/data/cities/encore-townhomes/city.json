@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "encore-townhomes",
+  "createdAt": "2026-10-08T15:32:16.048Z",
+  "updatedAt": "2026-10-08T15:32:16.048Z",
+  "meta": {
+    "name": "Encore Townhomes",
+    "nameIt": "Encore Townhomes",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Encore Townhomes.geojson",
+      "sha256": "7608218126358a2eb51a74d19d728ec650ca03927374ac8e19b354bc4fa8daff",
+      "size": 402781,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "encore-townhomes",
+    "name": "Encore Townhomes",
+    "nameIt": "Encore Townhomes",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -82.97119,
+      42.60935
+    ],
+    "zoom": 10.6,
+    "population": 69823,
+    "grid": "cities/encore-townhomes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/encore-townhomes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "encore-townhomes",
+        "name": "Encore Townhomes",
+        "nameIt": "Encore Townhomes",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -82.97119,
+          42.60935
+        ],
+        "zoom": 10.6,
+        "population": 69823,
+        "cells": 347,
+        "layer": "cities/encore-townhomes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.97119,
+            42.60935
+          ]
+        },
+        "properties": {
+          "id": "encore-townhomes",
+          "name": "Encore Townhomes",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 24.5,
+          "population": 69823
+        }
+      },
+      "summary": null
+    }
+  }
+}

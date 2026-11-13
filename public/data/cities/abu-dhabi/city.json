@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abu-dhabi",
+  "createdAt": "2026-10-08T15:01:47.232Z",
+  "updatedAt": "2026-10-08T15:01:47.232Z",
+  "meta": {
+    "name": "Abu Dhabi",
+    "nameIt": "Abu Dhabi",
+    "region": "United Arab Emirates",
+    "regionIt": "Emirati Arabi Uniti",
+    "country": "AE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abu Dhabi.geojson",
+      "sha256": "5b5f775b7048ac50154c29d7074c0c752610d7424fdd22f1abcdc43f399b9fc4",
+      "size": 1313638,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abu-dhabi",
+    "name": "Abu Dhabi",
+    "nameIt": "Abu Dhabi",
+    "region": "United Arab Emirates",
+    "regionIt": "Emirati Arabi Uniti",
+    "country": "AE",
+    "center": [
+      54.38421,
+      24.46056
+    ],
+    "zoom": 10.1,
+    "population": 229362,
+    "grid": "cities/abu-dhabi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abu-dhabi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abu-dhabi",
+        "name": "Abu Dhabi",
+        "nameIt": "Abu Dhabi",
+        "region": "United Arab Emirates",
+        "regionIt": "Emirati Arabi Uniti",
+        "country": "AE",
+        "center": [
+          54.38421,
+          24.46056
+        ],
+        "zoom": 10.1,
+        "population": 229362,
+        "cells": 1144,
+        "layer": "cities/abu-dhabi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            54.38421,
+            24.46056
+          ]
+        },
+        "properties": {
+          "id": "abu-dhabi",
+          "name": "Abu Dhabi",
+          "country": "AE",
+          "isStudy": true,
+          "proximityMinutes": 17.8,
+          "population": 229362
+        }
+      },
+      "summary": null
+    }
+  }
+}

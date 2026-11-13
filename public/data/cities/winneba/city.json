@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "winneba",
+  "createdAt": "2026-10-08T16:21:43.896Z",
+  "updatedAt": "2026-10-08T16:21:43.896Z",
+  "meta": {
+    "name": "Winneba",
+    "nameIt": "Winneba",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Winneba.geojson",
+      "sha256": "11f0ba2717836360bbacda8026adc3b82f37c56f97ed68fb993e6a04a173b098",
+      "size": 404674,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "winneba",
+    "name": "Winneba",
+    "nameIt": "Winneba",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH",
+    "center": [
+      -0.62979,
+      5.35985
+    ],
+    "zoom": 11,
+    "population": 112329,
+    "grid": "cities/winneba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/winneba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "winneba",
+        "name": "Winneba",
+        "nameIt": "Winneba",
+        "region": "Ghana",
+        "regionIt": "Ghana",
+        "country": "GH",
+        "center": [
+          -0.62979,
+          5.35985
+        ],
+        "zoom": 11,
+        "population": 112329,
+        "cells": 347,
+        "layer": "cities/winneba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.62979,
+            5.35985
+          ]
+        },
+        "properties": {
+          "id": "winneba",
+          "name": "Winneba",
+          "country": "GH",
+          "isStudy": true,
+          "proximityMinutes": 23.1,
+          "population": 112329
+        }
+      },
+      "summary": null
+    }
+  }
+}

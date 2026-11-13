@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "otsu",
+  "createdAt": "2026-10-08T16:03:13.703Z",
+  "updatedAt": "2026-10-08T16:03:13.703Z",
+  "meta": {
+    "name": "Otsu",
+    "nameIt": "Otsu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Otsu.geojson",
+      "sha256": "e107da0e276e4305e5aa1b370ea3ba7cecf0d8e34860a46a4b6df4f76885eacb",
+      "size": 2271739,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "otsu",
+    "name": "Otsu",
+    "nameIt": "Otsu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      135.93557,
+      35.02652
+    ],
+    "zoom": 9.4,
+    "population": 565243,
+    "grid": "cities/otsu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/otsu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "otsu",
+        "name": "Otsu",
+        "nameIt": "Otsu",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          135.93557,
+          35.02652
+        ],
+        "zoom": 9.4,
+        "population": 565243,
+        "cells": 1979,
+        "layer": "cities/otsu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            135.93557,
+            35.02652
+          ]
+        },
+        "properties": {
+          "id": "otsu",
+          "name": "Otsu",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 565243
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "albany",
+  "createdAt": "2026-10-08T15:05:34.393Z",
+  "updatedAt": "2026-10-08T15:05:34.393Z",
+  "meta": {
+    "name": "Albany",
+    "nameIt": "Albany",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Albany.geojson",
+      "sha256": "ef865e3bd9395b0f059c84d7efad8b81773b8ab4b6097b284854a2f2ab485663",
+      "size": 391548,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "albany",
+    "name": "Albany",
+    "nameIt": "Albany",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -73.78068,
+      42.65885
+    ],
+    "zoom": 10.8,
+    "population": 87997,
+    "grid": "cities/albany/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/albany/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "albany",
+        "name": "Albany",
+        "nameIt": "Albany",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -73.78068,
+          42.65885
+        ],
+        "zoom": 10.8,
+        "population": 87997,
+        "cells": 341,
+        "layer": "cities/albany/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.78068,
+            42.65885
+          ]
+        },
+        "properties": {
+          "id": "albany",
+          "name": "Albany",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 9.3,
+          "population": 87997
+        }
+      },
+      "summary": null
+    }
+  }
+}

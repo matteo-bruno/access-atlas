@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hoi-an",
+  "createdAt": "2026-10-08T15:40:08.772Z",
+  "updatedAt": "2026-10-08T15:40:08.772Z",
+  "meta": {
+    "name": "Hội An",
+    "nameIt": "Hội An",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hội An.geojson",
+      "sha256": "08b88e9c81f1534e29ca10d4f28b9919a81ba8a823c833bd6aa352bf8fc1fff7",
+      "size": 390950,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hoi-an",
+    "name": "Hội An",
+    "nameIt": "Hội An",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      108.3258,
+      15.88625
+    ],
+    "zoom": 10.6,
+    "population": 97179,
+    "grid": "cities/hoi-an/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hoi-an/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hoi-an",
+        "name": "Hội An",
+        "nameIt": "Hội An",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          108.3258,
+          15.88625
+        ],
+        "zoom": 10.6,
+        "population": 97179,
+        "cells": 338,
+        "layer": "cities/hoi-an/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.3258,
+            15.88625
+          ]
+        },
+        "properties": {
+          "id": "hoi-an",
+          "name": "Hội An",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 16.8,
+          "population": 97179
+        }
+      },
+      "summary": null
+    }
+  }
+}

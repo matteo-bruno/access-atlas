@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "maurepas",
+  "createdAt": "2026-10-08T15:55:52.580Z",
+  "updatedAt": "2026-10-08T15:55:52.580Z",
+  "meta": {
+    "name": "Maurepas",
+    "nameIt": "Maurepas",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Maurepas.geojson",
+      "sha256": "9368afed7a3a514bbb771cba680df86ff69c5a16700776b0a9a6ff35168c2ea4",
+      "size": 746327,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "maurepas",
+    "name": "Maurepas",
+    "nameIt": "Maurepas",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      2.0126,
+      48.77891
+    ],
+    "zoom": 10.5,
+    "population": 211409,
+    "grid": "cities/maurepas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/maurepas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "maurepas",
+        "name": "Maurepas",
+        "nameIt": "Maurepas",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          2.0126,
+          48.77891
+        ],
+        "zoom": 10.5,
+        "population": 211409,
+        "cells": 654,
+        "layer": "cities/maurepas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.0126,
+            48.77891
+          ]
+        },
+        "properties": {
+          "id": "maurepas",
+          "name": "Maurepas",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 9.8,
+          "population": 211409
+        }
+      },
+      "summary": null
+    }
+  }
+}

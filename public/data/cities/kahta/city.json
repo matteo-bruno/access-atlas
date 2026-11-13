@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kahta",
+  "createdAt": "2026-10-08T15:49:15.234Z",
+  "updatedAt": "2026-10-08T15:49:15.234Z",
+  "meta": {
+    "name": "Kâhta",
+    "nameIt": "Kâhta",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kâhta.geojson",
+      "sha256": "f2f84c5a52e8390c20447c8ffa58d81530a01ea7347f812a2002e8f8bc27e52c",
+      "size": 91374,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kahta",
+    "name": "Kâhta",
+    "nameIt": "Kâhta",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      38.62236,
+      37.78619
+    ],
+    "zoom": 12,
+    "population": 77405,
+    "grid": "cities/kahta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kahta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kahta",
+        "name": "Kâhta",
+        "nameIt": "Kâhta",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          38.62236,
+          37.78619
+        ],
+        "zoom": 12,
+        "population": 77405,
+        "cells": 79,
+        "layer": "cities/kahta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.62236,
+            37.78619
+          ]
+        },
+        "properties": {
+          "id": "kahta",
+          "name": "Kâhta",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 77405
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bera",
+  "createdAt": "2026-10-08T15:17:35.418Z",
+  "updatedAt": "2026-10-08T15:17:35.418Z",
+  "meta": {
+    "name": "Bera",
+    "nameIt": "Bera",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bera.geojson",
+      "sha256": "51bc1ce26a3093d29ddcaed4590bb82a02ac3ec6e45ac9c794b95a629f9c0123",
+      "size": 153978,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bera",
+    "name": "Bera",
+    "nameIt": "Bera",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.61636,
+      24.07791
+    ],
+    "zoom": 11.4,
+    "population": 52647,
+    "grid": "cities/bera/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bera/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bera",
+        "name": "Bera",
+        "nameIt": "Bera",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.61636,
+          24.07791
+        ],
+        "zoom": 11.4,
+        "population": 52647,
+        "cells": 133,
+        "layer": "cities/bera/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.61636,
+            24.07791
+          ]
+        },
+        "properties": {
+          "id": "bera",
+          "name": "Bera",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 52647
+        }
+      },
+      "summary": null
+    }
+  }
+}

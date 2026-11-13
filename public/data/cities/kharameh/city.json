@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kharameh",
+  "createdAt": "2026-10-08T15:46:34.388Z",
+  "updatedAt": "2026-10-08T15:46:34.388Z",
+  "meta": {
+    "name": "Kharameh",
+    "nameIt": "Kharameh",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kharameh.geojson",
+      "sha256": "3165a6dc5359d98578bca79d95c0f24056132090e78f4a3ea122054704f863b8",
+      "size": 273928,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kharameh",
+    "name": "Kharameh",
+    "nameIt": "Kharameh",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      53.31041,
+      29.50294
+    ],
+    "zoom": 11.4,
+    "population": 27444,
+    "grid": "cities/kharameh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kharameh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kharameh",
+        "name": "Kharameh",
+        "nameIt": "Kharameh",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          53.31041,
+          29.50294
+        ],
+        "zoom": 11.4,
+        "population": 27444,
+        "cells": 236,
+        "layer": "cities/kharameh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            53.31041,
+            29.50294
+          ]
+        },
+        "properties": {
+          "id": "kharameh",
+          "name": "Kharameh",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 11.4,
+          "population": 27444
+        }
+      },
+      "summary": null
+    }
+  }
+}

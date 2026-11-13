@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "arrah",
+  "createdAt": "2026-10-08T15:09:38.911Z",
+  "updatedAt": "2026-10-08T15:09:38.911Z",
+  "meta": {
+    "name": "Arrah",
+    "nameIt": "Arrah",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Arrah.geojson",
+      "sha256": "f602f3a15201df6614e76a0611d67865186b962d42cc6d85b55b186972975924",
+      "size": 480968,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "arrah",
+    "name": "Arrah",
+    "nameIt": "Arrah",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.66173,
+      25.55629
+    ],
+    "zoom": 10.5,
+    "population": 452336,
+    "grid": "cities/arrah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/arrah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "arrah",
+        "name": "Arrah",
+        "nameIt": "Arrah",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.66173,
+          25.55629
+        ],
+        "zoom": 10.5,
+        "population": 452336,
+        "cells": 415,
+        "layer": "cities/arrah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.66173,
+            25.55629
+          ]
+        },
+        "properties": {
+          "id": "arrah",
+          "name": "Arrah",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 34.7,
+          "population": 452336
+        }
+      },
+      "summary": null
+    }
+  }
+}

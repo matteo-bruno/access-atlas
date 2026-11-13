@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "palm-bay",
+  "createdAt": "2026-10-08T16:03:49.486Z",
+  "updatedAt": "2026-10-08T16:03:49.486Z",
+  "meta": {
+    "name": "Palm Bay",
+    "nameIt": "Palm Bay",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Palm Bay.geojson",
+      "sha256": "89040468ae58f4a58b4d005a2e53110fc6e0da136b16d625abd921d5f774b5fa",
+      "size": 1620282,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "palm-bay",
+    "name": "Palm Bay",
+    "nameIt": "Palm Bay",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -80.65061,
+      28.07381
+    ],
+    "zoom": 9.6,
+    "population": 158425,
+    "grid": "cities/palm-bay/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/palm-bay/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "palm-bay",
+        "name": "Palm Bay",
+        "nameIt": "Palm Bay",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -80.65061,
+          28.07381
+        ],
+        "zoom": 9.6,
+        "population": 158425,
+        "cells": 1398,
+        "layer": "cities/palm-bay/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.65061,
+            28.07381
+          ]
+        },
+        "properties": {
+          "id": "palm-bay",
+          "name": "Palm Bay",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 32.3,
+          "population": 158425
+        }
+      },
+      "summary": null
+    }
+  }
+}

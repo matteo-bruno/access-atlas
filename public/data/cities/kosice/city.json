@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kosice",
+  "createdAt": "2026-10-08T15:48:20.627Z",
+  "updatedAt": "2026-10-08T15:48:20.627Z",
+  "meta": {
+    "name": "Košice",
+    "nameIt": "Košice",
+    "region": "Slovakia",
+    "regionIt": "Slovacchia",
+    "country": "SK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Košice.geojson",
+      "sha256": "ea34c65404ca87a4b58f21ef2636bb7d8b85f754c1e7f7bf65faa866a747cc8f",
+      "size": 560716,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kosice",
+    "name": "Košice",
+    "nameIt": "Košice",
+    "region": "Slovakia",
+    "regionIt": "Slovacchia",
+    "country": "SK",
+    "center": [
+      21.26017,
+      48.71695
+    ],
+    "zoom": 10.6,
+    "population": 200007,
+    "grid": "cities/kosice/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kosice/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kosice",
+        "name": "Košice",
+        "nameIt": "Košice",
+        "region": "Slovakia",
+        "regionIt": "Slovacchia",
+        "country": "SK",
+        "center": [
+          21.26017,
+          48.71695
+        ],
+        "zoom": 10.6,
+        "population": 200007,
+        "cells": 491,
+        "layer": "cities/kosice/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            21.26017,
+            48.71695
+          ]
+        },
+        "properties": {
+          "id": "kosice",
+          "name": "Košice",
+          "country": "SK",
+          "isStudy": true,
+          "proximityMinutes": 9,
+          "population": 200007
+        }
+      },
+      "summary": null
+    }
+  }
+}

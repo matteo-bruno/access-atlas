@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baberu",
+  "createdAt": "2026-10-08T15:12:17.395Z",
+  "updatedAt": "2026-10-08T15:12:17.395Z",
+  "meta": {
+    "name": "Baberu",
+    "nameIt": "Baberu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baberu.geojson",
+      "sha256": "713e27ff37002a697b248a776536173458774c812825b98a726ed873065f861e",
+      "size": 125086,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baberu",
+    "name": "Baberu",
+    "nameIt": "Baberu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.69694,
+      25.5474
+    ],
+    "zoom": 11.7,
+    "population": 67617,
+    "grid": "cities/baberu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baberu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baberu",
+        "name": "Baberu",
+        "nameIt": "Baberu",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.69694,
+          25.5474
+        ],
+        "zoom": 11.7,
+        "population": 67617,
+        "cells": 108,
+        "layer": "cities/baberu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.69694,
+            25.5474
+          ]
+        },
+        "properties": {
+          "id": "baberu",
+          "name": "Baberu",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 67617
+        }
+      },
+      "summary": null
+    }
+  }
+}

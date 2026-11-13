@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "phulbani",
+  "createdAt": "2026-10-08T16:05:19.765Z",
+  "updatedAt": "2026-10-08T16:05:19.765Z",
+  "meta": {
+    "name": "Phulbani",
+    "nameIt": "Phulbani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Phulbani.geojson",
+      "sha256": "ff5f7e01811c2273cfa47eaa7818d3ff00d37da98fe000cc8dabe113f0f43edf",
+      "size": 68349,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "phulbani",
+    "name": "Phulbani",
+    "nameIt": "Phulbani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.23177,
+      20.47876
+    ],
+    "zoom": 12,
+    "population": 41658,
+    "grid": "cities/phulbani/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/phulbani/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "phulbani",
+        "name": "Phulbani",
+        "nameIt": "Phulbani",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.23177,
+          20.47876
+        ],
+        "zoom": 12,
+        "population": 41658,
+        "cells": 59,
+        "layer": "cities/phulbani/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.23177,
+            20.47876
+          ]
+        },
+        "properties": {
+          "id": "phulbani",
+          "name": "Phulbani",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 41658
+        }
+      },
+      "summary": null
+    }
+  }
+}

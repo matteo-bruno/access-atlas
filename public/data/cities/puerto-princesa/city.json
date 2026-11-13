@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "puerto-princesa",
+  "createdAt": "2026-10-08T16:06:46.427Z",
+  "updatedAt": "2026-10-08T16:06:46.427Z",
+  "meta": {
+    "name": "Puerto Princesa",
+    "nameIt": "Puerto Princesa",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Puerto Princesa.geojson",
+      "sha256": "e1d01fbad31a3aaf8f7befa85501ebb188bc3b4f4b38692afd2f6e080517ac5e",
+      "size": 557411,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "puerto-princesa",
+    "name": "Puerto Princesa",
+    "nameIt": "Puerto Princesa",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      118.74501,
+      9.76077
+    ],
+    "zoom": 10.8,
+    "population": 191264,
+    "grid": "cities/puerto-princesa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/puerto-princesa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "puerto-princesa",
+        "name": "Puerto Princesa",
+        "nameIt": "Puerto Princesa",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          118.74501,
+          9.76077
+        ],
+        "zoom": 10.8,
+        "population": 191264,
+        "cells": 483,
+        "layer": "cities/puerto-princesa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.74501,
+            9.76077
+          ]
+        },
+        "properties": {
+          "id": "puerto-princesa",
+          "name": "Puerto Princesa",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 19.7,
+          "population": 191264
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shanghang",
+  "createdAt": "2026-10-08T16:12:28.918Z",
+  "updatedAt": "2026-10-08T16:12:28.918Z",
+  "meta": {
+    "name": "Shanghang",
+    "nameIt": "Shanghang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shanghang.geojson",
+      "sha256": "1831fa490d42827a57a68ac4251e5aaf528ce1e38b33404b1a15b2cf43351357",
+      "size": 193989,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shanghang",
+    "name": "Shanghang",
+    "nameIt": "Shanghang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.41556,
+      25.05419
+    ],
+    "zoom": 11.3,
+    "population": 110917,
+    "grid": "cities/shanghang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shanghang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shanghang",
+        "name": "Shanghang",
+        "nameIt": "Shanghang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.41556,
+          25.05419
+        ],
+        "zoom": 11.3,
+        "population": 110917,
+        "cells": 166,
+        "layer": "cities/shanghang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.41556,
+            25.05419
+          ]
+        },
+        "properties": {
+          "id": "shanghang",
+          "name": "Shanghang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 110917
+        }
+      },
+      "summary": null
+    }
+  }
+}

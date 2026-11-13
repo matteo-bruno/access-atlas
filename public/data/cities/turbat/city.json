@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "turbat",
+  "createdAt": "2026-10-08T16:19:17.488Z",
+  "updatedAt": "2026-10-08T16:19:17.488Z",
+  "meta": {
+    "name": "Turbat",
+    "nameIt": "Turbat",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Turbat.geojson",
+      "sha256": "55bebd12037a19e37806ff93235e7ae2cb69531a851a8aafb0e5649c2b63dba7",
+      "size": 319533,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "turbat",
+    "name": "Turbat",
+    "nameIt": "Turbat",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      63.05025,
+      26.00084
+    ],
+    "zoom": 10.7,
+    "population": 251953,
+    "grid": "cities/turbat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/turbat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "turbat",
+        "name": "Turbat",
+        "nameIt": "Turbat",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          63.05025,
+          26.00084
+        ],
+        "zoom": 10.7,
+        "population": 251953,
+        "cells": 275,
+        "layer": "cities/turbat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            63.05025,
+            26.00084
+          ]
+        },
+        "properties": {
+          "id": "turbat",
+          "name": "Turbat",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 251953
+        }
+      },
+      "summary": null
+    }
+  }
+}

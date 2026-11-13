@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sahiwal-pakistan",
+  "createdAt": "2026-10-08T16:09:49.277Z",
+  "updatedAt": "2026-10-08T16:09:49.277Z",
+  "meta": {
+    "name": "Sahiwal (Pakistan)",
+    "nameIt": "Sahiwal (Pakistan)",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sahiwal (Pakistan).geojson",
+      "sha256": "3f59d871f9a0ef306b8a5c761f16f09ead5cc17dc646e134a1772f918d28304a",
+      "size": 784352,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sahiwal-pakistan",
+    "name": "Sahiwal (Pakistan)",
+    "nameIt": "Sahiwal (Pakistan)",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      73.10313,
+      30.66489
+    ],
+    "zoom": 10.5,
+    "population": 566382,
+    "grid": "cities/sahiwal-pakistan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sahiwal-pakistan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sahiwal-pakistan",
+        "name": "Sahiwal (Pakistan)",
+        "nameIt": "Sahiwal (Pakistan)",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          73.10313,
+          30.66489
+        ],
+        "zoom": 10.5,
+        "population": 566382,
+        "cells": 676,
+        "layer": "cities/sahiwal-pakistan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.10313,
+            30.66489
+          ]
+        },
+        "properties": {
+          "id": "sahiwal-pakistan",
+          "name": "Sahiwal (Pakistan)",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 39.9,
+          "population": 566382
+        }
+      },
+      "summary": null
+    }
+  }
+}

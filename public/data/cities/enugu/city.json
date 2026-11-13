@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "enugu",
+  "createdAt": "2026-10-08T15:32:20.235Z",
+  "updatedAt": "2026-10-08T15:32:20.235Z",
+  "meta": {
+    "name": "Enugu",
+    "nameIt": "Enugu",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Enugu.geojson",
+      "sha256": "7ce2335f0d0d3c2a5e739cc62effef4029764420519bd22318fb0811505fe0e3",
+      "size": 2085756,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "enugu",
+    "name": "Enugu",
+    "nameIt": "Enugu",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      7.51597,
+      6.45026
+    ],
+    "zoom": 9.8,
+    "population": 968983,
+    "grid": "cities/enugu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/enugu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "enugu",
+        "name": "Enugu",
+        "nameIt": "Enugu",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          7.51597,
+          6.45026
+        ],
+        "zoom": 9.8,
+        "population": 968983,
+        "cells": 1809,
+        "layer": "cities/enugu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.51597,
+            6.45026
+          ]
+        },
+        "properties": {
+          "id": "enugu",
+          "name": "Enugu",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 49.9,
+          "population": 968983
+        }
+      },
+      "summary": null
+    }
+  }
+}

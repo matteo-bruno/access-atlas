@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "madiun",
+  "createdAt": "2026-10-08T15:53:25.707Z",
+  "updatedAt": "2026-10-08T15:53:25.707Z",
+  "meta": {
+    "name": "Madiun",
+    "nameIt": "Madiun",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Madiun.geojson",
+      "sha256": "f1655a4cc62aadfeb55b736e42ca5e7a944ad447d2a7651bac17a26ae792d080",
+      "size": 1186102,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "madiun",
+    "name": "Madiun",
+    "nameIt": "Madiun",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      111.51122,
+      -7.62362
+    ],
+    "zoom": 9.8,
+    "population": 378307,
+    "grid": "cities/madiun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/madiun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "madiun",
+        "name": "Madiun",
+        "nameIt": "Madiun",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          111.51122,
+          -7.62362
+        ],
+        "zoom": 9.8,
+        "population": 378307,
+        "cells": 1012,
+        "layer": "cities/madiun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.51122,
+            -7.62362
+          ]
+        },
+        "properties": {
+          "id": "madiun",
+          "name": "Madiun",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 44.2,
+          "population": 378307
+        }
+      },
+      "summary": null
+    }
+  }
+}

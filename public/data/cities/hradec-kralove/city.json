@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hradec-kralove",
+  "createdAt": "2026-10-08T15:39:14.151Z",
+  "updatedAt": "2026-10-08T15:39:14.151Z",
+  "meta": {
+    "name": "Hradec Králové",
+    "nameIt": "Hradec Králové",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hradec Králové.geojson",
+      "sha256": "708785eefdf644bffd8d831a52f1d31003802cf82145b69c2b4e4ea29ca6b695",
+      "size": 286822,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hradec-kralove",
+    "name": "Hradec Králové",
+    "nameIt": "Hradec Králové",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ",
+    "center": [
+      15.83637,
+      50.20687
+    ],
+    "zoom": 11.2,
+    "population": 60275,
+    "grid": "cities/hradec-kralove/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hradec-kralove/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hradec-kralove",
+        "name": "Hradec Králové",
+        "nameIt": "Hradec Králové",
+        "region": "Czech Republic",
+        "regionIt": "Repubblica Ceca",
+        "country": "CZ",
+        "center": [
+          15.83637,
+          50.20687
+        ],
+        "zoom": 11.2,
+        "population": 60275,
+        "cells": 251,
+        "layer": "cities/hradec-kralove/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            15.83637,
+            50.20687
+          ]
+        },
+        "properties": {
+          "id": "hradec-kralove",
+          "name": "Hradec Králové",
+          "country": "CZ",
+          "isStudy": true,
+          "proximityMinutes": 8.4,
+          "population": 60275
+        }
+      },
+      "summary": null
+    }
+  }
+}

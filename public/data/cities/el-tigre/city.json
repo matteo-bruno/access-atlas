@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "el-tigre",
+  "createdAt": "2026-10-08T15:32:02.723Z",
+  "updatedAt": "2026-10-08T15:32:02.723Z",
+  "meta": {
+    "name": "El Tigre",
+    "nameIt": "El Tigre",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/El Tigre.geojson",
+      "sha256": "068bbb585ccb81863ad2adb97c441a6a6db75cc5165264b510ced257e42475d8",
+      "size": 517017,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "el-tigre",
+    "name": "El Tigre",
+    "nameIt": "El Tigre",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -64.2511,
+      8.8881
+    ],
+    "zoom": 10.8,
+    "population": 201982,
+    "grid": "cities/el-tigre/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/el-tigre/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "el-tigre",
+        "name": "El Tigre",
+        "nameIt": "El Tigre",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -64.2511,
+          8.8881
+        ],
+        "zoom": 10.8,
+        "population": 201982,
+        "cells": 450,
+        "layer": "cities/el-tigre/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -64.2511,
+            8.8881
+          ]
+        },
+        "properties": {
+          "id": "el-tigre",
+          "name": "El Tigre",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 201982
+        }
+      },
+      "summary": null
+    }
+  }
+}

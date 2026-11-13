@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gitega",
+  "createdAt": "2026-10-08T15:35:21.028Z",
+  "updatedAt": "2026-10-08T15:35:21.028Z",
+  "meta": {
+    "name": "Gitega",
+    "nameIt": "Gitega",
+    "region": "Burundi",
+    "regionIt": "Burundi",
+    "country": "BI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gitega.geojson",
+      "sha256": "d4bc734694edc4908519380b559aa3f135a280d6663a9df8892088680341e3a6",
+      "size": 249810,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gitega",
+    "name": "Gitega",
+    "nameIt": "Gitega",
+    "region": "Burundi",
+    "regionIt": "Burundi",
+    "country": "BI",
+    "center": [
+      29.92444,
+      -3.4286
+    ],
+    "zoom": 11.2,
+    "population": 109275,
+    "grid": "cities/gitega/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gitega/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gitega",
+        "name": "Gitega",
+        "nameIt": "Gitega",
+        "region": "Burundi",
+        "regionIt": "Burundi",
+        "country": "BI",
+        "center": [
+          29.92444,
+          -3.4286
+        ],
+        "zoom": 11.2,
+        "population": 109275,
+        "cells": 213,
+        "layer": "cities/gitega/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.92444,
+            -3.4286
+          ]
+        },
+        "properties": {
+          "id": "gitega",
+          "name": "Gitega",
+          "country": "BI",
+          "isStudy": true,
+          "proximityMinutes": 27.1,
+          "population": 109275
+        }
+      },
+      "summary": null
+    }
+  }
+}

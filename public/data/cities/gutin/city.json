@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gutin",
+  "createdAt": "2026-10-08T15:36:52.667Z",
+  "updatedAt": "2026-10-08T15:36:52.667Z",
+  "meta": {
+    "name": "Gutin",
+    "nameIt": "Gutin",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gutin.geojson",
+      "sha256": "2ff6555e372709e160988d0127ed0e597bd4514e3c2ce0eb7f86d819635ee7f9",
+      "size": 46127,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gutin",
+    "name": "Gutin",
+    "nameIt": "Gutin",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      36.63004,
+      9.56225
+    ],
+    "zoom": 12,
+    "population": 18066,
+    "grid": "cities/gutin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gutin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gutin",
+        "name": "Gutin",
+        "nameIt": "Gutin",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          36.63004,
+          9.56225
+        ],
+        "zoom": 12,
+        "population": 18066,
+        "cells": 40,
+        "layer": "cities/gutin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.63004,
+            9.56225
+          ]
+        },
+        "properties": {
+          "id": "gutin",
+          "name": "Gutin",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 18066
+        }
+      },
+      "summary": null
+    }
+  }
+}

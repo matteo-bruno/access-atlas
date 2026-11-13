@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "golmorti",
+  "createdAt": "2026-10-08T15:35:35.826Z",
+  "updatedAt": "2026-10-08T15:35:35.826Z",
+  "meta": {
+    "name": "Golmorti",
+    "nameIt": "Golmorti",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Golmorti.geojson",
+      "sha256": "f76a7f2337ddeeb33458c58ccdb43871981078b1b85d4ef5e98ee5943811e775",
+      "size": 143977,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "golmorti",
+    "name": "Golmorti",
+    "nameIt": "Golmorti",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      59.45227,
+      27.48041
+    ],
+    "zoom": 11.7,
+    "population": 44448,
+    "grid": "cities/golmorti/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/golmorti/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "golmorti",
+        "name": "Golmorti",
+        "nameIt": "Golmorti",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          59.45227,
+          27.48041
+        ],
+        "zoom": 11.7,
+        "population": 44448,
+        "cells": 124,
+        "layer": "cities/golmorti/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            59.45227,
+            27.48041
+          ]
+        },
+        "properties": {
+          "id": "golmorti",
+          "name": "Golmorti",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 44448
+        }
+      },
+      "summary": null
+    }
+  }
+}

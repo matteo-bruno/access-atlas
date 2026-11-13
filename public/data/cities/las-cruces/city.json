@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "las-cruces",
+  "createdAt": "2026-10-08T15:50:15.595Z",
+  "updatedAt": "2026-10-08T15:50:15.595Z",
+  "meta": {
+    "name": "Las Cruces",
+    "nameIt": "Las Cruces",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Las Cruces.geojson",
+      "sha256": "27a72d834bdfa75fed793bdbceea2f369ffc42056030db21ad28ec18b3a34fff",
+      "size": 360004,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "las-cruces",
+    "name": "Las Cruces",
+    "nameIt": "Las Cruces",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -106.7697,
+      32.31326
+    ],
+    "zoom": 10.9,
+    "population": 52979,
+    "grid": "cities/las-cruces/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/las-cruces/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "las-cruces",
+        "name": "Las Cruces",
+        "nameIt": "Las Cruces",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -106.7697,
+          32.31326
+        ],
+        "zoom": 10.9,
+        "population": 52979,
+        "cells": 308,
+        "layer": "cities/las-cruces/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.7697,
+            32.31326
+          ]
+        },
+        "properties": {
+          "id": "las-cruces",
+          "name": "Las Cruces",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 19.9,
+          "population": 52979
+        }
+      },
+      "summary": null
+    }
+  }
+}

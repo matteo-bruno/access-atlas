@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "golmud",
+  "createdAt": "2026-10-08T15:35:36.235Z",
+  "updatedAt": "2026-10-08T15:35:36.235Z",
+  "meta": {
+    "name": "Golmud",
+    "nameIt": "Golmud",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Golmud.geojson",
+      "sha256": "e7f34997e52e40daf5f0321b63ad330830e3d8e7a6da9cb5f9783846eeecb77a",
+      "size": 535442,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "golmud",
+    "name": "Golmud",
+    "nameIt": "Golmud",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      94.90051,
+      36.40446
+    ],
+    "zoom": 10.6,
+    "population": 137069,
+    "grid": "cities/golmud/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/golmud/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "golmud",
+        "name": "Golmud",
+        "nameIt": "Golmud",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          94.90051,
+          36.40446
+        ],
+        "zoom": 10.6,
+        "population": 137069,
+        "cells": 464,
+        "layer": "cities/golmud/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            94.90051,
+            36.40446
+          ]
+        },
+        "properties": {
+          "id": "golmud",
+          "name": "Golmud",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24.7,
+          "population": 137069
+        }
+      },
+      "summary": null
+    }
+  }
+}

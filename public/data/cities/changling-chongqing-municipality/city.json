@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "changling-chongqing-municipality",
+  "createdAt": "2026-10-08T15:23:39.145Z",
+  "updatedAt": "2026-10-08T15:23:39.145Z",
+  "meta": {
+    "name": "Changling (Chongqing Municipality)",
+    "nameIt": "Changling (Chongqing Municipality)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Changling (Chongqing Municipality).geojson",
+      "sha256": "66dec8586ef6da3e827855ec68b5566ab619c3573769b7ad90640953dfd5c5b6",
+      "size": 250000,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "changling-chongqing-municipality",
+    "name": "Changling (Chongqing Municipality)",
+    "nameIt": "Changling (Chongqing Municipality)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      108.49097,
+      30.76303
+    ],
+    "zoom": 11.1,
+    "population": 16471,
+    "grid": "cities/changling-chongqing-municipality/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/changling-chongqing-municipality/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "changling-chongqing-municipality",
+        "name": "Changling (Chongqing Municipality)",
+        "nameIt": "Changling (Chongqing Municipality)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          108.49097,
+          30.76303
+        ],
+        "zoom": 11.1,
+        "population": 16471,
+        "cells": 214,
+        "layer": "cities/changling-chongqing-municipality/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.49097,
+            30.76303
+          ]
+        },
+        "properties": {
+          "id": "changling-chongqing-municipality",
+          "name": "Changling (Chongqing Municipality)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 16471
+        }
+      },
+      "summary": null
+    }
+  }
+}

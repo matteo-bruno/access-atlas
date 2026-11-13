@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "totonicapan",
+  "createdAt": "2026-10-08T16:18:37.885Z",
+  "updatedAt": "2026-10-08T16:18:37.885Z",
+  "meta": {
+    "name": "Totonicapán",
+    "nameIt": "Totonicapán",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Totonicapán.geojson",
+      "sha256": "bf9cedc6d356085ddb470590b1bc11a9824c2e6d96a2c325be8875cc6be9e22f",
+      "size": 423603,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "totonicapan",
+    "name": "Totonicapán",
+    "nameIt": "Totonicapán",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT",
+    "center": [
+      -91.37565,
+      14.90228
+    ],
+    "zoom": 10.9,
+    "population": 67593,
+    "grid": "cities/totonicapan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/totonicapan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "totonicapan",
+        "name": "Totonicapán",
+        "nameIt": "Totonicapán",
+        "region": "Guatemala",
+        "regionIt": "Guatemala",
+        "country": "GT",
+        "center": [
+          -91.37565,
+          14.90228
+        ],
+        "zoom": 10.9,
+        "population": 67593,
+        "cells": 362,
+        "layer": "cities/totonicapan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -91.37565,
+            14.90228
+          ]
+        },
+        "properties": {
+          "id": "totonicapan",
+          "name": "Totonicapán",
+          "country": "GT",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 67593
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kavar",
+  "createdAt": "2026-10-08T15:45:48.524Z",
+  "updatedAt": "2026-10-08T15:45:48.524Z",
+  "meta": {
+    "name": "Kavar",
+    "nameIt": "Kavar",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kavar.geojson",
+      "sha256": "679c9d0fdb0443a1e8c1ec068abbc5924e53b3850d5f5479ee10285b18e1692f",
+      "size": 302902,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kavar",
+    "name": "Kavar",
+    "nameIt": "Kavar",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      52.693,
+      29.20438
+    ],
+    "zoom": 11.4,
+    "population": 37758,
+    "grid": "cities/kavar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kavar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kavar",
+        "name": "Kavar",
+        "nameIt": "Kavar",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          52.693,
+          29.20438
+        ],
+        "zoom": 11.4,
+        "population": 37758,
+        "cells": 261,
+        "layer": "cities/kavar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            52.693,
+            29.20438
+          ]
+        },
+        "properties": {
+          "id": "kavar",
+          "name": "Kavar",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 18.9,
+          "population": 37758
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "attur",
+  "createdAt": "2026-10-08T15:11:12.978Z",
+  "updatedAt": "2026-10-08T15:11:12.978Z",
+  "meta": {
+    "name": "Attur",
+    "nameIt": "Attur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Attur.geojson",
+      "sha256": "897ca846772e58a91107857387ca0988346bed2dcff073bb381a1c6d190b1048",
+      "size": 124186,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "attur",
+    "name": "Attur",
+    "nameIt": "Attur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.59634,
+      11.59811
+    ],
+    "zoom": 11.4,
+    "population": 58584,
+    "grid": "cities/attur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/attur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "attur",
+        "name": "Attur",
+        "nameIt": "Attur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.59634,
+          11.59811
+        ],
+        "zoom": 11.4,
+        "population": 58584,
+        "cells": 107,
+        "layer": "cities/attur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.59634,
+            11.59811
+          ]
+        },
+        "properties": {
+          "id": "attur",
+          "name": "Attur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 17,
+          "population": 58584
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mogok",
+  "createdAt": "2026-10-08T15:57:44.931Z",
+  "updatedAt": "2026-10-08T15:57:44.931Z",
+  "meta": {
+    "name": "Mogok",
+    "nameIt": "Mogok",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mogok.geojson",
+      "sha256": "a751cc50861ffa8f7b7954b0ee2058b80a7ed2daa3f56ddd651dd10cb77bab01",
+      "size": 118287,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mogok",
+    "name": "Mogok",
+    "nameIt": "Mogok",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      96.50474,
+      22.92136
+    ],
+    "zoom": 11.4,
+    "population": 88903,
+    "grid": "cities/mogok/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mogok/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mogok",
+        "name": "Mogok",
+        "nameIt": "Mogok",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          96.50474,
+          22.92136
+        ],
+        "zoom": 11.4,
+        "population": 88903,
+        "cells": 102,
+        "layer": "cities/mogok/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.50474,
+            22.92136
+          ]
+        },
+        "properties": {
+          "id": "mogok",
+          "name": "Mogok",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 19.5,
+          "population": 88903
+        }
+      },
+      "summary": null
+    }
+  }
+}

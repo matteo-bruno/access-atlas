@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "voskresensk",
+  "createdAt": "2026-10-08T16:21:03.727Z",
+  "updatedAt": "2026-10-08T16:21:03.727Z",
+  "meta": {
+    "name": "Voskresensk",
+    "nameIt": "Voskresensk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Voskresensk.geojson",
+      "sha256": "1e1b724869f35e20a8d0ac987bac425f120b9de4f5782beada61fc357976e932",
+      "size": 192604,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "voskresensk",
+    "name": "Voskresensk",
+    "nameIt": "Voskresensk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      38.68628,
+      55.31855
+    ],
+    "zoom": 11.7,
+    "population": 36605,
+    "grid": "cities/voskresensk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/voskresensk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "voskresensk",
+        "name": "Voskresensk",
+        "nameIt": "Voskresensk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          38.68628,
+          55.31855
+        ],
+        "zoom": 11.7,
+        "population": 36605,
+        "cells": 168,
+        "layer": "cities/voskresensk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.68628,
+            55.31855
+          ]
+        },
+        "properties": {
+          "id": "voskresensk",
+          "name": "Voskresensk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 16.9,
+          "population": 36605
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -3,7 +3,7 @@
   "version": 1,
   "id": "barcelona",
   "createdAt": "2026-08-28T13:51:44.000Z",
-  "updatedAt": "2026-10-08T14:05:34.754Z",
+  "updatedAt": "2026-10-19T16:59:04.863Z",
   "meta": {
     "name": "Barcelona",
     "nameIt": "Barcellona",
@@ -31,19 +31,73 @@
       "cellRadiusM": 199
     },
     "layers": [
+      "citychrone",
       "cardep",
       "pov"
     ],
     "layerData": {
+      "citychrone": "cities/barcelona/citychrone.json.gz",
       "cardep": "cities/barcelona/cardep.json.gz",
       "pov": "cities/barcelona/pov.json.gz"
     },
     "cartogramSources": {
+      "citychrone": "derived",
       "cardep": "derived",
       "pov": "derived"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 996,
+      "times": "cities/barcelona/citychrone/times{hh}.bin"
     }
   },
   "platforms": {
+    "citychrone": {
+      "row": {
+        "id": "barcelona",
+        "name": "Barcelona",
+        "nameIt": "Barcellona",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          2.16075,
+          41.39802
+        ],
+        "zoom": 10.1,
+        "population": 1608693,
+        "cells": 996,
+        "layer": "cities/barcelona/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 996,
+          "times": "cities/barcelona/citychrone/times{hh}.bin"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.16075,
+            41.39802
+          ]
+        },
+        "properties": {
+          "id": "barcelona",
+          "name": "Barcelona",
+          "country": "ES",
+          "isStudy": true,
+          "velocityScore": 4.74,
+          "population": 1608693
+        }
+      },
+      "summary": null
+    },
     "cardep": {
       "row": {
         "id": "barcelona",

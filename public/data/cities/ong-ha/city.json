@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ong-ha",
+  "createdAt": "2026-10-08T16:25:57.134Z",
+  "updatedAt": "2026-10-08T16:25:57.134Z",
+  "meta": {
+    "name": "Đông Hà",
+    "nameIt": "Đông Hà",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Đông Hà.geojson",
+      "sha256": "b0c339ada5101735e408938de7e1a9cd2e244a7cf6fe6b6005fdeb552624e4ae",
+      "size": 168369,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ong-ha",
+    "name": "Đông Hà",
+    "nameIt": "Đông Hà",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      107.10085,
+      16.8129
+    ],
+    "zoom": 11.4,
+    "population": 83682,
+    "grid": "cities/ong-ha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ong-ha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ong-ha",
+        "name": "Đông Hà",
+        "nameIt": "Đông Hà",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          107.10085,
+          16.8129
+        ],
+        "zoom": 11.4,
+        "population": 83682,
+        "cells": 144,
+        "layer": "cities/ong-ha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.10085,
+            16.8129
+          ]
+        },
+        "properties": {
+          "id": "ong-ha",
+          "name": "Đông Hà",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 27.3,
+          "population": 83682
+        }
+      },
+      "summary": null
+    }
+  }
+}

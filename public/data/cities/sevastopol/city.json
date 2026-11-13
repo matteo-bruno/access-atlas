@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sevastopol",
+  "createdAt": "2026-10-08T16:12:07.967Z",
+  "updatedAt": "2026-10-08T16:12:07.967Z",
+  "meta": {
+    "name": "Sevastopol",
+    "nameIt": "Sevastopol",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sevastopol.geojson",
+      "sha256": "69848fb6b470d37a4a8bca61aeb398a6e0382a9ddfd757c24572f79cb222a62c",
+      "size": 881715,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sevastopol",
+    "name": "Sevastopol",
+    "nameIt": "Sevastopol",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      33.50806,
+      44.59182
+    ],
+    "zoom": 10.4,
+    "population": 265576,
+    "grid": "cities/sevastopol/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sevastopol/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sevastopol",
+        "name": "Sevastopol",
+        "nameIt": "Sevastopol",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          33.50806,
+          44.59182
+        ],
+        "zoom": 10.4,
+        "population": 265576,
+        "cells": 773,
+        "layer": "cities/sevastopol/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.50806,
+            44.59182
+          ]
+        },
+        "properties": {
+          "id": "sevastopol",
+          "name": "Sevastopol",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 10.8,
+          "population": 265576
+        }
+      },
+      "summary": null
+    }
+  }
+}

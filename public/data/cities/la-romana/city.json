@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "la-romana",
+  "createdAt": "2026-10-08T15:49:25.502Z",
+  "updatedAt": "2026-10-08T15:49:25.502Z",
+  "meta": {
+    "name": "La Romana",
+    "nameIt": "La Romana",
+    "region": "Dominican Republic",
+    "regionIt": "Repubblica Dominicana",
+    "country": "DO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/La Romana.geojson",
+      "sha256": "29348109be220711fc6cf9f6d1c0ea22da826acf97540d98b6957e43d9fa63bd",
+      "size": 548300,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "la-romana",
+    "name": "La Romana",
+    "nameIt": "La Romana",
+    "region": "Dominican Republic",
+    "regionIt": "Repubblica Dominicana",
+    "country": "DO",
+    "center": [
+      -68.99268,
+      18.43485
+    ],
+    "zoom": 10.7,
+    "population": 186608,
+    "grid": "cities/la-romana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/la-romana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "la-romana",
+        "name": "La Romana",
+        "nameIt": "La Romana",
+        "region": "Dominican Republic",
+        "regionIt": "Repubblica Dominicana",
+        "country": "DO",
+        "center": [
+          -68.99268,
+          18.43485
+        ],
+        "zoom": 10.7,
+        "population": 186608,
+        "cells": 471,
+        "layer": "cities/la-romana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -68.99268,
+            18.43485
+          ]
+        },
+        "properties": {
+          "id": "la-romana",
+          "name": "La Romana",
+          "country": "DO",
+          "isStudy": true,
+          "proximityMinutes": 20.4,
+          "population": 186608
+        }
+      },
+      "summary": null
+    }
+  }
+}

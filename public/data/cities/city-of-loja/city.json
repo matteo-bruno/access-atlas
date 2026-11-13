@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "city-of-loja",
+  "createdAt": "2026-10-08T15:25:35.828Z",
+  "updatedAt": "2026-10-08T15:25:35.828Z",
+  "meta": {
+    "name": "City of Loja",
+    "nameIt": "City of Loja",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/City of Loja.geojson",
+      "sha256": "3d6704575fcbf0d469b9ea6580eff28858eda965ed2cecb50f08f740fed89e1c",
+      "size": 261461,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "city-of-loja",
+    "name": "City of Loja",
+    "nameIt": "City of Loja",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC",
+    "center": [
+      -79.20831,
+      -3.99596
+    ],
+    "zoom": 10.9,
+    "population": 157205,
+    "grid": "cities/city-of-loja/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/city-of-loja/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "city-of-loja",
+        "name": "City of Loja",
+        "nameIt": "City of Loja",
+        "region": "Ecuador",
+        "regionIt": "Ecuador",
+        "country": "EC",
+        "center": [
+          -79.20831,
+          -3.99596
+        ],
+        "zoom": 10.9,
+        "population": 157205,
+        "cells": 226,
+        "layer": "cities/city-of-loja/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -79.20831,
+            -3.99596
+          ]
+        },
+        "properties": {
+          "id": "city-of-loja",
+          "name": "City of Loja",
+          "country": "EC",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 157205
+        }
+      },
+      "summary": null
+    }
+  }
+}

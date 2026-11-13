@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pokrovsk",
+  "createdAt": "2026-10-08T16:06:02.375Z",
+  "updatedAt": "2026-10-08T16:06:02.375Z",
+  "meta": {
+    "name": "Pokrovsk",
+    "nameIt": "Pokrovsk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pokrovsk.geojson",
+      "sha256": "9e6922b985cc3b6e5d8676299fba5a398769469f5c355dea963657beb3d72fa3",
+      "size": 164029,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pokrovsk",
+    "name": "Pokrovsk",
+    "nameIt": "Pokrovsk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      37.17749,
+      48.28137
+    ],
+    "zoom": 11.7,
+    "population": 49776,
+    "grid": "cities/pokrovsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pokrovsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pokrovsk",
+        "name": "Pokrovsk",
+        "nameIt": "Pokrovsk",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          37.17749,
+          48.28137
+        ],
+        "zoom": 11.7,
+        "population": 49776,
+        "cells": 142,
+        "layer": "cities/pokrovsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.17749,
+            48.28137
+          ]
+        },
+        "properties": {
+          "id": "pokrovsk",
+          "name": "Pokrovsk",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 16.9,
+          "population": 49776
+        }
+      },
+      "summary": null
+    }
+  }
+}

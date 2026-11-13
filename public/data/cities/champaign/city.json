@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "champaign",
+  "createdAt": "2026-10-08T15:23:24.195Z",
+  "updatedAt": "2026-10-08T15:23:24.195Z",
+  "meta": {
+    "name": "Champaign",
+    "nameIt": "Champaign",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Champaign.geojson",
+      "sha256": "e8bb5dd0a46c9140fa107fc99b0e99d1b6ba9d20d8dd4892db50752c9e1c7f21",
+      "size": 472361,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "champaign",
+    "name": "Champaign",
+    "nameIt": "Champaign",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -88.24377,
+      40.11112
+    ],
+    "zoom": 10.5,
+    "population": 93708,
+    "grid": "cities/champaign/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/champaign/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "champaign",
+        "name": "Champaign",
+        "nameIt": "Champaign",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -88.24377,
+          40.11112
+        ],
+        "zoom": 10.5,
+        "population": 93708,
+        "cells": 412,
+        "layer": "cities/champaign/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.24377,
+            40.11112
+          ]
+        },
+        "properties": {
+          "id": "champaign",
+          "name": "Champaign",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 10.2,
+          "population": 93708
+        }
+      },
+      "summary": null
+    }
+  }
+}

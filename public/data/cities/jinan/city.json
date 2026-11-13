@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jinan",
+  "createdAt": "2026-10-08T15:42:53.393Z",
+  "updatedAt": "2026-10-08T15:42:53.393Z",
+  "meta": {
+    "name": "Jinan",
+    "nameIt": "Jinan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jinan.geojson",
+      "sha256": "d5679602fa97ea14584d0a6458cd56e1e1724eed162e2a46ea094edc2b0b2ad9",
+      "size": 8594803,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jinan",
+    "name": "Jinan",
+    "nameIt": "Jinan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.019,
+      36.6646
+    ],
+    "zoom": 8.5,
+    "population": 4202046,
+    "grid": "cities/jinan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 172
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jinan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jinan",
+        "name": "Jinan",
+        "nameIt": "Jinan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.019,
+          36.6646
+        ],
+        "zoom": 8.5,
+        "population": 4202046,
+        "cells": 7424,
+        "layer": "cities/jinan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 172
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.019,
+            36.6646
+          ]
+        },
+        "properties": {
+          "id": "jinan",
+          "name": "Jinan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 27.6,
+          "population": 4202046
+        }
+      },
+      "summary": null
+    }
+  }
+}

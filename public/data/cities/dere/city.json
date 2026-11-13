@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dere",
+  "createdAt": "2026-10-08T15:29:01.003Z",
+  "updatedAt": "2026-10-08T15:29:01.003Z",
+  "meta": {
+    "name": "Dere",
+    "nameIt": "Dere",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dere.geojson",
+      "sha256": "d0fb0ce6c61ab6441339424c5396f72b0b388a3fafe055c08c2640fd6eb045f8",
+      "size": 369592,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dere",
+    "name": "Dere",
+    "nameIt": "Dere",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      7.29512,
+      4.66033
+    ],
+    "zoom": 11.1,
+    "population": 113902,
+    "grid": "cities/dere/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dere/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dere",
+        "name": "Dere",
+        "nameIt": "Dere",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          7.29512,
+          4.66033
+        ],
+        "zoom": 11.1,
+        "population": 113902,
+        "cells": 321,
+        "layer": "cities/dere/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.29512,
+            4.66033
+          ]
+        },
+        "properties": {
+          "id": "dere",
+          "name": "Dere",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 23.9,
+          "population": 113902
+        }
+      },
+      "summary": null
+    }
+  }
+}

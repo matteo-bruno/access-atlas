@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "taranto",
+  "createdAt": "2026-10-08T16:16:43.531Z",
+  "updatedAt": "2026-10-08T16:16:43.531Z",
+  "meta": {
+    "name": "Taranto",
+    "nameIt": "Taranto",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Taranto.geojson",
+      "sha256": "09e7a2fc0e50c8dfac8265cf7b94ebc90f0a581c915fe40a6a8b883f810f7b1d",
+      "size": 562301,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "taranto",
+    "name": "Taranto",
+    "nameIt": "Taranto",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      17.234,
+      40.47872
+    ],
+    "zoom": 10.4,
+    "population": 114610,
+    "grid": "cities/taranto/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/taranto/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "taranto",
+        "name": "Taranto",
+        "nameIt": "Taranto",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          17.234,
+          40.47872
+        ],
+        "zoom": 10.4,
+        "population": 114610,
+        "cells": 488,
+        "layer": "cities/taranto/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            17.234,
+            40.47872
+          ]
+        },
+        "properties": {
+          "id": "taranto",
+          "name": "Taranto",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 18.5,
+          "population": 114610
+        }
+      },
+      "summary": null
+    }
+  }
+}

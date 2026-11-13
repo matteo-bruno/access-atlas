@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jendouba",
+  "createdAt": "2026-10-08T15:42:15.471Z",
+  "updatedAt": "2026-10-08T15:42:15.471Z",
+  "meta": {
+    "name": "Jendouba",
+    "nameIt": "Jendouba",
+    "region": "Tunisia",
+    "regionIt": "Tunisia",
+    "country": "TN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jendouba.geojson",
+      "sha256": "87d32815cdd73b6b8d82fb15bccfdf9f528cedf7128d38ab3ae0af5e2acc8280",
+      "size": 149875,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jendouba",
+    "name": "Jendouba",
+    "nameIt": "Jendouba",
+    "region": "Tunisia",
+    "regionIt": "Tunisia",
+    "country": "TN",
+    "center": [
+      8.7786,
+      36.50068
+    ],
+    "zoom": 11.7,
+    "population": 68926,
+    "grid": "cities/jendouba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jendouba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jendouba",
+        "name": "Jendouba",
+        "nameIt": "Jendouba",
+        "region": "Tunisia",
+        "regionIt": "Tunisia",
+        "country": "TN",
+        "center": [
+          8.7786,
+          36.50068
+        ],
+        "zoom": 11.7,
+        "population": 68926,
+        "cells": 130,
+        "layer": "cities/jendouba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.7786,
+            36.50068
+          ]
+        },
+        "properties": {
+          "id": "jendouba",
+          "name": "Jendouba",
+          "country": "TN",
+          "isStudy": true,
+          "proximityMinutes": 23,
+          "population": 68926
+        }
+      },
+      "summary": null
+    }
+  }
+}

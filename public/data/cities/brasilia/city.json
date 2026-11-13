@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "brasilia",
+  "createdAt": "2026-10-08T15:20:21.830Z",
+  "updatedAt": "2026-10-08T15:20:21.830Z",
+  "meta": {
+    "name": "Brasilia",
+    "nameIt": "Brasilia",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Brasilia.geojson",
+      "sha256": "29d4dbad9a1b575380ee70470e472368de5bf7fc61489edf7065d12ffbe97f20",
+      "size": 2804372,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "brasilia",
+    "name": "Brasilia",
+    "nameIt": "Brasilia",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -48.0563,
+      -15.83138
+    ],
+    "zoom": 9.2,
+    "population": 1281315,
+    "grid": "cities/brasilia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/brasilia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "brasilia",
+        "name": "Brasilia",
+        "nameIt": "Brasilia",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -48.0563,
+          -15.83138
+        ],
+        "zoom": 9.2,
+        "population": 1281315,
+        "cells": 2396,
+        "layer": "cities/brasilia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.0563,
+            -15.83138
+          ]
+        },
+        "properties": {
+          "id": "brasilia",
+          "name": "Brasilia",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 1281315
+        }
+      },
+      "summary": null
+    }
+  }
+}

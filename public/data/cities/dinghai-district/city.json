@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dinghai-district",
+  "createdAt": "2026-10-08T15:30:06.189Z",
+  "updatedAt": "2026-10-08T15:30:06.189Z",
+  "meta": {
+    "name": "Dinghai District",
+    "nameIt": "Dinghai District",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dinghai District.geojson",
+      "sha256": "b549af6bd5928abc3c3d5fda6efd2e6092f8cd50ddf08a70d35ff58b7a0b123b",
+      "size": 433242,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dinghai-district",
+    "name": "Dinghai District",
+    "nameIt": "Dinghai District",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      122.10098,
+      30.01894
+    ],
+    "zoom": 10.7,
+    "population": 167143,
+    "grid": "cities/dinghai-district/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dinghai-district/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dinghai-district",
+        "name": "Dinghai District",
+        "nameIt": "Dinghai District",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          122.10098,
+          30.01894
+        ],
+        "zoom": 10.7,
+        "population": 167143,
+        "cells": 372,
+        "layer": "cities/dinghai-district/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            122.10098,
+            30.01894
+          ]
+        },
+        "properties": {
+          "id": "dinghai-district",
+          "name": "Dinghai District",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 167143
+        }
+      },
+      "summary": null
+    }
+  }
+}

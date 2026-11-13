@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "morioka",
+  "createdAt": "2026-10-08T15:58:17.924Z",
+  "updatedAt": "2026-10-08T15:58:17.924Z",
+  "meta": {
+    "name": "Morioka",
+    "nameIt": "Morioka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Morioka.geojson",
+      "sha256": "6073b6908922279fdb999eedd97f22d94012303c78c47f73d9141f536483a358",
+      "size": 809301,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "morioka",
+    "name": "Morioka",
+    "nameIt": "Morioka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      141.1401,
+      39.7083
+    ],
+    "zoom": 10.3,
+    "population": 246245,
+    "grid": "cities/morioka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/morioka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "morioka",
+        "name": "Morioka",
+        "nameIt": "Morioka",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          141.1401,
+          39.7083
+        ],
+        "zoom": 10.3,
+        "population": 246245,
+        "cells": 704,
+        "layer": "cities/morioka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            141.1401,
+            39.7083
+          ]
+        },
+        "properties": {
+          "id": "morioka",
+          "name": "Morioka",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 17.5,
+          "population": 246245
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yagoua",
+  "createdAt": "2026-10-08T16:23:12.561Z",
+  "updatedAt": "2026-10-08T16:23:12.561Z",
+  "meta": {
+    "name": "Yagoua",
+    "nameIt": "Yagoua",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yagoua.geojson",
+      "sha256": "d1b3597a2712c2aec80492698c9e5807f7db9b96776cdcc4d2a29fa84f75c529",
+      "size": 149368,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yagoua",
+    "name": "Yagoua",
+    "nameIt": "Yagoua",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      15.2304,
+      10.34057
+    ],
+    "zoom": 12,
+    "population": 93564,
+    "grid": "cities/yagoua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yagoua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yagoua",
+        "name": "Yagoua",
+        "nameIt": "Yagoua",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          15.2304,
+          10.34057
+        ],
+        "zoom": 12,
+        "population": 93564,
+        "cells": 128,
+        "layer": "cities/yagoua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            15.2304,
+            10.34057
+          ]
+        },
+        "properties": {
+          "id": "yagoua",
+          "name": "Yagoua",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 93564
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lehra",
+  "createdAt": "2026-10-08T15:50:37.535Z",
+  "updatedAt": "2026-10-08T15:50:37.535Z",
+  "meta": {
+    "name": "Lehra",
+    "nameIt": "Lehra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lehra.geojson",
+      "sha256": "07cf5280ccbd90438450e4c5e262faa75a4b98343eadaba01b2203a1c62eabfb",
+      "size": 576366,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lehra",
+    "name": "Lehra",
+    "nameIt": "Lehra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.21723,
+      27.19074
+    ],
+    "zoom": 10.8,
+    "population": 86801,
+    "grid": "cities/lehra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lehra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lehra",
+        "name": "Lehra",
+        "nameIt": "Lehra",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.21723,
+          27.19074
+        ],
+        "zoom": 10.8,
+        "population": 86801,
+        "cells": 497,
+        "layer": "cities/lehra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.21723,
+            27.19074
+          ]
+        },
+        "properties": {
+          "id": "lehra",
+          "name": "Lehra",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 32.7,
+          "population": 86801
+        }
+      },
+      "summary": null
+    }
+  }
+}

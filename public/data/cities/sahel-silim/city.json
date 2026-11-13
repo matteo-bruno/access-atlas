@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sahel-silim",
+  "createdAt": "2026-10-08T16:09:48.581Z",
+  "updatedAt": "2026-10-08T16:09:48.581Z",
+  "meta": {
+    "name": "Sahel Silim",
+    "nameIt": "Sahel Silim",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sahel Silim.geojson",
+      "sha256": "92e6474addc60b9fb5b39f76183bb7284d5227eb55fb8964fe9504d7d08ed270",
+      "size": 111714,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sahel-silim",
+    "name": "Sahel Silim",
+    "nameIt": "Sahel Silim",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      31.34664,
+      27.0674
+    ],
+    "zoom": 11.9,
+    "population": 101830,
+    "grid": "cities/sahel-silim/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sahel-silim/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sahel-silim",
+        "name": "Sahel Silim",
+        "nameIt": "Sahel Silim",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          31.34664,
+          27.0674
+        ],
+        "zoom": 11.9,
+        "population": 101830,
+        "cells": 96,
+        "layer": "cities/sahel-silim/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.34664,
+            27.0674
+          ]
+        },
+        "properties": {
+          "id": "sahel-silim",
+          "name": "Sahel Silim",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 101830
+        }
+      },
+      "summary": null
+    }
+  }
+}

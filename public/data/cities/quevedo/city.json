@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "quevedo",
+  "createdAt": "2026-10-08T16:07:36.545Z",
+  "updatedAt": "2026-10-08T16:07:36.545Z",
+  "meta": {
+    "name": "Quevedo",
+    "nameIt": "Quevedo",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Quevedo.geojson",
+      "sha256": "419a38e56c1fa502ec450b229b1046fefda6bb0c78d3999c9691f334263303fe",
+      "size": 314458,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "quevedo",
+    "name": "Quevedo",
+    "nameIt": "Quevedo",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC",
+    "center": [
+      -79.46602,
+      -1.0256
+    ],
+    "zoom": 10.9,
+    "population": 166298,
+    "grid": "cities/quevedo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/quevedo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "quevedo",
+        "name": "Quevedo",
+        "nameIt": "Quevedo",
+        "region": "Ecuador",
+        "regionIt": "Ecuador",
+        "country": "EC",
+        "center": [
+          -79.46602,
+          -1.0256
+        ],
+        "zoom": 10.9,
+        "population": 166298,
+        "cells": 268,
+        "layer": "cities/quevedo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -79.46602,
+            -1.0256
+          ]
+        },
+        "properties": {
+          "id": "quevedo",
+          "name": "Quevedo",
+          "country": "EC",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 166298
+        }
+      },
+      "summary": null
+    }
+  }
+}

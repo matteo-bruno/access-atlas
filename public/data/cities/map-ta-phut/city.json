@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "map-ta-phut",
+  "createdAt": "2026-10-08T15:55:02.469Z",
+  "updatedAt": "2026-10-08T15:55:02.469Z",
+  "meta": {
+    "name": "Map Ta Phut",
+    "nameIt": "Map Ta Phut",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Map Ta Phut.geojson",
+      "sha256": "bd3e14347da9eff21e5ea959423fd22974c42f13dba201ebdd67a659a49aada6",
+      "size": 471343,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "map-ta-phut",
+    "name": "Map Ta Phut",
+    "nameIt": "Map Ta Phut",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      101.14995,
+      12.70231
+    ],
+    "zoom": 10.7,
+    "population": 78018,
+    "grid": "cities/map-ta-phut/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/map-ta-phut/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "map-ta-phut",
+        "name": "Map Ta Phut",
+        "nameIt": "Map Ta Phut",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          101.14995,
+          12.70231
+        ],
+        "zoom": 10.7,
+        "population": 78018,
+        "cells": 403,
+        "layer": "cities/map-ta-phut/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            101.14995,
+            12.70231
+          ]
+        },
+        "properties": {
+          "id": "map-ta-phut",
+          "name": "Map Ta Phut",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 78018
+        }
+      },
+      "summary": null
+    }
+  }
+}

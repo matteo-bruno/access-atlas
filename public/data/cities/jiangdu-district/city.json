@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jiangdu-district",
+  "createdAt": "2026-10-08T15:42:33.048Z",
+  "updatedAt": "2026-10-08T15:42:33.048Z",
+  "meta": {
+    "name": "Jiangdu District",
+    "nameIt": "Jiangdu District",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jiangdu District.geojson",
+      "sha256": "840f3571c02de31847602d9919158aa9589cc629d134ab9bffcfa23f92f78159",
+      "size": 851519,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jiangdu-district",
+    "name": "Jiangdu District",
+    "nameIt": "Jiangdu District",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.5712,
+      32.42976
+    ],
+    "zoom": 10.5,
+    "population": 284565,
+    "grid": "cities/jiangdu-district/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jiangdu-district/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jiangdu-district",
+        "name": "Jiangdu District",
+        "nameIt": "Jiangdu District",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.5712,
+          32.42976
+        ],
+        "zoom": 10.5,
+        "population": 284565,
+        "cells": 730,
+        "layer": "cities/jiangdu-district/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.5712,
+            32.42976
+          ]
+        },
+        "properties": {
+          "id": "jiangdu-district",
+          "name": "Jiangdu District",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 31.1,
+          "population": 284565
+        }
+      },
+      "summary": null
+    }
+  }
+}

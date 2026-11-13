@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abadan",
+  "createdAt": "2026-10-08T15:01:11.544Z",
+  "updatedAt": "2026-10-08T15:01:11.544Z",
+  "meta": {
+    "name": "Abadan",
+    "nameIt": "Abadan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abadan.geojson",
+      "sha256": "50393d5a9ce1f628e4e85849110941e59d975a85e78d2025e68cfe920d20ba86",
+      "size": 523735,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abadan",
+    "name": "Abadan",
+    "nameIt": "Abadan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      48.28114,
+      30.35048
+    ],
+    "zoom": 10.5,
+    "population": 232680,
+    "grid": "cities/abadan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abadan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abadan",
+        "name": "Abadan",
+        "nameIt": "Abadan",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          48.28114,
+          30.35048
+        ],
+        "zoom": 10.5,
+        "population": 232680,
+        "cells": 452,
+        "layer": "cities/abadan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.28114,
+            30.35048
+          ]
+        },
+        "properties": {
+          "id": "abadan",
+          "name": "Abadan",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 30.4,
+          "population": 232680
+        }
+      },
+      "summary": null
+    }
+  }
+}

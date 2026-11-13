@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "columbia-maryland",
+  "createdAt": "2026-10-08T15:26:09.132Z",
+  "updatedAt": "2026-10-08T15:26:09.132Z",
+  "meta": {
+    "name": "Columbia (Maryland)",
+    "nameIt": "Columbia (Maryland)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Columbia (Maryland).geojson",
+      "sha256": "d8f8bef58346da48ac53f79d893385926c793b9c87a022c8de2c98c704ec3a34",
+      "size": 616371,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "columbia-maryland",
+    "name": "Columbia (Maryland)",
+    "nameIt": "Columbia (Maryland)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -76.83408,
+      39.20276
+    ],
+    "zoom": 10.3,
+    "population": 98207,
+    "grid": "cities/columbia-maryland/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/columbia-maryland/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "columbia-maryland",
+        "name": "Columbia (Maryland)",
+        "nameIt": "Columbia (Maryland)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -76.83408,
+          39.20276
+        ],
+        "zoom": 10.3,
+        "population": 98207,
+        "cells": 533,
+        "layer": "cities/columbia-maryland/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.83408,
+            39.20276
+          ]
+        },
+        "properties": {
+          "id": "columbia-maryland",
+          "name": "Columbia (Maryland)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 21,
+          "population": 98207
+        }
+      },
+      "summary": null
+    }
+  }
+}

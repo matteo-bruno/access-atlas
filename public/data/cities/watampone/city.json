@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "watampone",
+  "createdAt": "2026-10-08T16:21:26.153Z",
+  "updatedAt": "2026-10-08T16:21:26.153Z",
+  "meta": {
+    "name": "Watampone",
+    "nameIt": "Watampone",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Watampone.geojson",
+      "sha256": "2759b051f4bbc3768d92b36d30e13c32def7e18031d6706bf099d0fc917b31c1",
+      "size": 217496,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "watampone",
+    "name": "Watampone",
+    "nameIt": "Watampone",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      120.32091,
+      -4.54381
+    ],
+    "zoom": 11.4,
+    "population": 93766,
+    "grid": "cities/watampone/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/watampone/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "watampone",
+        "name": "Watampone",
+        "nameIt": "Watampone",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          120.32091,
+          -4.54381
+        ],
+        "zoom": 11.4,
+        "population": 93766,
+        "cells": 186,
+        "layer": "cities/watampone/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.32091,
+            -4.54381
+          ]
+        },
+        "properties": {
+          "id": "watampone",
+          "name": "Watampone",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 19.1,
+          "population": 93766
+        }
+      },
+      "summary": null
+    }
+  }
+}

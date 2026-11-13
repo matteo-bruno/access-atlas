@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bilwi",
+  "createdAt": "2026-10-08T15:18:57.210Z",
+  "updatedAt": "2026-10-08T15:18:57.210Z",
+  "meta": {
+    "name": "Bilwi",
+    "nameIt": "Bilwi",
+    "region": "Nicaragua",
+    "regionIt": "Nicaragua",
+    "country": "NI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bilwi.geojson",
+      "sha256": "97069c2a95384f03359d228704663ca4c12d17a710e6a73bb3f7258766655dbc",
+      "size": 202977,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bilwi",
+    "name": "Bilwi",
+    "nameIt": "Bilwi",
+    "region": "Nicaragua",
+    "regionIt": "Nicaragua",
+    "country": "NI",
+    "center": [
+      -83.39559,
+      14.03602
+    ],
+    "zoom": 11.5,
+    "population": 58772,
+    "grid": "cities/bilwi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bilwi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bilwi",
+        "name": "Bilwi",
+        "nameIt": "Bilwi",
+        "region": "Nicaragua",
+        "regionIt": "Nicaragua",
+        "country": "NI",
+        "center": [
+          -83.39559,
+          14.03602
+        ],
+        "zoom": 11.5,
+        "population": 58772,
+        "cells": 174,
+        "layer": "cities/bilwi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -83.39559,
+            14.03602
+          ]
+        },
+        "properties": {
+          "id": "bilwi",
+          "name": "Bilwi",
+          "country": "NI",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 58772
+        }
+      },
+      "summary": null
+    }
+  }
+}

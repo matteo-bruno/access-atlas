@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chon-buri",
+  "createdAt": "2026-10-08T15:25:06.452Z",
+  "updatedAt": "2026-10-08T15:25:06.452Z",
+  "meta": {
+    "name": "Chon Buri",
+    "nameIt": "Chon Buri",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chon Buri.geojson",
+      "sha256": "63f86a0dabd587e3c3acbb85ea7312236cad5febf538575899604f5024e1e0ff",
+      "size": 1577169,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chon-buri",
+    "name": "Chon Buri",
+    "nameIt": "Chon Buri",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      100.98727,
+      13.35829
+    ],
+    "zoom": 9.6,
+    "population": 410442,
+    "grid": "cities/chon-buri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chon-buri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chon-buri",
+        "name": "Chon Buri",
+        "nameIt": "Chon Buri",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          100.98727,
+          13.35829
+        ],
+        "zoom": 9.6,
+        "population": 410442,
+        "cells": 1347,
+        "layer": "cities/chon-buri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            100.98727,
+            13.35829
+          ]
+        },
+        "properties": {
+          "id": "chon-buri",
+          "name": "Chon Buri",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 37.4,
+          "population": 410442
+        }
+      },
+      "summary": null
+    }
+  }
+}

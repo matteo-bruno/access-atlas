@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bremerhaven",
+  "createdAt": "2026-10-08T15:20:24.603Z",
+  "updatedAt": "2026-10-08T15:20:24.603Z",
+  "meta": {
+    "name": "Bremerhaven",
+    "nameIt": "Bremerhaven",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bremerhaven.geojson",
+      "sha256": "9a3e46a1f15387b38722157b8a0307dc7c7722857f03a54b1e5a4f22e1ca4540",
+      "size": 764631,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bremerhaven",
+    "name": "Bremerhaven",
+    "nameIt": "Bremerhaven",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      8.58743,
+      53.55596
+    ],
+    "zoom": 10.4,
+    "population": 122129,
+    "grid": "cities/bremerhaven/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bremerhaven/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bremerhaven",
+        "name": "Bremerhaven",
+        "nameIt": "Bremerhaven",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          8.58743,
+          53.55596
+        ],
+        "zoom": 10.4,
+        "population": 122129,
+        "cells": 672,
+        "layer": "cities/bremerhaven/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.58743,
+            53.55596
+          ]
+        },
+        "properties": {
+          "id": "bremerhaven",
+          "name": "Bremerhaven",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 122129
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yarim",
+  "createdAt": "2026-10-08T16:23:34.817Z",
+  "updatedAt": "2026-10-08T16:23:34.817Z",
+  "meta": {
+    "name": "Yarim",
+    "nameIt": "Yarim",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yarim.geojson",
+      "sha256": "7e3bf333be604232d668465b86c232313e555306e263e241f1d195218c1e7f4e",
+      "size": 134945,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yarim",
+    "name": "Yarim",
+    "nameIt": "Yarim",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE",
+    "center": [
+      44.37732,
+      14.29812
+    ],
+    "zoom": 11.7,
+    "population": 192578,
+    "grid": "cities/yarim/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yarim/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yarim",
+        "name": "Yarim",
+        "nameIt": "Yarim",
+        "region": "Yemen",
+        "regionIt": "Yemen",
+        "country": "YE",
+        "center": [
+          44.37732,
+          14.29812
+        ],
+        "zoom": 11.7,
+        "population": 192578,
+        "cells": 116,
+        "layer": "cities/yarim/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.37732,
+            14.29812
+          ]
+        },
+        "properties": {
+          "id": "yarim",
+          "name": "Yarim",
+          "country": "YE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 192578
+        }
+      },
+      "summary": null
+    }
+  }
+}

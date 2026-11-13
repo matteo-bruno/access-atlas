@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "faranah",
+  "createdAt": "2026-10-08T15:32:52.572Z",
+  "updatedAt": "2026-10-08T15:32:52.572Z",
+  "meta": {
+    "name": "Faranah",
+    "nameIt": "Faranah",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Faranah.geojson",
+      "sha256": "85c554b5cdf111a0ccdadb2aab7ae112a625aadfad7374415930e6609fea3189",
+      "size": 241301,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "faranah",
+    "name": "Faranah",
+    "nameIt": "Faranah",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN",
+    "center": [
+      -10.73774,
+      10.04171
+    ],
+    "zoom": 11.4,
+    "population": 106789,
+    "grid": "cities/faranah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/faranah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "faranah",
+        "name": "Faranah",
+        "nameIt": "Faranah",
+        "region": "Guinea",
+        "regionIt": "Guinea",
+        "country": "GN",
+        "center": [
+          -10.73774,
+          10.04171
+        ],
+        "zoom": 11.4,
+        "population": 106789,
+        "cells": 205,
+        "layer": "cities/faranah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -10.73774,
+            10.04171
+          ]
+        },
+        "properties": {
+          "id": "faranah",
+          "name": "Faranah",
+          "country": "GN",
+          "isStudy": true,
+          "proximityMinutes": 19.3,
+          "population": 106789
+        }
+      },
+      "summary": null
+    }
+  }
+}

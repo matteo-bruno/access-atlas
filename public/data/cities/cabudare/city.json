@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cabudare",
+  "createdAt": "2026-10-08T15:21:36.037Z",
+  "updatedAt": "2026-10-08T15:21:36.037Z",
+  "meta": {
+    "name": "Cabudare",
+    "nameIt": "Cabudare",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cabudare.geojson",
+      "sha256": "5db9c699ddf55587c92ffbd081252c19717849b9a10b0e11419f501df42057df",
+      "size": 389772,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cabudare",
+    "name": "Cabudare",
+    "nameIt": "Cabudare",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -69.2552,
+      10.02359
+    ],
+    "zoom": 10.6,
+    "population": 146930,
+    "grid": "cities/cabudare/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cabudare/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cabudare",
+        "name": "Cabudare",
+        "nameIt": "Cabudare",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -69.2552,
+          10.02359
+        ],
+        "zoom": 10.6,
+        "population": 146930,
+        "cells": 334,
+        "layer": "cities/cabudare/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -69.2552,
+            10.02359
+          ]
+        },
+        "properties": {
+          "id": "cabudare",
+          "name": "Cabudare",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 24.2,
+          "population": 146930
+        }
+      },
+      "summary": null
+    }
+  }
+}

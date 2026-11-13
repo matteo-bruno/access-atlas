@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "raozan",
+  "createdAt": "2026-10-08T16:08:19.260Z",
+  "updatedAt": "2026-10-08T16:08:19.260Z",
+  "meta": {
+    "name": "Raozan",
+    "nameIt": "Raozan",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Raozan.geojson",
+      "sha256": "546f52b589469799179f82916f1c3d585a3fd2b68056547306ed33045cda55ea",
+      "size": 375570,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "raozan",
+    "name": "Raozan",
+    "nameIt": "Raozan",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      91.93019,
+      22.52502
+    ],
+    "zoom": 10.9,
+    "population": 141067,
+    "grid": "cities/raozan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/raozan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "raozan",
+        "name": "Raozan",
+        "nameIt": "Raozan",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          91.93019,
+          22.52502
+        ],
+        "zoom": 10.9,
+        "population": 141067,
+        "cells": 324,
+        "layer": "cities/raozan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.93019,
+            22.52502
+          ]
+        },
+        "properties": {
+          "id": "raozan",
+          "name": "Raozan",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 52.9,
+          "population": 141067
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dundet",
+  "createdAt": "2026-10-08T15:31:20.276Z",
+  "updatedAt": "2026-10-08T15:31:20.276Z",
+  "meta": {
+    "name": "Dundet",
+    "nameIt": "Dundet",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dundet.geojson",
+      "sha256": "07a56078a2587417d6ac9df16254e3a7ae5c30d7a862200ecb300e559fdc7326",
+      "size": 119850,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dundet",
+    "name": "Dundet",
+    "nameIt": "Dundet",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      31.35789,
+      30.71967
+    ],
+    "zoom": 11.4,
+    "population": 67492,
+    "grid": "cities/dundet/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dundet/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dundet",
+        "name": "Dundet",
+        "nameIt": "Dundet",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          31.35789,
+          30.71967
+        ],
+        "zoom": 11.4,
+        "population": 67492,
+        "cells": 103,
+        "layer": "cities/dundet/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.35789,
+            30.71967
+          ]
+        },
+        "properties": {
+          "id": "dundet",
+          "name": "Dundet",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 67492
+        }
+      },
+      "summary": null
+    }
+  }
+}

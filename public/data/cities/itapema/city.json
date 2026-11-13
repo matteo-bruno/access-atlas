@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "itapema",
+  "createdAt": "2026-10-08T15:41:22.311Z",
+  "updatedAt": "2026-10-08T15:41:22.311Z",
+  "meta": {
+    "name": "Itapema",
+    "nameIt": "Itapema",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Itapema.geojson",
+      "sha256": "f1abf002475e3156a09e95f83eaee27ce7701f4267ba6ebbd0c2b918ff67d444",
+      "size": 357587,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "itapema",
+    "name": "Itapema",
+    "nameIt": "Itapema",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -48.60529,
+      -27.12408
+    ],
+    "zoom": 10.9,
+    "population": 95257,
+    "grid": "cities/itapema/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/itapema/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "itapema",
+        "name": "Itapema",
+        "nameIt": "Itapema",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -48.60529,
+          -27.12408
+        ],
+        "zoom": 10.9,
+        "population": 95257,
+        "cells": 304,
+        "layer": "cities/itapema/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.60529,
+            -27.12408
+          ]
+        },
+        "properties": {
+          "id": "itapema",
+          "name": "Itapema",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 21.8,
+          "population": 95257
+        }
+      },
+      "summary": null
+    }
+  }
+}

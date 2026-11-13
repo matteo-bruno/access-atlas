@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "diffa",
+  "createdAt": "2026-10-08T15:29:52.149Z",
+  "updatedAt": "2026-10-08T15:29:52.149Z",
+  "meta": {
+    "name": "Diffa",
+    "nameIt": "Diffa",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Diffa.geojson",
+      "sha256": "e85d83d7e78894e6838bfb209c2d65e4e096f9802e52d0b4d75a2ff51d923492",
+      "size": 169235,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "diffa",
+    "name": "Diffa",
+    "nameIt": "Diffa",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE",
+    "center": [
+      12.60449,
+      13.3137
+    ],
+    "zoom": 11.8,
+    "population": 65592,
+    "grid": "cities/diffa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/diffa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "diffa",
+        "name": "Diffa",
+        "nameIt": "Diffa",
+        "region": "Niger",
+        "regionIt": "Niger",
+        "country": "NE",
+        "center": [
+          12.60449,
+          13.3137
+        ],
+        "zoom": 11.8,
+        "population": 65592,
+        "cells": 145,
+        "layer": "cities/diffa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.60449,
+            13.3137
+          ]
+        },
+        "properties": {
+          "id": "diffa",
+          "name": "Diffa",
+          "country": "NE",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 65592
+        }
+      },
+      "summary": null
+    }
+  }
+}

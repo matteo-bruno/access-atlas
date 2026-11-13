@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wannian",
+  "createdAt": "2026-10-08T16:21:20.084Z",
+  "updatedAt": "2026-10-08T16:21:20.084Z",
+  "meta": {
+    "name": "Wannian",
+    "nameIt": "Wannian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wannian.geojson",
+      "sha256": "e301f4240a3d592df1d12f80aaef61c6f465130f4abe083c8b52f96cc60d858d",
+      "size": 220941,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wannian",
+    "name": "Wannian",
+    "nameIt": "Wannian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.06219,
+      28.69546
+    ],
+    "zoom": 11.7,
+    "population": 119245,
+    "grid": "cities/wannian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wannian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wannian",
+        "name": "Wannian",
+        "nameIt": "Wannian",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.06219,
+          28.69546
+        ],
+        "zoom": 11.7,
+        "population": 119245,
+        "cells": 189,
+        "layer": "cities/wannian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.06219,
+            28.69546
+          ]
+        },
+        "properties": {
+          "id": "wannian",
+          "name": "Wannian",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 119245
+        }
+      },
+      "summary": null
+    }
+  }
+}

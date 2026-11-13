@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nadanghat",
+  "createdAt": "2026-10-08T15:59:34.417Z",
+  "updatedAt": "2026-10-08T15:59:34.417Z",
+  "meta": {
+    "name": "Nadanghat",
+    "nameIt": "Nadanghat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nadanghat.geojson",
+      "sha256": "df15f68cea9610d77f92003b72577f39b070e16c8b37a132b1ec82fc0e9f8f84",
+      "size": 258278,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nadanghat",
+    "name": "Nadanghat",
+    "nameIt": "Nadanghat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.2536,
+      23.39189
+    ],
+    "zoom": 10.8,
+    "population": 46330,
+    "grid": "cities/nadanghat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nadanghat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nadanghat",
+        "name": "Nadanghat",
+        "nameIt": "Nadanghat",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.2536,
+          23.39189
+        ],
+        "zoom": 10.8,
+        "population": 46330,
+        "cells": 223,
+        "layer": "cities/nadanghat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.2536,
+            23.39189
+          ]
+        },
+        "properties": {
+          "id": "nadanghat",
+          "name": "Nadanghat",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 46330
+        }
+      },
+      "summary": null
+    }
+  }
+}

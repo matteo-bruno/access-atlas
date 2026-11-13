@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "spring-hill",
+  "createdAt": "2026-10-08T16:14:39.201Z",
+  "updatedAt": "2026-10-08T16:14:39.201Z",
+  "meta": {
+    "name": "Spring Hill",
+    "nameIt": "Spring Hill",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Spring Hill.geojson",
+      "sha256": "61d78d1fe05be04fd2c59a3290ec60f605f2b892bdc4732fbffe8634396f8e3d",
+      "size": 712258,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "spring-hill",
+    "name": "Spring Hill",
+    "nameIt": "Spring Hill",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -82.5585,
+      28.48064
+    ],
+    "zoom": 10.7,
+    "population": 68835,
+    "grid": "cities/spring-hill/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/spring-hill/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "spring-hill",
+        "name": "Spring Hill",
+        "nameIt": "Spring Hill",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -82.5585,
+          28.48064
+        ],
+        "zoom": 10.7,
+        "population": 68835,
+        "cells": 610,
+        "layer": "cities/spring-hill/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.5585,
+            28.48064
+          ]
+        },
+        "properties": {
+          "id": "spring-hill",
+          "name": "Spring Hill",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 25.1,
+          "population": 68835
+        }
+      },
+      "summary": null
+    }
+  }
+}

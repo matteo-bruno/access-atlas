@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "brantford",
+  "createdAt": "2026-10-08T15:20:21.459Z",
+  "updatedAt": "2026-10-08T15:20:21.459Z",
+  "meta": {
+    "name": "Brantford",
+    "nameIt": "Brantford",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Brantford.geojson",
+      "sha256": "05daae65d51360bf98f49652277ba8113eb542d94e81de390b12c22851602cdf",
+      "size": 501648,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "brantford",
+    "name": "Brantford",
+    "nameIt": "Brantford",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -80.26253,
+      43.15542
+    ],
+    "zoom": 10.9,
+    "population": 102159,
+    "grid": "cities/brantford/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/brantford/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "brantford",
+        "name": "Brantford",
+        "nameIt": "Brantford",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -80.26253,
+          43.15542
+        ],
+        "zoom": 10.9,
+        "population": 102159,
+        "cells": 433,
+        "layer": "cities/brantford/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.26253,
+            43.15542
+          ]
+        },
+        "properties": {
+          "id": "brantford",
+          "name": "Brantford",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 102159
+        }
+      },
+      "summary": null
+    }
+  }
+}

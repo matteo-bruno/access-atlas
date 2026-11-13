@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pundri",
+  "createdAt": "2026-10-08T16:06:52.008Z",
+  "updatedAt": "2026-10-08T16:06:52.008Z",
+  "meta": {
+    "name": "Pundri",
+    "nameIt": "Pundri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pundri.geojson",
+      "sha256": "4cc4b4a9ce4f5007bc13fdd08a1c09e9ebaa99b140a1f9552450922a761b9104",
+      "size": 63819,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pundri",
+    "name": "Pundri",
+    "nameIt": "Pundri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.56021,
+      29.7674
+    ],
+    "zoom": 12,
+    "population": 39643,
+    "grid": "cities/pundri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pundri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pundri",
+        "name": "Pundri",
+        "nameIt": "Pundri",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.56021,
+          29.7674
+        ],
+        "zoom": 12,
+        "population": 39643,
+        "cells": 55,
+        "layer": "cities/pundri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.56021,
+            29.7674
+          ]
+        },
+        "properties": {
+          "id": "pundri",
+          "name": "Pundri",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 39643
+        }
+      },
+      "summary": null
+    }
+  }
+}

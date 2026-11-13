@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "honolulu",
+  "createdAt": "2026-10-08T15:39:03.466Z",
+  "updatedAt": "2026-10-08T15:39:03.466Z",
+  "meta": {
+    "name": "Honolulu",
+    "nameIt": "Honolulu",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Honolulu.geojson",
+      "sha256": "dfb515c1ff5ee946239690f8abd0829b26cbbc9c8b9ad045f81bed3842fd26dc",
+      "size": 1696633,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "honolulu",
+    "name": "Honolulu",
+    "nameIt": "Honolulu",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -157.88908,
+      21.33734
+    ],
+    "zoom": 9.2,
+    "population": 485015,
+    "grid": "cities/honolulu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/honolulu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "honolulu",
+        "name": "Honolulu",
+        "nameIt": "Honolulu",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -157.88908,
+          21.33734
+        ],
+        "zoom": 9.2,
+        "population": 485015,
+        "cells": 1459,
+        "layer": "cities/honolulu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -157.88908,
+            21.33734
+          ]
+        },
+        "properties": {
+          "id": "honolulu",
+          "name": "Honolulu",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 15.1,
+          "population": 485015
+        }
+      },
+      "summary": null
+    }
+  }
+}

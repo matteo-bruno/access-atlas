@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zarumilla",
+  "createdAt": "2026-10-08T16:24:54.359Z",
+  "updatedAt": "2026-10-08T16:24:54.359Z",
+  "meta": {
+    "name": "Zarumilla",
+    "nameIt": "Zarumilla",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zarumilla.geojson",
+      "sha256": "b6e495e3ae29d2d0ccd6a6da456a6dde5356092e701afbb92f0670f347a632af",
+      "size": 96181,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zarumilla",
+    "name": "Zarumilla",
+    "nameIt": "Zarumilla",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -80.26851,
+      -3.49435
+    ],
+    "zoom": 12,
+    "population": 39579,
+    "grid": "cities/zarumilla/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zarumilla/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zarumilla",
+        "name": "Zarumilla",
+        "nameIt": "Zarumilla",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -80.26851,
+          -3.49435
+        ],
+        "zoom": 12,
+        "population": 39579,
+        "cells": 82,
+        "layer": "cities/zarumilla/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.26851,
+            -3.49435
+          ]
+        },
+        "properties": {
+          "id": "zarumilla",
+          "name": "Zarumilla",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 39579
+        }
+      },
+      "summary": null
+    }
+  }
+}

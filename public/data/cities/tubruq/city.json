@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tubruq",
+  "createdAt": "2026-10-08T16:19:02.042Z",
+  "updatedAt": "2026-10-08T16:19:02.042Z",
+  "meta": {
+    "name": "Tubruq",
+    "nameIt": "Tubruq",
+    "region": "Libya",
+    "regionIt": "Libia",
+    "country": "LY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tubruq.geojson",
+      "sha256": "8e1852afa13e8949d31e878c919f2a29fd6702e297d02433254bc47f86020fa5",
+      "size": 363139,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tubruq",
+    "name": "Tubruq",
+    "nameIt": "Tubruq",
+    "region": "Libya",
+    "regionIt": "Libia",
+    "country": "LY",
+    "center": [
+      23.95072,
+      32.08337
+    ],
+    "zoom": 10.7,
+    "population": 68648,
+    "grid": "cities/tubruq/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tubruq/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tubruq",
+        "name": "Tubruq",
+        "nameIt": "Tubruq",
+        "region": "Libya",
+        "regionIt": "Libia",
+        "country": "LY",
+        "center": [
+          23.95072,
+          32.08337
+        ],
+        "zoom": 10.7,
+        "population": 68648,
+        "cells": 313,
+        "layer": "cities/tubruq/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.95072,
+            32.08337
+          ]
+        },
+        "properties": {
+          "id": "tubruq",
+          "name": "Tubruq",
+          "country": "LY",
+          "isStudy": true,
+          "proximityMinutes": 24.3,
+          "population": 68648
+        }
+      },
+      "summary": null
+    }
+  }
+}

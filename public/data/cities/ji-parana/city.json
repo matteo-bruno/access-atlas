@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ji-parana",
+  "createdAt": "2026-10-08T15:42:29.025Z",
+  "updatedAt": "2026-10-08T15:42:29.025Z",
+  "meta": {
+    "name": "Ji-Paraná",
+    "nameIt": "Ji-Paraná",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ji-Paraná.geojson",
+      "sha256": "8fb72714230200a75a6b4ec3b5e4a311d1f1a59b1210b07dbda6ec9c199bbb20",
+      "size": 476284,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ji-parana",
+    "name": "Ji-Paraná",
+    "nameIt": "Ji-Paraná",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -61.93537,
+      -10.88081
+    ],
+    "zoom": 10.7,
+    "population": 99443,
+    "grid": "cities/ji-parana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ji-parana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ji-parana",
+        "name": "Ji-Paraná",
+        "nameIt": "Ji-Paraná",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -61.93537,
+          -10.88081
+        ],
+        "zoom": 10.7,
+        "population": 99443,
+        "cells": 403,
+        "layer": "cities/ji-parana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -61.93537,
+            -10.88081
+          ]
+        },
+        "properties": {
+          "id": "ji-parana",
+          "name": "Ji-Paraná",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 27.3,
+          "population": 99443
+        }
+      },
+      "summary": null
+    }
+  }
+}

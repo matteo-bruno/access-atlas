@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santa-rosa-honduras",
+  "createdAt": "2026-10-08T16:11:09.008Z",
+  "updatedAt": "2026-10-08T16:11:09.008Z",
+  "meta": {
+    "name": "Santa Rosa (Honduras)",
+    "nameIt": "Santa Rosa (Honduras)",
+    "region": "Honduras",
+    "regionIt": "Honduras",
+    "country": "HN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santa Rosa (Honduras).geojson",
+      "sha256": "3c2c9080fd6b095ea4d75127304b610f2335cbcd2fbbadac0c2090abf631f07c",
+      "size": 89845,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santa-rosa-honduras",
+    "name": "Santa Rosa (Honduras)",
+    "nameIt": "Santa Rosa (Honduras)",
+    "region": "Honduras",
+    "regionIt": "Honduras",
+    "country": "HN",
+    "center": [
+      -88.77778,
+      14.77269
+    ],
+    "zoom": 12,
+    "population": 20940,
+    "grid": "cities/santa-rosa-honduras/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santa-rosa-honduras/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santa-rosa-honduras",
+        "name": "Santa Rosa (Honduras)",
+        "nameIt": "Santa Rosa (Honduras)",
+        "region": "Honduras",
+        "regionIt": "Honduras",
+        "country": "HN",
+        "center": [
+          -88.77778,
+          14.77269
+        ],
+        "zoom": 12,
+        "population": 20940,
+        "cells": 77,
+        "layer": "cities/santa-rosa-honduras/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.77778,
+            14.77269
+          ]
+        },
+        "properties": {
+          "id": "santa-rosa-honduras",
+          "name": "Santa Rosa (Honduras)",
+          "country": "HN",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 20940
+        }
+      },
+      "summary": null
+    }
+  }
+}

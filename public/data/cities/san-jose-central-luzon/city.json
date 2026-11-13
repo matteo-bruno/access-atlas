@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-jose-central-luzon",
+  "createdAt": "2026-10-08T16:10:31.923Z",
+  "updatedAt": "2026-10-08T16:10:31.923Z",
+  "meta": {
+    "name": "San Jose (Central Luzon)",
+    "nameIt": "San Jose (Central Luzon)",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Jose (Central Luzon).geojson",
+      "sha256": "f4be2b10d00966c7dac1e6e8a539a36ceb697ff379df62762b016ecfeb3e92d2",
+      "size": 199598,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-jose-central-luzon",
+    "name": "San Jose (Central Luzon)",
+    "nameIt": "San Jose (Central Luzon)",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      120.98804,
+      15.79418
+    ],
+    "zoom": 11.4,
+    "population": 72800,
+    "grid": "cities/san-jose-central-luzon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-jose-central-luzon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-jose-central-luzon",
+        "name": "San Jose (Central Luzon)",
+        "nameIt": "San Jose (Central Luzon)",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          120.98804,
+          15.79418
+        ],
+        "zoom": 11.4,
+        "population": 72800,
+        "cells": 171,
+        "layer": "cities/san-jose-central-luzon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.98804,
+            15.79418
+          ]
+        },
+        "properties": {
+          "id": "san-jose-central-luzon",
+          "name": "San Jose (Central Luzon)",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 72800
+        }
+      },
+      "summary": null
+    }
+  }
+}

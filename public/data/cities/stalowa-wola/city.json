@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "stalowa-wola",
+  "createdAt": "2026-10-08T16:14:46.931Z",
+  "updatedAt": "2026-10-08T16:14:46.931Z",
+  "meta": {
+    "name": "Stalowa Wola",
+    "nameIt": "Stalowa Wola",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Stalowa Wola.geojson",
+      "sha256": "487d5ffe8807c70900df92c8da8ce2a4dcc78fedf740cfcc77227f53762a9914",
+      "size": 180933,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "stalowa-wola",
+    "name": "Stalowa Wola",
+    "nameIt": "Stalowa Wola",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      22.05726,
+      50.56834
+    ],
+    "zoom": 11.5,
+    "population": 45026,
+    "grid": "cities/stalowa-wola/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/stalowa-wola/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "stalowa-wola",
+        "name": "Stalowa Wola",
+        "nameIt": "Stalowa Wola",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          22.05726,
+          50.56834
+        ],
+        "zoom": 11.5,
+        "population": 45026,
+        "cells": 158,
+        "layer": "cities/stalowa-wola/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            22.05726,
+            50.56834
+          ]
+        },
+        "properties": {
+          "id": "stalowa-wola",
+          "name": "Stalowa Wola",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 45026
+        }
+      },
+      "summary": null
+    }
+  }
+}

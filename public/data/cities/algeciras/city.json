@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "algeciras",
+  "createdAt": "2026-10-08T15:05:44.784Z",
+  "updatedAt": "2026-10-08T15:05:44.784Z",
+  "meta": {
+    "name": "Algeciras",
+    "nameIt": "Algeciras",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Algeciras.geojson",
+      "sha256": "474c5a85180d080da34b7feec2387c548dac576303c05c37caac800c8c91cd54",
+      "size": 308693,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "algeciras",
+    "name": "Algeciras",
+    "nameIt": "Algeciras",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -5.45233,
+      36.13051
+    ],
+    "zoom": 11.1,
+    "population": 119710,
+    "grid": "cities/algeciras/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/algeciras/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "algeciras",
+        "name": "Algeciras",
+        "nameIt": "Algeciras",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -5.45233,
+          36.13051
+        ],
+        "zoom": 11.1,
+        "population": 119710,
+        "cells": 268,
+        "layer": "cities/algeciras/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.45233,
+            36.13051
+          ]
+        },
+        "properties": {
+          "id": "algeciras",
+          "name": "Algeciras",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 10.7,
+          "population": 119710
+        }
+      },
+      "summary": null
+    }
+  }
+}

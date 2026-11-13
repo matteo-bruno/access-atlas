@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bafra",
+  "createdAt": "2026-10-08T15:12:39.101Z",
+  "updatedAt": "2026-10-08T15:12:39.101Z",
+  "meta": {
+    "name": "Bafra",
+    "nameIt": "Bafra",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bafra.geojson",
+      "sha256": "613e6fde513b9cecf4902e95083ad09de23dddb9bb49ac08f48ab3ff5eff488c",
+      "size": 105387,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bafra",
+    "name": "Bafra",
+    "nameIt": "Bafra",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      35.90756,
+      41.56431
+    ],
+    "zoom": 12,
+    "population": 93365,
+    "grid": "cities/bafra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bafra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bafra",
+        "name": "Bafra",
+        "nameIt": "Bafra",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          35.90756,
+          41.56431
+        ],
+        "zoom": 12,
+        "population": 93365,
+        "cells": 91,
+        "layer": "cities/bafra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.90756,
+            41.56431
+          ]
+        },
+        "properties": {
+          "id": "bafra",
+          "name": "Bafra",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 93365
+        }
+      },
+      "summary": null
+    }
+  }
+}

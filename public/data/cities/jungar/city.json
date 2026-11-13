@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jungar",
+  "createdAt": "2026-10-08T15:43:41.386Z",
+  "updatedAt": "2026-10-08T15:43:41.386Z",
+  "meta": {
+    "name": "Jungar",
+    "nameIt": "Jungar",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jungar.geojson",
+      "sha256": "a97ad61271382a5e3cac41e2877789066d735a57beba1ac7d406b30f26c6ce47",
+      "size": 319502,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jungar",
+    "name": "Jungar",
+    "nameIt": "Jungar",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      111.23183,
+      39.86067
+    ],
+    "zoom": 11.2,
+    "population": 126945,
+    "grid": "cities/jungar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jungar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jungar",
+        "name": "Jungar",
+        "nameIt": "Jungar",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          111.23183,
+          39.86067
+        ],
+        "zoom": 11.2,
+        "population": 126945,
+        "cells": 274,
+        "layer": "cities/jungar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.23183,
+            39.86067
+          ]
+        },
+        "properties": {
+          "id": "jungar",
+          "name": "Jungar",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 30.2,
+          "population": 126945
+        }
+      },
+      "summary": null
+    }
+  }
+}

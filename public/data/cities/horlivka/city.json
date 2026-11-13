@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "horlivka",
+  "createdAt": "2026-10-08T15:39:06.200Z",
+  "updatedAt": "2026-10-08T15:39:06.200Z",
+  "meta": {
+    "name": "Horlivka",
+    "nameIt": "Horlivka",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Horlivka.geojson",
+      "sha256": "70049bf04d95c1430d9caa069bb05df2640edd472233d9bf7a503f00d2085a79",
+      "size": 506031,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "horlivka",
+    "name": "Horlivka",
+    "nameIt": "Horlivka",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      38.0382,
+      48.30692
+    ],
+    "zoom": 10.6,
+    "population": 87980,
+    "grid": "cities/horlivka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/horlivka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "horlivka",
+        "name": "Horlivka",
+        "nameIt": "Horlivka",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          38.0382,
+          48.30692
+        ],
+        "zoom": 10.6,
+        "population": 87980,
+        "cells": 441,
+        "layer": "cities/horlivka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.0382,
+            48.30692
+          ]
+        },
+        "properties": {
+          "id": "horlivka",
+          "name": "Horlivka",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 22.1,
+          "population": 87980
+        }
+      },
+      "summary": null
+    }
+  }
+}

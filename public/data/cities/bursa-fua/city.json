@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bursa-fua",
+  "createdAt": "2026-10-19T16:55:42.231Z",
+  "updatedAt": "2026-10-19T16:55:42.231Z",
+  "meta": {
+    "name": "Bursa",
+    "nameIt": "Bursa",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "bursa-fua",
+    "name": "Bursa",
+    "nameIt": "Bursa",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "extent": "fua",
+    "core": "bursa",
+    "center": [
+      29.04643,
+      40.21756
+    ],
+    "zoom": 8.5,
+    "population": 2327457,
+    "grid": "cities/bursa-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bursa-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bursa-fua",
+        "name": "Bursa",
+        "nameIt": "Bursa",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "extent": "fua",
+        "core": "bursa",
+        "center": [
+          29.04643,
+          40.21756
+        ],
+        "zoom": 8.5,
+        "population": 2327457,
+        "cells": 6589,
+        "layer": "cities/bursa-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.04643,
+            40.21756
+          ]
+        },
+        "properties": {
+          "id": "bursa-fua",
+          "name": "Bursa",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 19.9,
+          "population": 2327457
+        }
+      },
+      "summary": null
+    }
+  }
+}

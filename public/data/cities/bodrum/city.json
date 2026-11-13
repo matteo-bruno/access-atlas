@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bodrum",
+  "createdAt": "2026-10-08T15:19:47.312Z",
+  "updatedAt": "2026-10-08T15:19:47.312Z",
+  "meta": {
+    "name": "Bodrum",
+    "nameIt": "Bodrum",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bodrum.geojson",
+      "sha256": "c3200e7ebc65853094883202519a8df811b97d1294ab70cd1b661a46ec15f863",
+      "size": 225969,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bodrum",
+    "name": "Bodrum",
+    "nameIt": "Bodrum",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      27.41296,
+      37.0395
+    ],
+    "zoom": 11.3,
+    "population": 68487,
+    "grid": "cities/bodrum/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bodrum/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bodrum",
+        "name": "Bodrum",
+        "nameIt": "Bodrum",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          27.41296,
+          37.0395
+        ],
+        "zoom": 11.3,
+        "population": 68487,
+        "cells": 196,
+        "layer": "cities/bodrum/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.41296,
+            37.0395
+          ]
+        },
+        "properties": {
+          "id": "bodrum",
+          "name": "Bodrum",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 68487
+        }
+      },
+      "summary": null
+    }
+  }
+}

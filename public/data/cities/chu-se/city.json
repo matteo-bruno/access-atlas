@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chu-se",
+  "createdAt": "2026-10-08T15:25:24.965Z",
+  "updatedAt": "2026-10-08T15:25:24.965Z",
+  "meta": {
+    "name": "Chư Sê",
+    "nameIt": "Chư Sê",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chư Sê.geojson",
+      "sha256": "bdbf8bf4bebdbb4acc3b3ca0c6d6c184d92ec413cbd2d2db298fcbf112879545",
+      "size": 85415,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chu-se",
+    "name": "Chư Sê",
+    "nameIt": "Chư Sê",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      108.07702,
+      13.69562
+    ],
+    "zoom": 11.9,
+    "population": 35383,
+    "grid": "cities/chu-se/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chu-se/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chu-se",
+        "name": "Chư Sê",
+        "nameIt": "Chư Sê",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          108.07702,
+          13.69562
+        ],
+        "zoom": 11.9,
+        "population": 35383,
+        "cells": 73,
+        "layer": "cities/chu-se/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.07702,
+            13.69562
+          ]
+        },
+        "properties": {
+          "id": "chu-se",
+          "name": "Chư Sê",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 35383
+        }
+      },
+      "summary": null
+    }
+  }
+}

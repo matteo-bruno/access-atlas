@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fiche",
+  "createdAt": "2026-10-08T15:33:21.088Z",
+  "updatedAt": "2026-10-08T15:33:21.088Z",
+  "meta": {
+    "name": "Fiche",
+    "nameIt": "Fiche",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fiche.geojson",
+      "sha256": "563882250fa2a0a7a73b9591d7c6843d39478c9498107d3c27b6c56a97d57151",
+      "size": 138315,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fiche",
+    "name": "Fiche",
+    "nameIt": "Fiche",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      38.73648,
+      9.78327
+    ],
+    "zoom": 11.7,
+    "population": 32906,
+    "grid": "cities/fiche/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fiche/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fiche",
+        "name": "Fiche",
+        "nameIt": "Fiche",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          38.73648,
+          9.78327
+        ],
+        "zoom": 11.7,
+        "population": 32906,
+        "cells": 120,
+        "layer": "cities/fiche/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.73648,
+            9.78327
+          ]
+        },
+        "properties": {
+          "id": "fiche",
+          "name": "Fiche",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 32906
+        }
+      },
+      "summary": null
+    }
+  }
+}

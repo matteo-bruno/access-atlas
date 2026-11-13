@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "anand",
+  "createdAt": "2026-10-08T15:07:18.607Z",
+  "updatedAt": "2026-10-08T15:07:18.607Z",
+  "meta": {
+    "name": "Anand",
+    "nameIt": "Anand",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Anand.geojson",
+      "sha256": "6e6aa63f8b7ad94d1b6b5f5a0da0ffe1743e1ecf179abca5e9d7bb9368341a2b",
+      "size": 863838,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "anand",
+    "name": "Anand",
+    "nameIt": "Anand",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.9462,
+      22.5507
+    ],
+    "zoom": 10.5,
+    "population": 419654,
+    "grid": "cities/anand/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/anand/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "anand",
+        "name": "Anand",
+        "nameIt": "Anand",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.9462,
+          22.5507
+        ],
+        "zoom": 10.5,
+        "population": 419654,
+        "cells": 745,
+        "layer": "cities/anand/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.9462,
+            22.5507
+          ]
+        },
+        "properties": {
+          "id": "anand",
+          "name": "Anand",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 38.6,
+          "population": 419654
+        }
+      },
+      "summary": null
+    }
+  }
+}

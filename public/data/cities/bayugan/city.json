@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bayugan",
+  "createdAt": "2026-10-08T15:16:25.796Z",
+  "updatedAt": "2026-10-08T15:16:25.796Z",
+  "meta": {
+    "name": "Bayugan",
+    "nameIt": "Bayugan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bayugan.geojson",
+      "sha256": "3083a29de1489a43f232f0940457e563723056357182ddc6ebab2298a90543e3",
+      "size": 159870,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bayugan",
+    "name": "Bayugan",
+    "nameIt": "Bayugan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      125.75011,
+      8.71216
+    ],
+    "zoom": 11.6,
+    "population": 42076,
+    "grid": "cities/bayugan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bayugan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bayugan",
+        "name": "Bayugan",
+        "nameIt": "Bayugan",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          125.75011,
+          8.71216
+        ],
+        "zoom": 11.6,
+        "population": 42076,
+        "cells": 138,
+        "layer": "cities/bayugan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.75011,
+            8.71216
+          ]
+        },
+        "properties": {
+          "id": "bayugan",
+          "name": "Bayugan",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 10.1,
+          "population": 42076
+        }
+      },
+      "summary": null
+    }
+  }
+}

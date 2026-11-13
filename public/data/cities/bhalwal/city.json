@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bhalwal",
+  "createdAt": "2026-10-08T15:18:10.302Z",
+  "updatedAt": "2026-10-08T15:18:10.302Z",
+  "meta": {
+    "name": "Bhalwal",
+    "nameIt": "Bhalwal",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bhalwal.geojson",
+      "sha256": "7f48e56f3afc120cdafc4d496da0fdcd5b45a08883df16947240399f500dffc3",
+      "size": 209127,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bhalwal",
+    "name": "Bhalwal",
+    "nameIt": "Bhalwal",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      72.89828,
+      32.2693
+    ],
+    "zoom": 11.6,
+    "population": 117974,
+    "grid": "cities/bhalwal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bhalwal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bhalwal",
+        "name": "Bhalwal",
+        "nameIt": "Bhalwal",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          72.89828,
+          32.2693
+        ],
+        "zoom": 11.6,
+        "population": 117974,
+        "cells": 181,
+        "layer": "cities/bhalwal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.89828,
+            32.2693
+          ]
+        },
+        "properties": {
+          "id": "bhalwal",
+          "name": "Bhalwal",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 117974
+        }
+      },
+      "summary": null
+    }
+  }
+}

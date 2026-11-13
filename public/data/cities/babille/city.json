@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "babille",
+  "createdAt": "2026-10-08T15:12:18.347Z",
+  "updatedAt": "2026-10-08T15:12:18.347Z",
+  "meta": {
+    "name": "Babille",
+    "nameIt": "Babille",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Babille.geojson",
+      "sha256": "46874c50449598a898beebb8ddc5689a4fe87f210b356cd36a71f52973acbf37",
+      "size": 86442,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "babille",
+    "name": "Babille",
+    "nameIt": "Babille",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      42.33207,
+      9.22539
+    ],
+    "zoom": 12,
+    "population": 60599,
+    "grid": "cities/babille/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/babille/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "babille",
+        "name": "Babille",
+        "nameIt": "Babille",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          42.33207,
+          9.22539
+        ],
+        "zoom": 12,
+        "population": 60599,
+        "cells": 75,
+        "layer": "cities/babille/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            42.33207,
+            9.22539
+          ]
+        },
+        "properties": {
+          "id": "babille",
+          "name": "Babille",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 60599
+        }
+      },
+      "summary": null
+    }
+  }
+}

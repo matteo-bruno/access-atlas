@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cumbum",
+  "createdAt": "2026-10-08T15:27:04.476Z",
+  "updatedAt": "2026-10-08T15:27:04.476Z",
+  "meta": {
+    "name": "Cumbum",
+    "nameIt": "Cumbum",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cumbum.geojson",
+      "sha256": "86196b4939f9d9892fd3fcb15d87119b277e9aed6a169d7fed931bbd8dc13897",
+      "size": 103447,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cumbum",
+    "name": "Cumbum",
+    "nameIt": "Cumbum",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.28339,
+      9.73789
+    ],
+    "zoom": 12,
+    "population": 35217,
+    "grid": "cities/cumbum/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cumbum/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cumbum",
+        "name": "Cumbum",
+        "nameIt": "Cumbum",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.28339,
+          9.73789
+        ],
+        "zoom": 12,
+        "population": 35217,
+        "cells": 90,
+        "layer": "cities/cumbum/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.28339,
+            9.73789
+          ]
+        },
+        "properties": {
+          "id": "cumbum",
+          "name": "Cumbum",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 10.6,
+          "population": 35217
+        }
+      },
+      "summary": null
+    }
+  }
+}

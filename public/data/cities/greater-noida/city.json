@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "greater-noida",
+  "createdAt": "2026-10-08T15:35:59.509Z",
+  "updatedAt": "2026-10-08T15:35:59.509Z",
+  "meta": {
+    "name": "Greater Noida",
+    "nameIt": "Greater Noida",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Greater Noida.geojson",
+      "sha256": "1c2cd0ec00f9555a70d39e76aadb7767d90d4a08afab20fe8d4dd02885f7eba4",
+      "size": 1088294,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "greater-noida",
+    "name": "Greater Noida",
+    "nameIt": "Greater Noida",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.52566,
+      28.47935
+    ],
+    "zoom": 10,
+    "population": 1460582,
+    "grid": "cities/greater-noida/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/greater-noida/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "greater-noida",
+        "name": "Greater Noida",
+        "nameIt": "Greater Noida",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.52566,
+          28.47935
+        ],
+        "zoom": 10,
+        "population": 1460582,
+        "cells": 939,
+        "layer": "cities/greater-noida/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.52566,
+            28.47935
+          ]
+        },
+        "properties": {
+          "id": "greater-noida",
+          "name": "Greater Noida",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 39.1,
+          "population": 1460582
+        }
+      },
+      "summary": null
+    }
+  }
+}

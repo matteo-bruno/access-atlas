@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yuekou",
+  "createdAt": "2026-10-08T16:24:23.274Z",
+  "updatedAt": "2026-10-08T16:24:23.274Z",
+  "meta": {
+    "name": "Yuekou",
+    "nameIt": "Yuekou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yuekou.geojson",
+      "sha256": "a4f1c36dc1aab941e85fa0673a99613f29fddd35b3555bf824ea36ad73582ccc",
+      "size": 175282,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yuekou",
+    "name": "Yuekou",
+    "nameIt": "Yuekou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.08133,
+      30.5121
+    ],
+    "zoom": 11.5,
+    "population": 28906,
+    "grid": "cities/yuekou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yuekou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yuekou",
+        "name": "Yuekou",
+        "nameIt": "Yuekou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.08133,
+          30.5121
+        ],
+        "zoom": 11.5,
+        "population": 28906,
+        "cells": 150,
+        "layer": "cities/yuekou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.08133,
+            30.5121
+          ]
+        },
+        "properties": {
+          "id": "yuekou",
+          "name": "Yuekou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 28906
+        }
+      },
+      "summary": null
+    }
+  }
+}

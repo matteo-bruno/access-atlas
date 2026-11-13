@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tarija",
+  "createdAt": "2026-10-08T16:16:46.057Z",
+  "updatedAt": "2026-10-08T16:16:46.057Z",
+  "meta": {
+    "name": "Tarija",
+    "nameIt": "Tarija",
+    "region": "Bolivia",
+    "regionIt": "Bolivia",
+    "country": "BO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tarija.geojson",
+      "sha256": "10f9f2c1fddacfc1ef5988791ca6088b9bb4145b4a1ecead968e5e783fdaf172",
+      "size": 489444,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tarija",
+    "name": "Tarija",
+    "nameIt": "Tarija",
+    "region": "Bolivia",
+    "regionIt": "Bolivia",
+    "country": "BO",
+    "center": [
+      -64.72796,
+      -21.52892
+    ],
+    "zoom": 10.8,
+    "population": 150578,
+    "grid": "cities/tarija/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tarija/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tarija",
+        "name": "Tarija",
+        "nameIt": "Tarija",
+        "region": "Bolivia",
+        "regionIt": "Bolivia",
+        "country": "BO",
+        "center": [
+          -64.72796,
+          -21.52892
+        ],
+        "zoom": 10.8,
+        "population": 150578,
+        "cells": 419,
+        "layer": "cities/tarija/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -64.72796,
+            -21.52892
+          ]
+        },
+        "properties": {
+          "id": "tarija",
+          "name": "Tarija",
+          "country": "BO",
+          "isStudy": true,
+          "proximityMinutes": 15.8,
+          "population": 150578
+        }
+      },
+      "summary": null
+    }
+  }
+}

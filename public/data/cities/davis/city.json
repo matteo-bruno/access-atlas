@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "davis",
+  "createdAt": "2026-10-08T15:28:39.712Z",
+  "updatedAt": "2026-10-08T15:28:39.712Z",
+  "meta": {
+    "name": "Davis",
+    "nameIt": "Davis",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Davis.geojson",
+      "sha256": "c599d4e38501bc61889164699dec206165e6d73cd88177aa99e201ea427ba960",
+      "size": 302287,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "davis",
+    "name": "Davis",
+    "nameIt": "Davis",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -121.74268,
+      38.55313
+    ],
+    "zoom": 10.7,
+    "population": 69351,
+    "grid": "cities/davis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/davis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "davis",
+        "name": "Davis",
+        "nameIt": "Davis",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -121.74268,
+          38.55313
+        ],
+        "zoom": 10.7,
+        "population": 69351,
+        "cells": 260,
+        "layer": "cities/davis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -121.74268,
+            38.55313
+          ]
+        },
+        "properties": {
+          "id": "davis",
+          "name": "Davis",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 17.5,
+          "population": 69351
+        }
+      },
+      "summary": null
+    }
+  }
+}

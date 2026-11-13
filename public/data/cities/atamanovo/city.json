@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "atamanovo",
+  "createdAt": "2026-10-08T15:10:45.793Z",
+  "updatedAt": "2026-10-08T15:10:45.793Z",
+  "meta": {
+    "name": "Atamanovo",
+    "nameIt": "Atamanovo",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Atamanovo.geojson",
+      "sha256": "18a6a0ced1e4b9c70c768ee0c36878b1e0cfc492c735b6716c26e9c756865c28",
+      "size": 148773,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "atamanovo",
+    "name": "Atamanovo",
+    "nameIt": "Atamanovo",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      87.3241,
+      53.78853
+    ],
+    "zoom": 11.2,
+    "population": 56798,
+    "grid": "cities/atamanovo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/atamanovo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "atamanovo",
+        "name": "Atamanovo",
+        "nameIt": "Atamanovo",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          87.3241,
+          53.78853
+        ],
+        "zoom": 11.2,
+        "population": 56798,
+        "cells": 129,
+        "layer": "cities/atamanovo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.3241,
+            53.78853
+          ]
+        },
+        "properties": {
+          "id": "atamanovo",
+          "name": "Atamanovo",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 19.1,
+          "population": 56798
+        }
+      },
+      "summary": null
+    }
+  }
+}

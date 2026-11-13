@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kodarma",
+  "createdAt": "2026-10-08T15:47:35.180Z",
+  "updatedAt": "2026-10-08T15:47:35.180Z",
+  "meta": {
+    "name": "Kodarma",
+    "nameIt": "Kodarma",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kodarma.geojson",
+      "sha256": "924e368cac8e149ed8ac86b17732f46b82eabf0f2fc4520f35bc2958d1a66a99",
+      "size": 345790,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kodarma",
+    "name": "Kodarma",
+    "nameIt": "Kodarma",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.54876,
+      24.44443
+    ],
+    "zoom": 10.6,
+    "population": 213786,
+    "grid": "cities/kodarma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kodarma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kodarma",
+        "name": "Kodarma",
+        "nameIt": "Kodarma",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.54876,
+          24.44443
+        ],
+        "zoom": 10.6,
+        "population": 213786,
+        "cells": 298,
+        "layer": "cities/kodarma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.54876,
+            24.44443
+          ]
+        },
+        "properties": {
+          "id": "kodarma",
+          "name": "Kodarma",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 31,
+          "population": 213786
+        }
+      },
+      "summary": null
+    }
+  }
+}

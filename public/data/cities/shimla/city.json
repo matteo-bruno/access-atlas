@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shimla",
+  "createdAt": "2026-10-08T16:13:05.840Z",
+  "updatedAt": "2026-10-08T16:13:05.840Z",
+  "meta": {
+    "name": "Shimla",
+    "nameIt": "Shimla",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shimla.geojson",
+      "sha256": "96b55597839dfe0cdd723189a1523f370319c58e1c18c8c5ea5811e3aa6b7658",
+      "size": 184119,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shimla",
+    "name": "Shimla",
+    "nameIt": "Shimla",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.16638,
+      31.10052
+    ],
+    "zoom": 11.6,
+    "population": 27641,
+    "grid": "cities/shimla/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shimla/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shimla",
+        "name": "Shimla",
+        "nameIt": "Shimla",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.16638,
+          31.10052
+        ],
+        "zoom": 11.6,
+        "population": 27641,
+        "cells": 159,
+        "layer": "cities/shimla/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.16638,
+            31.10052
+          ]
+        },
+        "properties": {
+          "id": "shimla",
+          "name": "Shimla",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 29.5,
+          "population": 27641
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hamirpur",
+  "createdAt": "2026-10-08T15:37:33.602Z",
+  "updatedAt": "2026-10-08T15:37:33.602Z",
+  "meta": {
+    "name": "Hamirpur",
+    "nameIt": "Hamirpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hamirpur.geojson",
+      "sha256": "bc1e29f7f759cfbf89481872f482927be9e6df9eb954e7a7cbd6175d20c374d7",
+      "size": 149324,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hamirpur",
+    "name": "Hamirpur",
+    "nameIt": "Hamirpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.15086,
+      25.95675
+    ],
+    "zoom": 11.8,
+    "population": 57296,
+    "grid": "cities/hamirpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hamirpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hamirpur",
+        "name": "Hamirpur",
+        "nameIt": "Hamirpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.15086,
+          25.95675
+        ],
+        "zoom": 11.8,
+        "population": 57296,
+        "cells": 129,
+        "layer": "cities/hamirpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.15086,
+            25.95675
+          ]
+        },
+        "properties": {
+          "id": "hamirpur",
+          "name": "Hamirpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 57296
+        }
+      },
+      "summary": null
+    }
+  }
+}

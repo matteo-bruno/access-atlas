@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "muri",
+  "createdAt": "2026-10-08T15:59:02.926Z",
+  "updatedAt": "2026-10-08T15:59:02.926Z",
+  "meta": {
+    "name": "Muri",
+    "nameIt": "Muri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Muri.geojson",
+      "sha256": "0597ea4483fb5aa95cec4b02fc5508446701bc4b2f9dc58f818b9694824e9165",
+      "size": 114666,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "muri",
+    "name": "Muri",
+    "nameIt": "Muri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.87015,
+      23.37533
+    ],
+    "zoom": 11.7,
+    "population": 39994,
+    "grid": "cities/muri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/muri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "muri",
+        "name": "Muri",
+        "nameIt": "Muri",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.87015,
+          23.37533
+        ],
+        "zoom": 11.7,
+        "population": 39994,
+        "cells": 99,
+        "layer": "cities/muri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.87015,
+            23.37533
+          ]
+        },
+        "properties": {
+          "id": "muri",
+          "name": "Muri",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 39994
+        }
+      },
+      "summary": null
+    }
+  }
+}

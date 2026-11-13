@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "singaraja",
+  "createdAt": "2026-10-08T16:13:50.605Z",
+  "updatedAt": "2026-10-08T16:13:50.605Z",
+  "meta": {
+    "name": "Singaraja",
+    "nameIt": "Singaraja",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Singaraja.geojson",
+      "sha256": "8060c5b393cffa7cd5b65c5a98f5937df2d22cea1e30a0048e861598da8ce7dc",
+      "size": 911926,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "singaraja",
+    "name": "Singaraja",
+    "nameIt": "Singaraja",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      115.09649,
+      -8.11811
+    ],
+    "zoom": 9.9,
+    "population": 243661,
+    "grid": "cities/singaraja/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/singaraja/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "singaraja",
+        "name": "Singaraja",
+        "nameIt": "Singaraja",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          115.09649,
+          -8.11811
+        ],
+        "zoom": 9.9,
+        "population": 243661,
+        "cells": 779,
+        "layer": "cities/singaraja/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.09649,
+            -8.11811
+          ]
+        },
+        "properties": {
+          "id": "singaraja",
+          "name": "Singaraja",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 38,
+          "population": 243661
+        }
+      },
+      "summary": null
+    }
+  }
+}

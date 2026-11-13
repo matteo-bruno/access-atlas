@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "suhum",
+  "createdAt": "2026-10-08T16:14:57.632Z",
+  "updatedAt": "2026-10-08T16:14:57.632Z",
+  "meta": {
+    "name": "Suhum",
+    "nameIt": "Suhum",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Suhum.geojson",
+      "sha256": "284fbd606a898b797b56432352bb93da09d975ee3e70a8612982ee2869dee8d4",
+      "size": 222583,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "suhum",
+    "name": "Suhum",
+    "nameIt": "Suhum",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH",
+    "center": [
+      -0.4506,
+      6.03664
+    ],
+    "zoom": 12,
+    "population": 85187,
+    "grid": "cities/suhum/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/suhum/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "suhum",
+        "name": "Suhum",
+        "nameIt": "Suhum",
+        "region": "Ghana",
+        "regionIt": "Ghana",
+        "country": "GH",
+        "center": [
+          -0.4506,
+          6.03664
+        ],
+        "zoom": 12,
+        "population": 85187,
+        "cells": 190,
+        "layer": "cities/suhum/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.4506,
+            6.03664
+          ]
+        },
+        "properties": {
+          "id": "suhum",
+          "name": "Suhum",
+          "country": "GH",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 85187
+        }
+      },
+      "summary": null
+    }
+  }
+}

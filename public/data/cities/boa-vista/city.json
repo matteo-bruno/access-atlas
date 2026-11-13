@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "boa-vista",
+  "createdAt": "2026-10-08T15:19:42.345Z",
+  "updatedAt": "2026-10-08T15:19:42.345Z",
+  "meta": {
+    "name": "Boa Vista",
+    "nameIt": "Boa Vista",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Boa Vista.geojson",
+      "sha256": "f15b2168f9d774d3dd3ea21ac8bc2a541bbd5844fea4fac0824634a0cd0f217b",
+      "size": 906167,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "boa-vista",
+    "name": "Boa Vista",
+    "nameIt": "Boa Vista",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -60.71401,
+      2.8168
+    ],
+    "zoom": 10.3,
+    "population": 390675,
+    "grid": "cities/boa-vista/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/boa-vista/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "boa-vista",
+        "name": "Boa Vista",
+        "nameIt": "Boa Vista",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -60.71401,
+          2.8168
+        ],
+        "zoom": 10.3,
+        "population": 390675,
+        "cells": 784,
+        "layer": "cities/boa-vista/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -60.71401,
+            2.8168
+          ]
+        },
+        "properties": {
+          "id": "boa-vista",
+          "name": "Boa Vista",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 20.2,
+          "population": 390675
+        }
+      },
+      "summary": null
+    }
+  }
+}

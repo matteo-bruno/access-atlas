@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "maluru",
+  "createdAt": "2026-10-08T15:54:16.248Z",
+  "updatedAt": "2026-10-08T15:54:16.248Z",
+  "meta": {
+    "name": "Maluru",
+    "nameIt": "Maluru",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Maluru.geojson",
+      "sha256": "aa0148ab369fb276f8124e8268d6190ffda3f8bf4a6ca66f9f9673865e13a6cb",
+      "size": 138023,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "maluru",
+    "name": "Maluru",
+    "nameIt": "Maluru",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.92948,
+      12.99283
+    ],
+    "zoom": 11.7,
+    "population": 60042,
+    "grid": "cities/maluru/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/maluru/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "maluru",
+        "name": "Maluru",
+        "nameIt": "Maluru",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.92948,
+          12.99283
+        ],
+        "zoom": 11.7,
+        "population": 60042,
+        "cells": 119,
+        "layer": "cities/maluru/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.92948,
+            12.99283
+          ]
+        },
+        "properties": {
+          "id": "maluru",
+          "name": "Maluru",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 60042
+        }
+      },
+      "summary": null
+    }
+  }
+}

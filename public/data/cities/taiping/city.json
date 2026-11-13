@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "taiping",
+  "createdAt": "2026-10-08T16:16:05.460Z",
+  "updatedAt": "2026-10-08T16:16:05.460Z",
+  "meta": {
+    "name": "Taiping",
+    "nameIt": "Taiping",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Taiping.geojson",
+      "sha256": "7794088fe3d1685eda19fe86bdad590e4be8a01d34e26a909f8327c1b089da57",
+      "size": 586151,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "taiping",
+    "name": "Taiping",
+    "nameIt": "Taiping",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      100.72729,
+      4.85441
+    ],
+    "zoom": 10.5,
+    "population": 175527,
+    "grid": "cities/taiping/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/taiping/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "taiping",
+        "name": "Taiping",
+        "nameIt": "Taiping",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          100.72729,
+          4.85441
+        ],
+        "zoom": 10.5,
+        "population": 175527,
+        "cells": 508,
+        "layer": "cities/taiping/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            100.72729,
+            4.85441
+          ]
+        },
+        "properties": {
+          "id": "taiping",
+          "name": "Taiping",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 29.7,
+          "population": 175527
+        }
+      },
+      "summary": null
+    }
+  }
+}

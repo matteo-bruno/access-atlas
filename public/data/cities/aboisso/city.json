@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aboisso",
+  "createdAt": "2026-10-08T15:01:39.955Z",
+  "updatedAt": "2026-10-08T15:01:39.955Z",
+  "meta": {
+    "name": "Aboisso",
+    "nameIt": "Aboisso",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aboisso.geojson",
+      "sha256": "65267bef1f9b63812367def7f50e017f80342d779584731517c2e655b0229906",
+      "size": 216661,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aboisso",
+    "name": "Aboisso",
+    "nameIt": "Aboisso",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI",
+    "center": [
+      -3.20477,
+      5.47244
+    ],
+    "zoom": 12,
+    "population": 63389,
+    "grid": "cities/aboisso/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 169
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aboisso/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aboisso",
+        "name": "Aboisso",
+        "nameIt": "Aboisso",
+        "region": "Ivory Coast",
+        "regionIt": "Costa d'Avorio",
+        "country": "CI",
+        "center": [
+          -3.20477,
+          5.47244
+        ],
+        "zoom": 12,
+        "population": 63389,
+        "cells": 186,
+        "layer": "cities/aboisso/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 169
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -3.20477,
+            5.47244
+          ]
+        },
+        "properties": {
+          "id": "aboisso",
+          "name": "Aboisso",
+          "country": "CI",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 63389
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dumraon",
+  "createdAt": "2026-10-08T15:31:17.893Z",
+  "updatedAt": "2026-10-08T15:31:17.893Z",
+  "meta": {
+    "name": "Dumraon",
+    "nameIt": "Dumraon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dumraon.geojson",
+      "sha256": "47157aa8f9e9ebcb274ba8e76c02cc18386427a3c94018f6282a26cc2da0eace",
+      "size": 110057,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dumraon",
+    "name": "Dumraon",
+    "nameIt": "Dumraon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.1482,
+      25.56325
+    ],
+    "zoom": 11.6,
+    "population": 85021,
+    "grid": "cities/dumraon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dumraon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dumraon",
+        "name": "Dumraon",
+        "nameIt": "Dumraon",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.1482,
+          25.56325
+        ],
+        "zoom": 11.6,
+        "population": 85021,
+        "cells": 95,
+        "layer": "cities/dumraon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.1482,
+            25.56325
+          ]
+        },
+        "properties": {
+          "id": "dumraon",
+          "name": "Dumraon",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 85021
+        }
+      },
+      "summary": null
+    }
+  }
+}

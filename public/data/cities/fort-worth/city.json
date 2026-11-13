@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fort-worth",
+  "createdAt": "2026-10-08T15:33:35.725Z",
+  "updatedAt": "2026-10-08T15:33:35.725Z",
+  "meta": {
+    "name": "Fort Worth",
+    "nameIt": "Fort Worth",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fort Worth.geojson",
+      "sha256": "310f98edb23a29e1478963a8264741055742fc3607b75c83f97e21e6916e9440",
+      "size": 590246,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fort-worth",
+    "name": "Fort Worth",
+    "nameIt": "Fort Worth",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -97.36327,
+      32.78431
+    ],
+    "zoom": 10.6,
+    "population": 83717,
+    "grid": "cities/fort-worth/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fort-worth/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fort-worth",
+        "name": "Fort Worth",
+        "nameIt": "Fort Worth",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -97.36327,
+          32.78431
+        ],
+        "zoom": 10.6,
+        "population": 83717,
+        "cells": 509,
+        "layer": "cities/fort-worth/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.36327,
+            32.78431
+          ]
+        },
+        "properties": {
+          "id": "fort-worth",
+          "name": "Fort Worth",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20,
+          "population": 83717
+        }
+      },
+      "summary": null
+    }
+  }
+}

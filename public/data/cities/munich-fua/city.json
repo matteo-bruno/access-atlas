@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "munich-fua",
+  "createdAt": "2026-10-15T09:15:29.796Z",
+  "updatedAt": "2026-10-19T16:57:33.761Z",
+  "meta": {
+    "name": "Munich",
+    "nameIt": "Monaco di Baviera",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "munich-fua",
+    "name": "Munich",
+    "nameIt": "Monaco di Baviera",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "extent": "fua",
+    "core": "munich",
+    "center": [
+      11.55101,
+      48.14718
+    ],
+    "zoom": 8.5,
+    "population": 2631765,
+    "grid": "cities/munich-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/munich-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "munich-fua",
+        "name": "Munich",
+        "nameIt": "Monaco di Baviera",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "extent": "fua",
+        "core": "munich",
+        "center": [
+          11.55101,
+          48.14718
+        ],
+        "zoom": 8.5,
+        "population": 2631765,
+        "cells": 25899,
+        "layer": "cities/munich-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.55101,
+            48.14718
+          ]
+        },
+        "properties": {
+          "id": "munich-fua",
+          "name": "Munich",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 8.6,
+          "population": 2631765
+        }
+      },
+      "summary": null
+    }
+  }
+}

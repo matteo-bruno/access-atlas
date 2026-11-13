@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "buzau",
+  "createdAt": "2026-10-08T15:21:19.811Z",
+  "updatedAt": "2026-10-08T15:21:19.811Z",
+  "meta": {
+    "name": "Buzău",
+    "nameIt": "Buzău",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Buzău.geojson",
+      "sha256": "b706901785828978bef8d3a9a4e7b85ebf183a70c9eda65480b03ee6fd6b17ab",
+      "size": 184712,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "buzau",
+    "name": "Buzău",
+    "nameIt": "Buzău",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO",
+    "center": [
+      26.82137,
+      45.14911
+    ],
+    "zoom": 11.6,
+    "population": 84724,
+    "grid": "cities/buzau/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/buzau/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "buzau",
+        "name": "Buzău",
+        "nameIt": "Buzău",
+        "region": "Romania",
+        "regionIt": "Romania",
+        "country": "RO",
+        "center": [
+          26.82137,
+          45.14911
+        ],
+        "zoom": 11.6,
+        "population": 84724,
+        "cells": 161,
+        "layer": "cities/buzau/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.82137,
+            45.14911
+          ]
+        },
+        "properties": {
+          "id": "buzau",
+          "name": "Buzău",
+          "country": "RO",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 84724
+        }
+      },
+      "summary": null
+    }
+  }
+}

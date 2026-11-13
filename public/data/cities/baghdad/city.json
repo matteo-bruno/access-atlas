@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baghdad",
+  "createdAt": "2026-10-08T15:12:49.300Z",
+  "updatedAt": "2026-10-08T15:12:49.300Z",
+  "meta": {
+    "name": "Baghdad",
+    "nameIt": "Baghdad",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baghdad.geojson",
+      "sha256": "646f7cbd39189f803b3ecad467b967cc1ca083e6b36b229d3dc59fe51f6a3f54",
+      "size": 7349084,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baghdad",
+    "name": "Baghdad",
+    "nameIt": "Baghdad",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      44.41225,
+      33.34235
+    ],
+    "zoom": 8.6,
+    "population": 7344381,
+    "grid": "cities/baghdad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baghdad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baghdad",
+        "name": "Baghdad",
+        "nameIt": "Baghdad",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          44.41225,
+          33.34235
+        ],
+        "zoom": 8.6,
+        "population": 7344381,
+        "cells": 6390,
+        "layer": "cities/baghdad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.41225,
+            33.34235
+          ]
+        },
+        "properties": {
+          "id": "baghdad",
+          "name": "Baghdad",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 23.6,
+          "population": 7344381
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kingston-jamaica",
+  "createdAt": "2026-10-08T15:47:08.411Z",
+  "updatedAt": "2026-10-08T15:47:08.411Z",
+  "meta": {
+    "name": "Kingston (Jamaica)",
+    "nameIt": "Kingston (Jamaica)",
+    "region": "Jamaica",
+    "regionIt": "Giamaica",
+    "country": "JM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kingston (Jamaica).geojson",
+      "sha256": "1e2a4ab63f78c35f489dd22b6661a10bb35225f88d5942cff8d70dec8241fa03",
+      "size": 1592097,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kingston-jamaica",
+    "name": "Kingston (Jamaica)",
+    "nameIt": "Kingston (Jamaica)",
+    "region": "Jamaica",
+    "regionIt": "Giamaica",
+    "country": "JM",
+    "center": [
+      -76.80247,
+      18.00861
+    ],
+    "zoom": 10.3,
+    "population": 553499,
+    "grid": "cities/kingston-jamaica/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 182
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kingston-jamaica/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kingston-jamaica",
+        "name": "Kingston (Jamaica)",
+        "nameIt": "Kingston (Jamaica)",
+        "region": "Jamaica",
+        "regionIt": "Giamaica",
+        "country": "JM",
+        "center": [
+          -76.80247,
+          18.00861
+        ],
+        "zoom": 10.3,
+        "population": 553499,
+        "cells": 1377,
+        "layer": "cities/kingston-jamaica/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 182
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.80247,
+            18.00861
+          ]
+        },
+        "properties": {
+          "id": "kingston-jamaica",
+          "name": "Kingston (Jamaica)",
+          "country": "JM",
+          "isStudy": true,
+          "proximityMinutes": 20.3,
+          "population": 553499
+        }
+      },
+      "summary": null
+    }
+  }
+}

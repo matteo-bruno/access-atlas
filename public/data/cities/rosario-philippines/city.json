@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rosario-philippines",
+  "createdAt": "2026-10-08T16:09:08.428Z",
+  "updatedAt": "2026-10-08T16:09:08.428Z",
+  "meta": {
+    "name": "Rosario (Philippines)",
+    "nameIt": "Rosario (Philippines)",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rosario (Philippines).geojson",
+      "sha256": "881556d724944a23a5fcd551938d62668bb847d5ba1db18adac39b85fc8e2ecf",
+      "size": 296030,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rosario-philippines",
+    "name": "Rosario (Philippines)",
+    "nameIt": "Rosario (Philippines)",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      121.2149,
+      13.86391
+    ],
+    "zoom": 11.2,
+    "population": 71644,
+    "grid": "cities/rosario-philippines/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rosario-philippines/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rosario-philippines",
+        "name": "Rosario (Philippines)",
+        "nameIt": "Rosario (Philippines)",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          121.2149,
+          13.86391
+        ],
+        "zoom": 11.2,
+        "population": 71644,
+        "cells": 254,
+        "layer": "cities/rosario-philippines/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.2149,
+            13.86391
+          ]
+        },
+        "properties": {
+          "id": "rosario-philippines",
+          "name": "Rosario (Philippines)",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 17.5,
+          "population": 71644
+        }
+      },
+      "summary": null
+    }
+  }
+}

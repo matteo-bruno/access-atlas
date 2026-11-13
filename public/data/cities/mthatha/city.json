@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mthatha",
+  "createdAt": "2026-10-08T15:58:38.033Z",
+  "updatedAt": "2026-10-08T15:58:38.033Z",
+  "meta": {
+    "name": "Mthatha",
+    "nameIt": "Mthatha",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mthatha.geojson",
+      "sha256": "7bb7cc3fd058f2266c268be6b8871ec81390353820e420f916eec9adc58ca217",
+      "size": 706395,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mthatha",
+    "name": "Mthatha",
+    "nameIt": "Mthatha",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      28.76645,
+      -31.59616
+    ],
+    "zoom": 10.7,
+    "population": 108807,
+    "grid": "cities/mthatha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mthatha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mthatha",
+        "name": "Mthatha",
+        "nameIt": "Mthatha",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          28.76645,
+          -31.59616
+        ],
+        "zoom": 10.7,
+        "population": 108807,
+        "cells": 601,
+        "layer": "cities/mthatha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.76645,
+            -31.59616
+          ]
+        },
+        "properties": {
+          "id": "mthatha",
+          "name": "Mthatha",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 57.5,
+          "population": 108807
+        }
+      },
+      "summary": null
+    }
+  }
+}

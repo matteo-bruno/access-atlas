@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "setif",
+  "createdAt": "2026-10-08T16:12:06.926Z",
+  "updatedAt": "2026-10-08T16:12:06.926Z",
+  "meta": {
+    "name": "Setif",
+    "nameIt": "Setif",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Setif.geojson",
+      "sha256": "aee0dbe3b4935f44351056231d0fbdae4e94362c3ee9ae6784add677583c315c",
+      "size": 499736,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "setif",
+    "name": "Setif",
+    "nameIt": "Setif",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      5.4163,
+      36.19318
+    ],
+    "zoom": 10.9,
+    "population": 356145,
+    "grid": "cities/setif/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/setif/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "setif",
+        "name": "Setif",
+        "nameIt": "Setif",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          5.4163,
+          36.19318
+        ],
+        "zoom": 10.9,
+        "population": 356145,
+        "cells": 437,
+        "layer": "cities/setif/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.4163,
+            36.19318
+          ]
+        },
+        "properties": {
+          "id": "setif",
+          "name": "Setif",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 356145
+        }
+      },
+      "summary": null
+    }
+  }
+}

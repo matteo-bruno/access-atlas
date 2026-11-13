@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ranong",
+  "createdAt": "2026-10-08T16:08:17.573Z",
+  "updatedAt": "2026-10-08T16:08:17.573Z",
+  "meta": {
+    "name": "Ranong",
+    "nameIt": "Ranong",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ranong.geojson",
+      "sha256": "46bfad14d2fb06a7d31ad14d1ce209e4cf51afe477736f009a33030f34c3822d",
+      "size": 236581,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ranong",
+    "name": "Ranong",
+    "nameIt": "Ranong",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      98.62598,
+      9.96
+    ],
+    "zoom": 11,
+    "population": 139390,
+    "grid": "cities/ranong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ranong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ranong",
+        "name": "Ranong",
+        "nameIt": "Ranong",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          98.62598,
+          9.96
+        ],
+        "zoom": 11,
+        "population": 139390,
+        "cells": 206,
+        "layer": "cities/ranong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            98.62598,
+            9.96
+          ]
+        },
+        "properties": {
+          "id": "ranong",
+          "name": "Ranong",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 22.6,
+          "population": 139390
+        }
+      },
+      "summary": null
+    }
+  }
+}

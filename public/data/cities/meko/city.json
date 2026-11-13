@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "meko",
+  "createdAt": "2026-10-08T15:56:27.148Z",
+  "updatedAt": "2026-10-08T15:56:27.148Z",
+  "meta": {
+    "name": "Meko",
+    "nameIt": "Meko",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Meko.geojson",
+      "sha256": "53180996263c3a20d6485a082702dbcee5646ed7960106240c6ddfa52b3ad5a5",
+      "size": 118883,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "meko",
+    "name": "Meko",
+    "nameIt": "Meko",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      2.84155,
+      7.44827
+    ],
+    "zoom": 12,
+    "population": 33645,
+    "grid": "cities/meko/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/meko/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "meko",
+        "name": "Meko",
+        "nameIt": "Meko",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          2.84155,
+          7.44827
+        ],
+        "zoom": 12,
+        "population": 33645,
+        "cells": 103,
+        "layer": "cities/meko/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.84155,
+            7.44827
+          ]
+        },
+        "properties": {
+          "id": "meko",
+          "name": "Meko",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 33645
+        }
+      },
+      "summary": null
+    }
+  }
+}

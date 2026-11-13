@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pretoria",
+  "createdAt": "2026-10-08T16:06:33.140Z",
+  "updatedAt": "2026-10-08T16:06:33.140Z",
+  "meta": {
+    "name": "Pretoria",
+    "nameIt": "Pretoria",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pretoria.geojson",
+      "sha256": "6b3597678fd8ac7778296bce7cebc362e61734691975ec79225fdd939c394455",
+      "size": 4696863,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pretoria",
+    "name": "Pretoria",
+    "nameIt": "Pretoria",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      28.2466,
+      -25.74372
+    ],
+    "zoom": 8.6,
+    "population": 1603441,
+    "grid": "cities/pretoria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pretoria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pretoria",
+        "name": "Pretoria",
+        "nameIt": "Pretoria",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          28.2466,
+          -25.74372
+        ],
+        "zoom": 8.6,
+        "population": 1603441,
+        "cells": 4029,
+        "layer": "cities/pretoria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.2466,
+            -25.74372
+          ]
+        },
+        "properties": {
+          "id": "pretoria",
+          "name": "Pretoria",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 32.6,
+          "population": 1603441
+        }
+      },
+      "summary": null
+    }
+  }
+}

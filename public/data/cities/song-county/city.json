@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "song-county",
+  "createdAt": "2026-10-08T16:14:23.558Z",
+  "updatedAt": "2026-10-08T16:14:23.558Z",
+  "meta": {
+    "name": "Song County",
+    "nameIt": "Song County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Song County.geojson",
+      "sha256": "95da6c03cb246eb2d724806e53a6d3b87c153a26ee9fc432e28c8b84f782721d",
+      "size": 375173,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "song-county",
+    "name": "Song County",
+    "nameIt": "Song County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.08392,
+      34.13534
+    ],
+    "zoom": 10.8,
+    "population": 169725,
+    "grid": "cities/song-county/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/song-county/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "song-county",
+        "name": "Song County",
+        "nameIt": "Song County",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.08392,
+          34.13534
+        ],
+        "zoom": 10.8,
+        "population": 169725,
+        "cells": 322,
+        "layer": "cities/song-county/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.08392,
+            34.13534
+          ]
+        },
+        "properties": {
+          "id": "song-county",
+          "name": "Song County",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 169725
+        }
+      },
+      "summary": null
+    }
+  }
+}

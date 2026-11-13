@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kladno",
+  "createdAt": "2026-10-08T15:47:27.240Z",
+  "updatedAt": "2026-10-08T15:47:27.240Z",
+  "meta": {
+    "name": "Kladno",
+    "nameIt": "Kladno",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kladno.geojson",
+      "sha256": "a7fd25381c3f2650d682caef3ea73bbfd5750781994d30c9418683aa63d801b3",
+      "size": 241746,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kladno",
+    "name": "Kladno",
+    "nameIt": "Kladno",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ",
+    "center": [
+      14.1056,
+      50.14585
+    ],
+    "zoom": 11.4,
+    "population": 58599,
+    "grid": "cities/kladno/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kladno/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kladno",
+        "name": "Kladno",
+        "nameIt": "Kladno",
+        "region": "Czech Republic",
+        "regionIt": "Repubblica Ceca",
+        "country": "CZ",
+        "center": [
+          14.1056,
+          50.14585
+        ],
+        "zoom": 11.4,
+        "population": 58599,
+        "cells": 211,
+        "layer": "cities/kladno/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.1056,
+            50.14585
+          ]
+        },
+        "properties": {
+          "id": "kladno",
+          "name": "Kladno",
+          "country": "CZ",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 58599
+        }
+      },
+      "summary": null
+    }
+  }
+}

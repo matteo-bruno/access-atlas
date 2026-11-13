@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bafoussam",
+  "createdAt": "2026-10-08T15:12:38.499Z",
+  "updatedAt": "2026-10-08T15:12:38.499Z",
+  "meta": {
+    "name": "Bafoussam",
+    "nameIt": "Bafoussam",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bafoussam.geojson",
+      "sha256": "53f9ed7486380f7ccb6f141fd23cb5a8dce53918c1e5d10a4ffb2543c25cb886",
+      "size": 734019,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bafoussam",
+    "name": "Bafoussam",
+    "nameIt": "Bafoussam",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      10.41398,
+      5.48845
+    ],
+    "zoom": 10.6,
+    "population": 284005,
+    "grid": "cities/bafoussam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bafoussam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bafoussam",
+        "name": "Bafoussam",
+        "nameIt": "Bafoussam",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          10.41398,
+          5.48845
+        ],
+        "zoom": 10.6,
+        "population": 284005,
+        "cells": 634,
+        "layer": "cities/bafoussam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.41398,
+            5.48845
+          ]
+        },
+        "properties": {
+          "id": "bafoussam",
+          "name": "Bafoussam",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 27.4,
+          "population": 284005
+        }
+      },
+      "summary": null
+    }
+  }
+}

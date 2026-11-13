@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "musoma",
+  "createdAt": "2026-10-08T15:59:08.859Z",
+  "updatedAt": "2026-10-08T15:59:08.859Z",
+  "meta": {
+    "name": "Musoma",
+    "nameIt": "Musoma",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Musoma.geojson",
+      "sha256": "dc0ac945d9bb1de7029cc869d381bc2288358706cd87c449343686e84bc23b97",
+      "size": 484283,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "musoma",
+    "name": "Musoma",
+    "nameIt": "Musoma",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      33.80586,
+      -1.51976
+    ],
+    "zoom": 10.8,
+    "population": 162985,
+    "grid": "cities/musoma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/musoma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "musoma",
+        "name": "Musoma",
+        "nameIt": "Musoma",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          33.80586,
+          -1.51976
+        ],
+        "zoom": 10.8,
+        "population": 162985,
+        "cells": 414,
+        "layer": "cities/musoma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.80586,
+            -1.51976
+          ]
+        },
+        "properties": {
+          "id": "musoma",
+          "name": "Musoma",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 28.4,
+          "population": 162985
+        }
+      },
+      "summary": null
+    }
+  }
+}

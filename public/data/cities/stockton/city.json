@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "stockton",
+  "createdAt": "2026-10-08T16:14:51.223Z",
+  "updatedAt": "2026-10-08T16:14:51.223Z",
+  "meta": {
+    "name": "Stockton",
+    "nameIt": "Stockton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Stockton.geojson",
+      "sha256": "19a28a169cc60bf561752c9e1aa7f2c8e8b0b7ccd7a19da30db58d5b63e1e92a",
+      "size": 1701315,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "stockton",
+    "name": "Stockton",
+    "nameIt": "Stockton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -121.30264,
+      37.98354
+    ],
+    "zoom": 9.9,
+    "population": 402536,
+    "grid": "cities/stockton/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/stockton/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "stockton",
+        "name": "Stockton",
+        "nameIt": "Stockton",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -121.30264,
+          37.98354
+        ],
+        "zoom": 9.9,
+        "population": 402536,
+        "cells": 1459,
+        "layer": "cities/stockton/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -121.30264,
+            37.98354
+          ]
+        },
+        "properties": {
+          "id": "stockton",
+          "name": "Stockton",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 33.7,
+          "population": 402536
+        }
+      },
+      "summary": null
+    }
+  }
+}

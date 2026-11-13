@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chelyabinsk",
+  "createdAt": "2026-10-08T15:24:10.947Z",
+  "updatedAt": "2026-10-08T15:24:10.947Z",
+  "meta": {
+    "name": "Chelyabinsk",
+    "nameIt": "Chelyabinsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chelyabinsk.geojson",
+      "sha256": "006633bb771cd991cabd6679d3bc90c9b6cdc3742ac173ecfda328ffdaacb5c9",
+      "size": 2167615,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chelyabinsk",
+    "name": "Chelyabinsk",
+    "nameIt": "Chelyabinsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      61.40519,
+      55.155
+    ],
+    "zoom": 9.5,
+    "population": 942817,
+    "grid": "cities/chelyabinsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chelyabinsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chelyabinsk",
+        "name": "Chelyabinsk",
+        "nameIt": "Chelyabinsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          61.40519,
+          55.155
+        ],
+        "zoom": 9.5,
+        "population": 942817,
+        "cells": 1895,
+        "layer": "cities/chelyabinsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            61.40519,
+            55.155
+          ]
+        },
+        "properties": {
+          "id": "chelyabinsk",
+          "name": "Chelyabinsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 10.9,
+          "population": 942817
+        }
+      },
+      "summary": null
+    }
+  }
+}

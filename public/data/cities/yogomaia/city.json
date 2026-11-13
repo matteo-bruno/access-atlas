@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yogomaia",
+  "createdAt": "2026-10-08T16:24:03.979Z",
+  "updatedAt": "2026-10-08T16:24:03.979Z",
+  "meta": {
+    "name": "Yogomaia",
+    "nameIt": "Yogomaia",
+    "region": "Sierra Leone",
+    "regionIt": "Sierra Leone",
+    "country": "SL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yogomaia.geojson",
+      "sha256": "8b3fc9a828b36bc5280f4a45f02dc5c408422c3bf48e5e66f5e728994ccdb986",
+      "size": 119026,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yogomaia",
+    "name": "Yogomaia",
+    "nameIt": "Yogomaia",
+    "region": "Sierra Leone",
+    "regionIt": "Sierra Leone",
+    "country": "SL",
+    "center": [
+      -11.55103,
+      9.58612
+    ],
+    "zoom": 12,
+    "population": 43770,
+    "grid": "cities/yogomaia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yogomaia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yogomaia",
+        "name": "Yogomaia",
+        "nameIt": "Yogomaia",
+        "region": "Sierra Leone",
+        "regionIt": "Sierra Leone",
+        "country": "SL",
+        "center": [
+          -11.55103,
+          9.58612
+        ],
+        "zoom": 12,
+        "population": 43770,
+        "cells": 102,
+        "layer": "cities/yogomaia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -11.55103,
+            9.58612
+          ]
+        },
+        "properties": {
+          "id": "yogomaia",
+          "name": "Yogomaia",
+          "country": "SL",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 43770
+        }
+      },
+      "summary": null
+    }
+  }
+}

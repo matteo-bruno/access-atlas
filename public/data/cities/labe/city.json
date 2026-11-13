@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "labe",
+  "createdAt": "2026-10-08T15:49:29.014Z",
+  "updatedAt": "2026-10-08T15:49:29.014Z",
+  "meta": {
+    "name": "Labé",
+    "nameIt": "Labé",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Labé.geojson",
+      "sha256": "5a0498ae6460d4a0c812206f219b302514ece8cf5ff684a6cf523556103789fe",
+      "size": 692757,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "labe",
+    "name": "Labé",
+    "nameIt": "Labé",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN",
+    "center": [
+      -12.2875,
+      11.32047
+    ],
+    "zoom": 10.8,
+    "population": 161442,
+    "grid": "cities/labe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/labe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "labe",
+        "name": "Labé",
+        "nameIt": "Labé",
+        "region": "Guinea",
+        "regionIt": "Guinea",
+        "country": "GN",
+        "center": [
+          -12.2875,
+          11.32047
+        ],
+        "zoom": 10.8,
+        "population": 161442,
+        "cells": 588,
+        "layer": "cities/labe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -12.2875,
+            11.32047
+          ]
+        },
+        "properties": {
+          "id": "labe",
+          "name": "Labé",
+          "country": "GN",
+          "isStudy": true,
+          "proximityMinutes": 31.2,
+          "population": 161442
+        }
+      },
+      "summary": null
+    }
+  }
+}

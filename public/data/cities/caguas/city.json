@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "caguas",
+  "createdAt": "2026-10-08T15:21:43.533Z",
+  "updatedAt": "2026-10-08T15:21:43.533Z",
+  "meta": {
+    "name": "Caguas",
+    "nameIt": "Caguas",
+    "region": "Puerto Rico",
+    "regionIt": "Porto Rico",
+    "country": "PR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Caguas.geojson",
+      "sha256": "22454471adc452680e031089e840d9d3c34ac1f6202ed283130956c59523604f",
+      "size": 565382,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "caguas",
+    "name": "Caguas",
+    "nameIt": "Caguas",
+    "region": "Puerto Rico",
+    "regionIt": "Porto Rico",
+    "country": "PR",
+    "center": [
+      -66.03185,
+      18.22994
+    ],
+    "zoom": 11.1,
+    "population": 83927,
+    "grid": "cities/caguas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 172
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/caguas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "caguas",
+        "name": "Caguas",
+        "nameIt": "Caguas",
+        "region": "Puerto Rico",
+        "regionIt": "Porto Rico",
+        "country": "PR",
+        "center": [
+          -66.03185,
+          18.22994
+        ],
+        "zoom": 11.1,
+        "population": 83927,
+        "cells": 489,
+        "layer": "cities/caguas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 172
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -66.03185,
+            18.22994
+          ]
+        },
+        "properties": {
+          "id": "caguas",
+          "name": "Caguas",
+          "country": "PR",
+          "isStudy": true,
+          "proximityMinutes": 20.5,
+          "population": 83927
+        }
+      },
+      "summary": null
+    }
+  }
+}

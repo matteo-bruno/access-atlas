@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "saratov",
+  "createdAt": "2026-10-08T16:11:26.165Z",
+  "updatedAt": "2026-10-08T16:11:26.165Z",
+  "meta": {
+    "name": "Saratov",
+    "nameIt": "Saratov",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Saratov.geojson",
+      "sha256": "8bbf169c8d6bf2755b7022bdb7239119bc17a60dc4bb34d6f3f5bd64f9619f57",
+      "size": 1519685,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "saratov",
+    "name": "Saratov",
+    "nameIt": "Saratov",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      45.98017,
+      51.5451
+    ],
+    "zoom": 9.7,
+    "population": 774652,
+    "grid": "cities/saratov/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/saratov/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "saratov",
+        "name": "Saratov",
+        "nameIt": "Saratov",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          45.98017,
+          51.5451
+        ],
+        "zoom": 9.7,
+        "population": 774652,
+        "cells": 1330,
+        "layer": "cities/saratov/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            45.98017,
+            51.5451
+          ]
+        },
+        "properties": {
+          "id": "saratov",
+          "name": "Saratov",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 12.8,
+          "population": 774652
+        }
+      },
+      "summary": null
+    }
+  }
+}

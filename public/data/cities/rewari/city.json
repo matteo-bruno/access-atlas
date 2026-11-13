@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rewari",
+  "createdAt": "2026-10-08T16:08:43.810Z",
+  "updatedAt": "2026-10-08T16:08:43.810Z",
+  "meta": {
+    "name": "Rewari",
+    "nameIt": "Rewari",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rewari.geojson",
+      "sha256": "4178260d17322af1c4b73f2f1edb8497843b3a2519189c596fd1984433eeb92b",
+      "size": 305189,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rewari",
+    "name": "Rewari",
+    "nameIt": "Rewari",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.61935,
+      28.19355
+    ],
+    "zoom": 11.2,
+    "population": 183982,
+    "grid": "cities/rewari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rewari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rewari",
+        "name": "Rewari",
+        "nameIt": "Rewari",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.61935,
+          28.19355
+        ],
+        "zoom": 11.2,
+        "population": 183982,
+        "cells": 263,
+        "layer": "cities/rewari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.61935,
+            28.19355
+          ]
+        },
+        "properties": {
+          "id": "rewari",
+          "name": "Rewari",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 183982
+        }
+      },
+      "summary": null
+    }
+  }
+}

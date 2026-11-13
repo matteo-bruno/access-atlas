@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-hillah",
+  "createdAt": "2026-10-08T15:04:16.861Z",
+  "updatedAt": "2026-10-08T15:04:16.861Z",
+  "meta": {
+    "name": "Al Hillah",
+    "nameIt": "Al Hillah",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Hillah.geojson",
+      "sha256": "c1b1249063450651508b76bc39e7201ec8dfe0cd1626b7a1fa4acc63d18e2fc5",
+      "size": 2299753,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-hillah",
+    "name": "Al Hillah",
+    "nameIt": "Al Hillah",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      44.38959,
+      32.47902
+    ],
+    "zoom": 9.3,
+    "population": 773330,
+    "grid": "cities/al-hillah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-hillah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-hillah",
+        "name": "Al Hillah",
+        "nameIt": "Al Hillah",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          44.38959,
+          32.47902
+        ],
+        "zoom": 9.3,
+        "population": 773330,
+        "cells": 1982,
+        "layer": "cities/al-hillah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.38959,
+            32.47902
+          ]
+        },
+        "properties": {
+          "id": "al-hillah",
+          "name": "Al Hillah",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 29.3,
+          "population": 773330
+        }
+      },
+      "summary": null
+    }
+  }
+}

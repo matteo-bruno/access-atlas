@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "athani",
+  "createdAt": "2026-10-08T15:10:53.141Z",
+  "updatedAt": "2026-10-08T15:10:53.141Z",
+  "meta": {
+    "name": "Athani",
+    "nameIt": "Athani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Athani.geojson",
+      "sha256": "cd39d66e5a7a6b5a41e85952534df8caafe1295488f0a7df60d1cc0ca9c2458a",
+      "size": 123889,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "athani",
+    "name": "Athani",
+    "nameIt": "Athani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.06268,
+      16.72415
+    ],
+    "zoom": 11.9,
+    "population": 42852,
+    "grid": "cities/athani/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/athani/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "athani",
+        "name": "Athani",
+        "nameIt": "Athani",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.06268,
+          16.72415
+        ],
+        "zoom": 11.9,
+        "population": 42852,
+        "cells": 107,
+        "layer": "cities/athani/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.06268,
+            16.72415
+          ]
+        },
+        "properties": {
+          "id": "athani",
+          "name": "Athani",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 42852
+        }
+      },
+      "summary": null
+    }
+  }
+}

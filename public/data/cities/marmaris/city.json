@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "marmaris",
+  "createdAt": "2026-10-08T15:55:19.006Z",
+  "updatedAt": "2026-10-08T15:55:19.006Z",
+  "meta": {
+    "name": "Marmaris",
+    "nameIt": "Marmaris",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Marmaris.geojson",
+      "sha256": "2f012a41538c2938c12c21ae06c06475d495b0aa440b97da6dae1825dd9c70ff",
+      "size": 129474,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "marmaris",
+    "name": "Marmaris",
+    "nameIt": "Marmaris",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      28.25672,
+      36.85456
+    ],
+    "zoom": 11.6,
+    "population": 66305,
+    "grid": "cities/marmaris/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/marmaris/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "marmaris",
+        "name": "Marmaris",
+        "nameIt": "Marmaris",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          28.25672,
+          36.85456
+        ],
+        "zoom": 11.6,
+        "population": 66305,
+        "cells": 113,
+        "layer": "cities/marmaris/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.25672,
+            36.85456
+          ]
+        },
+        "properties": {
+          "id": "marmaris",
+          "name": "Marmaris",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 11,
+          "population": 66305
+        }
+      },
+      "summary": null
+    }
+  }
+}

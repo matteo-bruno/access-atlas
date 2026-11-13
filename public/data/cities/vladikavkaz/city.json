@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vladikavkaz",
+  "createdAt": "2026-10-08T16:20:58.503Z",
+  "updatedAt": "2026-10-08T16:20:58.503Z",
+  "meta": {
+    "name": "Vladikavkaz",
+    "nameIt": "Vladikavkaz",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vladikavkaz.geojson",
+      "sha256": "dde7e3f2a49190a97203d46bbf16f6c63ea3a3995e6b27f9ec3c675d4872d02d",
+      "size": 712883,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vladikavkaz",
+    "name": "Vladikavkaz",
+    "nameIt": "Vladikavkaz",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      44.66594,
+      43.04307
+    ],
+    "zoom": 10.4,
+    "population": 277935,
+    "grid": "cities/vladikavkaz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vladikavkaz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vladikavkaz",
+        "name": "Vladikavkaz",
+        "nameIt": "Vladikavkaz",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          44.66594,
+          43.04307
+        ],
+        "zoom": 10.4,
+        "population": 277935,
+        "cells": 623,
+        "layer": "cities/vladikavkaz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.66594,
+            43.04307
+          ]
+        },
+        "properties": {
+          "id": "vladikavkaz",
+          "name": "Vladikavkaz",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 13.2,
+          "population": 277935
+        }
+      },
+      "summary": null
+    }
+  }
+}

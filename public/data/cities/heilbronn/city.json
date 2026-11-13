@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "heilbronn",
+  "createdAt": "2026-10-08T15:38:16.041Z",
+  "updatedAt": "2026-10-08T15:38:16.041Z",
+  "meta": {
+    "name": "Heilbronn",
+    "nameIt": "Heilbronn",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Heilbronn.geojson",
+      "sha256": "90ec8341913585da9aa28868054ebaf4a61430c57ff00180ab817b34284ce616",
+      "size": 526023,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "heilbronn",
+    "name": "Heilbronn",
+    "nameIt": "Heilbronn",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      9.21542,
+      49.16
+    ],
+    "zoom": 10.2,
+    "population": 126415,
+    "grid": "cities/heilbronn/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/heilbronn/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "heilbronn",
+        "name": "Heilbronn",
+        "nameIt": "Heilbronn",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.21542,
+          49.16
+        ],
+        "zoom": 10.2,
+        "population": 126415,
+        "cells": 464,
+        "layer": "cities/heilbronn/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.21542,
+            49.16
+          ]
+        },
+        "properties": {
+          "id": "heilbronn",
+          "name": "Heilbronn",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 9.7,
+          "population": 126415
+        }
+      },
+      "summary": null
+    }
+  }
+}

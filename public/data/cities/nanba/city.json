@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nanba",
+  "createdAt": "2026-10-08T15:59:58.210Z",
+  "updatedAt": "2026-10-08T15:59:58.210Z",
+  "meta": {
+    "name": "Nanba",
+    "nameIt": "Nanba",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nanba.geojson",
+      "sha256": "83deada41725cfa5a1a4d2a404587b8be728167ed4886f542319654a6bda1b16",
+      "size": 96985,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nanba",
+    "name": "Nanba",
+    "nameIt": "Nanba",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      108.00243,
+      31.36517
+    ],
+    "zoom": 12,
+    "population": 65761,
+    "grid": "cities/nanba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nanba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nanba",
+        "name": "Nanba",
+        "nameIt": "Nanba",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          108.00243,
+          31.36517
+        ],
+        "zoom": 12,
+        "population": 65761,
+        "cells": 83,
+        "layer": "cities/nanba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.00243,
+            31.36517
+          ]
+        },
+        "properties": {
+          "id": "nanba",
+          "name": "Nanba",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 65761
+        }
+      },
+      "summary": null
+    }
+  }
+}

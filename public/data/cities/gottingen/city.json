@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gottingen",
+  "createdAt": "2026-10-08T15:37:03.403Z",
+  "updatedAt": "2026-10-08T15:37:03.403Z",
+  "meta": {
+    "name": "Göttingen",
+    "nameIt": "Göttingen",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Göttingen.geojson",
+      "sha256": "85965b60ec6e505de20a652c60e26e9b214bd1f03462c30cf7b341cb530ed89e",
+      "size": 369553,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gottingen",
+    "name": "Göttingen",
+    "nameIt": "Göttingen",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      9.93099,
+      51.53694
+    ],
+    "zoom": 11.1,
+    "population": 96516,
+    "grid": "cities/gottingen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gottingen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gottingen",
+        "name": "Göttingen",
+        "nameIt": "Göttingen",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.93099,
+          51.53694
+        ],
+        "zoom": 11.1,
+        "population": 96516,
+        "cells": 327,
+        "layer": "cities/gottingen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.93099,
+            51.53694
+          ]
+        },
+        "properties": {
+          "id": "gottingen",
+          "name": "Göttingen",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 6.1,
+          "population": 96516
+        }
+      },
+      "summary": null
+    }
+  }
+}

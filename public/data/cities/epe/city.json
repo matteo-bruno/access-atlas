@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "epe",
+  "createdAt": "2026-10-08T15:32:20.597Z",
+  "updatedAt": "2026-10-08T15:32:20.597Z",
+  "meta": {
+    "name": "Epe",
+    "nameIt": "Epe",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Epe.geojson",
+      "sha256": "d4d2cfff43bfe1e2b8d44adc7815e5f66ff9a4248b08fb79be6edf00479336b1",
+      "size": 345251,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "epe",
+    "name": "Epe",
+    "nameIt": "Epe",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      3.98132,
+      6.59813
+    ],
+    "zoom": 11.1,
+    "population": 138144,
+    "grid": "cities/epe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/epe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "epe",
+        "name": "Epe",
+        "nameIt": "Epe",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          3.98132,
+          6.59813
+        ],
+        "zoom": 11.1,
+        "population": 138144,
+        "cells": 299,
+        "layer": "cities/epe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.98132,
+            6.59813
+          ]
+        },
+        "properties": {
+          "id": "epe",
+          "name": "Epe",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 138144
+        }
+      },
+      "summary": null
+    }
+  }
+}

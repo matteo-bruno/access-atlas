@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "calapan",
+  "createdAt": "2026-10-08T15:21:53.124Z",
+  "updatedAt": "2026-10-08T15:21:53.124Z",
+  "meta": {
+    "name": "Calapan",
+    "nameIt": "Calapan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Calapan.geojson",
+      "sha256": "579e680df1adc2507d8a69886c5e0302f1dfa60692b14c5fefbdc49155312657",
+      "size": 274038,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "calapan",
+    "name": "Calapan",
+    "nameIt": "Calapan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      121.17997,
+      13.40676
+    ],
+    "zoom": 11.2,
+    "population": 78124,
+    "grid": "cities/calapan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/calapan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "calapan",
+        "name": "Calapan",
+        "nameIt": "Calapan",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          121.17997,
+          13.40676
+        ],
+        "zoom": 11.2,
+        "population": 78124,
+        "cells": 235,
+        "layer": "cities/calapan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.17997,
+            13.40676
+          ]
+        },
+        "properties": {
+          "id": "calapan",
+          "name": "Calapan",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 15.2,
+          "population": 78124
+        }
+      },
+      "summary": null
+    }
+  }
+}

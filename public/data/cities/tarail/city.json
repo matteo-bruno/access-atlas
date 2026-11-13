@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tarail",
+  "createdAt": "2026-10-08T16:16:42.822Z",
+  "updatedAt": "2026-10-08T16:16:42.822Z",
+  "meta": {
+    "name": "Tarail",
+    "nameIt": "Tarail",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tarail.geojson",
+      "sha256": "e6bf5430ce42084ac0ce6cabd191c7e35752bdd90c6ddca8a8006778e90ea61d",
+      "size": 171370,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tarail",
+    "name": "Tarail",
+    "nameIt": "Tarail",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      90.89556,
+      24.55094
+    ],
+    "zoom": 11,
+    "population": 48472,
+    "grid": "cities/tarail/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tarail/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tarail",
+        "name": "Tarail",
+        "nameIt": "Tarail",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          90.89556,
+          24.55094
+        ],
+        "zoom": 11,
+        "population": 48472,
+        "cells": 148,
+        "layer": "cities/tarail/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            90.89556,
+            24.55094
+          ]
+        },
+        "properties": {
+          "id": "tarail",
+          "name": "Tarail",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 48472
+        }
+      },
+      "summary": null
+    }
+  }
+}

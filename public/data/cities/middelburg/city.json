@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "middelburg",
+  "createdAt": "2026-10-08T15:56:58.901Z",
+  "updatedAt": "2026-10-08T15:56:58.901Z",
+  "meta": {
+    "name": "Middelburg",
+    "nameIt": "Middelburg",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Middelburg.geojson",
+      "sha256": "9e84f7f1bdded7d7faee3129e9f64139564ba92379839225792b76cd98b01fa9",
+      "size": 609503,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "middelburg",
+    "name": "Middelburg",
+    "nameIt": "Middelburg",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      29.45329,
+      -25.7699
+    ],
+    "zoom": 10.6,
+    "population": 118854,
+    "grid": "cities/middelburg/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/middelburg/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "middelburg",
+        "name": "Middelburg",
+        "nameIt": "Middelburg",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          29.45329,
+          -25.7699
+        ],
+        "zoom": 10.6,
+        "population": 118854,
+        "cells": 519,
+        "layer": "cities/middelburg/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.45329,
+            -25.7699
+          ]
+        },
+        "properties": {
+          "id": "middelburg",
+          "name": "Middelburg",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 35.2,
+          "population": 118854
+        }
+      },
+      "summary": null
+    }
+  }
+}

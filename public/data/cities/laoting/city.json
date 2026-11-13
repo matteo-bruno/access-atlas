@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "laoting",
+  "createdAt": "2026-10-08T15:50:11.571Z",
+  "updatedAt": "2026-10-08T15:50:11.571Z",
+  "meta": {
+    "name": "Laoting",
+    "nameIt": "Laoting",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Laoting.geojson",
+      "sha256": "90ba07edbb0eebcc20cf1358233f17be07961227d53e27d621f5e3700f3b5357",
+      "size": 430374,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "laoting",
+    "name": "Laoting",
+    "nameIt": "Laoting",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.89834,
+      39.42311
+    ],
+    "zoom": 11.3,
+    "population": 89345,
+    "grid": "cities/laoting/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 166
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/laoting/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "laoting",
+        "name": "Laoting",
+        "nameIt": "Laoting",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.89834,
+          39.42311
+        ],
+        "zoom": 11.3,
+        "population": 89345,
+        "cells": 370,
+        "layer": "cities/laoting/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 166
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.89834,
+            39.42311
+          ]
+        },
+        "properties": {
+          "id": "laoting",
+          "name": "Laoting",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 14.6,
+          "population": 89345
+        }
+      },
+      "summary": null
+    }
+  }
+}

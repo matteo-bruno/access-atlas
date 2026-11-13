@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dindigul",
+  "createdAt": "2026-10-08T15:30:04.571Z",
+  "updatedAt": "2026-10-08T15:30:04.571Z",
+  "meta": {
+    "name": "Dindigul",
+    "nameIt": "Dindigul",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dindigul.geojson",
+      "sha256": "4e135f2f967a8d193314169a2dec91c6c18cc953709d7a8cf6ceca46a8073625",
+      "size": 535777,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dindigul",
+    "name": "Dindigul",
+    "nameIt": "Dindigul",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.97759,
+      10.3651
+    ],
+    "zoom": 11,
+    "population": 256181,
+    "grid": "cities/dindigul/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dindigul/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dindigul",
+        "name": "Dindigul",
+        "nameIt": "Dindigul",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.97759,
+          10.3651
+        ],
+        "zoom": 11,
+        "population": 256181,
+        "cells": 462,
+        "layer": "cities/dindigul/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.97759,
+            10.3651
+          ]
+        },
+        "properties": {
+          "id": "dindigul",
+          "name": "Dindigul",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 26.7,
+          "population": 256181
+        }
+      },
+      "summary": null
+    }
+  }
+}

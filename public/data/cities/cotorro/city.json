@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cotorro",
+  "createdAt": "2026-10-08T15:26:42.209Z",
+  "updatedAt": "2026-10-08T15:26:42.209Z",
+  "meta": {
+    "name": "Cotorro",
+    "nameIt": "Cotorro",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cotorro.geojson",
+      "sha256": "391e7e78d18ec62bbef7f5733f67390aba0ea9a39c7e42dbdb4bda36a64f2b30",
+      "size": 190762,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cotorro",
+    "name": "Cotorro",
+    "nameIt": "Cotorro",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU",
+    "center": [
+      -82.25984,
+      23.04107
+    ],
+    "zoom": 11.3,
+    "population": 54866,
+    "grid": "cities/cotorro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cotorro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cotorro",
+        "name": "Cotorro",
+        "nameIt": "Cotorro",
+        "region": "Cuba",
+        "regionIt": "Cuba",
+        "country": "CU",
+        "center": [
+          -82.25984,
+          23.04107
+        ],
+        "zoom": 11.3,
+        "population": 54866,
+        "cells": 164,
+        "layer": "cities/cotorro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.25984,
+            23.04107
+          ]
+        },
+        "properties": {
+          "id": "cotorro",
+          "name": "Cotorro",
+          "country": "CU",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 54866
+        }
+      },
+      "summary": null
+    }
+  }
+}

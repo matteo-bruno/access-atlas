@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vaddu",
+  "createdAt": "2026-10-08T16:20:16.129Z",
+  "updatedAt": "2026-10-08T16:20:16.129Z",
+  "meta": {
+    "name": "Vaddu",
+    "nameIt": "Vaddu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vaddu.geojson",
+      "sha256": "12605168bb70cc260695fdf88e7a199c746c0c68d1a9706155c3044ecd53df84",
+      "size": 249361,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vaddu",
+    "name": "Vaddu",
+    "nameIt": "Vaddu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.659,
+      15.18197
+    ],
+    "zoom": 11.2,
+    "population": 70596,
+    "grid": "cities/vaddu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vaddu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vaddu",
+        "name": "Vaddu",
+        "nameIt": "Vaddu",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.659,
+          15.18197
+        ],
+        "zoom": 11.2,
+        "population": 70596,
+        "cells": 215,
+        "layer": "cities/vaddu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.659,
+            15.18197
+          ]
+        },
+        "properties": {
+          "id": "vaddu",
+          "name": "Vaddu",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 70596
+        }
+      },
+      "summary": null
+    }
+  }
+}

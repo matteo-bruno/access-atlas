@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "burton-latimer",
+  "createdAt": "2026-10-08T15:21:07.478Z",
+  "updatedAt": "2026-10-08T15:21:07.478Z",
+  "meta": {
+    "name": "Burton Latimer",
+    "nameIt": "Burton Latimer",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Burton Latimer.geojson",
+      "sha256": "c96fa4b02ed5364dd82e41181968d705743e8ea7b55b5438cc3abcd7cdcba905",
+      "size": 264621,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "burton-latimer",
+    "name": "Burton Latimer",
+    "nameIt": "Burton Latimer",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.71132,
+      52.39251
+    ],
+    "zoom": 11.2,
+    "population": 72910,
+    "grid": "cities/burton-latimer/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/burton-latimer/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "burton-latimer",
+        "name": "Burton Latimer",
+        "nameIt": "Burton Latimer",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.71132,
+          52.39251
+        ],
+        "zoom": 11.2,
+        "population": 72910,
+        "cells": 229,
+        "layer": "cities/burton-latimer/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.71132,
+            52.39251
+          ]
+        },
+        "properties": {
+          "id": "burton-latimer",
+          "name": "Burton Latimer",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 72910
+        }
+      },
+      "summary": null
+    }
+  }
+}

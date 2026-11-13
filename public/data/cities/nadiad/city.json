@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nadiad",
+  "createdAt": "2026-10-08T15:59:34.838Z",
+  "updatedAt": "2026-10-08T15:59:34.838Z",
+  "meta": {
+    "name": "Nadiad",
+    "nameIt": "Nadiad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nadiad.geojson",
+      "sha256": "860d755fc018af5cc044be9768b5c27dafadbcd9d3bfa563510e9a6ee6ac242c",
+      "size": 387330,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nadiad",
+    "name": "Nadiad",
+    "nameIt": "Nadiad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.85904,
+      22.6942
+    ],
+    "zoom": 11,
+    "population": 217059,
+    "grid": "cities/nadiad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nadiad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nadiad",
+        "name": "Nadiad",
+        "nameIt": "Nadiad",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.85904,
+          22.6942
+        ],
+        "zoom": 11,
+        "population": 217059,
+        "cells": 334,
+        "layer": "cities/nadiad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.85904,
+            22.6942
+          ]
+        },
+        "properties": {
+          "id": "nadiad",
+          "name": "Nadiad",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 21.3,
+          "population": 217059
+        }
+      },
+      "summary": null
+    }
+  }
+}

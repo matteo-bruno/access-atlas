@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sangrur",
+  "createdAt": "2026-10-08T16:10:55.423Z",
+  "updatedAt": "2026-10-08T16:10:55.423Z",
+  "meta": {
+    "name": "Sangrur",
+    "nameIt": "Sangrur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sangrur.geojson",
+      "sha256": "504eb38ca46c7496bd9d657e39a471c2c145cc1b2653755d5dbd980e160dccde",
+      "size": 205149,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sangrur",
+    "name": "Sangrur",
+    "nameIt": "Sangrur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.84428,
+      30.2464
+    ],
+    "zoom": 11.6,
+    "population": 121504,
+    "grid": "cities/sangrur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sangrur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sangrur",
+        "name": "Sangrur",
+        "nameIt": "Sangrur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.84428,
+          30.2464
+        ],
+        "zoom": 11.6,
+        "population": 121504,
+        "cells": 177,
+        "layer": "cities/sangrur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.84428,
+            30.2464
+          ]
+        },
+        "properties": {
+          "id": "sangrur",
+          "name": "Sangrur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 15.8,
+          "population": 121504
+        }
+      },
+      "summary": null
+    }
+  }
+}

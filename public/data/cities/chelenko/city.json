@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chelenko",
+  "createdAt": "2026-10-08T15:24:09.110Z",
+  "updatedAt": "2026-10-08T15:24:09.110Z",
+  "meta": {
+    "name": "Chelenko",
+    "nameIt": "Chelenko",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chelenko.geojson",
+      "sha256": "93c83ec3e14e7c6a5b9049869d912d55fe5f9bc82496b8e90c31aa7f02f5d575",
+      "size": 87640,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chelenko",
+    "name": "Chelenko",
+    "nameIt": "Chelenko",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      41.5599,
+      9.39781
+    ],
+    "zoom": 12,
+    "population": 45808,
+    "grid": "cities/chelenko/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chelenko/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chelenko",
+        "name": "Chelenko",
+        "nameIt": "Chelenko",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          41.5599,
+          9.39781
+        ],
+        "zoom": 12,
+        "population": 45808,
+        "cells": 76,
+        "layer": "cities/chelenko/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            41.5599,
+            9.39781
+          ]
+        },
+        "properties": {
+          "id": "chelenko",
+          "name": "Chelenko",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 45808
+        }
+      },
+      "summary": null
+    }
+  }
+}

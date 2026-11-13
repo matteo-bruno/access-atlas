@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "seguela",
+  "createdAt": "2026-10-08T16:15:44.528Z",
+  "updatedAt": "2026-10-08T16:15:44.528Z",
+  "meta": {
+    "name": "Séguéla",
+    "nameIt": "Séguéla",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Séguéla.geojson",
+      "sha256": "70f04bfafad2f061ded7b19faa57161189a0911c44514a7a987878fed2023640",
+      "size": 192619,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "seguela",
+    "name": "Séguéla",
+    "nameIt": "Séguéla",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI",
+    "center": [
+      -6.6772,
+      7.9625
+    ],
+    "zoom": 11.9,
+    "population": 84485,
+    "grid": "cities/seguela/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/seguela/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "seguela",
+        "name": "Séguéla",
+        "nameIt": "Séguéla",
+        "region": "Ivory Coast",
+        "regionIt": "Costa d'Avorio",
+        "country": "CI",
+        "center": [
+          -6.6772,
+          7.9625
+        ],
+        "zoom": 11.9,
+        "population": 84485,
+        "cells": 166,
+        "layer": "cities/seguela/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -6.6772,
+            7.9625
+          ]
+        },
+        "properties": {
+          "id": "seguela",
+          "name": "Séguéla",
+          "country": "CI",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 84485
+        }
+      },
+      "summary": null
+    }
+  }
+}

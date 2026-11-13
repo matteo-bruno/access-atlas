@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fushan",
+  "createdAt": "2026-10-08T15:34:02.306Z",
+  "updatedAt": "2026-10-08T15:34:02.306Z",
+  "meta": {
+    "name": "Fushan",
+    "nameIt": "Fushan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fushan.geojson",
+      "sha256": "14b80ed3d4256bb25e0d44051414e51e309323a7d0566ffb21ebb49c0ad79ed9",
+      "size": 3956136,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fushan",
+    "name": "Fushan",
+    "nameIt": "Fushan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      121.30879,
+      37.5398
+    ],
+    "zoom": 9.4,
+    "population": 1309003,
+    "grid": "cities/fushan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 163
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fushan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fushan",
+        "name": "Fushan",
+        "nameIt": "Fushan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          121.30879,
+          37.5398
+        ],
+        "zoom": 9.4,
+        "population": 1309003,
+        "cells": 3413,
+        "layer": "cities/fushan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 163
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.30879,
+            37.5398
+          ]
+        },
+        "properties": {
+          "id": "fushan",
+          "name": "Fushan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 41.6,
+          "population": 1309003
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sumenep",
+  "createdAt": "2026-10-08T16:15:09.810Z",
+  "updatedAt": "2026-10-08T16:15:09.810Z",
+  "meta": {
+    "name": "Sumenep",
+    "nameIt": "Sumenep",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sumenep.geojson",
+      "sha256": "fca4fd1437b6e19804950e39f79bc54016c244df312b197025a5b1834d37e8d1",
+      "size": 231973,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sumenep",
+    "name": "Sumenep",
+    "nameIt": "Sumenep",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      113.86583,
+      -7.00865
+    ],
+    "zoom": 11.4,
+    "population": 76557,
+    "grid": "cities/sumenep/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sumenep/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sumenep",
+        "name": "Sumenep",
+        "nameIt": "Sumenep",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          113.86583,
+          -7.00865
+        ],
+        "zoom": 11.4,
+        "population": 76557,
+        "cells": 198,
+        "layer": "cities/sumenep/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.86583,
+            -7.00865
+          ]
+        },
+        "properties": {
+          "id": "sumenep",
+          "name": "Sumenep",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 76557
+        }
+      },
+      "summary": null
+    }
+  }
+}

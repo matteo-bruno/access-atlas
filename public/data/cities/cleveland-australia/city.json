@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cleveland-australia",
+  "createdAt": "2026-10-08T15:25:48.074Z",
+  "updatedAt": "2026-10-08T15:25:48.074Z",
+  "meta": {
+    "name": "Cleveland (Australia)",
+    "nameIt": "Cleveland (Australia)",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cleveland (Australia).geojson",
+      "sha256": "55f9bbf028991077eac41129b0e8f4d467124ad05b8d5beef8235793338569c1",
+      "size": 464390,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cleveland-australia",
+    "name": "Cleveland (Australia)",
+    "nameIt": "Cleveland (Australia)",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      153.24767,
+      -27.5184
+    ],
+    "zoom": 10.5,
+    "population": 62119,
+    "grid": "cities/cleveland-australia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cleveland-australia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cleveland-australia",
+        "name": "Cleveland (Australia)",
+        "nameIt": "Cleveland (Australia)",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          153.24767,
+          -27.5184
+        ],
+        "zoom": 10.5,
+        "population": 62119,
+        "cells": 398,
+        "layer": "cities/cleveland-australia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            153.24767,
+            -27.5184
+          ]
+        },
+        "properties": {
+          "id": "cleveland-australia",
+          "name": "Cleveland (Australia)",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 18.7,
+          "population": 62119
+        }
+      },
+      "summary": null
+    }
+  }
+}

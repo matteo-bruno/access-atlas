@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "darnah",
+  "createdAt": "2026-10-08T15:28:25.514Z",
+  "updatedAt": "2026-10-08T15:28:25.514Z",
+  "meta": {
+    "name": "Darnah",
+    "nameIt": "Darnah",
+    "region": "Libya",
+    "regionIt": "Libia",
+    "country": "LY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Darnah.geojson",
+      "sha256": "b058dcb2b367dbba068fa1e8d844bb63e89f1ef720b4b0df4075cb51b6ba3ce7",
+      "size": 184411,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "darnah",
+    "name": "Darnah",
+    "nameIt": "Darnah",
+    "region": "Libya",
+    "regionIt": "Libia",
+    "country": "LY",
+    "center": [
+      22.63789,
+      32.75997
+    ],
+    "zoom": 10.9,
+    "population": 34747,
+    "grid": "cities/darnah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/darnah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "darnah",
+        "name": "Darnah",
+        "nameIt": "Darnah",
+        "region": "Libya",
+        "regionIt": "Libia",
+        "country": "LY",
+        "center": [
+          22.63789,
+          32.75997
+        ],
+        "zoom": 10.9,
+        "population": 34747,
+        "cells": 159,
+        "layer": "cities/darnah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            22.63789,
+            32.75997
+          ]
+        },
+        "properties": {
+          "id": "darnah",
+          "name": "Darnah",
+          "country": "LY",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 34747
+        }
+      },
+      "summary": null
+    }
+  }
+}

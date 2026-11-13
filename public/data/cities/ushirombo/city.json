@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ushirombo",
+  "createdAt": "2026-10-08T16:20:07.071Z",
+  "updatedAt": "2026-10-08T16:20:07.071Z",
+  "meta": {
+    "name": "Ushirombo",
+    "nameIt": "Ushirombo",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ushirombo.geojson",
+      "sha256": "77f59f06c3a03f9b7bf1f790883fb59d366a4080a15aed9e6ddcb6cf4903dc63",
+      "size": 143914,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ushirombo",
+    "name": "Ushirombo",
+    "nameIt": "Ushirombo",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      31.89795,
+      -3.46033
+    ],
+    "zoom": 11.7,
+    "population": 63525,
+    "grid": "cities/ushirombo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ushirombo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ushirombo",
+        "name": "Ushirombo",
+        "nameIt": "Ushirombo",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          31.89795,
+          -3.46033
+        ],
+        "zoom": 11.7,
+        "population": 63525,
+        "cells": 123,
+        "layer": "cities/ushirombo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.89795,
+            -3.46033
+          ]
+        },
+        "properties": {
+          "id": "ushirombo",
+          "name": "Ushirombo",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 13.3,
+          "population": 63525
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "charleroi-fua",
+  "createdAt": "2026-10-19T16:55:46.219Z",
+  "updatedAt": "2026-10-19T16:55:46.219Z",
+  "meta": {
+    "name": "Charleroi",
+    "nameIt": "Charleroi",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "charleroi-fua",
+    "name": "Charleroi",
+    "nameIt": "Charleroi",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE",
+    "extent": "fua",
+    "core": "charleroi",
+    "center": [
+      4.40815,
+      50.44816
+    ],
+    "zoom": 8.5,
+    "population": 926779,
+    "grid": "cities/charleroi-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/charleroi-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "charleroi-fua",
+        "name": "Charleroi",
+        "nameIt": "Charleroi",
+        "region": "Belgium",
+        "regionIt": "Belgio",
+        "country": "BE",
+        "extent": "fua",
+        "core": "charleroi",
+        "center": [
+          4.40815,
+          50.44816
+        ],
+        "zoom": 8.5,
+        "population": 926779,
+        "cells": 23877,
+        "layer": "cities/charleroi-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.40815,
+            50.44816
+          ]
+        },
+        "properties": {
+          "id": "charleroi-fua",
+          "name": "Charleroi",
+          "country": "BE",
+          "isStudy": true,
+          "proximityMinutes": 17.2,
+          "population": 926779
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "maidenhead",
+  "createdAt": "2026-10-08T15:53:49.333Z",
+  "updatedAt": "2026-10-08T15:53:49.333Z",
+  "meta": {
+    "name": "Maidenhead",
+    "nameIt": "Maidenhead",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Maidenhead.geojson",
+      "sha256": "82de27017f9d3eb0d3d2d7328259bb75d01c593007580927e160c8c5e755e1a8",
+      "size": 205465,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "maidenhead",
+    "name": "Maidenhead",
+    "nameIt": "Maidenhead",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.73366,
+      51.52174
+    ],
+    "zoom": 11.7,
+    "population": 61886,
+    "grid": "cities/maidenhead/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/maidenhead/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "maidenhead",
+        "name": "Maidenhead",
+        "nameIt": "Maidenhead",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.73366,
+          51.52174
+        ],
+        "zoom": 11.7,
+        "population": 61886,
+        "cells": 178,
+        "layer": "cities/maidenhead/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.73366,
+            51.52174
+          ]
+        },
+        "properties": {
+          "id": "maidenhead",
+          "name": "Maidenhead",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 12.3,
+          "population": 61886
+        }
+      },
+      "summary": null
+    }
+  }
+}

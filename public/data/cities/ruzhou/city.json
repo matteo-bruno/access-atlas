@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ruzhou",
+  "createdAt": "2026-10-08T16:09:26.463Z",
+  "updatedAt": "2026-10-08T16:09:26.463Z",
+  "meta": {
+    "name": "Ruzhou",
+    "nameIt": "Ruzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ruzhou.geojson",
+      "sha256": "290c6f2d40a7fa08426eeff235c8c50e4dd9b1daf90aeb80b937bc4e7e62e7a4",
+      "size": 447580,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ruzhou",
+    "name": "Ruzhou",
+    "nameIt": "Ruzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.84069,
+      34.17162
+    ],
+    "zoom": 11.3,
+    "population": 287240,
+    "grid": "cities/ruzhou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ruzhou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ruzhou",
+        "name": "Ruzhou",
+        "nameIt": "Ruzhou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.84069,
+          34.17162
+        ],
+        "zoom": 11.3,
+        "population": 287240,
+        "cells": 384,
+        "layer": "cities/ruzhou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.84069,
+            34.17162
+          ]
+        },
+        "properties": {
+          "id": "ruzhou",
+          "name": "Ruzhou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 287240
+        }
+      },
+      "summary": null
+    }
+  }
+}

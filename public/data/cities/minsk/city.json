@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "minsk",
+  "createdAt": "2026-10-08T15:57:18.805Z",
+  "updatedAt": "2026-10-08T15:57:18.805Z",
+  "meta": {
+    "name": "Minsk",
+    "nameIt": "Minsk",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Minsk.geojson",
+      "sha256": "a2f4eb01fbd136ea4bddcc0fe6fecbaf530329e0128b2b2a87b65f6c36247d67",
+      "size": 3018656,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "minsk",
+    "name": "Minsk",
+    "nameIt": "Minsk",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY",
+    "center": [
+      27.55319,
+      53.89387
+    ],
+    "zoom": 9.7,
+    "population": 1828557,
+    "grid": "cities/minsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/minsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "minsk",
+        "name": "Minsk",
+        "nameIt": "Minsk",
+        "region": "Belarus",
+        "regionIt": "Bielorussia",
+        "country": "BY",
+        "center": [
+          27.55319,
+          53.89387
+        ],
+        "zoom": 9.7,
+        "population": 1828557,
+        "cells": 2643,
+        "layer": "cities/minsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.55319,
+            53.89387
+          ]
+        },
+        "properties": {
+          "id": "minsk",
+          "name": "Minsk",
+          "country": "BY",
+          "isStudy": true,
+          "proximityMinutes": 7.2,
+          "population": 1828557
+        }
+      },
+      "summary": null
+    }
+  }
+}

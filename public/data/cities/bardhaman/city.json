@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bardhaman",
+  "createdAt": "2026-10-08T15:15:33.955Z",
+  "updatedAt": "2026-10-08T15:15:33.955Z",
+  "meta": {
+    "name": "Bardhaman",
+    "nameIt": "Bardhaman",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bardhaman.geojson",
+      "sha256": "8c9abab42b30f6c0666644ec01f595d74b1f2ad64341583c2612af533a06a573",
+      "size": 375207,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bardhaman",
+    "name": "Bardhaman",
+    "nameIt": "Bardhaman",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.86201,
+      23.23882
+    ],
+    "zoom": 11.1,
+    "population": 471560,
+    "grid": "cities/bardhaman/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bardhaman/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bardhaman",
+        "name": "Bardhaman",
+        "nameIt": "Bardhaman",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.86201,
+          23.23882
+        ],
+        "zoom": 11.1,
+        "population": 471560,
+        "cells": 324,
+        "layer": "cities/bardhaman/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.86201,
+            23.23882
+          ]
+        },
+        "properties": {
+          "id": "bardhaman",
+          "name": "Bardhaman",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 24,
+          "population": 471560
+        }
+      },
+      "summary": null
+    }
+  }
+}

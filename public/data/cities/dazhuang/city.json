@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dazhuang",
+  "createdAt": "2026-10-08T15:28:44.335Z",
+  "updatedAt": "2026-10-08T15:28:44.335Z",
+  "meta": {
+    "name": "Dazhuang",
+    "nameIt": "Dazhuang",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dazhuang.geojson",
+      "sha256": "a37cc5834d0b1988bbf292b3ff5188efb6382cb4f548c05c8e453ca76dc3ae0c",
+      "size": 1087080,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dazhuang",
+    "name": "Dazhuang",
+    "nameIt": "Dazhuang",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW",
+    "center": [
+      120.55133,
+      24.23875
+    ],
+    "zoom": 10.3,
+    "population": 250037,
+    "grid": "cities/dazhuang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dazhuang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dazhuang",
+        "name": "Dazhuang",
+        "nameIt": "Dazhuang",
+        "region": "Taiwan",
+        "regionIt": "Taiwan",
+        "country": "TW",
+        "center": [
+          120.55133,
+          24.23875
+        ],
+        "zoom": 10.3,
+        "population": 250037,
+        "cells": 940,
+        "layer": "cities/dazhuang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.55133,
+            24.23875
+          ]
+        },
+        "properties": {
+          "id": "dazhuang",
+          "name": "Dazhuang",
+          "country": "TW",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 250037
+        }
+      },
+      "summary": null
+    }
+  }
+}

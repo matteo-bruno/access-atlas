@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "atlantis",
+  "createdAt": "2026-10-08T15:11:01.743Z",
+  "updatedAt": "2026-10-08T15:11:01.743Z",
+  "meta": {
+    "name": "Atlantis",
+    "nameIt": "Atlantis",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Atlantis.geojson",
+      "sha256": "3d2fd39057a1655a3760a375bacfef01d52d7006b282306f7663224ab03cc64a",
+      "size": 184075,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "atlantis",
+    "name": "Atlantis",
+    "nameIt": "Atlantis",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      18.49453,
+      -33.56612
+    ],
+    "zoom": 11.6,
+    "population": 57305,
+    "grid": "cities/atlantis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/atlantis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "atlantis",
+        "name": "Atlantis",
+        "nameIt": "Atlantis",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          18.49453,
+          -33.56612
+        ],
+        "zoom": 11.6,
+        "population": 57305,
+        "cells": 158,
+        "layer": "cities/atlantis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.49453,
+            -33.56612
+          ]
+        },
+        "properties": {
+          "id": "atlantis",
+          "name": "Atlantis",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 12.7,
+          "population": 57305
+        }
+      },
+      "summary": null
+    }
+  }
+}

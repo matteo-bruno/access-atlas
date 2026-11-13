@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "liberia",
+  "createdAt": "2026-10-08T15:51:02.351Z",
+  "updatedAt": "2026-10-08T15:51:02.351Z",
+  "meta": {
+    "name": "Liberia",
+    "nameIt": "Liberia",
+    "region": "Costa Rica",
+    "regionIt": "Costa Rica",
+    "country": "CR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Liberia.geojson",
+      "sha256": "5fe59e644d456af41e08d70e6a8199537dcfc9c4fbba29f8aa4e53725482fa99",
+      "size": 142169,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "liberia",
+    "name": "Liberia",
+    "nameIt": "Liberia",
+    "region": "Costa Rica",
+    "regionIt": "Costa Rica",
+    "country": "CR",
+    "center": [
+      -85.43732,
+      10.63404
+    ],
+    "zoom": 12,
+    "population": 34407,
+    "grid": "cities/liberia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/liberia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "liberia",
+        "name": "Liberia",
+        "nameIt": "Liberia",
+        "region": "Costa Rica",
+        "regionIt": "Costa Rica",
+        "country": "CR",
+        "center": [
+          -85.43732,
+          10.63404
+        ],
+        "zoom": 12,
+        "population": 34407,
+        "cells": 123,
+        "layer": "cities/liberia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.43732,
+            10.63404
+          ]
+        },
+        "properties": {
+          "id": "liberia",
+          "name": "Liberia",
+          "country": "CR",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 34407
+        }
+      },
+      "summary": null
+    }
+  }
+}

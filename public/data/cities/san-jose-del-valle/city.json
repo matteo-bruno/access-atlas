@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-jose-del-valle",
+  "createdAt": "2026-10-08T16:10:33.807Z",
+  "updatedAt": "2026-10-08T16:10:33.807Z",
+  "meta": {
+    "name": "San José del Valle",
+    "nameIt": "San José del Valle",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San José del Valle.geojson",
+      "sha256": "379ba26d4b5d0851aca056bd672a231705356ad504c9721c7b67a1093e9e23b1",
+      "size": 93113,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-jose-del-valle",
+    "name": "San José del Valle",
+    "nameIt": "San José del Valle",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -105.23813,
+      20.7582
+    ],
+    "zoom": 11.6,
+    "population": 40663,
+    "grid": "cities/san-jose-del-valle/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-jose-del-valle/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-jose-del-valle",
+        "name": "San José del Valle",
+        "nameIt": "San José del Valle",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -105.23813,
+          20.7582
+        ],
+        "zoom": 11.6,
+        "population": 40663,
+        "cells": 79,
+        "layer": "cities/san-jose-del-valle/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -105.23813,
+            20.7582
+          ]
+        },
+        "properties": {
+          "id": "san-jose-del-valle",
+          "name": "San José del Valle",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 20.4,
+          "population": 40663
+        }
+      },
+      "summary": null
+    }
+  }
+}

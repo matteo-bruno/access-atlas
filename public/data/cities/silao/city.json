@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "silao",
+  "createdAt": "2026-10-08T16:13:39.324Z",
+  "updatedAt": "2026-10-08T16:13:39.324Z",
+  "meta": {
+    "name": "Silao",
+    "nameIt": "Silao",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Silao.geojson",
+      "sha256": "63319dc4005331fc69fddebfc038f778e184b14ab0ccb5dccf4e34c75107ac74",
+      "size": 158755,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "silao",
+    "name": "Silao",
+    "nameIt": "Silao",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -101.42878,
+      20.94754
+    ],
+    "zoom": 11.7,
+    "population": 83776,
+    "grid": "cities/silao/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/silao/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "silao",
+        "name": "Silao",
+        "nameIt": "Silao",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -101.42878,
+          20.94754
+        ],
+        "zoom": 11.7,
+        "population": 83776,
+        "cells": 135,
+        "layer": "cities/silao/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -101.42878,
+            20.94754
+          ]
+        },
+        "properties": {
+          "id": "silao",
+          "name": "Silao",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 83776
+        }
+      },
+      "summary": null
+    }
+  }
+}

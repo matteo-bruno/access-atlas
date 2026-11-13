@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hailakandi",
+  "createdAt": "2026-10-08T15:37:15.498Z",
+  "updatedAt": "2026-10-08T15:37:15.498Z",
+  "meta": {
+    "name": "Hailakandi",
+    "nameIt": "Hailakandi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hailakandi.geojson",
+      "sha256": "fdbae14e5bfa74da32f12efad780a16ae1b2d36cce00b2077d04162f11e13b0a",
+      "size": 108819,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hailakandi",
+    "name": "Hailakandi",
+    "nameIt": "Hailakandi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      92.56181,
+      24.6822
+    ],
+    "zoom": 12,
+    "population": 43880,
+    "grid": "cities/hailakandi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hailakandi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hailakandi",
+        "name": "Hailakandi",
+        "nameIt": "Hailakandi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          92.56181,
+          24.6822
+        ],
+        "zoom": 12,
+        "population": 43880,
+        "cells": 94,
+        "layer": "cities/hailakandi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            92.56181,
+            24.6822
+          ]
+        },
+        "properties": {
+          "id": "hailakandi",
+          "name": "Hailakandi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 43880
+        }
+      },
+      "summary": null
+    }
+  }
+}

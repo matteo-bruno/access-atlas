@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mousani",
+  "createdAt": "2026-10-08T15:58:34.557Z",
+  "updatedAt": "2026-10-08T15:58:34.557Z",
+  "meta": {
+    "name": "Mousani",
+    "nameIt": "Mousani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mousani.geojson",
+      "sha256": "f8b830bcafa2137bdc4cfeeda69295ea72e43c24e6e520219fa1ec361e2b46db",
+      "size": 731615,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mousani",
+    "name": "Mousani",
+    "nameIt": "Mousani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.22298,
+      21.67552
+    ],
+    "zoom": 10.3,
+    "population": 66222,
+    "grid": "cities/mousani/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mousani/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mousani",
+        "name": "Mousani",
+        "nameIt": "Mousani",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.22298,
+          21.67552
+        ],
+        "zoom": 10.3,
+        "population": 66222,
+        "cells": 632,
+        "layer": "cities/mousani/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.22298,
+            21.67552
+          ]
+        },
+        "properties": {
+          "id": "mousani",
+          "name": "Mousani",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 66222
+        }
+      },
+      "summary": null
+    }
+  }
+}

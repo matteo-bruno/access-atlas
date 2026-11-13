@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "trang",
+  "createdAt": "2026-10-08T16:18:44.129Z",
+  "updatedAt": "2026-10-08T16:18:44.129Z",
+  "meta": {
+    "name": "Trang",
+    "nameIt": "Trang",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Trang.geojson",
+      "sha256": "07c35b682780325c6cc0463bcc08c086164fae9e39015c91b5d72db075080157",
+      "size": 163285,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "trang",
+    "name": "Trang",
+    "nameIt": "Trang",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      99.61147,
+      7.55926
+    ],
+    "zoom": 11.7,
+    "population": 64740,
+    "grid": "cities/trang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/trang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "trang",
+        "name": "Trang",
+        "nameIt": "Trang",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          99.61147,
+          7.55926
+        ],
+        "zoom": 11.7,
+        "population": 64740,
+        "cells": 142,
+        "layer": "cities/trang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            99.61147,
+            7.55926
+          ]
+        },
+        "properties": {
+          "id": "trang",
+          "name": "Trang",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 64740
+        }
+      },
+      "summary": null
+    }
+  }
+}

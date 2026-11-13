@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "maasvlakte",
+  "createdAt": "2026-10-08T15:53:11.621Z",
+  "updatedAt": "2026-10-08T15:53:11.621Z",
+  "meta": {
+    "name": "Maasvlakte",
+    "nameIt": "Maasvlakte",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Maasvlakte.geojson",
+      "sha256": "251c010b31035ddf022dd1a15c99ac97589a73d3fd5aa569934ac8985ae4c8d6",
+      "size": 338534,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "maasvlakte",
+    "name": "Maasvlakte",
+    "nameIt": "Maasvlakte",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      4.04042,
+      51.9571
+    ],
+    "zoom": 11.5,
+    "population": 39400,
+    "grid": "cities/maasvlakte/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/maasvlakte/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "maasvlakte",
+        "name": "Maasvlakte",
+        "nameIt": "Maasvlakte",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          4.04042,
+          51.9571
+        ],
+        "zoom": 11.5,
+        "population": 39400,
+        "cells": 293,
+        "layer": "cities/maasvlakte/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.04042,
+            51.9571
+          ]
+        },
+        "properties": {
+          "id": "maasvlakte",
+          "name": "Maasvlakte",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 39400
+        }
+      },
+      "summary": null
+    }
+  }
+}

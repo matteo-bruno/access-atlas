@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oral",
+  "createdAt": "2026-10-08T16:02:56.693Z",
+  "updatedAt": "2026-10-08T16:02:56.693Z",
+  "meta": {
+    "name": "Oral",
+    "nameIt": "Oral",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Oral.geojson",
+      "sha256": "62bfdbbd98913e8d8fb05b6831aa36de3d44bb0dfa0694eb6471ecc24ed9e5e8",
+      "size": 480183,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "oral",
+    "name": "Oral",
+    "nameIt": "Oral",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ",
+    "center": [
+      51.41116,
+      51.23394
+    ],
+    "zoom": 10.6,
+    "population": 140195,
+    "grid": "cities/oral/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oral/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oral",
+        "name": "Oral",
+        "nameIt": "Oral",
+        "region": "Kazakhstan",
+        "regionIt": "Kazakistan",
+        "country": "KZ",
+        "center": [
+          51.41116,
+          51.23394
+        ],
+        "zoom": 10.6,
+        "population": 140195,
+        "cells": 420,
+        "layer": "cities/oral/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            51.41116,
+            51.23394
+          ]
+        },
+        "properties": {
+          "id": "oral",
+          "name": "Oral",
+          "country": "KZ",
+          "isStudy": true,
+          "proximityMinutes": 16.5,
+          "population": 140195
+        }
+      },
+      "summary": null
+    }
+  }
+}

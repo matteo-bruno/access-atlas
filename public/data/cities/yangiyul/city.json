@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yangiyul",
+  "createdAt": "2026-10-08T16:23:22.538Z",
+  "updatedAt": "2026-10-08T16:23:22.538Z",
+  "meta": {
+    "name": "Yangiyul",
+    "nameIt": "Yangiyul",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yangiyul.geojson",
+      "sha256": "8e92ad8365d9b8630aeadec9c8673049174bbda96c9e93e5c1b5c3133cabbba8",
+      "size": 298380,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yangiyul",
+    "name": "Yangiyul",
+    "nameIt": "Yangiyul",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      69.05693,
+      41.11514
+    ],
+    "zoom": 11.1,
+    "population": 175487,
+    "grid": "cities/yangiyul/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yangiyul/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yangiyul",
+        "name": "Yangiyul",
+        "nameIt": "Yangiyul",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          69.05693,
+          41.11514
+        ],
+        "zoom": 11.1,
+        "population": 175487,
+        "cells": 259,
+        "layer": "cities/yangiyul/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.05693,
+            41.11514
+          ]
+        },
+        "properties": {
+          "id": "yangiyul",
+          "name": "Yangiyul",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 175487
+        }
+      },
+      "summary": null
+    }
+  }
+}

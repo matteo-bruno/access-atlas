@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bilbao",
+  "createdAt": "2026-10-08T15:18:53.110Z",
+  "updatedAt": "2026-10-08T15:18:53.110Z",
+  "meta": {
+    "name": "Bilbao",
+    "nameIt": "Bilbao",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bilbao.geojson",
+      "sha256": "4058e854467d7b4be65a592749007c7b174cd3d712b2b18ccd846f490fc496b8",
+      "size": 1149839,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bilbao",
+    "name": "Bilbao",
+    "nameIt": "Bilbao",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -2.96138,
+      43.28432
+    ],
+    "zoom": 9.6,
+    "population": 769147,
+    "grid": "cities/bilbao/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bilbao/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bilbao",
+        "name": "Bilbao",
+        "nameIt": "Bilbao",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -2.96138,
+          43.28432
+        ],
+        "zoom": 9.6,
+        "population": 769147,
+        "cells": 998,
+        "layer": "cities/bilbao/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.96138,
+            43.28432
+          ]
+        },
+        "properties": {
+          "id": "bilbao",
+          "name": "Bilbao",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 6.2,
+          "population": 769147
+        }
+      },
+      "summary": null
+    }
+  }
+}

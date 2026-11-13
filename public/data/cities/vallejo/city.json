@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vallejo",
+  "createdAt": "2026-10-08T16:20:23.335Z",
+  "updatedAt": "2026-10-08T16:20:23.335Z",
+  "meta": {
+    "name": "Vallejo",
+    "nameIt": "Vallejo",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vallejo.geojson",
+      "sha256": "28164804461002f5b77e4dec339284b313fdebb842055b1d7302582900fb1821",
+      "size": 912545,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vallejo",
+    "name": "Vallejo",
+    "nameIt": "Vallejo",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -122.22787,
+      38.11287
+    ],
+    "zoom": 10.1,
+    "population": 170525,
+    "grid": "cities/vallejo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vallejo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vallejo",
+        "name": "Vallejo",
+        "nameIt": "Vallejo",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -122.22787,
+          38.11287
+        ],
+        "zoom": 10.1,
+        "population": 170525,
+        "cells": 785,
+        "layer": "cities/vallejo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.22787,
+            38.11287
+          ]
+        },
+        "properties": {
+          "id": "vallejo",
+          "name": "Vallejo",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 22.7,
+          "population": 170525
+        }
+      },
+      "summary": null
+    }
+  }
+}

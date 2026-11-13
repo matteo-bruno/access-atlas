@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "siuri",
+  "createdAt": "2026-10-08T16:14:06.362Z",
+  "updatedAt": "2026-10-08T16:14:06.362Z",
+  "meta": {
+    "name": "Siuri",
+    "nameIt": "Siuri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Siuri.geojson",
+      "sha256": "378715d489d3c45bb6263499c70c0a42488b3c3cf899e67c9e2556dfc3985a51",
+      "size": 291970,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "siuri",
+    "name": "Siuri",
+    "nameIt": "Siuri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.52348,
+      23.90471
+    ],
+    "zoom": 11.4,
+    "population": 191016,
+    "grid": "cities/siuri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/siuri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "siuri",
+        "name": "Siuri",
+        "nameIt": "Siuri",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.52348,
+          23.90471
+        ],
+        "zoom": 11.4,
+        "population": 191016,
+        "cells": 252,
+        "layer": "cities/siuri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.52348,
+            23.90471
+          ]
+        },
+        "properties": {
+          "id": "siuri",
+          "name": "Siuri",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 24.2,
+          "population": 191016
+        }
+      },
+      "summary": null
+    }
+  }
+}

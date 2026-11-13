@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "buzuluk",
+  "createdAt": "2026-10-08T15:21:19.198Z",
+  "updatedAt": "2026-10-08T15:21:19.198Z",
+  "meta": {
+    "name": "Buzuluk",
+    "nameIt": "Buzuluk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Buzuluk.geojson",
+      "sha256": "cf2ff4261a92fb1891f7f6ed3b46dc3becc035db36ec80f0e429fe2ed7b67f58",
+      "size": 228504,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "buzuluk",
+    "name": "Buzuluk",
+    "nameIt": "Buzuluk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      52.25793,
+      52.77632
+    ],
+    "zoom": 11.2,
+    "population": 74778,
+    "grid": "cities/buzuluk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/buzuluk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "buzuluk",
+        "name": "Buzuluk",
+        "nameIt": "Buzuluk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          52.25793,
+          52.77632
+        ],
+        "zoom": 11.2,
+        "population": 74778,
+        "cells": 198,
+        "layer": "cities/buzuluk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            52.25793,
+            52.77632
+          ]
+        },
+        "properties": {
+          "id": "buzuluk",
+          "name": "Buzuluk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 18.2,
+          "population": 74778
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shbrawysh",
+  "createdAt": "2026-10-08T16:12:43.917Z",
+  "updatedAt": "2026-10-08T16:12:43.917Z",
+  "meta": {
+    "name": "Shbrawysh",
+    "nameIt": "Shbrawysh",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shbrawysh.geojson",
+      "sha256": "81139dc4539ebc54ada92e99248fb9e6ad658a698830c15a622c897d6ec4c9ec",
+      "size": 103667,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shbrawysh",
+    "name": "Shbrawysh",
+    "nameIt": "Shbrawysh",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      31.23467,
+      30.88097
+    ],
+    "zoom": 11.7,
+    "population": 75109,
+    "grid": "cities/shbrawysh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shbrawysh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shbrawysh",
+        "name": "Shbrawysh",
+        "nameIt": "Shbrawysh",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          31.23467,
+          30.88097
+        ],
+        "zoom": 11.7,
+        "population": 75109,
+        "cells": 89,
+        "layer": "cities/shbrawysh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.23467,
+            30.88097
+          ]
+        },
+        "properties": {
+          "id": "shbrawysh",
+          "name": "Shbrawysh",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 75109
+        }
+      },
+      "summary": null
+    }
+  }
+}

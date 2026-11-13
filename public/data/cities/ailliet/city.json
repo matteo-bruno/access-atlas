@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ailliet",
+  "createdAt": "2026-10-08T15:03:10.241Z",
+  "updatedAt": "2026-10-08T15:03:10.241Z",
+  "meta": {
+    "name": "Ailliet",
+    "nameIt": "Ailliet",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ailliet.geojson",
+      "sha256": "88fb1a3dd5b88639e1079f1c1e3f03ad2399adc2edaa04744bc3712ca67ec157",
+      "size": 83918,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ailliet",
+    "name": "Ailliet",
+    "nameIt": "Ailliet",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      27.04668,
+      11.95892
+    ],
+    "zoom": 12,
+    "population": 22580,
+    "grid": "cities/ailliet/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ailliet/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ailliet",
+        "name": "Ailliet",
+        "nameIt": "Ailliet",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          27.04668,
+          11.95892
+        ],
+        "zoom": 12,
+        "population": 22580,
+        "cells": 72,
+        "layer": "cities/ailliet/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.04668,
+            11.95892
+          ]
+        },
+        "properties": {
+          "id": "ailliet",
+          "name": "Ailliet",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 22580
+        }
+      },
+      "summary": null
+    }
+  }
+}

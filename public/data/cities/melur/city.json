@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "melur",
+  "createdAt": "2026-10-08T15:56:32.154Z",
+  "updatedAt": "2026-10-08T15:56:32.154Z",
+  "meta": {
+    "name": "Melur",
+    "nameIt": "Melur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Melur.geojson",
+      "sha256": "d4261250fa501979b9ef41a635d9f80c1bbac107d17118ed2d90f8447d738c42",
+      "size": 93956,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "melur",
+    "name": "Melur",
+    "nameIt": "Melur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.33862,
+      10.03268
+    ],
+    "zoom": 11.9,
+    "population": 25966,
+    "grid": "cities/melur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/melur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "melur",
+        "name": "Melur",
+        "nameIt": "Melur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.33862,
+          10.03268
+        ],
+        "zoom": 11.9,
+        "population": 25966,
+        "cells": 81,
+        "layer": "cities/melur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.33862,
+            10.03268
+          ]
+        },
+        "properties": {
+          "id": "melur",
+          "name": "Melur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 25966
+        }
+      },
+      "summary": null
+    }
+  }
+}

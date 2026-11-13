@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guntur",
+  "createdAt": "2026-10-08T15:36:45.710Z",
+  "updatedAt": "2026-10-08T15:36:45.710Z",
+  "meta": {
+    "name": "Guntur",
+    "nameIt": "Guntur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guntur.geojson",
+      "sha256": "a12b65a97033c823c2d6001236baed5e426928203e9a1e52084f2f9449050532",
+      "size": 790761,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guntur",
+    "name": "Guntur",
+    "nameIt": "Guntur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.43433,
+      16.30324
+    ],
+    "zoom": 10.3,
+    "population": 647949,
+    "grid": "cities/guntur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guntur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guntur",
+        "name": "Guntur",
+        "nameIt": "Guntur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.43433,
+          16.30324
+        ],
+        "zoom": 10.3,
+        "population": 647949,
+        "cells": 687,
+        "layer": "cities/guntur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.43433,
+            16.30324
+          ]
+        },
+        "properties": {
+          "id": "guntur",
+          "name": "Guntur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 25,
+          "population": 647949
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "palmdale",
+  "createdAt": "2026-10-08T16:03:51.901Z",
+  "updatedAt": "2026-10-08T16:03:51.901Z",
+  "meta": {
+    "name": "Palmdale",
+    "nameIt": "Palmdale",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Palmdale.geojson",
+      "sha256": "52a722985320e4db65caf0e0442f04d6da65098e20766393c0373dc9551d6d86",
+      "size": 337305,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "palmdale",
+    "name": "Palmdale",
+    "nameIt": "Palmdale",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -118.07707,
+      34.56731
+    ],
+    "zoom": 10.6,
+    "population": 108216,
+    "grid": "cities/palmdale/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/palmdale/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "palmdale",
+        "name": "Palmdale",
+        "nameIt": "Palmdale",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -118.07707,
+          34.56731
+        ],
+        "zoom": 10.6,
+        "population": 108216,
+        "cells": 288,
+        "layer": "cities/palmdale/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -118.07707,
+            34.56731
+          ]
+        },
+        "properties": {
+          "id": "palmdale",
+          "name": "Palmdale",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 19.2,
+          "population": 108216
+        }
+      },
+      "summary": null
+    }
+  }
+}

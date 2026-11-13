@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kirumba",
+  "createdAt": "2026-10-08T15:47:14.486Z",
+  "updatedAt": "2026-10-08T15:47:14.486Z",
+  "meta": {
+    "name": "Kirumba",
+    "nameIt": "Kirumba",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kirumba.geojson",
+      "sha256": "fb5685ed03707521c40a8ed57d5fb2123ab0ea2795cc2586dac1057427ac045b",
+      "size": 130379,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kirumba",
+    "name": "Kirumba",
+    "nameIt": "Kirumba",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      29.18428,
+      -0.55971
+    ],
+    "zoom": 12,
+    "population": 82984,
+    "grid": "cities/kirumba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kirumba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kirumba",
+        "name": "Kirumba",
+        "nameIt": "Kirumba",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          29.18428,
+          -0.55971
+        ],
+        "zoom": 12,
+        "population": 82984,
+        "cells": 111,
+        "layer": "cities/kirumba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.18428,
+            -0.55971
+          ]
+        },
+        "properties": {
+          "id": "kirumba",
+          "name": "Kirumba",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 82984
+        }
+      },
+      "summary": null
+    }
+  }
+}

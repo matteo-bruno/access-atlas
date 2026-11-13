@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bordeaux-fua",
+  "createdAt": "2026-10-19T16:55:34.372Z",
+  "updatedAt": "2026-10-19T16:55:34.372Z",
+  "meta": {
+    "name": "Bordeaux",
+    "nameIt": "Bordeaux",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "bordeaux-fua",
+    "name": "Bordeaux",
+    "nameIt": "Bordeaux",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "extent": "fua",
+    "core": "bordeaux",
+    "center": [
+      -0.56377,
+      44.84411
+    ],
+    "zoom": 8.5,
+    "population": 1170976,
+    "grid": "cities/bordeaux-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bordeaux-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bordeaux-fua",
+        "name": "Bordeaux",
+        "nameIt": "Bordeaux",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "extent": "fua",
+        "core": "bordeaux",
+        "center": [
+          -0.56377,
+          44.84411
+        ],
+        "zoom": 8.5,
+        "population": 1170976,
+        "cells": 21320,
+        "layer": "cities/bordeaux-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.56377,
+            44.84411
+          ]
+        },
+        "properties": {
+          "id": "bordeaux-fua",
+          "name": "Bordeaux",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 1170976
+        }
+      },
+      "summary": null
+    }
+  }
+}

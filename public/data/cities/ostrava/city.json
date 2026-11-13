@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ostrava",
+  "createdAt": "2026-10-08T16:03:11.001Z",
+  "updatedAt": "2026-10-08T16:03:11.001Z",
+  "meta": {
+    "name": "Ostrava",
+    "nameIt": "Ostrava",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ostrava.geojson",
+      "sha256": "1df7487f8450bc6efff4c5c8e7ba05acecd62557e6f89eb26607072f84805ebf",
+      "size": 504392,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ostrava",
+    "name": "Ostrava",
+    "nameIt": "Ostrava",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ",
+    "center": [
+      18.2616,
+      49.81791
+    ],
+    "zoom": 10.6,
+    "population": 111479,
+    "grid": "cities/ostrava/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ostrava/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ostrava",
+        "name": "Ostrava",
+        "nameIt": "Ostrava",
+        "region": "Czech Republic",
+        "regionIt": "Repubblica Ceca",
+        "country": "CZ",
+        "center": [
+          18.2616,
+          49.81791
+        ],
+        "zoom": 10.6,
+        "population": 111479,
+        "cells": 441,
+        "layer": "cities/ostrava/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.2616,
+            49.81791
+          ]
+        },
+        "properties": {
+          "id": "ostrava",
+          "name": "Ostrava",
+          "country": "CZ",
+          "isStudy": true,
+          "proximityMinutes": 11.3,
+          "population": 111479
+        }
+      },
+      "summary": null
+    }
+  }
+}

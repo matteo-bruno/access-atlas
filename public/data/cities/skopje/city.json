@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "skopje",
+  "createdAt": "2026-10-08T16:14:10.764Z",
+  "updatedAt": "2026-10-08T16:14:10.764Z",
+  "meta": {
+    "name": "Skopje",
+    "nameIt": "Skopje",
+    "region": "North Macedonia",
+    "regionIt": "Macedonia del Nord",
+    "country": "MK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Skopje.geojson",
+      "sha256": "34f01a9325747c1a07bed49497fd5b90bb03ce2d85ffd6c7ae0f7584ef9bf952",
+      "size": 930281,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "skopje",
+    "name": "Skopje",
+    "nameIt": "Skopje",
+    "region": "North Macedonia",
+    "regionIt": "Macedonia del Nord",
+    "country": "MK",
+    "center": [
+      21.43451,
+      41.99995
+    ],
+    "zoom": 9.9,
+    "population": 431714,
+    "grid": "cities/skopje/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/skopje/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "skopje",
+        "name": "Skopje",
+        "nameIt": "Skopje",
+        "region": "North Macedonia",
+        "regionIt": "Macedonia del Nord",
+        "country": "MK",
+        "center": [
+          21.43451,
+          41.99995
+        ],
+        "zoom": 9.9,
+        "population": 431714,
+        "cells": 811,
+        "layer": "cities/skopje/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            21.43451,
+            41.99995
+          ]
+        },
+        "properties": {
+          "id": "skopje",
+          "name": "Skopje",
+          "country": "MK",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 431714
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shwegu",
+  "createdAt": "2026-10-08T16:13:21.009Z",
+  "updatedAt": "2026-10-08T16:13:21.009Z",
+  "meta": {
+    "name": "Shwegu",
+    "nameIt": "Shwegu",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shwegu.geojson",
+      "sha256": "a0df400fd41de4409421c517dc34a7851301a7a449fa69b8c499600e3e164116",
+      "size": 128597,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shwegu",
+    "name": "Shwegu",
+    "nameIt": "Shwegu",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      96.79254,
+      24.22186
+    ],
+    "zoom": 11.6,
+    "population": 52984,
+    "grid": "cities/shwegu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shwegu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shwegu",
+        "name": "Shwegu",
+        "nameIt": "Shwegu",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          96.79254,
+          24.22186
+        ],
+        "zoom": 11.6,
+        "population": 52984,
+        "cells": 111,
+        "layer": "cities/shwegu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.79254,
+            24.22186
+          ]
+        },
+        "properties": {
+          "id": "shwegu",
+          "name": "Shwegu",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 52984
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vijayawada",
+  "createdAt": "2026-10-08T16:20:43.873Z",
+  "updatedAt": "2026-10-08T16:20:43.873Z",
+  "meta": {
+    "name": "Vijayawada",
+    "nameIt": "Vijayawada",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vijayawada.geojson",
+      "sha256": "f2534384029807c6afb82247b8b7306e3a10a5cc089a1990e31b9529702134c8",
+      "size": 1179466,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vijayawada",
+    "name": "Vijayawada",
+    "nameIt": "Vijayawada",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.6483,
+      16.5109
+    ],
+    "zoom": 10,
+    "population": 1014386,
+    "grid": "cities/vijayawada/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vijayawada/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vijayawada",
+        "name": "Vijayawada",
+        "nameIt": "Vijayawada",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.6483,
+          16.5109
+        ],
+        "zoom": 10,
+        "population": 1014386,
+        "cells": 1028,
+        "layer": "cities/vijayawada/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.6483,
+            16.5109
+          ]
+        },
+        "properties": {
+          "id": "vijayawada",
+          "name": "Vijayawada",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.4,
+          "population": 1014386
+        }
+      },
+      "summary": null
+    }
+  }
+}

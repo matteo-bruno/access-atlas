@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guemar",
+  "createdAt": "2026-10-08T15:36:31.220Z",
+  "updatedAt": "2026-10-08T15:36:31.220Z",
+  "meta": {
+    "name": "Guemar",
+    "nameIt": "Guemar",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guemar.geojson",
+      "sha256": "9d7050c3874314186e86722732a6baa9fa15f0f923c2319d654532603e6e91cb",
+      "size": 129274,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guemar",
+    "name": "Guemar",
+    "nameIt": "Guemar",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      6.79877,
+      33.49625
+    ],
+    "zoom": 11.6,
+    "population": 46053,
+    "grid": "cities/guemar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guemar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guemar",
+        "name": "Guemar",
+        "nameIt": "Guemar",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          6.79877,
+          33.49625
+        ],
+        "zoom": 11.6,
+        "population": 46053,
+        "cells": 112,
+        "layer": "cities/guemar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.79877,
+            33.49625
+          ]
+        },
+        "properties": {
+          "id": "guemar",
+          "name": "Guemar",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 21.2,
+          "population": 46053
+        }
+      },
+      "summary": null
+    }
+  }
+}

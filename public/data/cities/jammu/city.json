@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jammu",
+  "createdAt": "2026-10-08T15:41:53.960Z",
+  "updatedAt": "2026-10-08T15:41:53.960Z",
+  "meta": {
+    "name": "Jammu",
+    "nameIt": "Jammu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jammu.geojson",
+      "sha256": "c6b8bac3d431e1c9f3a38139f9562055c7c3a4ae42c8731faae0ec7f5d055601",
+      "size": 1386132,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jammu",
+    "name": "Jammu",
+    "nameIt": "Jammu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.86516,
+      32.70586
+    ],
+    "zoom": 9.8,
+    "population": 1069414,
+    "grid": "cities/jammu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jammu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jammu",
+        "name": "Jammu",
+        "nameIt": "Jammu",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.86516,
+          32.70586
+        ],
+        "zoom": 9.8,
+        "population": 1069414,
+        "cells": 1198,
+        "layer": "cities/jammu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.86516,
+            32.70586
+          ]
+        },
+        "properties": {
+          "id": "jammu",
+          "name": "Jammu",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 46,
+          "population": 1069414
+        }
+      },
+      "summary": null
+    }
+  }
+}

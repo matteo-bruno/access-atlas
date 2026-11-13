@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "potchefstroom",
+  "createdAt": "2026-10-08T16:06:24.352Z",
+  "updatedAt": "2026-10-08T16:06:24.352Z",
+  "meta": {
+    "name": "Potchefstroom",
+    "nameIt": "Potchefstroom",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Potchefstroom.geojson",
+      "sha256": "d40576a1f748d0a52a2839bbb3169a3d1f35b08983bc9add5ef14c7c643e6ac3",
+      "size": 594578,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "potchefstroom",
+    "name": "Potchefstroom",
+    "nameIt": "Potchefstroom",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      27.06711,
+      -26.71791
+    ],
+    "zoom": 10.5,
+    "population": 94461,
+    "grid": "cities/potchefstroom/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/potchefstroom/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "potchefstroom",
+        "name": "Potchefstroom",
+        "nameIt": "Potchefstroom",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          27.06711,
+          -26.71791
+        ],
+        "zoom": 10.5,
+        "population": 94461,
+        "cells": 507,
+        "layer": "cities/potchefstroom/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.06711,
+            -26.71791
+          ]
+        },
+        "properties": {
+          "id": "potchefstroom",
+          "name": "Potchefstroom",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 29.1,
+          "population": 94461
+        }
+      },
+      "summary": null
+    }
+  }
+}

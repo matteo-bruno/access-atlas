@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "eindhoven",
+  "createdAt": "2026-10-08T15:31:47.618Z",
+  "updatedAt": "2026-10-08T15:31:47.618Z",
+  "meta": {
+    "name": "Eindhoven",
+    "nameIt": "Eindhoven",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Eindhoven.geojson",
+      "sha256": "c6d330bf4c39c26dc743bb53470dcb229480321f11bc703183d5982f6f1458e1",
+      "size": 1232094,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "eindhoven",
+    "name": "Eindhoven",
+    "nameIt": "Eindhoven",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      5.45918,
+      51.44525
+    ],
+    "zoom": 10.3,
+    "population": 302779,
+    "grid": "cities/eindhoven/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/eindhoven/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "eindhoven",
+        "name": "Eindhoven",
+        "nameIt": "Eindhoven",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          5.45918,
+          51.44525
+        ],
+        "zoom": 10.3,
+        "population": 302779,
+        "cells": 1083,
+        "layer": "cities/eindhoven/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.45918,
+            51.44525
+          ]
+        },
+        "properties": {
+          "id": "eindhoven",
+          "name": "Eindhoven",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 302779
+        }
+      },
+      "summary": null
+    }
+  }
+}

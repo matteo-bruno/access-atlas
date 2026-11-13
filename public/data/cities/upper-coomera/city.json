@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "upper-coomera",
+  "createdAt": "2026-10-08T16:20:00.928Z",
+  "updatedAt": "2026-10-08T16:20:00.928Z",
+  "meta": {
+    "name": "Upper Coomera",
+    "nameIt": "Upper Coomera",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Upper Coomera.geojson",
+      "sha256": "c5c6c3d9f3d9798c663c91b037a41f153ec5240a5fb02f348174df938fd4b669",
+      "size": 266096,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "upper-coomera",
+    "name": "Upper Coomera",
+    "nameIt": "Upper Coomera",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      153.3155,
+      -27.87051
+    ],
+    "zoom": 11,
+    "population": 36531,
+    "grid": "cities/upper-coomera/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/upper-coomera/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "upper-coomera",
+        "name": "Upper Coomera",
+        "nameIt": "Upper Coomera",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          153.3155,
+          -27.87051
+        ],
+        "zoom": 11,
+        "population": 36531,
+        "cells": 227,
+        "layer": "cities/upper-coomera/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            153.3155,
+            -27.87051
+          ]
+        },
+        "properties": {
+          "id": "upper-coomera",
+          "name": "Upper Coomera",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 20.2,
+          "population": 36531
+        }
+      },
+      "summary": null
+    }
+  }
+}

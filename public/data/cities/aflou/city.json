@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aflou",
+  "createdAt": "2026-10-08T15:02:38.946Z",
+  "updatedAt": "2026-10-08T15:02:38.946Z",
+  "meta": {
+    "name": "Aflou",
+    "nameIt": "Aflou",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aflou.geojson",
+      "sha256": "74b8f7ea8e755a767245ac3dbfc699b8eb3d3617823b6e764e3d4065e1dbe638",
+      "size": 139050,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aflou",
+    "name": "Aflou",
+    "nameIt": "Aflou",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      2.09908,
+      34.11031
+    ],
+    "zoom": 11.7,
+    "population": 120733,
+    "grid": "cities/aflou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aflou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aflou",
+        "name": "Aflou",
+        "nameIt": "Aflou",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          2.09908,
+          34.11031
+        ],
+        "zoom": 11.7,
+        "population": 120733,
+        "cells": 120,
+        "layer": "cities/aflou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.09908,
+            34.11031
+          ]
+        },
+        "properties": {
+          "id": "aflou",
+          "name": "Aflou",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 15.9,
+          "population": 120733
+        }
+      },
+      "summary": null
+    }
+  }
+}

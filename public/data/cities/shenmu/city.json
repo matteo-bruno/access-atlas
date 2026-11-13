@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shenmu",
+  "createdAt": "2026-10-08T16:12:50.264Z",
+  "updatedAt": "2026-10-08T16:12:50.264Z",
+  "meta": {
+    "name": "Shenmu",
+    "nameIt": "Shenmu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shenmu.geojson",
+      "sha256": "4ae385adc911de1b790cd03ae3d4bf70296858f301b4931130f63cf7d1540c48",
+      "size": 368542,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shenmu",
+    "name": "Shenmu",
+    "nameIt": "Shenmu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      110.493,
+      38.83461
+    ],
+    "zoom": 11,
+    "population": 163972,
+    "grid": "cities/shenmu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shenmu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shenmu",
+        "name": "Shenmu",
+        "nameIt": "Shenmu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          110.493,
+          38.83461
+        ],
+        "zoom": 11,
+        "population": 163972,
+        "cells": 316,
+        "layer": "cities/shenmu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.493,
+            38.83461
+          ]
+        },
+        "properties": {
+          "id": "shenmu",
+          "name": "Shenmu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 27.4,
+          "population": 163972
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khan-yunis",
+  "createdAt": "2026-10-08T15:46:28.369Z",
+  "updatedAt": "2026-10-08T15:46:28.369Z",
+  "meta": {
+    "name": "Khan Yunis",
+    "nameIt": "Khan Yunis",
+    "region": "Palestine",
+    "regionIt": "Palestina",
+    "country": "PS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khan Yunis.geojson",
+      "sha256": "3a7004f6264816c72d6b73d59b6275386104d8647490c88be96b832ff0f67e4e",
+      "size": 968265,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khan-yunis",
+    "name": "Khan Yunis",
+    "nameIt": "Khan Yunis",
+    "region": "Palestine",
+    "regionIt": "Palestina",
+    "country": "PS",
+    "center": [
+      34.29777,
+      31.3211
+    ],
+    "zoom": 10.2,
+    "population": 646535,
+    "grid": "cities/khan-yunis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khan-yunis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khan-yunis",
+        "name": "Khan Yunis",
+        "nameIt": "Khan Yunis",
+        "region": "Palestine",
+        "regionIt": "Palestina",
+        "country": "PS",
+        "center": [
+          34.29777,
+          31.3211
+        ],
+        "zoom": 10.2,
+        "population": 646535,
+        "cells": 835,
+        "layer": "cities/khan-yunis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.29777,
+            31.3211
+          ]
+        },
+        "properties": {
+          "id": "khan-yunis",
+          "name": "Khan Yunis",
+          "country": "PS",
+          "isStudy": true,
+          "proximityMinutes": 21.3,
+          "population": 646535
+        }
+      },
+      "summary": null
+    }
+  }
+}

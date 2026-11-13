@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "urdaneta",
+  "createdAt": "2026-10-08T16:20:03.083Z",
+  "updatedAt": "2026-10-08T16:20:03.083Z",
+  "meta": {
+    "name": "Urdaneta",
+    "nameIt": "Urdaneta",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Urdaneta.geojson",
+      "sha256": "935de5d5a15782263e04dc7102a320ba3276a2e2d69d8e4c5aa7dd42c460ac29",
+      "size": 443045,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "urdaneta",
+    "name": "Urdaneta",
+    "nameIt": "Urdaneta",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      120.57137,
+      15.97486
+    ],
+    "zoom": 10.5,
+    "population": 94778,
+    "grid": "cities/urdaneta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/urdaneta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "urdaneta",
+        "name": "Urdaneta",
+        "nameIt": "Urdaneta",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          120.57137,
+          15.97486
+        ],
+        "zoom": 10.5,
+        "population": 94778,
+        "cells": 380,
+        "layer": "cities/urdaneta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.57137,
+            15.97486
+          ]
+        },
+        "properties": {
+          "id": "urdaneta",
+          "name": "Urdaneta",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 19.9,
+          "population": 94778
+        }
+      },
+      "summary": null
+    }
+  }
+}

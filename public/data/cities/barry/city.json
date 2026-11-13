@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barry",
+  "createdAt": "2026-10-08T15:15:44.459Z",
+  "updatedAt": "2026-10-08T15:15:44.459Z",
+  "meta": {
+    "name": "Barry",
+    "nameIt": "Barry",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barry.geojson",
+      "sha256": "4c96ecbe77be9cc2da1c8088c8c1f3c1882da19f17d05f55dd6ea56272a8a19a",
+      "size": 232676,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barry",
+    "name": "Barry",
+    "nameIt": "Barry",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -3.27006,
+      51.4082
+    ],
+    "zoom": 11.6,
+    "population": 53857,
+    "grid": "cities/barry/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barry/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barry",
+        "name": "Barry",
+        "nameIt": "Barry",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -3.27006,
+          51.4082
+        ],
+        "zoom": 11.6,
+        "population": 53857,
+        "cells": 201,
+        "layer": "cities/barry/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -3.27006,
+            51.4082
+          ]
+        },
+        "properties": {
+          "id": "barry",
+          "name": "Barry",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 9.4,
+          "population": 53857
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "godhra",
+  "createdAt": "2026-10-08T15:35:29.023Z",
+  "updatedAt": "2026-10-08T15:35:29.023Z",
+  "meta": {
+    "name": "Godhra",
+    "nameIt": "Godhra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Godhra.geojson",
+      "sha256": "5c7a9c907da3346f6f15b80feecb71632d6a7fb2cc60bcc9719ca101b6978d95",
+      "size": 352636,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "godhra",
+    "name": "Godhra",
+    "nameIt": "Godhra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.61988,
+      22.77632
+    ],
+    "zoom": 11,
+    "population": 163268,
+    "grid": "cities/godhra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/godhra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "godhra",
+        "name": "Godhra",
+        "nameIt": "Godhra",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.61988,
+          22.77632
+        ],
+        "zoom": 11,
+        "population": 163268,
+        "cells": 304,
+        "layer": "cities/godhra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.61988,
+            22.77632
+          ]
+        },
+        "properties": {
+          "id": "godhra",
+          "name": "Godhra",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.6,
+          "population": 163268
+        }
+      },
+      "summary": null
+    }
+  }
+}

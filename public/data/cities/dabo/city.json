@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dabo",
+  "createdAt": "2026-10-08T15:27:20.221Z",
+  "updatedAt": "2026-10-08T15:27:20.221Z",
+  "meta": {
+    "name": "Dabo",
+    "nameIt": "Dabo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dabo.geojson",
+      "sha256": "76eea4756f857e69cb9c9b32776b87f068a817a82590d657e39416b46be4d014",
+      "size": 108739,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dabo",
+    "name": "Dabo",
+    "nameIt": "Dabo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      104.56357,
+      -0.49157
+    ],
+    "zoom": 12,
+    "population": 32898,
+    "grid": "cities/dabo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dabo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dabo",
+        "name": "Dabo",
+        "nameIt": "Dabo",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          104.56357,
+          -0.49157
+        ],
+        "zoom": 12,
+        "population": 32898,
+        "cells": 92,
+        "layer": "cities/dabo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            104.56357,
+            -0.49157
+          ]
+        },
+        "properties": {
+          "id": "dabo",
+          "name": "Dabo",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 17.1,
+          "population": 32898
+        }
+      },
+      "summary": null
+    }
+  }
+}

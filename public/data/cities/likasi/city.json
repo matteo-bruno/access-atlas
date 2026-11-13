@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "likasi",
+  "createdAt": "2026-10-08T15:51:06.523Z",
+  "updatedAt": "2026-10-08T15:51:06.523Z",
+  "meta": {
+    "name": "Likasi",
+    "nameIt": "Likasi",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Likasi.geojson",
+      "sha256": "4c7302160eba705fe093c1f3e81c2ae7db1cc7db0e69ab34918b9ac251be23ed",
+      "size": 606393,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "likasi",
+    "name": "Likasi",
+    "nameIt": "Likasi",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      26.73769,
+      -10.98478
+    ],
+    "zoom": 10.5,
+    "population": 394803,
+    "grid": "cities/likasi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/likasi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "likasi",
+        "name": "Likasi",
+        "nameIt": "Likasi",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          26.73769,
+          -10.98478
+        ],
+        "zoom": 10.5,
+        "population": 394803,
+        "cells": 515,
+        "layer": "cities/likasi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.73769,
+            -10.98478
+          ]
+        },
+        "properties": {
+          "id": "likasi",
+          "name": "Likasi",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 34.7,
+          "population": 394803
+        }
+      },
+      "summary": null
+    }
+  }
+}

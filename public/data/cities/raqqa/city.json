@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "raqqa",
+  "createdAt": "2026-10-08T16:08:19.590Z",
+  "updatedAt": "2026-10-08T16:08:19.590Z",
+  "meta": {
+    "name": "Raqqa",
+    "nameIt": "Raqqa",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Raqqa.geojson",
+      "sha256": "94c302a9de81b4797959b91a8120bde4cbf7a8c89013e07ada1af99f24b52e48",
+      "size": 286830,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "raqqa",
+    "name": "Raqqa",
+    "nameIt": "Raqqa",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY",
+    "center": [
+      39.01002,
+      35.95314
+    ],
+    "zoom": 10.9,
+    "population": 334719,
+    "grid": "cities/raqqa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/raqqa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "raqqa",
+        "name": "Raqqa",
+        "nameIt": "Raqqa",
+        "region": "Syria",
+        "regionIt": "Siria",
+        "country": "SY",
+        "center": [
+          39.01002,
+          35.95314
+        ],
+        "zoom": 10.9,
+        "population": 334719,
+        "cells": 248,
+        "layer": "cities/raqqa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.01002,
+            35.95314
+          ]
+        },
+        "properties": {
+          "id": "raqqa",
+          "name": "Raqqa",
+          "country": "SY",
+          "isStudy": true,
+          "proximityMinutes": 18.2,
+          "population": 334719
+        }
+      },
+      "summary": null
+    }
+  }
+}

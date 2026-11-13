@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yen-inh",
+  "createdAt": "2026-10-08T16:24:39.004Z",
+  "updatedAt": "2026-10-08T16:24:39.004Z",
+  "meta": {
+    "name": "Yên Định",
+    "nameIt": "Yên Định",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yên Định.geojson",
+      "sha256": "5ccae09c2c108e0123602442483e7aa1ce93a2bb75ab82335e5bcfd55c3dae3b",
+      "size": 265196,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yen-inh",
+    "name": "Yên Định",
+    "nameIt": "Yên Định",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      106.31527,
+      20.20457
+    ],
+    "zoom": 11.1,
+    "population": 67922,
+    "grid": "cities/yen-inh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yen-inh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yen-inh",
+        "name": "Yên Định",
+        "nameIt": "Yên Định",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          106.31527,
+          20.20457
+        ],
+        "zoom": 11.1,
+        "population": 67922,
+        "cells": 227,
+        "layer": "cities/yen-inh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.31527,
+            20.20457
+          ]
+        },
+        "properties": {
+          "id": "yen-inh",
+          "name": "Yên Định",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 67922
+        }
+      },
+      "summary": null
+    }
+  }
+}

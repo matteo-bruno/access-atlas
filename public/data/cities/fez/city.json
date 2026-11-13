@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fez",
+  "createdAt": "2026-10-08T15:33:20.442Z",
+  "updatedAt": "2026-10-08T15:33:20.442Z",
+  "meta": {
+    "name": "Fez",
+    "nameIt": "Fez",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fez.geojson",
+      "sha256": "c5b13f639523ff612b48fcab240dcc3899eff61feb82c394669bd63f52b9ac37",
+      "size": 1096684,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fez",
+    "name": "Fez",
+    "nameIt": "Fez",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -5.00659,
+      34.02396
+    ],
+    "zoom": 10.2,
+    "population": 717211,
+    "grid": "cities/fez/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fez/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fez",
+        "name": "Fez",
+        "nameIt": "Fez",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -5.00659,
+          34.02396
+        ],
+        "zoom": 10.2,
+        "population": 717211,
+        "cells": 952,
+        "layer": "cities/fez/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.00659,
+            34.02396
+          ]
+        },
+        "properties": {
+          "id": "fez",
+          "name": "Fez",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 20.2,
+          "population": 717211
+        }
+      },
+      "summary": null
+    }
+  }
+}

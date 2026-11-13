@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ostend",
+  "createdAt": "2026-10-08T16:03:10.550Z",
+  "updatedAt": "2026-10-08T16:03:10.550Z",
+  "meta": {
+    "name": "Ostend",
+    "nameIt": "Ostend",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ostend.geojson",
+      "sha256": "465d243ad2b8fbfd7fa3a5b3f586e4a67442882bec1c7ce9eb8e4a069c9f87b9",
+      "size": 439140,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ostend",
+    "name": "Ostend",
+    "nameIt": "Ostend",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE",
+    "center": [
+      2.9219,
+      51.22248
+    ],
+    "zoom": 10.9,
+    "population": 84192,
+    "grid": "cities/ostend/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ostend/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ostend",
+        "name": "Ostend",
+        "nameIt": "Ostend",
+        "region": "Belgium",
+        "regionIt": "Belgio",
+        "country": "BE",
+        "center": [
+          2.9219,
+          51.22248
+        ],
+        "zoom": 10.9,
+        "population": 84192,
+        "cells": 385,
+        "layer": "cities/ostend/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.9219,
+            51.22248
+          ]
+        },
+        "properties": {
+          "id": "ostend",
+          "name": "Ostend",
+          "country": "BE",
+          "isStudy": true,
+          "proximityMinutes": 9,
+          "population": 84192
+        }
+      },
+      "summary": null
+    }
+  }
+}

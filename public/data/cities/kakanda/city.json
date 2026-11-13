@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kakanda",
+  "createdAt": "2026-10-08T15:44:18.348Z",
+  "updatedAt": "2026-10-08T15:44:18.348Z",
+  "meta": {
+    "name": "Kakanda",
+    "nameIt": "Kakanda",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kakanda.geojson",
+      "sha256": "946477bfc0cb8d28d95b3b23d063a570a6b22e1003dc3c20fa37af55d13a99a1",
+      "size": 98770,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kakanda",
+    "name": "Kakanda",
+    "nameIt": "Kakanda",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      26.41499,
+      -10.74869
+    ],
+    "zoom": 12,
+    "population": 52237,
+    "grid": "cities/kakanda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kakanda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kakanda",
+        "name": "Kakanda",
+        "nameIt": "Kakanda",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          26.41499,
+          -10.74869
+        ],
+        "zoom": 12,
+        "population": 52237,
+        "cells": 84,
+        "layer": "cities/kakanda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.41499,
+            -10.74869
+          ]
+        },
+        "properties": {
+          "id": "kakanda",
+          "name": "Kakanda",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 52237
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-gamaleya",
+  "createdAt": "2026-10-08T15:05:00.385Z",
+  "updatedAt": "2026-10-08T15:05:00.385Z",
+  "meta": {
+    "name": "Al-Gamaleya",
+    "nameIt": "Al-Gamaleya",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al-Gamaleya.geojson",
+      "sha256": "0b1f9ec002b74a9126188752cc4144400f07202429f41e9091fcc3faa8fd5e05",
+      "size": 273761,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-gamaleya",
+    "name": "Al-Gamaleya",
+    "nameIt": "Al-Gamaleya",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      31.86325,
+      31.18797
+    ],
+    "zoom": 10.8,
+    "population": 191553,
+    "grid": "cities/al-gamaleya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-gamaleya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-gamaleya",
+        "name": "Al-Gamaleya",
+        "nameIt": "Al-Gamaleya",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          31.86325,
+          31.18797
+        ],
+        "zoom": 10.8,
+        "population": 191553,
+        "cells": 235,
+        "layer": "cities/al-gamaleya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.86325,
+            31.18797
+          ]
+        },
+        "properties": {
+          "id": "al-gamaleya",
+          "name": "Al-Gamaleya",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 191553
+        }
+      },
+      "summary": null
+    }
+  }
+}

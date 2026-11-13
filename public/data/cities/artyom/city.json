@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "artyom",
+  "createdAt": "2026-10-08T15:09:43.454Z",
+  "updatedAt": "2026-10-08T15:09:43.454Z",
+  "meta": {
+    "name": "Artyom",
+    "nameIt": "Artyom",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Artyom.geojson",
+      "sha256": "7984a669274b8d51d7fbc03a3bf84d518425ff2f16ec5c61d4346613b1c72f8f",
+      "size": 282152,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "artyom",
+    "name": "Artyom",
+    "nameIt": "Artyom",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      132.183,
+      43.35737
+    ],
+    "zoom": 11,
+    "population": 40576,
+    "grid": "cities/artyom/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/artyom/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "artyom",
+        "name": "Artyom",
+        "nameIt": "Artyom",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          132.183,
+          43.35737
+        ],
+        "zoom": 11,
+        "population": 40576,
+        "cells": 245,
+        "layer": "cities/artyom/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            132.183,
+            43.35737
+          ]
+        },
+        "properties": {
+          "id": "artyom",
+          "name": "Artyom",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 40576
+        }
+      },
+      "summary": null
+    }
+  }
+}

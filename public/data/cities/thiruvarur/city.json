@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "thiruvarur",
+  "createdAt": "2026-10-08T16:17:37.187Z",
+  "updatedAt": "2026-10-08T16:17:37.187Z",
+  "meta": {
+    "name": "Thiruvarur",
+    "nameIt": "Thiruvarur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Thiruvarur.geojson",
+      "sha256": "47df7b7420fdd8fc3f87193caff0d6a78dde96a3e54049c052384538ce1b0ac8",
+      "size": 241497,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "thiruvarur",
+    "name": "Thiruvarur",
+    "nameIt": "Thiruvarur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.63281,
+      10.77336
+    ],
+    "zoom": 11.4,
+    "population": 81418,
+    "grid": "cities/thiruvarur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/thiruvarur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "thiruvarur",
+        "name": "Thiruvarur",
+        "nameIt": "Thiruvarur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.63281,
+          10.77336
+        ],
+        "zoom": 11.4,
+        "population": 81418,
+        "cells": 208,
+        "layer": "cities/thiruvarur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.63281,
+            10.77336
+          ]
+        },
+        "properties": {
+          "id": "thiruvarur",
+          "name": "Thiruvarur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19.9,
+          "population": 81418
+        }
+      },
+      "summary": null
+    }
+  }
+}

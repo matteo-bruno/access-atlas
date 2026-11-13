@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "araraquara",
+  "createdAt": "2026-10-08T15:09:04.809Z",
+  "updatedAt": "2026-10-08T15:09:04.809Z",
+  "meta": {
+    "name": "Araraquara",
+    "nameIt": "Araraquara",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Araraquara.geojson",
+      "sha256": "11bf30a47c2dd70e6773e6bf498e4316cb1863d468a760425917ea2cb61dbbe7",
+      "size": 695454,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "araraquara",
+    "name": "Araraquara",
+    "nameIt": "Araraquara",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -48.1659,
+      -21.78201
+    ],
+    "zoom": 10.3,
+    "population": 220969,
+    "grid": "cities/araraquara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/araraquara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "araraquara",
+        "name": "Araraquara",
+        "nameIt": "Araraquara",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -48.1659,
+          -21.78201
+        ],
+        "zoom": 10.3,
+        "population": 220969,
+        "cells": 597,
+        "layer": "cities/araraquara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.1659,
+            -21.78201
+          ]
+        },
+        "properties": {
+          "id": "araraquara",
+          "name": "Araraquara",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 220969
+        }
+      },
+      "summary": null
+    }
+  }
+}

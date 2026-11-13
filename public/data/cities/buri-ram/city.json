@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "buri-ram",
+  "createdAt": "2026-10-08T15:21:03.465Z",
+  "updatedAt": "2026-10-08T15:21:03.465Z",
+  "meta": {
+    "name": "Buri Ram",
+    "nameIt": "Buri Ram",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Buri Ram.geojson",
+      "sha256": "4210c71e68460a58dfe6b9a86af44dc78c6cc0e21a6f6b34add71831e4fc94c2",
+      "size": 225368,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "buri-ram",
+    "name": "Buri Ram",
+    "nameIt": "Buri Ram",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      103.10177,
+      14.99628
+    ],
+    "zoom": 11.3,
+    "population": 52863,
+    "grid": "cities/buri-ram/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/buri-ram/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "buri-ram",
+        "name": "Buri Ram",
+        "nameIt": "Buri Ram",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          103.10177,
+          14.99628
+        ],
+        "zoom": 11.3,
+        "population": 52863,
+        "cells": 193,
+        "layer": "cities/buri-ram/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.10177,
+            14.99628
+          ]
+        },
+        "properties": {
+          "id": "buri-ram",
+          "name": "Buri Ram",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 17.4,
+          "population": 52863
+        }
+      },
+      "summary": null
+    }
+  }
+}

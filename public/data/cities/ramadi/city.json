@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ramadi",
+  "createdAt": "2026-10-08T16:08:04.331Z",
+  "updatedAt": "2026-10-08T16:08:04.331Z",
+  "meta": {
+    "name": "Ramadi",
+    "nameIt": "Ramadi",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ramadi.geojson",
+      "sha256": "4b04d11633cca2ef2d9d051df3ce328482b64ab44662d5d6475e0896dbb46b4a",
+      "size": 752128,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ramadi",
+    "name": "Ramadi",
+    "nameIt": "Ramadi",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      43.29816,
+      33.42817
+    ],
+    "zoom": 10.1,
+    "population": 306446,
+    "grid": "cities/ramadi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ramadi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ramadi",
+        "name": "Ramadi",
+        "nameIt": "Ramadi",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          43.29816,
+          33.42817
+        ],
+        "zoom": 10.1,
+        "population": 306446,
+        "cells": 650,
+        "layer": "cities/ramadi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.29816,
+            33.42817
+          ]
+        },
+        "properties": {
+          "id": "ramadi",
+          "name": "Ramadi",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 29.2,
+          "population": 306446
+        }
+      },
+      "summary": null
+    }
+  }
+}

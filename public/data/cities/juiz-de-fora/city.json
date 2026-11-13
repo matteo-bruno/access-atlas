@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "juiz-de-fora",
+  "createdAt": "2026-10-08T15:43:37.201Z",
+  "updatedAt": "2026-10-08T15:43:37.201Z",
+  "meta": {
+    "name": "Juiz de Fora",
+    "nameIt": "Juiz de Fora",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Juiz de Fora.geojson",
+      "sha256": "13e8bb3ff5fbbb1f557d228cf59291583394a992afc6ce6b0091146732c281af",
+      "size": 988456,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "juiz-de-fora",
+    "name": "Juiz de Fora",
+    "nameIt": "Juiz de Fora",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -43.36598,
+      -21.75119
+    ],
+    "zoom": 10,
+    "population": 435144,
+    "grid": "cities/juiz-de-fora/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/juiz-de-fora/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "juiz-de-fora",
+        "name": "Juiz de Fora",
+        "nameIt": "Juiz de Fora",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -43.36598,
+          -21.75119
+        ],
+        "zoom": 10,
+        "population": 435144,
+        "cells": 842,
+        "layer": "cities/juiz-de-fora/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -43.36598,
+            -21.75119
+          ]
+        },
+        "properties": {
+          "id": "juiz-de-fora",
+          "name": "Juiz de Fora",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 29.1,
+          "population": 435144
+        }
+      },
+      "summary": null
+    }
+  }
+}

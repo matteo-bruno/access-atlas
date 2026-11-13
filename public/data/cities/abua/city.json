@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abua",
+  "createdAt": "2026-10-08T15:01:59.573Z",
+  "updatedAt": "2026-10-08T15:01:59.573Z",
+  "meta": {
+    "name": "Abua",
+    "nameIt": "Abua",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abua.geojson",
+      "sha256": "51363db796965d4754acc18f1f760b496825e1726121b0f15ddab95de720cef7",
+      "size": 169234,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abua",
+    "name": "Abua",
+    "nameIt": "Abua",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      6.64734,
+      4.85098
+    ],
+    "zoom": 12,
+    "population": 51408,
+    "grid": "cities/abua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abua",
+        "name": "Abua",
+        "nameIt": "Abua",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          6.64734,
+          4.85098
+        ],
+        "zoom": 12,
+        "population": 51408,
+        "cells": 147,
+        "layer": "cities/abua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.64734,
+            4.85098
+          ]
+        },
+        "properties": {
+          "id": "abua",
+          "name": "Abua",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 51408
+        }
+      },
+      "summary": null
+    }
+  }
+}

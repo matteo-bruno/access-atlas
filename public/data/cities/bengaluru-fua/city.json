@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bengaluru-fua",
+  "createdAt": "2026-10-19T16:55:27.103Z",
+  "updatedAt": "2026-10-19T16:55:27.103Z",
+  "meta": {
+    "name": "Bengaluru",
+    "nameIt": "Bengaluru",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "bengaluru-fua",
+    "name": "Bengaluru",
+    "nameIt": "Bengaluru",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "extent": "fua",
+    "core": "bengaluru",
+    "center": [
+      77.60311,
+      12.96975
+    ],
+    "zoom": 8.5,
+    "population": 8705930,
+    "grid": "cities/bengaluru-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bengaluru-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bengaluru-fua",
+        "name": "Bengaluru",
+        "nameIt": "Bengaluru",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "extent": "fua",
+        "core": "bengaluru",
+        "center": [
+          77.60311,
+          12.96975
+        ],
+        "zoom": 8.5,
+        "population": 8705930,
+        "cells": 18866,
+        "layer": "cities/bengaluru-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.60311,
+            12.96975
+          ]
+        },
+        "properties": {
+          "id": "bengaluru-fua",
+          "name": "Bengaluru",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 8705930
+        }
+      },
+      "summary": null
+    }
+  }
+}

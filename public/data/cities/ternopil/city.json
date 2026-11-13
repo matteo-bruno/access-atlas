@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ternopil",
+  "createdAt": "2026-10-08T16:17:23.681Z",
+  "updatedAt": "2026-10-08T16:17:23.681Z",
+  "meta": {
+    "name": "Ternopil",
+    "nameIt": "Ternopil",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ternopil.geojson",
+      "sha256": "4059e6246a25732003b2b652dce643d58a13eed641167cd83dd0b07d470fd47c",
+      "size": 418312,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ternopil",
+    "name": "Ternopil",
+    "nameIt": "Ternopil",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      25.60177,
+      49.55506
+    ],
+    "zoom": 11,
+    "population": 140308,
+    "grid": "cities/ternopil/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ternopil/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ternopil",
+        "name": "Ternopil",
+        "nameIt": "Ternopil",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          25.60177,
+          49.55506
+        ],
+        "zoom": 11,
+        "population": 140308,
+        "cells": 366,
+        "layer": "cities/ternopil/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.60177,
+            49.55506
+          ]
+        },
+        "properties": {
+          "id": "ternopil",
+          "name": "Ternopil",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 9.1,
+          "population": 140308
+        }
+      },
+      "summary": null
+    }
+  }
+}

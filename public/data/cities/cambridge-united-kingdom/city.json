@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cambridge-united-kingdom",
+  "createdAt": "2026-10-08T15:22:04.118Z",
+  "updatedAt": "2026-10-08T15:22:04.118Z",
+  "meta": {
+    "name": "Cambridge (United Kingdom)",
+    "nameIt": "Cambridge (United Kingdom)",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cambridge (United Kingdom).geojson",
+      "sha256": "0d8fa9f0047007fe2b32349442226e7635d1aa7ead64442159458c4c4a1d4156",
+      "size": 421334,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cambridge-united-kingdom",
+    "name": "Cambridge (United Kingdom)",
+    "nameIt": "Cambridge (United Kingdom)",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      0.1375,
+      52.20641
+    ],
+    "zoom": 11,
+    "population": 144201,
+    "grid": "cities/cambridge-united-kingdom/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cambridge-united-kingdom/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cambridge-united-kingdom",
+        "name": "Cambridge (United Kingdom)",
+        "nameIt": "Cambridge (United Kingdom)",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          0.1375,
+          52.20641
+        ],
+        "zoom": 11,
+        "population": 144201,
+        "cells": 367,
+        "layer": "cities/cambridge-united-kingdom/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.1375,
+            52.20641
+          ]
+        },
+        "properties": {
+          "id": "cambridge-united-kingdom",
+          "name": "Cambridge (United Kingdom)",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 8.6,
+          "population": 144201
+        }
+      },
+      "summary": null
+    }
+  }
+}

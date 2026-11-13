@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ponta-grossa",
+  "createdAt": "2026-10-08T16:06:09.413Z",
+  "updatedAt": "2026-10-08T16:06:09.413Z",
+  "meta": {
+    "name": "Ponta Grossa",
+    "nameIt": "Ponta Grossa",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ponta Grossa.geojson",
+      "sha256": "6fcecb636f36ed949e771ddb8ddad5c5afe343d651ba5b1ece81da5b4b07d3e1",
+      "size": 1032618,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ponta-grossa",
+    "name": "Ponta Grossa",
+    "nameIt": "Ponta Grossa",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -50.15817,
+      -25.09156
+    ],
+    "zoom": 10.3,
+    "population": 303198,
+    "grid": "cities/ponta-grossa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ponta-grossa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ponta-grossa",
+        "name": "Ponta Grossa",
+        "nameIt": "Ponta Grossa",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -50.15817,
+          -25.09156
+        ],
+        "zoom": 10.3,
+        "population": 303198,
+        "cells": 882,
+        "layer": "cities/ponta-grossa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.15817,
+            -25.09156
+          ]
+        },
+        "properties": {
+          "id": "ponta-grossa",
+          "name": "Ponta Grossa",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 26.4,
+          "population": 303198
+        }
+      },
+      "summary": null
+    }
+  }
+}

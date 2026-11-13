@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mumigunga",
+  "createdAt": "2026-10-08T15:58:55.532Z",
+  "updatedAt": "2026-10-08T15:58:55.532Z",
+  "meta": {
+    "name": "Mumigunga",
+    "nameIt": "Mumigunga",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mumigunga.geojson",
+      "sha256": "a40ee00ca74216581451d55013abacf73e566459e014a37dd766cb10125b3962",
+      "size": 192728,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mumigunga",
+    "name": "Mumigunga",
+    "nameIt": "Mumigunga",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      30.3907,
+      -4.23104
+    ],
+    "zoom": 11.3,
+    "population": 49566,
+    "grid": "cities/mumigunga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mumigunga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mumigunga",
+        "name": "Mumigunga",
+        "nameIt": "Mumigunga",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          30.3907,
+          -4.23104
+        ],
+        "zoom": 11.3,
+        "population": 49566,
+        "cells": 165,
+        "layer": "cities/mumigunga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.3907,
+            -4.23104
+          ]
+        },
+        "properties": {
+          "id": "mumigunga",
+          "name": "Mumigunga",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 49566
+        }
+      },
+      "summary": null
+    }
+  }
+}

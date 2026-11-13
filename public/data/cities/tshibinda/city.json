@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tshibinda",
+  "createdAt": "2026-10-08T16:18:56.392Z",
+  "updatedAt": "2026-10-08T16:18:56.392Z",
+  "meta": {
+    "name": "Tshibinda",
+    "nameIt": "Tshibinda",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tshibinda.geojson",
+      "sha256": "c06498891f983262bd124cc69627f6c2b202f8ffecd4b8cd976d8d451fcd9e86",
+      "size": 46758,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tshibinda",
+    "name": "Tshibinda",
+    "nameIt": "Tshibinda",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      20.88823,
+      -7.24029
+    ],
+    "zoom": 12,
+    "population": 18815,
+    "grid": "cities/tshibinda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tshibinda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tshibinda",
+        "name": "Tshibinda",
+        "nameIt": "Tshibinda",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          20.88823,
+          -7.24029
+        ],
+        "zoom": 12,
+        "population": 18815,
+        "cells": 40,
+        "layer": "cities/tshibinda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.88823,
+            -7.24029
+          ]
+        },
+        "properties": {
+          "id": "tshibinda",
+          "name": "Tshibinda",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 18815
+        }
+      },
+      "summary": null
+    }
+  }
+}

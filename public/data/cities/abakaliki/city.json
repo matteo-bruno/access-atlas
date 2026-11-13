@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abakaliki",
+  "createdAt": "2026-10-08T15:01:14.012Z",
+  "updatedAt": "2026-10-08T15:01:14.012Z",
+  "meta": {
+    "name": "Abakaliki",
+    "nameIt": "Abakaliki",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abakaliki.geojson",
+      "sha256": "ce9039249b11cd21258ad26e96f6dc8fd7ab4d43368bd4f96731bddbbf9f0fc9",
+      "size": 879401,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abakaliki",
+    "name": "Abakaliki",
+    "nameIt": "Abakaliki",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      8.10085,
+      6.32306
+    ],
+    "zoom": 10.5,
+    "population": 354080,
+    "grid": "cities/abakaliki/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abakaliki/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abakaliki",
+        "name": "Abakaliki",
+        "nameIt": "Abakaliki",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          8.10085,
+          6.32306
+        ],
+        "zoom": 10.5,
+        "population": 354080,
+        "cells": 765,
+        "layer": "cities/abakaliki/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.10085,
+            6.32306
+          ]
+        },
+        "properties": {
+          "id": "abakaliki",
+          "name": "Abakaliki",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 354080
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bourges",
+  "createdAt": "2026-10-08T15:20:14.663Z",
+  "updatedAt": "2026-10-08T15:20:14.663Z",
+  "meta": {
+    "name": "Bourges",
+    "nameIt": "Bourges",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bourges.geojson",
+      "sha256": "3e27e45a8282e17dec39c5fa88803f9a4d0e7205bd827a3576160912b6bdd3a5",
+      "size": 346283,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bourges",
+    "name": "Bourges",
+    "nameIt": "Bourges",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      2.3973,
+      47.08468
+    ],
+    "zoom": 11.5,
+    "population": 65199,
+    "grid": "cities/bourges/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bourges/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bourges",
+        "name": "Bourges",
+        "nameIt": "Bourges",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          2.3973,
+          47.08468
+        ],
+        "zoom": 11.5,
+        "population": 65199,
+        "cells": 304,
+        "layer": "cities/bourges/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.3973,
+            47.08468
+          ]
+        },
+        "properties": {
+          "id": "bourges",
+          "name": "Bourges",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 8.8,
+          "population": 65199
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "thrissur",
+  "createdAt": "2026-10-08T16:17:40.032Z",
+  "updatedAt": "2026-10-08T16:17:40.032Z",
+  "meta": {
+    "name": "Thrissur",
+    "nameIt": "Thrissur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Thrissur.geojson",
+      "sha256": "863ee32b21d20fdbb283995a331d0c60a40ed8321b7e031de075488262e57a1b",
+      "size": 2925240,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "thrissur",
+    "name": "Thrissur",
+    "nameIt": "Thrissur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.21224,
+      10.52783
+    ],
+    "zoom": 9.4,
+    "population": 1047030,
+    "grid": "cities/thrissur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/thrissur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "thrissur",
+        "name": "Thrissur",
+        "nameIt": "Thrissur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.21224,
+          10.52783
+        ],
+        "zoom": 9.4,
+        "population": 1047030,
+        "cells": 2548,
+        "layer": "cities/thrissur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.21224,
+            10.52783
+          ]
+        },
+        "properties": {
+          "id": "thrissur",
+          "name": "Thrissur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.7,
+          "population": 1047030
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "loning",
+  "createdAt": "2026-10-08T15:52:03.910Z",
+  "updatedAt": "2026-10-08T15:52:03.910Z",
+  "meta": {
+    "name": "Loning",
+    "nameIt": "Loning",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Loning.geojson",
+      "sha256": "830ee02b98e65dbca53ca981dcf2d7ef6f0a391a2d58c44475246823b7ec1d35",
+      "size": 207414,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "loning",
+    "name": "Loning",
+    "nameIt": "Loning",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      109.46364,
+      -6.87843
+    ],
+    "zoom": 11.2,
+    "population": 85839,
+    "grid": "cities/loning/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/loning/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "loning",
+        "name": "Loning",
+        "nameIt": "Loning",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          109.46364,
+          -6.87843
+        ],
+        "zoom": 11.2,
+        "population": 85839,
+        "cells": 177,
+        "layer": "cities/loning/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.46364,
+            -6.87843
+          ]
+        },
+        "properties": {
+          "id": "loning",
+          "name": "Loning",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 85839
+        }
+      },
+      "summary": null
+    }
+  }
+}

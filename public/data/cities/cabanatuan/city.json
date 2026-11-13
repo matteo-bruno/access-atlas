@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cabanatuan",
+  "createdAt": "2026-10-08T15:21:29.973Z",
+  "updatedAt": "2026-10-08T15:21:29.973Z",
+  "meta": {
+    "name": "Cabanatuan",
+    "nameIt": "Cabanatuan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cabanatuan.geojson",
+      "sha256": "f0e328f82cbd315b0107fc2485f7e48690094925c58ef524f3751434f8483fa8",
+      "size": 663857,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cabanatuan",
+    "name": "Cabanatuan",
+    "nameIt": "Cabanatuan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      120.95897,
+      15.46809
+    ],
+    "zoom": 10.1,
+    "population": 244943,
+    "grid": "cities/cabanatuan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cabanatuan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cabanatuan",
+        "name": "Cabanatuan",
+        "nameIt": "Cabanatuan",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          120.95897,
+          15.46809
+        ],
+        "zoom": 10.1,
+        "population": 244943,
+        "cells": 569,
+        "layer": "cities/cabanatuan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.95897,
+            15.46809
+          ]
+        },
+        "properties": {
+          "id": "cabanatuan",
+          "name": "Cabanatuan",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 17.5,
+          "population": 244943
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "deyang",
+  "createdAt": "2026-10-08T15:29:11.487Z",
+  "updatedAt": "2026-10-08T15:29:11.487Z",
+  "meta": {
+    "name": "Deyang",
+    "nameIt": "Deyang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Deyang.geojson",
+      "sha256": "c0932233686f7c67b4ab2fee4971d66e4d2ada02c8ba2f49e10c2958c0f1c195",
+      "size": 1059299,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "deyang",
+    "name": "Deyang",
+    "nameIt": "Deyang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      104.38576,
+      31.12322
+    ],
+    "zoom": 10.3,
+    "population": 572555,
+    "grid": "cities/deyang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/deyang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "deyang",
+        "name": "Deyang",
+        "nameIt": "Deyang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          104.38576,
+          31.12322
+        ],
+        "zoom": 10.3,
+        "population": 572555,
+        "cells": 906,
+        "layer": "cities/deyang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            104.38576,
+            31.12322
+          ]
+        },
+        "properties": {
+          "id": "deyang",
+          "name": "Deyang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 34.6,
+          "population": 572555
+        }
+      },
+      "summary": null
+    }
+  }
+}

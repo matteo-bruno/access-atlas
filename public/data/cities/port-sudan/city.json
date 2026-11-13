@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "port-sudan",
+  "createdAt": "2026-10-08T16:06:16.148Z",
+  "updatedAt": "2026-10-08T16:06:16.148Z",
+  "meta": {
+    "name": "Port Sudan",
+    "nameIt": "Port Sudan",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Port Sudan.geojson",
+      "sha256": "e588ad2fbd68999e770db6798ffbc3c30bc54623b10c26af4d086dbbe08a412e",
+      "size": 1032125,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "port-sudan",
+    "name": "Port Sudan",
+    "nameIt": "Port Sudan",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      37.19601,
+      19.61857
+    ],
+    "zoom": 10.1,
+    "population": 1146822,
+    "grid": "cities/port-sudan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/port-sudan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "port-sudan",
+        "name": "Port Sudan",
+        "nameIt": "Port Sudan",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          37.19601,
+          19.61857
+        ],
+        "zoom": 10.1,
+        "population": 1146822,
+        "cells": 887,
+        "layer": "cities/port-sudan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.19601,
+            19.61857
+          ]
+        },
+        "properties": {
+          "id": "port-sudan",
+          "name": "Port Sudan",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 50.4,
+          "population": 1146822
+        }
+      },
+      "summary": null
+    }
+  }
+}

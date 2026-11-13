@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lleida",
+  "createdAt": "2026-10-08T15:51:41.539Z",
+  "updatedAt": "2026-10-08T15:51:41.539Z",
+  "meta": {
+    "name": "Lleida",
+    "nameIt": "Lleida",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lleida.geojson",
+      "sha256": "662c0d9af5e129f6eb69df56cf145bb6de653408eb6dcc6bb9a49cee1df2c226",
+      "size": 259545,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lleida",
+    "name": "Lleida",
+    "nameIt": "Lleida",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      0.6297,
+      41.6177
+    ],
+    "zoom": 11.3,
+    "population": 113877,
+    "grid": "cities/lleida/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lleida/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lleida",
+        "name": "Lleida",
+        "nameIt": "Lleida",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          0.6297,
+          41.6177
+        ],
+        "zoom": 11.3,
+        "population": 113877,
+        "cells": 227,
+        "layer": "cities/lleida/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.6297,
+            41.6177
+          ]
+        },
+        "properties": {
+          "id": "lleida",
+          "name": "Lleida",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 6,
+          "population": 113877
+        }
+      },
+      "summary": null
+    }
+  }
+}

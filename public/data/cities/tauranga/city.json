@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tauranga",
+  "createdAt": "2026-10-08T16:16:58.975Z",
+  "updatedAt": "2026-10-08T16:16:58.975Z",
+  "meta": {
+    "name": "Tauranga",
+    "nameIt": "Tauranga",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tauranga.geojson",
+      "sha256": "42eb5ea1b9ac9a08c577880f1a258d2f61659e63858a12382ab9a8142b430fff",
+      "size": 1112992,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tauranga",
+    "name": "Tauranga",
+    "nameIt": "Tauranga",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ",
+    "center": [
+      176.1958,
+      -37.69623
+    ],
+    "zoom": 9.5,
+    "population": 135418,
+    "grid": "cities/tauranga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tauranga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tauranga",
+        "name": "Tauranga",
+        "nameIt": "Tauranga",
+        "region": "New Zealand",
+        "regionIt": "Nuova Zelanda",
+        "country": "NZ",
+        "center": [
+          176.1958,
+          -37.69623
+        ],
+        "zoom": 9.5,
+        "population": 135418,
+        "cells": 960,
+        "layer": "cities/tauranga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            176.1958,
+            -37.69623
+          ]
+        },
+        "properties": {
+          "id": "tauranga",
+          "name": "Tauranga",
+          "country": "NZ",
+          "isStudy": true,
+          "proximityMinutes": 20.3,
+          "population": 135418
+        }
+      },
+      "summary": null
+    }
+  }
+}

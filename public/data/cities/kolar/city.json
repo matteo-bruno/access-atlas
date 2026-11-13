@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kolar",
+  "createdAt": "2026-10-08T15:47:41.434Z",
+  "updatedAt": "2026-10-08T15:47:41.434Z",
+  "meta": {
+    "name": "Kolar",
+    "nameIt": "Kolar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kolar.geojson",
+      "sha256": "bfc625883bd526b43d394c2ee8b9c580377fc1e005c32c868ef21d2902157acf",
+      "size": 206568,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kolar",
+    "name": "Kolar",
+    "nameIt": "Kolar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.12703,
+      13.13287
+    ],
+    "zoom": 11.7,
+    "population": 103837,
+    "grid": "cities/kolar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kolar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kolar",
+        "name": "Kolar",
+        "nameIt": "Kolar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.12703,
+          13.13287
+        ],
+        "zoom": 11.7,
+        "population": 103837,
+        "cells": 178,
+        "layer": "cities/kolar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.12703,
+            13.13287
+          ]
+        },
+        "properties": {
+          "id": "kolar",
+          "name": "Kolar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 103837
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "talavera-de-la-reina",
+  "createdAt": "2026-10-08T16:16:15.252Z",
+  "updatedAt": "2026-10-08T16:16:15.252Z",
+  "meta": {
+    "name": "Talavera de la Reina",
+    "nameIt": "Talavera de la Reina",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Talavera de la Reina.geojson",
+      "sha256": "94cd58554e9af5197ec754248afd6398e33648b1e8086e0fe1287de72c567fd6",
+      "size": 105220,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "talavera-de-la-reina",
+    "name": "Talavera de la Reina",
+    "nameIt": "Talavera de la Reina",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -4.82794,
+      39.9628
+    ],
+    "zoom": 11.8,
+    "population": 57567,
+    "grid": "cities/talavera-de-la-reina/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/talavera-de-la-reina/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "talavera-de-la-reina",
+        "name": "Talavera de la Reina",
+        "nameIt": "Talavera de la Reina",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -4.82794,
+          39.9628
+        ],
+        "zoom": 11.8,
+        "population": 57567,
+        "cells": 92,
+        "layer": "cities/talavera-de-la-reina/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -4.82794,
+            39.9628
+          ]
+        },
+        "properties": {
+          "id": "talavera-de-la-reina",
+          "name": "Talavera de la Reina",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 5.2,
+          "population": 57567
+        }
+      },
+      "summary": null
+    }
+  }
+}

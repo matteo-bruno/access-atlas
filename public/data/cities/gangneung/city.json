@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gangneung",
+  "createdAt": "2026-10-08T15:34:24.791Z",
+  "updatedAt": "2026-10-08T15:34:24.791Z",
+  "meta": {
+    "name": "Gangneung",
+    "nameIt": "Gangneung",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gangneung.geojson",
+      "sha256": "73881291fd752af52045257355c4e4c18bf1ee238805be19502d90d0aa73733a",
+      "size": 466894,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gangneung",
+    "name": "Gangneung",
+    "nameIt": "Gangneung",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      128.89798,
+      37.75948
+    ],
+    "zoom": 10.9,
+    "population": 150177,
+    "grid": "cities/gangneung/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 173
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gangneung/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gangneung",
+        "name": "Gangneung",
+        "nameIt": "Gangneung",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          128.89798,
+          37.75948
+        ],
+        "zoom": 10.9,
+        "population": 150177,
+        "cells": 407,
+        "layer": "cities/gangneung/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 173
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            128.89798,
+            37.75948
+          ]
+        },
+        "properties": {
+          "id": "gangneung",
+          "name": "Gangneung",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 150177
+        }
+      },
+      "summary": null
+    }
+  }
+}

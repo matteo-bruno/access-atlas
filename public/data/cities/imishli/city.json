@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "imishli",
+  "createdAt": "2026-10-08T15:40:44.523Z",
+  "updatedAt": "2026-10-08T15:40:44.523Z",
+  "meta": {
+    "name": "Imishli",
+    "nameIt": "Imishli",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Imishli.geojson",
+      "sha256": "095b3e427fafe665136512796eb218a3d87c1dbbaa7354a099b75692f6bc7cc8",
+      "size": 136590,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "imishli",
+    "name": "Imishli",
+    "nameIt": "Imishli",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ",
+    "center": [
+      48.06287,
+      39.86934
+    ],
+    "zoom": 11.9,
+    "population": 38474,
+    "grid": "cities/imishli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/imishli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "imishli",
+        "name": "Imishli",
+        "nameIt": "Imishli",
+        "region": "Azerbaijan",
+        "regionIt": "Azerbaigian",
+        "country": "AZ",
+        "center": [
+          48.06287,
+          39.86934
+        ],
+        "zoom": 11.9,
+        "population": 38474,
+        "cells": 118,
+        "layer": "cities/imishli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.06287,
+            39.86934
+          ]
+        },
+        "properties": {
+          "id": "imishli",
+          "name": "Imishli",
+          "country": "AZ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 38474
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aylesbury",
+  "createdAt": "2026-10-08T15:11:54.591Z",
+  "updatedAt": "2026-10-08T15:11:54.591Z",
+  "meta": {
+    "name": "Aylesbury",
+    "nameIt": "Aylesbury",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aylesbury.geojson",
+      "sha256": "6c60bc463ccac9ab72d745ccfb6763528490b9abfa6eaba94cd67bfe7244a5f7",
+      "size": 206421,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aylesbury",
+    "name": "Aylesbury",
+    "nameIt": "Aylesbury",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.81265,
+      51.81455
+    ],
+    "zoom": 11.6,
+    "population": 77968,
+    "grid": "cities/aylesbury/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aylesbury/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aylesbury",
+        "name": "Aylesbury",
+        "nameIt": "Aylesbury",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.81265,
+          51.81455
+        ],
+        "zoom": 11.6,
+        "population": 77968,
+        "cells": 178,
+        "layer": "cities/aylesbury/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.81265,
+            51.81455
+          ]
+        },
+        "properties": {
+          "id": "aylesbury",
+          "name": "Aylesbury",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 13.8,
+          "population": 77968
+        }
+      },
+      "summary": null
+    }
+  }
+}

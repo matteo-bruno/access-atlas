@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "caaguazu",
+  "createdAt": "2026-10-08T15:21:29.213Z",
+  "updatedAt": "2026-10-08T15:21:29.213Z",
+  "meta": {
+    "name": "Caaguazú",
+    "nameIt": "Caaguazú",
+    "region": "Paraguay",
+    "regionIt": "Paraguay",
+    "country": "PY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Caaguazú.geojson",
+      "sha256": "0556457d1240101e1519e2857341b78772b768a6e46c6d5a649fde286a1a3ac3",
+      "size": 260921,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "caaguazu",
+    "name": "Caaguazú",
+    "nameIt": "Caaguazú",
+    "region": "Paraguay",
+    "regionIt": "Paraguay",
+    "country": "PY",
+    "center": [
+      -56.02169,
+      -25.46736
+    ],
+    "zoom": 11.3,
+    "population": 64809,
+    "grid": "cities/caaguazu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/caaguazu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "caaguazu",
+        "name": "Caaguazú",
+        "nameIt": "Caaguazú",
+        "region": "Paraguay",
+        "regionIt": "Paraguay",
+        "country": "PY",
+        "center": [
+          -56.02169,
+          -25.46736
+        ],
+        "zoom": 11.3,
+        "population": 64809,
+        "cells": 221,
+        "layer": "cities/caaguazu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -56.02169,
+            -25.46736
+          ]
+        },
+        "properties": {
+          "id": "caaguazu",
+          "name": "Caaguazú",
+          "country": "PY",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 64809
+        }
+      },
+      "summary": null
+    }
+  }
+}

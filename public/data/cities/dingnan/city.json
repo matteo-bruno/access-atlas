@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dingnan",
+  "createdAt": "2026-10-08T15:30:06.694Z",
+  "updatedAt": "2026-10-08T15:30:06.694Z",
+  "meta": {
+    "name": "Dingnan",
+    "nameIt": "Dingnan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dingnan.geojson",
+      "sha256": "801717bf52b01142a42ce79f3dcf229a8ad15dedc40b89830318e2be1adf4a27",
+      "size": 116723,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dingnan",
+    "name": "Dingnan",
+    "nameIt": "Dingnan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      115.02504,
+      24.77713
+    ],
+    "zoom": 11.7,
+    "population": 103644,
+    "grid": "cities/dingnan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dingnan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dingnan",
+        "name": "Dingnan",
+        "nameIt": "Dingnan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          115.02504,
+          24.77713
+        ],
+        "zoom": 11.7,
+        "population": 103644,
+        "cells": 100,
+        "layer": "cities/dingnan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.02504,
+            24.77713
+          ]
+        },
+        "properties": {
+          "id": "dingnan",
+          "name": "Dingnan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 103644
+        }
+      },
+      "summary": null
+    }
+  }
+}

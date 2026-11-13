@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aruja",
+  "createdAt": "2026-10-08T15:09:46.186Z",
+  "updatedAt": "2026-10-08T15:09:46.186Z",
+  "meta": {
+    "name": "Arujá",
+    "nameIt": "Arujá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Arujá.geojson",
+      "sha256": "f090e23ca253ca2afc4ec8a4f64cbf6f4c8fd9ded9ef393d45300e8799fed540",
+      "size": 153841,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aruja",
+    "name": "Arujá",
+    "nameIt": "Arujá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -46.31836,
+      -23.39123
+    ],
+    "zoom": 11.8,
+    "population": 52770,
+    "grid": "cities/aruja/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aruja/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aruja",
+        "name": "Arujá",
+        "nameIt": "Arujá",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -46.31836,
+          -23.39123
+        ],
+        "zoom": 11.8,
+        "population": 52770,
+        "cells": 131,
+        "layer": "cities/aruja/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.31836,
+            -23.39123
+          ]
+        },
+        "properties": {
+          "id": "aruja",
+          "name": "Arujá",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 13.3,
+          "population": 52770
+        }
+      },
+      "summary": null
+    }
+  }
+}

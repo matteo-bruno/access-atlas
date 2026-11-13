@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gondia",
+  "createdAt": "2026-10-08T15:35:40.735Z",
+  "updatedAt": "2026-10-08T15:35:40.735Z",
+  "meta": {
+    "name": "Gondia",
+    "nameIt": "Gondia",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gondia.geojson",
+      "sha256": "5b1d596c3a4ca58acb7e294e50afa2f74bb27839ce5f2de71ed506681568a9fd",
+      "size": 346783,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gondia",
+    "name": "Gondia",
+    "nameIt": "Gondia",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.19532,
+      21.45833
+    ],
+    "zoom": 10.9,
+    "population": 209246,
+    "grid": "cities/gondia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gondia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gondia",
+        "name": "Gondia",
+        "nameIt": "Gondia",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.19532,
+          21.45833
+        ],
+        "zoom": 10.9,
+        "population": 209246,
+        "cells": 299,
+        "layer": "cities/gondia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.19532,
+            21.45833
+          ]
+        },
+        "properties": {
+          "id": "gondia",
+          "name": "Gondia",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.9,
+          "population": 209246
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chatra",
+  "createdAt": "2026-10-08T15:24:03.604Z",
+  "updatedAt": "2026-10-08T15:24:03.604Z",
+  "meta": {
+    "name": "Chatra",
+    "nameIt": "Chatra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chatra.geojson",
+      "sha256": "bca60576a6af190cf7a204d1d5c38748c6f1ea023bfb75882764d1c8a2c7492a",
+      "size": 135522,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chatra",
+    "name": "Chatra",
+    "nameIt": "Chatra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.87184,
+      24.206
+    ],
+    "zoom": 11.8,
+    "population": 76680,
+    "grid": "cities/chatra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chatra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chatra",
+        "name": "Chatra",
+        "nameIt": "Chatra",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.87184,
+          24.206
+        ],
+        "zoom": 11.8,
+        "population": 76680,
+        "cells": 117,
+        "layer": "cities/chatra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.87184,
+            24.206
+          ]
+        },
+        "properties": {
+          "id": "chatra",
+          "name": "Chatra",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 76680
+        }
+      },
+      "summary": null
+    }
+  }
+}

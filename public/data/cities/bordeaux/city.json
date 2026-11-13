@@ -3,7 +3,7 @@
   "version": 1,
   "id": "bordeaux",
   "createdAt": "2026-08-28T13:51:44.000Z",
-  "updatedAt": "2026-10-08T14:05:34.918Z",
+  "updatedAt": "2026-10-19T20:51:40.951Z",
   "meta": {
     "name": "Bordeaux",
     "nameIt": "Bordeaux",
@@ -20,30 +20,128 @@
     "regionIt": "Francia",
     "country": "FR",
     "center": [
-      -0.57778,
-      44.84368
+      -0.5896,
+      44.83629
     ],
-    "zoom": 10.6,
-    "population": 251045,
+    "zoom": 9.9,
+    "population": 680864,
     "grid": "cities/bordeaux/grid.json.gz",
     "cell": {
       "h3Resolution": 9,
       "cellRadiusM": 198
     },
     "layers": [
+      "fifteen",
+      "citychrone",
       "cardep",
       "pov"
     ],
     "layerData": {
+      "fifteen": "cities/bordeaux/fifteen.json.gz",
+      "citychrone": "cities/bordeaux/citychrone.json.gz",
       "cardep": "cities/bordeaux/cardep.json.gz",
       "pov": "cities/bordeaux/pov.json.gz"
     },
     "cartogramSources": {
+      "fifteen": "derived",
+      "citychrone": "derived",
       "cardep": "derived",
       "pov": "derived"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 489,
+      "times": "cities/bordeaux/citychrone/times{hh}.bin"
     }
   },
   "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bordeaux",
+        "name": "Bordeaux",
+        "nameIt": "Bordeaux",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -0.59123,
+          44.83629
+        ],
+        "zoom": 9.9,
+        "population": 697343,
+        "cells": 2047,
+        "layer": "cities/bordeaux/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.59123,
+            44.83629
+          ]
+        },
+        "properties": {
+          "id": "bordeaux",
+          "name": "Bordeaux",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 7.4,
+          "population": 697343
+        }
+      },
+      "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "bordeaux",
+        "name": "Bordeaux",
+        "nameIt": "Bordeaux",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -0.57778,
+          44.84368
+        ],
+        "zoom": 10.6,
+        "population": 251045,
+        "cells": 489,
+        "layer": "cities/bordeaux/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 489,
+          "times": "cities/bordeaux/citychrone/times{hh}.bin"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.57778,
+            44.84368
+          ]
+        },
+        "properties": {
+          "id": "bordeaux",
+          "name": "Bordeaux",
+          "country": "FR",
+          "isStudy": true,
+          "velocityScore": 3.99,
+          "population": 251045
+        }
+      },
+      "summary": null
+    },
     "cardep": {
       "row": {
         "id": "bordeaux",

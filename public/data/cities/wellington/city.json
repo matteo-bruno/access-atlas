@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wellington",
+  "createdAt": "2026-10-08T16:21:32.260Z",
+  "updatedAt": "2026-10-08T16:21:32.260Z",
+  "meta": {
+    "name": "Wellington",
+    "nameIt": "Wellington",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wellington.geojson",
+      "sha256": "ef1ead72e06290d21a24c5101fa36ca285bf8654b57d7ba19bbb6464df9d7474",
+      "size": 676750,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wellington",
+    "name": "Wellington",
+    "nameIt": "Wellington",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ",
+    "center": [
+      174.78075,
+      -41.30334
+    ],
+    "zoom": 10.6,
+    "population": 141294,
+    "grid": "cities/wellington/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wellington/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wellington",
+        "name": "Wellington",
+        "nameIt": "Wellington",
+        "region": "New Zealand",
+        "regionIt": "Nuova Zelanda",
+        "country": "NZ",
+        "center": [
+          174.78075,
+          -41.30334
+        ],
+        "zoom": 10.6,
+        "population": 141294,
+        "cells": 585,
+        "layer": "cities/wellington/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            174.78075,
+            -41.30334
+          ]
+        },
+        "properties": {
+          "id": "wellington",
+          "name": "Wellington",
+          "country": "NZ",
+          "isStudy": true,
+          "proximityMinutes": 10.1,
+          "population": 141294
+        }
+      },
+      "summary": null
+    }
+  }
+}

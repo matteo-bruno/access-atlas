@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "achotnica",
+  "createdAt": "2026-10-08T15:02:11.121Z",
+  "updatedAt": "2026-10-08T15:02:11.121Z",
+  "meta": {
+    "name": "Achotnica",
+    "nameIt": "Achotnica",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Achotnica.geojson",
+      "sha256": "e0c69ec23bd1416ca9fa24fae77b94cda6902d05381f5b25160178e6aa2fd164",
+      "size": 184759,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "achotnica",
+    "name": "Achotnica",
+    "nameIt": "Achotnica",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY",
+    "center": [
+      28.56265,
+      55.51325
+    ],
+    "zoom": 11.7,
+    "population": 26802,
+    "grid": "cities/achotnica/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/achotnica/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "achotnica",
+        "name": "Achotnica",
+        "nameIt": "Achotnica",
+        "region": "Belarus",
+        "regionIt": "Bielorussia",
+        "country": "BY",
+        "center": [
+          28.56265,
+          55.51325
+        ],
+        "zoom": 11.7,
+        "population": 26802,
+        "cells": 159,
+        "layer": "cities/achotnica/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.56265,
+            55.51325
+          ]
+        },
+        "properties": {
+          "id": "achotnica",
+          "name": "Achotnica",
+          "country": "BY",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 26802
+        }
+      },
+      "summary": null
+    }
+  }
+}

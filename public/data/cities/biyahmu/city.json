@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "biyahmu",
+  "createdAt": "2026-10-08T15:19:29.344Z",
+  "updatedAt": "2026-10-08T15:19:29.344Z",
+  "meta": {
+    "name": "Biyahmu",
+    "nameIt": "Biyahmu",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Biyahmu.geojson",
+      "sha256": "9ad22ff0fcb9c4abf384a49e24c446c5aa5d1b2f1740ddfb015ed04b3df76510",
+      "size": 101218,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "biyahmu",
+    "name": "Biyahmu",
+    "nameIt": "Biyahmu",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      30.86277,
+      29.36164
+    ],
+    "zoom": 12,
+    "population": 79915,
+    "grid": "cities/biyahmu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/biyahmu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "biyahmu",
+        "name": "Biyahmu",
+        "nameIt": "Biyahmu",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          30.86277,
+          29.36164
+        ],
+        "zoom": 12,
+        "population": 79915,
+        "cells": 87,
+        "layer": "cities/biyahmu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.86277,
+            29.36164
+          ]
+        },
+        "properties": {
+          "id": "biyahmu",
+          "name": "Biyahmu",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 79915
+        }
+      },
+      "summary": null
+    }
+  }
+}

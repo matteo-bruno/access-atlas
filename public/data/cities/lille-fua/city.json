@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lille-fua",
+  "createdAt": "2026-10-19T16:57:00.093Z",
+  "updatedAt": "2026-10-19T16:57:00.093Z",
+  "meta": {
+    "name": "Lille",
+    "nameIt": "Lille",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "lille-fua",
+    "name": "Lille",
+    "nameIt": "Lille",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "extent": "fua",
+    "core": "lille",
+    "center": [
+      3.07586,
+      50.65634
+    ],
+    "zoom": 8.6,
+    "population": 1273585,
+    "grid": "cities/lille-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lille-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lille-fua",
+        "name": "Lille",
+        "nameIt": "Lille",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "extent": "fua",
+        "core": "lille",
+        "center": [
+          3.07586,
+          50.65634
+        ],
+        "zoom": 8.6,
+        "population": 1273585,
+        "cells": 10580,
+        "layer": "cities/lille-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.07586,
+            50.65634
+          ]
+        },
+        "properties": {
+          "id": "lille-fua",
+          "name": "Lille",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 8.5,
+          "population": 1273585
+        }
+      },
+      "summary": null
+    }
+  }
+}

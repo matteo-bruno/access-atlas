@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tangier",
+  "createdAt": "2026-10-08T16:16:32.922Z",
+  "updatedAt": "2026-10-08T16:16:32.922Z",
+  "meta": {
+    "name": "Tangier",
+    "nameIt": "Tangier",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tangier.geojson",
+      "sha256": "4621dd05fb18665eb090750c6117ff7d2e10e94eb42bd36bcc455f03132544fe",
+      "size": 877115,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tangier",
+    "name": "Tangier",
+    "nameIt": "Tangier",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -5.81605,
+      35.75577
+    ],
+    "zoom": 10.4,
+    "population": 163264,
+    "grid": "cities/tangier/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tangier/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tangier",
+        "name": "Tangier",
+        "nameIt": "Tangier",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -5.81605,
+          35.75577
+        ],
+        "zoom": 10.4,
+        "population": 163264,
+        "cells": 762,
+        "layer": "cities/tangier/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.81605,
+            35.75577
+          ]
+        },
+        "properties": {
+          "id": "tangier",
+          "name": "Tangier",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 17.3,
+          "population": 163264
+        }
+      },
+      "summary": null
+    }
+  }
+}

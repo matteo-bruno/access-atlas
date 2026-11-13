@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tanur",
+  "createdAt": "2026-10-08T16:16:40.477Z",
+  "updatedAt": "2026-10-08T16:16:40.477Z",
+  "meta": {
+    "name": "Tanur",
+    "nameIt": "Tanur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tanur.geojson",
+      "sha256": "e022f4c907fd51a47f54c3ec3aa384de7525fdb1f706cd80ac1c852f90d69dc5",
+      "size": 895856,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tanur",
+    "name": "Tanur",
+    "nameIt": "Tanur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.91021,
+      10.92746
+    ],
+    "zoom": 10.3,
+    "population": 184873,
+    "grid": "cities/tanur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tanur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tanur",
+        "name": "Tanur",
+        "nameIt": "Tanur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.91021,
+          10.92746
+        ],
+        "zoom": 10.3,
+        "population": 184873,
+        "cells": 775,
+        "layer": "cities/tanur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.91021,
+            10.92746
+          ]
+        },
+        "properties": {
+          "id": "tanur",
+          "name": "Tanur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 28.6,
+          "population": 184873
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ulaanbaatar",
+  "createdAt": "2026-10-08T16:19:43.678Z",
+  "updatedAt": "2026-10-08T16:19:43.678Z",
+  "meta": {
+    "name": "Ulaanbaatar",
+    "nameIt": "Ulaanbaatar",
+    "region": "Mongolia",
+    "regionIt": "Mongolia",
+    "country": "MN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ulaanbaatar.geojson",
+      "sha256": "7114a199ff74d5dd2371cd2fcf392c5e1de87f3ee57e0b835f1ae0a49b238909",
+      "size": 2785411,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ulaanbaatar",
+    "name": "Ulaanbaatar",
+    "nameIt": "Ulaanbaatar",
+    "region": "Mongolia",
+    "regionIt": "Mongolia",
+    "country": "MN",
+    "center": [
+      106.88396,
+      47.9209
+    ],
+    "zoom": 9.2,
+    "population": 1184967,
+    "grid": "cities/ulaanbaatar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ulaanbaatar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ulaanbaatar",
+        "name": "Ulaanbaatar",
+        "nameIt": "Ulaanbaatar",
+        "region": "Mongolia",
+        "regionIt": "Mongolia",
+        "country": "MN",
+        "center": [
+          106.88396,
+          47.9209
+        ],
+        "zoom": 9.2,
+        "population": 1184967,
+        "cells": 2409,
+        "layer": "cities/ulaanbaatar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.88396,
+            47.9209
+          ]
+        },
+        "properties": {
+          "id": "ulaanbaatar",
+          "name": "Ulaanbaatar",
+          "country": "MN",
+          "isStudy": true,
+          "proximityMinutes": 23.8,
+          "population": 1184967
+        }
+      },
+      "summary": null
+    }
+  }
+}

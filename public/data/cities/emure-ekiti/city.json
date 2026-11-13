@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "emure-ekiti",
+  "createdAt": "2026-10-08T15:32:14.137Z",
+  "updatedAt": "2026-10-08T15:32:14.137Z",
+  "meta": {
+    "name": "Emure-Ekiti",
+    "nameIt": "Emure-Ekiti",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Emure-Ekiti.geojson",
+      "sha256": "f6ea91abfcf5b1f3f0d2684b4c1779a16eaefc3c536fa2cb8e4eb4b06492b393",
+      "size": 154260,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "emure-ekiti",
+    "name": "Emure-Ekiti",
+    "nameIt": "Emure-Ekiti",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      5.4605,
+      7.43565
+    ],
+    "zoom": 11.9,
+    "population": 70289,
+    "grid": "cities/emure-ekiti/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/emure-ekiti/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "emure-ekiti",
+        "name": "Emure-Ekiti",
+        "nameIt": "Emure-Ekiti",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          5.4605,
+          7.43565
+        ],
+        "zoom": 11.9,
+        "population": 70289,
+        "cells": 134,
+        "layer": "cities/emure-ekiti/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.4605,
+            7.43565
+          ]
+        },
+        "properties": {
+          "id": "emure-ekiti",
+          "name": "Emure-Ekiti",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 70289
+        }
+      },
+      "summary": null
+    }
+  }
+}

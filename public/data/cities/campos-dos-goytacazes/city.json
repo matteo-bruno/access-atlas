@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "campos-dos-goytacazes",
+  "createdAt": "2026-10-08T15:22:11.723Z",
+  "updatedAt": "2026-10-08T15:22:11.723Z",
+  "meta": {
+    "name": "Campos dos Goytacazes",
+    "nameIt": "Campos dos Goytacazes",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Campos dos Goytacazes.geojson",
+      "sha256": "f0af8ca53bb5df994f523076c05eddbde3ea15582167b845cc4fd93484c8aec8",
+      "size": 651771,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "campos-dos-goytacazes",
+    "name": "Campos dos Goytacazes",
+    "nameIt": "Campos dos Goytacazes",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -41.31828,
+      -21.75452
+    ],
+    "zoom": 10.6,
+    "population": 288741,
+    "grid": "cities/campos-dos-goytacazes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/campos-dos-goytacazes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "campos-dos-goytacazes",
+        "name": "Campos dos Goytacazes",
+        "nameIt": "Campos dos Goytacazes",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -41.31828,
+          -21.75452
+        ],
+        "zoom": 10.6,
+        "population": 288741,
+        "cells": 557,
+        "layer": "cities/campos-dos-goytacazes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -41.31828,
+            -21.75452
+          ]
+        },
+        "properties": {
+          "id": "campos-dos-goytacazes",
+          "name": "Campos dos Goytacazes",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 24.6,
+          "population": 288741
+        }
+      },
+      "summary": null
+    }
+  }
+}

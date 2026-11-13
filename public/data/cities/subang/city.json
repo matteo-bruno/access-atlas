@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "subang",
+  "createdAt": "2026-10-08T16:14:54.564Z",
+  "updatedAt": "2026-10-08T16:14:54.564Z",
+  "meta": {
+    "name": "Subang",
+    "nameIt": "Subang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Subang.geojson",
+      "sha256": "0ab44d54388624f48963fd5d1b9f1e3755bd8c093e67c7ba1c6f914cfd201a19",
+      "size": 490294,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "subang",
+    "name": "Subang",
+    "nameIt": "Subang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      107.76866,
+      -6.55822
+    ],
+    "zoom": 10.3,
+    "population": 173664,
+    "grid": "cities/subang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/subang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "subang",
+        "name": "Subang",
+        "nameIt": "Subang",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          107.76866,
+          -6.55822
+        ],
+        "zoom": 10.3,
+        "population": 173664,
+        "cells": 419,
+        "layer": "cities/subang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.76866,
+            -6.55822
+          ]
+        },
+        "properties": {
+          "id": "subang",
+          "name": "Subang",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 21.7,
+          "population": 173664
+        }
+      },
+      "summary": null
+    }
+  }
+}

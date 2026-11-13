@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "phetchaburi",
+  "createdAt": "2026-10-08T16:05:15.109Z",
+  "updatedAt": "2026-10-08T16:05:15.109Z",
+  "meta": {
+    "name": "Phetchaburi",
+    "nameIt": "Phetchaburi",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Phetchaburi.geojson",
+      "sha256": "ace20830bd3874811ebd5e5fd0b3a59ef7b88a2ebcc4a118b59a8884584e0513",
+      "size": 207113,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "phetchaburi",
+    "name": "Phetchaburi",
+    "nameIt": "Phetchaburi",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      99.94574,
+      13.10231
+    ],
+    "zoom": 11.3,
+    "population": 63340,
+    "grid": "cities/phetchaburi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/phetchaburi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "phetchaburi",
+        "name": "Phetchaburi",
+        "nameIt": "Phetchaburi",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          99.94574,
+          13.10231
+        ],
+        "zoom": 11.3,
+        "population": 63340,
+        "cells": 179,
+        "layer": "cities/phetchaburi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            99.94574,
+            13.10231
+          ]
+        },
+        "properties": {
+          "id": "phetchaburi",
+          "name": "Phetchaburi",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 18.6,
+          "population": 63340
+        }
+      },
+      "summary": null
+    }
+  }
+}

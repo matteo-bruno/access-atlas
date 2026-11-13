@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sakania",
+  "createdAt": "2026-10-08T16:09:57.248Z",
+  "updatedAt": "2026-10-08T16:09:57.248Z",
+  "meta": {
+    "name": "Sakania",
+    "nameIt": "Sakania",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sakania.geojson",
+      "sha256": "8a2fc9d7da33d4934fa7a776098a83c98bad5df633271e85fd2180ce4b0f995d",
+      "size": 82307,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sakania",
+    "name": "Sakania",
+    "nameIt": "Sakania",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      28.55548,
+      -12.75103
+    ],
+    "zoom": 12,
+    "population": 31905,
+    "grid": "cities/sakania/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sakania/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sakania",
+        "name": "Sakania",
+        "nameIt": "Sakania",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          28.55548,
+          -12.75103
+        ],
+        "zoom": 12,
+        "population": 31905,
+        "cells": 70,
+        "layer": "cities/sakania/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.55548,
+            -12.75103
+          ]
+        },
+        "properties": {
+          "id": "sakania",
+          "name": "Sakania",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 31905
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chikkamagaluru",
+  "createdAt": "2026-10-08T15:24:45.898Z",
+  "updatedAt": "2026-10-08T15:24:45.898Z",
+  "meta": {
+    "name": "Chikkamagaluru",
+    "nameIt": "Chikkamagaluru",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chikkamagaluru.geojson",
+      "sha256": "adef47a1de3a83620963c50a527933f281eef3c234e68d5934c9f36d53bcf6c8",
+      "size": 257421,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chikkamagaluru",
+    "name": "Chikkamagaluru",
+    "nameIt": "Chikkamagaluru",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.77896,
+      13.32277
+    ],
+    "zoom": 11.4,
+    "population": 104337,
+    "grid": "cities/chikkamagaluru/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chikkamagaluru/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chikkamagaluru",
+        "name": "Chikkamagaluru",
+        "nameIt": "Chikkamagaluru",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.77896,
+          13.32277
+        ],
+        "zoom": 11.4,
+        "population": 104337,
+        "cells": 222,
+        "layer": "cities/chikkamagaluru/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.77896,
+            13.32277
+          ]
+        },
+        "properties": {
+          "id": "chikkamagaluru",
+          "name": "Chikkamagaluru",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 24,
+          "population": 104337
+        }
+      },
+      "summary": null
+    }
+  }
+}

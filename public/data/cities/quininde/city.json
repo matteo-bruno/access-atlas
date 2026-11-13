@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "quininde",
+  "createdAt": "2026-10-08T16:07:38.154Z",
+  "updatedAt": "2026-10-08T16:07:38.154Z",
+  "meta": {
+    "name": "Quinindé",
+    "nameIt": "Quinindé",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Quinindé.geojson",
+      "sha256": "5104aa08c46a50a1b5bbdcc3d7c5e54e5fac0843c8f59b6cc39937d16e597595",
+      "size": 58748,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "quininde",
+    "name": "Quinindé",
+    "nameIt": "Quinindé",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC",
+    "center": [
+      -79.46836,
+      0.32616
+    ],
+    "zoom": 12,
+    "population": 21582,
+    "grid": "cities/quininde/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/quininde/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "quininde",
+        "name": "Quinindé",
+        "nameIt": "Quinindé",
+        "region": "Ecuador",
+        "regionIt": "Ecuador",
+        "country": "EC",
+        "center": [
+          -79.46836,
+          0.32616
+        ],
+        "zoom": 12,
+        "population": 21582,
+        "cells": 50,
+        "layer": "cities/quininde/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -79.46836,
+            0.32616
+          ]
+        },
+        "properties": {
+          "id": "quininde",
+          "name": "Quinindé",
+          "country": "EC",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 21582
+        }
+      },
+      "summary": null
+    }
+  }
+}

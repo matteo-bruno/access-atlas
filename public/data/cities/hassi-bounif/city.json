@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hassi-bounif",
+  "createdAt": "2026-10-08T15:38:00.672Z",
+  "updatedAt": "2026-10-08T15:38:00.672Z",
+  "meta": {
+    "name": "Hassi Bounif",
+    "nameIt": "Hassi Bounif",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hassi Bounif.geojson",
+      "sha256": "00ce66f70a2a8e99e49f4b46269ed0d0e18fbf5d72fe411d4076db77f5ededfc",
+      "size": 110503,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hassi-bounif",
+    "name": "Hassi Bounif",
+    "nameIt": "Hassi Bounif",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      -0.49104,
+      35.70064
+    ],
+    "zoom": 12,
+    "population": 50354,
+    "grid": "cities/hassi-bounif/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hassi-bounif/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hassi-bounif",
+        "name": "Hassi Bounif",
+        "nameIt": "Hassi Bounif",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          -0.49104,
+          35.70064
+        ],
+        "zoom": 12,
+        "population": 50354,
+        "cells": 94,
+        "layer": "cities/hassi-bounif/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.49104,
+            35.70064
+          ]
+        },
+        "properties": {
+          "id": "hassi-bounif",
+          "name": "Hassi Bounif",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 50354
+        }
+      },
+      "summary": null
+    }
+  }
+}

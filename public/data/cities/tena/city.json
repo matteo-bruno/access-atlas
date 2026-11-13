@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tena",
+  "createdAt": "2026-10-08T16:17:15.406Z",
+  "updatedAt": "2026-10-08T16:17:15.406Z",
+  "meta": {
+    "name": "Tena",
+    "nameIt": "Tena",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tena.geojson",
+      "sha256": "973c73edcf723d30a32b6ada9ac21a752c223931e6d193732d86be41c6180599",
+      "size": 84446,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tena",
+    "name": "Tena",
+    "nameIt": "Tena",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC",
+    "center": [
+      -77.81479,
+      -0.99486
+    ],
+    "zoom": 12,
+    "population": 28530,
+    "grid": "cities/tena/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tena/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tena",
+        "name": "Tena",
+        "nameIt": "Tena",
+        "region": "Ecuador",
+        "regionIt": "Ecuador",
+        "country": "EC",
+        "center": [
+          -77.81479,
+          -0.99486
+        ],
+        "zoom": 12,
+        "population": 28530,
+        "cells": 72,
+        "layer": "cities/tena/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.81479,
+            -0.99486
+          ]
+        },
+        "properties": {
+          "id": "tena",
+          "name": "Tena",
+          "country": "EC",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 28530
+        }
+      },
+      "summary": null
+    }
+  }
+}

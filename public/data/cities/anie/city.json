@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "anie",
+  "createdAt": "2026-10-08T15:07:45.604Z",
+  "updatedAt": "2026-10-08T15:07:45.604Z",
+  "meta": {
+    "name": "Anié",
+    "nameIt": "Anié",
+    "region": "Togo",
+    "regionIt": "Togo",
+    "country": "TG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Anié.geojson",
+      "sha256": "af3391d9920aa07ff67a40e748624c888ff7c0dec9fe723eb7a526f35927e921",
+      "size": 174655,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "anie",
+    "name": "Anié",
+    "nameIt": "Anié",
+    "region": "Togo",
+    "regionIt": "Togo",
+    "country": "TG",
+    "center": [
+      1.19637,
+      7.76358
+    ],
+    "zoom": 11.7,
+    "population": 57712,
+    "grid": "cities/anie/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 182
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/anie/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "anie",
+        "name": "Anié",
+        "nameIt": "Anié",
+        "region": "Togo",
+        "regionIt": "Togo",
+        "country": "TG",
+        "center": [
+          1.19637,
+          7.76358
+        ],
+        "zoom": 11.7,
+        "population": 57712,
+        "cells": 151,
+        "layer": "cities/anie/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 182
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.19637,
+            7.76358
+          ]
+        },
+        "properties": {
+          "id": "anie",
+          "name": "Anié",
+          "country": "TG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 57712
+        }
+      },
+      "summary": null
+    }
+  }
+}

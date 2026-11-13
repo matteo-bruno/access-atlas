@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "madanpur",
+  "createdAt": "2026-10-08T15:53:19.472Z",
+  "updatedAt": "2026-10-08T15:53:19.472Z",
+  "meta": {
+    "name": "Madanpur",
+    "nameIt": "Madanpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Madanpur.geojson",
+      "sha256": "be1a53e01c6480dc33479e4b4fede7acf8a006a03d906d5ed80ba58d3f695905",
+      "size": 368321,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "madanpur",
+    "name": "Madanpur",
+    "nameIt": "Madanpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.57784,
+      24.66099
+    ],
+    "zoom": 11,
+    "population": 97328,
+    "grid": "cities/madanpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/madanpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "madanpur",
+        "name": "Madanpur",
+        "nameIt": "Madanpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.57784,
+          24.66099
+        ],
+        "zoom": 11,
+        "population": 97328,
+        "cells": 318,
+        "layer": "cities/madanpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.57784,
+            24.66099
+          ]
+        },
+        "properties": {
+          "id": "madanpur",
+          "name": "Madanpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 97328
+        }
+      },
+      "summary": null
+    }
+  }
+}

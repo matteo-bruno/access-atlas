@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nuh",
+  "createdAt": "2026-10-08T16:02:17.833Z",
+  "updatedAt": "2026-10-08T16:02:17.833Z",
+  "meta": {
+    "name": "Nuh",
+    "nameIt": "Nuh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nuh.geojson",
+      "sha256": "5a2d9d091bf342fd9839c44da12fb714e2f17fab2d220f65e2b88c966e7f4b98",
+      "size": 137803,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nuh",
+    "name": "Nuh",
+    "nameIt": "Nuh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.01415,
+      28.10393
+    ],
+    "zoom": 11.6,
+    "population": 49154,
+    "grid": "cities/nuh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nuh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nuh",
+        "name": "Nuh",
+        "nameIt": "Nuh",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.01415,
+          28.10393
+        ],
+        "zoom": 11.6,
+        "population": 49154,
+        "cells": 119,
+        "layer": "cities/nuh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.01415,
+            28.10393
+          ]
+        },
+        "properties": {
+          "id": "nuh",
+          "name": "Nuh",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 49154
+        }
+      },
+      "summary": null
+    }
+  }
+}

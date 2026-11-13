@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shrirampur",
+  "createdAt": "2026-10-08T16:13:14.294Z",
+  "updatedAt": "2026-10-08T16:13:14.294Z",
+  "meta": {
+    "name": "Shrirampur",
+    "nameIt": "Shrirampur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shrirampur.geojson",
+      "sha256": "c0df85dca567a8e94d4f974090806c7697bafb8c18aff40896de1b4c3ed7b7d5",
+      "size": 213360,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shrirampur",
+    "name": "Shrirampur",
+    "nameIt": "Shrirampur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.65507,
+      19.62021
+    ],
+    "zoom": 11.2,
+    "population": 116947,
+    "grid": "cities/shrirampur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shrirampur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shrirampur",
+        "name": "Shrirampur",
+        "nameIt": "Shrirampur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.65507,
+          19.62021
+        ],
+        "zoom": 11.2,
+        "population": 116947,
+        "cells": 184,
+        "layer": "cities/shrirampur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.65507,
+            19.62021
+          ]
+        },
+        "properties": {
+          "id": "shrirampur",
+          "name": "Shrirampur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18.2,
+          "population": 116947
+        }
+      },
+      "summary": null
+    }
+  }
+}

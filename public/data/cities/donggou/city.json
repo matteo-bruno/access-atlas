@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "donggou",
+  "createdAt": "2026-10-08T15:30:48.769Z",
+  "updatedAt": "2026-10-08T15:30:48.769Z",
+  "meta": {
+    "name": "Donggou",
+    "nameIt": "Donggou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Donggou.geojson",
+      "sha256": "ec8375589e48e45c60ea96a61dd4666ccd3ab8c478b478e4c73d5bde27760d5f",
+      "size": 267936,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "donggou",
+    "name": "Donggou",
+    "nameIt": "Donggou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.61635,
+      33.59778
+    ],
+    "zoom": 11.4,
+    "population": 57572,
+    "grid": "cities/donggou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/donggou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "donggou",
+        "name": "Donggou",
+        "nameIt": "Donggou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.61635,
+          33.59778
+        ],
+        "zoom": 11.4,
+        "population": 57572,
+        "cells": 230,
+        "layer": "cities/donggou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.61635,
+            33.59778
+          ]
+        },
+        "properties": {
+          "id": "donggou",
+          "name": "Donggou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 57572
+        }
+      },
+      "summary": null
+    }
+  }
+}

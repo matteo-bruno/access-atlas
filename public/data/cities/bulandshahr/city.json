@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bulandshahr",
+  "createdAt": "2026-10-08T15:20:38.761Z",
+  "updatedAt": "2026-10-08T15:20:38.761Z",
+  "meta": {
+    "name": "Bulandshahr",
+    "nameIt": "Bulandshahr",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bulandshahr.geojson",
+      "sha256": "7bb125ced9f26ac2dce43ba85d6f09094beb851e45aae3abf4353406c806e876",
+      "size": 318864,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bulandshahr",
+    "name": "Bulandshahr",
+    "nameIt": "Bulandshahr",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.85107,
+      28.40552
+    ],
+    "zoom": 11.2,
+    "population": 353479,
+    "grid": "cities/bulandshahr/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bulandshahr/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bulandshahr",
+        "name": "Bulandshahr",
+        "nameIt": "Bulandshahr",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.85107,
+          28.40552
+        ],
+        "zoom": 11.2,
+        "population": 353479,
+        "cells": 275,
+        "layer": "cities/bulandshahr/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.85107,
+            28.40552
+          ]
+        },
+        "properties": {
+          "id": "bulandshahr",
+          "name": "Bulandshahr",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 26.7,
+          "population": 353479
+        }
+      },
+      "summary": null
+    }
+  }
+}

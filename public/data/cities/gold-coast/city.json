@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gold-coast",
+  "createdAt": "2026-10-08T15:35:35.472Z",
+  "updatedAt": "2026-10-08T15:35:35.472Z",
+  "meta": {
+    "name": "Gold Coast",
+    "nameIt": "Gold Coast",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gold Coast.geojson",
+      "sha256": "7b20fdf01e8911c4e29a8c357c4d5719f16f920c43119072f3e130aa790da826",
+      "size": 1563227,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gold-coast",
+    "name": "Gold Coast",
+    "nameIt": "Gold Coast",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      153.41304,
+      -28.0217
+    ],
+    "zoom": 9.2,
+    "population": 314002,
+    "grid": "cities/gold-coast/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gold-coast/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gold-coast",
+        "name": "Gold Coast",
+        "nameIt": "Gold Coast",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          153.41304,
+          -28.0217
+        ],
+        "zoom": 9.2,
+        "population": 314002,
+        "cells": 1345,
+        "layer": "cities/gold-coast/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            153.41304,
+            -28.0217
+          ]
+        },
+        "properties": {
+          "id": "gold-coast",
+          "name": "Gold Coast",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 16.5,
+          "population": 314002
+        }
+      },
+      "summary": null
+    }
+  }
+}

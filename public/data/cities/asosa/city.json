@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "asosa",
+  "createdAt": "2026-10-08T15:10:23.247Z",
+  "updatedAt": "2026-10-08T15:10:23.247Z",
+  "meta": {
+    "name": "Asosa",
+    "nameIt": "Asosa",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Asosa.geojson",
+      "sha256": "d63b05048b4de89d19d8ff28e9d312dfd3261051d15b5be36848c2a18bda8ba4",
+      "size": 203488,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "asosa",
+    "name": "Asosa",
+    "nameIt": "Asosa",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      34.5478,
+      10.06643
+    ],
+    "zoom": 11.6,
+    "population": 96199,
+    "grid": "cities/asosa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/asosa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "asosa",
+        "name": "Asosa",
+        "nameIt": "Asosa",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          34.5478,
+          10.06643
+        ],
+        "zoom": 11.6,
+        "population": 96199,
+        "cells": 175,
+        "layer": "cities/asosa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.5478,
+            10.06643
+          ]
+        },
+        "properties": {
+          "id": "asosa",
+          "name": "Asosa",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 96199
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "venkatagiri",
+  "createdAt": "2026-10-08T16:20:35.767Z",
+  "updatedAt": "2026-10-08T16:20:35.767Z",
+  "meta": {
+    "name": "Venkatagiri",
+    "nameIt": "Venkatagiri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Venkatagiri.geojson",
+      "sha256": "32c94140f4d3208243f59418ad76b282b2b1ae094100ea40ee4492ba7e2bd4a0",
+      "size": 107871,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "venkatagiri",
+    "name": "Venkatagiri",
+    "nameIt": "Venkatagiri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.58762,
+      13.95598
+    ],
+    "zoom": 12,
+    "population": 44877,
+    "grid": "cities/venkatagiri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/venkatagiri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "venkatagiri",
+        "name": "Venkatagiri",
+        "nameIt": "Venkatagiri",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.58762,
+          13.95598
+        ],
+        "zoom": 12,
+        "population": 44877,
+        "cells": 93,
+        "layer": "cities/venkatagiri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.58762,
+            13.95598
+          ]
+        },
+        "properties": {
+          "id": "venkatagiri",
+          "name": "Venkatagiri",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 44877
+        }
+      },
+      "summary": null
+    }
+  }
+}

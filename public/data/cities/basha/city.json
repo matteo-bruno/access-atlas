@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "basha",
+  "createdAt": "2026-10-08T15:15:47.825Z",
+  "updatedAt": "2026-10-08T15:15:47.825Z",
+  "meta": {
+    "name": "Basha",
+    "nameIt": "Basha",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Basha.geojson",
+      "sha256": "664b55a60be427462f125f60e18b1fcf4197a9bb2d7910d25ce14d628d9df9cd",
+      "size": 161710,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "basha",
+    "name": "Basha",
+    "nameIt": "Basha",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      38.61043,
+      7.03279
+    ],
+    "zoom": 11.7,
+    "population": 113939,
+    "grid": "cities/basha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/basha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "basha",
+        "name": "Basha",
+        "nameIt": "Basha",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          38.61043,
+          7.03279
+        ],
+        "zoom": 11.7,
+        "population": 113939,
+        "cells": 140,
+        "layer": "cities/basha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.61043,
+            7.03279
+          ]
+        },
+        "properties": {
+          "id": "basha",
+          "name": "Basha",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 113939
+        }
+      },
+      "summary": null
+    }
+  }
+}

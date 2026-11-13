@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "new-york-fua",
+  "createdAt": "2026-10-19T21:09:25.996Z",
+  "updatedAt": "2026-10-19T21:09:25.996Z",
+  "meta": {
+    "name": "New York",
+    "nameIt": "New York",
+    "region": "United States",
+    "regionIt": "Stati Uniti",
+    "country": "US"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "new-york-fua",
+    "name": "New York",
+    "nameIt": "New York",
+    "region": "United States",
+    "regionIt": "Stati Uniti",
+    "country": "US",
+    "extent": "fua",
+    "core": "new-york",
+    "center": [
+      -73.9511,
+      40.74956
+    ],
+    "zoom": 8.5,
+    "population": 20671100,
+    "grid": "cities/new-york-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/new-york-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "new-york-fua",
+        "name": "New York",
+        "nameIt": "New York",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "extent": "fua",
+        "core": "new-york",
+        "center": [
+          -73.9511,
+          40.74956
+        ],
+        "zoom": 8.5,
+        "population": 20671100,
+        "cells": 164531,
+        "layer": "cities/new-york-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.9511,
+            40.74956
+          ]
+        },
+        "properties": {
+          "id": "new-york-fua",
+          "name": "New York",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 14.6,
+          "population": 20671100
+        }
+      },
+      "summary": null
+    }
+  }
+}

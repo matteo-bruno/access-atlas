@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gumla",
+  "createdAt": "2026-10-08T15:36:42.239Z",
+  "updatedAt": "2026-10-08T15:36:42.239Z",
+  "meta": {
+    "name": "Gumla",
+    "nameIt": "Gumla",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gumla.geojson",
+      "sha256": "2abfd289be782a4b831685818d323c305af5629396752f0813e2fc6b3f6dace9",
+      "size": 228363,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gumla",
+    "name": "Gumla",
+    "nameIt": "Gumla",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.54651,
+      23.04194
+    ],
+    "zoom": 11.2,
+    "population": 123382,
+    "grid": "cities/gumla/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gumla/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gumla",
+        "name": "Gumla",
+        "nameIt": "Gumla",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.54651,
+          23.04194
+        ],
+        "zoom": 11.2,
+        "population": 123382,
+        "cells": 197,
+        "layer": "cities/gumla/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.54651,
+            23.04194
+          ]
+        },
+        "properties": {
+          "id": "gumla",
+          "name": "Gumla",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 123382
+        }
+      },
+      "summary": null
+    }
+  }
+}

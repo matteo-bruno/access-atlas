@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fortaleza",
+  "createdAt": "2026-10-08T15:33:36.848Z",
+  "updatedAt": "2026-10-08T15:33:36.848Z",
+  "meta": {
+    "name": "Fortaleza",
+    "nameIt": "Fortaleza",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fortaleza.geojson",
+      "sha256": "05d5dcb18e8997833b6cd9a6442cea39ef3b6b474460514b3279852e2596736f",
+      "size": 3818651,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fortaleza",
+    "name": "Fortaleza",
+    "nameIt": "Fortaleza",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -38.56048,
+      -3.7819
+    ],
+    "zoom": 9.4,
+    "population": 2989674,
+    "grid": "cities/fortaleza/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fortaleza/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fortaleza",
+        "name": "Fortaleza",
+        "nameIt": "Fortaleza",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -38.56048,
+          -3.7819
+        ],
+        "zoom": 9.4,
+        "population": 2989674,
+        "cells": 3278,
+        "layer": "cities/fortaleza/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -38.56048,
+            -3.7819
+          ]
+        },
+        "properties": {
+          "id": "fortaleza",
+          "name": "Fortaleza",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 14.4,
+          "population": 2989674
+        }
+      },
+      "summary": null
+    }
+  }
+}

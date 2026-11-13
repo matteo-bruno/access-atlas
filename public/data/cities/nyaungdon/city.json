@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nyaungdon",
+  "createdAt": "2026-10-08T16:02:23.916Z",
+  "updatedAt": "2026-10-08T16:02:23.916Z",
+  "meta": {
+    "name": "Nyaungdon",
+    "nameIt": "Nyaungdon",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nyaungdon.geojson",
+      "sha256": "f62ae34eec02e1c522cc712e21ea3cf4ef76f53fcd55d5d160f21f210a4ddd85",
+      "size": 69466,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nyaungdon",
+    "name": "Nyaungdon",
+    "nameIt": "Nyaungdon",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      95.63982,
+      17.04605
+    ],
+    "zoom": 12,
+    "population": 46501,
+    "grid": "cities/nyaungdon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nyaungdon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nyaungdon",
+        "name": "Nyaungdon",
+        "nameIt": "Nyaungdon",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          95.63982,
+          17.04605
+        ],
+        "zoom": 12,
+        "population": 46501,
+        "cells": 60,
+        "layer": "cities/nyaungdon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            95.63982,
+            17.04605
+          ]
+        },
+        "properties": {
+          "id": "nyaungdon",
+          "name": "Nyaungdon",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 46501
+        }
+      },
+      "summary": null
+    }
+  }
+}

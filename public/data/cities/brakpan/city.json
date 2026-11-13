@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "brakpan",
+  "createdAt": "2026-10-08T15:20:20.980Z",
+  "updatedAt": "2026-10-08T15:20:20.980Z",
+  "meta": {
+    "name": "Brakpan",
+    "nameIt": "Brakpan",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Brakpan.geojson",
+      "sha256": "4999f96f462724ef6cf646f1ea6566f33f5d0eff82125f2a9234c5f951916195",
+      "size": 290193,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "brakpan",
+    "name": "Brakpan",
+    "nameIt": "Brakpan",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      28.3717,
+      -26.24823
+    ],
+    "zoom": 10.8,
+    "population": 109034,
+    "grid": "cities/brakpan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/brakpan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "brakpan",
+        "name": "Brakpan",
+        "nameIt": "Brakpan",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          28.3717,
+          -26.24823
+        ],
+        "zoom": 10.8,
+        "population": 109034,
+        "cells": 247,
+        "layer": "cities/brakpan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.3717,
+            -26.24823
+          ]
+        },
+        "properties": {
+          "id": "brakpan",
+          "name": "Brakpan",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 27.8,
+          "population": 109034
+        }
+      },
+      "summary": null
+    }
+  }
+}

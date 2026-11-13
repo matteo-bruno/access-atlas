@@ -1,0 +1,84 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-andres",
+  "createdAt": "2026-10-08T16:10:22.017Z",
+  "updatedAt": "2026-10-08T16:10:22.017Z",
+  "meta": {
+    "name": "San Andrés",
+    "nameIt": "San Andrés"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Andrés.geojson",
+      "sha256": "541c96e272b0beb0f16c84350d6095c796f0b74ecfeaa883ea5e4893aedfe462",
+      "size": 151157,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-andres",
+    "name": "San Andrés",
+    "nameIt": "San Andrés",
+    "center": [
+      -81.70665,
+      12.58064
+    ],
+    "zoom": 11.6,
+    "population": 34877,
+    "grid": "cities/san-andres/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-andres/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-andres",
+        "name": "San Andrés",
+        "nameIt": "San Andrés",
+        "center": [
+          -81.70665,
+          12.58064
+        ],
+        "zoom": 11.6,
+        "population": 34877,
+        "cells": 130,
+        "layer": "cities/san-andres/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.70665,
+            12.58064
+          ]
+        },
+        "properties": {
+          "id": "san-andres",
+          "name": "San Andrés",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 34877
+        }
+      },
+      "summary": null
+    }
+  }
+}

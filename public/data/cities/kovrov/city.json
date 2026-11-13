@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kovrov",
+  "createdAt": "2026-10-08T15:48:16.530Z",
+  "updatedAt": "2026-10-08T15:48:16.530Z",
+  "meta": {
+    "name": "Kovrov",
+    "nameIt": "Kovrov",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kovrov.geojson",
+      "sha256": "13072a2a24640f626382fec045e88148a6eb3551030ecd87e2d472b49d2bf863",
+      "size": 300534,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kovrov",
+    "name": "Kovrov",
+    "nameIt": "Kovrov",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      41.31646,
+      56.3579
+    ],
+    "zoom": 11.1,
+    "population": 111814,
+    "grid": "cities/kovrov/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kovrov/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kovrov",
+        "name": "Kovrov",
+        "nameIt": "Kovrov",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          41.31646,
+          56.3579
+        ],
+        "zoom": 11.1,
+        "population": 111814,
+        "cells": 263,
+        "layer": "cities/kovrov/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            41.31646,
+            56.3579
+          ]
+        },
+        "properties": {
+          "id": "kovrov",
+          "name": "Kovrov",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 111814
+        }
+      },
+      "summary": null
+    }
+  }
+}

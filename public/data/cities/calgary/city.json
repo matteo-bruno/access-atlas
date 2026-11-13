@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "calgary",
+  "createdAt": "2026-10-08T15:21:56.771Z",
+  "updatedAt": "2026-10-08T15:21:56.771Z",
+  "meta": {
+    "name": "Calgary",
+    "nameIt": "Calgary",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Calgary.geojson",
+      "sha256": "093444b2d41073282cb5292c5225ed66b98cee2dc470c2ffb0b957ee9b27ef16",
+      "size": 6148493,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "calgary",
+    "name": "Calgary",
+    "nameIt": "Calgary",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -114.06566,
+      51.03473
+    ],
+    "zoom": 9,
+    "population": 1351786,
+    "grid": "cities/calgary/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/calgary/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "calgary",
+        "name": "Calgary",
+        "nameIt": "Calgary",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -114.06566,
+          51.03473
+        ],
+        "zoom": 9,
+        "population": 1351786,
+        "cells": 5294,
+        "layer": "cities/calgary/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -114.06566,
+            51.03473
+          ]
+        },
+        "properties": {
+          "id": "calgary",
+          "name": "Calgary",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 17.6,
+          "population": 1351786
+        }
+      },
+      "summary": null
+    }
+  }
+}

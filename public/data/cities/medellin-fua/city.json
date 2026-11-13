@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "medellin-fua",
+  "createdAt": "2026-10-19T16:57:19.042Z",
+  "updatedAt": "2026-10-19T16:57:19.042Z",
+  "meta": {
+    "name": "Medellín",
+    "nameIt": "Medellín",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "medellin-fua",
+    "name": "Medellín",
+    "nameIt": "Medellín",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "extent": "fua",
+    "core": "medellin",
+    "center": [
+      -75.57782,
+      6.25289
+    ],
+    "zoom": 8.7,
+    "population": 4445546,
+    "grid": "cities/medellin-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/medellin-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "medellin-fua",
+        "name": "Medellín",
+        "nameIt": "Medellín",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "extent": "fua",
+        "core": "medellin",
+        "center": [
+          -75.57782,
+          6.25289
+        ],
+        "zoom": 8.7,
+        "population": 4445546,
+        "cells": 6334,
+        "layer": "cities/medellin-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.57782,
+            6.25289
+          ]
+        },
+        "properties": {
+          "id": "medellin-fua",
+          "name": "Medellín",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 12.3,
+          "population": 4445546
+        }
+      },
+      "summary": null
+    }
+  }
+}

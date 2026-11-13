@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shufune",
+  "createdAt": "2026-10-08T16:13:16.973Z",
+  "updatedAt": "2026-10-08T16:13:16.973Z",
+  "meta": {
+    "name": "Shufune",
+    "nameIt": "Shufune",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shufune.geojson",
+      "sha256": "ae8b70d2cd0521bc699bd031bb33199c026d83eab23baea69c7a7b6577d671ac",
+      "size": 213358,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shufune",
+    "name": "Shufune",
+    "nameIt": "Shufune",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      38.75517,
+      9.16079
+    ],
+    "zoom": 11.1,
+    "population": 52285,
+    "grid": "cities/shufune/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shufune/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shufune",
+        "name": "Shufune",
+        "nameIt": "Shufune",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          38.75517,
+          9.16079
+        ],
+        "zoom": 11.1,
+        "population": 52285,
+        "cells": 185,
+        "layer": "cities/shufune/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.75517,
+            9.16079
+          ]
+        },
+        "properties": {
+          "id": "shufune",
+          "name": "Shufune",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 52285
+        }
+      },
+      "summary": null
+    }
+  }
+}

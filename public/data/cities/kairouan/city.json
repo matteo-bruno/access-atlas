@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kairouan",
+  "createdAt": "2026-10-08T15:44:14.834Z",
+  "updatedAt": "2026-10-08T15:44:14.834Z",
+  "meta": {
+    "name": "Kairouan",
+    "nameIt": "Kairouan",
+    "region": "Tunisia",
+    "regionIt": "Tunisia",
+    "country": "TN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kairouan.geojson",
+      "sha256": "c885385b12d4bbb0d2b9baf36a3b800100dcbbb66ed7502ae73ff21a0a03a829",
+      "size": 208464,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kairouan",
+    "name": "Kairouan",
+    "nameIt": "Kairouan",
+    "region": "Tunisia",
+    "regionIt": "Tunisia",
+    "country": "TN",
+    "center": [
+      10.09268,
+      35.67007
+    ],
+    "zoom": 11.3,
+    "population": 73308,
+    "grid": "cities/kairouan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kairouan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kairouan",
+        "name": "Kairouan",
+        "nameIt": "Kairouan",
+        "region": "Tunisia",
+        "regionIt": "Tunisia",
+        "country": "TN",
+        "center": [
+          10.09268,
+          35.67007
+        ],
+        "zoom": 11.3,
+        "population": 73308,
+        "cells": 180,
+        "layer": "cities/kairouan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.09268,
+            35.67007
+          ]
+        },
+        "properties": {
+          "id": "kairouan",
+          "name": "Kairouan",
+          "country": "TN",
+          "isStudy": true,
+          "proximityMinutes": 19.9,
+          "population": 73308
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tikapur",
+  "createdAt": "2026-10-08T16:17:51.551Z",
+  "updatedAt": "2026-10-08T16:17:51.551Z",
+  "meta": {
+    "name": "Tikapur",
+    "nameIt": "Tikapur",
+    "region": "Nepal",
+    "regionIt": "Nepal",
+    "country": "NP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tikapur.geojson",
+      "sha256": "0e284a65eab742d3efcb264811a3eab244c7f45863f5b72bc8a54f6ee054b1a2",
+      "size": 226790,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tikapur",
+    "name": "Tikapur",
+    "nameIt": "Tikapur",
+    "region": "Nepal",
+    "regionIt": "Nepal",
+    "country": "NP",
+    "center": [
+      81.1208,
+      28.52936
+    ],
+    "zoom": 11.3,
+    "population": 48932,
+    "grid": "cities/tikapur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tikapur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tikapur",
+        "name": "Tikapur",
+        "nameIt": "Tikapur",
+        "region": "Nepal",
+        "regionIt": "Nepal",
+        "country": "NP",
+        "center": [
+          81.1208,
+          28.52936
+        ],
+        "zoom": 11.3,
+        "population": 48932,
+        "cells": 196,
+        "layer": "cities/tikapur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.1208,
+            28.52936
+          ]
+        },
+        "properties": {
+          "id": "tikapur",
+          "name": "Tikapur",
+          "country": "NP",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 48932
+        }
+      },
+      "summary": null
+    }
+  }
+}

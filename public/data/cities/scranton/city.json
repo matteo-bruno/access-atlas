@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "scranton",
+  "createdAt": "2026-10-08T16:11:46.033Z",
+  "updatedAt": "2026-10-08T16:11:46.033Z",
+  "meta": {
+    "name": "Scranton",
+    "nameIt": "Scranton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Scranton.geojson",
+      "sha256": "04fee11cf86c92cd5c1c85a7ee432ae9634e7a9ace07fbb9955d4df081942131",
+      "size": 352425,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "scranton",
+    "name": "Scranton",
+    "nameIt": "Scranton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -75.66049,
+      41.41384
+    ],
+    "zoom": 11,
+    "population": 72401,
+    "grid": "cities/scranton/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/scranton/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "scranton",
+        "name": "Scranton",
+        "nameIt": "Scranton",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -75.66049,
+          41.41384
+        ],
+        "zoom": 11,
+        "population": 72401,
+        "cells": 306,
+        "layer": "cities/scranton/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.66049,
+            41.41384
+          ]
+        },
+        "properties": {
+          "id": "scranton",
+          "name": "Scranton",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 72401
+        }
+      },
+      "summary": null
+    }
+  }
+}

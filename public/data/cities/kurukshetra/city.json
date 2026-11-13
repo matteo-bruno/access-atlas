@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kurukshetra",
+  "createdAt": "2026-10-08T15:48:56.857Z",
+  "updatedAt": "2026-10-08T15:48:56.857Z",
+  "meta": {
+    "name": "Kurukshetra",
+    "nameIt": "Kurukshetra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kurukshetra.geojson",
+      "sha256": "18fe6d61457ff21265d81a427a6674327413252585fab18a9f1ca01e7eefbff7",
+      "size": 474500,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kurukshetra",
+    "name": "Kurukshetra",
+    "nameIt": "Kurukshetra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.85493,
+      29.96666
+    ],
+    "zoom": 10.4,
+    "population": 270543,
+    "grid": "cities/kurukshetra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kurukshetra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kurukshetra",
+        "name": "Kurukshetra",
+        "nameIt": "Kurukshetra",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.85493,
+          29.96666
+        ],
+        "zoom": 10.4,
+        "population": 270543,
+        "cells": 410,
+        "layer": "cities/kurukshetra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.85493,
+            29.96666
+          ]
+        },
+        "properties": {
+          "id": "kurukshetra",
+          "name": "Kurukshetra",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 25.6,
+          "population": 270543
+        }
+      },
+      "summary": null
+    }
+  }
+}

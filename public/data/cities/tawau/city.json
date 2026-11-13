@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tawau",
+  "createdAt": "2026-10-08T16:16:59.651Z",
+  "updatedAt": "2026-10-08T16:16:59.651Z",
+  "meta": {
+    "name": "Tawau",
+    "nameIt": "Tawau",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tawau.geojson",
+      "sha256": "06986fe277505d29871fedf9675a627597e7ecd19f105fa8ccdb7dac4bc7b6d6",
+      "size": 733748,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tawau",
+    "name": "Tawau",
+    "nameIt": "Tawau",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      117.89864,
+      4.26792
+    ],
+    "zoom": 10.4,
+    "population": 246596,
+    "grid": "cities/tawau/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tawau/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tawau",
+        "name": "Tawau",
+        "nameIt": "Tawau",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          117.89864,
+          4.26792
+        ],
+        "zoom": 10.4,
+        "population": 246596,
+        "cells": 633,
+        "layer": "cities/tawau/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.89864,
+            4.26792
+          ]
+        },
+        "properties": {
+          "id": "tawau",
+          "name": "Tawau",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 28.7,
+          "population": 246596
+        }
+      },
+      "summary": null
+    }
+  }
+}

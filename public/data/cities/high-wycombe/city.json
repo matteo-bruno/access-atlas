@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "high-wycombe",
+  "createdAt": "2026-10-08T15:38:37.520Z",
+  "updatedAt": "2026-10-08T15:38:37.520Z",
+  "meta": {
+    "name": "High Wycombe",
+    "nameIt": "High Wycombe",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/High Wycombe.geojson",
+      "sha256": "fd034d2a7b67efe58f7c28e21f3c89c1ac0f4fd19ea005bb7e2db6de4a7301a4",
+      "size": 448187,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "high-wycombe",
+    "name": "High Wycombe",
+    "nameIt": "High Wycombe",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.74008,
+      51.63061
+    ],
+    "zoom": 10.7,
+    "population": 112968,
+    "grid": "cities/high-wycombe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/high-wycombe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "high-wycombe",
+        "name": "High Wycombe",
+        "nameIt": "High Wycombe",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.74008,
+          51.63061
+        ],
+        "zoom": 10.7,
+        "population": 112968,
+        "cells": 388,
+        "layer": "cities/high-wycombe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.74008,
+            51.63061
+          ]
+        },
+        "properties": {
+          "id": "high-wycombe",
+          "name": "High Wycombe",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 13.9,
+          "population": 112968
+        }
+      },
+      "summary": null
+    }
+  }
+}

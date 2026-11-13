@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "taubate",
+  "createdAt": "2026-10-08T16:16:56.698Z",
+  "updatedAt": "2026-10-08T16:16:56.698Z",
+  "meta": {
+    "name": "Taubaté",
+    "nameIt": "Taubaté",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Taubaté.geojson",
+      "sha256": "0995ff7af17d9d40d2324855886199e0bf7b7c2d6b96ba5bcbdc431341fd2f24",
+      "size": 829526,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "taubate",
+    "name": "Taubaté",
+    "nameIt": "Taubaté",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -45.56185,
+      -23.01876
+    ],
+    "zoom": 10.4,
+    "population": 325106,
+    "grid": "cities/taubate/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/taubate/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "taubate",
+        "name": "Taubaté",
+        "nameIt": "Taubaté",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -45.56185,
+          -23.01876
+        ],
+        "zoom": 10.4,
+        "population": 325106,
+        "cells": 710,
+        "layer": "cities/taubate/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -45.56185,
+            -23.01876
+          ]
+        },
+        "properties": {
+          "id": "taubate",
+          "name": "Taubaté",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 17.3,
+          "population": 325106
+        }
+      },
+      "summary": null
+    }
+  }
+}

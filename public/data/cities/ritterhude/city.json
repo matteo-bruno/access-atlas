@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ritterhude",
+  "createdAt": "2026-10-08T16:08:54.788Z",
+  "updatedAt": "2026-10-08T16:08:54.788Z",
+  "meta": {
+    "name": "Ritterhude",
+    "nameIt": "Ritterhude",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ritterhude.geojson",
+      "sha256": "26169a22f5b5ef38609735da7dd982797386de9288909f01b0198b99123aba5e",
+      "size": 327744,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ritterhude",
+    "name": "Ritterhude",
+    "nameIt": "Ritterhude",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      8.65962,
+      53.17672
+    ],
+    "zoom": 10.6,
+    "population": 71957,
+    "grid": "cities/ritterhude/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ritterhude/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ritterhude",
+        "name": "Ritterhude",
+        "nameIt": "Ritterhude",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          8.65962,
+          53.17672
+        ],
+        "zoom": 10.6,
+        "population": 71957,
+        "cells": 289,
+        "layer": "cities/ritterhude/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.65962,
+            53.17672
+          ]
+        },
+        "properties": {
+          "id": "ritterhude",
+          "name": "Ritterhude",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 11.1,
+          "population": 71957
+        }
+      },
+      "summary": null
+    }
+  }
+}

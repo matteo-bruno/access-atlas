@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "van-gia-town",
+  "createdAt": "2026-10-08T16:20:25.310Z",
+  "updatedAt": "2026-10-08T16:20:25.310Z",
+  "meta": {
+    "name": "Van Gia Town",
+    "nameIt": "Van Gia Town",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Van Gia Town.geojson",
+      "sha256": "8e8285b4ce778452aff033e6fc86b5e762e4dd5d84b7983e746726e98c1b116c",
+      "size": 175407,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "van-gia-town",
+    "name": "Van Gia Town",
+    "nameIt": "Van Gia Town",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      109.22477,
+      12.69526
+    ],
+    "zoom": 11.4,
+    "population": 61883,
+    "grid": "cities/van-gia-town/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/van-gia-town/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "van-gia-town",
+        "name": "Van Gia Town",
+        "nameIt": "Van Gia Town",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          109.22477,
+          12.69526
+        ],
+        "zoom": 11.4,
+        "population": 61883,
+        "cells": 150,
+        "layer": "cities/van-gia-town/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.22477,
+            12.69526
+          ]
+        },
+        "properties": {
+          "id": "van-gia-town",
+          "name": "Van Gia Town",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 61883
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kitotolo",
+  "createdAt": "2026-10-08T15:47:25.271Z",
+  "updatedAt": "2026-10-08T15:47:25.271Z",
+  "meta": {
+    "name": "Kitotolo",
+    "nameIt": "Kitotolo",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kitotolo.geojson",
+      "sha256": "6a3a63d6f59e6fa3e5019afb21f25eaecd0de3b777b2e517658226b5c404267c",
+      "size": 43279,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kitotolo",
+    "name": "Kitotolo",
+    "nameIt": "Kitotolo",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      27.45868,
+      -7.29432
+    ],
+    "zoom": 12,
+    "population": 29300,
+    "grid": "cities/kitotolo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kitotolo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kitotolo",
+        "name": "Kitotolo",
+        "nameIt": "Kitotolo",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          27.45868,
+          -7.29432
+        ],
+        "zoom": 12,
+        "population": 29300,
+        "cells": 37,
+        "layer": "cities/kitotolo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.45868,
+            -7.29432
+          ]
+        },
+        "properties": {
+          "id": "kitotolo",
+          "name": "Kitotolo",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 29300
+        }
+      },
+      "summary": null
+    }
+  }
+}

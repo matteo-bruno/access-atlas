@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "parcona",
+  "createdAt": "2026-10-08T16:04:19.717Z",
+  "updatedAt": "2026-10-08T16:04:19.717Z",
+  "meta": {
+    "name": "Parcona",
+    "nameIt": "Parcona",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Parcona.geojson",
+      "sha256": "bc2b2fae1070a33b4dde8a2071bd0981d3626589ad34f63075a121ae8d1ab88a",
+      "size": 89011,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "parcona",
+    "name": "Parcona",
+    "nameIt": "Parcona",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -75.70193,
+      -14.04209
+    ],
+    "zoom": 12,
+    "population": 69601,
+    "grid": "cities/parcona/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/parcona/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "parcona",
+        "name": "Parcona",
+        "nameIt": "Parcona",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -75.70193,
+          -14.04209
+        ],
+        "zoom": 12,
+        "population": 69601,
+        "cells": 76,
+        "layer": "cities/parcona/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.70193,
+            -14.04209
+          ]
+        },
+        "properties": {
+          "id": "parcona",
+          "name": "Parcona",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 7.6,
+          "population": 69601
+        }
+      },
+      "summary": null
+    }
+  }
+}

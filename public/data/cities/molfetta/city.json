@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "molfetta",
+  "createdAt": "2026-10-08T15:57:54.845Z",
+  "updatedAt": "2026-10-08T15:57:54.845Z",
+  "meta": {
+    "name": "Molfetta",
+    "nameIt": "Molfetta",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Molfetta.geojson",
+      "sha256": "9e7f17c75024f4a56a4efcb832413012db1970a96199a3b343d5440fb38e278b",
+      "size": 84227,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "molfetta",
+    "name": "Molfetta",
+    "nameIt": "Molfetta",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      16.59314,
+      41.19813
+    ],
+    "zoom": 12,
+    "population": 34703,
+    "grid": "cities/molfetta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/molfetta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "molfetta",
+        "name": "Molfetta",
+        "nameIt": "Molfetta",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          16.59314,
+          41.19813
+        ],
+        "zoom": 12,
+        "population": 34703,
+        "cells": 73,
+        "layer": "cities/molfetta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.59314,
+            41.19813
+          ]
+        },
+        "properties": {
+          "id": "molfetta",
+          "name": "Molfetta",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 9,
+          "population": 34703
+        }
+      },
+      "summary": null
+    }
+  }
+}

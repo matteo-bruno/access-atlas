@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chiquinquira",
+  "createdAt": "2026-10-08T15:24:54.401Z",
+  "updatedAt": "2026-10-08T15:24:54.401Z",
+  "meta": {
+    "name": "Chiquinquirá",
+    "nameIt": "Chiquinquirá",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chiquinquirá.geojson",
+      "sha256": "c5fc24b0c6c368416399f67862086b8abb9fd10bb27197c3e1935dc85e60fca1",
+      "size": 85479,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chiquinquira",
+    "name": "Chiquinquirá",
+    "nameIt": "Chiquinquirá",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -73.81827,
+      5.61554
+    ],
+    "zoom": 12,
+    "population": 54115,
+    "grid": "cities/chiquinquira/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chiquinquira/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chiquinquira",
+        "name": "Chiquinquirá",
+        "nameIt": "Chiquinquirá",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -73.81827,
+          5.61554
+        ],
+        "zoom": 12,
+        "population": 54115,
+        "cells": 74,
+        "layer": "cities/chiquinquira/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.81827,
+            5.61554
+          ]
+        },
+        "properties": {
+          "id": "chiquinquira",
+          "name": "Chiquinquirá",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 9.9,
+          "population": 54115
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jingdezhen",
+  "createdAt": "2026-10-08T15:42:57.995Z",
+  "updatedAt": "2026-10-08T15:42:57.995Z",
+  "meta": {
+    "name": "Jingdezhen",
+    "nameIt": "Jingdezhen",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jingdezhen.geojson",
+      "sha256": "81279386aeab781af544f4076a96fcf6ec4b4dc0ad7b4e7437ba1f854ac3414d",
+      "size": 1285798,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jingdezhen",
+    "name": "Jingdezhen",
+    "nameIt": "Jingdezhen",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.21114,
+      29.29667
+    ],
+    "zoom": 9.7,
+    "population": 554272,
+    "grid": "cities/jingdezhen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jingdezhen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jingdezhen",
+        "name": "Jingdezhen",
+        "nameIt": "Jingdezhen",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.21114,
+          29.29667
+        ],
+        "zoom": 9.7,
+        "population": 554272,
+        "cells": 1100,
+        "layer": "cities/jingdezhen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.21114,
+            29.29667
+          ]
+        },
+        "properties": {
+          "id": "jingdezhen",
+          "name": "Jingdezhen",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 35.8,
+          "population": 554272
+        }
+      },
+      "summary": null
+    }
+  }
+}

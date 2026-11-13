@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "icad-i",
+  "createdAt": "2026-10-08T15:40:09.270Z",
+  "updatedAt": "2026-10-08T15:40:09.270Z",
+  "meta": {
+    "name": "ICAD I",
+    "nameIt": "ICAD I",
+    "region": "United Arab Emirates",
+    "regionIt": "Emirati Arabi Uniti",
+    "country": "AE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/ICAD I.geojson",
+      "sha256": "0621a32f7fda9ff6bb7a32ee66b1e75e6207d208a28706f5fb18d84a937e4770",
+      "size": 1390471,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "icad-i",
+    "name": "ICAD I",
+    "nameIt": "ICAD I",
+    "region": "United Arab Emirates",
+    "regionIt": "Emirati Arabi Uniti",
+    "country": "AE",
+    "center": [
+      54.51122,
+      24.35624
+    ],
+    "zoom": 10.3,
+    "population": 206935,
+    "grid": "cities/icad-i/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/icad-i/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "icad-i",
+        "name": "ICAD I",
+        "nameIt": "ICAD I",
+        "region": "United Arab Emirates",
+        "regionIt": "Emirati Arabi Uniti",
+        "country": "AE",
+        "center": [
+          54.51122,
+          24.35624
+        ],
+        "zoom": 10.3,
+        "population": 206935,
+        "cells": 1199,
+        "layer": "cities/icad-i/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            54.51122,
+            24.35624
+          ]
+        },
+        "properties": {
+          "id": "icad-i",
+          "name": "ICAD I",
+          "country": "AE",
+          "isStudy": true,
+          "proximityMinutes": 33.4,
+          "population": 206935
+        }
+      },
+      "summary": null
+    }
+  }
+}

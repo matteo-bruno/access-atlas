@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pakenham",
+  "createdAt": "2026-10-08T16:03:41.143Z",
+  "updatedAt": "2026-10-08T16:03:41.143Z",
+  "meta": {
+    "name": "Pakenham",
+    "nameIt": "Pakenham",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pakenham.geojson",
+      "sha256": "a121d499afb7fc08c8b8999c846bd95f19fcb17aeafce0c4562fe5ce77bc778e",
+      "size": 217122,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pakenham",
+    "name": "Pakenham",
+    "nameIt": "Pakenham",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      145.46727,
+      -38.07119
+    ],
+    "zoom": 11,
+    "population": 53655,
+    "grid": "cities/pakenham/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pakenham/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pakenham",
+        "name": "Pakenham",
+        "nameIt": "Pakenham",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          145.46727,
+          -38.07119
+        ],
+        "zoom": 11,
+        "population": 53655,
+        "cells": 186,
+        "layer": "cities/pakenham/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            145.46727,
+            -38.07119
+          ]
+        },
+        "properties": {
+          "id": "pakenham",
+          "name": "Pakenham",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 16.6,
+          "population": 53655
+        }
+      },
+      "summary": null
+    }
+  }
+}

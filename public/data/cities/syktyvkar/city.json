@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "syktyvkar",
+  "createdAt": "2026-10-08T16:15:33.361Z",
+  "updatedAt": "2026-10-08T16:15:33.361Z",
+  "meta": {
+    "name": "Syktyvkar",
+    "nameIt": "Syktyvkar",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Syktyvkar.geojson",
+      "sha256": "1f104f47814a8a56993825a5a79cb478bbcfb43a611565ded7e5c78df66c58cb",
+      "size": 241448,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "syktyvkar",
+    "name": "Syktyvkar",
+    "nameIt": "Syktyvkar",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      50.82469,
+      61.66687
+    ],
+    "zoom": 11,
+    "population": 124950,
+    "grid": "cities/syktyvkar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/syktyvkar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "syktyvkar",
+        "name": "Syktyvkar",
+        "nameIt": "Syktyvkar",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          50.82469,
+          61.66687
+        ],
+        "zoom": 11,
+        "population": 124950,
+        "cells": 212,
+        "layer": "cities/syktyvkar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            50.82469,
+            61.66687
+          ]
+        },
+        "properties": {
+          "id": "syktyvkar",
+          "name": "Syktyvkar",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 7.9,
+          "population": 124950
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "stuttgart-fua",
+  "createdAt": "2026-10-19T16:58:38.515Z",
+  "updatedAt": "2026-10-19T16:58:38.515Z",
+  "meta": {
+    "name": "Stuttgart",
+    "nameIt": "Stuttgart",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "stuttgart-fua",
+    "name": "Stuttgart",
+    "nameIt": "Stuttgart",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "extent": "fua",
+    "core": "stuttgart",
+    "center": [
+      9.20987,
+      48.79072
+    ],
+    "zoom": 8.5,
+    "population": 2417475,
+    "grid": "cities/stuttgart-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/stuttgart-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "stuttgart-fua",
+        "name": "Stuttgart",
+        "nameIt": "Stuttgart",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "extent": "fua",
+        "core": "stuttgart",
+        "center": [
+          9.20987,
+          48.79072
+        ],
+        "zoom": 8.5,
+        "population": 2417475,
+        "cells": 21833,
+        "layer": "cities/stuttgart-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.20987,
+            48.79072
+          ]
+        },
+        "properties": {
+          "id": "stuttgart-fua",
+          "name": "Stuttgart",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 10.6,
+          "population": 2417475
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "swabi",
+  "createdAt": "2026-10-08T16:15:29.837Z",
+  "updatedAt": "2026-10-08T16:15:29.837Z",
+  "meta": {
+    "name": "Swabi",
+    "nameIt": "Swabi",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Swabi.geojson",
+      "sha256": "e03961b60cd3cdb9a26a50a929bd2bb0ac8b0ff1f1337a51b3cb935e86314c86",
+      "size": 1020491,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "swabi",
+    "name": "Swabi",
+    "nameIt": "Swabi",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      72.45887,
+      34.07919
+    ],
+    "zoom": 9.6,
+    "population": 416892,
+    "grid": "cities/swabi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/swabi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "swabi",
+        "name": "Swabi",
+        "nameIt": "Swabi",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          72.45887,
+          34.07919
+        ],
+        "zoom": 9.6,
+        "population": 416892,
+        "cells": 883,
+        "layer": "cities/swabi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.45887,
+            34.07919
+          ]
+        },
+        "properties": {
+          "id": "swabi",
+          "name": "Swabi",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 416892
+        }
+      },
+      "summary": null
+    }
+  }
+}

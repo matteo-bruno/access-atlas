@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "philadelphia-fua",
+  "createdAt": "2026-10-19T16:58:04.964Z",
+  "updatedAt": "2026-10-19T16:58:04.964Z",
+  "meta": {
+    "name": "Philadelphia",
+    "nameIt": "Philadelphia",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "philadelphia-fua",
+    "name": "Philadelphia",
+    "nameIt": "Philadelphia",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "extent": "fua",
+    "core": "philadelphia",
+    "center": [
+      -75.179,
+      39.96537
+    ],
+    "zoom": 8.5,
+    "population": 6319033,
+    "grid": "cities/philadelphia-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/philadelphia-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "philadelphia-fua",
+        "name": "Philadelphia",
+        "nameIt": "Philadelphia",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "extent": "fua",
+        "core": "philadelphia",
+        "center": [
+          -75.179,
+          39.96537
+        ],
+        "zoom": 8.5,
+        "population": 6319033,
+        "cells": 110434,
+        "layer": "cities/philadelphia-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.179,
+            39.96537
+          ]
+        },
+        "properties": {
+          "id": "philadelphia-fua",
+          "name": "Philadelphia",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 26.3,
+          "population": 6319033
+        }
+      },
+      "summary": null
+    }
+  }
+}

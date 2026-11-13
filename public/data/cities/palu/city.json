@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "palu",
+  "createdAt": "2026-10-08T16:03:53.820Z",
+  "updatedAt": "2026-10-08T16:03:53.820Z",
+  "meta": {
+    "name": "Palu",
+    "nameIt": "Palu",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Palu.geojson",
+      "sha256": "9f00904298dcf15685c27157ccdb87b979b735a19a3bca346b7271a0f04701d0",
+      "size": 848769,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "palu",
+    "name": "Palu",
+    "nameIt": "Palu",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      119.87634,
+      -0.90588
+    ],
+    "zoom": 10.3,
+    "population": 348635,
+    "grid": "cities/palu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/palu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "palu",
+        "name": "Palu",
+        "nameIt": "Palu",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          119.87634,
+          -0.90588
+        ],
+        "zoom": 10.3,
+        "population": 348635,
+        "cells": 721,
+        "layer": "cities/palu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.87634,
+            -0.90588
+          ]
+        },
+        "properties": {
+          "id": "palu",
+          "name": "Palu",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 29.4,
+          "population": 348635
+        }
+      },
+      "summary": null
+    }
+  }
+}

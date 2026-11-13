@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lakhdaria",
+  "createdAt": "2026-10-08T15:49:47.749Z",
+  "updatedAt": "2026-10-08T15:49:47.749Z",
+  "meta": {
+    "name": "Lakhdaria",
+    "nameIt": "Lakhdaria",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lakhdaria.geojson",
+      "sha256": "194f19e9439b4374ffdaf94cc9194d10a7de0c2e0d5d323ed7c7eef59f095e3c",
+      "size": 104319,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lakhdaria",
+    "name": "Lakhdaria",
+    "nameIt": "Lakhdaria",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      3.59505,
+      36.56662
+    ],
+    "zoom": 11.8,
+    "population": 54238,
+    "grid": "cities/lakhdaria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lakhdaria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lakhdaria",
+        "name": "Lakhdaria",
+        "nameIt": "Lakhdaria",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          3.59505,
+          36.56662
+        ],
+        "zoom": 11.8,
+        "population": 54238,
+        "cells": 90,
+        "layer": "cities/lakhdaria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.59505,
+            36.56662
+          ]
+        },
+        "properties": {
+          "id": "lakhdaria",
+          "name": "Lakhdaria",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 54238
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sainthia",
+  "createdAt": "2026-10-08T16:09:56.614Z",
+  "updatedAt": "2026-10-08T16:09:56.614Z",
+  "meta": {
+    "name": "Sainthia",
+    "nameIt": "Sainthia",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sainthia.geojson",
+      "sha256": "753923eb987f67157c9b237ec1dd3852db85fe050bbc9ccae49435adb64dc259",
+      "size": 174904,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sainthia",
+    "name": "Sainthia",
+    "nameIt": "Sainthia",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.68996,
+      23.95067
+    ],
+    "zoom": 10.9,
+    "population": 80500,
+    "grid": "cities/sainthia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sainthia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sainthia",
+        "name": "Sainthia",
+        "nameIt": "Sainthia",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.68996,
+          23.95067
+        ],
+        "zoom": 10.9,
+        "population": 80500,
+        "cells": 151,
+        "layer": "cities/sainthia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.68996,
+            23.95067
+          ]
+        },
+        "properties": {
+          "id": "sainthia",
+          "name": "Sainthia",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 80500
+        }
+      },
+      "summary": null
+    }
+  }
+}

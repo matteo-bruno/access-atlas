@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hit",
+  "createdAt": "2026-10-08T15:40:06.230Z",
+  "updatedAt": "2026-10-08T15:40:06.230Z",
+  "meta": {
+    "name": "Hīt",
+    "nameIt": "Hīt",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hīt.geojson",
+      "sha256": "b6afd2a144da57392e99700d944dfab48d4ae8c595dfeaba16a7f51ba411c693",
+      "size": 115805,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hit",
+    "name": "Hīt",
+    "nameIt": "Hīt",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      42.827,
+      33.63679
+    ],
+    "zoom": 11.8,
+    "population": 78029,
+    "grid": "cities/hit/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hit/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hit",
+        "name": "Hīt",
+        "nameIt": "Hīt",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          42.827,
+          33.63679
+        ],
+        "zoom": 11.8,
+        "population": 78029,
+        "cells": 100,
+        "layer": "cities/hit/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            42.827,
+            33.63679
+          ]
+        },
+        "properties": {
+          "id": "hit",
+          "name": "Hīt",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 78029
+        }
+      },
+      "summary": null
+    }
+  }
+}

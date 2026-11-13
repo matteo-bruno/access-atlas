@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ciudad-ojeda",
+  "createdAt": "2026-10-08T15:25:41.365Z",
+  "updatedAt": "2026-10-08T15:25:41.365Z",
+  "meta": {
+    "name": "Ciudad Ojeda",
+    "nameIt": "Ciudad Ojeda",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ciudad Ojeda.geojson",
+      "sha256": "43b9cd912698a481cea19b39fc7c69f370be86b736567fecbecf42ece970c363",
+      "size": 498772,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ciudad-ojeda",
+    "name": "Ciudad Ojeda",
+    "nameIt": "Ciudad Ojeda",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -71.31385,
+      10.20667
+    ],
+    "zoom": 10.9,
+    "population": 210767,
+    "grid": "cities/ciudad-ojeda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ciudad-ojeda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ciudad-ojeda",
+        "name": "Ciudad Ojeda",
+        "nameIt": "Ciudad Ojeda",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -71.31385,
+          10.20667
+        ],
+        "zoom": 10.9,
+        "population": 210767,
+        "cells": 427,
+        "layer": "cities/ciudad-ojeda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -71.31385,
+            10.20667
+          ]
+        },
+        "properties": {
+          "id": "ciudad-ojeda",
+          "name": "Ciudad Ojeda",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 26.5,
+          "population": 210767
+        }
+      },
+      "summary": null
+    }
+  }
+}

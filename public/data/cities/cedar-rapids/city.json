@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cedar-rapids",
+  "createdAt": "2026-10-08T15:22:58.829Z",
+  "updatedAt": "2026-10-08T15:22:58.829Z",
+  "meta": {
+    "name": "Cedar Rapids",
+    "nameIt": "Cedar Rapids",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cedar Rapids.geojson",
+      "sha256": "ef42f6c248e42777bcf8c6a263279c92fb6ccd03f65d5ace81c4a392b7427d72",
+      "size": 373456,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cedar-rapids",
+    "name": "Cedar Rapids",
+    "nameIt": "Cedar Rapids",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -91.68003,
+      41.98201
+    ],
+    "zoom": 10.5,
+    "population": 49878,
+    "grid": "cities/cedar-rapids/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cedar-rapids/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cedar-rapids",
+        "name": "Cedar Rapids",
+        "nameIt": "Cedar Rapids",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -91.68003,
+          41.98201
+        ],
+        "zoom": 10.5,
+        "population": 49878,
+        "cells": 325,
+        "layer": "cities/cedar-rapids/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -91.68003,
+            41.98201
+          ]
+        },
+        "properties": {
+          "id": "cedar-rapids",
+          "name": "Cedar Rapids",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.5,
+          "population": 49878
+        }
+      },
+      "summary": null
+    }
+  }
+}

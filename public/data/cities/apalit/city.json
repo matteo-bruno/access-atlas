@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "apalit",
+  "createdAt": "2026-10-08T15:08:45.416Z",
+  "updatedAt": "2026-10-08T15:08:45.416Z",
+  "meta": {
+    "name": "Apalit",
+    "nameIt": "Apalit",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Apalit.geojson",
+      "sha256": "2f816e0ea9bcc298b2ec74a8bfe5d2dbe647e6b01dd1f3683cec417e738c0ccb",
+      "size": 198257,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "apalit",
+    "name": "Apalit",
+    "nameIt": "Apalit",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      120.76747,
+      14.95708
+    ],
+    "zoom": 11.6,
+    "population": 78008,
+    "grid": "cities/apalit/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/apalit/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "apalit",
+        "name": "Apalit",
+        "nameIt": "Apalit",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          120.76747,
+          14.95708
+        ],
+        "zoom": 11.6,
+        "population": 78008,
+        "cells": 170,
+        "layer": "cities/apalit/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.76747,
+            14.95708
+          ]
+        },
+        "properties": {
+          "id": "apalit",
+          "name": "Apalit",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 13.2,
+          "population": 78008
+        }
+      },
+      "summary": null
+    }
+  }
+}

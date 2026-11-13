@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mahiliou",
+  "createdAt": "2026-10-08T15:53:44.058Z",
+  "updatedAt": "2026-10-08T15:53:44.058Z",
+  "meta": {
+    "name": "Mahilioŭ",
+    "nameIt": "Mahilioŭ",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mahilioŭ.geojson",
+      "sha256": "9a7455568b35dcf13eab024aaf39071adb23d3e9bb1b36d8705e971a8ba73ef0",
+      "size": 952202,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mahiliou",
+    "name": "Mahilioŭ",
+    "nameIt": "Mahilioŭ",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY",
+    "center": [
+      30.3381,
+      53.90084
+    ],
+    "zoom": 10.4,
+    "population": 286696,
+    "grid": "cities/mahiliou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mahiliou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mahiliou",
+        "name": "Mahilioŭ",
+        "nameIt": "Mahilioŭ",
+        "region": "Belarus",
+        "regionIt": "Bielorussia",
+        "country": "BY",
+        "center": [
+          30.3381,
+          53.90084
+        ],
+        "zoom": 10.4,
+        "population": 286696,
+        "cells": 831,
+        "layer": "cities/mahiliou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.3381,
+            53.90084
+          ]
+        },
+        "properties": {
+          "id": "mahiliou",
+          "name": "Mahilioŭ",
+          "country": "BY",
+          "isStudy": true,
+          "proximityMinutes": 13.9,
+          "population": 286696
+        }
+      },
+      "summary": null
+    }
+  }
+}

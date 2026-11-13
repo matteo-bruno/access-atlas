@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vavoua",
+  "createdAt": "2026-10-08T16:20:32.008Z",
+  "updatedAt": "2026-10-08T16:20:32.008Z",
+  "meta": {
+    "name": "Vavoua",
+    "nameIt": "Vavoua",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vavoua.geojson",
+      "sha256": "53ef18d0547b1f7950e9ef1a1d80a0236b5d5b40e67a2577627feed8865f646d",
+      "size": 213620,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vavoua",
+    "name": "Vavoua",
+    "nameIt": "Vavoua",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI",
+    "center": [
+      -6.47859,
+      7.3814
+    ],
+    "zoom": 11.9,
+    "population": 73268,
+    "grid": "cities/vavoua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 173
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vavoua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vavoua",
+        "name": "Vavoua",
+        "nameIt": "Vavoua",
+        "region": "Ivory Coast",
+        "regionIt": "Costa d'Avorio",
+        "country": "CI",
+        "center": [
+          -6.47859,
+          7.3814
+        ],
+        "zoom": 11.9,
+        "population": 73268,
+        "cells": 184,
+        "layer": "cities/vavoua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 173
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -6.47859,
+            7.3814
+          ]
+        },
+        "properties": {
+          "id": "vavoua",
+          "name": "Vavoua",
+          "country": "CI",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 73268
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "basingstoke",
+  "createdAt": "2026-10-08T15:15:49.951Z",
+  "updatedAt": "2026-10-08T15:15:49.951Z",
+  "meta": {
+    "name": "Basingstoke",
+    "nameIt": "Basingstoke",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Basingstoke.geojson",
+      "sha256": "9d26b581b5a492ff42ad72c343b2d68568c4a1d45f9b28d1b3e498fb4f88e1fe",
+      "size": 393158,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "basingstoke",
+    "name": "Basingstoke",
+    "nameIt": "Basingstoke",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.10098,
+      51.26373
+    ],
+    "zoom": 11,
+    "population": 110865,
+    "grid": "cities/basingstoke/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/basingstoke/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "basingstoke",
+        "name": "Basingstoke",
+        "nameIt": "Basingstoke",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.10098,
+          51.26373
+        ],
+        "zoom": 11,
+        "population": 110865,
+        "cells": 341,
+        "layer": "cities/basingstoke/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.10098,
+            51.26373
+          ]
+        },
+        "properties": {
+          "id": "basingstoke",
+          "name": "Basingstoke",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 12.9,
+          "population": 110865
+        }
+      },
+      "summary": null
+    }
+  }
+}

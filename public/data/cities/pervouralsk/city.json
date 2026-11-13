@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pervouralsk",
+  "createdAt": "2026-10-08T16:05:05.849Z",
+  "updatedAt": "2026-10-08T16:05:05.849Z",
+  "meta": {
+    "name": "Pervouralsk",
+    "nameIt": "Pervouralsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pervouralsk.geojson",
+      "sha256": "e8fbd438b7ab8e0bd76869cdb70aa9862686eed15831ee73392dfda59ef6ff03",
+      "size": 200832,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pervouralsk",
+    "name": "Pervouralsk",
+    "nameIt": "Pervouralsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      59.95737,
+      56.90758
+    ],
+    "zoom": 11.5,
+    "population": 53480,
+    "grid": "cities/pervouralsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pervouralsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pervouralsk",
+        "name": "Pervouralsk",
+        "nameIt": "Pervouralsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          59.95737,
+          56.90758
+        ],
+        "zoom": 11.5,
+        "population": 53480,
+        "cells": 175,
+        "layer": "cities/pervouralsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            59.95737,
+            56.90758
+          ]
+        },
+        "properties": {
+          "id": "pervouralsk",
+          "name": "Pervouralsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14.4,
+          "population": 53480
+        }
+      },
+      "summary": null
+    }
+  }
+}

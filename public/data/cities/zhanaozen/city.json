@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhanaozen",
+  "createdAt": "2026-10-08T16:24:57.594Z",
+  "updatedAt": "2026-10-08T16:24:57.594Z",
+  "meta": {
+    "name": "Zhanaozen",
+    "nameIt": "Zhanaozen",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhanaozen.geojson",
+      "sha256": "da66f2be3e0f5ecc1df4310f9d29ccf0a417d0fa1ccdca30b2442f58866336a7",
+      "size": 393866,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhanaozen",
+    "name": "Zhanaozen",
+    "nameIt": "Zhanaozen",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ",
+    "center": [
+      52.87346,
+      43.33297
+    ],
+    "zoom": 10.9,
+    "population": 100854,
+    "grid": "cities/zhanaozen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhanaozen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhanaozen",
+        "name": "Zhanaozen",
+        "nameIt": "Zhanaozen",
+        "region": "Kazakhstan",
+        "regionIt": "Kazakistan",
+        "country": "KZ",
+        "center": [
+          52.87346,
+          43.33297
+        ],
+        "zoom": 10.9,
+        "population": 100854,
+        "cells": 341,
+        "layer": "cities/zhanaozen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            52.87346,
+            43.33297
+          ]
+        },
+        "properties": {
+          "id": "zhanaozen",
+          "name": "Zhanaozen",
+          "country": "KZ",
+          "isStudy": true,
+          "proximityMinutes": 27.1,
+          "population": 100854
+        }
+      },
+      "summary": null
+    }
+  }
+}

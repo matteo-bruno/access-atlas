@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "atambua",
+  "createdAt": "2026-10-08T15:10:46.763Z",
+  "updatedAt": "2026-10-08T15:10:46.763Z",
+  "meta": {
+    "name": "Atambua",
+    "nameIt": "Atambua",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Atambua.geojson",
+      "sha256": "078b6cd17c6975b319893b4f372c1de7e8e5b9ae44eaf2a7edfeb79663eaa507",
+      "size": 247861,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "atambua",
+    "name": "Atambua",
+    "nameIt": "Atambua",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      124.89019,
+      -9.10648
+    ],
+    "zoom": 11.1,
+    "population": 88038,
+    "grid": "cities/atambua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/atambua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "atambua",
+        "name": "Atambua",
+        "nameIt": "Atambua",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          124.89019,
+          -9.10648
+        ],
+        "zoom": 11.1,
+        "population": 88038,
+        "cells": 212,
+        "layer": "cities/atambua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            124.89019,
+            -9.10648
+          ]
+        },
+        "properties": {
+          "id": "atambua",
+          "name": "Atambua",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 88038
+        }
+      },
+      "summary": null
+    }
+  }
+}

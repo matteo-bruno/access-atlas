@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ashmoun",
+  "createdAt": "2026-10-08T15:10:18.058Z",
+  "updatedAt": "2026-10-08T15:10:18.058Z",
+  "meta": {
+    "name": "Ashmoun",
+    "nameIt": "Ashmoun",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ashmoun.geojson",
+      "sha256": "c42f396034cd18684548b323c7c24239403eae38e870c3c1ecdc7347dbf8130d",
+      "size": 193307,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ashmoun",
+    "name": "Ashmoun",
+    "nameIt": "Ashmoun",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      30.97762,
+      30.30073
+    ],
+    "zoom": 11.6,
+    "population": 153008,
+    "grid": "cities/ashmoun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ashmoun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ashmoun",
+        "name": "Ashmoun",
+        "nameIt": "Ashmoun",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          30.97762,
+          30.30073
+        ],
+        "zoom": 11.6,
+        "population": 153008,
+        "cells": 166,
+        "layer": "cities/ashmoun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.97762,
+            30.30073
+          ]
+        },
+        "properties": {
+          "id": "ashmoun",
+          "name": "Ashmoun",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 153008
+        }
+      },
+      "summary": null
+    }
+  }
+}

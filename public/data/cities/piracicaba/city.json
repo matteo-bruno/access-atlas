@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "piracicaba",
+  "createdAt": "2026-10-08T16:05:47.762Z",
+  "updatedAt": "2026-10-08T16:05:47.762Z",
+  "meta": {
+    "name": "Piracicaba",
+    "nameIt": "Piracicaba",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Piracicaba.geojson",
+      "sha256": "ba28138dd063fad8d53bf620cb5019c842cda62e930ec9528f53d1e424412a88",
+      "size": 1001238,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "piracicaba",
+    "name": "Piracicaba",
+    "nameIt": "Piracicaba",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -47.65065,
+      -22.72646
+    ],
+    "zoom": 10.4,
+    "population": 370902,
+    "grid": "cities/piracicaba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/piracicaba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "piracicaba",
+        "name": "Piracicaba",
+        "nameIt": "Piracicaba",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -47.65065,
+          -22.72646
+        ],
+        "zoom": 10.4,
+        "population": 370902,
+        "cells": 855,
+        "layer": "cities/piracicaba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.65065,
+            -22.72646
+          ]
+        },
+        "properties": {
+          "id": "piracicaba",
+          "name": "Piracicaba",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 20.2,
+          "population": 370902
+        }
+      },
+      "summary": null
+    }
+  }
+}

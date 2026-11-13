@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "krakow-fua",
+  "createdAt": "2026-10-19T16:56:51.994Z",
+  "updatedAt": "2026-10-19T16:56:51.994Z",
+  "meta": {
+    "name": "Krakow",
+    "nameIt": "Krakow",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "krakow-fua",
+    "name": "Krakow",
+    "nameIt": "Krakow",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "extent": "fua",
+    "core": "krakow",
+    "center": [
+      19.96595,
+      50.03741
+    ],
+    "zoom": 8.5,
+    "population": 1434158,
+    "grid": "cities/krakow-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/krakow-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "krakow-fua",
+        "name": "Krakow",
+        "nameIt": "Krakow",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "extent": "fua",
+        "core": "krakow",
+        "center": [
+          19.96595,
+          50.03741
+        ],
+        "zoom": 8.5,
+        "population": 1434158,
+        "cells": 25897,
+        "layer": "cities/krakow-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.96595,
+            50.03741
+          ]
+        },
+        "properties": {
+          "id": "krakow-fua",
+          "name": "Krakow",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 1434158
+        }
+      },
+      "summary": null
+    }
+  }
+}

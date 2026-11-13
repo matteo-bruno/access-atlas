@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vasai-virar",
+  "createdAt": "2026-10-08T16:20:30.927Z",
+  "updatedAt": "2026-10-08T16:20:30.927Z",
+  "meta": {
+    "name": "Vasai-Virar",
+    "nameIt": "Vasai-Virar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vasai-Virar.geojson",
+      "sha256": "e6bbebf3edb7ed70574ba9b05ef300208b08f3dd7616496a4f137c782ed95655",
+      "size": 1540063,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vasai-virar",
+    "name": "Vasai-Virar",
+    "nameIt": "Vasai-Virar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.82809,
+      19.41806
+    ],
+    "zoom": 10,
+    "population": 780122,
+    "grid": "cities/vasai-virar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vasai-virar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vasai-virar",
+        "name": "Vasai-Virar",
+        "nameIt": "Vasai-Virar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.82809,
+          19.41806
+        ],
+        "zoom": 10,
+        "population": 780122,
+        "cells": 1329,
+        "layer": "cities/vasai-virar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.82809,
+            19.41806
+          ]
+        },
+        "properties": {
+          "id": "vasai-virar",
+          "name": "Vasai-Virar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 37.4,
+          "population": 780122
+        }
+      },
+      "summary": null
+    }
+  }
+}

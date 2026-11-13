@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bulungu",
+  "createdAt": "2026-10-08T15:20:45.764Z",
+  "updatedAt": "2026-10-08T15:20:45.764Z",
+  "meta": {
+    "name": "Bulungu",
+    "nameIt": "Bulungu",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bulungu.geojson",
+      "sha256": "a49cb3e467d40c7ae1d64e32f9bef8e653d2dc74a1d52a094141d5a28411a9d7",
+      "size": 109755,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bulungu",
+    "name": "Bulungu",
+    "nameIt": "Bulungu",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      18.60211,
+      -4.54345
+    ],
+    "zoom": 12,
+    "population": 102180,
+    "grid": "cities/bulungu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bulungu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bulungu",
+        "name": "Bulungu",
+        "nameIt": "Bulungu",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          18.60211,
+          -4.54345
+        ],
+        "zoom": 12,
+        "population": 102180,
+        "cells": 94,
+        "layer": "cities/bulungu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.60211,
+            -4.54345
+          ]
+        },
+        "properties": {
+          "id": "bulungu",
+          "name": "Bulungu",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 102180
+        }
+      },
+      "summary": null
+    }
+  }
+}

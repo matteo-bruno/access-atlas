@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "amakpo",
+  "createdAt": "2026-10-08T15:06:30.451Z",
+  "updatedAt": "2026-10-08T15:06:30.451Z",
+  "meta": {
+    "name": "Amakpo",
+    "nameIt": "Amakpo",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Amakpo.geojson",
+      "sha256": "61227ef05fad52086ea987f37eed6d33d2321446d100b61ddecd3bb20681f550",
+      "size": 139144,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "amakpo",
+    "name": "Amakpo",
+    "nameIt": "Amakpo",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      7.65348,
+      5.70623
+    ],
+    "zoom": 12,
+    "population": 29210,
+    "grid": "cities/amakpo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/amakpo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "amakpo",
+        "name": "Amakpo",
+        "nameIt": "Amakpo",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          7.65348,
+          5.70623
+        ],
+        "zoom": 12,
+        "population": 29210,
+        "cells": 121,
+        "layer": "cities/amakpo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.65348,
+            5.70623
+          ]
+        },
+        "properties": {
+          "id": "amakpo",
+          "name": "Amakpo",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 29210
+        }
+      },
+      "summary": null
+    }
+  }
+}

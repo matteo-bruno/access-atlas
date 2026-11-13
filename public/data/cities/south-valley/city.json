@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "south-valley",
+  "createdAt": "2026-10-08T16:14:36.116Z",
+  "updatedAt": "2026-10-08T16:14:36.116Z",
+  "meta": {
+    "name": "South Valley",
+    "nameIt": "South Valley",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/South Valley.geojson",
+      "sha256": "6237a9253c62d3e69d0bf4462405ba7cc3ac45bc08b1988b3a70eb75aff521b7",
+      "size": 787392,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "south-valley",
+    "name": "South Valley",
+    "nameIt": "South Valley",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -106.71634,
+      35.08042
+    ],
+    "zoom": 10,
+    "population": 140881,
+    "grid": "cities/south-valley/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/south-valley/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "south-valley",
+        "name": "South Valley",
+        "nameIt": "South Valley",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -106.71634,
+          35.08042
+        ],
+        "zoom": 10,
+        "population": 140881,
+        "cells": 676,
+        "layer": "cities/south-valley/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.71634,
+            35.08042
+          ]
+        },
+        "properties": {
+          "id": "south-valley",
+          "name": "South Valley",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 30.5,
+          "population": 140881
+        }
+      },
+      "summary": null
+    }
+  }
+}

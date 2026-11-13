@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "puducherry",
+  "createdAt": "2026-10-08T16:06:41.099Z",
+  "updatedAt": "2026-10-08T16:06:41.099Z",
+  "meta": {
+    "name": "Puducherry",
+    "nameIt": "Puducherry",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Puducherry.geojson",
+      "sha256": "b3c0df01cbb2064c0e2e8eacd0c0c7205c2d3306d19faac7c3ebaa623bb411e2",
+      "size": 902365,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "puducherry",
+    "name": "Puducherry",
+    "nameIt": "Puducherry",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.80221,
+      11.93069
+    ],
+    "zoom": 10.4,
+    "population": 736421,
+    "grid": "cities/puducherry/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/puducherry/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "puducherry",
+        "name": "Puducherry",
+        "nameIt": "Puducherry",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.80221,
+          11.93069
+        ],
+        "zoom": 10.4,
+        "population": 736421,
+        "cells": 785,
+        "layer": "cities/puducherry/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.80221,
+            11.93069
+          ]
+        },
+        "properties": {
+          "id": "puducherry",
+          "name": "Puducherry",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 17.8,
+          "population": 736421
+        }
+      },
+      "summary": null
+    }
+  }
+}

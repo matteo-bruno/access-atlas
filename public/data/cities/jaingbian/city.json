@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jaingbian",
+  "createdAt": "2026-10-08T15:41:42.014Z",
+  "updatedAt": "2026-10-08T15:41:42.014Z",
+  "meta": {
+    "name": "Jaingbian",
+    "nameIt": "Jaingbian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jaingbian.geojson",
+      "sha256": "2abedb344b5c0b8c451451b5c3ea7cefef84af5cfa9a236a12fc3c1c035df38e",
+      "size": 546997,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jaingbian",
+    "name": "Jaingbian",
+    "nameIt": "Jaingbian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.03241,
+      28.24044
+    ],
+    "zoom": 10.5,
+    "population": 224746,
+    "grid": "cities/jaingbian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jaingbian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jaingbian",
+        "name": "Jaingbian",
+        "nameIt": "Jaingbian",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.03241,
+          28.24044
+        ],
+        "zoom": 10.5,
+        "population": 224746,
+        "cells": 468,
+        "layer": "cities/jaingbian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.03241,
+            28.24044
+          ]
+        },
+        "properties": {
+          "id": "jaingbian",
+          "name": "Jaingbian",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 26,
+          "population": 224746
+        }
+      },
+      "summary": null
+    }
+  }
+}

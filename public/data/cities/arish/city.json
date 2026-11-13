@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "arish",
+  "createdAt": "2026-10-08T15:09:24.947Z",
+  "updatedAt": "2026-10-08T15:09:24.947Z",
+  "meta": {
+    "name": "Arish",
+    "nameIt": "Arish",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Arish.geojson",
+      "sha256": "9de258f5d9d6ac04545eaef9ea84d108ad6bcd871d377f6736a34f341b5cdcc4",
+      "size": 264933,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "arish",
+    "name": "Arish",
+    "nameIt": "Arish",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      33.80938,
+      31.13472
+    ],
+    "zoom": 10.8,
+    "population": 125960,
+    "grid": "cities/arish/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/arish/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "arish",
+        "name": "Arish",
+        "nameIt": "Arish",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          33.80938,
+          31.13472
+        ],
+        "zoom": 10.8,
+        "population": 125960,
+        "cells": 228,
+        "layer": "cities/arish/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.80938,
+            31.13472
+          ]
+        },
+        "properties": {
+          "id": "arish",
+          "name": "Arish",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 125960
+        }
+      },
+      "summary": null
+    }
+  }
+}

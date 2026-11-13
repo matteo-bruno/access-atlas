@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bantwal-cross-road",
+  "createdAt": "2026-10-08T15:15:10.444Z",
+  "updatedAt": "2026-10-08T15:15:10.444Z",
+  "meta": {
+    "name": "Bantwal Cross Road",
+    "nameIt": "Bantwal Cross Road",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bantwal Cross Road.geojson",
+      "sha256": "987da4794727b84cc60a4c7183f660757f561838eda61580e51b20db53cf2c8e",
+      "size": 223861,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bantwal-cross-road",
+    "name": "Bantwal Cross Road",
+    "nameIt": "Bantwal Cross Road",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.03451,
+      12.87947
+    ],
+    "zoom": 11.5,
+    "population": 67032,
+    "grid": "cities/bantwal-cross-road/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bantwal-cross-road/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bantwal-cross-road",
+        "name": "Bantwal Cross Road",
+        "nameIt": "Bantwal Cross Road",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.03451,
+          12.87947
+        ],
+        "zoom": 11.5,
+        "population": 67032,
+        "cells": 193,
+        "layer": "cities/bantwal-cross-road/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.03451,
+            12.87947
+          ]
+        },
+        "properties": {
+          "id": "bantwal-cross-road",
+          "name": "Bantwal Cross Road",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 67032
+        }
+      },
+      "summary": null
+    }
+  }
+}

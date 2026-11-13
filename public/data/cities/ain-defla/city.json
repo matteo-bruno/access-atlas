@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ain-defla",
+  "createdAt": "2026-10-08T15:03:11.515Z",
+  "updatedAt": "2026-10-08T15:03:11.515Z",
+  "meta": {
+    "name": "Ain Defla",
+    "nameIt": "Ain Defla",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ain Defla.geojson",
+      "sha256": "6715481136113f19d05870df38ea554d7cd0720e43dfcc6777c8ef533286a504",
+      "size": 163711,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ain-defla",
+    "name": "Ain Defla",
+    "nameIt": "Ain Defla",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      1.95687,
+      36.25603
+    ],
+    "zoom": 11.5,
+    "population": 72956,
+    "grid": "cities/ain-defla/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ain-defla/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ain-defla",
+        "name": "Ain Defla",
+        "nameIt": "Ain Defla",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          1.95687,
+          36.25603
+        ],
+        "zoom": 11.5,
+        "population": 72956,
+        "cells": 142,
+        "layer": "cities/ain-defla/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.95687,
+            36.25603
+          ]
+        },
+        "properties": {
+          "id": "ain-defla",
+          "name": "Ain Defla",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 11.4,
+          "population": 72956
+        }
+      },
+      "summary": null
+    }
+  }
+}

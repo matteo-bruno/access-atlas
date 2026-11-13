@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nippani",
+  "createdAt": "2026-10-08T16:01:45.707Z",
+  "updatedAt": "2026-10-08T16:01:45.707Z",
+  "meta": {
+    "name": "Nippani",
+    "nameIt": "Nippani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nippani.geojson",
+      "sha256": "d5a7dd2be04eddb39e96ecae6456762ff513e31f48ca0ed6ff0bf7d4393b895d",
+      "size": 148225,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nippani",
+    "name": "Nippani",
+    "nameIt": "Nippani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.37952,
+      16.40304
+    ],
+    "zoom": 11.2,
+    "population": 44003,
+    "grid": "cities/nippani/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nippani/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nippani",
+        "name": "Nippani",
+        "nameIt": "Nippani",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.37952,
+          16.40304
+        ],
+        "zoom": 11.2,
+        "population": 44003,
+        "cells": 128,
+        "layer": "cities/nippani/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.37952,
+            16.40304
+          ]
+        },
+        "properties": {
+          "id": "nippani",
+          "name": "Nippani",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 44003
+        }
+      },
+      "summary": null
+    }
+  }
+}

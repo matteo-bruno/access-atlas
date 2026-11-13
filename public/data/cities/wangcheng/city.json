@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wangcheng",
+  "createdAt": "2026-10-08T16:21:18.037Z",
+  "updatedAt": "2026-10-08T16:21:18.037Z",
+  "meta": {
+    "name": "Wangcheng",
+    "nameIt": "Wangcheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wangcheng.geojson",
+      "sha256": "7d009003954cf0b8891426cd335ba2e8e171711c22db66199fa88d839ec4b7cc",
+      "size": 183228,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wangcheng",
+    "name": "Wangcheng",
+    "nameIt": "Wangcheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.81649,
+      28.35399
+    ],
+    "zoom": 11.6,
+    "population": 140366,
+    "grid": "cities/wangcheng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wangcheng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wangcheng",
+        "name": "Wangcheng",
+        "nameIt": "Wangcheng",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.81649,
+          28.35399
+        ],
+        "zoom": 11.6,
+        "population": 140366,
+        "cells": 157,
+        "layer": "cities/wangcheng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.81649,
+            28.35399
+          ]
+        },
+        "properties": {
+          "id": "wangcheng",
+          "name": "Wangcheng",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 16.2,
+          "population": 140366
+        }
+      },
+      "summary": null
+    }
+  }
+}

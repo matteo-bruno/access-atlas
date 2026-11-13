@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mila",
+  "createdAt": "2026-10-08T15:57:03.496Z",
+  "updatedAt": "2026-10-08T15:57:03.496Z",
+  "meta": {
+    "name": "Mila",
+    "nameIt": "Mila",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mila.geojson",
+      "sha256": "af95d17e359355a7e1db055a7ea00b7ee0d7b1fb2baa73a910a6330ef1095262",
+      "size": 173471,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mila",
+    "name": "Mila",
+    "nameIt": "Mila",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      6.26125,
+      36.44508
+    ],
+    "zoom": 11.8,
+    "population": 83776,
+    "grid": "cities/mila/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mila/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mila",
+        "name": "Mila",
+        "nameIt": "Mila",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          6.26125,
+          36.44508
+        ],
+        "zoom": 11.8,
+        "population": 83776,
+        "cells": 151,
+        "layer": "cities/mila/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.26125,
+            36.44508
+          ]
+        },
+        "properties": {
+          "id": "mila",
+          "name": "Mila",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 83776
+        }
+      },
+      "summary": null
+    }
+  }
+}

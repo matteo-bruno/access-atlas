@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "melbourne-fua",
+  "createdAt": "2026-10-19T16:57:22.058Z",
+  "updatedAt": "2026-10-19T16:57:22.058Z",
+  "meta": {
+    "name": "Melbourne",
+    "nameIt": "Melbourne",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "melbourne-fua",
+    "name": "Melbourne",
+    "nameIt": "Melbourne",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "extent": "fua",
+    "core": "melbourne",
+    "center": [
+      145.04265,
+      -37.84764
+    ],
+    "zoom": 8.5,
+    "population": 5196764,
+    "grid": "cities/melbourne-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/melbourne-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "melbourne-fua",
+        "name": "Melbourne",
+        "nameIt": "Melbourne",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "extent": "fua",
+        "core": "melbourne",
+        "center": [
+          145.04265,
+          -37.84764
+        ],
+        "zoom": 8.5,
+        "population": 5196764,
+        "cells": 67521,
+        "layer": "cities/melbourne-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            145.04265,
+            -37.84764
+          ]
+        },
+        "properties": {
+          "id": "melbourne-fua",
+          "name": "Melbourne",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 5196764
+        }
+      },
+      "summary": null
+    }
+  }
+}

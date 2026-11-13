@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sinchon",
+  "createdAt": "2026-10-08T16:13:48.103Z",
+  "updatedAt": "2026-10-08T16:13:48.103Z",
+  "meta": {
+    "name": "Sinchon",
+    "nameIt": "Sinchon",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sinchon.geojson",
+      "sha256": "ab63705316d9f07dac36ec345b261402a6532c1638fb5e7ec81404aa24ecfa60",
+      "size": 120040,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sinchon",
+    "name": "Sinchon",
+    "nameIt": "Sinchon",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP",
+    "center": [
+      125.48932,
+      38.35459
+    ],
+    "zoom": 12,
+    "population": 78966,
+    "grid": "cities/sinchon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 165
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sinchon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sinchon",
+        "name": "Sinchon",
+        "nameIt": "Sinchon",
+        "region": "North Korea",
+        "regionIt": "Corea del Nord",
+        "country": "KP",
+        "center": [
+          125.48932,
+          38.35459
+        ],
+        "zoom": 12,
+        "population": 78966,
+        "cells": 103,
+        "layer": "cities/sinchon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 165
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.48932,
+            38.35459
+          ]
+        },
+        "properties": {
+          "id": "sinchon",
+          "name": "Sinchon",
+          "country": "KP",
+          "isStudy": true,
+          "proximityMinutes": 13.9,
+          "population": 78966
+        }
+      },
+      "summary": null
+    }
+  }
+}

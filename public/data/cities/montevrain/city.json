@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "montevrain",
+  "createdAt": "2026-10-08T15:58:10.657Z",
+  "updatedAt": "2026-10-08T15:58:10.657Z",
+  "meta": {
+    "name": "Montévrain",
+    "nameIt": "Montévrain",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Montévrain.geojson",
+      "sha256": "2ba3de3b7b134514a9be6e427a783e15a33a9c75a4c6df5f72136c3e9f4400c6",
+      "size": 618827,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "montevrain",
+    "name": "Montévrain",
+    "nameIt": "Montévrain",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      2.72895,
+      48.86233
+    ],
+    "zoom": 10.9,
+    "population": 107512,
+    "grid": "cities/montevrain/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/montevrain/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "montevrain",
+        "name": "Montévrain",
+        "nameIt": "Montévrain",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          2.72895,
+          48.86233
+        ],
+        "zoom": 10.9,
+        "population": 107512,
+        "cells": 542,
+        "layer": "cities/montevrain/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.72895,
+            48.86233
+          ]
+        },
+        "properties": {
+          "id": "montevrain",
+          "name": "Montévrain",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 107512
+        }
+      },
+      "summary": null
+    }
+  }
+}

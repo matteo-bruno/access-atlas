@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "agr",
+  "createdAt": "2026-10-08T15:12:11.150Z",
+  "updatedAt": "2026-10-08T15:12:11.150Z",
+  "meta": {
+    "name": "Ağrı",
+    "nameIt": "Ağrı",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ağrı.geojson",
+      "sha256": "1a30db2cd80480133369db494a98736cd04df5f34db7f8813a4721c87ae10d04",
+      "size": 219760,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "agr",
+    "name": "Ağrı",
+    "nameIt": "Ağrı",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      43.04632,
+      39.71806
+    ],
+    "zoom": 11.5,
+    "population": 120651,
+    "grid": "cities/agr/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/agr/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "agr",
+        "name": "Ağrı",
+        "nameIt": "Ağrı",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          43.04632,
+          39.71806
+        ],
+        "zoom": 11.5,
+        "population": 120651,
+        "cells": 190,
+        "layer": "cities/agr/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.04632,
+            39.71806
+          ]
+        },
+        "properties": {
+          "id": "agr",
+          "name": "Ağrı",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 16.7,
+          "population": 120651
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "manzini",
+  "createdAt": "2026-10-08T15:55:00.794Z",
+  "updatedAt": "2026-10-08T15:55:00.794Z",
+  "meta": {
+    "name": "Manzini",
+    "nameIt": "Manzini",
+    "region": "Eswatini",
+    "regionIt": "eSwatini",
+    "country": "SZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Manzini.geojson",
+      "sha256": "f1bd25e6485c8dd4171260e4536780317c8fa1ebec052ce6225775180dbc30b1",
+      "size": 342585,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "manzini",
+    "name": "Manzini",
+    "nameIt": "Manzini",
+    "region": "Eswatini",
+    "regionIt": "eSwatini",
+    "country": "SZ",
+    "center": [
+      31.34263,
+      -26.49527
+    ],
+    "zoom": 10.6,
+    "population": 56877,
+    "grid": "cities/manzini/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/manzini/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "manzini",
+        "name": "Manzini",
+        "nameIt": "Manzini",
+        "region": "Eswatini",
+        "regionIt": "eSwatini",
+        "country": "SZ",
+        "center": [
+          31.34263,
+          -26.49527
+        ],
+        "zoom": 10.6,
+        "population": 56877,
+        "cells": 292,
+        "layer": "cities/manzini/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.34263,
+            -26.49527
+          ]
+        },
+        "properties": {
+          "id": "manzini",
+          "name": "Manzini",
+          "country": "SZ",
+          "isStudy": true,
+          "proximityMinutes": 42.2,
+          "population": 56877
+        }
+      },
+      "summary": null
+    }
+  }
+}

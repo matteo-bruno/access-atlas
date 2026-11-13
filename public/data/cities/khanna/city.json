@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khanna",
+  "createdAt": "2026-10-08T15:46:31.092Z",
+  "updatedAt": "2026-10-08T15:46:31.092Z",
+  "meta": {
+    "name": "Khanna",
+    "nameIt": "Khanna",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khanna.geojson",
+      "sha256": "dacb508ff6f442049cfcc0586f9df45cfbbcbebd638ce4ca9ecbaa2496c7336e",
+      "size": 235352,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khanna",
+    "name": "Khanna",
+    "nameIt": "Khanna",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.2221,
+      30.70306
+    ],
+    "zoom": 11.5,
+    "population": 118128,
+    "grid": "cities/khanna/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khanna/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khanna",
+        "name": "Khanna",
+        "nameIt": "Khanna",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.2221,
+          30.70306
+        ],
+        "zoom": 11.5,
+        "population": 118128,
+        "cells": 203,
+        "layer": "cities/khanna/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.2221,
+            30.70306
+          ]
+        },
+        "properties": {
+          "id": "khanna",
+          "name": "Khanna",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.6,
+          "population": 118128
+        }
+      },
+      "summary": null
+    }
+  }
+}

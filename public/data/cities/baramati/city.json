@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baramati",
+  "createdAt": "2026-10-08T15:15:27.153Z",
+  "updatedAt": "2026-10-08T15:15:27.153Z",
+  "meta": {
+    "name": "Baramati",
+    "nameIt": "Baramati",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baramati.geojson",
+      "sha256": "b439e62bde2871d3825fcd06de78a100df49d90f598c6d7efc8eb06d19f5f1e6",
+      "size": 395420,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baramati",
+    "name": "Baramati",
+    "nameIt": "Baramati",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.58907,
+      18.16581
+    ],
+    "zoom": 10.8,
+    "population": 183044,
+    "grid": "cities/baramati/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baramati/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baramati",
+        "name": "Baramati",
+        "nameIt": "Baramati",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.58907,
+          18.16581
+        ],
+        "zoom": 10.8,
+        "population": 183044,
+        "cells": 341,
+        "layer": "cities/baramati/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.58907,
+            18.16581
+          ]
+        },
+        "properties": {
+          "id": "baramati",
+          "name": "Baramati",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 30.2,
+          "population": 183044
+        }
+      },
+      "summary": null
+    }
+  }
+}

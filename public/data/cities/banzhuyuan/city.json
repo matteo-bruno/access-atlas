@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "banzhuyuan",
+  "createdAt": "2026-10-08T15:15:12.429Z",
+  "updatedAt": "2026-10-08T15:15:12.429Z",
+  "meta": {
+    "name": "Banzhuyuan",
+    "nameIt": "Banzhuyuan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Banzhuyuan.geojson",
+      "sha256": "34d37d6a165ce69832d38add57afea5d751916d91da3aa15ed4434d3a15dfe52",
+      "size": 278433,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "banzhuyuan",
+    "name": "Banzhuyuan",
+    "nameIt": "Banzhuyuan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      104.04568,
+      30.8087
+    ],
+    "zoom": 10.9,
+    "population": 157559,
+    "grid": "cities/banzhuyuan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/banzhuyuan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "banzhuyuan",
+        "name": "Banzhuyuan",
+        "nameIt": "Banzhuyuan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          104.04568,
+          30.8087
+        ],
+        "zoom": 10.9,
+        "population": 157559,
+        "cells": 238,
+        "layer": "cities/banzhuyuan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            104.04568,
+            30.8087
+          ]
+        },
+        "properties": {
+          "id": "banzhuyuan",
+          "name": "Banzhuyuan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 46.7,
+          "population": 157559
+        }
+      },
+      "summary": null
+    }
+  }
+}

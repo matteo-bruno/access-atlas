@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "indianapolis",
+  "createdAt": "2026-10-08T15:40:48.251Z",
+  "updatedAt": "2026-10-08T15:40:48.251Z",
+  "meta": {
+    "name": "Indianapolis",
+    "nameIt": "Indianapolis",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Indianapolis.geojson",
+      "sha256": "070d3abccbfc40c280ff13cbf34a4cc10e1da682d7947eb92dc5338f79f5aa58",
+      "size": 2846425,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "indianapolis",
+    "name": "Indianapolis",
+    "nameIt": "Indianapolis",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -86.1744,
+      39.79916
+    ],
+    "zoom": 9.4,
+    "population": 394699,
+    "grid": "cities/indianapolis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/indianapolis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "indianapolis",
+        "name": "Indianapolis",
+        "nameIt": "Indianapolis",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -86.1744,
+          39.79916
+        ],
+        "zoom": 9.4,
+        "population": 394699,
+        "cells": 2469,
+        "layer": "cities/indianapolis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -86.1744,
+            39.79916
+          ]
+        },
+        "properties": {
+          "id": "indianapolis",
+          "name": "Indianapolis",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20,
+          "population": 394699
+        }
+      },
+      "summary": null
+    }
+  }
+}

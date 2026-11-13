@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sehwan",
+  "createdAt": "2026-10-08T16:11:49.764Z",
+  "updatedAt": "2026-10-08T16:11:49.764Z",
+  "meta": {
+    "name": "Sehwan",
+    "nameIt": "Sehwan",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sehwan.geojson",
+      "sha256": "a5f42652620d7d52f98bb20249275db907c4d22b7cad6856dea399354747c59d",
+      "size": 100773,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sehwan",
+    "name": "Sehwan",
+    "nameIt": "Sehwan",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      67.86164,
+      26.42195
+    ],
+    "zoom": 12,
+    "population": 83277,
+    "grid": "cities/sehwan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sehwan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sehwan",
+        "name": "Sehwan",
+        "nameIt": "Sehwan",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          67.86164,
+          26.42195
+        ],
+        "zoom": 12,
+        "population": 83277,
+        "cells": 87,
+        "layer": "cities/sehwan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            67.86164,
+            26.42195
+          ]
+        },
+        "properties": {
+          "id": "sehwan",
+          "name": "Sehwan",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 83277
+        }
+      },
+      "summary": null
+    }
+  }
+}

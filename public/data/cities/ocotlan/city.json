@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ocotlan",
+  "createdAt": "2026-10-08T16:02:30.921Z",
+  "updatedAt": "2026-10-08T16:02:30.921Z",
+  "meta": {
+    "name": "Ocotlán",
+    "nameIt": "Ocotlán",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ocotlán.geojson",
+      "sha256": "415591bbae800d397875ab3f7ca2a6b6dd724584bf22a2a957a96bf80f1a8f7b",
+      "size": 187868,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ocotlan",
+    "name": "Ocotlán",
+    "nameIt": "Ocotlán",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -102.77164,
+      20.34948
+    ],
+    "zoom": 11.4,
+    "population": 88303,
+    "grid": "cities/ocotlan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ocotlan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ocotlan",
+        "name": "Ocotlán",
+        "nameIt": "Ocotlán",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -102.77164,
+          20.34948
+        ],
+        "zoom": 11.4,
+        "population": 88303,
+        "cells": 160,
+        "layer": "cities/ocotlan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -102.77164,
+            20.34948
+          ]
+        },
+        "properties": {
+          "id": "ocotlan",
+          "name": "Ocotlán",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 88303
+        }
+      },
+      "summary": null
+    }
+  }
+}

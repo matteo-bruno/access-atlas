@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "caceres",
+  "createdAt": "2026-10-08T15:27:10.531Z",
+  "updatedAt": "2026-10-08T15:27:10.531Z",
+  "meta": {
+    "name": "Cáceres",
+    "nameIt": "Cáceres",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cáceres.geojson",
+      "sha256": "76af055e9a5b8cbf0ef2849b06bee959adcfa8e7eedc88c2d8c165fa4912f138",
+      "size": 284895,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "caceres",
+    "name": "Cáceres",
+    "nameIt": "Cáceres",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -57.68012,
+      -16.07801
+    ],
+    "zoom": 11.2,
+    "population": 55639,
+    "grid": "cities/caceres/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/caceres/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "caceres",
+        "name": "Cáceres",
+        "nameIt": "Cáceres",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -57.68012,
+          -16.07801
+        ],
+        "zoom": 11.2,
+        "population": 55639,
+        "cells": 242,
+        "layer": "cities/caceres/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -57.68012,
+            -16.07801
+          ]
+        },
+        "properties": {
+          "id": "caceres",
+          "name": "Cáceres",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 16.4,
+          "population": 55639
+        }
+      },
+      "summary": null
+    }
+  }
+}

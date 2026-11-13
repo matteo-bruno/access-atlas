@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "beachwood",
+  "createdAt": "2026-10-08T15:16:30.890Z",
+  "updatedAt": "2026-10-08T15:16:30.890Z",
+  "meta": {
+    "name": "Beachwood",
+    "nameIt": "Beachwood",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Beachwood.geojson",
+      "sha256": "3c70f619415c378f1d3c348cbdee6ab27371d339373115274110a11fca1469ef",
+      "size": 508625,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "beachwood",
+    "name": "Beachwood",
+    "nameIt": "Beachwood",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -74.16234,
+      39.95931
+    ],
+    "zoom": 10.8,
+    "population": 52156,
+    "grid": "cities/beachwood/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/beachwood/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "beachwood",
+        "name": "Beachwood",
+        "nameIt": "Beachwood",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -74.16234,
+          39.95931
+        ],
+        "zoom": 10.8,
+        "population": 52156,
+        "cells": 438,
+        "layer": "cities/beachwood/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.16234,
+            39.95931
+          ]
+        },
+        "properties": {
+          "id": "beachwood",
+          "name": "Beachwood",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20.5,
+          "population": 52156
+        }
+      },
+      "summary": null
+    }
+  }
+}

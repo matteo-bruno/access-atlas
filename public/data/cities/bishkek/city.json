@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bishkek",
+  "createdAt": "2026-10-08T15:19:22.272Z",
+  "updatedAt": "2026-10-08T15:19:22.272Z",
+  "meta": {
+    "name": "Bishkek",
+    "nameIt": "Bishkek",
+    "region": "Kyrgyzstan",
+    "regionIt": "Kirghizistan",
+    "country": "KG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bishkek.geojson",
+      "sha256": "f93c9282de0ef1ccb48ffe4c310af89f31d880e9b770224284ad731a8a7631c4",
+      "size": 1780026,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bishkek",
+    "name": "Bishkek",
+    "nameIt": "Bishkek",
+    "region": "Kyrgyzstan",
+    "regionIt": "Kirghizistan",
+    "country": "KG",
+    "center": [
+      74.59452,
+      42.87207
+    ],
+    "zoom": 9.3,
+    "population": 1188891,
+    "grid": "cities/bishkek/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bishkek/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bishkek",
+        "name": "Bishkek",
+        "nameIt": "Bishkek",
+        "region": "Kyrgyzstan",
+        "regionIt": "Kirghizistan",
+        "country": "KG",
+        "center": [
+          74.59452,
+          42.87207
+        ],
+        "zoom": 9.3,
+        "population": 1188891,
+        "cells": 1558,
+        "layer": "cities/bishkek/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.59452,
+            42.87207
+          ]
+        },
+        "properties": {
+          "id": "bishkek",
+          "name": "Bishkek",
+          "country": "KG",
+          "isStudy": true,
+          "proximityMinutes": 16.7,
+          "population": 1188891
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "horizonte",
+  "createdAt": "2026-10-08T15:39:05.779Z",
+  "updatedAt": "2026-10-08T15:39:05.779Z",
+  "meta": {
+    "name": "Horizonte",
+    "nameIt": "Horizonte",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Horizonte.geojson",
+      "sha256": "79fe7c73c4a7d5bddd91dc34e9da2415bd4411c3af3d7f95117228a95d478873",
+      "size": 119649,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "horizonte",
+    "name": "Horizonte",
+    "nameIt": "Horizonte",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -38.49022,
+      -4.1003
+    ],
+    "zoom": 12,
+    "population": 47063,
+    "grid": "cities/horizonte/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/horizonte/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "horizonte",
+        "name": "Horizonte",
+        "nameIt": "Horizonte",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -38.49022,
+          -4.1003
+        ],
+        "zoom": 12,
+        "population": 47063,
+        "cells": 102,
+        "layer": "cities/horizonte/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -38.49022,
+            -4.1003
+          ]
+        },
+        "properties": {
+          "id": "horizonte",
+          "name": "Horizonte",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 14.2,
+          "population": 47063
+        }
+      },
+      "summary": null
+    }
+  }
+}

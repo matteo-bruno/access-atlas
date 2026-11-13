@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mati",
+  "createdAt": "2026-10-08T15:55:43.618Z",
+  "updatedAt": "2026-10-08T15:55:43.618Z",
+  "meta": {
+    "name": "Mati",
+    "nameIt": "Mati",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mati.geojson",
+      "sha256": "8d45cccc6f2a5ff0887a50278bcdc46058bef784d55b8136d801eab53afcf3e9",
+      "size": 146908,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mati",
+    "name": "Mati",
+    "nameIt": "Mati",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      126.21778,
+      6.95539
+    ],
+    "zoom": 11.6,
+    "population": 46664,
+    "grid": "cities/mati/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mati/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mati",
+        "name": "Mati",
+        "nameIt": "Mati",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          126.21778,
+          6.95539
+        ],
+        "zoom": 11.6,
+        "population": 46664,
+        "cells": 127,
+        "layer": "cities/mati/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            126.21778,
+            6.95539
+          ]
+        },
+        "properties": {
+          "id": "mati",
+          "name": "Mati",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 10.2,
+          "population": 46664
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "floriano",
+  "createdAt": "2026-10-08T15:33:27.731Z",
+  "updatedAt": "2026-10-08T15:33:27.731Z",
+  "meta": {
+    "name": "Floriano",
+    "nameIt": "Floriano",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Floriano.geojson",
+      "sha256": "df242ca5794ae585d63ac6a9ab7c773b90030d29e581ddb184857d9c00d6e3a2",
+      "size": 174900,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "floriano",
+    "name": "Floriano",
+    "nameIt": "Floriano",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -43.02148,
+      -6.77168
+    ],
+    "zoom": 11.7,
+    "population": 51245,
+    "grid": "cities/floriano/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/floriano/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "floriano",
+        "name": "Floriano",
+        "nameIt": "Floriano",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -43.02148,
+          -6.77168
+        ],
+        "zoom": 11.7,
+        "population": 51245,
+        "cells": 149,
+        "layer": "cities/floriano/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -43.02148,
+            -6.77168
+          ]
+        },
+        "properties": {
+          "id": "floriano",
+          "name": "Floriano",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 51245
+        }
+      },
+      "summary": null
+    }
+  }
+}

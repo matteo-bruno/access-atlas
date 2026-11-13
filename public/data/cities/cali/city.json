@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cali",
+  "createdAt": "2026-10-08T15:21:57.599Z",
+  "updatedAt": "2026-10-08T15:21:57.599Z",
+  "meta": {
+    "name": "Cali",
+    "nameIt": "Cali",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cali.geojson",
+      "sha256": "7dcf16f518566ac5829c963b4dbf1a85bac7ca4c6087463032e0ad381cc6014c",
+      "size": 1877435,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cali",
+    "name": "Cali",
+    "nameIt": "Cali",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -76.51115,
+      3.43075
+    ],
+    "zoom": 9.6,
+    "population": 2195007,
+    "grid": "cities/cali/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cali/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cali",
+        "name": "Cali",
+        "nameIt": "Cali",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -76.51115,
+          3.43075
+        ],
+        "zoom": 9.6,
+        "population": 2195007,
+        "cells": 1628,
+        "layer": "cities/cali/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.51115,
+            3.43075
+          ]
+        },
+        "properties": {
+          "id": "cali",
+          "name": "Cali",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 16.7,
+          "population": 2195007
+        }
+      },
+      "summary": null
+    }
+  }
+}

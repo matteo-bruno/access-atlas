@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "darzab",
+  "createdAt": "2026-10-08T15:28:27.954Z",
+  "updatedAt": "2026-10-08T15:28:27.954Z",
+  "meta": {
+    "name": "Darzab",
+    "nameIt": "Darzab",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Darzab.geojson",
+      "sha256": "8c00d0ccc2d743e5f1ed5c3dfc5379c934372880c834116d73354daffd7f0df3",
+      "size": 47409,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "darzab",
+    "name": "Darzab",
+    "nameIt": "Darzab",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF",
+    "center": [
+      65.38285,
+      35.97793
+    ],
+    "zoom": 12,
+    "population": 5099,
+    "grid": "cities/darzab/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/darzab/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "darzab",
+        "name": "Darzab",
+        "nameIt": "Darzab",
+        "region": "Afghanistan",
+        "regionIt": "Afghanistan",
+        "country": "AF",
+        "center": [
+          65.38285,
+          35.97793
+        ],
+        "zoom": 12,
+        "population": 5099,
+        "cells": 41,
+        "layer": "cities/darzab/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            65.38285,
+            35.97793
+          ]
+        },
+        "properties": {
+          "id": "darzab",
+          "name": "Darzab",
+          "country": "AF",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 5099
+        }
+      },
+      "summary": null
+    }
+  }
+}

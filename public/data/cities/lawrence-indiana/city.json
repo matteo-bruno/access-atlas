@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lawrence-indiana",
+  "createdAt": "2026-10-08T15:50:25.514Z",
+  "updatedAt": "2026-10-08T15:50:25.514Z",
+  "meta": {
+    "name": "Lawrence (Indiana)",
+    "nameIt": "Lawrence (Indiana)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lawrence (Indiana).geojson",
+      "sha256": "e5b9ce4e9bbb597c382948d25f8cd61dfe4b645a00e25f07e3a4648ea98fe0a2",
+      "size": 512012,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lawrence-indiana",
+    "name": "Lawrence (Indiana)",
+    "nameIt": "Lawrence (Indiana)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -86.02018,
+      39.82539
+    ],
+    "zoom": 10.7,
+    "population": 67408,
+    "grid": "cities/lawrence-indiana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lawrence-indiana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lawrence-indiana",
+        "name": "Lawrence (Indiana)",
+        "nameIt": "Lawrence (Indiana)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -86.02018,
+          39.82539
+        ],
+        "zoom": 10.7,
+        "population": 67408,
+        "cells": 440,
+        "layer": "cities/lawrence-indiana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -86.02018,
+            39.82539
+          ]
+        },
+        "properties": {
+          "id": "lawrence-indiana",
+          "name": "Lawrence (Indiana)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 26.4,
+          "population": 67408
+        }
+      },
+      "summary": null
+    }
+  }
+}

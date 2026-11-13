@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gimbichu",
+  "createdAt": "2026-10-08T15:35:15.744Z",
+  "updatedAt": "2026-10-08T15:35:15.744Z",
+  "meta": {
+    "name": "Gimbichu",
+    "nameIt": "Gimbichu",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gimbichu.geojson",
+      "sha256": "52bbcb5bad2cd224f296637cd41bc87fed8828ba68bb6f38f7eda0d61ba29ceb",
+      "size": 103884,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gimbichu",
+    "name": "Gimbichu",
+    "nameIt": "Gimbichu",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      37.62397,
+      7.44964
+    ],
+    "zoom": 12,
+    "population": 36652,
+    "grid": "cities/gimbichu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gimbichu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gimbichu",
+        "name": "Gimbichu",
+        "nameIt": "Gimbichu",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          37.62397,
+          7.44964
+        ],
+        "zoom": 12,
+        "population": 36652,
+        "cells": 90,
+        "layer": "cities/gimbichu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.62397,
+            7.44964
+          ]
+        },
+        "properties": {
+          "id": "gimbichu",
+          "name": "Gimbichu",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 36652
+        }
+      },
+      "summary": null
+    }
+  }
+}

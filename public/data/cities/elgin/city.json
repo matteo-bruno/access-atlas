@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "elgin",
+  "createdAt": "2026-10-08T15:32:09.251Z",
+  "updatedAt": "2026-10-08T15:32:09.251Z",
+  "meta": {
+    "name": "Elgin",
+    "nameIt": "Elgin",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Elgin.geojson",
+      "sha256": "1148f1029599e7a33ba11b865cd6b86eaa847ffd2fc24f016e9e9e6d89f5d6fb",
+      "size": 444231,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "elgin",
+    "name": "Elgin",
+    "nameIt": "Elgin",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -88.28387,
+      42.04212
+    ],
+    "zoom": 11,
+    "population": 84042,
+    "grid": "cities/elgin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/elgin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "elgin",
+        "name": "Elgin",
+        "nameIt": "Elgin",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -88.28387,
+          42.04212
+        ],
+        "zoom": 11,
+        "population": 84042,
+        "cells": 385,
+        "layer": "cities/elgin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.28387,
+            42.04212
+          ]
+        },
+        "properties": {
+          "id": "elgin",
+          "name": "Elgin",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.5,
+          "population": 84042
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bhainsa",
+  "createdAt": "2026-10-08T15:18:07.918Z",
+  "updatedAt": "2026-10-08T15:18:07.918Z",
+  "meta": {
+    "name": "Bhainsa",
+    "nameIt": "Bhainsa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bhainsa.geojson",
+      "sha256": "53b999b25fefe3dd135b1db369db9c032347af9ce0a1d817aca662b5865a714c",
+      "size": 76398,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bhainsa",
+    "name": "Bhainsa",
+    "nameIt": "Bhainsa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.96643,
+      19.10659
+    ],
+    "zoom": 12,
+    "population": 44599,
+    "grid": "cities/bhainsa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bhainsa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bhainsa",
+        "name": "Bhainsa",
+        "nameIt": "Bhainsa",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.96643,
+          19.10659
+        ],
+        "zoom": 12,
+        "population": 44599,
+        "cells": 66,
+        "layer": "cities/bhainsa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.96643,
+            19.10659
+          ]
+        },
+        "properties": {
+          "id": "bhainsa",
+          "name": "Bhainsa",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 44599
+        }
+      },
+      "summary": null
+    }
+  }
+}

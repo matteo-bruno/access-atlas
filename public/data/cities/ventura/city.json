@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ventura",
+  "createdAt": "2026-10-08T16:20:36.172Z",
+  "updatedAt": "2026-10-08T16:20:36.172Z",
+  "meta": {
+    "name": "Ventura",
+    "nameIt": "Ventura",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ventura.geojson",
+      "sha256": "16dd46aaf0254be3d23a425e035e260de2f249affbe7c82463f14bf962a76027",
+      "size": 341263,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ventura",
+    "name": "Ventura",
+    "nameIt": "Ventura",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -119.24521,
+      34.27264
+    ],
+    "zoom": 10.6,
+    "population": 69207,
+    "grid": "cities/ventura/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ventura/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ventura",
+        "name": "Ventura",
+        "nameIt": "Ventura",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -119.24521,
+          34.27264
+        ],
+        "zoom": 10.6,
+        "population": 69207,
+        "cells": 294,
+        "layer": "cities/ventura/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -119.24521,
+            34.27264
+          ]
+        },
+        "properties": {
+          "id": "ventura",
+          "name": "Ventura",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.3,
+          "population": 69207
+        }
+      },
+      "summary": null
+    }
+  }
+}

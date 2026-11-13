@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "astara",
+  "createdAt": "2026-10-08T15:10:30.486Z",
+  "updatedAt": "2026-10-08T15:10:30.486Z",
+  "meta": {
+    "name": "Astara",
+    "nameIt": "Astara",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Astara.geojson",
+      "sha256": "27adfbc629f690e6ce40790deaa1ba29f70d51ac0848b0fef4196dff32caaac9",
+      "size": 179545,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "astara",
+    "name": "Astara",
+    "nameIt": "Astara",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      48.86817,
+      38.46579
+    ],
+    "zoom": 11,
+    "population": 39709,
+    "grid": "cities/astara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/astara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "astara",
+        "name": "Astara",
+        "nameIt": "Astara",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          48.86817,
+          38.46579
+        ],
+        "zoom": 11,
+        "population": 39709,
+        "cells": 155,
+        "layer": "cities/astara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.86817,
+            38.46579
+          ]
+        },
+        "properties": {
+          "id": "astara",
+          "name": "Astara",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 26.3,
+          "population": 39709
+        }
+      },
+      "summary": null
+    }
+  }
+}

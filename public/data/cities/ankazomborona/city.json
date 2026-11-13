@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ankazomborona",
+  "createdAt": "2026-10-08T15:07:53.888Z",
+  "updatedAt": "2026-10-08T15:07:53.888Z",
+  "meta": {
+    "name": "Ankazomborona",
+    "nameIt": "Ankazomborona",
+    "region": "Madagascar",
+    "regionIt": "Madagascar",
+    "country": "MG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ankazomborona.geojson",
+      "sha256": "8bdaa50dd6bbd97dfb6aaa5ba84ec56906dfdc88151527b09844a8cb789807a7",
+      "size": 79544,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ankazomborona",
+    "name": "Ankazomborona",
+    "nameIt": "Ankazomborona",
+    "region": "Madagascar",
+    "regionIt": "Madagascar",
+    "country": "MG",
+    "center": [
+      46.6708,
+      -16.08188
+    ],
+    "zoom": 12,
+    "population": 2425,
+    "grid": "cities/ankazomborona/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ankazomborona/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ankazomborona",
+        "name": "Ankazomborona",
+        "nameIt": "Ankazomborona",
+        "region": "Madagascar",
+        "regionIt": "Madagascar",
+        "country": "MG",
+        "center": [
+          46.6708,
+          -16.08188
+        ],
+        "zoom": 12,
+        "population": 2425,
+        "cells": 68,
+        "layer": "cities/ankazomborona/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            46.6708,
+            -16.08188
+          ]
+        },
+        "properties": {
+          "id": "ankazomborona",
+          "name": "Ankazomborona",
+          "country": "MG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 2425
+        }
+      },
+      "summary": null
+    }
+  }
+}

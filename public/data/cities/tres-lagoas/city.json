@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tres-lagoas",
+  "createdAt": "2026-10-08T16:18:55.496Z",
+  "updatedAt": "2026-10-08T16:18:55.496Z",
+  "meta": {
+    "name": "Três Lagoas",
+    "nameIt": "Três Lagoas",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Três Lagoas.geojson",
+      "sha256": "154fc132e6b201b8f91470f3d46bfe853b054ae3a2824ad79185137ec1daa10a",
+      "size": 394823,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tres-lagoas",
+    "name": "Três Lagoas",
+    "nameIt": "Três Lagoas",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -51.70228,
+      -20.79171
+    ],
+    "zoom": 11,
+    "population": 110885,
+    "grid": "cities/tres-lagoas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tres-lagoas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tres-lagoas",
+        "name": "Três Lagoas",
+        "nameIt": "Três Lagoas",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -51.70228,
+          -20.79171
+        ],
+        "zoom": 11,
+        "population": 110885,
+        "cells": 335,
+        "layer": "cities/tres-lagoas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -51.70228,
+            -20.79171
+          ]
+        },
+        "properties": {
+          "id": "tres-lagoas",
+          "name": "Três Lagoas",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 19.8,
+          "population": 110885
+        }
+      },
+      "summary": null
+    }
+  }
+}

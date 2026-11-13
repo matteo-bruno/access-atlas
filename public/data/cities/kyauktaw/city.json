@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kyauktaw",
+  "createdAt": "2026-10-08T15:49:10.852Z",
+  "updatedAt": "2026-10-08T15:49:10.852Z",
+  "meta": {
+    "name": "Kyauktaw",
+    "nameIt": "Kyauktaw",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kyauktaw.geojson",
+      "sha256": "af85d043309f8b1c45f0bf82ad7ef21a427072fbdf1601041c6769393c6909be",
+      "size": 63725,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kyauktaw",
+    "name": "Kyauktaw",
+    "nameIt": "Kyauktaw",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      92.97614,
+      20.843
+    ],
+    "zoom": 12,
+    "population": 58606,
+    "grid": "cities/kyauktaw/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kyauktaw/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kyauktaw",
+        "name": "Kyauktaw",
+        "nameIt": "Kyauktaw",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          92.97614,
+          20.843
+        ],
+        "zoom": 12,
+        "population": 58606,
+        "cells": 55,
+        "layer": "cities/kyauktaw/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            92.97614,
+            20.843
+          ]
+        },
+        "properties": {
+          "id": "kyauktaw",
+          "name": "Kyauktaw",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 58606
+        }
+      },
+      "summary": null
+    }
+  }
+}

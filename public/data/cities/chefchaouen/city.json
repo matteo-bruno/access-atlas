@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chefchaouen",
+  "createdAt": "2026-10-08T15:24:08.349Z",
+  "updatedAt": "2026-10-08T15:24:08.349Z",
+  "meta": {
+    "name": "Chefchaouen",
+    "nameIt": "Chefchaouen",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chefchaouen.geojson",
+      "sha256": "22f1cf91d393ac87d2ce9d8ad9a04c2a0a0a7f08bbe04ce7f36971a5294e6589",
+      "size": 62574,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chefchaouen",
+    "name": "Chefchaouen",
+    "nameIt": "Chefchaouen",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -5.2711,
+      35.17062
+    ],
+    "zoom": 12,
+    "population": 9587,
+    "grid": "cities/chefchaouen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chefchaouen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chefchaouen",
+        "name": "Chefchaouen",
+        "nameIt": "Chefchaouen",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -5.2711,
+          35.17062
+        ],
+        "zoom": 12,
+        "population": 9587,
+        "cells": 54,
+        "layer": "cities/chefchaouen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.2711,
+            35.17062
+          ]
+        },
+        "properties": {
+          "id": "chefchaouen",
+          "name": "Chefchaouen",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 10.2,
+          "population": 9587
+        }
+      },
+      "summary": null
+    }
+  }
+}

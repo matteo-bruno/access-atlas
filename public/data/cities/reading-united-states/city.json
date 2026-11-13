@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "reading-united-states",
+  "createdAt": "2026-10-08T16:08:30.396Z",
+  "updatedAt": "2026-10-08T16:08:30.396Z",
+  "meta": {
+    "name": "Reading (United States)",
+    "nameIt": "Reading (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Reading (United States).geojson",
+      "sha256": "2ccf8289ea5388e48ebe57337e1f19d0b3e7c59f2e10db59fad494ad07e1ef9c",
+      "size": 568005,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "reading-united-states",
+    "name": "Reading (United States)",
+    "nameIt": "Reading (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -75.94166,
+      40.33378
+    ],
+    "zoom": 10.2,
+    "population": 140507,
+    "grid": "cities/reading-united-states/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/reading-united-states/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "reading-united-states",
+        "name": "Reading (United States)",
+        "nameIt": "Reading (United States)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -75.94166,
+          40.33378
+        ],
+        "zoom": 10.2,
+        "population": 140507,
+        "cells": 490,
+        "layer": "cities/reading-united-states/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.94166,
+            40.33378
+          ]
+        },
+        "properties": {
+          "id": "reading-united-states",
+          "name": "Reading (United States)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.7,
+          "population": 140507
+        }
+      },
+      "summary": null
+    }
+  }
+}

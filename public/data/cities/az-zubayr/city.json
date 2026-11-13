@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "az-zubayr",
+  "createdAt": "2026-10-08T15:11:57.731Z",
+  "updatedAt": "2026-10-08T15:11:57.731Z",
+  "meta": {
+    "name": "Az Zubayr",
+    "nameIt": "Az Zubayr",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Az Zubayr.geojson",
+      "sha256": "e3b4a4438f2429959d4590e8c2757b3f4a06ac0c438c3e049c27cd8376fb081a",
+      "size": 319785,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "az-zubayr",
+    "name": "Az Zubayr",
+    "nameIt": "Az Zubayr",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      47.70863,
+      30.38263
+    ],
+    "zoom": 11.1,
+    "population": 199159,
+    "grid": "cities/az-zubayr/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/az-zubayr/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "az-zubayr",
+        "name": "Az Zubayr",
+        "nameIt": "Az Zubayr",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          47.70863,
+          30.38263
+        ],
+        "zoom": 11.1,
+        "population": 199159,
+        "cells": 276,
+        "layer": "cities/az-zubayr/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            47.70863,
+            30.38263
+          ]
+        },
+        "properties": {
+          "id": "az-zubayr",
+          "name": "Az Zubayr",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 17.6,
+          "population": 199159
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kebri-beyah",
+  "createdAt": "2026-10-08T15:45:58.197Z",
+  "updatedAt": "2026-10-08T15:45:58.197Z",
+  "meta": {
+    "name": "Kebri Beyah",
+    "nameIt": "Kebri Beyah",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kebri Beyah.geojson",
+      "sha256": "939ea1a4e5414604af6fd3bb472de2f8e0338217c19b11c049ca3db8a191df24",
+      "size": 100222,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kebri-beyah",
+    "name": "Kebri Beyah",
+    "nameIt": "Kebri Beyah",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      43.17792,
+      9.10165
+    ],
+    "zoom": 12,
+    "population": 29747,
+    "grid": "cities/kebri-beyah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kebri-beyah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kebri-beyah",
+        "name": "Kebri Beyah",
+        "nameIt": "Kebri Beyah",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          43.17792,
+          9.10165
+        ],
+        "zoom": 12,
+        "population": 29747,
+        "cells": 87,
+        "layer": "cities/kebri-beyah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.17792,
+            9.10165
+          ]
+        },
+        "properties": {
+          "id": "kebri-beyah",
+          "name": "Kebri Beyah",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 29747
+        }
+      },
+      "summary": null
+    }
+  }
+}

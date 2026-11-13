@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jamshedpur",
+  "createdAt": "2026-10-08T15:41:55.745Z",
+  "updatedAt": "2026-10-08T15:41:55.745Z",
+  "meta": {
+    "name": "Jamshedpur",
+    "nameIt": "Jamshedpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jamshedpur.geojson",
+      "sha256": "6e53551d6c264b96a229db231fbf2bbd2694a2307c65118b0c666c2b48958658",
+      "size": 1644295,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jamshedpur",
+    "name": "Jamshedpur",
+    "nameIt": "Jamshedpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.1965,
+      22.79489
+    ],
+    "zoom": 9.6,
+    "population": 1706074,
+    "grid": "cities/jamshedpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jamshedpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jamshedpur",
+        "name": "Jamshedpur",
+        "nameIt": "Jamshedpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.1965,
+          22.79489
+        ],
+        "zoom": 9.6,
+        "population": 1706074,
+        "cells": 1423,
+        "layer": "cities/jamshedpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.1965,
+            22.79489
+          ]
+        },
+        "properties": {
+          "id": "jamshedpur",
+          "name": "Jamshedpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 47.9,
+          "population": 1706074
+        }
+      },
+      "summary": null
+    }
+  }
+}

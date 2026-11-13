@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jember",
+  "createdAt": "2026-10-08T15:42:14.370Z",
+  "updatedAt": "2026-10-08T15:42:14.370Z",
+  "meta": {
+    "name": "Jember",
+    "nameIt": "Jember",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jember.geojson",
+      "sha256": "8c5797e116cec68b8992823be5968bcccbfb4a1cc4b07abb92051aa689993470",
+      "size": 1186435,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jember",
+    "name": "Jember",
+    "nameIt": "Jember",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      113.6896,
+      -8.18131
+    ],
+    "zoom": 9.7,
+    "population": 441625,
+    "grid": "cities/jember/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jember/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jember",
+        "name": "Jember",
+        "nameIt": "Jember",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          113.6896,
+          -8.18131
+        ],
+        "zoom": 9.7,
+        "population": 441625,
+        "cells": 1014,
+        "layer": "cities/jember/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.6896,
+            -8.18131
+          ]
+        },
+        "properties": {
+          "id": "jember",
+          "name": "Jember",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 37.4,
+          "population": 441625
+        }
+      },
+      "summary": null
+    }
+  }
+}

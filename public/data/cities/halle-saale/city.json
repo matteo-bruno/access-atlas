@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "halle-saale",
+  "createdAt": "2026-10-08T15:37:27.131Z",
+  "updatedAt": "2026-10-08T15:37:27.131Z",
+  "meta": {
+    "name": "Halle (Saale)",
+    "nameIt": "Halle (Saale)",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Halle (Saale).geojson",
+      "sha256": "b25b31b7e52d6681495a861b36369b9f31182f36e8a60a017546ca8f92423ee1",
+      "size": 694939,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "halle-saale",
+    "name": "Halle (Saale)",
+    "nameIt": "Halle (Saale)",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      11.96678,
+      51.47564
+    ],
+    "zoom": 10.5,
+    "population": 186925,
+    "grid": "cities/halle-saale/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/halle-saale/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "halle-saale",
+        "name": "Halle (Saale)",
+        "nameIt": "Halle (Saale)",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          11.96678,
+          51.47564
+        ],
+        "zoom": 10.5,
+        "population": 186925,
+        "cells": 608,
+        "layer": "cities/halle-saale/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.96678,
+            51.47564
+          ]
+        },
+        "properties": {
+          "id": "halle-saale",
+          "name": "Halle (Saale)",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 8.9,
+          "population": 186925
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bocono",
+  "createdAt": "2026-10-08T15:19:45.127Z",
+  "updatedAt": "2026-10-08T15:19:45.127Z",
+  "meta": {
+    "name": "Boconó",
+    "nameIt": "Boconó",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Boconó.geojson",
+      "sha256": "9668ef6010139bb04c534ba67d0379d29c0e5788ce7f7a0a95f894959820985c",
+      "size": 128802,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bocono",
+    "name": "Boconó",
+    "nameIt": "Boconó",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -70.25882,
+      9.24929
+    ],
+    "zoom": 11.7,
+    "population": 28126,
+    "grid": "cities/bocono/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bocono/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bocono",
+        "name": "Boconó",
+        "nameIt": "Boconó",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -70.25882,
+          9.24929
+        ],
+        "zoom": 11.7,
+        "population": 28126,
+        "cells": 111,
+        "layer": "cities/bocono/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -70.25882,
+            9.24929
+          ]
+        },
+        "properties": {
+          "id": "bocono",
+          "name": "Boconó",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 22.2,
+          "population": 28126
+        }
+      },
+      "summary": null
+    }
+  }
+}

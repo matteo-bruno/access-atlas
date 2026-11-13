@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "budapest-fua",
+  "createdAt": "2026-10-19T16:55:41.709Z",
+  "updatedAt": "2026-10-19T16:55:41.709Z",
+  "meta": {
+    "name": "Budapest",
+    "nameIt": "Budapest",
+    "region": "Hungary",
+    "regionIt": "Ungheria",
+    "country": "HU"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "budapest-fua",
+    "name": "Budapest",
+    "nameIt": "Budapest",
+    "region": "Hungary",
+    "regionIt": "Ungheria",
+    "country": "HU",
+    "extent": "fua",
+    "core": "budapest",
+    "center": [
+      19.11061,
+      47.49446
+    ],
+    "zoom": 8.5,
+    "population": 2829436,
+    "grid": "cities/budapest-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/budapest-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "budapest-fua",
+        "name": "Budapest",
+        "nameIt": "Budapest",
+        "region": "Hungary",
+        "regionIt": "Ungheria",
+        "country": "HU",
+        "extent": "fua",
+        "core": "budapest",
+        "center": [
+          19.11061,
+          47.49446
+        ],
+        "zoom": 8.5,
+        "population": 2829436,
+        "cells": 39365,
+        "layer": "cities/budapest-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.11061,
+            47.49446
+          ]
+        },
+        "properties": {
+          "id": "budapest-fua",
+          "name": "Budapest",
+          "country": "HU",
+          "isStudy": true,
+          "proximityMinutes": 10.8,
+          "population": 2829436
+        }
+      },
+      "summary": null
+    }
+  }
+}

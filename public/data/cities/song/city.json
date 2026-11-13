@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "song",
+  "createdAt": "2026-10-08T16:14:23.915Z",
+  "updatedAt": "2026-10-08T16:14:23.915Z",
+  "meta": {
+    "name": "Song",
+    "nameIt": "Song",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Song.geojson",
+      "sha256": "87b750fa3836c7f5912afb48c309d3d76e2c1519ff7d92c3627a37792393153f",
+      "size": 120421,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "song",
+    "name": "Song",
+    "nameIt": "Song",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      12.62246,
+      9.82419
+    ],
+    "zoom": 12,
+    "population": 45228,
+    "grid": "cities/song/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/song/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "song",
+        "name": "Song",
+        "nameIt": "Song",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          12.62246,
+          9.82419
+        ],
+        "zoom": 12,
+        "population": 45228,
+        "cells": 104,
+        "layer": "cities/song/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.62246,
+            9.82419
+          ]
+        },
+        "properties": {
+          "id": "song",
+          "name": "Song",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 45228
+        }
+      },
+      "summary": null
+    }
+  }
+}

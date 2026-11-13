@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rajanpur",
+  "createdAt": "2026-10-08T16:07:55.849Z",
+  "updatedAt": "2026-10-08T16:07:55.849Z",
+  "meta": {
+    "name": "Rajanpur",
+    "nameIt": "Rajanpur",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rajanpur.geojson",
+      "sha256": "91904367d8c3d73cac2cacb2719efa916bd471dbf2b034dbbeffab0c1ec381b2",
+      "size": 127397,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rajanpur",
+    "name": "Rajanpur",
+    "nameIt": "Rajanpur",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      70.3295,
+      29.1052
+    ],
+    "zoom": 11.7,
+    "population": 94006,
+    "grid": "cities/rajanpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rajanpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rajanpur",
+        "name": "Rajanpur",
+        "nameIt": "Rajanpur",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          70.3295,
+          29.1052
+        ],
+        "zoom": 11.7,
+        "population": 94006,
+        "cells": 110,
+        "layer": "cities/rajanpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            70.3295,
+            29.1052
+          ]
+        },
+        "properties": {
+          "id": "rajanpur",
+          "name": "Rajanpur",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 94006
+        }
+      },
+      "summary": null
+    }
+  }
+}

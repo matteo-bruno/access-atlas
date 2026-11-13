@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hejian",
+  "createdAt": "2026-10-08T15:38:16.888Z",
+  "updatedAt": "2026-10-08T15:38:16.888Z",
+  "meta": {
+    "name": "Hejian",
+    "nameIt": "Hejian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hejian.geojson",
+      "sha256": "58bd642773bcb851e82cb6ed59de6b8035175d4d1f0d1327b1e63f81d7d1adee",
+      "size": 811796,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hejian",
+    "name": "Hejian",
+    "nameIt": "Hejian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.094,
+      38.44037
+    ],
+    "zoom": 10.3,
+    "population": 219696,
+    "grid": "cities/hejian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 170
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hejian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hejian",
+        "name": "Hejian",
+        "nameIt": "Hejian",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.094,
+          38.44037
+        ],
+        "zoom": 10.3,
+        "population": 219696,
+        "cells": 696,
+        "layer": "cities/hejian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 170
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.094,
+            38.44037
+          ]
+        },
+        "properties": {
+          "id": "hejian",
+          "name": "Hejian",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 23.9,
+          "population": 219696
+        }
+      },
+      "summary": null
+    }
+  }
+}

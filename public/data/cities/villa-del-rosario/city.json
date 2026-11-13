@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "villa-del-rosario",
+  "createdAt": "2026-10-08T16:20:47.131Z",
+  "updatedAt": "2026-10-08T16:20:47.131Z",
+  "meta": {
+    "name": "Villa del Rosario",
+    "nameIt": "Villa del Rosario",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Villa del Rosario.geojson",
+      "sha256": "c11f23064ea75794942821e4f2f3dbf3dae93ddfee30e5bc232c2972bbfc514e",
+      "size": 190815,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "villa-del-rosario",
+    "name": "Villa del Rosario",
+    "nameIt": "Villa del Rosario",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -72.31773,
+      10.325
+    ],
+    "zoom": 11.7,
+    "population": 73365,
+    "grid": "cities/villa-del-rosario/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/villa-del-rosario/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "villa-del-rosario",
+        "name": "Villa del Rosario",
+        "nameIt": "Villa del Rosario",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -72.31773,
+          10.325
+        ],
+        "zoom": 11.7,
+        "population": 73365,
+        "cells": 163,
+        "layer": "cities/villa-del-rosario/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.31773,
+            10.325
+          ]
+        },
+        "properties": {
+          "id": "villa-del-rosario",
+          "name": "Villa del Rosario",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 73365
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "blora",
+  "createdAt": "2026-10-08T15:19:39.539Z",
+  "updatedAt": "2026-10-08T15:19:39.539Z",
+  "meta": {
+    "name": "Blora",
+    "nameIt": "Blora",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Blora.geojson",
+      "sha256": "71d4c7e08a7244d75ae46f155d91680c8b7fe669ca6ced4566c5e47ccbe55984",
+      "size": 260290,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "blora",
+    "name": "Blora",
+    "nameIt": "Blora",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      111.42672,
+      -6.96952
+    ],
+    "zoom": 10.5,
+    "population": 97743,
+    "grid": "cities/blora/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/blora/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "blora",
+        "name": "Blora",
+        "nameIt": "Blora",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          111.42672,
+          -6.96952
+        ],
+        "zoom": 10.5,
+        "population": 97743,
+        "cells": 222,
+        "layer": "cities/blora/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.42672,
+            -6.96952
+          ]
+        },
+        "properties": {
+          "id": "blora",
+          "name": "Blora",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 22.8,
+          "population": 97743
+        }
+      },
+      "summary": null
+    }
+  }
+}

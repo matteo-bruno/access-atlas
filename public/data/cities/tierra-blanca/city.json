@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tierra-blanca",
+  "createdAt": "2026-10-08T16:17:49.512Z",
+  "updatedAt": "2026-10-08T16:17:49.512Z",
+  "meta": {
+    "name": "Tierra Blanca",
+    "nameIt": "Tierra Blanca",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tierra Blanca.geojson",
+      "sha256": "24b5a6161c3ad7f3cbb931373adf6a98918804690f65264431701afd7e5a8bd0",
+      "size": 117515,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tierra-blanca",
+    "name": "Tierra Blanca",
+    "nameIt": "Tierra Blanca",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -96.35752,
+      18.4486
+    ],
+    "zoom": 12,
+    "population": 43768,
+    "grid": "cities/tierra-blanca/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tierra-blanca/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tierra-blanca",
+        "name": "Tierra Blanca",
+        "nameIt": "Tierra Blanca",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -96.35752,
+          18.4486
+        ],
+        "zoom": 12,
+        "population": 43768,
+        "cells": 101,
+        "layer": "cities/tierra-blanca/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -96.35752,
+            18.4486
+          ]
+        },
+        "properties": {
+          "id": "tierra-blanca",
+          "name": "Tierra Blanca",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 12.9,
+          "population": 43768
+        }
+      },
+      "summary": null
+    }
+  }
+}

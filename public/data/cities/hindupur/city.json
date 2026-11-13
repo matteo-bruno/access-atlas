@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hindupur",
+  "createdAt": "2026-10-08T15:38:42.606Z",
+  "updatedAt": "2026-10-08T15:38:42.606Z",
+  "meta": {
+    "name": "Hindupur",
+    "nameIt": "Hindupur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hindupur.geojson",
+      "sha256": "714f441a61a0d965b8da17f658b47fbf26270a2653c7a38542c953f4e86697f3",
+      "size": 286615,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hindupur",
+    "name": "Hindupur",
+    "nameIt": "Hindupur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.49418,
+      13.8276
+    ],
+    "zoom": 10.9,
+    "population": 119293,
+    "grid": "cities/hindupur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hindupur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hindupur",
+        "name": "Hindupur",
+        "nameIt": "Hindupur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.49418,
+          13.8276
+        ],
+        "zoom": 10.9,
+        "population": 119293,
+        "cells": 247,
+        "layer": "cities/hindupur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.49418,
+            13.8276
+          ]
+        },
+        "properties": {
+          "id": "hindupur",
+          "name": "Hindupur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.7,
+          "population": 119293
+        }
+      },
+      "summary": null
+    }
+  }
+}

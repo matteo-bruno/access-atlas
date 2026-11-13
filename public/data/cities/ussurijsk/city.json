@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ussurijsk",
+  "createdAt": "2026-10-08T16:20:08.381Z",
+  "updatedAt": "2026-10-08T16:20:08.381Z",
+  "meta": {
+    "name": "Ussurijsk",
+    "nameIt": "Ussurijsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ussurijsk.geojson",
+      "sha256": "4273c2c4a7ab8f6a702a6561c88d13b77c4e544edc502d630f8d79d1a78c57d9",
+      "size": 514133,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ussurijsk",
+    "name": "Ussurijsk",
+    "nameIt": "Ussurijsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      131.95985,
+      43.80598
+    ],
+    "zoom": 10.9,
+    "population": 131611,
+    "grid": "cities/ussurijsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ussurijsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ussurijsk",
+        "name": "Ussurijsk",
+        "nameIt": "Ussurijsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          131.95985,
+          43.80598
+        ],
+        "zoom": 10.9,
+        "population": 131611,
+        "cells": 446,
+        "layer": "cities/ussurijsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            131.95985,
+            43.80598
+          ]
+        },
+        "properties": {
+          "id": "ussurijsk",
+          "name": "Ussurijsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 131611
+        }
+      },
+      "summary": null
+    }
+  }
+}

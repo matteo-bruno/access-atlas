@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shirvan",
+  "createdAt": "2026-10-08T16:13:08.704Z",
+  "updatedAt": "2026-10-08T16:13:08.704Z",
+  "meta": {
+    "name": "Shirvan",
+    "nameIt": "Shirvan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shirvan.geojson",
+      "sha256": "933f8e1dabc886a62d0011079c4f3e3c8e711b0e341a434fc72661c5d2c9434e",
+      "size": 147848,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shirvan",
+    "name": "Shirvan",
+    "nameIt": "Shirvan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      57.92819,
+      37.40093
+    ],
+    "zoom": 11.7,
+    "population": 81277,
+    "grid": "cities/shirvan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shirvan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shirvan",
+        "name": "Shirvan",
+        "nameIt": "Shirvan",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          57.92819,
+          37.40093
+        ],
+        "zoom": 11.7,
+        "population": 81277,
+        "cells": 128,
+        "layer": "cities/shirvan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            57.92819,
+            37.40093
+          ]
+        },
+        "properties": {
+          "id": "shirvan",
+          "name": "Shirvan",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 16.2,
+          "population": 81277
+        }
+      },
+      "summary": null
+    }
+  }
+}

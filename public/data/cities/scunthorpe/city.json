@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "scunthorpe",
+  "createdAt": "2026-10-08T16:11:46.395Z",
+  "updatedAt": "2026-10-08T16:11:46.395Z",
+  "meta": {
+    "name": "Scunthorpe",
+    "nameIt": "Scunthorpe",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Scunthorpe.geojson",
+      "sha256": "6439c34c4faefc3a4c126c37a4e05e1efe6af54f887bc02533c200de6a59e26e",
+      "size": 463628,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "scunthorpe",
+    "name": "Scunthorpe",
+    "nameIt": "Scunthorpe",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.65475,
+      53.57597
+    ],
+    "zoom": 11.2,
+    "population": 80317,
+    "grid": "cities/scunthorpe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/scunthorpe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "scunthorpe",
+        "name": "Scunthorpe",
+        "nameIt": "Scunthorpe",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.65475,
+          53.57597
+        ],
+        "zoom": 11.2,
+        "population": 80317,
+        "cells": 399,
+        "layer": "cities/scunthorpe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.65475,
+            53.57597
+          ]
+        },
+        "properties": {
+          "id": "scunthorpe",
+          "name": "Scunthorpe",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 80317
+        }
+      },
+      "summary": null
+    }
+  }
+}

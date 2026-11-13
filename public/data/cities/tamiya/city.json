@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tamiya",
+  "createdAt": "2026-10-08T16:16:23.283Z",
+  "updatedAt": "2026-10-08T16:16:23.283Z",
+  "meta": {
+    "name": "Tamiya",
+    "nameIt": "Tamiya",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tamiya.geojson",
+      "sha256": "3ad981bf5deed9d9f0e4d76e5002c2d93c2fe4e2367a371f4dbcc1e133f2a74c",
+      "size": 104813,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tamiya",
+    "name": "Tamiya",
+    "nameIt": "Tamiya",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      30.95886,
+      29.47561
+    ],
+    "zoom": 11.6,
+    "population": 85187,
+    "grid": "cities/tamiya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tamiya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tamiya",
+        "name": "Tamiya",
+        "nameIt": "Tamiya",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          30.95886,
+          29.47561
+        ],
+        "zoom": 11.6,
+        "population": 85187,
+        "cells": 90,
+        "layer": "cities/tamiya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.95886,
+            29.47561
+          ]
+        },
+        "properties": {
+          "id": "tamiya",
+          "name": "Tamiya",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 85187
+        }
+      },
+      "summary": null
+    }
+  }
+}

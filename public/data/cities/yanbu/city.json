@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yanbu",
+  "createdAt": "2026-10-08T16:23:19.586Z",
+  "updatedAt": "2026-10-08T16:23:19.586Z",
+  "meta": {
+    "name": "Yanbu`",
+    "nameIt": "Yanbu`",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yanbu`.geojson",
+      "sha256": "8be272de24a7855daa2452b18a35886cfadad58b6d51582827b555bf7dd410e2",
+      "size": 456851,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yanbu",
+    "name": "Yanbu`",
+    "nameIt": "Yanbu`",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA",
+    "center": [
+      38.06768,
+      24.09162
+    ],
+    "zoom": 10.9,
+    "population": 88943,
+    "grid": "cities/yanbu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yanbu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yanbu",
+        "name": "Yanbu`",
+        "nameIt": "Yanbu`",
+        "region": "Saudi Arabia",
+        "regionIt": "Arabia Saudita",
+        "country": "SA",
+        "center": [
+          38.06768,
+          24.09162
+        ],
+        "zoom": 10.9,
+        "population": 88943,
+        "cells": 394,
+        "layer": "cities/yanbu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.06768,
+            24.09162
+          ]
+        },
+        "properties": {
+          "id": "yanbu",
+          "name": "Yanbu`",
+          "country": "SA",
+          "isStudy": true,
+          "proximityMinutes": 24.5,
+          "population": 88943
+        }
+      },
+      "summary": null
+    }
+  }
+}

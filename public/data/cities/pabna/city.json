@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pabna",
+  "createdAt": "2026-10-08T16:03:30.865Z",
+  "updatedAt": "2026-10-08T16:03:30.865Z",
+  "meta": {
+    "name": "Pabna",
+    "nameIt": "Pabna",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pabna.geojson",
+      "sha256": "8ee9ddb5ee0ab8b6a55d0108e61eada694275d16eabc0a2fc378a296997a6c6a",
+      "size": 458974,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pabna",
+    "name": "Pabna",
+    "nameIt": "Pabna",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.23856,
+      24.00732
+    ],
+    "zoom": 10.8,
+    "population": 248855,
+    "grid": "cities/pabna/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pabna/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pabna",
+        "name": "Pabna",
+        "nameIt": "Pabna",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.23856,
+          24.00732
+        ],
+        "zoom": 10.8,
+        "population": 248855,
+        "cells": 396,
+        "layer": "cities/pabna/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.23856,
+            24.00732
+          ]
+        },
+        "properties": {
+          "id": "pabna",
+          "name": "Pabna",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 25.7,
+          "population": 248855
+        }
+      },
+      "summary": null
+    }
+  }
+}

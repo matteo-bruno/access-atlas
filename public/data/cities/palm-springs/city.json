@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "palm-springs",
+  "createdAt": "2026-10-08T16:03:50.527Z",
+  "updatedAt": "2026-10-08T16:03:50.527Z",
+  "meta": {
+    "name": "Palm Springs",
+    "nameIt": "Palm Springs",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Palm Springs.geojson",
+      "sha256": "270e9d937cc07cae83962c8181edf89eb8de2376e5ebc4d0d25cc942aebb1b84",
+      "size": 344509,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "palm-springs",
+    "name": "Palm Springs",
+    "nameIt": "Palm Springs",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -116.53229,
+      33.8281
+    ],
+    "zoom": 10.8,
+    "population": 35945,
+    "grid": "cities/palm-springs/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/palm-springs/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "palm-springs",
+        "name": "Palm Springs",
+        "nameIt": "Palm Springs",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -116.53229,
+          33.8281
+        ],
+        "zoom": 10.8,
+        "population": 35945,
+        "cells": 296,
+        "layer": "cities/palm-springs/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -116.53229,
+            33.8281
+          ]
+        },
+        "properties": {
+          "id": "palm-springs",
+          "name": "Palm Springs",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.2,
+          "population": 35945
+        }
+      },
+      "summary": null
+    }
+  }
+}

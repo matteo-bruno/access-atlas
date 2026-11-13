@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sibiti",
+  "createdAt": "2026-10-08T16:13:22.817Z",
+  "updatedAt": "2026-10-08T16:13:22.817Z",
+  "meta": {
+    "name": "Sibiti",
+    "nameIt": "Sibiti",
+    "region": "Republic of the Congo",
+    "regionIt": "Repubblica del Congo",
+    "country": "CG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sibiti.geojson",
+      "sha256": "993a16e3bb23d5e37f934ee8525649aad387e6ed33fa093acde3f751828bffff",
+      "size": 86781,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sibiti",
+    "name": "Sibiti",
+    "nameIt": "Sibiti",
+    "region": "Republic of the Congo",
+    "regionIt": "Repubblica del Congo",
+    "country": "CG",
+    "center": [
+      13.34609,
+      -3.68139
+    ],
+    "zoom": 12,
+    "population": 36512,
+    "grid": "cities/sibiti/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sibiti/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sibiti",
+        "name": "Sibiti",
+        "nameIt": "Sibiti",
+        "region": "Republic of the Congo",
+        "regionIt": "Repubblica del Congo",
+        "country": "CG",
+        "center": [
+          13.34609,
+          -3.68139
+        ],
+        "zoom": 12,
+        "population": 36512,
+        "cells": 74,
+        "layer": "cities/sibiti/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.34609,
+            -3.68139
+          ]
+        },
+        "properties": {
+          "id": "sibiti",
+          "name": "Sibiti",
+          "country": "CG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 36512
+        }
+      },
+      "summary": null
+    }
+  }
+}

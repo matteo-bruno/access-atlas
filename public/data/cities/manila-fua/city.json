@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "manila-fua",
+  "createdAt": "2026-10-19T16:57:16.382Z",
+  "updatedAt": "2026-10-19T16:57:16.382Z",
+  "meta": {
+    "name": "Manila",
+    "nameIt": "Manila",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "manila-fua",
+    "name": "Manila",
+    "nameIt": "Manila",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "extent": "fua",
+    "core": "manila",
+    "center": [
+      121.03676,
+      14.54273
+    ],
+    "zoom": 8.5,
+    "population": 30245238,
+    "grid": "cities/manila-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/manila-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "manila-fua",
+        "name": "Manila",
+        "nameIt": "Manila",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "extent": "fua",
+        "core": "manila",
+        "center": [
+          121.03676,
+          14.54273
+        ],
+        "zoom": 8.5,
+        "population": 30245238,
+        "cells": 45586,
+        "layer": "cities/manila-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.03676,
+            14.54273
+          ]
+        },
+        "properties": {
+          "id": "manila-fua",
+          "name": "Manila",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 30245238
+        }
+      },
+      "summary": null
+    }
+  }
+}

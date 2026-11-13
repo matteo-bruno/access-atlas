@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "terni",
+  "createdAt": "2026-10-08T16:17:23.351Z",
+  "updatedAt": "2026-10-08T16:17:23.351Z",
+  "meta": {
+    "name": "Terni",
+    "nameIt": "Terni",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Terni.geojson",
+      "sha256": "5857f83551513fcf587f6f4804e333bc8df81e4066a46ebbc59ecc0ab0705965",
+      "size": 328246,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "terni",
+    "name": "Terni",
+    "nameIt": "Terni",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      12.64182,
+      42.56395
+    ],
+    "zoom": 11,
+    "population": 79928,
+    "grid": "cities/terni/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/terni/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "terni",
+        "name": "Terni",
+        "nameIt": "Terni",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          12.64182,
+          42.56395
+        ],
+        "zoom": 11,
+        "population": 79928,
+        "cells": 285,
+        "layer": "cities/terni/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.64182,
+            42.56395
+          ]
+        },
+        "properties": {
+          "id": "terni",
+          "name": "Terni",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 15.1,
+          "population": 79928
+        }
+      },
+      "summary": null
+    }
+  }
+}

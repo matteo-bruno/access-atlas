@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "boise",
+  "createdAt": "2026-10-08T15:19:52.401Z",
+  "updatedAt": "2026-10-08T15:19:52.401Z",
+  "meta": {
+    "name": "Boise",
+    "nameIt": "Boise",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Boise.geojson",
+      "sha256": "f5511294b85dc2fdd8514ca75dd872b2c448439889ddf3f706a3cddf170d4496",
+      "size": 2132270,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "boise",
+    "name": "Boise",
+    "nameIt": "Boise",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -116.29934,
+      43.62157
+    ],
+    "zoom": 9.4,
+    "population": 292145,
+    "grid": "cities/boise/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/boise/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "boise",
+        "name": "Boise",
+        "nameIt": "Boise",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -116.29934,
+          43.62157
+        ],
+        "zoom": 9.4,
+        "population": 292145,
+        "cells": 1836,
+        "layer": "cities/boise/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -116.29934,
+            43.62157
+          ]
+        },
+        "properties": {
+          "id": "boise",
+          "name": "Boise",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 19.5,
+          "population": 292145
+        }
+      },
+      "summary": null
+    }
+  }
+}

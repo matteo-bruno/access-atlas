@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bayana",
+  "createdAt": "2026-10-08T15:16:20.169Z",
+  "updatedAt": "2026-10-08T15:16:20.169Z",
+  "meta": {
+    "name": "Bayana",
+    "nameIt": "Bayana",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bayana.geojson",
+      "sha256": "925b4b03329bb12b2a4a01b4ec6c68b57efe6a1977ecfe96c54bb2e0a1330324",
+      "size": 110027,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bayana",
+    "name": "Bayana",
+    "nameIt": "Bayana",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.29057,
+      26.91547
+    ],
+    "zoom": 11.9,
+    "population": 39067,
+    "grid": "cities/bayana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bayana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bayana",
+        "name": "Bayana",
+        "nameIt": "Bayana",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.29057,
+          26.91547
+        ],
+        "zoom": 11.9,
+        "population": 39067,
+        "cells": 95,
+        "layer": "cities/bayana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.29057,
+            26.91547
+          ]
+        },
+        "properties": {
+          "id": "bayana",
+          "name": "Bayana",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 39067
+        }
+      },
+      "summary": null
+    }
+  }
+}

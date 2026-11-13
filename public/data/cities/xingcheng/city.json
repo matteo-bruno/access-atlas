@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xingcheng",
+  "createdAt": "2026-10-08T16:22:38.285Z",
+  "updatedAt": "2026-10-08T16:22:38.285Z",
+  "meta": {
+    "name": "Xingcheng",
+    "nameIt": "Xingcheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xingcheng.geojson",
+      "sha256": "0890bf28f72f80c24093d63040217f5624519150f32c8217ba5325a0ea75d63b",
+      "size": 793598,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xingcheng",
+    "name": "Xingcheng",
+    "nameIt": "Xingcheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      120.73467,
+      40.61626
+    ],
+    "zoom": 10.3,
+    "population": 236716,
+    "grid": "cities/xingcheng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 164
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xingcheng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xingcheng",
+        "name": "Xingcheng",
+        "nameIt": "Xingcheng",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          120.73467,
+          40.61626
+        ],
+        "zoom": 10.3,
+        "population": 236716,
+        "cells": 681,
+        "layer": "cities/xingcheng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 164
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.73467,
+            40.61626
+          ]
+        },
+        "properties": {
+          "id": "xingcheng",
+          "name": "Xingcheng",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 29.1,
+          "population": 236716
+        }
+      },
+      "summary": null
+    }
+  }
+}

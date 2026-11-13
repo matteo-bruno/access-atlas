@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "turlock",
+  "createdAt": "2026-10-08T16:19:21.062Z",
+  "updatedAt": "2026-10-08T16:19:21.062Z",
+  "meta": {
+    "name": "Turlock",
+    "nameIt": "Turlock",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Turlock.geojson",
+      "sha256": "10a22fd43705201309139c4cd1512d344b700b25a064efff30dcebf7726b4106",
+      "size": 327213,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "turlock",
+    "name": "Turlock",
+    "nameIt": "Turlock",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -120.85096,
+      37.50857
+    ],
+    "zoom": 11.3,
+    "population": 71253,
+    "grid": "cities/turlock/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/turlock/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "turlock",
+        "name": "Turlock",
+        "nameIt": "Turlock",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -120.85096,
+          37.50857
+        ],
+        "zoom": 11.3,
+        "population": 71253,
+        "cells": 282,
+        "layer": "cities/turlock/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -120.85096,
+            37.50857
+          ]
+        },
+        "properties": {
+          "id": "turlock",
+          "name": "Turlock",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 71253
+        }
+      },
+      "summary": null
+    }
+  }
+}

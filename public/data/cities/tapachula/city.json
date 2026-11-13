@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tapachula",
+  "createdAt": "2026-10-08T16:16:42.476Z",
+  "updatedAt": "2026-10-08T16:16:42.476Z",
+  "meta": {
+    "name": "Tapachula",
+    "nameIt": "Tapachula",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tapachula.geojson",
+      "sha256": "a14ef3e875fb5789088157e660db6f241bc10e4fac6e057fd7846c97614ceae0",
+      "size": 574991,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tapachula",
+    "name": "Tapachula",
+    "nameIt": "Tapachula",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -92.2675,
+      14.89746
+    ],
+    "zoom": 10.7,
+    "population": 242507,
+    "grid": "cities/tapachula/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tapachula/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tapachula",
+        "name": "Tapachula",
+        "nameIt": "Tapachula",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -92.2675,
+          14.89746
+        ],
+        "zoom": 10.7,
+        "population": 242507,
+        "cells": 493,
+        "layer": "cities/tapachula/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -92.2675,
+            14.89746
+          ]
+        },
+        "properties": {
+          "id": "tapachula",
+          "name": "Tapachula",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 22.5,
+          "population": 242507
+        }
+      },
+      "summary": null
+    }
+  }
+}

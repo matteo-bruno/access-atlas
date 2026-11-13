@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gorakhpur",
+  "createdAt": "2026-10-08T15:35:45.674Z",
+  "updatedAt": "2026-10-08T15:35:45.674Z",
+  "meta": {
+    "name": "Gorakhpur",
+    "nameIt": "Gorakhpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gorakhpur.geojson",
+      "sha256": "6bd8cc6b64a667f4fbe3a8a99d082020458a1c4c8183bef498db89363dfcef80",
+      "size": 1565303,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gorakhpur",
+    "name": "Gorakhpur",
+    "nameIt": "Gorakhpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.38435,
+      26.76398
+    ],
+    "zoom": 10.1,
+    "population": 1907619,
+    "grid": "cities/gorakhpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gorakhpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gorakhpur",
+        "name": "Gorakhpur",
+        "nameIt": "Gorakhpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.38435,
+          26.76398
+        ],
+        "zoom": 10.1,
+        "population": 1907619,
+        "cells": 1350,
+        "layer": "cities/gorakhpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.38435,
+            26.76398
+          ]
+        },
+        "properties": {
+          "id": "gorakhpur",
+          "name": "Gorakhpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 36.1,
+          "population": 1907619
+        }
+      },
+      "summary": null
+    }
+  }
+}

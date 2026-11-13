@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hou-jin",
+  "createdAt": "2026-10-08T15:39:09.227Z",
+  "updatedAt": "2026-10-08T15:39:09.227Z",
+  "meta": {
+    "name": "Hou Jin",
+    "nameIt": "Hou Jin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hou Jin.geojson",
+      "sha256": "eb2cc4900155701a7d5f5d7bc18226df62959c9a10bbfcd3f913f2bae4259b6d",
+      "size": 251297,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hou-jin",
+    "name": "Hou Jin",
+    "nameIt": "Hou Jin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.93537,
+      28.86804
+    ],
+    "zoom": 11,
+    "population": 61834,
+    "grid": "cities/hou-jin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hou-jin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hou-jin",
+        "name": "Hou Jin",
+        "nameIt": "Hou Jin",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.93537,
+          28.86804
+        ],
+        "zoom": 11,
+        "population": 61834,
+        "cells": 215,
+        "layer": "cities/hou-jin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.93537,
+            28.86804
+          ]
+        },
+        "properties": {
+          "id": "hou-jin",
+          "name": "Hou Jin",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 25.4,
+          "population": 61834
+        }
+      },
+      "summary": null
+    }
+  }
+}

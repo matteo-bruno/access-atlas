@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "el-hawata",
+  "createdAt": "2026-10-08T15:31:56.826Z",
+  "updatedAt": "2026-10-08T15:31:56.826Z",
+  "meta": {
+    "name": "El Hawata",
+    "nameIt": "El Hawata",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/El Hawata.geojson",
+      "sha256": "799d0070c2001c117368960a86dacd007eabc95061b73d3a592c41901fac622a",
+      "size": 107025,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "el-hawata",
+    "name": "El Hawata",
+    "nameIt": "El Hawata",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      34.63216,
+      13.41843
+    ],
+    "zoom": 11.9,
+    "population": 95256,
+    "grid": "cities/el-hawata/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/el-hawata/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "el-hawata",
+        "name": "El Hawata",
+        "nameIt": "El Hawata",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          34.63216,
+          13.41843
+        ],
+        "zoom": 11.9,
+        "population": 95256,
+        "cells": 92,
+        "layer": "cities/el-hawata/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.63216,
+            13.41843
+          ]
+        },
+        "properties": {
+          "id": "el-hawata",
+          "name": "El Hawata",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 19.6,
+          "population": 95256
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tujmazy",
+  "createdAt": "2026-10-08T16:19:05.066Z",
+  "updatedAt": "2026-10-08T16:19:05.066Z",
+  "meta": {
+    "name": "Tujmazy",
+    "nameIt": "Tujmazy",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tujmazy.geojson",
+      "sha256": "86d0a40d3b45fe5fb8031ab52787de76545eab6c2c69dd989873f4eee645b90c",
+      "size": 171084,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tujmazy",
+    "name": "Tujmazy",
+    "nameIt": "Tujmazy",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      53.70132,
+      54.60307
+    ],
+    "zoom": 11.5,
+    "population": 54277,
+    "grid": "cities/tujmazy/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tujmazy/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tujmazy",
+        "name": "Tujmazy",
+        "nameIt": "Tujmazy",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          53.70132,
+          54.60307
+        ],
+        "zoom": 11.5,
+        "population": 54277,
+        "cells": 148,
+        "layer": "cities/tujmazy/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            53.70132,
+            54.60307
+          ]
+        },
+        "properties": {
+          "id": "tujmazy",
+          "name": "Tujmazy",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 54277
+        }
+      },
+      "summary": null
+    }
+  }
+}

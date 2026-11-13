@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tembilahan",
+  "createdAt": "2026-10-08T16:17:13.260Z",
+  "updatedAt": "2026-10-08T16:17:13.260Z",
+  "meta": {
+    "name": "Tembilahan",
+    "nameIt": "Tembilahan",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tembilahan.geojson",
+      "sha256": "29eb69e7a5b9282c77df4736cf47eea3b9f2634217076f7fc89b9939d0faf0ad",
+      "size": 199873,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tembilahan",
+    "name": "Tembilahan",
+    "nameIt": "Tembilahan",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      103.15271,
+      -0.3217
+    ],
+    "zoom": 11.4,
+    "population": 120010,
+    "grid": "cities/tembilahan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tembilahan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tembilahan",
+        "name": "Tembilahan",
+        "nameIt": "Tembilahan",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          103.15271,
+          -0.3217
+        ],
+        "zoom": 11.4,
+        "population": 120010,
+        "cells": 169,
+        "layer": "cities/tembilahan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.15271,
+            -0.3217
+          ]
+        },
+        "properties": {
+          "id": "tembilahan",
+          "name": "Tembilahan",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 120010
+        }
+      },
+      "summary": null
+    }
+  }
+}

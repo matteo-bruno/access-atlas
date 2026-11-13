@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pila",
+  "createdAt": "2026-10-08T16:05:31.043Z",
+  "updatedAt": "2026-10-08T16:05:31.043Z",
+  "meta": {
+    "name": "Pila",
+    "nameIt": "Pila",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pila.geojson",
+      "sha256": "cd23864668f9eb27963a03ccbf3ef187edf92e949a77dedf1eb902d85313dca7",
+      "size": 232289,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pila",
+    "name": "Pila",
+    "nameIt": "Pila",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      16.74808,
+      53.15119
+    ],
+    "zoom": 11.6,
+    "population": 59331,
+    "grid": "cities/pila/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pila/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pila",
+        "name": "Pila",
+        "nameIt": "Pila",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          16.74808,
+          53.15119
+        ],
+        "zoom": 11.6,
+        "population": 59331,
+        "cells": 203,
+        "layer": "cities/pila/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.74808,
+            53.15119
+          ]
+        },
+        "properties": {
+          "id": "pila",
+          "name": "Pila",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 10.1,
+          "population": 59331
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "libenge",
+  "createdAt": "2026-10-08T15:51:01.583Z",
+  "updatedAt": "2026-10-08T15:51:01.583Z",
+  "meta": {
+    "name": "Libenge",
+    "nameIt": "Libenge",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Libenge.geojson",
+      "sha256": "4dc6e6ff13e315e1b0dc173c66f0066e01dcd1116edb4ae31ad1766214a54266",
+      "size": 98702,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "libenge",
+    "name": "Libenge",
+    "nameIt": "Libenge",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      18.63517,
+      3.65212
+    ],
+    "zoom": 12,
+    "population": 37900,
+    "grid": "cities/libenge/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/libenge/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "libenge",
+        "name": "Libenge",
+        "nameIt": "Libenge",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          18.63517,
+          3.65212
+        ],
+        "zoom": 12,
+        "population": 37900,
+        "cells": 85,
+        "layer": "cities/libenge/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.63517,
+            3.65212
+          ]
+        },
+        "properties": {
+          "id": "libenge",
+          "name": "Libenge",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 37900
+        }
+      },
+      "summary": null
+    }
+  }
+}

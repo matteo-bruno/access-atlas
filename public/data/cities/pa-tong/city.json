@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pa-tong",
+  "createdAt": "2026-10-08T16:03:29.259Z",
+  "updatedAt": "2026-10-08T16:03:29.259Z",
+  "meta": {
+    "name": "Pa Tong",
+    "nameIt": "Pa Tong",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pa Tong.geojson",
+      "sha256": "11c0a5415b7c24b9cd3dea5175cbfe243716207e0612abf815e401c8db297613",
+      "size": 80081,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pa-tong",
+    "name": "Pa Tong",
+    "nameIt": "Pa Tong",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      98.30097,
+      7.89427
+    ],
+    "zoom": 12,
+    "population": 96796,
+    "grid": "cities/pa-tong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pa-tong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pa-tong",
+        "name": "Pa Tong",
+        "nameIt": "Pa Tong",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          98.30097,
+          7.89427
+        ],
+        "zoom": 12,
+        "population": 96796,
+        "cells": 70,
+        "layer": "cities/pa-tong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            98.30097,
+            7.89427
+          ]
+        },
+        "properties": {
+          "id": "pa-tong",
+          "name": "Pa Tong",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 9.8,
+          "population": 96796
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pafos",
+  "createdAt": "2026-10-08T16:03:35.905Z",
+  "updatedAt": "2026-10-08T16:03:35.905Z",
+  "meta": {
+    "name": "Pafos",
+    "nameIt": "Pafos",
+    "region": "Cyprus",
+    "regionIt": "Cipro",
+    "country": "CY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pafos.geojson",
+      "sha256": "087cf502244565850fe434329fa9e4b616fc57dd4f070eb93b3321d535716da2",
+      "size": 293866,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pafos",
+    "name": "Pafos",
+    "nameIt": "Pafos",
+    "region": "Cyprus",
+    "regionIt": "Cipro",
+    "country": "CY",
+    "center": [
+      32.42816,
+      34.77615
+    ],
+    "zoom": 11.3,
+    "population": 50632,
+    "grid": "cities/pafos/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pafos/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pafos",
+        "name": "Pafos",
+        "nameIt": "Pafos",
+        "region": "Cyprus",
+        "regionIt": "Cipro",
+        "country": "CY",
+        "center": [
+          32.42816,
+          34.77615
+        ],
+        "zoom": 11.3,
+        "population": 50632,
+        "cells": 258,
+        "layer": "cities/pafos/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.42816,
+            34.77615
+          ]
+        },
+        "properties": {
+          "id": "pafos",
+          "name": "Pafos",
+          "country": "CY",
+          "isStudy": true,
+          "proximityMinutes": 10,
+          "population": 50632
+        }
+      },
+      "summary": null
+    }
+  }
+}

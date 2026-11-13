@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "warri",
+  "createdAt": "2026-10-08T16:21:23.817Z",
+  "updatedAt": "2026-10-08T16:21:23.817Z",
+  "meta": {
+    "name": "Warri",
+    "nameIt": "Warri",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Warri.geojson",
+      "sha256": "688ba09b8d84879ec56a6c7fe0505eaa14ac0c26879b4050ee3a1dd4385d0502",
+      "size": 2727773,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "warri",
+    "name": "Warri",
+    "nameIt": "Warri",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      5.78079,
+      5.54089
+    ],
+    "zoom": 9.4,
+    "population": 1357563,
+    "grid": "cities/warri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/warri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "warri",
+        "name": "Warri",
+        "nameIt": "Warri",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          5.78079,
+          5.54089
+        ],
+        "zoom": 9.4,
+        "population": 1357563,
+        "cells": 2363,
+        "layer": "cities/warri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.78079,
+            5.54089
+          ]
+        },
+        "properties": {
+          "id": "warri",
+          "name": "Warri",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 66.6,
+          "population": 1357563
+        }
+      },
+      "summary": null
+    }
+  }
+}

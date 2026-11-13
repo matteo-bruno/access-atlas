@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cascavel",
+  "createdAt": "2026-10-08T15:22:44.139Z",
+  "updatedAt": "2026-10-08T15:22:44.139Z",
+  "meta": {
+    "name": "Cascavel",
+    "nameIt": "Cascavel",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cascavel.geojson",
+      "sha256": "66902ab63419a10fadf22a34904ebba8d6797561c10c29c5440279a3cb72805b",
+      "size": 995768,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cascavel",
+    "name": "Cascavel",
+    "nameIt": "Cascavel",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -53.45539,
+      -24.9568
+    ],
+    "zoom": 10.5,
+    "population": 320994,
+    "grid": "cities/cascavel/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cascavel/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cascavel",
+        "name": "Cascavel",
+        "nameIt": "Cascavel",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -53.45539,
+          -24.9568
+        ],
+        "zoom": 10.5,
+        "population": 320994,
+        "cells": 847,
+        "layer": "cities/cascavel/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -53.45539,
+            -24.9568
+          ]
+        },
+        "properties": {
+          "id": "cascavel",
+          "name": "Cascavel",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 25.7,
+          "population": 320994
+        }
+      },
+      "summary": null
+    }
+  }
+}

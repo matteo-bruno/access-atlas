@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "los-mochis",
+  "createdAt": "2026-10-08T15:52:10.300Z",
+  "updatedAt": "2026-10-08T15:52:10.300Z",
+  "meta": {
+    "name": "Los Mochis",
+    "nameIt": "Los Mochis",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Los Mochis.geojson",
+      "sha256": "e019c9863240baa9d880658aa74136ee7f09f22503d3da11fda3da46446b36c8",
+      "size": 492516,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "los-mochis",
+    "name": "Los Mochis",
+    "nameIt": "Los Mochis",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -108.9957,
+      25.79067
+    ],
+    "zoom": 10.7,
+    "population": 317304,
+    "grid": "cities/los-mochis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/los-mochis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "los-mochis",
+        "name": "Los Mochis",
+        "nameIt": "Los Mochis",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -108.9957,
+          25.79067
+        ],
+        "zoom": 10.7,
+        "population": 317304,
+        "cells": 419,
+        "layer": "cities/los-mochis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -108.9957,
+            25.79067
+          ]
+        },
+        "properties": {
+          "id": "los-mochis",
+          "name": "Los Mochis",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 24.5,
+          "population": 317304
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "arang",
+  "createdAt": "2026-10-08T15:09:01.610Z",
+  "updatedAt": "2026-10-08T15:09:01.610Z",
+  "meta": {
+    "name": "Arang",
+    "nameIt": "Arang",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Arang.geojson",
+      "sha256": "6283be9e5a46c0b5dbc3e099280e0360435888cdfaf7ea240c6c89e6a10812f5",
+      "size": 72948,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "arang",
+    "name": "Arang",
+    "nameIt": "Arang",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.96457,
+      21.19644
+    ],
+    "zoom": 12,
+    "population": 17994,
+    "grid": "cities/arang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/arang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "arang",
+        "name": "Arang",
+        "nameIt": "Arang",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.96457,
+          21.19644
+        ],
+        "zoom": 12,
+        "population": 17994,
+        "cells": 63,
+        "layer": "cities/arang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.96457,
+            21.19644
+          ]
+        },
+        "properties": {
+          "id": "arang",
+          "name": "Arang",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 17994
+        }
+      },
+      "summary": null
+    }
+  }
+}

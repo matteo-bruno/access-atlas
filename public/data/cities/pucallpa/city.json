@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pucallpa",
+  "createdAt": "2026-10-08T16:06:39.808Z",
+  "updatedAt": "2026-10-08T16:06:39.808Z",
+  "meta": {
+    "name": "Pucallpa",
+    "nameIt": "Pucallpa",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pucallpa.geojson",
+      "sha256": "f005290896949e1ef463023b099cdad9ba8c62e684c888c718cfce9dea1322f0",
+      "size": 571118,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pucallpa",
+    "name": "Pucallpa",
+    "nameIt": "Pucallpa",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -74.56024,
+      -8.38834
+    ],
+    "zoom": 10.8,
+    "population": 357963,
+    "grid": "cities/pucallpa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pucallpa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pucallpa",
+        "name": "Pucallpa",
+        "nameIt": "Pucallpa",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -74.56024,
+          -8.38834
+        ],
+        "zoom": 10.8,
+        "population": 357963,
+        "cells": 491,
+        "layer": "cities/pucallpa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.56024,
+            -8.38834
+          ]
+        },
+        "properties": {
+          "id": "pucallpa",
+          "name": "Pucallpa",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 19.3,
+          "population": 357963
+        }
+      },
+      "summary": null
+    }
+  }
+}

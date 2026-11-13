@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kodada",
+  "createdAt": "2026-10-08T15:47:34.408Z",
+  "updatedAt": "2026-10-08T15:47:34.408Z",
+  "meta": {
+    "name": "Kodada",
+    "nameIt": "Kodada",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kodada.geojson",
+      "sha256": "1337bf097c85ee4049d97b66df9e0f93ffaa80cf4641b612e547dee07efbf9c5",
+      "size": 118040,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kodada",
+    "name": "Kodada",
+    "nameIt": "Kodada",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.96283,
+      16.99978
+    ],
+    "zoom": 11.8,
+    "population": 70838,
+    "grid": "cities/kodada/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kodada/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kodada",
+        "name": "Kodada",
+        "nameIt": "Kodada",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.96283,
+          16.99978
+        ],
+        "zoom": 11.8,
+        "population": 70838,
+        "cells": 102,
+        "layer": "cities/kodada/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.96283,
+            16.99978
+          ]
+        },
+        "properties": {
+          "id": "kodada",
+          "name": "Kodada",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 70838
+        }
+      },
+      "summary": null
+    }
+  }
+}

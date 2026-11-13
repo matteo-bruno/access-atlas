@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "beloretsk",
+  "createdAt": "2026-10-08T15:17:13.093Z",
+  "updatedAt": "2026-10-08T15:17:13.093Z",
+  "meta": {
+    "name": "Beloretsk",
+    "nameIt": "Beloretsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Beloretsk.geojson",
+      "sha256": "f6a26704e0643b1e9be4671e8d9367a18b13d1730ec3a7e867e5b857da4e84da",
+      "size": 183560,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "beloretsk",
+    "name": "Beloretsk",
+    "nameIt": "Beloretsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      58.40543,
+      53.96447
+    ],
+    "zoom": 11.2,
+    "population": 47743,
+    "grid": "cities/beloretsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/beloretsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "beloretsk",
+        "name": "Beloretsk",
+        "nameIt": "Beloretsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          58.40543,
+          53.96447
+        ],
+        "zoom": 11.2,
+        "population": 47743,
+        "cells": 160,
+        "layer": "cities/beloretsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            58.40543,
+            53.96447
+          ]
+        },
+        "properties": {
+          "id": "beloretsk",
+          "name": "Beloretsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 47743
+        }
+      },
+      "summary": null
+    }
+  }
+}

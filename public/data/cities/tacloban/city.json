@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tacloban",
+  "createdAt": "2026-10-08T16:15:51.848Z",
+  "updatedAt": "2026-10-08T16:15:51.848Z",
+  "meta": {
+    "name": "Tacloban",
+    "nameIt": "Tacloban",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tacloban.geojson",
+      "sha256": "98b569fc2c42f167a22659896b0305eb2092be1bc35398499f684b9d8fa70af7",
+      "size": 620023,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tacloban",
+    "name": "Tacloban",
+    "nameIt": "Tacloban",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      124.99836,
+      11.20853
+    ],
+    "zoom": 10.3,
+    "population": 236091,
+    "grid": "cities/tacloban/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tacloban/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tacloban",
+        "name": "Tacloban",
+        "nameIt": "Tacloban",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          124.99836,
+          11.20853
+        ],
+        "zoom": 10.3,
+        "population": 236091,
+        "cells": 537,
+        "layer": "cities/tacloban/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            124.99836,
+            11.20853
+          ]
+        },
+        "properties": {
+          "id": "tacloban",
+          "name": "Tacloban",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 236091
+        }
+      },
+      "summary": null
+    }
+  }
+}

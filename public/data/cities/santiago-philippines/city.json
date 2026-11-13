@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santiago-philippines",
+  "createdAt": "2026-10-08T16:11:13.201Z",
+  "updatedAt": "2026-10-08T16:11:13.201Z",
+  "meta": {
+    "name": "Santiago (Philippines)",
+    "nameIt": "Santiago (Philippines)",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santiago (Philippines).geojson",
+      "sha256": "a01d80ab1315fda630400634439b5126634bda9d819b75cf8fd3c3d5827ab418",
+      "size": 256093,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santiago-philippines",
+    "name": "Santiago (Philippines)",
+    "nameIt": "Santiago (Philippines)",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      121.55144,
+      16.68686
+    ],
+    "zoom": 11.2,
+    "population": 88677,
+    "grid": "cities/santiago-philippines/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santiago-philippines/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santiago-philippines",
+        "name": "Santiago (Philippines)",
+        "nameIt": "Santiago (Philippines)",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          121.55144,
+          16.68686
+        ],
+        "zoom": 11.2,
+        "population": 88677,
+        "cells": 220,
+        "layer": "cities/santiago-philippines/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.55144,
+            16.68686
+          ]
+        },
+        "properties": {
+          "id": "santiago-philippines",
+          "name": "Santiago (Philippines)",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 88677
+        }
+      },
+      "summary": null
+    }
+  }
+}

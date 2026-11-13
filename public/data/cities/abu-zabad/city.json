@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abu-zabad",
+  "createdAt": "2026-10-08T15:01:57.074Z",
+  "updatedAt": "2026-10-08T15:01:57.074Z",
+  "meta": {
+    "name": "Abu Zabad",
+    "nameIt": "Abu Zabad",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abu Zabad.geojson",
+      "sha256": "e449e5a2b8844a88033dcccce9f18e4a7da9983092eefd7e47700d5e6ba157dc",
+      "size": 114272,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abu-zabad",
+    "name": "Abu Zabad",
+    "nameIt": "Abu Zabad",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      29.23329,
+      12.35353
+    ],
+    "zoom": 12,
+    "population": 38363,
+    "grid": "cities/abu-zabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abu-zabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abu-zabad",
+        "name": "Abu Zabad",
+        "nameIt": "Abu Zabad",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          29.23329,
+          12.35353
+        ],
+        "zoom": 12,
+        "population": 38363,
+        "cells": 98,
+        "layer": "cities/abu-zabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.23329,
+            12.35353
+          ]
+        },
+        "properties": {
+          "id": "abu-zabad",
+          "name": "Abu Zabad",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 38363
+        }
+      },
+      "summary": null
+    }
+  }
+}

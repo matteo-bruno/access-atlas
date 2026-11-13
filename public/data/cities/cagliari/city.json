@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cagliari",
+  "createdAt": "2026-10-08T15:21:42.940Z",
+  "updatedAt": "2026-10-08T15:21:42.940Z",
+  "meta": {
+    "name": "Cagliari",
+    "nameIt": "Cagliari",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cagliari.geojson",
+      "sha256": "411a8ba6fc3e490c32522fc5b772212a4a0053a27192857cfd89ab0b1ffec67d",
+      "size": 650306,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cagliari",
+    "name": "Cagliari",
+    "nameIt": "Cagliari",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      9.13894,
+      39.23757
+    ],
+    "zoom": 10.4,
+    "population": 234444,
+    "grid": "cities/cagliari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cagliari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cagliari",
+        "name": "Cagliari",
+        "nameIt": "Cagliari",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          9.13894,
+          39.23757
+        ],
+        "zoom": 10.4,
+        "population": 234444,
+        "cells": 572,
+        "layer": "cities/cagliari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.13894,
+            39.23757
+          ]
+        },
+        "properties": {
+          "id": "cagliari",
+          "name": "Cagliari",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 234444
+        }
+      },
+      "summary": null
+    }
+  }
+}

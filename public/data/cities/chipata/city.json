@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chipata",
+  "createdAt": "2026-10-08T15:24:53.311Z",
+  "updatedAt": "2026-10-08T15:24:53.311Z",
+  "meta": {
+    "name": "Chipata",
+    "nameIt": "Chipata",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chipata.geojson",
+      "sha256": "5fcc051f05136367c4daaa8ad042c48d5d022d840044a5cf5ca9086bbec5a99e",
+      "size": 412853,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chipata",
+    "name": "Chipata",
+    "nameIt": "Chipata",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM",
+    "center": [
+      32.64232,
+      -13.63997
+    ],
+    "zoom": 10.7,
+    "population": 142792,
+    "grid": "cities/chipata/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chipata/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chipata",
+        "name": "Chipata",
+        "nameIt": "Chipata",
+        "region": "Zambia",
+        "regionIt": "Zambia",
+        "country": "ZM",
+        "center": [
+          32.64232,
+          -13.63997
+        ],
+        "zoom": 10.7,
+        "population": 142792,
+        "cells": 352,
+        "layer": "cities/chipata/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.64232,
+            -13.63997
+          ]
+        },
+        "properties": {
+          "id": "chipata",
+          "name": "Chipata",
+          "country": "ZM",
+          "isStudy": true,
+          "proximityMinutes": 34.3,
+          "population": 142792
+        }
+      },
+      "summary": null
+    }
+  }
+}

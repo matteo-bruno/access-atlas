@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shepo",
+  "createdAt": "2026-10-08T16:12:52.877Z",
+  "updatedAt": "2026-10-08T16:12:52.877Z",
+  "meta": {
+    "name": "Shepo",
+    "nameIt": "Shepo",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shepo.geojson",
+      "sha256": "9651e69ea40c1660e306fa7dc865cc279ad689e5c0630c3444aada3e1a1ece5c",
+      "size": 240601,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shepo",
+    "name": "Shepo",
+    "nameIt": "Shepo",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      110.20978,
+      23.39065
+    ],
+    "zoom": 11.2,
+    "population": 30328,
+    "grid": "cities/shepo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shepo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shepo",
+        "name": "Shepo",
+        "nameIt": "Shepo",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          110.20978,
+          23.39065
+        ],
+        "zoom": 11.2,
+        "population": 30328,
+        "cells": 206,
+        "layer": "cities/shepo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.20978,
+            23.39065
+          ]
+        },
+        "properties": {
+          "id": "shepo",
+          "name": "Shepo",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 30328
+        }
+      },
+      "summary": null
+    }
+  }
+}

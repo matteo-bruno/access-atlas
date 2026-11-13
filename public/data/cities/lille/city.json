@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lille",
+  "createdAt": "2026-10-08T15:51:08.538Z",
+  "updatedAt": "2026-10-08T15:51:08.538Z",
+  "meta": {
+    "name": "Lille",
+    "nameIt": "Lille",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lille.geojson",
+      "sha256": "2e8b47cd2a25c91fb52b2385681a58e5888b75cc62d99da4949b16570026907f",
+      "size": 2844090,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lille",
+    "name": "Lille",
+    "nameIt": "Lille",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      3.10746,
+      50.65854
+    ],
+    "zoom": 9.7,
+    "population": 935286,
+    "grid": "cities/lille/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lille/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lille",
+        "name": "Lille",
+        "nameIt": "Lille",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          3.10746,
+          50.65854
+        ],
+        "zoom": 9.7,
+        "population": 935286,
+        "cells": 2496,
+        "layer": "cities/lille/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.10746,
+            50.65854
+          ]
+        },
+        "properties": {
+          "id": "lille",
+          "name": "Lille",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 7.6,
+          "population": 935286
+        }
+      },
+      "summary": null
+    }
+  }
+}

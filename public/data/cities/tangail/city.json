@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tangail",
+  "createdAt": "2026-10-08T16:16:31.512Z",
+  "updatedAt": "2026-10-08T16:16:31.512Z",
+  "meta": {
+    "name": "Tangail",
+    "nameIt": "Tangail",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tangail.geojson",
+      "sha256": "d13ab2def4586c2ec76e1c0f84909d0348a2167ff83d7bf516c9360d7ec91940",
+      "size": 455725,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tangail",
+    "name": "Tangail",
+    "nameIt": "Tangail",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.91389,
+      24.24907
+    ],
+    "zoom": 10.8,
+    "population": 169578,
+    "grid": "cities/tangail/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tangail/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tangail",
+        "name": "Tangail",
+        "nameIt": "Tangail",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.91389,
+          24.24907
+        ],
+        "zoom": 10.8,
+        "population": 169578,
+        "cells": 394,
+        "layer": "cities/tangail/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.91389,
+            24.24907
+          ]
+        },
+        "properties": {
+          "id": "tangail",
+          "name": "Tangail",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 21.4,
+          "population": 169578
+        }
+      },
+      "summary": null
+    }
+  }
+}

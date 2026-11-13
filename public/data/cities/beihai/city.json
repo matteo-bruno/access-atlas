@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "beihai",
+  "createdAt": "2026-10-08T15:16:45.794Z",
+  "updatedAt": "2026-10-08T15:16:45.794Z",
+  "meta": {
+    "name": "Beihai",
+    "nameIt": "Beihai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Beihai.geojson",
+      "sha256": "db61f12a7f0ff07dd16c740c9c16c38dd797081741b8f02134cac14dc30b58f7",
+      "size": 1259135,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "beihai",
+    "name": "Beihai",
+    "nameIt": "Beihai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      109.12779,
+      21.46748
+    ],
+    "zoom": 9.9,
+    "population": 692852,
+    "grid": "cities/beihai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/beihai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "beihai",
+        "name": "Beihai",
+        "nameIt": "Beihai",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          109.12779,
+          21.46748
+        ],
+        "zoom": 9.9,
+        "population": 692852,
+        "cells": 1077,
+        "layer": "cities/beihai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.12779,
+            21.46748
+          ]
+        },
+        "properties": {
+          "id": "beihai",
+          "name": "Beihai",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 35,
+          "population": 692852
+        }
+      },
+      "summary": null
+    }
+  }
+}

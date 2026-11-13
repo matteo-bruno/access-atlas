@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gemlik",
+  "createdAt": "2026-10-08T15:34:54.837Z",
+  "updatedAt": "2026-10-08T15:34:54.837Z",
+  "meta": {
+    "name": "Gemlik",
+    "nameIt": "Gemlik",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gemlik.geojson",
+      "sha256": "c4e4a8d1746a9c0861b31600f87a54977572564261db641e5420286851e8b9da",
+      "size": 118013,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gemlik",
+    "name": "Gemlik",
+    "nameIt": "Gemlik",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      29.1629,
+      40.42996
+    ],
+    "zoom": 11.8,
+    "population": 55234,
+    "grid": "cities/gemlik/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gemlik/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gemlik",
+        "name": "Gemlik",
+        "nameIt": "Gemlik",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          29.1629,
+          40.42996
+        ],
+        "zoom": 11.8,
+        "population": 55234,
+        "cells": 102,
+        "layer": "cities/gemlik/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.1629,
+            40.42996
+          ]
+        },
+        "properties": {
+          "id": "gemlik",
+          "name": "Gemlik",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 55234
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "freiburg-im-breisgau",
+  "createdAt": "2026-10-08T15:33:44.556Z",
+  "updatedAt": "2026-10-08T15:33:44.556Z",
+  "meta": {
+    "name": "Freiburg im Breisgau",
+    "nameIt": "Freiburg im Breisgau",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Freiburg im Breisgau.geojson",
+      "sha256": "f18158e9b0d68a8239cd5dfcae776dcec532cc4c9652560fba64dc17afb920d9",
+      "size": 568846,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "freiburg-im-breisgau",
+    "name": "Freiburg im Breisgau",
+    "nameIt": "Freiburg im Breisgau",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      7.83794,
+      48.00114
+    ],
+    "zoom": 10.9,
+    "population": 209432,
+    "grid": "cities/freiburg-im-breisgau/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/freiburg-im-breisgau/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "freiburg-im-breisgau",
+        "name": "Freiburg im Breisgau",
+        "nameIt": "Freiburg im Breisgau",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          7.83794,
+          48.00114
+        ],
+        "zoom": 10.9,
+        "population": 209432,
+        "cells": 502,
+        "layer": "cities/freiburg-im-breisgau/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.83794,
+            48.00114
+          ]
+        },
+        "properties": {
+          "id": "freiburg-im-breisgau",
+          "name": "Freiburg im Breisgau",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 6.9,
+          "population": 209432
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "muscat",
+  "createdAt": "2026-10-08T15:59:08.047Z",
+  "updatedAt": "2026-10-08T15:59:08.047Z",
+  "meta": {
+    "name": "Muscat",
+    "nameIt": "Muscat",
+    "region": "Oman",
+    "regionIt": "Oman",
+    "country": "OM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Muscat.geojson",
+      "sha256": "da9d853655a98b1f2a9128d9b22477ca150b06a54689c676d553c52b4b266cc7",
+      "size": 1784663,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "muscat",
+    "name": "Muscat",
+    "nameIt": "Muscat",
+    "region": "Oman",
+    "regionIt": "Oman",
+    "country": "OM",
+    "center": [
+      58.45789,
+      23.59256
+    ],
+    "zoom": 9.4,
+    "population": 648316,
+    "grid": "cities/muscat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/muscat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "muscat",
+        "name": "Muscat",
+        "nameIt": "Muscat",
+        "region": "Oman",
+        "regionIt": "Oman",
+        "country": "OM",
+        "center": [
+          58.45789,
+          23.59256
+        ],
+        "zoom": 9.4,
+        "population": 648316,
+        "cells": 1549,
+        "layer": "cities/muscat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            58.45789,
+            23.59256
+          ]
+        },
+        "properties": {
+          "id": "muscat",
+          "name": "Muscat",
+          "country": "OM",
+          "isStudy": true,
+          "proximityMinutes": 28.7,
+          "population": 648316
+        }
+      },
+      "summary": null
+    }
+  }
+}

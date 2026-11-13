@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "muse",
+  "createdAt": "2026-10-08T15:59:08.420Z",
+  "updatedAt": "2026-10-08T15:59:08.420Z",
+  "meta": {
+    "name": "Muse",
+    "nameIt": "Muse",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Muse.geojson",
+      "sha256": "e0956d92d894d678694f564170a43c82cfbb52090ae1cb00bf96629f30eb511c",
+      "size": 168010,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "muse",
+    "name": "Muse",
+    "nameIt": "Muse",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      97.902,
+      23.99001
+    ],
+    "zoom": 11.4,
+    "population": 95551,
+    "grid": "cities/muse/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/muse/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "muse",
+        "name": "Muse",
+        "nameIt": "Muse",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          97.902,
+          23.99001
+        ],
+        "zoom": 11.4,
+        "population": 95551,
+        "cells": 145,
+        "layer": "cities/muse/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            97.902,
+            23.99001
+          ]
+        },
+        "properties": {
+          "id": "muse",
+          "name": "Muse",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 95551
+        }
+      },
+      "summary": null
+    }
+  }
+}

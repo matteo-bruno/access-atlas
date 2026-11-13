@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oklahoma-city",
+  "createdAt": "2026-10-08T16:02:41.722Z",
+  "updatedAt": "2026-10-08T16:02:41.722Z",
+  "meta": {
+    "name": "Oklahoma City",
+    "nameIt": "Oklahoma City",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Oklahoma City.geojson",
+      "sha256": "ab3b06d6b2e0eb80a9ba218a1cf16d2d47241c0e0e1fe04a4e0d15f027d218b0",
+      "size": 3119658,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "oklahoma-city",
+    "name": "Oklahoma City",
+    "nameIt": "Oklahoma City",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -97.56223,
+      35.45283
+    ],
+    "zoom": 9,
+    "population": 406045,
+    "grid": "cities/oklahoma-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oklahoma-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oklahoma-city",
+        "name": "Oklahoma City",
+        "nameIt": "Oklahoma City",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -97.56223,
+          35.45283
+        ],
+        "zoom": 9,
+        "population": 406045,
+        "cells": 2701,
+        "layer": "cities/oklahoma-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.56223,
+            35.45283
+          ]
+        },
+        "properties": {
+          "id": "oklahoma-city",
+          "name": "Oklahoma City",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 35,
+          "population": 406045
+        }
+      },
+      "summary": null
+    }
+  }
+}

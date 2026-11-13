@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gonghuakeng",
+  "createdAt": "2026-10-08T15:35:42.554Z",
+  "updatedAt": "2026-10-08T15:35:42.554Z",
+  "meta": {
+    "name": "Gonghuakeng",
+    "nameIt": "Gonghuakeng",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gonghuakeng.geojson",
+      "sha256": "7f845aee731406029b404575531a9238767053c93a0af78bc36257518684fb1a",
+      "size": 513391,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gonghuakeng",
+    "name": "Gonghuakeng",
+    "nameIt": "Gonghuakeng",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW",
+    "center": [
+      121.37111,
+      25.06301
+    ],
+    "zoom": 10.9,
+    "population": 212744,
+    "grid": "cities/gonghuakeng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gonghuakeng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gonghuakeng",
+        "name": "Gonghuakeng",
+        "nameIt": "Gonghuakeng",
+        "region": "Taiwan",
+        "regionIt": "Taiwan",
+        "country": "TW",
+        "center": [
+          121.37111,
+          25.06301
+        ],
+        "zoom": 10.9,
+        "population": 212744,
+        "cells": 445,
+        "layer": "cities/gonghuakeng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.37111,
+            25.06301
+          ]
+        },
+        "properties": {
+          "id": "gonghuakeng",
+          "name": "Gonghuakeng",
+          "country": "TW",
+          "isStudy": true,
+          "proximityMinutes": 11,
+          "population": 212744
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kaohsiung",
+  "createdAt": "2026-10-08T15:45:03.733Z",
+  "updatedAt": "2026-10-08T15:45:03.733Z",
+  "meta": {
+    "name": "Kaohsiung",
+    "nameIt": "Kaohsiung",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kaohsiung.geojson",
+      "sha256": "1e907833fd9221225c687b12d0375d90f6822705035f7d0a56a4d04102b93185",
+      "size": 4522158,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kaohsiung",
+    "name": "Kaohsiung",
+    "nameIt": "Kaohsiung",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW",
+    "center": [
+      120.33144,
+      22.63757
+    ],
+    "zoom": 9,
+    "population": 2155395,
+    "grid": "cities/kaohsiung/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kaohsiung/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kaohsiung",
+        "name": "Kaohsiung",
+        "nameIt": "Kaohsiung",
+        "region": "Taiwan",
+        "regionIt": "Taiwan",
+        "country": "TW",
+        "center": [
+          120.33144,
+          22.63757
+        ],
+        "zoom": 9,
+        "population": 2155395,
+        "cells": 3914,
+        "layer": "cities/kaohsiung/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.33144,
+            22.63757
+          ]
+        },
+        "properties": {
+          "id": "kaohsiung",
+          "name": "Kaohsiung",
+          "country": "TW",
+          "isStudy": true,
+          "proximityMinutes": 10.2,
+          "population": 2155395
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "miandoab",
+  "createdAt": "2026-10-08T15:56:54.826Z",
+  "updatedAt": "2026-10-08T15:56:54.826Z",
+  "meta": {
+    "name": "Miandoab",
+    "nameIt": "Miandoab",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Miandoab.geojson",
+      "sha256": "b1749fe4be0c213d6118d184943200a9446d4a840b71cc51bb421d2020d884c1",
+      "size": 259145,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "miandoab",
+    "name": "Miandoab",
+    "nameIt": "Miandoab",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      46.10885,
+      36.96543
+    ],
+    "zoom": 11.3,
+    "population": 128882,
+    "grid": "cities/miandoab/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/miandoab/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "miandoab",
+        "name": "Miandoab",
+        "nameIt": "Miandoab",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          46.10885,
+          36.96543
+        ],
+        "zoom": 11.3,
+        "population": 128882,
+        "cells": 224,
+        "layer": "cities/miandoab/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            46.10885,
+            36.96543
+          ]
+        },
+        "properties": {
+          "id": "miandoab",
+          "name": "Miandoab",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 128882
+        }
+      },
+      "summary": null
+    }
+  }
+}

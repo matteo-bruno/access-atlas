@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yiyang-county",
+  "createdAt": "2026-10-08T16:24:02.512Z",
+  "updatedAt": "2026-10-08T16:24:02.512Z",
+  "meta": {
+    "name": "Yiyang County",
+    "nameIt": "Yiyang County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yiyang County.geojson",
+      "sha256": "43dea7784005428dd6ae771831088d34c04e5b3c0d137bcf231047b06d836114",
+      "size": 540891,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yiyang-county",
+    "name": "Yiyang County",
+    "nameIt": "Yiyang County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.18762,
+      34.52655
+    ],
+    "zoom": 10.7,
+    "population": 263691,
+    "grid": "cities/yiyang-county/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yiyang-county/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yiyang-county",
+        "name": "Yiyang County",
+        "nameIt": "Yiyang County",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.18762,
+          34.52655
+        ],
+        "zoom": 10.7,
+        "population": 263691,
+        "cells": 464,
+        "layer": "cities/yiyang-county/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.18762,
+            34.52655
+          ]
+        },
+        "properties": {
+          "id": "yiyang-county",
+          "name": "Yiyang County",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 23.8,
+          "population": 263691
+        }
+      },
+      "summary": null
+    }
+  }
+}

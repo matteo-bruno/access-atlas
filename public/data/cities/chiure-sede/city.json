@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chiure-sede",
+  "createdAt": "2026-10-08T15:25:01.345Z",
+  "updatedAt": "2026-10-08T15:25:01.345Z",
+  "meta": {
+    "name": "Chiure-Sede",
+    "nameIt": "Chiure-Sede",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chiure-Sede.geojson",
+      "sha256": "4b00a13f95256301929251a5eee1f78e3facae57f223b277c77003faf44d3ddf",
+      "size": 84518,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chiure-sede",
+    "name": "Chiure-Sede",
+    "nameIt": "Chiure-Sede",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ",
+    "center": [
+      39.78529,
+      -13.38033
+    ],
+    "zoom": 12,
+    "population": 69853,
+    "grid": "cities/chiure-sede/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chiure-sede/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chiure-sede",
+        "name": "Chiure-Sede",
+        "nameIt": "Chiure-Sede",
+        "region": "Mozambique",
+        "regionIt": "Mozambico",
+        "country": "MZ",
+        "center": [
+          39.78529,
+          -13.38033
+        ],
+        "zoom": 12,
+        "population": 69853,
+        "cells": 72,
+        "layer": "cities/chiure-sede/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.78529,
+            -13.38033
+          ]
+        },
+        "properties": {
+          "id": "chiure-sede",
+          "name": "Chiure-Sede",
+          "country": "MZ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 69853
+        }
+      },
+      "summary": null
+    }
+  }
+}

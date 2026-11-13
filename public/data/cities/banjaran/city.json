@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "banjaran",
+  "createdAt": "2026-10-08T15:14:57.478Z",
+  "updatedAt": "2026-10-08T15:14:57.478Z",
+  "meta": {
+    "name": "Banjaran",
+    "nameIt": "Banjaran",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Banjaran.geojson",
+      "sha256": "38148f1fb1bfc0d7d5e6cca379607d6e2b4b223766c1aab32b2a0b82e7d7ba40",
+      "size": 235448,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "banjaran",
+    "name": "Banjaran",
+    "nameIt": "Banjaran",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      108.35518,
+      -6.69925
+    ],
+    "zoom": 11.2,
+    "population": 78035,
+    "grid": "cities/banjaran/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/banjaran/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "banjaran",
+        "name": "Banjaran",
+        "nameIt": "Banjaran",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          108.35518,
+          -6.69925
+        ],
+        "zoom": 11.2,
+        "population": 78035,
+        "cells": 201,
+        "layer": "cities/banjaran/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.35518,
+            -6.69925
+          ]
+        },
+        "properties": {
+          "id": "banjaran",
+          "name": "Banjaran",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 78035
+        }
+      },
+      "summary": null
+    }
+  }
+}

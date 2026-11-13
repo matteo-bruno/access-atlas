@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rubtsovsk",
+  "createdAt": "2026-10-08T16:09:15.720Z",
+  "updatedAt": "2026-10-08T16:09:15.720Z",
+  "meta": {
+    "name": "Rubtsovsk",
+    "nameIt": "Rubtsovsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rubtsovsk.geojson",
+      "sha256": "badef0639d50baef950fcedcd3a00534f64c59139fad2db462f225fca1238384",
+      "size": 305648,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rubtsovsk",
+    "name": "Rubtsovsk",
+    "nameIt": "Rubtsovsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      81.20643,
+      51.51677
+    ],
+    "zoom": 10.8,
+    "population": 98060,
+    "grid": "cities/rubtsovsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rubtsovsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rubtsovsk",
+        "name": "Rubtsovsk",
+        "nameIt": "Rubtsovsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          81.20643,
+          51.51677
+        ],
+        "zoom": 10.8,
+        "population": 98060,
+        "cells": 268,
+        "layer": "cities/rubtsovsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.20643,
+            51.51677
+          ]
+        },
+        "properties": {
+          "id": "rubtsovsk",
+          "name": "Rubtsovsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 98060
+        }
+      },
+      "summary": null
+    }
+  }
+}

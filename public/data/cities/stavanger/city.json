@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "stavanger",
+  "createdAt": "2026-10-08T16:14:48.696Z",
+  "updatedAt": "2026-10-08T16:14:48.696Z",
+  "meta": {
+    "name": "Stavanger",
+    "nameIt": "Stavanger",
+    "region": "Norway",
+    "regionIt": "Norvegia",
+    "country": "NO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Stavanger.geojson",
+      "sha256": "64f93a1ec76214d8253efd906f45d1a6993b4521e0e8158909c62eee3f4e2299",
+      "size": 1206517,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "stavanger",
+    "name": "Stavanger",
+    "nameIt": "Stavanger",
+    "region": "Norway",
+    "regionIt": "Norvegia",
+    "country": "NO",
+    "center": [
+      5.7219,
+      58.92858
+    ],
+    "zoom": 9.6,
+    "population": 171836,
+    "grid": "cities/stavanger/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 173
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/stavanger/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "stavanger",
+        "name": "Stavanger",
+        "nameIt": "Stavanger",
+        "region": "Norway",
+        "regionIt": "Norvegia",
+        "country": "NO",
+        "center": [
+          5.7219,
+          58.92858
+        ],
+        "zoom": 9.6,
+        "population": 171836,
+        "cells": 1061,
+        "layer": "cities/stavanger/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 173
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.7219,
+            58.92858
+          ]
+        },
+        "properties": {
+          "id": "stavanger",
+          "name": "Stavanger",
+          "country": "NO",
+          "isStudy": true,
+          "proximityMinutes": 12.7,
+          "population": 171836
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ghatampur",
+  "createdAt": "2026-10-08T15:35:05.598Z",
+  "updatedAt": "2026-10-08T15:35:05.598Z",
+  "meta": {
+    "name": "Ghatampur",
+    "nameIt": "Ghatampur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ghatampur.geojson",
+      "sha256": "c86992d155f018b4682eb759e4f3388138806e69f5fb3417b959c8a03aec7964",
+      "size": 98360,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ghatampur",
+    "name": "Ghatampur",
+    "nameIt": "Ghatampur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.17027,
+      26.15247
+    ],
+    "zoom": 12,
+    "population": 47573,
+    "grid": "cities/ghatampur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ghatampur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ghatampur",
+        "name": "Ghatampur",
+        "nameIt": "Ghatampur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.17027,
+          26.15247
+        ],
+        "zoom": 12,
+        "population": 47573,
+        "cells": 85,
+        "layer": "cities/ghatampur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.17027,
+            26.15247
+          ]
+        },
+        "properties": {
+          "id": "ghatampur",
+          "name": "Ghatampur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 47573
+        }
+      },
+      "summary": null
+    }
+  }
+}

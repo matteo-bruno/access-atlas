@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "batrabat",
+  "createdAt": "2026-10-08T15:16:09.783Z",
+  "updatedAt": "2026-10-08T15:16:09.783Z",
+  "meta": {
+    "name": "Batrabat",
+    "nameIt": "Batrabat",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Batrabat.geojson",
+      "sha256": "1fccca82693aa5391e9a865c9c9a741ff28ca5b772adb5a8267e20fa1cdddde9",
+      "size": 130436,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "batrabat",
+    "name": "Batrabat",
+    "nameIt": "Batrabat",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ",
+    "center": [
+      68.89826,
+      37.80319
+    ],
+    "zoom": 11.9,
+    "population": 22652,
+    "grid": "cities/batrabat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/batrabat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "batrabat",
+        "name": "Batrabat",
+        "nameIt": "Batrabat",
+        "region": "Tajikistan",
+        "regionIt": "Tagikistan",
+        "country": "TJ",
+        "center": [
+          68.89826,
+          37.80319
+        ],
+        "zoom": 11.9,
+        "population": 22652,
+        "cells": 113,
+        "layer": "cities/batrabat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            68.89826,
+            37.80319
+          ]
+        },
+        "properties": {
+          "id": "batrabat",
+          "name": "Batrabat",
+          "country": "TJ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 22652
+        }
+      },
+      "summary": null
+    }
+  }
+}

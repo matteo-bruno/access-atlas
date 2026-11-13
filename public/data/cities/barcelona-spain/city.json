@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barcelona-spain",
+  "createdAt": "2026-10-08T15:15:32.255Z",
+  "updatedAt": "2026-10-08T15:15:32.255Z",
+  "meta": {
+    "name": "Barcelona (Spain)",
+    "nameIt": "Barcelona (Spain)",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barcelona (Spain).geojson",
+      "sha256": "86f49ac3d4446840e957e90bb3fa357224c0c1d4fc9c8342cb4e512cd19bab58",
+      "size": 4883625,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barcelona-spain",
+    "name": "Barcelona (Spain)",
+    "nameIt": "Barcelona (Spain)",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      2.15785,
+      41.4291
+    ],
+    "zoom": 9,
+    "population": 3456763,
+    "grid": "cities/barcelona-spain/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barcelona-spain/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barcelona-spain",
+        "name": "Barcelona (Spain)",
+        "nameIt": "Barcelona (Spain)",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          2.15785,
+          41.4291
+        ],
+        "zoom": 9,
+        "population": 3456763,
+        "cells": 4276,
+        "layer": "cities/barcelona-spain/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.15785,
+            41.4291
+          ]
+        },
+        "properties": {
+          "id": "barcelona-spain",
+          "name": "Barcelona (Spain)",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 5.1,
+          "population": 3456763
+        }
+      },
+      "summary": null
+    }
+  }
+}

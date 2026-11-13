@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "port-saint-lucie",
+  "createdAt": "2026-10-08T16:06:15.769Z",
+  "updatedAt": "2026-10-08T16:06:15.769Z",
+  "meta": {
+    "name": "Port Saint Lucie",
+    "nameIt": "Port Saint Lucie",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Port Saint Lucie.geojson",
+      "sha256": "40e66794a3cdfcb31c885cab32f5a7902ea0c847ff12406e4d877db74e4dc610",
+      "size": 1333285,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "port-saint-lucie",
+    "name": "Port Saint Lucie",
+    "nameIt": "Port Saint Lucie",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -80.37049,
+      27.27863
+    ],
+    "zoom": 10.2,
+    "population": 160043,
+    "grid": "cities/port-saint-lucie/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/port-saint-lucie/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "port-saint-lucie",
+        "name": "Port Saint Lucie",
+        "nameIt": "Port Saint Lucie",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -80.37049,
+          27.27863
+        ],
+        "zoom": 10.2,
+        "population": 160043,
+        "cells": 1142,
+        "layer": "cities/port-saint-lucie/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.37049,
+            27.27863
+          ]
+        },
+        "properties": {
+          "id": "port-saint-lucie",
+          "name": "Port Saint Lucie",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 39.2,
+          "population": 160043
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "richmond",
+  "createdAt": "2026-10-08T16:08:46.963Z",
+  "updatedAt": "2026-10-08T16:08:46.963Z",
+  "meta": {
+    "name": "Richmond",
+    "nameIt": "Richmond",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Richmond.geojson",
+      "sha256": "a7c4385d17d3264eff99d517c5288e64e2c5b9ba36e14d8f40945230df48cc6e",
+      "size": 830983,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "richmond",
+    "name": "Richmond",
+    "nameIt": "Richmond",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -77.44801,
+      37.55745
+    ],
+    "zoom": 10.2,
+    "population": 159072,
+    "grid": "cities/richmond/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/richmond/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "richmond",
+        "name": "Richmond",
+        "nameIt": "Richmond",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -77.44801,
+          37.55745
+        ],
+        "zoom": 10.2,
+        "population": 159072,
+        "cells": 723,
+        "layer": "cities/richmond/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.44801,
+            37.55745
+          ]
+        },
+        "properties": {
+          "id": "richmond",
+          "name": "Richmond",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 159072
+        }
+      },
+      "summary": null
+    }
+  }
+}

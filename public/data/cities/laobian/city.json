@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "laobian",
+  "createdAt": "2026-10-08T15:50:10.283Z",
+  "updatedAt": "2026-10-08T15:50:10.283Z",
+  "meta": {
+    "name": "Laobian",
+    "nameIt": "Laobian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Laobian.geojson",
+      "sha256": "e773e92b780913cbbc52601caca6a472cbf21032c2177bdd8230f7ef2a8693a7",
+      "size": 240106,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "laobian",
+    "name": "Laobian",
+    "nameIt": "Laobian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      122.38265,
+      40.67491
+    ],
+    "zoom": 11.6,
+    "population": 39211,
+    "grid": "cities/laobian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 163
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/laobian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "laobian",
+        "name": "Laobian",
+        "nameIt": "Laobian",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          122.38265,
+          40.67491
+        ],
+        "zoom": 11.6,
+        "population": 39211,
+        "cells": 206,
+        "layer": "cities/laobian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 163
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            122.38265,
+            40.67491
+          ]
+        },
+        "properties": {
+          "id": "laobian",
+          "name": "Laobian",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 39211
+        }
+      },
+      "summary": null
+    }
+  }
+}

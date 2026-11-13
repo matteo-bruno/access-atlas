@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barranquilla",
+  "createdAt": "2026-10-08T15:15:43.012Z",
+  "updatedAt": "2026-10-08T15:15:43.012Z",
+  "meta": {
+    "name": "Barranquilla",
+    "nameIt": "Barranquilla",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barranquilla.geojson",
+      "sha256": "03061742ebe334f098880e7929242973ad29359c34e531b666cce0e2e17f3c40",
+      "size": 1818916,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barranquilla",
+    "name": "Barranquilla",
+    "nameIt": "Barranquilla",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -74.79988,
+      10.94075
+    ],
+    "zoom": 9.6,
+    "population": 2082398,
+    "grid": "cities/barranquilla/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barranquilla/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barranquilla",
+        "name": "Barranquilla",
+        "nameIt": "Barranquilla",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -74.79988,
+          10.94075
+        ],
+        "zoom": 9.6,
+        "population": 2082398,
+        "cells": 1573,
+        "layer": "cities/barranquilla/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.79988,
+            10.94075
+          ]
+        },
+        "properties": {
+          "id": "barranquilla",
+          "name": "Barranquilla",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 2082398
+        }
+      },
+      "summary": null
+    }
+  }
+}

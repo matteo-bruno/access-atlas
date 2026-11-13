@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nguru",
+  "createdAt": "2026-10-08T16:01:23.615Z",
+  "updatedAt": "2026-10-08T16:01:23.615Z",
+  "meta": {
+    "name": "Nguru",
+    "nameIt": "Nguru",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nguru.geojson",
+      "sha256": "225dfd50a5ccc8f1c201eee0986735aa89b6b85144aac584d3980cdbff5010d0",
+      "size": 228997,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nguru",
+    "name": "Nguru",
+    "nameIt": "Nguru",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      10.44878,
+      12.87606
+    ],
+    "zoom": 11.4,
+    "population": 128492,
+    "grid": "cities/nguru/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nguru/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nguru",
+        "name": "Nguru",
+        "nameIt": "Nguru",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          10.44878,
+          12.87606
+        ],
+        "zoom": 11.4,
+        "population": 128492,
+        "cells": 196,
+        "layer": "cities/nguru/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.44878,
+            12.87606
+          ]
+        },
+        "properties": {
+          "id": "nguru",
+          "name": "Nguru",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 15.2,
+          "population": 128492
+        }
+      },
+      "summary": null
+    }
+  }
+}

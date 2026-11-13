@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gaobeidian",
+  "createdAt": "2026-10-08T15:34:31.191Z",
+  "updatedAt": "2026-10-08T15:34:31.191Z",
+  "meta": {
+    "name": "Gaobeidian",
+    "nameIt": "Gaobeidian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gaobeidian.geojson",
+      "sha256": "574a4e915b515a9acdb926efdf5b66275236f9f88a5d2a42b19acd7cf180cde0",
+      "size": 707649,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gaobeidian",
+    "name": "Gaobeidian",
+    "nameIt": "Gaobeidian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      115.87419,
+      39.32705
+    ],
+    "zoom": 10.7,
+    "population": 224112,
+    "grid": "cities/gaobeidian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gaobeidian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gaobeidian",
+        "name": "Gaobeidian",
+        "nameIt": "Gaobeidian",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          115.87419,
+          39.32705
+        ],
+        "zoom": 10.7,
+        "population": 224112,
+        "cells": 607,
+        "layer": "cities/gaobeidian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.87419,
+            39.32705
+          ]
+        },
+        "properties": {
+          "id": "gaobeidian",
+          "name": "Gaobeidian",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 52,
+          "population": 224112
+        }
+      },
+      "summary": null
+    }
+  }
+}

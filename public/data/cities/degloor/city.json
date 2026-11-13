@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "degloor",
+  "createdAt": "2026-10-08T15:28:47.379Z",
+  "updatedAt": "2026-10-08T15:28:47.379Z",
+  "meta": {
+    "name": "Degloor",
+    "nameIt": "Degloor",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Degloor.geojson",
+      "sha256": "b0f22b7283bd08e2220476ff2fb894bccf1b2a62f2d3501f6251a3e06e161b75",
+      "size": 55646,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "degloor",
+    "name": "Degloor",
+    "nameIt": "Degloor",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.57741,
+      18.5468
+    ],
+    "zoom": 12,
+    "population": 33581,
+    "grid": "cities/degloor/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/degloor/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "degloor",
+        "name": "Degloor",
+        "nameIt": "Degloor",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.57741,
+          18.5468
+        ],
+        "zoom": 12,
+        "population": 33581,
+        "cells": 48,
+        "layer": "cities/degloor/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.57741,
+            18.5468
+          ]
+        },
+        "properties": {
+          "id": "degloor",
+          "name": "Degloor",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 33581
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "novi-pazar",
+  "createdAt": "2026-10-08T16:02:08.106Z",
+  "updatedAt": "2026-10-08T16:02:08.106Z",
+  "meta": {
+    "name": "Novi Pazar",
+    "nameIt": "Novi Pazar",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Novi Pazar.geojson",
+      "sha256": "87b0cdf39397aa5e853feddd78d4a27a39dc8d59099ce27c4903be5e2c00b677",
+      "size": 207374,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "novi-pazar",
+    "name": "Novi Pazar",
+    "nameIt": "Novi Pazar",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS",
+    "center": [
+      20.51284,
+      43.13805
+    ],
+    "zoom": 11.3,
+    "population": 85991,
+    "grid": "cities/novi-pazar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/novi-pazar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "novi-pazar",
+        "name": "Novi Pazar",
+        "nameIt": "Novi Pazar",
+        "region": "Serbia",
+        "regionIt": "Serbia",
+        "country": "RS",
+        "center": [
+          20.51284,
+          43.13805
+        ],
+        "zoom": 11.3,
+        "population": 85991,
+        "cells": 179,
+        "layer": "cities/novi-pazar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.51284,
+            43.13805
+          ]
+        },
+        "properties": {
+          "id": "novi-pazar",
+          "name": "Novi Pazar",
+          "country": "RS",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 85991
+        }
+      },
+      "summary": null
+    }
+  }
+}

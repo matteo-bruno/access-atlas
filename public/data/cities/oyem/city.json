@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oyem",
+  "createdAt": "2026-10-08T16:03:26.334Z",
+  "updatedAt": "2026-10-08T16:03:26.334Z",
+  "meta": {
+    "name": "Oyem",
+    "nameIt": "Oyem",
+    "region": "Gabon",
+    "regionIt": "Gabon",
+    "country": "GA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Oyem.geojson",
+      "sha256": "d8eecd97edb8838528c6ee1a5befd33be7d23ea19137a5fb51b4377e70683d3a",
+      "size": 209947,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "oyem",
+    "name": "Oyem",
+    "nameIt": "Oyem",
+    "region": "Gabon",
+    "regionIt": "Gabon",
+    "country": "GA",
+    "center": [
+      11.57244,
+      1.59651
+    ],
+    "zoom": 11.5,
+    "population": 44990,
+    "grid": "cities/oyem/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oyem/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oyem",
+        "name": "Oyem",
+        "nameIt": "Oyem",
+        "region": "Gabon",
+        "regionIt": "Gabon",
+        "country": "GA",
+        "center": [
+          11.57244,
+          1.59651
+        ],
+        "zoom": 11.5,
+        "population": 44990,
+        "cells": 180,
+        "layer": "cities/oyem/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.57244,
+            1.59651
+          ]
+        },
+        "properties": {
+          "id": "oyem",
+          "name": "Oyem",
+          "country": "GA",
+          "isStudy": true,
+          "proximityMinutes": 14.5,
+          "population": 44990
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "iizuka",
+  "createdAt": "2026-10-08T15:40:27.221Z",
+  "updatedAt": "2026-10-08T15:40:27.221Z",
+  "meta": {
+    "name": "Iizuka",
+    "nameIt": "Iizuka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Iizuka.geojson",
+      "sha256": "95316551e2e4a4282b035351fad6d5dc1c77a23e6b1bb9c172b3d9537ab86ef3",
+      "size": 513375,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "iizuka",
+    "name": "Iizuka",
+    "nameIt": "Iizuka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      130.6824,
+      33.63863
+    ],
+    "zoom": 11,
+    "population": 89285,
+    "grid": "cities/iizuka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/iizuka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "iizuka",
+        "name": "Iizuka",
+        "nameIt": "Iizuka",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          130.6824,
+          33.63863
+        ],
+        "zoom": 11,
+        "population": 89285,
+        "cells": 444,
+        "layer": "cities/iizuka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            130.6824,
+            33.63863
+          ]
+        },
+        "properties": {
+          "id": "iizuka",
+          "name": "Iizuka",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 18.5,
+          "population": 89285
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kuala-lumpur",
+  "createdAt": "2026-10-08T15:48:34.314Z",
+  "updatedAt": "2026-10-08T15:48:34.314Z",
+  "meta": {
+    "name": "Kuala Lumpur",
+    "nameIt": "Kuala Lumpur",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kuala Lumpur.geojson",
+      "sha256": "b525c05231970fdafa312ed2b35b75d94dccd8d8a1518d293427091903a79881",
+      "size": 12584757,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kuala-lumpur",
+    "name": "Kuala Lumpur",
+    "nameIt": "Kuala Lumpur",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      101.63731,
+      3.09878
+    ],
+    "zoom": 8.5,
+    "population": 7541407,
+    "grid": "cities/kuala-lumpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kuala-lumpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kuala-lumpur",
+        "name": "Kuala Lumpur",
+        "nameIt": "Kuala Lumpur",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          101.63731,
+          3.09878
+        ],
+        "zoom": 8.5,
+        "population": 7541407,
+        "cells": 10890,
+        "layer": "cities/kuala-lumpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            101.63731,
+            3.09878
+          ]
+        },
+        "properties": {
+          "id": "kuala-lumpur",
+          "name": "Kuala Lumpur",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 19.8,
+          "population": 7541407
+        }
+      },
+      "summary": null
+    }
+  }
+}

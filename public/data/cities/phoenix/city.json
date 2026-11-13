@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "phoenix",
+  "createdAt": "2026-10-08T16:05:17.603Z",
+  "updatedAt": "2026-10-08T16:05:17.603Z",
+  "meta": {
+    "name": "Phoenix",
+    "nameIt": "Phoenix",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Phoenix.geojson",
+      "sha256": "0d4aeccc6047131ac59ef3636ff254b96c67607440339d09309d032d0cd2fe3b",
+      "size": 12425285,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "phoenix",
+    "name": "Phoenix",
+    "nameIt": "Phoenix",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -112.14669,
+      33.55341
+    ],
+    "zoom": 8.5,
+    "population": 2768593,
+    "grid": "cities/phoenix/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/phoenix/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "phoenix",
+        "name": "Phoenix",
+        "nameIt": "Phoenix",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -112.14669,
+          33.55341
+        ],
+        "zoom": 8.5,
+        "population": 2768593,
+        "cells": 10686,
+        "layer": "cities/phoenix/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -112.14669,
+            33.55341
+          ]
+        },
+        "properties": {
+          "id": "phoenix",
+          "name": "Phoenix",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 2768593
+        }
+      },
+      "summary": null
+    }
+  }
+}

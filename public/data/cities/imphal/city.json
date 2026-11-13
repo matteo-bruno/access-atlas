@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "imphal",
+  "createdAt": "2026-10-08T15:40:45.898Z",
+  "updatedAt": "2026-10-08T15:40:45.898Z",
+  "meta": {
+    "name": "Imphal",
+    "nameIt": "Imphal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Imphal.geojson",
+      "sha256": "14774eb2e9b41a99e675afb6cc3855214e547e37c19374030411d707a81c11b0",
+      "size": 2045291,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "imphal",
+    "name": "Imphal",
+    "nameIt": "Imphal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      93.92945,
+      24.77823
+    ],
+    "zoom": 9.4,
+    "population": 872537,
+    "grid": "cities/imphal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/imphal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "imphal",
+        "name": "Imphal",
+        "nameIt": "Imphal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          93.92945,
+          24.77823
+        ],
+        "zoom": 9.4,
+        "population": 872537,
+        "cells": 1760,
+        "layer": "cities/imphal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            93.92945,
+            24.77823
+          ]
+        },
+        "properties": {
+          "id": "imphal",
+          "name": "Imphal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 61.9,
+          "population": 872537
+        }
+      },
+      "summary": null
+    }
+  }
+}

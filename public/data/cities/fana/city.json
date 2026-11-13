@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fana",
+  "createdAt": "2026-10-08T15:32:47.194Z",
+  "updatedAt": "2026-10-08T15:32:47.194Z",
+  "meta": {
+    "name": "Fana",
+    "nameIt": "Fana",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fana.geojson",
+      "sha256": "2f3c7eef7b17f88fc35f8247696ad7316f861dd2513b2b9d0cbae28c4ff4cc6e",
+      "size": 223440,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fana",
+    "name": "Fana",
+    "nameIt": "Fana",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML",
+    "center": [
+      -6.95454,
+      12.78116
+    ],
+    "zoom": 11.6,
+    "population": 103653,
+    "grid": "cities/fana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fana",
+        "name": "Fana",
+        "nameIt": "Fana",
+        "region": "Mali",
+        "regionIt": "Mali",
+        "country": "ML",
+        "center": [
+          -6.95454,
+          12.78116
+        ],
+        "zoom": 11.6,
+        "population": 103653,
+        "cells": 191,
+        "layer": "cities/fana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -6.95454,
+            12.78116
+          ]
+        },
+        "properties": {
+          "id": "fana",
+          "name": "Fana",
+          "country": "ML",
+          "isStudy": true,
+          "proximityMinutes": 17.4,
+          "population": 103653
+        }
+      },
+      "summary": null
+    }
+  }
+}

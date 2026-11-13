@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "daye",
+  "createdAt": "2026-10-08T15:28:41.579Z",
+  "updatedAt": "2026-10-08T15:28:41.579Z",
+  "meta": {
+    "name": "Daye",
+    "nameIt": "Daye",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Daye.geojson",
+      "sha256": "813eb8d4ca72466e89bf60de528105aca1dfc962eaf4f46696578707b47cfc1f",
+      "size": 101709,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "daye",
+    "name": "Daye",
+    "nameIt": "Daye",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      111.20399,
+      22.90528
+    ],
+    "zoom": 11.4,
+    "population": 17593,
+    "grid": "cities/daye/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/daye/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "daye",
+        "name": "Daye",
+        "nameIt": "Daye",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          111.20399,
+          22.90528
+        ],
+        "zoom": 11.4,
+        "population": 17593,
+        "cells": 87,
+        "layer": "cities/daye/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.20399,
+            22.90528
+          ]
+        },
+        "properties": {
+          "id": "daye",
+          "name": "Daye",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 17593
+        }
+      },
+      "summary": null
+    }
+  }
+}

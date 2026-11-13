@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "taean",
+  "createdAt": "2026-10-08T16:15:54.873Z",
+  "updatedAt": "2026-10-08T16:15:54.873Z",
+  "meta": {
+    "name": "Taean",
+    "nameIt": "Taean",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Taean.geojson",
+      "sha256": "95b799d237165c2b4b21312b6437794ed9f581cf0581d8c38f2f862c9d3dd6ee",
+      "size": 287749,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "taean",
+    "name": "Taean",
+    "nameIt": "Taean",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP",
+    "center": [
+      125.50608,
+      38.8342
+    ],
+    "zoom": 11.3,
+    "population": 83714,
+    "grid": "cities/taean/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 166
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/taean/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "taean",
+        "name": "Taean",
+        "nameIt": "Taean",
+        "region": "North Korea",
+        "regionIt": "Corea del Nord",
+        "country": "KP",
+        "center": [
+          125.50608,
+          38.8342
+        ],
+        "zoom": 11.3,
+        "population": 83714,
+        "cells": 247,
+        "layer": "cities/taean/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 166
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.50608,
+            38.8342
+          ]
+        },
+        "properties": {
+          "id": "taean",
+          "name": "Taean",
+          "country": "KP",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 83714
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bahalgarh",
+  "createdAt": "2026-10-08T15:13:05.200Z",
+  "updatedAt": "2026-10-08T15:13:05.200Z",
+  "meta": {
+    "name": "Bahalgarh",
+    "nameIt": "Bahalgarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bahalgarh.geojson",
+      "sha256": "4901e13807721153cc2488b47b1b986d744092ce4f00b77e10c7a7733ae58a69",
+      "size": 210827,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bahalgarh",
+    "name": "Bahalgarh",
+    "nameIt": "Bahalgarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.09178,
+      28.94824
+    ],
+    "zoom": 11.4,
+    "population": 85153,
+    "grid": "cities/bahalgarh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bahalgarh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bahalgarh",
+        "name": "Bahalgarh",
+        "nameIt": "Bahalgarh",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.09178,
+          28.94824
+        ],
+        "zoom": 11.4,
+        "population": 85153,
+        "cells": 182,
+        "layer": "cities/bahalgarh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.09178,
+            28.94824
+          ]
+        },
+        "properties": {
+          "id": "bahalgarh",
+          "name": "Bahalgarh",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 85153
+        }
+      },
+      "summary": null
+    }
+  }
+}

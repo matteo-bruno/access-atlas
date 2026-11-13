@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kafue",
+  "createdAt": "2026-10-08T15:44:06.550Z",
+  "updatedAt": "2026-10-08T15:44:06.550Z",
+  "meta": {
+    "name": "Kafue",
+    "nameIt": "Kafue",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kafue.geojson",
+      "sha256": "f48e7724839be2fcd244daaeddb89ab9de6c648ab7f43f376425b643d2b6ab68",
+      "size": 230503,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kafue",
+    "name": "Kafue",
+    "nameIt": "Kafue",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM",
+    "center": [
+      28.17616,
+      -15.76208
+    ],
+    "zoom": 11.3,
+    "population": 56225,
+    "grid": "cities/kafue/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kafue/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kafue",
+        "name": "Kafue",
+        "nameIt": "Kafue",
+        "region": "Zambia",
+        "regionIt": "Zambia",
+        "country": "ZM",
+        "center": [
+          28.17616,
+          -15.76208
+        ],
+        "zoom": 11.3,
+        "population": 56225,
+        "cells": 196,
+        "layer": "cities/kafue/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.17616,
+            -15.76208
+          ]
+        },
+        "properties": {
+          "id": "kafue",
+          "name": "Kafue",
+          "country": "ZM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 56225
+        }
+      },
+      "summary": null
+    }
+  }
+}

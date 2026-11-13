@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "poko",
+  "createdAt": "2026-10-08T16:06:02.092Z",
+  "updatedAt": "2026-10-08T16:06:02.092Z",
+  "meta": {
+    "name": "Poko",
+    "nameIt": "Poko",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Poko.geojson",
+      "sha256": "2ea4cfb3ddfcee3d491854ad3b4341e58f8d56fdb9257c2fa69eb97fd40dca58",
+      "size": 126523,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "poko",
+    "name": "Poko",
+    "nameIt": "Poko",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      26.89244,
+      3.14394
+    ],
+    "zoom": 11.7,
+    "population": 43925,
+    "grid": "cities/poko/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/poko/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "poko",
+        "name": "Poko",
+        "nameIt": "Poko",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          26.89244,
+          3.14394
+        ],
+        "zoom": 11.7,
+        "population": 43925,
+        "cells": 109,
+        "layer": "cities/poko/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.89244,
+            3.14394
+          ]
+        },
+        "properties": {
+          "id": "poko",
+          "name": "Poko",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 43925
+        }
+      },
+      "summary": null
+    }
+  }
+}

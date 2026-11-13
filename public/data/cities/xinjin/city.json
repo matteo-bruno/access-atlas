@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xinjin",
+  "createdAt": "2026-10-08T16:22:47.073Z",
+  "updatedAt": "2026-10-08T16:22:47.073Z",
+  "meta": {
+    "name": "Xinjin",
+    "nameIt": "Xinjin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xinjin.geojson",
+      "sha256": "c3a001b330ca5c97b3203bd58fd1f17c58b9c685a5799144d2dfd7e5076f0536",
+      "size": 237235,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xinjin",
+    "name": "Xinjin",
+    "nameIt": "Xinjin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      103.8036,
+      30.42225
+    ],
+    "zoom": 11.4,
+    "population": 123855,
+    "grid": "cities/xinjin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xinjin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xinjin",
+        "name": "Xinjin",
+        "nameIt": "Xinjin",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          103.8036,
+          30.42225
+        ],
+        "zoom": 11.4,
+        "population": 123855,
+        "cells": 203,
+        "layer": "cities/xinjin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.8036,
+            30.42225
+          ]
+        },
+        "properties": {
+          "id": "xinjin",
+          "name": "Xinjin",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 123855
+        }
+      },
+      "summary": null
+    }
+  }
+}

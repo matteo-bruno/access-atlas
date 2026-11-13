@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cambridge-canada",
+  "createdAt": "2026-10-08T15:22:03.656Z",
+  "updatedAt": "2026-10-08T15:22:03.656Z",
+  "meta": {
+    "name": "Cambridge (Canada)",
+    "nameIt": "Cambridge (Canada)",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cambridge (Canada).geojson",
+      "sha256": "a65cfbf563fd3f35d14541fe76777bc806281f551778e5c750c21210b5c86b2a",
+      "size": 631626,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cambridge-canada",
+    "name": "Cambridge (Canada)",
+    "nameIt": "Cambridge (Canada)",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -80.31386,
+      43.38354
+    ],
+    "zoom": 10.5,
+    "population": 132364,
+    "grid": "cities/cambridge-canada/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cambridge-canada/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cambridge-canada",
+        "name": "Cambridge (Canada)",
+        "nameIt": "Cambridge (Canada)",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -80.31386,
+          43.38354
+        ],
+        "zoom": 10.5,
+        "population": 132364,
+        "cells": 549,
+        "layer": "cities/cambridge-canada/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.31386,
+            43.38354
+          ]
+        },
+        "properties": {
+          "id": "cambridge-canada",
+          "name": "Cambridge (Canada)",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 132364
+        }
+      },
+      "summary": null
+    }
+  }
+}

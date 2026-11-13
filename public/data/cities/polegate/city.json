@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "polegate",
+  "createdAt": "2026-10-08T16:06:03.925Z",
+  "updatedAt": "2026-10-08T16:06:03.925Z",
+  "meta": {
+    "name": "Polegate",
+    "nameIt": "Polegate",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Polegate.geojson",
+      "sha256": "cea2ba1198da005dd56789fde14d0c77b039a44504d6835600fdb19f4f9c64e3",
+      "size": 443207,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "polegate",
+    "name": "Polegate",
+    "nameIt": "Polegate",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      0.2841,
+      50.78971
+    ],
+    "zoom": 11.1,
+    "population": 116714,
+    "grid": "cities/polegate/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/polegate/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "polegate",
+        "name": "Polegate",
+        "nameIt": "Polegate",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          0.2841,
+          50.78971
+        ],
+        "zoom": 11.1,
+        "population": 116714,
+        "cells": 386,
+        "layer": "cities/polegate/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.2841,
+            50.78971
+          ]
+        },
+        "properties": {
+          "id": "polegate",
+          "name": "Polegate",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 12.9,
+          "population": 116714
+        }
+      },
+      "summary": null
+    }
+  }
+}

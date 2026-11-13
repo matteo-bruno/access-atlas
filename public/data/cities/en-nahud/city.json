@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "en-nahud",
+  "createdAt": "2026-10-08T15:32:14.491Z",
+  "updatedAt": "2026-10-08T15:32:14.491Z",
+  "meta": {
+    "name": "En Nahud",
+    "nameIt": "En Nahud",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/En Nahud.geojson",
+      "sha256": "df6dfb86f5e1ecf4d601f98134884c403f3ec646a84d631c35dbf7926e355a7d",
+      "size": 250842,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "en-nahud",
+    "name": "En Nahud",
+    "nameIt": "En Nahud",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      28.42208,
+      12.69048
+    ],
+    "zoom": 11.6,
+    "population": 148978,
+    "grid": "cities/en-nahud/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/en-nahud/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "en-nahud",
+        "name": "En Nahud",
+        "nameIt": "En Nahud",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          28.42208,
+          12.69048
+        ],
+        "zoom": 11.6,
+        "population": 148978,
+        "cells": 215,
+        "layer": "cities/en-nahud/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.42208,
+            12.69048
+          ]
+        },
+        "properties": {
+          "id": "en-nahud",
+          "name": "En Nahud",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 148978
+        }
+      },
+      "summary": null
+    }
+  }
+}

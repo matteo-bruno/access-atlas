@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "muzaffarabad",
+  "createdAt": "2026-10-08T15:59:14.171Z",
+  "updatedAt": "2026-10-08T15:59:14.171Z",
+  "meta": {
+    "name": "Muzaffarabad",
+    "nameIt": "Muzaffarabad",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Muzaffarabad.geojson",
+      "sha256": "1cf6fbeb62a02ace32fdde81278b65dd56f67dd166033a9d6d91585b88d0693b",
+      "size": 252072,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "muzaffarabad",
+    "name": "Muzaffarabad",
+    "nameIt": "Muzaffarabad",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      73.4706,
+      34.36504
+    ],
+    "zoom": 11,
+    "population": 166794,
+    "grid": "cities/muzaffarabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/muzaffarabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "muzaffarabad",
+        "name": "Muzaffarabad",
+        "nameIt": "Muzaffarabad",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          73.4706,
+          34.36504
+        ],
+        "zoom": 11,
+        "population": 166794,
+        "cells": 218,
+        "layer": "cities/muzaffarabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.4706,
+            34.36504
+          ]
+        },
+        "properties": {
+          "id": "muzaffarabad",
+          "name": "Muzaffarabad",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 36.5,
+          "population": 166794
+        }
+      },
+      "summary": null
+    }
+  }
+}

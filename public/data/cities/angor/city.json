@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "angor",
+  "createdAt": "2026-10-08T15:07:39.881Z",
+  "updatedAt": "2026-10-08T15:07:39.881Z",
+  "meta": {
+    "name": "Angor",
+    "nameIt": "Angor",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Angor.geojson",
+      "sha256": "7837ed0248761f990104d28b445a269559be65aa46b7504f639de21a070f87d6",
+      "size": 160566,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "angor",
+    "name": "Angor",
+    "nameIt": "Angor",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      67.15188,
+      37.46289
+    ],
+    "zoom": 11.4,
+    "population": 45539,
+    "grid": "cities/angor/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/angor/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "angor",
+        "name": "Angor",
+        "nameIt": "Angor",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          67.15188,
+          37.46289
+        ],
+        "zoom": 11.4,
+        "population": 45539,
+        "cells": 139,
+        "layer": "cities/angor/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            67.15188,
+            37.46289
+          ]
+        },
+        "properties": {
+          "id": "angor",
+          "name": "Angor",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 45539
+        }
+      },
+      "summary": null
+    }
+  }
+}

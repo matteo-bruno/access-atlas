@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shillong",
+  "createdAt": "2026-10-08T16:13:05.240Z",
+  "updatedAt": "2026-10-08T16:13:05.240Z",
+  "meta": {
+    "name": "Shillong",
+    "nameIt": "Shillong",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shillong.geojson",
+      "sha256": "c151d3a5106661313a0627677d3a02b63b84d90eba5c499904a7b2456f297973",
+      "size": 515975,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shillong",
+    "name": "Shillong",
+    "nameIt": "Shillong",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      91.89201,
+      25.57721
+    ],
+    "zoom": 10.8,
+    "population": 289956,
+    "grid": "cities/shillong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shillong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shillong",
+        "name": "Shillong",
+        "nameIt": "Shillong",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          91.89201,
+          25.57721
+        ],
+        "zoom": 10.8,
+        "population": 289956,
+        "cells": 446,
+        "layer": "cities/shillong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.89201,
+            25.57721
+          ]
+        },
+        "properties": {
+          "id": "shillong",
+          "name": "Shillong",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 26.9,
+          "population": 289956
+        }
+      },
+      "summary": null
+    }
+  }
+}

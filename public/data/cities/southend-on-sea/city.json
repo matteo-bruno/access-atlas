@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "southend-on-sea",
+  "createdAt": "2026-10-08T16:14:36.931Z",
+  "updatedAt": "2026-10-08T16:14:36.931Z",
+  "meta": {
+    "name": "Southend-on-Sea",
+    "nameIt": "Southend-on-Sea",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Southend-on-Sea.geojson",
+      "sha256": "fd00830c6b0392df8c4963d413aca9d49f1f2a580e5087d11e53a194e914d872",
+      "size": 975089,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "southend-on-sea",
+    "name": "Southend-on-Sea",
+    "nameIt": "Southend-on-Sea",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      0.66808,
+      51.55447
+    ],
+    "zoom": 9.9,
+    "population": 262214,
+    "grid": "cities/southend-on-sea/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/southend-on-sea/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "southend-on-sea",
+        "name": "Southend-on-Sea",
+        "nameIt": "Southend-on-Sea",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          0.66808,
+          51.55447
+        ],
+        "zoom": 9.9,
+        "population": 262214,
+        "cells": 851,
+        "layer": "cities/southend-on-sea/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.66808,
+            51.55447
+          ]
+        },
+        "properties": {
+          "id": "southend-on-sea",
+          "name": "Southend-on-Sea",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 13.7,
+          "population": 262214
+        }
+      },
+      "summary": null
+    }
+  }
+}

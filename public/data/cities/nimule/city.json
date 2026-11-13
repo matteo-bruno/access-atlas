@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nimule",
+  "createdAt": "2026-10-08T16:01:35.945Z",
+  "updatedAt": "2026-10-08T16:01:35.945Z",
+  "meta": {
+    "name": "Nimule",
+    "nameIt": "Nimule",
+    "region": "South Sudan",
+    "regionIt": "Sudan del Sud",
+    "country": "SS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nimule.geojson",
+      "sha256": "3f218c843b4f6d1f500fad8989122fb94bbcfbd620b4aed975b5b6dda162983b",
+      "size": 144866,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nimule",
+    "name": "Nimule",
+    "nameIt": "Nimule",
+    "region": "South Sudan",
+    "regionIt": "Sudan del Sud",
+    "country": "SS",
+    "center": [
+      32.06559,
+      3.59091
+    ],
+    "zoom": 11.7,
+    "population": 79451,
+    "grid": "cities/nimule/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nimule/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nimule",
+        "name": "Nimule",
+        "nameIt": "Nimule",
+        "region": "South Sudan",
+        "regionIt": "Sudan del Sud",
+        "country": "SS",
+        "center": [
+          32.06559,
+          3.59091
+        ],
+        "zoom": 11.7,
+        "population": 79451,
+        "cells": 125,
+        "layer": "cities/nimule/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.06559,
+            3.59091
+          ]
+        },
+        "properties": {
+          "id": "nimule",
+          "name": "Nimule",
+          "country": "SS",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 79451
+        }
+      },
+      "summary": null
+    }
+  }
+}

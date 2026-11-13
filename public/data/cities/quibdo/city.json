@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "quibdo",
+  "createdAt": "2026-10-08T16:07:37.594Z",
+  "updatedAt": "2026-10-08T16:07:37.594Z",
+  "meta": {
+    "name": "Quibdó",
+    "nameIt": "Quibdó",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Quibdó.geojson",
+      "sha256": "dafc77c8971b430c767d7a103d5f336a4e3c44b42b6791615ef52d2801aed769",
+      "size": 152227,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "quibdo",
+    "name": "Quibdó",
+    "nameIt": "Quibdó",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -76.6513,
+      5.69092
+    ],
+    "zoom": 11.7,
+    "population": 122053,
+    "grid": "cities/quibdo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/quibdo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "quibdo",
+        "name": "Quibdó",
+        "nameIt": "Quibdó",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -76.6513,
+          5.69092
+        ],
+        "zoom": 11.7,
+        "population": 122053,
+        "cells": 131,
+        "layer": "cities/quibdo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.6513,
+            5.69092
+          ]
+        },
+        "properties": {
+          "id": "quibdo",
+          "name": "Quibdó",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 122053
+        }
+      },
+      "summary": null
+    }
+  }
+}

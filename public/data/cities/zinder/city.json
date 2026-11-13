@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zinder",
+  "createdAt": "2026-10-08T16:25:33.737Z",
+  "updatedAt": "2026-10-08T16:25:33.737Z",
+  "meta": {
+    "name": "Zinder",
+    "nameIt": "Zinder",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zinder.geojson",
+      "sha256": "50deb629dd6c3fe92db064e82030fa9be6811748634a01b6324309dc9b9e2fde",
+      "size": 499222,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zinder",
+    "name": "Zinder",
+    "nameIt": "Zinder",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE",
+    "center": [
+      8.98688,
+      13.81024
+    ],
+    "zoom": 10.8,
+    "population": 431476,
+    "grid": "cities/zinder/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zinder/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zinder",
+        "name": "Zinder",
+        "nameIt": "Zinder",
+        "region": "Niger",
+        "regionIt": "Niger",
+        "country": "NE",
+        "center": [
+          8.98688,
+          13.81024
+        ],
+        "zoom": 10.8,
+        "population": 431476,
+        "cells": 431,
+        "layer": "cities/zinder/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.98688,
+            13.81024
+          ]
+        },
+        "properties": {
+          "id": "zinder",
+          "name": "Zinder",
+          "country": "NE",
+          "isStudy": true,
+          "proximityMinutes": 24.5,
+          "population": 431476
+        }
+      },
+      "summary": null
+    }
+  }
+}

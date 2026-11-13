@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-buraimi",
+  "createdAt": "2026-10-08T15:04:58.953Z",
+  "updatedAt": "2026-10-08T15:04:58.953Z",
+  "meta": {
+    "name": "Al-Buraimi",
+    "nameIt": "Al-Buraimi",
+    "region": "Oman",
+    "regionIt": "Oman",
+    "country": "OM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al-Buraimi.geojson",
+      "sha256": "30fd6eb698fa92db29d8b62e33692e8da76cac843bdeddc7db5872013ea09d69",
+      "size": 175424,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-buraimi",
+    "name": "Al-Buraimi",
+    "nameIt": "Al-Buraimi",
+    "region": "Oman",
+    "regionIt": "Oman",
+    "country": "OM",
+    "center": [
+      55.7862,
+      24.25982
+    ],
+    "zoom": 11.6,
+    "population": 35058,
+    "grid": "cities/al-buraimi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-buraimi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-buraimi",
+        "name": "Al-Buraimi",
+        "nameIt": "Al-Buraimi",
+        "region": "Oman",
+        "regionIt": "Oman",
+        "country": "OM",
+        "center": [
+          55.7862,
+          24.25982
+        ],
+        "zoom": 11.6,
+        "population": 35058,
+        "cells": 151,
+        "layer": "cities/al-buraimi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            55.7862,
+            24.25982
+          ]
+        },
+        "properties": {
+          "id": "al-buraimi",
+          "name": "Al-Buraimi",
+          "country": "OM",
+          "isStudy": true,
+          "proximityMinutes": 20.8,
+          "population": 35058
+        }
+      },
+      "summary": null
+    }
+  }
+}

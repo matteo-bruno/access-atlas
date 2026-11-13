@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tirupattur",
+  "createdAt": "2026-10-08T16:18:05.685Z",
+  "updatedAt": "2026-10-08T16:18:05.685Z",
+  "meta": {
+    "name": "Tirupattur",
+    "nameIt": "Tirupattur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tirupattur.geojson",
+      "sha256": "33d577487d719e98267ee04b99b9927ad0e4e8a0d0b5d3ad6ed58c29833e0e90",
+      "size": 307574,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tirupattur",
+    "name": "Tirupattur",
+    "nameIt": "Tirupattur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.5649,
+      12.49495
+    ],
+    "zoom": 11.1,
+    "population": 105456,
+    "grid": "cities/tirupattur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tirupattur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tirupattur",
+        "name": "Tirupattur",
+        "nameIt": "Tirupattur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.5649,
+          12.49495
+        ],
+        "zoom": 11.1,
+        "population": 105456,
+        "cells": 265,
+        "layer": "cities/tirupattur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.5649,
+            12.49495
+          ]
+        },
+        "properties": {
+          "id": "tirupattur",
+          "name": "Tirupattur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 24.3,
+          "population": 105456
+        }
+      },
+      "summary": null
+    }
+  }
+}

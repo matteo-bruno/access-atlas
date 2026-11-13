@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "alanda",
+  "createdAt": "2026-10-08T15:05:26.645Z",
+  "updatedAt": "2026-10-08T15:05:26.645Z",
+  "meta": {
+    "name": "Alanda",
+    "nameIt": "Alanda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Alanda.geojson",
+      "sha256": "5aec808597e656bb6f4802e085fd07dcf8b7d0b17b376b68caec0cde07b746ac",
+      "size": 45181,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "alanda",
+    "name": "Alanda",
+    "nameIt": "Alanda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.56504,
+      17.56544
+    ],
+    "zoom": 12,
+    "population": 19191,
+    "grid": "cities/alanda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/alanda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "alanda",
+        "name": "Alanda",
+        "nameIt": "Alanda",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.56504,
+          17.56544
+        ],
+        "zoom": 12,
+        "population": 19191,
+        "cells": 39,
+        "layer": "cities/alanda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.56504,
+            17.56544
+          ]
+        },
+        "properties": {
+          "id": "alanda",
+          "name": "Alanda",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 19191
+        }
+      },
+      "summary": null
+    }
+  }
+}

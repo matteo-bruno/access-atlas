@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sambrial",
+  "createdAt": "2026-10-08T16:10:18.610Z",
+  "updatedAt": "2026-10-08T16:10:18.610Z",
+  "meta": {
+    "name": "Sambrial",
+    "nameIt": "Sambrial",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sambrial.geojson",
+      "sha256": "bd966245ede931ca9232879389ab68efcfc5b59ae53b2285e9e8588d228bf1d9",
+      "size": 228873,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sambrial",
+    "name": "Sambrial",
+    "nameIt": "Sambrial",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      74.35262,
+      32.47789
+    ],
+    "zoom": 11.2,
+    "population": 157600,
+    "grid": "cities/sambrial/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sambrial/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sambrial",
+        "name": "Sambrial",
+        "nameIt": "Sambrial",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          74.35262,
+          32.47789
+        ],
+        "zoom": 11.2,
+        "population": 157600,
+        "cells": 198,
+        "layer": "cities/sambrial/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.35262,
+            32.47789
+          ]
+        },
+        "properties": {
+          "id": "sambrial",
+          "name": "Sambrial",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 157600
+        }
+      },
+      "summary": null
+    }
+  }
+}

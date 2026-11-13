@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "haiyuan",
+  "createdAt": "2026-10-08T15:37:18.567Z",
+  "updatedAt": "2026-10-08T15:37:18.567Z",
+  "meta": {
+    "name": "Haiyuan",
+    "nameIt": "Haiyuan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Haiyuan.geojson",
+      "sha256": "3565d749ae2ac121aae2066006c960ee988639ca3b21440eb6a1adba403de90f",
+      "size": 206394,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "haiyuan",
+    "name": "Haiyuan",
+    "nameIt": "Haiyuan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      105.64593,
+      36.56134
+    ],
+    "zoom": 11.5,
+    "population": 115203,
+    "grid": "cities/haiyuan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/haiyuan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "haiyuan",
+        "name": "Haiyuan",
+        "nameIt": "Haiyuan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          105.64593,
+          36.56134
+        ],
+        "zoom": 11.5,
+        "population": 115203,
+        "cells": 177,
+        "layer": "cities/haiyuan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.64593,
+            36.56134
+          ]
+        },
+        "properties": {
+          "id": "haiyuan",
+          "name": "Haiyuan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 25.1,
+          "population": 115203
+        }
+      },
+      "summary": null
+    }
+  }
+}

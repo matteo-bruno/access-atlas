@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "elaz-g",
+  "createdAt": "2026-10-08T15:32:05.221Z",
+  "updatedAt": "2026-10-08T15:32:05.221Z",
+  "meta": {
+    "name": "Elazığ",
+    "nameIt": "Elazığ",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Elazığ.geojson",
+      "sha256": "8f7b20cb2b5c96687fa7f39162ccff45fd8e8472085d88c406c209ca0bcd24a4",
+      "size": 458646,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "elaz-g",
+    "name": "Elazığ",
+    "nameIt": "Elazığ",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      39.21146,
+      38.67209
+    ],
+    "zoom": 10.5,
+    "population": 320235,
+    "grid": "cities/elaz-g/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/elaz-g/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "elaz-g",
+        "name": "Elazığ",
+        "nameIt": "Elazığ",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          39.21146,
+          38.67209
+        ],
+        "zoom": 10.5,
+        "population": 320235,
+        "cells": 397,
+        "layer": "cities/elaz-g/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.21146,
+            38.67209
+          ]
+        },
+        "properties": {
+          "id": "elaz-g",
+          "name": "Elazığ",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 21.4,
+          "population": 320235
+        }
+      },
+      "summary": null
+    }
+  }
+}

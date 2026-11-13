@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "quelimane",
+  "createdAt": "2026-10-08T16:07:35.567Z",
+  "updatedAt": "2026-10-08T16:07:35.567Z",
+  "meta": {
+    "name": "Quelimane",
+    "nameIt": "Quelimane",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Quelimane.geojson",
+      "sha256": "815dc16f988e7a1e2e696bfed6201abf2d15e21abc84365224cafecc4ca4824c",
+      "size": 414736,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "quelimane",
+    "name": "Quelimane",
+    "nameIt": "Quelimane",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ",
+    "center": [
+      36.90044,
+      -17.86107
+    ],
+    "zoom": 10.8,
+    "population": 434013,
+    "grid": "cities/quelimane/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/quelimane/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "quelimane",
+        "name": "Quelimane",
+        "nameIt": "Quelimane",
+        "region": "Mozambique",
+        "regionIt": "Mozambico",
+        "country": "MZ",
+        "center": [
+          36.90044,
+          -17.86107
+        ],
+        "zoom": 10.8,
+        "population": 434013,
+        "cells": 354,
+        "layer": "cities/quelimane/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.90044,
+            -17.86107
+          ]
+        },
+        "properties": {
+          "id": "quelimane",
+          "name": "Quelimane",
+          "country": "MZ",
+          "isStudy": true,
+          "proximityMinutes": 24.8,
+          "population": 434013
+        }
+      },
+      "summary": null
+    }
+  }
+}

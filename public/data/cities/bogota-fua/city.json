@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bogota-fua",
+  "createdAt": "2026-10-19T16:55:32.825Z",
+  "updatedAt": "2026-10-19T16:55:32.825Z",
+  "meta": {
+    "name": "Bogota",
+    "nameIt": "Bogota",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "bogota-fua",
+    "name": "Bogota",
+    "nameIt": "Bogota",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "extent": "fua",
+    "core": "bogota",
+    "center": [
+      -74.12721,
+      4.64899
+    ],
+    "zoom": 8.5,
+    "population": 10249150,
+    "grid": "cities/bogota-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bogota-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bogota-fua",
+        "name": "Bogota",
+        "nameIt": "Bogota",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "extent": "fua",
+        "core": "bogota",
+        "center": [
+          -74.12721,
+          4.64899
+        ],
+        "zoom": 8.5,
+        "population": 10249150,
+        "cells": 16849,
+        "layer": "cities/bogota-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.12721,
+            4.64899
+          ]
+        },
+        "properties": {
+          "id": "bogota-fua",
+          "name": "Bogota",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 10.6,
+          "population": 10249150
+        }
+      },
+      "summary": null
+    }
+  }
+}

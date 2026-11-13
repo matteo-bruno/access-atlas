@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sorocaba",
+  "createdAt": "2026-10-08T16:14:30.873Z",
+  "updatedAt": "2026-10-08T16:14:30.873Z",
+  "meta": {
+    "name": "Sorocaba",
+    "nameIt": "Sorocaba",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sorocaba.geojson",
+      "sha256": "660f95a96cd18f2aaf08eb709bdb899d16cad34dabf47456f65a613729398ee8",
+      "size": 1611720,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sorocaba",
+    "name": "Sorocaba",
+    "nameIt": "Sorocaba",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -47.46994,
+      -23.4945
+    ],
+    "zoom": 9.9,
+    "population": 784726,
+    "grid": "cities/sorocaba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sorocaba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sorocaba",
+        "name": "Sorocaba",
+        "nameIt": "Sorocaba",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -47.46994,
+          -23.4945
+        ],
+        "zoom": 9.9,
+        "population": 784726,
+        "cells": 1382,
+        "layer": "cities/sorocaba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.46994,
+            -23.4945
+          ]
+        },
+        "properties": {
+          "id": "sorocaba",
+          "name": "Sorocaba",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 14.5,
+          "population": 784726
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "madalla",
+  "createdAt": "2026-10-08T15:53:18.232Z",
+  "updatedAt": "2026-10-08T15:53:18.232Z",
+  "meta": {
+    "name": "Madalla",
+    "nameIt": "Madalla",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Madalla.geojson",
+      "sha256": "437fa7f9f74a3ffd22c00ce29f4d7cb7380670f36b2b23ce6805541930d73d28",
+      "size": 1078525,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "madalla",
+    "name": "Madalla",
+    "nameIt": "Madalla",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      7.2083,
+      9.15443
+    ],
+    "zoom": 10,
+    "population": 595245,
+    "grid": "cities/madalla/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/madalla/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "madalla",
+        "name": "Madalla",
+        "nameIt": "Madalla",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          7.2083,
+          9.15443
+        ],
+        "zoom": 10,
+        "population": 595245,
+        "cells": 937,
+        "layer": "cities/madalla/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.2083,
+            9.15443
+          ]
+        },
+        "properties": {
+          "id": "madalla",
+          "name": "Madalla",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 49.6,
+          "population": 595245
+        }
+      },
+      "summary": null
+    }
+  }
+}

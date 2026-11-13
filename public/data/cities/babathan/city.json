@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "babathan",
+  "createdAt": "2026-10-08T15:12:16.330Z",
+  "updatedAt": "2026-10-08T15:12:16.330Z",
+  "meta": {
+    "name": "Babathan",
+    "nameIt": "Babathan",
+    "region": "Nepal",
+    "regionIt": "Nepal",
+    "country": "NP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Babathan.geojson",
+      "sha256": "9bee433d37a0dee7ef8993b50e4332ca45d43cf02f69350df56dab347037528d",
+      "size": 426555,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "babathan",
+    "name": "Babathan",
+    "nameIt": "Babathan",
+    "region": "Nepal",
+    "regionIt": "Nepal",
+    "country": "NP",
+    "center": [
+      80.08224,
+      28.88298
+    ],
+    "zoom": 10.5,
+    "population": 35243,
+    "grid": "cities/babathan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/babathan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "babathan",
+        "name": "Babathan",
+        "nameIt": "Babathan",
+        "region": "Nepal",
+        "regionIt": "Nepal",
+        "country": "NP",
+        "center": [
+          80.08224,
+          28.88298
+        ],
+        "zoom": 10.5,
+        "population": 35243,
+        "cells": 368,
+        "layer": "cities/babathan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.08224,
+            28.88298
+          ]
+        },
+        "properties": {
+          "id": "babathan",
+          "name": "Babathan",
+          "country": "NP",
+          "isStudy": true,
+          "proximityMinutes": 35.2,
+          "population": 35243
+        }
+      },
+      "summary": null
+    }
+  }
+}

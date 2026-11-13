@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "la-rioja",
+  "createdAt": "2026-10-08T15:49:24.610Z",
+  "updatedAt": "2026-10-08T15:49:24.610Z",
+  "meta": {
+    "name": "La Rioja",
+    "nameIt": "La Rioja",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/La Rioja.geojson",
+      "sha256": "be9c7d888de13037e4b65b41826e49b4bdc1fb83f371c30c483d59875b25213f",
+      "size": 669192,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "la-rioja",
+    "name": "La Rioja",
+    "nameIt": "La Rioja",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -66.85657,
+      -29.41851
+    ],
+    "zoom": 10.5,
+    "population": 176933,
+    "grid": "cities/la-rioja/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/la-rioja/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "la-rioja",
+        "name": "La Rioja",
+        "nameIt": "La Rioja",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -66.85657,
+          -29.41851
+        ],
+        "zoom": 10.5,
+        "population": 176933,
+        "cells": 570,
+        "layer": "cities/la-rioja/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -66.85657,
+            -29.41851
+          ]
+        },
+        "properties": {
+          "id": "la-rioja",
+          "name": "La Rioja",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 21.6,
+          "population": 176933
+        }
+      },
+      "summary": null
+    }
+  }
+}

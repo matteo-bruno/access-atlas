@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "adilabad",
+  "createdAt": "2026-10-08T15:02:25.028Z",
+  "updatedAt": "2026-10-08T15:02:25.028Z",
+  "meta": {
+    "name": "Adilabad",
+    "nameIt": "Adilabad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Adilabad.geojson",
+      "sha256": "f977173acebeebcc4eac5b948677bcc601cecb79471d6f5cf765b5b330d2de7f",
+      "size": 164227,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "adilabad",
+    "name": "Adilabad",
+    "nameIt": "Adilabad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.52974,
+      19.66958
+    ],
+    "zoom": 11.9,
+    "population": 134762,
+    "grid": "cities/adilabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/adilabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "adilabad",
+        "name": "Adilabad",
+        "nameIt": "Adilabad",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.52974,
+          19.66958
+        ],
+        "zoom": 11.9,
+        "population": 134762,
+        "cells": 142,
+        "layer": "cities/adilabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.52974,
+            19.66958
+          ]
+        },
+        "properties": {
+          "id": "adilabad",
+          "name": "Adilabad",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 134762
+        }
+      },
+      "summary": null
+    }
+  }
+}

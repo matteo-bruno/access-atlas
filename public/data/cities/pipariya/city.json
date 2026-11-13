@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pipariya",
+  "createdAt": "2026-10-08T16:05:45.781Z",
+  "updatedAt": "2026-10-08T16:05:45.781Z",
+  "meta": {
+    "name": "Pipariya",
+    "nameIt": "Pipariya",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pipariya.geojson",
+      "sha256": "4e5a2f06bb98186a18e5f897ef7fac0ed450beffa7214a46682dbd77485a610d",
+      "size": 99619,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pipariya",
+    "name": "Pipariya",
+    "nameIt": "Pipariya",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.35188,
+      22.75732
+    ],
+    "zoom": 11.9,
+    "population": 55586,
+    "grid": "cities/pipariya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pipariya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pipariya",
+        "name": "Pipariya",
+        "nameIt": "Pipariya",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.35188,
+          22.75732
+        ],
+        "zoom": 11.9,
+        "population": 55586,
+        "cells": 86,
+        "layer": "cities/pipariya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.35188,
+            22.75732
+          ]
+        },
+        "properties": {
+          "id": "pipariya",
+          "name": "Pipariya",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 12.3,
+          "population": 55586
+        }
+      },
+      "summary": null
+    }
+  }
+}

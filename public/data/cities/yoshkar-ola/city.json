@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yoshkar-ola",
+  "createdAt": "2026-10-08T16:24:14.596Z",
+  "updatedAt": "2026-10-08T16:24:14.596Z",
+  "meta": {
+    "name": "Yoshkar-Ola",
+    "nameIt": "Yoshkar-Ola",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yoshkar-Ola.geojson",
+      "sha256": "94d6e749ac7be89d6a7ae2c946ba2d4be011e6d38915f9611605d0c8a6e00f8b",
+      "size": 499343,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yoshkar-ola",
+    "name": "Yoshkar-Ola",
+    "nameIt": "Yoshkar-Ola",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      47.88644,
+      56.63653
+    ],
+    "zoom": 10.4,
+    "population": 292362,
+    "grid": "cities/yoshkar-ola/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yoshkar-ola/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yoshkar-ola",
+        "name": "Yoshkar-Ola",
+        "nameIt": "Yoshkar-Ola",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          47.88644,
+          56.63653
+        ],
+        "zoom": 10.4,
+        "population": 292362,
+        "cells": 438,
+        "layer": "cities/yoshkar-ola/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            47.88644,
+            56.63653
+          ]
+        },
+        "properties": {
+          "id": "yoshkar-ola",
+          "name": "Yoshkar-Ola",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 9.7,
+          "population": 292362
+        }
+      },
+      "summary": null
+    }
+  }
+}

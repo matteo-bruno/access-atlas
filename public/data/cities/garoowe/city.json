@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "garoowe",
+  "createdAt": "2026-10-08T15:34:40.990Z",
+  "updatedAt": "2026-10-08T15:34:40.990Z",
+  "meta": {
+    "name": "Garoowe",
+    "nameIt": "Garoowe",
+    "region": "Somalia",
+    "regionIt": "Somalia",
+    "country": "SO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Garoowe.geojson",
+      "sha256": "075c29df62f360f7c4d668cd541197a7b08139457132d0b183126993016b2942",
+      "size": 175361,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "garoowe",
+    "name": "Garoowe",
+    "nameIt": "Garoowe",
+    "region": "Somalia",
+    "regionIt": "Somalia",
+    "country": "SO",
+    "center": [
+      48.48674,
+      8.40279
+    ],
+    "zoom": 11.6,
+    "population": 264264,
+    "grid": "cities/garoowe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 182
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/garoowe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "garoowe",
+        "name": "Garoowe",
+        "nameIt": "Garoowe",
+        "region": "Somalia",
+        "regionIt": "Somalia",
+        "country": "SO",
+        "center": [
+          48.48674,
+          8.40279
+        ],
+        "zoom": 11.6,
+        "population": 264264,
+        "cells": 152,
+        "layer": "cities/garoowe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 182
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.48674,
+            8.40279
+          ]
+        },
+        "properties": {
+          "id": "garoowe",
+          "name": "Garoowe",
+          "country": "SO",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 264264
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "numan",
+  "createdAt": "2026-10-08T16:02:18.778Z",
+  "updatedAt": "2026-10-08T16:02:18.778Z",
+  "meta": {
+    "name": "Numan",
+    "nameIt": "Numan",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Numan.geojson",
+      "sha256": "b52e253db9ff4ec94ccda7b08c9734b4545f933f8bd80d52f969feb366145752",
+      "size": 197948,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "numan",
+    "name": "Numan",
+    "nameIt": "Numan",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      12.03764,
+      9.45536
+    ],
+    "zoom": 11.4,
+    "population": 91107,
+    "grid": "cities/numan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/numan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "numan",
+        "name": "Numan",
+        "nameIt": "Numan",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          12.03764,
+          9.45536
+        ],
+        "zoom": 11.4,
+        "population": 91107,
+        "cells": 171,
+        "layer": "cities/numan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.03764,
+            9.45536
+          ]
+        },
+        "properties": {
+          "id": "numan",
+          "name": "Numan",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 91107
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nui-oi",
+  "createdAt": "2026-10-08T16:02:26.354Z",
+  "updatedAt": "2026-10-08T16:02:26.354Z",
+  "meta": {
+    "name": "Núi Đối",
+    "nameIt": "Núi Đối",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Núi Đối.geojson",
+      "sha256": "2c802a6af4201f736cecc0496f988d0a9589bf55bc181aed6e10a3733b10ff8c",
+      "size": 312991,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nui-oi",
+    "name": "Núi Đối",
+    "nameIt": "Núi Đối",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      106.65289,
+      20.75308
+    ],
+    "zoom": 11,
+    "population": 78375,
+    "grid": "cities/nui-oi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nui-oi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nui-oi",
+        "name": "Núi Đối",
+        "nameIt": "Núi Đối",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          106.65289,
+          20.75308
+        ],
+        "zoom": 11,
+        "population": 78375,
+        "cells": 268,
+        "layer": "cities/nui-oi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.65289,
+            20.75308
+          ]
+        },
+        "properties": {
+          "id": "nui-oi",
+          "name": "Núi Đối",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 78375
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bauru",
+  "createdAt": "2026-10-08T15:16:16.687Z",
+  "updatedAt": "2026-10-08T15:16:16.687Z",
+  "meta": {
+    "name": "Bauru",
+    "nameIt": "Bauru",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bauru.geojson",
+      "sha256": "a47bff1ced3f24a1d936dabfe84963b1ffa8875e4b5d1d5c1a887cefe98115db",
+      "size": 982120,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bauru",
+    "name": "Bauru",
+    "nameIt": "Bauru",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -49.07471,
+      -22.3207
+    ],
+    "zoom": 10.4,
+    "population": 360530,
+    "grid": "cities/bauru/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bauru/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bauru",
+        "name": "Bauru",
+        "nameIt": "Bauru",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -49.07471,
+          -22.3207
+        ],
+        "zoom": 10.4,
+        "population": 360530,
+        "cells": 841,
+        "layer": "cities/bauru/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.07471,
+            -22.3207
+          ]
+        },
+        "properties": {
+          "id": "bauru",
+          "name": "Bauru",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 19.3,
+          "population": 360530
+        }
+      },
+      "summary": null
+    }
+  }
+}

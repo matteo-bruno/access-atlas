@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "minqin",
+  "createdAt": "2026-10-08T15:57:17.658Z",
+  "updatedAt": "2026-10-08T15:57:17.658Z",
+  "meta": {
+    "name": "Minqin",
+    "nameIt": "Minqin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Minqin.geojson",
+      "sha256": "4fa527f9d120e97e46af203b843d4e4dad28d9e59cde38ef8caf34e894d589db",
+      "size": 108281,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "minqin",
+    "name": "Minqin",
+    "nameIt": "Minqin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      103.09434,
+      38.62437
+    ],
+    "zoom": 11.9,
+    "population": 69027,
+    "grid": "cities/minqin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/minqin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "minqin",
+        "name": "Minqin",
+        "nameIt": "Minqin",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          103.09434,
+          38.62437
+        ],
+        "zoom": 11.9,
+        "population": 69027,
+        "cells": 93,
+        "layer": "cities/minqin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.09434,
+            38.62437
+          ]
+        },
+        "properties": {
+          "id": "minqin",
+          "name": "Minqin",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 10.3,
+          "population": 69027
+        }
+      },
+      "summary": null
+    }
+  }
+}

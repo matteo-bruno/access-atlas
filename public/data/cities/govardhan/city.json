@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "govardhan",
+  "createdAt": "2026-10-08T15:35:51.679Z",
+  "updatedAt": "2026-10-08T15:35:51.679Z",
+  "meta": {
+    "name": "Govardhan",
+    "nameIt": "Govardhan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Govardhan.geojson",
+      "sha256": "9dc0f40ce78f48908deb1f263f52a66e1cff6f5bcce7a6cb3f45b7470eadabfc",
+      "size": 279534,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "govardhan",
+    "name": "Govardhan",
+    "nameIt": "Govardhan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.46672,
+      27.49695
+    ],
+    "zoom": 11.2,
+    "population": 157182,
+    "grid": "cities/govardhan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/govardhan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "govardhan",
+        "name": "Govardhan",
+        "nameIt": "Govardhan",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.46672,
+          27.49695
+        ],
+        "zoom": 11.2,
+        "population": 157182,
+        "cells": 241,
+        "layer": "cities/govardhan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.46672,
+            27.49695
+          ]
+        },
+        "properties": {
+          "id": "govardhan",
+          "name": "Govardhan",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.2,
+          "population": 157182
+        }
+      },
+      "summary": null
+    }
+  }
+}

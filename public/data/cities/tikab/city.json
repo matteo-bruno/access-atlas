@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tikab",
+  "createdAt": "2026-10-08T16:17:50.926Z",
+  "updatedAt": "2026-10-08T16:17:50.926Z",
+  "meta": {
+    "name": "Tikab",
+    "nameIt": "Tikab",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tikab.geojson",
+      "sha256": "2486e6d13953547e4e1889f23d36fad6d8c8586dd3b3d5788cc7d76895225328",
+      "size": 99625,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tikab",
+    "name": "Tikab",
+    "nameIt": "Tikab",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      47.11133,
+      36.40094
+    ],
+    "zoom": 12,
+    "population": 50531,
+    "grid": "cities/tikab/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tikab/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tikab",
+        "name": "Tikab",
+        "nameIt": "Tikab",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          47.11133,
+          36.40094
+        ],
+        "zoom": 12,
+        "population": 50531,
+        "cells": 86,
+        "layer": "cities/tikab/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            47.11133,
+            36.40094
+          ]
+        },
+        "properties": {
+          "id": "tikab",
+          "name": "Tikab",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 17,
+          "population": 50531
+        }
+      },
+      "summary": null
+    }
+  }
+}

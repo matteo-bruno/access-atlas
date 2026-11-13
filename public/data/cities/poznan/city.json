@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "poznan",
+  "createdAt": "2026-10-08T16:06:28.155Z",
+  "updatedAt": "2026-10-08T16:06:28.155Z",
+  "meta": {
+    "name": "Poznan",
+    "nameIt": "Poznan",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Poznan.geojson",
+      "sha256": "7ed139dd5b884e76194f148f93943577475ccf685d3089445a9c9db41a209d30",
+      "size": 2003571,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "poznan",
+    "name": "Poznan",
+    "nameIt": "Poznan",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      16.9088,
+      52.40398
+    ],
+    "zoom": 9.9,
+    "population": 522229,
+    "grid": "cities/poznan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/poznan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "poznan",
+        "name": "Poznan",
+        "nameIt": "Poznan",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          16.9088,
+          52.40398
+        ],
+        "zoom": 9.9,
+        "population": 522229,
+        "cells": 1753,
+        "layer": "cities/poznan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.9088,
+            52.40398
+          ]
+        },
+        "properties": {
+          "id": "poznan",
+          "name": "Poznan",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 7.9,
+          "population": 522229
+        }
+      },
+      "summary": null
+    }
+  }
+}

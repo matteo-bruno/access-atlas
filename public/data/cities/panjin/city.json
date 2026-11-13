@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "panjin",
+  "createdAt": "2026-10-08T16:04:06.509Z",
+  "updatedAt": "2026-10-08T16:04:06.509Z",
+  "meta": {
+    "name": "Panjin",
+    "nameIt": "Panjin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Panjin.geojson",
+      "sha256": "0a59cbd37af3b0cd568aa7cd18aef376d912678a072fbc8a4dd4e81237a47537",
+      "size": 1370109,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "panjin",
+    "name": "Panjin",
+    "nameIt": "Panjin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      122.07157,
+      41.12508
+    ],
+    "zoom": 10.4,
+    "population": 454372,
+    "grid": "cities/panjin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 164
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/panjin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "panjin",
+        "name": "Panjin",
+        "nameIt": "Panjin",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          122.07157,
+          41.12508
+        ],
+        "zoom": 10.4,
+        "population": 454372,
+        "cells": 1174,
+        "layer": "cities/panjin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 164
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            122.07157,
+            41.12508
+          ]
+        },
+        "properties": {
+          "id": "panjin",
+          "name": "Panjin",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 35.8,
+          "population": 454372
+        }
+      },
+      "summary": null
+    }
+  }
+}

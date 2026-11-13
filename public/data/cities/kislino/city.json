@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kislino",
+  "createdAt": "2026-10-08T15:47:19.732Z",
+  "updatedAt": "2026-10-08T15:47:19.732Z",
+  "meta": {
+    "name": "Kislino",
+    "nameIt": "Kislino",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kislino.geojson",
+      "sha256": "9827705744e1608b0c454199f57e0b45e1e13dd0c0c554c72e38771c836f0706",
+      "size": 290273,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kislino",
+    "name": "Kislino",
+    "nameIt": "Kislino",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      36.12622,
+      51.65894
+    ],
+    "zoom": 11.2,
+    "population": 80300,
+    "grid": "cities/kislino/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kislino/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kislino",
+        "name": "Kislino",
+        "nameIt": "Kislino",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          36.12622,
+          51.65894
+        ],
+        "zoom": 11.2,
+        "population": 80300,
+        "cells": 253,
+        "layer": "cities/kislino/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.12622,
+            51.65894
+          ]
+        },
+        "properties": {
+          "id": "kislino",
+          "name": "Kislino",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 19.4,
+          "population": 80300
+        }
+      },
+      "summary": null
+    }
+  }
+}

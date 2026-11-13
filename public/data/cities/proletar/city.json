@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "proletar",
+  "createdAt": "2026-10-08T16:06:36.995Z",
+  "updatedAt": "2026-10-08T16:06:36.995Z",
+  "meta": {
+    "name": "Proletar",
+    "nameIt": "Proletar",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Proletar.geojson",
+      "sha256": "b78f1496420c5585d1a1a2a94a16fa13d5f75b50d4f80b179ce8ccff347dbdbb",
+      "size": 228542,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "proletar",
+    "name": "Proletar",
+    "nameIt": "Proletar",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ",
+    "center": [
+      69.48479,
+      40.15776
+    ],
+    "zoom": 11.1,
+    "population": 87151,
+    "grid": "cities/proletar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/proletar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "proletar",
+        "name": "Proletar",
+        "nameIt": "Proletar",
+        "region": "Tajikistan",
+        "regionIt": "Tagikistan",
+        "country": "TJ",
+        "center": [
+          69.48479,
+          40.15776
+        ],
+        "zoom": 11.1,
+        "population": 87151,
+        "cells": 198,
+        "layer": "cities/proletar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.48479,
+            40.15776
+          ]
+        },
+        "properties": {
+          "id": "proletar",
+          "name": "Proletar",
+          "country": "TJ",
+          "isStudy": true,
+          "proximityMinutes": 24.8,
+          "population": 87151
+        }
+      },
+      "summary": null
+    }
+  }
+}

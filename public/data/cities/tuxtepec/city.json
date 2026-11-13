@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tuxtepec",
+  "createdAt": "2026-10-08T16:19:22.301Z",
+  "updatedAt": "2026-10-08T16:19:22.301Z",
+  "meta": {
+    "name": "Tuxtepec",
+    "nameIt": "Tuxtepec",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tuxtepec.geojson",
+      "sha256": "0b98feb76c045a7dc96d4a6bcf3709c7517c9f2cd54178871eb2e813991321e4",
+      "size": 246681,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tuxtepec",
+    "name": "Tuxtepec",
+    "nameIt": "Tuxtepec",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -96.13763,
+      18.08763
+    ],
+    "zoom": 10.9,
+    "population": 80356,
+    "grid": "cities/tuxtepec/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tuxtepec/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tuxtepec",
+        "name": "Tuxtepec",
+        "nameIt": "Tuxtepec",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -96.13763,
+          18.08763
+        ],
+        "zoom": 10.9,
+        "population": 80356,
+        "cells": 211,
+        "layer": "cities/tuxtepec/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -96.13763,
+            18.08763
+          ]
+        },
+        "properties": {
+          "id": "tuxtepec",
+          "name": "Tuxtepec",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 21.8,
+          "population": 80356
+        }
+      },
+      "summary": null
+    }
+  }
+}

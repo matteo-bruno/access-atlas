@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zalingei",
+  "createdAt": "2026-10-08T16:24:46.894Z",
+  "updatedAt": "2026-10-08T16:24:46.894Z",
+  "meta": {
+    "name": "Zalingei",
+    "nameIt": "Zalingei",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zalingei.geojson",
+      "sha256": "bce37128f8633d5ffac0e2412911d402be9528e7ce53e639798c2fa1e48891d3",
+      "size": 121284,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zalingei",
+    "name": "Zalingei",
+    "nameIt": "Zalingei",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      23.47132,
+      12.90885
+    ],
+    "zoom": 11.7,
+    "population": 129274,
+    "grid": "cities/zalingei/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zalingei/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zalingei",
+        "name": "Zalingei",
+        "nameIt": "Zalingei",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          23.47132,
+          12.90885
+        ],
+        "zoom": 11.7,
+        "population": 129274,
+        "cells": 104,
+        "layer": "cities/zalingei/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.47132,
+            12.90885
+          ]
+        },
+        "properties": {
+          "id": "zalingei",
+          "name": "Zalingei",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 129274
+        }
+      },
+      "summary": null
+    }
+  }
+}

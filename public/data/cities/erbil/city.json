@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "erbil",
+  "createdAt": "2026-10-08T15:32:21.881Z",
+  "updatedAt": "2026-10-08T15:32:21.881Z",
+  "meta": {
+    "name": "Erbil",
+    "nameIt": "Erbil",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Erbil.geojson",
+      "sha256": "b84f7cb150a67711c598d486be983514fcc1870351ccc2c6bc485668381ac2ee",
+      "size": 2427608,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "erbil",
+    "name": "Erbil",
+    "nameIt": "Erbil",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      44.03669,
+      36.18
+    ],
+    "zoom": 9.7,
+    "population": 1214158,
+    "grid": "cities/erbil/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/erbil/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "erbil",
+        "name": "Erbil",
+        "nameIt": "Erbil",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          44.03669,
+          36.18
+        ],
+        "zoom": 9.7,
+        "population": 1214158,
+        "cells": 2117,
+        "layer": "cities/erbil/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.03669,
+            36.18
+          ]
+        },
+        "properties": {
+          "id": "erbil",
+          "name": "Erbil",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 15.8,
+          "population": 1214158
+        }
+      },
+      "summary": null
+    }
+  }
+}

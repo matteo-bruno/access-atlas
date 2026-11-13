@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "irba",
+  "createdAt": "2026-10-08T15:41:00.074Z",
+  "updatedAt": "2026-10-08T15:41:00.074Z",
+  "meta": {
+    "name": "Irba",
+    "nameIt": "Irba",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Irba.geojson",
+      "sha256": "7aa6709b39ce6d1623636a5ef7df495539a7d332ea6a9af3d10f14871d5425fd",
+      "size": 249461,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "irba",
+    "name": "Irba",
+    "nameIt": "Irba",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      38.36679,
+      6.91309
+    ],
+    "zoom": 11.1,
+    "population": 63278,
+    "grid": "cities/irba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/irba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "irba",
+        "name": "Irba",
+        "nameIt": "Irba",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          38.36679,
+          6.91309
+        ],
+        "zoom": 11.1,
+        "population": 63278,
+        "cells": 216,
+        "layer": "cities/irba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.36679,
+            6.91309
+          ]
+        },
+        "properties": {
+          "id": "irba",
+          "name": "Irba",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 63278
+        }
+      },
+      "summary": null
+    }
+  }
+}

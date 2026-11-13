@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "balugaon",
+  "createdAt": "2026-10-08T15:14:18.801Z",
+  "updatedAt": "2026-10-08T15:14:18.801Z",
+  "meta": {
+    "name": "Balugaon",
+    "nameIt": "Balugaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Balugaon.geojson",
+      "sha256": "55c94aef13deb07b644928a3e7e0ab771bce1d174cdaa1424407c3cf18e8c33c",
+      "size": 149513,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "balugaon",
+    "name": "Balugaon",
+    "nameIt": "Balugaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.205,
+      19.75101
+    ],
+    "zoom": 11.5,
+    "population": 37964,
+    "grid": "cities/balugaon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/balugaon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "balugaon",
+        "name": "Balugaon",
+        "nameIt": "Balugaon",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.205,
+          19.75101
+        ],
+        "zoom": 11.5,
+        "population": 37964,
+        "cells": 129,
+        "layer": "cities/balugaon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.205,
+            19.75101
+          ]
+        },
+        "properties": {
+          "id": "balugaon",
+          "name": "Balugaon",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19.5,
+          "population": 37964
+        }
+      },
+      "summary": null
+    }
+  }
+}

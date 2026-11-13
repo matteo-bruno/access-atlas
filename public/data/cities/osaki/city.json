@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "osaki",
+  "createdAt": "2026-10-08T16:03:06.571Z",
+  "updatedAt": "2026-10-08T16:03:06.571Z",
+  "meta": {
+    "name": "Osaki",
+    "nameIt": "Osaki",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Osaki.geojson",
+      "sha256": "90b1311d269922862b14517254b98bc6b12e67a26ffc6624428f4bfd06f3e61d",
+      "size": 174294,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "osaki",
+    "name": "Osaki",
+    "nameIt": "Osaki",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      140.96049,
+      38.57587
+    ],
+    "zoom": 11.5,
+    "population": 54174,
+    "grid": "cities/osaki/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/osaki/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "osaki",
+        "name": "Osaki",
+        "nameIt": "Osaki",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          140.96049,
+          38.57587
+        ],
+        "zoom": 11.5,
+        "population": 54174,
+        "cells": 151,
+        "layer": "cities/osaki/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            140.96049,
+            38.57587
+          ]
+        },
+        "properties": {
+          "id": "osaki",
+          "name": "Osaki",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 9.3,
+          "population": 54174
+        }
+      },
+      "summary": null
+    }
+  }
+}

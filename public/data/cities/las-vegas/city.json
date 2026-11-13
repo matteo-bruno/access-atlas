@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "las-vegas",
+  "createdAt": "2026-10-08T15:50:18.584Z",
+  "updatedAt": "2026-10-08T15:50:18.584Z",
+  "meta": {
+    "name": "Las Vegas",
+    "nameIt": "Las Vegas",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Las Vegas.geojson",
+      "sha256": "5792b4001ebb2437ccfd8bc46a0ce7ded955af3af90d547bc74af81cdfb10fdc",
+      "size": 8423755,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "las-vegas",
+    "name": "Las Vegas",
+    "nameIt": "Las Vegas",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -115.15649,
+      36.14126
+    ],
+    "zoom": 8.6,
+    "population": 2210178,
+    "grid": "cities/las-vegas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/las-vegas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "las-vegas",
+        "name": "Las Vegas",
+        "nameIt": "Las Vegas",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -115.15649,
+          36.14126
+        ],
+        "zoom": 8.6,
+        "population": 2210178,
+        "cells": 7235,
+        "layer": "cities/las-vegas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -115.15649,
+            36.14126
+          ]
+        },
+        "properties": {
+          "id": "las-vegas",
+          "name": "Las Vegas",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 23.9,
+          "population": 2210178
+        }
+      },
+      "summary": null
+    }
+  }
+}

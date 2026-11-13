@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mankachar",
+  "createdAt": "2026-10-08T15:54:48.160Z",
+  "updatedAt": "2026-10-08T15:54:48.160Z",
+  "meta": {
+    "name": "Mankachar",
+    "nameIt": "Mankachar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mankachar.geojson",
+      "sha256": "51af95dc32a7fbc19573b4c83bc8b42fe497f42798015fc17f2615769fc3cf10",
+      "size": 147191,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mankachar",
+    "name": "Mankachar",
+    "nameIt": "Mankachar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      89.87323,
+      25.55261
+    ],
+    "zoom": 10.9,
+    "population": 29782,
+    "grid": "cities/mankachar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mankachar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mankachar",
+        "name": "Mankachar",
+        "nameIt": "Mankachar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          89.87323,
+          25.55261
+        ],
+        "zoom": 10.9,
+        "population": 29782,
+        "cells": 127,
+        "layer": "cities/mankachar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.87323,
+            25.55261
+          ]
+        },
+        "properties": {
+          "id": "mankachar",
+          "name": "Mankachar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 26.3,
+          "population": 29782
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "roi-et",
+  "createdAt": "2026-10-08T16:09:03.430Z",
+  "updatedAt": "2026-10-08T16:09:03.430Z",
+  "meta": {
+    "name": "Roi Et",
+    "nameIt": "Roi Et",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Roi Et.geojson",
+      "sha256": "7a25370e8b199e34637398efae9a23967cfa30c0cfeaf52f2a16317cd9ebdc5d",
+      "size": 229933,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "roi-et",
+    "name": "Roi Et",
+    "nameIt": "Roi Et",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      103.653,
+      16.05299
+    ],
+    "zoom": 11.4,
+    "population": 56629,
+    "grid": "cities/roi-et/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/roi-et/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "roi-et",
+        "name": "Roi Et",
+        "nameIt": "Roi Et",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          103.653,
+          16.05299
+        ],
+        "zoom": 11.4,
+        "population": 56629,
+        "cells": 197,
+        "layer": "cities/roi-et/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.653,
+            16.05299
+          ]
+        },
+        "properties": {
+          "id": "roi-et",
+          "name": "Roi Et",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 19.1,
+          "population": 56629
+        }
+      },
+      "summary": null
+    }
+  }
+}

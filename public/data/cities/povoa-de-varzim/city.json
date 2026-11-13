@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "povoa-de-varzim",
+  "createdAt": "2026-10-08T16:07:09.457Z",
+  "updatedAt": "2026-10-08T16:07:09.457Z",
+  "meta": {
+    "name": "Póvoa de Varzim",
+    "nameIt": "Póvoa de Varzim",
+    "region": "Portugal",
+    "regionIt": "Portogallo",
+    "country": "PT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Póvoa de Varzim.geojson",
+      "sha256": "5d416c5e3ffb011f9118f105d8b99990a234d39e7d57cad127c49cef97e11cac",
+      "size": 190838,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "povoa-de-varzim",
+    "name": "Póvoa de Varzim",
+    "nameIt": "Póvoa de Varzim",
+    "region": "Portugal",
+    "regionIt": "Portogallo",
+    "country": "PT",
+    "center": [
+      -8.7532,
+      41.37205
+    ],
+    "zoom": 11.3,
+    "population": 62926,
+    "grid": "cities/povoa-de-varzim/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/povoa-de-varzim/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "povoa-de-varzim",
+        "name": "Póvoa de Varzim",
+        "nameIt": "Póvoa de Varzim",
+        "region": "Portugal",
+        "regionIt": "Portogallo",
+        "country": "PT",
+        "center": [
+          -8.7532,
+          41.37205
+        ],
+        "zoom": 11.3,
+        "population": 62926,
+        "cells": 167,
+        "layer": "cities/povoa-de-varzim/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -8.7532,
+            41.37205
+          ]
+        },
+        "properties": {
+          "id": "povoa-de-varzim",
+          "name": "Póvoa de Varzim",
+          "country": "PT",
+          "isStudy": true,
+          "proximityMinutes": 8.4,
+          "population": 62926
+        }
+      },
+      "summary": null
+    }
+  }
+}

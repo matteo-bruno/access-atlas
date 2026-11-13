@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "los-reyes-de-salgado",
+  "createdAt": "2026-10-08T15:52:11.053Z",
+  "updatedAt": "2026-10-08T15:52:11.053Z",
+  "meta": {
+    "name": "Los Reyes de Salgado",
+    "nameIt": "Los Reyes de Salgado",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Los Reyes de Salgado.geojson",
+      "sha256": "8418b6b715482db72edfa38fd88e831a64c7d556f72bc24a76047c1cf31c00dc",
+      "size": 94304,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "los-reyes-de-salgado",
+    "name": "Los Reyes de Salgado",
+    "nameIt": "Los Reyes de Salgado",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -102.46954,
+      19.58937
+    ],
+    "zoom": 12,
+    "population": 43096,
+    "grid": "cities/los-reyes-de-salgado/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/los-reyes-de-salgado/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "los-reyes-de-salgado",
+        "name": "Los Reyes de Salgado",
+        "nameIt": "Los Reyes de Salgado",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -102.46954,
+          19.58937
+        ],
+        "zoom": 12,
+        "population": 43096,
+        "cells": 80,
+        "layer": "cities/los-reyes-de-salgado/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -102.46954,
+            19.58937
+          ]
+        },
+        "properties": {
+          "id": "los-reyes-de-salgado",
+          "name": "Los Reyes de Salgado",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 23.5,
+          "population": 43096
+        }
+      },
+      "summary": null
+    }
+  }
+}

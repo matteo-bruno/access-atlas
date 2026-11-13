@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "allada",
+  "createdAt": "2026-10-08T15:06:05.355Z",
+  "updatedAt": "2026-10-08T15:06:05.355Z",
+  "meta": {
+    "name": "Allada",
+    "nameIt": "Allada",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Allada.geojson",
+      "sha256": "1f980714535b282b6bf7c10efb6bed0c521f89e7afbfce9be93e972565bfc028",
+      "size": 168535,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "allada",
+    "name": "Allada",
+    "nameIt": "Allada",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ",
+    "center": [
+      2.14888,
+      6.66647
+    ],
+    "zoom": 11.6,
+    "population": 42787,
+    "grid": "cities/allada/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/allada/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "allada",
+        "name": "Allada",
+        "nameIt": "Allada",
+        "region": "Benin",
+        "regionIt": "Benin",
+        "country": "BJ",
+        "center": [
+          2.14888,
+          6.66647
+        ],
+        "zoom": 11.6,
+        "population": 42787,
+        "cells": 146,
+        "layer": "cities/allada/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.14888,
+            6.66647
+          ]
+        },
+        "properties": {
+          "id": "allada",
+          "name": "Allada",
+          "country": "BJ",
+          "isStudy": true,
+          "proximityMinutes": 13.7,
+          "population": 42787
+        }
+      },
+      "summary": null
+    }
+  }
+}

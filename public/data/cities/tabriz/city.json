@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tabriz",
+  "createdAt": "2026-10-08T16:15:50.485Z",
+  "updatedAt": "2026-10-08T16:15:50.485Z",
+  "meta": {
+    "name": "Tabriz",
+    "nameIt": "Tabriz",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tabriz.geojson",
+      "sha256": "f29be14554c8c74acfaf90c16e9d8fc4349807c8506a28bcb192cdfafb864416",
+      "size": 1792222,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tabriz",
+    "name": "Tabriz",
+    "nameIt": "Tabriz",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      46.28635,
+      38.06367
+    ],
+    "zoom": 9.3,
+    "population": 1540032,
+    "grid": "cities/tabriz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tabriz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tabriz",
+        "name": "Tabriz",
+        "nameIt": "Tabriz",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          46.28635,
+          38.06367
+        ],
+        "zoom": 9.3,
+        "population": 1540032,
+        "cells": 1561,
+        "layer": "cities/tabriz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            46.28635,
+            38.06367
+          ]
+        },
+        "properties": {
+          "id": "tabriz",
+          "name": "Tabriz",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 18.3,
+          "population": 1540032
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sinjai",
+  "createdAt": "2026-10-08T16:13:52.826Z",
+  "updatedAt": "2026-10-08T16:13:52.826Z",
+  "meta": {
+    "name": "Sinjai",
+    "nameIt": "Sinjai",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sinjai.geojson",
+      "sha256": "26c04d796a645e32c60532a036acee39e51a2227de60a83d9660eb9202f8536d",
+      "size": 209627,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sinjai",
+    "name": "Sinjai",
+    "nameIt": "Sinjai",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      120.25646,
+      -5.121
+    ],
+    "zoom": 11.7,
+    "population": 48768,
+    "grid": "cities/sinjai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sinjai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sinjai",
+        "name": "Sinjai",
+        "nameIt": "Sinjai",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          120.25646,
+          -5.121
+        ],
+        "zoom": 11.7,
+        "population": 48768,
+        "cells": 179,
+        "layer": "cities/sinjai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.25646,
+            -5.121
+          ]
+        },
+        "properties": {
+          "id": "sinjai",
+          "name": "Sinjai",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 48768
+        }
+      },
+      "summary": null
+    }
+  }
+}

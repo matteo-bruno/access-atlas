@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "po-lati",
+  "createdAt": "2026-10-08T16:05:56.803Z",
+  "updatedAt": "2026-10-08T16:05:56.803Z",
+  "meta": {
+    "name": "Po'lati",
+    "nameIt": "Po'lati",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Po'lati.geojson",
+      "sha256": "b45300c6f9d688568f648cc5771782ef7f7b2024578896715d0e80d9e863c4ce",
+      "size": 217235,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "po-lati",
+    "name": "Po'lati",
+    "nameIt": "Po'lati",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      65.71921,
+      39.03961
+    ],
+    "zoom": 11.4,
+    "population": 29313,
+    "grid": "cities/po-lati/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/po-lati/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "po-lati",
+        "name": "Po'lati",
+        "nameIt": "Po'lati",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          65.71921,
+          39.03961
+        ],
+        "zoom": 11.4,
+        "population": 29313,
+        "cells": 188,
+        "layer": "cities/po-lati/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            65.71921,
+            39.03961
+          ]
+        },
+        "properties": {
+          "id": "po-lati",
+          "name": "Po'lati",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 29313
+        }
+      },
+      "summary": null
+    }
+  }
+}

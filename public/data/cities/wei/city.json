@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wei",
+  "createdAt": "2026-10-08T16:21:28.474Z",
+  "updatedAt": "2026-10-08T16:21:28.474Z",
+  "meta": {
+    "name": "Wei",
+    "nameIt": "Wei",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wei.geojson",
+      "sha256": "a42586d2cc6d25b3e64dfb2b311359cb844786bf8311b56947561cb050544549",
+      "size": 413843,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wei",
+    "name": "Wei",
+    "nameIt": "Wei",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.92829,
+      36.35553
+    ],
+    "zoom": 11.2,
+    "population": 174685,
+    "grid": "cities/wei/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wei/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wei",
+        "name": "Wei",
+        "nameIt": "Wei",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.92829,
+          36.35553
+        ],
+        "zoom": 11.2,
+        "population": 174685,
+        "cells": 355,
+        "layer": "cities/wei/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.92829,
+            36.35553
+          ]
+        },
+        "properties": {
+          "id": "wei",
+          "name": "Wei",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 174685
+        }
+      },
+      "summary": null
+    }
+  }
+}

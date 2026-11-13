@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baitu",
+  "createdAt": "2026-10-08T15:13:37.921Z",
+  "updatedAt": "2026-10-08T15:13:37.921Z",
+  "meta": {
+    "name": "Baitu",
+    "nameIt": "Baitu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baitu.geojson",
+      "sha256": "3da282a5ed17714e7f8b83eaf32b18b93e3667d810b0722d26ee1c96723fbf9a",
+      "size": 192745,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baitu",
+    "name": "Baitu",
+    "nameIt": "Baitu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.59142,
+      22.98551
+    ],
+    "zoom": 11.4,
+    "population": 56173,
+    "grid": "cities/baitu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baitu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baitu",
+        "name": "Baitu",
+        "nameIt": "Baitu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.59142,
+          22.98551
+        ],
+        "zoom": 11.4,
+        "population": 56173,
+        "cells": 165,
+        "layer": "cities/baitu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.59142,
+            22.98551
+          ]
+        },
+        "properties": {
+          "id": "baitu",
+          "name": "Baitu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 21.8,
+          "population": 56173
+        }
+      },
+      "summary": null
+    }
+  }
+}

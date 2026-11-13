@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "p-ock",
+  "createdAt": "2026-10-08T16:07:09.779Z",
+  "updatedAt": "2026-10-08T16:07:09.779Z",
+  "meta": {
+    "name": "Płock",
+    "nameIt": "Płock",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Płock.geojson",
+      "sha256": "be7d7b4b9179626a505c266cd1ac44323f838d09868be29b7254a5f6e58eb75e",
+      "size": 263875,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "p-ock",
+    "name": "Płock",
+    "nameIt": "Płock",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      19.71754,
+      52.54433
+    ],
+    "zoom": 11.2,
+    "population": 69543,
+    "grid": "cities/p-ock/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/p-ock/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "p-ock",
+        "name": "Płock",
+        "nameIt": "Płock",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          19.71754,
+          52.54433
+        ],
+        "zoom": 11.2,
+        "population": 69543,
+        "cells": 231,
+        "layer": "cities/p-ock/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.71754,
+            52.54433
+          ]
+        },
+        "properties": {
+          "id": "p-ock",
+          "name": "Płock",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 9.2,
+          "population": 69543
+        }
+      },
+      "summary": null
+    }
+  }
+}

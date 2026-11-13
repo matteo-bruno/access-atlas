@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sungai-penuh",
+  "createdAt": "2026-10-08T16:15:15.415Z",
+  "updatedAt": "2026-10-08T16:15:15.415Z",
+  "meta": {
+    "name": "Sungai Penuh",
+    "nameIt": "Sungai Penuh",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sungai Penuh.geojson",
+      "sha256": "701a1414ea479d36363c0232536af8c8a30d27577c421b664d6b88dbb425790e",
+      "size": 58815,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sungai-penuh",
+    "name": "Sungai Penuh",
+    "nameIt": "Sungai Penuh",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      101.3949,
+      -2.06279
+    ],
+    "zoom": 12,
+    "population": 38977,
+    "grid": "cities/sungai-penuh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sungai-penuh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sungai-penuh",
+        "name": "Sungai Penuh",
+        "nameIt": "Sungai Penuh",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          101.3949,
+          -2.06279
+        ],
+        "zoom": 12,
+        "population": 38977,
+        "cells": 50,
+        "layer": "cities/sungai-penuh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            101.3949,
+            -2.06279
+          ]
+        },
+        "properties": {
+          "id": "sungai-penuh",
+          "name": "Sungai Penuh",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 38977
+        }
+      },
+      "summary": null
+    }
+  }
+}

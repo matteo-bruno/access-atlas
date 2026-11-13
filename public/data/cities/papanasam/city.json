@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "papanasam",
+  "createdAt": "2026-10-08T16:04:11.542Z",
+  "updatedAt": "2026-10-08T16:04:11.542Z",
+  "meta": {
+    "name": "Papanasam",
+    "nameIt": "Papanasam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Papanasam.geojson",
+      "sha256": "68898e60b78303046b7de99b56e27197f475321b2ad51e9d0f2cba3c6bec60e3",
+      "size": 100902,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "papanasam",
+    "name": "Papanasam",
+    "nameIt": "Papanasam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.25664,
+      10.92318
+    ],
+    "zoom": 11.4,
+    "population": 24848,
+    "grid": "cities/papanasam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/papanasam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "papanasam",
+        "name": "Papanasam",
+        "nameIt": "Papanasam",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.25664,
+          10.92318
+        ],
+        "zoom": 11.4,
+        "population": 24848,
+        "cells": 87,
+        "layer": "cities/papanasam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.25664,
+            10.92318
+          ]
+        },
+        "properties": {
+          "id": "papanasam",
+          "name": "Papanasam",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 24848
+        }
+      },
+      "summary": null
+    }
+  }
+}

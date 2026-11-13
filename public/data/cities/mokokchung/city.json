@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mokokchung",
+  "createdAt": "2026-10-08T15:57:52.234Z",
+  "updatedAt": "2026-10-08T15:57:52.234Z",
+  "meta": {
+    "name": "Mokokchung",
+    "nameIt": "Mokokchung",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mokokchung.geojson",
+      "sha256": "37edcf42edc4f1fea5c25317799482f4e6d993b17a08b004144c9ff3cb94d5c1",
+      "size": 83409,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mokokchung",
+    "name": "Mokokchung",
+    "nameIt": "Mokokchung",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      94.51764,
+      26.32544
+    ],
+    "zoom": 11.9,
+    "population": 41149,
+    "grid": "cities/mokokchung/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mokokchung/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mokokchung",
+        "name": "Mokokchung",
+        "nameIt": "Mokokchung",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          94.51764,
+          26.32544
+        ],
+        "zoom": 11.9,
+        "population": 41149,
+        "cells": 72,
+        "layer": "cities/mokokchung/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            94.51764,
+            26.32544
+          ]
+        },
+        "properties": {
+          "id": "mokokchung",
+          "name": "Mokokchung",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 14.6,
+          "population": 41149
+        }
+      },
+      "summary": null
+    }
+  }
+}

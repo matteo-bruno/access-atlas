@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "petaluma",
+  "createdAt": "2026-10-08T16:05:07.545Z",
+  "updatedAt": "2026-10-08T16:05:07.545Z",
+  "meta": {
+    "name": "Petaluma",
+    "nameIt": "Petaluma",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Petaluma.geojson",
+      "sha256": "d81d02904dc602c2bee50f1e513b8fa69070443ed702f3bbc788f505a4e9eec1",
+      "size": 266017,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "petaluma",
+    "name": "Petaluma",
+    "nameIt": "Petaluma",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -122.62764,
+      38.24708
+    ],
+    "zoom": 11.2,
+    "population": 53026,
+    "grid": "cities/petaluma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/petaluma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "petaluma",
+        "name": "Petaluma",
+        "nameIt": "Petaluma",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -122.62764,
+          38.24708
+        ],
+        "zoom": 11.2,
+        "population": 53026,
+        "cells": 228,
+        "layer": "cities/petaluma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.62764,
+            38.24708
+          ]
+        },
+        "properties": {
+          "id": "petaluma",
+          "name": "Petaluma",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 17.4,
+          "population": 53026
+        }
+      },
+      "summary": null
+    }
+  }
+}

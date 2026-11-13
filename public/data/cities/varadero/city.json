@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "varadero",
+  "createdAt": "2026-10-08T16:20:28.686Z",
+  "updatedAt": "2026-10-08T16:20:28.686Z",
+  "meta": {
+    "name": "Varadero",
+    "nameIt": "Varadero",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Varadero.geojson",
+      "sha256": "bff5c1aa637088743090e2e15810b054271457be980bc62ad6fb43361a42c22f",
+      "size": 374623,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "varadero",
+    "name": "Varadero",
+    "nameIt": "Varadero",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU",
+    "center": [
+      -81.28622,
+      23.11785
+    ],
+    "zoom": 11,
+    "population": 42402,
+    "grid": "cities/varadero/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/varadero/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "varadero",
+        "name": "Varadero",
+        "nameIt": "Varadero",
+        "region": "Cuba",
+        "regionIt": "Cuba",
+        "country": "CU",
+        "center": [
+          -81.28622,
+          23.11785
+        ],
+        "zoom": 11,
+        "population": 42402,
+        "cells": 323,
+        "layer": "cities/varadero/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.28622,
+            23.11785
+          ]
+        },
+        "properties": {
+          "id": "varadero",
+          "name": "Varadero",
+          "country": "CU",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 42402
+        }
+      },
+      "summary": null
+    }
+  }
+}

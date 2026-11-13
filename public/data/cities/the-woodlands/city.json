@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "the-woodlands",
+  "createdAt": "2026-10-08T16:17:33.730Z",
+  "updatedAt": "2026-10-08T16:17:33.730Z",
+  "meta": {
+    "name": "The Woodlands",
+    "nameIt": "The Woodlands",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/The Woodlands.geojson",
+      "sha256": "c8ce5f31b35c4032b5a35358f50124d15a7aca0c7ace8dd1758649ceceb51778",
+      "size": 1271765,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "the-woodlands",
+    "name": "The Woodlands",
+    "nameIt": "The Woodlands",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -95.47836,
+      30.16213
+    ],
+    "zoom": 9.7,
+    "population": 156592,
+    "grid": "cities/the-woodlands/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/the-woodlands/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "the-woodlands",
+        "name": "The Woodlands",
+        "nameIt": "The Woodlands",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -95.47836,
+          30.16213
+        ],
+        "zoom": 9.7,
+        "population": 156592,
+        "cells": 1095,
+        "layer": "cities/the-woodlands/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -95.47836,
+            30.16213
+          ]
+        },
+        "properties": {
+          "id": "the-woodlands",
+          "name": "The Woodlands",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 35.8,
+          "population": 156592
+        }
+      },
+      "summary": null
+    }
+  }
+}

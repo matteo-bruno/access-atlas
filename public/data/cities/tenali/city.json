@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tenali",
+  "createdAt": "2026-10-08T16:17:15.702Z",
+  "updatedAt": "2026-10-08T16:17:15.702Z",
+  "meta": {
+    "name": "Tenali",
+    "nameIt": "Tenali",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tenali.geojson",
+      "sha256": "0fe80d70d68d3a3a39f1610b5c10f5bd19553dd3c5672bfd8643f195beb5999c",
+      "size": 251044,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tenali",
+    "name": "Tenali",
+    "nameIt": "Tenali",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.64429,
+      16.23935
+    ],
+    "zoom": 11.1,
+    "population": 163376,
+    "grid": "cities/tenali/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tenali/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tenali",
+        "name": "Tenali",
+        "nameIt": "Tenali",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.64429,
+          16.23935
+        ],
+        "zoom": 11.1,
+        "population": 163376,
+        "cells": 217,
+        "layer": "cities/tenali/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.64429,
+            16.23935
+          ]
+        },
+        "properties": {
+          "id": "tenali",
+          "name": "Tenali",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18.4,
+          "population": 163376
+        }
+      },
+      "summary": null
+    }
+  }
+}

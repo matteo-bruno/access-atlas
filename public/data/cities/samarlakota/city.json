@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "samarlakota",
+  "createdAt": "2026-10-08T16:10:16.299Z",
+  "updatedAt": "2026-10-08T16:10:16.299Z",
+  "meta": {
+    "name": "Samarlakota",
+    "nameIt": "Samarlakota",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Samarlakota.geojson",
+      "sha256": "80239de4c6e4889b54ee4e9f3b3a9b6fad8ad3e4353a7e50d32e10702b76aab3",
+      "size": 159846,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "samarlakota",
+    "name": "Samarlakota",
+    "nameIt": "Samarlakota",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      82.1594,
+      17.04649
+    ],
+    "zoom": 11.4,
+    "population": 81583,
+    "grid": "cities/samarlakota/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/samarlakota/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "samarlakota",
+        "name": "Samarlakota",
+        "nameIt": "Samarlakota",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          82.1594,
+          17.04649
+        ],
+        "zoom": 11.4,
+        "population": 81583,
+        "cells": 138,
+        "layer": "cities/samarlakota/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            82.1594,
+            17.04649
+          ]
+        },
+        "properties": {
+          "id": "samarlakota",
+          "name": "Samarlakota",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 81583
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "st-louis",
+  "createdAt": "2026-10-08T16:14:46.000Z",
+  "updatedAt": "2026-10-08T16:14:46.000Z",
+  "meta": {
+    "name": "St. Louis",
+    "nameIt": "St. Louis",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/St. Louis.geojson",
+      "sha256": "d5d22a5da47651aae8407a1fb5cfe3c6156b14e7350fbb93e5ec58ae799e6f67",
+      "size": 4850892,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "st-louis",
+    "name": "St. Louis",
+    "nameIt": "St. Louis",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -90.30336,
+      38.6594
+    ],
+    "zoom": 8.9,
+    "population": 733734,
+    "grid": "cities/st-louis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/st-louis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "st-louis",
+        "name": "St. Louis",
+        "nameIt": "St. Louis",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -90.30336,
+          38.6594
+        ],
+        "zoom": 8.9,
+        "population": 733734,
+        "cells": 4208,
+        "layer": "cities/st-louis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -90.30336,
+            38.6594
+          ]
+        },
+        "properties": {
+          "id": "st-louis",
+          "name": "St. Louis",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 19.4,
+          "population": 733734
+        }
+      },
+      "summary": null
+    }
+  }
+}

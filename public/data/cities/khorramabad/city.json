@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khorramabad",
+  "createdAt": "2026-10-08T15:46:49.780Z",
+  "updatedAt": "2026-10-08T15:46:49.780Z",
+  "meta": {
+    "name": "Khorramabad",
+    "nameIt": "Khorramabad",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khorramabad.geojson",
+      "sha256": "44758923e7d102ba5aca37986bd26d1eaf8c065d465a16cf52fd0d09c9469b1e",
+      "size": 588029,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khorramabad",
+    "name": "Khorramabad",
+    "nameIt": "Khorramabad",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      48.34952,
+      33.48461
+    ],
+    "zoom": 10.3,
+    "population": 388334,
+    "grid": "cities/khorramabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khorramabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khorramabad",
+        "name": "Khorramabad",
+        "nameIt": "Khorramabad",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          48.34952,
+          33.48461
+        ],
+        "zoom": 10.3,
+        "population": 388334,
+        "cells": 511,
+        "layer": "cities/khorramabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.34952,
+            33.48461
+          ]
+        },
+        "properties": {
+          "id": "khorramabad",
+          "name": "Khorramabad",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 20.7,
+          "population": 388334
+        }
+      },
+      "summary": null
+    }
+  }
+}

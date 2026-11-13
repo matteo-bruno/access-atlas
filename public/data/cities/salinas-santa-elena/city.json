@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "salinas-santa-elena",
+  "createdAt": "2026-10-08T16:10:08.262Z",
+  "updatedAt": "2026-10-08T16:10:08.262Z",
+  "meta": {
+    "name": "Salinas [Santa Elena]",
+    "nameIt": "Salinas [Santa Elena]",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Salinas [Santa Elena].geojson",
+      "sha256": "6af7295aef97b841a3ff564f86c2b1aae58a62ddfc62778cfd1f4e62845793fb",
+      "size": 568186,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "salinas-santa-elena",
+    "name": "Salinas [Santa Elena]",
+    "nameIt": "Salinas [Santa Elena]",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC",
+    "center": [
+      -80.90646,
+      -2.22942
+    ],
+    "zoom": 10.1,
+    "population": 231002,
+    "grid": "cities/salinas-santa-elena/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/salinas-santa-elena/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "salinas-santa-elena",
+        "name": "Salinas [Santa Elena]",
+        "nameIt": "Salinas [Santa Elena]",
+        "region": "Ecuador",
+        "regionIt": "Ecuador",
+        "country": "EC",
+        "center": [
+          -80.90646,
+          -2.22942
+        ],
+        "zoom": 10.1,
+        "population": 231002,
+        "cells": 485,
+        "layer": "cities/salinas-santa-elena/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.90646,
+            -2.22942
+          ]
+        },
+        "properties": {
+          "id": "salinas-santa-elena",
+          "name": "Salinas [Santa Elena]",
+          "country": "EC",
+          "isStudy": true,
+          "proximityMinutes": 29.1,
+          "population": 231002
+        }
+      },
+      "summary": null
+    }
+  }
+}

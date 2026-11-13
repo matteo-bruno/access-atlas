@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mecheria",
+  "createdAt": "2026-10-08T15:56:09.035Z",
+  "updatedAt": "2026-10-08T15:56:09.035Z",
+  "meta": {
+    "name": "Mecheria",
+    "nameIt": "Mecheria",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mecheria.geojson",
+      "sha256": "20ef68fe52775eff4898e745fd87198419b1145067ae1bcdd13ce13ba684c6f6",
+      "size": 136311,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mecheria",
+    "name": "Mecheria",
+    "nameIt": "Mecheria",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      -0.27567,
+      33.54565
+    ],
+    "zoom": 11.7,
+    "population": 78988,
+    "grid": "cities/mecheria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mecheria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mecheria",
+        "name": "Mecheria",
+        "nameIt": "Mecheria",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          -0.27567,
+          33.54565
+        ],
+        "zoom": 11.7,
+        "population": 78988,
+        "cells": 116,
+        "layer": "cities/mecheria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.27567,
+            33.54565
+          ]
+        },
+        "properties": {
+          "id": "mecheria",
+          "name": "Mecheria",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 78988
+        }
+      },
+      "summary": null
+    }
+  }
+}

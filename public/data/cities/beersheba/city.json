@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "beersheba",
+  "createdAt": "2026-10-08T15:16:37.947Z",
+  "updatedAt": "2026-10-08T15:16:37.947Z",
+  "meta": {
+    "name": "Beersheba",
+    "nameIt": "Beersheba",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Beersheba.geojson",
+      "sha256": "a80c9260509c086c35bc73f513ae71674f9b247a102fbdcb092767e32957e100",
+      "size": 323853,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "beersheba",
+    "name": "Beersheba",
+    "nameIt": "Beersheba",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL",
+    "center": [
+      34.7832,
+      31.2557
+    ],
+    "zoom": 11.2,
+    "population": 191120,
+    "grid": "cities/beersheba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/beersheba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "beersheba",
+        "name": "Beersheba",
+        "nameIt": "Beersheba",
+        "region": "Israel",
+        "regionIt": "Israele",
+        "country": "IL",
+        "center": [
+          34.7832,
+          31.2557
+        ],
+        "zoom": 11.2,
+        "population": 191120,
+        "cells": 283,
+        "layer": "cities/beersheba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.7832,
+            31.2557
+          ]
+        },
+        "properties": {
+          "id": "beersheba",
+          "name": "Beersheba",
+          "country": "IL",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 191120
+        }
+      },
+      "summary": null
+    }
+  }
+}

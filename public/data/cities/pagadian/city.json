@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pagadian",
+  "createdAt": "2026-10-08T16:03:36.220Z",
+  "updatedAt": "2026-10-08T16:03:36.220Z",
+  "meta": {
+    "name": "Pagadian",
+    "nameIt": "Pagadian",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pagadian.geojson",
+      "sha256": "215efc64713508726220abbbbafd92557053196c6f6b2048d59a66e607186b05",
+      "size": 362660,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pagadian",
+    "name": "Pagadian",
+    "nameIt": "Pagadian",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      123.43643,
+      7.82735
+    ],
+    "zoom": 10.9,
+    "population": 156180,
+    "grid": "cities/pagadian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pagadian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pagadian",
+        "name": "Pagadian",
+        "nameIt": "Pagadian",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          123.43643,
+          7.82735
+        ],
+        "zoom": 10.9,
+        "population": 156180,
+        "cells": 313,
+        "layer": "cities/pagadian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.43643,
+            7.82735
+          ]
+        },
+        "properties": {
+          "id": "pagadian",
+          "name": "Pagadian",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 156180
+        }
+      },
+      "summary": null
+    }
+  }
+}

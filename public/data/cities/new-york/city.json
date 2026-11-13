@@ -3,7 +3,7 @@
   "version": 1,
   "id": "new-york",
   "createdAt": "2026-08-28T13:51:44.000Z",
-  "updatedAt": "2026-10-08T14:05:35.649Z",
+  "updatedAt": "2026-10-19T17:03:57.824Z",
   "meta": {
     "name": "New York",
     "nameIt": "New York",
@@ -20,30 +20,128 @@
     "regionIt": "Stati Uniti",
     "country": "US",
     "center": [
-      -73.92293,
-      40.72503
+      -73.94733,
+      40.73785
     ],
     "zoom": 8.5,
-    "population": 8038108,
+    "population": 14057822,
     "grid": "cities/new-york/grid.json.gz",
     "cell": {
       "h3Resolution": 9,
       "cellRadiusM": 202
     },
     "layers": [
+      "fifteen",
+      "citychrone",
       "cardep",
       "pov"
     ],
     "layerData": {
+      "fifteen": "cities/new-york/fifteen.json.gz",
+      "citychrone": "cities/new-york/citychrone.json.gz",
       "cardep": "cities/new-york/cardep.json.gz",
       "pov": "cities/new-york/pov.json.gz"
     },
     "cartogramSources": {
+      "fifteen": "derived",
+      "citychrone": "derived",
       "cardep": "derived",
       "pov": "derived"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 11520,
+      "times": "cities/new-york/citychrone/times{hh}.bin"
     }
   },
   "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "new-york",
+        "name": "New York",
+        "nameIt": "New York",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -73.94615,
+          40.73675
+        ],
+        "zoom": 8.5,
+        "population": 14692172,
+        "cells": 28588,
+        "layer": "cities/new-york/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.94615,
+            40.73675
+          ]
+        },
+        "properties": {
+          "id": "new-york",
+          "name": "New York",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 14692172
+        }
+      },
+      "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "new-york",
+        "name": "New York",
+        "nameIt": "New York",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -73.92293,
+          40.72503
+        ],
+        "zoom": 8.5,
+        "population": 8038108,
+        "cells": 11520,
+        "layer": "cities/new-york/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 11520,
+          "times": "cities/new-york/citychrone/times{hh}.bin"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.92293,
+            40.72503
+          ]
+        },
+        "properties": {
+          "id": "new-york",
+          "name": "New York",
+          "country": "US",
+          "isStudy": true,
+          "velocityScore": 6.13,
+          "population": 8038108
+        }
+      },
+      "summary": null
+    },
     "cardep": {
       "row": {
         "id": "new-york",

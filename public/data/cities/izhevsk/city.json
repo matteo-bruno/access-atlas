@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "izhevsk",
+  "createdAt": "2026-10-08T15:41:32.189Z",
+  "updatedAt": "2026-10-08T15:41:32.189Z",
+  "meta": {
+    "name": "Izhevsk",
+    "nameIt": "Izhevsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Izhevsk.geojson",
+      "sha256": "0fc8294d1365c28bfc6bec5231f23d23753c70476ac90cdd63e4039273f78b45",
+      "size": 1084047,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "izhevsk",
+    "name": "Izhevsk",
+    "nameIt": "Izhevsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      53.21664,
+      56.84708
+    ],
+    "zoom": 10.2,
+    "population": 549604,
+    "grid": "cities/izhevsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/izhevsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "izhevsk",
+        "name": "Izhevsk",
+        "nameIt": "Izhevsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          53.21664,
+          56.84708
+        ],
+        "zoom": 10.2,
+        "population": 549604,
+        "cells": 950,
+        "layer": "cities/izhevsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            53.21664,
+            56.84708
+          ]
+        },
+        "properties": {
+          "id": "izhevsk",
+          "name": "Izhevsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 10.4,
+          "population": 549604
+        }
+      },
+      "summary": null
+    }
+  }
+}

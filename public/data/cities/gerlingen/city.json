@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gerlingen",
+  "createdAt": "2026-10-08T15:35:02.138Z",
+  "updatedAt": "2026-10-08T15:35:02.138Z",
+  "meta": {
+    "name": "Gerlingen",
+    "nameIt": "Gerlingen",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gerlingen.geojson",
+      "sha256": "5027100e454e27992e1ca00d6091cd67b748c7eccb7894a032a34193f61b0551",
+      "size": 182377,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gerlingen",
+    "name": "Gerlingen",
+    "nameIt": "Gerlingen",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      9.09794,
+      48.81174
+    ],
+    "zoom": 11.5,
+    "population": 57102,
+    "grid": "cities/gerlingen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gerlingen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gerlingen",
+        "name": "Gerlingen",
+        "nameIt": "Gerlingen",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.09794,
+          48.81174
+        ],
+        "zoom": 11.5,
+        "population": 57102,
+        "cells": 161,
+        "layer": "cities/gerlingen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.09794,
+            48.81174
+          ]
+        },
+        "properties": {
+          "id": "gerlingen",
+          "name": "Gerlingen",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 57102
+        }
+      },
+      "summary": null
+    }
+  }
+}

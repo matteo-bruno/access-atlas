@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "salaiya",
+  "createdAt": "2026-10-08T16:10:01.669Z",
+  "updatedAt": "2026-10-08T16:10:01.669Z",
+  "meta": {
+    "name": "Salaiya",
+    "nameIt": "Salaiya",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Salaiya.geojson",
+      "sha256": "c3e496cfa894eae2593980947eb909894653008d9fa50c6ef0305fdc4c6459ef",
+      "size": 119300,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "salaiya",
+    "name": "Salaiya",
+    "nameIt": "Salaiya",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.12554,
+      22.12497
+    ],
+    "zoom": 11.1,
+    "population": 28085,
+    "grid": "cities/salaiya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/salaiya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "salaiya",
+        "name": "Salaiya",
+        "nameIt": "Salaiya",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.12554,
+          22.12497
+        ],
+        "zoom": 11.1,
+        "population": 28085,
+        "cells": 103,
+        "layer": "cities/salaiya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.12554,
+            22.12497
+          ]
+        },
+        "properties": {
+          "id": "salaiya",
+          "name": "Salaiya",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 28085
+        }
+      },
+      "summary": null
+    }
+  }
+}

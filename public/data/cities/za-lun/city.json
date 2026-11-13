@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "za-lun",
+  "createdAt": "2026-10-08T16:24:39.631Z",
+  "updatedAt": "2026-10-08T16:24:39.631Z",
+  "meta": {
+    "name": "Za Lun",
+    "nameIt": "Za Lun",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Za Lun.geojson",
+      "sha256": "deca955e75a211aef1ccb08a3a30dd72cfe40de0417d566962080069d5b70952",
+      "size": 61439,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "za-lun",
+    "name": "Za Lun",
+    "nameIt": "Za Lun",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      95.55287,
+      17.47385
+    ],
+    "zoom": 12,
+    "population": 41166,
+    "grid": "cities/za-lun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/za-lun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "za-lun",
+        "name": "Za Lun",
+        "nameIt": "Za Lun",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          95.55287,
+          17.47385
+        ],
+        "zoom": 12,
+        "population": 41166,
+        "cells": 53,
+        "layer": "cities/za-lun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            95.55287,
+            17.47385
+          ]
+        },
+        "properties": {
+          "id": "za-lun",
+          "name": "Za Lun",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 41166
+        }
+      },
+      "summary": null
+    }
+  }
+}

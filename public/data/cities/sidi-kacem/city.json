@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sidi-kacem",
+  "createdAt": "2026-10-08T16:13:27.035Z",
+  "updatedAt": "2026-10-08T16:13:27.035Z",
+  "meta": {
+    "name": "Sidi Kacem",
+    "nameIt": "Sidi Kacem",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sidi Kacem.geojson",
+      "sha256": "0ca3920191324aa36ee919a6cbbbe3da9ca4fc5700dda8e2186dc2050056c31f",
+      "size": 145329,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sidi-kacem",
+    "name": "Sidi Kacem",
+    "nameIt": "Sidi Kacem",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -5.7177,
+      34.23078
+    ],
+    "zoom": 11.7,
+    "population": 51984,
+    "grid": "cities/sidi-kacem/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sidi-kacem/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sidi-kacem",
+        "name": "Sidi Kacem",
+        "nameIt": "Sidi Kacem",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -5.7177,
+          34.23078
+        ],
+        "zoom": 11.7,
+        "population": 51984,
+        "cells": 125,
+        "layer": "cities/sidi-kacem/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.7177,
+            34.23078
+          ]
+        },
+        "properties": {
+          "id": "sidi-kacem",
+          "name": "Sidi Kacem",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 51984
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "alor-setar",
+  "createdAt": "2026-10-08T15:06:20.567Z",
+  "updatedAt": "2026-10-08T15:06:20.567Z",
+  "meta": {
+    "name": "Alor Setar",
+    "nameIt": "Alor Setar",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Alor Setar.geojson",
+      "sha256": "3166a5029e6173656f0df9b40a1f3792ac1eb0f2d16a2f3784caf14027254deb",
+      "size": 632778,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "alor-setar",
+    "name": "Alor Setar",
+    "nameIt": "Alor Setar",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      100.36728,
+      6.12298
+    ],
+    "zoom": 10.3,
+    "population": 216555,
+    "grid": "cities/alor-setar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/alor-setar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "alor-setar",
+        "name": "Alor Setar",
+        "nameIt": "Alor Setar",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          100.36728,
+          6.12298
+        ],
+        "zoom": 10.3,
+        "population": 216555,
+        "cells": 551,
+        "layer": "cities/alor-setar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            100.36728,
+            6.12298
+          ]
+        },
+        "properties": {
+          "id": "alor-setar",
+          "name": "Alor Setar",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 17.7,
+          "population": 216555
+        }
+      },
+      "summary": null
+    }
+  }
+}

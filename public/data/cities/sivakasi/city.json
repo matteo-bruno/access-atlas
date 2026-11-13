@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sivakasi",
+  "createdAt": "2026-10-08T16:14:06.990Z",
+  "updatedAt": "2026-10-08T16:14:06.990Z",
+  "meta": {
+    "name": "Sivakasi",
+    "nameIt": "Sivakasi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sivakasi.geojson",
+      "sha256": "1b5bbb0095b4a43877a4256294fbb704c1f3716772c3af2a4a571dc6a81f13f9",
+      "size": 524058,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sivakasi",
+    "name": "Sivakasi",
+    "nameIt": "Sivakasi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.79924,
+      9.45533
+    ],
+    "zoom": 10.8,
+    "population": 223256,
+    "grid": "cities/sivakasi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sivakasi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sivakasi",
+        "name": "Sivakasi",
+        "nameIt": "Sivakasi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.79924,
+          9.45533
+        ],
+        "zoom": 10.8,
+        "population": 223256,
+        "cells": 455,
+        "layer": "cities/sivakasi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.79924,
+            9.45533
+          ]
+        },
+        "properties": {
+          "id": "sivakasi",
+          "name": "Sivakasi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 33.4,
+          "population": 223256
+        }
+      },
+      "summary": null
+    }
+  }
+}

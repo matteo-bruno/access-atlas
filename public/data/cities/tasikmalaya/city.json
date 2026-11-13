@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tasikmalaya",
+  "createdAt": "2026-10-08T16:16:54.534Z",
+  "updatedAt": "2026-10-08T16:16:54.534Z",
+  "meta": {
+    "name": "Tasikmalaya",
+    "nameIt": "Tasikmalaya",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tasikmalaya.geojson",
+      "sha256": "6924cf04512647ce746b624b145449f4e208e1d3d54363579b4bbb90ee80458b",
+      "size": 6190636,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tasikmalaya",
+    "name": "Tasikmalaya",
+    "nameIt": "Tasikmalaya",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      108.20794,
+      -7.3006
+    ],
+    "zoom": 8.7,
+    "population": 2009281,
+    "grid": "cities/tasikmalaya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tasikmalaya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tasikmalaya",
+        "name": "Tasikmalaya",
+        "nameIt": "Tasikmalaya",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          108.20794,
+          -7.3006
+        ],
+        "zoom": 8.7,
+        "population": 2009281,
+        "cells": 5266,
+        "layer": "cities/tasikmalaya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.20794,
+            -7.3006
+          ]
+        },
+        "properties": {
+          "id": "tasikmalaya",
+          "name": "Tasikmalaya",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 91.9,
+          "population": 2009281
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kaifeng",
+  "createdAt": "2026-10-08T15:44:11.433Z",
+  "updatedAt": "2026-10-08T15:44:11.433Z",
+  "meta": {
+    "name": "Kaifeng",
+    "nameIt": "Kaifeng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kaifeng.geojson",
+      "sha256": "5e2e09446263d06d167917b43e875dd926837f418dcd8fea1634339821637e8e",
+      "size": 2715643,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kaifeng",
+    "name": "Kaifeng",
+    "nameIt": "Kaifeng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.33223,
+      34.79798
+    ],
+    "zoom": 9.4,
+    "population": 909996,
+    "grid": "cities/kaifeng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kaifeng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kaifeng",
+        "name": "Kaifeng",
+        "nameIt": "Kaifeng",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.33223,
+          34.79798
+        ],
+        "zoom": 9.4,
+        "population": 909996,
+        "cells": 2330,
+        "layer": "cities/kaifeng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.33223,
+            34.79798
+          ]
+        },
+        "properties": {
+          "id": "kaifeng",
+          "name": "Kaifeng",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 36.8,
+          "population": 909996
+        }
+      },
+      "summary": null
+    }
+  }
+}

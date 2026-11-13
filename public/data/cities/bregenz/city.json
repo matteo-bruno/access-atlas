@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bregenz",
+  "createdAt": "2026-10-08T15:20:23.919Z",
+  "updatedAt": "2026-10-08T15:20:23.919Z",
+  "meta": {
+    "name": "Bregenz",
+    "nameIt": "Bregenz",
+    "region": "Austria",
+    "regionIt": "Austria",
+    "country": "AT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bregenz.geojson",
+      "sha256": "3402dc4d68671b9a903eea472e9f0ed68fbca08db4bde3a9e6c9d61af35eb4ec",
+      "size": 223091,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bregenz",
+    "name": "Bregenz",
+    "nameIt": "Bregenz",
+    "region": "Austria",
+    "regionIt": "Austria",
+    "country": "AT",
+    "center": [
+      9.72482,
+      47.4896
+    ],
+    "zoom": 11.6,
+    "population": 52876,
+    "grid": "cities/bregenz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bregenz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bregenz",
+        "name": "Bregenz",
+        "nameIt": "Bregenz",
+        "region": "Austria",
+        "regionIt": "Austria",
+        "country": "AT",
+        "center": [
+          9.72482,
+          47.4896
+        ],
+        "zoom": 11.6,
+        "population": 52876,
+        "cells": 197,
+        "layer": "cities/bregenz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.72482,
+            47.4896
+          ]
+        },
+        "properties": {
+          "id": "bregenz",
+          "name": "Bregenz",
+          "country": "AT",
+          "isStudy": true,
+          "proximityMinutes": 9.4,
+          "population": 52876
+        }
+      },
+      "summary": null
+    }
+  }
+}

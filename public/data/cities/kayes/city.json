@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kayes",
+  "createdAt": "2026-10-08T15:45:52.285Z",
+  "updatedAt": "2026-10-08T15:45:52.285Z",
+  "meta": {
+    "name": "Kayes",
+    "nameIt": "Kayes",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kayes.geojson",
+      "sha256": "c7d2439a850a4917e41c24502a8145691eb4562a5ccf2fa220d0b1b6c42476d0",
+      "size": 516331,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kayes",
+    "name": "Kayes",
+    "nameIt": "Kayes",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML",
+    "center": [
+      -11.43903,
+      14.44758
+    ],
+    "zoom": 10.8,
+    "population": 608404,
+    "grid": "cities/kayes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kayes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kayes",
+        "name": "Kayes",
+        "nameIt": "Kayes",
+        "region": "Mali",
+        "regionIt": "Mali",
+        "country": "ML",
+        "center": [
+          -11.43903,
+          14.44758
+        ],
+        "zoom": 10.8,
+        "population": 608404,
+        "cells": 439,
+        "layer": "cities/kayes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -11.43903,
+            14.44758
+          ]
+        },
+        "properties": {
+          "id": "kayes",
+          "name": "Kayes",
+          "country": "ML",
+          "isStudy": true,
+          "proximityMinutes": 18.3,
+          "population": 608404
+        }
+      },
+      "summary": null
+    }
+  }
+}

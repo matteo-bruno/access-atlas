@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bratislava",
+  "createdAt": "2026-10-08T15:20:22.602Z",
+  "updatedAt": "2026-10-08T15:20:22.602Z",
+  "meta": {
+    "name": "Bratislava",
+    "nameIt": "Bratislava",
+    "region": "Slovakia",
+    "regionIt": "Slovacchia",
+    "country": "SK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bratislava.geojson",
+      "sha256": "4eabfadcfe321755eab5f5a34aec2e9f70099c323eb4c49af2df2f71075570c2",
+      "size": 916468,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bratislava",
+    "name": "Bratislava",
+    "nameIt": "Bratislava",
+    "region": "Slovakia",
+    "regionIt": "Slovacchia",
+    "country": "SK",
+    "center": [
+      17.12873,
+      48.14776
+    ],
+    "zoom": 10.2,
+    "population": 344811,
+    "grid": "cities/bratislava/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bratislava/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bratislava",
+        "name": "Bratislava",
+        "nameIt": "Bratislava",
+        "region": "Slovakia",
+        "regionIt": "Slovacchia",
+        "country": "SK",
+        "center": [
+          17.12873,
+          48.14776
+        ],
+        "zoom": 10.2,
+        "population": 344811,
+        "cells": 804,
+        "layer": "cities/bratislava/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            17.12873,
+            48.14776
+          ]
+        },
+        "properties": {
+          "id": "bratislava",
+          "name": "Bratislava",
+          "country": "SK",
+          "isStudy": true,
+          "proximityMinutes": 6.5,
+          "population": 344811
+        }
+      },
+      "summary": null
+    }
+  }
+}

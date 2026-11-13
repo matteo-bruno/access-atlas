@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kathara",
+  "createdAt": "2026-10-08T15:45:36.840Z",
+  "updatedAt": "2026-10-08T15:45:36.840Z",
+  "meta": {
+    "name": "Kathara",
+    "nameIt": "Kathara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kathara.geojson",
+      "sha256": "f943f32b89a42d958a9d5c80da88f6cd7eccb3796a31d752d506c01dff717aee",
+      "size": 211899,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kathara",
+    "name": "Kathara",
+    "nameIt": "Kathara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.87978,
+      23.78446
+    ],
+    "zoom": 11.6,
+    "population": 72836,
+    "grid": "cities/kathara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kathara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kathara",
+        "name": "Kathara",
+        "nameIt": "Kathara",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.87978,
+          23.78446
+        ],
+        "zoom": 11.6,
+        "population": 72836,
+        "cells": 183,
+        "layer": "cities/kathara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.87978,
+            23.78446
+          ]
+        },
+        "properties": {
+          "id": "kathara",
+          "name": "Kathara",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 72836
+        }
+      },
+      "summary": null
+    }
+  }
+}

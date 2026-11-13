@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bac-ninh",
+  "createdAt": "2026-10-08T15:21:27.903Z",
+  "updatedAt": "2026-10-08T15:21:27.903Z",
+  "meta": {
+    "name": "Bắc Ninh",
+    "nameIt": "Bắc Ninh",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bắc Ninh.geojson",
+      "sha256": "c0ec9637122e9803cf92813903b72b6b0390997884f64f252b065e0771923cf1",
+      "size": 463568,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bac-ninh",
+    "name": "Bắc Ninh",
+    "nameIt": "Bắc Ninh",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      106.0658,
+      21.18048
+    ],
+    "zoom": 10.6,
+    "population": 212839,
+    "grid": "cities/bac-ninh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bac-ninh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bac-ninh",
+        "name": "Bắc Ninh",
+        "nameIt": "Bắc Ninh",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          106.0658,
+          21.18048
+        ],
+        "zoom": 10.6,
+        "population": 212839,
+        "cells": 401,
+        "layer": "cities/bac-ninh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.0658,
+            21.18048
+          ]
+        },
+        "properties": {
+          "id": "bac-ninh",
+          "name": "Bắc Ninh",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 12.3,
+          "population": 212839
+        }
+      },
+      "summary": null
+    }
+  }
+}

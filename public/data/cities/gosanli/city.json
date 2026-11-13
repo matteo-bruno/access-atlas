@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gosanli",
+  "createdAt": "2026-10-08T15:35:48.305Z",
+  "updatedAt": "2026-10-08T15:35:48.305Z",
+  "meta": {
+    "name": "Gosanli",
+    "nameIt": "Gosanli",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gosanli.geojson",
+      "sha256": "9ea935825b7d9d5f4dd06b41afe47ec8cd8e0113cf74bb29329ba3f8fc3bcab2",
+      "size": 150281,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gosanli",
+    "name": "Gosanli",
+    "nameIt": "Gosanli",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP",
+    "center": [
+      125.63471,
+      39.11494
+    ],
+    "zoom": 11.7,
+    "population": 51380,
+    "grid": "cities/gosanli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 166
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gosanli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gosanli",
+        "name": "Gosanli",
+        "nameIt": "Gosanli",
+        "region": "North Korea",
+        "regionIt": "Corea del Nord",
+        "country": "KP",
+        "center": [
+          125.63471,
+          39.11494
+        ],
+        "zoom": 11.7,
+        "population": 51380,
+        "cells": 129,
+        "layer": "cities/gosanli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 166
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.63471,
+            39.11494
+          ]
+        },
+        "properties": {
+          "id": "gosanli",
+          "name": "Gosanli",
+          "country": "KP",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 51380
+        }
+      },
+      "summary": null
+    }
+  }
+}

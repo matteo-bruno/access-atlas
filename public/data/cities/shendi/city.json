@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shendi",
+  "createdAt": "2026-10-08T16:12:48.073Z",
+  "updatedAt": "2026-10-08T16:12:48.073Z",
+  "meta": {
+    "name": "Shendi",
+    "nameIt": "Shendi",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shendi.geojson",
+      "sha256": "faecdd692eb5a9b59d9f9b1e7180a73d2ddedfb2138d212710cf49ee6090fcba",
+      "size": 510619,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shendi",
+    "name": "Shendi",
+    "nameIt": "Shendi",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      33.42922,
+      16.68569
+    ],
+    "zoom": 9.7,
+    "population": 175857,
+    "grid": "cities/shendi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shendi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shendi",
+        "name": "Shendi",
+        "nameIt": "Shendi",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          33.42922,
+          16.68569
+        ],
+        "zoom": 9.7,
+        "population": 175857,
+        "cells": 439,
+        "layer": "cities/shendi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.42922,
+            16.68569
+          ]
+        },
+        "properties": {
+          "id": "shendi",
+          "name": "Shendi",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 24.5,
+          "population": 175857
+        }
+      },
+      "summary": null
+    }
+  }
+}

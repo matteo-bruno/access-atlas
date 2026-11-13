@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fuguancun",
+  "createdAt": "2026-10-08T15:33:49.995Z",
+  "updatedAt": "2026-10-08T15:33:49.995Z",
+  "meta": {
+    "name": "Fuguancun",
+    "nameIt": "Fuguancun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fuguancun.geojson",
+      "sha256": "171d668beb041fc696f404c16267fcd7cbc490051298f3cbd3d8438ff05c6bd7",
+      "size": 252196,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fuguancun",
+    "name": "Fuguancun",
+    "nameIt": "Fuguancun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.64007,
+      24.80191
+    ],
+    "zoom": 11.4,
+    "population": 34532,
+    "grid": "cities/fuguancun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fuguancun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fuguancun",
+        "name": "Fuguancun",
+        "nameIt": "Fuguancun",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.64007,
+          24.80191
+        ],
+        "zoom": 11.4,
+        "population": 34532,
+        "cells": 216,
+        "layer": "cities/fuguancun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.64007,
+            24.80191
+          ]
+        },
+        "properties": {
+          "id": "fuguancun",
+          "name": "Fuguancun",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 81.7,
+          "population": 34532
+        }
+      },
+      "summary": null
+    }
+  }
+}

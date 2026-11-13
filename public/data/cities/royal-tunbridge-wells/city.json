@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "royal-tunbridge-wells",
+  "createdAt": "2026-10-08T16:09:14.100Z",
+  "updatedAt": "2026-10-08T16:09:14.100Z",
+  "meta": {
+    "name": "Royal Tunbridge Wells",
+    "nameIt": "Royal Tunbridge Wells",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Royal Tunbridge Wells.geojson",
+      "sha256": "0485967a5ecd8bc48b52218bedf29743ced006688d223aff40f582d9bbd2a327",
+      "size": 218960,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "royal-tunbridge-wells",
+    "name": "Royal Tunbridge Wells",
+    "nameIt": "Royal Tunbridge Wells",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      0.26373,
+      51.14009
+    ],
+    "zoom": 11.6,
+    "population": 60088,
+    "grid": "cities/royal-tunbridge-wells/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/royal-tunbridge-wells/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "royal-tunbridge-wells",
+        "name": "Royal Tunbridge Wells",
+        "nameIt": "Royal Tunbridge Wells",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          0.26373,
+          51.14009
+        ],
+        "zoom": 11.6,
+        "population": 60088,
+        "cells": 189,
+        "layer": "cities/royal-tunbridge-wells/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.26373,
+            51.14009
+          ]
+        },
+        "properties": {
+          "id": "royal-tunbridge-wells",
+          "name": "Royal Tunbridge Wells",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 60088
+        }
+      },
+      "summary": null
+    }
+  }
+}

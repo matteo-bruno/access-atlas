@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "imabari",
+  "createdAt": "2026-10-08T15:40:43.475Z",
+  "updatedAt": "2026-10-08T15:40:43.475Z",
+  "meta": {
+    "name": "Imabari",
+    "nameIt": "Imabari",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Imabari.geojson",
+      "sha256": "bee8bfd2fdde5eb4827625b5c91b8b097a79b3af3007f3d92e47656c2722eb8a",
+      "size": 549607,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "imabari",
+    "name": "Imabari",
+    "nameIt": "Imabari",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      132.9989,
+      34.05323
+    ],
+    "zoom": 10.8,
+    "population": 87340,
+    "grid": "cities/imabari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/imabari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "imabari",
+        "name": "Imabari",
+        "nameIt": "Imabari",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          132.9989,
+          34.05323
+        ],
+        "zoom": 10.8,
+        "population": 87340,
+        "cells": 479,
+        "layer": "cities/imabari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            132.9989,
+            34.05323
+          ]
+        },
+        "properties": {
+          "id": "imabari",
+          "name": "Imabari",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 87340
+        }
+      },
+      "summary": null
+    }
+  }
+}

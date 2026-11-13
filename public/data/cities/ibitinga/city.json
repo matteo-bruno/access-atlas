@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ibitinga",
+  "createdAt": "2026-10-08T15:40:12.896Z",
+  "updatedAt": "2026-10-08T15:40:12.896Z",
+  "meta": {
+    "name": "Ibitinga",
+    "nameIt": "Ibitinga",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ibitinga.geojson",
+      "sha256": "16f85a4086ec210efea4fbcb993dbcc89bf20ebe1b4fc00224690dbf487b1802",
+      "size": 162972,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ibitinga",
+    "name": "Ibitinga",
+    "nameIt": "Ibitinga",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -48.82746,
+      -21.75912
+    ],
+    "zoom": 11.9,
+    "population": 49430,
+    "grid": "cities/ibitinga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ibitinga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ibitinga",
+        "name": "Ibitinga",
+        "nameIt": "Ibitinga",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -48.82746,
+          -21.75912
+        ],
+        "zoom": 11.9,
+        "population": 49430,
+        "cells": 138,
+        "layer": "cities/ibitinga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.82746,
+            -21.75912
+          ]
+        },
+        "properties": {
+          "id": "ibitinga",
+          "name": "Ibitinga",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 49430
+        }
+      },
+      "summary": null
+    }
+  }
+}

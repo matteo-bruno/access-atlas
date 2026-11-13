@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wanrong",
+  "createdAt": "2026-10-08T16:21:20.722Z",
+  "updatedAt": "2026-10-08T16:21:20.722Z",
+  "meta": {
+    "name": "Wanrong",
+    "nameIt": "Wanrong",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wanrong.geojson",
+      "sha256": "4a665e33f23320d4ab8ffa4d50c566c21c14c398869ef8d07c1331d341e057a4",
+      "size": 195941,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wanrong",
+    "name": "Wanrong",
+    "nameIt": "Wanrong",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      110.83802,
+      35.41636
+    ],
+    "zoom": 11.7,
+    "population": 71602,
+    "grid": "cities/wanrong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 182
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wanrong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wanrong",
+        "name": "Wanrong",
+        "nameIt": "Wanrong",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          110.83802,
+          35.41636
+        ],
+        "zoom": 11.7,
+        "population": 71602,
+        "cells": 168,
+        "layer": "cities/wanrong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 182
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.83802,
+            35.41636
+          ]
+        },
+        "properties": {
+          "id": "wanrong",
+          "name": "Wanrong",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24.2,
+          "population": 71602
+        }
+      },
+      "summary": null
+    }
+  }
+}

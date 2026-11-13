@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kefole",
+  "createdAt": "2026-10-08T15:46:03.341Z",
+  "updatedAt": "2026-10-08T15:46:03.341Z",
+  "meta": {
+    "name": "Kefole",
+    "nameIt": "Kefole",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kefole.geojson",
+      "sha256": "3d3eb125536486b73c7f40e81e4c3cda9428da095e170feeb2aab5b1342907b7",
+      "size": 139688,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kefole",
+    "name": "Kefole",
+    "nameIt": "Kefole",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      38.78517,
+      7.07558
+    ],
+    "zoom": 12,
+    "population": 79749,
+    "grid": "cities/kefole/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kefole/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kefole",
+        "name": "Kefole",
+        "nameIt": "Kefole",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          38.78517,
+          7.07558
+        ],
+        "zoom": 12,
+        "population": 79749,
+        "cells": 121,
+        "layer": "cities/kefole/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.78517,
+            7.07558
+          ]
+        },
+        "properties": {
+          "id": "kefole",
+          "name": "Kefole",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 79749
+        }
+      },
+      "summary": null
+    }
+  }
+}

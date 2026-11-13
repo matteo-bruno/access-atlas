@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yenagoa",
+  "createdAt": "2026-10-08T16:23:43.793Z",
+  "updatedAt": "2026-10-08T16:23:43.793Z",
+  "meta": {
+    "name": "Yenagoa",
+    "nameIt": "Yenagoa",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yenagoa.geojson",
+      "sha256": "46635487a0e213bb618c699a157591cdd93eacf77e2e35e1a29efcea7b4e8890",
+      "size": 1176166,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yenagoa",
+    "name": "Yenagoa",
+    "nameIt": "Yenagoa",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      6.32885,
+      4.94518
+    ],
+    "zoom": 9.8,
+    "population": 1318948,
+    "grid": "cities/yenagoa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yenagoa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yenagoa",
+        "name": "Yenagoa",
+        "nameIt": "Yenagoa",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          6.32885,
+          4.94518
+        ],
+        "zoom": 9.8,
+        "population": 1318948,
+        "cells": 1020,
+        "layer": "cities/yenagoa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.32885,
+            4.94518
+          ]
+        },
+        "properties": {
+          "id": "yenagoa",
+          "name": "Yenagoa",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 48.4,
+          "population": 1318948
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "manassas-park",
+  "createdAt": "2026-10-08T15:54:24.510Z",
+  "updatedAt": "2026-10-08T15:54:24.510Z",
+  "meta": {
+    "name": "Manassas Park",
+    "nameIt": "Manassas Park",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Manassas Park.geojson",
+      "sha256": "6b4ef48216041191c3e517aab2848c4884bdf80c1d7bfbffe6b4e283b414f8ee",
+      "size": 312726,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "manassas-park",
+    "name": "Manassas Park",
+    "nameIt": "Manassas Park",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -77.48452,
+      38.7791
+    ],
+    "zoom": 10.7,
+    "population": 78987,
+    "grid": "cities/manassas-park/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/manassas-park/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "manassas-park",
+        "name": "Manassas Park",
+        "nameIt": "Manassas Park",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -77.48452,
+          38.7791
+        ],
+        "zoom": 10.7,
+        "population": 78987,
+        "cells": 270,
+        "layer": "cities/manassas-park/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.48452,
+            38.7791
+          ]
+        },
+        "properties": {
+          "id": "manassas-park",
+          "name": "Manassas Park",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 78987
+        }
+      },
+      "summary": null
+    }
+  }
+}

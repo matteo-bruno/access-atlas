@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hull",
+  "createdAt": "2026-10-08T15:39:50.866Z",
+  "updatedAt": "2026-10-08T15:39:50.866Z",
+  "meta": {
+    "name": "Hull",
+    "nameIt": "Hull",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hull.geojson",
+      "sha256": "4fd075c58cb84ce289135cdae966dae614affc85c3865317a806fbe4d784b029",
+      "size": 1271556,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hull",
+    "name": "Hull",
+    "nameIt": "Hull",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.35426,
+      53.76368
+    ],
+    "zoom": 10.2,
+    "population": 322157,
+    "grid": "cities/hull/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hull/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hull",
+        "name": "Hull",
+        "nameIt": "Hull",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.35426,
+          53.76368
+        ],
+        "zoom": 10.2,
+        "population": 322157,
+        "cells": 1096,
+        "layer": "cities/hull/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.35426,
+            53.76368
+          ]
+        },
+        "properties": {
+          "id": "hull",
+          "name": "Hull",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 322157
+        }
+      },
+      "summary": null
+    }
+  }
+}

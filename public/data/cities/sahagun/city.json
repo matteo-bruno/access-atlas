@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sahagun",
+  "createdAt": "2026-10-08T16:09:45.543Z",
+  "updatedAt": "2026-10-08T16:09:45.543Z",
+  "meta": {
+    "name": "Sahagún",
+    "nameIt": "Sahagún",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sahagún.geojson",
+      "sha256": "47f78e4cec6f6eff6dc339cefe4b84027eccd7e7f4a5f467e793d0b969a663c5",
+      "size": 177326,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sahagun",
+    "name": "Sahagún",
+    "nameIt": "Sahagún",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -75.44638,
+      8.94845
+    ],
+    "zoom": 11.5,
+    "population": 59260,
+    "grid": "cities/sahagun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sahagun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sahagun",
+        "name": "Sahagún",
+        "nameIt": "Sahagún",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -75.44638,
+          8.94845
+        ],
+        "zoom": 11.5,
+        "population": 59260,
+        "cells": 153,
+        "layer": "cities/sahagun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.44638,
+            8.94845
+          ]
+        },
+        "properties": {
+          "id": "sahagun",
+          "name": "Sahagún",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 14.8,
+          "population": 59260
+        }
+      },
+      "summary": null
+    }
+  }
+}

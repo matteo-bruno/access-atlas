@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "paikgacha",
+  "createdAt": "2026-10-08T16:03:38.040Z",
+  "updatedAt": "2026-10-08T16:03:38.040Z",
+  "meta": {
+    "name": "Paikgacha",
+    "nameIt": "Paikgacha",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Paikgacha.geojson",
+      "sha256": "041e3d72b0926085dd8c15e8d274101d18feebfe72f07766c31b77d2740b2ea6",
+      "size": 791115,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "paikgacha",
+    "name": "Paikgacha",
+    "nameIt": "Paikgacha",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.35992,
+      22.54949
+    ],
+    "zoom": 10.3,
+    "population": 43315,
+    "grid": "cities/paikgacha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/paikgacha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "paikgacha",
+        "name": "Paikgacha",
+        "nameIt": "Paikgacha",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.35992,
+          22.54949
+        ],
+        "zoom": 10.3,
+        "population": 43315,
+        "cells": 683,
+        "layer": "cities/paikgacha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.35992,
+            22.54949
+          ]
+        },
+        "properties": {
+          "id": "paikgacha",
+          "name": "Paikgacha",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 43315
+        }
+      },
+      "summary": null
+    }
+  }
+}

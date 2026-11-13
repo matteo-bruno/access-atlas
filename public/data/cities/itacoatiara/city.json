@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "itacoatiara",
+  "createdAt": "2026-10-08T15:41:20.046Z",
+  "updatedAt": "2026-10-08T15:41:20.046Z",
+  "meta": {
+    "name": "Itacoatiara",
+    "nameIt": "Itacoatiara",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Itacoatiara.geojson",
+      "sha256": "9f4b511a761c044656f46c8a161934b55728b37281de8583a636660d0733e5e5",
+      "size": 170977,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "itacoatiara",
+    "name": "Itacoatiara",
+    "nameIt": "Itacoatiara",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -58.43674,
+      -3.1353
+    ],
+    "zoom": 11.7,
+    "population": 72082,
+    "grid": "cities/itacoatiara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/itacoatiara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "itacoatiara",
+        "name": "Itacoatiara",
+        "nameIt": "Itacoatiara",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -58.43674,
+          -3.1353
+        ],
+        "zoom": 11.7,
+        "population": 72082,
+        "cells": 145,
+        "layer": "cities/itacoatiara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -58.43674,
+            -3.1353
+          ]
+        },
+        "properties": {
+          "id": "itacoatiara",
+          "name": "Itacoatiara",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 72082
+        }
+      },
+      "summary": null
+    }
+  }
+}

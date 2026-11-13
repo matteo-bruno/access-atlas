@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yuanlin-city",
+  "createdAt": "2026-10-08T16:24:17.887Z",
+  "updatedAt": "2026-10-08T16:24:17.887Z",
+  "meta": {
+    "name": "Yuanlin City",
+    "nameIt": "Yuanlin City",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yuanlin City.geojson",
+      "sha256": "94b027c8554b3d523a11f7b528c5f01a3309717712048d6ba42adf060509ecd6",
+      "size": 1363880,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yuanlin-city",
+    "name": "Yuanlin City",
+    "nameIt": "Yuanlin City",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW",
+    "center": [
+      120.54875,
+      23.9355
+    ],
+    "zoom": 10,
+    "population": 270864,
+    "grid": "cities/yuanlin-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yuanlin-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yuanlin-city",
+        "name": "Yuanlin City",
+        "nameIt": "Yuanlin City",
+        "region": "Taiwan",
+        "regionIt": "Taiwan",
+        "country": "TW",
+        "center": [
+          120.54875,
+          23.9355
+        ],
+        "zoom": 10,
+        "population": 270864,
+        "cells": 1179,
+        "layer": "cities/yuanlin-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.54875,
+            23.9355
+          ]
+        },
+        "properties": {
+          "id": "yuanlin-city",
+          "name": "Yuanlin City",
+          "country": "TW",
+          "isStudy": true,
+          "proximityMinutes": 22.4,
+          "population": 270864
+        }
+      },
+      "summary": null
+    }
+  }
+}

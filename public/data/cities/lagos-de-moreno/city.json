@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lagos-de-moreno",
+  "createdAt": "2026-10-08T15:49:35.025Z",
+  "updatedAt": "2026-10-08T15:49:35.025Z",
+  "meta": {
+    "name": "Lagos de Moreno",
+    "nameIt": "Lagos de Moreno",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lagos de Moreno.geojson",
+      "sha256": "c1aa7ef7880491634e2dfcb1e2a8565ac50d1a59a342c8908d450031c4d5cc10",
+      "size": 206060,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lagos-de-moreno",
+    "name": "Lagos de Moreno",
+    "nameIt": "Lagos de Moreno",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -101.92947,
+      21.3596
+    ],
+    "zoom": 11.2,
+    "population": 85312,
+    "grid": "cities/lagos-de-moreno/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lagos-de-moreno/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lagos-de-moreno",
+        "name": "Lagos de Moreno",
+        "nameIt": "Lagos de Moreno",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -101.92947,
+          21.3596
+        ],
+        "zoom": 11.2,
+        "population": 85312,
+        "cells": 175,
+        "layer": "cities/lagos-de-moreno/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -101.92947,
+            21.3596
+          ]
+        },
+        "properties": {
+          "id": "lagos-de-moreno",
+          "name": "Lagos de Moreno",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 16.2,
+          "population": 85312
+        }
+      },
+      "summary": null
+    }
+  }
+}

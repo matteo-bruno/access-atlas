@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shibu",
+  "createdAt": "2026-10-08T16:09:31.653Z",
+  "updatedAt": "2026-10-08T16:09:31.653Z",
+  "meta": {
+    "name": "SHIBU",
+    "nameIt": "SHIBU",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/SHIBU.geojson",
+      "sha256": "50c7ef92f355903b725032a650486b387a53d46995535dcaf71ac62f6b7d2b2d",
+      "size": 105096,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shibu",
+    "name": "SHIBU",
+    "nameIt": "SHIBU",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      108.15856,
+      22.83309
+    ],
+    "zoom": 11.6,
+    "population": 18623,
+    "grid": "cities/shibu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shibu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shibu",
+        "name": "SHIBU",
+        "nameIt": "SHIBU",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          108.15856,
+          22.83309
+        ],
+        "zoom": 11.6,
+        "population": 18623,
+        "cells": 90,
+        "layer": "cities/shibu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.15856,
+            22.83309
+          ]
+        },
+        "properties": {
+          "id": "shibu",
+          "name": "SHIBU",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 18623
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dema-russian-federation",
+  "createdAt": "2026-10-08T15:28:52.212Z",
+  "updatedAt": "2026-10-08T15:28:52.212Z",
+  "meta": {
+    "name": "Dema (Russian Federation)",
+    "nameIt": "Dema (Russian Federation)",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dema (Russian Federation).geojson",
+      "sha256": "dce640ad7d21f656c092f176d3a12118c49c1532ce171758382eda17d08ba77a",
+      "size": 143946,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dema-russian-federation",
+    "name": "Dema (Russian Federation)",
+    "nameIt": "Dema (Russian Federation)",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      55.82306,
+      54.6988
+    ],
+    "zoom": 11.7,
+    "population": 63825,
+    "grid": "cities/dema-russian-federation/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dema-russian-federation/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dema-russian-federation",
+        "name": "Dema (Russian Federation)",
+        "nameIt": "Dema (Russian Federation)",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          55.82306,
+          54.6988
+        ],
+        "zoom": 11.7,
+        "population": 63825,
+        "cells": 125,
+        "layer": "cities/dema-russian-federation/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            55.82306,
+            54.6988
+          ]
+        },
+        "properties": {
+          "id": "dema-russian-federation",
+          "name": "Dema (Russian Federation)",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 11.1,
+          "population": 63825
+        }
+      },
+      "summary": null
+    }
+  }
+}

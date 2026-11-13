@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sidi-moussa",
+  "createdAt": "2026-10-08T16:13:27.646Z",
+  "updatedAt": "2026-10-08T16:13:27.646Z",
+  "meta": {
+    "name": "Sidi Moussa",
+    "nameIt": "Sidi Moussa",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sidi Moussa.geojson",
+      "sha256": "d4324641503cf08cf7a92085cbca31cdc55f646b16fea44c53a393adcabd4d47",
+      "size": 138819,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sidi-moussa",
+    "name": "Sidi Moussa",
+    "nameIt": "Sidi Moussa",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      3.10092,
+      36.61452
+    ],
+    "zoom": 11.6,
+    "population": 48144,
+    "grid": "cities/sidi-moussa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sidi-moussa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sidi-moussa",
+        "name": "Sidi Moussa",
+        "nameIt": "Sidi Moussa",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          3.10092,
+          36.61452
+        ],
+        "zoom": 11.6,
+        "population": 48144,
+        "cells": 120,
+        "layer": "cities/sidi-moussa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.10092,
+            36.61452
+          ]
+        },
+        "properties": {
+          "id": "sidi-moussa",
+          "name": "Sidi Moussa",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 48144
+        }
+      },
+      "summary": null
+    }
+  }
+}

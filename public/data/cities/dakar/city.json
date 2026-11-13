@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dakar",
+  "createdAt": "2026-10-08T15:27:35.257Z",
+  "updatedAt": "2026-10-08T15:27:35.257Z",
+  "meta": {
+    "name": "Dakar",
+    "nameIt": "Dakar",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dakar.geojson",
+      "sha256": "ffdeb70804b8d1436a782d52b9faf9363237d621714f265570cd23370fe848b2",
+      "size": 3116463,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dakar",
+    "name": "Dakar",
+    "nameIt": "Dakar",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN",
+    "center": [
+      -17.37621,
+      14.74873
+    ],
+    "zoom": 9,
+    "population": 3672739,
+    "grid": "cities/dakar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dakar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dakar",
+        "name": "Dakar",
+        "nameIt": "Dakar",
+        "region": "Senegal",
+        "regionIt": "Senegal",
+        "country": "SN",
+        "center": [
+          -17.37621,
+          14.74873
+        ],
+        "zoom": 9,
+        "population": 3672739,
+        "cells": 2675,
+        "layer": "cities/dakar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -17.37621,
+            14.74873
+          ]
+        },
+        "properties": {
+          "id": "dakar",
+          "name": "Dakar",
+          "country": "SN",
+          "isStudy": true,
+          "proximityMinutes": 18.7,
+          "population": 3672739
+        }
+      },
+      "summary": null
+    }
+  }
+}

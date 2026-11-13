@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ad-damazin",
+  "createdAt": "2026-10-08T15:02:15.923Z",
+  "updatedAt": "2026-10-08T15:02:15.923Z",
+  "meta": {
+    "name": "Ad-Damazin",
+    "nameIt": "Ad-Damazin",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ad-Damazin.geojson",
+      "sha256": "a8453c4df9da9bc781b122e0d27e84faa107a9d49926eb05b724969d06aa0228",
+      "size": 434267,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ad-damazin",
+    "name": "Ad-Damazin",
+    "nameIt": "Ad-Damazin",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      34.35619,
+      11.81043
+    ],
+    "zoom": 10.6,
+    "population": 360601,
+    "grid": "cities/ad-damazin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ad-damazin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ad-damazin",
+        "name": "Ad-Damazin",
+        "nameIt": "Ad-Damazin",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          34.35619,
+          11.81043
+        ],
+        "zoom": 10.6,
+        "population": 360601,
+        "cells": 373,
+        "layer": "cities/ad-damazin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.35619,
+            11.81043
+          ]
+        },
+        "properties": {
+          "id": "ad-damazin",
+          "name": "Ad-Damazin",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 52,
+          "population": 360601
+        }
+      },
+      "summary": null
+    }
+  }
+}

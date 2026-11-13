@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dharashiv",
+  "createdAt": "2026-10-08T15:29:29.937Z",
+  "updatedAt": "2026-10-08T15:29:29.937Z",
+  "meta": {
+    "name": "Dharashiv",
+    "nameIt": "Dharashiv",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dharashiv.geojson",
+      "sha256": "87e2163de0a4f09c338be3765289cff4b612546182e748768ffcd6f8886ecbaf",
+      "size": 325764,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dharashiv",
+    "name": "Dharashiv",
+    "nameIt": "Dharashiv",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.04195,
+      18.19317
+    ],
+    "zoom": 11.1,
+    "population": 133169,
+    "grid": "cities/dharashiv/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dharashiv/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dharashiv",
+        "name": "Dharashiv",
+        "nameIt": "Dharashiv",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.04195,
+          18.19317
+        ],
+        "zoom": 11.1,
+        "population": 133169,
+        "cells": 281,
+        "layer": "cities/dharashiv/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.04195,
+            18.19317
+          ]
+        },
+        "properties": {
+          "id": "dharashiv",
+          "name": "Dharashiv",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.2,
+          "population": 133169
+        }
+      },
+      "summary": null
+    }
+  }
+}

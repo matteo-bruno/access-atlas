@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "havirov",
+  "createdAt": "2026-10-08T15:38:06.578Z",
+  "updatedAt": "2026-10-08T15:38:06.578Z",
+  "meta": {
+    "name": "Havířov",
+    "nameIt": "Havířov",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Havířov.geojson",
+      "sha256": "8d37d359eeebe6c4d348c3f82f92d0b57d21f155a873daf75564b4f8f930937a",
+      "size": 190168,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "havirov",
+    "name": "Havířov",
+    "nameIt": "Havířov",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ",
+    "center": [
+      18.4364,
+      49.78528
+    ],
+    "zoom": 11.7,
+    "population": 49361,
+    "grid": "cities/havirov/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/havirov/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "havirov",
+        "name": "Havířov",
+        "nameIt": "Havířov",
+        "region": "Czech Republic",
+        "regionIt": "Repubblica Ceca",
+        "country": "CZ",
+        "center": [
+          18.4364,
+          49.78528
+        ],
+        "zoom": 11.7,
+        "population": 49361,
+        "cells": 166,
+        "layer": "cities/havirov/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.4364,
+            49.78528
+          ]
+        },
+        "properties": {
+          "id": "havirov",
+          "name": "Havířov",
+          "country": "CZ",
+          "isStudy": true,
+          "proximityMinutes": 12.9,
+          "population": 49361
+        }
+      },
+      "summary": null
+    }
+  }
+}

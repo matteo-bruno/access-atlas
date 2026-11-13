@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "szolohegy",
+  "createdAt": "2026-10-08T16:15:37.253Z",
+  "updatedAt": "2026-10-08T16:15:37.253Z",
+  "meta": {
+    "name": "Szőlőhegy",
+    "nameIt": "Szőlőhegy",
+    "region": "Hungary",
+    "regionIt": "Ungheria",
+    "country": "HU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Szőlőhegy.geojson",
+      "sha256": "7c1f5411410a4567eef612e957b31bce3efa87e0563d245b7b29ad0f7aadece7",
+      "size": 275620,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "szolohegy",
+    "name": "Szőlőhegy",
+    "nameIt": "Szőlőhegy",
+    "region": "Hungary",
+    "regionIt": "Ungheria",
+    "country": "HU",
+    "center": [
+      19.26334,
+      47.47821
+    ],
+    "zoom": 10.9,
+    "population": 72571,
+    "grid": "cities/szolohegy/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/szolohegy/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "szolohegy",
+        "name": "Szőlőhegy",
+        "nameIt": "Szőlőhegy",
+        "region": "Hungary",
+        "regionIt": "Ungheria",
+        "country": "HU",
+        "center": [
+          19.26334,
+          47.47821
+        ],
+        "zoom": 10.9,
+        "population": 72571,
+        "cells": 241,
+        "layer": "cities/szolohegy/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.26334,
+            47.47821
+          ]
+        },
+        "properties": {
+          "id": "szolohegy",
+          "name": "Szőlőhegy",
+          "country": "HU",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 72571
+        }
+      },
+      "summary": null
+    }
+  }
+}

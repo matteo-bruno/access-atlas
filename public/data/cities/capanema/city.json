@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "capanema",
+  "createdAt": "2026-10-08T15:22:23.911Z",
+  "updatedAt": "2026-10-08T15:22:23.911Z",
+  "meta": {
+    "name": "Capanema",
+    "nameIt": "Capanema",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Capanema.geojson",
+      "sha256": "fa3accf1ffeed470db351a43397186c35918a6193715ae125593cf3cb26634d9",
+      "size": 137166,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "capanema",
+    "name": "Capanema",
+    "nameIt": "Capanema",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -47.18029,
+      -1.19314
+    ],
+    "zoom": 11.7,
+    "population": 56092,
+    "grid": "cities/capanema/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/capanema/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "capanema",
+        "name": "Capanema",
+        "nameIt": "Capanema",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -47.18029,
+          -1.19314
+        ],
+        "zoom": 11.7,
+        "population": 56092,
+        "cells": 117,
+        "layer": "cities/capanema/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.18029,
+            -1.19314
+          ]
+        },
+        "properties": {
+          "id": "capanema",
+          "name": "Capanema",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 10.7,
+          "population": 56092
+        }
+      },
+      "summary": null
+    }
+  }
+}

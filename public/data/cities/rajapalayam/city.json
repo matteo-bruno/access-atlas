@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rajapalayam",
+  "createdAt": "2026-10-08T16:07:56.201Z",
+  "updatedAt": "2026-10-08T16:07:56.201Z",
+  "meta": {
+    "name": "Rajapalayam",
+    "nameIt": "Rajapalayam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rajapalayam.geojson",
+      "sha256": "620dd3435bfe0b718195fbdca96d97623fb5a2703bce5e321012b093a438a7b9",
+      "size": 364798,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rajapalayam",
+    "name": "Rajapalayam",
+    "nameIt": "Rajapalayam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.56929,
+      9.44808
+    ],
+    "zoom": 10.7,
+    "population": 135590,
+    "grid": "cities/rajapalayam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rajapalayam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rajapalayam",
+        "name": "Rajapalayam",
+        "nameIt": "Rajapalayam",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.56929,
+          9.44808
+        ],
+        "zoom": 10.7,
+        "population": 135590,
+        "cells": 317,
+        "layer": "cities/rajapalayam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.56929,
+            9.44808
+          ]
+        },
+        "properties": {
+          "id": "rajapalayam",
+          "name": "Rajapalayam",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 28.1,
+          "population": 135590
+        }
+      },
+      "summary": null
+    }
+  }
+}

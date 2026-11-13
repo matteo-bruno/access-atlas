@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nagari",
+  "createdAt": "2026-10-08T15:59:39.496Z",
+  "updatedAt": "2026-10-08T15:59:39.496Z",
+  "meta": {
+    "name": "Nagari",
+    "nameIt": "Nagari",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nagari.geojson",
+      "sha256": "a51913b16a4c61c7130e759b10d8962651ce3f11db9e0d0f3dbb8769d75686e1",
+      "size": 157727,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nagari",
+    "name": "Nagari",
+    "nameIt": "Nagari",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.57586,
+      13.31952
+    ],
+    "zoom": 11.1,
+    "population": 46195,
+    "grid": "cities/nagari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nagari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nagari",
+        "name": "Nagari",
+        "nameIt": "Nagari",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.57586,
+          13.31952
+        ],
+        "zoom": 11.1,
+        "population": 46195,
+        "cells": 136,
+        "layer": "cities/nagari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.57586,
+            13.31952
+          ]
+        },
+        "properties": {
+          "id": "nagari",
+          "name": "Nagari",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 46195
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "turin-fua",
+  "createdAt": "2026-10-19T16:58:50.610Z",
+  "updatedAt": "2026-10-19T16:58:50.610Z",
+  "meta": {
+    "name": "Turin",
+    "nameIt": "Turin",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "turin-fua",
+    "name": "Turin",
+    "nameIt": "Turin",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "extent": "fua",
+    "core": "turin",
+    "center": [
+      7.65621,
+      45.06434
+    ],
+    "zoom": 8.5,
+    "population": 1762946,
+    "grid": "cities/turin-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/turin-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "turin-fua",
+        "name": "Turin",
+        "nameIt": "Turin",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "extent": "fua",
+        "core": "turin",
+        "center": [
+          7.65621,
+          45.06434
+        ],
+        "zoom": 8.5,
+        "population": 1762946,
+        "cells": 16425,
+        "layer": "cities/turin-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.65621,
+            45.06434
+          ]
+        },
+        "properties": {
+          "id": "turin-fua",
+          "name": "Turin",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 1762946
+        }
+      },
+      "summary": null
+    }
+  }
+}

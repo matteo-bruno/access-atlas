@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guyuk",
+  "createdAt": "2026-10-08T15:36:53.992Z",
+  "updatedAt": "2026-10-08T15:36:53.992Z",
+  "meta": {
+    "name": "Guyuk",
+    "nameIt": "Guyuk",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guyuk.geojson",
+      "sha256": "37e63ec7842b8071a327cd33950633173acbf5d4491fa7f455d367c7116f6a37",
+      "size": 63719,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guyuk",
+    "name": "Guyuk",
+    "nameIt": "Guyuk",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      11.93786,
+      9.90882
+    ],
+    "zoom": 12,
+    "population": 46169,
+    "grid": "cities/guyuk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guyuk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guyuk",
+        "name": "Guyuk",
+        "nameIt": "Guyuk",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          11.93786,
+          9.90882
+        ],
+        "zoom": 12,
+        "population": 46169,
+        "cells": 55,
+        "layer": "cities/guyuk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.93786,
+            9.90882
+          ]
+        },
+        "properties": {
+          "id": "guyuk",
+          "name": "Guyuk",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 46169
+        }
+      },
+      "summary": null
+    }
+  }
+}

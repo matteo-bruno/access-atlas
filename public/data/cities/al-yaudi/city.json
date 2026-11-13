@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-yaudi",
+  "createdAt": "2026-10-08T15:04:55.143Z",
+  "updatedAt": "2026-10-08T15:04:55.143Z",
+  "meta": {
+    "name": "Al Yaudi",
+    "nameIt": "Al Yaudi",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Yaudi.geojson",
+      "sha256": "6efb578c53d496582eacb391b0e97a38835576f0b2118c13847353fad3766cde",
+      "size": 131488,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-yaudi",
+    "name": "Al Yaudi",
+    "nameIt": "Al Yaudi",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      31.93888,
+      30.86145
+    ],
+    "zoom": 11.2,
+    "population": 138046,
+    "grid": "cities/al-yaudi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-yaudi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-yaudi",
+        "name": "Al Yaudi",
+        "nameIt": "Al Yaudi",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          31.93888,
+          30.86145
+        ],
+        "zoom": 11.2,
+        "population": 138046,
+        "cells": 113,
+        "layer": "cities/al-yaudi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.93888,
+            30.86145
+          ]
+        },
+        "properties": {
+          "id": "al-yaudi",
+          "name": "Al Yaudi",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 138046
+        }
+      },
+      "summary": null
+    }
+  }
+}

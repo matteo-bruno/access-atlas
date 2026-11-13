@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "teluk-dalam",
+  "createdAt": "2026-10-08T16:17:11.986Z",
+  "updatedAt": "2026-10-08T16:17:11.986Z",
+  "meta": {
+    "name": "Teluk Dalam",
+    "nameIt": "Teluk Dalam",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Teluk Dalam.geojson",
+      "sha256": "3997309348fc2718096dbc53df2d5b7e76d5eefabca62dfba46795c409614f89",
+      "size": 121589,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "teluk-dalam",
+    "name": "Teluk Dalam",
+    "nameIt": "Teluk Dalam",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      97.81718,
+      0.56778
+    ],
+    "zoom": 11.6,
+    "population": 37340,
+    "grid": "cities/teluk-dalam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/teluk-dalam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "teluk-dalam",
+        "name": "Teluk Dalam",
+        "nameIt": "Teluk Dalam",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          97.81718,
+          0.56778
+        ],
+        "zoom": 11.6,
+        "population": 37340,
+        "cells": 105,
+        "layer": "cities/teluk-dalam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            97.81718,
+            0.56778
+          ]
+        },
+        "properties": {
+          "id": "teluk-dalam",
+          "name": "Teluk Dalam",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 17.7,
+          "population": 37340
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bergama",
+  "createdAt": "2026-10-08T15:17:42.153Z",
+  "updatedAt": "2026-10-08T15:17:42.153Z",
+  "meta": {
+    "name": "Bergama",
+    "nameIt": "Bergama",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bergama.geojson",
+      "sha256": "2562c36a9852c11c25d25a6e2ce220945ae7addd62a0417a76abb5323ac2ee8f",
+      "size": 105330,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bergama",
+    "name": "Bergama",
+    "nameIt": "Bergama",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      27.18032,
+      39.11127
+    ],
+    "zoom": 12,
+    "population": 55242,
+    "grid": "cities/bergama/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bergama/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bergama",
+        "name": "Bergama",
+        "nameIt": "Bergama",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          27.18032,
+          39.11127
+        ],
+        "zoom": 12,
+        "population": 55242,
+        "cells": 92,
+        "layer": "cities/bergama/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.18032,
+            39.11127
+          ]
+        },
+        "properties": {
+          "id": "bergama",
+          "name": "Bergama",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 8,
+          "population": 55242
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nagoya",
+  "createdAt": "2026-10-08T15:59:44.941Z",
+  "updatedAt": "2026-10-08T15:59:44.941Z",
+  "meta": {
+    "name": "Nagoya",
+    "nameIt": "Nagoya",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nagoya.geojson",
+      "sha256": "9df78172ac03f2ef095c830098468da9cd061635c63f6b05a6d6298b257b5e01",
+      "size": 30169124,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nagoya",
+    "name": "Nagoya",
+    "nameIt": "Nagoya",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      136.90251,
+      35.13817
+    ],
+    "zoom": 8.5,
+    "population": 7594701,
+    "grid": "cities/nagoya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nagoya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nagoya",
+        "name": "Nagoya",
+        "nameIt": "Nagoya",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          136.90251,
+          35.13817
+        ],
+        "zoom": 8.5,
+        "population": 7594701,
+        "cells": 26166,
+        "layer": "cities/nagoya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            136.90251,
+            35.13817
+          ]
+        },
+        "properties": {
+          "id": "nagoya",
+          "name": "Nagoya",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 7594701
+        }
+      },
+      "summary": null
+    }
+  }
+}

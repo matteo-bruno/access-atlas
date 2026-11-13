@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "odesa",
+  "createdAt": "2026-10-08T16:02:32.612Z",
+  "updatedAt": "2026-10-08T16:02:32.612Z",
+  "meta": {
+    "name": "Odesa",
+    "nameIt": "Odesa",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Odesa.geojson",
+      "sha256": "40ca717dd3da7c52b6673d33af0edacd1e7b325dcd2b33b9c9d282fc6de04ae6",
+      "size": 1885324,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "odesa",
+    "name": "Odesa",
+    "nameIt": "Odesa",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      30.70626,
+      46.43203
+    ],
+    "zoom": 9.2,
+    "population": 535276,
+    "grid": "cities/odesa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/odesa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "odesa",
+        "name": "Odesa",
+        "nameIt": "Odesa",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          30.70626,
+          46.43203
+        ],
+        "zoom": 9.2,
+        "population": 535276,
+        "cells": 1645,
+        "layer": "cities/odesa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.70626,
+            46.43203
+          ]
+        },
+        "properties": {
+          "id": "odesa",
+          "name": "Odesa",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 11.4,
+          "population": 535276
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "casablanca",
+  "createdAt": "2026-10-08T15:22:42.959Z",
+  "updatedAt": "2026-10-08T15:22:42.959Z",
+  "meta": {
+    "name": "Casablanca",
+    "nameIt": "Casablanca",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Casablanca.geojson",
+      "sha256": "0031256a1973031abe52c2f8e1392cf490facd71829662dd8468ff2f62acbec8",
+      "size": 4187400,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "casablanca",
+    "name": "Casablanca",
+    "nameIt": "Casablanca",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -7.55842,
+      33.58394
+    ],
+    "zoom": 8.8,
+    "population": 4533203,
+    "grid": "cities/casablanca/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/casablanca/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "casablanca",
+        "name": "Casablanca",
+        "nameIt": "Casablanca",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -7.55842,
+          33.58394
+        ],
+        "zoom": 8.8,
+        "population": 4533203,
+        "cells": 3622,
+        "layer": "cities/casablanca/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -7.55842,
+            33.58394
+          ]
+        },
+        "properties": {
+          "id": "casablanca",
+          "name": "Casablanca",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 19.7,
+          "population": 4533203
+        }
+      },
+      "summary": null
+    }
+  }
+}

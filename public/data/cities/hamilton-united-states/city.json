@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hamilton-united-states",
+  "createdAt": "2026-10-08T15:37:33.220Z",
+  "updatedAt": "2026-10-08T15:37:33.220Z",
+  "meta": {
+    "name": "Hamilton (United States)",
+    "nameIt": "Hamilton (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hamilton (United States).geojson",
+      "sha256": "36eb455058e58300eaa32028acb16bd443ada74b4975005dac0d03f3453f7f7f",
+      "size": 934659,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hamilton-united-states",
+    "name": "Hamilton (United States)",
+    "nameIt": "Hamilton (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -84.52441,
+      39.34618
+    ],
+    "zoom": 9.9,
+    "population": 79032,
+    "grid": "cities/hamilton-united-states/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hamilton-united-states/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hamilton-united-states",
+        "name": "Hamilton (United States)",
+        "nameIt": "Hamilton (United States)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -84.52441,
+          39.34618
+        ],
+        "zoom": 9.9,
+        "population": 79032,
+        "cells": 805,
+        "layer": "cities/hamilton-united-states/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -84.52441,
+            39.34618
+          ]
+        },
+        "properties": {
+          "id": "hamilton-united-states",
+          "name": "Hamilton (United States)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 29.2,
+          "population": 79032
+        }
+      },
+      "summary": null
+    }
+  }
+}

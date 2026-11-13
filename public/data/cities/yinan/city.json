@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yinan",
+  "createdAt": "2026-10-08T16:23:53.648Z",
+  "updatedAt": "2026-10-08T16:23:53.648Z",
+  "meta": {
+    "name": "Yinan",
+    "nameIt": "Yinan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yinan.geojson",
+      "sha256": "d274d2b43fc94f8ae6c1ce0c853957e15b828e221bf838d3e329664c09175eb4",
+      "size": 677897,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yinan",
+    "name": "Yinan",
+    "nameIt": "Yinan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.46244,
+      35.54341
+    ],
+    "zoom": 10.8,
+    "population": 262264,
+    "grid": "cities/yinan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 172
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yinan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yinan",
+        "name": "Yinan",
+        "nameIt": "Yinan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.46244,
+          35.54341
+        ],
+        "zoom": 10.8,
+        "population": 262264,
+        "cells": 582,
+        "layer": "cities/yinan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 172
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.46244,
+            35.54341
+          ]
+        },
+        "properties": {
+          "id": "yinan",
+          "name": "Yinan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24,
+          "population": 262264
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jacmel",
+  "createdAt": "2026-10-08T15:41:36.971Z",
+  "updatedAt": "2026-10-08T15:41:36.971Z",
+  "meta": {
+    "name": "Jacmel",
+    "nameIt": "Jacmel",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jacmel.geojson",
+      "sha256": "f21c190a63ce6e19d807c87a608cee65caf30c0d7ce573af60eca94a5677ebfa",
+      "size": 351926,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jacmel",
+    "name": "Jacmel",
+    "nameIt": "Jacmel",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT",
+    "center": [
+      -72.52356,
+      18.23674
+    ],
+    "zoom": 11.2,
+    "population": 77078,
+    "grid": "cities/jacmel/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jacmel/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jacmel",
+        "name": "Jacmel",
+        "nameIt": "Jacmel",
+        "region": "Haiti",
+        "regionIt": "Haiti",
+        "country": "HT",
+        "center": [
+          -72.52356,
+          18.23674
+        ],
+        "zoom": 11.2,
+        "population": 77078,
+        "cells": 302,
+        "layer": "cities/jacmel/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.52356,
+            18.23674
+          ]
+        },
+        "properties": {
+          "id": "jacmel",
+          "name": "Jacmel",
+          "country": "HT",
+          "isStudy": true,
+          "proximityMinutes": 20.6,
+          "population": 77078
+        }
+      },
+      "summary": null
+    }
+  }
+}

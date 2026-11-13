@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "runcorn",
+  "createdAt": "2026-10-08T16:09:21.411Z",
+  "updatedAt": "2026-10-08T16:09:21.411Z",
+  "meta": {
+    "name": "Runcorn",
+    "nameIt": "Runcorn",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Runcorn.geojson",
+      "sha256": "87132da8d1f3cf49a3c3e9c9414e053be98ad8bccff3a6a36ef082f41506a4f7",
+      "size": 597938,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "runcorn",
+    "name": "Runcorn",
+    "nameIt": "Runcorn",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -2.72284,
+      53.35192
+    ],
+    "zoom": 11,
+    "population": 113802,
+    "grid": "cities/runcorn/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/runcorn/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "runcorn",
+        "name": "Runcorn",
+        "nameIt": "Runcorn",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -2.72284,
+          53.35192
+        ],
+        "zoom": 11,
+        "population": 113802,
+        "cells": 519,
+        "layer": "cities/runcorn/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.72284,
+            53.35192
+          ]
+        },
+        "properties": {
+          "id": "runcorn",
+          "name": "Runcorn",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 113802
+        }
+      },
+      "summary": null
+    }
+  }
+}

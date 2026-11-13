@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "targoviste",
+  "createdAt": "2026-10-08T16:19:27.550Z",
+  "updatedAt": "2026-10-08T16:19:27.550Z",
+  "meta": {
+    "name": "Târgoviște",
+    "nameIt": "Târgoviște",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Târgoviște.geojson",
+      "sha256": "3bc673d5530e4092914ae617783ae0e7b3fd4b7a32b70dbce036a1ac19d01c96",
+      "size": 175342,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "targoviste",
+    "name": "Târgoviște",
+    "nameIt": "Târgoviște",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO",
+    "center": [
+      25.45804,
+      44.92358
+    ],
+    "zoom": 11.5,
+    "population": 57189,
+    "grid": "cities/targoviste/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/targoviste/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "targoviste",
+        "name": "Târgoviște",
+        "nameIt": "Târgoviște",
+        "region": "Romania",
+        "regionIt": "Romania",
+        "country": "RO",
+        "center": [
+          25.45804,
+          44.92358
+        ],
+        "zoom": 11.5,
+        "population": 57189,
+        "cells": 153,
+        "layer": "cities/targoviste/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.45804,
+            44.92358
+          ]
+        },
+        "properties": {
+          "id": "targoviste",
+          "name": "Târgoviște",
+          "country": "RO",
+          "isStudy": true,
+          "proximityMinutes": 11.1,
+          "population": 57189
+        }
+      },
+      "summary": null
+    }
+  }
+}

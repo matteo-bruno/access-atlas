@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "duzici",
+  "createdAt": "2026-10-08T15:31:36.922Z",
+  "updatedAt": "2026-10-08T15:31:36.922Z",
+  "meta": {
+    "name": "Düziçi",
+    "nameIt": "Düziçi",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Düziçi.geojson",
+      "sha256": "a638255217cc947db4e9011705227c5cac010de678d13526ad67289d07904e82",
+      "size": 100803,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "duzici",
+    "name": "Düziçi",
+    "nameIt": "Düziçi",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      36.45305,
+      37.24435
+    ],
+    "zoom": 12,
+    "population": 55776,
+    "grid": "cities/duzici/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/duzici/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "duzici",
+        "name": "Düziçi",
+        "nameIt": "Düziçi",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          36.45305,
+          37.24435
+        ],
+        "zoom": 12,
+        "population": 55776,
+        "cells": 87,
+        "layer": "cities/duzici/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.45305,
+            37.24435
+          ]
+        },
+        "properties": {
+          "id": "duzici",
+          "name": "Düziçi",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 55776
+        }
+      },
+      "summary": null
+    }
+  }
+}

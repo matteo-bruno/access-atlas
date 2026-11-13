@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gorgan",
+  "createdAt": "2026-10-08T15:35:46.071Z",
+  "updatedAt": "2026-10-08T15:35:46.071Z",
+  "meta": {
+    "name": "Gorgan",
+    "nameIt": "Gorgan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gorgan.geojson",
+      "sha256": "4602a9a21fa06dfb51c84fa447db8d800518ec5fa402a7a5392c93ab22d1df5d",
+      "size": 428986,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gorgan",
+    "name": "Gorgan",
+    "nameIt": "Gorgan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      54.4385,
+      36.83905
+    ],
+    "zoom": 10.6,
+    "population": 339815,
+    "grid": "cities/gorgan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gorgan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gorgan",
+        "name": "Gorgan",
+        "nameIt": "Gorgan",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          54.4385,
+          36.83905
+        ],
+        "zoom": 10.6,
+        "population": 339815,
+        "cells": 371,
+        "layer": "cities/gorgan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            54.4385,
+            36.83905
+          ]
+        },
+        "properties": {
+          "id": "gorgan",
+          "name": "Gorgan",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 24.7,
+          "population": 339815
+        }
+      },
+      "summary": null
+    }
+  }
+}

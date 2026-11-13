@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mazgam",
+  "createdAt": "2026-10-08T15:56:01.480Z",
+  "updatedAt": "2026-10-08T15:56:01.480Z",
+  "meta": {
+    "name": "Mazgam",
+    "nameIt": "Mazgam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mazgam.geojson",
+      "sha256": "bd6785bedd445480119f892641ea625c0cb458e578dc3d6087d24d7b455eb512",
+      "size": 77387,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mazgam",
+    "name": "Mazgam",
+    "nameIt": "Mazgam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.8836,
+      34.11042
+    ],
+    "zoom": 11.9,
+    "population": 24259,
+    "grid": "cities/mazgam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mazgam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mazgam",
+        "name": "Mazgam",
+        "nameIt": "Mazgam",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.8836,
+          34.11042
+        ],
+        "zoom": 11.9,
+        "population": 24259,
+        "cells": 67,
+        "layer": "cities/mazgam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.8836,
+            34.11042
+          ]
+        },
+        "properties": {
+          "id": "mazgam",
+          "name": "Mazgam",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 24259
+        }
+      },
+      "summary": null
+    }
+  }
+}

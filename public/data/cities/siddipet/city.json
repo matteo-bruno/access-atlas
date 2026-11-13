@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "siddipet",
+  "createdAt": "2026-10-08T16:13:24.398Z",
+  "updatedAt": "2026-10-08T16:13:24.398Z",
+  "meta": {
+    "name": "Siddipet",
+    "nameIt": "Siddipet",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Siddipet.geojson",
+      "sha256": "a515619c322a85d719998fd3b4c6e4252c159753c2d23058ce0a93a750c57301",
+      "size": 163154,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "siddipet",
+    "name": "Siddipet",
+    "nameIt": "Siddipet",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.84662,
+      18.10266
+    ],
+    "zoom": 11.4,
+    "population": 116147,
+    "grid": "cities/siddipet/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/siddipet/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "siddipet",
+        "name": "Siddipet",
+        "nameIt": "Siddipet",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.84662,
+          18.10266
+        ],
+        "zoom": 11.4,
+        "population": 116147,
+        "cells": 141,
+        "layer": "cities/siddipet/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.84662,
+            18.10266
+          ]
+        },
+        "properties": {
+          "id": "siddipet",
+          "name": "Siddipet",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 116147
+        }
+      },
+      "summary": null
+    }
+  }
+}

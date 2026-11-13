@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ningxiang",
+  "createdAt": "2026-10-08T16:01:43.275Z",
+  "updatedAt": "2026-10-08T16:01:43.275Z",
+  "meta": {
+    "name": "Ningxiang",
+    "nameIt": "Ningxiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ningxiang.geojson",
+      "sha256": "a7715ebaf61ab89201ed929704b70bd70354794a058a3712f24ed6d2c4460506",
+      "size": 553115,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ningxiang",
+    "name": "Ningxiang",
+    "nameIt": "Ningxiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.55486,
+      28.2654
+    ],
+    "zoom": 10.6,
+    "population": 403806,
+    "grid": "cities/ningxiang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ningxiang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ningxiang",
+        "name": "Ningxiang",
+        "nameIt": "Ningxiang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.55486,
+          28.2654
+        ],
+        "zoom": 10.6,
+        "population": 403806,
+        "cells": 473,
+        "layer": "cities/ningxiang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.55486,
+            28.2654
+          ]
+        },
+        "properties": {
+          "id": "ningxiang",
+          "name": "Ningxiang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 403806
+        }
+      },
+      "summary": null
+    }
+  }
+}

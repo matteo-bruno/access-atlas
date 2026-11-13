@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "reinbek",
+  "createdAt": "2026-10-08T16:08:36.447Z",
+  "updatedAt": "2026-10-08T16:08:36.447Z",
+  "meta": {
+    "name": "Reinbek",
+    "nameIt": "Reinbek",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Reinbek.geojson",
+      "sha256": "7b75ebb24692dc1167a00c7ded998262493c5f9be660d0d8471f88905224909d",
+      "size": 532811,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "reinbek",
+    "name": "Reinbek",
+    "nameIt": "Reinbek",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      10.21484,
+      53.5047
+    ],
+    "zoom": 10.8,
+    "population": 124063,
+    "grid": "cities/reinbek/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/reinbek/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "reinbek",
+        "name": "Reinbek",
+        "nameIt": "Reinbek",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          10.21484,
+          53.5047
+        ],
+        "zoom": 10.8,
+        "population": 124063,
+        "cells": 466,
+        "layer": "cities/reinbek/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.21484,
+            53.5047
+          ]
+        },
+        "properties": {
+          "id": "reinbek",
+          "name": "Reinbek",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 10.1,
+          "population": 124063
+        }
+      },
+      "summary": null
+    }
+  }
+}

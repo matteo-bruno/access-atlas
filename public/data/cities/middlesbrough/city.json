@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "middlesbrough",
+  "createdAt": "2026-10-08T15:56:59.493Z",
+  "updatedAt": "2026-10-08T15:56:59.493Z",
+  "meta": {
+    "name": "Middlesbrough",
+    "nameIt": "Middlesbrough",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Middlesbrough.geojson",
+      "sha256": "f5578f4aa668e5fe414d28821e27302d59dac6c5c0dc3ccd17ea42e7c607578e",
+      "size": 1941728,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "middlesbrough",
+    "name": "Middlesbrough",
+    "nameIt": "Middlesbrough",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.26012,
+      54.56028
+    ],
+    "zoom": 9.9,
+    "population": 348581,
+    "grid": "cities/middlesbrough/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/middlesbrough/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "middlesbrough",
+        "name": "Middlesbrough",
+        "nameIt": "Middlesbrough",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.26012,
+          54.56028
+        ],
+        "zoom": 9.9,
+        "population": 348581,
+        "cells": 1677,
+        "layer": "cities/middlesbrough/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.26012,
+            54.56028
+          ]
+        },
+        "properties": {
+          "id": "middlesbrough",
+          "name": "Middlesbrough",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 16.1,
+          "population": 348581
+        }
+      },
+      "summary": null
+    }
+  }
+}

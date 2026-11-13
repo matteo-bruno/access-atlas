@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "songkhla",
+  "createdAt": "2026-10-08T16:14:25.098Z",
+  "updatedAt": "2026-10-08T16:14:25.098Z",
+  "meta": {
+    "name": "Songkhla",
+    "nameIt": "Songkhla",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Songkhla.geojson",
+      "sha256": "1fbb68e5bd3a755c49f8927bb5bccaa222b666ef616c9ff8c7548c8e75280163",
+      "size": 614772,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "songkhla",
+    "name": "Songkhla",
+    "nameIt": "Songkhla",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      100.59846,
+      7.17063
+    ],
+    "zoom": 10.4,
+    "population": 180857,
+    "grid": "cities/songkhla/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/songkhla/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "songkhla",
+        "name": "Songkhla",
+        "nameIt": "Songkhla",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          100.59846,
+          7.17063
+        ],
+        "zoom": 10.4,
+        "population": 180857,
+        "cells": 530,
+        "layer": "cities/songkhla/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            100.59846,
+            7.17063
+          ]
+        },
+        "properties": {
+          "id": "songkhla",
+          "name": "Songkhla",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 24.6,
+          "population": 180857
+        }
+      },
+      "summary": null
+    }
+  }
+}

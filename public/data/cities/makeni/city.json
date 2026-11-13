@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "makeni",
+  "createdAt": "2026-10-08T15:53:58.069Z",
+  "updatedAt": "2026-10-08T15:53:58.069Z",
+  "meta": {
+    "name": "Makeni",
+    "nameIt": "Makeni",
+    "region": "Sierra Leone",
+    "regionIt": "Sierra Leone",
+    "country": "SL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Makeni.geojson",
+      "sha256": "f818673cdf8014503f5a2e9c0f4b1cffc51fcf54fe0812c785134b7b4dd73f7f",
+      "size": 431736,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "makeni",
+    "name": "Makeni",
+    "nameIt": "Makeni",
+    "region": "Sierra Leone",
+    "regionIt": "Sierra Leone",
+    "country": "SL",
+    "center": [
+      -12.04516,
+      8.88537
+    ],
+    "zoom": 11.2,
+    "population": 172505,
+    "grid": "cities/makeni/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/makeni/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "makeni",
+        "name": "Makeni",
+        "nameIt": "Makeni",
+        "region": "Sierra Leone",
+        "regionIt": "Sierra Leone",
+        "country": "SL",
+        "center": [
+          -12.04516,
+          8.88537
+        ],
+        "zoom": 11.2,
+        "population": 172505,
+        "cells": 370,
+        "layer": "cities/makeni/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -12.04516,
+            8.88537
+          ]
+        },
+        "properties": {
+          "id": "makeni",
+          "name": "Makeni",
+          "country": "SL",
+          "isStudy": true,
+          "proximityMinutes": 22.2,
+          "population": 172505
+        }
+      },
+      "summary": null
+    }
+  }
+}

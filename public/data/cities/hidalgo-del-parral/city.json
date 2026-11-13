@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hidalgo-del-parral",
+  "createdAt": "2026-10-08T15:38:36.723Z",
+  "updatedAt": "2026-10-08T15:38:36.723Z",
+  "meta": {
+    "name": "Hidalgo del Parral",
+    "nameIt": "Hidalgo del Parral",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hidalgo del Parral.geojson",
+      "sha256": "b205f650f29a1dfe19df56613fa07c988f433d126ae879ca9892fd791a074bb1",
+      "size": 263696,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hidalgo-del-parral",
+    "name": "Hidalgo del Parral",
+    "nameIt": "Hidalgo del Parral",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -105.67536,
+      26.93164
+    ],
+    "zoom": 11,
+    "population": 106643,
+    "grid": "cities/hidalgo-del-parral/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hidalgo-del-parral/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hidalgo-del-parral",
+        "name": "Hidalgo del Parral",
+        "nameIt": "Hidalgo del Parral",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -105.67536,
+          26.93164
+        ],
+        "zoom": 11,
+        "population": 106643,
+        "cells": 224,
+        "layer": "cities/hidalgo-del-parral/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -105.67536,
+            26.93164
+          ]
+        },
+        "properties": {
+          "id": "hidalgo-del-parral",
+          "name": "Hidalgo del Parral",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 19.5,
+          "population": 106643
+        }
+      },
+      "summary": null
+    }
+  }
+}

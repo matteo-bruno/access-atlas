@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khachmaz",
+  "createdAt": "2026-10-08T15:46:19.306Z",
+  "updatedAt": "2026-10-08T15:46:19.306Z",
+  "meta": {
+    "name": "Khachmaz",
+    "nameIt": "Khachmaz",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khachmaz.geojson",
+      "sha256": "c8e2f4b90f4153adb047a1eac4a1eadda63db0110b0a4979acc36d8a11e98119",
+      "size": 145862,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khachmaz",
+    "name": "Khachmaz",
+    "nameIt": "Khachmaz",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ",
+    "center": [
+      48.80304,
+      41.46115
+    ],
+    "zoom": 12,
+    "population": 46563,
+    "grid": "cities/khachmaz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khachmaz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khachmaz",
+        "name": "Khachmaz",
+        "nameIt": "Khachmaz",
+        "region": "Azerbaijan",
+        "regionIt": "Azerbaigian",
+        "country": "AZ",
+        "center": [
+          48.80304,
+          41.46115
+        ],
+        "zoom": 12,
+        "population": 46563,
+        "cells": 126,
+        "layer": "cities/khachmaz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.80304,
+            41.46115
+          ]
+        },
+        "properties": {
+          "id": "khachmaz",
+          "name": "Khachmaz",
+          "country": "AZ",
+          "isStudy": true,
+          "proximityMinutes": 16.9,
+          "population": 46563
+        }
+      },
+      "summary": null
+    }
+  }
+}

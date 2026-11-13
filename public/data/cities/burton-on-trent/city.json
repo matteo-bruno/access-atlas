@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "burton-on-trent",
+  "createdAt": "2026-10-08T15:21:08.039Z",
+  "updatedAt": "2026-10-08T15:21:08.039Z",
+  "meta": {
+    "name": "Burton-on-Trent",
+    "nameIt": "Burton-on-Trent",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Burton-on-Trent.geojson",
+      "sha256": "65909eafb99a87e5373ce260a5590a3379c2255cc7a0db569121d59755895214",
+      "size": 290772,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "burton-on-trent",
+    "name": "Burton-on-Trent",
+    "nameIt": "Burton-on-Trent",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.63284,
+      52.80834
+    ],
+    "zoom": 11.2,
+    "population": 71679,
+    "grid": "cities/burton-on-trent/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/burton-on-trent/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "burton-on-trent",
+        "name": "Burton-on-Trent",
+        "nameIt": "Burton-on-Trent",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.63284,
+          52.80834
+        ],
+        "zoom": 11.2,
+        "population": 71679,
+        "cells": 251,
+        "layer": "cities/burton-on-trent/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.63284,
+            52.80834
+          ]
+        },
+        "properties": {
+          "id": "burton-on-trent",
+          "name": "Burton-on-Trent",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 71679
+        }
+      },
+      "summary": null
+    }
+  }
+}

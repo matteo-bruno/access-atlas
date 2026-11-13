@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "phaltan",
+  "createdAt": "2026-10-08T16:05:13.072Z",
+  "updatedAt": "2026-10-08T16:05:13.072Z",
+  "meta": {
+    "name": "Phaltan",
+    "nameIt": "Phaltan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Phaltan.geojson",
+      "sha256": "b4daf0481b3f1e55cdc79177d7c6516c2ed588faeeee711887f36fc1fd8b2f66",
+      "size": 147157,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "phaltan",
+    "name": "Phaltan",
+    "nameIt": "Phaltan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.43419,
+      17.98662
+    ],
+    "zoom": 11.9,
+    "population": 75752,
+    "grid": "cities/phaltan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/phaltan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "phaltan",
+        "name": "Phaltan",
+        "nameIt": "Phaltan",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.43419,
+          17.98662
+        ],
+        "zoom": 11.9,
+        "population": 75752,
+        "cells": 127,
+        "layer": "cities/phaltan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.43419,
+            17.98662
+          ]
+        },
+        "properties": {
+          "id": "phaltan",
+          "name": "Phaltan",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 16.4,
+          "population": 75752
+        }
+      },
+      "summary": null
+    }
+  }
+}

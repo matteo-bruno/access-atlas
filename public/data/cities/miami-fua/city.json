@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "miami-fua",
+  "createdAt": "2026-10-19T16:57:27.675Z",
+  "updatedAt": "2026-10-19T16:57:27.675Z",
+  "meta": {
+    "name": "Miami",
+    "nameIt": "Miami",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "miami-fua",
+    "name": "Miami",
+    "nameIt": "Miami",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "extent": "fua",
+    "core": "miami",
+    "center": [
+      -80.23881,
+      26.09493
+    ],
+    "zoom": 8.5,
+    "population": 7164143,
+    "grid": "cities/miami-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/miami-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "miami-fua",
+        "name": "Miami",
+        "nameIt": "Miami",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "extent": "fua",
+        "core": "miami",
+        "center": [
+          -80.23881,
+          26.09493
+        ],
+        "zoom": 8.5,
+        "population": 7164143,
+        "cells": 68909,
+        "layer": "cities/miami-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.23881,
+            26.09493
+          ]
+        },
+        "properties": {
+          "id": "miami-fua",
+          "name": "Miami",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 26.3,
+          "population": 7164143
+        }
+      },
+      "summary": null
+    }
+  }
+}

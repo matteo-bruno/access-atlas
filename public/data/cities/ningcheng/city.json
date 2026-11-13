@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ningcheng",
+  "createdAt": "2026-10-08T16:01:38.265Z",
+  "updatedAt": "2026-10-08T16:01:38.265Z",
+  "meta": {
+    "name": "Ningcheng",
+    "nameIt": "Ningcheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ningcheng.geojson",
+      "sha256": "0a361851936085e4583fe4cdb4ee3b4af57a0cfc678341b1e3451d136adcf080",
+      "size": 308703,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ningcheng",
+    "name": "Ningcheng",
+    "nameIt": "Ningcheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.32607,
+      41.59314
+    ],
+    "zoom": 11.4,
+    "population": 90730,
+    "grid": "cities/ningcheng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 168
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ningcheng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ningcheng",
+        "name": "Ningcheng",
+        "nameIt": "Ningcheng",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.32607,
+          41.59314
+        ],
+        "zoom": 11.4,
+        "population": 90730,
+        "cells": 265,
+        "layer": "cities/ningcheng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 168
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.32607,
+            41.59314
+          ]
+        },
+        "properties": {
+          "id": "ningcheng",
+          "name": "Ningcheng",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 20.3,
+          "population": 90730
+        }
+      },
+      "summary": null
+    }
+  }
+}

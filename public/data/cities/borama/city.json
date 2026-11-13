@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "borama",
+  "createdAt": "2026-10-08T15:20:06.472Z",
+  "updatedAt": "2026-10-08T15:20:06.472Z",
+  "meta": {
+    "name": "Borama",
+    "nameIt": "Borama",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Borama.geojson",
+      "sha256": "3f8346d361a3ea8cd4415ba26effb84e01ee33e5874855b8646b37246850d6c7",
+      "size": 208946,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "borama",
+    "name": "Borama",
+    "nameIt": "Borama",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      43.18374,
+      9.93789
+    ],
+    "zoom": 11.6,
+    "population": 260296,
+    "grid": "cities/borama/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/borama/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "borama",
+        "name": "Borama",
+        "nameIt": "Borama",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          43.18374,
+          9.93789
+        ],
+        "zoom": 11.6,
+        "population": 260296,
+        "cells": 181,
+        "layer": "cities/borama/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.18374,
+            9.93789
+          ]
+        },
+        "properties": {
+          "id": "borama",
+          "name": "Borama",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 17,
+          "population": 260296
+        }
+      },
+      "summary": null
+    }
+  }
+}

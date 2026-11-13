@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-midhatiya",
+  "createdAt": "2026-10-08T15:04:37.165Z",
+  "updatedAt": "2026-10-08T15:04:37.165Z",
+  "meta": {
+    "name": "Al Midhatiya",
+    "nameIt": "Al Midhatiya",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Midhatiya.geojson",
+      "sha256": "06567992a101afb2ea363b85c0b477dd3faf222efe02e2bbf520d719cf232595",
+      "size": 227013,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-midhatiya",
+    "name": "Al Midhatiya",
+    "nameIt": "Al Midhatiya",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      44.6627,
+      32.38305
+    ],
+    "zoom": 11.4,
+    "population": 102940,
+    "grid": "cities/al-midhatiya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-midhatiya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-midhatiya",
+        "name": "Al Midhatiya",
+        "nameIt": "Al Midhatiya",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          44.6627,
+          32.38305
+        ],
+        "zoom": 11.4,
+        "population": 102940,
+        "cells": 196,
+        "layer": "cities/al-midhatiya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.6627,
+            32.38305
+          ]
+        },
+        "properties": {
+          "id": "al-midhatiya",
+          "name": "Al Midhatiya",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 20.9,
+          "population": 102940
+        }
+      },
+      "summary": null
+    }
+  }
+}

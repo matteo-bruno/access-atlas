@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "meishan-sichuan-province",
+  "createdAt": "2026-10-08T15:56:22.648Z",
+  "updatedAt": "2026-10-08T15:56:22.648Z",
+  "meta": {
+    "name": "Meishan (Sichuan Province)",
+    "nameIt": "Meishan (Sichuan Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Meishan (Sichuan Province).geojson",
+      "sha256": "b3d7320e691b2654c6f71d351ee99f21980d60d32b4387c1dd901ac0d0d84b45",
+      "size": 1260486,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "meishan-sichuan-province",
+    "name": "Meishan (Sichuan Province)",
+    "nameIt": "Meishan (Sichuan Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      103.83673,
+      30.05447
+    ],
+    "zoom": 10.1,
+    "population": 470018,
+    "grid": "cities/meishan-sichuan-province/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/meishan-sichuan-province/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "meishan-sichuan-province",
+        "name": "Meishan (Sichuan Province)",
+        "nameIt": "Meishan (Sichuan Province)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          103.83673,
+          30.05447
+        ],
+        "zoom": 10.1,
+        "population": 470018,
+        "cells": 1077,
+        "layer": "cities/meishan-sichuan-province/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.83673,
+            30.05447
+          ]
+        },
+        "properties": {
+          "id": "meishan-sichuan-province",
+          "name": "Meishan (Sichuan Province)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 39.3,
+          "population": 470018
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chemnitz",
+  "createdAt": "2026-10-08T15:24:11.518Z",
+  "updatedAt": "2026-10-08T15:24:11.518Z",
+  "meta": {
+    "name": "Chemnitz",
+    "nameIt": "Chemnitz",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chemnitz.geojson",
+      "sha256": "62d0fbcc8df331a259f9654a8d11397b4c524704c95a414763c4e4fac942bc8f",
+      "size": 891571,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chemnitz",
+    "name": "Chemnitz",
+    "nameIt": "Chemnitz",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      12.90887,
+      50.82521
+    ],
+    "zoom": 10.3,
+    "population": 189377,
+    "grid": "cities/chemnitz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chemnitz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chemnitz",
+        "name": "Chemnitz",
+        "nameIt": "Chemnitz",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          12.90887,
+          50.82521
+        ],
+        "zoom": 10.3,
+        "population": 189377,
+        "cells": 780,
+        "layer": "cities/chemnitz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.90887,
+            50.82521
+          ]
+        },
+        "properties": {
+          "id": "chemnitz",
+          "name": "Chemnitz",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 8.9,
+          "population": 189377
+        }
+      },
+      "summary": null
+    }
+  }
+}

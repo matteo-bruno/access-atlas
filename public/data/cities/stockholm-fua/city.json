@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "stockholm-fua",
+  "createdAt": "2026-10-19T16:58:37.290Z",
+  "updatedAt": "2026-10-19T16:58:37.290Z",
+  "meta": {
+    "name": "Stockholm",
+    "nameIt": "Stoccolma",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "stockholm-fua",
+    "name": "Stockholm",
+    "nameIt": "Stoccolma",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE",
+    "extent": "fua",
+    "core": "stockholm",
+    "center": [
+      18.01598,
+      59.34059
+    ],
+    "zoom": 8.5,
+    "population": 2232360,
+    "grid": "cities/stockholm-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/stockholm-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "stockholm-fua",
+        "name": "Stockholm",
+        "nameIt": "Stoccolma",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "extent": "fua",
+        "core": "stockholm",
+        "center": [
+          18.01598,
+          59.34059
+        ],
+        "zoom": 8.5,
+        "population": 2232360,
+        "cells": 31999,
+        "layer": "cities/stockholm-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.01598,
+            59.34059
+          ]
+        },
+        "properties": {
+          "id": "stockholm-fua",
+          "name": "Stockholm",
+          "country": "SE",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 2232360
+        }
+      },
+      "summary": null
+    }
+  }
+}

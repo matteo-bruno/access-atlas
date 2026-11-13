@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kamonia",
+  "createdAt": "2026-10-08T15:44:43.532Z",
+  "updatedAt": "2026-10-08T15:44:43.532Z",
+  "meta": {
+    "name": "Kamonia",
+    "nameIt": "Kamonia",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kamonia.geojson",
+      "sha256": "f31e1655205b8f91a8543c69cb0b855e6f0071f09682b3f81c7e3fbacf906514",
+      "size": 67711,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kamonia",
+    "name": "Kamonia",
+    "nameIt": "Kamonia",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      20.92766,
+      -6.8789
+    ],
+    "zoom": 12,
+    "population": 21552,
+    "grid": "cities/kamonia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kamonia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kamonia",
+        "name": "Kamonia",
+        "nameIt": "Kamonia",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          20.92766,
+          -6.8789
+        ],
+        "zoom": 12,
+        "population": 21552,
+        "cells": 58,
+        "layer": "cities/kamonia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.92766,
+            -6.8789
+          ]
+        },
+        "properties": {
+          "id": "kamonia",
+          "name": "Kamonia",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 21552
+        }
+      },
+      "summary": null
+    }
+  }
+}

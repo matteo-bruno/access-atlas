@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "angeles",
+  "createdAt": "2026-10-08T15:07:36.835Z",
+  "updatedAt": "2026-10-08T15:07:36.835Z",
+  "meta": {
+    "name": "Angeles",
+    "nameIt": "Angeles",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Angeles.geojson",
+      "sha256": "9c32026e6afa08e9d844befae8725b05fd7f2eb06df2a27d4294babb00c9209c",
+      "size": 3374776,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "angeles",
+    "name": "Angeles",
+    "nameIt": "Angeles",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      120.63099,
+      15.13285
+    ],
+    "zoom": 9.3,
+    "population": 1401947,
+    "grid": "cities/angeles/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/angeles/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "angeles",
+        "name": "Angeles",
+        "nameIt": "Angeles",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          120.63099,
+          15.13285
+        ],
+        "zoom": 9.3,
+        "population": 1401947,
+        "cells": 2909,
+        "layer": "cities/angeles/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.63099,
+            15.13285
+          ]
+        },
+        "properties": {
+          "id": "angeles",
+          "name": "Angeles",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 25.2,
+          "population": 1401947
+        }
+      },
+      "summary": null
+    }
+  }
+}

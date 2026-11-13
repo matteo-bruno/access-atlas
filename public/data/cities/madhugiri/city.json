@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "madhugiri",
+  "createdAt": "2026-10-08T15:53:23.568Z",
+  "updatedAt": "2026-10-08T15:53:23.568Z",
+  "meta": {
+    "name": "Madhugiri",
+    "nameIt": "Madhugiri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Madhugiri.geojson",
+      "sha256": "57467bce4eae8be4c370b4a9745d59fd630ccca13efb5408ef10de30f10a6068",
+      "size": 85856,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "madhugiri",
+    "name": "Madhugiri",
+    "nameIt": "Madhugiri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.21445,
+      13.66171
+    ],
+    "zoom": 12,
+    "population": 25779,
+    "grid": "cities/madhugiri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/madhugiri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "madhugiri",
+        "name": "Madhugiri",
+        "nameIt": "Madhugiri",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.21445,
+          13.66171
+        ],
+        "zoom": 12,
+        "population": 25779,
+        "cells": 74,
+        "layer": "cities/madhugiri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.21445,
+            13.66171
+          ]
+        },
+        "properties": {
+          "id": "madhugiri",
+          "name": "Madhugiri",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 25779
+        }
+      },
+      "summary": null
+    }
+  }
+}

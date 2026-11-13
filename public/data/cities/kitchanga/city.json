@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kitchanga",
+  "createdAt": "2026-10-08T15:47:23.673Z",
+  "updatedAt": "2026-10-08T15:47:23.673Z",
+  "meta": {
+    "name": "Kitchanga",
+    "nameIt": "Kitchanga",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kitchanga.geojson",
+      "sha256": "0887584a40f0931d086d3700ff99ce56bd6d4db932d3bc0a7a40ee749f3bd68a",
+      "size": 76328,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kitchanga",
+    "name": "Kitchanga",
+    "nameIt": "Kitchanga",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      29.05959,
+      -1.25149
+    ],
+    "zoom": 12,
+    "population": 59305,
+    "grid": "cities/kitchanga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kitchanga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kitchanga",
+        "name": "Kitchanga",
+        "nameIt": "Kitchanga",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          29.05959,
+          -1.25149
+        ],
+        "zoom": 12,
+        "population": 59305,
+        "cells": 65,
+        "layer": "cities/kitchanga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.05959,
+            -1.25149
+          ]
+        },
+        "properties": {
+          "id": "kitchanga",
+          "name": "Kitchanga",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 59305
+        }
+      },
+      "summary": null
+    }
+  }
+}

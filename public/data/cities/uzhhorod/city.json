@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "uzhhorod",
+  "createdAt": "2026-10-08T16:20:12.779Z",
+  "updatedAt": "2026-10-08T16:20:12.779Z",
+  "meta": {
+    "name": "Uzhhorod",
+    "nameIt": "Uzhhorod",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Uzhhorod.geojson",
+      "sha256": "a28bff42a3360d0e9409ff3ebe8b86f64d821d0c66ae20156aa5c54fe23e1e02",
+      "size": 358076,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "uzhhorod",
+    "name": "Uzhhorod",
+    "nameIt": "Uzhhorod",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      22.29144,
+      48.61509
+    ],
+    "zoom": 11.2,
+    "population": 98053,
+    "grid": "cities/uzhhorod/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/uzhhorod/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "uzhhorod",
+        "name": "Uzhhorod",
+        "nameIt": "Uzhhorod",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          22.29144,
+          48.61509
+        ],
+        "zoom": 11.2,
+        "population": 98053,
+        "cells": 313,
+        "layer": "cities/uzhhorod/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            22.29144,
+            48.61509
+          ]
+        },
+        "properties": {
+          "id": "uzhhorod",
+          "name": "Uzhhorod",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 98053
+        }
+      },
+      "summary": null
+    }
+  }
+}

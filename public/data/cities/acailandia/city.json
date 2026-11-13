@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "acailandia",
+  "createdAt": "2026-10-08T15:12:07.613Z",
+  "updatedAt": "2026-10-08T15:12:07.613Z",
+  "meta": {
+    "name": "Açailândia",
+    "nameIt": "Açailândia",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Açailândia.geojson",
+      "sha256": "fc46e4de80107d604d6296e6e15cdb003e09397508298af6b76ff2733946d27c",
+      "size": 164254,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "acailandia",
+    "name": "Açailândia",
+    "nameIt": "Açailândia",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -47.48678,
+      -4.94936
+    ],
+    "zoom": 11.4,
+    "population": 54938,
+    "grid": "cities/acailandia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/acailandia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "acailandia",
+        "name": "Açailândia",
+        "nameIt": "Açailândia",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -47.48678,
+          -4.94936
+        ],
+        "zoom": 11.4,
+        "population": 54938,
+        "cells": 140,
+        "layer": "cities/acailandia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.48678,
+            -4.94936
+          ]
+        },
+        "properties": {
+          "id": "acailandia",
+          "name": "Açailândia",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 13.9,
+          "population": 54938
+        }
+      },
+      "summary": null
+    }
+  }
+}

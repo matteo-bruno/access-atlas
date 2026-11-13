@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lagarto",
+  "createdAt": "2026-10-08T15:49:33.440Z",
+  "updatedAt": "2026-10-08T15:49:33.440Z",
+  "meta": {
+    "name": "Lagarto",
+    "nameIt": "Lagarto",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lagarto.geojson",
+      "sha256": "95735f70fcac617347ad475cdbc385257101aa3ca3c244383e66a7a26ced85b6",
+      "size": 91546,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lagarto",
+    "name": "Lagarto",
+    "nameIt": "Lagarto",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -37.67086,
+      -10.91676
+    ],
+    "zoom": 12,
+    "population": 39833,
+    "grid": "cities/lagarto/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lagarto/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lagarto",
+        "name": "Lagarto",
+        "nameIt": "Lagarto",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -37.67086,
+          -10.91676
+        ],
+        "zoom": 12,
+        "population": 39833,
+        "cells": 78,
+        "layer": "cities/lagarto/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -37.67086,
+            -10.91676
+          ]
+        },
+        "properties": {
+          "id": "lagarto",
+          "name": "Lagarto",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 7.8,
+          "population": 39833
+        }
+      },
+      "summary": null
+    }
+  }
+}

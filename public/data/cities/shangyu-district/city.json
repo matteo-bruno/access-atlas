@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shangyu-district",
+  "createdAt": "2026-10-08T16:12:32.722Z",
+  "updatedAt": "2026-10-08T16:12:32.722Z",
+  "meta": {
+    "name": "Shangyu District",
+    "nameIt": "Shangyu District",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shangyu District.geojson",
+      "sha256": "9b24d47cd661ed847067276fafa3589cce3a7cbcac94de890bd096dbaff7de02",
+      "size": 1308388,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shangyu-district",
+    "name": "Shangyu District",
+    "nameIt": "Shangyu District",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      120.85844,
+      30.02318
+    ],
+    "zoom": 10.2,
+    "population": 309848,
+    "grid": "cities/shangyu-district/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shangyu-district/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shangyu-district",
+        "name": "Shangyu District",
+        "nameIt": "Shangyu District",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          120.85844,
+          30.02318
+        ],
+        "zoom": 10.2,
+        "population": 309848,
+        "cells": 1119,
+        "layer": "cities/shangyu-district/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.85844,
+            30.02318
+          ]
+        },
+        "properties": {
+          "id": "shangyu-district",
+          "name": "Shangyu District",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 35.5,
+          "population": 309848
+        }
+      },
+      "summary": null
+    }
+  }
+}

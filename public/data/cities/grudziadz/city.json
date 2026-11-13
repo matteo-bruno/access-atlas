@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "grudziadz",
+  "createdAt": "2026-10-08T15:36:05.104Z",
+  "updatedAt": "2026-10-08T15:36:05.104Z",
+  "meta": {
+    "name": "Grudziądz",
+    "nameIt": "Grudziądz",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Grudziądz.geojson",
+      "sha256": "417dca4f33545901a385f414558434c574adcdcb1a1bca732b5b0fe9769e84c2",
+      "size": 242382,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "grudziadz",
+    "name": "Grudziądz",
+    "nameIt": "Grudziądz",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      18.75683,
+      53.47744
+    ],
+    "zoom": 10.8,
+    "population": 65328,
+    "grid": "cities/grudziadz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/grudziadz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "grudziadz",
+        "name": "Grudziądz",
+        "nameIt": "Grudziądz",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          18.75683,
+          53.47744
+        ],
+        "zoom": 10.8,
+        "population": 65328,
+        "cells": 212,
+        "layer": "cities/grudziadz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.75683,
+            53.47744
+          ]
+        },
+        "properties": {
+          "id": "grudziadz",
+          "name": "Grudziądz",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 10,
+          "population": 65328
+        }
+      },
+      "summary": null
+    }
+  }
+}

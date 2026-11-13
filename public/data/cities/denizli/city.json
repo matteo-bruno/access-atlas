@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "denizli",
+  "createdAt": "2026-10-08T15:28:54.853Z",
+  "updatedAt": "2026-10-08T15:28:54.853Z",
+  "meta": {
+    "name": "Denizli",
+    "nameIt": "Denizli",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Denizli.geojson",
+      "sha256": "7857112f334486d5274cc0bd77863e0d91156d6a718ddd5f39c277f5e6b9a63e",
+      "size": 774870,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "denizli",
+    "name": "Denizli",
+    "nameIt": "Denizli",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      29.08339,
+      37.77738
+    ],
+    "zoom": 10.4,
+    "population": 559339,
+    "grid": "cities/denizli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/denizli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "denizli",
+        "name": "Denizli",
+        "nameIt": "Denizli",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          29.08339,
+          37.77738
+        ],
+        "zoom": 10.4,
+        "population": 559339,
+        "cells": 675,
+        "layer": "cities/denizli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.08339,
+            37.77738
+          ]
+        },
+        "properties": {
+          "id": "denizli",
+          "name": "Denizli",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 17,
+          "population": 559339
+        }
+      },
+      "summary": null
+    }
+  }
+}

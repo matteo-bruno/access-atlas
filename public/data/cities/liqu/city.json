@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "liqu",
+  "createdAt": "2026-10-08T15:51:32.826Z",
+  "updatedAt": "2026-10-08T15:51:32.826Z",
+  "meta": {
+    "name": "Liqu",
+    "nameIt": "Liqu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Liqu.geojson",
+      "sha256": "15a1a364467ad78d4469172cba13dc95970016081a6d53574f93771b0a7f3c04",
+      "size": 241317,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "liqu",
+    "name": "Liqu",
+    "nameIt": "Liqu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      109.6362,
+      36.67435
+    ],
+    "zoom": 10.6,
+    "population": 71671,
+    "grid": "cities/liqu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/liqu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "liqu",
+        "name": "Liqu",
+        "nameIt": "Liqu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          109.6362,
+          36.67435
+        ],
+        "zoom": 10.6,
+        "population": 71671,
+        "cells": 207,
+        "layer": "cities/liqu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.6362,
+            36.67435
+          ]
+        },
+        "properties": {
+          "id": "liqu",
+          "name": "Liqu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 71671
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fria",
+  "createdAt": "2026-10-08T15:33:46.595Z",
+  "updatedAt": "2026-10-08T15:33:46.595Z",
+  "meta": {
+    "name": "Fria",
+    "nameIt": "Fria",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fria.geojson",
+      "sha256": "7fb333f62aba839e960638c4a19bcd4754877c1b185b879f2904e00003cb6e79",
+      "size": 155410,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fria",
+    "name": "Fria",
+    "nameIt": "Fria",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN",
+    "center": [
+      -13.58041,
+      10.36686
+    ],
+    "zoom": 11.9,
+    "population": 33412,
+    "grid": "cities/fria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fria",
+        "name": "Fria",
+        "nameIt": "Fria",
+        "region": "Guinea",
+        "regionIt": "Guinea",
+        "country": "GN",
+        "center": [
+          -13.58041,
+          10.36686
+        ],
+        "zoom": 11.9,
+        "population": 33412,
+        "cells": 132,
+        "layer": "cities/fria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -13.58041,
+            10.36686
+          ]
+        },
+        "properties": {
+          "id": "fria",
+          "name": "Fria",
+          "country": "GN",
+          "isStudy": true,
+          "proximityMinutes": 13.2,
+          "population": 33412
+        }
+      },
+      "summary": null
+    }
+  }
+}

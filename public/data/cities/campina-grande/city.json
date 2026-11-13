@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "campina-grande",
+  "createdAt": "2026-10-08T15:22:07.046Z",
+  "updatedAt": "2026-10-08T15:22:07.046Z",
+  "meta": {
+    "name": "Campina Grande",
+    "nameIt": "Campina Grande",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Campina Grande.geojson",
+      "sha256": "0bec50d77e8b162c71e095ab6506328b6e9addaaa68fab60f030f28492e41988",
+      "size": 595312,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "campina-grande",
+    "name": "Campina Grande",
+    "nameIt": "Campina Grande",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -35.89919,
+      -7.23324
+    ],
+    "zoom": 10.7,
+    "population": 381331,
+    "grid": "cities/campina-grande/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/campina-grande/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "campina-grande",
+        "name": "Campina Grande",
+        "nameIt": "Campina Grande",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -35.89919,
+          -7.23324
+        ],
+        "zoom": 10.7,
+        "population": 381331,
+        "cells": 513,
+        "layer": "cities/campina-grande/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -35.89919,
+            -7.23324
+          ]
+        },
+        "properties": {
+          "id": "campina-grande",
+          "name": "Campina Grande",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 16.5,
+          "population": 381331
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chortoq",
+  "createdAt": "2026-10-08T15:25:12.881Z",
+  "updatedAt": "2026-10-08T15:25:12.881Z",
+  "meta": {
+    "name": "Chortoq",
+    "nameIt": "Chortoq",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chortoq.geojson",
+      "sha256": "657bd4df28ca7ec596888c10153be95433bb12e268b57a2cd7b71b89047a9f73",
+      "size": 227819,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chortoq",
+    "name": "Chortoq",
+    "nameIt": "Chortoq",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      71.81547,
+      41.07284
+    ],
+    "zoom": 11.3,
+    "population": 101937,
+    "grid": "cities/chortoq/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chortoq/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chortoq",
+        "name": "Chortoq",
+        "nameIt": "Chortoq",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          71.81547,
+          41.07284
+        ],
+        "zoom": 11.3,
+        "population": 101937,
+        "cells": 197,
+        "layer": "cities/chortoq/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.81547,
+            41.07284
+          ]
+        },
+        "properties": {
+          "id": "chortoq",
+          "name": "Chortoq",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 23.8,
+          "population": 101937
+        }
+      },
+      "summary": null
+    }
+  }
+}

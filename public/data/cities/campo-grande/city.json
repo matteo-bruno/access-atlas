@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "campo-grande",
+  "createdAt": "2026-10-08T15:22:09.348Z",
+  "updatedAt": "2026-10-08T15:22:09.348Z",
+  "meta": {
+    "name": "Campo Grande",
+    "nameIt": "Campo Grande",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Campo Grande.geojson",
+      "sha256": "9d143cbdb4d9ec236be611c4a95eedddd47c3fc26363f7d5b8b30c40b0ff2bed",
+      "size": 2761302,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "campo-grande",
+    "name": "Campo Grande",
+    "nameIt": "Campo Grande",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -54.619,
+      -20.47524
+    ],
+    "zoom": 9.6,
+    "population": 898335,
+    "grid": "cities/campo-grande/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/campo-grande/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "campo-grande",
+        "name": "Campo Grande",
+        "nameIt": "Campo Grande",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -54.619,
+          -20.47524
+        ],
+        "zoom": 9.6,
+        "population": 898335,
+        "cells": 2358,
+        "layer": "cities/campo-grande/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -54.619,
+            -20.47524
+          ]
+        },
+        "properties": {
+          "id": "campo-grande",
+          "name": "Campo Grande",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 26.5,
+          "population": 898335
+        }
+      },
+      "summary": null
+    }
+  }
+}

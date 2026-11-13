@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "georgetown",
+  "createdAt": "2026-10-08T15:35:00.430Z",
+  "updatedAt": "2026-10-08T15:35:00.430Z",
+  "meta": {
+    "name": "Georgetown",
+    "nameIt": "Georgetown",
+    "region": "Guyana",
+    "regionIt": "Guyana",
+    "country": "GY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Georgetown.geojson",
+      "sha256": "a01465740290b17bef10ebd99038ac31e87eb74851e55146ac5e5ba5306199f0",
+      "size": 441776,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "georgetown",
+    "name": "Georgetown",
+    "nameIt": "Georgetown",
+    "region": "Guyana",
+    "regionIt": "Guyana",
+    "country": "GY",
+    "center": [
+      -58.14769,
+      6.80354
+    ],
+    "zoom": 10.8,
+    "population": 107961,
+    "grid": "cities/georgetown/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/georgetown/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "georgetown",
+        "name": "Georgetown",
+        "nameIt": "Georgetown",
+        "region": "Guyana",
+        "regionIt": "Guyana",
+        "country": "GY",
+        "center": [
+          -58.14769,
+          6.80354
+        ],
+        "zoom": 10.8,
+        "population": 107961,
+        "cells": 383,
+        "layer": "cities/georgetown/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -58.14769,
+            6.80354
+          ]
+        },
+        "properties": {
+          "id": "georgetown",
+          "name": "Georgetown",
+          "country": "GY",
+          "isStudy": true,
+          "proximityMinutes": 18.5,
+          "population": 107961
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "modasa",
+  "createdAt": "2026-10-08T15:57:39.654Z",
+  "updatedAt": "2026-10-08T15:57:39.654Z",
+  "meta": {
+    "name": "Modasa",
+    "nameIt": "Modasa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Modasa.geojson",
+      "sha256": "f8eeaa6550d7c0aca305a60a8e4877267b2f9a461a5df8f3bc57a71bccc24c06",
+      "size": 164617,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "modasa",
+    "name": "Modasa",
+    "nameIt": "Modasa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.30144,
+      23.46189
+    ],
+    "zoom": 11.9,
+    "population": 74834,
+    "grid": "cities/modasa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/modasa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "modasa",
+        "name": "Modasa",
+        "nameIt": "Modasa",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.30144,
+          23.46189
+        ],
+        "zoom": 11.9,
+        "population": 74834,
+        "cells": 142,
+        "layer": "cities/modasa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.30144,
+            23.46189
+          ]
+        },
+        "properties": {
+          "id": "modasa",
+          "name": "Modasa",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 74834
+        }
+      },
+      "summary": null
+    }
+  }
+}

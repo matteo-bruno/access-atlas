@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fosforitnyj",
+  "createdAt": "2026-10-08T15:33:37.210Z",
+  "updatedAt": "2026-10-08T15:33:37.210Z",
+  "meta": {
+    "name": "Fosforitnyj",
+    "nameIt": "Fosforitnyj",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fosforitnyj.geojson",
+      "sha256": "59eae1fddd7ada4a9e14082dc78ec7ac1c97fdb18a05b5656ec385f495bb0c05",
+      "size": 196320,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fosforitnyj",
+    "name": "Fosforitnyj",
+    "nameIt": "Fosforitnyj",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      34.42282,
+      53.26585
+    ],
+    "zoom": 11.4,
+    "population": 45419,
+    "grid": "cities/fosforitnyj/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fosforitnyj/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fosforitnyj",
+        "name": "Fosforitnyj",
+        "nameIt": "Fosforitnyj",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          34.42282,
+          53.26585
+        ],
+        "zoom": 11.4,
+        "population": 45419,
+        "cells": 171,
+        "layer": "cities/fosforitnyj/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.42282,
+            53.26585
+          ]
+        },
+        "properties": {
+          "id": "fosforitnyj",
+          "name": "Fosforitnyj",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 45419
+        }
+      },
+      "summary": null
+    }
+  }
+}

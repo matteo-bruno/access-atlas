@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mashhad",
+  "createdAt": "2026-10-08T15:55:31.211Z",
+  "updatedAt": "2026-10-08T15:55:31.211Z",
+  "meta": {
+    "name": "Mashhad",
+    "nameIt": "Mashhad",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mashhad.geojson",
+      "sha256": "d7ff311e7f5549bf43786ffc8256bab26b1626a1a67805c2e25a0bb177f00be8",
+      "size": 4643162,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mashhad",
+    "name": "Mashhad",
+    "nameIt": "Mashhad",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      59.56508,
+      36.32722
+    ],
+    "zoom": 8.7,
+    "population": 3278588,
+    "grid": "cities/mashhad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mashhad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mashhad",
+        "name": "Mashhad",
+        "nameIt": "Mashhad",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          59.56508,
+          36.32722
+        ],
+        "zoom": 8.7,
+        "population": 3278588,
+        "cells": 4036,
+        "layer": "cities/mashhad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            59.56508,
+            36.32722
+          ]
+        },
+        "properties": {
+          "id": "mashhad",
+          "name": "Mashhad",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 17.5,
+          "population": 3278588
+        }
+      },
+      "summary": null
+    }
+  }
+}

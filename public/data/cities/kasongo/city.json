@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kasongo",
+  "createdAt": "2026-10-08T15:45:30.228Z",
+  "updatedAt": "2026-10-08T15:45:30.228Z",
+  "meta": {
+    "name": "Kasongo",
+    "nameIt": "Kasongo",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kasongo.geojson",
+      "sha256": "6e743a7b3811e34999a36cf8827ee7771b4af0ad11e2d13fde055d402fb6ee97",
+      "size": 133177,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kasongo",
+    "name": "Kasongo",
+    "nameIt": "Kasongo",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      26.66501,
+      -4.43135
+    ],
+    "zoom": 11.7,
+    "population": 145878,
+    "grid": "cities/kasongo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kasongo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kasongo",
+        "name": "Kasongo",
+        "nameIt": "Kasongo",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          26.66501,
+          -4.43135
+        ],
+        "zoom": 11.7,
+        "population": 145878,
+        "cells": 114,
+        "layer": "cities/kasongo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.66501,
+            -4.43135
+          ]
+        },
+        "properties": {
+          "id": "kasongo",
+          "name": "Kasongo",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 145878
+        }
+      },
+      "summary": null
+    }
+  }
+}

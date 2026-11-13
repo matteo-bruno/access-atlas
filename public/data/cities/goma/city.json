@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "goma",
+  "createdAt": "2026-10-08T15:35:36.722Z",
+  "updatedAt": "2026-10-08T15:35:36.722Z",
+  "meta": {
+    "name": "Goma",
+    "nameIt": "Goma",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Goma.geojson",
+      "sha256": "f6a9cf1f55c6c453fc909ad31140604fcad204c6445ccb5d06f55457b9229596",
+      "size": 822654,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "goma",
+    "name": "Goma",
+    "nameIt": "Goma",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      29.20774,
+      -1.6529
+    ],
+    "zoom": 10.1,
+    "population": 888716,
+    "grid": "cities/goma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/goma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "goma",
+        "name": "Goma",
+        "nameIt": "Goma",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          29.20774,
+          -1.6529
+        ],
+        "zoom": 10.1,
+        "population": 888716,
+        "cells": 701,
+        "layer": "cities/goma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.20774,
+            -1.6529
+          ]
+        },
+        "properties": {
+          "id": "goma",
+          "name": "Goma",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 32.4,
+          "population": 888716
+        }
+      },
+      "summary": null
+    }
+  }
+}

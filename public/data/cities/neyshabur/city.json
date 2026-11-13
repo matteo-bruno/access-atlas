@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "neyshabur",
+  "createdAt": "2026-10-08T16:01:16.353Z",
+  "updatedAt": "2026-10-08T16:01:16.353Z",
+  "meta": {
+    "name": "Neyshabur",
+    "nameIt": "Neyshabur",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Neyshabur.geojson",
+      "sha256": "890dee0eda90b39571300eb17714e1fe0270c77928010a42c9c29c6fe69f6ea9",
+      "size": 352173,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "neyshabur",
+    "name": "Neyshabur",
+    "nameIt": "Neyshabur",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      58.79405,
+      36.21234
+    ],
+    "zoom": 11,
+    "population": 259021,
+    "grid": "cities/neyshabur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/neyshabur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "neyshabur",
+        "name": "Neyshabur",
+        "nameIt": "Neyshabur",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          58.79405,
+          36.21234
+        ],
+        "zoom": 11,
+        "population": 259021,
+        "cells": 308,
+        "layer": "cities/neyshabur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            58.79405,
+            36.21234
+          ]
+        },
+        "properties": {
+          "id": "neyshabur",
+          "name": "Neyshabur",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 15.1,
+          "population": 259021
+        }
+      },
+      "summary": null
+    }
+  }
+}

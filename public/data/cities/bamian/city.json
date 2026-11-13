@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bamian",
+  "createdAt": "2026-10-08T15:14:28.237Z",
+  "updatedAt": "2026-10-08T15:14:28.237Z",
+  "meta": {
+    "name": "Bamian",
+    "nameIt": "Bamian",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bamian.geojson",
+      "sha256": "5d9aff6d73df7d10bdb6c76d9620b757302c0f0cab250d5491d231402fc4667b",
+      "size": 93562,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bamian",
+    "name": "Bamian",
+    "nameIt": "Bamian",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF",
+    "center": [
+      67.82714,
+      34.81585
+    ],
+    "zoom": 11.7,
+    "population": 50530,
+    "grid": "cities/bamian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bamian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bamian",
+        "name": "Bamian",
+        "nameIt": "Bamian",
+        "region": "Afghanistan",
+        "regionIt": "Afghanistan",
+        "country": "AF",
+        "center": [
+          67.82714,
+          34.81585
+        ],
+        "zoom": 11.7,
+        "population": 50530,
+        "cells": 81,
+        "layer": "cities/bamian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            67.82714,
+            34.81585
+          ]
+        },
+        "properties": {
+          "id": "bamian",
+          "name": "Bamian",
+          "country": "AF",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 50530
+        }
+      },
+      "summary": null
+    }
+  }
+}

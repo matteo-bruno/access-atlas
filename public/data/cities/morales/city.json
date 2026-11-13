@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "morales",
+  "createdAt": "2026-10-08T15:58:14.267Z",
+  "updatedAt": "2026-10-08T15:58:14.267Z",
+  "meta": {
+    "name": "Morales",
+    "nameIt": "Morales",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Morales.geojson",
+      "sha256": "56530d2b601d8e7e2af0b765683a5a1dc332e2b510f2cac587420d9d0022a6e2",
+      "size": 121627,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "morales",
+    "name": "Morales",
+    "nameIt": "Morales",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT",
+    "center": [
+      -88.84296,
+      15.47086
+    ],
+    "zoom": 12,
+    "population": 25033,
+    "grid": "cities/morales/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/morales/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "morales",
+        "name": "Morales",
+        "nameIt": "Morales",
+        "region": "Guatemala",
+        "regionIt": "Guatemala",
+        "country": "GT",
+        "center": [
+          -88.84296,
+          15.47086
+        ],
+        "zoom": 12,
+        "population": 25033,
+        "cells": 104,
+        "layer": "cities/morales/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.84296,
+            15.47086
+          ]
+        },
+        "properties": {
+          "id": "morales",
+          "name": "Morales",
+          "country": "GT",
+          "isStudy": true,
+          "proximityMinutes": 15.2,
+          "population": 25033
+        }
+      },
+      "summary": null
+    }
+  }
+}

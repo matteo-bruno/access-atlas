@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ostrow-wielkopolski",
+  "createdAt": "2026-10-08T16:03:11.416Z",
+  "updatedAt": "2026-10-08T16:03:11.416Z",
+  "meta": {
+    "name": "Ostrów Wielkopolski",
+    "nameIt": "Ostrów Wielkopolski",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ostrów Wielkopolski.geojson",
+      "sha256": "ea43a4e76ae9f70571093c367bb32711b505aa6991df844196cf64d25bbcade8",
+      "size": 251272,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ostrow-wielkopolski",
+    "name": "Ostrów Wielkopolski",
+    "nameIt": "Ostrów Wielkopolski",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      17.81297,
+      51.64846
+    ],
+    "zoom": 11.2,
+    "population": 59369,
+    "grid": "cities/ostrow-wielkopolski/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ostrow-wielkopolski/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ostrow-wielkopolski",
+        "name": "Ostrów Wielkopolski",
+        "nameIt": "Ostrów Wielkopolski",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          17.81297,
+          51.64846
+        ],
+        "zoom": 11.2,
+        "population": 59369,
+        "cells": 220,
+        "layer": "cities/ostrow-wielkopolski/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            17.81297,
+            51.64846
+          ]
+        },
+        "properties": {
+          "id": "ostrow-wielkopolski",
+          "name": "Ostrów Wielkopolski",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 10.8,
+          "population": 59369
+        }
+      },
+      "summary": null
+    }
+  }
+}

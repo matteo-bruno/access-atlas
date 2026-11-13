@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "blouberg-rise",
+  "createdAt": "2026-10-08T15:19:40.014Z",
+  "updatedAt": "2026-10-08T15:19:40.014Z",
+  "meta": {
+    "name": "Blouberg Rise",
+    "nameIt": "Blouberg Rise",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Blouberg Rise.geojson",
+      "sha256": "af062570a9dddc20e05919742658ddfdf4fab0301ae0e7b5ac132b7eb11dc8e2",
+      "size": 446304,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "blouberg-rise",
+    "name": "Blouberg Rise",
+    "nameIt": "Blouberg Rise",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      18.5017,
+      -33.81542
+    ],
+    "zoom": 10.9,
+    "population": 190297,
+    "grid": "cities/blouberg-rise/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/blouberg-rise/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "blouberg-rise",
+        "name": "Blouberg Rise",
+        "nameIt": "Blouberg Rise",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          18.5017,
+          -33.81542
+        ],
+        "zoom": 10.9,
+        "population": 190297,
+        "cells": 383,
+        "layer": "cities/blouberg-rise/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.5017,
+            -33.81542
+          ]
+        },
+        "properties": {
+          "id": "blouberg-rise",
+          "name": "Blouberg Rise",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 190297
+        }
+      },
+      "summary": null
+    }
+  }
+}

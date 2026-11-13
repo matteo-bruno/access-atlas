@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bilimora",
+  "createdAt": "2026-10-08T15:18:54.801Z",
+  "updatedAt": "2026-10-08T15:18:54.801Z",
+  "meta": {
+    "name": "Bilimora",
+    "nameIt": "Bilimora",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bilimora.geojson",
+      "sha256": "8911c2975d4d34e68da6d45cb915e312ae44ef9234c5d308a6916618ab3d47bf",
+      "size": 134407,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bilimora",
+    "name": "Bilimora",
+    "nameIt": "Bilimora",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.97493,
+      20.76821
+    ],
+    "zoom": 11.7,
+    "population": 65130,
+    "grid": "cities/bilimora/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bilimora/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bilimora",
+        "name": "Bilimora",
+        "nameIt": "Bilimora",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.97493,
+          20.76821
+        ],
+        "zoom": 11.7,
+        "population": 65130,
+        "cells": 116,
+        "layer": "cities/bilimora/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.97493,
+            20.76821
+          ]
+        },
+        "properties": {
+          "id": "bilimora",
+          "name": "Bilimora",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 14.5,
+          "population": 65130
+        }
+      },
+      "summary": null
+    }
+  }
+}

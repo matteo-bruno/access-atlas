@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nansang",
+  "createdAt": "2026-10-08T16:00:09.252Z",
+  "updatedAt": "2026-10-08T16:00:09.252Z",
+  "meta": {
+    "name": "Nansang",
+    "nameIt": "Nansang",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nansang.geojson",
+      "sha256": "fbdfb5041c6495731321dade309b1ee6dd5bc3c342757fc2e4ab6d3ad39dad05",
+      "size": 45238,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nansang",
+    "name": "Nansang",
+    "nameIt": "Nansang",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      97.71788,
+      20.89279
+    ],
+    "zoom": 12,
+    "population": 32777,
+    "grid": "cities/nansang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nansang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nansang",
+        "name": "Nansang",
+        "nameIt": "Nansang",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          97.71788,
+          20.89279
+        ],
+        "zoom": 12,
+        "population": 32777,
+        "cells": 39,
+        "layer": "cities/nansang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            97.71788,
+            20.89279
+          ]
+        },
+        "properties": {
+          "id": "nansang",
+          "name": "Nansang",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 32777
+        }
+      },
+      "summary": null
+    }
+  }
+}

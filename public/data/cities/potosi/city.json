@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "potosi",
+  "createdAt": "2026-10-08T16:06:25.012Z",
+  "updatedAt": "2026-10-08T16:06:25.012Z",
+  "meta": {
+    "name": "Potosí",
+    "nameIt": "Potosí",
+    "region": "Bolivia",
+    "regionIt": "Bolivia",
+    "country": "BO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Potosí.geojson",
+      "sha256": "fe2eb607874ce488b083e370ee7bfd569f0ebb8efed3b4615b00cc9404193213",
+      "size": 286360,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "potosi",
+    "name": "Potosí",
+    "nameIt": "Potosí",
+    "region": "Bolivia",
+    "regionIt": "Bolivia",
+    "country": "BO",
+    "center": [
+      -65.75635,
+      -19.57996
+    ],
+    "zoom": 11.4,
+    "population": 303793,
+    "grid": "cities/potosi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/potosi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "potosi",
+        "name": "Potosí",
+        "nameIt": "Potosí",
+        "region": "Bolivia",
+        "regionIt": "Bolivia",
+        "country": "BO",
+        "center": [
+          -65.75635,
+          -19.57996
+        ],
+        "zoom": 11.4,
+        "population": 303793,
+        "cells": 245,
+        "layer": "cities/potosi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -65.75635,
+            -19.57996
+          ]
+        },
+        "properties": {
+          "id": "potosi",
+          "name": "Potosí",
+          "country": "BO",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 303793
+        }
+      },
+      "summary": null
+    }
+  }
+}

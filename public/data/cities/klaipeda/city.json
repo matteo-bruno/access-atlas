@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "klaipeda",
+  "createdAt": "2026-10-08T15:47:28.400Z",
+  "updatedAt": "2026-10-08T15:47:28.400Z",
+  "meta": {
+    "name": "Klaipėda",
+    "nameIt": "Klaipėda",
+    "region": "Lithuania",
+    "regionIt": "Lituania",
+    "country": "LT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Klaipėda.geojson",
+      "sha256": "1cf57ab41143c9738c345b3de48222056ba29ebacc8e41e6f5a5e8e3b9130dde",
+      "size": 478668,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "klaipeda",
+    "name": "Klaipėda",
+    "nameIt": "Klaipėda",
+    "region": "Lithuania",
+    "regionIt": "Lituania",
+    "country": "LT",
+    "center": [
+      21.15624,
+      55.69361
+    ],
+    "zoom": 10.6,
+    "population": 117109,
+    "grid": "cities/klaipeda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/klaipeda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "klaipeda",
+        "name": "Klaipėda",
+        "nameIt": "Klaipėda",
+        "region": "Lithuania",
+        "regionIt": "Lituania",
+        "country": "LT",
+        "center": [
+          21.15624,
+          55.69361
+        ],
+        "zoom": 10.6,
+        "population": 117109,
+        "cells": 418,
+        "layer": "cities/klaipeda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            21.15624,
+            55.69361
+          ]
+        },
+        "properties": {
+          "id": "klaipeda",
+          "name": "Klaipėda",
+          "country": "LT",
+          "isStudy": true,
+          "proximityMinutes": 10.6,
+          "population": 117109
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bremen",
+  "createdAt": "2026-10-08T15:20:24.276Z",
+  "updatedAt": "2026-10-08T15:20:24.276Z",
+  "meta": {
+    "name": "Bremen",
+    "nameIt": "Bremen",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bremen.geojson",
+      "sha256": "6226267b4f85f79eda642cbe4ad84835971337193d250d5814b7852a548d5439",
+      "size": 1860164,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bremen",
+    "name": "Bremen",
+    "nameIt": "Bremen",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      8.84023,
+      53.07958
+    ],
+    "zoom": 9.8,
+    "population": 398286,
+    "grid": "cities/bremen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bremen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bremen",
+        "name": "Bremen",
+        "nameIt": "Bremen",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          8.84023,
+          53.07958
+        ],
+        "zoom": 9.8,
+        "population": 398286,
+        "cells": 1639,
+        "layer": "cities/bremen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.84023,
+            53.07958
+          ]
+        },
+        "properties": {
+          "id": "bremen",
+          "name": "Bremen",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 9.2,
+          "population": 398286
+        }
+      },
+      "summary": null
+    }
+  }
+}

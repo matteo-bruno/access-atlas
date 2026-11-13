@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "selden",
+  "createdAt": "2026-10-08T16:11:50.959Z",
+  "updatedAt": "2026-10-08T16:11:50.959Z",
+  "meta": {
+    "name": "Selden",
+    "nameIt": "Selden",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Selden.geojson",
+      "sha256": "eb8df66e4d834c28ec2f9459d0af974b70103b4decbe66b069409ecbb1d1298c",
+      "size": 404551,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "selden",
+    "name": "Selden",
+    "nameIt": "Selden",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -73.04758,
+      40.8802
+    ],
+    "zoom": 11.1,
+    "population": 57861,
+    "grid": "cities/selden/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/selden/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "selden",
+        "name": "Selden",
+        "nameIt": "Selden",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -73.04758,
+          40.8802
+        ],
+        "zoom": 11.1,
+        "population": 57861,
+        "cells": 348,
+        "layer": "cities/selden/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.04758,
+            40.8802
+          ]
+        },
+        "properties": {
+          "id": "selden",
+          "name": "Selden",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 23.4,
+          "population": 57861
+        }
+      },
+      "summary": null
+    }
+  }
+}

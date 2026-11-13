@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dayton",
+  "createdAt": "2026-10-08T15:28:42.831Z",
+  "updatedAt": "2026-10-08T15:28:42.831Z",
+  "meta": {
+    "name": "Dayton",
+    "nameIt": "Dayton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dayton.geojson",
+      "sha256": "8f0837ef2710cb03e7ef52cd295892894fd871af6f208758cb31c77087e0de37",
+      "size": 1026655,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dayton",
+    "name": "Dayton",
+    "nameIt": "Dayton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -84.16727,
+      39.74784
+    ],
+    "zoom": 10.2,
+    "population": 144758,
+    "grid": "cities/dayton/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dayton/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dayton",
+        "name": "Dayton",
+        "nameIt": "Dayton",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -84.16727,
+          39.74784
+        ],
+        "zoom": 10.2,
+        "population": 144758,
+        "cells": 886,
+        "layer": "cities/dayton/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -84.16727,
+            39.74784
+          ]
+        },
+        "properties": {
+          "id": "dayton",
+          "name": "Dayton",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 19.6,
+          "population": 144758
+        }
+      },
+      "summary": null
+    }
+  }
+}

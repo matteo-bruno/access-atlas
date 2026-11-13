@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jerez",
+  "createdAt": "2026-10-08T15:42:18.435Z",
+  "updatedAt": "2026-10-08T15:42:18.435Z",
+  "meta": {
+    "name": "Jerez",
+    "nameIt": "Jerez",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jerez.geojson",
+      "sha256": "41fef73edd71fc3e31108e5d385d9af18dc19146e8796a7604bd8a0bffa22b05",
+      "size": 324221,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jerez",
+    "name": "Jerez",
+    "nameIt": "Jerez",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -6.12631,
+      36.68797
+    ],
+    "zoom": 11.1,
+    "population": 176369,
+    "grid": "cities/jerez/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jerez/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jerez",
+        "name": "Jerez",
+        "nameIt": "Jerez",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -6.12631,
+          36.68797
+        ],
+        "zoom": 11.1,
+        "population": 176369,
+        "cells": 283,
+        "layer": "cities/jerez/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -6.12631,
+            36.68797
+          ]
+        },
+        "properties": {
+          "id": "jerez",
+          "name": "Jerez",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 9.2,
+          "population": 176369
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nayagarh",
+  "createdAt": "2026-10-08T16:00:45.696Z",
+  "updatedAt": "2026-10-08T16:00:45.696Z",
+  "meta": {
+    "name": "Nayagarh",
+    "nameIt": "Nayagarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nayagarh.geojson",
+      "sha256": "6b2b0667719a5d0942c53a1673859a5be92d21c5192226d8e37437299181bda9",
+      "size": 178311,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nayagarh",
+    "name": "Nayagarh",
+    "nameIt": "Nayagarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.11754,
+      20.12759
+    ],
+    "zoom": 11.1,
+    "population": 48961,
+    "grid": "cities/nayagarh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nayagarh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nayagarh",
+        "name": "Nayagarh",
+        "nameIt": "Nayagarh",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.11754,
+          20.12759
+        ],
+        "zoom": 11.1,
+        "population": 48961,
+        "cells": 154,
+        "layer": "cities/nayagarh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.11754,
+            20.12759
+          ]
+        },
+        "properties": {
+          "id": "nayagarh",
+          "name": "Nayagarh",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 48961
+        }
+      },
+      "summary": null
+    }
+  }
+}

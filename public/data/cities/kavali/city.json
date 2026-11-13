@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kavali",
+  "createdAt": "2026-10-08T15:45:48.132Z",
+  "updatedAt": "2026-10-08T15:45:48.132Z",
+  "meta": {
+    "name": "Kavali",
+    "nameIt": "Kavali",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kavali.geojson",
+      "sha256": "f7ccbd58d0dccf9b7f06373e74ca75ebf5c5782ff1f4912704c2494dd385d68c",
+      "size": 93968,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kavali",
+    "name": "Kavali",
+    "nameIt": "Kavali",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.99079,
+      14.91337
+    ],
+    "zoom": 12,
+    "population": 64802,
+    "grid": "cities/kavali/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kavali/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kavali",
+        "name": "Kavali",
+        "nameIt": "Kavali",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.99079,
+          14.91337
+        ],
+        "zoom": 12,
+        "population": 64802,
+        "cells": 81,
+        "layer": "cities/kavali/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.99079,
+            14.91337
+          ]
+        },
+        "properties": {
+          "id": "kavali",
+          "name": "Kavali",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 14.8,
+          "population": 64802
+        }
+      },
+      "summary": null
+    }
+  }
+}

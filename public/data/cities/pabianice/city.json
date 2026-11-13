@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pabianice",
+  "createdAt": "2026-10-08T16:03:30.499Z",
+  "updatedAt": "2026-10-08T16:03:30.499Z",
+  "meta": {
+    "name": "Pabianice",
+    "nameIt": "Pabianice",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pabianice.geojson",
+      "sha256": "ce60cbc2db515fa39950a7b01e27bd9a742c469626e278ca92e8dd93155ae82c",
+      "size": 194227,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pabianice",
+    "name": "Pabianice",
+    "nameIt": "Pabianice",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      19.35468,
+      51.66132
+    ],
+    "zoom": 11.4,
+    "population": 57014,
+    "grid": "cities/pabianice/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pabianice/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pabianice",
+        "name": "Pabianice",
+        "nameIt": "Pabianice",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          19.35468,
+          51.66132
+        ],
+        "zoom": 11.4,
+        "population": 57014,
+        "cells": 170,
+        "layer": "cities/pabianice/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.35468,
+            51.66132
+          ]
+        },
+        "properties": {
+          "id": "pabianice",
+          "name": "Pabianice",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 9.2,
+          "population": 57014
+        }
+      },
+      "summary": null
+    }
+  }
+}

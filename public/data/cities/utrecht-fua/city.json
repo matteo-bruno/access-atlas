@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "utrecht-fua",
+  "createdAt": "2026-10-19T16:58:51.371Z",
+  "updatedAt": "2026-10-19T16:58:51.371Z",
+  "meta": {
+    "name": "Utrecht",
+    "nameIt": "Utrecht",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "utrecht-fua",
+    "name": "Utrecht",
+    "nameIt": "Utrecht",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "extent": "fua",
+    "core": "utrecht",
+    "center": [
+      5.1027,
+      52.06032
+    ],
+    "zoom": 8.6,
+    "population": 967755,
+    "grid": "cities/utrecht-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/utrecht-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "utrecht-fua",
+        "name": "Utrecht",
+        "nameIt": "Utrecht",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "extent": "fua",
+        "core": "utrecht",
+        "center": [
+          5.1027,
+          52.06032
+        ],
+        "zoom": 8.6,
+        "population": 967755,
+        "cells": 11634,
+        "layer": "cities/utrecht-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.1027,
+            52.06032
+          ]
+        },
+        "properties": {
+          "id": "utrecht-fua",
+          "name": "Utrecht",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 14.2,
+          "population": 967755
+        }
+      },
+      "summary": null
+    }
+  }
+}

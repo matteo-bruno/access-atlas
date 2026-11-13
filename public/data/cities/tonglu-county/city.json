@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tonglu-county",
+  "createdAt": "2026-10-08T16:18:27.926Z",
+  "updatedAt": "2026-10-08T16:18:27.926Z",
+  "meta": {
+    "name": "Tonglu County",
+    "nameIt": "Tonglu County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tonglu County.geojson",
+      "sha256": "6a88c956e198738b624d27aca8205159814552e6f568d37cc00f225005d5ac16",
+      "size": 474854,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tonglu-county",
+    "name": "Tonglu County",
+    "nameIt": "Tonglu County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.69311,
+      29.79806
+    ],
+    "zoom": 11,
+    "population": 169859,
+    "grid": "cities/tonglu-county/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tonglu-county/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tonglu-county",
+        "name": "Tonglu County",
+        "nameIt": "Tonglu County",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.69311,
+          29.79806
+        ],
+        "zoom": 11,
+        "population": 169859,
+        "cells": 406,
+        "layer": "cities/tonglu-county/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.69311,
+            29.79806
+          ]
+        },
+        "properties": {
+          "id": "tonglu-county",
+          "name": "Tonglu County",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 42.6,
+          "population": 169859
+        }
+      },
+      "summary": null
+    }
+  }
+}

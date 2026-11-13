@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "palermo-fua",
+  "createdAt": "2026-10-19T16:57:58.088Z",
+  "updatedAt": "2026-10-19T16:57:58.088Z",
+  "meta": {
+    "name": "Palermo",
+    "nameIt": "Palermo",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "palermo-fua",
+    "name": "Palermo",
+    "nameIt": "Palermo",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "extent": "fua",
+    "core": "palermo",
+    "center": [
+      13.34359,
+      38.11633
+    ],
+    "zoom": 8.6,
+    "population": 933907,
+    "grid": "cities/palermo-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/palermo-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "palermo-fua",
+        "name": "Palermo",
+        "nameIt": "Palermo",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "extent": "fua",
+        "core": "palermo",
+        "center": [
+          13.34359,
+          38.11633
+        ],
+        "zoom": 8.6,
+        "population": 933907,
+        "cells": 5718,
+        "layer": "cities/palermo-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.34359,
+            38.11633
+          ]
+        },
+        "properties": {
+          "id": "palermo-fua",
+          "name": "Palermo",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 17.2,
+          "population": 933907
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chanderi",
+  "createdAt": "2026-10-08T15:23:27.698Z",
+  "updatedAt": "2026-10-08T15:23:27.698Z",
+  "meta": {
+    "name": "Chanderi",
+    "nameIt": "Chanderi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chanderi.geojson",
+      "sha256": "cdc048cec7d98551377672a91623a2f52e25e67b63a4ce78dd06cb07bb3f6c31",
+      "size": 54482,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chanderi",
+    "name": "Chanderi",
+    "nameIt": "Chanderi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.13577,
+      24.71437
+    ],
+    "zoom": 12,
+    "population": 34275,
+    "grid": "cities/chanderi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chanderi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chanderi",
+        "name": "Chanderi",
+        "nameIt": "Chanderi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.13577,
+          24.71437
+        ],
+        "zoom": 12,
+        "population": 34275,
+        "cells": 47,
+        "layer": "cities/chanderi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.13577,
+            24.71437
+          ]
+        },
+        "properties": {
+          "id": "chanderi",
+          "name": "Chanderi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 34275
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "manama",
+  "createdAt": "2026-10-08T15:54:23.387Z",
+  "updatedAt": "2026-10-08T15:54:23.387Z",
+  "meta": {
+    "name": "Manama",
+    "nameIt": "Manama",
+    "region": "Bahrain",
+    "regionIt": "Bahrein",
+    "country": "BH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Manama.geojson",
+      "sha256": "bcdfa06a33e27895b509d9443e6dc752b89cf12c86056b784ee64d7727d57d58",
+      "size": 3272449,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "manama",
+    "name": "Manama",
+    "nameIt": "Manama",
+    "region": "Bahrain",
+    "regionIt": "Bahrein",
+    "country": "BH",
+    "center": [
+      50.56381,
+      26.1933
+    ],
+    "zoom": 9.6,
+    "population": 1444862,
+    "grid": "cities/manama/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/manama/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "manama",
+        "name": "Manama",
+        "nameIt": "Manama",
+        "region": "Bahrain",
+        "regionIt": "Bahrein",
+        "country": "BH",
+        "center": [
+          50.56381,
+          26.1933
+        ],
+        "zoom": 9.6,
+        "population": 1444862,
+        "cells": 2841,
+        "layer": "cities/manama/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            50.56381,
+            26.1933
+          ]
+        },
+        "properties": {
+          "id": "manama",
+          "name": "Manama",
+          "country": "BH",
+          "isStudy": true,
+          "proximityMinutes": 26.3,
+          "population": 1444862
+        }
+      },
+      "summary": null
+    }
+  }
+}

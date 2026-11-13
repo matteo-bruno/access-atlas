@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bwari",
+  "createdAt": "2026-10-08T15:21:21.697Z",
+  "updatedAt": "2026-10-08T15:21:21.697Z",
+  "meta": {
+    "name": "Bwari",
+    "nameIt": "Bwari",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bwari.geojson",
+      "sha256": "20b872c33c04e2f1ecf67a86fdadea17e82a66b8e7716c56a9f0eb9fa5f0f6e6",
+      "size": 166592,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bwari",
+    "name": "Bwari",
+    "nameIt": "Bwari",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      7.37659,
+      9.27101
+    ],
+    "zoom": 12,
+    "population": 95992,
+    "grid": "cities/bwari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bwari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bwari",
+        "name": "Bwari",
+        "nameIt": "Bwari",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          7.37659,
+          9.27101
+        ],
+        "zoom": 12,
+        "population": 95992,
+        "cells": 145,
+        "layer": "cities/bwari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.37659,
+            9.27101
+          ]
+        },
+        "properties": {
+          "id": "bwari",
+          "name": "Bwari",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 95992
+        }
+      },
+      "summary": null
+    }
+  }
+}

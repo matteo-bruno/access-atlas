@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wuwei-anhui-province",
+  "createdAt": "2026-10-08T16:22:05.786Z",
+  "updatedAt": "2026-10-08T16:22:05.786Z",
+  "meta": {
+    "name": "Wuwei (Anhui Province)",
+    "nameIt": "Wuwei (Anhui Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wuwei (Anhui Province).geojson",
+      "sha256": "48f979ccf7e2f165f36f798fef8078504b49b40ee8e656b21335e6ba4670c371",
+      "size": 335318,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wuwei-anhui-province",
+    "name": "Wuwei (Anhui Province)",
+    "nameIt": "Wuwei (Anhui Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.90165,
+      31.31062
+    ],
+    "zoom": 11.4,
+    "population": 125541,
+    "grid": "cities/wuwei-anhui-province/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wuwei-anhui-province/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wuwei-anhui-province",
+        "name": "Wuwei (Anhui Province)",
+        "nameIt": "Wuwei (Anhui Province)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.90165,
+          31.31062
+        ],
+        "zoom": 11.4,
+        "population": 125541,
+        "cells": 287,
+        "layer": "cities/wuwei-anhui-province/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.90165,
+            31.31062
+          ]
+        },
+        "properties": {
+          "id": "wuwei-anhui-province",
+          "name": "Wuwei (Anhui Province)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 18.2,
+          "population": 125541
+        }
+      },
+      "summary": null
+    }
+  }
+}

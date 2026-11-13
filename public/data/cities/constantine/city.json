@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "constantine",
+  "createdAt": "2026-10-08T15:26:28.158Z",
+  "updatedAt": "2026-10-08T15:26:28.158Z",
+  "meta": {
+    "name": "Constantine",
+    "nameIt": "Constantine",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Constantine.geojson",
+      "sha256": "9ae8ecf31ffbee01d5334eb134a0649b97c8b9880faa405401bd7cbcaf850ad2",
+      "size": 947193,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "constantine",
+    "name": "Constantine",
+    "nameIt": "Constantine",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      6.61889,
+      36.35769
+    ],
+    "zoom": 10.1,
+    "population": 664753,
+    "grid": "cities/constantine/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/constantine/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "constantine",
+        "name": "Constantine",
+        "nameIt": "Constantine",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          6.61889,
+          36.35769
+        ],
+        "zoom": 10.1,
+        "population": 664753,
+        "cells": 824,
+        "layer": "cities/constantine/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.61889,
+            36.35769
+          ]
+        },
+        "properties": {
+          "id": "constantine",
+          "name": "Constantine",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 25.2,
+          "population": 664753
+        }
+      },
+      "summary": null
+    }
+  }
+}

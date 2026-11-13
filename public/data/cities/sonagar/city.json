@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sonagar",
+  "createdAt": "2026-10-08T16:14:21.564Z",
+  "updatedAt": "2026-10-08T16:14:21.564Z",
+  "meta": {
+    "name": "Sonagar",
+    "nameIt": "Sonagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sonagar.geojson",
+      "sha256": "c0f98cd63869a34fd81659cde5e83bb04a8789e9cc16f81aa8de58e780e8bf21",
+      "size": 423720,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sonagar",
+    "name": "Sonagar",
+    "nameIt": "Sonagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.81507,
+      22.15353
+    ],
+    "zoom": 10.9,
+    "population": 26959,
+    "grid": "cities/sonagar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sonagar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sonagar",
+        "name": "Sonagar",
+        "nameIt": "Sonagar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.81507,
+          22.15353
+        ],
+        "zoom": 10.9,
+        "population": 26959,
+        "cells": 366,
+        "layer": "cities/sonagar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.81507,
+            22.15353
+          ]
+        },
+        "properties": {
+          "id": "sonagar",
+          "name": "Sonagar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 26959
+        }
+      },
+      "summary": null
+    }
+  }
+}

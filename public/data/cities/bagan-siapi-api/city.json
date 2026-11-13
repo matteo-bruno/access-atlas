@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bagan-siapi-api",
+  "createdAt": "2026-10-08T15:12:44.207Z",
+  "updatedAt": "2026-10-08T15:12:44.207Z",
+  "meta": {
+    "name": "Bagan Siapi-api",
+    "nameIt": "Bagan Siapi-api",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bagan Siapi-api.geojson",
+      "sha256": "3e2d08c8e0f08c1979f136a0862f3206560cc7b7c1b1caa08d091a40b4cfa6d1",
+      "size": 163172,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bagan-siapi-api",
+    "name": "Bagan Siapi-api",
+    "nameIt": "Bagan Siapi-api",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      100.80749,
+      2.15674
+    ],
+    "zoom": 11.5,
+    "population": 70424,
+    "grid": "cities/bagan-siapi-api/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bagan-siapi-api/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bagan-siapi-api",
+        "name": "Bagan Siapi-api",
+        "nameIt": "Bagan Siapi-api",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          100.80749,
+          2.15674
+        ],
+        "zoom": 11.5,
+        "population": 70424,
+        "cells": 140,
+        "layer": "cities/bagan-siapi-api/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            100.80749,
+            2.15674
+          ]
+        },
+        "properties": {
+          "id": "bagan-siapi-api",
+          "name": "Bagan Siapi-api",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 70424
+        }
+      },
+      "summary": null
+    }
+  }
+}

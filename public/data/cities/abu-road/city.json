@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abu-road",
+  "createdAt": "2026-10-08T15:01:55.371Z",
+  "updatedAt": "2026-10-08T15:01:55.371Z",
+  "meta": {
+    "name": "Abu Road",
+    "nameIt": "Abu Road",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abu Road.geojson",
+      "sha256": "cd81fdd987938a2bbf79aa95c104da1b5a430c4da58612a37624691e50f93ea0",
+      "size": 225827,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abu-road",
+    "name": "Abu Road",
+    "nameIt": "Abu Road",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.77983,
+      24.477
+    ],
+    "zoom": 11.2,
+    "population": 73497,
+    "grid": "cities/abu-road/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abu-road/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abu-road",
+        "name": "Abu Road",
+        "nameIt": "Abu Road",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.77983,
+          24.477
+        ],
+        "zoom": 11.2,
+        "population": 73497,
+        "cells": 195,
+        "layer": "cities/abu-road/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.77983,
+            24.477
+          ]
+        },
+        "properties": {
+          "id": "abu-road",
+          "name": "Abu Road",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 73497
+        }
+      },
+      "summary": null
+    }
+  }
+}

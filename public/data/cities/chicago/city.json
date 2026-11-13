@@ -3,7 +3,7 @@
   "version": 1,
   "id": "chicago",
   "createdAt": "2026-08-28T13:51:44.000Z",
-  "updatedAt": "2026-10-08T14:05:35.023Z",
+  "updatedAt": "2026-10-19T20:59:17.172Z",
   "meta": {
     "name": "Chicago",
     "nameIt": "Chicago",
@@ -20,30 +20,128 @@
     "regionIt": "Stati Uniti",
     "country": "US",
     "center": [
-      -87.68386,
-      41.86533
+      -87.76247,
+      41.88065
     ],
-    "zoom": 8.7,
-    "population": 2504511,
+    "zoom": 8.5,
+    "population": 5140868,
     "grid": "cities/chicago/grid.json.gz",
     "cell": {
       "h3Resolution": 9,
       "cellRadiusM": 202
     },
     "layers": [
+      "fifteen",
+      "citychrone",
       "cardep",
       "pov"
     ],
     "layerData": {
+      "fifteen": "cities/chicago/fifteen.json.gz",
+      "citychrone": "cities/chicago/citychrone.json.gz",
       "cardep": "cities/chicago/cardep.json.gz",
       "pov": "cities/chicago/pov.json.gz"
     },
     "cartogramSources": {
+      "fifteen": "derived",
+      "citychrone": "derived",
       "cardep": "derived",
       "pov": "derived"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 5641,
+      "times": "cities/chicago/citychrone/times{hh}.bin"
     }
   },
   "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chicago",
+        "name": "Chicago",
+        "nameIt": "Chicago",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -87.75682,
+          41.8826
+        ],
+        "zoom": 8.5,
+        "population": 5514434,
+        "cells": 19223,
+        "layer": "cities/chicago/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.75682,
+            41.8826
+          ]
+        },
+        "properties": {
+          "id": "chicago",
+          "name": "Chicago",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 5514434
+        }
+      },
+      "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "chicago",
+        "name": "Chicago",
+        "nameIt": "Chicago",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -87.68386,
+          41.86533
+        ],
+        "zoom": 8.7,
+        "population": 2504511,
+        "cells": 5641,
+        "layer": "cities/chicago/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 5641,
+          "times": "cities/chicago/citychrone/times{hh}.bin"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.68386,
+            41.86533
+          ]
+        },
+        "properties": {
+          "id": "chicago",
+          "name": "Chicago",
+          "country": "US",
+          "isStudy": true,
+          "velocityScore": 6.12,
+          "population": 2504511
+        }
+      },
+      "summary": null
+    },
     "cardep": {
       "row": {
         "id": "chicago",

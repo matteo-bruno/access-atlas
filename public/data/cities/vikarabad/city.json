@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vikarabad",
+  "createdAt": "2026-10-08T16:20:44.156Z",
+  "updatedAt": "2026-10-08T16:20:44.156Z",
+  "meta": {
+    "name": "Vikarabad",
+    "nameIt": "Vikarabad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vikarabad.geojson",
+      "sha256": "423f0ec8250ef9a958fadd53bde6c172b27e7823cb2ed5d3e52785ddef53de20",
+      "size": 74166,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vikarabad",
+    "name": "Vikarabad",
+    "nameIt": "Vikarabad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.90533,
+      17.33871
+    ],
+    "zoom": 12,
+    "population": 39404,
+    "grid": "cities/vikarabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vikarabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vikarabad",
+        "name": "Vikarabad",
+        "nameIt": "Vikarabad",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.90533,
+          17.33871
+        ],
+        "zoom": 12,
+        "population": 39404,
+        "cells": 64,
+        "layer": "cities/vikarabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.90533,
+            17.33871
+          ]
+        },
+        "properties": {
+          "id": "vikarabad",
+          "name": "Vikarabad",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 11.1,
+          "population": 39404
+        }
+      },
+      "summary": null
+    }
+  }
+}

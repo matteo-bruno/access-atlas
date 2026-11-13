@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "poso",
+  "createdAt": "2026-10-08T16:06:23.983Z",
+  "updatedAt": "2026-10-08T16:06:23.983Z",
+  "meta": {
+    "name": "Poso",
+    "nameIt": "Poso",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Poso.geojson",
+      "sha256": "38c82ba63b54deaea3bb7e19f5177f252b6be01c133e3f1062d0d6801d400abc",
+      "size": 171881,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "poso",
+    "name": "Poso",
+    "nameIt": "Poso",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      120.75429,
+      -1.39792
+    ],
+    "zoom": 11.3,
+    "population": 38849,
+    "grid": "cities/poso/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/poso/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "poso",
+        "name": "Poso",
+        "nameIt": "Poso",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          120.75429,
+          -1.39792
+        ],
+        "zoom": 11.3,
+        "population": 38849,
+        "cells": 146,
+        "layer": "cities/poso/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.75429,
+            -1.39792
+          ]
+        },
+        "properties": {
+          "id": "poso",
+          "name": "Poso",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 38849
+        }
+      },
+      "summary": null
+    }
+  }
+}

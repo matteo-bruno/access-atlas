@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "monapo",
+  "createdAt": "2026-10-08T15:57:57.800Z",
+  "updatedAt": "2026-10-08T15:57:57.800Z",
+  "meta": {
+    "name": "Monapo",
+    "nameIt": "Monapo",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Monapo.geojson",
+      "sha256": "70a934da783b41d469526c43912bc6c1a79a4e374fa29d321f5283872ba68dd5",
+      "size": 93865,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "monapo",
+    "name": "Monapo",
+    "nameIt": "Monapo",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ",
+    "center": [
+      40.29666,
+      -14.91718
+    ],
+    "zoom": 12,
+    "population": 51824,
+    "grid": "cities/monapo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/monapo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "monapo",
+        "name": "Monapo",
+        "nameIt": "Monapo",
+        "region": "Mozambique",
+        "regionIt": "Mozambico",
+        "country": "MZ",
+        "center": [
+          40.29666,
+          -14.91718
+        ],
+        "zoom": 12,
+        "population": 51824,
+        "cells": 80,
+        "layer": "cities/monapo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.29666,
+            -14.91718
+          ]
+        },
+        "properties": {
+          "id": "monapo",
+          "name": "Monapo",
+          "country": "MZ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 51824
+        }
+      },
+      "summary": null
+    }
+  }
+}

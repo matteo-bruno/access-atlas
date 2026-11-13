@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bumi-mulyo",
+  "createdAt": "2026-10-08T15:20:47.169Z",
+  "updatedAt": "2026-10-08T15:20:47.169Z",
+  "meta": {
+    "name": "Bumi Mulyo",
+    "nameIt": "Bumi Mulyo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bumi Mulyo.geojson",
+      "sha256": "cd3599d39cfde562d3677786c3c92a433619236e22ce65bd7478187749e2d82b",
+      "size": 246802,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bumi-mulyo",
+    "name": "Bumi Mulyo",
+    "nameIt": "Bumi Mulyo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      119.2137,
+      -3.40374
+    ],
+    "zoom": 11.4,
+    "population": 68458,
+    "grid": "cities/bumi-mulyo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bumi-mulyo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bumi-mulyo",
+        "name": "Bumi Mulyo",
+        "nameIt": "Bumi Mulyo",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          119.2137,
+          -3.40374
+        ],
+        "zoom": 11.4,
+        "population": 68458,
+        "cells": 210,
+        "layer": "cities/bumi-mulyo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.2137,
+            -3.40374
+          ]
+        },
+        "properties": {
+          "id": "bumi-mulyo",
+          "name": "Bumi Mulyo",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 68458
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "douala",
+  "createdAt": "2026-10-08T15:31:04.839Z",
+  "updatedAt": "2026-10-08T15:31:04.839Z",
+  "meta": {
+    "name": "Douala",
+    "nameIt": "Douala",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Douala.geojson",
+      "sha256": "b59cb14fe9cb8df34f04d04d6d301643e4bb9048a3333887d947f282075ea873",
+      "size": 3471351,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "douala",
+    "name": "Douala",
+    "nameIt": "Douala",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      9.73744,
+      4.05098
+    ],
+    "zoom": 9.4,
+    "population": 3162161,
+    "grid": "cities/douala/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/douala/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "douala",
+        "name": "Douala",
+        "nameIt": "Douala",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          9.73744,
+          4.05098
+        ],
+        "zoom": 9.4,
+        "population": 3162161,
+        "cells": 3024,
+        "layer": "cities/douala/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.73744,
+            4.05098
+          ]
+        },
+        "properties": {
+          "id": "douala",
+          "name": "Douala",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 38.1,
+          "population": 3162161
+        }
+      },
+      "summary": null
+    }
+  }
+}

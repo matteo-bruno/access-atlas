@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shush",
+  "createdAt": "2026-10-08T16:13:19.458Z",
+  "updatedAt": "2026-10-08T16:13:19.458Z",
+  "meta": {
+    "name": "Shush",
+    "nameIt": "Shush",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shush.geojson",
+      "sha256": "ff4ba7e2e765e910f7e8d30a53233539da9980a33e8f3853c2c09f932df96b93",
+      "size": 227639,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shush",
+    "name": "Shush",
+    "nameIt": "Shush",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      48.25757,
+      32.19556
+    ],
+    "zoom": 11.6,
+    "population": 75358,
+    "grid": "cities/shush/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shush/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shush",
+        "name": "Shush",
+        "nameIt": "Shush",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          48.25757,
+          32.19556
+        ],
+        "zoom": 11.6,
+        "population": 75358,
+        "cells": 197,
+        "layer": "cities/shush/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.25757,
+            32.19556
+          ]
+        },
+        "properties": {
+          "id": "shush",
+          "name": "Shush",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 16.9,
+          "population": 75358
+        }
+      },
+      "summary": null
+    }
+  }
+}

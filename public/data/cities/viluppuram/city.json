@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "viluppuram",
+  "createdAt": "2026-10-08T16:20:49.619Z",
+  "updatedAt": "2026-10-08T16:20:49.619Z",
+  "meta": {
+    "name": "Viluppuram",
+    "nameIt": "Viluppuram",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Viluppuram.geojson",
+      "sha256": "3971fcf8bcb33a6cec3f53f27792e8f8f4a937524670bb123b5e4545b1de96d5",
+      "size": 422490,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "viluppuram",
+    "name": "Viluppuram",
+    "nameIt": "Viluppuram",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.50566,
+      11.93419
+    ],
+    "zoom": 10.4,
+    "population": 160587,
+    "grid": "cities/viluppuram/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/viluppuram/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "viluppuram",
+        "name": "Viluppuram",
+        "nameIt": "Viluppuram",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.50566,
+          11.93419
+        ],
+        "zoom": 10.4,
+        "population": 160587,
+        "cells": 365,
+        "layer": "cities/viluppuram/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.50566,
+            11.93419
+          ]
+        },
+        "properties": {
+          "id": "viluppuram",
+          "name": "Viluppuram",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 25.7,
+          "population": 160587
+        }
+      },
+      "summary": null
+    }
+  }
+}

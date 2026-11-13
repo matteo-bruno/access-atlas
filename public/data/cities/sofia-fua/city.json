@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sofia-fua",
+  "createdAt": "2026-10-19T16:58:35.333Z",
+  "updatedAt": "2026-10-19T16:58:35.333Z",
+  "meta": {
+    "name": "Sofia",
+    "nameIt": "Sofia",
+    "region": "Bulgaria",
+    "regionIt": "Bulgaria",
+    "country": "BG"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "sofia-fua",
+    "name": "Sofia",
+    "nameIt": "Sofia",
+    "region": "Bulgaria",
+    "regionIt": "Bulgaria",
+    "country": "BG",
+    "extent": "fua",
+    "core": "sofia",
+    "center": [
+      23.31191,
+      42.68318
+    ],
+    "zoom": 8.5,
+    "population": 1435013,
+    "grid": "cities/sofia-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sofia-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sofia-fua",
+        "name": "Sofia",
+        "nameIt": "Sofia",
+        "region": "Bulgaria",
+        "regionIt": "Bulgaria",
+        "country": "BG",
+        "extent": "fua",
+        "core": "sofia",
+        "center": [
+          23.31191,
+          42.68318
+        ],
+        "zoom": 8.5,
+        "population": 1435013,
+        "cells": 11675,
+        "layer": "cities/sofia-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.31191,
+            42.68318
+          ]
+        },
+        "properties": {
+          "id": "sofia-fua",
+          "name": "Sofia",
+          "country": "BG",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 1435013
+        }
+      },
+      "summary": null
+    }
+  }
+}

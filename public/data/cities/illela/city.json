@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "illela",
+  "createdAt": "2026-10-08T15:40:40.881Z",
+  "updatedAt": "2026-10-08T15:40:40.881Z",
+  "meta": {
+    "name": "Illela",
+    "nameIt": "Illela",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Illela.geojson",
+      "sha256": "da042d489467d12dae357885047457b392b2d4a7d625a52d30f21e227c9e660d",
+      "size": 112424,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "illela",
+    "name": "Illela",
+    "nameIt": "Illela",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE",
+    "center": [
+      5.24753,
+      14.45966
+    ],
+    "zoom": 12,
+    "population": 72862,
+    "grid": "cities/illela/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/illela/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "illela",
+        "name": "Illela",
+        "nameIt": "Illela",
+        "region": "Niger",
+        "regionIt": "Niger",
+        "country": "NE",
+        "center": [
+          5.24753,
+          14.45966
+        ],
+        "zoom": 12,
+        "population": 72862,
+        "cells": 97,
+        "layer": "cities/illela/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.24753,
+            14.45966
+          ]
+        },
+        "properties": {
+          "id": "illela",
+          "name": "Illela",
+          "country": "NE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 72862
+        }
+      },
+      "summary": null
+    }
+  }
+}

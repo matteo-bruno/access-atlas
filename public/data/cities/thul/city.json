@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "thul",
+  "createdAt": "2026-10-08T16:17:40.304Z",
+  "updatedAt": "2026-10-08T16:17:40.304Z",
+  "meta": {
+    "name": "Thul",
+    "nameIt": "Thul",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Thul.geojson",
+      "sha256": "aa87dabc5121aaa68fdf97592f8601ad4b74dcd46c56af8f921f00653cf62976",
+      "size": 104233,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "thul",
+    "name": "Thul",
+    "nameIt": "Thul",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      68.77574,
+      28.23844
+    ],
+    "zoom": 12,
+    "population": 66210,
+    "grid": "cities/thul/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/thul/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "thul",
+        "name": "Thul",
+        "nameIt": "Thul",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          68.77574,
+          28.23844
+        ],
+        "zoom": 12,
+        "population": 66210,
+        "cells": 90,
+        "layer": "cities/thul/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            68.77574,
+            28.23844
+          ]
+        },
+        "properties": {
+          "id": "thul",
+          "name": "Thul",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 66210
+        }
+      },
+      "summary": null
+    }
+  }
+}

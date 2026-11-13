@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barinas",
+  "createdAt": "2026-10-08T15:15:37.729Z",
+  "updatedAt": "2026-10-08T15:15:37.729Z",
+  "meta": {
+    "name": "Barinas",
+    "nameIt": "Barinas",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barinas.geojson",
+      "sha256": "a39a121809f580b541e4210a7ea1ce8e044b4ec39b0ad7e9a9e4601b0abae68f",
+      "size": 814114,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barinas",
+    "name": "Barinas",
+    "nameIt": "Barinas",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -70.21959,
+      8.61694
+    ],
+    "zoom": 10.5,
+    "population": 298629,
+    "grid": "cities/barinas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barinas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barinas",
+        "name": "Barinas",
+        "nameIt": "Barinas",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -70.21959,
+          8.61694
+        ],
+        "zoom": 10.5,
+        "population": 298629,
+        "cells": 704,
+        "layer": "cities/barinas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -70.21959,
+            8.61694
+          ]
+        },
+        "properties": {
+          "id": "barinas",
+          "name": "Barinas",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 26.9,
+          "population": 298629
+        }
+      },
+      "summary": null
+    }
+  }
+}

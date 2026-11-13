@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santa-cruz-philippines",
+  "createdAt": "2026-10-08T16:11:02.601Z",
+  "updatedAt": "2026-10-08T16:11:02.601Z",
+  "meta": {
+    "name": "Santa Cruz (Philippines)",
+    "nameIt": "Santa Cruz (Philippines)",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santa Cruz (Philippines).geojson",
+      "sha256": "2a3d40d013d76a5a20a11dee889fbcd013acc76885764fe9a3a3c7369c8e7fcc",
+      "size": 641503,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santa-cruz-philippines",
+    "name": "Santa Cruz (Philippines)",
+    "nameIt": "Santa Cruz (Philippines)",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      121.39661,
+      14.26175
+    ],
+    "zoom": 10.6,
+    "population": 185817,
+    "grid": "cities/santa-cruz-philippines/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santa-cruz-philippines/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santa-cruz-philippines",
+        "name": "Santa Cruz (Philippines)",
+        "nameIt": "Santa Cruz (Philippines)",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          121.39661,
+          14.26175
+        ],
+        "zoom": 10.6,
+        "population": 185817,
+        "cells": 552,
+        "layer": "cities/santa-cruz-philippines/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.39661,
+            14.26175
+          ]
+        },
+        "properties": {
+          "id": "santa-cruz-philippines",
+          "name": "Santa Cruz (Philippines)",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 22.4,
+          "population": 185817
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "purworejo",
+  "createdAt": "2026-10-08T16:07:01.235Z",
+  "updatedAt": "2026-10-08T16:07:01.235Z",
+  "meta": {
+    "name": "Purworejo",
+    "nameIt": "Purworejo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Purworejo.geojson",
+      "sha256": "2b3a8f1c66cd6d62280b0616ca2a267cd4ee08f9ae563641742bd6e88d2eb17b",
+      "size": 334643,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "purworejo",
+    "name": "Purworejo",
+    "nameIt": "Purworejo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      110.00285,
+      -7.71772
+    ],
+    "zoom": 10.8,
+    "population": 125076,
+    "grid": "cities/purworejo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/purworejo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "purworejo",
+        "name": "Purworejo",
+        "nameIt": "Purworejo",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          110.00285,
+          -7.71772
+        ],
+        "zoom": 10.8,
+        "population": 125076,
+        "cells": 287,
+        "layer": "cities/purworejo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.00285,
+            -7.71772
+          ]
+        },
+        "properties": {
+          "id": "purworejo",
+          "name": "Purworejo",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 125076
+        }
+      },
+      "summary": null
+    }
+  }
+}

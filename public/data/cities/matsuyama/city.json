@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "matsuyama",
+  "createdAt": "2026-10-08T15:55:48.726Z",
+  "updatedAt": "2026-10-08T15:55:48.726Z",
+  "meta": {
+    "name": "Matsuyama",
+    "nameIt": "Matsuyama",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Matsuyama.geojson",
+      "sha256": "5120bda35fcb860a00b6e5167d26c47768d1199fa1f3bba898efbb2905760d05",
+      "size": 1929744,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "matsuyama",
+    "name": "Matsuyama",
+    "nameIt": "Matsuyama",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      132.7663,
+      33.82773
+    ],
+    "zoom": 9.7,
+    "population": 472085,
+    "grid": "cities/matsuyama/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/matsuyama/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "matsuyama",
+        "name": "Matsuyama",
+        "nameIt": "Matsuyama",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          132.7663,
+          33.82773
+        ],
+        "zoom": 9.7,
+        "population": 472085,
+        "cells": 1675,
+        "layer": "cities/matsuyama/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            132.7663,
+            33.82773
+          ]
+        },
+        "properties": {
+          "id": "matsuyama",
+          "name": "Matsuyama",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 17.2,
+          "population": 472085
+        }
+      },
+      "summary": null
+    }
+  }
+}

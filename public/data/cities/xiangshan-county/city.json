@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xiangshan-county",
+  "createdAt": "2026-10-08T16:22:19.191Z",
+  "updatedAt": "2026-10-08T16:22:19.191Z",
+  "meta": {
+    "name": "Xiangshan County",
+    "nameIt": "Xiangshan County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xiangshan County.geojson",
+      "sha256": "e6e9f838946e617ecd4bfe4f034bc534584c0e48bcf16232f03a016b7cbf0fa0",
+      "size": 397886,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xiangshan-county",
+    "name": "Xiangshan County",
+    "nameIt": "Xiangshan County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      121.88044,
+      29.46788
+    ],
+    "zoom": 11.4,
+    "population": 202506,
+    "grid": "cities/xiangshan-county/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xiangshan-county/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xiangshan-county",
+        "name": "Xiangshan County",
+        "nameIt": "Xiangshan County",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          121.88044,
+          29.46788
+        ],
+        "zoom": 11.4,
+        "population": 202506,
+        "cells": 341,
+        "layer": "cities/xiangshan-county/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.88044,
+            29.46788
+          ]
+        },
+        "properties": {
+          "id": "xiangshan-county",
+          "name": "Xiangshan County",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 202506
+        }
+      },
+      "summary": null
+    }
+  }
+}

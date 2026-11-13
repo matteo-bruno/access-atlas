@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rio-de-janeiro",
+  "createdAt": "2026-10-08T16:08:52.265Z",
+  "updatedAt": "2026-10-08T16:08:52.265Z",
+  "meta": {
+    "name": "Rio de Janeiro",
+    "nameIt": "Rio de Janeiro",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rio de Janeiro.geojson",
+      "sha256": "f7b9939a7c7cf2a16b9d4e124bcc0908d60929327ab8cff17486adb81569149e",
+      "size": 13823745,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rio-de-janeiro",
+    "name": "Rio de Janeiro",
+    "nameIt": "Rio de Janeiro",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -43.39798,
+      -22.84238
+    ],
+    "zoom": 8.5,
+    "population": 8765981,
+    "grid": "cities/rio-de-janeiro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rio-de-janeiro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rio-de-janeiro",
+        "name": "Rio de Janeiro",
+        "nameIt": "Rio de Janeiro",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -43.39798,
+          -22.84238
+        ],
+        "zoom": 8.5,
+        "population": 8765981,
+        "cells": 11790,
+        "layer": "cities/rio-de-janeiro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -43.39798,
+            -22.84238
+          ]
+        },
+        "properties": {
+          "id": "rio-de-janeiro",
+          "name": "Rio de Janeiro",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 21.5,
+          "population": 8765981
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "luojiang",
+  "createdAt": "2026-10-08T15:52:44.435Z",
+  "updatedAt": "2026-10-08T15:52:44.435Z",
+  "meta": {
+    "name": "Luojiang",
+    "nameIt": "Luojiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Luojiang.geojson",
+      "sha256": "244c76756d2058817426006dd8563fe75472563437c93736848b47d783b452cd",
+      "size": 266336,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "luojiang",
+    "name": "Luojiang",
+    "nameIt": "Luojiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.66972,
+      26.968
+    ],
+    "zoom": 11.2,
+    "population": 76314,
+    "grid": "cities/luojiang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/luojiang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "luojiang",
+        "name": "Luojiang",
+        "nameIt": "Luojiang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.66972,
+          26.968
+        ],
+        "zoom": 11.2,
+        "population": 76314,
+        "cells": 228,
+        "layer": "cities/luojiang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.66972,
+            26.968
+          ]
+        },
+        "properties": {
+          "id": "luojiang",
+          "name": "Luojiang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 76314
+        }
+      },
+      "summary": null
+    }
+  }
+}

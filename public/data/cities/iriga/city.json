@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "iriga",
+  "createdAt": "2026-10-08T15:41:02.369Z",
+  "updatedAt": "2026-10-08T15:41:02.369Z",
+  "meta": {
+    "name": "Iriga",
+    "nameIt": "Iriga",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Iriga.geojson",
+      "sha256": "6bd19ed6751664e7f823c45d31cb754d7a46f27852725ebf070ebed7ec91abc9",
+      "size": 701403,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "iriga",
+    "name": "Iriga",
+    "nameIt": "Iriga",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      123.39097,
+      13.42906
+    ],
+    "zoom": 10.4,
+    "population": 154234,
+    "grid": "cities/iriga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/iriga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "iriga",
+        "name": "Iriga",
+        "nameIt": "Iriga",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          123.39097,
+          13.42906
+        ],
+        "zoom": 10.4,
+        "population": 154234,
+        "cells": 601,
+        "layer": "cities/iriga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.39097,
+            13.42906
+          ]
+        },
+        "properties": {
+          "id": "iriga",
+          "name": "Iriga",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 26.5,
+          "population": 154234
+        }
+      },
+      "summary": null
+    }
+  }
+}

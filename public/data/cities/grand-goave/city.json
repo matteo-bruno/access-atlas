@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "grand-goave",
+  "createdAt": "2026-10-08T15:35:55.200Z",
+  "updatedAt": "2026-10-08T15:35:55.200Z",
+  "meta": {
+    "name": "Grand Goâve",
+    "nameIt": "Grand Goâve",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Grand Goâve.geojson",
+      "sha256": "349e0a4b1f9f58f321a69f238877b4c36dd519c2cfa1ebfb8222ac6bea6c1b56",
+      "size": 286117,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "grand-goave",
+    "name": "Grand Goâve",
+    "nameIt": "Grand Goâve",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT",
+    "center": [
+      -72.76163,
+      18.42388
+    ],
+    "zoom": 10.8,
+    "population": 42664,
+    "grid": "cities/grand-goave/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/grand-goave/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "grand-goave",
+        "name": "Grand Goâve",
+        "nameIt": "Grand Goâve",
+        "region": "Haiti",
+        "regionIt": "Haiti",
+        "country": "HT",
+        "center": [
+          -72.76163,
+          18.42388
+        ],
+        "zoom": 10.8,
+        "population": 42664,
+        "cells": 245,
+        "layer": "cities/grand-goave/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.76163,
+            18.42388
+          ]
+        },
+        "properties": {
+          "id": "grand-goave",
+          "name": "Grand Goâve",
+          "country": "HT",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 42664
+        }
+      },
+      "summary": null
+    }
+  }
+}

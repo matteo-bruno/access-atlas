@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "balo-i",
+  "createdAt": "2026-10-08T15:14:10.929Z",
+  "updatedAt": "2026-10-08T15:14:10.929Z",
+  "meta": {
+    "name": "Balo-i",
+    "nameIt": "Balo-i",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Balo-i.geojson",
+      "sha256": "6842cedeb018e0e0d426fb03df897619fe5d225ac9847a0298fb76e53ff0b522",
+      "size": 78934,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "balo-i",
+    "name": "Balo-i",
+    "nameIt": "Balo-i",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      124.21795,
+      8.11543
+    ],
+    "zoom": 12,
+    "population": 26009,
+    "grid": "cities/balo-i/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/balo-i/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "balo-i",
+        "name": "Balo-i",
+        "nameIt": "Balo-i",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          124.21795,
+          8.11543
+        ],
+        "zoom": 12,
+        "population": 26009,
+        "cells": 68,
+        "layer": "cities/balo-i/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            124.21795,
+            8.11543
+          ]
+        },
+        "properties": {
+          "id": "balo-i",
+          "name": "Balo-i",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 26009
+        }
+      },
+      "summary": null
+    }
+  }
+}

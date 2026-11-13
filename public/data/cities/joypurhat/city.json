@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "joypurhat",
+  "createdAt": "2026-10-08T15:43:33.496Z",
+  "updatedAt": "2026-10-08T15:43:33.496Z",
+  "meta": {
+    "name": "Joypurhat",
+    "nameIt": "Joypurhat",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Joypurhat.geojson",
+      "sha256": "13b3fbebf98e12eba3ee71bb76d9bd20945ca710a5900d7dc916e63cd9c8ebe9",
+      "size": 192999,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "joypurhat",
+    "name": "Joypurhat",
+    "nameIt": "Joypurhat",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.02849,
+      25.10009
+    ],
+    "zoom": 11.2,
+    "population": 67347,
+    "grid": "cities/joypurhat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/joypurhat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "joypurhat",
+        "name": "Joypurhat",
+        "nameIt": "Joypurhat",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.02849,
+          25.10009
+        ],
+        "zoom": 11.2,
+        "population": 67347,
+        "cells": 167,
+        "layer": "cities/joypurhat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.02849,
+            25.10009
+          ]
+        },
+        "properties": {
+          "id": "joypurhat",
+          "name": "Joypurhat",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 16.4,
+          "population": 67347
+        }
+      },
+      "summary": null
+    }
+  }
+}

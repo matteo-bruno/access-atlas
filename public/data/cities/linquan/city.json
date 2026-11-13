@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "linquan",
+  "createdAt": "2026-10-08T15:51:27.526Z",
+  "updatedAt": "2026-10-08T15:51:27.526Z",
+  "meta": {
+    "name": "Linquan",
+    "nameIt": "Linquan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Linquan.geojson",
+      "sha256": "8384d3eee487a2c590aed9d1df534f6eae2bf844a97f2dea3d7302c9aba56345",
+      "size": 533923,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "linquan",
+    "name": "Linquan",
+    "nameIt": "Linquan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      115.25918,
+      33.05828
+    ],
+    "zoom": 10.9,
+    "population": 324347,
+    "grid": "cities/linquan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 182
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/linquan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "linquan",
+        "name": "Linquan",
+        "nameIt": "Linquan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          115.25918,
+          33.05828
+        ],
+        "zoom": 10.9,
+        "population": 324347,
+        "cells": 458,
+        "layer": "cities/linquan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 182
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.25918,
+            33.05828
+          ]
+        },
+        "properties": {
+          "id": "linquan",
+          "name": "Linquan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 18.5,
+          "population": 324347
+        }
+      },
+      "summary": null
+    }
+  }
+}

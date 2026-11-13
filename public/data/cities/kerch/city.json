@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kerch",
+  "createdAt": "2026-10-08T15:46:12.898Z",
+  "updatedAt": "2026-10-08T15:46:12.898Z",
+  "meta": {
+    "name": "Kerch",
+    "nameIt": "Kerch",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kerch.geojson",
+      "sha256": "834353aae46a5f6d6ffb81835dba165f412453a91559df8fff1574d43d1d6cfa",
+      "size": 303987,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kerch",
+    "name": "Kerch",
+    "nameIt": "Kerch",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      36.47259,
+      45.35639
+    ],
+    "zoom": 10.9,
+    "population": 78250,
+    "grid": "cities/kerch/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kerch/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kerch",
+        "name": "Kerch",
+        "nameIt": "Kerch",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          36.47259,
+          45.35639
+        ],
+        "zoom": 10.9,
+        "population": 78250,
+        "cells": 266,
+        "layer": "cities/kerch/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.47259,
+            45.35639
+          ]
+        },
+        "properties": {
+          "id": "kerch",
+          "name": "Kerch",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 16.5,
+          "population": 78250
+        }
+      },
+      "summary": null
+    }
+  }
+}

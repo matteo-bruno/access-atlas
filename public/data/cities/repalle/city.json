@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "repalle",
+  "createdAt": "2026-10-08T16:08:41.061Z",
+  "updatedAt": "2026-10-08T16:08:41.061Z",
+  "meta": {
+    "name": "Repalle",
+    "nameIt": "Repalle",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Repalle.geojson",
+      "sha256": "be560c60c44acf5034f38056209858935a2322b6016aab89d9a1e6fe003ebe5b",
+      "size": 133173,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "repalle",
+    "name": "Repalle",
+    "nameIt": "Repalle",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.82918,
+      16.02069
+    ],
+    "zoom": 11.9,
+    "population": 53654,
+    "grid": "cities/repalle/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/repalle/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "repalle",
+        "name": "Repalle",
+        "nameIt": "Repalle",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.82918,
+          16.02069
+        ],
+        "zoom": 11.9,
+        "population": 53654,
+        "cells": 115,
+        "layer": "cities/repalle/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.82918,
+            16.02069
+          ]
+        },
+        "properties": {
+          "id": "repalle",
+          "name": "Repalle",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 53654
+        }
+      },
+      "summary": null
+    }
+  }
+}

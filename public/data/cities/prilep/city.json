@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "prilep",
+  "createdAt": "2026-10-08T16:06:34.054Z",
+  "updatedAt": "2026-10-08T16:06:34.054Z",
+  "meta": {
+    "name": "Prilep",
+    "nameIt": "Prilep",
+    "region": "North Macedonia",
+    "regionIt": "Macedonia del Nord",
+    "country": "MK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Prilep.geojson",
+      "sha256": "eea59d58e74106b5e8c979ec5772eb91405653f56735c0bdff7b6ab700686199",
+      "size": 98368,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "prilep",
+    "name": "Prilep",
+    "nameIt": "Prilep",
+    "region": "North Macedonia",
+    "regionIt": "Macedonia del Nord",
+    "country": "MK",
+    "center": [
+      21.55342,
+      41.34729
+    ],
+    "zoom": 12,
+    "population": 51098,
+    "grid": "cities/prilep/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/prilep/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "prilep",
+        "name": "Prilep",
+        "nameIt": "Prilep",
+        "region": "North Macedonia",
+        "regionIt": "Macedonia del Nord",
+        "country": "MK",
+        "center": [
+          21.55342,
+          41.34729
+        ],
+        "zoom": 12,
+        "population": 51098,
+        "cells": 86,
+        "layer": "cities/prilep/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            21.55342,
+            41.34729
+          ]
+        },
+        "properties": {
+          "id": "prilep",
+          "name": "Prilep",
+          "country": "MK",
+          "isStudy": true,
+          "proximityMinutes": 10,
+          "population": 51098
+        }
+      },
+      "summary": null
+    }
+  }
+}

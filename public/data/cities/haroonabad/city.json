@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "haroonabad",
+  "createdAt": "2026-10-08T15:37:54.841Z",
+  "updatedAt": "2026-10-08T15:37:54.841Z",
+  "meta": {
+    "name": "Haroonabad",
+    "nameIt": "Haroonabad",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Haroonabad.geojson",
+      "sha256": "dbd481f55969703e873ed86cf9255d55f77982d5c1e2cb3669cbfc70b1c879f5",
+      "size": 237426,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "haroonabad",
+    "name": "Haroonabad",
+    "nameIt": "Haroonabad",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      73.13311,
+      29.6081
+    ],
+    "zoom": 11.5,
+    "population": 99462,
+    "grid": "cities/haroonabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/haroonabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "haroonabad",
+        "name": "Haroonabad",
+        "nameIt": "Haroonabad",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          73.13311,
+          29.6081
+        ],
+        "zoom": 11.5,
+        "population": 99462,
+        "cells": 205,
+        "layer": "cities/haroonabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.13311,
+            29.6081
+          ]
+        },
+        "properties": {
+          "id": "haroonabad",
+          "name": "Haroonabad",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 99462
+        }
+      },
+      "summary": null
+    }
+  }
+}

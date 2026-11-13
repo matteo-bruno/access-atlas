@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "arequipa",
+  "createdAt": "2026-10-08T15:09:17.142Z",
+  "updatedAt": "2026-10-08T15:09:17.142Z",
+  "meta": {
+    "name": "Arequipa",
+    "nameIt": "Arequipa",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Arequipa.geojson",
+      "sha256": "a906a3716fdb9ddfbcb7ace8832f83574a26a4980a7fa5b8efb6ac537fec3763",
+      "size": 1653460,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "arequipa",
+    "name": "Arequipa",
+    "nameIt": "Arequipa",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -71.54003,
+      -16.3874
+    ],
+    "zoom": 9.8,
+    "population": 1010196,
+    "grid": "cities/arequipa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/arequipa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "arequipa",
+        "name": "Arequipa",
+        "nameIt": "Arequipa",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -71.54003,
+          -16.3874
+        ],
+        "zoom": 9.8,
+        "population": 1010196,
+        "cells": 1420,
+        "layer": "cities/arequipa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -71.54003,
+            -16.3874
+          ]
+        },
+        "properties": {
+          "id": "arequipa",
+          "name": "Arequipa",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 15.9,
+          "population": 1010196
+        }
+      },
+      "summary": null
+    }
+  }
+}

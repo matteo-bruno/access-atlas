@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jakarta",
+  "createdAt": "2026-10-08T15:41:45.323Z",
+  "updatedAt": "2026-10-08T15:41:45.323Z",
+  "meta": {
+    "name": "Jakarta",
+    "nameIt": "Jakarta",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jakarta.geojson",
+      "sha256": "cdc748f7d78caef12f6f8323cf5b540ddeedbd8e29993840174f77f272e3d9a9",
+      "size": 50462013,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jakarta",
+    "name": "Jakarta",
+    "nameIt": "Jakarta",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      106.83373,
+      -6.32557
+    ],
+    "zoom": 8.5,
+    "population": 35114708,
+    "grid": "cities/jakarta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jakarta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jakarta",
+        "name": "Jakarta",
+        "nameIt": "Jakarta",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          106.83373,
+          -6.32557
+        ],
+        "zoom": 8.5,
+        "population": 35114708,
+        "cells": 43188,
+        "layer": "cities/jakarta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.83373,
+            -6.32557
+          ]
+        },
+        "properties": {
+          "id": "jakarta",
+          "name": "Jakarta",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 30,
+          "population": 35114708
+        }
+      },
+      "summary": null
+    }
+  }
+}

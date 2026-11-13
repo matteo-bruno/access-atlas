@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jecheon-si",
+  "createdAt": "2026-10-08T15:42:11.816Z",
+  "updatedAt": "2026-10-08T15:42:11.816Z",
+  "meta": {
+    "name": "Jecheon-si",
+    "nameIt": "Jecheon-si",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jecheon-si.geojson",
+      "sha256": "e2d57c1c13afad7b0182c3158c069059fe97008c240714f563031b88d7130ce6",
+      "size": 263476,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jecheon-si",
+    "name": "Jecheon-si",
+    "nameIt": "Jecheon-si",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      128.21406,
+      37.14132
+    ],
+    "zoom": 11.7,
+    "population": 85052,
+    "grid": "cities/jecheon-si/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jecheon-si/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jecheon-si",
+        "name": "Jecheon-si",
+        "nameIt": "Jecheon-si",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          128.21406,
+          37.14132
+        ],
+        "zoom": 11.7,
+        "population": 85052,
+        "cells": 228,
+        "layer": "cities/jecheon-si/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            128.21406,
+            37.14132
+          ]
+        },
+        "properties": {
+          "id": "jecheon-si",
+          "name": "Jecheon-si",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 85052
+        }
+      },
+      "summary": null
+    }
+  }
+}

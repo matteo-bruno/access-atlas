@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kursk",
+  "createdAt": "2026-10-08T15:48:56.457Z",
+  "updatedAt": "2026-10-08T15:48:56.457Z",
+  "meta": {
+    "name": "Kursk",
+    "nameIt": "Kursk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kursk.geojson",
+      "sha256": "654ac06aa076601ceaac334d2f56f169e607f06a95677ec4897b9f342648a8a1",
+      "size": 843383,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kursk",
+    "name": "Kursk",
+    "nameIt": "Kursk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      36.18381,
+      51.73836
+    ],
+    "zoom": 10.6,
+    "population": 315633,
+    "grid": "cities/kursk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kursk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kursk",
+        "name": "Kursk",
+        "nameIt": "Kursk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          36.18381,
+          51.73836
+        ],
+        "zoom": 10.6,
+        "population": 315633,
+        "cells": 739,
+        "layer": "cities/kursk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.18381,
+            51.73836
+          ]
+        },
+        "properties": {
+          "id": "kursk",
+          "name": "Kursk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 315633
+        }
+      },
+      "summary": null
+    }
+  }
+}

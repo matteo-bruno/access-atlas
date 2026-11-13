@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kaghaznagar",
+  "createdAt": "2026-10-08T15:44:06.909Z",
+  "updatedAt": "2026-10-08T15:44:06.909Z",
+  "meta": {
+    "name": "Kaghaznagar",
+    "nameIt": "Kaghaznagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kaghaznagar.geojson",
+      "sha256": "3af798794537de40623b97597e9eaaac4eab40278ae9b09fc6501a4158198089",
+      "size": 92762,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kaghaznagar",
+    "name": "Kaghaznagar",
+    "nameIt": "Kaghaznagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.48185,
+      19.3523
+    ],
+    "zoom": 12,
+    "population": 66289,
+    "grid": "cities/kaghaznagar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kaghaznagar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kaghaznagar",
+        "name": "Kaghaznagar",
+        "nameIt": "Kaghaznagar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.48185,
+          19.3523
+        ],
+        "zoom": 12,
+        "population": 66289,
+        "cells": 80,
+        "layer": "cities/kaghaznagar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.48185,
+            19.3523
+          ]
+        },
+        "properties": {
+          "id": "kaghaznagar",
+          "name": "Kaghaznagar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 10.9,
+          "population": 66289
+        }
+      },
+      "summary": null
+    }
+  }
+}

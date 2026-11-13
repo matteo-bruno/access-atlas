@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tres-rios",
+  "createdAt": "2026-10-08T16:18:55.812Z",
+  "updatedAt": "2026-10-08T16:18:55.812Z",
+  "meta": {
+    "name": "Três Rios",
+    "nameIt": "Três Rios",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Três Rios.geojson",
+      "sha256": "1d9f34177a69a83bc4d02dbb321acbf52118ad6b39421ca6f95ab043e06dd346",
+      "size": 160328,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tres-rios",
+    "name": "Três Rios",
+    "nameIt": "Três Rios",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -43.20366,
+      -22.10777
+    ],
+    "zoom": 11.7,
+    "population": 54075,
+    "grid": "cities/tres-rios/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tres-rios/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tres-rios",
+        "name": "Três Rios",
+        "nameIt": "Três Rios",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -43.20366,
+          -22.10777
+        ],
+        "zoom": 11.7,
+        "population": 54075,
+        "cells": 136,
+        "layer": "cities/tres-rios/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -43.20366,
+            -22.10777
+          ]
+        },
+        "properties": {
+          "id": "tres-rios",
+          "name": "Três Rios",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 54075
+        }
+      },
+      "summary": null
+    }
+  }
+}

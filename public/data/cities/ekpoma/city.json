@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ekpoma",
+  "createdAt": "2026-10-08T15:31:52.350Z",
+  "updatedAt": "2026-10-08T15:31:52.350Z",
+  "meta": {
+    "name": "Ekpoma",
+    "nameIt": "Ekpoma",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ekpoma.geojson",
+      "sha256": "1a003369f1053f8755e9895bb165d6cf3250a9f36d3de15be01207cf0047c89c",
+      "size": 451577,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ekpoma",
+    "name": "Ekpoma",
+    "nameIt": "Ekpoma",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      6.12365,
+      6.7427
+    ],
+    "zoom": 10.2,
+    "population": 273707,
+    "grid": "cities/ekpoma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ekpoma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ekpoma",
+        "name": "Ekpoma",
+        "nameIt": "Ekpoma",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          6.12365,
+          6.7427
+        ],
+        "zoom": 10.2,
+        "population": 273707,
+        "cells": 392,
+        "layer": "cities/ekpoma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.12365,
+            6.7427
+          ]
+        },
+        "properties": {
+          "id": "ekpoma",
+          "name": "Ekpoma",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 273707
+        }
+      },
+      "summary": null
+    }
+  }
+}

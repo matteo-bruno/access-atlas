@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "acacias",
+  "createdAt": "2026-10-08T15:02:04.099Z",
+  "updatedAt": "2026-10-08T15:02:04.099Z",
+  "meta": {
+    "name": "Acacías",
+    "nameIt": "Acacías",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Acacías.geojson",
+      "sha256": "dbc9bea35a82ecd1e162507c72636a87abe7f7b9b94e36a144065dad03405104",
+      "size": 92855,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "acacias",
+    "name": "Acacías",
+    "nameIt": "Acacías",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -73.76968,
+      3.99071
+    ],
+    "zoom": 12,
+    "population": 70401,
+    "grid": "cities/acacias/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/acacias/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "acacias",
+        "name": "Acacías",
+        "nameIt": "Acacías",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -73.76968,
+          3.99071
+        ],
+        "zoom": 12,
+        "population": 70401,
+        "cells": 80,
+        "layer": "cities/acacias/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.76968,
+            3.99071
+          ]
+        },
+        "properties": {
+          "id": "acacias",
+          "name": "Acacías",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 12.7,
+          "population": 70401
+        }
+      },
+      "summary": null
+    }
+  }
+}

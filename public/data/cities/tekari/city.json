@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tekari",
+  "createdAt": "2026-10-08T16:17:09.150Z",
+  "updatedAt": "2026-10-08T16:17:09.150Z",
+  "meta": {
+    "name": "Tekari",
+    "nameIt": "Tekari",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tekari.geojson",
+      "sha256": "0a6fa190a690cfc04848c07a9e8871e84691d85a5fcc8566e7b6606f0fd50762",
+      "size": 199222,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tekari",
+    "name": "Tekari",
+    "nameIt": "Tekari",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.84599,
+      24.94397
+    ],
+    "zoom": 11.4,
+    "population": 81772,
+    "grid": "cities/tekari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tekari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tekari",
+        "name": "Tekari",
+        "nameIt": "Tekari",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.84599,
+          24.94397
+        ],
+        "zoom": 11.4,
+        "population": 81772,
+        "cells": 172,
+        "layer": "cities/tekari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.84599,
+            24.94397
+          ]
+        },
+        "properties": {
+          "id": "tekari",
+          "name": "Tekari",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 81772
+        }
+      },
+      "summary": null
+    }
+  }
+}

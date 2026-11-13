@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sabinas",
+  "createdAt": "2026-10-08T16:09:35.068Z",
+  "updatedAt": "2026-10-08T16:09:35.068Z",
+  "meta": {
+    "name": "Sabinas",
+    "nameIt": "Sabinas",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sabinas.geojson",
+      "sha256": "f59e59b4e7a08ab24c26ab836f169d4fc36f03f0773b42b33152d763f2382ce7",
+      "size": 142581,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sabinas",
+    "name": "Sabinas",
+    "nameIt": "Sabinas",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -101.11724,
+      27.85451
+    ],
+    "zoom": 11.9,
+    "population": 41477,
+    "grid": "cities/sabinas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sabinas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sabinas",
+        "name": "Sabinas",
+        "nameIt": "Sabinas",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -101.11724,
+          27.85451
+        ],
+        "zoom": 11.9,
+        "population": 41477,
+        "cells": 121,
+        "layer": "cities/sabinas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -101.11724,
+            27.85451
+          ]
+        },
+        "properties": {
+          "id": "sabinas",
+          "name": "Sabinas",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 41477
+        }
+      },
+      "summary": null
+    }
+  }
+}

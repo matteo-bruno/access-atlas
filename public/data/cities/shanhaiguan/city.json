@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shanhaiguan",
+  "createdAt": "2026-10-08T16:12:33.411Z",
+  "updatedAt": "2026-10-08T16:12:33.411Z",
+  "meta": {
+    "name": "Shanhaiguan",
+    "nameIt": "Shanhaiguan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shanhaiguan.geojson",
+      "sha256": "300078ddd47535d75ed4db16f31450e2f3a77fddf3de7f5d7ed80950f7fe5f2f",
+      "size": 466211,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shanhaiguan",
+    "name": "Shanhaiguan",
+    "nameIt": "Shanhaiguan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.7571,
+      40.00126
+    ],
+    "zoom": 11,
+    "population": 142892,
+    "grid": "cities/shanhaiguan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 165
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shanhaiguan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shanhaiguan",
+        "name": "Shanhaiguan",
+        "nameIt": "Shanhaiguan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.7571,
+          40.00126
+        ],
+        "zoom": 11,
+        "population": 142892,
+        "cells": 400,
+        "layer": "cities/shanhaiguan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 165
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.7571,
+            40.00126
+          ]
+        },
+        "properties": {
+          "id": "shanhaiguan",
+          "name": "Shanhaiguan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24.9,
+          "population": 142892
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "thai-nguyen",
+  "createdAt": "2026-10-08T16:17:42.009Z",
+  "updatedAt": "2026-10-08T16:17:42.009Z",
+  "meta": {
+    "name": "Thái Nguyên",
+    "nameIt": "Thái Nguyên",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Thái Nguyên.geojson",
+      "sha256": "99a854ce34b63698b8018072d27fe79d8f1c41866b1ba6fab36bb1e940229fad",
+      "size": 636665,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "thai-nguyen",
+    "name": "Thái Nguyên",
+    "nameIt": "Thái Nguyên",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      105.83688,
+      21.58445
+    ],
+    "zoom": 10.5,
+    "population": 271674,
+    "grid": "cities/thai-nguyen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/thai-nguyen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "thai-nguyen",
+        "name": "Thái Nguyên",
+        "nameIt": "Thái Nguyên",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          105.83688,
+          21.58445
+        ],
+        "zoom": 10.5,
+        "population": 271674,
+        "cells": 545,
+        "layer": "cities/thai-nguyen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.83688,
+            21.58445
+          ]
+        },
+        "properties": {
+          "id": "thai-nguyen",
+          "name": "Thái Nguyên",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 33.6,
+          "population": 271674
+        }
+      },
+      "summary": null
+    }
+  }
+}

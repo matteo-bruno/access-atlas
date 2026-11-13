@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wakayama",
+  "createdAt": "2026-10-08T16:21:12.848Z",
+  "updatedAt": "2026-10-08T16:21:12.848Z",
+  "meta": {
+    "name": "Wakayama",
+    "nameIt": "Wakayama",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wakayama.geojson",
+      "sha256": "2bd88402d33d1e910206323a228099ca206dd3cc570d360caaeaf4a03b526e14",
+      "size": 1193084,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wakayama",
+    "name": "Wakayama",
+    "nameIt": "Wakayama",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      135.17128,
+      34.23139
+    ],
+    "zoom": 10.3,
+    "population": 294848,
+    "grid": "cities/wakayama/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wakayama/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wakayama",
+        "name": "Wakayama",
+        "nameIt": "Wakayama",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          135.17128,
+          34.23139
+        ],
+        "zoom": 10.3,
+        "population": 294848,
+        "cells": 1038,
+        "layer": "cities/wakayama/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            135.17128,
+            34.23139
+          ]
+        },
+        "properties": {
+          "id": "wakayama",
+          "name": "Wakayama",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 294848
+        }
+      },
+      "summary": null
+    }
+  }
+}

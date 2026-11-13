@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "parbalpur",
+  "createdAt": "2026-10-08T16:04:18.429Z",
+  "updatedAt": "2026-10-08T16:04:18.429Z",
+  "meta": {
+    "name": "Parbalpur",
+    "nameIt": "Parbalpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Parbalpur.geojson",
+      "sha256": "bbdf1821afd8634216d8996883d5fe8d6b4e9bfa1d889ca19e2f2fa0e426e192",
+      "size": 317304,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "parbalpur",
+    "name": "Parbalpur",
+    "nameIt": "Parbalpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.33497,
+      25.20104
+    ],
+    "zoom": 10.7,
+    "population": 50881,
+    "grid": "cities/parbalpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/parbalpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "parbalpur",
+        "name": "Parbalpur",
+        "nameIt": "Parbalpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.33497,
+          25.20104
+        ],
+        "zoom": 10.7,
+        "population": 50881,
+        "cells": 274,
+        "layer": "cities/parbalpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.33497,
+            25.20104
+          ]
+        },
+        "properties": {
+          "id": "parbalpur",
+          "name": "Parbalpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 50881
+        }
+      },
+      "summary": null
+    }
+  }
+}

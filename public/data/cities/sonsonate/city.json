@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sonsonate",
+  "createdAt": "2026-10-08T16:14:29.215Z",
+  "updatedAt": "2026-10-08T16:14:29.215Z",
+  "meta": {
+    "name": "Sonsonate",
+    "nameIt": "Sonsonate",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sonsonate.geojson",
+      "sha256": "9854fc8681a012552b06247b1659b88e69c8cd93397897288d811692a0b720fe",
+      "size": 364685,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sonsonate",
+    "name": "Sonsonate",
+    "nameIt": "Sonsonate",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV",
+    "center": [
+      -89.72469,
+      13.73879
+    ],
+    "zoom": 10.8,
+    "population": 128628,
+    "grid": "cities/sonsonate/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sonsonate/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sonsonate",
+        "name": "Sonsonate",
+        "nameIt": "Sonsonate",
+        "region": "El Salvador",
+        "regionIt": "El Salvador",
+        "country": "SV",
+        "center": [
+          -89.72469,
+          13.73879
+        ],
+        "zoom": 10.8,
+        "population": 128628,
+        "cells": 315,
+        "layer": "cities/sonsonate/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -89.72469,
+            13.73879
+          ]
+        },
+        "properties": {
+          "id": "sonsonate",
+          "name": "Sonsonate",
+          "country": "SV",
+          "isStudy": true,
+          "proximityMinutes": 12.3,
+          "population": 128628
+        }
+      },
+      "summary": null
+    }
+  }
+}

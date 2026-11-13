@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "birpur",
+  "createdAt": "2026-10-08T15:19:17.780Z",
+  "updatedAt": "2026-10-08T15:19:17.780Z",
+  "meta": {
+    "name": "Birpur",
+    "nameIt": "Birpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Birpur.geojson",
+      "sha256": "01c745983969b9b2c60f096d4e07bcb3f9c3d7ae225b69eb72399ab484275a46",
+      "size": 915060,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "birpur",
+    "name": "Birpur",
+    "nameIt": "Birpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.1471,
+      25.53545
+    ],
+    "zoom": 9.5,
+    "population": 239879,
+    "grid": "cities/birpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/birpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "birpur",
+        "name": "Birpur",
+        "nameIt": "Birpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.1471,
+          25.53545
+        ],
+        "zoom": 9.5,
+        "population": 239879,
+        "cells": 790,
+        "layer": "cities/birpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.1471,
+            25.53545
+          ]
+        },
+        "properties": {
+          "id": "birpur",
+          "name": "Birpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 239879
+        }
+      },
+      "summary": null
+    }
+  }
+}

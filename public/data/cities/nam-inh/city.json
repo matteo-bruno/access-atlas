@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nam-inh",
+  "createdAt": "2026-10-08T15:59:54.657Z",
+  "updatedAt": "2026-10-08T15:59:54.657Z",
+  "meta": {
+    "name": "Nam Định",
+    "nameIt": "Nam Định",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nam Định.geojson",
+      "sha256": "fe0bf4ceb9417da6841b025ba25affd0af0d3b17996e7cc6064aa3eceb623288",
+      "size": 990295,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nam-inh",
+    "name": "Nam Định",
+    "nameIt": "Nam Định",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      106.17569,
+      20.43825
+    ],
+    "zoom": 10.4,
+    "population": 336668,
+    "grid": "cities/nam-inh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nam-inh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nam-inh",
+        "name": "Nam Định",
+        "nameIt": "Nam Định",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          106.17569,
+          20.43825
+        ],
+        "zoom": 10.4,
+        "population": 336668,
+        "cells": 848,
+        "layer": "cities/nam-inh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.17569,
+            20.43825
+          ]
+        },
+        "properties": {
+          "id": "nam-inh",
+          "name": "Nam Định",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 24.2,
+          "population": 336668
+        }
+      },
+      "summary": null
+    }
+  }
+}

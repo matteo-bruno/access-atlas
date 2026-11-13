@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bayhan",
+  "createdAt": "2026-10-08T15:16:21.919Z",
+  "updatedAt": "2026-10-08T15:16:21.919Z",
+  "meta": {
+    "name": "Bayhan",
+    "nameIt": "Bayhan",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bayhan.geojson",
+      "sha256": "b990004eb2125bf07d682c15c64f9804e1f7a289cbf9da13a5a5fd99f8f0128a",
+      "size": 72131,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bayhan",
+    "name": "Bayhan",
+    "nameIt": "Bayhan",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE",
+    "center": [
+      45.71764,
+      14.80045
+    ],
+    "zoom": 12,
+    "population": 45632,
+    "grid": "cities/bayhan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bayhan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bayhan",
+        "name": "Bayhan",
+        "nameIt": "Bayhan",
+        "region": "Yemen",
+        "regionIt": "Yemen",
+        "country": "YE",
+        "center": [
+          45.71764,
+          14.80045
+        ],
+        "zoom": 12,
+        "population": 45632,
+        "cells": 62,
+        "layer": "cities/bayhan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            45.71764,
+            14.80045
+          ]
+        },
+        "properties": {
+          "id": "bayhan",
+          "name": "Bayhan",
+          "country": "YE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 45632
+        }
+      },
+      "summary": null
+    }
+  }
+}

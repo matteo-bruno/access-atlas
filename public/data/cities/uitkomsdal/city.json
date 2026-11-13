@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "uitkomsdal",
+  "createdAt": "2026-10-08T16:19:40.868Z",
+  "updatedAt": "2026-10-08T16:19:40.868Z",
+  "meta": {
+    "name": "Uitkomsdal",
+    "nameIt": "Uitkomsdal",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Uitkomsdal.geojson",
+      "sha256": "9aa2213ad8668ac5348b3d79c802866927074c050a99336f7623765bdf39098a",
+      "size": 170296,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "uitkomsdal",
+    "name": "Uitkomsdal",
+    "nameIt": "Uitkomsdal",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      26.63589,
+      -26.95335
+    ],
+    "zoom": 11.6,
+    "population": 35336,
+    "grid": "cities/uitkomsdal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/uitkomsdal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "uitkomsdal",
+        "name": "Uitkomsdal",
+        "nameIt": "Uitkomsdal",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          26.63589,
+          -26.95335
+        ],
+        "zoom": 11.6,
+        "population": 35336,
+        "cells": 145,
+        "layer": "cities/uitkomsdal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.63589,
+            -26.95335
+          ]
+        },
+        "properties": {
+          "id": "uitkomsdal",
+          "name": "Uitkomsdal",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 35336
+        }
+      },
+      "summary": null
+    }
+  }
+}

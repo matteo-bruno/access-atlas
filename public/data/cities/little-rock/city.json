@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "little-rock",
+  "createdAt": "2026-10-08T15:51:35.423Z",
+  "updatedAt": "2026-10-08T15:51:35.423Z",
+  "meta": {
+    "name": "Little Rock",
+    "nameIt": "Little Rock",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Little Rock.geojson",
+      "sha256": "9b6de2702f13e7dd40699e82d3b6424906427f4800590eaed6334843191af2cc",
+      "size": 618698,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "little-rock",
+    "name": "Little Rock",
+    "nameIt": "Little Rock",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -92.34216,
+      34.7517
+    ],
+    "zoom": 10.1,
+    "population": 76068,
+    "grid": "cities/little-rock/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/little-rock/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "little-rock",
+        "name": "Little Rock",
+        "nameIt": "Little Rock",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -92.34216,
+          34.7517
+        ],
+        "zoom": 10.1,
+        "population": 76068,
+        "cells": 538,
+        "layer": "cities/little-rock/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -92.34216,
+            34.7517
+          ]
+        },
+        "properties": {
+          "id": "little-rock",
+          "name": "Little Rock",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.3,
+          "population": 76068
+        }
+      },
+      "summary": null
+    }
+  }
+}

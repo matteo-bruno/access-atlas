@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "welkite",
+  "createdAt": "2026-10-08T16:21:31.784Z",
+  "updatedAt": "2026-10-08T16:21:31.784Z",
+  "meta": {
+    "name": "Welkite",
+    "nameIt": "Welkite",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Welkite.geojson",
+      "sha256": "d2058e65a44f1ecb5d3b64cc4041ff20f3373ee3a2057bbf09da83ff164bd530",
+      "size": 142947,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "welkite",
+    "name": "Welkite",
+    "nameIt": "Welkite",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      37.78162,
+      8.28882
+    ],
+    "zoom": 12,
+    "population": 42759,
+    "grid": "cities/welkite/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/welkite/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "welkite",
+        "name": "Welkite",
+        "nameIt": "Welkite",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          37.78162,
+          8.28882
+        ],
+        "zoom": 12,
+        "population": 42759,
+        "cells": 124,
+        "layer": "cities/welkite/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.78162,
+            8.28882
+          ]
+        },
+        "properties": {
+          "id": "welkite",
+          "name": "Welkite",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 42759
+        }
+      },
+      "summary": null
+    }
+  }
+}

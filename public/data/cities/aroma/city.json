@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aroma",
+  "createdAt": "2026-10-08T15:09:37.302Z",
+  "updatedAt": "2026-10-08T15:09:37.302Z",
+  "meta": {
+    "name": "Aroma",
+    "nameIt": "Aroma",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aroma.geojson",
+      "sha256": "d37321fc6dde22aad65223383f4dc018aea326d47d4e6ab5c0a07094e9b2bb2d",
+      "size": 83715,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aroma",
+    "name": "Aroma",
+    "nameIt": "Aroma",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      36.1328,
+      15.811
+    ],
+    "zoom": 12,
+    "population": 42575,
+    "grid": "cities/aroma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aroma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aroma",
+        "name": "Aroma",
+        "nameIt": "Aroma",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          36.1328,
+          15.811
+        ],
+        "zoom": 12,
+        "population": 42575,
+        "cells": 72,
+        "layer": "cities/aroma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.1328,
+            15.811
+          ]
+        },
+        "properties": {
+          "id": "aroma",
+          "name": "Aroma",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 42575
+        }
+      },
+      "summary": null
+    }
+  }
+}

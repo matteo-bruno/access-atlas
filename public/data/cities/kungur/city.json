@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kungur",
+  "createdAt": "2026-10-08T15:48:49.927Z",
+  "updatedAt": "2026-10-08T15:48:49.927Z",
+  "meta": {
+    "name": "Kungur",
+    "nameIt": "Kungur",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kungur.geojson",
+      "sha256": "6ac1c90388b29432e6b0c6a0e674073875c47a2e5dce09e053390bb6e5db441f",
+      "size": 199555,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kungur",
+    "name": "Kungur",
+    "nameIt": "Kungur",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      56.96074,
+      57.43282
+    ],
+    "zoom": 11.1,
+    "population": 45923,
+    "grid": "cities/kungur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kungur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kungur",
+        "name": "Kungur",
+        "nameIt": "Kungur",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          56.96074,
+          57.43282
+        ],
+        "zoom": 11.1,
+        "population": 45923,
+        "cells": 173,
+        "layer": "cities/kungur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            56.96074,
+            57.43282
+          ]
+        },
+        "properties": {
+          "id": "kungur",
+          "name": "Kungur",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 45923
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cuernavaca",
+  "createdAt": "2026-10-08T15:27:00.460Z",
+  "updatedAt": "2026-10-08T15:27:00.460Z",
+  "meta": {
+    "name": "Cuernavaca",
+    "nameIt": "Cuernavaca",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cuernavaca.geojson",
+      "sha256": "e26c56bbe5f4810560a7f40ba1dd523b76ebd45470dc94e5d53ba04d9c92007a",
+      "size": 1870684,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cuernavaca",
+    "name": "Cuernavaca",
+    "nameIt": "Cuernavaca",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -99.20749,
+      18.90017
+    ],
+    "zoom": 9.4,
+    "population": 844997,
+    "grid": "cities/cuernavaca/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cuernavaca/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cuernavaca",
+        "name": "Cuernavaca",
+        "nameIt": "Cuernavaca",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -99.20749,
+          18.90017
+        ],
+        "zoom": 9.4,
+        "population": 844997,
+        "cells": 1614,
+        "layer": "cities/cuernavaca/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -99.20749,
+            18.90017
+          ]
+        },
+        "properties": {
+          "id": "cuernavaca",
+          "name": "Cuernavaca",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 27.2,
+          "population": 844997
+        }
+      },
+      "summary": null
+    }
+  }
+}

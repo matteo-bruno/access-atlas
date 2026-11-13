@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hadejia",
+  "createdAt": "2026-10-08T15:37:07.321Z",
+  "updatedAt": "2026-10-08T15:37:07.321Z",
+  "meta": {
+    "name": "Hadejia",
+    "nameIt": "Hadejia",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hadejia.geojson",
+      "sha256": "b1f714cb75a9c294b520cf9a74e6d73e195321f47220c59ad110fddba2d72ed8",
+      "size": 251102,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hadejia",
+    "name": "Hadejia",
+    "nameIt": "Hadejia",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      10.03895,
+      12.45387
+    ],
+    "zoom": 11.4,
+    "population": 273252,
+    "grid": "cities/hadejia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hadejia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hadejia",
+        "name": "Hadejia",
+        "nameIt": "Hadejia",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          10.03895,
+          12.45387
+        ],
+        "zoom": 11.4,
+        "population": 273252,
+        "cells": 215,
+        "layer": "cities/hadejia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.03895,
+            12.45387
+          ]
+        },
+        "properties": {
+          "id": "hadejia",
+          "name": "Hadejia",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 273252
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tingo-maria",
+  "createdAt": "2026-10-08T16:17:58.934Z",
+  "updatedAt": "2026-10-08T16:17:58.934Z",
+  "meta": {
+    "name": "Tingo María",
+    "nameIt": "Tingo María",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tingo María.geojson",
+      "sha256": "7841c66acdb0eab46f24b7fe97b553d8f2baaa5b0344ee8416e924726f33ff2b",
+      "size": 107391,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tingo-maria",
+    "name": "Tingo María",
+    "nameIt": "Tingo María",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -76.00027,
+      -9.29837
+    ],
+    "zoom": 11.7,
+    "population": 59268,
+    "grid": "cities/tingo-maria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tingo-maria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tingo-maria",
+        "name": "Tingo María",
+        "nameIt": "Tingo María",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -76.00027,
+          -9.29837
+        ],
+        "zoom": 11.7,
+        "population": 59268,
+        "cells": 92,
+        "layer": "cities/tingo-maria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.00027,
+            -9.29837
+          ]
+        },
+        "properties": {
+          "id": "tingo-maria",
+          "name": "Tingo María",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 59268
+        }
+      },
+      "summary": null
+    }
+  }
+}

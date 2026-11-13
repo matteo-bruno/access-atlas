@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "minbya",
+  "createdAt": "2026-10-08T15:57:10.538Z",
+  "updatedAt": "2026-10-08T15:57:10.538Z",
+  "meta": {
+    "name": "Minbya",
+    "nameIt": "Minbya",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Minbya.geojson",
+      "sha256": "340df62637e2158584843f2b34ea4ee45a53e1af1cede2c34dae74f1d25940a5",
+      "size": 77390,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "minbya",
+    "name": "Minbya",
+    "nameIt": "Minbya",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      93.27262,
+      20.36111
+    ],
+    "zoom": 12,
+    "population": 85736,
+    "grid": "cities/minbya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/minbya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "minbya",
+        "name": "Minbya",
+        "nameIt": "Minbya",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          93.27262,
+          20.36111
+        ],
+        "zoom": 12,
+        "population": 85736,
+        "cells": 67,
+        "layer": "cities/minbya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            93.27262,
+            20.36111
+          ]
+        },
+        "properties": {
+          "id": "minbya",
+          "name": "Minbya",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 8.5,
+          "population": 85736
+        }
+      },
+      "summary": null
+    }
+  }
+}

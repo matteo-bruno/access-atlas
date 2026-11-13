@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pocos-de-caldas",
+  "createdAt": "2026-10-08T16:06:28.463Z",
+  "updatedAt": "2026-10-08T16:06:28.463Z",
+  "meta": {
+    "name": "Poços de Caldas",
+    "nameIt": "Poços de Caldas",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Poços de Caldas.geojson",
+      "sha256": "ad3aa9e89f8f8e7b80b8e1451b653e1fffb2a955f7de903c5eafb2c15e104802",
+      "size": 294914,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pocos-de-caldas",
+    "name": "Poços de Caldas",
+    "nameIt": "Poços de Caldas",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -46.56158,
+      -21.79279
+    ],
+    "zoom": 10.7,
+    "population": 115032,
+    "grid": "cities/pocos-de-caldas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pocos-de-caldas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pocos-de-caldas",
+        "name": "Poços de Caldas",
+        "nameIt": "Poços de Caldas",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -46.56158,
+          -21.79279
+        ],
+        "zoom": 10.7,
+        "population": 115032,
+        "cells": 252,
+        "layer": "cities/pocos-de-caldas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.56158,
+            -21.79279
+          ]
+        },
+        "properties": {
+          "id": "pocos-de-caldas",
+          "name": "Poços de Caldas",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 20.4,
+          "population": 115032
+        }
+      },
+      "summary": null
+    }
+  }
+}

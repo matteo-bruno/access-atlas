@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nyunzu",
+  "createdAt": "2026-10-08T16:02:24.759Z",
+  "updatedAt": "2026-10-08T16:02:24.759Z",
+  "meta": {
+    "name": "Nyunzu",
+    "nameIt": "Nyunzu",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nyunzu.geojson",
+      "sha256": "939b86ac4db4294156db9e2c0c4a86b0b62afdea08b5a2a41198248d181c7a30",
+      "size": 82954,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nyunzu",
+    "name": "Nyunzu",
+    "nameIt": "Nyunzu",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      28.01321,
+      -5.95589
+    ],
+    "zoom": 12,
+    "population": 100441,
+    "grid": "cities/nyunzu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nyunzu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nyunzu",
+        "name": "Nyunzu",
+        "nameIt": "Nyunzu",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          28.01321,
+          -5.95589
+        ],
+        "zoom": 12,
+        "population": 100441,
+        "cells": 71,
+        "layer": "cities/nyunzu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.01321,
+            -5.95589
+          ]
+        },
+        "properties": {
+          "id": "nyunzu",
+          "name": "Nyunzu",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 100441
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "salaga",
+  "createdAt": "2026-10-08T16:10:01.372Z",
+  "updatedAt": "2026-10-08T16:10:01.372Z",
+  "meta": {
+    "name": "Salaga",
+    "nameIt": "Salaga",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Salaga.geojson",
+      "sha256": "aebf95183199e79b3ed5eb20a105b53169502da57248133761eedad7c892f2ac",
+      "size": 137570,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "salaga",
+    "name": "Salaga",
+    "nameIt": "Salaga",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH",
+    "center": [
+      -0.51961,
+      8.55027
+    ],
+    "zoom": 12,
+    "population": 57224,
+    "grid": "cities/salaga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/salaga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "salaga",
+        "name": "Salaga",
+        "nameIt": "Salaga",
+        "region": "Ghana",
+        "regionIt": "Ghana",
+        "country": "GH",
+        "center": [
+          -0.51961,
+          8.55027
+        ],
+        "zoom": 12,
+        "population": 57224,
+        "cells": 118,
+        "layer": "cities/salaga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.51961,
+            8.55027
+          ]
+        },
+        "properties": {
+          "id": "salaga",
+          "name": "Salaga",
+          "country": "GH",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 57224
+        }
+      },
+      "summary": null
+    }
+  }
+}

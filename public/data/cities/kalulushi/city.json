@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kalulushi",
+  "createdAt": "2026-10-08T15:44:34.810Z",
+  "updatedAt": "2026-10-08T15:44:34.810Z",
+  "meta": {
+    "name": "Kalulushi",
+    "nameIt": "Kalulushi",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kalulushi.geojson",
+      "sha256": "e3f396664bf32f4ea9414e0cacff0881ea7bd1a7a065dd10fdcbcbe26c19806e",
+      "size": 168223,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kalulushi",
+    "name": "Kalulushi",
+    "nameIt": "Kalulushi",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM",
+    "center": [
+      28.09072,
+      -12.84951
+    ],
+    "zoom": 11.5,
+    "population": 49066,
+    "grid": "cities/kalulushi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kalulushi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kalulushi",
+        "name": "Kalulushi",
+        "nameIt": "Kalulushi",
+        "region": "Zambia",
+        "regionIt": "Zambia",
+        "country": "ZM",
+        "center": [
+          28.09072,
+          -12.84951
+        ],
+        "zoom": 11.5,
+        "population": 49066,
+        "cells": 143,
+        "layer": "cities/kalulushi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.09072,
+            -12.84951
+          ]
+        },
+        "properties": {
+          "id": "kalulushi",
+          "name": "Kalulushi",
+          "country": "ZM",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 49066
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sibiu",
+  "createdAt": "2026-10-08T16:13:23.148Z",
+  "updatedAt": "2026-10-08T16:13:23.148Z",
+  "meta": {
+    "name": "Sibiu",
+    "nameIt": "Sibiu",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sibiu.geojson",
+      "sha256": "4ade07b634ae6a333e614e386c431b69f2b1745695e97f605de6ab880d1a267f",
+      "size": 280864,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sibiu",
+    "name": "Sibiu",
+    "nameIt": "Sibiu",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO",
+    "center": [
+      24.1493,
+      45.79211
+    ],
+    "zoom": 11.4,
+    "population": 119378,
+    "grid": "cities/sibiu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sibiu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sibiu",
+        "name": "Sibiu",
+        "nameIt": "Sibiu",
+        "region": "Romania",
+        "regionIt": "Romania",
+        "country": "RO",
+        "center": [
+          24.1493,
+          45.79211
+        ],
+        "zoom": 11.4,
+        "population": 119378,
+        "cells": 246,
+        "layer": "cities/sibiu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            24.1493,
+            45.79211
+          ]
+        },
+        "properties": {
+          "id": "sibiu",
+          "name": "Sibiu",
+          "country": "RO",
+          "isStudy": true,
+          "proximityMinutes": 9.4,
+          "population": 119378
+        }
+      },
+      "summary": null
+    }
+  }
+}

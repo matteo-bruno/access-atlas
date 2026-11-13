@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "setubal",
+  "createdAt": "2026-10-08T16:12:07.549Z",
+  "updatedAt": "2026-10-08T16:12:07.549Z",
+  "meta": {
+    "name": "Setúbal",
+    "nameIt": "Setúbal",
+    "region": "Portugal",
+    "regionIt": "Portogallo",
+    "country": "PT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Setúbal.geojson",
+      "sha256": "fa5b6dd49f853e7c3c4544ec1d412fcac1b27a3a3a54d71a811996c87a2ce25f",
+      "size": 165687,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "setubal",
+    "name": "Setúbal",
+    "nameIt": "Setúbal",
+    "region": "Portugal",
+    "regionIt": "Portogallo",
+    "country": "PT",
+    "center": [
+      -8.88154,
+      38.52861
+    ],
+    "zoom": 11.5,
+    "population": 79714,
+    "grid": "cities/setubal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/setubal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "setubal",
+        "name": "Setúbal",
+        "nameIt": "Setúbal",
+        "region": "Portugal",
+        "regionIt": "Portogallo",
+        "country": "PT",
+        "center": [
+          -8.88154,
+          38.52861
+        ],
+        "zoom": 11.5,
+        "population": 79714,
+        "cells": 145,
+        "layer": "cities/setubal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -8.88154,
+            38.52861
+          ]
+        },
+        "properties": {
+          "id": "setubal",
+          "name": "Setúbal",
+          "country": "PT",
+          "isStudy": true,
+          "proximityMinutes": 7.5,
+          "population": 79714
+        }
+      },
+      "summary": null
+    }
+  }
+}

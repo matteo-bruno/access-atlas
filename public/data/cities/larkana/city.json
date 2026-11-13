@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "larkana",
+  "createdAt": "2026-10-08T15:50:14.381Z",
+  "updatedAt": "2026-10-08T15:50:14.381Z",
+  "meta": {
+    "name": "Larkana",
+    "nameIt": "Larkana",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Larkana.geojson",
+      "sha256": "fbddee7e14da1303dccae7fa21707ea6ae46188a86b473cefd4623ef373873d3",
+      "size": 384946,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "larkana",
+    "name": "Larkana",
+    "nameIt": "Larkana",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      68.21033,
+      27.55692
+    ],
+    "zoom": 11.2,
+    "population": 602855,
+    "grid": "cities/larkana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/larkana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "larkana",
+        "name": "Larkana",
+        "nameIt": "Larkana",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          68.21033,
+          27.55692
+        ],
+        "zoom": 11.2,
+        "population": 602855,
+        "cells": 332,
+        "layer": "cities/larkana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            68.21033,
+            27.55692
+          ]
+        },
+        "properties": {
+          "id": "larkana",
+          "name": "Larkana",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 25.3,
+          "population": 602855
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kasba",
+  "createdAt": "2026-10-08T15:45:26.447Z",
+  "updatedAt": "2026-10-08T15:45:26.447Z",
+  "meta": {
+    "name": "Kasba",
+    "nameIt": "Kasba",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kasba.geojson",
+      "sha256": "8e04f98b80cfede55696169c4c4d907ecfdd5397e4e23affb6fb5bc9e4bbf0b8",
+      "size": 261800,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kasba",
+    "name": "Kasba",
+    "nameIt": "Kasba",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      91.13522,
+      23.7439
+    ],
+    "zoom": 11.2,
+    "population": 87538,
+    "grid": "cities/kasba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kasba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kasba",
+        "name": "Kasba",
+        "nameIt": "Kasba",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          91.13522,
+          23.7439
+        ],
+        "zoom": 11.2,
+        "population": 87538,
+        "cells": 226,
+        "layer": "cities/kasba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.13522,
+            23.7439
+          ]
+        },
+        "properties": {
+          "id": "kasba",
+          "name": "Kasba",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 87538
+        }
+      },
+      "summary": null
+    }
+  }
+}

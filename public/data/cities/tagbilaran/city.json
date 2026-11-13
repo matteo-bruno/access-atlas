@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tagbilaran",
+  "createdAt": "2026-10-08T16:15:57.568Z",
+  "updatedAt": "2026-10-08T16:15:57.568Z",
+  "meta": {
+    "name": "Tagbilaran",
+    "nameIt": "Tagbilaran",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tagbilaran.geojson",
+      "sha256": "97865f94f75b26692e454f7a3876fb77e0d9b74d4bd27368f5da4c557f5c0036",
+      "size": 520321,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tagbilaran",
+    "name": "Tagbilaran",
+    "nameIt": "Tagbilaran",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      123.86406,
+      9.65168
+    ],
+    "zoom": 10.5,
+    "population": 142200,
+    "grid": "cities/tagbilaran/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tagbilaran/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tagbilaran",
+        "name": "Tagbilaran",
+        "nameIt": "Tagbilaran",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          123.86406,
+          9.65168
+        ],
+        "zoom": 10.5,
+        "population": 142200,
+        "cells": 454,
+        "layer": "cities/tagbilaran/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.86406,
+            9.65168
+          ]
+        },
+        "properties": {
+          "id": "tagbilaran",
+          "name": "Tagbilaran",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 19.8,
+          "population": 142200
+        }
+      },
+      "summary": null
+    }
+  }
+}

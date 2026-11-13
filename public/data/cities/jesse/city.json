@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jesse",
+  "createdAt": "2026-10-08T15:42:20.012Z",
+  "updatedAt": "2026-10-08T15:42:20.012Z",
+  "meta": {
+    "name": "Jesse",
+    "nameIt": "Jesse",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jesse.geojson",
+      "sha256": "571b031aa733d58940389f1d5661c0769d3533b47901be5a7b05d61c32ab21cb",
+      "size": 84017,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jesse",
+    "name": "Jesse",
+    "nameIt": "Jesse",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      5.75422,
+      5.87068
+    ],
+    "zoom": 12,
+    "population": 47520,
+    "grid": "cities/jesse/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jesse/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jesse",
+        "name": "Jesse",
+        "nameIt": "Jesse",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          5.75422,
+          5.87068
+        ],
+        "zoom": 12,
+        "population": 47520,
+        "cells": 73,
+        "layer": "cities/jesse/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.75422,
+            5.87068
+          ]
+        },
+        "properties": {
+          "id": "jesse",
+          "name": "Jesse",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 47520
+        }
+      },
+      "summary": null
+    }
+  }
+}

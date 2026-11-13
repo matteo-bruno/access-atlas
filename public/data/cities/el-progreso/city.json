@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "el-progreso",
+  "createdAt": "2026-10-08T15:32:01.223Z",
+  "updatedAt": "2026-10-08T15:32:01.223Z",
+  "meta": {
+    "name": "El Progreso",
+    "nameIt": "El Progreso",
+    "region": "Honduras",
+    "regionIt": "Honduras",
+    "country": "HN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/El Progreso.geojson",
+      "sha256": "56dee46c6296f9be4b44c312da46f168e573b6e8a2f362be97dfc3d6fb866213",
+      "size": 295063,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "el-progreso",
+    "name": "El Progreso",
+    "nameIt": "El Progreso",
+    "region": "Honduras",
+    "regionIt": "Honduras",
+    "country": "HN",
+    "center": [
+      -87.79979,
+      15.40029
+    ],
+    "zoom": 11.1,
+    "population": 65461,
+    "grid": "cities/el-progreso/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/el-progreso/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "el-progreso",
+        "name": "El Progreso",
+        "nameIt": "El Progreso",
+        "region": "Honduras",
+        "regionIt": "Honduras",
+        "country": "HN",
+        "center": [
+          -87.79979,
+          15.40029
+        ],
+        "zoom": 11.1,
+        "population": 65461,
+        "cells": 253,
+        "layer": "cities/el-progreso/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.79979,
+            15.40029
+          ]
+        },
+        "properties": {
+          "id": "el-progreso",
+          "name": "El Progreso",
+          "country": "HN",
+          "isStudy": true,
+          "proximityMinutes": 19.1,
+          "population": 65461
+        }
+      },
+      "summary": null
+    }
+  }
+}

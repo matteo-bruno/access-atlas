@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cho-moi",
+  "createdAt": "2026-10-08T15:25:25.350Z",
+  "updatedAt": "2026-10-08T15:25:25.350Z",
+  "meta": {
+    "name": "Chợ Mới",
+    "nameIt": "Chợ Mới",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chợ Mới.geojson",
+      "sha256": "5edaf6d000117d9d17dbdb1de1b75f44db04fd2565bdee436dfb5b1f5fcee1d6",
+      "size": 163734,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cho-moi",
+    "name": "Chợ Mới",
+    "nameIt": "Chợ Mới",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      105.40457,
+      10.54804
+    ],
+    "zoom": 11.4,
+    "population": 45127,
+    "grid": "cities/cho-moi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cho-moi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cho-moi",
+        "name": "Chợ Mới",
+        "nameIt": "Chợ Mới",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          105.40457,
+          10.54804
+        ],
+        "zoom": 11.4,
+        "population": 45127,
+        "cells": 140,
+        "layer": "cities/cho-moi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.40457,
+            10.54804
+          ]
+        },
+        "properties": {
+          "id": "cho-moi",
+          "name": "Chợ Mới",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 45127
+        }
+      },
+      "summary": null
+    }
+  }
+}

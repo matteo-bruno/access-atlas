@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "safidon",
+  "createdAt": "2026-10-08T16:09:40.175Z",
+  "updatedAt": "2026-10-08T16:09:40.175Z",
+  "meta": {
+    "name": "Safidon",
+    "nameIt": "Safidon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Safidon.geojson",
+      "sha256": "a5630e00f7f5a9c22832ccd01f6cf030839a8131ab629a707f0fea57eec563b0",
+      "size": 83438,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "safidon",
+    "name": "Safidon",
+    "nameIt": "Safidon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.66266,
+      29.40435
+    ],
+    "zoom": 12,
+    "population": 39757,
+    "grid": "cities/safidon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/safidon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "safidon",
+        "name": "Safidon",
+        "nameIt": "Safidon",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.66266,
+          29.40435
+        ],
+        "zoom": 12,
+        "population": 39757,
+        "cells": 72,
+        "layer": "cities/safidon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.66266,
+            29.40435
+          ]
+        },
+        "properties": {
+          "id": "safidon",
+          "name": "Safidon",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.2,
+          "population": 39757
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fatsa",
+  "createdAt": "2026-10-08T15:33:00.451Z",
+  "updatedAt": "2026-10-08T15:33:00.451Z",
+  "meta": {
+    "name": "Fatsa",
+    "nameIt": "Fatsa",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fatsa.geojson",
+      "sha256": "2097e51750e2ea9038980b2e32836222381a571db9e9b39441b0276b53135f70",
+      "size": 174171,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fatsa",
+    "name": "Fatsa",
+    "nameIt": "Fatsa",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      37.49452,
+      41.03193
+    ],
+    "zoom": 11.5,
+    "population": 83556,
+    "grid": "cities/fatsa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fatsa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fatsa",
+        "name": "Fatsa",
+        "nameIt": "Fatsa",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          37.49452,
+          41.03193
+        ],
+        "zoom": 11.5,
+        "population": 83556,
+        "cells": 151,
+        "layer": "cities/fatsa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.49452,
+            41.03193
+          ]
+        },
+        "properties": {
+          "id": "fatsa",
+          "name": "Fatsa",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 83556
+        }
+      },
+      "summary": null
+    }
+  }
+}

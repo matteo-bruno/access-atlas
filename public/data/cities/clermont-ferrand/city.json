@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "clermont-ferrand",
+  "createdAt": "2026-10-08T15:25:47.596Z",
+  "updatedAt": "2026-10-08T15:25:47.596Z",
+  "meta": {
+    "name": "Clermont-Ferrand",
+    "nameIt": "Clermont-Ferrand",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Clermont-Ferrand.geojson",
+      "sha256": "049d4d0ed97f00d1765a982abc1438114197d3e570e08169c40bfe8afee6a961",
+      "size": 771003,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "clermont-ferrand",
+    "name": "Clermont-Ferrand",
+    "nameIt": "Clermont-Ferrand",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      3.0972,
+      45.78025
+    ],
+    "zoom": 10.5,
+    "population": 215473,
+    "grid": "cities/clermont-ferrand/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/clermont-ferrand/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "clermont-ferrand",
+        "name": "Clermont-Ferrand",
+        "nameIt": "Clermont-Ferrand",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          3.0972,
+          45.78025
+        ],
+        "zoom": 10.5,
+        "population": 215473,
+        "cells": 677,
+        "layer": "cities/clermont-ferrand/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.0972,
+            45.78025
+          ]
+        },
+        "properties": {
+          "id": "clermont-ferrand",
+          "name": "Clermont-Ferrand",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 8.1,
+          "population": 215473
+        }
+      },
+      "summary": null
+    }
+  }
+}

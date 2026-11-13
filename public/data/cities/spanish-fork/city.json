@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "spanish-fork",
+  "createdAt": "2026-10-08T16:14:37.957Z",
+  "updatedAt": "2026-10-08T16:14:37.957Z",
+  "meta": {
+    "name": "Spanish Fork",
+    "nameIt": "Spanish Fork",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Spanish Fork.geojson",
+      "sha256": "e883e3d90e3151f8161e2b89da7cce55ce4fe664248c1c1fb60923a65bf4f17f",
+      "size": 161510,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "spanish-fork",
+    "name": "Spanish Fork",
+    "nameIt": "Spanish Fork",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -111.63414,
+      40.10397
+    ],
+    "zoom": 11.4,
+    "population": 28698,
+    "grid": "cities/spanish-fork/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/spanish-fork/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "spanish-fork",
+        "name": "Spanish Fork",
+        "nameIt": "Spanish Fork",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -111.63414,
+          40.10397
+        ],
+        "zoom": 11.4,
+        "population": 28698,
+        "cells": 138,
+        "layer": "cities/spanish-fork/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -111.63414,
+            40.10397
+          ]
+        },
+        "properties": {
+          "id": "spanish-fork",
+          "name": "Spanish Fork",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 16.5,
+          "population": 28698
+        }
+      },
+      "summary": null
+    }
+  }
+}

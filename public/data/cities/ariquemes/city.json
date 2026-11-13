@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ariquemes",
+  "createdAt": "2026-10-08T15:09:24.095Z",
+  "updatedAt": "2026-10-08T15:09:24.095Z",
+  "meta": {
+    "name": "Ariquemes",
+    "nameIt": "Ariquemes",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ariquemes.geojson",
+      "sha256": "46711c883454dd486bff706154e432b2d91f802b24c2d4def5935ed53324b2e8",
+      "size": 269522,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ariquemes",
+    "name": "Ariquemes",
+    "nameIt": "Ariquemes",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -63.03182,
+      -9.91062
+    ],
+    "zoom": 11.4,
+    "population": 70248,
+    "grid": "cities/ariquemes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ariquemes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ariquemes",
+        "name": "Ariquemes",
+        "nameIt": "Ariquemes",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -63.03182,
+          -9.91062
+        ],
+        "zoom": 11.4,
+        "population": 70248,
+        "cells": 230,
+        "layer": "cities/ariquemes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -63.03182,
+            -9.91062
+          ]
+        },
+        "properties": {
+          "id": "ariquemes",
+          "name": "Ariquemes",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 21.3,
+          "population": 70248
+        }
+      },
+      "summary": null
+    }
+  }
+}

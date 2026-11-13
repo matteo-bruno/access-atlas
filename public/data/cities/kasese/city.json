@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kasese",
+  "createdAt": "2026-10-08T15:45:26.811Z",
+  "updatedAt": "2026-10-08T15:45:26.811Z",
+  "meta": {
+    "name": "Kasese",
+    "nameIt": "Kasese",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kasese.geojson",
+      "sha256": "0ce50c4dfbb08a737c8f48d60a654a04bbf1b5d632c86451b95485ad3a592483",
+      "size": 188483,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kasese",
+    "name": "Kasese",
+    "nameIt": "Kasese",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG",
+    "center": [
+      30.08248,
+      0.17557
+    ],
+    "zoom": 11.6,
+    "population": 58807,
+    "grid": "cities/kasese/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kasese/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kasese",
+        "name": "Kasese",
+        "nameIt": "Kasese",
+        "region": "Uganda",
+        "regionIt": "Uganda",
+        "country": "UG",
+        "center": [
+          30.08248,
+          0.17557
+        ],
+        "zoom": 11.6,
+        "population": 58807,
+        "cells": 161,
+        "layer": "cities/kasese/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.08248,
+            0.17557
+          ]
+        },
+        "properties": {
+          "id": "kasese",
+          "name": "Kasese",
+          "country": "UG",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 58807
+        }
+      },
+      "summary": null
+    }
+  }
+}

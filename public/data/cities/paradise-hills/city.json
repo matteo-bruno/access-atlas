@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "paradise-hills",
+  "createdAt": "2026-10-08T16:04:13.498Z",
+  "updatedAt": "2026-10-08T16:04:13.498Z",
+  "meta": {
+    "name": "Paradise Hills",
+    "nameIt": "Paradise Hills",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Paradise Hills.geojson",
+      "sha256": "5e2b6ccbcfce253f476622169e118d4e8891b0592173457191be1272444b8e98",
+      "size": 697573,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "paradise-hills",
+    "name": "Paradise Hills",
+    "nameIt": "Paradise Hills",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -106.68961,
+      35.22178
+    ],
+    "zoom": 10.6,
+    "population": 111440,
+    "grid": "cities/paradise-hills/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/paradise-hills/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "paradise-hills",
+        "name": "Paradise Hills",
+        "nameIt": "Paradise Hills",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -106.68961,
+          35.22178
+        ],
+        "zoom": 10.6,
+        "population": 111440,
+        "cells": 596,
+        "layer": "cities/paradise-hills/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.68961,
+            35.22178
+          ]
+        },
+        "properties": {
+          "id": "paradise-hills",
+          "name": "Paradise Hills",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 22.7,
+          "population": 111440
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "neuchatel",
+  "createdAt": "2026-10-08T16:01:01.199Z",
+  "updatedAt": "2026-10-08T16:01:01.199Z",
+  "meta": {
+    "name": "Neuchâtel",
+    "nameIt": "Neuchâtel",
+    "region": "Switzerland",
+    "regionIt": "Svizzera",
+    "country": "CH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Neuchâtel.geojson",
+      "sha256": "c668883bb9041f7ba25eb7d4707dc70eb392ca03059152facb8bfca97dcb90d9",
+      "size": 224531,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "neuchatel",
+    "name": "Neuchâtel",
+    "nameIt": "Neuchâtel",
+    "region": "Switzerland",
+    "regionIt": "Svizzera",
+    "country": "CH",
+    "center": [
+      6.92274,
+      46.99349
+    ],
+    "zoom": 10.8,
+    "population": 49340,
+    "grid": "cities/neuchatel/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/neuchatel/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "neuchatel",
+        "name": "Neuchâtel",
+        "nameIt": "Neuchâtel",
+        "region": "Switzerland",
+        "regionIt": "Svizzera",
+        "country": "CH",
+        "center": [
+          6.92274,
+          46.99349
+        ],
+        "zoom": 10.8,
+        "population": 49340,
+        "cells": 198,
+        "layer": "cities/neuchatel/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.92274,
+            46.99349
+          ]
+        },
+        "properties": {
+          "id": "neuchatel",
+          "name": "Neuchâtel",
+          "country": "CH",
+          "isStudy": true,
+          "proximityMinutes": 8.9,
+          "population": 49340
+        }
+      },
+      "summary": null
+    }
+  }
+}

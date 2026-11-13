@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bukavu",
+  "createdAt": "2026-10-08T15:20:35.122Z",
+  "updatedAt": "2026-10-08T15:20:35.122Z",
+  "meta": {
+    "name": "Bukavu",
+    "nameIt": "Bukavu",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bukavu.geojson",
+      "sha256": "5660df91403bd5d734620a9636bbbf5afc9f508112c004d7dcb649edd980580e",
+      "size": 626125,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bukavu",
+    "name": "Bukavu",
+    "nameIt": "Bukavu",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      28.85058,
+      -2.51042
+    ],
+    "zoom": 10.4,
+    "population": 1005350,
+    "grid": "cities/bukavu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bukavu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bukavu",
+        "name": "Bukavu",
+        "nameIt": "Bukavu",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          28.85058,
+          -2.51042
+        ],
+        "zoom": 10.4,
+        "population": 1005350,
+        "cells": 534,
+        "layer": "cities/bukavu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.85058,
+            -2.51042
+          ]
+        },
+        "properties": {
+          "id": "bukavu",
+          "name": "Bukavu",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 31.8,
+          "population": 1005350
+        }
+      },
+      "summary": null
+    }
+  }
+}

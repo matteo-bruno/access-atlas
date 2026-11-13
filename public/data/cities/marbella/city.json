@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "marbella",
+  "createdAt": "2026-10-08T15:55:10.092Z",
+  "updatedAt": "2026-10-08T15:55:10.092Z",
+  "meta": {
+    "name": "Marbella",
+    "nameIt": "Marbella",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Marbella.geojson",
+      "sha256": "5790b31f21fcd6f18926e358ceec093bdfb76a676499afe996017fb35a880ce5",
+      "size": 596364,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "marbella",
+    "name": "Marbella",
+    "nameIt": "Marbella",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -4.94876,
+      36.49802
+    ],
+    "zoom": 10,
+    "population": 150892,
+    "grid": "cities/marbella/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/marbella/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "marbella",
+        "name": "Marbella",
+        "nameIt": "Marbella",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -4.94876,
+          36.49802
+        ],
+        "zoom": 10,
+        "population": 150892,
+        "cells": 519,
+        "layer": "cities/marbella/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -4.94876,
+            36.49802
+          ]
+        },
+        "properties": {
+          "id": "marbella",
+          "name": "Marbella",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 150892
+        }
+      },
+      "summary": null
+    }
+  }
+}

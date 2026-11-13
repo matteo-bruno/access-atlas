@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bolzano-bozen",
+  "createdAt": "2026-10-08T15:20:00.304Z",
+  "updatedAt": "2026-10-08T15:20:00.304Z",
+  "meta": {
+    "name": "Bolzano - Bozen",
+    "nameIt": "Bolzano - Bozen",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bolzano - Bozen.geojson",
+      "sha256": "3065dd51d4b107dea0d6ec35628c158ce34c7fa529180160375974eb00e65837",
+      "size": 173734,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bolzano-bozen",
+    "name": "Bolzano - Bozen",
+    "nameIt": "Bolzano - Bozen",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      11.33482,
+      46.48921
+    ],
+    "zoom": 11.5,
+    "population": 91805,
+    "grid": "cities/bolzano-bozen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bolzano-bozen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bolzano-bozen",
+        "name": "Bolzano - Bozen",
+        "nameIt": "Bolzano - Bozen",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          11.33482,
+          46.48921
+        ],
+        "zoom": 11.5,
+        "population": 91805,
+        "cells": 152,
+        "layer": "cities/bolzano-bozen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.33482,
+            46.48921
+          ]
+        },
+        "properties": {
+          "id": "bolzano-bozen",
+          "name": "Bolzano - Bozen",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 7.1,
+          "population": 91805
+        }
+      },
+      "summary": null
+    }
+  }
+}

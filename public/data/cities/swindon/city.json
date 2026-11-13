@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "swindon",
+  "createdAt": "2026-10-08T16:15:31.612Z",
+  "updatedAt": "2026-10-08T16:15:31.612Z",
+  "meta": {
+    "name": "Swindon",
+    "nameIt": "Swindon",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Swindon.geojson",
+      "sha256": "b7d794de2ac94e204cdf3abaf2a5b4af81c433bd7ea009ef0f84de9d8d7275b4",
+      "size": 636291,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "swindon",
+    "name": "Swindon",
+    "nameIt": "Swindon",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.78704,
+      51.57289
+    ],
+    "zoom": 10.9,
+    "population": 209770,
+    "grid": "cities/swindon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/swindon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "swindon",
+        "name": "Swindon",
+        "nameIt": "Swindon",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.78704,
+          51.57289
+        ],
+        "zoom": 10.9,
+        "population": 209770,
+        "cells": 552,
+        "layer": "cities/swindon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.78704,
+            51.57289
+          ]
+        },
+        "properties": {
+          "id": "swindon",
+          "name": "Swindon",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 209770
+        }
+      },
+      "summary": null
+    }
+  }
+}

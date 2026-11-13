@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sougueur",
+  "createdAt": "2026-10-08T16:14:34.028Z",
+  "updatedAt": "2026-10-08T16:14:34.028Z",
+  "meta": {
+    "name": "Sougueur",
+    "nameIt": "Sougueur",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sougueur.geojson",
+      "sha256": "2921c8bf8aca5b3e0f9cf8582363f150d8d0dfdad2703c1e5369b1f96df44dac",
+      "size": 109057,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sougueur",
+    "name": "Sougueur",
+    "nameIt": "Sougueur",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      1.4961,
+      35.18244
+    ],
+    "zoom": 12,
+    "population": 85840,
+    "grid": "cities/sougueur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sougueur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sougueur",
+        "name": "Sougueur",
+        "nameIt": "Sougueur",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          1.4961,
+          35.18244
+        ],
+        "zoom": 12,
+        "population": 85840,
+        "cells": 94,
+        "layer": "cities/sougueur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.4961,
+            35.18244
+          ]
+        },
+        "properties": {
+          "id": "sougueur",
+          "name": "Sougueur",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 14.5,
+          "population": 85840
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ngaoundal",
+  "createdAt": "2026-10-08T16:01:19.449Z",
+  "updatedAt": "2026-10-08T16:01:19.449Z",
+  "meta": {
+    "name": "Ngaoundal",
+    "nameIt": "Ngaoundal",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ngaoundal.geojson",
+      "sha256": "09b5efb4093e01bebf35f4111f2d9d86efde94a564519ac6278f4f7d589c8c0f",
+      "size": 129797,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ngaoundal",
+    "name": "Ngaoundal",
+    "nameIt": "Ngaoundal",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      13.27236,
+      6.46295
+    ],
+    "zoom": 11.7,
+    "population": 42846,
+    "grid": "cities/ngaoundal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ngaoundal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ngaoundal",
+        "name": "Ngaoundal",
+        "nameIt": "Ngaoundal",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          13.27236,
+          6.46295
+        ],
+        "zoom": 11.7,
+        "population": 42846,
+        "cells": 112,
+        "layer": "cities/ngaoundal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.27236,
+            6.46295
+          ]
+        },
+        "properties": {
+          "id": "ngaoundal",
+          "name": "Ngaoundal",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 42846
+        }
+      },
+      "summary": null
+    }
+  }
+}

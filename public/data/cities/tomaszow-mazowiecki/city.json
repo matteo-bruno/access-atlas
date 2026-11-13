@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tomaszow-mazowiecki",
+  "createdAt": "2026-10-08T16:18:20.911Z",
+  "updatedAt": "2026-10-08T16:18:20.911Z",
+  "meta": {
+    "name": "Tomaszów Mazowiecki",
+    "nameIt": "Tomaszów Mazowiecki",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tomaszów Mazowiecki.geojson",
+      "sha256": "361f059ac444d123dc8c2d7ea8c5cff8e3dd3933dc0fa8132de0a071f374e058",
+      "size": 170370,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tomaszow-mazowiecki",
+    "name": "Tomaszów Mazowiecki",
+    "nameIt": "Tomaszów Mazowiecki",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      20.01341,
+      51.5344
+    ],
+    "zoom": 11.8,
+    "population": 46313,
+    "grid": "cities/tomaszow-mazowiecki/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tomaszow-mazowiecki/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tomaszow-mazowiecki",
+        "name": "Tomaszów Mazowiecki",
+        "nameIt": "Tomaszów Mazowiecki",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          20.01341,
+          51.5344
+        ],
+        "zoom": 11.8,
+        "population": 46313,
+        "cells": 149,
+        "layer": "cities/tomaszow-mazowiecki/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.01341,
+            51.5344
+          ]
+        },
+        "properties": {
+          "id": "tomaszow-mazowiecki",
+          "name": "Tomaszów Mazowiecki",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 8.3,
+          "population": 46313
+        }
+      },
+      "summary": null
+    }
+  }
+}

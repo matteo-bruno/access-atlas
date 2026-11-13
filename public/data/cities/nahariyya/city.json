@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nahariyya",
+  "createdAt": "2026-10-08T15:59:47.082Z",
+  "updatedAt": "2026-10-08T15:59:47.082Z",
+  "meta": {
+    "name": "Nahariyya",
+    "nameIt": "Nahariyya",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nahariyya.geojson",
+      "sha256": "a13474b6886f2e42e9c2719f42126ae62b8e88cbb74f72174b733040c0ad3b2f",
+      "size": 145270,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nahariyya",
+    "name": "Nahariyya",
+    "nameIt": "Nahariyya",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL",
+    "center": [
+      35.09767,
+      33.00398
+    ],
+    "zoom": 11.4,
+    "population": 66396,
+    "grid": "cities/nahariyya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nahariyya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nahariyya",
+        "name": "Nahariyya",
+        "nameIt": "Nahariyya",
+        "region": "Israel",
+        "regionIt": "Israele",
+        "country": "IL",
+        "center": [
+          35.09767,
+          33.00398
+        ],
+        "zoom": 11.4,
+        "population": 66396,
+        "cells": 126,
+        "layer": "cities/nahariyya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.09767,
+            33.00398
+          ]
+        },
+        "properties": {
+          "id": "nahariyya",
+          "name": "Nahariyya",
+          "country": "IL",
+          "isStudy": true,
+          "proximityMinutes": 12.9,
+          "population": 66396
+        }
+      },
+      "summary": null
+    }
+  }
+}

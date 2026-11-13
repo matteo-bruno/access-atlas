@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "thuringowa-central",
+  "createdAt": "2026-10-08T16:17:41.277Z",
+  "updatedAt": "2026-10-08T16:17:41.277Z",
+  "meta": {
+    "name": "Thuringowa Central",
+    "nameIt": "Thuringowa Central",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Thuringowa Central.geojson",
+      "sha256": "b9574130cf919ad6e06d85115472eb38ecf1d47d4de0e30c88714c292015d6c0",
+      "size": 757644,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "thuringowa-central",
+    "name": "Thuringowa Central",
+    "nameIt": "Thuringowa Central",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      146.76242,
+      -19.29508
+    ],
+    "zoom": 10.5,
+    "population": 96292,
+    "grid": "cities/thuringowa-central/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/thuringowa-central/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "thuringowa-central",
+        "name": "Thuringowa Central",
+        "nameIt": "Thuringowa Central",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          146.76242,
+          -19.29508
+        ],
+        "zoom": 10.5,
+        "population": 96292,
+        "cells": 650,
+        "layer": "cities/thuringowa-central/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            146.76242,
+            -19.29508
+          ]
+        },
+        "properties": {
+          "id": "thuringowa-central",
+          "name": "Thuringowa Central",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 22.8,
+          "population": 96292
+        }
+      },
+      "summary": null
+    }
+  }
+}

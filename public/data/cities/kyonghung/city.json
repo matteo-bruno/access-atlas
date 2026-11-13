@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kyonghung",
+  "createdAt": "2026-10-08T15:49:13.536Z",
+  "updatedAt": "2026-10-08T15:49:13.536Z",
+  "meta": {
+    "name": "Kyonghung",
+    "nameIt": "Kyonghung",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kyonghung.geojson",
+      "sha256": "7f1660914cd836bbc4b2aa714c0e2ccf3fb35a1e516fe702d1de3a77289b4e16",
+      "size": 113928,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kyonghung",
+    "name": "Kyonghung",
+    "nameIt": "Kyonghung",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP",
+    "center": [
+      130.34004,
+      42.51982
+    ],
+    "zoom": 11.9,
+    "population": 40355,
+    "grid": "cities/kyonghung/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kyonghung/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kyonghung",
+        "name": "Kyonghung",
+        "nameIt": "Kyonghung",
+        "region": "North Korea",
+        "regionIt": "Corea del Nord",
+        "country": "KP",
+        "center": [
+          130.34004,
+          42.51982
+        ],
+        "zoom": 11.9,
+        "population": 40355,
+        "cells": 98,
+        "layer": "cities/kyonghung/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            130.34004,
+            42.51982
+          ]
+        },
+        "properties": {
+          "id": "kyonghung",
+          "name": "Kyonghung",
+          "country": "KP",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 40355
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "newcastle",
+  "createdAt": "2026-10-08T16:01:14.456Z",
+  "updatedAt": "2026-10-08T16:01:14.456Z",
+  "meta": {
+    "name": "Newcastle",
+    "nameIt": "Newcastle",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Newcastle.geojson",
+      "sha256": "8dd486a3d4481661336d1af3ed1d50a2147d409bd60ecd0e010db46e297a4f35",
+      "size": 1147023,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "newcastle",
+    "name": "Newcastle",
+    "nameIt": "Newcastle",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      151.71039,
+      -32.92857
+    ],
+    "zoom": 9.9,
+    "population": 208122,
+    "grid": "cities/newcastle/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/newcastle/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "newcastle",
+        "name": "Newcastle",
+        "nameIt": "Newcastle",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          151.71039,
+          -32.92857
+        ],
+        "zoom": 9.9,
+        "population": 208122,
+        "cells": 990,
+        "layer": "cities/newcastle/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            151.71039,
+            -32.92857
+          ]
+        },
+        "properties": {
+          "id": "newcastle",
+          "name": "Newcastle",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 14.5,
+          "population": 208122
+        }
+      },
+      "summary": null
+    }
+  }
+}

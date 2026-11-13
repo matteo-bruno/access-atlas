@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "almaty",
+  "createdAt": "2026-10-08T15:06:14.705Z",
+  "updatedAt": "2026-10-08T15:06:14.705Z",
+  "meta": {
+    "name": "Almaty",
+    "nameIt": "Almaty",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Almaty.geojson",
+      "sha256": "373b334fa4ccfdecd11e17077f2d6f77de0afbf28c98d393b41ac77483549c0e",
+      "size": 3001199,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "almaty",
+    "name": "Almaty",
+    "nameIt": "Almaty",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ",
+    "center": [
+      76.90379,
+      43.26329
+    ],
+    "zoom": 9.4,
+    "population": 1970526,
+    "grid": "cities/almaty/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/almaty/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "almaty",
+        "name": "Almaty",
+        "nameIt": "Almaty",
+        "region": "Kazakhstan",
+        "regionIt": "Kazakistan",
+        "country": "KZ",
+        "center": [
+          76.90379,
+          43.26329
+        ],
+        "zoom": 9.4,
+        "population": 1970526,
+        "cells": 2626,
+        "layer": "cities/almaty/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.90379,
+            43.26329
+          ]
+        },
+        "properties": {
+          "id": "almaty",
+          "name": "Almaty",
+          "country": "KZ",
+          "isStudy": true,
+          "proximityMinutes": 20,
+          "population": 1970526
+        }
+      },
+      "summary": null
+    }
+  }
+}

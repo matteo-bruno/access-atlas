@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huimin",
+  "createdAt": "2026-10-08T15:39:45.681Z",
+  "updatedAt": "2026-10-08T15:39:45.681Z",
+  "meta": {
+    "name": "Huimin",
+    "nameIt": "Huimin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huimin.geojson",
+      "sha256": "fcebaca099e30ccb43b288e4b72253df3404cf7642e5a852db60c1fed6b12763",
+      "size": 217866,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huimin",
+    "name": "Huimin",
+    "nameIt": "Huimin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.50971,
+      37.47815
+    ],
+    "zoom": 11.7,
+    "population": 83087,
+    "grid": "cities/huimin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 169
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huimin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huimin",
+        "name": "Huimin",
+        "nameIt": "Huimin",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.50971,
+          37.47815
+        ],
+        "zoom": 11.7,
+        "population": 83087,
+        "cells": 187,
+        "layer": "cities/huimin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 169
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.50971,
+            37.47815
+          ]
+        },
+        "properties": {
+          "id": "huimin",
+          "name": "Huimin",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 83087
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huntington-station",
+  "createdAt": "2026-10-08T15:39:54.628Z",
+  "updatedAt": "2026-10-08T15:39:54.628Z",
+  "meta": {
+    "name": "Huntington Station",
+    "nameIt": "Huntington Station",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huntington Station.geojson",
+      "sha256": "fb259f9053b145376fc8f90b192bd313c0a6a8d28ab189a9923063aeae91e747",
+      "size": 334715,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huntington-station",
+    "name": "Huntington Station",
+    "nameIt": "Huntington Station",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -73.40356,
+      40.8413
+    ],
+    "zoom": 11,
+    "population": 59048,
+    "grid": "cities/huntington-station/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huntington-station/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huntington-station",
+        "name": "Huntington Station",
+        "nameIt": "Huntington Station",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -73.40356,
+          40.8413
+        ],
+        "zoom": 11,
+        "population": 59048,
+        "cells": 289,
+        "layer": "cities/huntington-station/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.40356,
+            40.8413
+          ]
+        },
+        "properties": {
+          "id": "huntington-station",
+          "name": "Huntington Station",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 17.4,
+          "population": 59048
+        }
+      },
+      "summary": null
+    }
+  }
+}

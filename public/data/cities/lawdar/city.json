@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lawdar",
+  "createdAt": "2026-10-08T15:50:24.738Z",
+  "updatedAt": "2026-10-08T15:50:24.738Z",
+  "meta": {
+    "name": "Lawdar",
+    "nameIt": "Lawdar",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lawdar.geojson",
+      "sha256": "6bc558886bbf4e0449fddd7a439e3eb19b299b6435d61cf33f3f11f209f009d0",
+      "size": 75628,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lawdar",
+    "name": "Lawdar",
+    "nameIt": "Lawdar",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE",
+    "center": [
+      45.86639,
+      13.88358
+    ],
+    "zoom": 12,
+    "population": 49665,
+    "grid": "cities/lawdar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lawdar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lawdar",
+        "name": "Lawdar",
+        "nameIt": "Lawdar",
+        "region": "Yemen",
+        "regionIt": "Yemen",
+        "country": "YE",
+        "center": [
+          45.86639,
+          13.88358
+        ],
+        "zoom": 12,
+        "population": 49665,
+        "cells": 65,
+        "layer": "cities/lawdar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            45.86639,
+            13.88358
+          ]
+        },
+        "properties": {
+          "id": "lawdar",
+          "name": "Lawdar",
+          "country": "YE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 49665
+        }
+      },
+      "summary": null
+    }
+  }
+}

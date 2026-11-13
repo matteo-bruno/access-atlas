@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nazirhat",
+  "createdAt": "2026-10-08T16:00:48.353Z",
+  "updatedAt": "2026-10-08T16:00:48.353Z",
+  "meta": {
+    "name": "Nazirhat",
+    "nameIt": "Nazirhat",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nazirhat.geojson",
+      "sha256": "49a9820f3608bbcca322e11a482e6db802fe58400d0ef1723df6b0a9fc646624",
+      "size": 1236051,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nazirhat",
+    "name": "Nazirhat",
+    "nameIt": "Nazirhat",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      91.81009,
+      22.64298
+    ],
+    "zoom": 10,
+    "population": 469973,
+    "grid": "cities/nazirhat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nazirhat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nazirhat",
+        "name": "Nazirhat",
+        "nameIt": "Nazirhat",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          91.81009,
+          22.64298
+        ],
+        "zoom": 10,
+        "population": 469973,
+        "cells": 1067,
+        "layer": "cities/nazirhat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.81009,
+            22.64298
+          ]
+        },
+        "properties": {
+          "id": "nazirhat",
+          "name": "Nazirhat",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 41.7,
+          "population": 469973
+        }
+      },
+      "summary": null
+    }
+  }
+}

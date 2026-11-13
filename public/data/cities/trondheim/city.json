@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "trondheim",
+  "createdAt": "2026-10-08T16:18:52.685Z",
+  "updatedAt": "2026-10-08T16:18:52.685Z",
+  "meta": {
+    "name": "Trondheim",
+    "nameIt": "Trondheim",
+    "region": "Norway",
+    "regionIt": "Norvegia",
+    "country": "NO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Trondheim.geojson",
+      "sha256": "1f4e0472d3d32ab323269262308f6de60416ae2ebbf8a5a0c68a1f870fa416b8",
+      "size": 972597,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "trondheim",
+    "name": "Trondheim",
+    "nameIt": "Trondheim",
+    "region": "Norway",
+    "regionIt": "Norvegia",
+    "country": "NO",
+    "center": [
+      10.41592,
+      63.41726
+    ],
+    "zoom": 10.8,
+    "population": 141276,
+    "grid": "cities/trondheim/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 162
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/trondheim/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "trondheim",
+        "name": "Trondheim",
+        "nameIt": "Trondheim",
+        "region": "Norway",
+        "regionIt": "Norvegia",
+        "country": "NO",
+        "center": [
+          10.41592,
+          63.41726
+        ],
+        "zoom": 10.8,
+        "population": 141276,
+        "cells": 851,
+        "layer": "cities/trondheim/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 162
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.41592,
+            63.41726
+          ]
+        },
+        "properties": {
+          "id": "trondheim",
+          "name": "Trondheim",
+          "country": "NO",
+          "isStudy": true,
+          "proximityMinutes": 10.8,
+          "population": 141276
+        }
+      },
+      "summary": null
+    }
+  }
+}

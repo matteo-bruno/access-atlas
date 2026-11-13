@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bukit-sentosa",
+  "createdAt": "2026-10-08T15:20:37.409Z",
+  "updatedAt": "2026-10-08T15:20:37.409Z",
+  "meta": {
+    "name": "Bukit Sentosa",
+    "nameIt": "Bukit Sentosa",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bukit Sentosa.geojson",
+      "sha256": "a07dbc0ed9e75a63d42543cc79405f43d1314e89ec10d9fd9abb2e78efc1ee9d",
+      "size": 143184,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bukit-sentosa",
+    "name": "Bukit Sentosa",
+    "nameIt": "Bukit Sentosa",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      101.57215,
+      3.40982
+    ],
+    "zoom": 11.4,
+    "population": 38129,
+    "grid": "cities/bukit-sentosa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bukit-sentosa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bukit-sentosa",
+        "name": "Bukit Sentosa",
+        "nameIt": "Bukit Sentosa",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          101.57215,
+          3.40982
+        ],
+        "zoom": 11.4,
+        "population": 38129,
+        "cells": 123,
+        "layer": "cities/bukit-sentosa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            101.57215,
+            3.40982
+          ]
+        },
+        "properties": {
+          "id": "bukit-sentosa",
+          "name": "Bukit Sentosa",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 17.7,
+          "population": 38129
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "voinjama",
+  "createdAt": "2026-10-08T16:21:00.302Z",
+  "updatedAt": "2026-10-08T16:21:00.302Z",
+  "meta": {
+    "name": "Voinjama",
+    "nameIt": "Voinjama",
+    "region": "Liberia",
+    "regionIt": "Liberia",
+    "country": "LR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Voinjama.geojson",
+      "sha256": "a21646c3db3f3f976154a76d30d71599cfd365206e1968f0fd49e922ba56bb31",
+      "size": 137720,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "voinjama",
+    "name": "Voinjama",
+    "nameIt": "Voinjama",
+    "region": "Liberia",
+    "regionIt": "Liberia",
+    "country": "LR",
+    "center": [
+      -9.75326,
+      8.4238
+    ],
+    "zoom": 12,
+    "population": 46905,
+    "grid": "cities/voinjama/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/voinjama/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "voinjama",
+        "name": "Voinjama",
+        "nameIt": "Voinjama",
+        "region": "Liberia",
+        "regionIt": "Liberia",
+        "country": "LR",
+        "center": [
+          -9.75326,
+          8.4238
+        ],
+        "zoom": 12,
+        "population": 46905,
+        "cells": 119,
+        "layer": "cities/voinjama/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -9.75326,
+            8.4238
+          ]
+        },
+        "properties": {
+          "id": "voinjama",
+          "name": "Voinjama",
+          "country": "LR",
+          "isStudy": true,
+          "proximityMinutes": 11.1,
+          "population": 46905
+        }
+      },
+      "summary": null
+    }
+  }
+}

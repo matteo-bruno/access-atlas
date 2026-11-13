@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-francisco-de-macoris",
+  "createdAt": "2026-10-08T16:10:30.639Z",
+  "updatedAt": "2026-10-08T16:10:30.639Z",
+  "meta": {
+    "name": "San Francisco de Macorís",
+    "nameIt": "San Francisco de Macorís",
+    "region": "Dominican Republic",
+    "regionIt": "Repubblica Dominicana",
+    "country": "DO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Francisco de Macorís.geojson",
+      "sha256": "fb104d3059beb4cd03b47905281f121f78386ba252fbf90fc8a19ddb18d348a2",
+      "size": 376696,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-francisco-de-macoris",
+    "name": "San Francisco de Macorís",
+    "nameIt": "San Francisco de Macorís",
+    "region": "Dominican Republic",
+    "regionIt": "Repubblica Dominicana",
+    "country": "DO",
+    "center": [
+      -70.26098,
+      19.2973
+    ],
+    "zoom": 11.5,
+    "population": 91302,
+    "grid": "cities/san-francisco-de-macoris/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 173
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-francisco-de-macoris/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-francisco-de-macoris",
+        "name": "San Francisco de Macorís",
+        "nameIt": "San Francisco de Macorís",
+        "region": "Dominican Republic",
+        "regionIt": "Repubblica Dominicana",
+        "country": "DO",
+        "center": [
+          -70.26098,
+          19.2973
+        ],
+        "zoom": 11.5,
+        "population": 91302,
+        "cells": 324,
+        "layer": "cities/san-francisco-de-macoris/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 173
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -70.26098,
+            19.2973
+          ]
+        },
+        "properties": {
+          "id": "san-francisco-de-macoris",
+          "name": "San Francisco de Macorís",
+          "country": "DO",
+          "isStudy": true,
+          "proximityMinutes": 17,
+          "population": 91302
+        }
+      },
+      "summary": null
+    }
+  }
+}

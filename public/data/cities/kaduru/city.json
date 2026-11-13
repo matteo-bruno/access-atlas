@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kaduru",
+  "createdAt": "2026-10-08T15:43:59.256Z",
+  "updatedAt": "2026-10-08T15:43:59.256Z",
+  "meta": {
+    "name": "Kaduru",
+    "nameIt": "Kaduru",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kaduru.geojson",
+      "sha256": "d63507abc2396b500b47a9279ae4c2eaea40bff80c46608cad80a430519fd78c",
+      "size": 69639,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kaduru",
+    "name": "Kaduru",
+    "nameIt": "Kaduru",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.01228,
+      13.55087
+    ],
+    "zoom": 12,
+    "population": 33213,
+    "grid": "cities/kaduru/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kaduru/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kaduru",
+        "name": "Kaduru",
+        "nameIt": "Kaduru",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.01228,
+          13.55087
+        ],
+        "zoom": 12,
+        "population": 33213,
+        "cells": 60,
+        "layer": "cities/kaduru/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.01228,
+            13.55087
+          ]
+        },
+        "properties": {
+          "id": "kaduru",
+          "name": "Kaduru",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 33213
+        }
+      },
+      "summary": null
+    }
+  }
+}

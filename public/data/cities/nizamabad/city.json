@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nizamabad",
+  "createdAt": "2026-10-08T16:01:48.237Z",
+  "updatedAt": "2026-10-08T16:01:48.237Z",
+  "meta": {
+    "name": "Nizamabad",
+    "nameIt": "Nizamabad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nizamabad.geojson",
+      "sha256": "c088ee2980ae0847bb92efb8129fce645ffadc932c6f20a010b97369ac4c680f",
+      "size": 543564,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nizamabad",
+    "name": "Nizamabad",
+    "nameIt": "Nizamabad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.09732,
+      18.67598
+    ],
+    "zoom": 10.6,
+    "population": 346876,
+    "grid": "cities/nizamabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nizamabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nizamabad",
+        "name": "Nizamabad",
+        "nameIt": "Nizamabad",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.09732,
+          18.67598
+        ],
+        "zoom": 10.6,
+        "population": 346876,
+        "cells": 469,
+        "layer": "cities/nizamabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.09732,
+            18.67598
+          ]
+        },
+        "properties": {
+          "id": "nizamabad",
+          "name": "Nizamabad",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 22.9,
+          "population": 346876
+        }
+      },
+      "summary": null
+    }
+  }
+}

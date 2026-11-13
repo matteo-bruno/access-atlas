@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "camaguey",
+  "createdAt": "2026-10-08T15:22:00.768Z",
+  "updatedAt": "2026-10-08T15:22:00.768Z",
+  "meta": {
+    "name": "Camagüey",
+    "nameIt": "Camagüey",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Camagüey.geojson",
+      "sha256": "8788913e3c5bc1f45f6361e2078505e329ec7eff5819ede14d43f6be2ae9afa0",
+      "size": 669736,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "camaguey",
+    "name": "Camagüey",
+    "nameIt": "Camagüey",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU",
+    "center": [
+      -77.9154,
+      21.38343
+    ],
+    "zoom": 10.8,
+    "population": 265578,
+    "grid": "cities/camaguey/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/camaguey/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "camaguey",
+        "name": "Camagüey",
+        "nameIt": "Camagüey",
+        "region": "Cuba",
+        "regionIt": "Cuba",
+        "country": "CU",
+        "center": [
+          -77.9154,
+          21.38343
+        ],
+        "zoom": 10.8,
+        "population": 265578,
+        "cells": 580,
+        "layer": "cities/camaguey/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.9154,
+            21.38343
+          ]
+        },
+        "properties": {
+          "id": "camaguey",
+          "name": "Camagüey",
+          "country": "CU",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 265578
+        }
+      },
+      "summary": null
+    }
+  }
+}

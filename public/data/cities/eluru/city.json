@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "eluru",
+  "createdAt": "2026-10-08T15:32:11.888Z",
+  "updatedAt": "2026-10-08T15:32:11.888Z",
+  "meta": {
+    "name": "Eluru",
+    "nameIt": "Eluru",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Eluru.geojson",
+      "sha256": "5eda981bce6ac108d94014f2f9aaee4f420ec4650dcfa0b73a6a3f59507007c3",
+      "size": 419262,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "eluru",
+    "name": "Eluru",
+    "nameIt": "Eluru",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.10022,
+      16.7108
+    ],
+    "zoom": 11,
+    "population": 249783,
+    "grid": "cities/eluru/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/eluru/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "eluru",
+        "name": "Eluru",
+        "nameIt": "Eluru",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.10022,
+          16.7108
+        ],
+        "zoom": 11,
+        "population": 249783,
+        "cells": 362,
+        "layer": "cities/eluru/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.10022,
+            16.7108
+          ]
+        },
+        "properties": {
+          "id": "eluru",
+          "name": "Eluru",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 26.5,
+          "population": 249783
+        }
+      },
+      "summary": null
+    }
+  }
+}

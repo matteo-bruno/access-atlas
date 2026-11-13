@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "muhanga",
+  "createdAt": "2026-10-08T15:58:46.912Z",
+  "updatedAt": "2026-10-08T15:58:46.912Z",
+  "meta": {
+    "name": "Muhanga",
+    "nameIt": "Muhanga",
+    "region": "Rwanda",
+    "regionIt": "Ruanda",
+    "country": "RW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Muhanga.geojson",
+      "sha256": "4ea43e8e356ad7eca65dfb82420f4805be48b3274f224b7e18eb39a3e79682b7",
+      "size": 243737,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "muhanga",
+    "name": "Muhanga",
+    "nameIt": "Muhanga",
+    "region": "Rwanda",
+    "regionIt": "Ruanda",
+    "country": "RW",
+    "center": [
+      29.76175,
+      -2.07715
+    ],
+    "zoom": 10.8,
+    "population": 73426,
+    "grid": "cities/muhanga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/muhanga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "muhanga",
+        "name": "Muhanga",
+        "nameIt": "Muhanga",
+        "region": "Rwanda",
+        "regionIt": "Ruanda",
+        "country": "RW",
+        "center": [
+          29.76175,
+          -2.07715
+        ],
+        "zoom": 10.8,
+        "population": 73426,
+        "cells": 208,
+        "layer": "cities/muhanga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.76175,
+            -2.07715
+          ]
+        },
+        "properties": {
+          "id": "muhanga",
+          "name": "Muhanga",
+          "country": "RW",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 73426
+        }
+      },
+      "summary": null
+    }
+  }
+}

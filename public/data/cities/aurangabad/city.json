@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aurangabad",
+  "createdAt": "2026-10-08T15:11:27.638Z",
+  "updatedAt": "2026-10-08T15:11:27.638Z",
+  "meta": {
+    "name": "Aurangabad",
+    "nameIt": "Aurangabad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aurangabad.geojson",
+      "sha256": "50ca66344e5b52250fe5f4fdd6940f129cbe1a3537d4983f8013f6438e3c1e7e",
+      "size": 213379,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aurangabad",
+    "name": "Aurangabad",
+    "nameIt": "Aurangabad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.37135,
+      24.75272
+    ],
+    "zoom": 11.3,
+    "population": 272956,
+    "grid": "cities/aurangabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aurangabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aurangabad",
+        "name": "Aurangabad",
+        "nameIt": "Aurangabad",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.37135,
+          24.75272
+        ],
+        "zoom": 11.3,
+        "population": 272956,
+        "cells": 184,
+        "layer": "cities/aurangabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.37135,
+            24.75272
+          ]
+        },
+        "properties": {
+          "id": "aurangabad",
+          "name": "Aurangabad",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 36.1,
+          "population": 272956
+        }
+      },
+      "summary": null
+    }
+  }
+}

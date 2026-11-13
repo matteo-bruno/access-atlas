@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "votkinsk",
+  "createdAt": "2026-10-08T16:21:04.322Z",
+  "updatedAt": "2026-10-08T16:21:04.322Z",
+  "meta": {
+    "name": "Votkinsk",
+    "nameIt": "Votkinsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Votkinsk.geojson",
+      "sha256": "2eb6717bc51aa7b5a059efa092530d299e2b7c9ee8acfb5db166d323a470b870",
+      "size": 201009,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "votkinsk",
+    "name": "Votkinsk",
+    "nameIt": "Votkinsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      53.99434,
+      57.0536
+    ],
+    "zoom": 11.4,
+    "population": 74605,
+    "grid": "cities/votkinsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/votkinsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "votkinsk",
+        "name": "Votkinsk",
+        "nameIt": "Votkinsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          53.99434,
+          57.0536
+        ],
+        "zoom": 11.4,
+        "population": 74605,
+        "cells": 175,
+        "layer": "cities/votkinsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            53.99434,
+            57.0536
+          ]
+        },
+        "properties": {
+          "id": "votkinsk",
+          "name": "Votkinsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 17.8,
+          "population": 74605
+        }
+      },
+      "summary": null
+    }
+  }
+}

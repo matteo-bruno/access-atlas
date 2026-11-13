@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "peterborough-united-kingdom",
+  "createdAt": "2026-10-08T16:05:08.276Z",
+  "updatedAt": "2026-10-08T16:05:08.276Z",
+  "meta": {
+    "name": "Peterborough (United Kingdom)",
+    "nameIt": "Peterborough (United Kingdom)",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Peterborough (United Kingdom).geojson",
+      "sha256": "c3ce78f2f3e27974d69a3094dcd491035555a29871efedc7e9bc9c0fe2ffdabe",
+      "size": 790601,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "peterborough-united-kingdom",
+    "name": "Peterborough (United Kingdom)",
+    "nameIt": "Peterborough (United Kingdom)",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.25508,
+      52.57265
+    ],
+    "zoom": 10.4,
+    "population": 207958,
+    "grid": "cities/peterborough-united-kingdom/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/peterborough-united-kingdom/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "peterborough-united-kingdom",
+        "name": "Peterborough (United Kingdom)",
+        "nameIt": "Peterborough (United Kingdom)",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.25508,
+          52.57265
+        ],
+        "zoom": 10.4,
+        "population": 207958,
+        "cells": 681,
+        "layer": "cities/peterborough-united-kingdom/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.25508,
+            52.57265
+          ]
+        },
+        "properties": {
+          "id": "peterborough-united-kingdom",
+          "name": "Peterborough (United Kingdom)",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 207958
+        }
+      },
+      "summary": null
+    }
+  }
+}

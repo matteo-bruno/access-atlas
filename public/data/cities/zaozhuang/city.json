@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zaozhuang",
+  "createdAt": "2026-10-08T16:24:51.506Z",
+  "updatedAt": "2026-10-08T16:24:51.506Z",
+  "meta": {
+    "name": "Zaozhuang",
+    "nameIt": "Zaozhuang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zaozhuang.geojson",
+      "sha256": "51b85b25026fecdafbd8f16cd243cf6a89e72fa470131a475fbc04be1403db64",
+      "size": 854232,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zaozhuang",
+    "name": "Zaozhuang",
+    "nameIt": "Zaozhuang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.27178,
+      34.79657
+    ],
+    "zoom": 10.5,
+    "population": 308271,
+    "grid": "cities/zaozhuang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zaozhuang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zaozhuang",
+        "name": "Zaozhuang",
+        "nameIt": "Zaozhuang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.27178,
+          34.79657
+        ],
+        "zoom": 10.5,
+        "population": 308271,
+        "cells": 734,
+        "layer": "cities/zaozhuang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.27178,
+            34.79657
+          ]
+        },
+        "properties": {
+          "id": "zaozhuang",
+          "name": "Zaozhuang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 25.4,
+          "population": 308271
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wels",
+  "createdAt": "2026-10-08T16:21:32.474Z",
+  "updatedAt": "2026-10-08T16:21:32.474Z",
+  "meta": {
+    "name": "Wels",
+    "nameIt": "Wels",
+    "region": "Austria",
+    "regionIt": "Austria",
+    "country": "AT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wels.geojson",
+      "sha256": "9e4889510407851c51f78082b8ea5bd55d3e0508b59aa6f995b25b87667dc772",
+      "size": 227411,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wels",
+    "name": "Wels",
+    "nameIt": "Wels",
+    "region": "Austria",
+    "regionIt": "Austria",
+    "country": "AT",
+    "center": [
+      14.02549,
+      48.16387
+    ],
+    "zoom": 11.5,
+    "population": 58655,
+    "grid": "cities/wels/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wels/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wels",
+        "name": "Wels",
+        "nameIt": "Wels",
+        "region": "Austria",
+        "regionIt": "Austria",
+        "country": "AT",
+        "center": [
+          14.02549,
+          48.16387
+        ],
+        "zoom": 11.5,
+        "population": 58655,
+        "cells": 199,
+        "layer": "cities/wels/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.02549,
+            48.16387
+          ]
+        },
+        "properties": {
+          "id": "wels",
+          "name": "Wels",
+          "country": "AT",
+          "isStudy": true,
+          "proximityMinutes": 8.5,
+          "population": 58655
+        }
+      },
+      "summary": null
+    }
+  }
+}

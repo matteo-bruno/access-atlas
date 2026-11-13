@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mandeville",
+  "createdAt": "2026-10-08T15:54:31.114Z",
+  "updatedAt": "2026-10-08T15:54:31.114Z",
+  "meta": {
+    "name": "Mandeville",
+    "nameIt": "Mandeville",
+    "region": "Jamaica",
+    "regionIt": "Giamaica",
+    "country": "JM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mandeville.geojson",
+      "sha256": "528e2cf79146a5d4a38f04cadc865ed8f6f2750224c0f28c2a99bb582ce78a0a",
+      "size": 420904,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mandeville",
+    "name": "Mandeville",
+    "nameIt": "Mandeville",
+    "region": "Jamaica",
+    "regionIt": "Giamaica",
+    "country": "JM",
+    "center": [
+      -77.5114,
+      18.04123
+    ],
+    "zoom": 11.2,
+    "population": 41579,
+    "grid": "cities/mandeville/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mandeville/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mandeville",
+        "name": "Mandeville",
+        "nameIt": "Mandeville",
+        "region": "Jamaica",
+        "regionIt": "Giamaica",
+        "country": "JM",
+        "center": [
+          -77.5114,
+          18.04123
+        ],
+        "zoom": 11.2,
+        "population": 41579,
+        "cells": 361,
+        "layer": "cities/mandeville/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.5114,
+            18.04123
+          ]
+        },
+        "properties": {
+          "id": "mandeville",
+          "name": "Mandeville",
+          "country": "JM",
+          "isStudy": true,
+          "proximityMinutes": 27.1,
+          "population": 41579
+        }
+      },
+      "summary": null
+    }
+  }
+}

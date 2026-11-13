@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-lorenzo",
+  "createdAt": "2026-10-08T16:10:36.942Z",
+  "updatedAt": "2026-10-08T16:10:36.942Z",
+  "meta": {
+    "name": "San Lorenzo",
+    "nameIt": "San Lorenzo",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Lorenzo.geojson",
+      "sha256": "68f64ba67d03cc45259ff38aa85ab1463d19af3a74a528b2823e4b39be349973",
+      "size": 420907,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-lorenzo",
+    "name": "San Lorenzo",
+    "nameIt": "San Lorenzo",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -60.73475,
+      -32.74678
+    ],
+    "zoom": 10.5,
+    "population": 58954,
+    "grid": "cities/san-lorenzo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-lorenzo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-lorenzo",
+        "name": "San Lorenzo",
+        "nameIt": "San Lorenzo",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -60.73475,
+          -32.74678
+        ],
+        "zoom": 10.5,
+        "population": 58954,
+        "cells": 361,
+        "layer": "cities/san-lorenzo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -60.73475,
+            -32.74678
+          ]
+        },
+        "properties": {
+          "id": "san-lorenzo",
+          "name": "San Lorenzo",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 15.8,
+          "population": 58954
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kakenge",
+  "createdAt": "2026-10-08T15:44:19.855Z",
+  "updatedAt": "2026-10-08T15:44:19.855Z",
+  "meta": {
+    "name": "Kakenge",
+    "nameIt": "Kakenge",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kakenge.geojson",
+      "sha256": "a95719c6513cd410d13c42037aeb78d0b911ec1426280fdab13aa981ee211660",
+      "size": 66619,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kakenge",
+    "name": "Kakenge",
+    "nameIt": "Kakenge",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      21.91396,
+      -4.86723
+    ],
+    "zoom": 12,
+    "population": 34176,
+    "grid": "cities/kakenge/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kakenge/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kakenge",
+        "name": "Kakenge",
+        "nameIt": "Kakenge",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          21.91396,
+          -4.86723
+        ],
+        "zoom": 12,
+        "population": 34176,
+        "cells": 57,
+        "layer": "cities/kakenge/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            21.91396,
+            -4.86723
+          ]
+        },
+        "properties": {
+          "id": "kakenge",
+          "name": "Kakenge",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 34176
+        }
+      },
+      "summary": null
+    }
+  }
+}

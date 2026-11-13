@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cotonou",
+  "createdAt": "2026-10-08T15:26:41.806Z",
+  "updatedAt": "2026-10-08T15:26:41.806Z",
+  "meta": {
+    "name": "Cotonou",
+    "nameIt": "Cotonou",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cotonou.geojson",
+      "sha256": "2798888c6ebdd57fa9eb63b284548fb2d10ebb5e8f4f89cea0d1d89205ed3959",
+      "size": 6538552,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cotonou",
+    "name": "Cotonou",
+    "nameIt": "Cotonou",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ",
+    "center": [
+      2.36996,
+      6.40291
+    ],
+    "zoom": 8.5,
+    "population": 3347371,
+    "grid": "cities/cotonou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cotonou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cotonou",
+        "name": "Cotonou",
+        "nameIt": "Cotonou",
+        "region": "Benin",
+        "regionIt": "Benin",
+        "country": "BJ",
+        "center": [
+          2.36996,
+          6.40291
+        ],
+        "zoom": 8.5,
+        "population": 3347371,
+        "cells": 5682,
+        "layer": "cities/cotonou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.36996,
+            6.40291
+          ]
+        },
+        "properties": {
+          "id": "cotonou",
+          "name": "Cotonou",
+          "country": "BJ",
+          "isStudy": true,
+          "proximityMinutes": 31.7,
+          "population": 3347371
+        }
+      },
+      "summary": null
+    }
+  }
+}

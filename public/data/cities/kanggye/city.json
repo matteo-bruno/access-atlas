@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kanggye",
+  "createdAt": "2026-10-08T15:44:55.216Z",
+  "updatedAt": "2026-10-08T15:44:55.216Z",
+  "meta": {
+    "name": "Kanggye",
+    "nameIt": "Kanggye",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kanggye.geojson",
+      "sha256": "6a4bcc6258c24025e0c69611765cd9de87a1671ec04eb7f22f7a38c9ac7a98a4",
+      "size": 450178,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kanggye",
+    "name": "Kanggye",
+    "nameIt": "Kanggye",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP",
+    "center": [
+      126.59668,
+      40.97002
+    ],
+    "zoom": 11.1,
+    "population": 254075,
+    "grid": "cities/kanggye/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 168
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kanggye/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kanggye",
+        "name": "Kanggye",
+        "nameIt": "Kanggye",
+        "region": "North Korea",
+        "regionIt": "Corea del Nord",
+        "country": "KP",
+        "center": [
+          126.59668,
+          40.97002
+        ],
+        "zoom": 11.1,
+        "population": 254075,
+        "cells": 386,
+        "layer": "cities/kanggye/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 168
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            126.59668,
+            40.97002
+          ]
+        },
+        "properties": {
+          "id": "kanggye",
+          "name": "Kanggye",
+          "country": "KP",
+          "isStudy": true,
+          "proximityMinutes": 27.8,
+          "population": 254075
+        }
+      },
+      "summary": null
+    }
+  }
+}

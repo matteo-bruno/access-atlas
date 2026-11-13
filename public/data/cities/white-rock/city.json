@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "white-rock",
+  "createdAt": "2026-10-08T16:21:38.827Z",
+  "updatedAt": "2026-10-08T16:21:38.827Z",
+  "meta": {
+    "name": "White Rock",
+    "nameIt": "White Rock",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/White Rock.geojson",
+      "sha256": "8d3994e25a81b7ea8aadee22a3301ca181d735bfaab8f823835d1288395e8c1d",
+      "size": 593952,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "white-rock",
+    "name": "White Rock",
+    "nameIt": "White Rock",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -122.81597,
+      49.04101
+    ],
+    "zoom": 10.8,
+    "population": 121904,
+    "grid": "cities/white-rock/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/white-rock/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "white-rock",
+        "name": "White Rock",
+        "nameIt": "White Rock",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -122.81597,
+          49.04101
+        ],
+        "zoom": 10.8,
+        "population": 121904,
+        "cells": 512,
+        "layer": "cities/white-rock/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.81597,
+            49.04101
+          ]
+        },
+        "properties": {
+          "id": "white-rock",
+          "name": "White Rock",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 121904
+        }
+      },
+      "summary": null
+    }
+  }
+}

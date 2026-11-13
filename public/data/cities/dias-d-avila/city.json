@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dias-d-avila",
+  "createdAt": "2026-10-08T15:29:47.706Z",
+  "updatedAt": "2026-10-08T15:29:47.706Z",
+  "meta": {
+    "name": "Dias d'Ávila",
+    "nameIt": "Dias d'Ávila",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dias d'Ávila.geojson",
+      "sha256": "02ddc2a0d8f51bbed00ebefb898e5796e31e833353c36bda5a350ee60e4f3824",
+      "size": 151313,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dias-d-avila",
+    "name": "Dias d'Ávila",
+    "nameIt": "Dias d'Ávila",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -38.30624,
+      -12.61099
+    ],
+    "zoom": 11.5,
+    "population": 59190,
+    "grid": "cities/dias-d-avila/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dias-d-avila/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dias-d-avila",
+        "name": "Dias d'Ávila",
+        "nameIt": "Dias d'Ávila",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -38.30624,
+          -12.61099
+        ],
+        "zoom": 11.5,
+        "population": 59190,
+        "cells": 128,
+        "layer": "cities/dias-d-avila/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -38.30624,
+            -12.61099
+          ]
+        },
+        "properties": {
+          "id": "dias-d-avila",
+          "name": "Dias d'Ávila",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 15.8,
+          "population": 59190
+        }
+      },
+      "summary": null
+    }
+  }
+}

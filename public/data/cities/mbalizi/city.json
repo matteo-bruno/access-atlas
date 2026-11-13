@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mbalizi",
+  "createdAt": "2026-10-08T15:56:03.084Z",
+  "updatedAt": "2026-10-08T15:56:03.084Z",
+  "meta": {
+    "name": "Mbalizi",
+    "nameIt": "Mbalizi",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mbalizi.geojson",
+      "sha256": "1177b8195f4239104ec8cdb8ec6fc90e3f44eb1015736bc031d30d750f6706fe",
+      "size": 171089,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mbalizi",
+    "name": "Mbalizi",
+    "nameIt": "Mbalizi",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      33.35476,
+      -8.93468
+    ],
+    "zoom": 11.2,
+    "population": 77477,
+    "grid": "cities/mbalizi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mbalizi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mbalizi",
+        "name": "Mbalizi",
+        "nameIt": "Mbalizi",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          33.35476,
+          -8.93468
+        ],
+        "zoom": 11.2,
+        "population": 77477,
+        "cells": 147,
+        "layer": "cities/mbalizi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.35476,
+            -8.93468
+          ]
+        },
+        "properties": {
+          "id": "mbalizi",
+          "name": "Mbalizi",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 13.8,
+          "population": 77477
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kitwe",
+  "createdAt": "2026-10-08T15:47:26.096Z",
+  "updatedAt": "2026-10-08T15:47:26.096Z",
+  "meta": {
+    "name": "Kitwe",
+    "nameIt": "Kitwe",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kitwe.geojson",
+      "sha256": "9ccd06980fd177c48f87071c8d8ebef0aa495aa58005e64d73e33ef9ac271727",
+      "size": 1087447,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kitwe",
+    "name": "Kitwe",
+    "nameIt": "Kitwe",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM",
+    "center": [
+      28.2206,
+      -12.8068
+    ],
+    "zoom": 9.8,
+    "population": 576360,
+    "grid": "cities/kitwe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kitwe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kitwe",
+        "name": "Kitwe",
+        "nameIt": "Kitwe",
+        "region": "Zambia",
+        "regionIt": "Zambia",
+        "country": "ZM",
+        "center": [
+          28.2206,
+          -12.8068
+        ],
+        "zoom": 9.8,
+        "population": 576360,
+        "cells": 924,
+        "layer": "cities/kitwe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.2206,
+            -12.8068
+          ]
+        },
+        "properties": {
+          "id": "kitwe",
+          "name": "Kitwe",
+          "country": "ZM",
+          "isStudy": true,
+          "proximityMinutes": 51.2,
+          "population": 576360
+        }
+      },
+      "summary": null
+    }
+  }
+}

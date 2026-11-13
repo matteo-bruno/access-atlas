@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chengguan",
+  "createdAt": "2026-10-08T15:24:18.380Z",
+  "updatedAt": "2026-10-08T15:24:18.380Z",
+  "meta": {
+    "name": "Chengguan",
+    "nameIt": "Chengguan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chengguan.geojson",
+      "sha256": "1a5e299231355998b2f712ab6050221ade89600a118f3e5c7c87c7c50cb799bd",
+      "size": 266899,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chengguan",
+    "name": "Chengguan",
+    "nameIt": "Chengguan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      109.08193,
+      35.08165
+    ],
+    "zoom": 11,
+    "population": 124322,
+    "grid": "cities/chengguan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chengguan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chengguan",
+        "name": "Chengguan",
+        "nameIt": "Chengguan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          109.08193,
+          35.08165
+        ],
+        "zoom": 11,
+        "population": 124322,
+        "cells": 229,
+        "layer": "cities/chengguan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.08193,
+            35.08165
+          ]
+        },
+        "properties": {
+          "id": "chengguan",
+          "name": "Chengguan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 124322
+        }
+      },
+      "summary": null
+    }
+  }
+}

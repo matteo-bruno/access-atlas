@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "durango",
+  "createdAt": "2026-10-08T15:31:26.286Z",
+  "updatedAt": "2026-10-08T15:31:26.286Z",
+  "meta": {
+    "name": "Durango",
+    "nameIt": "Durango",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Durango.geojson",
+      "sha256": "cca095c9a4548f504b25957190d1ab70e2057ddbad1951184415f92d86f1e5bd",
+      "size": 831877,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "durango",
+    "name": "Durango",
+    "nameIt": "Durango",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -104.65121,
+      24.02609
+    ],
+    "zoom": 10.3,
+    "population": 569844,
+    "grid": "cities/durango/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/durango/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "durango",
+        "name": "Durango",
+        "nameIt": "Durango",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -104.65121,
+          24.02609
+        ],
+        "zoom": 10.3,
+        "population": 569844,
+        "cells": 713,
+        "layer": "cities/durango/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -104.65121,
+            24.02609
+          ]
+        },
+        "properties": {
+          "id": "durango",
+          "name": "Durango",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 23.4,
+          "population": 569844
+        }
+      },
+      "summary": null
+    }
+  }
+}

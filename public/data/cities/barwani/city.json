@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barwani",
+  "createdAt": "2026-10-08T15:15:45.670Z",
+  "updatedAt": "2026-10-08T15:15:45.670Z",
+  "meta": {
+    "name": "Barwani",
+    "nameIt": "Barwani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barwani.geojson",
+      "sha256": "944e821de3d55d3bd9a5cc4f3d0a5a40e689aaf5cefc9c989bdb62f324339148",
+      "size": 154045,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barwani",
+    "name": "Barwani",
+    "nameIt": "Barwani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.90401,
+      22.03286
+    ],
+    "zoom": 11.9,
+    "population": 72351,
+    "grid": "cities/barwani/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barwani/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barwani",
+        "name": "Barwani",
+        "nameIt": "Barwani",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.90401,
+          22.03286
+        ],
+        "zoom": 11.9,
+        "population": 72351,
+        "cells": 133,
+        "layer": "cities/barwani/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.90401,
+            22.03286
+          ]
+        },
+        "properties": {
+          "id": "barwani",
+          "name": "Barwani",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 72351
+        }
+      },
+      "summary": null
+    }
+  }
+}

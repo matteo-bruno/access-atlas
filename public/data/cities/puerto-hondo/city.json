@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "puerto-hondo",
+  "createdAt": "2026-10-08T16:06:44.134Z",
+  "updatedAt": "2026-10-08T16:06:44.134Z",
+  "meta": {
+    "name": "Puerto Hondo",
+    "nameIt": "Puerto Hondo",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Puerto Hondo.geojson",
+      "sha256": "ab4eb4cce4328921807e95913e2b1241e130611917aa987dd4f456b71803e8a8",
+      "size": 110073,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "puerto-hondo",
+    "name": "Puerto Hondo",
+    "nameIt": "Puerto Hondo",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC",
+    "center": [
+      -79.98353,
+      -2.18656
+    ],
+    "zoom": 11.2,
+    "population": 80428,
+    "grid": "cities/puerto-hondo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/puerto-hondo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "puerto-hondo",
+        "name": "Puerto Hondo",
+        "nameIt": "Puerto Hondo",
+        "region": "Ecuador",
+        "regionIt": "Ecuador",
+        "country": "EC",
+        "center": [
+          -79.98353,
+          -2.18656
+        ],
+        "zoom": 11.2,
+        "population": 80428,
+        "cells": 94,
+        "layer": "cities/puerto-hondo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -79.98353,
+            -2.18656
+          ]
+        },
+        "properties": {
+          "id": "puerto-hondo",
+          "name": "Puerto Hondo",
+          "country": "EC",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 80428
+        }
+      },
+      "summary": null
+    }
+  }
+}

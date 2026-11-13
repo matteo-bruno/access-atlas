@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "telde",
+  "createdAt": "2026-10-08T16:17:11.323Z",
+  "updatedAt": "2026-10-08T16:17:11.323Z",
+  "meta": {
+    "name": "Telde",
+    "nameIt": "Telde",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Telde.geojson",
+      "sha256": "f0d7013b98d7067eea207e14d4a1d9d37f1763c109980e1f2c77369c90314a15",
+      "size": 302243,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "telde",
+    "name": "Telde",
+    "nameIt": "Telde",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -15.40149,
+      27.99522
+    ],
+    "zoom": 11,
+    "population": 71871,
+    "grid": "cities/telde/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/telde/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "telde",
+        "name": "Telde",
+        "nameIt": "Telde",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -15.40149,
+          27.99522
+        ],
+        "zoom": 11,
+        "population": 71871,
+        "cells": 258,
+        "layer": "cities/telde/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -15.40149,
+            27.99522
+          ]
+        },
+        "properties": {
+          "id": "telde",
+          "name": "Telde",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 71871
+        }
+      },
+      "summary": null
+    }
+  }
+}

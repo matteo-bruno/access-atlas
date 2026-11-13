@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sylhet",
+  "createdAt": "2026-10-08T16:15:33.784Z",
+  "updatedAt": "2026-10-08T16:15:33.784Z",
+  "meta": {
+    "name": "Sylhet",
+    "nameIt": "Sylhet",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sylhet.geojson",
+      "sha256": "e791b617fc14f054c87e5d0cd59293c31217390bb1418d18938e0f1f6c3c9f14",
+      "size": 884124,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sylhet",
+    "name": "Sylhet",
+    "nameIt": "Sylhet",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      91.87904,
+      24.89499
+    ],
+    "zoom": 10.1,
+    "population": 531714,
+    "grid": "cities/sylhet/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sylhet/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sylhet",
+        "name": "Sylhet",
+        "nameIt": "Sylhet",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          91.87904,
+          24.89499
+        ],
+        "zoom": 10.1,
+        "population": 531714,
+        "cells": 764,
+        "layer": "cities/sylhet/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.87904,
+            24.89499
+          ]
+        },
+        "properties": {
+          "id": "sylhet",
+          "name": "Sylhet",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 32.4,
+          "population": 531714
+        }
+      },
+      "summary": null
+    }
+  }
+}

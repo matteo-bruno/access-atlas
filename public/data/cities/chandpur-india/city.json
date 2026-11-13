@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chandpur-india",
+  "createdAt": "2026-10-08T15:23:31.309Z",
+  "updatedAt": "2026-10-08T15:23:31.309Z",
+  "meta": {
+    "name": "Chandpur (India)",
+    "nameIt": "Chandpur (India)",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chandpur (India).geojson",
+      "sha256": "7884c97ce4e53bdf44a05d666ebd7613fc60cc034267eeab46c760210c4e7e69",
+      "size": 137895,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chandpur-india",
+    "name": "Chandpur (India)",
+    "nameIt": "Chandpur (India)",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.26984,
+      29.13641
+    ],
+    "zoom": 11.7,
+    "population": 105257,
+    "grid": "cities/chandpur-india/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chandpur-india/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chandpur-india",
+        "name": "Chandpur (India)",
+        "nameIt": "Chandpur (India)",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.26984,
+          29.13641
+        ],
+        "zoom": 11.7,
+        "population": 105257,
+        "cells": 119,
+        "layer": "cities/chandpur-india/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.26984,
+            29.13641
+          ]
+        },
+        "properties": {
+          "id": "chandpur-india",
+          "name": "Chandpur (India)",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 15.1,
+          "population": 105257
+        }
+      },
+      "summary": null
+    }
+  }
+}

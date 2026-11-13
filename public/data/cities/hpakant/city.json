@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hpakant",
+  "createdAt": "2026-10-08T15:39:13.765Z",
+  "updatedAt": "2026-10-08T15:39:13.765Z",
+  "meta": {
+    "name": "Hpakant",
+    "nameIt": "Hpakant",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hpakant.geojson",
+      "sha256": "126bcf327074dcf3237feaa782565076e9b69e584ed3925ffb8f79f8e2657a43",
+      "size": 384967,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hpakant",
+    "name": "Hpakant",
+    "nameIt": "Hpakant",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      96.31727,
+      25.61041
+    ],
+    "zoom": 10.3,
+    "population": 200464,
+    "grid": "cities/hpakant/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hpakant/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hpakant",
+        "name": "Hpakant",
+        "nameIt": "Hpakant",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          96.31727,
+          25.61041
+        ],
+        "zoom": 10.3,
+        "population": 200464,
+        "cells": 332,
+        "layer": "cities/hpakant/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.31727,
+            25.61041
+          ]
+        },
+        "properties": {
+          "id": "hpakant",
+          "name": "Hpakant",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 33.7,
+          "population": 200464
+        }
+      },
+      "summary": null
+    }
+  }
+}

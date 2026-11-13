@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kairana",
+  "createdAt": "2026-10-08T15:44:14.467Z",
+  "updatedAt": "2026-10-08T15:44:14.467Z",
+  "meta": {
+    "name": "Kairana",
+    "nameIt": "Kairana",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kairana.geojson",
+      "sha256": "7181ff2799cde8acbfc095229295e519481014b0fd88194cbe53049eb4d646f7",
+      "size": 107769,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kairana",
+    "name": "Kairana",
+    "nameIt": "Kairana",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.20518,
+      29.39512
+    ],
+    "zoom": 11.9,
+    "population": 91330,
+    "grid": "cities/kairana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kairana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kairana",
+        "name": "Kairana",
+        "nameIt": "Kairana",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.20518,
+          29.39512
+        ],
+        "zoom": 11.9,
+        "population": 91330,
+        "cells": 93,
+        "layer": "cities/kairana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.20518,
+            29.39512
+          ]
+        },
+        "properties": {
+          "id": "kairana",
+          "name": "Kairana",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 91330
+        }
+      },
+      "summary": null
+    }
+  }
+}

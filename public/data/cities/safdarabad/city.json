@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "safdarabad",
+  "createdAt": "2026-10-08T16:09:39.515Z",
+  "updatedAt": "2026-10-08T16:09:39.515Z",
+  "meta": {
+    "name": "Safdarabad",
+    "nameIt": "Safdarabad",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Safdarabad.geojson",
+      "sha256": "847517fde505eab8ed6f635182aa65bae37e76eb464ef3b267d34d9054a94c07",
+      "size": 72968,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "safdarabad",
+    "name": "Safdarabad",
+    "nameIt": "Safdarabad",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      73.57475,
+      31.7323
+    ],
+    "zoom": 12,
+    "population": 28075,
+    "grid": "cities/safdarabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/safdarabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "safdarabad",
+        "name": "Safdarabad",
+        "nameIt": "Safdarabad",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          73.57475,
+          31.7323
+        ],
+        "zoom": 12,
+        "population": 28075,
+        "cells": 63,
+        "layer": "cities/safdarabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.57475,
+            31.7323
+          ]
+        },
+        "properties": {
+          "id": "safdarabad",
+          "name": "Safdarabad",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 28075
+        }
+      },
+      "summary": null
+    }
+  }
+}

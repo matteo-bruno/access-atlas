@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hazorasp",
+  "createdAt": "2026-10-08T15:38:09.564Z",
+  "updatedAt": "2026-10-08T15:38:09.564Z",
+  "meta": {
+    "name": "Hazorasp",
+    "nameIt": "Hazorasp",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hazorasp.geojson",
+      "sha256": "f1872fe05bed4e011de65c5e9c7db4200701d4e4fc013245b890d3d32fb12578",
+      "size": 330478,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hazorasp",
+    "name": "Hazorasp",
+    "nameIt": "Hazorasp",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      61.0847,
+      41.31338
+    ],
+    "zoom": 10.6,
+    "population": 73646,
+    "grid": "cities/hazorasp/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hazorasp/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hazorasp",
+        "name": "Hazorasp",
+        "nameIt": "Hazorasp",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          61.0847,
+          41.31338
+        ],
+        "zoom": 10.6,
+        "population": 73646,
+        "cells": 285,
+        "layer": "cities/hazorasp/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            61.0847,
+            41.31338
+          ]
+        },
+        "properties": {
+          "id": "hazorasp",
+          "name": "Hazorasp",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 30.1,
+          "population": 73646
+        }
+      },
+      "summary": null
+    }
+  }
+}

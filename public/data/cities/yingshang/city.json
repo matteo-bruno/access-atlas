@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yingshang",
+  "createdAt": "2026-10-08T16:23:57.246Z",
+  "updatedAt": "2026-10-08T16:23:57.246Z",
+  "meta": {
+    "name": "Yingshang",
+    "nameIt": "Yingshang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yingshang.geojson",
+      "sha256": "abe9c32241fba051dc84b9bfc7d3b9094e8445595cbc071d5ddeb5e74965b3e8",
+      "size": 297465,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yingshang",
+    "name": "Yingshang",
+    "nameIt": "Yingshang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.25161,
+      32.64634
+    ],
+    "zoom": 11.5,
+    "population": 222453,
+    "grid": "cities/yingshang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yingshang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yingshang",
+        "name": "Yingshang",
+        "nameIt": "Yingshang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.25161,
+          32.64634
+        ],
+        "zoom": 11.5,
+        "population": 222453,
+        "cells": 255,
+        "layer": "cities/yingshang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.25161,
+            32.64634
+          ]
+        },
+        "properties": {
+          "id": "yingshang",
+          "name": "Yingshang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 34.3,
+          "population": 222453
+        }
+      },
+      "summary": null
+    }
+  }
+}

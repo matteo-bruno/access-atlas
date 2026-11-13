@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "phrae",
+  "createdAt": "2026-10-08T16:05:18.523Z",
+  "updatedAt": "2026-10-08T16:05:18.523Z",
+  "meta": {
+    "name": "Phrae",
+    "nameIt": "Phrae",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Phrae.geojson",
+      "sha256": "dd17ce710581ff86f10ba23603a2dad3c4e9650956e1a25f78aa73b2691fa81d",
+      "size": 144623,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "phrae",
+    "name": "Phrae",
+    "nameIt": "Phrae",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      100.15349,
+      18.14139
+    ],
+    "zoom": 11.3,
+    "population": 36034,
+    "grid": "cities/phrae/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/phrae/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "phrae",
+        "name": "Phrae",
+        "nameIt": "Phrae",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          100.15349,
+          18.14139
+        ],
+        "zoom": 11.3,
+        "population": 36034,
+        "cells": 124,
+        "layer": "cities/phrae/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            100.15349,
+            18.14139
+          ]
+        },
+        "properties": {
+          "id": "phrae",
+          "name": "Phrae",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 36034
+        }
+      },
+      "summary": null
+    }
+  }
+}

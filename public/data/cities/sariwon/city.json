@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sariwon",
+  "createdAt": "2026-10-08T16:11:30.372Z",
+  "updatedAt": "2026-10-08T16:11:30.372Z",
+  "meta": {
+    "name": "Sariwon",
+    "nameIt": "Sariwon",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sariwon.geojson",
+      "sha256": "87dc1a3e6dbed904a00f97a4e640841105e489d3f213172d0311e34f3436b1f2",
+      "size": 393922,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sariwon",
+    "name": "Sariwon",
+    "nameIt": "Sariwon",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP",
+    "center": [
+      125.75428,
+      38.51106
+    ],
+    "zoom": 11.4,
+    "population": 294714,
+    "grid": "cities/sariwon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 166
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sariwon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sariwon",
+        "name": "Sariwon",
+        "nameIt": "Sariwon",
+        "region": "North Korea",
+        "regionIt": "Corea del Nord",
+        "country": "KP",
+        "center": [
+          125.75428,
+          38.51106
+        ],
+        "zoom": 11.4,
+        "population": 294714,
+        "cells": 338,
+        "layer": "cities/sariwon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 166
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.75428,
+            38.51106
+          ]
+        },
+        "properties": {
+          "id": "sariwon",
+          "name": "Sariwon",
+          "country": "KP",
+          "isStudy": true,
+          "proximityMinutes": 21.5,
+          "population": 294714
+        }
+      },
+      "summary": null
+    }
+  }
+}

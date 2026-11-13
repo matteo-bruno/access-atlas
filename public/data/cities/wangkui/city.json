@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wangkui",
+  "createdAt": "2026-10-08T16:21:19.125Z",
+  "updatedAt": "2026-10-08T16:21:19.125Z",
+  "meta": {
+    "name": "Wangkui",
+    "nameIt": "Wangkui",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wangkui.geojson",
+      "sha256": "2fd79b00e0d8b4de6ccf2eefefbf497cfd3b7258a2cdeabf8ee31a63614a3eb4",
+      "size": 174842,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wangkui",
+    "name": "Wangkui",
+    "nameIt": "Wangkui",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      126.47649,
+      46.83074
+    ],
+    "zoom": 11.7,
+    "population": 82285,
+    "grid": "cities/wangkui/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wangkui/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wangkui",
+        "name": "Wangkui",
+        "nameIt": "Wangkui",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          126.47649,
+          46.83074
+        ],
+        "zoom": 11.7,
+        "population": 82285,
+        "cells": 150,
+        "layer": "cities/wangkui/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            126.47649,
+            46.83074
+          ]
+        },
+        "properties": {
+          "id": "wangkui",
+          "name": "Wangkui",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 82285
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "birmingham-united-states",
+  "createdAt": "2026-10-08T15:19:15.074Z",
+  "updatedAt": "2026-10-08T15:19:15.074Z",
+  "meta": {
+    "name": "Birmingham (United States)",
+    "nameIt": "Birmingham (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Birmingham (United States).geojson",
+      "sha256": "a1a8fdefea5b4362b71aa35b2233b62565815d3cdf6593afd7edcb8d83638d26",
+      "size": 1004520,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "birmingham-united-states",
+    "name": "Birmingham (United States)",
+    "nameIt": "Birmingham (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -86.82506,
+      33.49658
+    ],
+    "zoom": 10,
+    "population": 93310,
+    "grid": "cities/birmingham-united-states/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/birmingham-united-states/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "birmingham-united-states",
+        "name": "Birmingham (United States)",
+        "nameIt": "Birmingham (United States)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -86.82506,
+          33.49658
+        ],
+        "zoom": 10,
+        "population": 93310,
+        "cells": 872,
+        "layer": "cities/birmingham-united-states/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -86.82506,
+            33.49658
+          ]
+        },
+        "properties": {
+          "id": "birmingham-united-states",
+          "name": "Birmingham (United States)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 24,
+          "population": 93310
+        }
+      },
+      "summary": null
+    }
+  }
+}

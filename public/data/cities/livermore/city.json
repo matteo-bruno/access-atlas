@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "livermore",
+  "createdAt": "2026-10-08T15:51:37.967Z",
+  "updatedAt": "2026-10-08T15:51:37.967Z",
+  "meta": {
+    "name": "Livermore",
+    "nameIt": "Livermore",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Livermore.geojson",
+      "sha256": "2b08618586a47ded4bbe0bd36e66a97fec5cdeabfd3605be1b2536cfeb3217ae",
+      "size": 442475,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "livermore",
+    "name": "Livermore",
+    "nameIt": "Livermore",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -121.76112,
+      37.68525
+    ],
+    "zoom": 10.7,
+    "population": 77875,
+    "grid": "cities/livermore/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/livermore/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "livermore",
+        "name": "Livermore",
+        "nameIt": "Livermore",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -121.76112,
+          37.68525
+        ],
+        "zoom": 10.7,
+        "population": 77875,
+        "cells": 381,
+        "layer": "cities/livermore/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -121.76112,
+            37.68525
+          ]
+        },
+        "properties": {
+          "id": "livermore",
+          "name": "Livermore",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 77875
+        }
+      },
+      "summary": null
+    }
+  }
+}

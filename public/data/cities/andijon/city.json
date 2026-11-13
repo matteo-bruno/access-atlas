@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "andijon",
+  "createdAt": "2026-10-08T15:07:28.254Z",
+  "updatedAt": "2026-10-08T15:07:28.254Z",
+  "meta": {
+    "name": "Andijon",
+    "nameIt": "Andijon",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Andijon.geojson",
+      "sha256": "643c6f49ad0ece1d71bc9124e5c4237fcf209f7b33e440622d521f9f2ba9b8b6",
+      "size": 1670774,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "andijon",
+    "name": "Andijon",
+    "nameIt": "Andijon",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      72.33396,
+      40.78842
+    ],
+    "zoom": 9.9,
+    "population": 374790,
+    "grid": "cities/andijon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/andijon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "andijon",
+        "name": "Andijon",
+        "nameIt": "Andijon",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          72.33396,
+          40.78842
+        ],
+        "zoom": 9.9,
+        "population": 374790,
+        "cells": 1455,
+        "layer": "cities/andijon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.33396,
+            40.78842
+          ]
+        },
+        "properties": {
+          "id": "andijon",
+          "name": "Andijon",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 43.1,
+          "population": 374790
+        }
+      },
+      "summary": null
+    }
+  }
+}

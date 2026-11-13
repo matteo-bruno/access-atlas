@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tepeyac",
+  "createdAt": "2026-10-08T16:17:20.256Z",
+  "updatedAt": "2026-10-08T16:17:20.256Z",
+  "meta": {
+    "name": "Tepeyac",
+    "nameIt": "Tepeyac",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tepeyac.geojson",
+      "sha256": "8f667244f7bd5bc28efad6bb66d73ec3faf1052682c13f6c3100dd21e251a31a",
+      "size": 146009,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tepeyac",
+    "name": "Tepeyac",
+    "nameIt": "Tepeyac",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -99.95185,
+      16.89717
+    ],
+    "zoom": 11.7,
+    "population": 48078,
+    "grid": "cities/tepeyac/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tepeyac/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tepeyac",
+        "name": "Tepeyac",
+        "nameIt": "Tepeyac",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -99.95185,
+          16.89717
+        ],
+        "zoom": 11.7,
+        "population": 48078,
+        "cells": 125,
+        "layer": "cities/tepeyac/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -99.95185,
+            16.89717
+          ]
+        },
+        "properties": {
+          "id": "tepeyac",
+          "name": "Tepeyac",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 48078
+        }
+      },
+      "summary": null
+    }
+  }
+}

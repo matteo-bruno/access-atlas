@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hegang",
+  "createdAt": "2026-10-08T15:38:14.343Z",
+  "updatedAt": "2026-10-08T15:38:14.343Z",
+  "meta": {
+    "name": "Hegang",
+    "nameIt": "Hegang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hegang.geojson",
+      "sha256": "40c5268f5d2e341dafcd0542afac5add31e7f0cea215da1526a53d03593716d1",
+      "size": 1327790,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hegang",
+    "name": "Hegang",
+    "nameIt": "Hegang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      130.26574,
+      47.3084
+    ],
+    "zoom": 10.1,
+    "population": 440934,
+    "grid": "cities/hegang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hegang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hegang",
+        "name": "Hegang",
+        "nameIt": "Hegang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          130.26574,
+          47.3084
+        ],
+        "zoom": 10.1,
+        "population": 440934,
+        "cells": 1139,
+        "layer": "cities/hegang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            130.26574,
+            47.3084
+          ]
+        },
+        "properties": {
+          "id": "hegang",
+          "name": "Hegang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 52.6,
+          "population": 440934
+        }
+      },
+      "summary": null
+    }
+  }
+}

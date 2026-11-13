@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zwickau",
+  "createdAt": "2026-10-08T16:25:44.560Z",
+  "updatedAt": "2026-10-08T16:25:44.560Z",
+  "meta": {
+    "name": "Zwickau",
+    "nameIt": "Zwickau",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zwickau.geojson",
+      "sha256": "c443169f1aad571fa137142ba4c818e4bf946cc3711420614dfa4ccc174d5cff",
+      "size": 283386,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zwickau",
+    "name": "Zwickau",
+    "nameIt": "Zwickau",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      12.48281,
+      50.71279
+    ],
+    "zoom": 11,
+    "population": 49017,
+    "grid": "cities/zwickau/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zwickau/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zwickau",
+        "name": "Zwickau",
+        "nameIt": "Zwickau",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          12.48281,
+          50.71279
+        ],
+        "zoom": 11,
+        "population": 49017,
+        "cells": 248,
+        "layer": "cities/zwickau/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.48281,
+            50.71279
+          ]
+        },
+        "properties": {
+          "id": "zwickau",
+          "name": "Zwickau",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 10.6,
+          "population": 49017
+        }
+      },
+      "summary": null
+    }
+  }
+}

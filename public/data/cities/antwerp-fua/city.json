@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "antwerp-fua",
+  "createdAt": "2026-10-19T16:55:12.465Z",
+  "updatedAt": "2026-10-19T16:55:12.465Z",
+  "meta": {
+    "name": "Antwerp",
+    "nameIt": "Antwerp",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "antwerp-fua",
+    "name": "Antwerp",
+    "nameIt": "Antwerp",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE",
+    "extent": "fua",
+    "core": "antwerp",
+    "center": [
+      4.44472,
+      51.17991
+    ],
+    "zoom": 8.5,
+    "population": 1900977,
+    "grid": "cities/antwerp-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/antwerp-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "antwerp-fua",
+        "name": "Antwerp",
+        "nameIt": "Antwerp",
+        "region": "Belgium",
+        "regionIt": "Belgio",
+        "country": "BE",
+        "extent": "fua",
+        "core": "antwerp",
+        "center": [
+          4.44472,
+          51.17991
+        ],
+        "zoom": 8.5,
+        "population": 1900977,
+        "cells": 26509,
+        "layer": "cities/antwerp-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.44472,
+            51.17991
+          ]
+        },
+        "properties": {
+          "id": "antwerp-fua",
+          "name": "Antwerp",
+          "country": "BE",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 1900977
+        }
+      },
+      "summary": null
+    }
+  }
+}

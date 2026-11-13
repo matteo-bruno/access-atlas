@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "libreville",
+  "createdAt": "2026-10-08T15:51:03.292Z",
+  "updatedAt": "2026-10-08T15:51:03.292Z",
+  "meta": {
+    "name": "Libreville",
+    "nameIt": "Libreville",
+    "region": "Gabon",
+    "regionIt": "Gabon",
+    "country": "GA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Libreville.geojson",
+      "sha256": "84cfce22839856dd5394d0ba0905b2725c290d6d8f85bd019a7d2289545ed3ca",
+      "size": 2305689,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "libreville",
+    "name": "Libreville",
+    "nameIt": "Libreville",
+    "region": "Gabon",
+    "regionIt": "Gabon",
+    "country": "GA",
+    "center": [
+      9.47021,
+      0.41038
+    ],
+    "zoom": 9.2,
+    "population": 791968,
+    "grid": "cities/libreville/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/libreville/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "libreville",
+        "name": "Libreville",
+        "nameIt": "Libreville",
+        "region": "Gabon",
+        "regionIt": "Gabon",
+        "country": "GA",
+        "center": [
+          9.47021,
+          0.41038
+        ],
+        "zoom": 9.2,
+        "population": 791968,
+        "cells": 2002,
+        "layer": "cities/libreville/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.47021,
+            0.41038
+          ]
+        },
+        "properties": {
+          "id": "libreville",
+          "name": "Libreville",
+          "country": "GA",
+          "isStudy": true,
+          "proximityMinutes": 33.5,
+          "population": 791968
+        }
+      },
+      "summary": null
+    }
+  }
+}

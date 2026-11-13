@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barletta",
+  "createdAt": "2026-10-08T15:15:39.249Z",
+  "updatedAt": "2026-10-08T15:15:39.249Z",
+  "meta": {
+    "name": "Barletta",
+    "nameIt": "Barletta",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barletta.geojson",
+      "sha256": "3b66e68bdb968c7356cec352ea95afe8d3958a6d132d56969bd76ab561c1528d",
+      "size": 148736,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barletta",
+    "name": "Barletta",
+    "nameIt": "Barletta",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      16.27692,
+      41.31405
+    ],
+    "zoom": 11.6,
+    "population": 67085,
+    "grid": "cities/barletta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barletta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barletta",
+        "name": "Barletta",
+        "nameIt": "Barletta",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          16.27692,
+          41.31405
+        ],
+        "zoom": 11.6,
+        "population": 67085,
+        "cells": 130,
+        "layer": "cities/barletta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.27692,
+            41.31405
+          ]
+        },
+        "properties": {
+          "id": "barletta",
+          "name": "Barletta",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 8.1,
+          "population": 67085
+        }
+      },
+      "summary": null
+    }
+  }
+}

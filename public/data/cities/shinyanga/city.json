@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shinyanga",
+  "createdAt": "2026-10-08T16:13:06.800Z",
+  "updatedAt": "2026-10-08T16:13:06.800Z",
+  "meta": {
+    "name": "Shinyanga",
+    "nameIt": "Shinyanga",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shinyanga.geojson",
+      "sha256": "8446d1ad060878e85a8aa61c24fb23cf5c8b796b0a9faf605c1801b7a31e5a7c",
+      "size": 286075,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shinyanga",
+    "name": "Shinyanga",
+    "nameIt": "Shinyanga",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      33.42097,
+      -3.66541
+    ],
+    "zoom": 11.4,
+    "population": 117804,
+    "grid": "cities/shinyanga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shinyanga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shinyanga",
+        "name": "Shinyanga",
+        "nameIt": "Shinyanga",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          33.42097,
+          -3.66541
+        ],
+        "zoom": 11.4,
+        "population": 117804,
+        "cells": 245,
+        "layer": "cities/shinyanga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.42097,
+            -3.66541
+          ]
+        },
+        "properties": {
+          "id": "shinyanga",
+          "name": "Shinyanga",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 21.2,
+          "population": 117804
+        }
+      },
+      "summary": null
+    }
+  }
+}

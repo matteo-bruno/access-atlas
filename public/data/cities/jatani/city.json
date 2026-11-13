@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jatani",
+  "createdAt": "2026-10-08T15:42:05.973Z",
+  "updatedAt": "2026-10-08T15:42:05.973Z",
+  "meta": {
+    "name": "Jatani",
+    "nameIt": "Jatani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jatani.geojson",
+      "sha256": "0c847d5bf10e17ff84e6b1d5099f3480cb83b6fc08de3289cab70b59a0243acc",
+      "size": 155299,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jatani",
+    "name": "Jatani",
+    "nameIt": "Jatani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.70707,
+      20.1639
+    ],
+    "zoom": 11.7,
+    "population": 83868,
+    "grid": "cities/jatani/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jatani/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jatani",
+        "name": "Jatani",
+        "nameIt": "Jatani",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.70707,
+          20.1639
+        ],
+        "zoom": 11.7,
+        "population": 83868,
+        "cells": 134,
+        "layer": "cities/jatani/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.70707,
+            20.1639
+          ]
+        },
+        "properties": {
+          "id": "jatani",
+          "name": "Jatani",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18.3,
+          "population": 83868
+        }
+      },
+      "summary": null
+    }
+  }
+}

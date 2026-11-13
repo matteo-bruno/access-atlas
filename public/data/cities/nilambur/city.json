@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nilambur",
+  "createdAt": "2026-10-08T16:01:33.769Z",
+  "updatedAt": "2026-10-08T16:01:33.769Z",
+  "meta": {
+    "name": "Nilambur",
+    "nameIt": "Nilambur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nilambur.geojson",
+      "sha256": "61a3b8e689044a755cc4fde56cb63fe3926f2448c39deae9fbc364c269230fd2",
+      "size": 143008,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nilambur",
+    "name": "Nilambur",
+    "nameIt": "Nilambur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.23473,
+      11.27851
+    ],
+    "zoom": 11.6,
+    "population": 30731,
+    "grid": "cities/nilambur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nilambur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nilambur",
+        "name": "Nilambur",
+        "nameIt": "Nilambur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.23473,
+          11.27851
+        ],
+        "zoom": 11.6,
+        "population": 30731,
+        "cells": 124,
+        "layer": "cities/nilambur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.23473,
+            11.27851
+          ]
+        },
+        "properties": {
+          "id": "nilambur",
+          "name": "Nilambur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 30731
+        }
+      },
+      "summary": null
+    }
+  }
+}

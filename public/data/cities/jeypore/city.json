@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jeypore",
+  "createdAt": "2026-10-08T15:42:21.107Z",
+  "updatedAt": "2026-10-08T15:42:21.107Z",
+  "meta": {
+    "name": "Jeypore",
+    "nameIt": "Jeypore",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jeypore.geojson",
+      "sha256": "02555676817117bd7c7902fdd9aa5b5e8d08a9d158824c5835e0614fe9f04af7",
+      "size": 99653,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jeypore",
+    "name": "Jeypore",
+    "nameIt": "Jeypore",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      82.57322,
+      18.85934
+    ],
+    "zoom": 12,
+    "population": 77093,
+    "grid": "cities/jeypore/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jeypore/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jeypore",
+        "name": "Jeypore",
+        "nameIt": "Jeypore",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          82.57322,
+          18.85934
+        ],
+        "zoom": 12,
+        "population": 77093,
+        "cells": 86,
+        "layer": "cities/jeypore/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            82.57322,
+            18.85934
+          ]
+        },
+        "properties": {
+          "id": "jeypore",
+          "name": "Jeypore",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 77093
+        }
+      },
+      "summary": null
+    }
+  }
+}

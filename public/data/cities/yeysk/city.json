@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yeysk",
+  "createdAt": "2026-10-08T16:23:47.305Z",
+  "updatedAt": "2026-10-08T16:23:47.305Z",
+  "meta": {
+    "name": "Yeysk",
+    "nameIt": "Yeysk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yeysk.geojson",
+      "sha256": "e88cfeedd034f7dd4ea998e7caad7c69176d3f0af691566d34ba8d08418f0685",
+      "size": 336508,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yeysk",
+    "name": "Yeysk",
+    "nameIt": "Yeysk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      38.27736,
+      46.69723
+    ],
+    "zoom": 10.9,
+    "population": 63661,
+    "grid": "cities/yeysk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yeysk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yeysk",
+        "name": "Yeysk",
+        "nameIt": "Yeysk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          38.27736,
+          46.69723
+        ],
+        "zoom": 10.9,
+        "population": 63661,
+        "cells": 296,
+        "layer": "cities/yeysk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.27736,
+            46.69723
+          ]
+        },
+        "properties": {
+          "id": "yeysk",
+          "name": "Yeysk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 7.5,
+          "population": 63661
+        }
+      },
+      "summary": null
+    }
+  }
+}

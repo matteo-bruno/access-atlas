@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "long-xuyen",
+  "createdAt": "2026-10-08T15:51:54.228Z",
+  "updatedAt": "2026-10-08T15:51:54.228Z",
+  "meta": {
+    "name": "Long Xuyên",
+    "nameIt": "Long Xuyên",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Long Xuyên.geojson",
+      "sha256": "751eb48cc43415522deca368526451c1fe8d50d51008b6e1187f7a23264fae2c",
+      "size": 1786528,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "long-xuyen",
+    "name": "Long Xuyên",
+    "nameIt": "Long Xuyên",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      105.44866,
+      10.36317
+    ],
+    "zoom": 9.1,
+    "population": 526169,
+    "grid": "cities/long-xuyen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/long-xuyen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "long-xuyen",
+        "name": "Long Xuyên",
+        "nameIt": "Long Xuyên",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          105.44866,
+          10.36317
+        ],
+        "zoom": 9.1,
+        "population": 526169,
+        "cells": 1522,
+        "layer": "cities/long-xuyen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.44866,
+            10.36317
+          ]
+        },
+        "properties": {
+          "id": "long-xuyen",
+          "name": "Long Xuyên",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 52.7,
+          "population": 526169
+        }
+      },
+      "summary": null
+    }
+  }
+}

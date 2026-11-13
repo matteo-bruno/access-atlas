@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sabzevar",
+  "createdAt": "2026-10-08T16:09:36.558Z",
+  "updatedAt": "2026-10-08T16:09:36.558Z",
+  "meta": {
+    "name": "Sabzevar",
+    "nameIt": "Sabzevar",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sabzevar.geojson",
+      "sha256": "a3bbbf001a66f100cc7a0541608fd4c70ea81f5d51e20cf7fb229f44ff227276",
+      "size": 241888,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sabzevar",
+    "name": "Sabzevar",
+    "nameIt": "Sabzevar",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      57.67998,
+      36.2116
+    ],
+    "zoom": 11.4,
+    "population": 185939,
+    "grid": "cities/sabzevar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sabzevar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sabzevar",
+        "name": "Sabzevar",
+        "nameIt": "Sabzevar",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          57.67998,
+          36.2116
+        ],
+        "zoom": 11.4,
+        "population": 185939,
+        "cells": 210,
+        "layer": "cities/sabzevar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            57.67998,
+            36.2116
+          ]
+        },
+        "properties": {
+          "id": "sabzevar",
+          "name": "Sabzevar",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 185939
+        }
+      },
+      "summary": null
+    }
+  }
+}

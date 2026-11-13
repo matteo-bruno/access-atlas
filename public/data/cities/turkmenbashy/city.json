@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "turkmenbashy",
+  "createdAt": "2026-10-08T16:19:20.231Z",
+  "updatedAt": "2026-10-08T16:19:20.231Z",
+  "meta": {
+    "name": "Turkmenbashy",
+    "nameIt": "Turkmenbashy",
+    "region": "Turkmenistan",
+    "regionIt": "Turkmenistan",
+    "country": "TM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Turkmenbashy.geojson",
+      "sha256": "f26e111872d2c85aa3e7679b6eac595ebeecbdf8186851ff61dadcadd85789ea",
+      "size": 160681,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "turkmenbashy",
+    "name": "Turkmenbashy",
+    "nameIt": "Turkmenbashy",
+    "region": "Turkmenistan",
+    "regionIt": "Turkmenistan",
+    "country": "TM",
+    "center": [
+      52.97402,
+      40.01216
+    ],
+    "zoom": 11.4,
+    "population": 31521,
+    "grid": "cities/turkmenbashy/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/turkmenbashy/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "turkmenbashy",
+        "name": "Turkmenbashy",
+        "nameIt": "Turkmenbashy",
+        "region": "Turkmenistan",
+        "regionIt": "Turkmenistan",
+        "country": "TM",
+        "center": [
+          52.97402,
+          40.01216
+        ],
+        "zoom": 11.4,
+        "population": 31521,
+        "cells": 139,
+        "layer": "cities/turkmenbashy/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            52.97402,
+            40.01216
+          ]
+        },
+        "properties": {
+          "id": "turkmenbashy",
+          "name": "Turkmenbashy",
+          "country": "TM",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 31521
+        }
+      },
+      "summary": null
+    }
+  }
+}

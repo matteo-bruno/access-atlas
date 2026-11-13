@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ringim",
+  "createdAt": "2026-10-08T16:08:49.052Z",
+  "updatedAt": "2026-10-08T16:08:49.052Z",
+  "meta": {
+    "name": "Ringim",
+    "nameIt": "Ringim",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ringim.geojson",
+      "sha256": "7d32b97c15da23f6c0cf0aead4bcd518b1d338c9e11ec149ba997ff39067101e",
+      "size": 83350,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ringim",
+    "name": "Ringim",
+    "nameIt": "Ringim",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      9.16049,
+      12.15221
+    ],
+    "zoom": 12,
+    "population": 39109,
+    "grid": "cities/ringim/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ringim/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ringim",
+        "name": "Ringim",
+        "nameIt": "Ringim",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          9.16049,
+          12.15221
+        ],
+        "zoom": 12,
+        "population": 39109,
+        "cells": 72,
+        "layer": "cities/ringim/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.16049,
+            12.15221
+          ]
+        },
+        "properties": {
+          "id": "ringim",
+          "name": "Ringim",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 39109
+        }
+      },
+      "summary": null
+    }
+  }
+}

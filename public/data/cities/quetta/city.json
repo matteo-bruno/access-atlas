@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "quetta",
+  "createdAt": "2026-10-08T16:07:36.122Z",
+  "updatedAt": "2026-10-08T16:07:36.122Z",
+  "meta": {
+    "name": "Quetta",
+    "nameIt": "Quetta",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Quetta.geojson",
+      "sha256": "7e75fd2a37fb40681f7f08b69ca7bc427e7aa02380fb91f070051f6057057239",
+      "size": 1542161,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "quetta",
+    "name": "Quetta",
+    "nameIt": "Quetta",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      66.993,
+      30.17887
+    ],
+    "zoom": 9.7,
+    "population": 1877119,
+    "grid": "cities/quetta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/quetta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "quetta",
+        "name": "Quetta",
+        "nameIt": "Quetta",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          66.993,
+          30.17887
+        ],
+        "zoom": 9.7,
+        "population": 1877119,
+        "cells": 1335,
+        "layer": "cities/quetta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            66.993,
+            30.17887
+          ]
+        },
+        "properties": {
+          "id": "quetta",
+          "name": "Quetta",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 45.7,
+          "population": 1877119
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kahului",
+  "createdAt": "2026-10-08T15:44:10.466Z",
+  "updatedAt": "2026-10-08T15:44:10.466Z",
+  "meta": {
+    "name": "Kahului",
+    "nameIt": "Kahului",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kahului.geojson",
+      "sha256": "05cef9de5c4e46e14bc175f1d7dafd802454c6d20f5f983adc5e30c1d2478fd1",
+      "size": 242289,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kahului",
+    "name": "Kahului",
+    "nameIt": "Kahului",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -156.48571,
+      20.88762
+    ],
+    "zoom": 11.4,
+    "population": 45452,
+    "grid": "cities/kahului/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kahului/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kahului",
+        "name": "Kahului",
+        "nameIt": "Kahului",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -156.48571,
+          20.88762
+        ],
+        "zoom": 11.4,
+        "population": 45452,
+        "cells": 207,
+        "layer": "cities/kahului/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -156.48571,
+            20.88762
+          ]
+        },
+        "properties": {
+          "id": "kahului",
+          "name": "Kahului",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 45452
+        }
+      },
+      "summary": null
+    }
+  }
+}

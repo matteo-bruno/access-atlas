@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lagos",
+  "createdAt": "2026-10-08T15:49:36.427Z",
+  "updatedAt": "2026-10-08T15:49:36.427Z",
+  "meta": {
+    "name": "Lagos",
+    "nameIt": "Lagos",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lagos.geojson",
+      "sha256": "9fd32801446c7f842c4baae63d8a4d960476d2507af6252d30dd7aa27fe54f49",
+      "size": 16043146,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lagos",
+    "name": "Lagos",
+    "nameIt": "Lagos",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      3.2964,
+      6.59449
+    ],
+    "zoom": 8.5,
+    "population": 14189368,
+    "grid": "cities/lagos/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lagos/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lagos",
+        "name": "Lagos",
+        "nameIt": "Lagos",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          3.2964,
+          6.59449
+        ],
+        "zoom": 8.5,
+        "population": 14189368,
+        "cells": 13866,
+        "layer": "cities/lagos/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.2964,
+            6.59449
+          ]
+        },
+        "properties": {
+          "id": "lagos",
+          "name": "Lagos",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 72.7,
+          "population": 14189368
+        }
+      },
+      "summary": null
+    }
+  }
+}

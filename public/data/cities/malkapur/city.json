@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "malkapur",
+  "createdAt": "2026-10-08T15:54:11.388Z",
+  "updatedAt": "2026-10-08T15:54:11.388Z",
+  "meta": {
+    "name": "Malkapur",
+    "nameIt": "Malkapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Malkapur.geojson",
+      "sha256": "4b431d7c5e7ff487158c012eac45ff7c00e59cf18c16dbcbb8f345147fe30028",
+      "size": 138989,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "malkapur",
+    "name": "Malkapur",
+    "nameIt": "Malkapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.20222,
+      20.88367
+    ],
+    "zoom": 11.9,
+    "population": 61109,
+    "grid": "cities/malkapur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/malkapur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "malkapur",
+        "name": "Malkapur",
+        "nameIt": "Malkapur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.20222,
+          20.88367
+        ],
+        "zoom": 11.9,
+        "population": 61109,
+        "cells": 120,
+        "layer": "cities/malkapur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.20222,
+            20.88367
+          ]
+        },
+        "properties": {
+          "id": "malkapur",
+          "name": "Malkapur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 61109
+        }
+      },
+      "summary": null
+    }
+  }
+}

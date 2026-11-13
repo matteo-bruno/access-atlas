@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kindia",
+  "createdAt": "2026-10-08T15:47:06.722Z",
+  "updatedAt": "2026-10-08T15:47:06.722Z",
+  "meta": {
+    "name": "Kindia",
+    "nameIt": "Kindia",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kindia.geojson",
+      "sha256": "7565adaa8666cdc99a0eb6024ace90aa130e8620a32ed09a46b359eb8e43d8cf",
+      "size": 526858,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kindia",
+    "name": "Kindia",
+    "nameIt": "Kindia",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN",
+    "center": [
+      -12.85864,
+      10.03918
+    ],
+    "zoom": 11,
+    "population": 197520,
+    "grid": "cities/kindia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kindia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kindia",
+        "name": "Kindia",
+        "nameIt": "Kindia",
+        "region": "Guinea",
+        "regionIt": "Guinea",
+        "country": "GN",
+        "center": [
+          -12.85864,
+          10.03918
+        ],
+        "zoom": 11,
+        "population": 197520,
+        "cells": 447,
+        "layer": "cities/kindia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -12.85864,
+            10.03918
+          ]
+        },
+        "properties": {
+          "id": "kindia",
+          "name": "Kindia",
+          "country": "GN",
+          "isStudy": true,
+          "proximityMinutes": 26.8,
+          "population": 197520
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "salmas",
+  "createdAt": "2026-10-08T16:10:09.185Z",
+  "updatedAt": "2026-10-08T16:10:09.185Z",
+  "meta": {
+    "name": "Salmas",
+    "nameIt": "Salmas",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Salmas.geojson",
+      "sha256": "2171eff24729cbac3684b2dbb67ba9c5ce091fc520dddf2b5ba3c6506750b8c6",
+      "size": 154419,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "salmas",
+    "name": "Salmas",
+    "nameIt": "Salmas",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      44.76776,
+      38.20155
+    ],
+    "zoom": 11.5,
+    "population": 89900,
+    "grid": "cities/salmas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/salmas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "salmas",
+        "name": "Salmas",
+        "nameIt": "Salmas",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          44.76776,
+          38.20155
+        ],
+        "zoom": 11.5,
+        "population": 89900,
+        "cells": 134,
+        "layer": "cities/salmas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.76776,
+            38.20155
+          ]
+        },
+        "properties": {
+          "id": "salmas",
+          "name": "Salmas",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 89900
+        }
+      },
+      "summary": null
+    }
+  }
+}

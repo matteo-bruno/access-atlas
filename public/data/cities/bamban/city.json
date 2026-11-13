@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bamban",
+  "createdAt": "2026-10-08T15:14:25.085Z",
+  "updatedAt": "2026-10-08T15:14:25.085Z",
+  "meta": {
+    "name": "Bamban",
+    "nameIt": "Bamban",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bamban.geojson",
+      "sha256": "10a24af85df0cad3972a2709deadebbd9a3eb7e6e0cd588c2e4cde3045581eb3",
+      "size": 161330,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bamban",
+    "name": "Bamban",
+    "nameIt": "Bamban",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      120.5621,
+      15.28088
+    ],
+    "zoom": 11.7,
+    "population": 39534,
+    "grid": "cities/bamban/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bamban/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bamban",
+        "name": "Bamban",
+        "nameIt": "Bamban",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          120.5621,
+          15.28088
+        ],
+        "zoom": 11.7,
+        "population": 39534,
+        "cells": 138,
+        "layer": "cities/bamban/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.5621,
+            15.28088
+          ]
+        },
+        "properties": {
+          "id": "bamban",
+          "name": "Bamban",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 8.2,
+          "population": 39534
+        }
+      },
+      "summary": null
+    }
+  }
+}

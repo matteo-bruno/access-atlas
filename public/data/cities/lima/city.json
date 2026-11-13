@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lima",
+  "createdAt": "2026-10-08T15:51:10.065Z",
+  "updatedAt": "2026-10-08T15:51:10.065Z",
+  "meta": {
+    "name": "Lima",
+    "nameIt": "Lima",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lima.geojson",
+      "sha256": "8e6b6d81fe4ec099beebe20f640e87b258136f3c964d3159dac48f060d773d97",
+      "size": 9215706,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lima",
+    "name": "Lima",
+    "nameIt": "Lima",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -77.01017,
+      -12.03981
+    ],
+    "zoom": 8.5,
+    "population": 10468479,
+    "grid": "cities/lima/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lima/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lima",
+        "name": "Lima",
+        "nameIt": "Lima",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -77.01017,
+          -12.03981
+        ],
+        "zoom": 8.5,
+        "population": 10468479,
+        "cells": 7902,
+        "layer": "cities/lima/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.01017,
+            -12.03981
+          ]
+        },
+        "properties": {
+          "id": "lima",
+          "name": "Lima",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 10.1,
+          "population": 10468479
+        }
+      },
+      "summary": null
+    }
+  }
+}

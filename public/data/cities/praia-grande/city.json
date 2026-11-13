@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "praia-grande",
+  "createdAt": "2026-10-08T16:06:30.005Z",
+  "updatedAt": "2026-10-08T16:06:30.005Z",
+  "meta": {
+    "name": "Praia Grande",
+    "nameIt": "Praia Grande",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Praia Grande.geojson",
+      "sha256": "021ada16a63ba79ea8463cd13598646648147ecc87e24d2558596b0ad24a6804",
+      "size": 1509570,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "praia-grande",
+    "name": "Praia Grande",
+    "nameIt": "Praia Grande",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -46.52876,
+      -24.04244
+    ],
+    "zoom": 8.7,
+    "population": 559215,
+    "grid": "cities/praia-grande/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/praia-grande/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "praia-grande",
+        "name": "Praia Grande",
+        "nameIt": "Praia Grande",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -46.52876,
+          -24.04244
+        ],
+        "zoom": 8.7,
+        "population": 559215,
+        "cells": 1285,
+        "layer": "cities/praia-grande/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.52876,
+            -24.04244
+          ]
+        },
+        "properties": {
+          "id": "praia-grande",
+          "name": "Praia Grande",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 33.9,
+          "population": 559215
+        }
+      },
+      "summary": null
+    }
+  }
+}

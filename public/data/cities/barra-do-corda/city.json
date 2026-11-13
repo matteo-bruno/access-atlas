@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barra-do-corda",
+  "createdAt": "2026-10-08T15:15:41.702Z",
+  "updatedAt": "2026-10-08T15:15:41.702Z",
+  "meta": {
+    "name": "Barra do Corda",
+    "nameIt": "Barra do Corda",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barra do Corda.geojson",
+      "sha256": "c81e0592ec9cd56fa5b7dce0774c1997c1b239ac869bdd5d9a7ce707b1a0b9a5",
+      "size": 133658,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barra-do-corda",
+    "name": "Barra do Corda",
+    "nameIt": "Barra do Corda",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -45.245,
+      -5.50688
+    ],
+    "zoom": 11.8,
+    "population": 43622,
+    "grid": "cities/barra-do-corda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barra-do-corda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barra-do-corda",
+        "name": "Barra do Corda",
+        "nameIt": "Barra do Corda",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -45.245,
+          -5.50688
+        ],
+        "zoom": 11.8,
+        "population": 43622,
+        "cells": 114,
+        "layer": "cities/barra-do-corda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -45.245,
+            -5.50688
+          ]
+        },
+        "properties": {
+          "id": "barra-do-corda",
+          "name": "Barra do Corda",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 43622
+        }
+      },
+      "summary": null
+    }
+  }
+}

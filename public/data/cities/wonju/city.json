@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wonju",
+  "createdAt": "2026-10-08T16:21:48.007Z",
+  "updatedAt": "2026-10-08T16:21:48.007Z",
+  "meta": {
+    "name": "Wonju",
+    "nameIt": "Wonju",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wonju.geojson",
+      "sha256": "c7278598ad1196f140f18f036547c1fc8e839e3ba19a0f895efe194accba22e9",
+      "size": 627763,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wonju",
+    "name": "Wonju",
+    "nameIt": "Wonju",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      127.94991,
+      37.34105
+    ],
+    "zoom": 11,
+    "population": 250829,
+    "grid": "cities/wonju/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 170
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wonju/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wonju",
+        "name": "Wonju",
+        "nameIt": "Wonju",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          127.94991,
+          37.34105
+        ],
+        "zoom": 11,
+        "population": 250829,
+        "cells": 547,
+        "layer": "cities/wonju/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 170
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            127.94991,
+            37.34105
+          ]
+        },
+        "properties": {
+          "id": "wonju",
+          "name": "Wonju",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 10.8,
+          "population": 250829
+        }
+      },
+      "summary": null
+    }
+  }
+}

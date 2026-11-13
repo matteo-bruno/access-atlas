@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dungu",
+  "createdAt": "2026-10-08T15:31:22.188Z",
+  "updatedAt": "2026-10-08T15:31:22.188Z",
+  "meta": {
+    "name": "Dungu",
+    "nameIt": "Dungu",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dungu.geojson",
+      "sha256": "a3b6cfc3696b9440f9dda155829d5520fbf4d188b27eb7f1f701df807d862d75",
+      "size": 173192,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dungu",
+    "name": "Dungu",
+    "nameIt": "Dungu",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      28.56329,
+      3.61213
+    ],
+    "zoom": 11.5,
+    "population": 101010,
+    "grid": "cities/dungu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dungu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dungu",
+        "name": "Dungu",
+        "nameIt": "Dungu",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          28.56329,
+          3.61213
+        ],
+        "zoom": 11.5,
+        "population": 101010,
+        "cells": 149,
+        "layer": "cities/dungu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.56329,
+            3.61213
+          ]
+        },
+        "properties": {
+          "id": "dungu",
+          "name": "Dungu",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 101010
+        }
+      },
+      "summary": null
+    }
+  }
+}

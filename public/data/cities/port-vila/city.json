@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "port-vila",
+  "createdAt": "2026-10-08T16:06:16.486Z",
+  "updatedAt": "2026-10-08T16:06:16.486Z",
+  "meta": {
+    "name": "Port Vila",
+    "nameIt": "Port Vila",
+    "region": "Vanuatu",
+    "regionIt": "Vanuatu",
+    "country": "VU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Port Vila.geojson",
+      "sha256": "0539f05633cc91e13a10f4b344e49abfa5dcf5c0bf773132b49d5c218c8e92ff",
+      "size": 384689,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "port-vila",
+    "name": "Port Vila",
+    "nameIt": "Port Vila",
+    "region": "Vanuatu",
+    "regionIt": "Vanuatu",
+    "country": "VU",
+    "center": [
+      168.31376,
+      -17.73402
+    ],
+    "zoom": 10.9,
+    "population": 46434,
+    "grid": "cities/port-vila/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/port-vila/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "port-vila",
+        "name": "Port Vila",
+        "nameIt": "Port Vila",
+        "region": "Vanuatu",
+        "regionIt": "Vanuatu",
+        "country": "VU",
+        "center": [
+          168.31376,
+          -17.73402
+        ],
+        "zoom": 10.9,
+        "population": 46434,
+        "cells": 328,
+        "layer": "cities/port-vila/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            168.31376,
+            -17.73402
+          ]
+        },
+        "properties": {
+          "id": "port-vila",
+          "name": "Port Vila",
+          "country": "VU",
+          "isStudy": true,
+          "proximityMinutes": 23,
+          "population": 46434
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sunabeda",
+  "createdAt": "2026-10-08T16:15:11.493Z",
+  "updatedAt": "2026-10-08T16:15:11.493Z",
+  "meta": {
+    "name": "Sunabeda",
+    "nameIt": "Sunabeda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sunabeda.geojson",
+      "sha256": "49777433fdac6495ca873ee3275f966748f7a76a5ece9f115417fe3b6e2f12c4",
+      "size": 162111,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sunabeda",
+    "name": "Sunabeda",
+    "nameIt": "Sunabeda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      82.83009,
+      18.73538
+    ],
+    "zoom": 11.7,
+    "population": 40120,
+    "grid": "cities/sunabeda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sunabeda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sunabeda",
+        "name": "Sunabeda",
+        "nameIt": "Sunabeda",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          82.83009,
+          18.73538
+        ],
+        "zoom": 11.7,
+        "population": 40120,
+        "cells": 140,
+        "layer": "cities/sunabeda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            82.83009,
+            18.73538
+          ]
+        },
+        "properties": {
+          "id": "sunabeda",
+          "name": "Sunabeda",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 40120
+        }
+      },
+      "summary": null
+    }
+  }
+}

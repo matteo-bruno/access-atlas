@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "butler",
+  "createdAt": "2026-10-08T15:21:15.470Z",
+  "updatedAt": "2026-10-08T15:21:15.470Z",
+  "meta": {
+    "name": "Butler",
+    "nameIt": "Butler",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Butler.geojson",
+      "sha256": "6b77d7c85e3f65ac5e234ce9f699eb6f593a803631b3cbdaf811b68dae2bea7f",
+      "size": 536507,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "butler",
+    "name": "Butler",
+    "nameIt": "Butler",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      115.70801,
+      -31.66099
+    ],
+    "zoom": 11,
+    "population": 67873,
+    "grid": "cities/butler/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/butler/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "butler",
+        "name": "Butler",
+        "nameIt": "Butler",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          115.70801,
+          -31.66099
+        ],
+        "zoom": 11,
+        "population": 67873,
+        "cells": 458,
+        "layer": "cities/butler/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.70801,
+            -31.66099
+          ]
+        },
+        "properties": {
+          "id": "butler",
+          "name": "Butler",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 67873
+        }
+      },
+      "summary": null
+    }
+  }
+}

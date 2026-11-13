@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bayonne",
+  "createdAt": "2026-10-08T15:16:23.879Z",
+  "updatedAt": "2026-10-08T15:16:23.879Z",
+  "meta": {
+    "name": "Bayonne",
+    "nameIt": "Bayonne",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bayonne.geojson",
+      "sha256": "78025e77a80e2f579892c05ddb62763a432a1b6dc692e76a3c719d7e5ee02aa7",
+      "size": 420245,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bayonne",
+    "name": "Bayonne",
+    "nameIt": "Bayonne",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      -1.50865,
+      43.48768
+    ],
+    "zoom": 10.7,
+    "population": 103018,
+    "grid": "cities/bayonne/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bayonne/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bayonne",
+        "name": "Bayonne",
+        "nameIt": "Bayonne",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -1.50865,
+          43.48768
+        ],
+        "zoom": 10.7,
+        "population": 103018,
+        "cells": 366,
+        "layer": "cities/bayonne/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.50865,
+            43.48768
+          ]
+        },
+        "properties": {
+          "id": "bayonne",
+          "name": "Bayonne",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 7.1,
+          "population": 103018
+        }
+      },
+      "summary": null
+    }
+  }
+}

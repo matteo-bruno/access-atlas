@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sangaredi",
+  "createdAt": "2026-10-08T16:10:52.897Z",
+  "updatedAt": "2026-10-08T16:10:52.897Z",
+  "meta": {
+    "name": "Sangarédi",
+    "nameIt": "Sangarédi",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sangarédi.geojson",
+      "sha256": "0c25ca85f2b911d9fa6d22b79e74f5ffb212466510776a9336cc66aee21fa688",
+      "size": 164870,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sangaredi",
+    "name": "Sangarédi",
+    "nameIt": "Sangarédi",
+    "region": "Guinea",
+    "regionIt": "Guinea",
+    "country": "GN",
+    "center": [
+      -13.81027,
+      11.10493
+    ],
+    "zoom": 11.9,
+    "population": 95384,
+    "grid": "cities/sangaredi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sangaredi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sangaredi",
+        "name": "Sangarédi",
+        "nameIt": "Sangarédi",
+        "region": "Guinea",
+        "regionIt": "Guinea",
+        "country": "GN",
+        "center": [
+          -13.81027,
+          11.10493
+        ],
+        "zoom": 11.9,
+        "population": 95384,
+        "cells": 140,
+        "layer": "cities/sangaredi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -13.81027,
+            11.10493
+          ]
+        },
+        "properties": {
+          "id": "sangaredi",
+          "name": "Sangarédi",
+          "country": "GN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 95384
+        }
+      },
+      "summary": null
+    }
+  }
+}

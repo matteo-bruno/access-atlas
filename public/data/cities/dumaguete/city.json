@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dumaguete",
+  "createdAt": "2026-10-08T15:31:16.766Z",
+  "updatedAt": "2026-10-08T15:31:16.766Z",
+  "meta": {
+    "name": "Dumaguete",
+    "nameIt": "Dumaguete",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dumaguete.geojson",
+      "sha256": "beb12188fb8f2a5389a65d49e0fce2eee4141d69edefa9230ebba5e540d3bbc8",
+      "size": 536794,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dumaguete",
+    "name": "Dumaguete",
+    "nameIt": "Dumaguete",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      123.28841,
+      9.31359
+    ],
+    "zoom": 10.7,
+    "population": 184969,
+    "grid": "cities/dumaguete/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dumaguete/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dumaguete",
+        "name": "Dumaguete",
+        "nameIt": "Dumaguete",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          123.28841,
+          9.31359
+        ],
+        "zoom": 10.7,
+        "population": 184969,
+        "cells": 467,
+        "layer": "cities/dumaguete/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.28841,
+            9.31359
+          ]
+        },
+        "properties": {
+          "id": "dumaguete",
+          "name": "Dumaguete",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 22.8,
+          "population": 184969
+        }
+      },
+      "summary": null
+    }
+  }
+}

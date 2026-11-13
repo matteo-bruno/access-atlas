@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kousseri",
+  "createdAt": "2026-10-08T15:48:14.924Z",
+  "updatedAt": "2026-10-08T15:48:14.924Z",
+  "meta": {
+    "name": "Kousseri",
+    "nameIt": "Kousseri",
+    "region": "Chad",
+    "regionIt": "Ciad",
+    "country": "TD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kousseri.geojson",
+      "sha256": "e32a7e0d314bd1366e6b8f6cbac59c0ebadcc5edf29e2a9610c2258daa5c8146",
+      "size": 254382,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kousseri",
+    "name": "Kousseri",
+    "nameIt": "Kousseri",
+    "region": "Chad",
+    "regionIt": "Ciad",
+    "country": "TD",
+    "center": [
+      15.01868,
+      12.08281
+    ],
+    "zoom": 11.4,
+    "population": 255691,
+    "grid": "cities/kousseri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kousseri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kousseri",
+        "name": "Kousseri",
+        "nameIt": "Kousseri",
+        "region": "Chad",
+        "regionIt": "Ciad",
+        "country": "TD",
+        "center": [
+          15.01868,
+          12.08281
+        ],
+        "zoom": 11.4,
+        "population": 255691,
+        "cells": 218,
+        "layer": "cities/kousseri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            15.01868,
+            12.08281
+          ]
+        },
+        "properties": {
+          "id": "kousseri",
+          "name": "Kousseri",
+          "country": "TD",
+          "isStudy": true,
+          "proximityMinutes": 15.9,
+          "population": 255691
+        }
+      },
+      "summary": null
+    }
+  }
+}

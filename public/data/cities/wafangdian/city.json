@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wafangdian",
+  "createdAt": "2026-10-08T16:21:10.756Z",
+  "updatedAt": "2026-10-08T16:21:10.756Z",
+  "meta": {
+    "name": "Wafangdian",
+    "nameIt": "Wafangdian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wafangdian.geojson",
+      "sha256": "a2cc50220e7edbe85748835242708e24c01b24fb9543e3ba7113211aa0029ca4",
+      "size": 562556,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wafangdian",
+    "name": "Wafangdian",
+    "nameIt": "Wafangdian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      121.99605,
+      39.62471
+    ],
+    "zoom": 11.1,
+    "population": 230280,
+    "grid": "cities/wafangdian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 160
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wafangdian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wafangdian",
+        "name": "Wafangdian",
+        "nameIt": "Wafangdian",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          121.99605,
+          39.62471
+        ],
+        "zoom": 11.1,
+        "population": 230280,
+        "cells": 482,
+        "layer": "cities/wafangdian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 160
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.99605,
+            39.62471
+          ]
+        },
+        "properties": {
+          "id": "wafangdian",
+          "name": "Wafangdian",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 230280
+        }
+      },
+      "summary": null
+    }
+  }
+}

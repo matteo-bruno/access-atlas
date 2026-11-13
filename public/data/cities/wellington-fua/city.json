@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wellington-fua",
+  "createdAt": "2026-10-19T16:59:01.161Z",
+  "updatedAt": "2026-10-19T16:59:01.161Z",
+  "meta": {
+    "name": "Wellington",
+    "nameIt": "Wellington",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "wellington-fua",
+    "name": "Wellington",
+    "nameIt": "Wellington",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ",
+    "extent": "fua",
+    "core": "wellington",
+    "center": [
+      174.84233,
+      -41.23371
+    ],
+    "zoom": 9.1,
+    "population": 393595,
+    "grid": "cities/wellington-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wellington-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wellington-fua",
+        "name": "Wellington",
+        "nameIt": "Wellington",
+        "region": "New Zealand",
+        "regionIt": "Nuova Zelanda",
+        "country": "NZ",
+        "extent": "fua",
+        "core": "wellington",
+        "center": [
+          174.84233,
+          -41.23371
+        ],
+        "zoom": 9.1,
+        "population": 393595,
+        "cells": 4125,
+        "layer": "cities/wellington-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            174.84233,
+            -41.23371
+          ]
+        },
+        "properties": {
+          "id": "wellington-fua",
+          "name": "Wellington",
+          "country": "NZ",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 393595
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "usulutan",
+  "createdAt": "2026-10-08T16:20:09.362Z",
+  "updatedAt": "2026-10-08T16:20:09.362Z",
+  "meta": {
+    "name": "Usulután",
+    "nameIt": "Usulután",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Usulután.geojson",
+      "sha256": "2368b84dfe15a3ce204f5c7a5b7dac39056ab58b612684f4b51e13bd4f721809",
+      "size": 172252,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "usulutan",
+    "name": "Usulután",
+    "nameIt": "Usulután",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV",
+    "center": [
+      -88.43639,
+      13.3423
+    ],
+    "zoom": 11.6,
+    "population": 53583,
+    "grid": "cities/usulutan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/usulutan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "usulutan",
+        "name": "Usulután",
+        "nameIt": "Usulután",
+        "region": "El Salvador",
+        "regionIt": "El Salvador",
+        "country": "SV",
+        "center": [
+          -88.43639,
+          13.3423
+        ],
+        "zoom": 11.6,
+        "population": 53583,
+        "cells": 148,
+        "layer": "cities/usulutan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.43639,
+            13.3423
+          ]
+        },
+        "properties": {
+          "id": "usulutan",
+          "name": "Usulután",
+          "country": "SV",
+          "isStudy": true,
+          "proximityMinutes": 13.7,
+          "population": 53583
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "elland",
+  "createdAt": "2026-10-08T15:32:10.779Z",
+  "updatedAt": "2026-10-08T15:32:10.779Z",
+  "meta": {
+    "name": "Elland",
+    "nameIt": "Elland",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Elland.geojson",
+      "sha256": "7dada9f721fd968ac321bde963b1ddfa0e5b25153087303923859f2f91642835",
+      "size": 463106,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "elland",
+    "name": "Elland",
+    "nameIt": "Elland",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.87797,
+      53.71899
+    ],
+    "zoom": 10.8,
+    "population": 106424,
+    "grid": "cities/elland/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/elland/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "elland",
+        "name": "Elland",
+        "nameIt": "Elland",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.87797,
+          53.71899
+        ],
+        "zoom": 10.8,
+        "population": 106424,
+        "cells": 401,
+        "layer": "cities/elland/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.87797,
+            53.71899
+          ]
+        },
+        "properties": {
+          "id": "elland",
+          "name": "Elland",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 106424
+        }
+      },
+      "summary": null
+    }
+  }
+}

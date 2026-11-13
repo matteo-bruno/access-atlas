@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tuen-mun",
+  "createdAt": "2026-10-08T16:19:04.145Z",
+  "updatedAt": "2026-10-08T16:19:04.145Z",
+  "meta": {
+    "name": "Tuen Mun",
+    "nameIt": "Tuen Mun",
+    "region": "Hong Kong",
+    "regionIt": "Hong Kong",
+    "country": "HK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tuen Mun.geojson",
+      "sha256": "0e4c73de5d13834684b2fc58df93cbf46e35f4d69c077d94f1b22e9656f665e5",
+      "size": 1275615,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tuen-mun",
+    "name": "Tuen Mun",
+    "nameIt": "Tuen Mun",
+    "region": "Hong Kong",
+    "regionIt": "Hong Kong",
+    "country": "HK",
+    "center": [
+      114.00405,
+      22.41723
+    ],
+    "zoom": 9.7,
+    "population": 0,
+    "grid": "cities/tuen-mun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tuen-mun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tuen-mun",
+        "name": "Tuen Mun",
+        "nameIt": "Tuen Mun",
+        "region": "Hong Kong",
+        "regionIt": "Hong Kong",
+        "country": "HK",
+        "center": [
+          114.00405,
+          22.41723
+        ],
+        "zoom": 9.7,
+        "population": 0,
+        "cells": 1105,
+        "layer": "cities/tuen-mun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.00405,
+            22.41723
+          ]
+        },
+        "properties": {
+          "id": "tuen-mun",
+          "name": "Tuen Mun",
+          "country": "HK",
+          "isStudy": true,
+          "proximityMinutes": 22.1,
+          "population": 0
+        }
+      },
+      "summary": null
+    }
+  }
+}

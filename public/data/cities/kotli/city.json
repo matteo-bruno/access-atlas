@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kotli",
+  "createdAt": "2026-10-08T15:48:10.443Z",
+  "updatedAt": "2026-10-08T15:48:10.443Z",
+  "meta": {
+    "name": "Kotli",
+    "nameIt": "Kotli",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kotli.geojson",
+      "sha256": "951b9a509b02b3997570bc116d6817d55085299c4c1bfeeb6966b77b540ed60b",
+      "size": 194134,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kotli",
+    "name": "Kotli",
+    "nameIt": "Kotli",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      73.90298,
+      33.50838
+    ],
+    "zoom": 11.6,
+    "population": 99941,
+    "grid": "cities/kotli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kotli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kotli",
+        "name": "Kotli",
+        "nameIt": "Kotli",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          73.90298,
+          33.50838
+        ],
+        "zoom": 11.6,
+        "population": 99941,
+        "cells": 168,
+        "layer": "cities/kotli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.90298,
+            33.50838
+          ]
+        },
+        "properties": {
+          "id": "kotli",
+          "name": "Kotli",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 99941
+        }
+      },
+      "summary": null
+    }
+  }
+}

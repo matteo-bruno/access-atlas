@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "miami",
+  "createdAt": "2026-10-08T15:56:53.736Z",
+  "updatedAt": "2026-10-08T15:56:53.736Z",
+  "meta": {
+    "name": "Miami",
+    "nameIt": "Miami",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Miami.geojson",
+      "sha256": "665506ae45acc0072ff5e167041b87596e298f15764e5ffba2cf512f99d292f8",
+      "size": 34320092,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "miami",
+    "name": "Miami",
+    "nameIt": "Miami",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -80.23008,
+      26.07046
+    ],
+    "zoom": 8.5,
+    "population": 6308432,
+    "grid": "cities/miami/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/miami/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "miami",
+        "name": "Miami",
+        "nameIt": "Miami",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -80.23008,
+          26.07046
+        ],
+        "zoom": 8.5,
+        "population": 6308432,
+        "cells": 29588,
+        "layer": "cities/miami/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.23008,
+            26.07046
+          ]
+        },
+        "properties": {
+          "id": "miami",
+          "name": "Miami",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 24.8,
+          "population": 6308432
+        }
+      },
+      "summary": null
+    }
+  }
+}

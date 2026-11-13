@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pitalito",
+  "createdAt": "2026-10-08T16:05:51.134Z",
+  "updatedAt": "2026-10-08T16:05:51.134Z",
+  "meta": {
+    "name": "Pitalito",
+    "nameIt": "Pitalito",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pitalito.geojson",
+      "sha256": "2c34b449e724cfe59762a355ae4efcc45c3789233b63424d2b568aeb6e1d1028",
+      "size": 142071,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pitalito",
+    "name": "Pitalito",
+    "nameIt": "Pitalito",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -76.05051,
+      1.85214
+    ],
+    "zoom": 11.9,
+    "population": 90632,
+    "grid": "cities/pitalito/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pitalito/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pitalito",
+        "name": "Pitalito",
+        "nameIt": "Pitalito",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -76.05051,
+          1.85214
+        ],
+        "zoom": 11.9,
+        "population": 90632,
+        "cells": 122,
+        "layer": "cities/pitalito/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.05051,
+            1.85214
+          ]
+        },
+        "properties": {
+          "id": "pitalito",
+          "name": "Pitalito",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 90632
+        }
+      },
+      "summary": null
+    }
+  }
+}

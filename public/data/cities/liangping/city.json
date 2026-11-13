@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "liangping",
+  "createdAt": "2026-10-08T15:50:54.786Z",
+  "updatedAt": "2026-10-08T15:50:54.786Z",
+  "meta": {
+    "name": "Liangping",
+    "nameIt": "Liangping",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Liangping.geojson",
+      "sha256": "fc1f8a8229bbaa1c42202df738d6de0523a29f43eddab170db38b9f20d467594",
+      "size": 154207,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "liangping",
+    "name": "Liangping",
+    "nameIt": "Liangping",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      107.78187,
+      30.66656
+    ],
+    "zoom": 11.4,
+    "population": 156651,
+    "grid": "cities/liangping/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/liangping/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "liangping",
+        "name": "Liangping",
+        "nameIt": "Liangping",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          107.78187,
+          30.66656
+        ],
+        "zoom": 11.4,
+        "population": 156651,
+        "cells": 132,
+        "layer": "cities/liangping/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.78187,
+            30.66656
+          ]
+        },
+        "properties": {
+          "id": "liangping",
+          "name": "Liangping",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 156651
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gliwice",
+  "createdAt": "2026-10-08T15:35:23.520Z",
+  "updatedAt": "2026-10-08T15:35:23.520Z",
+  "meta": {
+    "name": "Gliwice",
+    "nameIt": "Gliwice",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gliwice.geojson",
+      "sha256": "2218940d175c655d7d3e0880d4339b5bd03ee515cb8ee24d34e06882c4a7a6a6",
+      "size": 267956,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gliwice",
+    "name": "Gliwice",
+    "nameIt": "Gliwice",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      18.67334,
+      50.29832
+    ],
+    "zoom": 11.5,
+    "population": 87691,
+    "grid": "cities/gliwice/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gliwice/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gliwice",
+        "name": "Gliwice",
+        "nameIt": "Gliwice",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          18.67334,
+          50.29832
+        ],
+        "zoom": 11.5,
+        "population": 87691,
+        "cells": 235,
+        "layer": "cities/gliwice/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.67334,
+            50.29832
+          ]
+        },
+        "properties": {
+          "id": "gliwice",
+          "name": "Gliwice",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 7.8,
+          "population": 87691
+        }
+      },
+      "summary": null
+    }
+  }
+}

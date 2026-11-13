@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "malaga-fua",
+  "createdAt": "2026-10-19T16:57:34.770Z",
+  "updatedAt": "2026-10-19T16:57:34.770Z",
+  "meta": {
+    "name": "Málaga",
+    "nameIt": "Malaga",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "malaga-fua",
+    "name": "Málaga",
+    "nameIt": "Malaga",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "extent": "fua",
+    "core": "malaga",
+    "center": [
+      -4.47595,
+      36.67674
+    ],
+    "zoom": 8.5,
+    "population": 1157540,
+    "grid": "cities/malaga-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/malaga-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "malaga-fua",
+        "name": "Málaga",
+        "nameIt": "Malaga",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "extent": "fua",
+        "core": "malaga",
+        "center": [
+          -4.47595,
+          36.67674
+        ],
+        "zoom": 8.5,
+        "population": 1157540,
+        "cells": 11424,
+        "layer": "cities/malaga-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -4.47595,
+            36.67674
+          ]
+        },
+        "properties": {
+          "id": "malaga-fua",
+          "name": "Málaga",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 9.1,
+          "population": 1157540
+        }
+      },
+      "summary": null
+    }
+  }
+}

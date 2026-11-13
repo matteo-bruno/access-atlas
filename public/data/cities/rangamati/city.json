@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rangamati",
+  "createdAt": "2026-10-08T16:08:13.359Z",
+  "updatedAt": "2026-10-08T16:08:13.359Z",
+  "meta": {
+    "name": "Rangamati",
+    "nameIt": "Rangamati",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rangamati.geojson",
+      "sha256": "3806f36e7106e8ac497ebbb82eeb1c7b67066c4896f75ca684220886aec82664",
+      "size": 305617,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rangamati",
+    "name": "Rangamati",
+    "nameIt": "Rangamati",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      92.17414,
+      22.64902
+    ],
+    "zoom": 11,
+    "population": 32860,
+    "grid": "cities/rangamati/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rangamati/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rangamati",
+        "name": "Rangamati",
+        "nameIt": "Rangamati",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          92.17414,
+          22.64902
+        ],
+        "zoom": 11,
+        "population": 32860,
+        "cells": 264,
+        "layer": "cities/rangamati/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            92.17414,
+            22.64902
+          ]
+        },
+        "properties": {
+          "id": "rangamati",
+          "name": "Rangamati",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 32860
+        }
+      },
+      "summary": null
+    }
+  }
+}

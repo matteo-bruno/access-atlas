@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kaspiysk",
+  "createdAt": "2026-10-08T15:45:30.650Z",
+  "updatedAt": "2026-10-08T15:45:30.650Z",
+  "meta": {
+    "name": "Kaspiysk",
+    "nameIt": "Kaspiysk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kaspiysk.geojson",
+      "sha256": "1a447eed4047b982bca574c94587ecd0ff4859f1a212a47c19c705329fe6fa8f",
+      "size": 352075,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kaspiysk",
+    "name": "Kaspiysk",
+    "nameIt": "Kaspiysk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      47.62705,
+      42.88557
+    ],
+    "zoom": 11.2,
+    "population": 125881,
+    "grid": "cities/kaspiysk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kaspiysk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kaspiysk",
+        "name": "Kaspiysk",
+        "nameIt": "Kaspiysk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          47.62705,
+          42.88557
+        ],
+        "zoom": 11.2,
+        "population": 125881,
+        "cells": 305,
+        "layer": "cities/kaspiysk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            47.62705,
+            42.88557
+          ]
+        },
+        "properties": {
+          "id": "kaspiysk",
+          "name": "Kaspiysk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 22.9,
+          "population": 125881
+        }
+      },
+      "summary": null
+    }
+  }
+}

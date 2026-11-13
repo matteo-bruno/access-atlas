@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barogram",
+  "createdAt": "2026-10-08T15:15:40.414Z",
+  "updatedAt": "2026-10-08T15:15:40.414Z",
+  "meta": {
+    "name": "Barogram",
+    "nameIt": "Barogram",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barogram.geojson",
+      "sha256": "f343ef051633ef006d1d05369b4b7aa9d05218dde42fe0bcbc74f8e17ee6abaf",
+      "size": 257128,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barogram",
+    "name": "Barogram",
+    "nameIt": "Barogram",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.90706,
+      24.00749
+    ],
+    "zoom": 10.9,
+    "population": 34554,
+    "grid": "cities/barogram/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barogram/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barogram",
+        "name": "Barogram",
+        "nameIt": "Barogram",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.90706,
+          24.00749
+        ],
+        "zoom": 10.9,
+        "population": 34554,
+        "cells": 222,
+        "layer": "cities/barogram/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.90706,
+            24.00749
+          ]
+        },
+        "properties": {
+          "id": "barogram",
+          "name": "Barogram",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 34554
+        }
+      },
+      "summary": null
+    }
+  }
+}

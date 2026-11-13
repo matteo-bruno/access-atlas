@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cardenas",
+  "createdAt": "2026-10-08T15:27:11.887Z",
+  "updatedAt": "2026-10-08T15:27:11.887Z",
+  "meta": {
+    "name": "Cárdenas",
+    "nameIt": "Cárdenas",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cárdenas.geojson",
+      "sha256": "6db66711075f50cb4b965bd9d8e5038b9bae5c8e8212f2fb972c51c0cf68d1ba",
+      "size": 282629,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cardenas",
+    "name": "Cárdenas",
+    "nameIt": "Cárdenas",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -93.37538,
+      17.99039
+    ],
+    "zoom": 11.2,
+    "population": 94766,
+    "grid": "cities/cardenas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cardenas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cardenas",
+        "name": "Cárdenas",
+        "nameIt": "Cárdenas",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -93.37538,
+          17.99039
+        ],
+        "zoom": 11.2,
+        "population": 94766,
+        "cells": 242,
+        "layer": "cities/cardenas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -93.37538,
+            17.99039
+          ]
+        },
+        "properties": {
+          "id": "cardenas",
+          "name": "Cárdenas",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 94766
+        }
+      },
+      "summary": null
+    }
+  }
+}

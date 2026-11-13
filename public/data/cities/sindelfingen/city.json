@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sindelfingen",
+  "createdAt": "2026-10-08T16:13:48.730Z",
+  "updatedAt": "2026-10-08T16:13:48.730Z",
+  "meta": {
+    "name": "Sindelfingen",
+    "nameIt": "Sindelfingen",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sindelfingen.geojson",
+      "sha256": "2bc557ec743b46f3d03540dec03d0c39861d6a4d6fa15e2cbdb43a608e599aa8",
+      "size": 287586,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sindelfingen",
+    "name": "Sindelfingen",
+    "nameIt": "Sindelfingen",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      9.0082,
+      48.69527
+    ],
+    "zoom": 11.3,
+    "population": 84680,
+    "grid": "cities/sindelfingen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sindelfingen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sindelfingen",
+        "name": "Sindelfingen",
+        "nameIt": "Sindelfingen",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.0082,
+          48.69527
+        ],
+        "zoom": 11.3,
+        "population": 84680,
+        "cells": 254,
+        "layer": "cities/sindelfingen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.0082,
+            48.69527
+          ]
+        },
+        "properties": {
+          "id": "sindelfingen",
+          "name": "Sindelfingen",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 8.2,
+          "population": 84680
+        }
+      },
+      "summary": null
+    }
+  }
+}

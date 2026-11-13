@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ishinomaki",
+  "createdAt": "2026-10-08T15:41:10.515Z",
+  "updatedAt": "2026-10-08T15:41:10.515Z",
+  "meta": {
+    "name": "Ishinomaki",
+    "nameIt": "Ishinomaki",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ishinomaki.geojson",
+      "sha256": "56258881c4161a3168ae4b519af13fb149d6f1a3f58037612500a966b24aeb1c",
+      "size": 473066,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ishinomaki",
+    "name": "Ishinomaki",
+    "nameIt": "Ishinomaki",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      141.2766,
+      38.43267
+    ],
+    "zoom": 10.6,
+    "population": 94699,
+    "grid": "cities/ishinomaki/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ishinomaki/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ishinomaki",
+        "name": "Ishinomaki",
+        "nameIt": "Ishinomaki",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          141.2766,
+          38.43267
+        ],
+        "zoom": 10.6,
+        "population": 94699,
+        "cells": 411,
+        "layer": "cities/ishinomaki/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            141.2766,
+            38.43267
+          ]
+        },
+        "properties": {
+          "id": "ishinomaki",
+          "name": "Ishinomaki",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 94699
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shankarpur",
+  "createdAt": "2026-10-08T16:12:34.379Z",
+  "updatedAt": "2026-10-08T16:12:34.379Z",
+  "meta": {
+    "name": "Shankarpur",
+    "nameIt": "Shankarpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shankarpur.geojson",
+      "sha256": "eb463d683dfe2f457b8917b309ee58b18c96057f8cf58209be9b4dd337fb6903",
+      "size": 240940,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shankarpur",
+    "name": "Shankarpur",
+    "nameIt": "Shankarpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.0688,
+      26.76952
+    ],
+    "zoom": 11.2,
+    "population": 45743,
+    "grid": "cities/shankarpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shankarpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shankarpur",
+        "name": "Shankarpur",
+        "nameIt": "Shankarpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.0688,
+          26.76952
+        ],
+        "zoom": 11.2,
+        "population": 45743,
+        "cells": 208,
+        "layer": "cities/shankarpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.0688,
+            26.76952
+          ]
+        },
+        "properties": {
+          "id": "shankarpur",
+          "name": "Shankarpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 45743
+        }
+      },
+      "summary": null
+    }
+  }
+}

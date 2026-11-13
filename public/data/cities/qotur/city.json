@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "qotur",
+  "createdAt": "2026-10-08T16:07:32.482Z",
+  "updatedAt": "2026-10-08T16:07:32.482Z",
+  "meta": {
+    "name": "Qotur",
+    "nameIt": "Qotur",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Qotur.geojson",
+      "sha256": "2a577d3f83ab2ad82aba77203a9e1ee234bc1eb91c2b30296523d4a600a30d9d",
+      "size": 65235,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "qotur",
+    "name": "Qotur",
+    "nameIt": "Qotur",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      30.95574,
+      30.97223
+    ],
+    "zoom": 12,
+    "population": 44475,
+    "grid": "cities/qotur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/qotur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "qotur",
+        "name": "Qotur",
+        "nameIt": "Qotur",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          30.95574,
+          30.97223
+        ],
+        "zoom": 12,
+        "population": 44475,
+        "cells": 56,
+        "layer": "cities/qotur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.95574,
+            30.97223
+          ]
+        },
+        "properties": {
+          "id": "qotur",
+          "name": "Qotur",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 44475
+        }
+      },
+      "summary": null
+    }
+  }
+}

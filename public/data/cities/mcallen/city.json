@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mcallen",
+  "createdAt": "2026-10-08T15:56:06.932Z",
+  "updatedAt": "2026-10-08T15:56:06.932Z",
+  "meta": {
+    "name": "McAllen",
+    "nameIt": "McAllen",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/McAllen.geojson",
+      "sha256": "96da638ae5380cc8e14e718fac57b2ea137843310a41cf0f14459673bd486d68",
+      "size": 1603151,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mcallen",
+    "name": "McAllen",
+    "nameIt": "McAllen",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -98.23404,
+      26.22217
+    ],
+    "zoom": 9.3,
+    "population": 241289,
+    "grid": "cities/mcallen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mcallen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mcallen",
+        "name": "McAllen",
+        "nameIt": "McAllen",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -98.23404,
+          26.22217
+        ],
+        "zoom": 9.3,
+        "population": 241289,
+        "cells": 1381,
+        "layer": "cities/mcallen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -98.23404,
+            26.22217
+          ]
+        },
+        "properties": {
+          "id": "mcallen",
+          "name": "McAllen",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 35.7,
+          "population": 241289
+        }
+      },
+      "summary": null
+    }
+  }
+}

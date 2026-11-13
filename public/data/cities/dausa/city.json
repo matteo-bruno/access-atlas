@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dausa",
+  "createdAt": "2026-10-08T15:28:37.607Z",
+  "updatedAt": "2026-10-08T15:28:37.607Z",
+  "meta": {
+    "name": "Dausa",
+    "nameIt": "Dausa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dausa.geojson",
+      "sha256": "5df895fee5134f3de538eb134574c32196d8be9257d652b66451c2390f10fa56",
+      "size": 326904,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dausa",
+    "name": "Dausa",
+    "nameIt": "Dausa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.33825,
+      26.89715
+    ],
+    "zoom": 11,
+    "population": 132783,
+    "grid": "cities/dausa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dausa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dausa",
+        "name": "Dausa",
+        "nameIt": "Dausa",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.33825,
+          26.89715
+        ],
+        "zoom": 11,
+        "population": 132783,
+        "cells": 282,
+        "layer": "cities/dausa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.33825,
+            26.89715
+          ]
+        },
+        "properties": {
+          "id": "dausa",
+          "name": "Dausa",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 27.8,
+          "population": 132783
+        }
+      },
+      "summary": null
+    }
+  }
+}

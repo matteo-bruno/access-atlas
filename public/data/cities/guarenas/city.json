@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guarenas",
+  "createdAt": "2026-10-08T15:36:24.333Z",
+  "updatedAt": "2026-10-08T15:36:24.333Z",
+  "meta": {
+    "name": "Guarenas",
+    "nameIt": "Guarenas",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guarenas.geojson",
+      "sha256": "d5cc7f5b62a2b9f202289f7302e2a004f500f44523405eb0ef77b869d8875598",
+      "size": 735484,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guarenas",
+    "name": "Guarenas",
+    "nameIt": "Guarenas",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -66.57808,
+      10.46766
+    ],
+    "zoom": 10,
+    "population": 326882,
+    "grid": "cities/guarenas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guarenas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guarenas",
+        "name": "Guarenas",
+        "nameIt": "Guarenas",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -66.57808,
+          10.46766
+        ],
+        "zoom": 10,
+        "population": 326882,
+        "cells": 630,
+        "layer": "cities/guarenas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -66.57808,
+            10.46766
+          ]
+        },
+        "properties": {
+          "id": "guarenas",
+          "name": "Guarenas",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 30.5,
+          "population": 326882
+        }
+      },
+      "summary": null
+    }
+  }
+}

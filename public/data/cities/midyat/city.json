@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "midyat",
+  "createdAt": "2026-10-08T15:57:01.532Z",
+  "updatedAt": "2026-10-08T15:57:01.532Z",
+  "meta": {
+    "name": "Midyat",
+    "nameIt": "Midyat",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Midyat.geojson",
+      "sha256": "3afd7ba27368c8aecb436bd573ce00b7d1aaf59975e510ab872371a57008823d",
+      "size": 104682,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "midyat",
+    "name": "Midyat",
+    "nameIt": "Midyat",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      41.35575,
+      37.42037
+    ],
+    "zoom": 11.8,
+    "population": 70600,
+    "grid": "cities/midyat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/midyat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "midyat",
+        "name": "Midyat",
+        "nameIt": "Midyat",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          41.35575,
+          37.42037
+        ],
+        "zoom": 11.8,
+        "population": 70600,
+        "cells": 91,
+        "layer": "cities/midyat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            41.35575,
+            37.42037
+          ]
+        },
+        "properties": {
+          "id": "midyat",
+          "name": "Midyat",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 10.1,
+          "population": 70600
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "freetown",
+  "createdAt": "2026-10-08T15:33:44.140Z",
+  "updatedAt": "2026-10-08T15:33:44.140Z",
+  "meta": {
+    "name": "Freetown",
+    "nameIt": "Freetown",
+    "region": "Sierra Leone",
+    "regionIt": "Sierra Leone",
+    "country": "SL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Freetown.geojson",
+      "sha256": "fc68313426dfaa2018b81842a5272659ad2d02e965458feaf9650550fbf05b6d",
+      "size": 2764543,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "freetown",
+    "name": "Freetown",
+    "nameIt": "Freetown",
+    "region": "Sierra Leone",
+    "regionIt": "Sierra Leone",
+    "country": "SL",
+    "center": [
+      -13.17211,
+      8.42041
+    ],
+    "zoom": 9.1,
+    "population": 1119004,
+    "grid": "cities/freetown/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/freetown/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "freetown",
+        "name": "Freetown",
+        "nameIt": "Freetown",
+        "region": "Sierra Leone",
+        "regionIt": "Sierra Leone",
+        "country": "SL",
+        "center": [
+          -13.17211,
+          8.42041
+        ],
+        "zoom": 9.1,
+        "population": 1119004,
+        "cells": 2367,
+        "layer": "cities/freetown/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -13.17211,
+            8.42041
+          ]
+        },
+        "properties": {
+          "id": "freetown",
+          "name": "Freetown",
+          "country": "SL",
+          "isStudy": true,
+          "proximityMinutes": 40.7,
+          "population": 1119004
+        }
+      },
+      "summary": null
+    }
+  }
+}

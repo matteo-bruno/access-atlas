@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gaborone",
+  "createdAt": "2026-10-08T15:34:09.334Z",
+  "updatedAt": "2026-10-08T15:34:09.334Z",
+  "meta": {
+    "name": "Gaborone",
+    "nameIt": "Gaborone",
+    "region": "Botswana",
+    "regionIt": "Botswana",
+    "country": "BW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gaborone.geojson",
+      "sha256": "ca095bb3e47524b255e40de4802d36dc37d12e117fddf6eb0ce4c06e6ec65baa",
+      "size": 1188155,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gaborone",
+    "name": "Gaborone",
+    "nameIt": "Gaborone",
+    "region": "Botswana",
+    "regionIt": "Botswana",
+    "country": "BW",
+    "center": [
+      25.89197,
+      -24.63263
+    ],
+    "zoom": 10,
+    "population": 249120,
+    "grid": "cities/gaborone/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gaborone/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gaborone",
+        "name": "Gaborone",
+        "nameIt": "Gaborone",
+        "region": "Botswana",
+        "regionIt": "Botswana",
+        "country": "BW",
+        "center": [
+          25.89197,
+          -24.63263
+        ],
+        "zoom": 10,
+        "population": 249120,
+        "cells": 1019,
+        "layer": "cities/gaborone/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.89197,
+            -24.63263
+          ]
+        },
+        "properties": {
+          "id": "gaborone",
+          "name": "Gaborone",
+          "country": "BW",
+          "isStudy": true,
+          "proximityMinutes": 30.5,
+          "population": 249120
+        }
+      },
+      "summary": null
+    }
+  }
+}

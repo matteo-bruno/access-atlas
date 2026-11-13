@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tianmen",
+  "createdAt": "2026-10-08T16:17:45.205Z",
+  "updatedAt": "2026-10-08T16:17:45.205Z",
+  "meta": {
+    "name": "Tianmen",
+    "nameIt": "Tianmen",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tianmen.geojson",
+      "sha256": "7fbcb465f82dd4ad81b0a3dd23af42dd6e88c9a03a35b49dfe660746b46c8979",
+      "size": 731103,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tianmen",
+    "name": "Tianmen",
+    "nameIt": "Tianmen",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.15428,
+      30.65105
+    ],
+    "zoom": 10.1,
+    "population": 293902,
+    "grid": "cities/tianmen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tianmen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tianmen",
+        "name": "Tianmen",
+        "nameIt": "Tianmen",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.15428,
+          30.65105
+        ],
+        "zoom": 10.1,
+        "population": 293902,
+        "cells": 631,
+        "layer": "cities/tianmen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.15428,
+            30.65105
+          ]
+        },
+        "properties": {
+          "id": "tianmen",
+          "name": "Tianmen",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 16.4,
+          "population": 293902
+        }
+      },
+      "summary": null
+    }
+  }
+}

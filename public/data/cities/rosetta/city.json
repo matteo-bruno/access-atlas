@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rosetta",
+  "createdAt": "2026-10-08T16:09:09.397Z",
+  "updatedAt": "2026-10-08T16:09:09.397Z",
+  "meta": {
+    "name": "Rosetta",
+    "nameIt": "Rosetta",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rosetta.geojson",
+      "sha256": "46d76f73506b4ce4e10aaeb3b08c1cd668b6c44a9a3574bd776ef1074ce564f2",
+      "size": 204972,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rosetta",
+    "name": "Rosetta",
+    "nameIt": "Rosetta",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      30.41866,
+      31.39821
+    ],
+    "zoom": 11,
+    "population": 203850,
+    "grid": "cities/rosetta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rosetta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rosetta",
+        "name": "Rosetta",
+        "nameIt": "Rosetta",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          30.41866,
+          31.39821
+        ],
+        "zoom": 11,
+        "population": 203850,
+        "cells": 176,
+        "layer": "cities/rosetta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.41866,
+            31.39821
+          ]
+        },
+        "properties": {
+          "id": "rosetta",
+          "name": "Rosetta",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 203850
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guercif",
+  "createdAt": "2026-10-08T15:36:31.570Z",
+  "updatedAt": "2026-10-08T15:36:31.570Z",
+  "meta": {
+    "name": "Guercif",
+    "nameIt": "Guercif",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guercif.geojson",
+      "sha256": "5cc1dab1808f49c9e20502876342958268fda4b0e3d219e6f738c2e8b8fbc27b",
+      "size": 204373,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guercif",
+    "name": "Guercif",
+    "nameIt": "Guercif",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -3.34668,
+      34.23282
+    ],
+    "zoom": 11.5,
+    "population": 27002,
+    "grid": "cities/guercif/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guercif/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guercif",
+        "name": "Guercif",
+        "nameIt": "Guercif",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -3.34668,
+          34.23282
+        ],
+        "zoom": 11.5,
+        "population": 27002,
+        "cells": 175,
+        "layer": "cities/guercif/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -3.34668,
+            34.23282
+          ]
+        },
+        "properties": {
+          "id": "guercif",
+          "name": "Guercif",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 22.5,
+          "population": 27002
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sincan",
+  "createdAt": "2026-10-08T16:13:47.141Z",
+  "updatedAt": "2026-10-08T16:13:47.141Z",
+  "meta": {
+    "name": "Sincan",
+    "nameIt": "Sincan",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sincan.geojson",
+      "sha256": "1ddff874056a49efe4b594d26ac0d2f57cb3b29f3ce9e78c4c98d63448787887",
+      "size": 861320,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sincan",
+    "name": "Sincan",
+    "nameIt": "Sincan",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      32.6072,
+      39.96379
+    ],
+    "zoom": 10.4,
+    "population": 840386,
+    "grid": "cities/sincan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sincan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sincan",
+        "name": "Sincan",
+        "nameIt": "Sincan",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          32.6072,
+          39.96379
+        ],
+        "zoom": 10.4,
+        "population": 840386,
+        "cells": 750,
+        "layer": "cities/sincan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.6072,
+            39.96379
+          ]
+        },
+        "properties": {
+          "id": "sincan",
+          "name": "Sincan",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 840386
+        }
+      },
+      "summary": null
+    }
+  }
+}

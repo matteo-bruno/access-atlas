@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "winnipeg",
+  "createdAt": "2026-10-08T16:21:44.473Z",
+  "updatedAt": "2026-10-08T16:21:44.473Z",
+  "meta": {
+    "name": "Winnipeg",
+    "nameIt": "Winnipeg",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Winnipeg.geojson",
+      "sha256": "500bb2b3865c630d69ac1c2cbee8c5f6394cd12b8ea5b788cc52892a9639c394",
+      "size": 2893089,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "winnipeg",
+    "name": "Winnipeg",
+    "nameIt": "Winnipeg",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -97.14775,
+      49.88508
+    ],
+    "zoom": 9.3,
+    "population": 752490,
+    "grid": "cities/winnipeg/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/winnipeg/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "winnipeg",
+        "name": "Winnipeg",
+        "nameIt": "Winnipeg",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -97.14775,
+          49.88508
+        ],
+        "zoom": 9.3,
+        "population": 752490,
+        "cells": 2516,
+        "layer": "cities/winnipeg/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.14775,
+            49.88508
+          ]
+        },
+        "properties": {
+          "id": "winnipeg",
+          "name": "Winnipeg",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 752490
+        }
+      },
+      "summary": null
+    }
+  }
+}

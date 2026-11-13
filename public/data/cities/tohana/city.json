@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tohana",
+  "createdAt": "2026-10-08T16:18:15.811Z",
+  "updatedAt": "2026-10-08T16:18:15.811Z",
+  "meta": {
+    "name": "Tohana",
+    "nameIt": "Tohana",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tohana.geojson",
+      "sha256": "20c5c88fc25c0feb91343820171673258231729f7795c3b24d5de8fa6beff0e2",
+      "size": 112386,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tohana",
+    "name": "Tohana",
+    "nameIt": "Tohana",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.90256,
+      29.71495
+    ],
+    "zoom": 11.9,
+    "population": 66295,
+    "grid": "cities/tohana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tohana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tohana",
+        "name": "Tohana",
+        "nameIt": "Tohana",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.90256,
+          29.71495
+        ],
+        "zoom": 11.9,
+        "population": 66295,
+        "cells": 97,
+        "layer": "cities/tohana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.90256,
+            29.71495
+          ]
+        },
+        "properties": {
+          "id": "tohana",
+          "name": "Tohana",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 66295
+        }
+      },
+      "summary": null
+    }
+  }
+}

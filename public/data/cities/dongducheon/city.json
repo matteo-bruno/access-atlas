@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dongducheon",
+  "createdAt": "2026-10-08T15:30:46.511Z",
+  "updatedAt": "2026-10-08T15:30:46.511Z",
+  "meta": {
+    "name": "Dongducheon",
+    "nameIt": "Dongducheon",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dongducheon.geojson",
+      "sha256": "3c84ff85cdd0e6de3cac2d123b481bc5479f5acfec136ebb78acecac500609c7",
+      "size": 827083,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dongducheon",
+    "name": "Dongducheon",
+    "nameIt": "Dongducheon",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      127.04487,
+      37.892
+    ],
+    "zoom": 10.1,
+    "population": 99039,
+    "grid": "cities/dongducheon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 169
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dongducheon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dongducheon",
+        "name": "Dongducheon",
+        "nameIt": "Dongducheon",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          127.04487,
+          37.892
+        ],
+        "zoom": 10.1,
+        "population": 99039,
+        "cells": 712,
+        "layer": "cities/dongducheon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 169
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            127.04487,
+            37.892
+          ]
+        },
+        "properties": {
+          "id": "dongducheon",
+          "name": "Dongducheon",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 99039
+        }
+      },
+      "summary": null
+    }
+  }
+}

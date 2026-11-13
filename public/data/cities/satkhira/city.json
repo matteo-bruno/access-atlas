@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "satkhira",
+  "createdAt": "2026-10-08T16:11:37.051Z",
+  "updatedAt": "2026-10-08T16:11:37.051Z",
+  "meta": {
+    "name": "Satkhira",
+    "nameIt": "Satkhira",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Satkhira.geojson",
+      "sha256": "73173bee58d5f2aa5f3c5a73e17168441d7ee3ba748d04b39adb6f2040e6ed7c",
+      "size": 351421,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "satkhira",
+    "name": "Satkhira",
+    "nameIt": "Satkhira",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.07537,
+      22.71714
+    ],
+    "zoom": 10.7,
+    "population": 188648,
+    "grid": "cities/satkhira/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/satkhira/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "satkhira",
+        "name": "Satkhira",
+        "nameIt": "Satkhira",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.07537,
+          22.71714
+        ],
+        "zoom": 10.7,
+        "population": 188648,
+        "cells": 304,
+        "layer": "cities/satkhira/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.07537,
+            22.71714
+          ]
+        },
+        "properties": {
+          "id": "satkhira",
+          "name": "Satkhira",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 14.4,
+          "population": 188648
+        }
+      },
+      "summary": null
+    }
+  }
+}

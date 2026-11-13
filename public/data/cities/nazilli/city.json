@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nazilli",
+  "createdAt": "2026-10-08T16:00:47.372Z",
+  "updatedAt": "2026-10-08T16:00:47.372Z",
+  "meta": {
+    "name": "Nazilli",
+    "nameIt": "Nazilli",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nazilli.geojson",
+      "sha256": "22614a803d1dd73f63bc6b6ca2ec2ed41156fd8691f523bde84cb99a59cf8f5f",
+      "size": 124179,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nazilli",
+    "name": "Nazilli",
+    "nameIt": "Nazilli",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      28.32677,
+      37.91392
+    ],
+    "zoom": 12,
+    "population": 113425,
+    "grid": "cities/nazilli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nazilli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nazilli",
+        "name": "Nazilli",
+        "nameIt": "Nazilli",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          28.32677,
+          37.91392
+        ],
+        "zoom": 12,
+        "population": 113425,
+        "cells": 107,
+        "layer": "cities/nazilli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.32677,
+            37.91392
+          ]
+        },
+        "properties": {
+          "id": "nazilli",
+          "name": "Nazilli",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 113425
+        }
+      },
+      "summary": null
+    }
+  }
+}

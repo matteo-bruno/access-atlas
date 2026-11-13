@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huailai",
+  "createdAt": "2026-10-08T15:39:21.226Z",
+  "updatedAt": "2026-10-08T15:39:21.226Z",
+  "meta": {
+    "name": "Huailai",
+    "nameIt": "Huailai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huailai.geojson",
+      "sha256": "31d57503639a175776b1c99dee4c959af13ac57b0b6b0307f385b4283012ecb9",
+      "size": 343959,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huailai",
+    "name": "Huailai",
+    "nameIt": "Huailai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      115.51545,
+      40.40493
+    ],
+    "zoom": 11.2,
+    "population": 135028,
+    "grid": "cities/huailai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 173
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huailai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huailai",
+        "name": "Huailai",
+        "nameIt": "Huailai",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          115.51545,
+          40.40493
+        ],
+        "zoom": 11.2,
+        "population": 135028,
+        "cells": 295,
+        "layer": "cities/huailai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 173
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.51545,
+            40.40493
+          ]
+        },
+        "properties": {
+          "id": "huailai",
+          "name": "Huailai",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 16.5,
+          "population": 135028
+        }
+      },
+      "summary": null
+    }
+  }
+}

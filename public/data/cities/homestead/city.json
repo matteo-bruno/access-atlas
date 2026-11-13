@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "homestead",
+  "createdAt": "2026-10-08T15:38:57.328Z",
+  "updatedAt": "2026-10-08T15:38:57.328Z",
+  "meta": {
+    "name": "Homestead",
+    "nameIt": "Homestead",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Homestead.geojson",
+      "sha256": "4e1cda9e20f74084a3b69b8467799e332234401edccd68c4a0504afd3e5f9c3c",
+      "size": 815104,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "homestead",
+    "name": "Homestead",
+    "nameIt": "Homestead",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -80.44252,
+      25.48571
+    ],
+    "zoom": 10.5,
+    "population": 197789,
+    "grid": "cities/homestead/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/homestead/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "homestead",
+        "name": "Homestead",
+        "nameIt": "Homestead",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -80.44252,
+          25.48571
+        ],
+        "zoom": 10.5,
+        "population": 197789,
+        "cells": 700,
+        "layer": "cities/homestead/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.44252,
+            25.48571
+          ]
+        },
+        "properties": {
+          "id": "homestead",
+          "name": "Homestead",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 25.1,
+          "population": 197789
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "labutta",
+  "createdAt": "2026-10-08T15:49:28.526Z",
+  "updatedAt": "2026-10-08T15:49:28.526Z",
+  "meta": {
+    "name": "Labutta",
+    "nameIt": "Labutta",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Labutta.geojson",
+      "sha256": "7586f579bdc1350b28741f560c78f69990750220716948ad5861bf46a21765a5",
+      "size": 99556,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "labutta",
+    "name": "Labutta",
+    "nameIt": "Labutta",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      94.75743,
+      16.14773
+    ],
+    "zoom": 11.8,
+    "population": 58470,
+    "grid": "cities/labutta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/labutta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "labutta",
+        "name": "Labutta",
+        "nameIt": "Labutta",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          94.75743,
+          16.14773
+        ],
+        "zoom": 11.8,
+        "population": 58470,
+        "cells": 86,
+        "layer": "cities/labutta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            94.75743,
+            16.14773
+          ]
+        },
+        "properties": {
+          "id": "labutta",
+          "name": "Labutta",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 58470
+        }
+      },
+      "summary": null
+    }
+  }
+}

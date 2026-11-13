@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "seversk",
+  "createdAt": "2026-10-08T16:12:08.621Z",
+  "updatedAt": "2026-10-08T16:12:08.621Z",
+  "meta": {
+    "name": "Seversk",
+    "nameIt": "Seversk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Seversk.geojson",
+      "sha256": "cd0b80e23d2e392bcc815a248b30980110cfad9cceaf4114db3b483672cd6778",
+      "size": 215444,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "seversk",
+    "name": "Seversk",
+    "nameIt": "Seversk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      84.89166,
+      56.59763
+    ],
+    "zoom": 11.1,
+    "population": 87526,
+    "grid": "cities/seversk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/seversk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "seversk",
+        "name": "Seversk",
+        "nameIt": "Seversk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          84.89166,
+          56.59763
+        ],
+        "zoom": 11.1,
+        "population": 87526,
+        "cells": 188,
+        "layer": "cities/seversk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.89166,
+            56.59763
+          ]
+        },
+        "properties": {
+          "id": "seversk",
+          "name": "Seversk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 87526
+        }
+      },
+      "summary": null
+    }
+  }
+}

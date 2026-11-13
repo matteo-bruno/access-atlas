@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pleiku",
+  "createdAt": "2026-10-08T16:05:55.452Z",
+  "updatedAt": "2026-10-08T16:05:55.452Z",
+  "meta": {
+    "name": "Pleiku",
+    "nameIt": "Pleiku",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pleiku.geojson",
+      "sha256": "60e78cebbc9de8f2876db87fbf2378ef9deafa99fac86c5c57fe615e2c3eca1c",
+      "size": 472658,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pleiku",
+    "name": "Pleiku",
+    "nameIt": "Pleiku",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      108.00547,
+      13.98122
+    ],
+    "zoom": 10.3,
+    "population": 205596,
+    "grid": "cities/pleiku/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pleiku/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pleiku",
+        "name": "Pleiku",
+        "nameIt": "Pleiku",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          108.00547,
+          13.98122
+        ],
+        "zoom": 10.3,
+        "population": 205596,
+        "cells": 404,
+        "layer": "cities/pleiku/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.00547,
+            13.98122
+          ]
+        },
+        "properties": {
+          "id": "pleiku",
+          "name": "Pleiku",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 26.6,
+          "population": 205596
+        }
+      },
+      "summary": null
+    }
+  }
+}

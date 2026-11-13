@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kasulu",
+  "createdAt": "2026-10-08T15:45:33.251Z",
+  "updatedAt": "2026-10-08T15:45:33.251Z",
+  "meta": {
+    "name": "Kasulu",
+    "nameIt": "Kasulu",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kasulu.geojson",
+      "sha256": "2ab8baeab701f8be52697323388316d109050401bd8188070d6280c056481525",
+      "size": 245268,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kasulu",
+    "name": "Kasulu",
+    "nameIt": "Kasulu",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      30.11217,
+      -4.57055
+    ],
+    "zoom": 11.2,
+    "population": 105269,
+    "grid": "cities/kasulu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kasulu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kasulu",
+        "name": "Kasulu",
+        "nameIt": "Kasulu",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          30.11217,
+          -4.57055
+        ],
+        "zoom": 11.2,
+        "population": 105269,
+        "cells": 210,
+        "layer": "cities/kasulu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.11217,
+            -4.57055
+          ]
+        },
+        "properties": {
+          "id": "kasulu",
+          "name": "Kasulu",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 16.2,
+          "population": 105269
+        }
+      },
+      "summary": null
+    }
+  }
+}

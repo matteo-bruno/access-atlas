@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "verona",
+  "createdAt": "2026-10-08T16:20:37.530Z",
+  "updatedAt": "2026-10-08T16:20:37.530Z",
+  "meta": {
+    "name": "Verona",
+    "nameIt": "Verona",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Verona.geojson",
+      "sha256": "8e17d38a14141450bd50d138c0c41a4cb2394ad4f9d684d2ff8a34ec7a8412db",
+      "size": 524625,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "verona",
+    "name": "Verona",
+    "nameIt": "Verona",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      10.98738,
+      45.43433
+    ],
+    "zoom": 10.8,
+    "population": 190467,
+    "grid": "cities/verona/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/verona/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "verona",
+        "name": "Verona",
+        "nameIt": "Verona",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          10.98738,
+          45.43433
+        ],
+        "zoom": 10.8,
+        "population": 190467,
+        "cells": 459,
+        "layer": "cities/verona/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.98738,
+            45.43433
+          ]
+        },
+        "properties": {
+          "id": "verona",
+          "name": "Verona",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 7.9,
+          "population": 190467
+        }
+      },
+      "summary": null
+    }
+  }
+}

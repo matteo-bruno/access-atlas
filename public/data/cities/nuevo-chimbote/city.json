@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nuevo-chimbote",
+  "createdAt": "2026-10-08T16:02:17.183Z",
+  "updatedAt": "2026-10-08T16:02:17.183Z",
+  "meta": {
+    "name": "Nuevo Chimbote",
+    "nameIt": "Nuevo Chimbote",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nuevo Chimbote.geojson",
+      "sha256": "3a6fa6f180e4cb3f081cbc49d9b7b842a85f78c356c13b65bdd7d68dfb79d3c3",
+      "size": 255778,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nuevo-chimbote",
+    "name": "Nuevo Chimbote",
+    "nameIt": "Nuevo Chimbote",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -78.51642,
+      -9.12621
+    ],
+    "zoom": 11.2,
+    "population": 166864,
+    "grid": "cities/nuevo-chimbote/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nuevo-chimbote/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nuevo-chimbote",
+        "name": "Nuevo Chimbote",
+        "nameIt": "Nuevo Chimbote",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -78.51642,
+          -9.12621
+        ],
+        "zoom": 11.2,
+        "population": 166864,
+        "cells": 220,
+        "layer": "cities/nuevo-chimbote/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -78.51642,
+            -9.12621
+          ]
+        },
+        "properties": {
+          "id": "nuevo-chimbote",
+          "name": "Nuevo Chimbote",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 11.1,
+          "population": 166864
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "settat",
+  "createdAt": "2026-10-08T16:12:07.234Z",
+  "updatedAt": "2026-10-08T16:12:07.234Z",
+  "meta": {
+    "name": "Settat",
+    "nameIt": "Settat",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Settat.geojson",
+      "sha256": "41f7b3f7105b4d31c009fcc7384481396def6a4c0dc380f0767d6197be241249",
+      "size": 174609,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "settat",
+    "name": "Settat",
+    "nameIt": "Settat",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -7.61941,
+      32.99849
+    ],
+    "zoom": 11.4,
+    "population": 12220,
+    "grid": "cities/settat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/settat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "settat",
+        "name": "Settat",
+        "nameIt": "Settat",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -7.61941,
+          32.99849
+        ],
+        "zoom": 11.4,
+        "population": 12220,
+        "cells": 151,
+        "layer": "cities/settat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -7.61941,
+            32.99849
+          ]
+        },
+        "properties": {
+          "id": "settat",
+          "name": "Settat",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 12220
+        }
+      },
+      "summary": null
+    }
+  }
+}

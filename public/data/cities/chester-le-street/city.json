@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chester-le-street",
+  "createdAt": "2026-10-08T15:24:32.013Z",
+  "updatedAt": "2026-10-08T15:24:32.013Z",
+  "meta": {
+    "name": "Chester-le-Street",
+    "nameIt": "Chester-le-Street",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chester-le-Street.geojson",
+      "sha256": "be936e942e99b249ad4c514fcb5057a309c7c15fe3352e7113f521ee0dab8d8c",
+      "size": 431489,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chester-le-street",
+    "name": "Chester-le-Street",
+    "nameIt": "Chester-le-Street",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.54701,
+      54.88889
+    ],
+    "zoom": 10.9,
+    "population": 82335,
+    "grid": "cities/chester-le-street/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chester-le-street/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chester-le-street",
+        "name": "Chester-le-Street",
+        "nameIt": "Chester-le-Street",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.54701,
+          54.88889
+        ],
+        "zoom": 10.9,
+        "population": 82335,
+        "cells": 373,
+        "layer": "cities/chester-le-street/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.54701,
+            54.88889
+          ]
+        },
+        "properties": {
+          "id": "chester-le-street",
+          "name": "Chester-le-Street",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 82335
+        }
+      },
+      "summary": null
+    }
+  }
+}

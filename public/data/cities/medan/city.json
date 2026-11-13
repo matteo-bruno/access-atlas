@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "medan",
+  "createdAt": "2026-10-08T15:56:10.645Z",
+  "updatedAt": "2026-10-08T15:56:10.645Z",
+  "meta": {
+    "name": "Medan",
+    "nameIt": "Medan",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Medan.geojson",
+      "sha256": "6d6b5d59290da20fc66fc0686c52d095d2a604e1fb8da475b1d2d2a56a6a459b",
+      "size": 5612399,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "medan",
+    "name": "Medan",
+    "nameIt": "Medan",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      98.66086,
+      3.59612
+    ],
+    "zoom": 8.5,
+    "population": 4055102,
+    "grid": "cities/medan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/medan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "medan",
+        "name": "Medan",
+        "nameIt": "Medan",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          98.66086,
+          3.59612
+        ],
+        "zoom": 8.5,
+        "population": 4055102,
+        "cells": 4866,
+        "layer": "cities/medan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            98.66086,
+            3.59612
+          ]
+        },
+        "properties": {
+          "id": "medan",
+          "name": "Medan",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 52.8,
+          "population": 4055102
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tshilenge",
+  "createdAt": "2026-10-08T16:18:57.057Z",
+  "updatedAt": "2026-10-08T16:18:57.057Z",
+  "meta": {
+    "name": "Tshilenge",
+    "nameIt": "Tshilenge",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tshilenge.geojson",
+      "sha256": "e1740766b418d4ea96007361321dcf39052d0fb222264071624e46d54c5f3e1c",
+      "size": 96901,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tshilenge",
+    "name": "Tshilenge",
+    "nameIt": "Tshilenge",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      23.75536,
+      -6.23627
+    ],
+    "zoom": 12,
+    "population": 54965,
+    "grid": "cities/tshilenge/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tshilenge/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tshilenge",
+        "name": "Tshilenge",
+        "nameIt": "Tshilenge",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          23.75536,
+          -6.23627
+        ],
+        "zoom": 12,
+        "population": 54965,
+        "cells": 83,
+        "layer": "cities/tshilenge/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.75536,
+            -6.23627
+          ]
+        },
+        "properties": {
+          "id": "tshilenge",
+          "name": "Tshilenge",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 54965
+        }
+      },
+      "summary": null
+    }
+  }
+}

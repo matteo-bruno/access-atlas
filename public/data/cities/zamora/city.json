@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zamora",
+  "createdAt": "2026-10-08T16:24:47.937Z",
+  "updatedAt": "2026-10-08T16:24:47.937Z",
+  "meta": {
+    "name": "Zamora",
+    "nameIt": "Zamora",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zamora.geojson",
+      "sha256": "5fd1ea90e2e048879b0cc8d7b08dcccd80b203486902351f0256c0f06db751dc",
+      "size": 215424,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zamora",
+    "name": "Zamora",
+    "nameIt": "Zamora",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -102.28245,
+      19.9897
+    ],
+    "zoom": 11.1,
+    "population": 116680,
+    "grid": "cities/zamora/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zamora/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zamora",
+        "name": "Zamora",
+        "nameIt": "Zamora",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -102.28245,
+          19.9897
+        ],
+        "zoom": 11.1,
+        "population": 116680,
+        "cells": 185,
+        "layer": "cities/zamora/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -102.28245,
+            19.9897
+          ]
+        },
+        "properties": {
+          "id": "zamora",
+          "name": "Zamora",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 116680
+        }
+      },
+      "summary": null
+    }
+  }
+}

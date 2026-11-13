@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "edmonton",
+  "createdAt": "2026-10-08T15:31:44.710Z",
+  "updatedAt": "2026-10-08T15:31:44.710Z",
+  "meta": {
+    "name": "Edmonton",
+    "nameIt": "Edmonton",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Edmonton.geojson",
+      "sha256": "96a326b0dae0999c4bf5a5b4cbf854fe4e39385bd79aee1cb7752a9631e3b7b5",
+      "size": 4827199,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "edmonton",
+    "name": "Edmonton",
+    "nameIt": "Edmonton",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -113.51159,
+      53.54246
+    ],
+    "zoom": 9.2,
+    "population": 1069594,
+    "grid": "cities/edmonton/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/edmonton/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "edmonton",
+        "name": "Edmonton",
+        "nameIt": "Edmonton",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -113.51159,
+          53.54246
+        ],
+        "zoom": 9.2,
+        "population": 1069594,
+        "cells": 4158,
+        "layer": "cities/edmonton/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -113.51159,
+            53.54246
+          ]
+        },
+        "properties": {
+          "id": "edmonton",
+          "name": "Edmonton",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 1069594
+        }
+      },
+      "summary": null
+    }
+  }
+}

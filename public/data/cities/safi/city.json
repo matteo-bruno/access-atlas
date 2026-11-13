@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "safi",
+  "createdAt": "2026-10-08T16:09:39.868Z",
+  "updatedAt": "2026-10-08T16:09:39.868Z",
+  "meta": {
+    "name": "Safi",
+    "nameIt": "Safi",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Safi.geojson",
+      "sha256": "7ec80f726d5a6d6144c78aa68278a49275afa608a6f4c7a78c181817312ede45",
+      "size": 386046,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "safi",
+    "name": "Safi",
+    "nameIt": "Safi",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -9.22982,
+      32.29801
+    ],
+    "zoom": 10.8,
+    "population": 20645,
+    "grid": "cities/safi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/safi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "safi",
+        "name": "Safi",
+        "nameIt": "Safi",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -9.22982,
+          32.29801
+        ],
+        "zoom": 10.8,
+        "population": 20645,
+        "cells": 336,
+        "layer": "cities/safi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -9.22982,
+            32.29801
+          ]
+        },
+        "properties": {
+          "id": "safi",
+          "name": "Safi",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 22.1,
+          "population": 20645
+        }
+      },
+      "summary": null
+    }
+  }
+}

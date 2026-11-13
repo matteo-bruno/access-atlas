@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "donetsk-fua",
+  "createdAt": "2026-10-19T16:56:04.426Z",
+  "updatedAt": "2026-10-19T16:56:04.426Z",
+  "meta": {
+    "name": "Donetsk",
+    "nameIt": "Donetsk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "donetsk-fua",
+    "name": "Donetsk",
+    "nameIt": "Donetsk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "extent": "fua",
+    "core": "donetsk",
+    "center": [
+      37.84201,
+      48.00663
+    ],
+    "zoom": 8.5,
+    "population": 1190376,
+    "grid": "cities/donetsk-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/donetsk-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "donetsk-fua",
+        "name": "Donetsk",
+        "nameIt": "Donetsk",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "extent": "fua",
+        "core": "donetsk",
+        "center": [
+          37.84201,
+          48.00663
+        ],
+        "zoom": 8.5,
+        "population": 1190376,
+        "cells": 12335,
+        "layer": "cities/donetsk-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.84201,
+            48.00663
+          ]
+        },
+        "properties": {
+          "id": "donetsk-fua",
+          "name": "Donetsk",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 20.8,
+          "population": 1190376
+        }
+      },
+      "summary": null
+    }
+  }
+}

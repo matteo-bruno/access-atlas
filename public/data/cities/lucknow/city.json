@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lucknow",
+  "createdAt": "2026-10-08T15:52:30.847Z",
+  "updatedAt": "2026-10-08T15:52:30.847Z",
+  "meta": {
+    "name": "Lucknow",
+    "nameIt": "Lucknow",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lucknow.geojson",
+      "sha256": "226d1bf594486a9fa074ed888fc563138d84463400f0e48ef5d8184458c6e98f",
+      "size": 5673556,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lucknow",
+    "name": "Lucknow",
+    "nameIt": "Lucknow",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.95521,
+      26.85246
+    ],
+    "zoom": 8.7,
+    "population": 7356559,
+    "grid": "cities/lucknow/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lucknow/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lucknow",
+        "name": "Lucknow",
+        "nameIt": "Lucknow",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.95521,
+          26.85246
+        ],
+        "zoom": 8.7,
+        "population": 7356559,
+        "cells": 4910,
+        "layer": "cities/lucknow/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.95521,
+            26.85246
+          ]
+        },
+        "properties": {
+          "id": "lucknow",
+          "name": "Lucknow",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 37.4,
+          "population": 7356559
+        }
+      },
+      "summary": null
+    }
+  }
+}

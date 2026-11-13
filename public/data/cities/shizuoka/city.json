@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shizuoka",
+  "createdAt": "2026-10-08T16:13:10.890Z",
+  "updatedAt": "2026-10-08T16:13:10.890Z",
+  "meta": {
+    "name": "Shizuoka",
+    "nameIt": "Shizuoka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shizuoka.geojson",
+      "sha256": "f79d9ecfc79cd04a6436f9243d5082de72f5481ff55dbced8bc2572892ffe232",
+      "size": 1698162,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shizuoka",
+    "name": "Shizuoka",
+    "nameIt": "Shizuoka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      138.42263,
+      34.98869
+    ],
+    "zoom": 9.8,
+    "population": 577575,
+    "grid": "cities/shizuoka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shizuoka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shizuoka",
+        "name": "Shizuoka",
+        "nameIt": "Shizuoka",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          138.42263,
+          34.98869
+        ],
+        "zoom": 9.8,
+        "population": 577575,
+        "cells": 1477,
+        "layer": "cities/shizuoka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            138.42263,
+            34.98869
+          ]
+        },
+        "properties": {
+          "id": "shizuoka",
+          "name": "Shizuoka",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 577575
+        }
+      },
+      "summary": null
+    }
+  }
+}

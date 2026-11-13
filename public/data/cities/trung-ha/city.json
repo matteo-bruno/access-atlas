@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "trung-ha",
+  "createdAt": "2026-10-08T16:18:54.502Z",
+  "updatedAt": "2026-10-08T16:18:54.502Z",
+  "meta": {
+    "name": "Trung Hà",
+    "nameIt": "Trung Hà",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Trung Hà.geojson",
+      "sha256": "232f500a27d32c5de413403dc1142ce4620b011f1bf6e84adbfe4d8b7f0e5b25",
+      "size": 248965,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "trung-ha",
+    "name": "Trung Hà",
+    "nameIt": "Trung Hà",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      105.37831,
+      21.2422
+    ],
+    "zoom": 11.3,
+    "population": 52970,
+    "grid": "cities/trung-ha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/trung-ha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "trung-ha",
+        "name": "Trung Hà",
+        "nameIt": "Trung Hà",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          105.37831,
+          21.2422
+        ],
+        "zoom": 11.3,
+        "population": 52970,
+        "cells": 213,
+        "layer": "cities/trung-ha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.37831,
+            21.2422
+          ]
+        },
+        "properties": {
+          "id": "trung-ha",
+          "name": "Trung Hà",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 25,
+          "population": 52970
+        }
+      },
+      "summary": null
+    }
+  }
+}

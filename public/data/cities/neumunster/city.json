@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "neumunster",
+  "createdAt": "2026-10-08T16:01:01.579Z",
+  "updatedAt": "2026-10-08T16:01:01.579Z",
+  "meta": {
+    "name": "Neumünster",
+    "nameIt": "Neumünster",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Neumünster.geojson",
+      "sha256": "b57dac80982b9deb266bf7cd79e8ebb62ae7d7dfb2e0f22991639d3560c6f93a",
+      "size": 317217,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "neumunster",
+    "name": "Neumünster",
+    "nameIt": "Neumünster",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      9.98194,
+      54.07266
+    ],
+    "zoom": 11.2,
+    "population": 57057,
+    "grid": "cities/neumunster/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/neumunster/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "neumunster",
+        "name": "Neumünster",
+        "nameIt": "Neumünster",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.98194,
+          54.07266
+        ],
+        "zoom": 11.2,
+        "population": 57057,
+        "cells": 279,
+        "layer": "cities/neumunster/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.98194,
+            54.07266
+          ]
+        },
+        "properties": {
+          "id": "neumunster",
+          "name": "Neumünster",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 57057
+        }
+      },
+      "summary": null
+    }
+  }
+}

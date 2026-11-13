@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sendai",
+  "createdAt": "2026-10-08T16:11:56.695Z",
+  "updatedAt": "2026-10-08T16:11:56.695Z",
+  "meta": {
+    "name": "Sendai",
+    "nameIt": "Sendai",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sendai.geojson",
+      "sha256": "5a8bed4aebf55d87204c6f4d0093c17b553abe0f99b29757463b56f49df53b3d",
+      "size": 3447844,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sendai",
+    "name": "Sendai",
+    "nameIt": "Sendai",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      140.90309,
+      38.27232
+    ],
+    "zoom": 9.3,
+    "population": 1219118,
+    "grid": "cities/sendai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sendai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sendai",
+        "name": "Sendai",
+        "nameIt": "Sendai",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          140.90309,
+          38.27232
+        ],
+        "zoom": 9.3,
+        "population": 1219118,
+        "cells": 3004,
+        "layer": "cities/sendai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            140.90309,
+            38.27232
+          ]
+        },
+        "properties": {
+          "id": "sendai",
+          "name": "Sendai",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 10.8,
+          "population": 1219118
+        }
+      },
+      "summary": null
+    }
+  }
+}

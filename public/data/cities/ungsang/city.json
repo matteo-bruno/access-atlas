@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ungsang",
+  "createdAt": "2026-10-08T16:19:55.715Z",
+  "updatedAt": "2026-10-08T16:19:55.715Z",
+  "meta": {
+    "name": "Ungsang",
+    "nameIt": "Ungsang",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ungsang.geojson",
+      "sha256": "6830865a5386c965c229a98029d523c2c6466b3ac3518eeba8a24bb32e601f3d",
+      "size": 389491,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ungsang",
+    "name": "Ungsang",
+    "nameIt": "Ungsang",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      129.15844,
+      35.39603
+    ],
+    "zoom": 11,
+    "population": 93217,
+    "grid": "cities/ungsang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ungsang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ungsang",
+        "name": "Ungsang",
+        "nameIt": "Ungsang",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          129.15844,
+          35.39603
+        ],
+        "zoom": 11,
+        "population": 93217,
+        "cells": 336,
+        "layer": "cities/ungsang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            129.15844,
+            35.39603
+          ]
+        },
+        "properties": {
+          "id": "ungsang",
+          "name": "Ungsang",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 93217
+        }
+      },
+      "summary": null
+    }
+  }
+}

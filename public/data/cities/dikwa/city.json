@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dikwa",
+  "createdAt": "2026-10-08T15:29:58.237Z",
+  "updatedAt": "2026-10-08T15:29:58.237Z",
+  "meta": {
+    "name": "Dikwa",
+    "nameIt": "Dikwa",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dikwa.geojson",
+      "sha256": "bda9d377fd1ba214bdc56bd5db7849266349b0b0798d604912146592f08b2c35",
+      "size": 95767,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dikwa",
+    "name": "Dikwa",
+    "nameIt": "Dikwa",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      13.91585,
+      12.03712
+    ],
+    "zoom": 12,
+    "population": 44097,
+    "grid": "cities/dikwa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dikwa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dikwa",
+        "name": "Dikwa",
+        "nameIt": "Dikwa",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          13.91585,
+          12.03712
+        ],
+        "zoom": 12,
+        "population": 44097,
+        "cells": 82,
+        "layer": "cities/dikwa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.91585,
+            12.03712
+          ]
+        },
+        "properties": {
+          "id": "dikwa",
+          "name": "Dikwa",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 44097
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "naksimal",
+  "createdAt": "2026-10-08T15:59:52.414Z",
+  "updatedAt": "2026-10-08T15:59:52.414Z",
+  "meta": {
+    "name": "Naksimal",
+    "nameIt": "Naksimal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Naksimal.geojson",
+      "sha256": "cfa86e9e7ba595d830a4ae87c9d3ab0767b93af47190dfead590dbca21baa3e7",
+      "size": 155247,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "naksimal",
+    "name": "Naksimal",
+    "nameIt": "Naksimal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.79054,
+      24.79497
+    ],
+    "zoom": 11.2,
+    "population": 32530,
+    "grid": "cities/naksimal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/naksimal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "naksimal",
+        "name": "Naksimal",
+        "nameIt": "Naksimal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.79054,
+          24.79497
+        ],
+        "zoom": 11.2,
+        "population": 32530,
+        "cells": 134,
+        "layer": "cities/naksimal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.79054,
+            24.79497
+          ]
+        },
+        "properties": {
+          "id": "naksimal",
+          "name": "Naksimal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 7.2,
+          "population": 32530
+        }
+      },
+      "summary": null
+    }
+  }
+}

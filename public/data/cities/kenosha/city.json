@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kenosha",
+  "createdAt": "2026-10-08T15:46:11.671Z",
+  "updatedAt": "2026-10-08T15:46:11.671Z",
+  "meta": {
+    "name": "Kenosha",
+    "nameIt": "Kenosha",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kenosha.geojson",
+      "sha256": "f5081a09881b766ad235ba012f86e078c5963726e2eb1cb8db551a2ee252a5d6",
+      "size": 478758,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kenosha",
+    "name": "Kenosha",
+    "nameIt": "Kenosha",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -87.84192,
+      42.57858
+    ],
+    "zoom": 10.8,
+    "population": 75216,
+    "grid": "cities/kenosha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kenosha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kenosha",
+        "name": "Kenosha",
+        "nameIt": "Kenosha",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -87.84192,
+          42.57858
+        ],
+        "zoom": 10.8,
+        "population": 75216,
+        "cells": 413,
+        "layer": "cities/kenosha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.84192,
+            42.57858
+          ]
+        },
+        "properties": {
+          "id": "kenosha",
+          "name": "Kenosha",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20.9,
+          "population": 75216
+        }
+      },
+      "summary": null
+    }
+  }
+}

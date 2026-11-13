@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guerrara",
+  "createdAt": "2026-10-08T15:36:31.915Z",
+  "updatedAt": "2026-10-08T15:36:31.915Z",
+  "meta": {
+    "name": "Guerrara",
+    "nameIt": "Guerrara",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guerrara.geojson",
+      "sha256": "f135a2bfb1362f2c7c24dc165aea5afb4e6f8c5a5ea8c918b407cf98a7976383",
+      "size": 115394,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guerrara",
+    "name": "Guerrara",
+    "nameIt": "Guerrara",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      4.49252,
+      32.79255
+    ],
+    "zoom": 11.7,
+    "population": 70536,
+    "grid": "cities/guerrara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guerrara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guerrara",
+        "name": "Guerrara",
+        "nameIt": "Guerrara",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          4.49252,
+          32.79255
+        ],
+        "zoom": 11.7,
+        "population": 70536,
+        "cells": 100,
+        "layer": "cities/guerrara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.49252,
+            32.79255
+          ]
+        },
+        "properties": {
+          "id": "guerrara",
+          "name": "Guerrara",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 15.9,
+          "population": 70536
+        }
+      },
+      "summary": null
+    }
+  }
+}

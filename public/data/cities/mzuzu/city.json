@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mzuzu",
+  "createdAt": "2026-10-08T15:59:24.032Z",
+  "updatedAt": "2026-10-08T15:59:24.032Z",
+  "meta": {
+    "name": "Mzuzu",
+    "nameIt": "Mzuzu",
+    "region": "Malawi",
+    "regionIt": "Malawi",
+    "country": "MW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mzuzu.geojson",
+      "sha256": "d92debb2b994252e0f3c3c5d9ec16037748440574e16b5d3aad63dfe405a4d2d",
+      "size": 428535,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mzuzu",
+    "name": "Mzuzu",
+    "nameIt": "Mzuzu",
+    "region": "Malawi",
+    "regionIt": "Malawi",
+    "country": "MW",
+    "center": [
+      34.00687,
+      -11.4431
+    ],
+    "zoom": 10.8,
+    "population": 222660,
+    "grid": "cities/mzuzu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mzuzu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mzuzu",
+        "name": "Mzuzu",
+        "nameIt": "Mzuzu",
+        "region": "Malawi",
+        "regionIt": "Malawi",
+        "country": "MW",
+        "center": [
+          34.00687,
+          -11.4431
+        ],
+        "zoom": 10.8,
+        "population": 222660,
+        "cells": 365,
+        "layer": "cities/mzuzu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.00687,
+            -11.4431
+          ]
+        },
+        "properties": {
+          "id": "mzuzu",
+          "name": "Mzuzu",
+          "country": "MW",
+          "isStudy": true,
+          "proximityMinutes": 21.5,
+          "population": 222660
+        }
+      },
+      "summary": null
+    }
+  }
+}

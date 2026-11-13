@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pagar-alam",
+  "createdAt": "2026-10-08T16:03:36.481Z",
+  "updatedAt": "2026-10-08T16:03:36.481Z",
+  "meta": {
+    "name": "Pagar Alam",
+    "nameIt": "Pagar Alam",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pagar Alam.geojson",
+      "sha256": "af6caf9189477f22fbecbb61d6ec7797c6d9c10c61774f4b96df325434938859",
+      "size": 111345,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pagar-alam",
+    "name": "Pagar Alam",
+    "nameIt": "Pagar Alam",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      103.24373,
+      -4.0223
+    ],
+    "zoom": 11.6,
+    "population": 64279,
+    "grid": "cities/pagar-alam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pagar-alam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pagar-alam",
+        "name": "Pagar Alam",
+        "nameIt": "Pagar Alam",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          103.24373,
+          -4.0223
+        ],
+        "zoom": 11.6,
+        "population": 64279,
+        "cells": 95,
+        "layer": "cities/pagar-alam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.24373,
+            -4.0223
+          ]
+        },
+        "properties": {
+          "id": "pagar-alam",
+          "name": "Pagar Alam",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 16.6,
+          "population": 64279
+        }
+      },
+      "summary": null
+    }
+  }
+}

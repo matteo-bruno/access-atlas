@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "petit-goave",
+  "createdAt": "2026-10-08T16:05:08.568Z",
+  "updatedAt": "2026-10-08T16:05:08.568Z",
+  "meta": {
+    "name": "Petit-Goâve",
+    "nameIt": "Petit-Goâve",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Petit-Goâve.geojson",
+      "sha256": "4c8d3565cf86173bf45501c84842ae66a1f601c921d2b6118feea39733a69c54",
+      "size": 212793,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "petit-goave",
+    "name": "Petit-Goâve",
+    "nameIt": "Petit-Goâve",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT",
+    "center": [
+      -72.85979,
+      18.42991
+    ],
+    "zoom": 11.6,
+    "population": 57143,
+    "grid": "cities/petit-goave/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/petit-goave/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "petit-goave",
+        "name": "Petit-Goâve",
+        "nameIt": "Petit-Goâve",
+        "region": "Haiti",
+        "regionIt": "Haiti",
+        "country": "HT",
+        "center": [
+          -72.85979,
+          18.42991
+        ],
+        "zoom": 11.6,
+        "population": 57143,
+        "cells": 182,
+        "layer": "cities/petit-goave/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.85979,
+            18.42991
+          ]
+        },
+        "properties": {
+          "id": "petit-goave",
+          "name": "Petit-Goâve",
+          "country": "HT",
+          "isStudy": true,
+          "proximityMinutes": 13.7,
+          "population": 57143
+        }
+      },
+      "summary": null
+    }
+  }
+}

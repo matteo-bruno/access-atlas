@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "akcaabat",
+  "createdAt": "2026-10-08T15:03:57.509Z",
+  "updatedAt": "2026-10-08T15:03:57.509Z",
+  "meta": {
+    "name": "Akçaabat",
+    "nameIt": "Akçaabat",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Akçaabat.geojson",
+      "sha256": "531d896ead2e1a7279d3b6aba7b075e768c8a42ce4a22d5a14219bf350f75fda",
+      "size": 202906,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "akcaabat",
+    "name": "Akçaabat",
+    "nameIt": "Akçaabat",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      39.59117,
+      41.01446
+    ],
+    "zoom": 11.1,
+    "population": 81739,
+    "grid": "cities/akcaabat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/akcaabat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "akcaabat",
+        "name": "Akçaabat",
+        "nameIt": "Akçaabat",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          39.59117,
+          41.01446
+        ],
+        "zoom": 11.1,
+        "population": 81739,
+        "cells": 176,
+        "layer": "cities/akcaabat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.59117,
+            41.01446
+          ]
+        },
+        "properties": {
+          "id": "akcaabat",
+          "name": "Akçaabat",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 81739
+        }
+      },
+      "summary": null
+    }
+  }
+}

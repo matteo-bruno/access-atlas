@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "reynosa",
+  "createdAt": "2026-10-08T16:08:44.954Z",
+  "updatedAt": "2026-10-08T16:08:44.954Z",
+  "meta": {
+    "name": "Reynosa",
+    "nameIt": "Reynosa",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Reynosa.geojson",
+      "sha256": "7a4653d864aa8fcb7a10c7d025f8aff05ebe54b8cfd5fa7c4a56ee2a584ee43a",
+      "size": 1470963,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "reynosa",
+    "name": "Reynosa",
+    "nameIt": "Reynosa",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -98.29981,
+      26.04922
+    ],
+    "zoom": 9.7,
+    "population": 649687,
+    "grid": "cities/reynosa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/reynosa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "reynosa",
+        "name": "Reynosa",
+        "nameIt": "Reynosa",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -98.29981,
+          26.04922
+        ],
+        "zoom": 9.7,
+        "population": 649687,
+        "cells": 1265,
+        "layer": "cities/reynosa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -98.29981,
+            26.04922
+          ]
+        },
+        "properties": {
+          "id": "reynosa",
+          "name": "Reynosa",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 35,
+          "population": 649687
+        }
+      },
+      "summary": null
+    }
+  }
+}

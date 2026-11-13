@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kakinada",
+  "createdAt": "2026-10-08T15:44:20.777Z",
+  "updatedAt": "2026-10-08T15:44:20.777Z",
+  "meta": {
+    "name": "Kakinada",
+    "nameIt": "Kakinada",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kakinada.geojson",
+      "sha256": "aafe35326dfc1c84bbd4b2b73b74598308968c01feea0598d180df8d1860c801",
+      "size": 724724,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kakinada",
+    "name": "Kakinada",
+    "nameIt": "Kakinada",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      82.23955,
+      16.97415
+    ],
+    "zoom": 10.5,
+    "population": 548048,
+    "grid": "cities/kakinada/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kakinada/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kakinada",
+        "name": "Kakinada",
+        "nameIt": "Kakinada",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          82.23955,
+          16.97415
+        ],
+        "zoom": 10.5,
+        "population": 548048,
+        "cells": 627,
+        "layer": "cities/kakinada/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            82.23955,
+            16.97415
+          ]
+        },
+        "properties": {
+          "id": "kakinada",
+          "name": "Kakinada",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 24.8,
+          "population": 548048
+        }
+      },
+      "summary": null
+    }
+  }
+}

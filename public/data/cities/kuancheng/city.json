@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kuancheng",
+  "createdAt": "2026-10-08T15:48:35.849Z",
+  "updatedAt": "2026-10-08T15:48:35.849Z",
+  "meta": {
+    "name": "Kuancheng",
+    "nameIt": "Kuancheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kuancheng.geojson",
+      "sha256": "7f8a6b224d676651a3a4d63166e8b4ce15bad8a48f515b90ae02d02a14d61f23",
+      "size": 209703,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kuancheng",
+    "name": "Kuancheng",
+    "nameIt": "Kuancheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.48102,
+      40.60959
+    ],
+    "zoom": 11.3,
+    "population": 86657,
+    "grid": "cities/kuancheng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 168
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kuancheng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kuancheng",
+        "name": "Kuancheng",
+        "nameIt": "Kuancheng",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.48102,
+          40.60959
+        ],
+        "zoom": 11.3,
+        "population": 86657,
+        "cells": 180,
+        "layer": "cities/kuancheng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 168
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.48102,
+            40.60959
+          ]
+        },
+        "properties": {
+          "id": "kuancheng",
+          "name": "Kuancheng",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 86657
+        }
+      },
+      "summary": null
+    }
+  }
+}

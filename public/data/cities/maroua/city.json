@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "maroua",
+  "createdAt": "2026-10-08T15:55:19.858Z",
+  "updatedAt": "2026-10-08T15:55:19.858Z",
+  "meta": {
+    "name": "Maroua",
+    "nameIt": "Maroua",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Maroua.geojson",
+      "sha256": "ab5a33a5662ebf20fe70a468dddcc56a1b3b8da8ca0a801142c85db94651154c",
+      "size": 718649,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "maroua",
+    "name": "Maroua",
+    "nameIt": "Maroua",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      14.32062,
+      10.60043
+    ],
+    "zoom": 10.1,
+    "population": 489806,
+    "grid": "cities/maroua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/maroua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "maroua",
+        "name": "Maroua",
+        "nameIt": "Maroua",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          14.32062,
+          10.60043
+        ],
+        "zoom": 10.1,
+        "population": 489806,
+        "cells": 617,
+        "layer": "cities/maroua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.32062,
+            10.60043
+          ]
+        },
+        "properties": {
+          "id": "maroua",
+          "name": "Maroua",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 21.4,
+          "population": 489806
+        }
+      },
+      "summary": null
+    }
+  }
+}

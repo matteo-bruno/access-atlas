@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shymkent",
+  "createdAt": "2026-10-08T16:13:21.770Z",
+  "updatedAt": "2026-10-08T16:13:21.770Z",
+  "meta": {
+    "name": "Shymkent",
+    "nameIt": "Shymkent",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shymkent.geojson",
+      "sha256": "347f0ab39aeab091dc492f027876af602820445504a7a10bd93f5916cfe4c2c6",
+      "size": 2182899,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shymkent",
+    "name": "Shymkent",
+    "nameIt": "Shymkent",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ",
+    "center": [
+      69.60316,
+      42.33964
+    ],
+    "zoom": 9.7,
+    "population": 813245,
+    "grid": "cities/shymkent/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shymkent/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shymkent",
+        "name": "Shymkent",
+        "nameIt": "Shymkent",
+        "region": "Kazakhstan",
+        "regionIt": "Kazakistan",
+        "country": "KZ",
+        "center": [
+          69.60316,
+          42.33964
+        ],
+        "zoom": 9.7,
+        "population": 813245,
+        "cells": 1902,
+        "layer": "cities/shymkent/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.60316,
+            42.33964
+          ]
+        },
+        "properties": {
+          "id": "shymkent",
+          "name": "Shymkent",
+          "country": "KZ",
+          "isStudy": true,
+          "proximityMinutes": 39.6,
+          "population": 813245
+        }
+      },
+      "summary": null
+    }
+  }
+}

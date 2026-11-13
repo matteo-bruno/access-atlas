@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "marl",
+  "createdAt": "2026-10-08T15:55:18.559Z",
+  "updatedAt": "2026-10-08T15:55:18.559Z",
+  "meta": {
+    "name": "Marl",
+    "nameIt": "Marl",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Marl.geojson",
+      "sha256": "b66974fc57130febe6764cb0f3d94c97cbacb5c9c64eab2fba5629036d8c14b5",
+      "size": 298013,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "marl",
+    "name": "Marl",
+    "nameIt": "Marl",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      7.10753,
+      51.66686
+    ],
+    "zoom": 11.4,
+    "population": 55084,
+    "grid": "cities/marl/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/marl/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "marl",
+        "name": "Marl",
+        "nameIt": "Marl",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          7.10753,
+          51.66686
+        ],
+        "zoom": 11.4,
+        "population": 55084,
+        "cells": 262,
+        "layer": "cities/marl/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.10753,
+            51.66686
+          ]
+        },
+        "properties": {
+          "id": "marl",
+          "name": "Marl",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 12,
+          "population": 55084
+        }
+      },
+      "summary": null
+    }
+  }
+}

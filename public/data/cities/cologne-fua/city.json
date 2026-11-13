@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cologne-fua",
+  "createdAt": "2026-10-19T16:55:56.345Z",
+  "updatedAt": "2026-10-19T16:55:56.345Z",
+  "meta": {
+    "name": "Cologne",
+    "nameIt": "Cologne",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "cologne-fua",
+    "name": "Cologne",
+    "nameIt": "Cologne",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "extent": "fua",
+    "core": "cologne",
+    "center": [
+      7.02216,
+      50.8891
+    ],
+    "zoom": 8.5,
+    "population": 3356402,
+    "grid": "cities/cologne-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cologne-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cologne-fua",
+        "name": "Cologne",
+        "nameIt": "Cologne",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "extent": "fua",
+        "core": "cologne",
+        "center": [
+          7.02216,
+          50.8891
+        ],
+        "zoom": 8.5,
+        "population": 3356402,
+        "cells": 35020,
+        "layer": "cities/cologne-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.02216,
+            50.8891
+          ]
+        },
+        "properties": {
+          "id": "cologne-fua",
+          "name": "Cologne",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 10.7,
+          "population": 3356402
+        }
+      },
+      "summary": null
+    }
+  }
+}

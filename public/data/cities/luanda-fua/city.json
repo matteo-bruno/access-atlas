@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "luanda-fua",
+  "createdAt": "2026-10-19T16:57:10.381Z",
+  "updatedAt": "2026-10-19T16:57:10.381Z",
+  "meta": {
+    "name": "Luanda",
+    "nameIt": "Luanda",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "luanda-fua",
+    "name": "Luanda",
+    "nameIt": "Luanda",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO",
+    "extent": "fua",
+    "core": "luanda",
+    "center": [
+      13.30439,
+      -8.87868
+    ],
+    "zoom": 8.5,
+    "population": 10296660,
+    "grid": "cities/luanda-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/luanda-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "luanda-fua",
+        "name": "Luanda",
+        "nameIt": "Luanda",
+        "region": "Angola",
+        "regionIt": "Angola",
+        "country": "AO",
+        "extent": "fua",
+        "core": "luanda",
+        "center": [
+          13.30439,
+          -8.87868
+        ],
+        "zoom": 8.5,
+        "population": 10296660,
+        "cells": 17142,
+        "layer": "cities/luanda-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.30439,
+            -8.87868
+          ]
+        },
+        "properties": {
+          "id": "luanda-fua",
+          "name": "Luanda",
+          "country": "AO",
+          "isStudy": true,
+          "proximityMinutes": 52.4,
+          "population": 10296660
+        }
+      },
+      "summary": null
+    }
+  }
+}

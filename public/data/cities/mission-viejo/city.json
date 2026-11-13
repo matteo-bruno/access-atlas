@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mission-viejo",
+  "createdAt": "2026-10-08T15:57:27.525Z",
+  "updatedAt": "2026-10-08T15:57:27.525Z",
+  "meta": {
+    "name": "Mission Viejo",
+    "nameIt": "Mission Viejo",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mission Viejo.geojson",
+      "sha256": "922e741dc98f69ec6e0043569b8eafe9dea0aa557a0042854de14755a3e46de1",
+      "size": 1805244,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mission-viejo",
+    "name": "Mission Viejo",
+    "nameIt": "Mission Viejo",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -117.68606,
+      33.605
+    ],
+    "zoom": 9.6,
+    "population": 447157,
+    "grid": "cities/mission-viejo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mission-viejo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mission-viejo",
+        "name": "Mission Viejo",
+        "nameIt": "Mission Viejo",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -117.68606,
+          33.605
+        ],
+        "zoom": 9.6,
+        "population": 447157,
+        "cells": 1552,
+        "layer": "cities/mission-viejo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -117.68606,
+            33.605
+          ]
+        },
+        "properties": {
+          "id": "mission-viejo",
+          "name": "Mission Viejo",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 23.8,
+          "population": 447157
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sydney-fua",
+  "createdAt": "2026-10-19T16:58:40.029Z",
+  "updatedAt": "2026-10-19T16:58:40.029Z",
+  "meta": {
+    "name": "Sydney",
+    "nameIt": "Sydney",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "sydney-fua",
+    "name": "Sydney",
+    "nameIt": "Sydney",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "extent": "fua",
+    "core": "sydney",
+    "center": [
+      151.05699,
+      -33.82867
+    ],
+    "zoom": 8.5,
+    "population": 4939053,
+    "grid": "cities/sydney-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sydney-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sydney-fua",
+        "name": "Sydney",
+        "nameIt": "Sydney",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "extent": "fua",
+        "core": "sydney",
+        "center": [
+          151.05699,
+          -33.82867
+        ],
+        "zoom": 8.5,
+        "population": 4939053,
+        "cells": 30528,
+        "layer": "cities/sydney-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            151.05699,
+            -33.82867
+          ]
+        },
+        "properties": {
+          "id": "sydney-fua",
+          "name": "Sydney",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 4939053
+        }
+      },
+      "summary": null
+    }
+  }
+}

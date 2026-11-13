@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ouargla",
+  "createdAt": "2026-10-08T16:03:17.386Z",
+  "updatedAt": "2026-10-08T16:03:17.386Z",
+  "meta": {
+    "name": "Ouargla",
+    "nameIt": "Ouargla",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ouargla.geojson",
+      "sha256": "3052c8bbef49cc9f2657c652b5e6a1567fbdae1a9007c00c013a28ed4ce59e57",
+      "size": 452433,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ouargla",
+    "name": "Ouargla",
+    "nameIt": "Ouargla",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      5.33603,
+      31.9466
+    ],
+    "zoom": 10.7,
+    "population": 219987,
+    "grid": "cities/ouargla/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ouargla/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ouargla",
+        "name": "Ouargla",
+        "nameIt": "Ouargla",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          5.33603,
+          31.9466
+        ],
+        "zoom": 10.7,
+        "population": 219987,
+        "cells": 395,
+        "layer": "cities/ouargla/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.33603,
+            31.9466
+          ]
+        },
+        "properties": {
+          "id": "ouargla",
+          "name": "Ouargla",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 18.7,
+          "population": 219987
+        }
+      },
+      "summary": null
+    }
+  }
+}

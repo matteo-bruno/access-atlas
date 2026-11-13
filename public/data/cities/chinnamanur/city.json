@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chinnamanur",
+  "createdAt": "2026-10-08T15:24:52.672Z",
+  "updatedAt": "2026-10-08T15:24:52.672Z",
+  "meta": {
+    "name": "Chinnamanur",
+    "nameIt": "Chinnamanur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chinnamanur.geojson",
+      "sha256": "5b1e09ceabcd9f651004d549ecb04adeb97ab5104cae0ecbd2b499afb4320aa5",
+      "size": 50611,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chinnamanur",
+    "name": "Chinnamanur",
+    "nameIt": "Chinnamanur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.38506,
+      9.84241
+    ],
+    "zoom": 12,
+    "population": 15948,
+    "grid": "cities/chinnamanur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chinnamanur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chinnamanur",
+        "name": "Chinnamanur",
+        "nameIt": "Chinnamanur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.38506,
+          9.84241
+        ],
+        "zoom": 12,
+        "population": 15948,
+        "cells": 44,
+        "layer": "cities/chinnamanur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.38506,
+            9.84241
+          ]
+        },
+        "properties": {
+          "id": "chinnamanur",
+          "name": "Chinnamanur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 15948
+        }
+      },
+      "summary": null
+    }
+  }
+}

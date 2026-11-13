@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shadegan",
+  "createdAt": "2026-10-08T16:12:11.563Z",
+  "updatedAt": "2026-10-08T16:12:11.563Z",
+  "meta": {
+    "name": "Shadegan",
+    "nameIt": "Shadegan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shadegan.geojson",
+      "sha256": "782243b2697696eff3e3b2e69e6709b43ecf43b6094b01e28ca609cc23fa3391",
+      "size": 159127,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shadegan",
+    "name": "Shadegan",
+    "nameIt": "Shadegan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      48.66053,
+      30.65045
+    ],
+    "zoom": 11.4,
+    "population": 60212,
+    "grid": "cities/shadegan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shadegan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shadegan",
+        "name": "Shadegan",
+        "nameIt": "Shadegan",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          48.66053,
+          30.65045
+        ],
+        "zoom": 11.4,
+        "population": 60212,
+        "cells": 137,
+        "layer": "cities/shadegan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.66053,
+            30.65045
+          ]
+        },
+        "properties": {
+          "id": "shadegan",
+          "name": "Shadegan",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 60212
+        }
+      },
+      "summary": null
+    }
+  }
+}

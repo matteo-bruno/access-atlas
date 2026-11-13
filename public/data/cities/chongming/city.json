@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chongming",
+  "createdAt": "2026-10-08T15:25:08.206Z",
+  "updatedAt": "2026-10-08T15:25:08.206Z",
+  "meta": {
+    "name": "Chongming",
+    "nameIt": "Chongming",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chongming.geojson",
+      "sha256": "0f4c2ea22be6a0fbe526a5ba38aff79bf5436cd2f3761ffcd95d26e49f2d0e11",
+      "size": 443397,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chongming",
+    "name": "Chongming",
+    "nameIt": "Chongming",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      121.40269,
+      31.632
+    ],
+    "zoom": 10.9,
+    "population": 101091,
+    "grid": "cities/chongming/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chongming/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chongming",
+        "name": "Chongming",
+        "nameIt": "Chongming",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          121.40269,
+          31.632
+        ],
+        "zoom": 10.9,
+        "population": 101091,
+        "cells": 380,
+        "layer": "cities/chongming/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.40269,
+            31.632
+          ]
+        },
+        "properties": {
+          "id": "chongming",
+          "name": "Chongming",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 101091
+        }
+      },
+      "summary": null
+    }
+  }
+}

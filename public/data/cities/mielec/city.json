@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mielec",
+  "createdAt": "2026-10-08T15:57:01.914Z",
+  "updatedAt": "2026-10-08T15:57:01.914Z",
+  "meta": {
+    "name": "Mielec",
+    "nameIt": "Mielec",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mielec.geojson",
+      "sha256": "8a1c994625a6d7247c13a078bef83cd002a552ea5e8e523dd3f1de45a9d28132",
+      "size": 202240,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mielec",
+    "name": "Mielec",
+    "nameIt": "Mielec",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      21.44264,
+      50.29569
+    ],
+    "zoom": 11.7,
+    "population": 47279,
+    "grid": "cities/mielec/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mielec/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mielec",
+        "name": "Mielec",
+        "nameIt": "Mielec",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          21.44264,
+          50.29569
+        ],
+        "zoom": 11.7,
+        "population": 47279,
+        "cells": 177,
+        "layer": "cities/mielec/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            21.44264,
+            50.29569
+          ]
+        },
+        "properties": {
+          "id": "mielec",
+          "name": "Mielec",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 47279
+        }
+      },
+      "summary": null
+    }
+  }
+}

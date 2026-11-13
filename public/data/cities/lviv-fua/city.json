@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lviv-fua",
+  "createdAt": "2026-10-19T16:57:11.090Z",
+  "updatedAt": "2026-10-19T16:57:11.090Z",
+  "meta": {
+    "name": "Lviv",
+    "nameIt": "Lviv",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "lviv-fua",
+    "name": "Lviv",
+    "nameIt": "Lviv",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "extent": "fua",
+    "core": "lviv",
+    "center": [
+      24.00625,
+      49.83337
+    ],
+    "zoom": 8.6,
+    "population": 740215,
+    "grid": "cities/lviv-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lviv-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lviv-fua",
+        "name": "Lviv",
+        "nameIt": "Lviv",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "extent": "fua",
+        "core": "lviv",
+        "center": [
+          24.00625,
+          49.83337
+        ],
+        "zoom": 8.6,
+        "population": 740215,
+        "cells": 9870,
+        "layer": "cities/lviv-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            24.00625,
+            49.83337
+          ]
+        },
+        "properties": {
+          "id": "lviv-fua",
+          "name": "Lviv",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 740215
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nandigama",
+  "createdAt": "2026-10-08T16:00:01.147Z",
+  "updatedAt": "2026-10-08T16:00:01.147Z",
+  "meta": {
+    "name": "Nandigama",
+    "nameIt": "Nandigama",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nandigama.geojson",
+      "sha256": "c3c374834ce8fac2e57825a28fb0e9f2f200155606b6d2ab561cd22a54c9c29d",
+      "size": 62605,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nandigama",
+    "name": "Nandigama",
+    "nameIt": "Nandigama",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.28389,
+      16.77147
+    ],
+    "zoom": 12,
+    "population": 35235,
+    "grid": "cities/nandigama/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nandigama/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nandigama",
+        "name": "Nandigama",
+        "nameIt": "Nandigama",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.28389,
+          16.77147
+        ],
+        "zoom": 12,
+        "population": 35235,
+        "cells": 54,
+        "layer": "cities/nandigama/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.28389,
+            16.77147
+          ]
+        },
+        "properties": {
+          "id": "nandigama",
+          "name": "Nandigama",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 10.6,
+          "population": 35235
+        }
+      },
+      "summary": null
+    }
+  }
+}

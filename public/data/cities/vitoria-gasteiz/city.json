@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vitoria-gasteiz",
+  "createdAt": "2026-10-08T16:20:55.213Z",
+  "updatedAt": "2026-10-08T16:20:55.213Z",
+  "meta": {
+    "name": "Vitoria-Gasteiz",
+    "nameIt": "Vitoria-Gasteiz",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vitoria-Gasteiz.geojson",
+      "sha256": "63db9d742e7cc242e4c93ea3b453a4f9f25c52aa9f58fa92833a3aa10812c061",
+      "size": 455991,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vitoria-gasteiz",
+    "name": "Vitoria-Gasteiz",
+    "nameIt": "Vitoria-Gasteiz",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -2.68308,
+      42.85123
+    ],
+    "zoom": 10.8,
+    "population": 244339,
+    "grid": "cities/vitoria-gasteiz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vitoria-gasteiz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vitoria-gasteiz",
+        "name": "Vitoria-Gasteiz",
+        "nameIt": "Vitoria-Gasteiz",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -2.68308,
+          42.85123
+        ],
+        "zoom": 10.8,
+        "population": 244339,
+        "cells": 396,
+        "layer": "cities/vitoria-gasteiz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.68308,
+            42.85123
+          ]
+        },
+        "properties": {
+          "id": "vitoria-gasteiz",
+          "name": "Vitoria-Gasteiz",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 6.7,
+          "population": 244339
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santo-tome",
+  "createdAt": "2026-10-08T16:11:17.013Z",
+  "updatedAt": "2026-10-08T16:11:17.013Z",
+  "meta": {
+    "name": "Santo Tomé",
+    "nameIt": "Santo Tomé",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santo Tomé.geojson",
+      "sha256": "5a0a0dc429390b661c1a794f96c2064328c665f77d031026faf3f29bd57fe56a",
+      "size": 302484,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santo-tome",
+    "name": "Santo Tomé",
+    "nameIt": "Santo Tomé",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -60.77147,
+      -31.67716
+    ],
+    "zoom": 11.6,
+    "population": 74907,
+    "grid": "cities/santo-tome/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santo-tome/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santo-tome",
+        "name": "Santo Tomé",
+        "nameIt": "Santo Tomé",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -60.77147,
+          -31.67716
+        ],
+        "zoom": 11.6,
+        "population": 74907,
+        "cells": 257,
+        "layer": "cities/santo-tome/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -60.77147,
+            -31.67716
+          ]
+        },
+        "properties": {
+          "id": "santo-tome",
+          "name": "Santo Tomé",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 14.8,
+          "population": 74907
+        }
+      },
+      "summary": null
+    }
+  }
+}

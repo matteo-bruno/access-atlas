@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bule-hora",
+  "createdAt": "2026-10-08T15:20:41.330Z",
+  "updatedAt": "2026-10-08T15:20:41.330Z",
+  "meta": {
+    "name": "Bule Hora",
+    "nameIt": "Bule Hora",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bule Hora.geojson",
+      "sha256": "0ce180f7162dc7a88e8387f391c9e59e2fbb9642bf9e033299957f02d5a64600",
+      "size": 233400,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bule-hora",
+    "name": "Bule Hora",
+    "nameIt": "Bule Hora",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      38.23793,
+      5.63735
+    ],
+    "zoom": 11.3,
+    "population": 67587,
+    "grid": "cities/bule-hora/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bule-hora/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bule-hora",
+        "name": "Bule Hora",
+        "nameIt": "Bule Hora",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          38.23793,
+          5.63735
+        ],
+        "zoom": 11.3,
+        "population": 67587,
+        "cells": 202,
+        "layer": "cities/bule-hora/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.23793,
+            5.63735
+          ]
+        },
+        "properties": {
+          "id": "bule-hora",
+          "name": "Bule Hora",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 29.6,
+          "population": 67587
+        }
+      },
+      "summary": null
+    }
+  }
+}

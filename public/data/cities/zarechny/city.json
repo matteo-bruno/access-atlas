@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zarechny",
+  "createdAt": "2026-10-08T16:24:53.617Z",
+  "updatedAt": "2026-10-08T16:24:53.617Z",
+  "meta": {
+    "name": "Zarechny",
+    "nameIt": "Zarechny",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zarechny.geojson",
+      "sha256": "613164e2a1d09f89d6da0ae9de9b16f999a24c50017dba45e00b5fb337bc5038",
+      "size": 115759,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zarechny",
+    "name": "Zarechny",
+    "nameIt": "Zarechny",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      45.17436,
+      53.19668
+    ],
+    "zoom": 11.6,
+    "population": 48907,
+    "grid": "cities/zarechny/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zarechny/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zarechny",
+        "name": "Zarechny",
+        "nameIt": "Zarechny",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          45.17436,
+          53.19668
+        ],
+        "zoom": 11.6,
+        "population": 48907,
+        "cells": 101,
+        "layer": "cities/zarechny/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            45.17436,
+            53.19668
+          ]
+        },
+        "properties": {
+          "id": "zarechny",
+          "name": "Zarechny",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 48907
+        }
+      },
+      "summary": null
+    }
+  }
+}

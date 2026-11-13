@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yongcheng",
+  "createdAt": "2026-10-08T16:24:07.272Z",
+  "updatedAt": "2026-10-08T16:24:07.272Z",
+  "meta": {
+    "name": "Yongcheng",
+    "nameIt": "Yongcheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yongcheng.geojson",
+      "sha256": "0f281a9fbe770ecb222aa8c4bdc1697d40490c1e1929f2bdf02fd50ecdf274bb",
+      "size": 824172,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yongcheng",
+    "name": "Yongcheng",
+    "nameIt": "Yongcheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.42749,
+      33.93665
+    ],
+    "zoom": 10.4,
+    "population": 433984,
+    "grid": "cities/yongcheng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yongcheng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yongcheng",
+        "name": "Yongcheng",
+        "nameIt": "Yongcheng",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.42749,
+          33.93665
+        ],
+        "zoom": 10.4,
+        "population": 433984,
+        "cells": 707,
+        "layer": "cities/yongcheng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.42749,
+            33.93665
+          ]
+        },
+        "properties": {
+          "id": "yongcheng",
+          "name": "Yongcheng",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24.5,
+          "population": 433984
+        }
+      },
+      "summary": null
+    }
+  }
+}

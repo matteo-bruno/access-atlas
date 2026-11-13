@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "alcala-de-henares",
+  "createdAt": "2026-10-08T15:05:36.853Z",
+  "updatedAt": "2026-10-08T15:05:36.853Z",
+  "meta": {
+    "name": "Alcalá de Henares",
+    "nameIt": "Alcalá de Henares",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Alcalá de Henares.geojson",
+      "sha256": "6d9c0e2e2349081acb838d8699d68ef1a92ee4cd9560b8197f54fe42c7e58e4a",
+      "size": 297916,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "alcala-de-henares",
+    "name": "Alcalá de Henares",
+    "nameIt": "Alcalá de Henares",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -3.36823,
+      40.48941
+    ],
+    "zoom": 11.1,
+    "population": 176382,
+    "grid": "cities/alcala-de-henares/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/alcala-de-henares/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "alcala-de-henares",
+        "name": "Alcalá de Henares",
+        "nameIt": "Alcalá de Henares",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -3.36823,
+          40.48941
+        ],
+        "zoom": 11.1,
+        "population": 176382,
+        "cells": 259,
+        "layer": "cities/alcala-de-henares/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -3.36823,
+            40.48941
+          ]
+        },
+        "properties": {
+          "id": "alcala-de-henares",
+          "name": "Alcalá de Henares",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 7.2,
+          "population": 176382
+        }
+      },
+      "summary": null
+    }
+  }
+}

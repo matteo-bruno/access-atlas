@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "andong-si",
+  "createdAt": "2026-10-08T15:07:31.133Z",
+  "updatedAt": "2026-10-08T15:07:31.133Z",
+  "meta": {
+    "name": "Andong-si",
+    "nameIt": "Andong-si",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Andong-si.geojson",
+      "sha256": "5376a62eb1c3830b7cb08c4a22096061e20bda863011caf121e937d0400ba0af",
+      "size": 247411,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "andong-si",
+    "name": "Andong-si",
+    "nameIt": "Andong-si",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      128.71429,
+      36.56405
+    ],
+    "zoom": 11.3,
+    "population": 81457,
+    "grid": "cities/andong-si/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 172
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/andong-si/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "andong-si",
+        "name": "Andong-si",
+        "nameIt": "Andong-si",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          128.71429,
+          36.56405
+        ],
+        "zoom": 11.3,
+        "population": 81457,
+        "cells": 214,
+        "layer": "cities/andong-si/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 172
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            128.71429,
+            36.56405
+          ]
+        },
+        "properties": {
+          "id": "andong-si",
+          "name": "Andong-si",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 12.8,
+          "population": 81457
+        }
+      },
+      "summary": null
+    }
+  }
+}

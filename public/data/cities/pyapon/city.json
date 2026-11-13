@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pyapon",
+  "createdAt": "2026-10-08T16:07:05.493Z",
+  "updatedAt": "2026-10-08T16:07:05.493Z",
+  "meta": {
+    "name": "Pyapon",
+    "nameIt": "Pyapon",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pyapon.geojson",
+      "sha256": "70e3425c843b66eac6adc0a719da8daf43a74c9f672fefa9450a8a01cf71e70c",
+      "size": 137763,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pyapon",
+    "name": "Pyapon",
+    "nameIt": "Pyapon",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      95.67996,
+      16.29026
+    ],
+    "zoom": 11.8,
+    "population": 99290,
+    "grid": "cities/pyapon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pyapon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pyapon",
+        "name": "Pyapon",
+        "nameIt": "Pyapon",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          95.67996,
+          16.29026
+        ],
+        "zoom": 11.8,
+        "population": 99290,
+        "cells": 119,
+        "layer": "cities/pyapon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            95.67996,
+            16.29026
+          ]
+        },
+        "properties": {
+          "id": "pyapon",
+          "name": "Pyapon",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 15.2,
+          "population": 99290
+        }
+      },
+      "summary": null
+    }
+  }
+}

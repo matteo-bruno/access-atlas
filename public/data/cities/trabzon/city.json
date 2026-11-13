@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "trabzon",
+  "createdAt": "2026-10-08T16:18:42.439Z",
+  "updatedAt": "2026-10-08T16:18:42.439Z",
+  "meta": {
+    "name": "Trabzon",
+    "nameIt": "Trabzon",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Trabzon.geojson",
+      "sha256": "029dcebdb4a67ce59878f3aa9d993738b158108f868ad61cd03595fb514b2dd8",
+      "size": 551964,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "trabzon",
+    "name": "Trabzon",
+    "nameIt": "Trabzon",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      39.74066,
+      40.99126
+    ],
+    "zoom": 10,
+    "population": 317201,
+    "grid": "cities/trabzon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/trabzon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "trabzon",
+        "name": "Trabzon",
+        "nameIt": "Trabzon",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          39.74066,
+          40.99126
+        ],
+        "zoom": 10,
+        "population": 317201,
+        "cells": 482,
+        "layer": "cities/trabzon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.74066,
+            40.99126
+          ]
+        },
+        "properties": {
+          "id": "trabzon",
+          "name": "Trabzon",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 317201
+        }
+      },
+      "summary": null
+    }
+  }
+}

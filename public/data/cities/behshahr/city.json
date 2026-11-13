@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "behshahr",
+  "createdAt": "2026-10-08T15:16:42.035Z",
+  "updatedAt": "2026-10-08T15:16:42.035Z",
+  "meta": {
+    "name": "Behshahr",
+    "nameIt": "Behshahr",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Behshahr.geojson",
+      "sha256": "a9a930385913128f569f63d84da64de1086a2754f838a9ae1ee79b087a537355",
+      "size": 135102,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "behshahr",
+    "name": "Behshahr",
+    "nameIt": "Behshahr",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      53.54488,
+      36.69276
+    ],
+    "zoom": 11.5,
+    "population": 61056,
+    "grid": "cities/behshahr/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/behshahr/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "behshahr",
+        "name": "Behshahr",
+        "nameIt": "Behshahr",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          53.54488,
+          36.69276
+        ],
+        "zoom": 11.5,
+        "population": 61056,
+        "cells": 117,
+        "layer": "cities/behshahr/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            53.54488,
+            36.69276
+          ]
+        },
+        "properties": {
+          "id": "behshahr",
+          "name": "Behshahr",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 61056
+        }
+      },
+      "summary": null
+    }
+  }
+}

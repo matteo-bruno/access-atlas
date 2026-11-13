@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "malacatan",
+  "createdAt": "2026-10-08T15:54:03.305Z",
+  "updatedAt": "2026-10-08T15:54:03.305Z",
+  "meta": {
+    "name": "Malacatán",
+    "nameIt": "Malacatán",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Malacatán.geojson",
+      "sha256": "d088d7e3ebd60321ee005242d354e01dfcd4c9db28d7841a469e868086e57ae2",
+      "size": 94720,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "malacatan",
+    "name": "Malacatán",
+    "nameIt": "Malacatán",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT",
+    "center": [
+      -92.05732,
+      14.91132
+    ],
+    "zoom": 12,
+    "population": 25811,
+    "grid": "cities/malacatan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/malacatan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "malacatan",
+        "name": "Malacatán",
+        "nameIt": "Malacatán",
+        "region": "Guatemala",
+        "regionIt": "Guatemala",
+        "country": "GT",
+        "center": [
+          -92.05732,
+          14.91132
+        ],
+        "zoom": 12,
+        "population": 25811,
+        "cells": 81,
+        "layer": "cities/malacatan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -92.05732,
+            14.91132
+          ]
+        },
+        "properties": {
+          "id": "malacatan",
+          "name": "Malacatán",
+          "country": "GT",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 25811
+        }
+      },
+      "summary": null
+    }
+  }
+}

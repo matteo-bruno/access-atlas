@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "morshi",
+  "createdAt": "2026-10-08T15:58:19.983Z",
+  "updatedAt": "2026-10-08T15:58:19.983Z",
+  "meta": {
+    "name": "Morshi",
+    "nameIt": "Morshi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Morshi.geojson",
+      "sha256": "40a67c4bbc40a49fc84bf173061f7bea403485a1e1774f7791944bf055e98d1c",
+      "size": 101899,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "morshi",
+    "name": "Morshi",
+    "nameIt": "Morshi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.00971,
+      21.33024
+    ],
+    "zoom": 12,
+    "population": 43524,
+    "grid": "cities/morshi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/morshi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "morshi",
+        "name": "Morshi",
+        "nameIt": "Morshi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.00971,
+          21.33024
+        ],
+        "zoom": 12,
+        "population": 43524,
+        "cells": 88,
+        "layer": "cities/morshi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.00971,
+            21.33024
+          ]
+        },
+        "properties": {
+          "id": "morshi",
+          "name": "Morshi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 43524
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "amman",
+  "createdAt": "2026-10-08T15:07:01.273Z",
+  "updatedAt": "2026-10-08T15:07:01.273Z",
+  "meta": {
+    "name": "Amman",
+    "nameIt": "Amman",
+    "region": "Jordan",
+    "regionIt": "Giordania",
+    "country": "JO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Amman.geojson",
+      "sha256": "981060a58d7e91d8f6f6fc80ee355e20bf6078bda06fe0e6d78baf8a2b1a2ee5",
+      "size": 5015348,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "amman",
+    "name": "Amman",
+    "nameIt": "Amman",
+    "region": "Jordan",
+    "regionIt": "Giordania",
+    "country": "JO",
+    "center": [
+      35.94848,
+      31.97882
+    ],
+    "zoom": 9,
+    "population": 5677709,
+    "grid": "cities/amman/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/amman/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "amman",
+        "name": "Amman",
+        "nameIt": "Amman",
+        "region": "Jordan",
+        "regionIt": "Giordania",
+        "country": "JO",
+        "center": [
+          35.94848,
+          31.97882
+        ],
+        "zoom": 9,
+        "population": 5677709,
+        "cells": 4341,
+        "layer": "cities/amman/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.94848,
+            31.97882
+          ]
+        },
+        "properties": {
+          "id": "amman",
+          "name": "Amman",
+          "country": "JO",
+          "isStudy": true,
+          "proximityMinutes": 43.6,
+          "population": 5677709
+        }
+      },
+      "summary": null
+    }
+  }
+}

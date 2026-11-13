@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "caluquembe",
+  "createdAt": "2026-10-08T15:21:59.152Z",
+  "updatedAt": "2026-10-08T15:21:59.152Z",
+  "meta": {
+    "name": "Caluquembe",
+    "nameIt": "Caluquembe",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Caluquembe.geojson",
+      "sha256": "fcf9b66017429019bd7901c1d6c5c4278d9a2fb0454d0b3116e14da25fdb3ac7",
+      "size": 142489,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "caluquembe",
+    "name": "Caluquembe",
+    "nameIt": "Caluquembe",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO",
+    "center": [
+      14.68797,
+      -13.78755
+    ],
+    "zoom": 11.7,
+    "population": 28693,
+    "grid": "cities/caluquembe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/caluquembe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "caluquembe",
+        "name": "Caluquembe",
+        "nameIt": "Caluquembe",
+        "region": "Angola",
+        "regionIt": "Angola",
+        "country": "AO",
+        "center": [
+          14.68797,
+          -13.78755
+        ],
+        "zoom": 11.7,
+        "population": 28693,
+        "cells": 121,
+        "layer": "cities/caluquembe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.68797,
+            -13.78755
+          ]
+        },
+        "properties": {
+          "id": "caluquembe",
+          "name": "Caluquembe",
+          "country": "AO",
+          "isStudy": true,
+          "proximityMinutes": 38.2,
+          "population": 28693
+        }
+      },
+      "summary": null
+    }
+  }
+}

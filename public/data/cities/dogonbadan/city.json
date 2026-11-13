@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dogonbadan",
+  "createdAt": "2026-10-08T15:30:29.081Z",
+  "updatedAt": "2026-10-08T15:30:29.081Z",
+  "meta": {
+    "name": "Dogonbadan",
+    "nameIt": "Dogonbadan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dogonbadan.geojson",
+      "sha256": "44758b70b82b0d650aa6fe7268f505ff27dbf27e79f9b32e833d40fc2e77e9f9",
+      "size": 220817,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dogonbadan",
+    "name": "Dogonbadan",
+    "nameIt": "Dogonbadan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      50.79394,
+      30.36032
+    ],
+    "zoom": 10.9,
+    "population": 90705,
+    "grid": "cities/dogonbadan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dogonbadan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dogonbadan",
+        "name": "Dogonbadan",
+        "nameIt": "Dogonbadan",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          50.79394,
+          30.36032
+        ],
+        "zoom": 10.9,
+        "population": 90705,
+        "cells": 190,
+        "layer": "cities/dogonbadan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            50.79394,
+            30.36032
+          ]
+        },
+        "properties": {
+          "id": "dogonbadan",
+          "name": "Dogonbadan",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 22.3,
+          "population": 90705
+        }
+      },
+      "summary": null
+    }
+  }
+}

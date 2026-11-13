@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yuanyi",
+  "createdAt": "2026-10-08T16:24:20.400Z",
+  "updatedAt": "2026-10-08T16:24:20.400Z",
+  "meta": {
+    "name": "Yuanyi",
+    "nameIt": "Yuanyi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yuanyi.geojson",
+      "sha256": "ebec773d9dbbaed37ef4f45a05376ee9f58848ac4c1c905e121aa8b09fd3cad2",
+      "size": 205166,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yuanyi",
+    "name": "Yuanyi",
+    "nameIt": "Yuanyi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      106.76308,
+      39.2197
+    ],
+    "zoom": 11.3,
+    "population": 60972,
+    "grid": "cities/yuanyi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yuanyi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yuanyi",
+        "name": "Yuanyi",
+        "nameIt": "Yuanyi",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          106.76308,
+          39.2197
+        ],
+        "zoom": 11.3,
+        "population": 60972,
+        "cells": 176,
+        "layer": "cities/yuanyi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.76308,
+            39.2197
+          ]
+        },
+        "properties": {
+          "id": "yuanyi",
+          "name": "Yuanyi",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 60972
+        }
+      },
+      "summary": null
+    }
+  }
+}

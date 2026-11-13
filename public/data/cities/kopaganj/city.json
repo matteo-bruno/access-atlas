@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kopaganj",
+  "createdAt": "2026-10-08T15:47:54.288Z",
+  "updatedAt": "2026-10-08T15:47:54.288Z",
+  "meta": {
+    "name": "Kopaganj",
+    "nameIt": "Kopaganj",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kopaganj.geojson",
+      "sha256": "4084f2e21b8feac28bd1fedc07ea236550cc975730e8613cc29faa2e5e77d030",
+      "size": 76486,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kopaganj",
+    "name": "Kopaganj",
+    "nameIt": "Kopaganj",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.56911,
+      26.02089
+    ],
+    "zoom": 12,
+    "population": 57788,
+    "grid": "cities/kopaganj/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kopaganj/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kopaganj",
+        "name": "Kopaganj",
+        "nameIt": "Kopaganj",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.56911,
+          26.02089
+        ],
+        "zoom": 12,
+        "population": 57788,
+        "cells": 66,
+        "layer": "cities/kopaganj/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.56911,
+            26.02089
+          ]
+        },
+        "properties": {
+          "id": "kopaganj",
+          "name": "Kopaganj",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 57788
+        }
+      },
+      "summary": null
+    }
+  }
+}

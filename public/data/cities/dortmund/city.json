@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dortmund",
+  "createdAt": "2026-10-08T15:31:02.478Z",
+  "updatedAt": "2026-10-08T15:31:02.478Z",
+  "meta": {
+    "name": "Dortmund",
+    "nameIt": "Dortmund",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dortmund.geojson",
+      "sha256": "c598b9b10ec75fadcf2bd16fa3bceb8e7d3cac60cb195b8f19388f332763e73d",
+      "size": 3125005,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dortmund",
+    "name": "Dortmund",
+    "nameIt": "Dortmund",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      7.44447,
+      51.50713
+    ],
+    "zoom": 9.4,
+    "population": 670527,
+    "grid": "cities/dortmund/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dortmund/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dortmund",
+        "name": "Dortmund",
+        "nameIt": "Dortmund",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          7.44447,
+          51.50713
+        ],
+        "zoom": 9.4,
+        "population": 670527,
+        "cells": 2750,
+        "layer": "cities/dortmund/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.44447,
+            51.50713
+          ]
+        },
+        "properties": {
+          "id": "dortmund",
+          "name": "Dortmund",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 9.9,
+          "population": 670527
+        }
+      },
+      "summary": null
+    }
+  }
+}

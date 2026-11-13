@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "garoua",
+  "createdAt": "2026-10-08T15:34:41.404Z",
+  "updatedAt": "2026-10-08T15:34:41.404Z",
+  "meta": {
+    "name": "Garoua",
+    "nameIt": "Garoua",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Garoua.geojson",
+      "sha256": "fa7ce9113e11cff7edbe2b93b4ada025dcf9fb72aacd649ff20f3bdeff00c729",
+      "size": 737210,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "garoua",
+    "name": "Garoua",
+    "nameIt": "Garoua",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      13.39346,
+      9.32229
+    ],
+    "zoom": 10.5,
+    "population": 639892,
+    "grid": "cities/garoua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/garoua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "garoua",
+        "name": "Garoua",
+        "nameIt": "Garoua",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          13.39346,
+          9.32229
+        ],
+        "zoom": 10.5,
+        "population": 639892,
+        "cells": 639,
+        "layer": "cities/garoua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.39346,
+            9.32229
+          ]
+        },
+        "properties": {
+          "id": "garoua",
+          "name": "Garoua",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 21.3,
+          "population": 639892
+        }
+      },
+      "summary": null
+    }
+  }
+}

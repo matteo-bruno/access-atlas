@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "soshanguve",
+  "createdAt": "2026-10-08T16:14:32.976Z",
+  "updatedAt": "2026-10-08T16:14:32.976Z",
+  "meta": {
+    "name": "Soshanguve",
+    "nameIt": "Soshanguve",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Soshanguve.geojson",
+      "sha256": "3b26b0c6a28163680f5a911332fb8a627769c04e5b32117d72160d95c2b18306",
+      "size": 3881998,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "soshanguve",
+    "name": "Soshanguve",
+    "nameIt": "Soshanguve",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      28.10631,
+      -25.48467
+    ],
+    "zoom": 8.6,
+    "population": 1073748,
+    "grid": "cities/soshanguve/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/soshanguve/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "soshanguve",
+        "name": "Soshanguve",
+        "nameIt": "Soshanguve",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          28.10631,
+          -25.48467
+        ],
+        "zoom": 8.6,
+        "population": 1073748,
+        "cells": 3304,
+        "layer": "cities/soshanguve/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.10631,
+            -25.48467
+          ]
+        },
+        "properties": {
+          "id": "soshanguve",
+          "name": "Soshanguve",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 86.8,
+          "population": 1073748
+        }
+      },
+      "summary": null
+    }
+  }
+}

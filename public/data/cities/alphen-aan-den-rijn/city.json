@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "alphen-aan-den-rijn",
+  "createdAt": "2026-10-08T15:06:21.315Z",
+  "updatedAt": "2026-10-08T15:06:21.315Z",
+  "meta": {
+    "name": "Alphen aan den Rijn",
+    "nameIt": "Alphen aan den Rijn",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Alphen aan den Rijn.geojson",
+      "sha256": "103f70b8f708d9b6295eee26883f1beaf79e3a70d04b3585bacd9a2ac2b7b163",
+      "size": 220623,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "alphen-aan-den-rijn",
+    "name": "Alphen aan den Rijn",
+    "nameIt": "Alphen aan den Rijn",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      4.659,
+      52.13451
+    ],
+    "zoom": 11.7,
+    "population": 46591,
+    "grid": "cities/alphen-aan-den-rijn/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/alphen-aan-den-rijn/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "alphen-aan-den-rijn",
+        "name": "Alphen aan den Rijn",
+        "nameIt": "Alphen aan den Rijn",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          4.659,
+          52.13451
+        ],
+        "zoom": 11.7,
+        "population": 46591,
+        "cells": 193,
+        "layer": "cities/alphen-aan-den-rijn/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.659,
+            52.13451
+          ]
+        },
+        "properties": {
+          "id": "alphen-aan-den-rijn",
+          "name": "Alphen aan den Rijn",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 10.8,
+          "population": 46591
+        }
+      },
+      "summary": null
+    }
+  }
+}

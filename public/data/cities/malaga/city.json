@@ -3,7 +3,7 @@
   "version": 1,
   "id": "malaga",
   "createdAt": "2026-08-28T13:51:44.000Z",
-  "updatedAt": "2026-10-08T14:05:35.108Z",
+  "updatedAt": "2026-10-19T21:01:01.803Z",
   "meta": {
     "name": "Málaga",
     "nameIt": "Malaga",
@@ -20,30 +20,128 @@
     "regionIt": "Spagna",
     "country": "ES",
     "center": [
-      -4.45463,
+      -4.45445,
       36.7129
     ],
     "zoom": 9.2,
-    "population": 595659,
+    "population": 597389,
     "grid": "cities/malaga/grid.json.gz",
     "cell": {
       "h3Resolution": 9,
       "cellRadiusM": 206
     },
     "layers": [
+      "fifteen",
+      "citychrone",
       "cardep",
       "pov"
     ],
     "layerData": {
+      "fifteen": "cities/malaga/fifteen.json.gz",
+      "citychrone": "cities/malaga/citychrone.json.gz",
       "cardep": "cities/malaga/cardep.json.gz",
       "pov": "cities/malaga/pov.json.gz"
     },
     "cartogramSources": {
+      "fifteen": "derived",
+      "citychrone": "derived",
       "cardep": "derived",
       "pov": "derived"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 3613,
+      "times": "cities/malaga/citychrone/times{hh}.bin"
     }
   },
   "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "malaga",
+        "name": "Málaga",
+        "nameIt": "Malaga",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -4.4385,
+          36.72083
+        ],
+        "zoom": 10.1,
+        "population": 511096,
+        "cells": 679,
+        "layer": "cities/malaga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -4.4385,
+            36.72083
+          ]
+        },
+        "properties": {
+          "id": "malaga",
+          "name": "Málaga",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 5.2,
+          "population": 511096
+        }
+      },
+      "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "malaga",
+        "name": "Málaga",
+        "nameIt": "Malaga",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -4.45463,
+          36.7129
+        ],
+        "zoom": 9.2,
+        "population": 595659,
+        "cells": 3613,
+        "layer": "cities/malaga/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 3613,
+          "times": "cities/malaga/citychrone/times{hh}.bin"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -4.45463,
+            36.7129
+          ]
+        },
+        "properties": {
+          "id": "malaga",
+          "name": "Málaga",
+          "country": "ES",
+          "isStudy": true,
+          "velocityScore": 3.6,
+          "population": 595659
+        }
+      },
+      "summary": null
+    },
     "cardep": {
       "row": {
         "id": "malaga",

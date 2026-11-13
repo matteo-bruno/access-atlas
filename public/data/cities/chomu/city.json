@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chomu",
+  "createdAt": "2026-10-08T15:25:05.846Z",
+  "updatedAt": "2026-10-08T15:25:05.846Z",
+  "meta": {
+    "name": "Chomu",
+    "nameIt": "Chomu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chomu.geojson",
+      "sha256": "f28c0415dab5e4a213b9e1d4025c3c703aa32e3df8947e1e199add7e3b4279c9",
+      "size": 238650,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chomu",
+    "name": "Chomu",
+    "nameIt": "Chomu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.72397,
+      27.15708
+    ],
+    "zoom": 11,
+    "population": 119242,
+    "grid": "cities/chomu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chomu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chomu",
+        "name": "Chomu",
+        "nameIt": "Chomu",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.72397,
+          27.15708
+        ],
+        "zoom": 11,
+        "population": 119242,
+        "cells": 206,
+        "layer": "cities/chomu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.72397,
+            27.15708
+          ]
+        },
+        "properties": {
+          "id": "chomu",
+          "name": "Chomu",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19.8,
+          "population": 119242
+        }
+      },
+      "summary": null
+    }
+  }
+}

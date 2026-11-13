@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "york-united-states",
+  "createdAt": "2026-10-08T16:24:14.218Z",
+  "updatedAt": "2026-10-08T16:24:14.218Z",
+  "meta": {
+    "name": "York (United States)",
+    "nameIt": "York (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/York (United States).geojson",
+      "sha256": "44ba10fb1db0ee975f17430d7d929c428d92ee5587feb473c2ffc41268740cba",
+      "size": 357170,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "york-united-states",
+    "name": "York (United States)",
+    "nameIt": "York (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -76.72094,
+      39.96299
+    ],
+    "zoom": 10.6,
+    "population": 66476,
+    "grid": "cities/york-united-states/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/york-united-states/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "york-united-states",
+        "name": "York (United States)",
+        "nameIt": "York (United States)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -76.72094,
+          39.96299
+        ],
+        "zoom": 10.6,
+        "population": 66476,
+        "cells": 310,
+        "layer": "cities/york-united-states/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.72094,
+            39.96299
+          ]
+        },
+        "properties": {
+          "id": "york-united-states",
+          "name": "York (United States)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 17.5,
+          "population": 66476
+        }
+      },
+      "summary": null
+    }
+  }
+}

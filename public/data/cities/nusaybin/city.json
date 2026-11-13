@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nusaybin",
+  "createdAt": "2026-10-08T16:02:21.515Z",
+  "updatedAt": "2026-10-08T16:02:21.515Z",
+  "meta": {
+    "name": "Nusaybin",
+    "nameIt": "Nusaybin",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nusaybin.geojson",
+      "sha256": "0a2e0a35a59fb044a0f9e6c4cb1f3831d5675a17aa2e05a28fbccc920080e660",
+      "size": 147554,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nusaybin",
+    "name": "Nusaybin",
+    "nameIt": "Nusaybin",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      41.21875,
+      37.08131
+    ],
+    "zoom": 11.7,
+    "population": 84639,
+    "grid": "cities/nusaybin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nusaybin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nusaybin",
+        "name": "Nusaybin",
+        "nameIt": "Nusaybin",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          41.21875,
+          37.08131
+        ],
+        "zoom": 11.7,
+        "population": 84639,
+        "cells": 128,
+        "layer": "cities/nusaybin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            41.21875,
+            37.08131
+          ]
+        },
+        "properties": {
+          "id": "nusaybin",
+          "name": "Nusaybin",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 84639
+        }
+      },
+      "summary": null
+    }
+  }
+}

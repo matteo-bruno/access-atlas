@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-francisco-united-states",
+  "createdAt": "2026-10-08T16:10:30.327Z",
+  "updatedAt": "2026-10-08T16:10:30.327Z",
+  "meta": {
+    "name": "San Francisco (United States)",
+    "nameIt": "San Francisco (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Francisco (United States).geojson",
+      "sha256": "c1aa1fdeca12445c55a4ab219c92a303c63258244ad9b4457769e6b1990733ca",
+      "size": 17010703,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-francisco-united-states",
+    "name": "San Francisco (United States)",
+    "nameIt": "San Francisco (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -122.1559,
+      37.57834
+    ],
+    "zoom": 8.5,
+    "population": 5513772,
+    "grid": "cities/san-francisco-united-states/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-francisco-united-states/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-francisco-united-states",
+        "name": "San Francisco (United States)",
+        "nameIt": "San Francisco (United States)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -122.1559,
+          37.57834
+        ],
+        "zoom": 8.5,
+        "population": 5513772,
+        "cells": 14650,
+        "layer": "cities/san-francisco-united-states/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.1559,
+            37.57834
+          ]
+        },
+        "properties": {
+          "id": "san-francisco-united-states",
+          "name": "San Francisco (United States)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 5513772
+        }
+      },
+      "summary": null
+    }
+  }
+}

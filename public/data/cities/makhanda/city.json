@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "makhanda",
+  "createdAt": "2026-10-08T15:53:59.015Z",
+  "updatedAt": "2026-10-08T15:53:59.015Z",
+  "meta": {
+    "name": "Makhanda",
+    "nameIt": "Makhanda",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Makhanda.geojson",
+      "sha256": "04dd19c57c3f96d6ebd6bb26b06a5d4e0e740cea375d3688a212da1728276324",
+      "size": 190306,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "makhanda",
+    "name": "Makhanda",
+    "nameIt": "Makhanda",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      26.54463,
+      -33.29983
+    ],
+    "zoom": 11.4,
+    "population": 47715,
+    "grid": "cities/makhanda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/makhanda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "makhanda",
+        "name": "Makhanda",
+        "nameIt": "Makhanda",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          26.54463,
+          -33.29983
+        ],
+        "zoom": 11.4,
+        "population": 47715,
+        "cells": 163,
+        "layer": "cities/makhanda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.54463,
+            -33.29983
+          ]
+        },
+        "properties": {
+          "id": "makhanda",
+          "name": "Makhanda",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 21.2,
+          "population": 47715
+        }
+      },
+      "summary": null
+    }
+  }
+}

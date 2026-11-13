@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gambela",
+  "createdAt": "2026-10-08T15:34:19.701Z",
+  "updatedAt": "2026-10-08T15:34:19.701Z",
+  "meta": {
+    "name": "Gambela",
+    "nameIt": "Gambela",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gambela.geojson",
+      "sha256": "73209cf30414b26a9d8e776d62f38e754b937e30005730686ae6a58f225b1f48",
+      "size": 196070,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gambela",
+    "name": "Gambela",
+    "nameIt": "Gambela",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      34.59041,
+      8.24644
+    ],
+    "zoom": 11.7,
+    "population": 108991,
+    "grid": "cities/gambela/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gambela/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gambela",
+        "name": "Gambela",
+        "nameIt": "Gambela",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          34.59041,
+          8.24644
+        ],
+        "zoom": 11.7,
+        "population": 108991,
+        "cells": 170,
+        "layer": "cities/gambela/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.59041,
+            8.24644
+          ]
+        },
+        "properties": {
+          "id": "gambela",
+          "name": "Gambela",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 108991
+        }
+      },
+      "summary": null
+    }
+  }
+}

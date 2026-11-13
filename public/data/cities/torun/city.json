@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "torun",
+  "createdAt": "2026-10-08T16:18:36.893Z",
+  "updatedAt": "2026-10-08T16:18:36.893Z",
+  "meta": {
+    "name": "Toruń",
+    "nameIt": "Toruń",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Toruń.geojson",
+      "sha256": "dcd3305cdd3cfcb3a5a7b132221d7c8b072606df7d654fd3ff4a7c210c44b416",
+      "size": 581847,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "torun",
+    "name": "Toruń",
+    "nameIt": "Toruń",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      18.62437,
+      53.02399
+    ],
+    "zoom": 10.7,
+    "population": 163876,
+    "grid": "cities/torun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/torun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "torun",
+        "name": "Toruń",
+        "nameIt": "Toruń",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          18.62437,
+          53.02399
+        ],
+        "zoom": 10.7,
+        "population": 163876,
+        "cells": 510,
+        "layer": "cities/torun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.62437,
+            53.02399
+          ]
+        },
+        "properties": {
+          "id": "torun",
+          "name": "Toruń",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 7.5,
+          "population": 163876
+        }
+      },
+      "summary": null
+    }
+  }
+}

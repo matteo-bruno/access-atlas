@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chibuto",
+  "createdAt": "2026-10-08T15:24:40.262Z",
+  "updatedAt": "2026-10-08T15:24:40.262Z",
+  "meta": {
+    "name": "Chibuto",
+    "nameIt": "Chibuto",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chibuto.geojson",
+      "sha256": "d69a3fd7d5abae12dcce191bed6295667889c7a739b9db9cdc1d8e03de8d98ea",
+      "size": 241360,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chibuto",
+    "name": "Chibuto",
+    "nameIt": "Chibuto",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ",
+    "center": [
+      33.5447,
+      -24.69628
+    ],
+    "zoom": 11.3,
+    "population": 81675,
+    "grid": "cities/chibuto/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chibuto/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chibuto",
+        "name": "Chibuto",
+        "nameIt": "Chibuto",
+        "region": "Mozambique",
+        "regionIt": "Mozambico",
+        "country": "MZ",
+        "center": [
+          33.5447,
+          -24.69628
+        ],
+        "zoom": 11.3,
+        "population": 81675,
+        "cells": 206,
+        "layer": "cities/chibuto/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.5447,
+            -24.69628
+          ]
+        },
+        "properties": {
+          "id": "chibuto",
+          "name": "Chibuto",
+          "country": "MZ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 81675
+        }
+      },
+      "summary": null
+    }
+  }
+}

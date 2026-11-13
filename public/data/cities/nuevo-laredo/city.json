@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nuevo-laredo",
+  "createdAt": "2026-10-08T16:02:17.553Z",
+  "updatedAt": "2026-10-08T16:02:17.553Z",
+  "meta": {
+    "name": "Nuevo Laredo",
+    "nameIt": "Nuevo Laredo",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nuevo Laredo.geojson",
+      "sha256": "856adb8ef7889119c314a8a11fe65ee51b06aa933c00841e67353fb68b382118",
+      "size": 736266,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nuevo-laredo",
+    "name": "Nuevo Laredo",
+    "nameIt": "Nuevo Laredo",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -99.53388,
+      27.48145
+    ],
+    "zoom": 10.4,
+    "population": 368855,
+    "grid": "cities/nuevo-laredo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nuevo-laredo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nuevo-laredo",
+        "name": "Nuevo Laredo",
+        "nameIt": "Nuevo Laredo",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -99.53388,
+          27.48145
+        ],
+        "zoom": 10.4,
+        "population": 368855,
+        "cells": 632,
+        "layer": "cities/nuevo-laredo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -99.53388,
+            27.48145
+          ]
+        },
+        "properties": {
+          "id": "nuevo-laredo",
+          "name": "Nuevo Laredo",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 23.3,
+          "population": 368855
+        }
+      },
+      "summary": null
+    }
+  }
+}

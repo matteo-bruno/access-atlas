@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santa-cruz-de-la-sierra",
+  "createdAt": "2026-10-08T16:11:04.480Z",
+  "updatedAt": "2026-10-08T16:11:04.480Z",
+  "meta": {
+    "name": "Santa Cruz de la Sierra",
+    "nameIt": "Santa Cruz de la Sierra",
+    "region": "Bolivia",
+    "regionIt": "Bolivia",
+    "country": "BO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santa Cruz de la Sierra.geojson",
+      "sha256": "9f565574b389c13febed2376f1ca9b402262d8f8f18c6a04f234bdf33d5d2766",
+      "size": 3445858,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santa-cruz-de-la-sierra",
+    "name": "Santa Cruz de la Sierra",
+    "nameIt": "Santa Cruz de la Sierra",
+    "region": "Bolivia",
+    "regionIt": "Bolivia",
+    "country": "BO",
+    "center": [
+      -63.15634,
+      -17.79742
+    ],
+    "zoom": 9.5,
+    "population": 1938630,
+    "grid": "cities/santa-cruz-de-la-sierra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santa-cruz-de-la-sierra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santa-cruz-de-la-sierra",
+        "name": "Santa Cruz de la Sierra",
+        "nameIt": "Santa Cruz de la Sierra",
+        "region": "Bolivia",
+        "regionIt": "Bolivia",
+        "country": "BO",
+        "center": [
+          -63.15634,
+          -17.79742
+        ],
+        "zoom": 9.5,
+        "population": 1938630,
+        "cells": 2948,
+        "layer": "cities/santa-cruz-de-la-sierra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -63.15634,
+            -17.79742
+          ]
+        },
+        "properties": {
+          "id": "santa-cruz-de-la-sierra",
+          "name": "Santa Cruz de la Sierra",
+          "country": "BO",
+          "isStudy": true,
+          "proximityMinutes": 22.4,
+          "population": 1938630
+        }
+      },
+      "summary": null
+    }
+  }
+}

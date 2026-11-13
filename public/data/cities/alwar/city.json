@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "alwar",
+  "createdAt": "2026-10-08T15:06:26.470Z",
+  "updatedAt": "2026-10-08T15:06:26.470Z",
+  "meta": {
+    "name": "Alwar",
+    "nameIt": "Alwar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Alwar.geojson",
+      "sha256": "81fef2ef8a0bf1dcc3e70a6fc19407ea6eb4c1dbfe854554a2d2a92f56c69fe7",
+      "size": 644081,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "alwar",
+    "name": "Alwar",
+    "nameIt": "Alwar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.62016,
+      27.56153
+    ],
+    "zoom": 10.4,
+    "population": 367802,
+    "grid": "cities/alwar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/alwar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "alwar",
+        "name": "Alwar",
+        "nameIt": "Alwar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.62016,
+          27.56153
+        ],
+        "zoom": 10.4,
+        "population": 367802,
+        "cells": 556,
+        "layer": "cities/alwar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.62016,
+            27.56153
+          ]
+        },
+        "properties": {
+          "id": "alwar",
+          "name": "Alwar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 27.2,
+          "population": 367802
+        }
+      },
+      "summary": null
+    }
+  }
+}

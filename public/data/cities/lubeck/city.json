@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lubeck",
+  "createdAt": "2026-10-08T15:53:04.018Z",
+  "updatedAt": "2026-10-08T15:53:04.018Z",
+  "meta": {
+    "name": "Lübeck",
+    "nameIt": "Lübeck",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lübeck.geojson",
+      "sha256": "4962f8765b72a03142583211a4c267ff022e205af8b7fa36f3211dbef0eb2dbb",
+      "size": 737108,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lubeck",
+    "name": "Lübeck",
+    "nameIt": "Lübeck",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      10.67982,
+      53.87134
+    ],
+    "zoom": 10.5,
+    "population": 165462,
+    "grid": "cities/lubeck/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lubeck/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lubeck",
+        "name": "Lübeck",
+        "nameIt": "Lübeck",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          10.67982,
+          53.87134
+        ],
+        "zoom": 10.5,
+        "population": 165462,
+        "cells": 645,
+        "layer": "cities/lubeck/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.67982,
+            53.87134
+          ]
+        },
+        "properties": {
+          "id": "lubeck",
+          "name": "Lübeck",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 165462
+        }
+      },
+      "summary": null
+    }
+  }
+}

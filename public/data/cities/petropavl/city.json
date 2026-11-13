@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "petropavl",
+  "createdAt": "2026-10-08T16:05:09.897Z",
+  "updatedAt": "2026-10-08T16:05:09.897Z",
+  "meta": {
+    "name": "Petropavl",
+    "nameIt": "Petropavl",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Petropavl.geojson",
+      "sha256": "2742d5237ddd0d5951678b940db7979a15c9a60b1643b6a0ea4daed549aa7ce3",
+      "size": 399498,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "petropavl",
+    "name": "Petropavl",
+    "nameIt": "Petropavl",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ",
+    "center": [
+      69.15688,
+      54.87074
+    ],
+    "zoom": 11,
+    "population": 142850,
+    "grid": "cities/petropavl/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/petropavl/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "petropavl",
+        "name": "Petropavl",
+        "nameIt": "Petropavl",
+        "region": "Kazakhstan",
+        "regionIt": "Kazakistan",
+        "country": "KZ",
+        "center": [
+          69.15688,
+          54.87074
+        ],
+        "zoom": 11,
+        "population": 142850,
+        "cells": 350,
+        "layer": "cities/petropavl/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.15688,
+            54.87074
+          ]
+        },
+        "properties": {
+          "id": "petropavl",
+          "name": "Petropavl",
+          "country": "KZ",
+          "isStudy": true,
+          "proximityMinutes": 19.2,
+          "population": 142850
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "corumba",
+  "createdAt": "2026-10-08T15:26:39.624Z",
+  "updatedAt": "2026-10-08T15:26:39.624Z",
+  "meta": {
+    "name": "Corumbá",
+    "nameIt": "Corumbá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Corumbá.geojson",
+      "sha256": "5c3275bf2a7b1c80de404a0c80b5957877b968b81cf52b2889d5045ca3b0ecf0",
+      "size": 413823,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "corumba",
+    "name": "Corumbá",
+    "nameIt": "Corumbá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -57.6397,
+      -19.01406
+    ],
+    "zoom": 10.8,
+    "population": 86794,
+    "grid": "cities/corumba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/corumba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "corumba",
+        "name": "Corumbá",
+        "nameIt": "Corumbá",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -57.6397,
+          -19.01406
+        ],
+        "zoom": 10.8,
+        "population": 86794,
+        "cells": 351,
+        "layer": "cities/corumba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -57.6397,
+            -19.01406
+          ]
+        },
+        "properties": {
+          "id": "corumba",
+          "name": "Corumbá",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 22.7,
+          "population": 86794
+        }
+      },
+      "summary": null
+    }
+  }
+}

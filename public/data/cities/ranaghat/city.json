@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ranaghat",
+  "createdAt": "2026-10-08T16:08:11.252Z",
+  "updatedAt": "2026-10-08T16:08:11.252Z",
+  "meta": {
+    "name": "Ranaghat",
+    "nameIt": "Ranaghat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ranaghat.geojson",
+      "sha256": "91bf27786a5bcc05cfe69839bfe48c0846123c8fa78d8f3e4079c0c24d1f9bbd",
+      "size": 243528,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ranaghat",
+    "name": "Ranaghat",
+    "nameIt": "Ranaghat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.56942,
+      23.17529
+    ],
+    "zoom": 11.1,
+    "population": 204185,
+    "grid": "cities/ranaghat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ranaghat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ranaghat",
+        "name": "Ranaghat",
+        "nameIt": "Ranaghat",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.56942,
+          23.17529
+        ],
+        "zoom": 11.1,
+        "population": 204185,
+        "cells": 210,
+        "layer": "cities/ranaghat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.56942,
+            23.17529
+          ]
+        },
+        "properties": {
+          "id": "ranaghat",
+          "name": "Ranaghat",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 204185
+        }
+      },
+      "summary": null
+    }
+  }
+}

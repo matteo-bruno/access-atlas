@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mingachevir",
+  "createdAt": "2026-10-08T15:57:13.354Z",
+  "updatedAt": "2026-10-08T15:57:13.354Z",
+  "meta": {
+    "name": "Mingachevir",
+    "nameIt": "Mingachevir",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mingachevir.geojson",
+      "sha256": "8ed6fb0e5fb0fab73a7eb29d9103352a00dbb26ddf8b74491649aac83a953b03",
+      "size": 221255,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mingachevir",
+    "name": "Mingachevir",
+    "nameIt": "Mingachevir",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ",
+    "center": [
+      47.03347,
+      40.76583
+    ],
+    "zoom": 10.9,
+    "population": 93611,
+    "grid": "cities/mingachevir/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mingachevir/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mingachevir",
+        "name": "Mingachevir",
+        "nameIt": "Mingachevir",
+        "region": "Azerbaijan",
+        "regionIt": "Azerbaigian",
+        "country": "AZ",
+        "center": [
+          47.03347,
+          40.76583
+        ],
+        "zoom": 10.9,
+        "population": 93611,
+        "cells": 192,
+        "layer": "cities/mingachevir/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            47.03347,
+            40.76583
+          ]
+        },
+        "properties": {
+          "id": "mingachevir",
+          "name": "Mingachevir",
+          "country": "AZ",
+          "isStudy": true,
+          "proximityMinutes": 17.2,
+          "population": 93611
+        }
+      },
+      "summary": null
+    }
+  }
+}

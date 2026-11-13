@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ahoada",
+  "createdAt": "2026-10-08T15:03:07.100Z",
+  "updatedAt": "2026-10-08T15:03:07.100Z",
+  "meta": {
+    "name": "Ahoada",
+    "nameIt": "Ahoada",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ahoada.geojson",
+      "sha256": "2ccccab66ce89897022b53e4379877e29f26109edc2362747d4485a85ba3f20b",
+      "size": 275107,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ahoada",
+    "name": "Ahoada",
+    "nameIt": "Ahoada",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      6.64433,
+      5.08532
+    ],
+    "zoom": 11.5,
+    "population": 115879,
+    "grid": "cities/ahoada/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ahoada/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ahoada",
+        "name": "Ahoada",
+        "nameIt": "Ahoada",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          6.64433,
+          5.08532
+        ],
+        "zoom": 11.5,
+        "population": 115879,
+        "cells": 239,
+        "layer": "cities/ahoada/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.64433,
+            5.08532
+          ]
+        },
+        "properties": {
+          "id": "ahoada",
+          "name": "Ahoada",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 115879
+        }
+      },
+      "summary": null
+    }
+  }
+}

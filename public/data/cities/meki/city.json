@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "meki",
+  "createdAt": "2026-10-08T15:56:26.234Z",
+  "updatedAt": "2026-10-08T15:56:26.234Z",
+  "meta": {
+    "name": "Meki",
+    "nameIt": "Meki",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Meki.geojson",
+      "sha256": "f41c51c16cae5a469898c3c1e5b933de142be7084a3c0f5baa9c42a1c17227ee",
+      "size": 192519,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "meki",
+    "name": "Meki",
+    "nameIt": "Meki",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      38.82074,
+      8.15174
+    ],
+    "zoom": 11.6,
+    "population": 82755,
+    "grid": "cities/meki/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/meki/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "meki",
+        "name": "Meki",
+        "nameIt": "Meki",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          38.82074,
+          8.15174
+        ],
+        "zoom": 11.6,
+        "population": 82755,
+        "cells": 167,
+        "layer": "cities/meki/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.82074,
+            8.15174
+          ]
+        },
+        "properties": {
+          "id": "meki",
+          "name": "Meki",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 82755
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rawalakot",
+  "createdAt": "2026-10-08T16:08:27.783Z",
+  "updatedAt": "2026-10-08T16:08:27.783Z",
+  "meta": {
+    "name": "Rawalakot",
+    "nameIt": "Rawalakot",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rawalakot.geojson",
+      "sha256": "a5f218a1da93cbc396c16ef679137b4099a716fdc046c21a2547577db81a529b",
+      "size": 234517,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rawalakot",
+    "name": "Rawalakot",
+    "nameIt": "Rawalakot",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      73.75881,
+      33.85207
+    ],
+    "zoom": 11.1,
+    "population": 65549,
+    "grid": "cities/rawalakot/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rawalakot/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rawalakot",
+        "name": "Rawalakot",
+        "nameIt": "Rawalakot",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          73.75881,
+          33.85207
+        ],
+        "zoom": 11.1,
+        "population": 65549,
+        "cells": 203,
+        "layer": "cities/rawalakot/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.75881,
+            33.85207
+          ]
+        },
+        "properties": {
+          "id": "rawalakot",
+          "name": "Rawalakot",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 65549
+        }
+      },
+      "summary": null
+    }
+  }
+}

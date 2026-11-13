@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "heishan",
+  "createdAt": "2026-10-08T15:38:16.429Z",
+  "updatedAt": "2026-10-08T15:38:16.429Z",
+  "meta": {
+    "name": "Heishan",
+    "nameIt": "Heishan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Heishan.geojson",
+      "sha256": "1fbccb146c6e4ba5cec81d830ce1774894be0f9a39e607ca990f4d471eaf6122",
+      "size": 265732,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "heishan",
+    "name": "Heishan",
+    "nameIt": "Heishan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      122.11095,
+      41.68616
+    ],
+    "zoom": 11.2,
+    "population": 74465,
+    "grid": "cities/heishan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 166
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/heishan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "heishan",
+        "name": "Heishan",
+        "nameIt": "Heishan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          122.11095,
+          41.68616
+        ],
+        "zoom": 11.2,
+        "population": 74465,
+        "cells": 228,
+        "layer": "cities/heishan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 166
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            122.11095,
+            41.68616
+          ]
+        },
+        "properties": {
+          "id": "heishan",
+          "name": "Heishan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 74465
+        }
+      },
+      "summary": null
+    }
+  }
+}

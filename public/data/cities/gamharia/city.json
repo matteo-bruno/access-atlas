@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gamharia",
+  "createdAt": "2026-10-08T15:34:20.475Z",
+  "updatedAt": "2026-10-08T15:34:20.475Z",
+  "meta": {
+    "name": "Gamharia",
+    "nameIt": "Gamharia",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gamharia.geojson",
+      "sha256": "9f7649d0d868cd545ec8812aa195c0ba4bdff8636c2956a4a353e357e9ba8f74",
+      "size": 874549,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gamharia",
+    "name": "Gamharia",
+    "nameIt": "Gamharia",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.7258,
+      26.06394
+    ],
+    "zoom": 10.3,
+    "population": 180222,
+    "grid": "cities/gamharia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gamharia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gamharia",
+        "name": "Gamharia",
+        "nameIt": "Gamharia",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.7258,
+          26.06394
+        ],
+        "zoom": 10.3,
+        "population": 180222,
+        "cells": 755,
+        "layer": "cities/gamharia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.7258,
+            26.06394
+          ]
+        },
+        "properties": {
+          "id": "gamharia",
+          "name": "Gamharia",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 180222
+        }
+      },
+      "summary": null
+    }
+  }
+}

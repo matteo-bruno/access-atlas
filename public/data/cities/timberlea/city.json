@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "timberlea",
+  "createdAt": "2026-10-08T16:17:55.089Z",
+  "updatedAt": "2026-10-08T16:17:55.089Z",
+  "meta": {
+    "name": "Timberlea",
+    "nameIt": "Timberlea",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Timberlea.geojson",
+      "sha256": "30ecaf1408afe997134ef4c58de36db2fb128b3823d3edbd1348d11c4e402f51",
+      "size": 181619,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "timberlea",
+    "name": "Timberlea",
+    "nameIt": "Timberlea",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -111.45409,
+      56.74545
+    ],
+    "zoom": 11.6,
+    "population": 25072,
+    "grid": "cities/timberlea/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/timberlea/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "timberlea",
+        "name": "Timberlea",
+        "nameIt": "Timberlea",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -111.45409,
+          56.74545
+        ],
+        "zoom": 11.6,
+        "population": 25072,
+        "cells": 155,
+        "layer": "cities/timberlea/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -111.45409,
+            56.74545
+          ]
+        },
+        "properties": {
+          "id": "timberlea",
+          "name": "Timberlea",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 15.1,
+          "population": 25072
+        }
+      },
+      "summary": null
+    }
+  }
+}

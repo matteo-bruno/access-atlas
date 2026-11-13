@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "daoukro",
+  "createdAt": "2026-10-08T15:28:16.360Z",
+  "updatedAt": "2026-10-08T15:28:16.360Z",
+  "meta": {
+    "name": "Daoukro",
+    "nameIt": "Daoukro",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Daoukro.geojson",
+      "sha256": "e848afa79ac555b3fe7270220224499b32462503ffa424436d628b13ccd8bedf",
+      "size": 143358,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "daoukro",
+    "name": "Daoukro",
+    "nameIt": "Daoukro",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI",
+    "center": [
+      -3.96685,
+      7.05743
+    ],
+    "zoom": 12,
+    "population": 69497,
+    "grid": "cities/daoukro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/daoukro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "daoukro",
+        "name": "Daoukro",
+        "nameIt": "Daoukro",
+        "region": "Ivory Coast",
+        "regionIt": "Costa d'Avorio",
+        "country": "CI",
+        "center": [
+          -3.96685,
+          7.05743
+        ],
+        "zoom": 12,
+        "population": 69497,
+        "cells": 123,
+        "layer": "cities/daoukro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -3.96685,
+            7.05743
+          ]
+        },
+        "properties": {
+          "id": "daoukro",
+          "name": "Daoukro",
+          "country": "CI",
+          "isStudy": true,
+          "proximityMinutes": 13.3,
+          "population": 69497
+        }
+      },
+      "summary": null
+    }
+  }
+}

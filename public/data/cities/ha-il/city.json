@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ha-il",
+  "createdAt": "2026-10-08T15:37:04.270Z",
+  "updatedAt": "2026-10-08T15:37:04.270Z",
+  "meta": {
+    "name": "Ha'il",
+    "nameIt": "Ha'il",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ha'il.geojson",
+      "sha256": "844cfb2e985a5b1715d55aa12dc0ed4c2654623d374ead940a42a5de01726608",
+      "size": 964473,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ha-il",
+    "name": "Ha'il",
+    "nameIt": "Ha'il",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA",
+    "center": [
+      41.68752,
+      27.51601
+    ],
+    "zoom": 10,
+    "population": 199654,
+    "grid": "cities/ha-il/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ha-il/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ha-il",
+        "name": "Ha'il",
+        "nameIt": "Ha'il",
+        "region": "Saudi Arabia",
+        "regionIt": "Arabia Saudita",
+        "country": "SA",
+        "center": [
+          41.68752,
+          27.51601
+        ],
+        "zoom": 10,
+        "population": 199654,
+        "cells": 830,
+        "layer": "cities/ha-il/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            41.68752,
+            27.51601
+          ]
+        },
+        "properties": {
+          "id": "ha-il",
+          "name": "Ha'il",
+          "country": "SA",
+          "isStudy": true,
+          "proximityMinutes": 49.2,
+          "population": 199654
+        }
+      },
+      "summary": null
+    }
+  }
+}

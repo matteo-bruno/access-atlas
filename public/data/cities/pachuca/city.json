@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pachuca",
+  "createdAt": "2026-10-08T16:03:32.449Z",
+  "updatedAt": "2026-10-08T16:03:32.449Z",
+  "meta": {
+    "name": "Pachuca",
+    "nameIt": "Pachuca",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pachuca.geojson",
+      "sha256": "51c2326902e167806349ed26e82419c5d8526b09a1f878f4d1614911d21b60f3",
+      "size": 696499,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pachuca",
+    "name": "Pachuca",
+    "nameIt": "Pachuca",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -98.74129,
+      20.10157
+    ],
+    "zoom": 10.6,
+    "population": 347387,
+    "grid": "cities/pachuca/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pachuca/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pachuca",
+        "name": "Pachuca",
+        "nameIt": "Pachuca",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -98.74129,
+          20.10157
+        ],
+        "zoom": 10.6,
+        "population": 347387,
+        "cells": 603,
+        "layer": "cities/pachuca/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -98.74129,
+            20.10157
+          ]
+        },
+        "properties": {
+          "id": "pachuca",
+          "name": "Pachuca",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 347387
+        }
+      },
+      "summary": null
+    }
+  }
+}

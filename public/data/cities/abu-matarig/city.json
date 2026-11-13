@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abu-matarig",
+  "createdAt": "2026-10-08T15:01:54.048Z",
+  "updatedAt": "2026-10-08T15:01:54.048Z",
+  "meta": {
+    "name": "Abu Matarig",
+    "nameIt": "Abu Matarig",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abu Matarig.geojson",
+      "sha256": "c85d5b7e9f904e67174a5a735f712db5e36a7aaea16e276aa307f78621ef2af4",
+      "size": 147927,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abu-matarig",
+    "name": "Abu Matarig",
+    "nameIt": "Abu Matarig",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      26.20104,
+      10.98598
+    ],
+    "zoom": 12,
+    "population": 15077,
+    "grid": "cities/abu-matarig/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abu-matarig/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abu-matarig",
+        "name": "Abu Matarig",
+        "nameIt": "Abu Matarig",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          26.20104,
+          10.98598
+        ],
+        "zoom": 12,
+        "population": 15077,
+        "cells": 127,
+        "layer": "cities/abu-matarig/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.20104,
+            10.98598
+          ]
+        },
+        "properties": {
+          "id": "abu-matarig",
+          "name": "Abu Matarig",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 15077
+        }
+      },
+      "summary": null
+    }
+  }
+}

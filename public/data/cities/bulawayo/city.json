@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bulawayo",
+  "createdAt": "2026-10-08T15:20:39.533Z",
+  "updatedAt": "2026-10-08T15:20:39.533Z",
+  "meta": {
+    "name": "Bulawayo",
+    "nameIt": "Bulawayo",
+    "region": "Zimbabwe",
+    "regionIt": "Zimbabwe",
+    "country": "ZW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bulawayo.geojson",
+      "sha256": "59ca62e54b2eb4ade66bfd098972e99077f9c3207afc07343dce1ba8f10e9aed",
+      "size": 1623907,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bulawayo",
+    "name": "Bulawayo",
+    "nameIt": "Bulawayo",
+    "region": "Zimbabwe",
+    "regionIt": "Zimbabwe",
+    "country": "ZW",
+    "center": [
+      28.53193,
+      -20.15662
+    ],
+    "zoom": 9.9,
+    "population": 585856,
+    "grid": "cities/bulawayo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bulawayo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bulawayo",
+        "name": "Bulawayo",
+        "nameIt": "Bulawayo",
+        "region": "Zimbabwe",
+        "regionIt": "Zimbabwe",
+        "country": "ZW",
+        "center": [
+          28.53193,
+          -20.15662
+        ],
+        "zoom": 9.9,
+        "population": 585856,
+        "cells": 1388,
+        "layer": "cities/bulawayo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.53193,
+            -20.15662
+          ]
+        },
+        "properties": {
+          "id": "bulawayo",
+          "name": "Bulawayo",
+          "country": "ZW",
+          "isStudy": true,
+          "proximityMinutes": 41.7,
+          "population": 585856
+        }
+      },
+      "summary": null
+    }
+  }
+}

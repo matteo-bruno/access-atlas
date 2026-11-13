@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "spring-valley",
+  "createdAt": "2026-10-08T16:14:39.516Z",
+  "updatedAt": "2026-10-08T16:14:39.516Z",
+  "meta": {
+    "name": "Spring Valley",
+    "nameIt": "Spring Valley",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Spring Valley.geojson",
+      "sha256": "9bbe221d8bf53c52ef7b2c6f76ec052aef3d36eb8ea4676fa625e1a122440655",
+      "size": 257955,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "spring-valley",
+    "name": "Spring Valley",
+    "nameIt": "Spring Valley",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -74.04979,
+      41.12039
+    ],
+    "zoom": 11.2,
+    "population": 102690,
+    "grid": "cities/spring-valley/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/spring-valley/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "spring-valley",
+        "name": "Spring Valley",
+        "nameIt": "Spring Valley",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -74.04979,
+          41.12039
+        ],
+        "zoom": 11.2,
+        "population": 102690,
+        "cells": 222,
+        "layer": "cities/spring-valley/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.04979,
+            41.12039
+          ]
+        },
+        "properties": {
+          "id": "spring-valley",
+          "name": "Spring Valley",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.5,
+          "population": 102690
+        }
+      },
+      "summary": null
+    }
+  }
+}

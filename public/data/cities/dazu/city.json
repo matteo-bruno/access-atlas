@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dazu",
+  "createdAt": "2026-10-08T15:28:44.560Z",
+  "updatedAt": "2026-10-08T15:28:44.560Z",
+  "meta": {
+    "name": "Dazu",
+    "nameIt": "Dazu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dazu.geojson",
+      "sha256": "9f2e7278eb5749217b10b15ba9f71e4e3fb1c46b66534bf7de05025ccfcb0500",
+      "size": 220641,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dazu",
+    "name": "Dazu",
+    "nameIt": "Dazu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      105.72232,
+      29.69592
+    ],
+    "zoom": 11.4,
+    "population": 184612,
+    "grid": "cities/dazu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dazu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dazu",
+        "name": "Dazu",
+        "nameIt": "Dazu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          105.72232,
+          29.69592
+        ],
+        "zoom": 11.4,
+        "population": 184612,
+        "cells": 189,
+        "layer": "cities/dazu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.72232,
+            29.69592
+          ]
+        },
+        "properties": {
+          "id": "dazu",
+          "name": "Dazu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 20.5,
+          "population": 184612
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-karak",
+  "createdAt": "2026-10-08T15:04:24.197Z",
+  "updatedAt": "2026-10-08T15:04:24.197Z",
+  "meta": {
+    "name": "Al Karak",
+    "nameIt": "Al Karak",
+    "region": "Jordan",
+    "regionIt": "Giordania",
+    "country": "JO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Karak.geojson",
+      "sha256": "4062f064d08fc65c25e5c1e80de903f2d05efb2b4f6ace07719ec075b0365693",
+      "size": 114954,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-karak",
+    "name": "Al Karak",
+    "nameIt": "Al Karak",
+    "region": "Jordan",
+    "regionIt": "Giordania",
+    "country": "JO",
+    "center": [
+      35.72486,
+      31.17683
+    ],
+    "zoom": 11.6,
+    "population": 38457,
+    "grid": "cities/al-karak/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-karak/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-karak",
+        "name": "Al Karak",
+        "nameIt": "Al Karak",
+        "region": "Jordan",
+        "regionIt": "Giordania",
+        "country": "JO",
+        "center": [
+          35.72486,
+          31.17683
+        ],
+        "zoom": 11.6,
+        "population": 38457,
+        "cells": 99,
+        "layer": "cities/al-karak/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.72486,
+            31.17683
+          ]
+        },
+        "properties": {
+          "id": "al-karak",
+          "name": "Al Karak",
+          "country": "JO",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 38457
+        }
+      },
+      "summary": null
+    }
+  }
+}

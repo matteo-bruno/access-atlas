@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "muzaffarnagar",
+  "createdAt": "2026-10-08T15:59:15.264Z",
+  "updatedAt": "2026-10-08T15:59:15.264Z",
+  "meta": {
+    "name": "Muzaffarnagar",
+    "nameIt": "Muzaffarnagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Muzaffarnagar.geojson",
+      "sha256": "b69c135ca641d9c42453d95ddc3f7062a59115f5d933e9ac9e712a2ad3162a19",
+      "size": 740214,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "muzaffarnagar",
+    "name": "Muzaffarnagar",
+    "nameIt": "Muzaffarnagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.70788,
+      29.46902
+    ],
+    "zoom": 10.5,
+    "population": 740742,
+    "grid": "cities/muzaffarnagar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/muzaffarnagar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "muzaffarnagar",
+        "name": "Muzaffarnagar",
+        "nameIt": "Muzaffarnagar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.70788,
+          29.46902
+        ],
+        "zoom": 10.5,
+        "population": 740742,
+        "cells": 638,
+        "layer": "cities/muzaffarnagar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.70788,
+            29.46902
+          ]
+        },
+        "properties": {
+          "id": "muzaffarnagar",
+          "name": "Muzaffarnagar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 28.5,
+          "population": 740742
+        }
+      },
+      "summary": null
+    }
+  }
+}

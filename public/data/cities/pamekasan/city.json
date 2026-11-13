@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pamekasan",
+  "createdAt": "2026-10-08T16:03:55.382Z",
+  "updatedAt": "2026-10-08T16:03:55.382Z",
+  "meta": {
+    "name": "Pamekasan",
+    "nameIt": "Pamekasan",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pamekasan.geojson",
+      "sha256": "99263bb74bf000b0b12ada546a72851708b8f72cd66eb90eae86bcd5ca754f8e",
+      "size": 742523,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pamekasan",
+    "name": "Pamekasan",
+    "nameIt": "Pamekasan",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      113.48892,
+      -7.15102
+    ],
+    "zoom": 10.5,
+    "population": 190589,
+    "grid": "cities/pamekasan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pamekasan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pamekasan",
+        "name": "Pamekasan",
+        "nameIt": "Pamekasan",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          113.48892,
+          -7.15102
+        ],
+        "zoom": 10.5,
+        "population": 190589,
+        "cells": 633,
+        "layer": "cities/pamekasan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.48892,
+            -7.15102
+          ]
+        },
+        "properties": {
+          "id": "pamekasan",
+          "name": "Pamekasan",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 40.8,
+          "population": 190589
+        }
+      },
+      "summary": null
+    }
+  }
+}

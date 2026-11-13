@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "joetsu",
+  "createdAt": "2026-10-08T15:43:23.706Z",
+  "updatedAt": "2026-10-08T15:43:23.706Z",
+  "meta": {
+    "name": "Joetsu",
+    "nameIt": "Joetsu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Joetsu.geojson",
+      "sha256": "4037840ce420c96c68798f883fa49ddc635fa1f6d4835ea97e60c9737ab914a0",
+      "size": 369843,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "joetsu",
+    "name": "Joetsu",
+    "nameIt": "Joetsu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      138.24865,
+      37.16598
+    ],
+    "zoom": 11,
+    "population": 62684,
+    "grid": "cities/joetsu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/joetsu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "joetsu",
+        "name": "Joetsu",
+        "nameIt": "Joetsu",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          138.24865,
+          37.16598
+        ],
+        "zoom": 11,
+        "population": 62684,
+        "cells": 319,
+        "layer": "cities/joetsu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            138.24865,
+            37.16598
+          ]
+        },
+        "properties": {
+          "id": "joetsu",
+          "name": "Joetsu",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 18.9,
+          "population": 62684
+        }
+      },
+      "summary": null
+    }
+  }
+}

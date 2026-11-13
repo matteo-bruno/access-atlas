@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sikandra",
+  "createdAt": "2026-10-08T16:13:37.608Z",
+  "updatedAt": "2026-10-08T16:13:37.608Z",
+  "meta": {
+    "name": "Sikandra",
+    "nameIt": "Sikandra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sikandra.geojson",
+      "sha256": "85f5b85e75eb10ba42e3f9734f9b17295e0ab0341a6d4847001aa58347454dc1",
+      "size": 374215,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sikandra",
+    "name": "Sikandra",
+    "nameIt": "Sikandra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.57765,
+      26.93873
+    ],
+    "zoom": 11,
+    "population": 37302,
+    "grid": "cities/sikandra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sikandra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sikandra",
+        "name": "Sikandra",
+        "nameIt": "Sikandra",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.57765,
+          26.93873
+        ],
+        "zoom": 11,
+        "population": 37302,
+        "cells": 323,
+        "layer": "cities/sikandra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.57765,
+            26.93873
+          ]
+        },
+        "properties": {
+          "id": "sikandra",
+          "name": "Sikandra",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 37302
+        }
+      },
+      "summary": null
+    }
+  }
+}

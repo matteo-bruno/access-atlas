@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ankang",
+  "createdAt": "2026-10-08T15:07:51.686Z",
+  "updatedAt": "2026-10-08T15:07:51.686Z",
+  "meta": {
+    "name": "Ankang",
+    "nameIt": "Ankang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ankang.geojson",
+      "sha256": "7e5b6565b90b4e22f21500889cf7cea19e261dc113b7b7bbf7eb73c32435a15b",
+      "size": 1313985,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ankang",
+    "name": "Ankang",
+    "nameIt": "Ankang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      109.01151,
+      32.7019
+    ],
+    "zoom": 9.5,
+    "population": 650601,
+    "grid": "cities/ankang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ankang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ankang",
+        "name": "Ankang",
+        "nameIt": "Ankang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          109.01151,
+          32.7019
+        ],
+        "zoom": 9.5,
+        "population": 650601,
+        "cells": 1126,
+        "layer": "cities/ankang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.01151,
+            32.7019
+          ]
+        },
+        "properties": {
+          "id": "ankang",
+          "name": "Ankang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 48.3,
+          "population": 650601
+        }
+      },
+      "summary": null
+    }
+  }
+}

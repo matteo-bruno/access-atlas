@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "providence-nevada",
+  "createdAt": "2026-10-08T16:06:37.609Z",
+  "updatedAt": "2026-10-08T16:06:37.609Z",
+  "meta": {
+    "name": "Providence (Nevada)",
+    "nameIt": "Providence (Nevada)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Providence (Nevada).geojson",
+      "sha256": "a8d79ff1cf0946fd3b2d47a94714621f386c19e6c683ad91c41c4af73be291e6",
+      "size": 269024,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "providence-nevada",
+    "name": "Providence (Nevada)",
+    "nameIt": "Providence (Nevada)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -115.29455,
+      36.299
+    ],
+    "zoom": 11,
+    "population": 95935,
+    "grid": "cities/providence-nevada/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/providence-nevada/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "providence-nevada",
+        "name": "Providence (Nevada)",
+        "nameIt": "Providence (Nevada)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -115.29455,
+          36.299
+        ],
+        "zoom": 11,
+        "population": 95935,
+        "cells": 230,
+        "layer": "cities/providence-nevada/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -115.29455,
+            36.299
+          ]
+        },
+        "properties": {
+          "id": "providence-nevada",
+          "name": "Providence (Nevada)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20.4,
+          "population": 95935
+        }
+      },
+      "summary": null
+    }
+  }
+}

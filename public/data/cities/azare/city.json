@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "azare",
+  "createdAt": "2026-10-08T15:12:02.902Z",
+  "updatedAt": "2026-10-08T15:12:02.902Z",
+  "meta": {
+    "name": "Azare",
+    "nameIt": "Azare",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Azare.geojson",
+      "sha256": "c4982cc2e9598ee507f0ad9c9d9947db2b8bc873a91679b0cc3d93abf0b83ddc",
+      "size": 391678,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "azare",
+    "name": "Azare",
+    "nameIt": "Azare",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      10.18793,
+      11.67274
+    ],
+    "zoom": 11.2,
+    "population": 142363,
+    "grid": "cities/azare/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/azare/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "azare",
+        "name": "Azare",
+        "nameIt": "Azare",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          10.18793,
+          11.67274
+        ],
+        "zoom": 11.2,
+        "population": 142363,
+        "cells": 335,
+        "layer": "cities/azare/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.18793,
+            11.67274
+          ]
+        },
+        "properties": {
+          "id": "azare",
+          "name": "Azare",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 21.5,
+          "population": 142363
+        }
+      },
+      "summary": null
+    }
+  }
+}

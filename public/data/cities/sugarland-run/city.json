@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sugarland-run",
+  "createdAt": "2026-10-08T16:14:56.592Z",
+  "updatedAt": "2026-10-08T16:14:56.592Z",
+  "meta": {
+    "name": "Sugarland Run",
+    "nameIt": "Sugarland Run",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sugarland Run.geojson",
+      "sha256": "33d7efcfed945d2c284b0eab1cd70dffd24f7453ad337efac44069ac72cf1cc5",
+      "size": 230818,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sugarland-run",
+    "name": "Sugarland Run",
+    "nameIt": "Sugarland Run",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -77.38956,
+      39.04228
+    ],
+    "zoom": 11,
+    "population": 46209,
+    "grid": "cities/sugarland-run/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sugarland-run/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sugarland-run",
+        "name": "Sugarland Run",
+        "nameIt": "Sugarland Run",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -77.38956,
+          39.04228
+        ],
+        "zoom": 11,
+        "population": 46209,
+        "cells": 199,
+        "layer": "cities/sugarland-run/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.38956,
+            39.04228
+          ]
+        },
+        "properties": {
+          "id": "sugarland-run",
+          "name": "Sugarland Run",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 21.2,
+          "population": 46209
+        }
+      },
+      "summary": null
+    }
+  }
+}

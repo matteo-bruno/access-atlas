@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kananga",
+  "createdAt": "2026-10-08T15:44:47.985Z",
+  "updatedAt": "2026-10-08T15:44:47.985Z",
+  "meta": {
+    "name": "Kananga",
+    "nameIt": "Kananga",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kananga.geojson",
+      "sha256": "26c42d3afe9c762a8d02181ba46e375e753ed303e9784df722c8904c6f1b26f1",
+      "size": 899984,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kananga",
+    "name": "Kananga",
+    "nameIt": "Kananga",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      22.41417,
+      -5.89914
+    ],
+    "zoom": 10.3,
+    "population": 784147,
+    "grid": "cities/kananga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kananga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kananga",
+        "name": "Kananga",
+        "nameIt": "Kananga",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          22.41417,
+          -5.89914
+        ],
+        "zoom": 10.3,
+        "population": 784147,
+        "cells": 770,
+        "layer": "cities/kananga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            22.41417,
+            -5.89914
+          ]
+        },
+        "properties": {
+          "id": "kananga",
+          "name": "Kananga",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 784147
+        }
+      },
+      "summary": null
+    }
+  }
+}

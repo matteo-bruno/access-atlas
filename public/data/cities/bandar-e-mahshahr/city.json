@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bandar-e-mahshahr",
+  "createdAt": "2026-10-08T15:14:36.832Z",
+  "updatedAt": "2026-10-08T15:14:36.832Z",
+  "meta": {
+    "name": "Bandar-e Mahshahr",
+    "nameIt": "Bandar-e Mahshahr",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bandar-e Mahshahr.geojson",
+      "sha256": "4988f241e83aa0de5c7aa38f08350c50422fb68a1d954a1ce3b48f53623b583a",
+      "size": 248881,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bandar-e-mahshahr",
+    "name": "Bandar-e Mahshahr",
+    "nameIt": "Bandar-e Mahshahr",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      49.18607,
+      30.55522
+    ],
+    "zoom": 11.4,
+    "population": 113858,
+    "grid": "cities/bandar-e-mahshahr/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bandar-e-mahshahr/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bandar-e-mahshahr",
+        "name": "Bandar-e Mahshahr",
+        "nameIt": "Bandar-e Mahshahr",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          49.18607,
+          30.55522
+        ],
+        "zoom": 11.4,
+        "population": 113858,
+        "cells": 215,
+        "layer": "cities/bandar-e-mahshahr/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            49.18607,
+            30.55522
+          ]
+        },
+        "properties": {
+          "id": "bandar-e-mahshahr",
+          "name": "Bandar-e Mahshahr",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 17,
+          "population": 113858
+        }
+      },
+      "summary": null
+    }
+  }
+}

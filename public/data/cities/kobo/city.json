@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kobo",
+  "createdAt": "2026-10-08T15:47:31.040Z",
+  "updatedAt": "2026-10-08T15:47:31.040Z",
+  "meta": {
+    "name": "Kobo",
+    "nameIt": "Kobo",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kobo.geojson",
+      "sha256": "6427fa7de8faf06851e6f969038ee706d98b8d232cbb7d742719da132300ef8c",
+      "size": 127960,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kobo",
+    "name": "Kobo",
+    "nameIt": "Kobo",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      39.63245,
+      12.15262
+    ],
+    "zoom": 11.9,
+    "population": 106403,
+    "grid": "cities/kobo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kobo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kobo",
+        "name": "Kobo",
+        "nameIt": "Kobo",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          39.63245,
+          12.15262
+        ],
+        "zoom": 11.9,
+        "population": 106403,
+        "cells": 110,
+        "layer": "cities/kobo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.63245,
+            12.15262
+          ]
+        },
+        "properties": {
+          "id": "kobo",
+          "name": "Kobo",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 106403
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "masohi",
+  "createdAt": "2026-10-08T15:55:33.766Z",
+  "updatedAt": "2026-10-08T15:55:33.766Z",
+  "meta": {
+    "name": "Masohi",
+    "nameIt": "Masohi",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Masohi.geojson",
+      "sha256": "db0f2646ea250d2d569c8ae0a51a088cca3fd72d222d400f212627f062ee286a",
+      "size": 119654,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "masohi",
+    "name": "Masohi",
+    "nameIt": "Masohi",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      128.96081,
+      -3.30076
+    ],
+    "zoom": 11.7,
+    "population": 59751,
+    "grid": "cities/masohi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/masohi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "masohi",
+        "name": "Masohi",
+        "nameIt": "Masohi",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          128.96081,
+          -3.30076
+        ],
+        "zoom": 11.7,
+        "population": 59751,
+        "cells": 102,
+        "layer": "cities/masohi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            128.96081,
+            -3.30076
+          ]
+        },
+        "properties": {
+          "id": "masohi",
+          "name": "Masohi",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 13.2,
+          "population": 59751
+        }
+      },
+      "summary": null
+    }
+  }
+}

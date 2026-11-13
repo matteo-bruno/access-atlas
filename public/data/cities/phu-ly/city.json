@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "phu-ly",
+  "createdAt": "2026-10-08T16:05:27.398Z",
+  "updatedAt": "2026-10-08T16:05:27.398Z",
+  "meta": {
+    "name": "Phủ Lý",
+    "nameIt": "Phủ Lý",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Phủ Lý.geojson",
+      "sha256": "8b60af51fd973340bdb226a0b17c00115c8f6675679d58ca5287f5e46d3bc610",
+      "size": 397395,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "phu-ly",
+    "name": "Phủ Lý",
+    "nameIt": "Phủ Lý",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      105.91035,
+      20.52853
+    ],
+    "zoom": 10.8,
+    "population": 142494,
+    "grid": "cities/phu-ly/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/phu-ly/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "phu-ly",
+        "name": "Phủ Lý",
+        "nameIt": "Phủ Lý",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          105.91035,
+          20.52853
+        ],
+        "zoom": 10.8,
+        "population": 142494,
+        "cells": 340,
+        "layer": "cities/phu-ly/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.91035,
+            20.52853
+          ]
+        },
+        "properties": {
+          "id": "phu-ly",
+          "name": "Phủ Lý",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 26,
+          "population": 142494
+        }
+      },
+      "summary": null
+    }
+  }
+}

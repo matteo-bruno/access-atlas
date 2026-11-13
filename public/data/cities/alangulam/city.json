@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "alangulam",
+  "createdAt": "2026-10-08T15:05:27.184Z",
+  "updatedAt": "2026-10-08T15:05:27.184Z",
+  "meta": {
+    "name": "Alangulam",
+    "nameIt": "Alangulam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Alangulam.geojson",
+      "sha256": "70b21c495b6204139991d81c5285d0c9eb91db8c1e02644ba6696ed9433cc791",
+      "size": 98850,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "alangulam",
+    "name": "Alangulam",
+    "nameIt": "Alangulam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.50033,
+      8.86716
+    ],
+    "zoom": 11.9,
+    "population": 24000,
+    "grid": "cities/alangulam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/alangulam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "alangulam",
+        "name": "Alangulam",
+        "nameIt": "Alangulam",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.50033,
+          8.86716
+        ],
+        "zoom": 11.9,
+        "population": 24000,
+        "cells": 86,
+        "layer": "cities/alangulam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.50033,
+            8.86716
+          ]
+        },
+        "properties": {
+          "id": "alangulam",
+          "name": "Alangulam",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 24000
+        }
+      },
+      "summary": null
+    }
+  }
+}

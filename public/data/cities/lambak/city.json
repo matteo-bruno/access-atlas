@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lambak",
+  "createdAt": "2026-10-08T15:49:57.697Z",
+  "updatedAt": "2026-10-08T15:49:57.697Z",
+  "meta": {
+    "name": "Lambak",
+    "nameIt": "Lambak",
+    "region": "Brunei",
+    "regionIt": "Brunei",
+    "country": "BN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lambak.geojson",
+      "sha256": "0d9b169901707e999604a400f8268701b7dac5c095cc236510ba4e8b5715dcf7",
+      "size": 321820,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lambak",
+    "name": "Lambak",
+    "nameIt": "Lambak",
+    "region": "Brunei",
+    "regionIt": "Brunei",
+    "country": "BN",
+    "center": [
+      114.95809,
+      4.95929
+    ],
+    "zoom": 11.1,
+    "population": 46372,
+    "grid": "cities/lambak/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lambak/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lambak",
+        "name": "Lambak",
+        "nameIt": "Lambak",
+        "region": "Brunei",
+        "regionIt": "Brunei",
+        "country": "BN",
+        "center": [
+          114.95809,
+          4.95929
+        ],
+        "zoom": 11.1,
+        "population": 46372,
+        "cells": 278,
+        "layer": "cities/lambak/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.95809,
+            4.95929
+          ]
+        },
+        "properties": {
+          "id": "lambak",
+          "name": "Lambak",
+          "country": "BN",
+          "isStudy": true,
+          "proximityMinutes": 23.7,
+          "population": 46372
+        }
+      },
+      "summary": null
+    }
+  }
+}

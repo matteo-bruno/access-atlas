@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vadakkenchery",
+  "createdAt": "2026-10-08T16:20:15.451Z",
+  "updatedAt": "2026-10-08T16:20:15.451Z",
+  "meta": {
+    "name": "Vadakkenchery",
+    "nameIt": "Vadakkenchery",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vadakkenchery.geojson",
+      "sha256": "7430cc2d17be09fb16151f087de90680ec8e5e08ad927c1c68b99f7e0202ec87",
+      "size": 159718,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vadakkenchery",
+    "name": "Vadakkenchery",
+    "nameIt": "Vadakkenchery",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.48985,
+      10.59008
+    ],
+    "zoom": 11.4,
+    "population": 40017,
+    "grid": "cities/vadakkenchery/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vadakkenchery/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vadakkenchery",
+        "name": "Vadakkenchery",
+        "nameIt": "Vadakkenchery",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.48985,
+          10.59008
+        ],
+        "zoom": 11.4,
+        "population": 40017,
+        "cells": 138,
+        "layer": "cities/vadakkenchery/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.48985,
+            10.59008
+          ]
+        },
+        "properties": {
+          "id": "vadakkenchery",
+          "name": "Vadakkenchery",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19.2,
+          "population": 40017
+        }
+      },
+      "summary": null
+    }
+  }
+}

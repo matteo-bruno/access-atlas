@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "eldorado",
+  "createdAt": "2026-10-08T15:32:07.010Z",
+  "updatedAt": "2026-10-08T15:32:07.010Z",
+  "meta": {
+    "name": "Eldorado",
+    "nameIt": "Eldorado",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Eldorado.geojson",
+      "sha256": "ea542dbdda7da0dfddb633b607c74ea2d58695674b77935f410226054a52c6bc",
+      "size": 259224,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "eldorado",
+    "name": "Eldorado",
+    "nameIt": "Eldorado",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -54.62581,
+      -26.40604
+    ],
+    "zoom": 10.7,
+    "population": 57309,
+    "grid": "cities/eldorado/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/eldorado/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "eldorado",
+        "name": "Eldorado",
+        "nameIt": "Eldorado",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -54.62581,
+          -26.40604
+        ],
+        "zoom": 10.7,
+        "population": 57309,
+        "cells": 221,
+        "layer": "cities/eldorado/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -54.62581,
+            -26.40604
+          ]
+        },
+        "properties": {
+          "id": "eldorado",
+          "name": "Eldorado",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 13.9,
+          "population": 57309
+        }
+      },
+      "summary": null
+    }
+  }
+}

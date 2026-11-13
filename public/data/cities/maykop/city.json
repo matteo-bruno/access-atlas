@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "maykop",
+  "createdAt": "2026-10-08T15:55:58.598Z",
+  "updatedAt": "2026-10-08T15:55:58.598Z",
+  "meta": {
+    "name": "Maykop",
+    "nameIt": "Maykop",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Maykop.geojson",
+      "sha256": "6137557701426f3715bd79b742d80e9e1bff2224ac649ae04e3262fae40b1dc2",
+      "size": 366016,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "maykop",
+    "name": "Maykop",
+    "nameIt": "Maykop",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      40.10031,
+      44.609
+    ],
+    "zoom": 11.1,
+    "population": 122690,
+    "grid": "cities/maykop/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/maykop/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "maykop",
+        "name": "Maykop",
+        "nameIt": "Maykop",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          40.10031,
+          44.609
+        ],
+        "zoom": 11.1,
+        "population": 122690,
+        "cells": 321,
+        "layer": "cities/maykop/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.10031,
+            44.609
+          ]
+        },
+        "properties": {
+          "id": "maykop",
+          "name": "Maykop",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 122690
+        }
+      },
+      "summary": null
+    }
+  }
+}

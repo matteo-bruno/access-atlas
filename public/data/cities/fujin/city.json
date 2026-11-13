@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fujin",
+  "createdAt": "2026-10-08T15:33:51.870Z",
+  "updatedAt": "2026-10-08T15:33:51.870Z",
+  "meta": {
+    "name": "Fujin",
+    "nameIt": "Fujin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fujin.geojson",
+      "sha256": "f4d270832ea6c82424082515cc7250231813aea1b00b9151066618b39b43eef4",
+      "size": 497353,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fujin",
+    "name": "Fujin",
+    "nameIt": "Fujin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      132.03101,
+      47.24837
+    ],
+    "zoom": 10.7,
+    "population": 120881,
+    "grid": "cities/fujin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fujin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fujin",
+        "name": "Fujin",
+        "nameIt": "Fujin",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          132.03101,
+          47.24837
+        ],
+        "zoom": 10.7,
+        "population": 120881,
+        "cells": 427,
+        "layer": "cities/fujin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            132.03101,
+            47.24837
+          ]
+        },
+        "properties": {
+          "id": "fujin",
+          "name": "Fujin",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 26.3,
+          "population": 120881
+        }
+      },
+      "summary": null
+    }
+  }
+}

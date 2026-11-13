@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "waladgaon",
+  "createdAt": "2026-10-08T16:21:14.220Z",
+  "updatedAt": "2026-10-08T16:21:14.220Z",
+  "meta": {
+    "name": "Waladgaon",
+    "nameIt": "Waladgaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Waladgaon.geojson",
+      "sha256": "5488460582f5aed3757faca154eb3fbb49dea53753aec93185091e04685cd106",
+      "size": 384897,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "waladgaon",
+    "name": "Waladgaon",
+    "nameIt": "Waladgaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.22773,
+      19.84528
+    ],
+    "zoom": 10.8,
+    "population": 213017,
+    "grid": "cities/waladgaon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/waladgaon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "waladgaon",
+        "name": "Waladgaon",
+        "nameIt": "Waladgaon",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.22773,
+          19.84528
+        ],
+        "zoom": 10.8,
+        "population": 213017,
+        "cells": 332,
+        "layer": "cities/waladgaon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.22773,
+            19.84528
+          ]
+        },
+        "properties": {
+          "id": "waladgaon",
+          "name": "Waladgaon",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 38.1,
+          "population": 213017
+        }
+      },
+      "summary": null
+    }
+  }
+}

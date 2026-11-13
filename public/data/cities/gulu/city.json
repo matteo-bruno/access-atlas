@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gulu",
+  "createdAt": "2026-10-08T15:36:40.658Z",
+  "updatedAt": "2026-10-08T15:36:40.658Z",
+  "meta": {
+    "name": "Gulu",
+    "nameIt": "Gulu",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gulu.geojson",
+      "sha256": "b6f447152471e623bdf86919305e39b066931fa2a5a4a5640cbdf73362158683",
+      "size": 492792,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gulu",
+    "name": "Gulu",
+    "nameIt": "Gulu",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG",
+    "center": [
+      32.29595,
+      2.77188
+    ],
+    "zoom": 10.8,
+    "population": 119684,
+    "grid": "cities/gulu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gulu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gulu",
+        "name": "Gulu",
+        "nameIt": "Gulu",
+        "region": "Uganda",
+        "regionIt": "Uganda",
+        "country": "UG",
+        "center": [
+          32.29595,
+          2.77188
+        ],
+        "zoom": 10.8,
+        "population": 119684,
+        "cells": 426,
+        "layer": "cities/gulu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.29595,
+            2.77188
+          ]
+        },
+        "properties": {
+          "id": "gulu",
+          "name": "Gulu",
+          "country": "UG",
+          "isStudy": true,
+          "proximityMinutes": 21.1,
+          "population": 119684
+        }
+      },
+      "summary": null
+    }
+  }
+}

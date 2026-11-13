@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "amassoma",
+  "createdAt": "2026-10-08T15:06:38.965Z",
+  "updatedAt": "2026-10-08T15:06:38.965Z",
+  "meta": {
+    "name": "Amassoma",
+    "nameIt": "Amassoma",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Amassoma.geojson",
+      "sha256": "1a1dd1f4bdc984723d072367f49ffc8dc0d03c30672f2a034c80ba558a7f217d",
+      "size": 173716,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "amassoma",
+    "name": "Amassoma",
+    "nameIt": "Amassoma",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      6.10645,
+      4.97298
+    ],
+    "zoom": 11.4,
+    "population": 73296,
+    "grid": "cities/amassoma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/amassoma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "amassoma",
+        "name": "Amassoma",
+        "nameIt": "Amassoma",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          6.10645,
+          4.97298
+        ],
+        "zoom": 11.4,
+        "population": 73296,
+        "cells": 151,
+        "layer": "cities/amassoma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.10645,
+            4.97298
+          ]
+        },
+        "properties": {
+          "id": "amassoma",
+          "name": "Amassoma",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 73296
+        }
+      },
+      "summary": null
+    }
+  }
+}

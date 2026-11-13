@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "iwo",
+  "createdAt": "2026-10-08T15:41:30.669Z",
+  "updatedAt": "2026-10-08T15:41:30.669Z",
+  "meta": {
+    "name": "Iwo",
+    "nameIt": "Iwo",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Iwo.geojson",
+      "sha256": "bf15cc889bbca0a386a5683fb4744d419248a7911db930a23e51199a56f87531",
+      "size": 554146,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "iwo",
+    "name": "Iwo",
+    "nameIt": "Iwo",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      4.18421,
+      7.63688
+    ],
+    "zoom": 10.9,
+    "population": 275539,
+    "grid": "cities/iwo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/iwo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "iwo",
+        "name": "Iwo",
+        "nameIt": "Iwo",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          4.18421,
+          7.63688
+        ],
+        "zoom": 10.9,
+        "population": 275539,
+        "cells": 481,
+        "layer": "cities/iwo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.18421,
+            7.63688
+          ]
+        },
+        "properties": {
+          "id": "iwo",
+          "name": "Iwo",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 34.2,
+          "population": 275539
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baidoa",
+  "createdAt": "2026-10-08T15:13:26.653Z",
+  "updatedAt": "2026-10-08T15:13:26.653Z",
+  "meta": {
+    "name": "Baidoa",
+    "nameIt": "Baidoa",
+    "region": "Somalia",
+    "regionIt": "Somalia",
+    "country": "SO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baidoa.geojson",
+      "sha256": "245b56fcfb56a00e24982d88ae7271dca00ac2082580bd7b4451568414abcd43",
+      "size": 342111,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baidoa",
+    "name": "Baidoa",
+    "nameIt": "Baidoa",
+    "region": "Somalia",
+    "regionIt": "Somalia",
+    "country": "SO",
+    "center": [
+      43.65369,
+      3.11899
+    ],
+    "zoom": 11.1,
+    "population": 355873,
+    "grid": "cities/baidoa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baidoa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baidoa",
+        "name": "Baidoa",
+        "nameIt": "Baidoa",
+        "region": "Somalia",
+        "regionIt": "Somalia",
+        "country": "SO",
+        "center": [
+          43.65369,
+          3.11899
+        ],
+        "zoom": 11.1,
+        "population": 355873,
+        "cells": 295,
+        "layer": "cities/baidoa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.65369,
+            3.11899
+          ]
+        },
+        "properties": {
+          "id": "baidoa",
+          "name": "Baidoa",
+          "country": "SO",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 355873
+        }
+      },
+      "summary": null
+    }
+  }
+}

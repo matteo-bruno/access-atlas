@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pelaihari",
+  "createdAt": "2026-10-08T16:04:55.193Z",
+  "updatedAt": "2026-10-08T16:04:55.193Z",
+  "meta": {
+    "name": "Pelaihari",
+    "nameIt": "Pelaihari",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pelaihari.geojson",
+      "sha256": "4e13e64ca07ab2af31003c2380ad66fe80dc0f3792fef7532178910ae2d39026",
+      "size": 152347,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pelaihari",
+    "name": "Pelaihari",
+    "nameIt": "Pelaihari",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      114.77555,
+      -3.80242
+    ],
+    "zoom": 11.7,
+    "population": 45286,
+    "grid": "cities/pelaihari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pelaihari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pelaihari",
+        "name": "Pelaihari",
+        "nameIt": "Pelaihari",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          114.77555,
+          -3.80242
+        ],
+        "zoom": 11.7,
+        "population": 45286,
+        "cells": 130,
+        "layer": "cities/pelaihari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.77555,
+            -3.80242
+          ]
+        },
+        "properties": {
+          "id": "pelaihari",
+          "name": "Pelaihari",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 45286
+        }
+      },
+      "summary": null
+    }
+  }
+}

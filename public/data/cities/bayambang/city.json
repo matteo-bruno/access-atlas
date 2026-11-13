@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bayambang",
+  "createdAt": "2026-10-08T15:16:18.029Z",
+  "updatedAt": "2026-10-08T15:16:18.029Z",
+  "meta": {
+    "name": "Bayambang",
+    "nameIt": "Bayambang",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bayambang.geojson",
+      "sha256": "39e9ab9d27c4f8989ed5170e2c5e30539a568aacccfa654c085e957b9c306a2b",
+      "size": 408673,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bayambang",
+    "name": "Bayambang",
+    "nameIt": "Bayambang",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      120.46282,
+      15.8072
+    ],
+    "zoom": 10.9,
+    "population": 83288,
+    "grid": "cities/bayambang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bayambang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bayambang",
+        "name": "Bayambang",
+        "nameIt": "Bayambang",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          120.46282,
+          15.8072
+        ],
+        "zoom": 10.9,
+        "population": 83288,
+        "cells": 350,
+        "layer": "cities/bayambang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.46282,
+            15.8072
+          ]
+        },
+        "properties": {
+          "id": "bayambang",
+          "name": "Bayambang",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 20.9,
+          "population": 83288
+        }
+      },
+      "summary": null
+    }
+  }
+}

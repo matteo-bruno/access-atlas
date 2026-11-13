@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "goiania",
+  "createdAt": "2026-10-08T15:35:31.536Z",
+  "updatedAt": "2026-10-08T15:35:31.536Z",
+  "meta": {
+    "name": "Goiânia",
+    "nameIt": "Goiânia",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Goiânia.geojson",
+      "sha256": "d7f9fe3c3a0390f01cffb4df04a7e0f3281a955d45a27c57752ad3898dc8707c",
+      "size": 5358566,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "goiania",
+    "name": "Goiânia",
+    "nameIt": "Goiânia",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -49.28844,
+      -16.70593
+    ],
+    "zoom": 9.1,
+    "population": 2050986,
+    "grid": "cities/goiania/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/goiania/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "goiania",
+        "name": "Goiânia",
+        "nameIt": "Goiânia",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -49.28844,
+          -16.70593
+        ],
+        "zoom": 9.1,
+        "population": 2050986,
+        "cells": 4564,
+        "layer": "cities/goiania/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.28844,
+            -16.70593
+          ]
+        },
+        "properties": {
+          "id": "goiania",
+          "name": "Goiânia",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 35.8,
+          "population": 2050986
+        }
+      },
+      "summary": null
+    }
+  }
+}

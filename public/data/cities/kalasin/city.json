@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kalasin",
+  "createdAt": "2026-10-08T15:44:23.921Z",
+  "updatedAt": "2026-10-08T15:44:23.921Z",
+  "meta": {
+    "name": "Kalasin",
+    "nameIt": "Kalasin",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kalasin.geojson",
+      "sha256": "0d25d21921e23f21ec214a64787e7c315c729a11ba0d308b6ccaecbb20de1d63",
+      "size": 160915,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kalasin",
+    "name": "Kalasin",
+    "nameIt": "Kalasin",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      103.51161,
+      16.43291
+    ],
+    "zoom": 11.4,
+    "population": 38428,
+    "grid": "cities/kalasin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kalasin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kalasin",
+        "name": "Kalasin",
+        "nameIt": "Kalasin",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          103.51161,
+          16.43291
+        ],
+        "zoom": 11.4,
+        "population": 38428,
+        "cells": 138,
+        "layer": "cities/kalasin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.51161,
+            16.43291
+          ]
+        },
+        "properties": {
+          "id": "kalasin",
+          "name": "Kalasin",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 16.9,
+          "population": 38428
+        }
+      },
+      "summary": null
+    }
+  }
+}

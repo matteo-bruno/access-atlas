@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xipeng",
+  "createdAt": "2026-10-08T16:22:57.673Z",
+  "updatedAt": "2026-10-08T16:22:57.673Z",
+  "meta": {
+    "name": "Xipeng",
+    "nameIt": "Xipeng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xipeng.geojson",
+      "sha256": "f553f9617fa3893c29937cc63c499d41f1abfa6d9df2153f146cfa0f56b8a618",
+      "size": 138993,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xipeng",
+    "name": "Xipeng",
+    "nameIt": "Xipeng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      106.32368,
+      29.30131
+    ],
+    "zoom": 11.9,
+    "population": 88256,
+    "grid": "cities/xipeng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xipeng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xipeng",
+        "name": "Xipeng",
+        "nameIt": "Xipeng",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          106.32368,
+          29.30131
+        ],
+        "zoom": 11.9,
+        "population": 88256,
+        "cells": 119,
+        "layer": "cities/xipeng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.32368,
+            29.30131
+          ]
+        },
+        "properties": {
+          "id": "xipeng",
+          "name": "Xipeng",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 88256
+        }
+      },
+      "summary": null
+    }
+  }
+}

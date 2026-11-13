@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xinlong",
+  "createdAt": "2026-10-08T16:22:47.781Z",
+  "updatedAt": "2026-10-08T16:22:47.781Z",
+  "meta": {
+    "name": "Xinlong",
+    "nameIt": "Xinlong",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xinlong.geojson",
+      "sha256": "7b2ff0be1152e99e6c4366c63fac57fc3898475eb02c7dc2b0b77603cf21f087",
+      "size": 284283,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xinlong",
+    "name": "Xinlong",
+    "nameIt": "Xinlong",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.60133,
+      23.28575
+    ],
+    "zoom": 10.7,
+    "population": 66613,
+    "grid": "cities/xinlong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xinlong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xinlong",
+        "name": "Xinlong",
+        "nameIt": "Xinlong",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.60133,
+          23.28575
+        ],
+        "zoom": 10.7,
+        "population": 66613,
+        "cells": 243,
+        "layer": "cities/xinlong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.60133,
+            23.28575
+          ]
+        },
+        "properties": {
+          "id": "xinlong",
+          "name": "Xinlong",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 19.3,
+          "population": 66613
+        }
+      },
+      "summary": null
+    }
+  }
+}

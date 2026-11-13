@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mbale-city",
+  "createdAt": "2026-10-08T15:56:02.678Z",
+  "updatedAt": "2026-10-08T15:56:02.678Z",
+  "meta": {
+    "name": "Mbale City",
+    "nameIt": "Mbale City",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mbale City.geojson",
+      "sha256": "e3fb56cb29d539f23fb7644bb038296a5ff0631ebddf39076de1bb78151cd813",
+      "size": 1088146,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mbale-city",
+    "name": "Mbale City",
+    "nameIt": "Mbale City",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG",
+    "center": [
+      34.19232,
+      1.08409
+    ],
+    "zoom": 10,
+    "population": 283783,
+    "grid": "cities/mbale-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mbale-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mbale-city",
+        "name": "Mbale City",
+        "nameIt": "Mbale City",
+        "region": "Uganda",
+        "regionIt": "Uganda",
+        "country": "UG",
+        "center": [
+          34.19232,
+          1.08409
+        ],
+        "zoom": 10,
+        "population": 283783,
+        "cells": 938,
+        "layer": "cities/mbale-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.19232,
+            1.08409
+          ]
+        },
+        "properties": {
+          "id": "mbale-city",
+          "name": "Mbale City",
+          "country": "UG",
+          "isStudy": true,
+          "proximityMinutes": 31.8,
+          "population": 283783
+        }
+      },
+      "summary": null
+    }
+  }
+}

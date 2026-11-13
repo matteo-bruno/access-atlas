@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "warsaw-fua",
+  "createdAt": "2026-10-19T16:58:57.299Z",
+  "updatedAt": "2026-10-19T16:58:57.299Z",
+  "meta": {
+    "name": "Warsaw",
+    "nameIt": "Warsaw",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "warsaw-fua",
+    "name": "Warsaw",
+    "nameIt": "Warsaw",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "extent": "fua",
+    "core": "warsaw",
+    "center": [
+      20.99911,
+      52.21637
+    ],
+    "zoom": 8.5,
+    "population": 3156940,
+    "grid": "cities/warsaw-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/warsaw-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "warsaw-fua",
+        "name": "Warsaw",
+        "nameIt": "Warsaw",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "extent": "fua",
+        "core": "warsaw",
+        "center": [
+          20.99911,
+          52.21637
+        ],
+        "zoom": 8.5,
+        "population": 3156940,
+        "cells": 43094,
+        "layer": "cities/warsaw-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.99911,
+            52.21637
+          ]
+        },
+        "properties": {
+          "id": "warsaw-fua",
+          "name": "Warsaw",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 8.6,
+          "population": 3156940
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "penrith",
+  "createdAt": "2026-10-08T16:04:59.982Z",
+  "updatedAt": "2026-10-08T16:04:59.982Z",
+  "meta": {
+    "name": "Penrith",
+    "nameIt": "Penrith",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Penrith.geojson",
+      "sha256": "4d64310db19b68c7bc500d88fe7aedab9edaabbe2af709294157591629526a12",
+      "size": 383159,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "penrith",
+    "name": "Penrith",
+    "nameIt": "Penrith",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      150.70473,
+      -33.7596
+    ],
+    "zoom": 10.7,
+    "population": 97597,
+    "grid": "cities/penrith/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/penrith/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "penrith",
+        "name": "Penrith",
+        "nameIt": "Penrith",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          150.70473,
+          -33.7596
+        ],
+        "zoom": 10.7,
+        "population": 97597,
+        "cells": 331,
+        "layer": "cities/penrith/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            150.70473,
+            -33.7596
+          ]
+        },
+        "properties": {
+          "id": "penrith",
+          "name": "Penrith",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 16.9,
+          "population": 97597
+        }
+      },
+      "summary": null
+    }
+  }
+}

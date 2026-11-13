@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "belgrade-fua",
+  "createdAt": "2026-10-19T16:55:24.169Z",
+  "updatedAt": "2026-10-19T16:55:24.169Z",
+  "meta": {
+    "name": "Belgrade",
+    "nameIt": "Belgrade",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "belgrade-fua",
+    "name": "Belgrade",
+    "nameIt": "Belgrade",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS",
+    "extent": "fua",
+    "core": "belgrade",
+    "center": [
+      20.44378,
+      44.7921
+    ],
+    "zoom": 8.5,
+    "population": 1498899,
+    "grid": "cities/belgrade-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/belgrade-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "belgrade-fua",
+        "name": "Belgrade",
+        "nameIt": "Belgrade",
+        "region": "Serbia",
+        "regionIt": "Serbia",
+        "country": "RS",
+        "extent": "fua",
+        "core": "belgrade",
+        "center": [
+          20.44378,
+          44.7921
+        ],
+        "zoom": 8.5,
+        "population": 1498899,
+        "cells": 10776,
+        "layer": "cities/belgrade-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.44378,
+            44.7921
+          ]
+        },
+        "properties": {
+          "id": "belgrade-fua",
+          "name": "Belgrade",
+          "country": "RS",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 1498899
+        }
+      },
+      "summary": null
+    }
+  }
+}

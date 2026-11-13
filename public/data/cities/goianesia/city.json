@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "goianesia",
+  "createdAt": "2026-10-08T15:35:30.769Z",
+  "updatedAt": "2026-10-08T15:35:30.769Z",
+  "meta": {
+    "name": "Goianésia",
+    "nameIt": "Goianésia",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Goianésia.geojson",
+      "sha256": "47884f20eca858b7c9a3060b864ee00dd8a4dd114b5fc1f0d01eb5338f9053b6",
+      "size": 180331,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "goianesia",
+    "name": "Goianésia",
+    "nameIt": "Goianésia",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -49.12038,
+      -15.32275
+    ],
+    "zoom": 11.7,
+    "population": 61186,
+    "grid": "cities/goianesia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/goianesia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "goianesia",
+        "name": "Goianésia",
+        "nameIt": "Goianésia",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -49.12038,
+          -15.32275
+        ],
+        "zoom": 11.7,
+        "population": 61186,
+        "cells": 153,
+        "layer": "cities/goianesia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.12038,
+            -15.32275
+          ]
+        },
+        "properties": {
+          "id": "goianesia",
+          "name": "Goianésia",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 17.7,
+          "population": 61186
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chiang-mai",
+  "createdAt": "2026-10-08T15:24:38.291Z",
+  "updatedAt": "2026-10-08T15:24:38.291Z",
+  "meta": {
+    "name": "Chiang Mai",
+    "nameIt": "Chiang Mai",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chiang Mai.geojson",
+      "sha256": "568fb1894c0f30f092180c19216a00a3846bf4e09fc57de1cb51ca4a54258f7e",
+      "size": 2099580,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chiang-mai",
+    "name": "Chiang Mai",
+    "nameIt": "Chiang Mai",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      98.99606,
+      18.78019
+    ],
+    "zoom": 9.7,
+    "population": 630559,
+    "grid": "cities/chiang-mai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chiang-mai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chiang-mai",
+        "name": "Chiang Mai",
+        "nameIt": "Chiang Mai",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          98.99606,
+          18.78019
+        ],
+        "zoom": 9.7,
+        "population": 630559,
+        "cells": 1830,
+        "layer": "cities/chiang-mai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            98.99606,
+            18.78019
+          ]
+        },
+        "properties": {
+          "id": "chiang-mai",
+          "name": "Chiang Mai",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 20,
+          "population": 630559
+        }
+      },
+      "summary": null
+    }
+  }
+}

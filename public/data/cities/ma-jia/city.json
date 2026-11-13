@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ma-jia",
+  "createdAt": "2026-10-08T15:53:09.483Z",
+  "updatedAt": "2026-10-08T15:53:09.483Z",
+  "meta": {
+    "name": "Ma Jia",
+    "nameIt": "Ma Jia",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ma Jia.geojson",
+      "sha256": "aa9f7c14241917e2a3e6b7fb06462dc4aa5c843bb4a2a6b2a8a7f27bad811b8c",
+      "size": 725502,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ma-jia",
+    "name": "Ma Jia",
+    "nameIt": "Ma Jia",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      108.99878,
+      34.46916
+    ],
+    "zoom": 10.7,
+    "population": 234074,
+    "grid": "cities/ma-jia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ma-jia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ma-jia",
+        "name": "Ma Jia",
+        "nameIt": "Ma Jia",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          108.99878,
+          34.46916
+        ],
+        "zoom": 10.7,
+        "population": 234074,
+        "cells": 622,
+        "layer": "cities/ma-jia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.99878,
+            34.46916
+          ]
+        },
+        "properties": {
+          "id": "ma-jia",
+          "name": "Ma Jia",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 52.2,
+          "population": 234074
+        }
+      },
+      "summary": null
+    }
+  }
+}

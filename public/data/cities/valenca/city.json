@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "valenca",
+  "createdAt": "2026-10-08T16:20:20.947Z",
+  "updatedAt": "2026-10-08T16:20:20.947Z",
+  "meta": {
+    "name": "Valença",
+    "nameIt": "Valença",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Valença.geojson",
+      "sha256": "f63d6c594b57bad3d2fa413ff78b2e44ddd50b851dc4d640092d9a4af28d211d",
+      "size": 122927,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "valenca",
+    "name": "Valença",
+    "nameIt": "Valença",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -39.07016,
+      -13.3692
+    ],
+    "zoom": 12,
+    "population": 46571,
+    "grid": "cities/valenca/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/valenca/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "valenca",
+        "name": "Valença",
+        "nameIt": "Valença",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -39.07016,
+          -13.3692
+        ],
+        "zoom": 12,
+        "population": 46571,
+        "cells": 104,
+        "layer": "cities/valenca/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -39.07016,
+            -13.3692
+          ]
+        },
+        "properties": {
+          "id": "valenca",
+          "name": "Valença",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 46571
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "karabuk",
+  "createdAt": "2026-10-08T15:45:08.193Z",
+  "updatedAt": "2026-10-08T15:45:08.193Z",
+  "meta": {
+    "name": "Karabük",
+    "nameIt": "Karabük",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Karabük.geojson",
+      "sha256": "67a934392c71dcb4c2e2fb7e93ca7523ea1549ca9808dfca55bc9cd57bb3bf70",
+      "size": 386297,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "karabuk",
+    "name": "Karabük",
+    "nameIt": "Karabük",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      32.64541,
+      41.21836
+    ],
+    "zoom": 10.4,
+    "population": 167448,
+    "grid": "cities/karabuk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/karabuk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "karabuk",
+        "name": "Karabük",
+        "nameIt": "Karabük",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          32.64541,
+          41.21836
+        ],
+        "zoom": 10.4,
+        "population": 167448,
+        "cells": 334,
+        "layer": "cities/karabuk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.64541,
+            41.21836
+          ]
+        },
+        "properties": {
+          "id": "karabuk",
+          "name": "Karabük",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 24.3,
+          "population": 167448
+        }
+      },
+      "summary": null
+    }
+  }
+}

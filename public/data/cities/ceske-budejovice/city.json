@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ceske-budejovice",
+  "createdAt": "2026-10-08T16:25:55.996Z",
+  "updatedAt": "2026-10-08T16:25:55.996Z",
+  "meta": {
+    "name": "České Budějovice",
+    "nameIt": "České Budějovice",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/České Budějovice.geojson",
+      "sha256": "78085473d3f525df21ff0e653e0773f1838737efe8b04492e2f0df635c00e7b4",
+      "size": 291450,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ceske-budejovice",
+    "name": "České Budějovice",
+    "nameIt": "České Budějovice",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ",
+    "center": [
+      14.47512,
+      48.97793
+    ],
+    "zoom": 11.4,
+    "population": 79463,
+    "grid": "cities/ceske-budejovice/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ceske-budejovice/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ceske-budejovice",
+        "name": "České Budějovice",
+        "nameIt": "České Budějovice",
+        "region": "Czech Republic",
+        "regionIt": "Repubblica Ceca",
+        "country": "CZ",
+        "center": [
+          14.47512,
+          48.97793
+        ],
+        "zoom": 11.4,
+        "population": 79463,
+        "cells": 255,
+        "layer": "cities/ceske-budejovice/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.47512,
+            48.97793
+          ]
+        },
+        "properties": {
+          "id": "ceske-budejovice",
+          "name": "České Budějovice",
+          "country": "CZ",
+          "isStudy": true,
+          "proximityMinutes": 9.3,
+          "population": 79463
+        }
+      },
+      "summary": null
+    }
+  }
+}

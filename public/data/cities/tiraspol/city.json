@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tiraspol",
+  "createdAt": "2026-10-08T16:18:01.725Z",
+  "updatedAt": "2026-10-08T16:18:01.725Z",
+  "meta": {
+    "name": "Tiraspol",
+    "nameIt": "Tiraspol",
+    "region": "Moldova",
+    "regionIt": "Moldavia",
+    "country": "MD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tiraspol.geojson",
+      "sha256": "a46ea3749eced2e18f8f581304efcee33ab64cb68033f9f01be00eed89f41f7e",
+      "size": 342474,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tiraspol",
+    "name": "Tiraspol",
+    "nameIt": "Tiraspol",
+    "region": "Moldova",
+    "regionIt": "Moldavia",
+    "country": "MD",
+    "center": [
+      29.62584,
+      46.84469
+    ],
+    "zoom": 10.8,
+    "population": 99519,
+    "grid": "cities/tiraspol/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tiraspol/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tiraspol",
+        "name": "Tiraspol",
+        "nameIt": "Tiraspol",
+        "region": "Moldova",
+        "regionIt": "Moldavia",
+        "country": "MD",
+        "center": [
+          29.62584,
+          46.84469
+        ],
+        "zoom": 10.8,
+        "population": 99519,
+        "cells": 299,
+        "layer": "cities/tiraspol/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.62584,
+            46.84469
+          ]
+        },
+        "properties": {
+          "id": "tiraspol",
+          "name": "Tiraspol",
+          "country": "MD",
+          "isStudy": true,
+          "proximityMinutes": 12.9,
+          "population": 99519
+        }
+      },
+      "summary": null
+    }
+  }
+}

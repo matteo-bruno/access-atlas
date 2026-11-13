@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jhunjhunu",
+  "createdAt": "2026-10-08T15:42:26.839Z",
+  "updatedAt": "2026-10-08T15:42:26.839Z",
+  "meta": {
+    "name": "Jhunjhunu",
+    "nameIt": "Jhunjhunu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jhunjhunu.geojson",
+      "sha256": "6431f8a767428f48c87661c0b8eccd61def31006deb6f46f6592acc0a400581f",
+      "size": 322296,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jhunjhunu",
+    "name": "Jhunjhunu",
+    "nameIt": "Jhunjhunu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.39232,
+      28.12074
+    ],
+    "zoom": 11.2,
+    "population": 174361,
+    "grid": "cities/jhunjhunu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jhunjhunu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jhunjhunu",
+        "name": "Jhunjhunu",
+        "nameIt": "Jhunjhunu",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.39232,
+          28.12074
+        ],
+        "zoom": 11.2,
+        "population": 174361,
+        "cells": 278,
+        "layer": "cities/jhunjhunu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.39232,
+            28.12074
+          ]
+        },
+        "properties": {
+          "id": "jhunjhunu",
+          "name": "Jhunjhunu",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 28.2,
+          "population": 174361
+        }
+      },
+      "summary": null
+    }
+  }
+}

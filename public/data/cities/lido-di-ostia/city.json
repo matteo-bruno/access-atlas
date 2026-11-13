@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lido-di-ostia",
+  "createdAt": "2026-10-08T15:51:05.213Z",
+  "updatedAt": "2026-10-08T15:51:05.213Z",
+  "meta": {
+    "name": "Lido di Ostia",
+    "nameIt": "Lido di Ostia",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lido di Ostia.geojson",
+      "sha256": "258ab6a44ecb01f10b6aa21bdd27e295d7d92837b877a9236cb50107123338bb",
+      "size": 120942,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lido-di-ostia",
+    "name": "Lido di Ostia",
+    "nameIt": "Lido di Ostia",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      12.28146,
+      41.73339
+    ],
+    "zoom": 11.4,
+    "population": 48403,
+    "grid": "cities/lido-di-ostia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lido-di-ostia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lido-di-ostia",
+        "name": "Lido di Ostia",
+        "nameIt": "Lido di Ostia",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          12.28146,
+          41.73339
+        ],
+        "zoom": 11.4,
+        "population": 48403,
+        "cells": 106,
+        "layer": "cities/lido-di-ostia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.28146,
+            41.73339
+          ]
+        },
+        "properties": {
+          "id": "lido-di-ostia",
+          "name": "Lido di Ostia",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 7,
+          "population": 48403
+        }
+      },
+      "summary": null
+    }
+  }
+}

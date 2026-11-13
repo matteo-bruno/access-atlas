@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sasebo",
+  "createdAt": "2026-10-08T16:11:32.983Z",
+  "updatedAt": "2026-10-08T16:11:32.983Z",
+  "meta": {
+    "name": "Sasebo",
+    "nameIt": "Sasebo",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sasebo.geojson",
+      "sha256": "c023280d3eeacd3aad7e896e73cc406f3b89783eeed5074dff533d417a3c3ae9",
+      "size": 566871,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sasebo",
+    "name": "Sasebo",
+    "nameIt": "Sasebo",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      129.73339,
+      33.1712
+    ],
+    "zoom": 10.7,
+    "population": 143219,
+    "grid": "cities/sasebo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sasebo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sasebo",
+        "name": "Sasebo",
+        "nameIt": "Sasebo",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          129.73339,
+          33.1712
+        ],
+        "zoom": 10.7,
+        "population": 143219,
+        "cells": 491,
+        "layer": "cities/sasebo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            129.73339,
+            33.1712
+          ]
+        },
+        "properties": {
+          "id": "sasebo",
+          "name": "Sasebo",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 24.9,
+          "population": 143219
+        }
+      },
+      "summary": null
+    }
+  }
+}

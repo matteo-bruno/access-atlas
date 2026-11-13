@@ -3,7 +3,7 @@
   "version": 1,
   "id": "karlsruhe",
   "createdAt": "2026-08-28T13:51:44.000Z",
-  "updatedAt": "2026-10-08T14:05:35.062Z",
+  "updatedAt": "2026-10-19T20:59:49.550Z",
   "meta": {
     "name": "Karlsruhe",
     "nameIt": "Karlsruhe",
@@ -20,30 +20,128 @@
     "regionIt": "Germania",
     "country": "DE",
     "center": [
-      8.40205,
-      49.01081
+      8.4045,
+      49.01066
     ],
-    "zoom": 9.9,
-    "population": 323592,
+    "zoom": 9.8,
+    "population": 330155,
     "grid": "cities/karlsruhe/grid.json.gz",
     "cell": {
       "h3Resolution": 9,
       "cellRadiusM": 194
     },
     "layers": [
+      "fifteen",
+      "citychrone",
       "cardep",
       "pov"
     ],
     "layerData": {
+      "fifteen": "cities/karlsruhe/fifteen.json.gz",
+      "citychrone": "cities/karlsruhe/citychrone.json.gz",
       "cardep": "cities/karlsruhe/cardep.json.gz",
       "pov": "cities/karlsruhe/pov.json.gz"
     },
     "cartogramSources": {
+      "fifteen": "derived",
+      "citychrone": "derived",
       "cardep": "derived",
       "pov": "derived"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 1766,
+      "times": "cities/karlsruhe/citychrone/times{hh}.bin"
     }
   },
   "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "karlsruhe",
+        "name": "Karlsruhe",
+        "nameIt": "Karlsruhe",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          8.40238,
+          49.00868
+        ],
+        "zoom": 9.9,
+        "population": 274104,
+        "cells": 979,
+        "layer": "cities/karlsruhe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.40238,
+            49.00868
+          ]
+        },
+        "properties": {
+          "id": "karlsruhe",
+          "name": "Karlsruhe",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 7.5,
+          "population": 274104
+        }
+      },
+      "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "karlsruhe",
+        "name": "Karlsruhe",
+        "nameIt": "Karlsruhe",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          8.40205,
+          49.01081
+        ],
+        "zoom": 9.9,
+        "population": 323592,
+        "cells": 1766,
+        "layer": "cities/karlsruhe/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 1766,
+          "times": "cities/karlsruhe/citychrone/times{hh}.bin"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.40205,
+            49.01081
+          ]
+        },
+        "properties": {
+          "id": "karlsruhe",
+          "name": "Karlsruhe",
+          "country": "DE",
+          "isStudy": true,
+          "velocityScore": 4.63,
+          "population": 323592
+        }
+      },
+      "summary": null
+    },
     "cardep": {
       "row": {
         "id": "karlsruhe",

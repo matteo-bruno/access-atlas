@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "misisi",
+  "createdAt": "2026-10-08T15:57:25.930Z",
+  "updatedAt": "2026-10-08T15:57:25.930Z",
+  "meta": {
+    "name": "Misisi",
+    "nameIt": "Misisi",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Misisi.geojson",
+      "sha256": "8eca6340d509edca4aa25a53c69d114ecdbb086e1cd3cdb802a33794c0029e9c",
+      "size": 65458,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "misisi",
+    "name": "Misisi",
+    "nameIt": "Misisi",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      28.70315,
+      -4.7671
+    ],
+    "zoom": 12,
+    "population": 51657,
+    "grid": "cities/misisi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/misisi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "misisi",
+        "name": "Misisi",
+        "nameIt": "Misisi",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          28.70315,
+          -4.7671
+        ],
+        "zoom": 12,
+        "population": 51657,
+        "cells": 56,
+        "layer": "cities/misisi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.70315,
+            -4.7671
+          ]
+        },
+        "properties": {
+          "id": "misisi",
+          "name": "Misisi",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 51657
+        }
+      },
+      "summary": null
+    }
+  }
+}

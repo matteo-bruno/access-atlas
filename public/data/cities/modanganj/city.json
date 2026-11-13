@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "modanganj",
+  "createdAt": "2026-10-08T15:57:39.263Z",
+  "updatedAt": "2026-10-08T15:57:39.263Z",
+  "meta": {
+    "name": "Modanganj",
+    "nameIt": "Modanganj",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Modanganj.geojson",
+      "sha256": "555dbfc90d73d7ba9b7f4da42cfb375a712cc12b5dccb73167f3b3be5d307170",
+      "size": 901206,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "modanganj",
+    "name": "Modanganj",
+    "nameIt": "Modanganj",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.16429,
+      25.23559
+    ],
+    "zoom": 10.4,
+    "population": 131977,
+    "grid": "cities/modanganj/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/modanganj/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "modanganj",
+        "name": "Modanganj",
+        "nameIt": "Modanganj",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.16429,
+          25.23559
+        ],
+        "zoom": 10.4,
+        "population": 131977,
+        "cells": 778,
+        "layer": "cities/modanganj/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.16429,
+            25.23559
+          ]
+        },
+        "properties": {
+          "id": "modanganj",
+          "name": "Modanganj",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 131977
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "burie",
+  "createdAt": "2026-10-08T15:21:04.071Z",
+  "updatedAt": "2026-10-08T15:21:04.071Z",
+  "meta": {
+    "name": "Burie",
+    "nameIt": "Burie",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Burie.geojson",
+      "sha256": "2170315a6ee476e1a65a20a3abec41d420038397b9e455abe35da74bfa1a340b",
+      "size": 138295,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "burie",
+    "name": "Burie",
+    "nameIt": "Burie",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      37.06366,
+      10.7054
+    ],
+    "zoom": 11.9,
+    "population": 46556,
+    "grid": "cities/burie/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/burie/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "burie",
+        "name": "Burie",
+        "nameIt": "Burie",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          37.06366,
+          10.7054
+        ],
+        "zoom": 11.9,
+        "population": 46556,
+        "cells": 119,
+        "layer": "cities/burie/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.06366,
+            10.7054
+          ]
+        },
+        "properties": {
+          "id": "burie",
+          "name": "Burie",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 46556
+        }
+      },
+      "summary": null
+    }
+  }
+}

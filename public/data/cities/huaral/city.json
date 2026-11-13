@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huaral",
+  "createdAt": "2026-10-08T15:39:35.097Z",
+  "updatedAt": "2026-10-08T15:39:35.097Z",
+  "meta": {
+    "name": "Huaral",
+    "nameIt": "Huaral",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huaral.geojson",
+      "sha256": "b3adaef64f74375bac6a36d61e54c935f93eb7938f3b284bead796211485fb46",
+      "size": 94950,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huaral",
+    "name": "Huaral",
+    "nameIt": "Huaral",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -77.21086,
+      -11.49561
+    ],
+    "zoom": 11.7,
+    "population": 64889,
+    "grid": "cities/huaral/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huaral/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huaral",
+        "name": "Huaral",
+        "nameIt": "Huaral",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -77.21086,
+          -11.49561
+        ],
+        "zoom": 11.7,
+        "population": 64889,
+        "cells": 81,
+        "layer": "cities/huaral/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.21086,
+            -11.49561
+          ]
+        },
+        "properties": {
+          "id": "huaral",
+          "name": "Huaral",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 7.7,
+          "population": 64889
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "savalou",
+  "createdAt": "2026-10-08T16:11:40.600Z",
+  "updatedAt": "2026-10-08T16:11:40.600Z",
+  "meta": {
+    "name": "Savalou",
+    "nameIt": "Savalou",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Savalou.geojson",
+      "sha256": "844f26a36a1f383f1163010345aa82fffbd9f7569b14693f7588d5e1277b551f",
+      "size": 226700,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "savalou",
+    "name": "Savalou",
+    "nameIt": "Savalou",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ",
+    "center": [
+      1.97981,
+      7.92971
+    ],
+    "zoom": 11.7,
+    "population": 55993,
+    "grid": "cities/savalou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/savalou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "savalou",
+        "name": "Savalou",
+        "nameIt": "Savalou",
+        "region": "Benin",
+        "regionIt": "Benin",
+        "country": "BJ",
+        "center": [
+          1.97981,
+          7.92971
+        ],
+        "zoom": 11.7,
+        "population": 55993,
+        "cells": 196,
+        "layer": "cities/savalou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.97981,
+            7.92971
+          ]
+        },
+        "properties": {
+          "id": "savalou",
+          "name": "Savalou",
+          "country": "BJ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 55993
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tulcan",
+  "createdAt": "2026-10-08T16:19:07.047Z",
+  "updatedAt": "2026-10-08T16:19:07.047Z",
+  "meta": {
+    "name": "Tulcán",
+    "nameIt": "Tulcán",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tulcán.geojson",
+      "sha256": "93b5de9a784aa17426efdaf5413e249010f8568832a5c3d4ef4921e6d59be477",
+      "size": 108653,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tulcan",
+    "name": "Tulcán",
+    "nameIt": "Tulcán",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC",
+    "center": [
+      -77.72107,
+      0.81157
+    ],
+    "zoom": 12,
+    "population": 45487,
+    "grid": "cities/tulcan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tulcan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tulcan",
+        "name": "Tulcán",
+        "nameIt": "Tulcán",
+        "region": "Ecuador",
+        "regionIt": "Ecuador",
+        "country": "EC",
+        "center": [
+          -77.72107,
+          0.81157
+        ],
+        "zoom": 12,
+        "population": 45487,
+        "cells": 94,
+        "layer": "cities/tulcan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.72107,
+            0.81157
+          ]
+        },
+        "properties": {
+          "id": "tulcan",
+          "name": "Tulcán",
+          "country": "EC",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 45487
+        }
+      },
+      "summary": null
+    }
+  }
+}

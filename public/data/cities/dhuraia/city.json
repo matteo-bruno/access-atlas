@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dhuraia",
+  "createdAt": "2026-10-08T15:29:42.677Z",
+  "updatedAt": "2026-10-08T15:29:42.677Z",
+  "meta": {
+    "name": "Dhuraia",
+    "nameIt": "Dhuraia",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dhuraia.geojson",
+      "sha256": "a1e5f1b1d9c6862b6fc0eaf6fdb3bef1eace4ce337a10813fc588e1542ac6ebd",
+      "size": 232720,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dhuraia",
+    "name": "Dhuraia",
+    "nameIt": "Dhuraia",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.13525,
+      24.98657
+    ],
+    "zoom": 11.4,
+    "population": 30275,
+    "grid": "cities/dhuraia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dhuraia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dhuraia",
+        "name": "Dhuraia",
+        "nameIt": "Dhuraia",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.13525,
+          24.98657
+        ],
+        "zoom": 11.4,
+        "population": 30275,
+        "cells": 201,
+        "layer": "cities/dhuraia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.13525,
+            24.98657
+          ]
+        },
+        "properties": {
+          "id": "dhuraia",
+          "name": "Dhuraia",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 30275
+        }
+      },
+      "summary": null
+    }
+  }
+}

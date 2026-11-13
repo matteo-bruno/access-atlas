@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "portland-oregon",
+  "createdAt": "2026-10-08T16:06:19.777Z",
+  "updatedAt": "2026-10-08T16:06:19.777Z",
+  "meta": {
+    "name": "Portland (Oregon)",
+    "nameIt": "Portland (Oregon)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Portland (Oregon).geojson",
+      "sha256": "607ac3ace00e7bcb16ac84e6f0278fc3f70a04cef784f969eaeaba9e33717930",
+      "size": 10488247,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "portland-oregon",
+    "name": "Portland (Oregon)",
+    "nameIt": "Portland (Oregon)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -122.66687,
+      45.52384
+    ],
+    "zoom": 8.5,
+    "population": 1816350,
+    "grid": "cities/portland-oregon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/portland-oregon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "portland-oregon",
+        "name": "Portland (Oregon)",
+        "nameIt": "Portland (Oregon)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -122.66687,
+          45.52384
+        ],
+        "zoom": 8.5,
+        "population": 1816350,
+        "cells": 9036,
+        "layer": "cities/portland-oregon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.66687,
+            45.52384
+          ]
+        },
+        "properties": {
+          "id": "portland-oregon",
+          "name": "Portland (Oregon)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 1816350
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mancherial",
+  "createdAt": "2026-10-08T15:54:27.946Z",
+  "updatedAt": "2026-10-08T15:54:27.946Z",
+  "meta": {
+    "name": "Mancherial",
+    "nameIt": "Mancherial",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mancherial.geojson",
+      "sha256": "81a64df7486a7cacf8a96e645e535377ed7d8232c33ef04c54e11488ce3da2f9",
+      "size": 347269,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mancherial",
+    "name": "Mancherial",
+    "nameIt": "Mancherial",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.45778,
+      18.8748
+    ],
+    "zoom": 10.7,
+    "population": 202789,
+    "grid": "cities/mancherial/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mancherial/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mancherial",
+        "name": "Mancherial",
+        "nameIt": "Mancherial",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.45778,
+          18.8748
+        ],
+        "zoom": 10.7,
+        "population": 202789,
+        "cells": 300,
+        "layer": "cities/mancherial/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.45778,
+            18.8748
+          ]
+        },
+        "properties": {
+          "id": "mancherial",
+          "name": "Mancherial",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 24.7,
+          "population": 202789
+        }
+      },
+      "summary": null
+    }
+  }
+}

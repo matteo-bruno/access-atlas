@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "francistown",
+  "createdAt": "2026-10-08T15:33:42.551Z",
+  "updatedAt": "2026-10-08T15:33:42.551Z",
+  "meta": {
+    "name": "Francistown",
+    "nameIt": "Francistown",
+    "region": "Botswana",
+    "regionIt": "Botswana",
+    "country": "BW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Francistown.geojson",
+      "sha256": "7ee7d533eaea83c8dad9655f761db9fd3fed4d458c6b26235eb5966331b7d083",
+      "size": 314475,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "francistown",
+    "name": "Francistown",
+    "nameIt": "Francistown",
+    "region": "Botswana",
+    "regionIt": "Botswana",
+    "country": "BW",
+    "center": [
+      27.52147,
+      -21.17905
+    ],
+    "zoom": 11.1,
+    "population": 84947,
+    "grid": "cities/francistown/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/francistown/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "francistown",
+        "name": "Francistown",
+        "nameIt": "Francistown",
+        "region": "Botswana",
+        "regionIt": "Botswana",
+        "country": "BW",
+        "center": [
+          27.52147,
+          -21.17905
+        ],
+        "zoom": 11.1,
+        "population": 84947,
+        "cells": 268,
+        "layer": "cities/francistown/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.52147,
+            -21.17905
+          ]
+        },
+        "properties": {
+          "id": "francistown",
+          "name": "Francistown",
+          "country": "BW",
+          "isStudy": true,
+          "proximityMinutes": 29,
+          "population": 84947
+        }
+      },
+      "summary": null
+    }
+  }
+}

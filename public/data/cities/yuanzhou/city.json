@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yuanzhou",
+  "createdAt": "2026-10-08T16:24:20.739Z",
+  "updatedAt": "2026-10-08T16:24:20.739Z",
+  "meta": {
+    "name": "Yuanzhou",
+    "nameIt": "Yuanzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yuanzhou.geojson",
+      "sha256": "afe3715d07abdb1f9ed2b7bb307fbb5a1f4aa1f39887d092360d7706ee27069d",
+      "size": 288800,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yuanzhou",
+    "name": "Yuanzhou",
+    "nameIt": "Yuanzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      106.27642,
+      36.00838
+    ],
+    "zoom": 11.5,
+    "population": 209525,
+    "grid": "cities/yuanzhou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yuanzhou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yuanzhou",
+        "name": "Yuanzhou",
+        "nameIt": "Yuanzhou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          106.27642,
+          36.00838
+        ],
+        "zoom": 11.5,
+        "population": 209525,
+        "cells": 248,
+        "layer": "cities/yuanzhou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.27642,
+            36.00838
+          ]
+        },
+        "properties": {
+          "id": "yuanzhou",
+          "name": "Yuanzhou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 16.5,
+          "population": 209525
+        }
+      },
+      "summary": null
+    }
+  }
+}

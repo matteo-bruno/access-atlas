@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nouadhibou",
+  "createdAt": "2026-10-08T16:02:06.014Z",
+  "updatedAt": "2026-10-08T16:02:06.014Z",
+  "meta": {
+    "name": "Nouadhibou",
+    "nameIt": "Nouadhibou",
+    "region": "Mauritania",
+    "regionIt": "Mauritania",
+    "country": "MR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nouadhibou.geojson",
+      "sha256": "4cf8e527ee0f4a8d83e33786f6037664e176f96d60e8045ca56684a885c1e39b",
+      "size": 392372,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nouadhibou",
+    "name": "Nouadhibou",
+    "nameIt": "Nouadhibou",
+    "region": "Mauritania",
+    "regionIt": "Mauritania",
+    "country": "MR",
+    "center": [
+      -17.03682,
+      20.94811
+    ],
+    "zoom": 10.6,
+    "population": 150537,
+    "grid": "cities/nouadhibou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nouadhibou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nouadhibou",
+        "name": "Nouadhibou",
+        "nameIt": "Nouadhibou",
+        "region": "Mauritania",
+        "regionIt": "Mauritania",
+        "country": "MR",
+        "center": [
+          -17.03682,
+          20.94811
+        ],
+        "zoom": 10.6,
+        "population": 150537,
+        "cells": 334,
+        "layer": "cities/nouadhibou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -17.03682,
+            20.94811
+          ]
+        },
+        "properties": {
+          "id": "nouadhibou",
+          "name": "Nouadhibou",
+          "country": "MR",
+          "isStudy": true,
+          "proximityMinutes": 22.7,
+          "population": 150537
+        }
+      },
+      "summary": null
+    }
+  }
+}

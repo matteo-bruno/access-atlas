@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cipanas",
+  "createdAt": "2026-10-08T15:25:34.229Z",
+  "updatedAt": "2026-10-08T15:25:34.229Z",
+  "meta": {
+    "name": "Cipanas",
+    "nameIt": "Cipanas",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cipanas.geojson",
+      "sha256": "d3a9759c3e231a86c29d62b0557c38c46a0b760195ce912515a62e46f77527f8",
+      "size": 721228,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cipanas",
+    "name": "Cipanas",
+    "nameIt": "Cipanas",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      107.04619,
+      -6.73148
+    ],
+    "zoom": 10.4,
+    "population": 394826,
+    "grid": "cities/cipanas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cipanas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cipanas",
+        "name": "Cipanas",
+        "nameIt": "Cipanas",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          107.04619,
+          -6.73148
+        ],
+        "zoom": 10.4,
+        "population": 394826,
+        "cells": 615,
+        "layer": "cities/cipanas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.04619,
+            -6.73148
+          ]
+        },
+        "properties": {
+          "id": "cipanas",
+          "name": "Cipanas",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 39.8,
+          "population": 394826
+        }
+      },
+      "summary": null
+    }
+  }
+}

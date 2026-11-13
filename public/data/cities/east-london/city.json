@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "east-london",
+  "createdAt": "2026-10-08T15:31:38.228Z",
+  "updatedAt": "2026-10-08T15:31:38.228Z",
+  "meta": {
+    "name": "East London",
+    "nameIt": "East London",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/East London.geojson",
+      "sha256": "b49bc84c71a8b85427940ebb5911fd64a990e8111abe75d037d55a96d27a5acf",
+      "size": 888653,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "east-london",
+    "name": "East London",
+    "nameIt": "East London",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      27.87573,
+      -33.00131
+    ],
+    "zoom": 10.2,
+    "population": 224700,
+    "grid": "cities/east-london/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/east-london/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "east-london",
+        "name": "East London",
+        "nameIt": "East London",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          27.87573,
+          -33.00131
+        ],
+        "zoom": 10.2,
+        "population": 224700,
+        "cells": 761,
+        "layer": "cities/east-london/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.87573,
+            -33.00131
+          ]
+        },
+        "properties": {
+          "id": "east-london",
+          "name": "East London",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 32.2,
+          "population": 224700
+        }
+      },
+      "summary": null
+    }
+  }
+}

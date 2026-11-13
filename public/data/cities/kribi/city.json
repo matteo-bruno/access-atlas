@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kribi",
+  "createdAt": "2026-10-08T15:48:26.790Z",
+  "updatedAt": "2026-10-08T15:48:26.790Z",
+  "meta": {
+    "name": "Kribi",
+    "nameIt": "Kribi",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kribi.geojson",
+      "sha256": "2c4b5c5b463d308ab7f1e8d0452b8e184e5d03024eee89ab4357e13c5dae2c93",
+      "size": 242298,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kribi",
+    "name": "Kribi",
+    "nameIt": "Kribi",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      9.91856,
+      2.95267
+    ],
+    "zoom": 11.1,
+    "population": 66106,
+    "grid": "cities/kribi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kribi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kribi",
+        "name": "Kribi",
+        "nameIt": "Kribi",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          9.91856,
+          2.95267
+        ],
+        "zoom": 11.1,
+        "population": 66106,
+        "cells": 211,
+        "layer": "cities/kribi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.91856,
+            2.95267
+          ]
+        },
+        "properties": {
+          "id": "kribi",
+          "name": "Kribi",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 9.7,
+          "population": 66106
+        }
+      },
+      "summary": null
+    }
+  }
+}

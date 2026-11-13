@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "a-lat",
+  "createdAt": "2026-10-08T16:25:56.384Z",
+  "updatedAt": "2026-10-08T16:25:56.384Z",
+  "meta": {
+    "name": "Đà Lạt",
+    "nameIt": "Đà Lạt",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Đà Lạt.geojson",
+      "sha256": "7afe12417adc03ef1fe66fe0eaba4f1af1c5856192c44407647d7790c3925954",
+      "size": 427005,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "a-lat",
+    "name": "Đà Lạt",
+    "nameIt": "Đà Lạt",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      108.44636,
+      11.95047
+    ],
+    "zoom": 10.6,
+    "population": 192029,
+    "grid": "cities/a-lat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/a-lat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "a-lat",
+        "name": "Đà Lạt",
+        "nameIt": "Đà Lạt",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          108.44636,
+          11.95047
+        ],
+        "zoom": 10.6,
+        "population": 192029,
+        "cells": 368,
+        "layer": "cities/a-lat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.44636,
+            11.95047
+          ]
+        },
+        "properties": {
+          "id": "a-lat",
+          "name": "Đà Lạt",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 19.2,
+          "population": 192029
+        }
+      },
+      "summary": null
+    }
+  }
+}

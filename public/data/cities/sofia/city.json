@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sofia",
+  "createdAt": "2026-10-08T16:14:15.357Z",
+  "updatedAt": "2026-10-08T16:14:15.357Z",
+  "meta": {
+    "name": "Sofia",
+    "nameIt": "Sofia",
+    "region": "Bulgaria",
+    "regionIt": "Bulgaria",
+    "country": "BG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sofia.geojson",
+      "sha256": "5ddba7070c68b2c3a1503e40df05605eacfc7db815fe7f953d058ec6cb67169a",
+      "size": 1991825,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sofia",
+    "name": "Sofia",
+    "nameIt": "Sofia",
+    "region": "Bulgaria",
+    "regionIt": "Bulgaria",
+    "country": "BG",
+    "center": [
+      23.32071,
+      42.6827
+    ],
+    "zoom": 9.9,
+    "population": 1147647,
+    "grid": "cities/sofia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sofia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sofia",
+        "name": "Sofia",
+        "nameIt": "Sofia",
+        "region": "Bulgaria",
+        "regionIt": "Bulgaria",
+        "country": "BG",
+        "center": [
+          23.32071,
+          42.6827
+        ],
+        "zoom": 9.9,
+        "population": 1147647,
+        "cells": 1741,
+        "layer": "cities/sofia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.32071,
+            42.6827
+          ]
+        },
+        "properties": {
+          "id": "sofia",
+          "name": "Sofia",
+          "country": "BG",
+          "isStudy": true,
+          "proximityMinutes": 9.1,
+          "population": 1147647
+        }
+      },
+      "summary": null
+    }
+  }
+}

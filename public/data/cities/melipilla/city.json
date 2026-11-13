@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "melipilla",
+  "createdAt": "2026-10-08T15:56:30.212Z",
+  "updatedAt": "2026-10-08T15:56:30.212Z",
+  "meta": {
+    "name": "Melipilla",
+    "nameIt": "Melipilla",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Melipilla.geojson",
+      "sha256": "34b1d120bacb39bdc82f2c40a5d10b914f2fdf02a5ffc6d6bd18f38509d4c791",
+      "size": 115679,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "melipilla",
+    "name": "Melipilla",
+    "nameIt": "Melipilla",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL",
+    "center": [
+      -71.21639,
+      -33.68548
+    ],
+    "zoom": 11.7,
+    "population": 52238,
+    "grid": "cities/melipilla/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/melipilla/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "melipilla",
+        "name": "Melipilla",
+        "nameIt": "Melipilla",
+        "region": "Chile",
+        "regionIt": "Cile",
+        "country": "CL",
+        "center": [
+          -71.21639,
+          -33.68548
+        ],
+        "zoom": 11.7,
+        "population": 52238,
+        "cells": 99,
+        "layer": "cities/melipilla/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -71.21639,
+            -33.68548
+          ]
+        },
+        "properties": {
+          "id": "melipilla",
+          "name": "Melipilla",
+          "country": "CL",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 52238
+        }
+      },
+      "summary": null
+    }
+  }
+}

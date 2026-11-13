@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "panvel",
+  "createdAt": "2026-10-08T16:04:09.363Z",
+  "updatedAt": "2026-10-08T16:04:09.363Z",
+  "meta": {
+    "name": "Panvel",
+    "nameIt": "Panvel",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Panvel.geojson",
+      "sha256": "d50fd31b868f1aea8d9c1afed726948874175f6dba52714ac03c99bed7916e6f",
+      "size": 1015042,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "panvel",
+    "name": "Panvel",
+    "nameIt": "Panvel",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.10473,
+      19.02985
+    ],
+    "zoom": 10,
+    "population": 622531,
+    "grid": "cities/panvel/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/panvel/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "panvel",
+        "name": "Panvel",
+        "nameIt": "Panvel",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.10473,
+          19.02985
+        ],
+        "zoom": 10,
+        "population": 622531,
+        "cells": 877,
+        "layer": "cities/panvel/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.10473,
+            19.02985
+          ]
+        },
+        "properties": {
+          "id": "panvel",
+          "name": "Panvel",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 28.5,
+          "population": 622531
+        }
+      },
+      "summary": null
+    }
+  }
+}

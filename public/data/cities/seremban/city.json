@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "seremban",
+  "createdAt": "2026-10-08T16:12:02.436Z",
+  "updatedAt": "2026-10-08T16:12:02.436Z",
+  "meta": {
+    "name": "Seremban",
+    "nameIt": "Seremban",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Seremban.geojson",
+      "sha256": "2b72e92820c16a091577804bffe4e7c8efecb0348f1b61b5cf0ca6ef58c62943",
+      "size": 1136505,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "seremban",
+    "name": "Seremban",
+    "nameIt": "Seremban",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      101.95536,
+      2.70858
+    ],
+    "zoom": 10,
+    "population": 410103,
+    "grid": "cities/seremban/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/seremban/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "seremban",
+        "name": "Seremban",
+        "nameIt": "Seremban",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          101.95536,
+          2.70858
+        ],
+        "zoom": 10,
+        "population": 410103,
+        "cells": 980,
+        "layer": "cities/seremban/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            101.95536,
+            2.70858
+          ]
+        },
+        "properties": {
+          "id": "seremban",
+          "name": "Seremban",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 33.7,
+          "population": 410103
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hong-kong",
+  "createdAt": "2026-10-08T15:38:58.767Z",
+  "updatedAt": "2026-10-08T15:38:58.767Z",
+  "meta": {
+    "name": "Hong Kong",
+    "nameIt": "Hong Kong",
+    "region": "Hong Kong",
+    "regionIt": "Hong Kong",
+    "country": "HK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hong Kong.geojson",
+      "sha256": "e315cb973f05c0b308e9989bdc6dd4bfa719bff1e7126775cadb81b6fddcc64a",
+      "size": 2468976,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hong-kong",
+    "name": "Hong Kong",
+    "nameIt": "Hong Kong",
+    "region": "Hong Kong",
+    "regionIt": "Hong Kong",
+    "country": "HK",
+    "center": [
+      114.17052,
+      22.3118
+    ],
+    "zoom": 9.4,
+    "population": 0,
+    "grid": "cities/hong-kong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hong-kong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hong-kong",
+        "name": "Hong Kong",
+        "nameIt": "Hong Kong",
+        "region": "Hong Kong",
+        "regionIt": "Hong Kong",
+        "country": "HK",
+        "center": [
+          114.17052,
+          22.3118
+        ],
+        "zoom": 9.4,
+        "population": 0,
+        "cells": 2142,
+        "layer": "cities/hong-kong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.17052,
+            22.3118
+          ]
+        },
+        "properties": {
+          "id": "hong-kong",
+          "name": "Hong Kong",
+          "country": "HK",
+          "isStudy": true,
+          "proximityMinutes": 12.9,
+          "population": 0
+        }
+      },
+      "summary": null
+    }
+  }
+}

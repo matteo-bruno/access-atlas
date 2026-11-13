@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "arak",
+  "createdAt": "2026-10-08T15:08:58.198Z",
+  "updatedAt": "2026-10-08T15:08:58.198Z",
+  "meta": {
+    "name": "Arak",
+    "nameIt": "Arak",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Arak.geojson",
+      "sha256": "414ba690d27797cbb91434440ab4ac05917a57cae0f6611920f5e6ef927d8a40",
+      "size": 642684,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "arak",
+    "name": "Arak",
+    "nameIt": "Arak",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      49.69505,
+      34.09042
+    ],
+    "zoom": 10.2,
+    "population": 413730,
+    "grid": "cities/arak/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/arak/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "arak",
+        "name": "Arak",
+        "nameIt": "Arak",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          49.69505,
+          34.09042
+        ],
+        "zoom": 10.2,
+        "population": 413730,
+        "cells": 562,
+        "layer": "cities/arak/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            49.69505,
+            34.09042
+          ]
+        },
+        "properties": {
+          "id": "arak",
+          "name": "Arak",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 413730
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "etawah",
+  "createdAt": "2026-10-08T15:32:35.904Z",
+  "updatedAt": "2026-10-08T15:32:35.904Z",
+  "meta": {
+    "name": "Etawah",
+    "nameIt": "Etawah",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Etawah.geojson",
+      "sha256": "3d8e78167416c95a6576b228b0365095459438957232d5c6063632b942eac490",
+      "size": 441702,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "etawah",
+    "name": "Etawah",
+    "nameIt": "Etawah",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.02256,
+      26.78434
+    ],
+    "zoom": 11,
+    "population": 524765,
+    "grid": "cities/etawah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/etawah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "etawah",
+        "name": "Etawah",
+        "nameIt": "Etawah",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.02256,
+          26.78434
+        ],
+        "zoom": 11,
+        "population": 524765,
+        "cells": 381,
+        "layer": "cities/etawah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.02256,
+            26.78434
+          ]
+        },
+        "properties": {
+          "id": "etawah",
+          "name": "Etawah",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 524765
+        }
+      },
+      "summary": null
+    }
+  }
+}

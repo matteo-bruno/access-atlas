@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "split",
+  "createdAt": "2026-10-08T16:14:38.359Z",
+  "updatedAt": "2026-10-08T16:14:38.359Z",
+  "meta": {
+    "name": "Split",
+    "nameIt": "Split",
+    "region": "Croatia",
+    "regionIt": "Croazia",
+    "country": "HR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Split.geojson",
+      "sha256": "1d38bb2b037e9bda75abcb869851d40a961da8c885d09a17bedccb71344dad9c",
+      "size": 739267,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "split",
+    "name": "Split",
+    "nameIt": "Split",
+    "region": "Croatia",
+    "regionIt": "Croazia",
+    "country": "HR",
+    "center": [
+      16.46313,
+      43.52018
+    ],
+    "zoom": 9.9,
+    "population": 204410,
+    "grid": "cities/split/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/split/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "split",
+        "name": "Split",
+        "nameIt": "Split",
+        "region": "Croatia",
+        "regionIt": "Croazia",
+        "country": "HR",
+        "center": [
+          16.46313,
+          43.52018
+        ],
+        "zoom": 9.9,
+        "population": 204410,
+        "cells": 645,
+        "layer": "cities/split/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.46313,
+            43.52018
+          ]
+        },
+        "properties": {
+          "id": "split",
+          "name": "Split",
+          "country": "HR",
+          "isStudy": true,
+          "proximityMinutes": 10.9,
+          "population": 204410
+        }
+      },
+      "summary": null
+    }
+  }
+}

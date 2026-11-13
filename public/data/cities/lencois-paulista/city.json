@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lencois-paulista",
+  "createdAt": "2026-10-08T15:50:44.733Z",
+  "updatedAt": "2026-10-08T15:50:44.733Z",
+  "meta": {
+    "name": "Lençóis Paulista",
+    "nameIt": "Lençóis Paulista",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lençóis Paulista.geojson",
+      "sha256": "1481095af0127e403bbec8eb9eca89c31b0e8b219af72eb57e3581ca6139f72c",
+      "size": 155714,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lencois-paulista",
+    "name": "Lençóis Paulista",
+    "nameIt": "Lençóis Paulista",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -48.79611,
+      -22.60171
+    ],
+    "zoom": 11.6,
+    "population": 53283,
+    "grid": "cities/lencois-paulista/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lencois-paulista/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lencois-paulista",
+        "name": "Lençóis Paulista",
+        "nameIt": "Lençóis Paulista",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -48.79611,
+          -22.60171
+        ],
+        "zoom": 11.6,
+        "population": 53283,
+        "cells": 132,
+        "layer": "cities/lencois-paulista/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.79611,
+            -22.60171
+          ]
+        },
+        "properties": {
+          "id": "lencois-paulista",
+          "name": "Lençóis Paulista",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 8.4,
+          "population": 53283
+        }
+      },
+      "summary": null
+    }
+  }
+}

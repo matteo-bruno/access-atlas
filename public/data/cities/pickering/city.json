@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pickering",
+  "createdAt": "2026-10-08T16:05:29.058Z",
+  "updatedAt": "2026-10-08T16:05:29.058Z",
+  "meta": {
+    "name": "Pickering",
+    "nameIt": "Pickering",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pickering.geojson",
+      "sha256": "6107af76db3016c51358ac7175eac041ec28d5aa8056369a4d4de2a5631c940f",
+      "size": 953241,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pickering",
+    "name": "Pickering",
+    "nameIt": "Pickering",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -79.06084,
+      43.84853
+    ],
+    "zoom": 10.2,
+    "population": 223480,
+    "grid": "cities/pickering/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pickering/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pickering",
+        "name": "Pickering",
+        "nameIt": "Pickering",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -79.06084,
+          43.84853
+        ],
+        "zoom": 10.2,
+        "population": 223480,
+        "cells": 826,
+        "layer": "cities/pickering/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -79.06084,
+            43.84853
+          ]
+        },
+        "properties": {
+          "id": "pickering",
+          "name": "Pickering",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 223480
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "joao-pessoa",
+  "createdAt": "2026-10-08T15:43:34.066Z",
+  "updatedAt": "2026-10-08T15:43:34.066Z",
+  "meta": {
+    "name": "João Pessoa",
+    "nameIt": "João Pessoa",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/João Pessoa.geojson",
+      "sha256": "2067f561dae8867af3bae1358901959ac8e2caf69d5ddff413a7240ddb01a902",
+      "size": 1861141,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "joao-pessoa",
+    "name": "João Pessoa",
+    "nameIt": "João Pessoa",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -34.88107,
+      -7.14786
+    ],
+    "zoom": 9.8,
+    "population": 1083761,
+    "grid": "cities/joao-pessoa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/joao-pessoa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "joao-pessoa",
+        "name": "João Pessoa",
+        "nameIt": "João Pessoa",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -34.88107,
+          -7.14786
+        ],
+        "zoom": 9.8,
+        "population": 1083761,
+        "cells": 1600,
+        "layer": "cities/joao-pessoa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -34.88107,
+            -7.14786
+          ]
+        },
+        "properties": {
+          "id": "joao-pessoa",
+          "name": "João Pessoa",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 21.4,
+          "population": 1083761
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khartoum",
+  "createdAt": "2026-10-08T15:46:37.594Z",
+  "updatedAt": "2026-10-08T15:46:37.594Z",
+  "meta": {
+    "name": "Khartoum",
+    "nameIt": "Khartoum",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khartoum.geojson",
+      "sha256": "83046729304fe23904d672d45493657b903831317943ec37f43df4f819719c7b",
+      "size": 9706730,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khartoum",
+    "name": "Khartoum",
+    "nameIt": "Khartoum",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      32.51631,
+      15.60107
+    ],
+    "zoom": 8.5,
+    "population": 8203207,
+    "grid": "cities/khartoum/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khartoum/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khartoum",
+        "name": "Khartoum",
+        "nameIt": "Khartoum",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          32.51631,
+          15.60107
+        ],
+        "zoom": 8.5,
+        "population": 8203207,
+        "cells": 8379,
+        "layer": "cities/khartoum/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.51631,
+            15.60107
+          ]
+        },
+        "properties": {
+          "id": "khartoum",
+          "name": "Khartoum",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 41.2,
+          "population": 8203207
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chetumal",
+  "createdAt": "2026-10-08T15:24:33.284Z",
+  "updatedAt": "2026-10-08T15:24:33.284Z",
+  "meta": {
+    "name": "Chetumal",
+    "nameIt": "Chetumal",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chetumal.geojson",
+      "sha256": "0aa8e95fc12a7957ed86d22ce8c2d8511e65772b4b13c016dbfd6af8418d9798",
+      "size": 449315,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chetumal",
+    "name": "Chetumal",
+    "nameIt": "Chetumal",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -88.30218,
+      18.51929
+    ],
+    "zoom": 11,
+    "population": 152086,
+    "grid": "cities/chetumal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chetumal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chetumal",
+        "name": "Chetumal",
+        "nameIt": "Chetumal",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -88.30218,
+          18.51929
+        ],
+        "zoom": 11,
+        "population": 152086,
+        "cells": 388,
+        "layer": "cities/chetumal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.30218,
+            18.51929
+          ]
+        },
+        "properties": {
+          "id": "chetumal",
+          "name": "Chetumal",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 17.5,
+          "population": 152086
+        }
+      },
+      "summary": null
+    }
+  }
+}

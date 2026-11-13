@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zalantun",
+  "createdAt": "2026-10-08T16:24:46.568Z",
+  "updatedAt": "2026-10-08T16:24:46.568Z",
+  "meta": {
+    "name": "Zalantun",
+    "nameIt": "Zalantun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zalantun.geojson",
+      "sha256": "dcb2b08ad71e0c4b9fff732a1a373fb858615031dccd3800fe7cd9ae18b7714a",
+      "size": 336690,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zalantun",
+    "name": "Zalantun",
+    "nameIt": "Zalantun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      122.73755,
+      48.00136
+    ],
+    "zoom": 11.2,
+    "population": 105139,
+    "grid": "cities/zalantun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zalantun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zalantun",
+        "name": "Zalantun",
+        "nameIt": "Zalantun",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          122.73755,
+          48.00136
+        ],
+        "zoom": 11.2,
+        "population": 105139,
+        "cells": 289,
+        "layer": "cities/zalantun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            122.73755,
+            48.00136
+          ]
+        },
+        "properties": {
+          "id": "zalantun",
+          "name": "Zalantun",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 105139
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "maicao",
+  "createdAt": "2026-10-08T15:53:48.950Z",
+  "updatedAt": "2026-10-08T15:53:48.950Z",
+  "meta": {
+    "name": "Maicao",
+    "nameIt": "Maicao",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Maicao.geojson",
+      "sha256": "4ffbc946904f21bf8f4a21022e6dfd1cadf308f4a14ae3ef6f0408af562aa970",
+      "size": 226531,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "maicao",
+    "name": "Maicao",
+    "nameIt": "Maicao",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -72.24193,
+      11.37829
+    ],
+    "zoom": 11.4,
+    "population": 121375,
+    "grid": "cities/maicao/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/maicao/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "maicao",
+        "name": "Maicao",
+        "nameIt": "Maicao",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -72.24193,
+          11.37829
+        ],
+        "zoom": 11.4,
+        "population": 121375,
+        "cells": 194,
+        "layer": "cities/maicao/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.24193,
+            11.37829
+          ]
+        },
+        "properties": {
+          "id": "maicao",
+          "name": "Maicao",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 15.8,
+          "population": 121375
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "makambako",
+  "createdAt": "2026-10-08T15:53:56.238Z",
+  "updatedAt": "2026-10-08T15:53:56.238Z",
+  "meta": {
+    "name": "Makambako",
+    "nameIt": "Makambako",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Makambako.geojson",
+      "sha256": "0efd1d88ea93c48dca4030fbf6a4bfcb366a8cac9d56924c20cc7beafcd33aee",
+      "size": 208346,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "makambako",
+    "name": "Makambako",
+    "nameIt": "Makambako",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      34.82688,
+      -8.85882
+    ],
+    "zoom": 11.5,
+    "population": 67890,
+    "grid": "cities/makambako/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/makambako/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "makambako",
+        "name": "Makambako",
+        "nameIt": "Makambako",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          34.82688,
+          -8.85882
+        ],
+        "zoom": 11.5,
+        "population": 67890,
+        "cells": 179,
+        "layer": "cities/makambako/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.82688,
+            -8.85882
+          ]
+        },
+        "properties": {
+          "id": "makambako",
+          "name": "Makambako",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 17.4,
+          "population": 67890
+        }
+      },
+      "summary": null
+    }
+  }
+}

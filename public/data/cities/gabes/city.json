@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gabes",
+  "createdAt": "2026-10-08T15:34:08.847Z",
+  "updatedAt": "2026-10-08T15:34:08.847Z",
+  "meta": {
+    "name": "Gabes",
+    "nameIt": "Gabes",
+    "region": "Tunisia",
+    "regionIt": "Tunisia",
+    "country": "TN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gabes.geojson",
+      "sha256": "cef334f37a28b2a3b28394f03c80dca4cd5688d0d163fe2ac735c052cceaefa9",
+      "size": 599060,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gabes",
+    "name": "Gabes",
+    "nameIt": "Gabes",
+    "region": "Tunisia",
+    "regionIt": "Tunisia",
+    "country": "TN",
+    "center": [
+      10.0937,
+      33.88836
+    ],
+    "zoom": 10.4,
+    "population": 135391,
+    "grid": "cities/gabes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gabes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gabes",
+        "name": "Gabes",
+        "nameIt": "Gabes",
+        "region": "Tunisia",
+        "regionIt": "Tunisia",
+        "country": "TN",
+        "center": [
+          10.0937,
+          33.88836
+        ],
+        "zoom": 10.4,
+        "population": 135391,
+        "cells": 516,
+        "layer": "cities/gabes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.0937,
+            33.88836
+          ]
+        },
+        "properties": {
+          "id": "gabes",
+          "name": "Gabes",
+          "country": "TN",
+          "isStudy": true,
+          "proximityMinutes": 20.5,
+          "population": 135391
+        }
+      },
+      "summary": null
+    }
+  }
+}

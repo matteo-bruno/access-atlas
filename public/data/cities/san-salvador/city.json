@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-salvador",
+  "createdAt": "2026-10-08T16:10:47.252Z",
+  "updatedAt": "2026-10-08T16:10:47.252Z",
+  "meta": {
+    "name": "San Salvador",
+    "nameIt": "San Salvador",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Salvador.geojson",
+      "sha256": "19119f477c9ff996ad41488f360e6a04b392d6284afa2a4d5452c435fac70a91",
+      "size": 2953776,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-salvador",
+    "name": "San Salvador",
+    "nameIt": "San Salvador",
+    "region": "El Salvador",
+    "regionIt": "El Salvador",
+    "country": "SV",
+    "center": [
+      -89.17403,
+      13.71468
+    ],
+    "zoom": 9.2,
+    "population": 1575482,
+    "grid": "cities/san-salvador/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-salvador/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-salvador",
+        "name": "San Salvador",
+        "nameIt": "San Salvador",
+        "region": "El Salvador",
+        "regionIt": "El Salvador",
+        "country": "SV",
+        "center": [
+          -89.17403,
+          13.71468
+        ],
+        "zoom": 9.2,
+        "population": 1575482,
+        "cells": 2545,
+        "layer": "cities/san-salvador/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -89.17403,
+            13.71468
+          ]
+        },
+        "properties": {
+          "id": "san-salvador",
+          "name": "San Salvador",
+          "country": "SV",
+          "isStudy": true,
+          "proximityMinutes": 24.7,
+          "population": 1575482
+        }
+      },
+      "summary": null
+    }
+  }
+}

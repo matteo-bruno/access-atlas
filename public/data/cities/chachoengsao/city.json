@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chachoengsao",
+  "createdAt": "2026-10-08T15:23:06.685Z",
+  "updatedAt": "2026-10-08T15:23:06.685Z",
+  "meta": {
+    "name": "Chachoengsao",
+    "nameIt": "Chachoengsao",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chachoengsao.geojson",
+      "sha256": "38f1126e671950d59a3e577be022493658bb7a0a42cd78417bc77244371aa880",
+      "size": 197589,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chachoengsao",
+    "name": "Chachoengsao",
+    "nameIt": "Chachoengsao",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      101.06728,
+      13.68294
+    ],
+    "zoom": 11.6,
+    "population": 85760,
+    "grid": "cities/chachoengsao/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chachoengsao/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chachoengsao",
+        "name": "Chachoengsao",
+        "nameIt": "Chachoengsao",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          101.06728,
+          13.68294
+        ],
+        "zoom": 11.6,
+        "population": 85760,
+        "cells": 169,
+        "layer": "cities/chachoengsao/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            101.06728,
+            13.68294
+          ]
+        },
+        "properties": {
+          "id": "chachoengsao",
+          "name": "Chachoengsao",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 20.9,
+          "population": 85760
+        }
+      },
+      "summary": null
+    }
+  }
+}

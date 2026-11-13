@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "memphis",
+  "createdAt": "2026-10-08T15:56:32.822Z",
+  "updatedAt": "2026-10-08T15:56:32.822Z",
+  "meta": {
+    "name": "Memphis",
+    "nameIt": "Memphis",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Memphis.geojson",
+      "sha256": "228b737e969d5246cef85068b4266b6ac8f218078c5b74ab3d2c7a5ddb42a794",
+      "size": 2949517,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "memphis",
+    "name": "Memphis",
+    "nameIt": "Memphis",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -89.93249,
+      35.09837
+    ],
+    "zoom": 9.3,
+    "population": 322057,
+    "grid": "cities/memphis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/memphis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "memphis",
+        "name": "Memphis",
+        "nameIt": "Memphis",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -89.93249,
+          35.09837
+        ],
+        "zoom": 9.3,
+        "population": 322057,
+        "cells": 2544,
+        "layer": "cities/memphis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -89.93249,
+            35.09837
+          ]
+        },
+        "properties": {
+          "id": "memphis",
+          "name": "Memphis",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 36,
+          "population": 322057
+        }
+      },
+      "summary": null
+    }
+  }
+}

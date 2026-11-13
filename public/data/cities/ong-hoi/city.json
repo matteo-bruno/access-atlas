@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ong-hoi",
+  "createdAt": "2026-10-08T16:25:58.119Z",
+  "updatedAt": "2026-10-08T16:25:58.119Z",
+  "meta": {
+    "name": "Đồng Hới",
+    "nameIt": "Đồng Hới",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Đồng Hới.geojson",
+      "sha256": "f0ace0c9edf6782eed93b428801bc27e0def6544d0e401c9d812c4e982f28a3a",
+      "size": 293700,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ong-hoi",
+    "name": "Đồng Hới",
+    "nameIt": "Đồng Hới",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      106.6052,
+      17.46462
+    ],
+    "zoom": 11.2,
+    "population": 98751,
+    "grid": "cities/ong-hoi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ong-hoi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ong-hoi",
+        "name": "Đồng Hới",
+        "nameIt": "Đồng Hới",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          106.6052,
+          17.46462
+        ],
+        "zoom": 11.2,
+        "population": 98751,
+        "cells": 253,
+        "layer": "cities/ong-hoi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.6052,
+            17.46462
+          ]
+        },
+        "properties": {
+          "id": "ong-hoi",
+          "name": "Đồng Hới",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 19.2,
+          "population": 98751
+        }
+      },
+      "summary": null
+    }
+  }
+}

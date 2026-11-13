@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhengding",
+  "createdAt": "2026-10-08T16:25:11.824Z",
+  "updatedAt": "2026-10-08T16:25:11.824Z",
+  "meta": {
+    "name": "Zhengding",
+    "nameIt": "Zhengding",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhengding.geojson",
+      "sha256": "a4a1e03213448cbb58accf57aee09dfc3fa2a0e2bdfb0f2a724d89e65193206e",
+      "size": 885322,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhengding",
+    "name": "Zhengding",
+    "nameIt": "Zhengding",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.56663,
+      38.16164
+    ],
+    "zoom": 10.4,
+    "population": 240750,
+    "grid": "cities/zhengding/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 173
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhengding/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhengding",
+        "name": "Zhengding",
+        "nameIt": "Zhengding",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.56663,
+          38.16164
+        ],
+        "zoom": 10.4,
+        "population": 240750,
+        "cells": 760,
+        "layer": "cities/zhengding/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 173
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.56663,
+            38.16164
+          ]
+        },
+        "properties": {
+          "id": "zhengding",
+          "name": "Zhengding",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 25.9,
+          "population": 240750
+        }
+      },
+      "summary": null
+    }
+  }
+}

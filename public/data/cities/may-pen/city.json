@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "may-pen",
+  "createdAt": "2026-10-08T15:55:55.810Z",
+  "updatedAt": "2026-10-08T15:55:55.810Z",
+  "meta": {
+    "name": "May Pen",
+    "nameIt": "May Pen",
+    "region": "Jamaica",
+    "regionIt": "Giamaica",
+    "country": "JM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/May Pen.geojson",
+      "sha256": "e9b0a4eed11e6fb8aef19a80d5c80d85cf122318dc150aa6fcabb8026c75c785",
+      "size": 326526,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "may-pen",
+    "name": "May Pen",
+    "nameIt": "May Pen",
+    "region": "Jamaica",
+    "regionIt": "Giamaica",
+    "country": "JM",
+    "center": [
+      -77.24251,
+      17.96644
+    ],
+    "zoom": 11.2,
+    "population": 49159,
+    "grid": "cities/may-pen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/may-pen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "may-pen",
+        "name": "May Pen",
+        "nameIt": "May Pen",
+        "region": "Jamaica",
+        "regionIt": "Giamaica",
+        "country": "JM",
+        "center": [
+          -77.24251,
+          17.96644
+        ],
+        "zoom": 11.2,
+        "population": 49159,
+        "cells": 280,
+        "layer": "cities/may-pen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.24251,
+            17.96644
+          ]
+        },
+        "properties": {
+          "id": "may-pen",
+          "name": "May Pen",
+          "country": "JM",
+          "isStudy": true,
+          "proximityMinutes": 22.2,
+          "population": 49159
+        }
+      },
+      "summary": null
+    }
+  }
+}

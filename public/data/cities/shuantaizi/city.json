@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shuantaizi",
+  "createdAt": "2026-10-08T16:13:16.365Z",
+  "updatedAt": "2026-10-08T16:13:16.365Z",
+  "meta": {
+    "name": "Shuantaizi",
+    "nameIt": "Shuantaizi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shuantaizi.geojson",
+      "sha256": "9e7c5fd13692bd8114c1a0f38c78bf10befa249774fc1d383f4aabb8d12926e7",
+      "size": 637503,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shuantaizi",
+    "name": "Shuantaizi",
+    "nameIt": "Shuantaizi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      122.0307,
+      41.19692
+    ],
+    "zoom": 10.7,
+    "population": 189114,
+    "grid": "cities/shuantaizi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 164
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shuantaizi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shuantaizi",
+        "name": "Shuantaizi",
+        "nameIt": "Shuantaizi",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          122.0307,
+          41.19692
+        ],
+        "zoom": 10.7,
+        "population": 189114,
+        "cells": 547,
+        "layer": "cities/shuantaizi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 164
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            122.0307,
+            41.19692
+          ]
+        },
+        "properties": {
+          "id": "shuantaizi",
+          "name": "Shuantaizi",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 189114
+        }
+      },
+      "summary": null
+    }
+  }
+}

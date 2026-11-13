@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "diinsoor",
+  "createdAt": "2026-10-08T15:29:56.289Z",
+  "updatedAt": "2026-10-08T15:29:56.289Z",
+  "meta": {
+    "name": "Diinsoor",
+    "nameIt": "Diinsoor",
+    "region": "Somalia",
+    "regionIt": "Somalia",
+    "country": "SO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Diinsoor.geojson",
+      "sha256": "878d202e7ed279772efd721196d343e20e4b935338b20bfab15416a0e3a0ee11",
+      "size": 66131,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "diinsoor",
+    "name": "Diinsoor",
+    "nameIt": "Diinsoor",
+    "region": "Somalia",
+    "regionIt": "Somalia",
+    "country": "SO",
+    "center": [
+      42.97638,
+      2.40849
+    ],
+    "zoom": 12,
+    "population": 42803,
+    "grid": "cities/diinsoor/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/diinsoor/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "diinsoor",
+        "name": "Diinsoor",
+        "nameIt": "Diinsoor",
+        "region": "Somalia",
+        "regionIt": "Somalia",
+        "country": "SO",
+        "center": [
+          42.97638,
+          2.40849
+        ],
+        "zoom": 12,
+        "population": 42803,
+        "cells": 57,
+        "layer": "cities/diinsoor/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            42.97638,
+            2.40849
+          ]
+        },
+        "properties": {
+          "id": "diinsoor",
+          "name": "Diinsoor",
+          "country": "SO",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 42803
+        }
+      },
+      "summary": null
+    }
+  }
+}

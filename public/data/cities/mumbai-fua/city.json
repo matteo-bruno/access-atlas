@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mumbai-fua",
+  "createdAt": "2026-10-19T16:57:31.649Z",
+  "updatedAt": "2026-10-19T16:57:31.649Z",
+  "meta": {
+    "name": "Mumbai",
+    "nameIt": "Mumbai",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "mumbai-fua",
+    "name": "Mumbai",
+    "nameIt": "Mumbai",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "extent": "fua",
+    "core": "mumbai",
+    "center": [
+      72.98209,
+      19.13858
+    ],
+    "zoom": 8.5,
+    "population": 9424111,
+    "grid": "cities/mumbai-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mumbai-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mumbai-fua",
+        "name": "Mumbai",
+        "nameIt": "Mumbai",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "extent": "fua",
+        "core": "mumbai",
+        "center": [
+          72.98209,
+          19.13858
+        ],
+        "zoom": 8.5,
+        "population": 9424111,
+        "cells": 24480,
+        "layer": "cities/mumbai-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.98209,
+            19.13858
+          ]
+        },
+        "properties": {
+          "id": "mumbai-fua",
+          "name": "Mumbai",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 21.5,
+          "population": 9424111
+        }
+      },
+      "summary": null
+    }
+  }
+}

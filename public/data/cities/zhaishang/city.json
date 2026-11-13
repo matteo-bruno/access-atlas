@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhaishang",
+  "createdAt": "2026-10-08T16:24:56.899Z",
+  "updatedAt": "2026-10-08T16:24:56.899Z",
+  "meta": {
+    "name": "Zhaishang",
+    "nameIt": "Zhaishang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhaishang.geojson",
+      "sha256": "cb7175e509a1620b0db0b3f7caffce604fb0979c688c392d8b7f0b30fb8b3449",
+      "size": 732455,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhaishang",
+    "name": "Zhaishang",
+    "nameIt": "Zhaishang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.79363,
+      39.23881
+    ],
+    "zoom": 10.8,
+    "population": 174559,
+    "grid": "cities/zhaishang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 168
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhaishang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhaishang",
+        "name": "Zhaishang",
+        "nameIt": "Zhaishang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.79363,
+          39.23881
+        ],
+        "zoom": 10.8,
+        "population": 174559,
+        "cells": 629,
+        "layer": "cities/zhaishang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 168
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.79363,
+            39.23881
+          ]
+        },
+        "properties": {
+          "id": "zhaishang",
+          "name": "Zhaishang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 21.1,
+          "population": 174559
+        }
+      },
+      "summary": null
+    }
+  }
+}

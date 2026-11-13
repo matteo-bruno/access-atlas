@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baiji",
+  "createdAt": "2026-10-08T15:13:28.747Z",
+  "updatedAt": "2026-10-08T15:13:28.747Z",
+  "meta": {
+    "name": "Baiji",
+    "nameIt": "Baiji",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baiji.geojson",
+      "sha256": "68230388c321261e1833e5a0938f8671c2c94e3ecd4d78261930cfb61204f13c",
+      "size": 149557,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baiji",
+    "name": "Baiji",
+    "nameIt": "Baiji",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      43.48787,
+      34.93021
+    ],
+    "zoom": 11.8,
+    "population": 90150,
+    "grid": "cities/baiji/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baiji/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baiji",
+        "name": "Baiji",
+        "nameIt": "Baiji",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          43.48787,
+          34.93021
+        ],
+        "zoom": 11.8,
+        "population": 90150,
+        "cells": 129,
+        "layer": "cities/baiji/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.48787,
+            34.93021
+          ]
+        },
+        "properties": {
+          "id": "baiji",
+          "name": "Baiji",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 19.9,
+          "population": 90150
+        }
+      },
+      "summary": null
+    }
+  }
+}

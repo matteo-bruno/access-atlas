@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "odesa-fua",
+  "createdAt": "2026-10-19T16:57:51.845Z",
+  "updatedAt": "2026-10-19T16:57:51.845Z",
+  "meta": {
+    "name": "Odesa",
+    "nameIt": "Odesa",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "odesa-fua",
+    "name": "Odesa",
+    "nameIt": "Odesa",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "extent": "fua",
+    "core": "odesa",
+    "center": [
+      30.69188,
+      46.45643
+    ],
+    "zoom": 8.5,
+    "population": 991223,
+    "grid": "cities/odesa-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/odesa-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "odesa-fua",
+        "name": "Odesa",
+        "nameIt": "Odesa",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "extent": "fua",
+        "core": "odesa",
+        "center": [
+          30.69188,
+          46.45643
+        ],
+        "zoom": 8.5,
+        "population": 991223,
+        "cells": 13403,
+        "layer": "cities/odesa-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.69188,
+            46.45643
+          ]
+        },
+        "properties": {
+          "id": "odesa-fua",
+          "name": "Odesa",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 23.1,
+          "population": 991223
+        }
+      },
+      "summary": null
+    }
+  }
+}

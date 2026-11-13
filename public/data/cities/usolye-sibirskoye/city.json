@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "usolye-sibirskoye",
+  "createdAt": "2026-10-08T16:20:08.022Z",
+  "updatedAt": "2026-10-08T16:20:08.022Z",
+  "meta": {
+    "name": "Usolye-Sibirskoye",
+    "nameIt": "Usolye-Sibirskoye",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Usolye-Sibirskoye.geojson",
+      "sha256": "c624525007e22e1941522db3d425e90a959b9d2962b287f62d9c58d6b6b39a95",
+      "size": 209580,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "usolye-sibirskoye",
+    "name": "Usolye-Sibirskoye",
+    "nameIt": "Usolye-Sibirskoye",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      103.6508,
+      52.74946
+    ],
+    "zoom": 11.4,
+    "population": 53457,
+    "grid": "cities/usolye-sibirskoye/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/usolye-sibirskoye/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "usolye-sibirskoye",
+        "name": "Usolye-Sibirskoye",
+        "nameIt": "Usolye-Sibirskoye",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          103.6508,
+          52.74946
+        ],
+        "zoom": 11.4,
+        "population": 53457,
+        "cells": 181,
+        "layer": "cities/usolye-sibirskoye/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.6508,
+            52.74946
+          ]
+        },
+        "properties": {
+          "id": "usolye-sibirskoye",
+          "name": "Usolye-Sibirskoye",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 53457
+        }
+      },
+      "summary": null
+    }
+  }
+}

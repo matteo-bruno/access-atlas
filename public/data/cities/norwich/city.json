@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "norwich",
+  "createdAt": "2026-10-08T16:02:04.599Z",
+  "updatedAt": "2026-10-08T16:02:04.599Z",
+  "meta": {
+    "name": "Norwich",
+    "nameIt": "Norwich",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Norwich.geojson",
+      "sha256": "fc6d68d3cb81bbb667ae83232eb912166cd8d81204cacaac450960e2872ac52c",
+      "size": 686320,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "norwich",
+    "name": "Norwich",
+    "nameIt": "Norwich",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      1.28385,
+      52.63754
+    ],
+    "zoom": 10.5,
+    "population": 192777,
+    "grid": "cities/norwich/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/norwich/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "norwich",
+        "name": "Norwich",
+        "nameIt": "Norwich",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          1.28385,
+          52.63754
+        ],
+        "zoom": 10.5,
+        "population": 192777,
+        "cells": 601,
+        "layer": "cities/norwich/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.28385,
+            52.63754
+          ]
+        },
+        "properties": {
+          "id": "norwich",
+          "name": "Norwich",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 192777
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kumasi",
+  "createdAt": "2026-10-08T15:48:45.573Z",
+  "updatedAt": "2026-10-08T15:48:45.573Z",
+  "meta": {
+    "name": "Kumasi",
+    "nameIt": "Kumasi",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kumasi.geojson",
+      "sha256": "a7b456a8284b89785ca061d056cdb416261f6988e40b106d93d2917e5c108ced",
+      "size": 6952980,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kumasi",
+    "name": "Kumasi",
+    "nameIt": "Kumasi",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH",
+    "center": [
+      -1.61423,
+      6.70499
+    ],
+    "zoom": 8.9,
+    "population": 2550368,
+    "grid": "cities/kumasi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kumasi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kumasi",
+        "name": "Kumasi",
+        "nameIt": "Kumasi",
+        "region": "Ghana",
+        "regionIt": "Ghana",
+        "country": "GH",
+        "center": [
+          -1.61423,
+          6.70499
+        ],
+        "zoom": 8.9,
+        "population": 2550368,
+        "cells": 5979,
+        "layer": "cities/kumasi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.61423,
+            6.70499
+          ]
+        },
+        "properties": {
+          "id": "kumasi",
+          "name": "Kumasi",
+          "country": "GH",
+          "isStudy": true,
+          "proximityMinutes": 49.8,
+          "population": 2550368
+        }
+      },
+      "summary": null
+    }
+  }
+}

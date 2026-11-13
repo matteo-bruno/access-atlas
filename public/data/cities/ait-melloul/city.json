@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ait-melloul",
+  "createdAt": "2026-10-08T15:12:09.901Z",
+  "updatedAt": "2026-10-08T15:12:09.901Z",
+  "meta": {
+    "name": "Aït Melloul",
+    "nameIt": "Aït Melloul",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aït Melloul.geojson",
+      "sha256": "c1a8549e24552b4e5c988312fa312f082b4339c9f766ac12a604708eabd22fe3",
+      "size": 241945,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ait-melloul",
+    "name": "Aït Melloul",
+    "nameIt": "Aït Melloul",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -9.50105,
+      30.33142
+    ],
+    "zoom": 11.5,
+    "population": 108140,
+    "grid": "cities/ait-melloul/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ait-melloul/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ait-melloul",
+        "name": "Aït Melloul",
+        "nameIt": "Aït Melloul",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -9.50105,
+          30.33142
+        ],
+        "zoom": 11.5,
+        "population": 108140,
+        "cells": 208,
+        "layer": "cities/ait-melloul/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -9.50105,
+            30.33142
+          ]
+        },
+        "properties": {
+          "id": "ait-melloul",
+          "name": "Aït Melloul",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 20.4,
+          "population": 108140
+        }
+      },
+      "summary": null
+    }
+  }
+}

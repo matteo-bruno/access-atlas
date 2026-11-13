@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "paita",
+  "createdAt": "2026-10-08T16:03:38.976Z",
+  "updatedAt": "2026-10-08T16:03:38.976Z",
+  "meta": {
+    "name": "Paita",
+    "nameIt": "Paita",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Paita.geojson",
+      "sha256": "dd5097feac7aec86dd7c2275c989dd513bf92883c93f05d4231d0ca31db03409",
+      "size": 153066,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "paita",
+    "name": "Paita",
+    "nameIt": "Paita",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -81.1019,
+      -5.09617
+    ],
+    "zoom": 11.4,
+    "population": 87874,
+    "grid": "cities/paita/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/paita/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "paita",
+        "name": "Paita",
+        "nameIt": "Paita",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -81.1019,
+          -5.09617
+        ],
+        "zoom": 11.4,
+        "population": 87874,
+        "cells": 131,
+        "layer": "cities/paita/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.1019,
+            -5.09617
+          ]
+        },
+        "properties": {
+          "id": "paita",
+          "name": "Paita",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 87874
+        }
+      },
+      "summary": null
+    }
+  }
+}

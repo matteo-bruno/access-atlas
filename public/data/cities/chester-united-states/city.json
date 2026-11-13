@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chester-united-states",
+  "createdAt": "2026-10-08T15:24:31.558Z",
+  "updatedAt": "2026-10-08T15:24:31.558Z",
+  "meta": {
+    "name": "Chester (United States)",
+    "nameIt": "Chester (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chester (United States).geojson",
+      "sha256": "66d74dac5aea9649c0e887dfd5b90fbf4d43a841e7ba7c094a5ce68506741c75",
+      "size": 529719,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chester-united-states",
+    "name": "Chester (United States)",
+    "nameIt": "Chester (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -75.38658,
+      39.85145
+    ],
+    "zoom": 10.5,
+    "population": 66770,
+    "grid": "cities/chester-united-states/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chester-united-states/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chester-united-states",
+        "name": "Chester (United States)",
+        "nameIt": "Chester (United States)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -75.38658,
+          39.85145
+        ],
+        "zoom": 10.5,
+        "population": 66770,
+        "cells": 458,
+        "layer": "cities/chester-united-states/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.38658,
+            39.85145
+          ]
+        },
+        "properties": {
+          "id": "chester-united-states",
+          "name": "Chester (United States)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20,
+          "population": 66770
+        }
+      },
+      "summary": null
+    }
+  }
+}

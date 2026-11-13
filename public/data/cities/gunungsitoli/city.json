@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gunungsitoli",
+  "createdAt": "2026-10-08T15:36:46.783Z",
+  "updatedAt": "2026-10-08T15:36:46.783Z",
+  "meta": {
+    "name": "Gunungsitoli",
+    "nameIt": "Gunungsitoli",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gunungsitoli.geojson",
+      "sha256": "f72b9082d3db4ac2217890bd5156828369719f26073827865d5a141f22917494",
+      "size": 148119,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gunungsitoli",
+    "name": "Gunungsitoli",
+    "nameIt": "Gunungsitoli",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      97.61499,
+      1.28827
+    ],
+    "zoom": 11.3,
+    "population": 48725,
+    "grid": "cities/gunungsitoli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gunungsitoli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gunungsitoli",
+        "name": "Gunungsitoli",
+        "nameIt": "Gunungsitoli",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          97.61499,
+          1.28827
+        ],
+        "zoom": 11.3,
+        "population": 48725,
+        "cells": 128,
+        "layer": "cities/gunungsitoli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            97.61499,
+            1.28827
+          ]
+        },
+        "properties": {
+          "id": "gunungsitoli",
+          "name": "Gunungsitoli",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 48725
+        }
+      },
+      "summary": null
+    }
+  }
+}

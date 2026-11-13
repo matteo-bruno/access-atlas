@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bussum",
+  "createdAt": "2026-10-08T15:21:12.266Z",
+  "updatedAt": "2026-10-08T15:21:12.266Z",
+  "meta": {
+    "name": "Bussum",
+    "nameIt": "Bussum",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bussum.geojson",
+      "sha256": "19a868b5418fc4fb3cbdb8378f8088ede77b19875d14793d104999d91d604368",
+      "size": 285354,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bussum",
+    "name": "Bussum",
+    "nameIt": "Bussum",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      5.16188,
+      52.27857
+    ],
+    "zoom": 11.4,
+    "population": 51014,
+    "grid": "cities/bussum/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bussum/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bussum",
+        "name": "Bussum",
+        "nameIt": "Bussum",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          5.16188,
+          52.27857
+        ],
+        "zoom": 11.4,
+        "population": 51014,
+        "cells": 249,
+        "layer": "cities/bussum/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.16188,
+            52.27857
+          ]
+        },
+        "properties": {
+          "id": "bussum",
+          "name": "Bussum",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 11,
+          "population": 51014
+        }
+      },
+      "summary": null
+    }
+  }
+}

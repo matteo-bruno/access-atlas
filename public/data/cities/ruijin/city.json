@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ruijin",
+  "createdAt": "2026-10-08T16:09:19.402Z",
+  "updatedAt": "2026-10-08T16:09:19.402Z",
+  "meta": {
+    "name": "Ruijin",
+    "nameIt": "Ruijin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ruijin.geojson",
+      "sha256": "8f1445e00170f25a1b34c1211b2319bf460d3c09cdc34e6c78425f7648ecd3fc",
+      "size": 329572,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ruijin",
+    "name": "Ruijin",
+    "nameIt": "Ruijin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.02982,
+      25.88055
+    ],
+    "zoom": 11.1,
+    "population": 255828,
+    "grid": "cities/ruijin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ruijin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ruijin",
+        "name": "Ruijin",
+        "nameIt": "Ruijin",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.02982,
+          25.88055
+        ],
+        "zoom": 11.1,
+        "population": 255828,
+        "cells": 282,
+        "layer": "cities/ruijin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.02982,
+            25.88055
+          ]
+        },
+        "properties": {
+          "id": "ruijin",
+          "name": "Ruijin",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 21.6,
+          "population": 255828
+        }
+      },
+      "summary": null
+    }
+  }
+}

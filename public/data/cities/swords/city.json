@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "swords",
+  "createdAt": "2026-10-08T16:15:31.960Z",
+  "updatedAt": "2026-10-08T16:15:31.960Z",
+  "meta": {
+    "name": "Swords",
+    "nameIt": "Swords",
+    "region": "Ireland",
+    "regionIt": "Irlanda",
+    "country": "IE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Swords.geojson",
+      "sha256": "dcf6594de50d31544e9ae260cf2b471f2e4c730755a25d4643d59cbd7c80d2a6",
+      "size": 326408,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "swords",
+    "name": "Swords",
+    "nameIt": "Swords",
+    "region": "Ireland",
+    "regionIt": "Irlanda",
+    "country": "IE",
+    "center": [
+      -6.20384,
+      53.45191
+    ],
+    "zoom": 10.6,
+    "population": 70082,
+    "grid": "cities/swords/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/swords/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "swords",
+        "name": "Swords",
+        "nameIt": "Swords",
+        "region": "Ireland",
+        "regionIt": "Irlanda",
+        "country": "IE",
+        "center": [
+          -6.20384,
+          53.45191
+        ],
+        "zoom": 10.6,
+        "population": 70082,
+        "cells": 284,
+        "layer": "cities/swords/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -6.20384,
+            53.45191
+          ]
+        },
+        "properties": {
+          "id": "swords",
+          "name": "Swords",
+          "country": "IE",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 70082
+        }
+      },
+      "summary": null
+    }
+  }
+}

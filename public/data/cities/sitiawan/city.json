@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sitiawan",
+  "createdAt": "2026-10-08T16:14:05.076Z",
+  "updatedAt": "2026-10-08T16:14:05.076Z",
+  "meta": {
+    "name": "Sitiawan",
+    "nameIt": "Sitiawan",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sitiawan.geojson",
+      "sha256": "e1ddd7d2b9862d9cee7db4678055b2f521720c4b9065d1c99efc6a8a23a950c5",
+      "size": 267495,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sitiawan",
+    "name": "Sitiawan",
+    "nameIt": "Sitiawan",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      100.67865,
+      4.20258
+    ],
+    "zoom": 11.1,
+    "population": 74867,
+    "grid": "cities/sitiawan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sitiawan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sitiawan",
+        "name": "Sitiawan",
+        "nameIt": "Sitiawan",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          100.67865,
+          4.20258
+        ],
+        "zoom": 11.1,
+        "population": 74867,
+        "cells": 231,
+        "layer": "cities/sitiawan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            100.67865,
+            4.20258
+          ]
+        },
+        "properties": {
+          "id": "sitiawan",
+          "name": "Sitiawan",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 21.7,
+          "population": 74867
+        }
+      },
+      "summary": null
+    }
+  }
+}

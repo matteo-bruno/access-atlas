@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gouda",
+  "createdAt": "2026-10-08T15:35:49.912Z",
+  "updatedAt": "2026-10-08T15:35:49.912Z",
+  "meta": {
+    "name": "Gouda",
+    "nameIt": "Gouda",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gouda.geojson",
+      "sha256": "bf6a2de96ed0a3b131898642f481e0008dd282551b318f5c92e4e06f3c614dad",
+      "size": 243468,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gouda",
+    "name": "Gouda",
+    "nameIt": "Gouda",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      4.71387,
+      52.0199
+    ],
+    "zoom": 11.4,
+    "population": 78000,
+    "grid": "cities/gouda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gouda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gouda",
+        "name": "Gouda",
+        "nameIt": "Gouda",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          4.71387,
+          52.0199
+        ],
+        "zoom": 11.4,
+        "population": 78000,
+        "cells": 214,
+        "layer": "cities/gouda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.71387,
+            52.0199
+          ]
+        },
+        "properties": {
+          "id": "gouda",
+          "name": "Gouda",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 10.1,
+          "population": 78000
+        }
+      },
+      "summary": null
+    }
+  }
+}

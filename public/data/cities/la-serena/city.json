@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "la-serena",
+  "createdAt": "2026-10-08T15:49:25.973Z",
+  "updatedAt": "2026-10-08T15:49:25.973Z",
+  "meta": {
+    "name": "La Serena",
+    "nameIt": "La Serena",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/La Serena.geojson",
+      "sha256": "3c92dd61667438505b1aa6f61db9cb57a159170e7fed7cef3d594e24cea626c8",
+      "size": 773538,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "la-serena",
+    "name": "La Serena",
+    "nameIt": "La Serena",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL",
+    "center": [
+      -71.24612,
+      -29.91892
+    ],
+    "zoom": 10.5,
+    "population": 260733,
+    "grid": "cities/la-serena/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/la-serena/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "la-serena",
+        "name": "La Serena",
+        "nameIt": "La Serena",
+        "region": "Chile",
+        "regionIt": "Cile",
+        "country": "CL",
+        "center": [
+          -71.24612,
+          -29.91892
+        ],
+        "zoom": 10.5,
+        "population": 260733,
+        "cells": 665,
+        "layer": "cities/la-serena/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -71.24612,
+            -29.91892
+          ]
+        },
+        "properties": {
+          "id": "la-serena",
+          "name": "La Serena",
+          "country": "CL",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 260733
+        }
+      },
+      "summary": null
+    }
+  }
+}

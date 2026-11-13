@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mossoro",
+  "createdAt": "2026-10-08T15:58:29.009Z",
+  "updatedAt": "2026-10-08T15:58:29.009Z",
+  "meta": {
+    "name": "Mossoró",
+    "nameIt": "Mossoró",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mossoró.geojson",
+      "sha256": "1d58f9ef6f52e7cbec271bbc418815d93ff51b1acfd0f54e9558d22dd7be4e66",
+      "size": 479833,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mossoro",
+    "name": "Mossoró",
+    "nameIt": "Mossoró",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -37.34651,
+      -5.18927
+    ],
+    "zoom": 10.6,
+    "population": 193620,
+    "grid": "cities/mossoro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mossoro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mossoro",
+        "name": "Mossoró",
+        "nameIt": "Mossoró",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -37.34651,
+          -5.18927
+        ],
+        "zoom": 10.6,
+        "population": 193620,
+        "cells": 413,
+        "layer": "cities/mossoro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -37.34651,
+            -5.18927
+          ]
+        },
+        "properties": {
+          "id": "mossoro",
+          "name": "Mossoró",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 16.7,
+          "population": 193620
+        }
+      },
+      "summary": null
+    }
+  }
+}

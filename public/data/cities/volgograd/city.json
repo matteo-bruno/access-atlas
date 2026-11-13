@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "volgograd",
+  "createdAt": "2026-10-08T16:21:01.112Z",
+  "updatedAt": "2026-10-08T16:21:01.112Z",
+  "meta": {
+    "name": "Volgograd",
+    "nameIt": "Volgograd",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Volgograd.geojson",
+      "sha256": "a9e5489f2fd5b35705a35fe3831d63711d6eb16bae4adaa2460cacb65ca43a2a",
+      "size": 1620760,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "volgograd",
+    "name": "Volgograd",
+    "nameIt": "Volgograd",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      44.50648,
+      48.73667
+    ],
+    "zoom": 9.6,
+    "population": 671247,
+    "grid": "cities/volgograd/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/volgograd/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "volgograd",
+        "name": "Volgograd",
+        "nameIt": "Volgograd",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          44.50648,
+          48.73667
+        ],
+        "zoom": 9.6,
+        "population": 671247,
+        "cells": 1417,
+        "layer": "cities/volgograd/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.50648,
+            48.73667
+          ]
+        },
+        "properties": {
+          "id": "volgograd",
+          "name": "Volgograd",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 12.8,
+          "population": 671247
+        }
+      },
+      "summary": null
+    }
+  }
+}

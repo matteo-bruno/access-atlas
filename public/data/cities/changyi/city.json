@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "changyi",
+  "createdAt": "2026-10-08T15:23:47.916Z",
+  "updatedAt": "2026-10-08T15:23:47.916Z",
+  "meta": {
+    "name": "Changyi",
+    "nameIt": "Changyi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Changyi.geojson",
+      "sha256": "8eb776aa7766a45603e8d7ef934d30ecd0af3be91f1882c93db695aceac4d19a",
+      "size": 1335154,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "changyi",
+    "name": "Changyi",
+    "nameIt": "Changyi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.39385,
+      36.86162
+    ],
+    "zoom": 10.2,
+    "population": 215130,
+    "grid": "cities/changyi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 168
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/changyi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "changyi",
+        "name": "Changyi",
+        "nameIt": "Changyi",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.39385,
+          36.86162
+        ],
+        "zoom": 10.2,
+        "population": 215130,
+        "cells": 1155,
+        "layer": "cities/changyi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 168
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.39385,
+            36.86162
+          ]
+        },
+        "properties": {
+          "id": "changyi",
+          "name": "Changyi",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 215130
+        }
+      },
+      "summary": null
+    }
+  }
+}

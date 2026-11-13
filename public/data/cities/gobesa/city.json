@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gobesa",
+  "createdAt": "2026-10-08T15:35:26.463Z",
+  "updatedAt": "2026-10-08T15:35:26.463Z",
+  "meta": {
+    "name": "Gobesa",
+    "nameIt": "Gobesa",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gobesa.geojson",
+      "sha256": "7800bd5576233fa0f1780cadb2fa9a592406abe0d45330d579be4f2d5bcc6ecc",
+      "size": 70527,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gobesa",
+    "name": "Gobesa",
+    "nameIt": "Gobesa",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      39.49294,
+      7.61933
+    ],
+    "zoom": 12,
+    "population": 44051,
+    "grid": "cities/gobesa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gobesa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gobesa",
+        "name": "Gobesa",
+        "nameIt": "Gobesa",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          39.49294,
+          7.61933
+        ],
+        "zoom": 12,
+        "population": 44051,
+        "cells": 61,
+        "layer": "cities/gobesa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.49294,
+            7.61933
+          ]
+        },
+        "properties": {
+          "id": "gobesa",
+          "name": "Gobesa",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 44051
+        }
+      },
+      "summary": null
+    }
+  }
+}

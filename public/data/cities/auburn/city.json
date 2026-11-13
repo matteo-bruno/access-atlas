@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "auburn",
+  "createdAt": "2026-10-08T15:11:15.848Z",
+  "updatedAt": "2026-10-08T15:11:15.848Z",
+  "meta": {
+    "name": "Auburn",
+    "nameIt": "Auburn",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Auburn.geojson",
+      "sha256": "fe23d6c55088a64872bb0719f6c176c16dd9f8b6784301d58d4277ccb45272c7",
+      "size": 447021,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "auburn",
+    "name": "Auburn",
+    "nameIt": "Auburn",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -122.21355,
+      47.29457
+    ],
+    "zoom": 10.4,
+    "population": 66216,
+    "grid": "cities/auburn/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/auburn/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "auburn",
+        "name": "Auburn",
+        "nameIt": "Auburn",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -122.21355,
+          47.29457
+        ],
+        "zoom": 10.4,
+        "population": 66216,
+        "cells": 385,
+        "layer": "cities/auburn/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.21355,
+            47.29457
+          ]
+        },
+        "properties": {
+          "id": "auburn",
+          "name": "Auburn",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 22,
+          "population": 66216
+        }
+      },
+      "summary": null
+    }
+  }
+}

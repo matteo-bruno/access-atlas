@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gaotang",
+  "createdAt": "2026-10-08T15:34:35.338Z",
+  "updatedAt": "2026-10-08T15:34:35.338Z",
+  "meta": {
+    "name": "Gaotang",
+    "nameIt": "Gaotang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gaotang.geojson",
+      "sha256": "e2c0ff5bf72e615843c5b26a7a8d4c539177d37f0656f947dea8f7a74dc975a0",
+      "size": 628308,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gaotang",
+    "name": "Gaotang",
+    "nameIt": "Gaotang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.22659,
+      36.86138
+    ],
+    "zoom": 10.7,
+    "population": 180813,
+    "grid": "cities/gaotang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 172
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gaotang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gaotang",
+        "name": "Gaotang",
+        "nameIt": "Gaotang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.22659,
+          36.86138
+        ],
+        "zoom": 10.7,
+        "population": 180813,
+        "cells": 539,
+        "layer": "cities/gaotang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 172
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.22659,
+            36.86138
+          ]
+        },
+        "properties": {
+          "id": "gaotang",
+          "name": "Gaotang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 180813
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "anping-beijing-municipality",
+  "createdAt": "2026-10-08T15:08:06.454Z",
+  "updatedAt": "2026-10-08T15:08:06.454Z",
+  "meta": {
+    "name": "Anping (Beijing Municipality)",
+    "nameIt": "Anping (Beijing Municipality)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Anping (Beijing Municipality).geojson",
+      "sha256": "c29d5304e78f956503290f6e25dce4553dfd207d88f95e349742ad3c59f44a61",
+      "size": 260031,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "anping-beijing-municipality",
+    "name": "Anping (Beijing Municipality)",
+    "nameIt": "Anping (Beijing Municipality)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.89254,
+      39.71055
+    ],
+    "zoom": 11.3,
+    "population": 51461,
+    "grid": "cities/anping-beijing-municipality/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 170
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/anping-beijing-municipality/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "anping-beijing-municipality",
+        "name": "Anping (Beijing Municipality)",
+        "nameIt": "Anping (Beijing Municipality)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.89254,
+          39.71055
+        ],
+        "zoom": 11.3,
+        "population": 51461,
+        "cells": 223,
+        "layer": "cities/anping-beijing-municipality/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 170
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.89254,
+            39.71055
+          ]
+        },
+        "properties": {
+          "id": "anping-beijing-municipality",
+          "name": "Anping (Beijing Municipality)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 21.6,
+          "population": 51461
+        }
+      },
+      "summary": null
+    }
+  }
+}

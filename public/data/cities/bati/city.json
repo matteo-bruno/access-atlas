@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bati",
+  "createdAt": "2026-10-08T15:16:05.568Z",
+  "updatedAt": "2026-10-08T15:16:05.568Z",
+  "meta": {
+    "name": "Bati",
+    "nameIt": "Bati",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bati.geojson",
+      "sha256": "3d504cc9b453dd47bab6b7232a151d2d85a057dc6ac1d4db7c87d948cc8cc4da",
+      "size": 55843,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bati",
+    "name": "Bati",
+    "nameIt": "Bati",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      40.01549,
+      11.19233
+    ],
+    "zoom": 12,
+    "population": 47995,
+    "grid": "cities/bati/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bati/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bati",
+        "name": "Bati",
+        "nameIt": "Bati",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          40.01549,
+          11.19233
+        ],
+        "zoom": 12,
+        "population": 47995,
+        "cells": 48,
+        "layer": "cities/bati/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.01549,
+            11.19233
+          ]
+        },
+        "properties": {
+          "id": "bati",
+          "name": "Bati",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 47995
+        }
+      },
+      "summary": null
+    }
+  }
+}

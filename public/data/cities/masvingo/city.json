@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "masvingo",
+  "createdAt": "2026-10-08T15:55:36.371Z",
+  "updatedAt": "2026-10-08T15:55:36.371Z",
+  "meta": {
+    "name": "Masvingo",
+    "nameIt": "Masvingo",
+    "region": "Zimbabwe",
+    "regionIt": "Zimbabwe",
+    "country": "ZW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Masvingo.geojson",
+      "sha256": "0d8059f540b32e45a4190d4e3afd45b55e86e3348c033ab7881e06f50162c5d3",
+      "size": 293679,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "masvingo",
+    "name": "Masvingo",
+    "nameIt": "Masvingo",
+    "region": "Zimbabwe",
+    "regionIt": "Zimbabwe",
+    "country": "ZW",
+    "center": [
+      30.81727,
+      -20.08591
+    ],
+    "zoom": 11.2,
+    "population": 101625,
+    "grid": "cities/masvingo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/masvingo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "masvingo",
+        "name": "Masvingo",
+        "nameIt": "Masvingo",
+        "region": "Zimbabwe",
+        "regionIt": "Zimbabwe",
+        "country": "ZW",
+        "center": [
+          30.81727,
+          -20.08591
+        ],
+        "zoom": 11.2,
+        "population": 101625,
+        "cells": 250,
+        "layer": "cities/masvingo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.81727,
+            -20.08591
+          ]
+        },
+        "properties": {
+          "id": "masvingo",
+          "name": "Masvingo",
+          "country": "ZW",
+          "isStudy": true,
+          "proximityMinutes": 45.6,
+          "population": 101625
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tanjung-pandan",
+  "createdAt": "2026-10-08T16:16:37.187Z",
+  "updatedAt": "2026-10-08T16:16:37.187Z",
+  "meta": {
+    "name": "Tanjung Pandan",
+    "nameIt": "Tanjung Pandan",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tanjung Pandan.geojson",
+      "sha256": "ee2957b0edf434d6059f71fce17b09fb3df20516e9e6dd91f95aba4b2311aa8f",
+      "size": 305668,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tanjung-pandan",
+    "name": "Tanjung Pandan",
+    "nameIt": "Tanjung Pandan",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      107.64803,
+      -2.73616
+    ],
+    "zoom": 11.2,
+    "population": 78491,
+    "grid": "cities/tanjung-pandan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tanjung-pandan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tanjung-pandan",
+        "name": "Tanjung Pandan",
+        "nameIt": "Tanjung Pandan",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          107.64803,
+          -2.73616
+        ],
+        "zoom": 11.2,
+        "population": 78491,
+        "cells": 260,
+        "layer": "cities/tanjung-pandan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.64803,
+            -2.73616
+          ]
+        },
+        "properties": {
+          "id": "tanjung-pandan",
+          "name": "Tanjung Pandan",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 57.2,
+          "population": 78491
+        }
+      },
+      "summary": null
+    }
+  }
+}

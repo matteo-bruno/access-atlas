@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "modderspruit",
+  "createdAt": "2026-10-08T15:57:40.048Z",
+  "updatedAt": "2026-10-08T15:57:40.048Z",
+  "meta": {
+    "name": "Modderspruit",
+    "nameIt": "Modderspruit",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Modderspruit.geojson",
+      "sha256": "e9a11e4172fc72656ef9f891d92b5464c7067c4d69328312bcf7a8503a9cf2e1",
+      "size": 205619,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "modderspruit",
+    "name": "Modderspruit",
+    "nameIt": "Modderspruit",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      27.66726,
+      -25.72476
+    ],
+    "zoom": 11.4,
+    "population": 40822,
+    "grid": "cities/modderspruit/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/modderspruit/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "modderspruit",
+        "name": "Modderspruit",
+        "nameIt": "Modderspruit",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          27.66726,
+          -25.72476
+        ],
+        "zoom": 11.4,
+        "population": 40822,
+        "cells": 175,
+        "layer": "cities/modderspruit/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.66726,
+            -25.72476
+          ]
+        },
+        "properties": {
+          "id": "modderspruit",
+          "name": "Modderspruit",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 40822
+        }
+      },
+      "summary": null
+    }
+  }
+}

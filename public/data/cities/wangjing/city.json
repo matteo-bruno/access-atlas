@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wangjing",
+  "createdAt": "2026-10-08T16:21:18.938Z",
+  "updatedAt": "2026-10-08T16:21:18.938Z",
+  "meta": {
+    "name": "Wangjing",
+    "nameIt": "Wangjing",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wangjing.geojson",
+      "sha256": "d13000812035271ffe2e3fe2e88a6aa92450d73734aaea278282d18f97bf4b42",
+      "size": 132084,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wangjing",
+    "name": "Wangjing",
+    "nameIt": "Wangjing",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      94.04462,
+      24.59256
+    ],
+    "zoom": 11.1,
+    "population": 46029,
+    "grid": "cities/wangjing/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wangjing/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wangjing",
+        "name": "Wangjing",
+        "nameIt": "Wangjing",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          94.04462,
+          24.59256
+        ],
+        "zoom": 11.1,
+        "population": 46029,
+        "cells": 114,
+        "layer": "cities/wangjing/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            94.04462,
+            24.59256
+          ]
+        },
+        "properties": {
+          "id": "wangjing",
+          "name": "Wangjing",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 46029
+        }
+      },
+      "summary": null
+    }
+  }
+}

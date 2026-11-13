@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "salto-uruguay",
+  "createdAt": "2026-10-08T16:10:11.692Z",
+  "updatedAt": "2026-10-08T16:10:11.692Z",
+  "meta": {
+    "name": "Salto (Uruguay)",
+    "nameIt": "Salto (Uruguay)",
+    "region": "Uruguay",
+    "regionIt": "Uruguay",
+    "country": "UY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Salto (Uruguay).geojson",
+      "sha256": "aa4bdbc89ef0d29fc40593b03502983224e88ebfcb82ac82f428f93fb2cc6596",
+      "size": 320845,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "salto-uruguay",
+    "name": "Salto (Uruguay)",
+    "nameIt": "Salto (Uruguay)",
+    "region": "Uruguay",
+    "regionIt": "Uruguay",
+    "country": "UY",
+    "center": [
+      -57.95923,
+      -31.39052
+    ],
+    "zoom": 11.5,
+    "population": 91565,
+    "grid": "cities/salto-uruguay/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/salto-uruguay/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "salto-uruguay",
+        "name": "Salto (Uruguay)",
+        "nameIt": "Salto (Uruguay)",
+        "region": "Uruguay",
+        "regionIt": "Uruguay",
+        "country": "UY",
+        "center": [
+          -57.95923,
+          -31.39052
+        ],
+        "zoom": 11.5,
+        "population": 91565,
+        "cells": 273,
+        "layer": "cities/salto-uruguay/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -57.95923,
+            -31.39052
+          ]
+        },
+        "properties": {
+          "id": "salto-uruguay",
+          "name": "Salto (Uruguay)",
+          "country": "UY",
+          "isStudy": true,
+          "proximityMinutes": 17.2,
+          "population": 91565
+        }
+      },
+      "summary": null
+    }
+  }
+}

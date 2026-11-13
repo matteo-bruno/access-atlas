@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "karacabey",
+  "createdAt": "2026-10-08T15:45:08.539Z",
+  "updatedAt": "2026-10-08T15:45:08.539Z",
+  "meta": {
+    "name": "Karacabey",
+    "nameIt": "Karacabey",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Karacabey.geojson",
+      "sha256": "f886284ccef14ef07cbb0c9c87e0bbcc9adeb306ec50143077f00c975a5453fd",
+      "size": 57848,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "karacabey",
+    "name": "Karacabey",
+    "nameIt": "Karacabey",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      28.36191,
+      40.2135
+    ],
+    "zoom": 12,
+    "population": 40791,
+    "grid": "cities/karacabey/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/karacabey/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "karacabey",
+        "name": "Karacabey",
+        "nameIt": "Karacabey",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          28.36191,
+          40.2135
+        ],
+        "zoom": 12,
+        "population": 40791,
+        "cells": 50,
+        "layer": "cities/karacabey/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.36191,
+            40.2135
+          ]
+        },
+        "properties": {
+          "id": "karacabey",
+          "name": "Karacabey",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 9.4,
+          "population": 40791
+        }
+      },
+      "summary": null
+    }
+  }
+}

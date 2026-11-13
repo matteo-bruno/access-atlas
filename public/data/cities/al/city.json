@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al",
+  "createdAt": "2026-10-08T15:05:20.505Z",
+  "updatedAt": "2026-10-08T15:05:20.505Z",
+  "meta": {
+    "name": "Al",
+    "nameIt": "Al",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al.geojson",
+      "sha256": "579122d6259a3069c56b42eeac8991ba14025ae3d969b8ae945ed88cffccf5c8",
+      "size": 91443,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al",
+    "name": "Al",
+    "nameIt": "Al",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      40.04452,
+      38.07269
+    ],
+    "zoom": 12,
+    "population": 31570,
+    "grid": "cities/al/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al",
+        "name": "Al",
+        "nameIt": "Al",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          40.04452,
+          38.07269
+        ],
+        "zoom": 12,
+        "population": 31570,
+        "cells": 79,
+        "layer": "cities/al/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.04452,
+            38.07269
+          ]
+        },
+        "properties": {
+          "id": "al",
+          "name": "Al",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 31570
+        }
+      },
+      "summary": null
+    }
+  }
+}

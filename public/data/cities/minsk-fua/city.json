@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "minsk-fua",
+  "createdAt": "2026-10-19T16:57:30.264Z",
+  "updatedAt": "2026-10-19T16:57:30.264Z",
+  "meta": {
+    "name": "Minsk",
+    "nameIt": "Minsk",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "minsk-fua",
+    "name": "Minsk",
+    "nameIt": "Minsk",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY",
+    "extent": "fua",
+    "core": "minsk",
+    "center": [
+      27.55742,
+      53.8924
+    ],
+    "zoom": 8.5,
+    "population": 2167336,
+    "grid": "cities/minsk-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/minsk-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "minsk-fua",
+        "name": "Minsk",
+        "nameIt": "Minsk",
+        "region": "Belarus",
+        "regionIt": "Bielorussia",
+        "country": "BY",
+        "extent": "fua",
+        "core": "minsk",
+        "center": [
+          27.55742,
+          53.8924
+        ],
+        "zoom": 8.5,
+        "population": 2167336,
+        "cells": 17045,
+        "layer": "cities/minsk-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.55742,
+            53.8924
+          ]
+        },
+        "properties": {
+          "id": "minsk-fua",
+          "name": "Minsk",
+          "country": "BY",
+          "isStudy": true,
+          "proximityMinutes": 7.8,
+          "population": 2167336
+        }
+      },
+      "summary": null
+    }
+  }
+}

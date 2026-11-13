@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "polokwane",
+  "createdAt": "2026-10-08T16:06:04.972Z",
+  "updatedAt": "2026-10-08T16:06:04.972Z",
+  "meta": {
+    "name": "Polokwane",
+    "nameIt": "Polokwane",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Polokwane.geojson",
+      "sha256": "43e784314ef2493b2a5fce894042cd6d10c02e8ada126e8769f6c228763807ff",
+      "size": 1197888,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "polokwane",
+    "name": "Polokwane",
+    "nameIt": "Polokwane",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      29.42036,
+      -23.86986
+    ],
+    "zoom": 9.8,
+    "population": 241154,
+    "grid": "cities/polokwane/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/polokwane/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "polokwane",
+        "name": "Polokwane",
+        "nameIt": "Polokwane",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          29.42036,
+          -23.86986
+        ],
+        "zoom": 9.8,
+        "population": 241154,
+        "cells": 1020,
+        "layer": "cities/polokwane/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.42036,
+            -23.86986
+          ]
+        },
+        "properties": {
+          "id": "polokwane",
+          "name": "Polokwane",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 51.6,
+          "population": 241154
+        }
+      },
+      "summary": null
+    }
+  }
+}

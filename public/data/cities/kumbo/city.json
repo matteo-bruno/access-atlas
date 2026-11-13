@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kumbo",
+  "createdAt": "2026-10-08T15:48:46.757Z",
+  "updatedAt": "2026-10-08T15:48:46.757Z",
+  "meta": {
+    "name": "Kumbo",
+    "nameIt": "Kumbo",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kumbo.geojson",
+      "sha256": "df44a3bb3ab4c0f4a0be0bdf5e3e1d774e1447cdc14e04ee911c100984ffdbbc",
+      "size": 305038,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kumbo",
+    "name": "Kumbo",
+    "nameIt": "Kumbo",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      10.68039,
+      6.20998
+    ],
+    "zoom": 11.2,
+    "population": 74255,
+    "grid": "cities/kumbo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kumbo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kumbo",
+        "name": "Kumbo",
+        "nameIt": "Kumbo",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          10.68039,
+          6.20998
+        ],
+        "zoom": 11.2,
+        "population": 74255,
+        "cells": 263,
+        "layer": "cities/kumbo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.68039,
+            6.20998
+          ]
+        },
+        "properties": {
+          "id": "kumbo",
+          "name": "Kumbo",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 19.4,
+          "population": 74255
+        }
+      },
+      "summary": null
+    }
+  }
+}

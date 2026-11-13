@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khaga",
+  "createdAt": "2026-10-08T15:46:20.063Z",
+  "updatedAt": "2026-10-08T15:46:20.063Z",
+  "meta": {
+    "name": "Khaga",
+    "nameIt": "Khaga",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khaga.geojson",
+      "sha256": "c5001d7ef2051f0dd19ed6b5ba7bd6bf59b9923a5b241890494af3d63e69c136",
+      "size": 142447,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khaga",
+    "name": "Khaga",
+    "nameIt": "Khaga",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.10334,
+      25.77037
+    ],
+    "zoom": 11.9,
+    "population": 59277,
+    "grid": "cities/khaga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khaga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khaga",
+        "name": "Khaga",
+        "nameIt": "Khaga",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.10334,
+          25.77037
+        ],
+        "zoom": 11.9,
+        "population": 59277,
+        "cells": 123,
+        "layer": "cities/khaga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.10334,
+            25.77037
+          ]
+        },
+        "properties": {
+          "id": "khaga",
+          "name": "Khaga",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 59277
+        }
+      },
+      "summary": null
+    }
+  }
+}

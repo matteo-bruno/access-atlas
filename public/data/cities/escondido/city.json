@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "escondido",
+  "createdAt": "2026-10-08T15:32:29.157Z",
+  "updatedAt": "2026-10-08T15:32:29.157Z",
+  "meta": {
+    "name": "Escondido",
+    "nameIt": "Escondido",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Escondido.geojson",
+      "sha256": "196102b917ca42df5ab47d70d8865d4a4a8b34be4b4ae66cee88a6ba8bd24234",
+      "size": 1874989,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "escondido",
+    "name": "Escondido",
+    "nameIt": "Escondido",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -117.19263,
+      33.17303
+    ],
+    "zoom": 9.2,
+    "population": 455864,
+    "grid": "cities/escondido/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/escondido/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "escondido",
+        "name": "Escondido",
+        "nameIt": "Escondido",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -117.19263,
+          33.17303
+        ],
+        "zoom": 9.2,
+        "population": 455864,
+        "cells": 1610,
+        "layer": "cities/escondido/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -117.19263,
+            33.17303
+          ]
+        },
+        "properties": {
+          "id": "escondido",
+          "name": "Escondido",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 25.7,
+          "population": 455864
+        }
+      },
+      "summary": null
+    }
+  }
+}

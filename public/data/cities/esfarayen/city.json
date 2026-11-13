@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "esfarayen",
+  "createdAt": "2026-10-08T15:32:29.885Z",
+  "updatedAt": "2026-10-08T15:32:29.885Z",
+  "meta": {
+    "name": "Esfarayen",
+    "nameIt": "Esfarayen",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Esfarayen.geojson",
+      "sha256": "777c0d5380a88e05ea13b7bdb9d86e5ab6ac4e6c2de13739d2d85dcbca025ce8",
+      "size": 108866,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "esfarayen",
+    "name": "Esfarayen",
+    "nameIt": "Esfarayen",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      57.50644,
+      37.0709
+    ],
+    "zoom": 11.8,
+    "population": 59971,
+    "grid": "cities/esfarayen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/esfarayen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "esfarayen",
+        "name": "Esfarayen",
+        "nameIt": "Esfarayen",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          57.50644,
+          37.0709
+        ],
+        "zoom": 11.8,
+        "population": 59971,
+        "cells": 94,
+        "layer": "cities/esfarayen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            57.50644,
+            37.0709
+          ]
+        },
+        "properties": {
+          "id": "esfarayen",
+          "name": "Esfarayen",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 17,
+          "population": 59971
+        }
+      },
+      "summary": null
+    }
+  }
+}

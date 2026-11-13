@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bhavnagar",
+  "createdAt": "2026-10-08T15:18:20.580Z",
+  "updatedAt": "2026-10-08T15:18:20.580Z",
+  "meta": {
+    "name": "Bhavnagar",
+    "nameIt": "Bhavnagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bhavnagar.geojson",
+      "sha256": "a35611ae227ea16139564bd29998744aabcbb15b03a8a49738e0c5a470791aac",
+      "size": 779979,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bhavnagar",
+    "name": "Bhavnagar",
+    "nameIt": "Bhavnagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.13708,
+      21.75874
+    ],
+    "zoom": 10.3,
+    "population": 449402,
+    "grid": "cities/bhavnagar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bhavnagar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bhavnagar",
+        "name": "Bhavnagar",
+        "nameIt": "Bhavnagar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.13708,
+          21.75874
+        ],
+        "zoom": 10.3,
+        "population": 449402,
+        "cells": 673,
+        "layer": "cities/bhavnagar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.13708,
+            21.75874
+          ]
+        },
+        "properties": {
+          "id": "bhavnagar",
+          "name": "Bhavnagar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 32.6,
+          "population": 449402
+        }
+      },
+      "summary": null
+    }
+  }
+}

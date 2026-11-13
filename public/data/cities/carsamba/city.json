@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "carsamba",
+  "createdAt": "2026-10-08T16:25:52.353Z",
+  "updatedAt": "2026-10-08T16:25:52.353Z",
+  "meta": {
+    "name": "Çarşamba",
+    "nameIt": "Çarşamba",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Çarşamba.geojson",
+      "sha256": "b8099776d4cef372f8f10f89730efe1294c32f2354ea8a03fa55781904f2b652",
+      "size": 157296,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "carsamba",
+    "name": "Çarşamba",
+    "nameIt": "Çarşamba",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      36.72009,
+      41.19779
+    ],
+    "zoom": 11.5,
+    "population": 72494,
+    "grid": "cities/carsamba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/carsamba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "carsamba",
+        "name": "Çarşamba",
+        "nameIt": "Çarşamba",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          36.72009,
+          41.19779
+        ],
+        "zoom": 11.5,
+        "population": 72494,
+        "cells": 136,
+        "layer": "cities/carsamba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.72009,
+            41.19779
+          ]
+        },
+        "properties": {
+          "id": "carsamba",
+          "name": "Çarşamba",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 16.2,
+          "population": 72494
+        }
+      },
+      "summary": null
+    }
+  }
+}

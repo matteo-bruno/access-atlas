@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "malegaon",
+  "createdAt": "2026-10-08T15:54:09.318Z",
+  "updatedAt": "2026-10-08T15:54:09.318Z",
+  "meta": {
+    "name": "Malegaon",
+    "nameIt": "Malegaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Malegaon.geojson",
+      "sha256": "629c2173a7717b2e2108f6fb4fee5ff9d8401e589c4329fa6b3a7ffa65786836",
+      "size": 542713,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "malegaon",
+    "name": "Malegaon",
+    "nameIt": "Malegaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.53017,
+      20.55635
+    ],
+    "zoom": 11,
+    "population": 364598,
+    "grid": "cities/malegaon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/malegaon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "malegaon",
+        "name": "Malegaon",
+        "nameIt": "Malegaon",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.53017,
+          20.55635
+        ],
+        "zoom": 11,
+        "population": 364598,
+        "cells": 468,
+        "layer": "cities/malegaon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.53017,
+            20.55635
+          ]
+        },
+        "properties": {
+          "id": "malegaon",
+          "name": "Malegaon",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 26.9,
+          "population": 364598
+        }
+      },
+      "summary": null
+    }
+  }
+}

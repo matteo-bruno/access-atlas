@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kediri",
+  "createdAt": "2026-10-08T15:46:01.832Z",
+  "updatedAt": "2026-10-08T15:46:01.832Z",
+  "meta": {
+    "name": "Kediri",
+    "nameIt": "Kediri",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kediri.geojson",
+      "sha256": "4730104b1214d37a242388022ac9361bd21a671e8ff9679fe4aae41fe0d01ffe",
+      "size": 1355233,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kediri",
+    "name": "Kediri",
+    "nameIt": "Kediri",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      112.02411,
+      -7.8158
+    ],
+    "zoom": 10.2,
+    "population": 463314,
+    "grid": "cities/kediri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kediri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kediri",
+        "name": "Kediri",
+        "nameIt": "Kediri",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          112.02411,
+          -7.8158
+        ],
+        "zoom": 10.2,
+        "population": 463314,
+        "cells": 1161,
+        "layer": "cities/kediri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.02411,
+            -7.8158
+          ]
+        },
+        "properties": {
+          "id": "kediri",
+          "name": "Kediri",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 35.3,
+          "population": 463314
+        }
+      },
+      "summary": null
+    }
+  }
+}

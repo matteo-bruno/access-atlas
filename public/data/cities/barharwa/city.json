@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barharwa",
+  "createdAt": "2026-10-08T15:15:36.109Z",
+  "updatedAt": "2026-10-08T15:15:36.109Z",
+  "meta": {
+    "name": "Barharwa",
+    "nameIt": "Barharwa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barharwa.geojson",
+      "sha256": "c2c3148b71fc80d3659c733fd8eeaf494d5862660cf9832f57b7f7bfc5e9ce30",
+      "size": 75276,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barharwa",
+    "name": "Barharwa",
+    "nameIt": "Barharwa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.77066,
+      24.85476
+    ],
+    "zoom": 12,
+    "population": 29936,
+    "grid": "cities/barharwa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barharwa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barharwa",
+        "name": "Barharwa",
+        "nameIt": "Barharwa",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.77066,
+          24.85476
+        ],
+        "zoom": 12,
+        "population": 29936,
+        "cells": 65,
+        "layer": "cities/barharwa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.77066,
+            24.85476
+          ]
+        },
+        "properties": {
+          "id": "barharwa",
+          "name": "Barharwa",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 10.7,
+          "population": 29936
+        }
+      },
+      "summary": null
+    }
+  }
+}

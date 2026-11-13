@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "quixada",
+  "createdAt": "2026-10-08T16:07:38.908Z",
+  "updatedAt": "2026-10-08T16:07:38.908Z",
+  "meta": {
+    "name": "Quixadá",
+    "nameIt": "Quixadá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Quixadá.geojson",
+      "sha256": "996ecd29e522fa56b29abdca09010e5f815fc0f9dca04f5a2ad61d592bb11b15",
+      "size": 99324,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "quixada",
+    "name": "Quixadá",
+    "nameIt": "Quixadá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -39.01867,
+      -4.96916
+    ],
+    "zoom": 12,
+    "population": 33228,
+    "grid": "cities/quixada/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/quixada/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "quixada",
+        "name": "Quixadá",
+        "nameIt": "Quixadá",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -39.01867,
+          -4.96916
+        ],
+        "zoom": 12,
+        "population": 33228,
+        "cells": 85,
+        "layer": "cities/quixada/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -39.01867,
+            -4.96916
+          ]
+        },
+        "properties": {
+          "id": "quixada",
+          "name": "Quixadá",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 11.7,
+          "population": 33228
+        }
+      },
+      "summary": null
+    }
+  }
+}

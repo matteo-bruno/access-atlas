@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "impfondo",
+  "createdAt": "2026-10-08T15:40:45.324Z",
+  "updatedAt": "2026-10-08T15:40:45.324Z",
+  "meta": {
+    "name": "Impfondo",
+    "nameIt": "Impfondo",
+    "region": "Republic of the Congo",
+    "regionIt": "Repubblica del Congo",
+    "country": "CG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Impfondo.geojson",
+      "sha256": "efa424b545ab2afaff4a16bfc1b9ec9fc5374da9b7e5daca7cbb4759600f3b78",
+      "size": 198882,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "impfondo",
+    "name": "Impfondo",
+    "nameIt": "Impfondo",
+    "region": "Republic of the Congo",
+    "regionIt": "Repubblica del Congo",
+    "country": "CG",
+    "center": [
+      18.05749,
+      1.61368
+    ],
+    "zoom": 11.1,
+    "population": 123312,
+    "grid": "cities/impfondo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/impfondo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "impfondo",
+        "name": "Impfondo",
+        "nameIt": "Impfondo",
+        "region": "Republic of the Congo",
+        "regionIt": "Repubblica del Congo",
+        "country": "CG",
+        "center": [
+          18.05749,
+          1.61368
+        ],
+        "zoom": 11.1,
+        "population": 123312,
+        "cells": 171,
+        "layer": "cities/impfondo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.05749,
+            1.61368
+          ]
+        },
+        "properties": {
+          "id": "impfondo",
+          "name": "Impfondo",
+          "country": "CG",
+          "isStudy": true,
+          "proximityMinutes": 17.4,
+          "population": 123312
+        }
+      },
+      "summary": null
+    }
+  }
+}

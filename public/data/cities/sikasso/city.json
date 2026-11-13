@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sikasso",
+  "createdAt": "2026-10-08T16:13:38.390Z",
+  "updatedAt": "2026-10-08T16:13:38.390Z",
+  "meta": {
+    "name": "Sikasso",
+    "nameIt": "Sikasso",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sikasso.geojson",
+      "sha256": "96db94e0637362db15499552c370ec4658bdd15a0ed832ce8c5cb9804da5d918",
+      "size": 945247,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sikasso",
+    "name": "Sikasso",
+    "nameIt": "Sikasso",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML",
+    "center": [
+      -5.67065,
+      11.31282
+    ],
+    "zoom": 10.5,
+    "population": 450842,
+    "grid": "cities/sikasso/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sikasso/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sikasso",
+        "name": "Sikasso",
+        "nameIt": "Sikasso",
+        "region": "Mali",
+        "regionIt": "Mali",
+        "country": "ML",
+        "center": [
+          -5.67065,
+          11.31282
+        ],
+        "zoom": 10.5,
+        "population": 450842,
+        "cells": 809,
+        "layer": "cities/sikasso/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.67065,
+            11.31282
+          ]
+        },
+        "properties": {
+          "id": "sikasso",
+          "name": "Sikasso",
+          "country": "ML",
+          "isStudy": true,
+          "proximityMinutes": 29.1,
+          "population": 450842
+        }
+      },
+      "summary": null
+    }
+  }
+}

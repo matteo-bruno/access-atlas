@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "seoul-fua",
+  "createdAt": "2026-10-19T16:58:26.208Z",
+  "updatedAt": "2026-10-19T16:58:26.208Z",
+  "meta": {
+    "name": "Seoul",
+    "nameIt": "Seoul",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "seoul-fua",
+    "name": "Seoul",
+    "nameIt": "Seoul",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "extent": "fua",
+    "core": "seoul",
+    "center": [
+      126.95368,
+      37.48001
+    ],
+    "zoom": 8.5,
+    "population": 24932301,
+    "grid": "cities/seoul-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 168
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/seoul-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "seoul-fua",
+        "name": "Seoul",
+        "nameIt": "Seoul",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "extent": "fua",
+        "core": "seoul",
+        "center": [
+          126.95368,
+          37.48001
+        ],
+        "zoom": 8.5,
+        "population": 24932301,
+        "cells": 97192,
+        "layer": "cities/seoul-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 168
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            126.95368,
+            37.48001
+          ]
+        },
+        "properties": {
+          "id": "seoul-fua",
+          "name": "Seoul",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 10.6,
+          "population": 24932301
+        }
+      },
+      "summary": null
+    }
+  }
+}

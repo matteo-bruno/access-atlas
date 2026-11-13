@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "beppu",
+  "createdAt": "2026-10-08T15:17:34.979Z",
+  "updatedAt": "2026-10-08T15:17:34.979Z",
+  "meta": {
+    "name": "Beppu",
+    "nameIt": "Beppu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Beppu.geojson",
+      "sha256": "2ae6f8646f799fa039dfe821e82154ce39a201f4bfa140c81807ccf1e0923241",
+      "size": 488918,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "beppu",
+    "name": "Beppu",
+    "nameIt": "Beppu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      131.48808,
+      33.29909
+    ],
+    "zoom": 11,
+    "population": 105859,
+    "grid": "cities/beppu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/beppu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "beppu",
+        "name": "Beppu",
+        "nameIt": "Beppu",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          131.48808,
+          33.29909
+        ],
+        "zoom": 11,
+        "population": 105859,
+        "cells": 426,
+        "layer": "cities/beppu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            131.48808,
+            33.29909
+          ]
+        },
+        "properties": {
+          "id": "beppu",
+          "name": "Beppu",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 105859
+        }
+      },
+      "summary": null
+    }
+  }
+}

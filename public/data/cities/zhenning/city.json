@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhenning",
+  "createdAt": "2026-10-08T16:25:14.423Z",
+  "updatedAt": "2026-10-08T16:25:14.423Z",
+  "meta": {
+    "name": "Zhenning",
+    "nameIt": "Zhenning",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhenning.geojson",
+      "sha256": "cf32267e279b220e850bedea78412364a4a6d7abc4e50a8608abb25f067c7bb6",
+      "size": 93566,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhenning",
+    "name": "Zhenning",
+    "nameIt": "Zhenning",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      105.76278,
+      26.05902
+    ],
+    "zoom": 12,
+    "population": 115684,
+    "grid": "cities/zhenning/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhenning/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhenning",
+        "name": "Zhenning",
+        "nameIt": "Zhenning",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          105.76278,
+          26.05902
+        ],
+        "zoom": 12,
+        "population": 115684,
+        "cells": 80,
+        "layer": "cities/zhenning/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.76278,
+            26.05902
+          ]
+        },
+        "properties": {
+          "id": "zhenning",
+          "name": "Zhenning",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 115684
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "uruapan",
+  "createdAt": "2026-10-08T16:20:05.786Z",
+  "updatedAt": "2026-10-08T16:20:05.786Z",
+  "meta": {
+    "name": "Uruapan",
+    "nameIt": "Uruapan",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Uruapan.geojson",
+      "sha256": "a1362731750f0b0ae28841aac468b0dbad534670d4391db925d97e5de8f13fd4",
+      "size": 520787,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "uruapan",
+    "name": "Uruapan",
+    "nameIt": "Uruapan",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -102.04779,
+      19.4106
+    ],
+    "zoom": 10.7,
+    "population": 298162,
+    "grid": "cities/uruapan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/uruapan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "uruapan",
+        "name": "Uruapan",
+        "nameIt": "Uruapan",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -102.04779,
+          19.4106
+        ],
+        "zoom": 10.7,
+        "population": 298162,
+        "cells": 443,
+        "layer": "cities/uruapan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -102.04779,
+            19.4106
+          ]
+        },
+        "properties": {
+          "id": "uruapan",
+          "name": "Uruapan",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 25.6,
+          "population": 298162
+        }
+      },
+      "summary": null
+    }
+  }
+}

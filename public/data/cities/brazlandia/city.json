@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "brazlandia",
+  "createdAt": "2026-10-08T15:20:23.066Z",
+  "updatedAt": "2026-10-08T15:20:23.066Z",
+  "meta": {
+    "name": "Brazlândia",
+    "nameIt": "Brazlândia",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Brazlândia.geojson",
+      "sha256": "8a5615334731f29b8a7c18ce2f0c6ed7cb19608f6959b6759ee11afefe5fe4ef",
+      "size": 91739,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "brazlandia",
+    "name": "Brazlândia",
+    "nameIt": "Brazlândia",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -48.19697,
+      -15.66932
+    ],
+    "zoom": 11.9,
+    "population": 40991,
+    "grid": "cities/brazlandia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/brazlandia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "brazlandia",
+        "name": "Brazlândia",
+        "nameIt": "Brazlândia",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -48.19697,
+          -15.66932
+        ],
+        "zoom": 11.9,
+        "population": 40991,
+        "cells": 78,
+        "layer": "cities/brazlandia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.19697,
+            -15.66932
+          ]
+        },
+        "properties": {
+          "id": "brazlandia",
+          "name": "Brazlândia",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 10.8,
+          "population": 40991
+        }
+      },
+      "summary": null
+    }
+  }
+}

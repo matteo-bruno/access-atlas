@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "castelldefels",
+  "createdAt": "2026-10-08T15:22:46.155Z",
+  "updatedAt": "2026-10-08T15:22:46.155Z",
+  "meta": {
+    "name": "Castelldefels",
+    "nameIt": "Castelldefels",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Castelldefels.geojson",
+      "sha256": "1b5d97abbb55bd58b65d852c6a401057fe9c0ba357a14cf74c5cf42f7c9cf7c0",
+      "size": 155656,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "castelldefels",
+    "name": "Castelldefels",
+    "nameIt": "Castelldefels",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      1.97403,
+      41.27548
+    ],
+    "zoom": 11.8,
+    "population": 70062,
+    "grid": "cities/castelldefels/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/castelldefels/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "castelldefels",
+        "name": "Castelldefels",
+        "nameIt": "Castelldefels",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          1.97403,
+          41.27548
+        ],
+        "zoom": 11.8,
+        "population": 70062,
+        "cells": 136,
+        "layer": "cities/castelldefels/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.97403,
+            41.27548
+          ]
+        },
+        "properties": {
+          "id": "castelldefels",
+          "name": "Castelldefels",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 70062
+        }
+      },
+      "summary": null
+    }
+  }
+}

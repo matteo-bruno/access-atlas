@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pathein",
+  "createdAt": "2026-10-08T16:04:38.918Z",
+  "updatedAt": "2026-10-08T16:04:38.918Z",
+  "meta": {
+    "name": "Pathein",
+    "nameIt": "Pathein",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pathein.geojson",
+      "sha256": "c357ca4f29136bb6aa8a5d0a4a64a72ac993235592c6dc9eb22cde2ce255f147",
+      "size": 315106,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pathein",
+    "name": "Pathein",
+    "nameIt": "Pathein",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      94.73934,
+      16.78531
+    ],
+    "zoom": 10.9,
+    "population": 206537,
+    "grid": "cities/pathein/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pathein/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pathein",
+        "name": "Pathein",
+        "nameIt": "Pathein",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          94.73934,
+          16.78531
+        ],
+        "zoom": 10.9,
+        "population": 206537,
+        "cells": 272,
+        "layer": "cities/pathein/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            94.73934,
+            16.78531
+          ]
+        },
+        "properties": {
+          "id": "pathein",
+          "name": "Pathein",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 26.1,
+          "population": 206537
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ravensburg",
+  "createdAt": "2026-10-08T16:08:26.903Z",
+  "updatedAt": "2026-10-08T16:08:26.903Z",
+  "meta": {
+    "name": "Ravensburg",
+    "nameIt": "Ravensburg",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ravensburg.geojson",
+      "sha256": "40ea8ad21a08adf0767a827385a71f105f65113da495112c77b7915538262ba3",
+      "size": 167410,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ravensburg",
+    "name": "Ravensburg",
+    "nameIt": "Ravensburg",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      9.62686,
+      47.79533
+    ],
+    "zoom": 11.1,
+    "population": 46250,
+    "grid": "cities/ravensburg/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ravensburg/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ravensburg",
+        "name": "Ravensburg",
+        "nameIt": "Ravensburg",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.62686,
+          47.79533
+        ],
+        "zoom": 11.1,
+        "population": 46250,
+        "cells": 148,
+        "layer": "cities/ravensburg/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.62686,
+            47.79533
+          ]
+        },
+        "properties": {
+          "id": "ravensburg",
+          "name": "Ravensburg",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 8.3,
+          "population": 46250
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mount-hagen",
+  "createdAt": "2026-10-08T15:58:33.582Z",
+  "updatedAt": "2026-10-08T15:58:33.582Z",
+  "meta": {
+    "name": "Mount Hagen",
+    "nameIt": "Mount Hagen",
+    "region": "Papua New Guinea",
+    "regionIt": "Papua Nuova Guinea",
+    "country": "PG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mount Hagen.geojson",
+      "sha256": "52d1387430628889ddf9167eb942e129bd67a5a836c2e9a36eff9733609fd5f0",
+      "size": 109798,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mount-hagen",
+    "name": "Mount Hagen",
+    "nameIt": "Mount Hagen",
+    "region": "Papua New Guinea",
+    "regionIt": "Papua Nuova Guinea",
+    "country": "PG",
+    "center": [
+      144.23118,
+      -5.86111
+    ],
+    "zoom": 11.7,
+    "population": 40621,
+    "grid": "cities/mount-hagen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mount-hagen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mount-hagen",
+        "name": "Mount Hagen",
+        "nameIt": "Mount Hagen",
+        "region": "Papua New Guinea",
+        "regionIt": "Papua Nuova Guinea",
+        "country": "PG",
+        "center": [
+          144.23118,
+          -5.86111
+        ],
+        "zoom": 11.7,
+        "population": 40621,
+        "cells": 94,
+        "layer": "cities/mount-hagen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            144.23118,
+            -5.86111
+          ]
+        },
+        "properties": {
+          "id": "mount-hagen",
+          "name": "Mount Hagen",
+          "country": "PG",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 40621
+        }
+      },
+      "summary": null
+    }
+  }
+}

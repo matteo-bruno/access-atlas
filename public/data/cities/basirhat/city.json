@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "basirhat",
+  "createdAt": "2026-10-08T15:15:50.918Z",
+  "updatedAt": "2026-10-08T15:15:50.918Z",
+  "meta": {
+    "name": "Basirhat",
+    "nameIt": "Basirhat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Basirhat.geojson",
+      "sha256": "28b7ac9763c81eb960ff24f213b86aa054fd12e7a81d62ca33858e1cf0dbcdba",
+      "size": 609826,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "basirhat",
+    "name": "Basirhat",
+    "nameIt": "Basirhat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.87264,
+      22.66512
+    ],
+    "zoom": 10.2,
+    "population": 190161,
+    "grid": "cities/basirhat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/basirhat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "basirhat",
+        "name": "Basirhat",
+        "nameIt": "Basirhat",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.87264,
+          22.66512
+        ],
+        "zoom": 10.2,
+        "population": 190161,
+        "cells": 526,
+        "layer": "cities/basirhat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.87264,
+            22.66512
+          ]
+        },
+        "properties": {
+          "id": "basirhat",
+          "name": "Basirhat",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 74,
+          "population": 190161
+        }
+      },
+      "summary": null
+    }
+  }
+}

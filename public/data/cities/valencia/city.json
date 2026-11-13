@@ -3,7 +3,7 @@
   "version": 1,
   "id": "valencia",
   "createdAt": "2026-08-28T13:51:44.000Z",
-  "updatedAt": "2026-10-08T14:05:37.061Z",
+  "updatedAt": "2026-10-19T17:05:13.491Z",
   "meta": {
     "name": "Valencia",
     "nameIt": "Valencia",
@@ -31,19 +31,73 @@
       "cellRadiusM": 200
     },
     "layers": [
+      "citychrone",
       "cardep",
       "pov"
     ],
     "layerData": {
+      "citychrone": "cities/valencia/citychrone.json.gz",
       "cardep": "cities/valencia/cardep.json.gz",
       "pov": "cities/valencia/pov.json.gz"
     },
     "cartogramSources": {
+      "citychrone": "derived",
       "cardep": "derived",
       "pov": "derived"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 1297,
+      "times": "cities/valencia/citychrone/times{hh}.bin"
     }
   },
   "platforms": {
+    "citychrone": {
+      "row": {
+        "id": "valencia",
+        "name": "Valencia",
+        "nameIt": "Valencia",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -0.37262,
+          39.46653
+        ],
+        "zoom": 9.1,
+        "population": 770448,
+        "cells": 1297,
+        "layer": "cities/valencia/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 1297,
+          "times": "cities/valencia/citychrone/times{hh}.bin"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.37262,
+            39.46653
+          ]
+        },
+        "properties": {
+          "id": "valencia",
+          "name": "Valencia",
+          "country": "ES",
+          "isStudy": true,
+          "velocityScore": 4.58,
+          "population": 770448
+        }
+      },
+      "summary": null
+    },
     "cardep": {
       "row": {
         "id": "valencia",

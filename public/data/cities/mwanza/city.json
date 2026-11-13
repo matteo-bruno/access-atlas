@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mwanza",
+  "createdAt": "2026-10-08T15:59:17.132Z",
+  "updatedAt": "2026-10-08T15:59:17.132Z",
+  "meta": {
+    "name": "Mwanza",
+    "nameIt": "Mwanza",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mwanza.geojson",
+      "sha256": "63acbdb8373b88d398753da055fc6c229053bcf9f60ad07c096d2048b10699c2",
+      "size": 1698575,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mwanza",
+    "name": "Mwanza",
+    "nameIt": "Mwanza",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      32.93706,
+      -2.54419
+    ],
+    "zoom": 9.7,
+    "population": 989771,
+    "grid": "cities/mwanza/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mwanza/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mwanza",
+        "name": "Mwanza",
+        "nameIt": "Mwanza",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          32.93706,
+          -2.54419
+        ],
+        "zoom": 9.7,
+        "population": 989771,
+        "cells": 1460,
+        "layer": "cities/mwanza/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.93706,
+            -2.54419
+          ]
+        },
+        "properties": {
+          "id": "mwanza",
+          "name": "Mwanza",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 36.1,
+          "population": 989771
+        }
+      },
+      "summary": null
+    }
+  }
+}

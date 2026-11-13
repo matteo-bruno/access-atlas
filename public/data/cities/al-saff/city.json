@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-saff",
+  "createdAt": "2026-10-08T15:04:51.380Z",
+  "updatedAt": "2026-10-08T15:04:51.380Z",
+  "meta": {
+    "name": "Al Saff",
+    "nameIt": "Al Saff",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Saff.geojson",
+      "sha256": "ba348b365e49e8807da7e6d7d3e2cd364dc04a9d5b48db9ba46513b0905c7788",
+      "size": 223557,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-saff",
+    "name": "Al Saff",
+    "nameIt": "Al Saff",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      31.29958,
+      29.58121
+    ],
+    "zoom": 10.9,
+    "population": 135449,
+    "grid": "cities/al-saff/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-saff/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-saff",
+        "name": "Al Saff",
+        "nameIt": "Al Saff",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          31.29958,
+          29.58121
+        ],
+        "zoom": 10.9,
+        "population": 135449,
+        "cells": 192,
+        "layer": "cities/al-saff/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.29958,
+            29.58121
+          ]
+        },
+        "properties": {
+          "id": "al-saff",
+          "name": "Al Saff",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 135449
+        }
+      },
+      "summary": null
+    }
+  }
+}

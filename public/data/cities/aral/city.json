@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aral",
+  "createdAt": "2026-10-08T15:08:59.675Z",
+  "updatedAt": "2026-10-08T15:08:59.675Z",
+  "meta": {
+    "name": "Aral",
+    "nameIt": "Aral",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aral.geojson",
+      "sha256": "941d530a34b1c472fedf565d4cc09379de5bb1a02b0e77454ed1b13e20d8e843",
+      "size": 113224,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aral",
+    "name": "Aral",
+    "nameIt": "Aral",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      81.27605,
+      40.54779
+    ],
+    "zoom": 11.8,
+    "population": 52607,
+    "grid": "cities/aral/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aral/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aral",
+        "name": "Aral",
+        "nameIt": "Aral",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          81.27605,
+          40.54779
+        ],
+        "zoom": 11.8,
+        "population": 52607,
+        "cells": 98,
+        "layer": "cities/aral/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.27605,
+            40.54779
+          ]
+        },
+        "properties": {
+          "id": "aral",
+          "name": "Aral",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 52607
+        }
+      },
+      "summary": null
+    }
+  }
+}

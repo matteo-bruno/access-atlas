@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shikokuchuo",
+  "createdAt": "2026-10-08T16:13:04.406Z",
+  "updatedAt": "2026-10-08T16:13:04.406Z",
+  "meta": {
+    "name": "Shikokuchuo",
+    "nameIt": "Shikokuchuo",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shikokuchuo.geojson",
+      "sha256": "277a83604704f9e1d91367304eb33d92b7c72d9e93f6abfc6e156addd090f413",
+      "size": 425424,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shikokuchuo",
+    "name": "Shikokuchuo",
+    "nameIt": "Shikokuchuo",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      133.55741,
+      33.98945
+    ],
+    "zoom": 10.9,
+    "population": 51093,
+    "grid": "cities/shikokuchuo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shikokuchuo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shikokuchuo",
+        "name": "Shikokuchuo",
+        "nameIt": "Shikokuchuo",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          133.55741,
+          33.98945
+        ],
+        "zoom": 10.9,
+        "population": 51093,
+        "cells": 367,
+        "layer": "cities/shikokuchuo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            133.55741,
+            33.98945
+          ]
+        },
+        "properties": {
+          "id": "shikokuchuo",
+          "name": "Shikokuchuo",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 18.4,
+          "population": 51093
+        }
+      },
+      "summary": null
+    }
+  }
+}

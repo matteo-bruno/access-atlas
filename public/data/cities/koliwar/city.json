@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "koliwar",
+  "createdAt": "2026-10-08T15:47:43.073Z",
+  "updatedAt": "2026-10-08T15:47:43.073Z",
+  "meta": {
+    "name": "Koliwar",
+    "nameIt": "Koliwar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Koliwar.geojson",
+      "sha256": "99cdc31caf5e7336f6959400dccd8bb0059baa200db3873a31361b7d4a13dac9",
+      "size": 494540,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "koliwar",
+    "name": "Koliwar",
+    "nameIt": "Koliwar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.75804,
+      25.56645
+    ],
+    "zoom": 10.4,
+    "population": 133719,
+    "grid": "cities/koliwar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/koliwar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "koliwar",
+        "name": "Koliwar",
+        "nameIt": "Koliwar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.75804,
+          25.56645
+        ],
+        "zoom": 10.4,
+        "population": 133719,
+        "cells": 427,
+        "layer": "cities/koliwar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.75804,
+            25.56645
+          ]
+        },
+        "properties": {
+          "id": "koliwar",
+          "name": "Koliwar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 133719
+        }
+      },
+      "summary": null
+    }
+  }
+}

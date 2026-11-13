@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rivera",
+  "createdAt": "2026-10-08T16:08:55.406Z",
+  "updatedAt": "2026-10-08T16:08:55.406Z",
+  "meta": {
+    "name": "Rivera",
+    "nameIt": "Rivera",
+    "region": "Uruguay",
+    "regionIt": "Uruguay",
+    "country": "UY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rivera.geojson",
+      "sha256": "0fc69ea341fcf6cd861df266f7379676d3949d82e6e91ca6684e840d92ff4f6f",
+      "size": 293533,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rivera",
+    "name": "Rivera",
+    "nameIt": "Rivera",
+    "region": "Uruguay",
+    "regionIt": "Uruguay",
+    "country": "UY",
+    "center": [
+      -55.54932,
+      -30.90828
+    ],
+    "zoom": 11.4,
+    "population": 39839,
+    "grid": "cities/rivera/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rivera/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rivera",
+        "name": "Rivera",
+        "nameIt": "Rivera",
+        "region": "Uruguay",
+        "regionIt": "Uruguay",
+        "country": "UY",
+        "center": [
+          -55.54932,
+          -30.90828
+        ],
+        "zoom": 11.4,
+        "population": 39839,
+        "cells": 249,
+        "layer": "cities/rivera/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -55.54932,
+            -30.90828
+          ]
+        },
+        "properties": {
+          "id": "rivera",
+          "name": "Rivera",
+          "country": "UY",
+          "isStudy": true,
+          "proximityMinutes": 17.4,
+          "population": 39839
+        }
+      },
+      "summary": null
+    }
+  }
+}

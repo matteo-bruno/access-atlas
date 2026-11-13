@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "my-tho",
+  "createdAt": "2026-10-08T15:59:28.220Z",
+  "updatedAt": "2026-10-08T15:59:28.220Z",
+  "meta": {
+    "name": "Mỹ Tho",
+    "nameIt": "Mỹ Tho",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mỹ Tho.geojson",
+      "sha256": "d3b5b1b6e02d96f48d30838d72dee6a41a19b825b85d4791cf72e2a6d8bb7d43",
+      "size": 1274747,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "my-tho",
+    "name": "Mỹ Tho",
+    "nameIt": "Mỹ Tho",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      106.36883,
+      10.41749
+    ],
+    "zoom": 9.3,
+    "population": 481970,
+    "grid": "cities/my-tho/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/my-tho/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "my-tho",
+        "name": "Mỹ Tho",
+        "nameIt": "Mỹ Tho",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          106.36883,
+          10.41749
+        ],
+        "zoom": 9.3,
+        "population": 481970,
+        "cells": 1089,
+        "layer": "cities/my-tho/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.36883,
+            10.41749
+          ]
+        },
+        "properties": {
+          "id": "my-tho",
+          "name": "Mỹ Tho",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 30.5,
+          "population": 481970
+        }
+      },
+      "summary": null
+    }
+  }
+}

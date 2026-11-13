@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bal-kesir",
+  "createdAt": "2026-10-08T15:14:22.215Z",
+  "updatedAt": "2026-10-08T15:14:22.215Z",
+  "meta": {
+    "name": "Balıkesir",
+    "nameIt": "Balıkesir",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Balıkesir.geojson",
+      "sha256": "c1d77db844c43475b23ae7cd110e8d1f15c3b3e8ea1db5fa4cda91ad6205eb8e",
+      "size": 370236,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bal-kesir",
+    "name": "Balıkesir",
+    "nameIt": "Balıkesir",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      27.89183,
+      39.65006
+    ],
+    "zoom": 10.8,
+    "population": 272566,
+    "grid": "cities/bal-kesir/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bal-kesir/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bal-kesir",
+        "name": "Balıkesir",
+        "nameIt": "Balıkesir",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          27.89183,
+          39.65006
+        ],
+        "zoom": 10.8,
+        "population": 272566,
+        "cells": 323,
+        "layer": "cities/bal-kesir/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.89183,
+            39.65006
+          ]
+        },
+        "properties": {
+          "id": "bal-kesir",
+          "name": "Balıkesir",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 272566
+        }
+      },
+      "summary": null
+    }
+  }
+}

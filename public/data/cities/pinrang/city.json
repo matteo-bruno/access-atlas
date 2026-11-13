@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pinrang",
+  "createdAt": "2026-10-08T16:05:45.162Z",
+  "updatedAt": "2026-10-08T16:05:45.162Z",
+  "meta": {
+    "name": "Pinrang",
+    "nameIt": "Pinrang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pinrang.geojson",
+      "sha256": "0c06da2523b3132db96c3156ab019a69a188a00c298bf8c2916034aa51390fe7",
+      "size": 167015,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pinrang",
+    "name": "Pinrang",
+    "nameIt": "Pinrang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      119.65194,
+      -3.79581
+    ],
+    "zoom": 11.4,
+    "population": 76654,
+    "grid": "cities/pinrang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pinrang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pinrang",
+        "name": "Pinrang",
+        "nameIt": "Pinrang",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          119.65194,
+          -3.79581
+        ],
+        "zoom": 11.4,
+        "population": 76654,
+        "cells": 142,
+        "layer": "cities/pinrang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.65194,
+            -3.79581
+          ]
+        },
+        "properties": {
+          "id": "pinrang",
+          "name": "Pinrang",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 76654
+        }
+      },
+      "summary": null
+    }
+  }
+}

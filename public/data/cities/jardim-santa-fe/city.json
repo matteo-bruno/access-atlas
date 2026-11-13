@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jardim-santa-fe",
+  "createdAt": "2026-10-08T15:42:02.154Z",
+  "updatedAt": "2026-10-08T15:42:02.154Z",
+  "meta": {
+    "name": "Jardim Santa Fé",
+    "nameIt": "Jardim Santa Fé",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jardim Santa Fé.geojson",
+      "sha256": "3bde03c3e06b557c2fae9ebfc0febe5dee959ef519d38cdce2ae52ff2469fa10",
+      "size": 134578,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jardim-santa-fe",
+    "name": "Jardim Santa Fé",
+    "nameIt": "Jardim Santa Fé",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -46.79141,
+      -23.43879
+    ],
+    "zoom": 11.9,
+    "population": 56607,
+    "grid": "cities/jardim-santa-fe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jardim-santa-fe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jardim-santa-fe",
+        "name": "Jardim Santa Fé",
+        "nameIt": "Jardim Santa Fé",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -46.79141,
+          -23.43879
+        ],
+        "zoom": 11.9,
+        "population": 56607,
+        "cells": 114,
+        "layer": "cities/jardim-santa-fe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.79141,
+            -23.43879
+          ]
+        },
+        "properties": {
+          "id": "jardim-santa-fe",
+          "name": "Jardim Santa Fé",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 56607
+        }
+      },
+      "summary": null
+    }
+  }
+}

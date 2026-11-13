@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "matola-rio",
+  "createdAt": "2026-10-08T15:55:46.000Z",
+  "updatedAt": "2026-10-08T15:55:46.000Z",
+  "meta": {
+    "name": "Matola-Rio",
+    "nameIt": "Matola-Rio",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Matola-Rio.geojson",
+      "sha256": "361070ad399daf2b990637272b8d12b0f8c4e5cf8cf63f1652e2c518448f0def",
+      "size": 303040,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "matola-rio",
+    "name": "Matola-Rio",
+    "nameIt": "Matola-Rio",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ",
+    "center": [
+      32.4178,
+      -25.98687
+    ],
+    "zoom": 10.9,
+    "population": 92145,
+    "grid": "cities/matola-rio/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/matola-rio/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "matola-rio",
+        "name": "Matola-Rio",
+        "nameIt": "Matola-Rio",
+        "region": "Mozambique",
+        "regionIt": "Mozambico",
+        "country": "MZ",
+        "center": [
+          32.4178,
+          -25.98687
+        ],
+        "zoom": 10.9,
+        "population": 92145,
+        "cells": 259,
+        "layer": "cities/matola-rio/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.4178,
+            -25.98687
+          ]
+        },
+        "properties": {
+          "id": "matola-rio",
+          "name": "Matola-Rio",
+          "country": "MZ",
+          "isStudy": true,
+          "proximityMinutes": 27.9,
+          "population": 92145
+        }
+      },
+      "summary": null
+    }
+  }
+}

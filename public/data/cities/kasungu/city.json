@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kasungu",
+  "createdAt": "2026-10-08T15:45:34.039Z",
+  "updatedAt": "2026-10-08T15:45:34.039Z",
+  "meta": {
+    "name": "Kasungu",
+    "nameIt": "Kasungu",
+    "region": "Malawi",
+    "regionIt": "Malawi",
+    "country": "MW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kasungu.geojson",
+      "sha256": "995795a33fb4ca63fe19bde825a8d8725e7ebba098389a7873a72f984288cf0e",
+      "size": 137176,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kasungu",
+    "name": "Kasungu",
+    "nameIt": "Kasungu",
+    "region": "Malawi",
+    "regionIt": "Malawi",
+    "country": "MW",
+    "center": [
+      33.49082,
+      -13.03909
+    ],
+    "zoom": 11.6,
+    "population": 57993,
+    "grid": "cities/kasungu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kasungu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kasungu",
+        "name": "Kasungu",
+        "nameIt": "Kasungu",
+        "region": "Malawi",
+        "regionIt": "Malawi",
+        "country": "MW",
+        "center": [
+          33.49082,
+          -13.03909
+        ],
+        "zoom": 11.6,
+        "population": 57993,
+        "cells": 117,
+        "layer": "cities/kasungu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.49082,
+            -13.03909
+          ]
+        },
+        "properties": {
+          "id": "kasungu",
+          "name": "Kasungu",
+          "country": "MW",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 57993
+        }
+      },
+      "summary": null
+    }
+  }
+}

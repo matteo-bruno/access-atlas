@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "poitiers",
+  "createdAt": "2026-10-08T16:06:00.813Z",
+  "updatedAt": "2026-10-08T16:06:00.813Z",
+  "meta": {
+    "name": "Poitiers",
+    "nameIt": "Poitiers",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Poitiers.geojson",
+      "sha256": "95f7f4620ede11849957d7adafd3e002df25da8b8374115e3c715a0b4aa6bffb",
+      "size": 361768,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "poitiers",
+    "name": "Poitiers",
+    "nameIt": "Poitiers",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      0.34681,
+      46.5804
+    ],
+    "zoom": 11.3,
+    "population": 97246,
+    "grid": "cities/poitiers/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/poitiers/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "poitiers",
+        "name": "Poitiers",
+        "nameIt": "Poitiers",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          0.34681,
+          46.5804
+        ],
+        "zoom": 11.3,
+        "population": 97246,
+        "cells": 316,
+        "layer": "cities/poitiers/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.34681,
+            46.5804
+          ]
+        },
+        "properties": {
+          "id": "poitiers",
+          "name": "Poitiers",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 8.2,
+          "population": 97246
+        }
+      },
+      "summary": null
+    }
+  }
+}

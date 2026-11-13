@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "letpadan",
+  "createdAt": "2026-10-08T15:50:48.311Z",
+  "updatedAt": "2026-10-08T15:50:48.311Z",
+  "meta": {
+    "name": "Letpadan",
+    "nameIt": "Letpadan",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Letpadan.geojson",
+      "sha256": "c27f5ebbf5ea18009ea77c3dcb903824c82f87128247fbf32814b2431950f0b3",
+      "size": 69539,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "letpadan",
+    "name": "Letpadan",
+    "nameIt": "Letpadan",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      95.75244,
+      17.78632
+    ],
+    "zoom": 12,
+    "population": 65796,
+    "grid": "cities/letpadan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/letpadan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "letpadan",
+        "name": "Letpadan",
+        "nameIt": "Letpadan",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          95.75244,
+          17.78632
+        ],
+        "zoom": 12,
+        "population": 65796,
+        "cells": 60,
+        "layer": "cities/letpadan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            95.75244,
+            17.78632
+          ]
+        },
+        "properties": {
+          "id": "letpadan",
+          "name": "Letpadan",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 65796
+        }
+      },
+      "summary": null
+    }
+  }
+}

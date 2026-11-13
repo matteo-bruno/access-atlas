@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "passo-fundo",
+  "createdAt": "2026-10-08T16:04:35.164Z",
+  "updatedAt": "2026-10-08T16:04:35.164Z",
+  "meta": {
+    "name": "Passo Fundo",
+    "nameIt": "Passo Fundo",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Passo Fundo.geojson",
+      "sha256": "66747e98ccb9b648acabc17453e1deb5c7ad39312c05e286f36e678b9a9baf8c",
+      "size": 558485,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "passo-fundo",
+    "name": "Passo Fundo",
+    "nameIt": "Passo Fundo",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -52.40534,
+      -28.25936
+    ],
+    "zoom": 10.6,
+    "population": 180984,
+    "grid": "cities/passo-fundo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/passo-fundo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "passo-fundo",
+        "name": "Passo Fundo",
+        "nameIt": "Passo Fundo",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -52.40534,
+          -28.25936
+        ],
+        "zoom": 10.6,
+        "population": 180984,
+        "cells": 478,
+        "layer": "cities/passo-fundo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -52.40534,
+            -28.25936
+          ]
+        },
+        "properties": {
+          "id": "passo-fundo",
+          "name": "Passo Fundo",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 18.9,
+          "population": 180984
+        }
+      },
+      "summary": null
+    }
+  }
+}

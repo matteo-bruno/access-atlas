@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dhamar",
+  "createdAt": "2026-10-08T15:29:22.945Z",
+  "updatedAt": "2026-10-08T15:29:22.945Z",
+  "meta": {
+    "name": "Dhamar",
+    "nameIt": "Dhamar",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dhamar.geojson",
+      "sha256": "d8e39a36e828d38919c8a3ffd14a3d3fd2a9ed71e88995169d2ca0e0b9d877f7",
+      "size": 430357,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dhamar",
+    "name": "Dhamar",
+    "nameIt": "Dhamar",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE",
+    "center": [
+      44.40085,
+      14.54264
+    ],
+    "zoom": 10.9,
+    "population": 352999,
+    "grid": "cities/dhamar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dhamar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dhamar",
+        "name": "Dhamar",
+        "nameIt": "Dhamar",
+        "region": "Yemen",
+        "regionIt": "Yemen",
+        "country": "YE",
+        "center": [
+          44.40085,
+          14.54264
+        ],
+        "zoom": 10.9,
+        "population": 352999,
+        "cells": 370,
+        "layer": "cities/dhamar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.40085,
+            14.54264
+          ]
+        },
+        "properties": {
+          "id": "dhamar",
+          "name": "Dhamar",
+          "country": "YE",
+          "isStudy": true,
+          "proximityMinutes": 21.7,
+          "population": 352999
+        }
+      },
+      "summary": null
+    }
+  }
+}

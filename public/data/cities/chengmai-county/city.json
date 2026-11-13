@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chengmai-county",
+  "createdAt": "2026-10-08T15:24:20.169Z",
+  "updatedAt": "2026-10-08T15:24:20.169Z",
+  "meta": {
+    "name": "Chengmai County",
+    "nameIt": "Chengmai County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chengmai County.geojson",
+      "sha256": "fa73368d3a7426aee085d351ddd93476c65b204c0a8deb2f06cb00eb5f48c063",
+      "size": 111006,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chengmai-county",
+    "name": "Chengmai County",
+    "nameIt": "Chengmai County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      110.00367,
+      19.73554
+    ],
+    "zoom": 11.9,
+    "population": 73466,
+    "grid": "cities/chengmai-county/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chengmai-county/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chengmai-county",
+        "name": "Chengmai County",
+        "nameIt": "Chengmai County",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          110.00367,
+          19.73554
+        ],
+        "zoom": 11.9,
+        "population": 73466,
+        "cells": 95,
+        "layer": "cities/chengmai-county/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.00367,
+            19.73554
+          ]
+        },
+        "properties": {
+          "id": "chengmai-county",
+          "name": "Chengmai County",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 73466
+        }
+      },
+      "summary": null
+    }
+  }
+}

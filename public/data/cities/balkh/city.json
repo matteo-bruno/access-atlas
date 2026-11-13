@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "balkh",
+  "createdAt": "2026-10-08T15:14:06.311Z",
+  "updatedAt": "2026-10-08T15:14:06.311Z",
+  "meta": {
+    "name": "Balkh",
+    "nameIt": "Balkh",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Balkh.geojson",
+      "sha256": "d2cd9e3f606330e956563c171105835575e325216e245211f76393b90ad30ef8",
+      "size": 105127,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "balkh",
+    "name": "Balkh",
+    "nameIt": "Balkh",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ",
+    "center": [
+      68.65749,
+      37.58769
+    ],
+    "zoom": 11.8,
+    "population": 35144,
+    "grid": "cities/balkh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/balkh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "balkh",
+        "name": "Balkh",
+        "nameIt": "Balkh",
+        "region": "Tajikistan",
+        "regionIt": "Tagikistan",
+        "country": "TJ",
+        "center": [
+          68.65749,
+          37.58769
+        ],
+        "zoom": 11.8,
+        "population": 35144,
+        "cells": 91,
+        "layer": "cities/balkh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            68.65749,
+            37.58769
+          ]
+        },
+        "properties": {
+          "id": "balkh",
+          "name": "Balkh",
+          "country": "TJ",
+          "isStudy": true,
+          "proximityMinutes": 15.2,
+          "population": 35144
+        }
+      },
+      "summary": null
+    }
+  }
+}

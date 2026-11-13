@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ballarat",
+  "createdAt": "2026-10-08T15:14:07.184Z",
+  "updatedAt": "2026-10-08T15:14:07.184Z",
+  "meta": {
+    "name": "Ballarat",
+    "nameIt": "Ballarat",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ballarat.geojson",
+      "sha256": "cc0e2e83bcf61490f25df0e99c6f581f3b43427f7202e783c30c7eebdfeff2fa",
+      "size": 438855,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ballarat",
+    "name": "Ballarat",
+    "nameIt": "Ballarat",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      143.83469,
+      -37.56098
+    ],
+    "zoom": 10.8,
+    "population": 62213,
+    "grid": "cities/ballarat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ballarat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ballarat",
+        "name": "Ballarat",
+        "nameIt": "Ballarat",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          143.83469,
+          -37.56098
+        ],
+        "zoom": 10.8,
+        "population": 62213,
+        "cells": 379,
+        "layer": "cities/ballarat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            143.83469,
+            -37.56098
+          ]
+        },
+        "properties": {
+          "id": "ballarat",
+          "name": "Ballarat",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 16.4,
+          "population": 62213
+        }
+      },
+      "summary": null
+    }
+  }
+}

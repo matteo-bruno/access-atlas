@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "karauli",
+  "createdAt": "2026-10-08T15:45:17.529Z",
+  "updatedAt": "2026-10-08T15:45:17.529Z",
+  "meta": {
+    "name": "Karauli",
+    "nameIt": "Karauli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Karauli.geojson",
+      "sha256": "cd02e1122852cf6f8164600988513b481a965f3d066dee4cd38e0b5ae52a926c",
+      "size": 176014,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "karauli",
+    "name": "Karauli",
+    "nameIt": "Karauli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.0212,
+      26.49584
+    ],
+    "zoom": 11.6,
+    "population": 70259,
+    "grid": "cities/karauli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/karauli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "karauli",
+        "name": "Karauli",
+        "nameIt": "Karauli",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.0212,
+          26.49584
+        ],
+        "zoom": 11.6,
+        "population": 70259,
+        "cells": 152,
+        "layer": "cities/karauli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.0212,
+            26.49584
+          ]
+        },
+        "properties": {
+          "id": "karauli",
+          "name": "Karauli",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 70259
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ede-netherlands",
+  "createdAt": "2026-10-08T15:31:41.410Z",
+  "updatedAt": "2026-10-08T15:31:41.410Z",
+  "meta": {
+    "name": "Ede (Netherlands)",
+    "nameIt": "Ede (Netherlands)",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ede (Netherlands).geojson",
+      "sha256": "d518b9d89e7b715de97c9564e367aa65c5d1aa409392a57f13a758ebf6b7a504",
+      "size": 256201,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ede-netherlands",
+    "name": "Ede (Netherlands)",
+    "nameIt": "Ede (Netherlands)",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      5.65147,
+      52.0355
+    ],
+    "zoom": 11.4,
+    "population": 52740,
+    "grid": "cities/ede-netherlands/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ede-netherlands/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ede-netherlands",
+        "name": "Ede (Netherlands)",
+        "nameIt": "Ede (Netherlands)",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          5.65147,
+          52.0355
+        ],
+        "zoom": 11.4,
+        "population": 52740,
+        "cells": 224,
+        "layer": "cities/ede-netherlands/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.65147,
+            52.0355
+          ]
+        },
+        "properties": {
+          "id": "ede-netherlands",
+          "name": "Ede (Netherlands)",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 52740
+        }
+      },
+      "summary": null
+    }
+  }
+}

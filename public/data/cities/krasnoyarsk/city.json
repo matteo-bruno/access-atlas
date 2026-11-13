@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "krasnoyarsk",
+  "createdAt": "2026-10-08T15:48:25.532Z",
+  "updatedAt": "2026-10-08T15:48:25.532Z",
+  "meta": {
+    "name": "Krasnoyarsk",
+    "nameIt": "Krasnoyarsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Krasnoyarsk.geojson",
+      "sha256": "2bd370c2c389eb158f0de0bc9808cc13d3e19c816c34ba01e422a1ae41e48540",
+      "size": 1066924,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "krasnoyarsk",
+    "name": "Krasnoyarsk",
+    "nameIt": "Krasnoyarsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      92.86725,
+      56.0363
+    ],
+    "zoom": 9.8,
+    "population": 696918,
+    "grid": "cities/krasnoyarsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/krasnoyarsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "krasnoyarsk",
+        "name": "Krasnoyarsk",
+        "nameIt": "Krasnoyarsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          92.86725,
+          56.0363
+        ],
+        "zoom": 9.8,
+        "population": 696918,
+        "cells": 936,
+        "layer": "cities/krasnoyarsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            92.86725,
+            56.0363
+          ]
+        },
+        "properties": {
+          "id": "krasnoyarsk",
+          "name": "Krasnoyarsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 11.4,
+          "population": 696918
+        }
+      },
+      "summary": null
+    }
+  }
+}

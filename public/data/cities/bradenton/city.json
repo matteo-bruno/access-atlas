@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bradenton",
+  "createdAt": "2026-10-08T15:20:18.518Z",
+  "updatedAt": "2026-10-08T15:20:18.518Z",
+  "meta": {
+    "name": "Bradenton",
+    "nameIt": "Bradenton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bradenton.geojson",
+      "sha256": "e3b2a7f450058398c80ae9400c7f95a7fa040ddb59b4774ffdcbb43db7a35e8c",
+      "size": 1809474,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bradenton",
+    "name": "Bradenton",
+    "nameIt": "Bradenton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -82.57169,
+      27.47017
+    ],
+    "zoom": 10.1,
+    "population": 225969,
+    "grid": "cities/bradenton/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bradenton/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bradenton",
+        "name": "Bradenton",
+        "nameIt": "Bradenton",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -82.57169,
+          27.47017
+        ],
+        "zoom": 10.1,
+        "population": 225969,
+        "cells": 1558,
+        "layer": "cities/bradenton/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.57169,
+            27.47017
+          ]
+        },
+        "properties": {
+          "id": "bradenton",
+          "name": "Bradenton",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 32.1,
+          "population": 225969
+        }
+      },
+      "summary": null
+    }
+  }
+}

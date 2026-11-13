@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "parnamirim",
+  "createdAt": "2026-10-08T16:04:30.179Z",
+  "updatedAt": "2026-10-08T16:04:30.179Z",
+  "meta": {
+    "name": "Parnamirim",
+    "nameIt": "Parnamirim",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Parnamirim.geojson",
+      "sha256": "a51d38b00663eb6142655755fcc3e37ce86980973ce83abded7314e422545bd5",
+      "size": 231814,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "parnamirim",
+    "name": "Parnamirim",
+    "nameIt": "Parnamirim",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -35.27294,
+      -5.9196
+    ],
+    "zoom": 11.4,
+    "population": 143023,
+    "grid": "cities/parnamirim/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/parnamirim/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "parnamirim",
+        "name": "Parnamirim",
+        "nameIt": "Parnamirim",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -35.27294,
+          -5.9196
+        ],
+        "zoom": 11.4,
+        "population": 143023,
+        "cells": 198,
+        "layer": "cities/parnamirim/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -35.27294,
+            -5.9196
+          ]
+        },
+        "properties": {
+          "id": "parnamirim",
+          "name": "Parnamirim",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 143023
+        }
+      },
+      "summary": null
+    }
+  }
+}

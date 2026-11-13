@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "manmad",
+  "createdAt": "2026-10-08T15:54:49.804Z",
+  "updatedAt": "2026-10-08T15:54:49.804Z",
+  "meta": {
+    "name": "Manmad",
+    "nameIt": "Manmad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Manmad.geojson",
+      "sha256": "5f9d81b2540b8a1fb085a408c0104cfd843e1a5af487a07ac2787f52ba26b0e4",
+      "size": 141325,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "manmad",
+    "name": "Manmad",
+    "nameIt": "Manmad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.43715,
+      20.25403
+    ],
+    "zoom": 12,
+    "population": 85539,
+    "grid": "cities/manmad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/manmad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "manmad",
+        "name": "Manmad",
+        "nameIt": "Manmad",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.43715,
+          20.25403
+        ],
+        "zoom": 12,
+        "population": 85539,
+        "cells": 122,
+        "layer": "cities/manmad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.43715,
+            20.25403
+          ]
+        },
+        "properties": {
+          "id": "manmad",
+          "name": "Manmad",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 85539
+        }
+      },
+      "summary": null
+    }
+  }
+}

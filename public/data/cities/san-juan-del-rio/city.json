@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-juan-del-rio",
+  "createdAt": "2026-10-08T16:10:36.123Z",
+  "updatedAt": "2026-10-08T16:10:36.123Z",
+  "meta": {
+    "name": "San Juan del Río",
+    "nameIt": "San Juan del Río",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Juan del Río.geojson",
+      "sha256": "d4f084fc095aa428f5d158db2969d24d365033cdd8f75d4238d709132ab28d72",
+      "size": 333013,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-juan-del-rio",
+    "name": "San Juan del Río",
+    "nameIt": "San Juan del Río",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -99.97459,
+      20.38967
+    ],
+    "zoom": 10.9,
+    "population": 149751,
+    "grid": "cities/san-juan-del-rio/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-juan-del-rio/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-juan-del-rio",
+        "name": "San Juan del Río",
+        "nameIt": "San Juan del Río",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -99.97459,
+          20.38967
+        ],
+        "zoom": 10.9,
+        "population": 149751,
+        "cells": 286,
+        "layer": "cities/san-juan-del-rio/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -99.97459,
+            20.38967
+          ]
+        },
+        "properties": {
+          "id": "san-juan-del-rio",
+          "name": "San Juan del Río",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 19.9,
+          "population": 149751
+        }
+      },
+      "summary": null
+    }
+  }
+}

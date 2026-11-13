@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bandaragama",
+  "createdAt": "2026-10-08T15:14:37.891Z",
+  "updatedAt": "2026-10-08T15:14:37.891Z",
+  "meta": {
+    "name": "Bandaragama",
+    "nameIt": "Bandaragama",
+    "region": "Sri Lanka",
+    "regionIt": "Sri Lanka",
+    "country": "LK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bandaragama.geojson",
+      "sha256": "0c77f64d570a2aa358efe0c79df68f2d303686206bd45ede9eef888a4695d0af",
+      "size": 389418,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bandaragama",
+    "name": "Bandaragama",
+    "nameIt": "Bandaragama",
+    "region": "Sri Lanka",
+    "regionIt": "Sri Lanka",
+    "country": "LK",
+    "center": [
+      80.01551,
+      6.7149
+    ],
+    "zoom": 10.4,
+    "population": 91502,
+    "grid": "cities/bandaragama/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bandaragama/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bandaragama",
+        "name": "Bandaragama",
+        "nameIt": "Bandaragama",
+        "region": "Sri Lanka",
+        "regionIt": "Sri Lanka",
+        "country": "LK",
+        "center": [
+          80.01551,
+          6.7149
+        ],
+        "zoom": 10.4,
+        "population": 91502,
+        "cells": 338,
+        "layer": "cities/bandaragama/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.01551,
+            6.7149
+          ]
+        },
+        "properties": {
+          "id": "bandaragama",
+          "name": "Bandaragama",
+          "country": "LK",
+          "isStudy": true,
+          "proximityMinutes": 53.9,
+          "population": 91502
+        }
+      },
+      "summary": null
+    }
+  }
+}

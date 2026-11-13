@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yakutsk",
+  "createdAt": "2026-10-08T16:23:14.651Z",
+  "updatedAt": "2026-10-08T16:23:14.651Z",
+  "meta": {
+    "name": "Yakutsk",
+    "nameIt": "Yakutsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yakutsk.geojson",
+      "sha256": "b11a1c89f5f8a9a5b4cab349b639d26099a145ad3492dca4cd0147350b31fe9c",
+      "size": 577962,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yakutsk",
+    "name": "Yakutsk",
+    "nameIt": "Yakutsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      129.71744,
+      62.04056
+    ],
+    "zoom": 10.4,
+    "population": 231551,
+    "grid": "cities/yakutsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yakutsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yakutsk",
+        "name": "Yakutsk",
+        "nameIt": "Yakutsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          129.71744,
+          62.04056
+        ],
+        "zoom": 10.4,
+        "population": 231551,
+        "cells": 502,
+        "layer": "cities/yakutsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            129.71744,
+            62.04056
+          ]
+        },
+        "properties": {
+          "id": "yakutsk",
+          "name": "Yakutsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 19.2,
+          "population": 231551
+        }
+      },
+      "summary": null
+    }
+  }
+}

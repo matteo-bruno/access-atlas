@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "austin",
+  "createdAt": "2026-10-08T15:11:33.708Z",
+  "updatedAt": "2026-10-08T15:11:33.708Z",
+  "meta": {
+    "name": "Austin",
+    "nameIt": "Austin",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Austin.geojson",
+      "sha256": "5a77dbcb45db58b75e3f06c484ae787e38eca7d5637a4b685ea20e96dfd0fb7d",
+      "size": 6031999,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "austin",
+    "name": "Austin",
+    "nameIt": "Austin",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -97.73311,
+      30.35927
+    ],
+    "zoom": 8.5,
+    "population": 1173938,
+    "grid": "cities/austin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/austin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "austin",
+        "name": "Austin",
+        "nameIt": "Austin",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -97.73311,
+          30.35927
+        ],
+        "zoom": 8.5,
+        "population": 1173938,
+        "cells": 5218,
+        "layer": "cities/austin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.73311,
+            30.35927
+          ]
+        },
+        "properties": {
+          "id": "austin",
+          "name": "Austin",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20.1,
+          "population": 1173938
+        }
+      },
+      "summary": null
+    }
+  }
+}

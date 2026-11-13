@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bhimavaram",
+  "createdAt": "2026-10-08T15:18:24.547Z",
+  "updatedAt": "2026-10-08T15:18:24.547Z",
+  "meta": {
+    "name": "Bhimavaram",
+    "nameIt": "Bhimavaram",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bhimavaram.geojson",
+      "sha256": "1e24e7cf7c3fb788e2990afd673439996296fe1e9879f861c61dfa5676621536",
+      "size": 275306,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bhimavaram",
+    "name": "Bhimavaram",
+    "nameIt": "Bhimavaram",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.52439,
+      16.54321
+    ],
+    "zoom": 10.5,
+    "population": 170616,
+    "grid": "cities/bhimavaram/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bhimavaram/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bhimavaram",
+        "name": "Bhimavaram",
+        "nameIt": "Bhimavaram",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.52439,
+          16.54321
+        ],
+        "zoom": 10.5,
+        "population": 170616,
+        "cells": 238,
+        "layer": "cities/bhimavaram/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.52439,
+            16.54321
+          ]
+        },
+        "properties": {
+          "id": "bhimavaram",
+          "name": "Bhimavaram",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 25.5,
+          "population": 170616
+        }
+      },
+      "summary": null
+    }
+  }
+}

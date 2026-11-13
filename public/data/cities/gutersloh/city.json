@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gutersloh",
+  "createdAt": "2026-10-08T15:37:03.771Z",
+  "updatedAt": "2026-10-08T15:37:03.771Z",
+  "meta": {
+    "name": "Gütersloh",
+    "nameIt": "Gütersloh",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gütersloh.geojson",
+      "sha256": "dc1fc66778b7a0789e8c1140542c5e47b6acf0d39135930d2b5b94df108df983",
+      "size": 258329,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gutersloh",
+    "name": "Gütersloh",
+    "nameIt": "Gütersloh",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      8.38375,
+      51.90329
+    ],
+    "zoom": 11.6,
+    "population": 57826,
+    "grid": "cities/gutersloh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gutersloh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gutersloh",
+        "name": "Gütersloh",
+        "nameIt": "Gütersloh",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          8.38375,
+          51.90329
+        ],
+        "zoom": 11.6,
+        "population": 57826,
+        "cells": 228,
+        "layer": "cities/gutersloh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.38375,
+            51.90329
+          ]
+        },
+        "properties": {
+          "id": "gutersloh",
+          "name": "Gütersloh",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 10.3,
+          "population": 57826
+        }
+      },
+      "summary": null
+    }
+  }
+}

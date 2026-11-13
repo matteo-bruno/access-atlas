@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "helsinki",
+  "createdAt": "2026-10-08T15:38:21.053Z",
+  "updatedAt": "2026-10-08T15:38:21.053Z",
+  "meta": {
+    "name": "Helsinki",
+    "nameIt": "Helsinki",
+    "region": "Finland",
+    "regionIt": "Finlandia",
+    "country": "FI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Helsinki.geojson",
+      "sha256": "aa6035e7942b116040ade4ca3bc936a038a5cce0d810674536a8e77bc8b0899e",
+      "size": 5347071,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "helsinki",
+    "name": "Helsinki",
+    "nameIt": "Helsinki",
+    "region": "Finland",
+    "regionIt": "Finlandia",
+    "country": "FI",
+    "center": [
+      24.92819,
+      60.22037
+    ],
+    "zoom": 9,
+    "population": 979787,
+    "grid": "cities/helsinki/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/helsinki/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "helsinki",
+        "name": "Helsinki",
+        "nameIt": "Helsinki",
+        "region": "Finland",
+        "regionIt": "Finlandia",
+        "country": "FI",
+        "center": [
+          24.92819,
+          60.22037
+        ],
+        "zoom": 9,
+        "population": 979787,
+        "cells": 4674,
+        "layer": "cities/helsinki/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            24.92819,
+            60.22037
+          ]
+        },
+        "properties": {
+          "id": "helsinki",
+          "name": "Helsinki",
+          "country": "FI",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 979787
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "coyhaique",
+  "createdAt": "2026-10-08T15:26:46.654Z",
+  "updatedAt": "2026-10-08T15:26:46.654Z",
+  "meta": {
+    "name": "Coyhaique",
+    "nameIt": "Coyhaique",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Coyhaique.geojson",
+      "sha256": "e5a1dd510ea76abed4d9ff4b8ce624bce350b1ea7b2d1c91239b91a18e4a6f9f",
+      "size": 110481,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "coyhaique",
+    "name": "Coyhaique",
+    "nameIt": "Coyhaique",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL",
+    "center": [
+      -72.05634,
+      -45.5787
+    ],
+    "zoom": 11.9,
+    "population": 47320,
+    "grid": "cities/coyhaique/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/coyhaique/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "coyhaique",
+        "name": "Coyhaique",
+        "nameIt": "Coyhaique",
+        "region": "Chile",
+        "regionIt": "Cile",
+        "country": "CL",
+        "center": [
+          -72.05634,
+          -45.5787
+        ],
+        "zoom": 11.9,
+        "population": 47320,
+        "cells": 95,
+        "layer": "cities/coyhaique/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.05634,
+            -45.5787
+          ]
+        },
+        "properties": {
+          "id": "coyhaique",
+          "name": "Coyhaique",
+          "country": "CL",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 47320
+        }
+      },
+      "summary": null
+    }
+  }
+}

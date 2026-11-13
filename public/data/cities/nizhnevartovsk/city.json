@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nizhnevartovsk",
+  "createdAt": "2026-10-08T16:01:49.011Z",
+  "updatedAt": "2026-10-08T16:01:49.011Z",
+  "meta": {
+    "name": "Nizhnevartovsk",
+    "nameIt": "Nizhnevartovsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nizhnevartovsk.geojson",
+      "sha256": "d8252ed24401686384b7bf6fb5ae0a6ac3c92f18261bf3d54590fc12a7ae9ac3",
+      "size": 485738,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nizhnevartovsk",
+    "name": "Nizhnevartovsk",
+    "nameIt": "Nizhnevartovsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      76.56912,
+      60.93882
+    ],
+    "zoom": 10.8,
+    "population": 233297,
+    "grid": "cities/nizhnevartovsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nizhnevartovsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nizhnevartovsk",
+        "name": "Nizhnevartovsk",
+        "nameIt": "Nizhnevartovsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          76.56912,
+          60.93882
+        ],
+        "zoom": 10.8,
+        "population": 233297,
+        "cells": 423,
+        "layer": "cities/nizhnevartovsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.56912,
+            60.93882
+          ]
+        },
+        "properties": {
+          "id": "nizhnevartovsk",
+          "name": "Nizhnevartovsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 233297
+        }
+      },
+      "summary": null
+    }
+  }
+}

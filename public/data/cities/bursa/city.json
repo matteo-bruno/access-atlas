@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bursa",
+  "createdAt": "2026-10-08T15:21:06.961Z",
+  "updatedAt": "2026-10-08T15:21:06.961Z",
+  "meta": {
+    "name": "Bursa",
+    "nameIt": "Bursa",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bursa.geojson",
+      "sha256": "2a820e8953b64da222b946dee8dd63501c18efd26a9ec06e49d11a5378520903",
+      "size": 2105197,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bursa",
+    "name": "Bursa",
+    "nameIt": "Bursa",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      29.05723,
+      40.21158
+    ],
+    "zoom": 9.2,
+    "population": 2013039,
+    "grid": "cities/bursa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bursa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bursa",
+        "name": "Bursa",
+        "nameIt": "Bursa",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          29.05723,
+          40.21158
+        ],
+        "zoom": 9.2,
+        "population": 2013039,
+        "cells": 1829,
+        "layer": "cities/bursa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.05723,
+            40.21158
+          ]
+        },
+        "properties": {
+          "id": "bursa",
+          "name": "Bursa",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 2013039
+        }
+      },
+      "summary": null
+    }
+  }
+}

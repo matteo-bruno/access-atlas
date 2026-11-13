@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rabat",
+  "createdAt": "2026-10-08T16:07:46.300Z",
+  "updatedAt": "2026-10-08T16:07:46.300Z",
+  "meta": {
+    "name": "Rabat",
+    "nameIt": "Rabat",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rabat.geojson",
+      "sha256": "7b3c588fd80d6aa60c0d9ac8798c8a113cd23b98f36ff8eec77b633042c7e170",
+      "size": 2058156,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rabat",
+    "name": "Rabat",
+    "nameIt": "Rabat",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -6.8368,
+      33.99574
+    ],
+    "zoom": 9.5,
+    "population": 1979022,
+    "grid": "cities/rabat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rabat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rabat",
+        "name": "Rabat",
+        "nameIt": "Rabat",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -6.8368,
+          33.99574
+        ],
+        "zoom": 9.5,
+        "population": 1979022,
+        "cells": 1785,
+        "layer": "cities/rabat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -6.8368,
+            33.99574
+          ]
+        },
+        "properties": {
+          "id": "rabat",
+          "name": "Rabat",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 19.9,
+          "population": 1979022
+        }
+      },
+      "summary": null
+    }
+  }
+}

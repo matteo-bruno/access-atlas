@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "belo-horizonte-fua",
+  "createdAt": "2026-10-19T16:55:25.979Z",
+  "updatedAt": "2026-10-19T16:55:25.979Z",
+  "meta": {
+    "name": "Belo Horizonte",
+    "nameIt": "Belo Horizonte",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "belo-horizonte-fua",
+    "name": "Belo Horizonte",
+    "nameIt": "Belo Horizonte",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "extent": "fua",
+    "core": "belo-horizonte",
+    "center": [
+      -44.00566,
+      -19.88947
+    ],
+    "zoom": 8.5,
+    "population": 4914080,
+    "grid": "cities/belo-horizonte-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/belo-horizonte-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "belo-horizonte-fua",
+        "name": "Belo Horizonte",
+        "nameIt": "Belo Horizonte",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "extent": "fua",
+        "core": "belo-horizonte",
+        "center": [
+          -44.00566,
+          -19.88947
+        ],
+        "zoom": 8.5,
+        "population": 4914080,
+        "cells": 27193,
+        "layer": "cities/belo-horizonte-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -44.00566,
+            -19.88947
+          ]
+        },
+        "properties": {
+          "id": "belo-horizonte-fua",
+          "name": "Belo Horizonte",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 23.7,
+          "population": 4914080
+        }
+      },
+      "summary": null
+    }
+  }
+}

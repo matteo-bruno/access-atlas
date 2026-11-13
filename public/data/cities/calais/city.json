@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "calais",
+  "createdAt": "2026-10-08T15:21:52.056Z",
+  "updatedAt": "2026-10-08T15:21:52.056Z",
+  "meta": {
+    "name": "Calais",
+    "nameIt": "Calais",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Calais.geojson",
+      "sha256": "235c9346a19c73a3a0bfe1361f5a6c48cea33b3280155a51ec9d38edb2049600",
+      "size": 329556,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "calais",
+    "name": "Calais",
+    "nameIt": "Calais",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      1.86952,
+      50.94996
+    ],
+    "zoom": 10.7,
+    "population": 81661,
+    "grid": "cities/calais/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/calais/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "calais",
+        "name": "Calais",
+        "nameIt": "Calais",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          1.86952,
+          50.94996
+        ],
+        "zoom": 10.7,
+        "population": 81661,
+        "cells": 288,
+        "layer": "cities/calais/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.86952,
+            50.94996
+          ]
+        },
+        "properties": {
+          "id": "calais",
+          "name": "Calais",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 10.4,
+          "population": 81661
+        }
+      },
+      "summary": null
+    }
+  }
+}

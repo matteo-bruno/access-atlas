@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baiyin",
+  "createdAt": "2026-10-08T15:13:38.632Z",
+  "updatedAt": "2026-10-08T15:13:38.632Z",
+  "meta": {
+    "name": "Baiyin",
+    "nameIt": "Baiyin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baiyin.geojson",
+      "sha256": "d5beff98fe0fe331ed29c08167fa2551a033bc0771e468865553dbbf98769c97",
+      "size": 417413,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baiyin",
+    "name": "Baiyin",
+    "nameIt": "Baiyin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      104.16384,
+      36.5448
+    ],
+    "zoom": 10.9,
+    "population": 241137,
+    "grid": "cities/baiyin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baiyin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baiyin",
+        "name": "Baiyin",
+        "nameIt": "Baiyin",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          104.16384,
+          36.5448
+        ],
+        "zoom": 10.9,
+        "population": 241137,
+        "cells": 360,
+        "layer": "cities/baiyin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            104.16384,
+            36.5448
+          ]
+        },
+        "properties": {
+          "id": "baiyin",
+          "name": "Baiyin",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 241137
+        }
+      },
+      "summary": null
+    }
+  }
+}

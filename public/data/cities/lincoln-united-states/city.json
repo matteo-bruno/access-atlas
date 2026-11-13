@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lincoln-united-states",
+  "createdAt": "2026-10-08T15:51:15.779Z",
+  "updatedAt": "2026-10-08T15:51:15.779Z",
+  "meta": {
+    "name": "Lincoln (United States)",
+    "nameIt": "Lincoln (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lincoln (United States).geojson",
+      "sha256": "9cdb11217197453822b261c6579786a61b6d28d1193a063ac21f01a8ac92bf42",
+      "size": 1466241,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lincoln-united-states",
+    "name": "Lincoln (United States)",
+    "nameIt": "Lincoln (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -96.66909,
+      40.80651
+    ],
+    "zoom": 10.1,
+    "population": 194609,
+    "grid": "cities/lincoln-united-states/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lincoln-united-states/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lincoln-united-states",
+        "name": "Lincoln (United States)",
+        "nameIt": "Lincoln (United States)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -96.66909,
+          40.80651
+        ],
+        "zoom": 10.1,
+        "population": 194609,
+        "cells": 1274,
+        "layer": "cities/lincoln-united-states/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -96.66909,
+            40.80651
+          ]
+        },
+        "properties": {
+          "id": "lincoln-united-states",
+          "name": "Lincoln (United States)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.5,
+          "population": 194609
+        }
+      },
+      "summary": null
+    }
+  }
+}

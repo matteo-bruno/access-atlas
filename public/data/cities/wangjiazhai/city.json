@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wangjiazhai",
+  "createdAt": "2026-10-08T16:21:18.726Z",
+  "updatedAt": "2026-10-08T16:21:18.726Z",
+  "meta": {
+    "name": "Wangjiazhai",
+    "nameIt": "Wangjiazhai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wangjiazhai.geojson",
+      "sha256": "3e33988f893bae03d4c6ce790d8878d336d062d3d4aea1917efa76d983facfba",
+      "size": 225288,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wangjiazhai",
+    "name": "Wangjiazhai",
+    "nameIt": "Wangjiazhai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      104.80425,
+      26.68827
+    ],
+    "zoom": 11.2,
+    "population": 19906,
+    "grid": "cities/wangjiazhai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wangjiazhai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wangjiazhai",
+        "name": "Wangjiazhai",
+        "nameIt": "Wangjiazhai",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          104.80425,
+          26.68827
+        ],
+        "zoom": 11.2,
+        "population": 19906,
+        "cells": 193,
+        "layer": "cities/wangjiazhai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            104.80425,
+            26.68827
+          ]
+        },
+        "properties": {
+          "id": "wangjiazhai",
+          "name": "Wangjiazhai",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 19906
+        }
+      },
+      "summary": null
+    }
+  }
+}

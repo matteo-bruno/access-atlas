@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cebu-city",
+  "createdAt": "2026-10-08T15:22:58.099Z",
+  "updatedAt": "2026-10-08T15:22:58.099Z",
+  "meta": {
+    "name": "Cebu City",
+    "nameIt": "Cebu City",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cebu City.geojson",
+      "sha256": "cafe4f587377766f87cba3c5ccfa43d47b6a7e58f058e948cbc93b6f6d791005",
+      "size": 4219527,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cebu-city",
+    "name": "Cebu City",
+    "nameIt": "Cebu City",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      123.90368,
+      10.3103
+    ],
+    "zoom": 8.5,
+    "population": 2931797,
+    "grid": "cities/cebu-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cebu-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cebu-city",
+        "name": "Cebu City",
+        "nameIt": "Cebu City",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          123.90368,
+          10.3103
+        ],
+        "zoom": 8.5,
+        "population": 2931797,
+        "cells": 3636,
+        "layer": "cities/cebu-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.90368,
+            10.3103
+          ]
+        },
+        "properties": {
+          "id": "cebu-city",
+          "name": "Cebu City",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 21,
+          "population": 2931797
+        }
+      },
+      "summary": null
+    }
+  }
+}

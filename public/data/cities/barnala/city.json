@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barnala",
+  "createdAt": "2026-10-08T15:15:39.672Z",
+  "updatedAt": "2026-10-08T15:15:39.672Z",
+  "meta": {
+    "name": "Barnala",
+    "nameIt": "Barnala",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Barnala.geojson",
+      "sha256": "594c0bff35663b64bca90bc97853c68b313f76112b4ce997afd1a69fb3179f4e",
+      "size": 265508,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "barnala",
+    "name": "Barnala",
+    "nameIt": "Barnala",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.54438,
+      30.37105
+    ],
+    "zoom": 11.4,
+    "population": 126291,
+    "grid": "cities/barnala/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barnala/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barnala",
+        "name": "Barnala",
+        "nameIt": "Barnala",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.54438,
+          30.37105
+        ],
+        "zoom": 11.4,
+        "population": 126291,
+        "cells": 229,
+        "layer": "cities/barnala/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.54438,
+            30.37105
+          ]
+        },
+        "properties": {
+          "id": "barnala",
+          "name": "Barnala",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.3,
+          "population": 126291
+        }
+      },
+      "summary": null
+    }
+  }
+}

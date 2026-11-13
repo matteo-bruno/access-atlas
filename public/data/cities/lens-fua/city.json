@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lens-fua",
+  "createdAt": "2026-10-19T16:56:59.365Z",
+  "updatedAt": "2026-10-19T16:56:59.365Z",
+  "meta": {
+    "name": "Lens",
+    "nameIt": "Lens",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "lens-fua",
+    "name": "Lens",
+    "nameIt": "Lens",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "extent": "fua",
+    "core": "lens",
+    "center": [
+      2.88058,
+      50.44351
+    ],
+    "zoom": 8.5,
+    "population": 983484,
+    "grid": "cities/lens-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lens-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lens-fua",
+        "name": "Lens",
+        "nameIt": "Lens",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "extent": "fua",
+        "core": "lens",
+        "center": [
+          2.88058,
+          50.44351
+        ],
+        "zoom": 8.5,
+        "population": 983484,
+        "cells": 17743,
+        "layer": "cities/lens-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.88058,
+            50.44351
+          ]
+        },
+        "properties": {
+          "id": "lens-fua",
+          "name": "Lens",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 983484
+        }
+      },
+      "summary": null
+    }
+  }
+}

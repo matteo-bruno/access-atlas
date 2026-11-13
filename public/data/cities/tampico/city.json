@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tampico",
+  "createdAt": "2026-10-08T16:16:25.901Z",
+  "updatedAt": "2026-10-08T16:16:25.901Z",
+  "meta": {
+    "name": "Tampico",
+    "nameIt": "Tampico",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tampico.geojson",
+      "sha256": "22a315f2105e02c38c94a85b5da84ef251921bc6977ea69d2457203a3f1d39e7",
+      "size": 1255359,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tampico",
+    "name": "Tampico",
+    "nameIt": "Tampico",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -97.85771,
+      22.26806
+    ],
+    "zoom": 9.9,
+    "population": 610838,
+    "grid": "cities/tampico/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tampico/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tampico",
+        "name": "Tampico",
+        "nameIt": "Tampico",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -97.85771,
+          22.26806
+        ],
+        "zoom": 9.9,
+        "population": 610838,
+        "cells": 1076,
+        "layer": "cities/tampico/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.85771,
+            22.26806
+          ]
+        },
+        "properties": {
+          "id": "tampico",
+          "name": "Tampico",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 30.4,
+          "population": 610838
+        }
+      },
+      "summary": null
+    }
+  }
+}

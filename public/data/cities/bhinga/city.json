@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bhinga",
+  "createdAt": "2026-10-08T15:18:26.222Z",
+  "updatedAt": "2026-10-08T15:18:26.222Z",
+  "meta": {
+    "name": "Bhinga",
+    "nameIt": "Bhinga",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bhinga.geojson",
+      "sha256": "43c1f64735abb5004b2ac6e57c3b5ef33bde144b8f31dcecc51f31e990a746ab",
+      "size": 75337,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bhinga",
+    "name": "Bhinga",
+    "nameIt": "Bhinga",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.93201,
+      27.70291
+    ],
+    "zoom": 12,
+    "population": 49092,
+    "grid": "cities/bhinga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bhinga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bhinga",
+        "name": "Bhinga",
+        "nameIt": "Bhinga",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.93201,
+          27.70291
+        ],
+        "zoom": 12,
+        "population": 49092,
+        "cells": 65,
+        "layer": "cities/bhinga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.93201,
+            27.70291
+          ]
+        },
+        "properties": {
+          "id": "bhinga",
+          "name": "Bhinga",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 49092
+        }
+      },
+      "summary": null
+    }
+  }
+}

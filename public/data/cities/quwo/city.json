@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "quwo",
+  "createdAt": "2026-10-08T16:07:40.716Z",
+  "updatedAt": "2026-10-08T16:07:40.716Z",
+  "meta": {
+    "name": "Quwo",
+    "nameIt": "Quwo",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Quwo.geojson",
+      "sha256": "ec70910a661dac5ee6568e2ce1bc76fb686ff7b27730ed78859419f7ec57d58e",
+      "size": 189920,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "quwo",
+    "name": "Quwo",
+    "nameIt": "Quwo",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      111.47073,
+      35.64256
+    ],
+    "zoom": 11.6,
+    "population": 61509,
+    "grid": "cities/quwo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/quwo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "quwo",
+        "name": "Quwo",
+        "nameIt": "Quwo",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          111.47073,
+          35.64256
+        ],
+        "zoom": 11.6,
+        "population": 61509,
+        "cells": 163,
+        "layer": "cities/quwo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.47073,
+            35.64256
+          ]
+        },
+        "properties": {
+          "id": "quwo",
+          "name": "Quwo",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24.4,
+          "population": 61509
+        }
+      },
+      "summary": null
+    }
+  }
+}

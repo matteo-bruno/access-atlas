@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "copenhagen",
+  "createdAt": "2026-10-08T15:26:32.355Z",
+  "updatedAt": "2026-10-08T15:26:32.355Z",
+  "meta": {
+    "name": "Copenhagen",
+    "nameIt": "Copenhagen",
+    "region": "Denmark",
+    "regionIt": "Danimarca",
+    "country": "DK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Copenhagen.geojson",
+      "sha256": "f939a57fd84cbf40bd0f08411df2fe1a799d858d6678cf217e766c352a30f8be",
+      "size": 3999934,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "copenhagen",
+    "name": "Copenhagen",
+    "nameIt": "Copenhagen",
+    "region": "Denmark",
+    "regionIt": "Danimarca",
+    "country": "DK",
+    "center": [
+      12.52112,
+      55.69035
+    ],
+    "zoom": 9.5,
+    "population": 1224583,
+    "grid": "cities/copenhagen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/copenhagen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "copenhagen",
+        "name": "Copenhagen",
+        "nameIt": "Copenhagen",
+        "region": "Denmark",
+        "regionIt": "Danimarca",
+        "country": "DK",
+        "center": [
+          12.52112,
+          55.69035
+        ],
+        "zoom": 9.5,
+        "population": 1224583,
+        "cells": 3492,
+        "layer": "cities/copenhagen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.52112,
+            55.69035
+          ]
+        },
+        "properties": {
+          "id": "copenhagen",
+          "name": "Copenhagen",
+          "country": "DK",
+          "isStudy": true,
+          "proximityMinutes": 8.5,
+          "population": 1224583
+        }
+      },
+      "summary": null
+    }
+  }
+}

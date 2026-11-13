@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fukuoka",
+  "createdAt": "2026-10-08T15:33:54.203Z",
+  "updatedAt": "2026-10-08T15:33:54.203Z",
+  "meta": {
+    "name": "Fukuoka",
+    "nameIt": "Fukuoka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fukuoka.geojson",
+      "sha256": "bb4adda7ce8618031e42e09c3d0a7ae182643e7b3d973f688b176a45743cb8f9",
+      "size": 6237654,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fukuoka",
+    "name": "Fukuoka",
+    "nameIt": "Fukuoka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      130.42357,
+      33.58619
+    ],
+    "zoom": 8.6,
+    "population": 2357474,
+    "grid": "cities/fukuoka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fukuoka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fukuoka",
+        "name": "Fukuoka",
+        "nameIt": "Fukuoka",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          130.42357,
+          33.58619
+        ],
+        "zoom": 8.6,
+        "population": 2357474,
+        "cells": 5423,
+        "layer": "cities/fukuoka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            130.42357,
+            33.58619
+          ]
+        },
+        "properties": {
+          "id": "fukuoka",
+          "name": "Fukuoka",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 2357474
+        }
+      },
+      "summary": null
+    }
+  }
+}

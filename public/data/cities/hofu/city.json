@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hofu",
+  "createdAt": "2026-10-08T15:38:53.360Z",
+  "updatedAt": "2026-10-08T15:38:53.360Z",
+  "meta": {
+    "name": "Hofu",
+    "nameIt": "Hofu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hofu.geojson",
+      "sha256": "1ef11618cb538e9fc3a3a9f39f503263da0a91c9fdfe3371247b05bbb4fa86fb",
+      "size": 507877,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hofu",
+    "name": "Hofu",
+    "nameIt": "Hofu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      131.57092,
+      34.0472
+    ],
+    "zoom": 11.1,
+    "population": 83694,
+    "grid": "cities/hofu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hofu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hofu",
+        "name": "Hofu",
+        "nameIt": "Hofu",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          131.57092,
+          34.0472
+        ],
+        "zoom": 11.1,
+        "population": 83694,
+        "cells": 438,
+        "layer": "cities/hofu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            131.57092,
+            34.0472
+          ]
+        },
+        "properties": {
+          "id": "hofu",
+          "name": "Hofu",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 18.5,
+          "population": 83694
+        }
+      },
+      "summary": null
+    }
+  }
+}

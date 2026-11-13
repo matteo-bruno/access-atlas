@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "laredo",
+  "createdAt": "2026-10-08T15:50:13.570Z",
+  "updatedAt": "2026-10-08T15:50:13.570Z",
+  "meta": {
+    "name": "Laredo",
+    "nameIt": "Laredo",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Laredo.geojson",
+      "sha256": "259c6528c2147c736b8d3d77083050cc1e9c1032f6adef813d24a47dc44ef3aa",
+      "size": 824542,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "laredo",
+    "name": "Laredo",
+    "nameIt": "Laredo",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -99.47608,
+      27.52192
+    ],
+    "zoom": 9.7,
+    "population": 178203,
+    "grid": "cities/laredo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/laredo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "laredo",
+        "name": "Laredo",
+        "nameIt": "Laredo",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -99.47608,
+          27.52192
+        ],
+        "zoom": 9.7,
+        "population": 178203,
+        "cells": 712,
+        "layer": "cities/laredo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -99.47608,
+            27.52192
+          ]
+        },
+        "properties": {
+          "id": "laredo",
+          "name": "Laredo",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 24.3,
+          "population": 178203
+        }
+      },
+      "summary": null
+    }
+  }
+}

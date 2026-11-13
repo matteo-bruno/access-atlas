@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "langley-city",
+  "createdAt": "2026-10-08T15:50:02.999Z",
+  "updatedAt": "2026-10-08T15:50:02.999Z",
+  "meta": {
+    "name": "Langley City",
+    "nameIt": "Langley City",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Langley City.geojson",
+      "sha256": "f05b9f1eb6d1dc3fa314e5976b3f782e2dc59333dd1226f2750d15c283d9b948",
+      "size": 529698,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "langley-city",
+    "name": "Langley City",
+    "nameIt": "Langley City",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -122.69221,
+      49.10944
+    ],
+    "zoom": 10.7,
+    "population": 119895,
+    "grid": "cities/langley-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/langley-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "langley-city",
+        "name": "Langley City",
+        "nameIt": "Langley City",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -122.69221,
+          49.10944
+        ],
+        "zoom": 10.7,
+        "population": 119895,
+        "cells": 457,
+        "layer": "cities/langley-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.69221,
+            49.10944
+          ]
+        },
+        "properties": {
+          "id": "langley-city",
+          "name": "Langley City",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 14.5,
+          "population": 119895
+        }
+      },
+      "summary": null
+    }
+  }
+}

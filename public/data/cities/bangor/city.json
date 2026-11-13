@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bangor",
+  "createdAt": "2026-10-08T15:14:50.153Z",
+  "updatedAt": "2026-10-08T15:14:50.153Z",
+  "meta": {
+    "name": "Bangor",
+    "nameIt": "Bangor",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bangor.geojson",
+      "sha256": "c1c29ec1fc1fef14a5fbcd4833ebec22f8890c50cf26abedc43c6fbc479286d9",
+      "size": 315143,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bangor",
+    "name": "Bangor",
+    "nameIt": "Bangor",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -5.66522,
+      54.65106
+    ],
+    "zoom": 11.4,
+    "population": 62201,
+    "grid": "cities/bangor/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bangor/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bangor",
+        "name": "Bangor",
+        "nameIt": "Bangor",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -5.66522,
+          54.65106
+        ],
+        "zoom": 11.4,
+        "population": 62201,
+        "cells": 273,
+        "layer": "cities/bangor/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.66522,
+            54.65106
+          ]
+        },
+        "properties": {
+          "id": "bangor",
+          "name": "Bangor",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 62201
+        }
+      },
+      "summary": null
+    }
+  }
+}

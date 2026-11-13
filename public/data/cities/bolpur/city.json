@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bolpur",
+  "createdAt": "2026-10-08T15:19:59.064Z",
+  "updatedAt": "2026-10-08T15:19:59.064Z",
+  "meta": {
+    "name": "Bolpur",
+    "nameIt": "Bolpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bolpur.geojson",
+      "sha256": "7017b59db7c9c7a6f0b0454d08a626718009d3f275daddb5e00620ab54a7eb86",
+      "size": 258520,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bolpur",
+    "name": "Bolpur",
+    "nameIt": "Bolpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.69077,
+      23.66947
+    ],
+    "zoom": 11.4,
+    "population": 250570,
+    "grid": "cities/bolpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bolpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bolpur",
+        "name": "Bolpur",
+        "nameIt": "Bolpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.69077,
+          23.66947
+        ],
+        "zoom": 11.4,
+        "population": 250570,
+        "cells": 223,
+        "layer": "cities/bolpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.69077,
+            23.66947
+          ]
+        },
+        "properties": {
+          "id": "bolpur",
+          "name": "Bolpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 22.8,
+          "population": 250570
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kabwe",
+  "createdAt": "2026-10-08T15:43:53.508Z",
+  "updatedAt": "2026-10-08T15:43:53.508Z",
+  "meta": {
+    "name": "Kabwe",
+    "nameIt": "Kabwe",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kabwe.geojson",
+      "sha256": "bc6b09da4636e9615f1205ce5abcb1536f1eaaf60c8a1aea8bec2fca7209452d",
+      "size": 678639,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kabwe",
+    "name": "Kabwe",
+    "nameIt": "Kabwe",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM",
+    "center": [
+      28.44576,
+      -14.43327
+    ],
+    "zoom": 10.6,
+    "population": 222551,
+    "grid": "cities/kabwe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kabwe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kabwe",
+        "name": "Kabwe",
+        "nameIt": "Kabwe",
+        "region": "Zambia",
+        "regionIt": "Zambia",
+        "country": "ZM",
+        "center": [
+          28.44576,
+          -14.43327
+        ],
+        "zoom": 10.6,
+        "population": 222551,
+        "cells": 577,
+        "layer": "cities/kabwe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.44576,
+            -14.43327
+          ]
+        },
+        "properties": {
+          "id": "kabwe",
+          "name": "Kabwe",
+          "country": "ZM",
+          "isStudy": true,
+          "proximityMinutes": 36.8,
+          "population": 222551
+        }
+      },
+      "summary": null
+    }
+  }
+}

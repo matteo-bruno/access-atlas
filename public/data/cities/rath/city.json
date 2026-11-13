@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rath",
+  "createdAt": "2026-10-08T16:08:24.409Z",
+  "updatedAt": "2026-10-08T16:08:24.409Z",
+  "meta": {
+    "name": "Rath",
+    "nameIt": "Rath",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rath.geojson",
+      "sha256": "5c08609508ca13055e3ebb2aac24eb6c3f8137a39bd04db59d3357a5579ae79b",
+      "size": 100828,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rath",
+    "name": "Rath",
+    "nameIt": "Rath",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.56692,
+      25.59373
+    ],
+    "zoom": 12,
+    "population": 112094,
+    "grid": "cities/rath/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rath/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rath",
+        "name": "Rath",
+        "nameIt": "Rath",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.56692,
+          25.59373
+        ],
+        "zoom": 12,
+        "population": 112094,
+        "cells": 87,
+        "layer": "cities/rath/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.56692,
+            25.59373
+          ]
+        },
+        "properties": {
+          "id": "rath",
+          "name": "Rath",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 112094
+        }
+      },
+      "summary": null
+    }
+  }
+}

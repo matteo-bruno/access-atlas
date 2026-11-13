@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "apia",
+  "createdAt": "2026-10-08T15:08:49.031Z",
+  "updatedAt": "2026-10-08T15:08:49.031Z",
+  "meta": {
+    "name": "Apia",
+    "nameIt": "Apia",
+    "region": "Samoa",
+    "regionIt": "Samoa",
+    "country": "WS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Apia.geojson",
+      "sha256": "0cab85799b1ba8bd85eda8b0685c6fab21c3ca7729b515fd16422ef0f68d1f4d",
+      "size": 386557,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "apia",
+    "name": "Apia",
+    "nameIt": "Apia",
+    "region": "Samoa",
+    "regionIt": "Samoa",
+    "country": "WS",
+    "center": [
+      -171.7877,
+      -13.83742
+    ],
+    "zoom": 10.6,
+    "population": 42785,
+    "grid": "cities/apia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/apia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "apia",
+        "name": "Apia",
+        "nameIt": "Apia",
+        "region": "Samoa",
+        "regionIt": "Samoa",
+        "country": "WS",
+        "center": [
+          -171.7877,
+          -13.83742
+        ],
+        "zoom": 10.6,
+        "population": 42785,
+        "cells": 328,
+        "layer": "cities/apia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -171.7877,
+            -13.83742
+          ]
+        },
+        "properties": {
+          "id": "apia",
+          "name": "Apia",
+          "country": "WS",
+          "isStudy": true,
+          "proximityMinutes": 21.9,
+          "population": 42785
+        }
+      },
+      "summary": null
+    }
+  }
+}

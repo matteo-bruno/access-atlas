@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tataouine",
+  "createdAt": "2026-10-08T16:16:55.259Z",
+  "updatedAt": "2026-10-08T16:16:55.259Z",
+  "meta": {
+    "name": "Tataouine",
+    "nameIt": "Tataouine",
+    "region": "Tunisia",
+    "regionIt": "Tunisia",
+    "country": "TN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tataouine.geojson",
+      "sha256": "a1d6b5d196b2ef5fcee457d035169cf936f3b8c9876c63a62d70895d27c67c6e",
+      "size": 152956,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tataouine",
+    "name": "Tataouine",
+    "nameIt": "Tataouine",
+    "region": "Tunisia",
+    "regionIt": "Tunisia",
+    "country": "TN",
+    "center": [
+      10.44906,
+      32.92814
+    ],
+    "zoom": 11.4,
+    "population": 14082,
+    "grid": "cities/tataouine/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tataouine/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tataouine",
+        "name": "Tataouine",
+        "nameIt": "Tataouine",
+        "region": "Tunisia",
+        "regionIt": "Tunisia",
+        "country": "TN",
+        "center": [
+          10.44906,
+          32.92814
+        ],
+        "zoom": 11.4,
+        "population": 14082,
+        "cells": 132,
+        "layer": "cities/tataouine/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.44906,
+            32.92814
+          ]
+        },
+        "properties": {
+          "id": "tataouine",
+          "name": "Tataouine",
+          "country": "TN",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 14082
+        }
+      },
+      "summary": null
+    }
+  }
+}

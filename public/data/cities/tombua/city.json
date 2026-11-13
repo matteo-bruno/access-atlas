@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tombua",
+  "createdAt": "2026-10-08T16:19:29.565Z",
+  "updatedAt": "2026-10-08T16:19:29.565Z",
+  "meta": {
+    "name": "Tômbua",
+    "nameIt": "Tômbua",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tômbua.geojson",
+      "sha256": "32930275124207387a5bb04b1ebf1c81cee8554b8a0395a17864033292f29ccf",
+      "size": 95419,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tombua",
+    "name": "Tômbua",
+    "nameIt": "Tômbua",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO",
+    "center": [
+      11.84382,
+      -15.8047
+    ],
+    "zoom": 11.7,
+    "population": 49676,
+    "grid": "cities/tombua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tombua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tombua",
+        "name": "Tômbua",
+        "nameIt": "Tômbua",
+        "region": "Angola",
+        "regionIt": "Angola",
+        "country": "AO",
+        "center": [
+          11.84382,
+          -15.8047
+        ],
+        "zoom": 11.7,
+        "population": 49676,
+        "cells": 81,
+        "layer": "cities/tombua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.84382,
+            -15.8047
+          ]
+        },
+        "properties": {
+          "id": "tombua",
+          "name": "Tômbua",
+          "country": "AO",
+          "isStudy": true,
+          "proximityMinutes": 14.5,
+          "population": 49676
+        }
+      },
+      "summary": null
+    }
+  }
+}

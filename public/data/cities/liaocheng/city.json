@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "liaocheng",
+  "createdAt": "2026-10-08T15:50:59.342Z",
+  "updatedAt": "2026-10-08T15:50:59.342Z",
+  "meta": {
+    "name": "Liaocheng",
+    "nameIt": "Liaocheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Liaocheng.geojson",
+      "sha256": "2d046c7ba27098460625500d1416a0443e43cf57987513d978fac80a2689f027",
+      "size": 1914216,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "liaocheng",
+    "name": "Liaocheng",
+    "nameIt": "Liaocheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      115.98933,
+      36.46285
+    ],
+    "zoom": 9.9,
+    "population": 775809,
+    "grid": "cities/liaocheng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/liaocheng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "liaocheng",
+        "name": "Liaocheng",
+        "nameIt": "Liaocheng",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          115.98933,
+          36.46285
+        ],
+        "zoom": 9.9,
+        "population": 775809,
+        "cells": 1645,
+        "layer": "cities/liaocheng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.98933,
+            36.46285
+          ]
+        },
+        "properties": {
+          "id": "liaocheng",
+          "name": "Liaocheng",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 31.7,
+          "population": 775809
+        }
+      },
+      "summary": null
+    }
+  }
+}

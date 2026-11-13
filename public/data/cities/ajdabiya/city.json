@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ajdabiya",
+  "createdAt": "2026-10-08T15:03:29.216Z",
+  "updatedAt": "2026-10-08T15:03:29.216Z",
+  "meta": {
+    "name": "Ajdabiya",
+    "nameIt": "Ajdabiya",
+    "region": "Libya",
+    "regionIt": "Libia",
+    "country": "LY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ajdabiya.geojson",
+      "sha256": "492cddce9979099ca4d183616962ea030893bf5b9b77d58743dab30558bc9fff",
+      "size": 186813,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ajdabiya",
+    "name": "Ajdabiya",
+    "nameIt": "Ajdabiya",
+    "region": "Libya",
+    "regionIt": "Libia",
+    "country": "LY",
+    "center": [
+      20.22293,
+      30.75614
+    ],
+    "zoom": 11.7,
+    "population": 59341,
+    "grid": "cities/ajdabiya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ajdabiya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ajdabiya",
+        "name": "Ajdabiya",
+        "nameIt": "Ajdabiya",
+        "region": "Libya",
+        "regionIt": "Libia",
+        "country": "LY",
+        "center": [
+          20.22293,
+          30.75614
+        ],
+        "zoom": 11.7,
+        "population": 59341,
+        "cells": 161,
+        "layer": "cities/ajdabiya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.22293,
+            30.75614
+          ]
+        },
+        "properties": {
+          "id": "ajdabiya",
+          "name": "Ajdabiya",
+          "country": "LY",
+          "isStudy": true,
+          "proximityMinutes": 18.2,
+          "population": 59341
+        }
+      },
+      "summary": null
+    }
+  }
+}

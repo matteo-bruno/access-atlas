@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "arauca",
+  "createdAt": "2026-10-08T15:09:09.184Z",
+  "updatedAt": "2026-10-08T15:09:09.184Z",
+  "meta": {
+    "name": "Arauca",
+    "nameIt": "Arauca",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Arauca.geojson",
+      "sha256": "82db2631f366aaf5686e6dd3d11e05d4181bcb7e251f4f3a7d629c1549c69a0f",
+      "size": 147107,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "arauca",
+    "name": "Arauca",
+    "nameIt": "Arauca",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -70.75731,
+      7.0806
+    ],
+    "zoom": 11.9,
+    "population": 65463,
+    "grid": "cities/arauca/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/arauca/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "arauca",
+        "name": "Arauca",
+        "nameIt": "Arauca",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -70.75731,
+          7.0806
+        ],
+        "zoom": 11.9,
+        "population": 65463,
+        "cells": 127,
+        "layer": "cities/arauca/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -70.75731,
+            7.0806
+          ]
+        },
+        "properties": {
+          "id": "arauca",
+          "name": "Arauca",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 65463
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chandrakona",
+  "createdAt": "2026-10-08T15:23:32.239Z",
+  "updatedAt": "2026-10-08T15:23:32.239Z",
+  "meta": {
+    "name": "Chandrakona",
+    "nameIt": "Chandrakona",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chandrakona.geojson",
+      "sha256": "c920462d6f4d630144dd98de6865a43062f01d9590ec24198ac9a3c170826326",
+      "size": 109994,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chandrakona",
+    "name": "Chandrakona",
+    "nameIt": "Chandrakona",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.51642,
+      22.73127
+    ],
+    "zoom": 11.7,
+    "population": 56318,
+    "grid": "cities/chandrakona/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chandrakona/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chandrakona",
+        "name": "Chandrakona",
+        "nameIt": "Chandrakona",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.51642,
+          22.73127
+        ],
+        "zoom": 11.7,
+        "population": 56318,
+        "cells": 95,
+        "layer": "cities/chandrakona/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.51642,
+            22.73127
+          ]
+        },
+        "properties": {
+          "id": "chandrakona",
+          "name": "Chandrakona",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 56318
+        }
+      },
+      "summary": null
+    }
+  }
+}

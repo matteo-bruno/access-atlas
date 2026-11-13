@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "erechim",
+  "createdAt": "2026-10-08T15:32:23.370Z",
+  "updatedAt": "2026-10-08T15:32:23.370Z",
+  "meta": {
+    "name": "Erechim",
+    "nameIt": "Erechim",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Erechim.geojson",
+      "sha256": "e684e2d3692c40ff71404da92edf3d9ee2b199c09460c86b9d6ae662253d633e",
+      "size": 362736,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "erechim",
+    "name": "Erechim",
+    "nameIt": "Erechim",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -52.26823,
+      -27.64252
+    ],
+    "zoom": 11,
+    "population": 88260,
+    "grid": "cities/erechim/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/erechim/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "erechim",
+        "name": "Erechim",
+        "nameIt": "Erechim",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -52.26823,
+          -27.64252
+        ],
+        "zoom": 11,
+        "population": 88260,
+        "cells": 308,
+        "layer": "cities/erechim/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -52.26823,
+            -27.64252
+          ]
+        },
+        "properties": {
+          "id": "erechim",
+          "name": "Erechim",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 17.2,
+          "population": 88260
+        }
+      },
+      "summary": null
+    }
+  }
+}

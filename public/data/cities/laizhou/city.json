@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "laizhou",
+  "createdAt": "2026-10-08T15:49:44.367Z",
+  "updatedAt": "2026-10-08T15:49:44.367Z",
+  "meta": {
+    "name": "Laizhou",
+    "nameIt": "Laizhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Laizhou.geojson",
+      "sha256": "753e5c29e66ee287b6de445e98da7174601126c6836e4ff315bac421e801a902",
+      "size": 1020216,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "laizhou",
+    "name": "Laizhou",
+    "nameIt": "Laizhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.94156,
+      37.18934
+    ],
+    "zoom": 10.7,
+    "population": 245012,
+    "grid": "cities/laizhou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 166
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/laizhou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "laizhou",
+        "name": "Laizhou",
+        "nameIt": "Laizhou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.94156,
+          37.18934
+        ],
+        "zoom": 10.7,
+        "population": 245012,
+        "cells": 878,
+        "layer": "cities/laizhou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 166
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.94156,
+            37.18934
+          ]
+        },
+        "properties": {
+          "id": "laizhou",
+          "name": "Laizhou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 19.7,
+          "population": 245012
+        }
+      },
+      "summary": null
+    }
+  }
+}

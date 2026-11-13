@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "edappadi",
+  "createdAt": "2026-10-08T15:31:41.062Z",
+  "updatedAt": "2026-10-08T15:31:41.062Z",
+  "meta": {
+    "name": "Edappadi",
+    "nameIt": "Edappadi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Edappadi.geojson",
+      "sha256": "2832668f55c331989ccf3dc41723aa565f3bb123989b81825387e679fd73927a",
+      "size": 95183,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "edappadi",
+    "name": "Edappadi",
+    "nameIt": "Edappadi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.83752,
+      11.58509
+    ],
+    "zoom": 11.7,
+    "population": 38886,
+    "grid": "cities/edappadi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/edappadi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "edappadi",
+        "name": "Edappadi",
+        "nameIt": "Edappadi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.83752,
+          11.58509
+        ],
+        "zoom": 11.7,
+        "population": 38886,
+        "cells": 82,
+        "layer": "cities/edappadi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.83752,
+            11.58509
+          ]
+        },
+        "properties": {
+          "id": "edappadi",
+          "name": "Edappadi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 38886
+        }
+      },
+      "summary": null
+    }
+  }
+}

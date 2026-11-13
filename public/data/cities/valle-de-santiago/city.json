@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "valle-de-santiago",
+  "createdAt": "2026-10-08T16:20:22.560Z",
+  "updatedAt": "2026-10-08T16:20:22.560Z",
+  "meta": {
+    "name": "Valle de Santiago",
+    "nameIt": "Valle de Santiago",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Valle de Santiago.geojson",
+      "sha256": "e165038d9b5b8826d3b65faeee60df66f2d0f78568b52fd0394025130175de4d",
+      "size": 142608,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "valle-de-santiago",
+    "name": "Valle de Santiago",
+    "nameIt": "Valle de Santiago",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -101.19335,
+      20.39045
+    ],
+    "zoom": 11.8,
+    "population": 56301,
+    "grid": "cities/valle-de-santiago/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/valle-de-santiago/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "valle-de-santiago",
+        "name": "Valle de Santiago",
+        "nameIt": "Valle de Santiago",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -101.19335,
+          20.39045
+        ],
+        "zoom": 11.8,
+        "population": 56301,
+        "cells": 121,
+        "layer": "cities/valle-de-santiago/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -101.19335,
+            20.39045
+          ]
+        },
+        "properties": {
+          "id": "valle-de-santiago",
+          "name": "Valle de Santiago",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 56301
+        }
+      },
+      "summary": null
+    }
+  }
+}

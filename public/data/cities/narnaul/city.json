@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "narnaul",
+  "createdAt": "2026-10-08T16:00:24.742Z",
+  "updatedAt": "2026-10-08T16:00:24.742Z",
+  "meta": {
+    "name": "Narnaul",
+    "nameIt": "Narnaul",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Narnaul.geojson",
+      "sha256": "f3ec57cc775d8bac4c629ff4e5c0dce2658aa00824e211150a3afdf409d08de9",
+      "size": 200220,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "narnaul",
+    "name": "Narnaul",
+    "nameIt": "Narnaul",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.10816,
+      28.05262
+    ],
+    "zoom": 11.4,
+    "population": 125268,
+    "grid": "cities/narnaul/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/narnaul/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "narnaul",
+        "name": "Narnaul",
+        "nameIt": "Narnaul",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.10816,
+          28.05262
+        ],
+        "zoom": 11.4,
+        "population": 125268,
+        "cells": 173,
+        "layer": "cities/narnaul/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.10816,
+            28.05262
+          ]
+        },
+        "properties": {
+          "id": "narnaul",
+          "name": "Narnaul",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.9,
+          "population": 125268
+        }
+      },
+      "summary": null
+    }
+  }
+}

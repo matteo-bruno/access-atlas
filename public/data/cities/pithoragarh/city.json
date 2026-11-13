@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pithoragarh",
+  "createdAt": "2026-10-08T16:05:52.355Z",
+  "updatedAt": "2026-10-08T16:05:52.355Z",
+  "meta": {
+    "name": "Pithoragarh",
+    "nameIt": "Pithoragarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pithoragarh.geojson",
+      "sha256": "157122018aee1fd3b553d6b7a2975b359b5e216ef66013b1259ddb4b4fbdecd1",
+      "size": 148334,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pithoragarh",
+    "name": "Pithoragarh",
+    "nameIt": "Pithoragarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.21756,
+      29.58327
+    ],
+    "zoom": 11.5,
+    "population": 73174,
+    "grid": "cities/pithoragarh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pithoragarh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pithoragarh",
+        "name": "Pithoragarh",
+        "nameIt": "Pithoragarh",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.21756,
+          29.58327
+        ],
+        "zoom": 11.5,
+        "population": 73174,
+        "cells": 128,
+        "layer": "cities/pithoragarh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.21756,
+            29.58327
+          ]
+        },
+        "properties": {
+          "id": "pithoragarh",
+          "name": "Pithoragarh",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 73174
+        }
+      },
+      "summary": null
+    }
+  }
+}

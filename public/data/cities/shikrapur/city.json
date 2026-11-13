@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shikrapur",
+  "createdAt": "2026-10-08T16:13:04.599Z",
+  "updatedAt": "2026-10-08T16:13:04.599Z",
+  "meta": {
+    "name": "Shikrapur",
+    "nameIt": "Shikrapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shikrapur.geojson",
+      "sha256": "9a07ccc38fc1651415d172d57fe1751848efce6bcd3229ff0952dfd08fcb20b3",
+      "size": 207304,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shikrapur",
+    "name": "Shikrapur",
+    "nameIt": "Shikrapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.12113,
+      18.68152
+    ],
+    "zoom": 11.4,
+    "population": 83939,
+    "grid": "cities/shikrapur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shikrapur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shikrapur",
+        "name": "Shikrapur",
+        "nameIt": "Shikrapur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.12113,
+          18.68152
+        ],
+        "zoom": 11.4,
+        "population": 83939,
+        "cells": 179,
+        "layer": "cities/shikrapur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.12113,
+            18.68152
+          ]
+        },
+        "properties": {
+          "id": "shikrapur",
+          "name": "Shikrapur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 83939
+        }
+      },
+      "summary": null
+    }
+  }
+}

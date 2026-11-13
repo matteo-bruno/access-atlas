@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gola-bazar",
+  "createdAt": "2026-10-08T15:35:33.325Z",
+  "updatedAt": "2026-10-08T15:35:33.325Z",
+  "meta": {
+    "name": "Gola Bazar",
+    "nameIt": "Gola Bazar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gola Bazar.geojson",
+      "sha256": "60d74336a9242afff015c699044e1947d8992e20d87d5e8ea7c0658c5bb3ce93",
+      "size": 366100,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gola-bazar",
+    "name": "Gola Bazar",
+    "nameIt": "Gola Bazar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.34486,
+      26.36177
+    ],
+    "zoom": 10.9,
+    "population": 95113,
+    "grid": "cities/gola-bazar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gola-bazar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gola-bazar",
+        "name": "Gola Bazar",
+        "nameIt": "Gola Bazar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.34486,
+          26.36177
+        ],
+        "zoom": 10.9,
+        "population": 95113,
+        "cells": 316,
+        "layer": "cities/gola-bazar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.34486,
+            26.36177
+          ]
+        },
+        "properties": {
+          "id": "gola-bazar",
+          "name": "Gola Bazar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 95113
+        }
+      },
+      "summary": null
+    }
+  }
+}

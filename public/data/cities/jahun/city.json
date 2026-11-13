@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jahun",
+  "createdAt": "2026-10-08T15:41:41.356Z",
+  "updatedAt": "2026-10-08T15:41:41.356Z",
+  "meta": {
+    "name": "Jahun",
+    "nameIt": "Jahun",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jahun.geojson",
+      "sha256": "3d083f081dea619466d09aae0c40aac6ed076cf932525421cdb46a8ecdaaa502",
+      "size": 55599,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jahun",
+    "name": "Jahun",
+    "nameIt": "Jahun",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      9.62719,
+      12.07668
+    ],
+    "zoom": 12,
+    "population": 41777,
+    "grid": "cities/jahun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jahun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jahun",
+        "name": "Jahun",
+        "nameIt": "Jahun",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          9.62719,
+          12.07668
+        ],
+        "zoom": 12,
+        "population": 41777,
+        "cells": 48,
+        "layer": "cities/jahun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.62719,
+            12.07668
+          ]
+        },
+        "properties": {
+          "id": "jahun",
+          "name": "Jahun",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 41777
+        }
+      },
+      "summary": null
+    }
+  }
+}

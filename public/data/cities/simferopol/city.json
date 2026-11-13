@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "simferopol",
+  "createdAt": "2026-10-08T16:13:44.340Z",
+  "updatedAt": "2026-10-08T16:13:44.340Z",
+  "meta": {
+    "name": "Simferopol",
+    "nameIt": "Simferopol",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Simferopol.geojson",
+      "sha256": "3e520b185d720f6c8dd6ba09fe281327eb6a5476247961355239d90c16748333",
+      "size": 778567,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "simferopol",
+    "name": "Simferopol",
+    "nameIt": "Simferopol",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      34.10241,
+      44.95236
+    ],
+    "zoom": 10.5,
+    "population": 274080,
+    "grid": "cities/simferopol/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/simferopol/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "simferopol",
+        "name": "Simferopol",
+        "nameIt": "Simferopol",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          34.10241,
+          44.95236
+        ],
+        "zoom": 10.5,
+        "population": 274080,
+        "cells": 681,
+        "layer": "cities/simferopol/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.10241,
+            44.95236
+          ]
+        },
+        "properties": {
+          "id": "simferopol",
+          "name": "Simferopol",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14.5,
+          "population": 274080
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ipoh",
+  "createdAt": "2026-10-08T15:40:57.019Z",
+  "updatedAt": "2026-10-08T15:40:57.019Z",
+  "meta": {
+    "name": "Ipoh",
+    "nameIt": "Ipoh",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ipoh.geojson",
+      "sha256": "d6dc161e8e09b30c3b8440bde2f82aa422dfaca839e1804b9a6f83e210c92de1",
+      "size": 2096966,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ipoh",
+    "name": "Ipoh",
+    "nameIt": "Ipoh",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      101.0962,
+      4.6047
+    ],
+    "zoom": 9.5,
+    "population": 748855,
+    "grid": "cities/ipoh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ipoh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ipoh",
+        "name": "Ipoh",
+        "nameIt": "Ipoh",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          101.0962,
+          4.6047
+        ],
+        "zoom": 9.5,
+        "population": 748855,
+        "cells": 1821,
+        "layer": "cities/ipoh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            101.0962,
+            4.6047
+          ]
+        },
+        "properties": {
+          "id": "ipoh",
+          "name": "Ipoh",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 26.2,
+          "population": 748855
+        }
+      },
+      "summary": null
+    }
+  }
+}

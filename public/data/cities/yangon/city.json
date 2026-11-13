@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yangon",
+  "createdAt": "2026-10-08T16:23:24.987Z",
+  "updatedAt": "2026-10-08T16:23:24.987Z",
+  "meta": {
+    "name": "Yangon",
+    "nameIt": "Yangon",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yangon.geojson",
+      "sha256": "2f601bd4249c1fd4a1afad344d049b51a25b945bb337efed071c688dcd2f4bce",
+      "size": 5013471,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yangon",
+    "name": "Yangon",
+    "nameIt": "Yangon",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      96.14846,
+      16.86239
+    ],
+    "zoom": 8.9,
+    "population": 6080211,
+    "grid": "cities/yangon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yangon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yangon",
+        "name": "Yangon",
+        "nameIt": "Yangon",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          96.14846,
+          16.86239
+        ],
+        "zoom": 8.9,
+        "population": 6080211,
+        "cells": 4357,
+        "layer": "cities/yangon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.14846,
+            16.86239
+          ]
+        },
+        "properties": {
+          "id": "yangon",
+          "name": "Yangon",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 21.5,
+          "population": 6080211
+        }
+      },
+      "summary": null
+    }
+  }
+}

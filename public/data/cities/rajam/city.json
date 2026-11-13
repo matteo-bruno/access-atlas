@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rajam",
+  "createdAt": "2026-10-08T16:07:54.772Z",
+  "updatedAt": "2026-10-08T16:07:54.772Z",
+  "meta": {
+    "name": "Rajam",
+    "nameIt": "Rajam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rajam.geojson",
+      "sha256": "ed4e1ee792e95bc4bda7cd1d36df7876c55f044cdb969e458724ec304e843b0d",
+      "size": 140194,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rajam",
+    "name": "Rajam",
+    "nameIt": "Rajam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.653,
+      18.45236
+    ],
+    "zoom": 11.4,
+    "population": 40624,
+    "grid": "cities/rajam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rajam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rajam",
+        "name": "Rajam",
+        "nameIt": "Rajam",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.653,
+          18.45236
+        ],
+        "zoom": 11.4,
+        "population": 40624,
+        "cells": 121,
+        "layer": "cities/rajam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.653,
+            18.45236
+          ]
+        },
+        "properties": {
+          "id": "rajam",
+          "name": "Rajam",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 40624
+        }
+      },
+      "summary": null
+    }
+  }
+}

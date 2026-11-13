@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nigde",
+  "createdAt": "2026-10-08T16:01:50.611Z",
+  "updatedAt": "2026-10-08T16:01:50.611Z",
+  "meta": {
+    "name": "Niğde",
+    "nameIt": "Niğde",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Niğde.geojson",
+      "sha256": "14081c54ee9643cff989bc56234d21e880b93c5c093b4669382fd193cb7fa73c",
+      "size": 178983,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nigde",
+    "name": "Niğde",
+    "nameIt": "Niğde",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      34.6775,
+      37.96797
+    ],
+    "zoom": 11.5,
+    "population": 89524,
+    "grid": "cities/nigde/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nigde/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nigde",
+        "name": "Niğde",
+        "nameIt": "Niğde",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          34.6775,
+          37.96797
+        ],
+        "zoom": 11.5,
+        "population": 89524,
+        "cells": 155,
+        "layer": "cities/nigde/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.6775,
+            37.96797
+          ]
+        },
+        "properties": {
+          "id": "nigde",
+          "name": "Niğde",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 13.7,
+          "population": 89524
+        }
+      },
+      "summary": null
+    }
+  }
+}

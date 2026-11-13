@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "suqian",
+  "createdAt": "2026-10-08T16:15:19.269Z",
+  "updatedAt": "2026-10-08T16:15:19.269Z",
+  "meta": {
+    "name": "Suqian",
+    "nameIt": "Suqian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Suqian.geojson",
+      "sha256": "4a05cbfafbeb34e1246d475af9ecb405094668f6cefc047a1e714231c1992449",
+      "size": 2873259,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "suqian",
+    "name": "Suqian",
+    "nameIt": "Suqian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.27405,
+      33.93988
+    ],
+    "zoom": 9.4,
+    "population": 760995,
+    "grid": "cities/suqian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/suqian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "suqian",
+        "name": "Suqian",
+        "nameIt": "Suqian",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.27405,
+          33.93988
+        ],
+        "zoom": 9.4,
+        "population": 760995,
+        "cells": 2492,
+        "layer": "cities/suqian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.27405,
+            33.93988
+          ]
+        },
+        "properties": {
+          "id": "suqian",
+          "name": "Suqian",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 760995
+        }
+      },
+      "summary": null
+    }
+  }
+}

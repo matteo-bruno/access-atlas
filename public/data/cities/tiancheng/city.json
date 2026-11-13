@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tiancheng",
+  "createdAt": "2026-10-08T16:17:43.046Z",
+  "updatedAt": "2026-10-08T16:17:43.046Z",
+  "meta": {
+    "name": "Tiancheng",
+    "nameIt": "Tiancheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tiancheng.geojson",
+      "sha256": "8582c7676389d7c78c4fd03c9f1c47a9144c0e312afce2503b52888fa180554d",
+      "size": 250147,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tiancheng",
+    "name": "Tiancheng",
+    "nameIt": "Tiancheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.04021,
+      29.54119
+    ],
+    "zoom": 11.6,
+    "population": 140345,
+    "grid": "cities/tiancheng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tiancheng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tiancheng",
+        "name": "Tiancheng",
+        "nameIt": "Tiancheng",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.04021,
+          29.54119
+        ],
+        "zoom": 11.6,
+        "population": 140345,
+        "cells": 214,
+        "layer": "cities/tiancheng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.04021,
+            29.54119
+          ]
+        },
+        "properties": {
+          "id": "tiancheng",
+          "name": "Tiancheng",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 140345
+        }
+      },
+      "summary": null
+    }
+  }
+}

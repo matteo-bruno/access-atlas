@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "le-tampon",
+  "createdAt": "2026-10-08T15:50:31.238Z",
+  "updatedAt": "2026-10-08T15:50:31.238Z",
+  "meta": {
+    "name": "Le Tampon",
+    "nameIt": "Le Tampon",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Le Tampon.geojson",
+      "sha256": "a3c81714220e1f6f694caa67f98fce0469580c5f442443f017264ad5eed7588b",
+      "size": 242750,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "le-tampon",
+    "name": "Le Tampon",
+    "nameIt": "Le Tampon",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      55.51274,
+      -21.2743
+    ],
+    "zoom": 11.4,
+    "population": 54956,
+    "grid": "cities/le-tampon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/le-tampon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "le-tampon",
+        "name": "Le Tampon",
+        "nameIt": "Le Tampon",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          55.51274,
+          -21.2743
+        ],
+        "zoom": 11.4,
+        "population": 54956,
+        "cells": 210,
+        "layer": "cities/le-tampon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            55.51274,
+            -21.2743
+          ]
+        },
+        "properties": {
+          "id": "le-tampon",
+          "name": "Le Tampon",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 15.1,
+          "population": 54956
+        }
+      },
+      "summary": null
+    }
+  }
+}

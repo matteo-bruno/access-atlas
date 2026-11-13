@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "reading-united-kingdom",
+  "createdAt": "2026-10-08T16:08:30.030Z",
+  "updatedAt": "2026-10-08T16:08:30.030Z",
+  "meta": {
+    "name": "Reading (United Kingdom)",
+    "nameIt": "Reading (United Kingdom)",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Reading (United Kingdom).geojson",
+      "sha256": "caceced746e9ffea770178f384f07ac8b005321e7b27fe3161ebfe48e2fa7993",
+      "size": 908981,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "reading-united-kingdom",
+    "name": "Reading (United Kingdom)",
+    "nameIt": "Reading (United Kingdom)",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.9684,
+      51.44943
+    ],
+    "zoom": 10.4,
+    "population": 284788,
+    "grid": "cities/reading-united-kingdom/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/reading-united-kingdom/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "reading-united-kingdom",
+        "name": "Reading (United Kingdom)",
+        "nameIt": "Reading (United Kingdom)",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.9684,
+          51.44943
+        ],
+        "zoom": 10.4,
+        "population": 284788,
+        "cells": 788,
+        "layer": "cities/reading-united-kingdom/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.9684,
+            51.44943
+          ]
+        },
+        "properties": {
+          "id": "reading-united-kingdom",
+          "name": "Reading (United Kingdom)",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 284788
+        }
+      },
+      "summary": null
+    }
+  }
+}

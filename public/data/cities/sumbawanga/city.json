@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sumbawanga",
+  "createdAt": "2026-10-08T16:15:08.502Z",
+  "updatedAt": "2026-10-08T16:15:08.502Z",
+  "meta": {
+    "name": "Sumbawanga",
+    "nameIt": "Sumbawanga",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sumbawanga.geojson",
+      "sha256": "112ba96c663ffb8fb3a370fe57ff36ce4846c7b9c530b777323d8c64af62831a",
+      "size": 339947,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sumbawanga",
+    "name": "Sumbawanga",
+    "nameIt": "Sumbawanga",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      31.62379,
+      -7.96017
+    ],
+    "zoom": 10.8,
+    "population": 188364,
+    "grid": "cities/sumbawanga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sumbawanga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sumbawanga",
+        "name": "Sumbawanga",
+        "nameIt": "Sumbawanga",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          31.62379,
+          -7.96017
+        ],
+        "zoom": 10.8,
+        "population": 188364,
+        "cells": 291,
+        "layer": "cities/sumbawanga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.62379,
+            -7.96017
+          ]
+        },
+        "properties": {
+          "id": "sumbawanga",
+          "name": "Sumbawanga",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 24,
+          "population": 188364
+        }
+      },
+      "summary": null
+    }
+  }
+}

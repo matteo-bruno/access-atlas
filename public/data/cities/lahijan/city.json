@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lahijan",
+  "createdAt": "2026-10-08T15:49:38.603Z",
+  "updatedAt": "2026-10-08T15:49:38.603Z",
+  "meta": {
+    "name": "Lahijan",
+    "nameIt": "Lahijan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lahijan.geojson",
+      "sha256": "3833bd15f4e30c65a7de0e5ff9fa2df28780d24465c88c3ff2a8fbda323a6c7e",
+      "size": 167269,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lahijan",
+    "name": "Lahijan",
+    "nameIt": "Lahijan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      50.00947,
+      37.20316
+    ],
+    "zoom": 11.7,
+    "population": 82749,
+    "grid": "cities/lahijan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lahijan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lahijan",
+        "name": "Lahijan",
+        "nameIt": "Lahijan",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          50.00947,
+          37.20316
+        ],
+        "zoom": 11.7,
+        "population": 82749,
+        "cells": 145,
+        "layer": "cities/lahijan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            50.00947,
+            37.20316
+          ]
+        },
+        "properties": {
+          "id": "lahijan",
+          "name": "Lahijan",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 14.6,
+          "population": 82749
+        }
+      },
+      "summary": null
+    }
+  }
+}

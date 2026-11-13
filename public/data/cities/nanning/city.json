@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nanning",
+  "createdAt": "2026-10-08T16:00:07.677Z",
+  "updatedAt": "2026-10-08T16:00:07.677Z",
+  "meta": {
+    "name": "Nanning",
+    "nameIt": "Nanning",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nanning.geojson",
+      "sha256": "252458f2f3757f23234a14bb200f0063337bcd303558e2c2d151c76dcffbee7e",
+      "size": 2685673,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nanning",
+    "name": "Nanning",
+    "nameIt": "Nanning",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      108.30949,
+      22.82417
+    ],
+    "zoom": 9.6,
+    "population": 3438914,
+    "grid": "cities/nanning/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nanning/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nanning",
+        "name": "Nanning",
+        "nameIt": "Nanning",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          108.30949,
+          22.82417
+        ],
+        "zoom": 9.6,
+        "population": 3438914,
+        "cells": 2314,
+        "layer": "cities/nanning/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.30949,
+            22.82417
+          ]
+        },
+        "properties": {
+          "id": "nanning",
+          "name": "Nanning",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 27.8,
+          "population": 3438914
+        }
+      },
+      "summary": null
+    }
+  }
+}

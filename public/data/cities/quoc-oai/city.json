@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "quoc-oai",
+  "createdAt": "2026-10-08T16:07:43.853Z",
+  "updatedAt": "2026-10-08T16:07:43.853Z",
+  "meta": {
+    "name": "Quốc Oai",
+    "nameIt": "Quốc Oai",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Quốc Oai.geojson",
+      "sha256": "dc537be84e5b1cccc6484b4c0f7bbd226f4f644dec97a9df7788ae9ccedab1e4",
+      "size": 240816,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "quoc-oai",
+    "name": "Quốc Oai",
+    "nameIt": "Quốc Oai",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      105.62654,
+      21.01101
+    ],
+    "zoom": 11.2,
+    "population": 104036,
+    "grid": "cities/quoc-oai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/quoc-oai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "quoc-oai",
+        "name": "Quốc Oai",
+        "nameIt": "Quốc Oai",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          105.62654,
+          21.01101
+        ],
+        "zoom": 11.2,
+        "population": 104036,
+        "cells": 206,
+        "layer": "cities/quoc-oai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.62654,
+            21.01101
+          ]
+        },
+        "properties": {
+          "id": "quoc-oai",
+          "name": "Quốc Oai",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 29,
+          "population": 104036
+        }
+      },
+      "summary": null
+    }
+  }
+}

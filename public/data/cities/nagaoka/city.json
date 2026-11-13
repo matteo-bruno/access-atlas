@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nagaoka",
+  "createdAt": "2026-10-08T15:59:37.833Z",
+  "updatedAt": "2026-10-08T15:59:37.833Z",
+  "meta": {
+    "name": "Nagaoka",
+    "nameIt": "Nagaoka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nagaoka.geojson",
+      "sha256": "318b50b8b694e067a68754de45f352e73762795f3b25eb6560ef7f73d2f29c0c",
+      "size": 639350,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nagaoka",
+    "name": "Nagaoka",
+    "nameIt": "Nagaoka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      138.84074,
+      37.45112
+    ],
+    "zoom": 10.7,
+    "population": 159786,
+    "grid": "cities/nagaoka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nagaoka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nagaoka",
+        "name": "Nagaoka",
+        "nameIt": "Nagaoka",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          138.84074,
+          37.45112
+        ],
+        "zoom": 10.7,
+        "population": 159786,
+        "cells": 556,
+        "layer": "cities/nagaoka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            138.84074,
+            37.45112
+          ]
+        },
+        "properties": {
+          "id": "nagaoka",
+          "name": "Nagaoka",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 14.8,
+          "population": 159786
+        }
+      },
+      "summary": null
+    }
+  }
+}

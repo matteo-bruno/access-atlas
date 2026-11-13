@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hazro",
+  "createdAt": "2026-10-08T15:38:09.984Z",
+  "updatedAt": "2026-10-08T15:38:09.984Z",
+  "meta": {
+    "name": "Hazro",
+    "nameIt": "Hazro",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hazro.geojson",
+      "sha256": "dd368696d8be0af8a5b9dd65d5bef137b3b0e7364cf3cce581b4128046d8b952",
+      "size": 710709,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hazro",
+    "name": "Hazro",
+    "nameIt": "Hazro",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      72.485,
+      33.89908
+    ],
+    "zoom": 10,
+    "population": 220052,
+    "grid": "cities/hazro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hazro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hazro",
+        "name": "Hazro",
+        "nameIt": "Hazro",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          72.485,
+          33.89908
+        ],
+        "zoom": 10,
+        "population": 220052,
+        "cells": 615,
+        "layer": "cities/hazro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.485,
+            33.89908
+          ]
+        },
+        "properties": {
+          "id": "hazro",
+          "name": "Hazro",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 220052
+        }
+      },
+      "summary": null
+    }
+  }
+}

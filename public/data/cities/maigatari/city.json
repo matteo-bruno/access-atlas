@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "maigatari",
+  "createdAt": "2026-10-08T15:53:50.668Z",
+  "updatedAt": "2026-10-08T15:53:50.668Z",
+  "meta": {
+    "name": "Maigatari",
+    "nameIt": "Maigatari",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Maigatari.geojson",
+      "sha256": "59ba2a4a414c9b6675a83095eebc420417ed4e581e23975bf50328b24422ae5a",
+      "size": 76420,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "maigatari",
+    "name": "Maigatari",
+    "nameIt": "Maigatari",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      9.44525,
+      12.80651
+    ],
+    "zoom": 12,
+    "population": 55342,
+    "grid": "cities/maigatari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/maigatari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "maigatari",
+        "name": "Maigatari",
+        "nameIt": "Maigatari",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          9.44525,
+          12.80651
+        ],
+        "zoom": 12,
+        "population": 55342,
+        "cells": 66,
+        "layer": "cities/maigatari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.44525,
+            12.80651
+          ]
+        },
+        "properties": {
+          "id": "maigatari",
+          "name": "Maigatari",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 55342
+        }
+      },
+      "summary": null
+    }
+  }
+}

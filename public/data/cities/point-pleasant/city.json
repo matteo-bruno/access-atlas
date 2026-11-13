@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "point-pleasant",
+  "createdAt": "2026-10-08T16:05:59.355Z",
+  "updatedAt": "2026-10-08T16:05:59.355Z",
+  "meta": {
+    "name": "Point Pleasant",
+    "nameIt": "Point Pleasant",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Point Pleasant.geojson",
+      "sha256": "77b852910f566b5d4850b3d39fccd6c42631f278a3b2f203d6d16af47f4939b7",
+      "size": 498889,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "point-pleasant",
+    "name": "Point Pleasant",
+    "nameIt": "Point Pleasant",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -74.09699,
+      40.08479
+    ],
+    "zoom": 10.7,
+    "population": 58070,
+    "grid": "cities/point-pleasant/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/point-pleasant/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "point-pleasant",
+        "name": "Point Pleasant",
+        "nameIt": "Point Pleasant",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -74.09699,
+          40.08479
+        ],
+        "zoom": 10.7,
+        "population": 58070,
+        "cells": 429,
+        "layer": "cities/point-pleasant/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.09699,
+            40.08479
+          ]
+        },
+        "properties": {
+          "id": "point-pleasant",
+          "name": "Point Pleasant",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 24.8,
+          "population": 58070
+        }
+      },
+      "summary": null
+    }
+  }
+}

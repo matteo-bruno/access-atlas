@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tundla",
+  "createdAt": "2026-10-08T16:19:12.978Z",
+  "updatedAt": "2026-10-08T16:19:12.978Z",
+  "meta": {
+    "name": "Tundla",
+    "nameIt": "Tundla",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tundla.geojson",
+      "sha256": "54a6a6b08fb2b683f4362317debc350ea217a58eda15edd668f0c8da85824bdf",
+      "size": 349856,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tundla",
+    "name": "Tundla",
+    "nameIt": "Tundla",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.24078,
+      27.21945
+    ],
+    "zoom": 10.6,
+    "population": 173484,
+    "grid": "cities/tundla/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tundla/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tundla",
+        "name": "Tundla",
+        "nameIt": "Tundla",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.24078,
+          27.21945
+        ],
+        "zoom": 10.6,
+        "population": 173484,
+        "cells": 302,
+        "layer": "cities/tundla/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.24078,
+            27.21945
+          ]
+        },
+        "properties": {
+          "id": "tundla",
+          "name": "Tundla",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 173484
+        }
+      },
+      "summary": null
+    }
+  }
+}

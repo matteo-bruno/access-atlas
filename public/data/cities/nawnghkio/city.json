@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nawnghkio",
+  "createdAt": "2026-10-08T16:00:44.886Z",
+  "updatedAt": "2026-10-08T16:00:44.886Z",
+  "meta": {
+    "name": "Nawnghkio",
+    "nameIt": "Nawnghkio",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nawnghkio.geojson",
+      "sha256": "20e5f770e4e6e11f89797bf504e94d299ad477c969b6c3dbc74ecaffbe945266",
+      "size": 68350,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nawnghkio",
+    "name": "Nawnghkio",
+    "nameIt": "Nawnghkio",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      96.80007,
+      22.3297
+    ],
+    "zoom": 12,
+    "population": 40606,
+    "grid": "cities/nawnghkio/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nawnghkio/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nawnghkio",
+        "name": "Nawnghkio",
+        "nameIt": "Nawnghkio",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          96.80007,
+          22.3297
+        ],
+        "zoom": 12,
+        "population": 40606,
+        "cells": 59,
+        "layer": "cities/nawnghkio/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.80007,
+            22.3297
+          ]
+        },
+        "properties": {
+          "id": "nawnghkio",
+          "name": "Nawnghkio",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 8.8,
+          "population": 40606
+        }
+      },
+      "summary": null
+    }
+  }
+}

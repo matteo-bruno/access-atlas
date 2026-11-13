@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "novyj-gorodok",
+  "createdAt": "2026-10-08T16:02:12.967Z",
+  "updatedAt": "2026-10-08T16:02:12.967Z",
+  "meta": {
+    "name": "Novyj Gorodok",
+    "nameIt": "Novyj Gorodok",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Novyj Gorodok.geojson",
+      "sha256": "3c0907bcd53b875b92cda6ace91e6db5a6f8c78d02584a3ea8f1e6e06b50c6c4",
+      "size": 267688,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "novyj-gorodok",
+    "name": "Novyj Gorodok",
+    "nameIt": "Novyj Gorodok",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      34.29653,
+      53.31346
+    ],
+    "zoom": 11.5,
+    "population": 79577,
+    "grid": "cities/novyj-gorodok/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/novyj-gorodok/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "novyj-gorodok",
+        "name": "Novyj Gorodok",
+        "nameIt": "Novyj Gorodok",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          34.29653,
+          53.31346
+        ],
+        "zoom": 11.5,
+        "population": 79577,
+        "cells": 234,
+        "layer": "cities/novyj-gorodok/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.29653,
+            53.31346
+          ]
+        },
+        "properties": {
+          "id": "novyj-gorodok",
+          "name": "Novyj Gorodok",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 13.9,
+          "population": 79577
+        }
+      },
+      "summary": null
+    }
+  }
+}

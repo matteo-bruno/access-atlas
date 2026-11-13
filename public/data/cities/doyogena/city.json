@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "doyogena",
+  "createdAt": "2026-10-08T15:31:06.687Z",
+  "updatedAt": "2026-10-08T15:31:06.687Z",
+  "meta": {
+    "name": "Doyogena",
+    "nameIt": "Doyogena",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Doyogena.geojson",
+      "sha256": "ca5d9acac5437318fdf6839f915d7698b193b63b000e63cae23e628542188d37",
+      "size": 82028,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "doyogena",
+    "name": "Doyogena",
+    "nameIt": "Doyogena",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      37.78634,
+      7.35478
+    ],
+    "zoom": 12,
+    "population": 31417,
+    "grid": "cities/doyogena/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/doyogena/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "doyogena",
+        "name": "Doyogena",
+        "nameIt": "Doyogena",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          37.78634,
+          7.35478
+        ],
+        "zoom": 12,
+        "population": 31417,
+        "cells": 71,
+        "layer": "cities/doyogena/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.78634,
+            7.35478
+          ]
+        },
+        "properties": {
+          "id": "doyogena",
+          "name": "Doyogena",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 31417
+        }
+      },
+      "summary": null
+    }
+  }
+}

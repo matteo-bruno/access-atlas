@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wuyishan",
+  "createdAt": "2026-10-08T16:22:08.465Z",
+  "updatedAt": "2026-10-08T16:22:08.465Z",
+  "meta": {
+    "name": "Wuyishan",
+    "nameIt": "Wuyishan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wuyishan.geojson",
+      "sha256": "e59cbcddc4bc906e0a8a54a5a091c63cc4d5a8b35a4e5e49c8f2697ebd10e66b",
+      "size": 184661,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wuyishan",
+    "name": "Wuyishan",
+    "nameIt": "Wuyishan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.02127,
+      27.74989
+    ],
+    "zoom": 11.6,
+    "population": 104460,
+    "grid": "cities/wuyishan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wuyishan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wuyishan",
+        "name": "Wuyishan",
+        "nameIt": "Wuyishan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.02127,
+          27.74989
+        ],
+        "zoom": 11.6,
+        "population": 104460,
+        "cells": 158,
+        "layer": "cities/wuyishan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.02127,
+            27.74989
+          ]
+        },
+        "properties": {
+          "id": "wuyishan",
+          "name": "Wuyishan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 27.2,
+          "population": 104460
+        }
+      },
+      "summary": null
+    }
+  }
+}

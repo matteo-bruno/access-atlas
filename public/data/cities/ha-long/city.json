@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ha-long",
+  "createdAt": "2026-10-08T15:40:06.965Z",
+  "updatedAt": "2026-10-08T15:40:06.965Z",
+  "meta": {
+    "name": "Hạ Long",
+    "nameIt": "Hạ Long",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hạ Long.geojson",
+      "sha256": "98499fccc61d2b9e6bfb486fa5010b4e3a5b5e65255006db782b3ca6d7ad61e9",
+      "size": 411103,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ha-long",
+    "name": "Hạ Long",
+    "nameIt": "Hạ Long",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      107.11015,
+      20.95694
+    ],
+    "zoom": 10.5,
+    "population": 160103,
+    "grid": "cities/ha-long/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ha-long/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ha-long",
+        "name": "Hạ Long",
+        "nameIt": "Hạ Long",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          107.11015,
+          20.95694
+        ],
+        "zoom": 10.5,
+        "population": 160103,
+        "cells": 352,
+        "layer": "cities/ha-long/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.11015,
+            20.95694
+          ]
+        },
+        "properties": {
+          "id": "ha-long",
+          "name": "Hạ Long",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 34,
+          "population": 160103
+        }
+      },
+      "summary": null
+    }
+  }
+}

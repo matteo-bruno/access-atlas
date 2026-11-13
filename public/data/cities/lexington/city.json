@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lexington",
+  "createdAt": "2026-10-08T15:50:51.013Z",
+  "updatedAt": "2026-10-08T15:50:51.013Z",
+  "meta": {
+    "name": "Lexington",
+    "nameIt": "Lexington",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lexington.geojson",
+      "sha256": "30aa79f871bd52310090bff1a49eec0f12a9d79b52d9fcebaefddaf869cf01db",
+      "size": 1919743,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lexington",
+    "name": "Lexington",
+    "nameIt": "Lexington",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -84.49874,
+      38.01682
+    ],
+    "zoom": 9.9,
+    "population": 272042,
+    "grid": "cities/lexington/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lexington/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lexington",
+        "name": "Lexington",
+        "nameIt": "Lexington",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -84.49874,
+          38.01682
+        ],
+        "zoom": 9.9,
+        "population": 272042,
+        "cells": 1665,
+        "layer": "cities/lexington/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -84.49874,
+            38.01682
+          ]
+        },
+        "properties": {
+          "id": "lexington",
+          "name": "Lexington",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 24.3,
+          "population": 272042
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "thessaloniki-fua",
+  "createdAt": "2026-10-19T16:58:44.727Z",
+  "updatedAt": "2026-10-19T16:58:44.727Z",
+  "meta": {
+    "name": "Thessaloniki",
+    "nameIt": "Thessaloniki",
+    "region": "Greece",
+    "regionIt": "Grecia",
+    "country": "GR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "thessaloniki-fua",
+    "name": "Thessaloniki",
+    "nameIt": "Thessaloniki",
+    "region": "Greece",
+    "regionIt": "Grecia",
+    "country": "GR",
+    "extent": "fua",
+    "core": "thessaloniki",
+    "center": [
+      22.94505,
+      40.62994
+    ],
+    "zoom": 8.6,
+    "population": 985609,
+    "grid": "cities/thessaloniki-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/thessaloniki-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "thessaloniki-fua",
+        "name": "Thessaloniki",
+        "nameIt": "Thessaloniki",
+        "region": "Greece",
+        "regionIt": "Grecia",
+        "country": "GR",
+        "extent": "fua",
+        "core": "thessaloniki",
+        "center": [
+          22.94505,
+          40.62994
+        ],
+        "zoom": 8.6,
+        "population": 985609,
+        "cells": 9345,
+        "layer": "cities/thessaloniki-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            22.94505,
+            40.62994
+          ]
+        },
+        "properties": {
+          "id": "thessaloniki-fua",
+          "name": "Thessaloniki",
+          "country": "GR",
+          "isStudy": true,
+          "proximityMinutes": 7.2,
+          "population": 985609
+        }
+      },
+      "summary": null
+    }
+  }
+}

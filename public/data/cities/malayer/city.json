@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "malayer",
+  "createdAt": "2026-10-08T15:54:07.865Z",
+  "updatedAt": "2026-10-08T15:54:07.865Z",
+  "meta": {
+    "name": "Malayer",
+    "nameIt": "Malayer",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Malayer.geojson",
+      "sha256": "8e9e1a87ab581f6520bddbd5477575eb5050528304d73a4a649fae851fb560e7",
+      "size": 232565,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "malayer",
+    "name": "Malayer",
+    "nameIt": "Malayer",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      48.81536,
+      34.2996
+    ],
+    "zoom": 11.4,
+    "population": 159922,
+    "grid": "cities/malayer/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/malayer/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "malayer",
+        "name": "Malayer",
+        "nameIt": "Malayer",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          48.81536,
+          34.2996
+        ],
+        "zoom": 11.4,
+        "population": 159922,
+        "cells": 203,
+        "layer": "cities/malayer/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.81536,
+            34.2996
+          ]
+        },
+        "properties": {
+          "id": "malayer",
+          "name": "Malayer",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 159922
+        }
+      },
+      "summary": null
+    }
+  }
+}

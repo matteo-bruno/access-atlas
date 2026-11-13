@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oxford",
+  "createdAt": "2026-10-08T16:03:25.349Z",
+  "updatedAt": "2026-10-08T16:03:25.349Z",
+  "meta": {
+    "name": "Oxford",
+    "nameIt": "Oxford",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Oxford.geojson",
+      "sha256": "c2e8bc5f623da06fbfebb77b2a0712347f30cd5ce48bff3b6096602f3350314b",
+      "size": 560308,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "oxford",
+    "name": "Oxford",
+    "nameIt": "Oxford",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.23365,
+      51.74864
+    ],
+    "zoom": 10.8,
+    "population": 174474,
+    "grid": "cities/oxford/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oxford/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oxford",
+        "name": "Oxford",
+        "nameIt": "Oxford",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.23365,
+          51.74864
+        ],
+        "zoom": 10.8,
+        "population": 174474,
+        "cells": 487,
+        "layer": "cities/oxford/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.23365,
+            51.74864
+          ]
+        },
+        "properties": {
+          "id": "oxford",
+          "name": "Oxford",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 8.5,
+          "population": 174474
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "livny",
+  "createdAt": "2026-10-08T15:51:39.107Z",
+  "updatedAt": "2026-10-08T15:51:39.107Z",
+  "meta": {
+    "name": "Livny",
+    "nameIt": "Livny",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Livny.geojson",
+      "sha256": "2401d9e60a2bd432e7319e7cbe69d6b58d70ca3ca9b83cd7fed8280a1c557ca1",
+      "size": 194062,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "livny",
+    "name": "Livny",
+    "nameIt": "Livny",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      37.59384,
+      52.41795
+    ],
+    "zoom": 11.7,
+    "population": 33942,
+    "grid": "cities/livny/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/livny/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "livny",
+        "name": "Livny",
+        "nameIt": "Livny",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          37.59384,
+          52.41795
+        ],
+        "zoom": 11.7,
+        "population": 33942,
+        "cells": 170,
+        "layer": "cities/livny/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.59384,
+            52.41795
+          ]
+        },
+        "properties": {
+          "id": "livny",
+          "name": "Livny",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 33942
+        }
+      },
+      "summary": null
+    }
+  }
+}

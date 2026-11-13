@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "siliguri",
+  "createdAt": "2026-10-08T16:13:40.738Z",
+  "updatedAt": "2026-10-08T16:13:40.738Z",
+  "meta": {
+    "name": "Siliguri",
+    "nameIt": "Siliguri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Siliguri.geojson",
+      "sha256": "b1c972aee2b388d693828dcaedc2de41fd0f814c0e897265bc86209a7937213f",
+      "size": 1312186,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "siliguri",
+    "name": "Siliguri",
+    "nameIt": "Siliguri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.41514,
+      26.7112
+    ],
+    "zoom": 9.9,
+    "population": 1421523,
+    "grid": "cities/siliguri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/siliguri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "siliguri",
+        "name": "Siliguri",
+        "nameIt": "Siliguri",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.41514,
+          26.7112
+        ],
+        "zoom": 9.9,
+        "population": 1421523,
+        "cells": 1137,
+        "layer": "cities/siliguri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.41514,
+            26.7112
+          ]
+        },
+        "properties": {
+          "id": "siliguri",
+          "name": "Siliguri",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 35.6,
+          "population": 1421523
+        }
+      },
+      "summary": null
+    }
+  }
+}

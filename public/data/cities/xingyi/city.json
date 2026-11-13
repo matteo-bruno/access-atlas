@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xingyi",
+  "createdAt": "2026-10-08T16:22:43.860Z",
+  "updatedAt": "2026-10-08T16:22:43.860Z",
+  "meta": {
+    "name": "Xingyi",
+    "nameIt": "Xingyi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xingyi.geojson",
+      "sha256": "658e8cb9fd30e400038266c5912ab3985dc3b65e508f98d783ea183e36646c80",
+      "size": 415390,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xingyi",
+    "name": "Xingyi",
+    "nameIt": "Xingyi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      104.90525,
+      25.09097
+    ],
+    "zoom": 10.8,
+    "population": 449044,
+    "grid": "cities/xingyi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xingyi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xingyi",
+        "name": "Xingyi",
+        "nameIt": "Xingyi",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          104.90525,
+          25.09097
+        ],
+        "zoom": 10.8,
+        "population": 449044,
+        "cells": 355,
+        "layer": "cities/xingyi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            104.90525,
+            25.09097
+          ]
+        },
+        "properties": {
+          "id": "xingyi",
+          "name": "Xingyi",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 26.7,
+          "population": 449044
+        }
+      },
+      "summary": null
+    }
+  }
+}

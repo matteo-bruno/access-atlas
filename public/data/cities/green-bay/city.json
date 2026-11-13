@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "green-bay",
+  "createdAt": "2026-10-08T15:36:00.774Z",
+  "updatedAt": "2026-10-08T15:36:00.774Z",
+  "meta": {
+    "name": "Green Bay",
+    "nameIt": "Green Bay",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Green Bay.geojson",
+      "sha256": "0b1256a4083de0c77858dda5d0cbc73808ad393af868b9cb804d5eef182f00cf",
+      "size": 676537,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "green-bay",
+    "name": "Green Bay",
+    "nameIt": "Green Bay",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -88.01882,
+      44.5087
+    ],
+    "zoom": 10.4,
+    "population": 89911,
+    "grid": "cities/green-bay/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/green-bay/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "green-bay",
+        "name": "Green Bay",
+        "nameIt": "Green Bay",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -88.01882,
+          44.5087
+        ],
+        "zoom": 10.4,
+        "population": 89911,
+        "cells": 584,
+        "layer": "cities/green-bay/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.01882,
+            44.5087
+          ]
+        },
+        "properties": {
+          "id": "green-bay",
+          "name": "Green Bay",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 19.3,
+          "population": 89911
+        }
+      },
+      "summary": null
+    }
+  }
+}

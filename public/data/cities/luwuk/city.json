@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "luwuk",
+  "createdAt": "2026-10-08T15:52:52.658Z",
+  "updatedAt": "2026-10-08T15:52:52.658Z",
+  "meta": {
+    "name": "Luwuk",
+    "nameIt": "Luwuk",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Luwuk.geojson",
+      "sha256": "66414a0f223ce65b54a07908a5d3bb94dd9a859a2ca3b7a6be087e7d7771ba9b",
+      "size": 272308,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "luwuk",
+    "name": "Luwuk",
+    "nameIt": "Luwuk",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      122.80448,
+      -0.94972
+    ],
+    "zoom": 10.5,
+    "population": 61693,
+    "grid": "cities/luwuk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/luwuk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "luwuk",
+        "name": "Luwuk",
+        "nameIt": "Luwuk",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          122.80448,
+          -0.94972
+        ],
+        "zoom": 10.5,
+        "population": 61693,
+        "cells": 231,
+        "layer": "cities/luwuk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            122.80448,
+            -0.94972
+          ]
+        },
+        "properties": {
+          "id": "luwuk",
+          "name": "Luwuk",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 19.2,
+          "population": 61693
+        }
+      },
+      "summary": null
+    }
+  }
+}

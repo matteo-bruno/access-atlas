@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sano",
+  "createdAt": "2026-10-08T16:10:59.070Z",
+  "updatedAt": "2026-10-08T16:10:59.070Z",
+  "meta": {
+    "name": "Sano",
+    "nameIt": "Sano",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sano.geojson",
+      "sha256": "66cc5b4607c1d8c57bb6a1cf3b619847e225e070f0d8ed77e1f0ca819f44f2fc",
+      "size": 274183,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sano",
+    "name": "Sano",
+    "nameIt": "Sano",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      139.58346,
+      36.31268
+    ],
+    "zoom": 11.2,
+    "population": 62929,
+    "grid": "cities/sano/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sano/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sano",
+        "name": "Sano",
+        "nameIt": "Sano",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          139.58346,
+          36.31268
+        ],
+        "zoom": 11.2,
+        "population": 62929,
+        "cells": 237,
+        "layer": "cities/sano/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.58346,
+            36.31268
+          ]
+        },
+        "properties": {
+          "id": "sano",
+          "name": "Sano",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 14.5,
+          "population": 62929
+        }
+      },
+      "summary": null
+    }
+  }
+}

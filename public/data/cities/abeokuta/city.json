@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abeokuta",
+  "createdAt": "2026-10-08T15:01:21.665Z",
+  "updatedAt": "2026-10-08T15:01:21.665Z",
+  "meta": {
+    "name": "Abeokuta",
+    "nameIt": "Abeokuta",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abeokuta.geojson",
+      "sha256": "fdea4fd89a7e7cac9391b797b760316848449cb3e80bedbe65f0835e55e019a8",
+      "size": 2302290,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abeokuta",
+    "name": "Abeokuta",
+    "nameIt": "Abeokuta",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      3.34783,
+      7.16077
+    ],
+    "zoom": 9.6,
+    "population": 585308,
+    "grid": "cities/abeokuta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abeokuta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abeokuta",
+        "name": "Abeokuta",
+        "nameIt": "Abeokuta",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          3.34783,
+          7.16077
+        ],
+        "zoom": 9.6,
+        "population": 585308,
+        "cells": 1991,
+        "layer": "cities/abeokuta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.34783,
+            7.16077
+          ]
+        },
+        "properties": {
+          "id": "abeokuta",
+          "name": "Abeokuta",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 585308
+        }
+      },
+      "summary": null
+    }
+  }
+}

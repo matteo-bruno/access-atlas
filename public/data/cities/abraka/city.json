@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abraka",
+  "createdAt": "2026-10-08T15:01:43.833Z",
+  "updatedAt": "2026-10-08T15:01:43.833Z",
+  "meta": {
+    "name": "Abraka",
+    "nameIt": "Abraka",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abraka.geojson",
+      "sha256": "d18c1b667e84d873c99f7d839a8fff066412d7c08645861d9914c3f7181dab87",
+      "size": 189970,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abraka",
+    "name": "Abraka",
+    "nameIt": "Abraka",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      6.10471,
+      5.7888
+    ],
+    "zoom": 11.6,
+    "population": 102441,
+    "grid": "cities/abraka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abraka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abraka",
+        "name": "Abraka",
+        "nameIt": "Abraka",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          6.10471,
+          5.7888
+        ],
+        "zoom": 11.6,
+        "population": 102441,
+        "cells": 165,
+        "layer": "cities/abraka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.10471,
+            5.7888
+          ]
+        },
+        "properties": {
+          "id": "abraka",
+          "name": "Abraka",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 102441
+        }
+      },
+      "summary": null
+    }
+  }
+}

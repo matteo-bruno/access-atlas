@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "madagali",
+  "createdAt": "2026-10-08T15:53:17.752Z",
+  "updatedAt": "2026-10-08T15:53:17.752Z",
+  "meta": {
+    "name": "Madagali",
+    "nameIt": "Madagali",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Madagali.geojson",
+      "sha256": "ecfddd8caebfb0702673fc6aaf935dfd8ffb5a71fcb3e87f8749ac00f309d955",
+      "size": 96928,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "madagali",
+    "name": "Madagali",
+    "nameIt": "Madagali",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      13.62353,
+      10.89038
+    ],
+    "zoom": 12,
+    "population": 40030,
+    "grid": "cities/madagali/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/madagali/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "madagali",
+        "name": "Madagali",
+        "nameIt": "Madagali",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          13.62353,
+          10.89038
+        ],
+        "zoom": 12,
+        "population": 40030,
+        "cells": 83,
+        "layer": "cities/madagali/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.62353,
+            10.89038
+          ]
+        },
+        "properties": {
+          "id": "madagali",
+          "name": "Madagali",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 40030
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fort-pierce",
+  "createdAt": "2026-10-08T15:33:33.984Z",
+  "updatedAt": "2026-10-08T15:33:33.984Z",
+  "meta": {
+    "name": "Fort Pierce",
+    "nameIt": "Fort Pierce",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fort Pierce.geojson",
+      "sha256": "3cc1ad154455d7ac18373b75f4a4378f1e028413d99ed184d60c40f9117e5d8e",
+      "size": 408265,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fort-pierce",
+    "name": "Fort Pierce",
+    "nameIt": "Fort Pierce",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -80.3403,
+      27.43635
+    ],
+    "zoom": 10.9,
+    "population": 44711,
+    "grid": "cities/fort-pierce/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fort-pierce/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fort-pierce",
+        "name": "Fort Pierce",
+        "nameIt": "Fort Pierce",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -80.3403,
+          27.43635
+        ],
+        "zoom": 10.9,
+        "population": 44711,
+        "cells": 351,
+        "layer": "cities/fort-pierce/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.3403,
+            27.43635
+          ]
+        },
+        "properties": {
+          "id": "fort-pierce",
+          "name": "Fort Pierce",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20.8,
+          "population": 44711
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhongxiang",
+  "createdAt": "2026-10-08T16:25:21.216Z",
+  "updatedAt": "2026-10-08T16:25:21.216Z",
+  "meta": {
+    "name": "Zhongxiang",
+    "nameIt": "Zhongxiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhongxiang.geojson",
+      "sha256": "a28d6ff47b1eca01908ae27881beb4c32690e429149faed516a27d29c084624e",
+      "size": 429003,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhongxiang",
+    "name": "Zhongxiang",
+    "nameIt": "Zhongxiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.58127,
+      31.17028
+    ],
+    "zoom": 10.9,
+    "population": 195441,
+    "grid": "cities/zhongxiang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhongxiang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhongxiang",
+        "name": "Zhongxiang",
+        "nameIt": "Zhongxiang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.58127,
+          31.17028
+        ],
+        "zoom": 10.9,
+        "population": 195441,
+        "cells": 367,
+        "layer": "cities/zhongxiang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.58127,
+            31.17028
+          ]
+        },
+        "properties": {
+          "id": "zhongxiang",
+          "name": "Zhongxiang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 195441
+        }
+      },
+      "summary": null
+    }
+  }
+}

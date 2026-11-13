@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "haarlem",
+  "createdAt": "2026-10-08T15:37:04.712Z",
+  "updatedAt": "2026-10-08T15:37:04.712Z",
+  "meta": {
+    "name": "Haarlem",
+    "nameIt": "Haarlem",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Haarlem.geojson",
+      "sha256": "4c3cdb8a49d236c6ed538a03bc6750ce047d099508e6e2cfdebc4aef32cb0c0b",
+      "size": 553828,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "haarlem",
+    "name": "Haarlem",
+    "nameIt": "Haarlem",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      4.63981,
+      52.38328
+    ],
+    "zoom": 10.4,
+    "population": 219757,
+    "grid": "cities/haarlem/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/haarlem/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "haarlem",
+        "name": "Haarlem",
+        "nameIt": "Haarlem",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          4.63981,
+          52.38328
+        ],
+        "zoom": 10.4,
+        "population": 219757,
+        "cells": 488,
+        "layer": "cities/haarlem/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.63981,
+            52.38328
+          ]
+        },
+        "properties": {
+          "id": "haarlem",
+          "name": "Haarlem",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 9.3,
+          "population": 219757
+        }
+      },
+      "summary": null
+    }
+  }
+}

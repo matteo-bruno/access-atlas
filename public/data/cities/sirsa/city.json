@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sirsa",
+  "createdAt": "2026-10-08T16:14:00.796Z",
+  "updatedAt": "2026-10-08T16:14:00.796Z",
+  "meta": {
+    "name": "Sirsa",
+    "nameIt": "Sirsa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sirsa.geojson",
+      "sha256": "8b3c9bf5c0ab4847956d9e4f751b35a4755582e6111682389fa49ecd6619aec7",
+      "size": 377082,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sirsa",
+    "name": "Sirsa",
+    "nameIt": "Sirsa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.03533,
+      29.53712
+    ],
+    "zoom": 11,
+    "population": 254171,
+    "grid": "cities/sirsa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sirsa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sirsa",
+        "name": "Sirsa",
+        "nameIt": "Sirsa",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.03533,
+          29.53712
+        ],
+        "zoom": 11,
+        "population": 254171,
+        "cells": 325,
+        "layer": "cities/sirsa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.03533,
+            29.53712
+          ]
+        },
+        "properties": {
+          "id": "sirsa",
+          "name": "Sirsa",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 24.1,
+          "population": 254171
+        }
+      },
+      "summary": null
+    }
+  }
+}

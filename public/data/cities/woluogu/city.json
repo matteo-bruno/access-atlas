@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "woluogu",
+  "createdAt": "2026-10-08T16:21:47.579Z",
+  "updatedAt": "2026-10-08T16:21:47.579Z",
+  "meta": {
+    "name": "Woluogu",
+    "nameIt": "Woluogu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Woluogu.geojson",
+      "sha256": "be0c165fba8314d8d4884826baaadfa2e96e3f706ea86cfbe9e58f93b268cdd4",
+      "size": 378652,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "woluogu",
+    "name": "Woluogu",
+    "nameIt": "Woluogu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.77691,
+      39.66914
+    ],
+    "zoom": 11,
+    "population": 29356,
+    "grid": "cities/woluogu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 168
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/woluogu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "woluogu",
+        "name": "Woluogu",
+        "nameIt": "Woluogu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.77691,
+          39.66914
+        ],
+        "zoom": 11,
+        "population": 29356,
+        "cells": 325,
+        "layer": "cities/woluogu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 168
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.77691,
+            39.66914
+          ]
+        },
+        "properties": {
+          "id": "woluogu",
+          "name": "Woluogu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 29356
+        }
+      },
+      "summary": null
+    }
+  }
+}

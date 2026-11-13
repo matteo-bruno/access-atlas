@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santiago-chile",
+  "createdAt": "2026-10-08T16:11:12.904Z",
+  "updatedAt": "2026-10-08T16:11:12.904Z",
+  "meta": {
+    "name": "Santiago (Chile)",
+    "nameIt": "Santiago (Chile)",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santiago (Chile).geojson",
+      "sha256": "a0199d8fca0e10c5f4a5c0bbd7a52e7c845c69a2bc17564f56df009cb97c49d7",
+      "size": 10177185,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santiago-chile",
+    "name": "Santiago (Chile)",
+    "nameIt": "Santiago (Chile)",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL",
+    "center": [
+      -70.6514,
+      -33.48393
+    ],
+    "zoom": 8.8,
+    "population": 6842881,
+    "grid": "cities/santiago-chile/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santiago-chile/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santiago-chile",
+        "name": "Santiago (Chile)",
+        "nameIt": "Santiago (Chile)",
+        "region": "Chile",
+        "regionIt": "Cile",
+        "country": "CL",
+        "center": [
+          -70.6514,
+          -33.48393
+        ],
+        "zoom": 8.8,
+        "population": 6842881,
+        "cells": 8773,
+        "layer": "cities/santiago-chile/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -70.6514,
+            -33.48393
+          ]
+        },
+        "properties": {
+          "id": "santiago-chile",
+          "name": "Santiago (Chile)",
+          "country": "CL",
+          "isStudy": true,
+          "proximityMinutes": 10.2,
+          "population": 6842881
+        }
+      },
+      "summary": null
+    }
+  }
+}

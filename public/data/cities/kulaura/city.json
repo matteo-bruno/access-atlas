@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kulaura",
+  "createdAt": "2026-10-08T15:48:41.277Z",
+  "updatedAt": "2026-10-08T15:48:41.277Z",
+  "meta": {
+    "name": "Kulaura",
+    "nameIt": "Kulaura",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kulaura.geojson",
+      "sha256": "db404982cc0f8b52652651ad607b91b3c8b35f73831a8080441fd2703ef945c6",
+      "size": 656928,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kulaura",
+    "name": "Kulaura",
+    "nameIt": "Kulaura",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      92.02493,
+      24.488
+    ],
+    "zoom": 10.5,
+    "population": 155506,
+    "grid": "cities/kulaura/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kulaura/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kulaura",
+        "name": "Kulaura",
+        "nameIt": "Kulaura",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          92.02493,
+          24.488
+        ],
+        "zoom": 10.5,
+        "population": 155506,
+        "cells": 567,
+        "layer": "cities/kulaura/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            92.02493,
+            24.488
+          ]
+        },
+        "properties": {
+          "id": "kulaura",
+          "name": "Kulaura",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 155506
+        }
+      },
+      "summary": null
+    }
+  }
+}

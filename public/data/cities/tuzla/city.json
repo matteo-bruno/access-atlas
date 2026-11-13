@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tuzla",
+  "createdAt": "2026-10-08T16:19:23.954Z",
+  "updatedAt": "2026-10-08T16:19:23.954Z",
+  "meta": {
+    "name": "Tuzla",
+    "nameIt": "Tuzla",
+    "region": "Bosnia and Herzegovina",
+    "regionIt": "Bosnia ed Erzegovina",
+    "country": "BA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tuzla.geojson",
+      "sha256": "fb592ad641dafca637aeba3afc4c94cc72580dab9d8d996c999281254c29bb09",
+      "size": 162423,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tuzla",
+    "name": "Tuzla",
+    "nameIt": "Tuzla",
+    "region": "Bosnia and Herzegovina",
+    "regionIt": "Bosnia ed Erzegovina",
+    "country": "BA",
+    "center": [
+      18.67706,
+      44.53401
+    ],
+    "zoom": 11.3,
+    "population": 41322,
+    "grid": "cities/tuzla/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tuzla/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tuzla",
+        "name": "Tuzla",
+        "nameIt": "Tuzla",
+        "region": "Bosnia and Herzegovina",
+        "regionIt": "Bosnia ed Erzegovina",
+        "country": "BA",
+        "center": [
+          18.67706,
+          44.53401
+        ],
+        "zoom": 11.3,
+        "population": 41322,
+        "cells": 142,
+        "layer": "cities/tuzla/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.67706,
+            44.53401
+          ]
+        },
+        "properties": {
+          "id": "tuzla",
+          "name": "Tuzla",
+          "country": "BA",
+          "isStudy": true,
+          "proximityMinutes": 10.9,
+          "population": 41322
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "springfield-massachusetts",
+  "createdAt": "2026-10-08T16:14:39.842Z",
+  "updatedAt": "2026-10-08T16:14:39.842Z",
+  "meta": {
+    "name": "Springfield (Massachusetts)",
+    "nameIt": "Springfield (Massachusetts)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Springfield (Massachusetts).geojson",
+      "sha256": "fc8bead7afefa65e4af6c078b8110cff73df73dcd0e20d63a3941d5b66a8142c",
+      "size": 433657,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "springfield-massachusetts",
+    "name": "Springfield (Massachusetts)",
+    "nameIt": "Springfield (Massachusetts)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -72.5793,
+      42.10445
+    ],
+    "zoom": 10.6,
+    "population": 102234,
+    "grid": "cities/springfield-massachusetts/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/springfield-massachusetts/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "springfield-massachusetts",
+        "name": "Springfield (Massachusetts)",
+        "nameIt": "Springfield (Massachusetts)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -72.5793,
+          42.10445
+        ],
+        "zoom": 10.6,
+        "population": 102234,
+        "cells": 376,
+        "layer": "cities/springfield-massachusetts/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.5793,
+            42.10445
+          ]
+        },
+        "properties": {
+          "id": "springfield-massachusetts",
+          "name": "Springfield (Massachusetts)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 21.4,
+          "population": 102234
+        }
+      },
+      "summary": null
+    }
+  }
+}

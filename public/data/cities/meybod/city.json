@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "meybod",
+  "createdAt": "2026-10-08T15:56:50.795Z",
+  "updatedAt": "2026-10-08T15:56:50.795Z",
+  "meta": {
+    "name": "Meybod",
+    "nameIt": "Meybod",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Meybod.geojson",
+      "sha256": "004a76d5c7c8309a764ee4cb92483815a2a309ba29cba32584725963d8606728",
+      "size": 248778,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "meybod",
+    "name": "Meybod",
+    "nameIt": "Meybod",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      54.02044,
+      32.24522
+    ],
+    "zoom": 11.4,
+    "population": 75118,
+    "grid": "cities/meybod/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/meybod/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "meybod",
+        "name": "Meybod",
+        "nameIt": "Meybod",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          54.02044,
+          32.24522
+        ],
+        "zoom": 11.4,
+        "population": 75118,
+        "cells": 215,
+        "layer": "cities/meybod/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            54.02044,
+            32.24522
+          ]
+        },
+        "properties": {
+          "id": "meybod",
+          "name": "Meybod",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 20.7,
+          "population": 75118
+        }
+      },
+      "summary": null
+    }
+  }
+}

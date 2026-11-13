@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bojonegoro",
+  "createdAt": "2026-10-08T15:19:53.311Z",
+  "updatedAt": "2026-10-08T15:19:53.311Z",
+  "meta": {
+    "name": "Bojonegoro",
+    "nameIt": "Bojonegoro",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bojonegoro.geojson",
+      "sha256": "6e8611e7f522cfd101f90ed01de485b0b16f31501a0fb001cc22f747a49d4479",
+      "size": 935172,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bojonegoro",
+    "name": "Bojonegoro",
+    "nameIt": "Bojonegoro",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      111.89663,
+      -7.16973
+    ],
+    "zoom": 10.3,
+    "population": 236664,
+    "grid": "cities/bojonegoro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bojonegoro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bojonegoro",
+        "name": "Bojonegoro",
+        "nameIt": "Bojonegoro",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          111.89663,
+          -7.16973
+        ],
+        "zoom": 10.3,
+        "population": 236664,
+        "cells": 798,
+        "layer": "cities/bojonegoro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.89663,
+            -7.16973
+          ]
+        },
+        "properties": {
+          "id": "bojonegoro",
+          "name": "Bojonegoro",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 34.3,
+          "population": 236664
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bauchi",
+  "createdAt": "2026-10-08T15:16:16.107Z",
+  "updatedAt": "2026-10-08T15:16:16.107Z",
+  "meta": {
+    "name": "Bauchi",
+    "nameIt": "Bauchi",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bauchi.geojson",
+      "sha256": "3255b54b2cc8ea16c23b7642f7446a7b9c960531521d32c73e5bcf9946266d18",
+      "size": 1222646,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bauchi",
+    "name": "Bauchi",
+    "nameIt": "Bauchi",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      9.83078,
+      10.30834
+    ],
+    "zoom": 10.1,
+    "population": 391064,
+    "grid": "cities/bauchi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bauchi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bauchi",
+        "name": "Bauchi",
+        "nameIt": "Bauchi",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          9.83078,
+          10.30834
+        ],
+        "zoom": 10.1,
+        "population": 391064,
+        "cells": 1055,
+        "layer": "cities/bauchi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.83078,
+            10.30834
+          ]
+        },
+        "properties": {
+          "id": "bauchi",
+          "name": "Bauchi",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 45.6,
+          "population": 391064
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rio-bravo",
+  "createdAt": "2026-10-08T16:09:29.667Z",
+  "updatedAt": "2026-10-08T16:09:29.667Z",
+  "meta": {
+    "name": "Río Bravo",
+    "nameIt": "Río Bravo",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Río Bravo.geojson",
+      "sha256": "653732cf0f65d74bf96b33914171fc186c4cfb2d8e45bd4d46ca5b13f1f8548a",
+      "size": 239430,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rio-bravo",
+    "name": "Río Bravo",
+    "nameIt": "Río Bravo",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -98.08938,
+      25.99053
+    ],
+    "zoom": 11.1,
+    "population": 93259,
+    "grid": "cities/rio-bravo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rio-bravo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rio-bravo",
+        "name": "Río Bravo",
+        "nameIt": "Río Bravo",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -98.08938,
+          25.99053
+        ],
+        "zoom": 11.1,
+        "population": 93259,
+        "cells": 206,
+        "layer": "cities/rio-bravo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -98.08938,
+            25.99053
+          ]
+        },
+        "properties": {
+          "id": "rio-bravo",
+          "name": "Río Bravo",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 16.2,
+          "population": 93259
+        }
+      },
+      "summary": null
+    }
+  }
+}

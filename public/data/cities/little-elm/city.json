@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "little-elm",
+  "createdAt": "2026-10-08T15:51:35.154Z",
+  "updatedAt": "2026-10-08T15:51:35.154Z",
+  "meta": {
+    "name": "Little Elm",
+    "nameIt": "Little Elm",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Little Elm.geojson",
+      "sha256": "20817f614314b764153811a9d7fae2ac140e941c091d4357535a32e5ad30f5ac",
+      "size": 305219,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "little-elm",
+    "name": "Little Elm",
+    "nameIt": "Little Elm",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -96.8805,
+      33.16271
+    ],
+    "zoom": 11,
+    "population": 90511,
+    "grid": "cities/little-elm/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/little-elm/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "little-elm",
+        "name": "Little Elm",
+        "nameIt": "Little Elm",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -96.8805,
+          33.16271
+        ],
+        "zoom": 11,
+        "population": 90511,
+        "cells": 263,
+        "layer": "cities/little-elm/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -96.8805,
+            33.16271
+          ]
+        },
+        "properties": {
+          "id": "little-elm",
+          "name": "Little Elm",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20.9,
+          "population": 90511
+        }
+      },
+      "summary": null
+    }
+  }
+}

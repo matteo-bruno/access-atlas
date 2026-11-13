@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "satu-mare",
+  "createdAt": "2026-10-08T16:11:39.055Z",
+  "updatedAt": "2026-10-08T16:11:39.055Z",
+  "meta": {
+    "name": "Satu Mare",
+    "nameIt": "Satu Mare",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Satu Mare.geojson",
+      "sha256": "d4b55984b1146e9b0bfa68ceac75b8d856a6509c634738795be1c0cf4d43b20f",
+      "size": 203768,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "satu-mare",
+    "name": "Satu Mare",
+    "nameIt": "Satu Mare",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO",
+    "center": [
+      22.87536,
+      47.78983
+    ],
+    "zoom": 11.5,
+    "population": 65559,
+    "grid": "cities/satu-mare/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/satu-mare/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "satu-mare",
+        "name": "Satu Mare",
+        "nameIt": "Satu Mare",
+        "region": "Romania",
+        "regionIt": "Romania",
+        "country": "RO",
+        "center": [
+          22.87536,
+          47.78983
+        ],
+        "zoom": 11.5,
+        "population": 65559,
+        "cells": 178,
+        "layer": "cities/satu-mare/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            22.87536,
+            47.78983
+          ]
+        },
+        "properties": {
+          "id": "satu-mare",
+          "name": "Satu Mare",
+          "country": "RO",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 65559
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "makiivka",
+  "createdAt": "2026-10-08T15:54:00.307Z",
+  "updatedAt": "2026-10-08T15:54:00.307Z",
+  "meta": {
+    "name": "Makiivka",
+    "nameIt": "Makiivka",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Makiivka.geojson",
+      "sha256": "0492b9dc36dc305a64963fcefb57c8c6c86fbcad776c476f34702ab7356cbcc6",
+      "size": 830552,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "makiivka",
+    "name": "Makiivka",
+    "nameIt": "Makiivka",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      37.96164,
+      48.05459
+    ],
+    "zoom": 10.5,
+    "population": 185958,
+    "grid": "cities/makiivka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/makiivka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "makiivka",
+        "name": "Makiivka",
+        "nameIt": "Makiivka",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          37.96164,
+          48.05459
+        ],
+        "zoom": 10.5,
+        "population": 185958,
+        "cells": 725,
+        "layer": "cities/makiivka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.96164,
+            48.05459
+          ]
+        },
+        "properties": {
+          "id": "makiivka",
+          "name": "Makiivka",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 21.6,
+          "population": 185958
+        }
+      },
+      "summary": null
+    }
+  }
+}

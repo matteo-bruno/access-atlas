@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gwaram",
+  "createdAt": "2026-10-08T15:36:57.552Z",
+  "updatedAt": "2026-10-08T15:36:57.552Z",
+  "meta": {
+    "name": "Gwaram",
+    "nameIt": "Gwaram",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gwaram.geojson",
+      "sha256": "071481f069d224fa42192ce488fa119ead1527ed96d2faed3f31030300dc853c",
+      "size": 44046,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gwaram",
+    "name": "Gwaram",
+    "nameIt": "Gwaram",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      9.88475,
+      11.27676
+    ],
+    "zoom": 12,
+    "population": 24498,
+    "grid": "cities/gwaram/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gwaram/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gwaram",
+        "name": "Gwaram",
+        "nameIt": "Gwaram",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          9.88475,
+          11.27676
+        ],
+        "zoom": 12,
+        "population": 24498,
+        "cells": 38,
+        "layer": "cities/gwaram/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.88475,
+            11.27676
+          ]
+        },
+        "properties": {
+          "id": "gwaram",
+          "name": "Gwaram",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 24498
+        }
+      },
+      "summary": null
+    }
+  }
+}

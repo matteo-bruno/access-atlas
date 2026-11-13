@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhodzina",
+  "createdAt": "2026-10-08T16:25:18.765Z",
+  "updatedAt": "2026-10-08T16:25:18.765Z",
+  "meta": {
+    "name": "Zhodzina",
+    "nameIt": "Zhodzina",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhodzina.geojson",
+      "sha256": "4283fde9eab46e1a35d91dc18670d40e86e0ec9d3f0b61f7fbd89a17f8bb5ab4",
+      "size": 235779,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhodzina",
+    "name": "Zhodzina",
+    "nameIt": "Zhodzina",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY",
+    "center": [
+      28.32788,
+      54.09851
+    ],
+    "zoom": 11.5,
+    "population": 55972,
+    "grid": "cities/zhodzina/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhodzina/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhodzina",
+        "name": "Zhodzina",
+        "nameIt": "Zhodzina",
+        "region": "Belarus",
+        "regionIt": "Bielorussia",
+        "country": "BY",
+        "center": [
+          28.32788,
+          54.09851
+        ],
+        "zoom": 11.5,
+        "population": 55972,
+        "cells": 205,
+        "layer": "cities/zhodzina/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.32788,
+            54.09851
+          ]
+        },
+        "properties": {
+          "id": "zhodzina",
+          "name": "Zhodzina",
+          "country": "BY",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 55972
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kozhikode",
+  "createdAt": "2026-10-08T15:48:19.838Z",
+  "updatedAt": "2026-10-08T15:48:19.838Z",
+  "meta": {
+    "name": "Kozhikode",
+    "nameIt": "Kozhikode",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kozhikode.geojson",
+      "sha256": "fbc6e7c4df7f7b11a932cd87f6957fd84791b6c5d175befd8719db878e5fb2e6",
+      "size": 14591204,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kozhikode",
+    "name": "Kozhikode",
+    "nameIt": "Kozhikode",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.94292,
+      11.1558
+    ],
+    "zoom": 8.5,
+    "population": 2350845,
+    "grid": "cities/kozhikode/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kozhikode/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kozhikode",
+        "name": "Kozhikode",
+        "nameIt": "Kozhikode",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.94292,
+          11.1558
+        ],
+        "zoom": 8.5,
+        "population": 2350845,
+        "cells": 12662,
+        "layer": "cities/kozhikode/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.94292,
+            11.1558
+          ]
+        },
+        "properties": {
+          "id": "kozhikode",
+          "name": "Kozhikode",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 32.8,
+          "population": 2350845
+        }
+      },
+      "summary": null
+    }
+  }
+}

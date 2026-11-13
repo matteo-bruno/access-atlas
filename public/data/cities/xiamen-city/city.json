@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xiamen-city",
+  "createdAt": "2026-10-08T16:22:15.418Z",
+  "updatedAt": "2026-10-08T16:22:15.418Z",
+  "meta": {
+    "name": "Xiamen City",
+    "nameIt": "Xiamen City",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xiamen City.geojson",
+      "sha256": "0ddc84e59ec36749a17e0f5ae422976056206da90bbd89bbd7c66832b6fa6c53",
+      "size": 2287091,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xiamen-city",
+    "name": "Xiamen City",
+    "nameIt": "Xiamen City",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.12004,
+      24.49416
+    ],
+    "zoom": 9.6,
+    "population": 2162667,
+    "grid": "cities/xiamen-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xiamen-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xiamen-city",
+        "name": "Xiamen City",
+        "nameIt": "Xiamen City",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.12004,
+          24.49416
+        ],
+        "zoom": 9.6,
+        "population": 2162667,
+        "cells": 1971,
+        "layer": "cities/xiamen-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.12004,
+            24.49416
+          ]
+        },
+        "properties": {
+          "id": "xiamen-city",
+          "name": "Xiamen City",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 25.7,
+          "population": 2162667
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jamner",
+  "createdAt": "2026-10-08T15:41:54.800Z",
+  "updatedAt": "2026-10-08T15:41:54.800Z",
+  "meta": {
+    "name": "Jamner",
+    "nameIt": "Jamner",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jamner.geojson",
+      "sha256": "91cfc534dd3456f7ef3e6e5b6750ccc405e8484515d33ec32b97b3d604cae1f3",
+      "size": 105333,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jamner",
+    "name": "Jamner",
+    "nameIt": "Jamner",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.77602,
+      20.80992
+    ],
+    "zoom": 12,
+    "population": 46398,
+    "grid": "cities/jamner/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jamner/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jamner",
+        "name": "Jamner",
+        "nameIt": "Jamner",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.77602,
+          20.80992
+        ],
+        "zoom": 12,
+        "population": 46398,
+        "cells": 91,
+        "layer": "cities/jamner/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.77602,
+            20.80992
+          ]
+        },
+        "properties": {
+          "id": "jamner",
+          "name": "Jamner",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 46398
+        }
+      },
+      "summary": null
+    }
+  }
+}

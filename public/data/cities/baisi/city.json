@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baisi",
+  "createdAt": "2026-10-08T15:13:37.273Z",
+  "updatedAt": "2026-10-08T15:13:37.273Z",
+  "meta": {
+    "name": "Baisi",
+    "nameIt": "Baisi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baisi.geojson",
+      "sha256": "a6adcf79caa0f093bc764f0361a99c41cecc0eacfd15fbe2512610e5abd7a534",
+      "size": 426300,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baisi",
+    "name": "Baisi",
+    "nameIt": "Baisi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.74399,
+      25.88646
+    ],
+    "zoom": 10.6,
+    "population": 99228,
+    "grid": "cities/baisi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baisi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baisi",
+        "name": "Baisi",
+        "nameIt": "Baisi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.74399,
+          25.88646
+        ],
+        "zoom": 10.6,
+        "population": 99228,
+        "cells": 368,
+        "layer": "cities/baisi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.74399,
+            25.88646
+          ]
+        },
+        "properties": {
+          "id": "baisi",
+          "name": "Baisi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 99228
+        }
+      },
+      "summary": null
+    }
+  }
+}

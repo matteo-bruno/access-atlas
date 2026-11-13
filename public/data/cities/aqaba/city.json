@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aqaba",
+  "createdAt": "2026-10-08T15:08:52.278Z",
+  "updatedAt": "2026-10-08T15:08:52.278Z",
+  "meta": {
+    "name": "Aqaba",
+    "nameIt": "Aqaba",
+    "region": "Jordan",
+    "regionIt": "Giordania",
+    "country": "JO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aqaba.geojson",
+      "sha256": "14f5c31e5a9443d7cf12b74c75ce8e9475df2e3e042c1d0dc40c185bcc22eab7",
+      "size": 250203,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aqaba",
+    "name": "Aqaba",
+    "nameIt": "Aqaba",
+    "region": "Jordan",
+    "regionIt": "Giordania",
+    "country": "JO",
+    "center": [
+      35.01171,
+      29.54429
+    ],
+    "zoom": 11.4,
+    "population": 104655,
+    "grid": "cities/aqaba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aqaba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aqaba",
+        "name": "Aqaba",
+        "nameIt": "Aqaba",
+        "region": "Jordan",
+        "regionIt": "Giordania",
+        "country": "JO",
+        "center": [
+          35.01171,
+          29.54429
+        ],
+        "zoom": 11.4,
+        "population": 104655,
+        "cells": 216,
+        "layer": "cities/aqaba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.01171,
+            29.54429
+          ]
+        },
+        "properties": {
+          "id": "aqaba",
+          "name": "Aqaba",
+          "country": "JO",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 104655
+        }
+      },
+      "summary": null
+    }
+  }
+}

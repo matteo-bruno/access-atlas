@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sennar",
+  "createdAt": "2026-10-08T16:11:58.529Z",
+  "updatedAt": "2026-10-08T16:11:58.529Z",
+  "meta": {
+    "name": "Sennar",
+    "nameIt": "Sennar",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sennar.geojson",
+      "sha256": "29d63bf83227e90bcada3d31cb532369fc5eaad927ca0b0629bb6f818df6d9e4",
+      "size": 224716,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sennar",
+    "name": "Sennar",
+    "nameIt": "Sennar",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      33.60678,
+      13.53721
+    ],
+    "zoom": 11.1,
+    "population": 245762,
+    "grid": "cities/sennar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sennar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sennar",
+        "name": "Sennar",
+        "nameIt": "Sennar",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          33.60678,
+          13.53721
+        ],
+        "zoom": 11.1,
+        "population": 245762,
+        "cells": 193,
+        "layer": "cities/sennar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.60678,
+            13.53721
+          ]
+        },
+        "properties": {
+          "id": "sennar",
+          "name": "Sennar",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 245762
+        }
+      },
+      "summary": null
+    }
+  }
+}

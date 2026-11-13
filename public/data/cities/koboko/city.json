@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "koboko",
+  "createdAt": "2026-10-08T15:47:31.412Z",
+  "updatedAt": "2026-10-08T15:47:31.412Z",
+  "meta": {
+    "name": "Koboko",
+    "nameIt": "Koboko",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Koboko.geojson",
+      "sha256": "d5ce302ea9cb7bd210b6ac57646a8fafffebd81258091257f43cd0fcc3a19ae8",
+      "size": 187132,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "koboko",
+    "name": "Koboko",
+    "nameIt": "Koboko",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG",
+    "center": [
+      30.96426,
+      3.41398
+    ],
+    "zoom": 11.6,
+    "population": 30783,
+    "grid": "cities/koboko/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/koboko/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "koboko",
+        "name": "Koboko",
+        "nameIt": "Koboko",
+        "region": "Uganda",
+        "regionIt": "Uganda",
+        "country": "UG",
+        "center": [
+          30.96426,
+          3.41398
+        ],
+        "zoom": 11.6,
+        "population": 30783,
+        "cells": 161,
+        "layer": "cities/koboko/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.96426,
+            3.41398
+          ]
+        },
+        "properties": {
+          "id": "koboko",
+          "name": "Koboko",
+          "country": "UG",
+          "isStudy": true,
+          "proximityMinutes": 21.7,
+          "population": 30783
+        }
+      },
+      "summary": null
+    }
+  }
+}

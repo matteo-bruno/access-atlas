@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hojai",
+  "createdAt": "2026-10-08T15:38:55.307Z",
+  "updatedAt": "2026-10-08T15:38:55.307Z",
+  "meta": {
+    "name": "Hojai",
+    "nameIt": "Hojai",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hojai.geojson",
+      "sha256": "451ac29b32478612bc107389e75fa0a60a4e34071464fb8bad359563f6813a84",
+      "size": 324684,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hojai",
+    "name": "Hojai",
+    "nameIt": "Hojai",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      92.86184,
+      26.01528
+    ],
+    "zoom": 10.9,
+    "population": 95801,
+    "grid": "cities/hojai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hojai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hojai",
+        "name": "Hojai",
+        "nameIt": "Hojai",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          92.86184,
+          26.01528
+        ],
+        "zoom": 10.9,
+        "population": 95801,
+        "cells": 280,
+        "layer": "cities/hojai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            92.86184,
+            26.01528
+          ]
+        },
+        "properties": {
+          "id": "hojai",
+          "name": "Hojai",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 68.6,
+          "population": 95801
+        }
+      },
+      "summary": null
+    }
+  }
+}

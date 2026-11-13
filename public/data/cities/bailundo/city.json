@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bailundo",
+  "createdAt": "2026-10-08T15:13:30.358Z",
+  "updatedAt": "2026-10-08T15:13:30.358Z",
+  "meta": {
+    "name": "Bailundo",
+    "nameIt": "Bailundo",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bailundo.geojson",
+      "sha256": "91c53e301e77d61de4fbb527266b3859612ff407136965e50e63f000e11e4ee8",
+      "size": 173097,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bailundo",
+    "name": "Bailundo",
+    "nameIt": "Bailundo",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO",
+    "center": [
+      15.86137,
+      -12.19357
+    ],
+    "zoom": 11.6,
+    "population": 51830,
+    "grid": "cities/bailundo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bailundo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bailundo",
+        "name": "Bailundo",
+        "nameIt": "Bailundo",
+        "region": "Angola",
+        "regionIt": "Angola",
+        "country": "AO",
+        "center": [
+          15.86137,
+          -12.19357
+        ],
+        "zoom": 11.6,
+        "population": 51830,
+        "cells": 147,
+        "layer": "cities/bailundo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            15.86137,
+            -12.19357
+          ]
+        },
+        "properties": {
+          "id": "bailundo",
+          "name": "Bailundo",
+          "country": "AO",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 51830
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "surgut",
+  "createdAt": "2026-10-08T16:15:24.004Z",
+  "updatedAt": "2026-10-08T16:15:24.004Z",
+  "meta": {
+    "name": "Surgut",
+    "nameIt": "Surgut",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Surgut.geojson",
+      "sha256": "f6090f573ed85c4a04d702c5f7c062332824b8deb79b9d76fe12d48b511d825e",
+      "size": 243737,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "surgut",
+    "name": "Surgut",
+    "nameIt": "Surgut",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      73.40741,
+      61.26254
+    ],
+    "zoom": 11.3,
+    "population": 153979,
+    "grid": "cities/surgut/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/surgut/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "surgut",
+        "name": "Surgut",
+        "nameIt": "Surgut",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          73.40741,
+          61.26254
+        ],
+        "zoom": 11.3,
+        "population": 153979,
+        "cells": 214,
+        "layer": "cities/surgut/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.40741,
+            61.26254
+          ]
+        },
+        "properties": {
+          "id": "surgut",
+          "name": "Surgut",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 8.9,
+          "population": 153979
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "surendranagar",
+  "createdAt": "2026-10-08T16:15:23.666Z",
+  "updatedAt": "2026-10-08T16:15:23.666Z",
+  "meta": {
+    "name": "Surendranagar",
+    "nameIt": "Surendranagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Surendranagar.geojson",
+      "sha256": "790f2b7d746ac8330fe2483512612d2af8eefc81024872b0c3ddd78df8b9b331",
+      "size": 386226,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "surendranagar",
+    "name": "Surendranagar",
+    "nameIt": "Surendranagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      71.64411,
+      22.72427
+    ],
+    "zoom": 10.8,
+    "population": 226297,
+    "grid": "cities/surendranagar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/surendranagar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "surendranagar",
+        "name": "Surendranagar",
+        "nameIt": "Surendranagar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          71.64411,
+          22.72427
+        ],
+        "zoom": 10.8,
+        "population": 226297,
+        "cells": 333,
+        "layer": "cities/surendranagar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.64411,
+            22.72427
+          ]
+        },
+        "properties": {
+          "id": "surendranagar",
+          "name": "Surendranagar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 22.6,
+          "population": 226297
+        }
+      },
+      "summary": null
+    }
+  }
+}

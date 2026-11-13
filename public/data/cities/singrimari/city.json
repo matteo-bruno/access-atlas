@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "singrimari",
+  "createdAt": "2026-10-08T16:13:51.927Z",
+  "updatedAt": "2026-10-08T16:13:51.927Z",
+  "meta": {
+    "name": "Singrimari",
+    "nameIt": "Singrimari",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Singrimari.geojson",
+      "sha256": "5204d7b73abc674a9150ac3ddf814460b9b7727f3ce73b4f41d06de5a21c97a2",
+      "size": 404240,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "singrimari",
+    "name": "Singrimari",
+    "nameIt": "Singrimari",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      89.92749,
+      25.6218
+    ],
+    "zoom": 10.4,
+    "population": 21386,
+    "grid": "cities/singrimari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/singrimari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "singrimari",
+        "name": "Singrimari",
+        "nameIt": "Singrimari",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          89.92749,
+          25.6218
+        ],
+        "zoom": 10.4,
+        "population": 21386,
+        "cells": 349,
+        "layer": "cities/singrimari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.92749,
+            25.6218
+          ]
+        },
+        "properties": {
+          "id": "singrimari",
+          "name": "Singrimari",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 25.4,
+          "population": 21386
+        }
+      },
+      "summary": null
+    }
+  }
+}

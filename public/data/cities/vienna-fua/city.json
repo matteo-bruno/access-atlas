@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vienna-fua",
+  "createdAt": "2026-10-19T16:58:54.453Z",
+  "updatedAt": "2026-10-19T16:58:54.453Z",
+  "meta": {
+    "name": "Vienna",
+    "nameIt": "Vienna",
+    "region": "Austria",
+    "regionIt": "Austria",
+    "country": "AT"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "vienna-fua",
+    "name": "Vienna",
+    "nameIt": "Vienna",
+    "region": "Austria",
+    "regionIt": "Austria",
+    "country": "AT",
+    "extent": "fua",
+    "core": "vienna",
+    "center": [
+      16.35962,
+      48.18932
+    ],
+    "zoom": 8.5,
+    "population": 2656143,
+    "grid": "cities/vienna-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vienna-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vienna-fua",
+        "name": "Vienna",
+        "nameIt": "Vienna",
+        "region": "Austria",
+        "regionIt": "Austria",
+        "country": "AT",
+        "extent": "fua",
+        "core": "vienna",
+        "center": [
+          16.35962,
+          48.18932
+        ],
+        "zoom": 8.5,
+        "population": 2656143,
+        "cells": 29741,
+        "layer": "cities/vienna-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.35962,
+            48.18932
+          ]
+        },
+        "properties": {
+          "id": "vienna-fua",
+          "name": "Vienna",
+          "country": "AT",
+          "isStudy": true,
+          "proximityMinutes": 7.1,
+          "population": 2656143
+        }
+      },
+      "summary": null
+    }
+  }
+}

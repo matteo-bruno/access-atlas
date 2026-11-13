@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chamagram",
+  "createdAt": "2026-10-08T15:23:20.690Z",
+  "updatedAt": "2026-10-08T15:23:20.690Z",
+  "meta": {
+    "name": "Chamagram",
+    "nameIt": "Chamagram",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chamagram.geojson",
+      "sha256": "0497d3b6824d7a3f49e6b798b6d58fd3b16a83bb2376114d24b128fd9086c80d",
+      "size": 600033,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chamagram",
+    "name": "Chamagram",
+    "nameIt": "Chamagram",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.97872,
+      24.82076
+    ],
+    "zoom": 10.5,
+    "population": 126268,
+    "grid": "cities/chamagram/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chamagram/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chamagram",
+        "name": "Chamagram",
+        "nameIt": "Chamagram",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.97872,
+          24.82076
+        ],
+        "zoom": 10.5,
+        "population": 126268,
+        "cells": 518,
+        "layer": "cities/chamagram/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.97872,
+            24.82076
+          ]
+        },
+        "properties": {
+          "id": "chamagram",
+          "name": "Chamagram",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 126268
+        }
+      },
+      "summary": null
+    }
+  }
+}

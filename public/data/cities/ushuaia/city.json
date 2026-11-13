@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ushuaia",
+  "createdAt": "2026-10-08T16:20:07.405Z",
+  "updatedAt": "2026-10-08T16:20:07.405Z",
+  "meta": {
+    "name": "Ushuaia",
+    "nameIt": "Ushuaia",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ushuaia.geojson",
+      "sha256": "7ff15f00f4167dfd97fa01c9780711c693099aa0ba839ce53e63358253528d77",
+      "size": 248393,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ushuaia",
+    "name": "Ushuaia",
+    "nameIt": "Ushuaia",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -68.32046,
+      -54.81089
+    ],
+    "zoom": 10.8,
+    "population": 70848,
+    "grid": "cities/ushuaia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ushuaia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ushuaia",
+        "name": "Ushuaia",
+        "nameIt": "Ushuaia",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -68.32046,
+          -54.81089
+        ],
+        "zoom": 10.8,
+        "population": 70848,
+        "cells": 214,
+        "layer": "cities/ushuaia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -68.32046,
+            -54.81089
+          ]
+        },
+        "properties": {
+          "id": "ushuaia",
+          "name": "Ushuaia",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 12.9,
+          "population": 70848
+        }
+      },
+      "summary": null
+    }
+  }
+}

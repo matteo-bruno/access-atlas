@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "joliet",
+  "createdAt": "2026-10-08T15:43:29.072Z",
+  "updatedAt": "2026-10-08T15:43:29.072Z",
+  "meta": {
+    "name": "Joliet",
+    "nameIt": "Joliet",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Joliet.geojson",
+      "sha256": "875e080e6c8287a4e25831179c34e1b7c1b8a070335f8f103430babca89cd7be",
+      "size": 537636,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "joliet",
+    "name": "Joliet",
+    "nameIt": "Joliet",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -88.1019,
+      41.53225
+    ],
+    "zoom": 10.5,
+    "population": 86334,
+    "grid": "cities/joliet/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/joliet/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "joliet",
+        "name": "Joliet",
+        "nameIt": "Joliet",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -88.1019,
+          41.53225
+        ],
+        "zoom": 10.5,
+        "population": 86334,
+        "cells": 464,
+        "layer": "cities/joliet/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.1019,
+            41.53225
+          ]
+        },
+        "properties": {
+          "id": "joliet",
+          "name": "Joliet",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.3,
+          "population": 86334
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "palma-soriano",
+  "createdAt": "2026-10-08T16:03:50.836Z",
+  "updatedAt": "2026-10-08T16:03:50.836Z",
+  "meta": {
+    "name": "Palma Soriano",
+    "nameIt": "Palma Soriano",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Palma Soriano.geojson",
+      "sha256": "06fea7692ebd73f5455661ad096cb8773a5f1bfdab91b626614c70edc73a7bc4",
+      "size": 183161,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "palma-soriano",
+    "name": "Palma Soriano",
+    "nameIt": "Palma Soriano",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU",
+    "center": [
+      -75.99579,
+      20.21609
+    ],
+    "zoom": 11.6,
+    "population": 76074,
+    "grid": "cities/palma-soriano/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/palma-soriano/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "palma-soriano",
+        "name": "Palma Soriano",
+        "nameIt": "Palma Soriano",
+        "region": "Cuba",
+        "regionIt": "Cuba",
+        "country": "CU",
+        "center": [
+          -75.99579,
+          20.21609
+        ],
+        "zoom": 11.6,
+        "population": 76074,
+        "cells": 158,
+        "layer": "cities/palma-soriano/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.99579,
+            20.21609
+          ]
+        },
+        "properties": {
+          "id": "palma-soriano",
+          "name": "Palma Soriano",
+          "country": "CU",
+          "isStudy": true,
+          "proximityMinutes": 12,
+          "population": 76074
+        }
+      },
+      "summary": null
+    }
+  }
+}

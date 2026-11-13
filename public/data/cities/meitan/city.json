@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "meitan",
+  "createdAt": "2026-10-08T15:56:23.072Z",
+  "updatedAt": "2026-10-08T15:56:23.072Z",
+  "meta": {
+    "name": "Meitan",
+    "nameIt": "Meitan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Meitan.geojson",
+      "sha256": "58e490d0f8a0100f395e0a12777ac60e4a739400f68cb2f797533a22a9dbd8e0",
+      "size": 135594,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "meitan",
+    "name": "Meitan",
+    "nameIt": "Meitan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      107.46805,
+      27.76205
+    ],
+    "zoom": 11.4,
+    "population": 120550,
+    "grid": "cities/meitan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/meitan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "meitan",
+        "name": "Meitan",
+        "nameIt": "Meitan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          107.46805,
+          27.76205
+        ],
+        "zoom": 11.4,
+        "population": 120550,
+        "cells": 116,
+        "layer": "cities/meitan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.46805,
+            27.76205
+          ]
+        },
+        "properties": {
+          "id": "meitan",
+          "name": "Meitan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 21.5,
+          "population": 120550
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gabu",
+  "createdAt": "2026-10-08T15:34:10.042Z",
+  "updatedAt": "2026-10-08T15:34:10.042Z",
+  "meta": {
+    "name": "Gabu",
+    "nameIt": "Gabu",
+    "region": "Guinea-Bissau",
+    "regionIt": "Guinea-Bissau",
+    "country": "GW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gabu.geojson",
+      "sha256": "90812e54b3eb6cec8ea11b77f509e156322a627b28e70b48bae7e30551605087",
+      "size": 134219,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gabu",
+    "name": "Gabu",
+    "nameIt": "Gabu",
+    "region": "Guinea-Bissau",
+    "regionIt": "Guinea-Bissau",
+    "country": "GW",
+    "center": [
+      -14.2307,
+      12.28424
+    ],
+    "zoom": 11.7,
+    "population": 55734,
+    "grid": "cities/gabu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gabu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gabu",
+        "name": "Gabu",
+        "nameIt": "Gabu",
+        "region": "Guinea-Bissau",
+        "regionIt": "Guinea-Bissau",
+        "country": "GW",
+        "center": [
+          -14.2307,
+          12.28424
+        ],
+        "zoom": 11.7,
+        "population": 55734,
+        "cells": 114,
+        "layer": "cities/gabu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -14.2307,
+            12.28424
+          ]
+        },
+        "properties": {
+          "id": "gabu",
+          "name": "Gabu",
+          "country": "GW",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 55734
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "meili",
+  "createdAt": "2026-10-08T15:56:20.914Z",
+  "updatedAt": "2026-10-08T15:56:20.914Z",
+  "meta": {
+    "name": "Meili",
+    "nameIt": "Meili",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Meili.geojson",
+      "sha256": "e784fdb1687b44da662ee10727803dbed131988a8e0a12ca605c8fbb41cd00bf",
+      "size": 1051642,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "meili",
+    "name": "Meili",
+    "nameIt": "Meili",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      120.90321,
+      31.72989
+    ],
+    "zoom": 10.2,
+    "population": 182504,
+    "grid": "cities/meili/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/meili/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "meili",
+        "name": "Meili",
+        "nameIt": "Meili",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          120.90321,
+          31.72989
+        ],
+        "zoom": 10.2,
+        "population": 182504,
+        "cells": 900,
+        "layer": "cities/meili/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.90321,
+            31.72989
+          ]
+        },
+        "properties": {
+          "id": "meili",
+          "name": "Meili",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 182504
+        }
+      },
+      "summary": null
+    }
+  }
+}

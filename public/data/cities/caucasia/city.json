@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "caucasia",
+  "createdAt": "2026-10-08T15:22:52.400Z",
+  "updatedAt": "2026-10-08T15:22:52.400Z",
+  "meta": {
+    "name": "Caucasia",
+    "nameIt": "Caucasia",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Caucasia.geojson",
+      "sha256": "17555a32352ddc3db69191a7e542e126bb83e7bd42905deb9bed4ce8a7b484dd",
+      "size": 120582,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "caucasia",
+    "name": "Caucasia",
+    "nameIt": "Caucasia",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -75.19916,
+      7.98516
+    ],
+    "zoom": 12,
+    "population": 79775,
+    "grid": "cities/caucasia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/caucasia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "caucasia",
+        "name": "Caucasia",
+        "nameIt": "Caucasia",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -75.19916,
+          7.98516
+        ],
+        "zoom": 12,
+        "population": 79775,
+        "cells": 104,
+        "layer": "cities/caucasia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.19916,
+            7.98516
+          ]
+        },
+        "properties": {
+          "id": "caucasia",
+          "name": "Caucasia",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 79775
+        }
+      },
+      "summary": null
+    }
+  }
+}

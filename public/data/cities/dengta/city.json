@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dengta",
+  "createdAt": "2026-10-08T15:28:54.129Z",
+  "updatedAt": "2026-10-08T15:28:54.129Z",
+  "meta": {
+    "name": "Dengta",
+    "nameIt": "Dengta",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dengta.geojson",
+      "sha256": "c2f2d7b44a9d1f125a43de91209d247637a927af08e02d5dc54e1734cbffd24f",
+      "size": 264478,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dengta",
+    "name": "Dengta",
+    "nameIt": "Dengta",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      123.32589,
+      41.42397
+    ],
+    "zoom": 11.2,
+    "population": 95047,
+    "grid": "cities/dengta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 166
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dengta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dengta",
+        "name": "Dengta",
+        "nameIt": "Dengta",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          123.32589,
+          41.42397
+        ],
+        "zoom": 11.2,
+        "population": 95047,
+        "cells": 227,
+        "layer": "cities/dengta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 166
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.32589,
+            41.42397
+          ]
+        },
+        "properties": {
+          "id": "dengta",
+          "name": "Dengta",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 95047
+        }
+      },
+      "summary": null
+    }
+  }
+}

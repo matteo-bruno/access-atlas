@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jimei",
+  "createdAt": "2026-10-08T15:42:51.970Z",
+  "updatedAt": "2026-10-08T15:42:51.970Z",
+  "meta": {
+    "name": "Jimei",
+    "nameIt": "Jimei",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jimei.geojson",
+      "sha256": "a458a656ccadb376bbdba0c20749a3cadb7882a9f0579d59196ac68110202d7c",
+      "size": 287095,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jimei",
+    "name": "Jimei",
+    "nameIt": "Jimei",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.09875,
+      24.59732
+    ],
+    "zoom": 11.4,
+    "population": 247708,
+    "grid": "cities/jimei/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jimei/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jimei",
+        "name": "Jimei",
+        "nameIt": "Jimei",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.09875,
+          24.59732
+        ],
+        "zoom": 11.4,
+        "population": 247708,
+        "cells": 246,
+        "layer": "cities/jimei/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.09875,
+            24.59732
+          ]
+        },
+        "properties": {
+          "id": "jimei",
+          "name": "Jimei",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 18.6,
+          "population": 247708
+        }
+      },
+      "summary": null
+    }
+  }
+}

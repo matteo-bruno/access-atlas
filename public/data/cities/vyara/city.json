@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vyara",
+  "createdAt": "2026-10-08T16:21:05.906Z",
+  "updatedAt": "2026-10-08T16:21:05.906Z",
+  "meta": {
+    "name": "Vyara",
+    "nameIt": "Vyara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vyara.geojson",
+      "sha256": "372e0218b9fa6a8a342794437e670c2ecd10df82dfeeac093e3d5b8298a11587",
+      "size": 135566,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vyara",
+    "name": "Vyara",
+    "nameIt": "Vyara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.39478,
+      21.10958
+    ],
+    "zoom": 11.9,
+    "population": 60389,
+    "grid": "cities/vyara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vyara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vyara",
+        "name": "Vyara",
+        "nameIt": "Vyara",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.39478,
+          21.10958
+        ],
+        "zoom": 11.9,
+        "population": 60389,
+        "cells": 117,
+        "layer": "cities/vyara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.39478,
+            21.10958
+          ]
+        },
+        "properties": {
+          "id": "vyara",
+          "name": "Vyara",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20,
+          "population": 60389
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "juwana",
+  "createdAt": "2026-10-08T15:43:44.107Z",
+  "updatedAt": "2026-10-08T15:43:44.107Z",
+  "meta": {
+    "name": "Juwana",
+    "nameIt": "Juwana",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Juwana.geojson",
+      "sha256": "f6457b7192a9be9a9ba0d7b4665877f96980818bc85fdebba2c486d0c77f4f9e",
+      "size": 264803,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "juwana",
+    "name": "Juwana",
+    "nameIt": "Juwana",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      111.15257,
+      -6.71839
+    ],
+    "zoom": 11.1,
+    "population": 80804,
+    "grid": "cities/juwana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/juwana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "juwana",
+        "name": "Juwana",
+        "nameIt": "Juwana",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          111.15257,
+          -6.71839
+        ],
+        "zoom": 11.1,
+        "population": 80804,
+        "cells": 226,
+        "layer": "cities/juwana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.15257,
+            -6.71839
+          ]
+        },
+        "properties": {
+          "id": "juwana",
+          "name": "Juwana",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 80804
+        }
+      },
+      "summary": null
+    }
+  }
+}

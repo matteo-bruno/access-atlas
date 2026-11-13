@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "viransehir",
+  "createdAt": "2026-10-08T16:20:52.684Z",
+  "updatedAt": "2026-10-08T16:20:52.684Z",
+  "meta": {
+    "name": "Viranşehir",
+    "nameIt": "Viranşehir",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Viranşehir.geojson",
+      "sha256": "acb666cdf6492a35b1774db13afec49b98aaf34a80ca146483ff1fe5aa35ef19",
+      "size": 154938,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "viransehir",
+    "name": "Viranşehir",
+    "nameIt": "Viranşehir",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      39.76129,
+      37.23402
+    ],
+    "zoom": 11.8,
+    "population": 131747,
+    "grid": "cities/viransehir/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/viransehir/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "viransehir",
+        "name": "Viranşehir",
+        "nameIt": "Viranşehir",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          39.76129,
+          37.23402
+        ],
+        "zoom": 11.8,
+        "population": 131747,
+        "cells": 134,
+        "layer": "cities/viransehir/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.76129,
+            37.23402
+          ]
+        },
+        "properties": {
+          "id": "viransehir",
+          "name": "Viranşehir",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 10.9,
+          "population": 131747
+        }
+      },
+      "summary": null
+    }
+  }
+}

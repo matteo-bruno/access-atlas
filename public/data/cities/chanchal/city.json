@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chanchal",
+  "createdAt": "2026-10-08T15:23:25.106Z",
+  "updatedAt": "2026-10-08T15:23:25.106Z",
+  "meta": {
+    "name": "Chanchal",
+    "nameIt": "Chanchal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chanchal.geojson",
+      "sha256": "82550f97fe0a015c6b42fb6f429bee60fd2d08a6638fad22026fd528d5bbb93e",
+      "size": 92714,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chanchal",
+    "name": "Chanchal",
+    "nameIt": "Chanchal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.01074,
+      25.39063
+    ],
+    "zoom": 11.9,
+    "population": 48354,
+    "grid": "cities/chanchal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chanchal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chanchal",
+        "name": "Chanchal",
+        "nameIt": "Chanchal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.01074,
+          25.39063
+        ],
+        "zoom": 11.9,
+        "population": 48354,
+        "cells": 80,
+        "layer": "cities/chanchal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.01074,
+            25.39063
+          ]
+        },
+        "properties": {
+          "id": "chanchal",
+          "name": "Chanchal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 48354
+        }
+      },
+      "summary": null
+    }
+  }
+}

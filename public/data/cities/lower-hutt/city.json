@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lower-hutt",
+  "createdAt": "2026-10-08T15:52:16.947Z",
+  "updatedAt": "2026-10-08T15:52:16.947Z",
+  "meta": {
+    "name": "Lower Hutt",
+    "nameIt": "Lower Hutt",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lower Hutt.geojson",
+      "sha256": "3b8086cdfbc3739117a58bb14d8644857cccc279d328211d217acb73461aee87",
+      "size": 474687,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lower-hutt",
+    "name": "Lower Hutt",
+    "nameIt": "Lower Hutt",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ",
+    "center": [
+      174.92118,
+      -41.21843
+    ],
+    "zoom": 10.8,
+    "population": 73947,
+    "grid": "cities/lower-hutt/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lower-hutt/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lower-hutt",
+        "name": "Lower Hutt",
+        "nameIt": "Lower Hutt",
+        "region": "New Zealand",
+        "regionIt": "Nuova Zelanda",
+        "country": "NZ",
+        "center": [
+          174.92118,
+          -41.21843
+        ],
+        "zoom": 10.8,
+        "population": 73947,
+        "cells": 409,
+        "layer": "cities/lower-hutt/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            174.92118,
+            -41.21843
+          ]
+        },
+        "properties": {
+          "id": "lower-hutt",
+          "name": "Lower Hutt",
+          "country": "NZ",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 73947
+        }
+      },
+      "summary": null
+    }
+  }
+}

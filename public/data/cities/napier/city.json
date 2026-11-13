@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "napier",
+  "createdAt": "2026-10-08T16:00:17.176Z",
+  "updatedAt": "2026-10-08T16:00:17.176Z",
+  "meta": {
+    "name": "Napier",
+    "nameIt": "Napier",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Napier.geojson",
+      "sha256": "cd2f396ea82e0cdaf91af14862651fd4f93d1904115c8b94826b4830f1b36474",
+      "size": 365842,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "napier",
+    "name": "Napier",
+    "nameIt": "Napier",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ",
+    "center": [
+      176.88487,
+      -39.5113
+    ],
+    "zoom": 11,
+    "population": 54913,
+    "grid": "cities/napier/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/napier/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "napier",
+        "name": "Napier",
+        "nameIt": "Napier",
+        "region": "New Zealand",
+        "regionIt": "Nuova Zelanda",
+        "country": "NZ",
+        "center": [
+          176.88487,
+          -39.5113
+        ],
+        "zoom": 11,
+        "population": 54913,
+        "cells": 316,
+        "layer": "cities/napier/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            176.88487,
+            -39.5113
+          ]
+        },
+        "properties": {
+          "id": "napier",
+          "name": "Napier",
+          "country": "NZ",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 54913
+        }
+      },
+      "summary": null
+    }
+  }
+}

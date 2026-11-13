@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bambari",
+  "createdAt": "2026-10-08T15:14:25.703Z",
+  "updatedAt": "2026-10-08T15:14:25.703Z",
+  "meta": {
+    "name": "Bambari",
+    "nameIt": "Bambari",
+    "region": "Central African Republic",
+    "regionIt": "Repubblica Centrafricana",
+    "country": "CF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bambari.geojson",
+      "sha256": "188b9853bc5b775a5955cfa5152fb3b804a38802b4ac16d1d4c392598b88f254",
+      "size": 141287,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bambari",
+    "name": "Bambari",
+    "nameIt": "Bambari",
+    "region": "Central African Republic",
+    "regionIt": "Repubblica Centrafricana",
+    "country": "CF",
+    "center": [
+      20.67155,
+      5.7646
+    ],
+    "zoom": 12,
+    "population": 66425,
+    "grid": "cities/bambari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bambari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bambari",
+        "name": "Bambari",
+        "nameIt": "Bambari",
+        "region": "Central African Republic",
+        "regionIt": "Repubblica Centrafricana",
+        "country": "CF",
+        "center": [
+          20.67155,
+          5.7646
+        ],
+        "zoom": 12,
+        "population": 66425,
+        "cells": 122,
+        "layer": "cities/bambari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.67155,
+            5.7646
+          ]
+        },
+        "properties": {
+          "id": "bambari",
+          "name": "Bambari",
+          "country": "CF",
+          "isStudy": true,
+          "proximityMinutes": 16.2,
+          "population": 66425
+        }
+      },
+      "summary": null
+    }
+  }
+}

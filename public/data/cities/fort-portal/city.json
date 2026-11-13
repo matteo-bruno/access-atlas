@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fort-portal",
+  "createdAt": "2026-10-08T15:33:34.366Z",
+  "updatedAt": "2026-10-08T15:33:34.366Z",
+  "meta": {
+    "name": "Fort Portal",
+    "nameIt": "Fort Portal",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fort Portal.geojson",
+      "sha256": "46bb089e771fc4bafb7cffab9879bf65bc00f24d2a76340c5f8f8d148af71a80",
+      "size": 202012,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fort-portal",
+    "name": "Fort Portal",
+    "nameIt": "Fort Portal",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG",
+    "center": [
+      30.27531,
+      0.65604
+    ],
+    "zoom": 11.4,
+    "population": 33976,
+    "grid": "cities/fort-portal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fort-portal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fort-portal",
+        "name": "Fort Portal",
+        "nameIt": "Fort Portal",
+        "region": "Uganda",
+        "regionIt": "Uganda",
+        "country": "UG",
+        "center": [
+          30.27531,
+          0.65604
+        ],
+        "zoom": 11.4,
+        "population": 33976,
+        "cells": 174,
+        "layer": "cities/fort-portal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.27531,
+            0.65604
+          ]
+        },
+        "properties": {
+          "id": "fort-portal",
+          "name": "Fort Portal",
+          "country": "UG",
+          "isStudy": true,
+          "proximityMinutes": 18.4,
+          "population": 33976
+        }
+      },
+      "summary": null
+    }
+  }
+}

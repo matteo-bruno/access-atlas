@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "port-louis",
+  "createdAt": "2026-10-08T16:06:14.627Z",
+  "updatedAt": "2026-10-08T16:06:14.627Z",
+  "meta": {
+    "name": "Port Louis",
+    "nameIt": "Port Louis",
+    "region": "Mauritius",
+    "regionIt": "Mauritius",
+    "country": "MU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Port Louis.geojson",
+      "sha256": "fdff0a78fd6dd55a7073c012ef2c1d6ddd4bea5ada4f0d2e59cad6c4017eb5ee",
+      "size": 1350931,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "port-louis",
+    "name": "Port Louis",
+    "nameIt": "Port Louis",
+    "region": "Mauritius",
+    "regionIt": "Mauritius",
+    "country": "MU",
+    "center": [
+      57.49078,
+      -20.24799
+    ],
+    "zoom": 9.5,
+    "population": 444839,
+    "grid": "cities/port-louis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/port-louis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "port-louis",
+        "name": "Port Louis",
+        "nameIt": "Port Louis",
+        "region": "Mauritius",
+        "regionIt": "Mauritius",
+        "country": "MU",
+        "center": [
+          57.49078,
+          -20.24799
+        ],
+        "zoom": 9.5,
+        "population": 444839,
+        "cells": 1167,
+        "layer": "cities/port-louis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            57.49078,
+            -20.24799
+          ]
+        },
+        "properties": {
+          "id": "port-louis",
+          "name": "Port Louis",
+          "country": "MU",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 444839
+        }
+      },
+      "summary": null
+    }
+  }
+}

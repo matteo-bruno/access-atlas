@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "petrolina",
+  "createdAt": "2026-10-08T16:05:09.555Z",
+  "updatedAt": "2026-10-08T16:05:09.555Z",
+  "meta": {
+    "name": "Petrolina",
+    "nameIt": "Petrolina",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Petrolina.geojson",
+      "sha256": "1ddfca412afea0db0e590a86a315573b070d59ec2600bedfdf001c46bbff3bcd",
+      "size": 862523,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "petrolina",
+    "name": "Petrolina",
+    "nameIt": "Petrolina",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -40.50874,
+      -9.39897
+    ],
+    "zoom": 10.2,
+    "population": 405964,
+    "grid": "cities/petrolina/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/petrolina/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "petrolina",
+        "name": "Petrolina",
+        "nameIt": "Petrolina",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -40.50874,
+          -9.39897
+        ],
+        "zoom": 10.2,
+        "population": 405964,
+        "cells": 743,
+        "layer": "cities/petrolina/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -40.50874,
+            -9.39897
+          ]
+        },
+        "properties": {
+          "id": "petrolina",
+          "name": "Petrolina",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 20.3,
+          "population": 405964
+        }
+      },
+      "summary": null
+    }
+  }
+}

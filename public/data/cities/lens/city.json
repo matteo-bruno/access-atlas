@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lens",
+  "createdAt": "2026-10-08T15:50:44.374Z",
+  "updatedAt": "2026-10-08T15:50:44.374Z",
+  "meta": {
+    "name": "Lens",
+    "nameIt": "Lens",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lens.geojson",
+      "sha256": "8d1d2f3e685bf0d1a2b9e6094bdeca5fec3d2756080bf709df7d6cc8156ec330",
+      "size": 818970,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lens",
+    "name": "Lens",
+    "nameIt": "Lens",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      2.84381,
+      50.42686
+    ],
+    "zoom": 9.8,
+    "population": 164856,
+    "grid": "cities/lens/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lens/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lens",
+        "name": "Lens",
+        "nameIt": "Lens",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          2.84381,
+          50.42686
+        ],
+        "zoom": 9.8,
+        "population": 164856,
+        "cells": 718,
+        "layer": "cities/lens/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.84381,
+            50.42686
+          ]
+        },
+        "properties": {
+          "id": "lens",
+          "name": "Lens",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 164856
+        }
+      },
+      "summary": null
+    }
+  }
+}

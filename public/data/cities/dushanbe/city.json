@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dushanbe",
+  "createdAt": "2026-10-08T15:31:31.316Z",
+  "updatedAt": "2026-10-08T15:31:31.316Z",
+  "meta": {
+    "name": "Dushanbe",
+    "nameIt": "Dushanbe",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dushanbe.geojson",
+      "sha256": "83ff4c1860653cf93b0cdaefc4b1e5ac43000590c917292e608051016e544d70",
+      "size": 1691854,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dushanbe",
+    "name": "Dushanbe",
+    "nameIt": "Dushanbe",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ",
+    "center": [
+      68.76922,
+      38.55151
+    ],
+    "zoom": 9.7,
+    "population": 1293438,
+    "grid": "cities/dushanbe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dushanbe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dushanbe",
+        "name": "Dushanbe",
+        "nameIt": "Dushanbe",
+        "region": "Tajikistan",
+        "regionIt": "Tagikistan",
+        "country": "TJ",
+        "center": [
+          68.76922,
+          38.55151
+        ],
+        "zoom": 9.7,
+        "population": 1293438,
+        "cells": 1475,
+        "layer": "cities/dushanbe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            68.76922,
+            38.55151
+          ]
+        },
+        "properties": {
+          "id": "dushanbe",
+          "name": "Dushanbe",
+          "country": "TJ",
+          "isStudy": true,
+          "proximityMinutes": 24.9,
+          "population": 1293438
+        }
+      },
+      "summary": null
+    }
+  }
+}

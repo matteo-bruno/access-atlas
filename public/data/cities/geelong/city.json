@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "geelong",
+  "createdAt": "2026-10-08T15:34:51.182Z",
+  "updatedAt": "2026-10-08T15:34:51.182Z",
+  "meta": {
+    "name": "Geelong",
+    "nameIt": "Geelong",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Geelong.geojson",
+      "sha256": "7c275d411d91d5952d11b93c0187f286cae3e1edffb500b092bb5cdfab94775d",
+      "size": 975345,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "geelong",
+    "name": "Geelong",
+    "nameIt": "Geelong",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      144.34346,
+      -38.14893
+    ],
+    "zoom": 10,
+    "population": 155262,
+    "grid": "cities/geelong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/geelong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "geelong",
+        "name": "Geelong",
+        "nameIt": "Geelong",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          144.34346,
+          -38.14893
+        ],
+        "zoom": 10,
+        "population": 155262,
+        "cells": 843,
+        "layer": "cities/geelong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            144.34346,
+            -38.14893
+          ]
+        },
+        "properties": {
+          "id": "geelong",
+          "name": "Geelong",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 155262
+        }
+      },
+      "summary": null
+    }
+  }
+}

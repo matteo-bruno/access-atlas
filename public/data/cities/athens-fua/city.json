@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "athens-fua",
+  "createdAt": "2026-10-19T16:55:14.606Z",
+  "updatedAt": "2026-10-19T16:55:14.606Z",
+  "meta": {
+    "name": "Athens",
+    "nameIt": "Athens",
+    "region": "Greece",
+    "regionIt": "Grecia",
+    "country": "GR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "athens-fua",
+    "name": "Athens",
+    "nameIt": "Athens",
+    "region": "Greece",
+    "regionIt": "Grecia",
+    "country": "GR",
+    "extent": "fua",
+    "core": "athens",
+    "center": [
+      23.73611,
+      37.99254
+    ],
+    "zoom": 8.5,
+    "population": 3579177,
+    "grid": "cities/athens-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/athens-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "athens-fua",
+        "name": "Athens",
+        "nameIt": "Athens",
+        "region": "Greece",
+        "regionIt": "Grecia",
+        "country": "GR",
+        "extent": "fua",
+        "core": "athens",
+        "center": [
+          23.73611,
+          37.99254
+        ],
+        "zoom": 8.5,
+        "population": 3579177,
+        "cells": 18446,
+        "layer": "cities/athens-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.73611,
+            37.99254
+          ]
+        },
+        "properties": {
+          "id": "athens-fua",
+          "name": "Athens",
+          "country": "GR",
+          "isStudy": true,
+          "proximityMinutes": 7.1,
+          "population": 3579177
+        }
+      },
+      "summary": null
+    }
+  }
+}

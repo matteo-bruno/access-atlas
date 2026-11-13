@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sant-boi-de-llobregat",
+  "createdAt": "2026-10-08T16:11:00.002Z",
+  "updatedAt": "2026-10-08T16:11:00.002Z",
+  "meta": {
+    "name": "Sant Boi de Llobregat",
+    "nameIt": "Sant Boi de Llobregat",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sant Boi de Llobregat.geojson",
+      "sha256": "6b99dc8120f8be3362b41ccc819d41f346bb273b7d8b7e695cf44ed4a6ec566d",
+      "size": 299583,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sant-boi-de-llobregat",
+    "name": "Sant Boi de Llobregat",
+    "nameIt": "Sant Boi de Llobregat",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      2.02134,
+      41.32651
+    ],
+    "zoom": 10.9,
+    "population": 183038,
+    "grid": "cities/sant-boi-de-llobregat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sant-boi-de-llobregat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sant-boi-de-llobregat",
+        "name": "Sant Boi de Llobregat",
+        "nameIt": "Sant Boi de Llobregat",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          2.02134,
+          41.32651
+        ],
+        "zoom": 10.9,
+        "population": 183038,
+        "cells": 263,
+        "layer": "cities/sant-boi-de-llobregat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.02134,
+            41.32651
+          ]
+        },
+        "properties": {
+          "id": "sant-boi-de-llobregat",
+          "name": "Sant Boi de Llobregat",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 7,
+          "population": 183038
+        }
+      },
+      "summary": null
+    }
+  }
+}

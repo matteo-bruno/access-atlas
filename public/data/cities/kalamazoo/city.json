@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kalamazoo",
+  "createdAt": "2026-10-08T15:44:23.167Z",
+  "updatedAt": "2026-10-08T15:44:23.167Z",
+  "meta": {
+    "name": "Kalamazoo",
+    "nameIt": "Kalamazoo",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kalamazoo.geojson",
+      "sha256": "e0eebcb9b15607e14ac101a1d5cf0c222af7ef3dd5c9deb6ff3903f8c07cb432",
+      "size": 362789,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kalamazoo",
+    "name": "Kalamazoo",
+    "nameIt": "Kalamazoo",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -85.59957,
+      42.28377
+    ],
+    "zoom": 10.7,
+    "population": 54520,
+    "grid": "cities/kalamazoo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kalamazoo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kalamazoo",
+        "name": "Kalamazoo",
+        "nameIt": "Kalamazoo",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -85.59957,
+          42.28377
+        ],
+        "zoom": 10.7,
+        "population": 54520,
+        "cells": 315,
+        "layer": "cities/kalamazoo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.59957,
+            42.28377
+          ]
+        },
+        "properties": {
+          "id": "kalamazoo",
+          "name": "Kalamazoo",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 54520
+        }
+      },
+      "summary": null
+    }
+  }
+}

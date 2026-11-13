@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jampur",
+  "createdAt": "2026-10-08T15:41:55.174Z",
+  "updatedAt": "2026-10-08T15:41:55.174Z",
+  "meta": {
+    "name": "Jampur",
+    "nameIt": "Jampur",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jampur.geojson",
+      "sha256": "fd7145f265e25a2f6322497a7efb80997f3d2e09654fcb2c92cc5e3b6bf858da",
+      "size": 234125,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jampur",
+    "name": "Jampur",
+    "nameIt": "Jampur",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      70.59298,
+      29.63976
+    ],
+    "zoom": 11.3,
+    "population": 142368,
+    "grid": "cities/jampur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jampur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jampur",
+        "name": "Jampur",
+        "nameIt": "Jampur",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          70.59298,
+          29.63976
+        ],
+        "zoom": 11.3,
+        "population": 142368,
+        "cells": 202,
+        "layer": "cities/jampur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            70.59298,
+            29.63976
+          ]
+        },
+        "properties": {
+          "id": "jampur",
+          "name": "Jampur",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 142368
+        }
+      },
+      "summary": null
+    }
+  }
+}

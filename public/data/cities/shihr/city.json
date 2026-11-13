@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shihr",
+  "createdAt": "2026-10-08T16:13:02.753Z",
+  "updatedAt": "2026-10-08T16:13:02.753Z",
+  "meta": {
+    "name": "Shihr",
+    "nameIt": "Shihr",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shihr.geojson",
+      "sha256": "fe679221a8a8d49970c286b9eec4b737c0785187bd9484ef1af9d9970c978466",
+      "size": 211266,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shihr",
+    "name": "Shihr",
+    "nameIt": "Shihr",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE",
+    "center": [
+      49.60527,
+      14.76116
+    ],
+    "zoom": 11.4,
+    "population": 106460,
+    "grid": "cities/shihr/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shihr/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shihr",
+        "name": "Shihr",
+        "nameIt": "Shihr",
+        "region": "Yemen",
+        "regionIt": "Yemen",
+        "country": "YE",
+        "center": [
+          49.60527,
+          14.76116
+        ],
+        "zoom": 11.4,
+        "population": 106460,
+        "cells": 182,
+        "layer": "cities/shihr/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            49.60527,
+            14.76116
+          ]
+        },
+        "properties": {
+          "id": "shihr",
+          "name": "Shihr",
+          "country": "YE",
+          "isStudy": true,
+          "proximityMinutes": 12,
+          "population": 106460
+        }
+      },
+      "summary": null
+    }
+  }
+}

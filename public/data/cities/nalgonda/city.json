@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nalgonda",
+  "createdAt": "2026-10-08T15:59:53.919Z",
+  "updatedAt": "2026-10-08T15:59:53.919Z",
+  "meta": {
+    "name": "Nalgonda",
+    "nameIt": "Nalgonda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nalgonda.geojson",
+      "sha256": "fb095b9518c0a04df81317958e3c7a1d7d558ae9509e1d8d21322a0d62690ed1",
+      "size": 261797,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nalgonda",
+    "name": "Nalgonda",
+    "nameIt": "Nalgonda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.27105,
+      17.05851
+    ],
+    "zoom": 11.4,
+    "population": 189010,
+    "grid": "cities/nalgonda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nalgonda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nalgonda",
+        "name": "Nalgonda",
+        "nameIt": "Nalgonda",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.27105,
+          17.05851
+        ],
+        "zoom": 11.4,
+        "population": 189010,
+        "cells": 226,
+        "layer": "cities/nalgonda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.27105,
+            17.05851
+          ]
+        },
+        "properties": {
+          "id": "nalgonda",
+          "name": "Nalgonda",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.4,
+          "population": 189010
+        }
+      },
+      "summary": null
+    }
+  }
+}

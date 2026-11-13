@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shostka",
+  "createdAt": "2026-10-08T16:13:12.876Z",
+  "updatedAt": "2026-10-08T16:13:12.876Z",
+  "meta": {
+    "name": "Shostka",
+    "nameIt": "Shostka",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shostka.geojson",
+      "sha256": "072b9f9c3e03a1fa0ed2b18a7a23216f28293bb3e63dda4deacb0e786c623a8d",
+      "size": 136299,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shostka",
+    "name": "Shostka",
+    "nameIt": "Shostka",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      33.4746,
+      51.8617
+    ],
+    "zoom": 12,
+    "population": 33181,
+    "grid": "cities/shostka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shostka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shostka",
+        "name": "Shostka",
+        "nameIt": "Shostka",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          33.4746,
+          51.8617
+        ],
+        "zoom": 12,
+        "population": 33181,
+        "cells": 118,
+        "layer": "cities/shostka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.4746,
+            51.8617
+          ]
+        },
+        "properties": {
+          "id": "shostka",
+          "name": "Shostka",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 12.8,
+          "population": 33181
+        }
+      },
+      "summary": null
+    }
+  }
+}

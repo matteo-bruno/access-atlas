@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ganja",
+  "createdAt": "2026-10-08T15:34:27.814Z",
+  "updatedAt": "2026-10-08T15:34:27.814Z",
+  "meta": {
+    "name": "Ganja",
+    "nameIt": "Ganja",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ganja.geojson",
+      "sha256": "13d45419a687c33c8cce6428cde896be2a9320be66c3223fb46e85a25e5fe31e",
+      "size": 700451,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ganja",
+    "name": "Ganja",
+    "nameIt": "Ganja",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ",
+    "center": [
+      46.35575,
+      40.68064
+    ],
+    "zoom": 10.5,
+    "population": 294213,
+    "grid": "cities/ganja/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ganja/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ganja",
+        "name": "Ganja",
+        "nameIt": "Ganja",
+        "region": "Azerbaijan",
+        "regionIt": "Azerbaigian",
+        "country": "AZ",
+        "center": [
+          46.35575,
+          40.68064
+        ],
+        "zoom": 10.5,
+        "population": 294213,
+        "cells": 610,
+        "layer": "cities/ganja/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            46.35575,
+            40.68064
+          ]
+        },
+        "properties": {
+          "id": "ganja",
+          "name": "Ganja",
+          "country": "AZ",
+          "isStudy": true,
+          "proximityMinutes": 22.1,
+          "population": 294213
+        }
+      },
+      "summary": null
+    }
+  }
+}

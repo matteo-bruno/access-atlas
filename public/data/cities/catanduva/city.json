@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "catanduva",
+  "createdAt": "2026-10-08T15:22:49.722Z",
+  "updatedAt": "2026-10-08T15:22:49.722Z",
+  "meta": {
+    "name": "Catanduva",
+    "nameIt": "Catanduva",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Catanduva.geojson",
+      "sha256": "70350475406c1a826b70c42859cf580e2c83f5148f6c9f1c0a41ae302804ffc7",
+      "size": 320369,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "catanduva",
+    "name": "Catanduva",
+    "nameIt": "Catanduva",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -48.96946,
+      -21.13739
+    ],
+    "zoom": 11.4,
+    "population": 99063,
+    "grid": "cities/catanduva/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/catanduva/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "catanduva",
+        "name": "Catanduva",
+        "nameIt": "Catanduva",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -48.96946,
+          -21.13739
+        ],
+        "zoom": 11.4,
+        "population": 99063,
+        "cells": 274,
+        "layer": "cities/catanduva/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.96946,
+            -21.13739
+          ]
+        },
+        "properties": {
+          "id": "catanduva",
+          "name": "Catanduva",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 13.7,
+          "population": 99063
+        }
+      },
+      "summary": null
+    }
+  }
+}

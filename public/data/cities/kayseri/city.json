@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kayseri",
+  "createdAt": "2026-10-08T15:45:53.197Z",
+  "updatedAt": "2026-10-08T15:45:53.197Z",
+  "meta": {
+    "name": "Kayseri",
+    "nameIt": "Kayseri",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kayseri.geojson",
+      "sha256": "d457e2b6ca2de1924f3793db15526d7f5e086e7bf3031b89d268ad4989023518",
+      "size": 1598065,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kayseri",
+    "name": "Kayseri",
+    "nameIt": "Kayseri",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      35.51094,
+      38.73063
+    ],
+    "zoom": 9.9,
+    "population": 844762,
+    "grid": "cities/kayseri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kayseri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kayseri",
+        "name": "Kayseri",
+        "nameIt": "Kayseri",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          35.51094,
+          38.73063
+        ],
+        "zoom": 9.9,
+        "population": 844762,
+        "cells": 1392,
+        "layer": "cities/kayseri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.51094,
+            38.73063
+          ]
+        },
+        "properties": {
+          "id": "kayseri",
+          "name": "Kayseri",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 844762
+        }
+      },
+      "summary": null
+    }
+  }
+}

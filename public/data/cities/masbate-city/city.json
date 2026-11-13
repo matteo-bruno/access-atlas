@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "masbate-city",
+  "createdAt": "2026-10-08T15:55:28.250Z",
+  "updatedAt": "2026-10-08T15:55:28.250Z",
+  "meta": {
+    "name": "Masbate City",
+    "nameIt": "Masbate City",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Masbate City.geojson",
+      "sha256": "118174b477afec9b2250c38b4fc5414f2af577c9de9f8050553c8caf8bc15c40",
+      "size": 275406,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "masbate-city",
+    "name": "Masbate City",
+    "nameIt": "Masbate City",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      123.62563,
+      12.3622
+    ],
+    "zoom": 10.7,
+    "population": 81356,
+    "grid": "cities/masbate-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/masbate-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "masbate-city",
+        "name": "Masbate City",
+        "nameIt": "Masbate City",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          123.62563,
+          12.3622
+        ],
+        "zoom": 10.7,
+        "population": 81356,
+        "cells": 236,
+        "layer": "cities/masbate-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.62563,
+            12.3622
+          ]
+        },
+        "properties": {
+          "id": "masbate-city",
+          "name": "Masbate City",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 14.5,
+          "population": 81356
+        }
+      },
+      "summary": null
+    }
+  }
+}

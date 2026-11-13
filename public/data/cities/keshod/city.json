@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "keshod",
+  "createdAt": "2026-10-08T15:46:17.183Z",
+  "updatedAt": "2026-10-08T15:46:17.183Z",
+  "meta": {
+    "name": "Keshod",
+    "nameIt": "Keshod",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Keshod.geojson",
+      "sha256": "d2694fa31725d5518deec8c7f8a899b5224ff575e7e3a14a1691d08d8f542f8f",
+      "size": 134397,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "keshod",
+    "name": "Keshod",
+    "nameIt": "Keshod",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      70.25131,
+      21.29969
+    ],
+    "zoom": 12,
+    "population": 55121,
+    "grid": "cities/keshod/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/keshod/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "keshod",
+        "name": "Keshod",
+        "nameIt": "Keshod",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          70.25131,
+          21.29969
+        ],
+        "zoom": 12,
+        "population": 55121,
+        "cells": 116,
+        "layer": "cities/keshod/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            70.25131,
+            21.29969
+          ]
+        },
+        "properties": {
+          "id": "keshod",
+          "name": "Keshod",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 14.2,
+          "population": 55121
+        }
+      },
+      "summary": null
+    }
+  }
+}

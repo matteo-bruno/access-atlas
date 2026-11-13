@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hiroshima",
+  "createdAt": "2026-10-08T15:38:46.547Z",
+  "updatedAt": "2026-10-08T15:38:46.547Z",
+  "meta": {
+    "name": "Hiroshima",
+    "nameIt": "Hiroshima",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hiroshima.geojson",
+      "sha256": "2feaaf13fee2a3f6a16af2e432056fcbc50e05a2bcd0d6f8db20a6af174d6518",
+      "size": 4727942,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hiroshima",
+    "name": "Hiroshima",
+    "nameIt": "Hiroshima",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      132.45011,
+      34.40461
+    ],
+    "zoom": 9,
+    "population": 1282122,
+    "grid": "cities/hiroshima/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hiroshima/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hiroshima",
+        "name": "Hiroshima",
+        "nameIt": "Hiroshima",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          132.45011,
+          34.40461
+        ],
+        "zoom": 9,
+        "population": 1282122,
+        "cells": 4105,
+        "layer": "cities/hiroshima/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            132.45011,
+            34.40461
+          ]
+        },
+        "properties": {
+          "id": "hiroshima",
+          "name": "Hiroshima",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 1282122
+        }
+      },
+      "summary": null
+    }
+  }
+}

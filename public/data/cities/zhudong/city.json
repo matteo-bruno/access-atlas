@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhudong",
+  "createdAt": "2026-10-08T16:25:25.577Z",
+  "updatedAt": "2026-10-08T16:25:25.577Z",
+  "meta": {
+    "name": "Zhudong",
+    "nameIt": "Zhudong",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhudong.geojson",
+      "sha256": "49add833fafebfd5712afc67f60b011c0bdb8f9df65ce975af12e6a17ad2b49a",
+      "size": 114637,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhudong",
+    "name": "Zhudong",
+    "nameIt": "Zhudong",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW",
+    "center": [
+      121.09066,
+      24.73286
+    ],
+    "zoom": 11.9,
+    "population": 49752,
+    "grid": "cities/zhudong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhudong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhudong",
+        "name": "Zhudong",
+        "nameIt": "Zhudong",
+        "region": "Taiwan",
+        "regionIt": "Taiwan",
+        "country": "TW",
+        "center": [
+          121.09066,
+          24.73286
+        ],
+        "zoom": 11.9,
+        "population": 49752,
+        "cells": 99,
+        "layer": "cities/zhudong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.09066,
+            24.73286
+          ]
+        },
+        "properties": {
+          "id": "zhudong",
+          "name": "Zhudong",
+          "country": "TW",
+          "isStudy": true,
+          "proximityMinutes": 9.2,
+          "population": 49752
+        }
+      },
+      "summary": null
+    }
+  }
+}

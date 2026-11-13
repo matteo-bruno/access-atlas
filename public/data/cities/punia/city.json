@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "punia",
+  "createdAt": "2026-10-08T16:06:53.259Z",
+  "updatedAt": "2026-10-08T16:06:53.259Z",
+  "meta": {
+    "name": "Punia",
+    "nameIt": "Punia",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Punia.geojson",
+      "sha256": "a72139dfa182eaadae9efc2b04650e3837d0a9c20d7ae841049cb46b16913e3d",
+      "size": 147958,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "punia",
+    "name": "Punia",
+    "nameIt": "Punia",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      26.43288,
+      -1.45708
+    ],
+    "zoom": 11.6,
+    "population": 73592,
+    "grid": "cities/punia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/punia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "punia",
+        "name": "Punia",
+        "nameIt": "Punia",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          26.43288,
+          -1.45708
+        ],
+        "zoom": 11.6,
+        "population": 73592,
+        "cells": 126,
+        "layer": "cities/punia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.43288,
+            -1.45708
+          ]
+        },
+        "properties": {
+          "id": "punia",
+          "name": "Punia",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 73592
+        }
+      },
+      "summary": null
+    }
+  }
+}

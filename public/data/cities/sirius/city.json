@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sirius",
+  "createdAt": "2026-10-08T16:13:59.191Z",
+  "updatedAt": "2026-10-08T16:13:59.191Z",
+  "meta": {
+    "name": "Sirius",
+    "nameIt": "Sirius",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sirius.geojson",
+      "sha256": "b6573dd1411e61600308f2b1947a83a9cce2df17f7dd81463f157a706e3c5eef",
+      "size": 511786,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sirius",
+    "name": "Sirius",
+    "nameIt": "Sirius",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      39.9376,
+      43.43601
+    ],
+    "zoom": 10.4,
+    "population": 92120,
+    "grid": "cities/sirius/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sirius/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sirius",
+        "name": "Sirius",
+        "nameIt": "Sirius",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          39.9376,
+          43.43601
+        ],
+        "zoom": 10.4,
+        "population": 92120,
+        "cells": 448,
+        "layer": "cities/sirius/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.9376,
+            43.43601
+          ]
+        },
+        "properties": {
+          "id": "sirius",
+          "name": "Sirius",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 92120
+        }
+      },
+      "summary": null
+    }
+  }
+}

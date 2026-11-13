@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lutsk",
+  "createdAt": "2026-10-08T15:52:51.056Z",
+  "updatedAt": "2026-10-08T15:52:51.056Z",
+  "meta": {
+    "name": "Lutsk",
+    "nameIt": "Lutsk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lutsk.geojson",
+      "sha256": "e59554930cfd3f026b7d0f0c74964030a90908efb66011b782009cd8540613ca",
+      "size": 662522,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lutsk",
+    "name": "Lutsk",
+    "nameIt": "Lutsk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      25.3418,
+      50.74877
+    ],
+    "zoom": 10.7,
+    "population": 170654,
+    "grid": "cities/lutsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lutsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lutsk",
+        "name": "Lutsk",
+        "nameIt": "Lutsk",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          25.3418,
+          50.74877
+        ],
+        "zoom": 10.7,
+        "population": 170654,
+        "cells": 579,
+        "layer": "cities/lutsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.3418,
+            50.74877
+          ]
+        },
+        "properties": {
+          "id": "lutsk",
+          "name": "Lutsk",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 170654
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "trenton",
+  "createdAt": "2026-10-08T16:18:46.518Z",
+  "updatedAt": "2026-10-08T16:18:46.518Z",
+  "meta": {
+    "name": "Trenton",
+    "nameIt": "Trenton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Trenton.geojson",
+      "sha256": "60191a01042ebd9dbcac552fe3fdf096064d48e1d0063b9d56e9540cc4b7d9c2",
+      "size": 646136,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "trenton",
+    "name": "Trenton",
+    "nameIt": "Trenton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -74.75069,
+      40.21933
+    ],
+    "zoom": 10.5,
+    "population": 167115,
+    "grid": "cities/trenton/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/trenton/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "trenton",
+        "name": "Trenton",
+        "nameIt": "Trenton",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -74.75069,
+          40.21933
+        ],
+        "zoom": 10.5,
+        "population": 167115,
+        "cells": 562,
+        "layer": "cities/trenton/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.75069,
+            40.21933
+          ]
+        },
+        "properties": {
+          "id": "trenton",
+          "name": "Trenton",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 13.3,
+          "population": 167115
+        }
+      },
+      "summary": null
+    }
+  }
+}

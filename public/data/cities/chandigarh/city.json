@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chandigarh",
+  "createdAt": "2026-10-08T15:23:29.188Z",
+  "updatedAt": "2026-10-08T15:23:29.188Z",
+  "meta": {
+    "name": "Chandigarh",
+    "nameIt": "Chandigarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chandigarh.geojson",
+      "sha256": "e1aed642f996a80581e7e25d6d1cfd2dd8f4858cc6b38d471fbba5270ca7e394",
+      "size": 3497589,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chandigarh",
+    "name": "Chandigarh",
+    "nameIt": "Chandigarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.77754,
+      30.70733
+    ],
+    "zoom": 9.3,
+    "population": 2443914,
+    "grid": "cities/chandigarh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chandigarh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chandigarh",
+        "name": "Chandigarh",
+        "nameIt": "Chandigarh",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.77754,
+          30.70733
+        ],
+        "zoom": 9.3,
+        "population": 2443914,
+        "cells": 3033,
+        "layer": "cities/chandigarh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.77754,
+            30.70733
+          ]
+        },
+        "properties": {
+          "id": "chandigarh",
+          "name": "Chandigarh",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 33.4,
+          "population": 2443914
+        }
+      },
+      "summary": null
+    }
+  }
+}

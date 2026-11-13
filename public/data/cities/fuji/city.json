@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fuji",
+  "createdAt": "2026-10-08T15:33:50.875Z",
+  "updatedAt": "2026-10-08T15:33:50.875Z",
+  "meta": {
+    "name": "Fuji",
+    "nameIt": "Fuji",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fuji.geojson",
+      "sha256": "f1d6b84121f30e5b1ee8fa1e36f5629148f57d2a35dfc290a5fabd36a06033d2",
+      "size": 1240072,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fuji",
+    "name": "Fuji",
+    "nameIt": "Fuji",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      138.65803,
+      35.18458
+    ],
+    "zoom": 10,
+    "population": 296264,
+    "grid": "cities/fuji/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fuji/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fuji",
+        "name": "Fuji",
+        "nameIt": "Fuji",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          138.65803,
+          35.18458
+        ],
+        "zoom": 10,
+        "population": 296264,
+        "cells": 1078,
+        "layer": "cities/fuji/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            138.65803,
+            35.18458
+          ]
+        },
+        "properties": {
+          "id": "fuji",
+          "name": "Fuji",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 18.6,
+          "population": 296264
+        }
+      },
+      "summary": null
+    }
+  }
+}

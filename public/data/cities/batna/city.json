@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "batna",
+  "createdAt": "2026-10-08T15:16:07.528Z",
+  "updatedAt": "2026-10-08T15:16:07.528Z",
+  "meta": {
+    "name": "Batna",
+    "nameIt": "Batna",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Batna.geojson",
+      "sha256": "e58984c063f19910f7a5a45be5849bc4b0dd5783472d57fea65c8610d5827c4f",
+      "size": 414763,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "batna",
+    "name": "Batna",
+    "nameIt": "Batna",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      6.17157,
+      35.54508
+    ],
+    "zoom": 10.9,
+    "population": 389686,
+    "grid": "cities/batna/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/batna/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "batna",
+        "name": "Batna",
+        "nameIt": "Batna",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          6.17157,
+          35.54508
+        ],
+        "zoom": 10.9,
+        "population": 389686,
+        "cells": 363,
+        "layer": "cities/batna/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.17157,
+            35.54508
+          ]
+        },
+        "properties": {
+          "id": "batna",
+          "name": "Batna",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 17.3,
+          "population": 389686
+        }
+      },
+      "summary": null
+    }
+  }
+}

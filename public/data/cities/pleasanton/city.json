@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pleasanton",
+  "createdAt": "2026-10-08T16:05:54.808Z",
+  "updatedAt": "2026-10-08T16:05:54.808Z",
+  "meta": {
+    "name": "Pleasanton",
+    "nameIt": "Pleasanton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pleasanton.geojson",
+      "sha256": "3545bd174e25f7c8a760328e70876fc778fbc43487927e723098299bb2286d4e",
+      "size": 713190,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pleasanton",
+    "name": "Pleasanton",
+    "nameIt": "Pleasanton",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -121.9053,
+      37.70617
+    ],
+    "zoom": 10.1,
+    "population": 167114,
+    "grid": "cities/pleasanton/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pleasanton/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pleasanton",
+        "name": "Pleasanton",
+        "nameIt": "Pleasanton",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -121.9053,
+          37.70617
+        ],
+        "zoom": 10.1,
+        "population": 167114,
+        "cells": 615,
+        "layer": "cities/pleasanton/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -121.9053,
+            37.70617
+          ]
+        },
+        "properties": {
+          "id": "pleasanton",
+          "name": "Pleasanton",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 16.6,
+          "population": 167114
+        }
+      },
+      "summary": null
+    }
+  }
+}

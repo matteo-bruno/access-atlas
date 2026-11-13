@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kumbakonam",
+  "createdAt": "2026-10-08T15:48:46.359Z",
+  "updatedAt": "2026-10-08T15:48:46.359Z",
+  "meta": {
+    "name": "Kumbakonam",
+    "nameIt": "Kumbakonam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kumbakonam.geojson",
+      "sha256": "5552b8c7abe2ecb9d8d115b695297d7c5f799caa5aed73c22172ea3c22340aad",
+      "size": 457341,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kumbakonam",
+    "name": "Kumbakonam",
+    "nameIt": "Kumbakonam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.38359,
+      10.96463
+    ],
+    "zoom": 10.2,
+    "population": 198538,
+    "grid": "cities/kumbakonam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kumbakonam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kumbakonam",
+        "name": "Kumbakonam",
+        "nameIt": "Kumbakonam",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.38359,
+          10.96463
+        ],
+        "zoom": 10.2,
+        "population": 198538,
+        "cells": 394,
+        "layer": "cities/kumbakonam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.38359,
+            10.96463
+          ]
+        },
+        "properties": {
+          "id": "kumbakonam",
+          "name": "Kumbakonam",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 30.7,
+          "population": 198538
+        }
+      },
+      "summary": null
+    }
+  }
+}

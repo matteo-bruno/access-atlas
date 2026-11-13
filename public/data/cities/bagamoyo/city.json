@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bagamoyo",
+  "createdAt": "2026-10-08T15:12:42.964Z",
+  "updatedAt": "2026-10-08T15:12:42.964Z",
+  "meta": {
+    "name": "Bagamoyo",
+    "nameIt": "Bagamoyo",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bagamoyo.geojson",
+      "sha256": "72a0573ac82751da94c6668a804714a748bba5adab2f7b19df3a53ca0cf344b5",
+      "size": 90844,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bagamoyo",
+    "name": "Bagamoyo",
+    "nameIt": "Bagamoyo",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      38.89702,
+      -6.44694
+    ],
+    "zoom": 12,
+    "population": 49567,
+    "grid": "cities/bagamoyo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bagamoyo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bagamoyo",
+        "name": "Bagamoyo",
+        "nameIt": "Bagamoyo",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          38.89702,
+          -6.44694
+        ],
+        "zoom": 12,
+        "population": 49567,
+        "cells": 78,
+        "layer": "cities/bagamoyo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.89702,
+            -6.44694
+          ]
+        },
+        "properties": {
+          "id": "bagamoyo",
+          "name": "Bagamoyo",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 9.9,
+          "population": 49567
+        }
+      },
+      "summary": null
+    }
+  }
+}

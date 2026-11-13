@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "veracruz",
+  "createdAt": "2026-10-08T16:20:36.706Z",
+  "updatedAt": "2026-10-08T16:20:36.706Z",
+  "meta": {
+    "name": "Veracruz",
+    "nameIt": "Veracruz",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Veracruz.geojson",
+      "sha256": "dc7cf2cb63863370c3bc338c4259a4bd2ae7404c306ac49b55f01e602b9a4a72",
+      "size": 1432587,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "veracruz",
+    "name": "Veracruz",
+    "nameIt": "Veracruz",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -96.15886,
+      19.17518
+    ],
+    "zoom": 10,
+    "population": 735493,
+    "grid": "cities/veracruz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/veracruz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "veracruz",
+        "name": "Veracruz",
+        "nameIt": "Veracruz",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -96.15886,
+          19.17518
+        ],
+        "zoom": 10,
+        "population": 735493,
+        "cells": 1240,
+        "layer": "cities/veracruz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -96.15886,
+            19.17518
+          ]
+        },
+        "properties": {
+          "id": "veracruz",
+          "name": "Veracruz",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 15.2,
+          "population": 735493
+        }
+      },
+      "summary": null
+    }
+  }
+}

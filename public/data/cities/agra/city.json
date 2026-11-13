@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "agra",
+  "createdAt": "2026-10-08T15:03:00.353Z",
+  "updatedAt": "2026-10-08T15:03:00.353Z",
+  "meta": {
+    "name": "Agra",
+    "nameIt": "Agra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Agra.geojson",
+      "sha256": "fdb8afb6f7cb7104aeb3510e9502c8459cea1d30b6c93b924d6becfa7a958af8",
+      "size": 2266992,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "agra",
+    "name": "Agra",
+    "nameIt": "Agra",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.99819,
+      27.18339
+    ],
+    "zoom": 9.6,
+    "population": 3483164,
+    "grid": "cities/agra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/agra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "agra",
+        "name": "Agra",
+        "nameIt": "Agra",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.99819,
+          27.18339
+        ],
+        "zoom": 9.6,
+        "population": 3483164,
+        "cells": 1964,
+        "layer": "cities/agra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.99819,
+            27.18339
+          ]
+        },
+        "properties": {
+          "id": "agra",
+          "name": "Agra",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 37.2,
+          "population": 3483164
+        }
+      },
+      "summary": null
+    }
+  }
+}

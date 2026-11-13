@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "daqing",
+  "createdAt": "2026-10-08T15:28:19.007Z",
+  "updatedAt": "2026-10-08T15:28:19.007Z",
+  "meta": {
+    "name": "Daqing",
+    "nameIt": "Daqing",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Daqing.geojson",
+      "sha256": "7179e74fc7de004cd1eb4e9c60b306242af1c913727811d0b11dc2b2da3912de",
+      "size": 1408764,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "daqing",
+    "name": "Daqing",
+    "nameIt": "Daqing",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      125.1233,
+      46.56976
+    ],
+    "zoom": 10.2,
+    "population": 458570,
+    "grid": "cities/daqing/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/daqing/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "daqing",
+        "name": "Daqing",
+        "nameIt": "Daqing",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          125.1233,
+          46.56976
+        ],
+        "zoom": 10.2,
+        "population": 458570,
+        "cells": 1210,
+        "layer": "cities/daqing/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.1233,
+            46.56976
+          ]
+        },
+        "properties": {
+          "id": "daqing",
+          "name": "Daqing",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 31.3,
+          "population": 458570
+        }
+      },
+      "summary": null
+    }
+  }
+}

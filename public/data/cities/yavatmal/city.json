@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yavatmal",
+  "createdAt": "2026-10-08T16:23:37.649Z",
+  "updatedAt": "2026-10-08T16:23:37.649Z",
+  "meta": {
+    "name": "Yavatmal",
+    "nameIt": "Yavatmal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yavatmal.geojson",
+      "sha256": "27092597143c533b686e1da7ac9f92ecca017e6937a79a3a286b6884bda698f7",
+      "size": 426323,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yavatmal",
+    "name": "Yavatmal",
+    "nameIt": "Yavatmal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.12285,
+      20.38947
+    ],
+    "zoom": 10.9,
+    "population": 270109,
+    "grid": "cities/yavatmal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yavatmal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yavatmal",
+        "name": "Yavatmal",
+        "nameIt": "Yavatmal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.12285,
+          20.38947
+        ],
+        "zoom": 10.9,
+        "population": 270109,
+        "cells": 368,
+        "layer": "cities/yavatmal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.12285,
+            20.38947
+          ]
+        },
+        "properties": {
+          "id": "yavatmal",
+          "name": "Yavatmal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 25.6,
+          "population": 270109
+        }
+      },
+      "summary": null
+    }
+  }
+}

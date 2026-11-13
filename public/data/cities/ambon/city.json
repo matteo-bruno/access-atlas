@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ambon",
+  "createdAt": "2026-10-08T15:06:53.209Z",
+  "updatedAt": "2026-10-08T15:06:53.209Z",
+  "meta": {
+    "name": "Ambon",
+    "nameIt": "Ambon",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ambon.geojson",
+      "sha256": "a3c612ed3bb7f8cd832348cdbbc981be7fd0959ccc5b5ab65d660ff652903fab",
+      "size": 737232,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ambon",
+    "name": "Ambon",
+    "nameIt": "Ambon",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      128.20128,
+      -3.67575
+    ],
+    "zoom": 10.3,
+    "population": 301193,
+    "grid": "cities/ambon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ambon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ambon",
+        "name": "Ambon",
+        "nameIt": "Ambon",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          128.20128,
+          -3.67575
+        ],
+        "zoom": 10.3,
+        "population": 301193,
+        "cells": 628,
+        "layer": "cities/ambon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            128.20128,
+            -3.67575
+          ]
+        },
+        "properties": {
+          "id": "ambon",
+          "name": "Ambon",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 43.3,
+          "population": 301193
+        }
+      },
+      "summary": null
+    }
+  }
+}

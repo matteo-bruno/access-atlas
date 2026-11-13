@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "virac",
+  "createdAt": "2026-10-08T16:20:52.078Z",
+  "updatedAt": "2026-10-08T16:20:52.078Z",
+  "meta": {
+    "name": "Virac",
+    "nameIt": "Virac",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Virac.geojson",
+      "sha256": "13d97716e901d3b6a0bd98ea6d3f09d3f58c309a0a36d64e0e1c510fd77c27fd",
+      "size": 312628,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "virac",
+    "name": "Virac",
+    "nameIt": "Virac",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      124.23144,
+      13.58712
+    ],
+    "zoom": 10.3,
+    "population": 65143,
+    "grid": "cities/virac/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/virac/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "virac",
+        "name": "Virac",
+        "nameIt": "Virac",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          124.23144,
+          13.58712
+        ],
+        "zoom": 10.3,
+        "population": 65143,
+        "cells": 268,
+        "layer": "cities/virac/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            124.23144,
+            13.58712
+          ]
+        },
+        "properties": {
+          "id": "virac",
+          "name": "Virac",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 21.1,
+          "population": 65143
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khairthal",
+  "createdAt": "2026-10-08T15:46:22.722Z",
+  "updatedAt": "2026-10-08T15:46:22.722Z",
+  "meta": {
+    "name": "Khairthal",
+    "nameIt": "Khairthal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khairthal.geojson",
+      "sha256": "674a3d7b5970ef841dc62e135cec5188aa82d173d27558da93af2936e91ee412",
+      "size": 96053,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khairthal",
+    "name": "Khairthal",
+    "nameIt": "Khairthal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.64223,
+      27.80072
+    ],
+    "zoom": 12,
+    "population": 38238,
+    "grid": "cities/khairthal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khairthal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khairthal",
+        "name": "Khairthal",
+        "nameIt": "Khairthal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.64223,
+          27.80072
+        ],
+        "zoom": 12,
+        "population": 38238,
+        "cells": 83,
+        "layer": "cities/khairthal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.64223,
+            27.80072
+          ]
+        },
+        "properties": {
+          "id": "khairthal",
+          "name": "Khairthal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 38238
+        }
+      },
+      "summary": null
+    }
+  }
+}

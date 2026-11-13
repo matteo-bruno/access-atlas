@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "surak",
+  "createdAt": "2026-10-08T16:15:20.945Z",
+  "updatedAt": "2026-10-08T16:15:20.945Z",
+  "meta": {
+    "name": "Surak",
+    "nameIt": "Surak",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Surak.geojson",
+      "sha256": "856268977cc85b17f200249d6730d2fba83ce85514401747d386d038ed81ebc4",
+      "size": 261544,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "surak",
+    "name": "Surak",
+    "nameIt": "Surak",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      53.22428,
+      36.59792
+    ],
+    "zoom": 11.2,
+    "population": 27008,
+    "grid": "cities/surak/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/surak/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "surak",
+        "name": "Surak",
+        "nameIt": "Surak",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          53.22428,
+          36.59792
+        ],
+        "zoom": 11.2,
+        "population": 27008,
+        "cells": 226,
+        "layer": "cities/surak/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            53.22428,
+            36.59792
+          ]
+        },
+        "properties": {
+          "id": "surak",
+          "name": "Surak",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 27008
+        }
+      },
+      "summary": null
+    }
+  }
+}

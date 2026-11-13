@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "diourbel",
+  "createdAt": "2026-10-08T15:30:10.452Z",
+  "updatedAt": "2026-10-08T15:30:10.452Z",
+  "meta": {
+    "name": "Diourbel",
+    "nameIt": "Diourbel",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Diourbel.geojson",
+      "sha256": "40fc0cda178c71f1511ea3589bdea185447ef8cc0807e47a882f6e72576e8d2c",
+      "size": 275239,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "diourbel",
+    "name": "Diourbel",
+    "nameIt": "Diourbel",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN",
+    "center": [
+      -16.23004,
+      14.65296
+    ],
+    "zoom": 11.4,
+    "population": 202447,
+    "grid": "cities/diourbel/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/diourbel/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "diourbel",
+        "name": "Diourbel",
+        "nameIt": "Diourbel",
+        "region": "Senegal",
+        "regionIt": "Senegal",
+        "country": "SN",
+        "center": [
+          -16.23004,
+          14.65296
+        ],
+        "zoom": 11.4,
+        "population": 202447,
+        "cells": 234,
+        "layer": "cities/diourbel/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -16.23004,
+            14.65296
+          ]
+        },
+        "properties": {
+          "id": "diourbel",
+          "name": "Diourbel",
+          "country": "SN",
+          "isStudy": true,
+          "proximityMinutes": 20.1,
+          "population": 202447
+        }
+      },
+      "summary": null
+    }
+  }
+}

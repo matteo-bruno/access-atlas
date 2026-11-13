@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tosu",
+  "createdAt": "2026-10-08T16:18:37.235Z",
+  "updatedAt": "2026-10-08T16:18:37.235Z",
+  "meta": {
+    "name": "Tosu",
+    "nameIt": "Tosu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tosu.geojson",
+      "sha256": "5c99950c0083e6bc28944758d2ffecd014f1aa1a68591a5c8514010dc2dc98a9",
+      "size": 494526,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tosu",
+    "name": "Tosu",
+    "nameIt": "Tosu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      130.52497,
+      33.3882
+    ],
+    "zoom": 11,
+    "population": 95710,
+    "grid": "cities/tosu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tosu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tosu",
+        "name": "Tosu",
+        "nameIt": "Tosu",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          130.52497,
+          33.3882
+        ],
+        "zoom": 11,
+        "population": 95710,
+        "cells": 430,
+        "layer": "cities/tosu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            130.52497,
+            33.3882
+          ]
+        },
+        "properties": {
+          "id": "tosu",
+          "name": "Tosu",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 20.2,
+          "population": 95710
+        }
+      },
+      "summary": null
+    }
+  }
+}

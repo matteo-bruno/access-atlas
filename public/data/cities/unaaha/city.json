@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "unaaha",
+  "createdAt": "2026-10-08T16:19:54.360Z",
+  "updatedAt": "2026-10-08T16:19:54.360Z",
+  "meta": {
+    "name": "Unaaha",
+    "nameIt": "Unaaha",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Unaaha.geojson",
+      "sha256": "615da02171f677dbf3ff25b19ed0e7d275bbafb926e451cde8326c6835831a92",
+      "size": 159842,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "unaaha",
+    "name": "Unaaha",
+    "nameIt": "Unaaha",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      122.05009,
+      -3.85789
+    ],
+    "zoom": 11.6,
+    "population": 40258,
+    "grid": "cities/unaaha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/unaaha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "unaaha",
+        "name": "Unaaha",
+        "nameIt": "Unaaha",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          122.05009,
+          -3.85789
+        ],
+        "zoom": 11.6,
+        "population": 40258,
+        "cells": 136,
+        "layer": "cities/unaaha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            122.05009,
+            -3.85789
+          ]
+        },
+        "properties": {
+          "id": "unaaha",
+          "name": "Unaaha",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 40258
+        }
+      },
+      "summary": null
+    }
+  }
+}

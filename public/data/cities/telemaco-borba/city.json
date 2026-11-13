@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "telemaco-borba",
+  "createdAt": "2026-10-08T16:17:12.611Z",
+  "updatedAt": "2026-10-08T16:17:12.611Z",
+  "meta": {
+    "name": "Telêmaco Borba",
+    "nameIt": "Telêmaco Borba",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Telêmaco Borba.geojson",
+      "sha256": "a0ddb068fad2b3e189c0c497df45d8c11c2a3532db91f6c25f5cd6c41bb5c70d",
+      "size": 217554,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "telemaco-borba",
+    "name": "Telêmaco Borba",
+    "nameIt": "Telêmaco Borba",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -50.62905,
+      -24.32786
+    ],
+    "zoom": 11.5,
+    "population": 68276,
+    "grid": "cities/telemaco-borba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/telemaco-borba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "telemaco-borba",
+        "name": "Telêmaco Borba",
+        "nameIt": "Telêmaco Borba",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -50.62905,
+          -24.32786
+        ],
+        "zoom": 11.5,
+        "population": 68276,
+        "cells": 185,
+        "layer": "cities/telemaco-borba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.62905,
+            -24.32786
+          ]
+        },
+        "properties": {
+          "id": "telemaco-borba",
+          "name": "Telêmaco Borba",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 68276
+        }
+      },
+      "summary": null
+    }
+  }
+}

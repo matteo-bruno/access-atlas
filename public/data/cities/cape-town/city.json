@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cape-town",
+  "createdAt": "2026-10-08T15:22:27.306Z",
+  "updatedAt": "2026-10-08T15:22:27.306Z",
+  "meta": {
+    "name": "Cape Town",
+    "nameIt": "Cape Town",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cape Town.geojson",
+      "sha256": "df2133f1b8152ba7356a24f08692608275caa9a5e1c6ba7f2eb7da2fa368ec4c",
+      "size": 8076713,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cape-town",
+    "name": "Cape Town",
+    "nameIt": "Cape Town",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      18.58599,
+      -33.9555
+    ],
+    "zoom": 8.9,
+    "population": 3644099,
+    "grid": "cities/cape-town/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cape-town/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cape-town",
+        "name": "Cape Town",
+        "nameIt": "Cape Town",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          18.58599,
+          -33.9555
+        ],
+        "zoom": 8.9,
+        "population": 3644099,
+        "cells": 6959,
+        "layer": "cities/cape-town/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.58599,
+            -33.9555
+          ]
+        },
+        "properties": {
+          "id": "cape-town",
+          "name": "Cape Town",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 26,
+          "population": 3644099
+        }
+      },
+      "summary": null
+    }
+  }
+}

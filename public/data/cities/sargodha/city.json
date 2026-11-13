@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sargodha",
+  "createdAt": "2026-10-08T16:11:28.299Z",
+  "updatedAt": "2026-10-08T16:11:28.299Z",
+  "meta": {
+    "name": "Sargodha",
+    "nameIt": "Sargodha",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sargodha.geojson",
+      "sha256": "bf3b9611543e4166f52b69e1642fd8eb9c3305b7589ef749591a0a6739d0cbcc",
+      "size": 813209,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sargodha",
+    "name": "Sargodha",
+    "nameIt": "Sargodha",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      72.6809,
+      32.07359
+    ],
+    "zoom": 10.4,
+    "population": 850467,
+    "grid": "cities/sargodha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sargodha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sargodha",
+        "name": "Sargodha",
+        "nameIt": "Sargodha",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          72.6809,
+          32.07359
+        ],
+        "zoom": 10.4,
+        "population": 850467,
+        "cells": 703,
+        "layer": "cities/sargodha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.6809,
+            32.07359
+          ]
+        },
+        "properties": {
+          "id": "sargodha",
+          "name": "Sargodha",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 39,
+          "population": 850467
+        }
+      },
+      "summary": null
+    }
+  }
+}

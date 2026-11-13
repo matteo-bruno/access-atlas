@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "divinopolis",
+  "createdAt": "2026-10-08T15:30:16.192Z",
+  "updatedAt": "2026-10-08T15:30:16.192Z",
+  "meta": {
+    "name": "Divinópolis",
+    "nameIt": "Divinópolis",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Divinópolis.geojson",
+      "sha256": "b33a8d3951041697507c46ea6d4bd134cdb4a2b8ceb09076aafab39fe1d22760",
+      "size": 565524,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "divinopolis",
+    "name": "Divinópolis",
+    "nameIt": "Divinópolis",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -44.88724,
+      -20.14617
+    ],
+    "zoom": 10.8,
+    "population": 175388,
+    "grid": "cities/divinopolis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/divinopolis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "divinopolis",
+        "name": "Divinópolis",
+        "nameIt": "Divinópolis",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -44.88724,
+          -20.14617
+        ],
+        "zoom": 10.8,
+        "population": 175388,
+        "cells": 480,
+        "layer": "cities/divinopolis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -44.88724,
+            -20.14617
+          ]
+        },
+        "properties": {
+          "id": "divinopolis",
+          "name": "Divinópolis",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 23,
+          "population": 175388
+        }
+      },
+      "summary": null
+    }
+  }
+}

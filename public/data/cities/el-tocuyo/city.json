@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "el-tocuyo",
+  "createdAt": "2026-10-08T15:32:03.106Z",
+  "updatedAt": "2026-10-08T15:32:03.106Z",
+  "meta": {
+    "name": "El Tocuyo",
+    "nameIt": "El Tocuyo",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/El Tocuyo.geojson",
+      "sha256": "9eec110a9fd8c5d654c310309f30d91fa1e8a20ecff65c941f331acbb98f07dd",
+      "size": 133278,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "el-tocuyo",
+    "name": "El Tocuyo",
+    "nameIt": "El Tocuyo",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -69.79115,
+      9.78814
+    ],
+    "zoom": 11.7,
+    "population": 48222,
+    "grid": "cities/el-tocuyo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/el-tocuyo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "el-tocuyo",
+        "name": "El Tocuyo",
+        "nameIt": "El Tocuyo",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -69.79115,
+          9.78814
+        ],
+        "zoom": 11.7,
+        "population": 48222,
+        "cells": 115,
+        "layer": "cities/el-tocuyo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -69.79115,
+            9.78814
+          ]
+        },
+        "properties": {
+          "id": "el-tocuyo",
+          "name": "El Tocuyo",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 48222
+        }
+      },
+      "summary": null
+    }
+  }
+}

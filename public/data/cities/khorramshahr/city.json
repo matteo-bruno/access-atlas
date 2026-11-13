@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khorramshahr",
+  "createdAt": "2026-10-08T15:46:50.241Z",
+  "updatedAt": "2026-10-08T15:46:50.241Z",
+  "meta": {
+    "name": "Khorramshahr",
+    "nameIt": "Khorramshahr",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khorramshahr.geojson",
+      "sha256": "dd952f51732db5947d79d373b1a34af4309eed3e0e7c4f438fcf613e31397f8e",
+      "size": 307331,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khorramshahr",
+    "name": "Khorramshahr",
+    "nameIt": "Khorramshahr",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      48.18041,
+      30.44284
+    ],
+    "zoom": 11,
+    "population": 111027,
+    "grid": "cities/khorramshahr/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khorramshahr/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khorramshahr",
+        "name": "Khorramshahr",
+        "nameIt": "Khorramshahr",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          48.18041,
+          30.44284
+        ],
+        "zoom": 11,
+        "population": 111027,
+        "cells": 265,
+        "layer": "cities/khorramshahr/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.18041,
+            30.44284
+          ]
+        },
+        "properties": {
+          "id": "khorramshahr",
+          "name": "Khorramshahr",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 21.5,
+          "population": 111027
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "funes",
+  "createdAt": "2026-10-08T15:33:58.302Z",
+  "updatedAt": "2026-10-08T15:33:58.302Z",
+  "meta": {
+    "name": "Funes",
+    "nameIt": "Funes",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Funes.geojson",
+      "sha256": "d7e940f5d1c1f18425df44b7bee76bb885764b39e856cf322601c48c2805f1d5",
+      "size": 365684,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "funes",
+    "name": "Funes",
+    "nameIt": "Funes",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -60.8213,
+      -32.91891
+    ],
+    "zoom": 10.9,
+    "population": 85165,
+    "grid": "cities/funes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/funes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "funes",
+        "name": "Funes",
+        "nameIt": "Funes",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -60.8213,
+          -32.91891
+        ],
+        "zoom": 10.9,
+        "population": 85165,
+        "cells": 316,
+        "layer": "cities/funes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -60.8213,
+            -32.91891
+          ]
+        },
+        "properties": {
+          "id": "funes",
+          "name": "Funes",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 8.3,
+          "population": 85165
+        }
+      },
+      "summary": null
+    }
+  }
+}

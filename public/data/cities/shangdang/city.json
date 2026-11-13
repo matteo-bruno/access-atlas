@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shangdang",
+  "createdAt": "2026-10-08T16:12:25.411Z",
+  "updatedAt": "2026-10-08T16:12:25.411Z",
+  "meta": {
+    "name": "Shangdang",
+    "nameIt": "Shangdang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shangdang.geojson",
+      "sha256": "f0c81d063a4aa6a686b3e20521a8df21732dc14ff3c4b44c71d56c6fbf31578f",
+      "size": 200722,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shangdang",
+    "name": "Shangdang",
+    "nameIt": "Shangdang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.05228,
+      36.05196
+    ],
+    "zoom": 11.6,
+    "population": 82770,
+    "grid": "cities/shangdang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shangdang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shangdang",
+        "name": "Shangdang",
+        "nameIt": "Shangdang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.05228,
+          36.05196
+        ],
+        "zoom": 11.6,
+        "population": 82770,
+        "cells": 172,
+        "layer": "cities/shangdang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.05228,
+            36.05196
+          ]
+        },
+        "properties": {
+          "id": "shangdang",
+          "name": "Shangdang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 82770
+        }
+      },
+      "summary": null
+    }
+  }
+}

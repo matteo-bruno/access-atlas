@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "flores",
+  "createdAt": "2026-10-08T15:33:27.396Z",
+  "updatedAt": "2026-10-08T15:33:27.396Z",
+  "meta": {
+    "name": "Flores",
+    "nameIt": "Flores",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Flores.geojson",
+      "sha256": "531ea3a205479fdcb6bf3863b97e3dd3442375220dc985c36ad97d7e90b41015",
+      "size": 259263,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "flores",
+    "name": "Flores",
+    "nameIt": "Flores",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT",
+    "center": [
+      -89.9113,
+      16.91576
+    ],
+    "zoom": 11.2,
+    "population": 66359,
+    "grid": "cities/flores/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/flores/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "flores",
+        "name": "Flores",
+        "nameIt": "Flores",
+        "region": "Guatemala",
+        "regionIt": "Guatemala",
+        "country": "GT",
+        "center": [
+          -89.9113,
+          16.91576
+        ],
+        "zoom": 11.2,
+        "population": 66359,
+        "cells": 223,
+        "layer": "cities/flores/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -89.9113,
+            16.91576
+          ]
+        },
+        "properties": {
+          "id": "flores",
+          "name": "Flores",
+          "country": "GT",
+          "isStudy": true,
+          "proximityMinutes": 19.2,
+          "population": 66359
+        }
+      },
+      "summary": null
+    }
+  }
+}

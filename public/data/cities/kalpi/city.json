@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kalpi",
+  "createdAt": "2026-10-08T15:44:33.653Z",
+  "updatedAt": "2026-10-08T15:44:33.653Z",
+  "meta": {
+    "name": "Kalpi",
+    "nameIt": "Kalpi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kalpi.geojson",
+      "sha256": "05e927e220e74a15de2f6c9863057ff97444b0ece61de2e5f29ad04ea102bd08",
+      "size": 88049,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kalpi",
+    "name": "Kalpi",
+    "nameIt": "Kalpi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.7477,
+      26.12109
+    ],
+    "zoom": 11.9,
+    "population": 76226,
+    "grid": "cities/kalpi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kalpi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kalpi",
+        "name": "Kalpi",
+        "nameIt": "Kalpi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.7477,
+          26.12109
+        ],
+        "zoom": 11.9,
+        "population": 76226,
+        "cells": 76,
+        "layer": "cities/kalpi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.7477,
+            26.12109
+          ]
+        },
+        "properties": {
+          "id": "kalpi",
+          "name": "Kalpi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 76226
+        }
+      },
+      "summary": null
+    }
+  }
+}

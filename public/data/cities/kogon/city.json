@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kogon",
+  "createdAt": "2026-10-08T15:47:36.900Z",
+  "updatedAt": "2026-10-08T15:47:36.900Z",
+  "meta": {
+    "name": "Kogon",
+    "nameIt": "Kogon",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kogon.geojson",
+      "sha256": "5d9c30e56c79e4674399a2ae69ce83b1a191ab77a06aed47a4a4bab568800f22",
+      "size": 204253,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kogon",
+    "name": "Kogon",
+    "nameIt": "Kogon",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      64.5515,
+      39.72614
+    ],
+    "zoom": 11.4,
+    "population": 124842,
+    "grid": "cities/kogon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kogon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kogon",
+        "name": "Kogon",
+        "nameIt": "Kogon",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          64.5515,
+          39.72614
+        ],
+        "zoom": 11.4,
+        "population": 124842,
+        "cells": 177,
+        "layer": "cities/kogon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            64.5515,
+            39.72614
+          ]
+        },
+        "properties": {
+          "id": "kogon",
+          "name": "Kogon",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 124842
+        }
+      },
+      "summary": null
+    }
+  }
+}

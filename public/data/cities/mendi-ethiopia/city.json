@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mendi-ethiopia",
+  "createdAt": "2026-10-08T15:56:33.194Z",
+  "updatedAt": "2026-10-08T15:56:33.194Z",
+  "meta": {
+    "name": "Mendi (Ethiopia)",
+    "nameIt": "Mendi (Ethiopia)",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mendi (Ethiopia).geojson",
+      "sha256": "bd68d9645e79cb88f692167d564b7aa902649b6f1a6f9613a031215df2c7dbb4",
+      "size": 124410,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mendi-ethiopia",
+    "name": "Mendi (Ethiopia)",
+    "nameIt": "Mendi (Ethiopia)",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      35.10447,
+      9.79626
+    ],
+    "zoom": 12,
+    "population": 36087,
+    "grid": "cities/mendi-ethiopia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mendi-ethiopia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mendi-ethiopia",
+        "name": "Mendi (Ethiopia)",
+        "nameIt": "Mendi (Ethiopia)",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          35.10447,
+          9.79626
+        ],
+        "zoom": 12,
+        "population": 36087,
+        "cells": 108,
+        "layer": "cities/mendi-ethiopia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.10447,
+            9.79626
+          ]
+        },
+        "properties": {
+          "id": "mendi-ethiopia",
+          "name": "Mendi (Ethiopia)",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 36087
+        }
+      },
+      "summary": null
+    }
+  }
+}

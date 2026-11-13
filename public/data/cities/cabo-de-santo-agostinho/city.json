@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cabo-de-santo-agostinho",
+  "createdAt": "2026-10-08T15:21:35.258Z",
+  "updatedAt": "2026-10-08T15:21:35.258Z",
+  "meta": {
+    "name": "Cabo de Santo Agostinho",
+    "nameIt": "Cabo de Santo Agostinho",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cabo de Santo Agostinho.geojson",
+      "sha256": "a9dd4c110fcd51bc508623881f8ebc8c6b6fb7aed7072fa69e8c2b93785717c7",
+      "size": 150825,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cabo-de-santo-agostinho",
+    "name": "Cabo de Santo Agostinho",
+    "nameIt": "Cabo de Santo Agostinho",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -35.03378,
+      -8.2902
+    ],
+    "zoom": 11.4,
+    "population": 86975,
+    "grid": "cities/cabo-de-santo-agostinho/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cabo-de-santo-agostinho/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cabo-de-santo-agostinho",
+        "name": "Cabo de Santo Agostinho",
+        "nameIt": "Cabo de Santo Agostinho",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -35.03378,
+          -8.2902
+        ],
+        "zoom": 11.4,
+        "population": 86975,
+        "cells": 129,
+        "layer": "cities/cabo-de-santo-agostinho/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -35.03378,
+            -8.2902
+          ]
+        },
+        "properties": {
+          "id": "cabo-de-santo-agostinho",
+          "name": "Cabo de Santo Agostinho",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 86975
+        }
+      },
+      "summary": null
+    }
+  }
+}

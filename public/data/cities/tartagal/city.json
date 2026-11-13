@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tartagal",
+  "createdAt": "2026-10-08T16:16:51.002Z",
+  "updatedAt": "2026-10-08T16:16:51.002Z",
+  "meta": {
+    "name": "Tartagal",
+    "nameIt": "Tartagal",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tartagal.geojson",
+      "sha256": "403f3e235100b6f8f60263719ce3191d806519d9f059904241c5cfe34c7f3fb1",
+      "size": 177645,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tartagal",
+    "name": "Tartagal",
+    "nameIt": "Tartagal",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -63.79908,
+      -22.51977
+    ],
+    "zoom": 11.6,
+    "population": 62373,
+    "grid": "cities/tartagal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tartagal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tartagal",
+        "name": "Tartagal",
+        "nameIt": "Tartagal",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -63.79908,
+          -22.51977
+        ],
+        "zoom": 11.6,
+        "population": 62373,
+        "cells": 151,
+        "layer": "cities/tartagal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -63.79908,
+            -22.51977
+          ]
+        },
+        "properties": {
+          "id": "tartagal",
+          "name": "Tartagal",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 14.4,
+          "population": 62373
+        }
+      },
+      "summary": null
+    }
+  }
+}

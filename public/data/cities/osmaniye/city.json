@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "osmaniye",
+  "createdAt": "2026-10-08T16:03:08.979Z",
+  "updatedAt": "2026-10-08T16:03:08.979Z",
+  "meta": {
+    "name": "Osmaniye",
+    "nameIt": "Osmaniye",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Osmaniye.geojson",
+      "sha256": "f8117c8873c58de32742ed25e46e8c6999d6145860ad52c8fd523de261bb4758",
+      "size": 290947,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "osmaniye",
+    "name": "Osmaniye",
+    "nameIt": "Osmaniye",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      36.25104,
+      37.06941
+    ],
+    "zoom": 11.3,
+    "population": 232731,
+    "grid": "cities/osmaniye/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/osmaniye/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "osmaniye",
+        "name": "Osmaniye",
+        "nameIt": "Osmaniye",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          36.25104,
+          37.06941
+        ],
+        "zoom": 11.3,
+        "population": 232731,
+        "cells": 252,
+        "layer": "cities/osmaniye/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.25104,
+            37.06941
+          ]
+        },
+        "properties": {
+          "id": "osmaniye",
+          "name": "Osmaniye",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 232731
+        }
+      },
+      "summary": null
+    }
+  }
+}

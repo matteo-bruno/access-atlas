@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "araguaina",
+  "createdAt": "2026-10-08T15:08:57.641Z",
+  "updatedAt": "2026-10-08T15:08:57.641Z",
+  "meta": {
+    "name": "Araguaína",
+    "nameIt": "Araguaína",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Araguaína.geojson",
+      "sha256": "fbecfe39cbf9ae68b65b597ec476497cfc36e576de142f2854197a2c5342e08a",
+      "size": 463810,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "araguaina",
+    "name": "Araguaína",
+    "nameIt": "Araguaína",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -48.20586,
+      -7.19278
+    ],
+    "zoom": 10.9,
+    "population": 143501,
+    "grid": "cities/araguaina/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/araguaina/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "araguaina",
+        "name": "Araguaína",
+        "nameIt": "Araguaína",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -48.20586,
+          -7.19278
+        ],
+        "zoom": 10.9,
+        "population": 143501,
+        "cells": 395,
+        "layer": "cities/araguaina/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.20586,
+            -7.19278
+          ]
+        },
+        "properties": {
+          "id": "araguaina",
+          "name": "Araguaína",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 22.9,
+          "population": 143501
+        }
+      },
+      "summary": null
+    }
+  }
+}

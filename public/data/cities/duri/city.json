@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "duri",
+  "createdAt": "2026-10-08T15:31:30.053Z",
+  "updatedAt": "2026-10-08T15:31:30.053Z",
+  "meta": {
+    "name": "Duri",
+    "nameIt": "Duri",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Duri.geojson",
+      "sha256": "c5c5eb511e3f649979f460b842d38a57db6200ba00f7987b884ef43c95818792",
+      "size": 433268,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "duri",
+    "name": "Duri",
+    "nameIt": "Duri",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      101.19261,
+      1.2772
+    ],
+    "zoom": 10.8,
+    "population": 208398,
+    "grid": "cities/duri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/duri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "duri",
+        "name": "Duri",
+        "nameIt": "Duri",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          101.19261,
+          1.2772
+        ],
+        "zoom": 10.8,
+        "population": 208398,
+        "cells": 371,
+        "layer": "cities/duri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            101.19261,
+            1.2772
+          ]
+        },
+        "properties": {
+          "id": "duri",
+          "name": "Duri",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 27.6,
+          "population": 208398
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sihong-county",
+  "createdAt": "2026-10-08T16:13:34.746Z",
+  "updatedAt": "2026-10-08T16:13:34.746Z",
+  "meta": {
+    "name": "Sihong County",
+    "nameIt": "Sihong County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sihong County.geojson",
+      "sha256": "4bbf6e52ff7bcb6f09d1d31c5f9424528195942b8b4246478d7ddc3ac7307148",
+      "size": 614252,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sihong-county",
+    "name": "Sihong County",
+    "nameIt": "Sihong County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.20601,
+      33.46593
+    ],
+    "zoom": 11,
+    "population": 331537,
+    "grid": "cities/sihong-county/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sihong-county/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sihong-county",
+        "name": "Sihong County",
+        "nameIt": "Sihong County",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.20601,
+          33.46593
+        ],
+        "zoom": 11,
+        "population": 331537,
+        "cells": 527,
+        "layer": "cities/sihong-county/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.20601,
+            33.46593
+          ]
+        },
+        "properties": {
+          "id": "sihong-county",
+          "name": "Sihong County",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 331537
+        }
+      },
+      "summary": null
+    }
+  }
+}

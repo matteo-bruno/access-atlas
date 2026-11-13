@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "digras",
+  "createdAt": "2026-10-08T15:29:55.236Z",
+  "updatedAt": "2026-10-08T15:29:55.236Z",
+  "meta": {
+    "name": "Digras",
+    "nameIt": "Digras",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Digras.geojson",
+      "sha256": "bdf53278b3f97fe0ae5a1e7b298d817af749a52912407fd65e05f2327ea9e30e",
+      "size": 89153,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "digras",
+    "name": "Digras",
+    "nameIt": "Digras",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.7178,
+      20.10504
+    ],
+    "zoom": 12,
+    "population": 36080,
+    "grid": "cities/digras/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/digras/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "digras",
+        "name": "Digras",
+        "nameIt": "Digras",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.7178,
+          20.10504
+        ],
+        "zoom": 12,
+        "population": 36080,
+        "cells": 77,
+        "layer": "cities/digras/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.7178,
+            20.10504
+          ]
+        },
+        "properties": {
+          "id": "digras",
+          "name": "Digras",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 36080
+        }
+      },
+      "summary": null
+    }
+  }
+}

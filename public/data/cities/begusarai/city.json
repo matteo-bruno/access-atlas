@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "begusarai",
+  "createdAt": "2026-10-08T15:16:40.014Z",
+  "updatedAt": "2026-10-08T15:16:40.014Z",
+  "meta": {
+    "name": "Begusarai",
+    "nameIt": "Begusarai",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Begusarai.geojson",
+      "sha256": "590f4d52cca9632c4d7514177ffe46d515625b48d74f27a4a01deb1d21c92c7c",
+      "size": 2297647,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "begusarai",
+    "name": "Begusarai",
+    "nameIt": "Begusarai",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.07955,
+      25.4329
+    ],
+    "zoom": 9.4,
+    "population": 1315092,
+    "grid": "cities/begusarai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/begusarai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "begusarai",
+        "name": "Begusarai",
+        "nameIt": "Begusarai",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.07955,
+          25.4329
+        ],
+        "zoom": 9.4,
+        "population": 1315092,
+        "cells": 1978,
+        "layer": "cities/begusarai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.07955,
+            25.4329
+          ]
+        },
+        "properties": {
+          "id": "begusarai",
+          "name": "Begusarai",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 75.7,
+          "population": 1315092
+        }
+      },
+      "summary": null
+    }
+  }
+}

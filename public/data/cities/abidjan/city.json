@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abidjan",
+  "createdAt": "2026-10-08T15:01:30.165Z",
+  "updatedAt": "2026-10-08T15:01:30.165Z",
+  "meta": {
+    "name": "Abidjan",
+    "nameIt": "Abidjan",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abidjan.geojson",
+      "sha256": "d8df515a4cb2dfdd9328655acaae4bd83f90a7bc4d88c8f7ebd4c79ada292247",
+      "size": 8078524,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abidjan",
+    "name": "Abidjan",
+    "nameIt": "Abidjan",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI",
+    "center": [
+      -4.01748,
+      5.3579
+    ],
+    "zoom": 8.9,
+    "population": 6622690,
+    "grid": "cities/abidjan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 167
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abidjan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abidjan",
+        "name": "Abidjan",
+        "nameIt": "Abidjan",
+        "region": "Ivory Coast",
+        "regionIt": "Costa d'Avorio",
+        "country": "CI",
+        "center": [
+          -4.01748,
+          5.3579
+        ],
+        "zoom": 8.9,
+        "population": 6622690,
+        "cells": 7008,
+        "layer": "cities/abidjan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 167
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -4.01748,
+            5.3579
+          ]
+        },
+        "properties": {
+          "id": "abidjan",
+          "name": "Abidjan",
+          "country": "CI",
+          "isStudy": true,
+          "proximityMinutes": 18.4,
+          "population": 6622690
+        }
+      },
+      "summary": null
+    }
+  }
+}

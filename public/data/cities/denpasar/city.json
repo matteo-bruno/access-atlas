@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "denpasar",
+  "createdAt": "2026-10-08T15:28:55.695Z",
+  "updatedAt": "2026-10-08T15:28:55.695Z",
+  "meta": {
+    "name": "Denpasar",
+    "nameIt": "Denpasar",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Denpasar.geojson",
+      "sha256": "0e2204be8256636d497a2fc9d8025b00fce51f31f189611c0624975591e55662",
+      "size": 4918702,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "denpasar",
+    "name": "Denpasar",
+    "nameIt": "Denpasar",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      115.20393,
+      -8.6553
+    ],
+    "zoom": 9,
+    "population": 1434950,
+    "grid": "cities/denpasar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/denpasar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "denpasar",
+        "name": "Denpasar",
+        "nameIt": "Denpasar",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          115.20393,
+          -8.6553
+        ],
+        "zoom": 9,
+        "population": 1434950,
+        "cells": 4237,
+        "layer": "cities/denpasar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.20393,
+            -8.6553
+          ]
+        },
+        "properties": {
+          "id": "denpasar",
+          "name": "Denpasar",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 22,
+          "population": 1434950
+        }
+      },
+      "summary": null
+    }
+  }
+}

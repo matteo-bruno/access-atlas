@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "corby",
+  "createdAt": "2026-10-08T15:26:33.766Z",
+  "updatedAt": "2026-10-08T15:26:33.766Z",
+  "meta": {
+    "name": "Corby",
+    "nameIt": "Corby",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Corby.geojson",
+      "sha256": "4ea368e8af922c9966604cbadb69d424a8656be74579a7c1dfe085ad31ced9b4",
+      "size": 299225,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "corby",
+    "name": "Corby",
+    "nameIt": "Corby",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.70882,
+      52.48568
+    ],
+    "zoom": 11.6,
+    "population": 63679,
+    "grid": "cities/corby/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/corby/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "corby",
+        "name": "Corby",
+        "nameIt": "Corby",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.70882,
+          52.48568
+        ],
+        "zoom": 11.6,
+        "population": 63679,
+        "cells": 257,
+        "layer": "cities/corby/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.70882,
+            52.48568
+          ]
+        },
+        "properties": {
+          "id": "corby",
+          "name": "Corby",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 13.3,
+          "population": 63679
+        }
+      },
+      "summary": null
+    }
+  }
+}

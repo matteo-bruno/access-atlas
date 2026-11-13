@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "los-cristianos",
+  "createdAt": "2026-10-08T15:52:09.865Z",
+  "updatedAt": "2026-10-08T15:52:09.865Z",
+  "meta": {
+    "name": "Los Cristianos",
+    "nameIt": "Los Cristianos",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Los Cristianos.geojson",
+      "sha256": "47c00e0fef7b7e46ac8d83d54d54781e2064ff77612b990726a0a7c7aba5bfd3",
+      "size": 211112,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "los-cristianos",
+    "name": "Los Cristianos",
+    "nameIt": "Los Cristianos",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -16.72354,
+      28.06672
+    ],
+    "zoom": 11.4,
+    "population": 70967,
+    "grid": "cities/los-cristianos/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/los-cristianos/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "los-cristianos",
+        "name": "Los Cristianos",
+        "nameIt": "Los Cristianos",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -16.72354,
+          28.06672
+        ],
+        "zoom": 11.4,
+        "population": 70967,
+        "cells": 182,
+        "layer": "cities/los-cristianos/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -16.72354,
+            28.06672
+          ]
+        },
+        "properties": {
+          "id": "los-cristianos",
+          "name": "Los Cristianos",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 8.5,
+          "population": 70967
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "unchahar",
+  "createdAt": "2026-10-08T16:19:55.353Z",
+  "updatedAt": "2026-10-08T16:19:55.353Z",
+  "meta": {
+    "name": "Unchahar",
+    "nameIt": "Unchahar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Unchahar.geojson",
+      "sha256": "6a135638400c497c94fa6dc3ba58c343a6e6f70392ff9d6a5e8b6c87ea246452",
+      "size": 194709,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "unchahar",
+    "name": "Unchahar",
+    "nameIt": "Unchahar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.31212,
+      25.91062
+    ],
+    "zoom": 11.3,
+    "population": 91739,
+    "grid": "cities/unchahar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/unchahar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "unchahar",
+        "name": "Unchahar",
+        "nameIt": "Unchahar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.31212,
+          25.91062
+        ],
+        "zoom": 11.3,
+        "population": 91739,
+        "cells": 168,
+        "layer": "cities/unchahar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.31212,
+            25.91062
+          ]
+        },
+        "properties": {
+          "id": "unchahar",
+          "name": "Unchahar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 91739
+        }
+      },
+      "summary": null
+    }
+  }
+}

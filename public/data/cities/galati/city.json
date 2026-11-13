@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "galati",
+  "createdAt": "2026-10-08T15:34:16.769Z",
+  "updatedAt": "2026-10-08T15:34:16.769Z",
+  "meta": {
+    "name": "Galați",
+    "nameIt": "Galați",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Galați.geojson",
+      "sha256": "72b8d88222c562efadf4b06ac382bb186eb721cb67b9935f933dd3b63b396cef",
+      "size": 519635,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "galati",
+    "name": "Galați",
+    "nameIt": "Galați",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO",
+    "center": [
+      28.02605,
+      45.43806
+    ],
+    "zoom": 10.7,
+    "population": 194905,
+    "grid": "cities/galati/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/galati/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "galati",
+        "name": "Galați",
+        "nameIt": "Galați",
+        "region": "Romania",
+        "regionIt": "Romania",
+        "country": "RO",
+        "center": [
+          28.02605,
+          45.43806
+        ],
+        "zoom": 10.7,
+        "population": 194905,
+        "cells": 452,
+        "layer": "cities/galati/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.02605,
+            45.43806
+          ]
+        },
+        "properties": {
+          "id": "galati",
+          "name": "Galați",
+          "country": "RO",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 194905
+        }
+      },
+      "summary": null
+    }
+  }
+}

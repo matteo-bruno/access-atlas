@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "suzhou-jiangsu-province",
+  "createdAt": "2026-10-08T16:15:29.169Z",
+  "updatedAt": "2026-10-08T16:15:29.169Z",
+  "meta": {
+    "name": "Suzhou (Jiangsu Province)",
+    "nameIt": "Suzhou (Jiangsu Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Suzhou (Jiangsu Province).geojson",
+      "sha256": "fa1c7579de2aa0a687591ba4993d79ac7df6554fb8595a5f602b3c0accf0da8c",
+      "size": 26337188,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "suzhou-jiangsu-province",
+    "name": "Suzhou (Jiangsu Province)",
+    "nameIt": "Suzhou (Jiangsu Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      120.55939,
+      31.40574
+    ],
+    "zoom": 8.5,
+    "population": 9395705,
+    "grid": "cities/suzhou-jiangsu-province/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/suzhou-jiangsu-province/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "suzhou-jiangsu-province",
+        "name": "Suzhou (Jiangsu Province)",
+        "nameIt": "Suzhou (Jiangsu Province)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          120.55939,
+          31.40574
+        ],
+        "zoom": 8.5,
+        "population": 9395705,
+        "cells": 22609,
+        "layer": "cities/suzhou-jiangsu-province/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.55939,
+            31.40574
+          ]
+        },
+        "properties": {
+          "id": "suzhou-jiangsu-province",
+          "name": "Suzhou (Jiangsu Province)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 39.5,
+          "population": 9395705
+        }
+      },
+      "summary": null
+    }
+  }
+}

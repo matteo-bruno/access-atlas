@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ruse",
+  "createdAt": "2026-10-08T16:09:22.838Z",
+  "updatedAt": "2026-10-08T16:09:22.838Z",
+  "meta": {
+    "name": "Ruse",
+    "nameIt": "Ruse",
+    "region": "Bulgaria",
+    "regionIt": "Bulgaria",
+    "country": "BG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ruse.geojson",
+      "sha256": "5433812ce6115c73bc25cf2fa8ed1e85861bc5764e9cfa5347df0131262a8c34",
+      "size": 183047,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ruse",
+    "name": "Ruse",
+    "nameIt": "Ruse",
+    "region": "Bulgaria",
+    "regionIt": "Bulgaria",
+    "country": "BG",
+    "center": [
+      25.96543,
+      43.84171
+    ],
+    "zoom": 11.7,
+    "population": 80198,
+    "grid": "cities/ruse/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ruse/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ruse",
+        "name": "Ruse",
+        "nameIt": "Ruse",
+        "region": "Bulgaria",
+        "regionIt": "Bulgaria",
+        "country": "BG",
+        "center": [
+          25.96543,
+          43.84171
+        ],
+        "zoom": 11.7,
+        "population": 80198,
+        "cells": 160,
+        "layer": "cities/ruse/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.96543,
+            43.84171
+          ]
+        },
+        "properties": {
+          "id": "ruse",
+          "name": "Ruse",
+          "country": "BG",
+          "isStudy": true,
+          "proximityMinutes": 9.7,
+          "population": 80198
+        }
+      },
+      "summary": null
+    }
+  }
+}

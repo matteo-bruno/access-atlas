@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "saint-nazaire",
+  "createdAt": "2026-10-08T16:09:55.937Z",
+  "updatedAt": "2026-10-08T16:09:55.937Z",
+  "meta": {
+    "name": "Saint-Nazaire",
+    "nameIt": "Saint-Nazaire",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Saint-Nazaire.geojson",
+      "sha256": "1705ea19b4907541a029e7ca69746999c2dadd4f63a04c4b8c579a40e91963c5",
+      "size": 386427,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "saint-nazaire",
+    "name": "Saint-Nazaire",
+    "nameIt": "Saint-Nazaire",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      -2.22209,
+      47.27653
+    ],
+    "zoom": 10.7,
+    "population": 66588,
+    "grid": "cities/saint-nazaire/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/saint-nazaire/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "saint-nazaire",
+        "name": "Saint-Nazaire",
+        "nameIt": "Saint-Nazaire",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -2.22209,
+          47.27653
+        ],
+        "zoom": 10.7,
+        "population": 66588,
+        "cells": 336,
+        "layer": "cities/saint-nazaire/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.22209,
+            47.27653
+          ]
+        },
+        "properties": {
+          "id": "saint-nazaire",
+          "name": "Saint-Nazaire",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 9.3,
+          "population": 66588
+        }
+      },
+      "summary": null
+    }
+  }
+}

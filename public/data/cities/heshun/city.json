@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "heshun",
+  "createdAt": "2026-10-08T15:38:32.367Z",
+  "updatedAt": "2026-10-08T15:38:32.367Z",
+  "meta": {
+    "name": "Heshun",
+    "nameIt": "Heshun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Heshun.geojson",
+      "sha256": "a6b9640021bba855abcd86a8987d72dcad96c851af09393bd7573ff7b7adb392",
+      "size": 132826,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "heshun",
+    "name": "Heshun",
+    "nameIt": "Heshun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.566,
+      37.32744
+    ],
+    "zoom": 12,
+    "population": 70214,
+    "grid": "cities/heshun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/heshun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "heshun",
+        "name": "Heshun",
+        "nameIt": "Heshun",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.566,
+          37.32744
+        ],
+        "zoom": 12,
+        "population": 70214,
+        "cells": 114,
+        "layer": "cities/heshun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.566,
+            37.32744
+          ]
+        },
+        "properties": {
+          "id": "heshun",
+          "name": "Heshun",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 70214
+        }
+      },
+      "summary": null
+    }
+  }
+}

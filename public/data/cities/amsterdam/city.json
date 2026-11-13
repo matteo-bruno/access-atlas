@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "amsterdam",
+  "createdAt": "2026-10-08T15:07:09.744Z",
+  "updatedAt": "2026-10-08T15:07:09.744Z",
+  "meta": {
+    "name": "Amsterdam",
+    "nameIt": "Amsterdam",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Amsterdam.geojson",
+      "sha256": "9e957c95cb477f3646b86bb61f082722ad20fd56f3c946965dbbfbfc94a54259",
+      "size": 3974782,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "amsterdam",
+    "name": "Amsterdam",
+    "nameIt": "Amsterdam",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      4.86662,
+      52.36187
+    ],
+    "zoom": 9,
+    "population": 1271077,
+    "grid": "cities/amsterdam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/amsterdam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "amsterdam",
+        "name": "Amsterdam",
+        "nameIt": "Amsterdam",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          4.86662,
+          52.36187
+        ],
+        "zoom": 9,
+        "population": 1271077,
+        "cells": 3490,
+        "layer": "cities/amsterdam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.86662,
+            52.36187
+          ]
+        },
+        "properties": {
+          "id": "amsterdam",
+          "name": "Amsterdam",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 9.1,
+          "population": 1271077
+        }
+      },
+      "summary": null
+    }
+  }
+}

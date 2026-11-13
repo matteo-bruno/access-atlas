@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "larnaca",
+  "createdAt": "2026-10-08T15:50:14.786Z",
+  "updatedAt": "2026-10-08T15:50:14.786Z",
+  "meta": {
+    "name": "Larnaca",
+    "nameIt": "Larnaca",
+    "region": "Cyprus",
+    "regionIt": "Cipro",
+    "country": "CY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Larnaca.geojson",
+      "sha256": "046601d653802291f64561d8a28688c19fab7d0af597592847fa1c39b75c3abe",
+      "size": 292866,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "larnaca",
+    "name": "Larnaca",
+    "nameIt": "Larnaca",
+    "region": "Cyprus",
+    "regionIt": "Cipro",
+    "country": "CY",
+    "center": [
+      33.61518,
+      34.92912
+    ],
+    "zoom": 11.3,
+    "population": 66649,
+    "grid": "cities/larnaca/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/larnaca/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "larnaca",
+        "name": "Larnaca",
+        "nameIt": "Larnaca",
+        "region": "Cyprus",
+        "regionIt": "Cipro",
+        "country": "CY",
+        "center": [
+          33.61518,
+          34.92912
+        ],
+        "zoom": 11.3,
+        "population": 66649,
+        "cells": 257,
+        "layer": "cities/larnaca/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.61518,
+            34.92912
+          ]
+        },
+        "properties": {
+          "id": "larnaca",
+          "name": "Larnaca",
+          "country": "CY",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 66649
+        }
+      },
+      "summary": null
+    }
+  }
+}

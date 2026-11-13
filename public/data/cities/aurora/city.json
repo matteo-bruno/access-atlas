@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aurora",
+  "createdAt": "2026-10-08T15:11:29.515Z",
+  "updatedAt": "2026-10-08T15:11:29.515Z",
+  "meta": {
+    "name": "Aurora",
+    "nameIt": "Aurora",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aurora.geojson",
+      "sha256": "90b725aa51e31d2985a15e58d1db1ce854adc64677fe5b73a9073dc4a34cc00e",
+      "size": 2254091,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aurora",
+    "name": "Aurora",
+    "nameIt": "Aurora",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -88.22423,
+      41.75396
+    ],
+    "zoom": 9.5,
+    "population": 323432,
+    "grid": "cities/aurora/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aurora/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aurora",
+        "name": "Aurora",
+        "nameIt": "Aurora",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -88.22423,
+          41.75396
+        ],
+        "zoom": 9.5,
+        "population": 323432,
+        "cells": 1955,
+        "layer": "cities/aurora/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.22423,
+            41.75396
+          ]
+        },
+        "properties": {
+          "id": "aurora",
+          "name": "Aurora",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 21.9,
+          "population": 323432
+        }
+      },
+      "summary": null
+    }
+  }
+}

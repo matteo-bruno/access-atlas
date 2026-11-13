@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "owode",
+  "createdAt": "2026-10-08T16:03:25.008Z",
+  "updatedAt": "2026-10-08T16:03:25.008Z",
+  "meta": {
+    "name": "Owode",
+    "nameIt": "Owode",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Owode.geojson",
+      "sha256": "9c888716fca59230dd0600e3f2890530242762e4e0252e927c190a4d1c3526a2",
+      "size": 254269,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "owode",
+    "name": "Owode",
+    "nameIt": "Owode",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      2.98637,
+      6.69641
+    ],
+    "zoom": 11.5,
+    "population": 159996,
+    "grid": "cities/owode/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/owode/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "owode",
+        "name": "Owode",
+        "nameIt": "Owode",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          2.98637,
+          6.69641
+        ],
+        "zoom": 11.5,
+        "population": 159996,
+        "cells": 220,
+        "layer": "cities/owode/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.98637,
+            6.69641
+          ]
+        },
+        "properties": {
+          "id": "owode",
+          "name": "Owode",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 159996
+        }
+      },
+      "summary": null
+    }
+  }
+}

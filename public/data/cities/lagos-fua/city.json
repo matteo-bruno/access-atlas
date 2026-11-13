@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lagos-fua",
+  "createdAt": "2026-10-19T16:56:55.111Z",
+  "updatedAt": "2026-10-19T16:56:55.111Z",
+  "meta": {
+    "name": "Lagos",
+    "nameIt": "Lagos",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "lagos-fua",
+    "name": "Lagos",
+    "nameIt": "Lagos",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "extent": "fua",
+    "core": "lagos",
+    "center": [
+      3.2758,
+      6.59228
+    ],
+    "zoom": 8.5,
+    "population": 16804041,
+    "grid": "cities/lagos-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lagos-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lagos-fua",
+        "name": "Lagos",
+        "nameIt": "Lagos",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "extent": "fua",
+        "core": "lagos",
+        "center": [
+          3.2758,
+          6.59228
+        ],
+        "zoom": 8.5,
+        "population": 16804041,
+        "cells": 26446,
+        "layer": "cities/lagos-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.2758,
+            6.59228
+          ]
+        },
+        "properties": {
+          "id": "lagos-fua",
+          "name": "Lagos",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 90.4,
+          "population": 16804041
+        }
+      },
+      "summary": null
+    }
+  }
+}

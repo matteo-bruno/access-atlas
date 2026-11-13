@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sangatta-utara",
+  "createdAt": "2026-10-08T16:10:53.515Z",
+  "updatedAt": "2026-10-08T16:10:53.515Z",
+  "meta": {
+    "name": "Sangatta Utara",
+    "nameIt": "Sangatta Utara",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sangatta Utara.geojson",
+      "sha256": "89f532eac3529780f3d32a2ae030e08ccfa6d5fbd23e5ef26d245b626c19c3c4",
+      "size": 305051,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sangatta-utara",
+    "name": "Sangatta Utara",
+    "nameIt": "Sangatta Utara",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      117.53067,
+      0.51321
+    ],
+    "zoom": 11.2,
+    "population": 98668,
+    "grid": "cities/sangatta-utara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sangatta-utara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sangatta-utara",
+        "name": "Sangatta Utara",
+        "nameIt": "Sangatta Utara",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          117.53067,
+          0.51321
+        ],
+        "zoom": 11.2,
+        "population": 98668,
+        "cells": 262,
+        "layer": "cities/sangatta-utara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.53067,
+            0.51321
+          ]
+        },
+        "properties": {
+          "id": "sangatta-utara",
+          "name": "Sangatta Utara",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 14.4,
+          "population": 98668
+        }
+      },
+      "summary": null
+    }
+  }
+}

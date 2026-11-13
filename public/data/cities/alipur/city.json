@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "alipur",
+  "createdAt": "2026-10-08T15:05:59.035Z",
+  "updatedAt": "2026-10-08T15:05:59.035Z",
+  "meta": {
+    "name": "Alipur",
+    "nameIt": "Alipur",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Alipur.geojson",
+      "sha256": "7a849489efdc241a06e18341dc26316f75b7eaf4c2d848fcca28d897e2b8e88b",
+      "size": 206278,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "alipur",
+    "name": "Alipur",
+    "nameIt": "Alipur",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      70.91441,
+      29.38394
+    ],
+    "zoom": 11.2,
+    "population": 108140,
+    "grid": "cities/alipur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/alipur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "alipur",
+        "name": "Alipur",
+        "nameIt": "Alipur",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          70.91441,
+          29.38394
+        ],
+        "zoom": 11.2,
+        "population": 108140,
+        "cells": 178,
+        "layer": "cities/alipur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            70.91441,
+            29.38394
+          ]
+        },
+        "properties": {
+          "id": "alipur",
+          "name": "Alipur",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 108140
+        }
+      },
+      "summary": null
+    }
+  }
+}

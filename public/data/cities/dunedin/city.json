@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dunedin",
+  "createdAt": "2026-10-08T15:31:21.086Z",
+  "updatedAt": "2026-10-08T15:31:21.086Z",
+  "meta": {
+    "name": "Dunedin",
+    "nameIt": "Dunedin",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dunedin.geojson",
+      "sha256": "82e8d09dce08da1ba6631d0bda334bd0b967164f451944c00c0ea02b6d29ce2c",
+      "size": 483271,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dunedin",
+    "name": "Dunedin",
+    "nameIt": "Dunedin",
+    "region": "New Zealand",
+    "regionIt": "Nuova Zelanda",
+    "country": "NZ",
+    "center": [
+      170.49973,
+      -45.87993
+    ],
+    "zoom": 10.8,
+    "population": 74191,
+    "grid": "cities/dunedin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dunedin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dunedin",
+        "name": "Dunedin",
+        "nameIt": "Dunedin",
+        "region": "New Zealand",
+        "regionIt": "Nuova Zelanda",
+        "country": "NZ",
+        "center": [
+          170.49973,
+          -45.87993
+        ],
+        "zoom": 10.8,
+        "population": 74191,
+        "cells": 417,
+        "layer": "cities/dunedin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            170.49973,
+            -45.87993
+          ]
+        },
+        "properties": {
+          "id": "dunedin",
+          "name": "Dunedin",
+          "country": "NZ",
+          "isStudy": true,
+          "proximityMinutes": 13.8,
+          "population": 74191
+        }
+      },
+      "summary": null
+    }
+  }
+}

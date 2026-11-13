@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "batu-pahat",
+  "createdAt": "2026-10-08T15:16:13.269Z",
+  "updatedAt": "2026-10-08T15:16:13.269Z",
+  "meta": {
+    "name": "Batu Pahat",
+    "nameIt": "Batu Pahat",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Batu Pahat.geojson",
+      "sha256": "a6d28a29d025e8e8fbe553a929ad93f7c0636541a74a27284cf76e0574bee98a",
+      "size": 380880,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "batu-pahat",
+    "name": "Batu Pahat",
+    "nameIt": "Batu Pahat",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      102.94863,
+      1.85873
+    ],
+    "zoom": 10.5,
+    "population": 119460,
+    "grid": "cities/batu-pahat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/batu-pahat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "batu-pahat",
+        "name": "Batu Pahat",
+        "nameIt": "Batu Pahat",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          102.94863,
+          1.85873
+        ],
+        "zoom": 10.5,
+        "population": 119460,
+        "cells": 327,
+        "layer": "cities/batu-pahat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            102.94863,
+            1.85873
+          ]
+        },
+        "properties": {
+          "id": "batu-pahat",
+          "name": "Batu Pahat",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 23,
+          "population": 119460
+        }
+      },
+      "summary": null
+    }
+  }
+}

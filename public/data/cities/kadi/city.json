@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kadi",
+  "createdAt": "2026-10-08T15:43:55.301Z",
+  "updatedAt": "2026-10-08T15:43:55.301Z",
+  "meta": {
+    "name": "Kadi",
+    "nameIt": "Kadi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kadi.geojson",
+      "sha256": "efe050f5896427fb2c125d554f8dcc9e5be5a876bd0c7cd858951f3e5da062d2",
+      "size": 264195,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kadi",
+    "name": "Kadi",
+    "nameIt": "Kadi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.34017,
+      23.29227
+    ],
+    "zoom": 10.9,
+    "population": 108895,
+    "grid": "cities/kadi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kadi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kadi",
+        "name": "Kadi",
+        "nameIt": "Kadi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.34017,
+          23.29227
+        ],
+        "zoom": 10.9,
+        "population": 108895,
+        "cells": 228,
+        "layer": "cities/kadi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.34017,
+            23.29227
+          ]
+        },
+        "properties": {
+          "id": "kadi",
+          "name": "Kadi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 108895
+        }
+      },
+      "summary": null
+    }
+  }
+}

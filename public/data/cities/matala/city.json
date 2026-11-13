@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "matala",
+  "createdAt": "2026-10-08T15:55:38.304Z",
+  "updatedAt": "2026-10-08T15:55:38.304Z",
+  "meta": {
+    "name": "Matala",
+    "nameIt": "Matala",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Matala.geojson",
+      "sha256": "8ac90005fa22123ee6ef7f05c5a8fe9284c36902e53f28ce298897c6870f530a",
+      "size": 332142,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "matala",
+    "name": "Matala",
+    "nameIt": "Matala",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO",
+    "center": [
+      15.01719,
+      -14.74321
+    ],
+    "zoom": 11,
+    "population": 130797,
+    "grid": "cities/matala/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/matala/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "matala",
+        "name": "Matala",
+        "nameIt": "Matala",
+        "region": "Angola",
+        "regionIt": "Angola",
+        "country": "AO",
+        "center": [
+          15.01719,
+          -14.74321
+        ],
+        "zoom": 11,
+        "population": 130797,
+        "cells": 282,
+        "layer": "cities/matala/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            15.01719,
+            -14.74321
+          ]
+        },
+        "properties": {
+          "id": "matala",
+          "name": "Matala",
+          "country": "AO",
+          "isStudy": true,
+          "proximityMinutes": 31.4,
+          "population": 130797
+        }
+      },
+      "summary": null
+    }
+  }
+}

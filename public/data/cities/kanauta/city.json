@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kanauta",
+  "createdAt": "2026-10-08T15:44:48.775Z",
+  "updatedAt": "2026-10-08T15:44:48.775Z",
+  "meta": {
+    "name": "Kanauta",
+    "nameIt": "Kanauta",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kanauta.geojson",
+      "sha256": "4e1990754345c4b5e24d8f96627738be823a7a42a477a2ffd3d75274d81f5725",
+      "size": 467964,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kanauta",
+    "name": "Kanauta",
+    "nameIt": "Kanauta",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.90303,
+      26.88316
+    ],
+    "zoom": 10.7,
+    "population": 186490,
+    "grid": "cities/kanauta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kanauta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kanauta",
+        "name": "Kanauta",
+        "nameIt": "Kanauta",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.90303,
+          26.88316
+        ],
+        "zoom": 10.7,
+        "population": 186490,
+        "cells": 404,
+        "layer": "cities/kanauta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.90303,
+            26.88316
+          ]
+        },
+        "properties": {
+          "id": "kanauta",
+          "name": "Kanauta",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 186490
+        }
+      },
+      "summary": null
+    }
+  }
+}

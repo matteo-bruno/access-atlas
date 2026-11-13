@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "victoria",
+  "createdAt": "2026-10-08T16:20:39.257Z",
+  "updatedAt": "2026-10-08T16:20:39.257Z",
+  "meta": {
+    "name": "Victoria",
+    "nameIt": "Victoria",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Victoria.geojson",
+      "sha256": "34a5d0a6317f1c89e7d14deb8772a0e267a9228c5c2f5e13f9e26f0d4661141e",
+      "size": 1429266,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "victoria",
+    "name": "Victoria",
+    "nameIt": "Victoria",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -123.3591,
+      48.44693
+    ],
+    "zoom": 10.1,
+    "population": 250765,
+    "grid": "cities/victoria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/victoria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "victoria",
+        "name": "Victoria",
+        "nameIt": "Victoria",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -123.3591,
+          48.44693
+        ],
+        "zoom": 10.1,
+        "population": 250765,
+        "cells": 1234,
+        "layer": "cities/victoria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -123.3591,
+            48.44693
+          ]
+        },
+        "properties": {
+          "id": "victoria",
+          "name": "Victoria",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 10.7,
+          "population": 250765
+        }
+      },
+      "summary": null
+    }
+  }
+}

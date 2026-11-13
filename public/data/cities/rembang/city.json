@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rembang",
+  "createdAt": "2026-10-08T16:08:37.079Z",
+  "updatedAt": "2026-10-08T16:08:37.079Z",
+  "meta": {
+    "name": "Rembang",
+    "nameIt": "Rembang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rembang.geojson",
+      "sha256": "7880c89bd84e78f73c9509d9de1182f4d97e38e350eca5c7ab29b89c7183aab3",
+      "size": 256840,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rembang",
+    "name": "Rembang",
+    "nameIt": "Rembang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      111.33956,
+      -6.71288
+    ],
+    "zoom": 11.1,
+    "population": 82510,
+    "grid": "cities/rembang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rembang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rembang",
+        "name": "Rembang",
+        "nameIt": "Rembang",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          111.33956,
+          -6.71288
+        ],
+        "zoom": 11.1,
+        "population": 82510,
+        "cells": 220,
+        "layer": "cities/rembang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.33956,
+            -6.71288
+          ]
+        },
+        "properties": {
+          "id": "rembang",
+          "name": "Rembang",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 13.2,
+          "population": 82510
+        }
+      },
+      "summary": null
+    }
+  }
+}

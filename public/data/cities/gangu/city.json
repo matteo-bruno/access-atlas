@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gangu",
+  "createdAt": "2026-10-08T15:34:26.676Z",
+  "updatedAt": "2026-10-08T15:34:26.676Z",
+  "meta": {
+    "name": "Gangu",
+    "nameIt": "Gangu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gangu.geojson",
+      "sha256": "6850574fe9ee2d6d725dfdc563dcb0624f7217d4e7101d74e29c0948e4c60600",
+      "size": 379119,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gangu",
+    "name": "Gangu",
+    "nameIt": "Gangu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      105.32656,
+      34.7485
+    ],
+    "zoom": 10.8,
+    "population": 224028,
+    "grid": "cities/gangu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gangu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gangu",
+        "name": "Gangu",
+        "nameIt": "Gangu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          105.32656,
+          34.7485
+        ],
+        "zoom": 10.8,
+        "population": 224028,
+        "cells": 325,
+        "layer": "cities/gangu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.32656,
+            34.7485
+          ]
+        },
+        "properties": {
+          "id": "gangu",
+          "name": "Gangu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 23.8,
+          "population": 224028
+        }
+      },
+      "summary": null
+    }
+  }
+}

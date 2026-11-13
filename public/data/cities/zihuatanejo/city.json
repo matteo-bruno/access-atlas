@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zihuatanejo",
+  "createdAt": "2026-10-08T16:25:32.589Z",
+  "updatedAt": "2026-10-08T16:25:32.589Z",
+  "meta": {
+    "name": "Zihuatanejo",
+    "nameIt": "Zihuatanejo",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zihuatanejo.geojson",
+      "sha256": "99d5a1973bc9d60203e8016699d47a15251a4502939276bc4f2976c8e7e41672",
+      "size": 154327,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zihuatanejo",
+    "name": "Zihuatanejo",
+    "nameIt": "Zihuatanejo",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -101.54952,
+      17.64715
+    ],
+    "zoom": 11.2,
+    "population": 56815,
+    "grid": "cities/zihuatanejo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zihuatanejo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zihuatanejo",
+        "name": "Zihuatanejo",
+        "nameIt": "Zihuatanejo",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -101.54952,
+          17.64715
+        ],
+        "zoom": 11.2,
+        "population": 56815,
+        "cells": 131,
+        "layer": "cities/zihuatanejo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -101.54952,
+            17.64715
+          ]
+        },
+        "properties": {
+          "id": "zihuatanejo",
+          "name": "Zihuatanejo",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 13.9,
+          "population": 56815
+        }
+      },
+      "summary": null
+    }
+  }
+}

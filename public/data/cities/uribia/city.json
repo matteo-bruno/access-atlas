@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "uribia",
+  "createdAt": "2026-10-08T16:20:04.638Z",
+  "updatedAt": "2026-10-08T16:20:04.638Z",
+  "meta": {
+    "name": "Uribia",
+    "nameIt": "Uribia",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Uribia.geojson",
+      "sha256": "cfabb394279d48dd362e0346fe055bb72b29f7cba40775dddcabb5b8c8b7adb4",
+      "size": 71382,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "uribia",
+    "name": "Uribia",
+    "nameIt": "Uribia",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -72.266,
+      11.71518
+    ],
+    "zoom": 12,
+    "population": 9853,
+    "grid": "cities/uribia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/uribia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "uribia",
+        "name": "Uribia",
+        "nameIt": "Uribia",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -72.266,
+          11.71518
+        ],
+        "zoom": 12,
+        "population": 9853,
+        "cells": 61,
+        "layer": "cities/uribia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.266,
+            11.71518
+          ]
+        },
+        "properties": {
+          "id": "uribia",
+          "name": "Uribia",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 8,
+          "population": 9853
+        }
+      },
+      "summary": null
+    }
+  }
+}

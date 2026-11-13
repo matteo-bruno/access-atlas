@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "exeter",
+  "createdAt": "2026-10-08T15:32:38.384Z",
+  "updatedAt": "2026-10-08T15:32:38.384Z",
+  "meta": {
+    "name": "Exeter",
+    "nameIt": "Exeter",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Exeter.geojson",
+      "sha256": "15e1de06cef03a9acc1b0c06b49e360f6a5475f6ea94dcc40c65276ff5e55128",
+      "size": 358371,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "exeter",
+    "name": "Exeter",
+    "nameIt": "Exeter",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -3.51566,
+      50.724
+    ],
+    "zoom": 11.4,
+    "population": 117527,
+    "grid": "cities/exeter/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/exeter/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "exeter",
+        "name": "Exeter",
+        "nameIt": "Exeter",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -3.51566,
+          50.724
+        ],
+        "zoom": 11.4,
+        "population": 117527,
+        "cells": 312,
+        "layer": "cities/exeter/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -3.51566,
+            50.724
+          ]
+        },
+        "properties": {
+          "id": "exeter",
+          "name": "Exeter",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 117527
+        }
+      },
+      "summary": null
+    }
+  }
+}

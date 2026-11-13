@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "prague-fua",
+  "createdAt": "2026-10-19T16:58:09.283Z",
+  "updatedAt": "2026-10-19T16:58:09.283Z",
+  "meta": {
+    "name": "Prague",
+    "nameIt": "Prague",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "prague-fua",
+    "name": "Prague",
+    "nameIt": "Prague",
+    "region": "Czech Republic",
+    "regionIt": "Repubblica Ceca",
+    "country": "CZ",
+    "extent": "fua",
+    "core": "prague",
+    "center": [
+      14.46793,
+      50.07522
+    ],
+    "zoom": 8.5,
+    "population": 1984442,
+    "grid": "cities/prague-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/prague-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "prague-fua",
+        "name": "Prague",
+        "nameIt": "Prague",
+        "region": "Czech Republic",
+        "regionIt": "Repubblica Ceca",
+        "country": "CZ",
+        "extent": "fua",
+        "core": "prague",
+        "center": [
+          14.46793,
+          50.07522
+        ],
+        "zoom": 8.5,
+        "population": 1984442,
+        "cells": 29058,
+        "layer": "cities/prague-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            14.46793,
+            50.07522
+          ]
+        },
+        "properties": {
+          "id": "prague-fua",
+          "name": "Prague",
+          "country": "CZ",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 1984442
+        }
+      },
+      "summary": null
+    }
+  }
+}

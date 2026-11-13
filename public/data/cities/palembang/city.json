@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "palembang",
+  "createdAt": "2026-10-08T16:03:46.501Z",
+  "updatedAt": "2026-10-08T16:03:46.501Z",
+  "meta": {
+    "name": "Palembang",
+    "nameIt": "Palembang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Palembang.geojson",
+      "sha256": "6dbd6415ad11b9e5c1d130bfcb6558a3ff065ab4e7fef585d12520188846213f",
+      "size": 2521005,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "palembang",
+    "name": "Palembang",
+    "nameIt": "Palembang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      104.75196,
+      -2.96627
+    ],
+    "zoom": 9.4,
+    "population": 1743757,
+    "grid": "cities/palembang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/palembang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "palembang",
+        "name": "Palembang",
+        "nameIt": "Palembang",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          104.75196,
+          -2.96627
+        ],
+        "zoom": 9.4,
+        "population": 1743757,
+        "cells": 2149,
+        "layer": "cities/palembang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            104.75196,
+            -2.96627
+          ]
+        },
+        "properties": {
+          "id": "palembang",
+          "name": "Palembang",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 41.8,
+          "population": 1743757
+        }
+      },
+      "summary": null
+    }
+  }
+}

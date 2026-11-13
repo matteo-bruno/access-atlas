@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "haeju",
+  "createdAt": "2026-10-08T15:37:09.223Z",
+  "updatedAt": "2026-10-08T15:37:09.223Z",
+  "meta": {
+    "name": "Haeju",
+    "nameIt": "Haeju",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Haeju.geojson",
+      "sha256": "b656440c44a4258e12ab30f5d25d9828f01f77377e82226622f1fa53eb1cb84d",
+      "size": 525362,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "haeju",
+    "name": "Haeju",
+    "nameIt": "Haeju",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP",
+    "center": [
+      125.70505,
+      38.04167
+    ],
+    "zoom": 10.5,
+    "population": 246477,
+    "grid": "cities/haeju/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 166
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/haeju/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "haeju",
+        "name": "Haeju",
+        "nameIt": "Haeju",
+        "region": "North Korea",
+        "regionIt": "Corea del Nord",
+        "country": "KP",
+        "center": [
+          125.70505,
+          38.04167
+        ],
+        "zoom": 10.5,
+        "population": 246477,
+        "cells": 451,
+        "layer": "cities/haeju/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 166
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.70505,
+            38.04167
+          ]
+        },
+        "properties": {
+          "id": "haeju",
+          "name": "Haeju",
+          "country": "KP",
+          "isStudy": true,
+          "proximityMinutes": 24.3,
+          "population": 246477
+        }
+      },
+      "summary": null
+    }
+  }
+}

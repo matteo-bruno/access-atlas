@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ogden",
+  "createdAt": "2026-10-08T16:02:34.698Z",
+  "updatedAt": "2026-10-08T16:02:34.698Z",
+  "meta": {
+    "name": "Ogden",
+    "nameIt": "Ogden",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ogden.geojson",
+      "sha256": "2b928f169e5a7d1ba022025bd4b4d32357b6c4fe251ae2150d75609cf263a1af",
+      "size": 747735,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ogden",
+    "name": "Ogden",
+    "nameIt": "Ogden",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -111.96259,
+      41.22018
+    ],
+    "zoom": 10,
+    "population": 100694,
+    "grid": "cities/ogden/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ogden/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ogden",
+        "name": "Ogden",
+        "nameIt": "Ogden",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -111.96259,
+          41.22018
+        ],
+        "zoom": 10,
+        "population": 100694,
+        "cells": 644,
+        "layer": "cities/ogden/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -111.96259,
+            41.22018
+          ]
+        },
+        "properties": {
+          "id": "ogden",
+          "name": "Ogden",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 19.2,
+          "population": 100694
+        }
+      },
+      "summary": null
+    }
+  }
+}

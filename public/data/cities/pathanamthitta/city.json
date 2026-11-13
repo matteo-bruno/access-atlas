@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pathanamthitta",
+  "createdAt": "2026-10-08T16:04:37.911Z",
+  "updatedAt": "2026-10-08T16:04:37.911Z",
+  "meta": {
+    "name": "Pathanamthitta",
+    "nameIt": "Pathanamthitta",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pathanamthitta.geojson",
+      "sha256": "8a57ac10572385f9155302cfdc6f02adb3157d36ea739643bfe348a194e34b34",
+      "size": 101788,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pathanamthitta",
+    "name": "Pathanamthitta",
+    "nameIt": "Pathanamthitta",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.7874,
+      9.26528
+    ],
+    "zoom": 11.9,
+    "population": 43068,
+    "grid": "cities/pathanamthitta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pathanamthitta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pathanamthitta",
+        "name": "Pathanamthitta",
+        "nameIt": "Pathanamthitta",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.7874,
+          9.26528
+        ],
+        "zoom": 11.9,
+        "population": 43068,
+        "cells": 89,
+        "layer": "cities/pathanamthitta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.7874,
+            9.26528
+          ]
+        },
+        "properties": {
+          "id": "pathanamthitta",
+          "name": "Pathanamthitta",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 43068
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "birecik",
+  "createdAt": "2026-10-08T15:19:10.485Z",
+  "updatedAt": "2026-10-08T15:19:10.485Z",
+  "meta": {
+    "name": "Birecik",
+    "nameIt": "Birecik",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Birecik.geojson",
+      "sha256": "015d6b305db36a81926b255b23b3e8ad4d5d0c3ee89354b38eafc18d6e71ad53",
+      "size": 121531,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "birecik",
+    "name": "Birecik",
+    "nameIt": "Birecik",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      37.97497,
+      37.02489
+    ],
+    "zoom": 12,
+    "population": 55890,
+    "grid": "cities/birecik/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/birecik/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "birecik",
+        "name": "Birecik",
+        "nameIt": "Birecik",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          37.97497,
+          37.02489
+        ],
+        "zoom": 12,
+        "population": 55890,
+        "cells": 105,
+        "layer": "cities/birecik/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.97497,
+            37.02489
+          ]
+        },
+        "properties": {
+          "id": "birecik",
+          "name": "Birecik",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 55890
+        }
+      },
+      "summary": null
+    }
+  }
+}

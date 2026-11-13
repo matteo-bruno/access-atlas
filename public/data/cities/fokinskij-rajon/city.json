@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fokinskij-rajon",
+  "createdAt": "2026-10-08T15:33:30.057Z",
+  "updatedAt": "2026-10-08T15:33:30.057Z",
+  "meta": {
+    "name": "Fokinskij Rajon",
+    "nameIt": "Fokinskij Rajon",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fokinskij Rajon.geojson",
+      "sha256": "554677d2189589bdf1c66128401986e765d467e65ddb4d00551d5b857844032c",
+      "size": 192523,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fokinskij-rajon",
+    "name": "Fokinskij Rajon",
+    "nameIt": "Fokinskij Rajon",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      34.42315,
+      53.21187
+    ],
+    "zoom": 11.6,
+    "population": 54265,
+    "grid": "cities/fokinskij-rajon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fokinskij-rajon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fokinskij-rajon",
+        "name": "Fokinskij Rajon",
+        "nameIt": "Fokinskij Rajon",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          34.42315,
+          53.21187
+        ],
+        "zoom": 11.6,
+        "population": 54265,
+        "cells": 167,
+        "layer": "cities/fokinskij-rajon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.42315,
+            53.21187
+          ]
+        },
+        "properties": {
+          "id": "fokinskij-rajon",
+          "name": "Fokinskij Rajon",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 54265
+        }
+      },
+      "summary": null
+    }
+  }
+}

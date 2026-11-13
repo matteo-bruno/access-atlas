@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-izziyah",
+  "createdAt": "2026-10-08T15:04:00.927Z",
+  "updatedAt": "2026-10-08T15:04:00.927Z",
+  "meta": {
+    "name": "Al 'Izziyah",
+    "nameIt": "Al 'Izziyah",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al 'Izziyah.geojson",
+      "sha256": "df011239bda50557b5e9b5db9963f002ce7a642c67ddf9a0f6518ecaf2b1f2df",
+      "size": 83838,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-izziyah",
+    "name": "Al 'Izziyah",
+    "nameIt": "Al 'Izziyah",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      30.98854,
+      27.22046
+    ],
+    "zoom": 12,
+    "population": 56831,
+    "grid": "cities/al-izziyah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-izziyah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-izziyah",
+        "name": "Al 'Izziyah",
+        "nameIt": "Al 'Izziyah",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          30.98854,
+          27.22046
+        ],
+        "zoom": 12,
+        "population": 56831,
+        "cells": 72,
+        "layer": "cities/al-izziyah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.98854,
+            27.22046
+          ]
+        },
+        "properties": {
+          "id": "al-izziyah",
+          "name": "Al 'Izziyah",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 56831
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "babol",
+  "createdAt": "2026-10-08T15:12:19.385Z",
+  "updatedAt": "2026-10-08T15:12:19.385Z",
+  "meta": {
+    "name": "Babol",
+    "nameIt": "Babol",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Babol.geojson",
+      "sha256": "c4ecd8217bb8a29b74b7cb74bf575e238e57a88ed6052ee18eb07144e4325f0d",
+      "size": 475250,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "babol",
+    "name": "Babol",
+    "nameIt": "Babol",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      52.67664,
+      36.55427
+    ],
+    "zoom": 10.4,
+    "population": 250007,
+    "grid": "cities/babol/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/babol/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "babol",
+        "name": "Babol",
+        "nameIt": "Babol",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          52.67664,
+          36.55427
+        ],
+        "zoom": 10.4,
+        "population": 250007,
+        "cells": 411,
+        "layer": "cities/babol/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            52.67664,
+            36.55427
+          ]
+        },
+        "properties": {
+          "id": "babol",
+          "name": "Babol",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 27.6,
+          "population": 250007
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "edinburgh",
+  "createdAt": "2026-10-08T15:31:43.227Z",
+  "updatedAt": "2026-10-08T15:31:43.227Z",
+  "meta": {
+    "name": "Edinburgh",
+    "nameIt": "Edinburgh",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Edinburgh.geojson",
+      "sha256": "5c9c9ec5f6ef50ba3ea58bbc39f3dbbd3ec9ebf3160d50e99b1c95c46817002d",
+      "size": 1635690,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "edinburgh",
+    "name": "Edinburgh",
+    "nameIt": "Edinburgh",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -3.20396,
+      55.94189
+    ],
+    "zoom": 9.9,
+    "population": 500237,
+    "grid": "cities/edinburgh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/edinburgh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "edinburgh",
+        "name": "Edinburgh",
+        "nameIt": "Edinburgh",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -3.20396,
+          55.94189
+        ],
+        "zoom": 9.9,
+        "population": 500237,
+        "cells": 1424,
+        "layer": "cities/edinburgh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -3.20396,
+            55.94189
+          ]
+        },
+        "properties": {
+          "id": "edinburgh",
+          "name": "Edinburgh",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 8.4,
+          "population": 500237
+        }
+      },
+      "summary": null
+    }
+  }
+}

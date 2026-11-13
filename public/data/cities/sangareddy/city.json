@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sangareddy",
+  "createdAt": "2026-10-08T16:10:52.615Z",
+  "updatedAt": "2026-10-08T16:10:52.615Z",
+  "meta": {
+    "name": "Sangareddy",
+    "nameIt": "Sangareddy",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sangareddy.geojson",
+      "sha256": "7dd401e1665cb6ca0ec0328c4a061fc85a4d5b847daeb0693eabe430c316a379",
+      "size": 142537,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sangareddy",
+    "name": "Sangareddy",
+    "nameIt": "Sangareddy",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.08084,
+      17.60786
+    ],
+    "zoom": 11.6,
+    "population": 98829,
+    "grid": "cities/sangareddy/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sangareddy/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sangareddy",
+        "name": "Sangareddy",
+        "nameIt": "Sangareddy",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.08084,
+          17.60786
+        ],
+        "zoom": 11.6,
+        "population": 98829,
+        "cells": 123,
+        "layer": "cities/sangareddy/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.08084,
+            17.60786
+          ]
+        },
+        "properties": {
+          "id": "sangareddy",
+          "name": "Sangareddy",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 16.7,
+          "population": 98829
+        }
+      },
+      "summary": null
+    }
+  }
+}

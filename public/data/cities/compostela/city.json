@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "compostela",
+  "createdAt": "2026-10-08T15:26:16.093Z",
+  "updatedAt": "2026-10-08T15:26:16.093Z",
+  "meta": {
+    "name": "Compostela",
+    "nameIt": "Compostela",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Compostela.geojson",
+      "sha256": "a91df89d36d2e9a808e81737eff8edf72a6fc51c7978373d36e878b4ac3db1f8",
+      "size": 90551,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "compostela",
+    "name": "Compostela",
+    "nameIt": "Compostela",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      126.0875,
+      7.67126
+    ],
+    "zoom": 12,
+    "population": 26816,
+    "grid": "cities/compostela/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/compostela/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "compostela",
+        "name": "Compostela",
+        "nameIt": "Compostela",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          126.0875,
+          7.67126
+        ],
+        "zoom": 12,
+        "population": 26816,
+        "cells": 78,
+        "layer": "cities/compostela/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            126.0875,
+            7.67126
+          ]
+        },
+        "properties": {
+          "id": "compostela",
+          "name": "Compostela",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 9,
+          "population": 26816
+        }
+      },
+      "summary": null
+    }
+  }
+}

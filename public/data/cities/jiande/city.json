@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jiande",
+  "createdAt": "2026-10-08T15:42:32.180Z",
+  "updatedAt": "2026-10-08T15:42:32.180Z",
+  "meta": {
+    "name": "Jiande",
+    "nameIt": "Jiande",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jiande.geojson",
+      "sha256": "795dff6f6314614ac063250e2aa352ecc3d4e78d4aa57295cf70a4f5d0d13e23",
+      "size": 341099,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jiande",
+    "name": "Jiande",
+    "nameIt": "Jiande",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.28434,
+      29.47586
+    ],
+    "zoom": 10.6,
+    "population": 99103,
+    "grid": "cities/jiande/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jiande/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jiande",
+        "name": "Jiande",
+        "nameIt": "Jiande",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.28434,
+          29.47586
+        ],
+        "zoom": 10.6,
+        "population": 99103,
+        "cells": 292,
+        "layer": "cities/jiande/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.28434,
+            29.47586
+          ]
+        },
+        "properties": {
+          "id": "jiande",
+          "name": "Jiande",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 99103
+        }
+      },
+      "summary": null
+    }
+  }
+}

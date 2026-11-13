@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ikole",
+  "createdAt": "2026-10-08T15:40:31.509Z",
+  "updatedAt": "2026-10-08T15:40:31.509Z",
+  "meta": {
+    "name": "Ikole",
+    "nameIt": "Ikole",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ikole.geojson",
+      "sha256": "5215725fade5700d939b9c3eae76316d12d25e77bff264a696130b3aa126ee94",
+      "size": 254430,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ikole",
+    "name": "Ikole",
+    "nameIt": "Ikole",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      5.50972,
+      7.79241
+    ],
+    "zoom": 11.4,
+    "population": 127000,
+    "grid": "cities/ikole/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ikole/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ikole",
+        "name": "Ikole",
+        "nameIt": "Ikole",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          5.50972,
+          7.79241
+        ],
+        "zoom": 11.4,
+        "population": 127000,
+        "cells": 221,
+        "layer": "cities/ikole/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.50972,
+            7.79241
+          ]
+        },
+        "properties": {
+          "id": "ikole",
+          "name": "Ikole",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 127000
+        }
+      },
+      "summary": null
+    }
+  }
+}

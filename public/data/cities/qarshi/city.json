@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "qarshi",
+  "createdAt": "2026-10-08T16:07:14.993Z",
+  "updatedAt": "2026-10-08T16:07:14.993Z",
+  "meta": {
+    "name": "Qarshi",
+    "nameIt": "Qarshi",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Qarshi.geojson",
+      "sha256": "1494c3d0139eb3d00b63a0137f212715a0529e42059f5dce103de1b3a224179d",
+      "size": 1385550,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "qarshi",
+    "name": "Qarshi",
+    "nameIt": "Qarshi",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      65.76842,
+      38.82931
+    ],
+    "zoom": 9.8,
+    "population": 99826,
+    "grid": "cities/qarshi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/qarshi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "qarshi",
+        "name": "Qarshi",
+        "nameIt": "Qarshi",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          65.76842,
+          38.82931
+        ],
+        "zoom": 9.8,
+        "population": 99826,
+        "cells": 1206,
+        "layer": "cities/qarshi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            65.76842,
+            38.82931
+          ]
+        },
+        "properties": {
+          "id": "qarshi",
+          "name": "Qarshi",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 40.2,
+          "population": 99826
+        }
+      },
+      "summary": null
+    }
+  }
+}

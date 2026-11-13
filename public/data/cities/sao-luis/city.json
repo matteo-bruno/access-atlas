@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sao-luis",
+  "createdAt": "2026-10-08T16:15:39.556Z",
+  "updatedAt": "2026-10-08T16:15:39.556Z",
+  "meta": {
+    "name": "São Luís",
+    "nameIt": "São Luís",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/São Luís.geojson",
+      "sha256": "86d8c46b892928cbd472b9cbd81f9ae0e80889528faed8209ce81770792858b6",
+      "size": 2224421,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sao-luis",
+    "name": "São Luís",
+    "nameIt": "São Luís",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -44.23168,
+      -2.54794
+    ],
+    "zoom": 9.6,
+    "population": 1185963,
+    "grid": "cities/sao-luis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sao-luis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sao-luis",
+        "name": "São Luís",
+        "nameIt": "São Luís",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -44.23168,
+          -2.54794
+        ],
+        "zoom": 9.6,
+        "population": 1185963,
+        "cells": 1903,
+        "layer": "cities/sao-luis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -44.23168,
+            -2.54794
+          ]
+        },
+        "properties": {
+          "id": "sao-luis",
+          "name": "São Luís",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 20.6,
+          "population": 1185963
+        }
+      },
+      "summary": null
+    }
+  }
+}

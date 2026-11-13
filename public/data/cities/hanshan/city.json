@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hanshan",
+  "createdAt": "2026-10-08T15:37:43.933Z",
+  "updatedAt": "2026-10-08T15:37:43.933Z",
+  "meta": {
+    "name": "Hanshan",
+    "nameIt": "Hanshan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hanshan.geojson",
+      "sha256": "0cccc78a7c61c1ec10fa96fbfc0d122128f024dd90ec5541cf7469315ccdd9f7",
+      "size": 194756,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hanshan",
+    "name": "Hanshan",
+    "nameIt": "Hanshan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.10001,
+      31.72742
+    ],
+    "zoom": 11.6,
+    "population": 89245,
+    "grid": "cities/hanshan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hanshan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hanshan",
+        "name": "Hanshan",
+        "nameIt": "Hanshan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.10001,
+          31.72742
+        ],
+        "zoom": 11.6,
+        "population": 89245,
+        "cells": 168,
+        "layer": "cities/hanshan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.10001,
+            31.72742
+          ]
+        },
+        "properties": {
+          "id": "hanshan",
+          "name": "Hanshan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 9.9,
+          "population": 89245
+        }
+      },
+      "summary": null
+    }
+  }
+}

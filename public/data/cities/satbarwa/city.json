@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "satbarwa",
+  "createdAt": "2026-10-08T16:11:35.330Z",
+  "updatedAt": "2026-10-08T16:11:35.330Z",
+  "meta": {
+    "name": "Satbarwa",
+    "nameIt": "Satbarwa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Satbarwa.geojson",
+      "sha256": "ee42135e89d15ea34c6b8f5891705052bdaceb3982c14362fc8547044cb5eb8a",
+      "size": 243092,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "satbarwa",
+    "name": "Satbarwa",
+    "nameIt": "Satbarwa",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.27058,
+      23.91482
+    ],
+    "zoom": 11.2,
+    "population": 27116,
+    "grid": "cities/satbarwa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/satbarwa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "satbarwa",
+        "name": "Satbarwa",
+        "nameIt": "Satbarwa",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.27058,
+          23.91482
+        ],
+        "zoom": 11.2,
+        "population": 27116,
+        "cells": 210,
+        "layer": "cities/satbarwa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.27058,
+            23.91482
+          ]
+        },
+        "properties": {
+          "id": "satbarwa",
+          "name": "Satbarwa",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 27116
+        }
+      },
+      "summary": null
+    }
+  }
+}

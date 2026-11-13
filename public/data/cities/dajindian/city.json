@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dajindian",
+  "createdAt": "2026-10-08T15:27:34.042Z",
+  "updatedAt": "2026-10-08T15:27:34.042Z",
+  "meta": {
+    "name": "Dajindian",
+    "nameIt": "Dajindian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dajindian.geojson",
+      "sha256": "020458976572edf30dd9d21e7780e891911cc0d10153a0a96ebd9aa2a6fddaf8",
+      "size": 596406,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dajindian",
+    "name": "Dajindian",
+    "nameIt": "Dajindian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.03296,
+      34.37444
+    ],
+    "zoom": 10.1,
+    "population": 56222,
+    "grid": "cities/dajindian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 182
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dajindian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dajindian",
+        "name": "Dajindian",
+        "nameIt": "Dajindian",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.03296,
+          34.37444
+        ],
+        "zoom": 10.1,
+        "population": 56222,
+        "cells": 512,
+        "layer": "cities/dajindian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 182
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.03296,
+            34.37444
+          ]
+        },
+        "properties": {
+          "id": "dajindian",
+          "name": "Dajindian",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 56222
+        }
+      },
+      "summary": null
+    }
+  }
+}

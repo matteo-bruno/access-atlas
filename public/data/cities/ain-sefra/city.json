@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ain-sefra",
+  "createdAt": "2026-10-08T15:03:15.039Z",
+  "updatedAt": "2026-10-08T15:03:15.039Z",
+  "meta": {
+    "name": "Ain Sefra",
+    "nameIt": "Ain Sefra",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ain Sefra.geojson",
+      "sha256": "ab3568a4d35f062ea9a8cc19879a51eb1781a6c37975caa3cb14ba36a4696821",
+      "size": 147692,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ain-sefra",
+    "name": "Ain Sefra",
+    "nameIt": "Ain Sefra",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      -0.58293,
+      32.75858
+    ],
+    "zoom": 11.7,
+    "population": 60180,
+    "grid": "cities/ain-sefra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ain-sefra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ain-sefra",
+        "name": "Ain Sefra",
+        "nameIt": "Ain Sefra",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          -0.58293,
+          32.75858
+        ],
+        "zoom": 11.7,
+        "population": 60180,
+        "cells": 126,
+        "layer": "cities/ain-sefra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.58293,
+            32.75858
+          ]
+        },
+        "properties": {
+          "id": "ain-sefra",
+          "name": "Ain Sefra",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 17,
+          "population": 60180
+        }
+      },
+      "summary": null
+    }
+  }
+}

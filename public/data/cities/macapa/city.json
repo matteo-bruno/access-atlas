@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "macapa",
+  "createdAt": "2026-10-08T15:53:12.075Z",
+  "updatedAt": "2026-10-08T15:53:12.075Z",
+  "meta": {
+    "name": "Macapá",
+    "nameIt": "Macapá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Macapá.geojson",
+      "sha256": "dd2e9dc6ce79b8ca9722a4cb87e8d62e784bc80dfa6f61a9a663b0b7323b9b77",
+      "size": 709765,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "macapa",
+    "name": "Macapá",
+    "nameIt": "Macapá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -51.06841,
+      0.04143
+    ],
+    "zoom": 10.3,
+    "population": 370090,
+    "grid": "cities/macapa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/macapa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "macapa",
+        "name": "Macapá",
+        "nameIt": "Macapá",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -51.06841,
+          0.04143
+        ],
+        "zoom": 10.3,
+        "population": 370090,
+        "cells": 606,
+        "layer": "cities/macapa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -51.06841,
+            0.04143
+          ]
+        },
+        "properties": {
+          "id": "macapa",
+          "name": "Macapá",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 15.9,
+          "population": 370090
+        }
+      },
+      "summary": null
+    }
+  }
+}

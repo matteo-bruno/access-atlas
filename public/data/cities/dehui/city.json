@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dehui",
+  "createdAt": "2026-10-08T15:28:49.048Z",
+  "updatedAt": "2026-10-08T15:28:49.048Z",
+  "meta": {
+    "name": "Dehui",
+    "nameIt": "Dehui",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dehui.geojson",
+      "sha256": "300b288678183aa3e4780155b9fdbf5d538ff24aa7a08ebf5eefeed0588d9e5c",
+      "size": 296255,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dehui",
+    "name": "Dehui",
+    "nameIt": "Dehui",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      125.69642,
+      44.53313
+    ],
+    "zoom": 11.5,
+    "population": 176688,
+    "grid": "cities/dehui/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dehui/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dehui",
+        "name": "Dehui",
+        "nameIt": "Dehui",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          125.69642,
+          44.53313
+        ],
+        "zoom": 11.5,
+        "population": 176688,
+        "cells": 254,
+        "layer": "cities/dehui/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.69642,
+            44.53313
+          ]
+        },
+        "properties": {
+          "id": "dehui",
+          "name": "Dehui",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 18.2,
+          "population": 176688
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yamagata",
+  "createdAt": "2026-10-08T16:23:16.085Z",
+  "updatedAt": "2026-10-08T16:23:16.085Z",
+  "meta": {
+    "name": "Yamagata",
+    "nameIt": "Yamagata",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yamagata.geojson",
+      "sha256": "275cc654a1f8cafed0a93dd2efdc7e39ca2b322f385b4619374c6018104984a6",
+      "size": 548365,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yamagata",
+    "name": "Yamagata",
+    "nameIt": "Yamagata",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      140.33192,
+      38.2489
+    ],
+    "zoom": 10.7,
+    "population": 191403,
+    "grid": "cities/yamagata/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yamagata/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yamagata",
+        "name": "Yamagata",
+        "nameIt": "Yamagata",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          140.33192,
+          38.2489
+        ],
+        "zoom": 10.7,
+        "population": 191403,
+        "cells": 478,
+        "layer": "cities/yamagata/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            140.33192,
+            38.2489
+          ]
+        },
+        "properties": {
+          "id": "yamagata",
+          "name": "Yamagata",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 13.8,
+          "population": 191403
+        }
+      },
+      "summary": null
+    }
+  }
+}

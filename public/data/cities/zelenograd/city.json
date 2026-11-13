@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zelenograd",
+  "createdAt": "2026-10-08T16:24:55.388Z",
+  "updatedAt": "2026-10-08T16:24:55.388Z",
+  "meta": {
+    "name": "Zelenograd",
+    "nameIt": "Zelenograd",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zelenograd.geojson",
+      "sha256": "938209b2ca4482723219dac0a4dc34d01af06fa4c84f81e0e5629ebd8ab78fbb",
+      "size": 381763,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zelenograd",
+    "name": "Zelenograd",
+    "nameIt": "Zelenograd",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      37.18771,
+      55.98843
+    ],
+    "zoom": 11,
+    "population": 253367,
+    "grid": "cities/zelenograd/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zelenograd/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zelenograd",
+        "name": "Zelenograd",
+        "nameIt": "Zelenograd",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          37.18771,
+          55.98843
+        ],
+        "zoom": 11,
+        "population": 253367,
+        "cells": 335,
+        "layer": "cities/zelenograd/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.18771,
+            55.98843
+          ]
+        },
+        "properties": {
+          "id": "zelenograd",
+          "name": "Zelenograd",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 7.8,
+          "population": 253367
+        }
+      },
+      "summary": null
+    }
+  }
+}

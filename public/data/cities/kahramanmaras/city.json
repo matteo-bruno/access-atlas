@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kahramanmaras",
+  "createdAt": "2026-10-08T15:44:09.728Z",
+  "updatedAt": "2026-10-08T15:44:09.728Z",
+  "meta": {
+    "name": "Kahramanmaraş",
+    "nameIt": "Kahramanmaraş",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kahramanmaraş.geojson",
+      "sha256": "8d1e5b4e5adbe175c4ac2955e07d998a01c46a6cc04b780493eee5255d8dc387",
+      "size": 617313,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kahramanmaras",
+    "name": "Kahramanmaraş",
+    "nameIt": "Kahramanmaraş",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      36.91018,
+      37.58131
+    ],
+    "zoom": 10.2,
+    "population": 534302,
+    "grid": "cities/kahramanmaras/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kahramanmaras/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kahramanmaras",
+        "name": "Kahramanmaraş",
+        "nameIt": "Kahramanmaraş",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          36.91018,
+          37.58131
+        ],
+        "zoom": 10.2,
+        "population": 534302,
+        "cells": 539,
+        "layer": "cities/kahramanmaras/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.91018,
+            37.58131
+          ]
+        },
+        "properties": {
+          "id": "kahramanmaras",
+          "name": "Kahramanmaraş",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 17.5,
+          "population": 534302
+        }
+      },
+      "summary": null
+    }
+  }
+}

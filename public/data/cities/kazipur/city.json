@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kazipur",
+  "createdAt": "2026-10-08T15:45:55.824Z",
+  "updatedAt": "2026-10-08T15:45:55.824Z",
+  "meta": {
+    "name": "Kazipur",
+    "nameIt": "Kazipur",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kazipur.geojson",
+      "sha256": "2bfe6ccaee3765a110d5e717d368e0fa1f5710b4a464dcda661e69f0f7d1e614",
+      "size": 1310583,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kazipur",
+    "name": "Kazipur",
+    "nameIt": "Kazipur",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.61308,
+      24.62786
+    ],
+    "zoom": 9.8,
+    "population": 232825,
+    "grid": "cities/kazipur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kazipur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kazipur",
+        "name": "Kazipur",
+        "nameIt": "Kazipur",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.61308,
+          24.62786
+        ],
+        "zoom": 9.8,
+        "population": 232825,
+        "cells": 1131,
+        "layer": "cities/kazipur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.61308,
+            24.62786
+          ]
+        },
+        "properties": {
+          "id": "kazipur",
+          "name": "Kazipur",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 232825
+        }
+      },
+      "summary": null
+    }
+  }
+}

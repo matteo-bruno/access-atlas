@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yaodu",
+  "createdAt": "2026-10-08T16:23:33.517Z",
+  "updatedAt": "2026-10-08T16:23:33.517Z",
+  "meta": {
+    "name": "Yaodu",
+    "nameIt": "Yaodu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yaodu.geojson",
+      "sha256": "e10d57e8cec79f05e1166c54793cce974e7e66fa66954300d74d66697ea59666",
+      "size": 121458,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yaodu",
+    "name": "Yaodu",
+    "nameIt": "Yaodu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.01977,
+      30.10161
+    ],
+    "zoom": 12,
+    "population": 60109,
+    "grid": "cities/yaodu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yaodu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yaodu",
+        "name": "Yaodu",
+        "nameIt": "Yaodu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.01977,
+          30.10161
+        ],
+        "zoom": 12,
+        "population": 60109,
+        "cells": 104,
+        "layer": "cities/yaodu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.01977,
+            30.10161
+          ]
+        },
+        "properties": {
+          "id": "yaodu",
+          "name": "Yaodu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 60109
+        }
+      },
+      "summary": null
+    }
+  }
+}

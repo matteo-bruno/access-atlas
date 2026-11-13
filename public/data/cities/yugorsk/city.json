@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yugorsk",
+  "createdAt": "2026-10-08T16:24:25.432Z",
+  "updatedAt": "2026-10-08T16:24:25.432Z",
+  "meta": {
+    "name": "Yugorsk",
+    "nameIt": "Yugorsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yugorsk.geojson",
+      "sha256": "c1bba7cc56997f1d0e0fd922c434978b7dfb0480b0c537b3f6e1df8516b7b464",
+      "size": 156117,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yugorsk",
+    "name": "Yugorsk",
+    "nameIt": "Yugorsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      63.33959,
+      61.31412
+    ],
+    "zoom": 11.8,
+    "population": 31356,
+    "grid": "cities/yugorsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yugorsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yugorsk",
+        "name": "Yugorsk",
+        "nameIt": "Yugorsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          63.33959,
+          61.31412
+        ],
+        "zoom": 11.8,
+        "population": 31356,
+        "cells": 136,
+        "layer": "cities/yugorsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            63.33959,
+            61.31412
+          ]
+        },
+        "properties": {
+          "id": "yugorsk",
+          "name": "Yugorsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 13.7,
+          "population": 31356
+        }
+      },
+      "summary": null
+    }
+  }
+}

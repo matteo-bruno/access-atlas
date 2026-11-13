@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tailai",
+  "createdAt": "2026-10-08T16:16:02.688Z",
+  "updatedAt": "2026-10-08T16:16:02.688Z",
+  "meta": {
+    "name": "Tailai",
+    "nameIt": "Tailai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tailai.geojson",
+      "sha256": "a82468c2ae2672e271434dd3365c6c9f074fdf4b9f810d28b69c03a0787c9317",
+      "size": 242361,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tailai",
+    "name": "Tailai",
+    "nameIt": "Tailai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      123.41358,
+      46.3917
+    ],
+    "zoom": 11.5,
+    "population": 69948,
+    "grid": "cities/tailai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tailai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tailai",
+        "name": "Tailai",
+        "nameIt": "Tailai",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          123.41358,
+          46.3917
+        ],
+        "zoom": 11.5,
+        "population": 69948,
+        "cells": 208,
+        "layer": "cities/tailai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.41358,
+            46.3917
+          ]
+        },
+        "properties": {
+          "id": "tailai",
+          "name": "Tailai",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 69948
+        }
+      },
+      "summary": null
+    }
+  }
+}

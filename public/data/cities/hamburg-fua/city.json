@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hamburg-fua",
+  "createdAt": "2026-10-19T16:56:22.672Z",
+  "updatedAt": "2026-10-19T16:56:22.672Z",
+  "meta": {
+    "name": "Hamburg",
+    "nameIt": "Hamburg",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "hamburg-fua",
+    "name": "Hamburg",
+    "nameIt": "Hamburg",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "extent": "fua",
+    "core": "hamburg",
+    "center": [
+      9.99629,
+      53.57895
+    ],
+    "zoom": 8.5,
+    "population": 2950878,
+    "grid": "cities/hamburg-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hamburg-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hamburg-fua",
+        "name": "Hamburg",
+        "nameIt": "Hamburg",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "extent": "fua",
+        "core": "hamburg",
+        "center": [
+          9.99629,
+          53.57895
+        ],
+        "zoom": 8.5,
+        "population": 2950878,
+        "cells": 35721,
+        "layer": "cities/hamburg-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.99629,
+            53.57895
+          ]
+        },
+        "properties": {
+          "id": "hamburg-fua",
+          "name": "Hamburg",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 10.7,
+          "population": 2950878
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "samarbagh",
+  "createdAt": "2026-10-08T16:10:15.557Z",
+  "updatedAt": "2026-10-08T16:10:15.557Z",
+  "meta": {
+    "name": "Samarbagh",
+    "nameIt": "Samarbagh",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Samarbagh.geojson",
+      "sha256": "73026456c77ff2aff27c84b57043a231e81da5bab7eddaebd5b5e1a1a50d110a",
+      "size": 509616,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "samarbagh",
+    "name": "Samarbagh",
+    "nameIt": "Samarbagh",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      71.67121,
+      34.93211
+    ],
+    "zoom": 10.3,
+    "population": 120733,
+    "grid": "cities/samarbagh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/samarbagh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "samarbagh",
+        "name": "Samarbagh",
+        "nameIt": "Samarbagh",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          71.67121,
+          34.93211
+        ],
+        "zoom": 10.3,
+        "population": 120733,
+        "cells": 441,
+        "layer": "cities/samarbagh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.67121,
+            34.93211
+          ]
+        },
+        "properties": {
+          "id": "samarbagh",
+          "name": "Samarbagh",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 120733
+        }
+      },
+      "summary": null
+    }
+  }
+}

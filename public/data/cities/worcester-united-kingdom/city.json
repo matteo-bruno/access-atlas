@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "worcester-united-kingdom",
+  "createdAt": "2026-10-08T16:21:50.827Z",
+  "updatedAt": "2026-10-08T16:21:50.827Z",
+  "meta": {
+    "name": "Worcester (United Kingdom)",
+    "nameIt": "Worcester (United Kingdom)",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Worcester (United Kingdom).geojson",
+      "sha256": "e8745b42761f0aed587ef3b5b9ff85595dff1cc44ea2965b9f644812053cd3a6",
+      "size": 355641,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "worcester-united-kingdom",
+    "name": "Worcester (United Kingdom)",
+    "nameIt": "Worcester (United Kingdom)",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -2.21395,
+      52.19597
+    ],
+    "zoom": 11.2,
+    "population": 106015,
+    "grid": "cities/worcester-united-kingdom/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/worcester-united-kingdom/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "worcester-united-kingdom",
+        "name": "Worcester (United Kingdom)",
+        "nameIt": "Worcester (United Kingdom)",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -2.21395,
+          52.19597
+        ],
+        "zoom": 11.2,
+        "population": 106015,
+        "cells": 309,
+        "layer": "cities/worcester-united-kingdom/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.21395,
+            52.19597
+          ]
+        },
+        "properties": {
+          "id": "worcester-united-kingdom",
+          "name": "Worcester (United Kingdom)",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 12.8,
+          "population": 106015
+        }
+      },
+      "summary": null
+    }
+  }
+}

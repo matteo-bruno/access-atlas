@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pandharkawada",
+  "createdAt": "2026-10-08T16:04:00.188Z",
+  "updatedAt": "2026-10-08T16:04:00.188Z",
+  "meta": {
+    "name": "Pandharkawada",
+    "nameIt": "Pandharkawada",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pandharkawada.geojson",
+      "sha256": "68651dff99652f0f990150b105cf5d7b718c788209b3ac76f9c65fa1dde39c47",
+      "size": 85747,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pandharkawada",
+    "name": "Pandharkawada",
+    "nameIt": "Pandharkawada",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.55041,
+      20.02372
+    ],
+    "zoom": 12,
+    "population": 38379,
+    "grid": "cities/pandharkawada/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pandharkawada/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pandharkawada",
+        "name": "Pandharkawada",
+        "nameIt": "Pandharkawada",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.55041,
+          20.02372
+        ],
+        "zoom": 12,
+        "population": 38379,
+        "cells": 74,
+        "layer": "cities/pandharkawada/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.55041,
+            20.02372
+          ]
+        },
+        "properties": {
+          "id": "pandharkawada",
+          "name": "Pandharkawada",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 38379
+        }
+      },
+      "summary": null
+    }
+  }
+}

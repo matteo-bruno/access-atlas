@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zwolle",
+  "createdAt": "2026-10-08T16:25:45.011Z",
+  "updatedAt": "2026-10-08T16:25:45.011Z",
+  "meta": {
+    "name": "Zwolle",
+    "nameIt": "Zwolle",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zwolle.geojson",
+      "sha256": "806d5b9c6c409433d7cdd23c9f528f5d6e558dd557b3566502c1ea9a4f8a3e72",
+      "size": 427183,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zwolle",
+    "name": "Zwolle",
+    "nameIt": "Zwolle",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      6.09413,
+      52.51205
+    ],
+    "zoom": 11.1,
+    "population": 109300,
+    "grid": "cities/zwolle/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zwolle/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zwolle",
+        "name": "Zwolle",
+        "nameIt": "Zwolle",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          6.09413,
+          52.51205
+        ],
+        "zoom": 11.1,
+        "population": 109300,
+        "cells": 376,
+        "layer": "cities/zwolle/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.09413,
+            52.51205
+          ]
+        },
+        "properties": {
+          "id": "zwolle",
+          "name": "Zwolle",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 109300
+        }
+      },
+      "summary": null
+    }
+  }
+}

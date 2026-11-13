@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pandharpur",
+  "createdAt": "2026-10-08T16:04:00.482Z",
+  "updatedAt": "2026-10-08T16:04:00.482Z",
+  "meta": {
+    "name": "Pandharpur",
+    "nameIt": "Pandharpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pandharpur.geojson",
+      "sha256": "ebc00f2fbb1425329266ba21c7ebbee5cd520667101bad1c307a8ac0710e75d5",
+      "size": 205076,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pandharpur",
+    "name": "Pandharpur",
+    "nameIt": "Pandharpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.32064,
+      17.67474
+    ],
+    "zoom": 11.6,
+    "population": 118871,
+    "grid": "cities/pandharpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pandharpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pandharpur",
+        "name": "Pandharpur",
+        "nameIt": "Pandharpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.32064,
+          17.67474
+        ],
+        "zoom": 11.6,
+        "population": 118871,
+        "cells": 177,
+        "layer": "cities/pandharpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.32064,
+            17.67474
+          ]
+        },
+        "properties": {
+          "id": "pandharpur",
+          "name": "Pandharpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19.1,
+          "population": 118871
+        }
+      },
+      "summary": null
+    }
+  }
+}

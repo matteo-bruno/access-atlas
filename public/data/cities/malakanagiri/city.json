@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "malakanagiri",
+  "createdAt": "2026-10-08T15:54:04.614Z",
+  "updatedAt": "2026-10-08T15:54:04.614Z",
+  "meta": {
+    "name": "Malakanagiri",
+    "nameIt": "Malakanagiri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Malakanagiri.geojson",
+      "sha256": "8c84b0fc4a3137d5f08d593b92bec37120197ff6b5bb9ceef8043e4a6839d197",
+      "size": 99706,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "malakanagiri",
+    "name": "Malakanagiri",
+    "nameIt": "Malakanagiri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.88836,
+      18.35411
+    ],
+    "zoom": 12,
+    "population": 53791,
+    "grid": "cities/malakanagiri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/malakanagiri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "malakanagiri",
+        "name": "Malakanagiri",
+        "nameIt": "Malakanagiri",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.88836,
+          18.35411
+        ],
+        "zoom": 12,
+        "population": 53791,
+        "cells": 86,
+        "layer": "cities/malakanagiri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.88836,
+            18.35411
+          ]
+        },
+        "properties": {
+          "id": "malakanagiri",
+          "name": "Malakanagiri",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 53791
+        }
+      },
+      "summary": null
+    }
+  }
+}

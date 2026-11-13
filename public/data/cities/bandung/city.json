@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bandung",
+  "createdAt": "2026-10-08T15:14:41.312Z",
+  "updatedAt": "2026-10-08T15:14:41.312Z",
+  "meta": {
+    "name": "Bandung",
+    "nameIt": "Bandung",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bandung.geojson",
+      "sha256": "25bb6dcf8e7eca425b681795b8ef145283695f6e82429402ca8e0d209c6cd2a9",
+      "size": 10995989,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bandung",
+    "name": "Bandung",
+    "nameIt": "Bandung",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      107.63081,
+      -6.93569
+    ],
+    "zoom": 8.5,
+    "population": 7597416,
+    "grid": "cities/bandung/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bandung/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bandung",
+        "name": "Bandung",
+        "nameIt": "Bandung",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          107.63081,
+          -6.93569
+        ],
+        "zoom": 8.5,
+        "population": 7597416,
+        "cells": 9418,
+        "layer": "cities/bandung/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.63081,
+            -6.93569
+          ]
+        },
+        "properties": {
+          "id": "bandung",
+          "name": "Bandung",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 36.1,
+          "population": 7597416
+        }
+      },
+      "summary": null
+    }
+  }
+}

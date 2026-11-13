@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "satar-halt",
+  "createdAt": "2026-10-08T16:11:34.665Z",
+  "updatedAt": "2026-10-08T16:11:34.665Z",
+  "meta": {
+    "name": "Satar Halt",
+    "nameIt": "Satar Halt",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Satar Halt.geojson",
+      "sha256": "7500bdd0b65e8558601a179d8b5dfaa18c58cc703ce0767e9a3d04eb0d7aff50",
+      "size": 421568,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "satar-halt",
+    "name": "Satar Halt",
+    "nameIt": "Satar Halt",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.53614,
+      26.01633
+    ],
+    "zoom": 10.7,
+    "population": 78443,
+    "grid": "cities/satar-halt/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/satar-halt/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "satar-halt",
+        "name": "Satar Halt",
+        "nameIt": "Satar Halt",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.53614,
+          26.01633
+        ],
+        "zoom": 10.7,
+        "population": 78443,
+        "cells": 364,
+        "layer": "cities/satar-halt/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.53614,
+            26.01633
+          ]
+        },
+        "properties": {
+          "id": "satar-halt",
+          "name": "Satar Halt",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 78443
+        }
+      },
+      "summary": null
+    }
+  }
+}

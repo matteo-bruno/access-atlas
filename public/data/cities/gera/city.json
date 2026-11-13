@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gera",
+  "createdAt": "2026-10-08T15:35:01.339Z",
+  "updatedAt": "2026-10-08T15:35:01.339Z",
+  "meta": {
+    "name": "Gera",
+    "nameIt": "Gera",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gera.geojson",
+      "sha256": "4e459f2eafba639556dab81d1d38e00176d38222cc17fe858a652709480bfd44",
+      "size": 246744,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gera",
+    "name": "Gera",
+    "nameIt": "Gera",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      12.07975,
+      50.86929
+    ],
+    "zoom": 11,
+    "population": 52693,
+    "grid": "cities/gera/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gera/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gera",
+        "name": "Gera",
+        "nameIt": "Gera",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          12.07975,
+          50.86929
+        ],
+        "zoom": 11,
+        "population": 52693,
+        "cells": 216,
+        "layer": "cities/gera/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.07975,
+            50.86929
+          ]
+        },
+        "properties": {
+          "id": "gera",
+          "name": "Gera",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 8.8,
+          "population": 52693
+        }
+      },
+      "summary": null
+    }
+  }
+}

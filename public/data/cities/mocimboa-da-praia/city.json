@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mocimboa-da-praia",
+  "createdAt": "2026-10-08T15:57:38.727Z",
+  "updatedAt": "2026-10-08T15:57:38.727Z",
+  "meta": {
+    "name": "Mocímboa da Praia",
+    "nameIt": "Mocímboa da Praia",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mocímboa da Praia.geojson",
+      "sha256": "2ba639cb1a9c7abd658876b716de703a651d6473786b1bbd3634a51c834160c2",
+      "size": 143126,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mocimboa-da-praia",
+    "name": "Mocímboa da Praia",
+    "nameIt": "Mocímboa da Praia",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ",
+    "center": [
+      40.35015,
+      -11.35434
+    ],
+    "zoom": 12,
+    "population": 93295,
+    "grid": "cities/mocimboa-da-praia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mocimboa-da-praia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mocimboa-da-praia",
+        "name": "Mocímboa da Praia",
+        "nameIt": "Mocímboa da Praia",
+        "region": "Mozambique",
+        "regionIt": "Mozambico",
+        "country": "MZ",
+        "center": [
+          40.35015,
+          -11.35434
+        ],
+        "zoom": 12,
+        "population": 93295,
+        "cells": 122,
+        "layer": "cities/mocimboa-da-praia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.35015,
+            -11.35434
+          ]
+        },
+        "properties": {
+          "id": "mocimboa-da-praia",
+          "name": "Mocímboa da Praia",
+          "country": "MZ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 93295
+        }
+      },
+      "summary": null
+    }
+  }
+}

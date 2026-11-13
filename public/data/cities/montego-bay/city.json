@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "montego-bay",
+  "createdAt": "2026-10-08T15:58:02.989Z",
+  "updatedAt": "2026-10-08T15:58:02.989Z",
+  "meta": {
+    "name": "Montego Bay",
+    "nameIt": "Montego Bay",
+    "region": "Jamaica",
+    "regionIt": "Giamaica",
+    "country": "JM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Montego Bay.geojson",
+      "sha256": "dc055823af94bca95e808e4c8f9f2392879c7d8ebee30c91273fb6f1aa80bce4",
+      "size": 653632,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "montego-bay",
+    "name": "Montego Bay",
+    "nameIt": "Montego Bay",
+    "region": "Jamaica",
+    "regionIt": "Giamaica",
+    "country": "JM",
+    "center": [
+      -77.90358,
+      18.47284
+    ],
+    "zoom": 10.9,
+    "population": 106440,
+    "grid": "cities/montego-bay/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 182
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/montego-bay/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "montego-bay",
+        "name": "Montego Bay",
+        "nameIt": "Montego Bay",
+        "region": "Jamaica",
+        "regionIt": "Giamaica",
+        "country": "JM",
+        "center": [
+          -77.90358,
+          18.47284
+        ],
+        "zoom": 10.9,
+        "population": 106440,
+        "cells": 561,
+        "layer": "cities/montego-bay/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 182
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.90358,
+            18.47284
+          ]
+        },
+        "properties": {
+          "id": "montego-bay",
+          "name": "Montego Bay",
+          "country": "JM",
+          "isStudy": true,
+          "proximityMinutes": 31.2,
+          "population": 106440
+        }
+      },
+      "summary": null
+    }
+  }
+}

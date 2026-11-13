@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xi",
+  "createdAt": "2026-10-08T16:22:13.832Z",
+  "updatedAt": "2026-10-08T16:22:13.832Z",
+  "meta": {
+    "name": "Xi",
+    "nameIt": "Xi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xi.geojson",
+      "sha256": "d6eadf361b2a0a18ce395e749fa0abdbd6dcf8b2d7087dd58af6005d79040dbd",
+      "size": 269433,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xi",
+    "name": "Xi",
+    "nameIt": "Xi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.73983,
+      32.35203
+    ],
+    "zoom": 11.4,
+    "population": 207628,
+    "grid": "cities/xi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xi",
+        "name": "Xi",
+        "nameIt": "Xi",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.73983,
+          32.35203
+        ],
+        "zoom": 11.4,
+        "population": 207628,
+        "cells": 231,
+        "layer": "cities/xi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.73983,
+            32.35203
+          ]
+        },
+        "properties": {
+          "id": "xi",
+          "name": "Xi",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 207628
+        }
+      },
+      "summary": null
+    }
+  }
+}

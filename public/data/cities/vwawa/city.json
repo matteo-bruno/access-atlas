@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vwawa",
+  "createdAt": "2026-10-08T16:21:05.611Z",
+  "updatedAt": "2026-10-08T16:21:05.611Z",
+  "meta": {
+    "name": "Vwawa",
+    "nameIt": "Vwawa",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vwawa.geojson",
+      "sha256": "7970556dea5e2be2a84b7b1d483c512fb7fc00763e6fa6be69e4d85c6bebbb9d",
+      "size": 146506,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vwawa",
+    "name": "Vwawa",
+    "nameIt": "Vwawa",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      32.93759,
+      -9.10718
+    ],
+    "zoom": 11.7,
+    "population": 38058,
+    "grid": "cities/vwawa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vwawa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vwawa",
+        "name": "Vwawa",
+        "nameIt": "Vwawa",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          32.93759,
+          -9.10718
+        ],
+        "zoom": 11.7,
+        "population": 38058,
+        "cells": 126,
+        "layer": "cities/vwawa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.93759,
+            -9.10718
+          ]
+        },
+        "properties": {
+          "id": "vwawa",
+          "name": "Vwawa",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 38058
+        }
+      },
+      "summary": null
+    }
+  }
+}

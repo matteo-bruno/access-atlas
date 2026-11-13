@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dublin",
+  "createdAt": "2026-10-08T15:31:12.630Z",
+  "updatedAt": "2026-10-08T15:31:12.630Z",
+  "meta": {
+    "name": "Dublin",
+    "nameIt": "Dublin",
+    "region": "Ireland",
+    "regionIt": "Irlanda",
+    "country": "IE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dublin.geojson",
+      "sha256": "f8836a7259e00df252286268cef9108514b2391385f3978ca662f345b2aa9150",
+      "size": 3507620,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dublin",
+    "name": "Dublin",
+    "nameIt": "Dublin",
+    "region": "Ireland",
+    "regionIt": "Irlanda",
+    "country": "IE",
+    "center": [
+      -6.27335,
+      53.33058
+    ],
+    "zoom": 9.3,
+    "population": 1137663,
+    "grid": "cities/dublin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dublin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dublin",
+        "name": "Dublin",
+        "nameIt": "Dublin",
+        "region": "Ireland",
+        "regionIt": "Irlanda",
+        "country": "IE",
+        "center": [
+          -6.27335,
+          53.33058
+        ],
+        "zoom": 9.3,
+        "population": 1137663,
+        "cells": 3059,
+        "layer": "cities/dublin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -6.27335,
+            53.33058
+          ]
+        },
+        "properties": {
+          "id": "dublin",
+          "name": "Dublin",
+          "country": "IE",
+          "isStudy": true,
+          "proximityMinutes": 9.5,
+          "population": 1137663
+        }
+      },
+      "summary": null
+    }
+  }
+}

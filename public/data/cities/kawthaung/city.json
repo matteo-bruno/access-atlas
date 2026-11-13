@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kawthaung",
+  "createdAt": "2026-10-08T15:45:50.006Z",
+  "updatedAt": "2026-10-08T15:45:50.006Z",
+  "meta": {
+    "name": "Kawthaung",
+    "nameIt": "Kawthaung",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kawthaung.geojson",
+      "sha256": "4ba6287c30ee597bc497cbafd62038e250e5426cb67f169cf6a58f1f26bcfc64",
+      "size": 144159,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kawthaung",
+    "name": "Kawthaung",
+    "nameIt": "Kawthaung",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      98.55415,
+      9.99311
+    ],
+    "zoom": 11.6,
+    "population": 81067,
+    "grid": "cities/kawthaung/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kawthaung/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kawthaung",
+        "name": "Kawthaung",
+        "nameIt": "Kawthaung",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          98.55415,
+          9.99311
+        ],
+        "zoom": 11.6,
+        "population": 81067,
+        "cells": 125,
+        "layer": "cities/kawthaung/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            98.55415,
+            9.99311
+          ]
+        },
+        "properties": {
+          "id": "kawthaung",
+          "name": "Kawthaung",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 81067
+        }
+      },
+      "summary": null
+    }
+  }
+}

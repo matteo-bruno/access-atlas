@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aranghata",
+  "createdAt": "2026-10-08T15:09:02.082Z",
+  "updatedAt": "2026-10-08T15:09:02.082Z",
+  "meta": {
+    "name": "Aranghata",
+    "nameIt": "Aranghata",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aranghata.geojson",
+      "sha256": "9252f4769c49814f01b9a2f15740b50d1c77aa472371d829ead62fe6bbb7fa48",
+      "size": 228132,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aranghata",
+    "name": "Aranghata",
+    "nameIt": "Aranghata",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.61218,
+      23.23969
+    ],
+    "zoom": 11.2,
+    "population": 50431,
+    "grid": "cities/aranghata/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aranghata/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aranghata",
+        "name": "Aranghata",
+        "nameIt": "Aranghata",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.61218,
+          23.23969
+        ],
+        "zoom": 11.2,
+        "population": 50431,
+        "cells": 197,
+        "layer": "cities/aranghata/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.61218,
+            23.23969
+          ]
+        },
+        "properties": {
+          "id": "aranghata",
+          "name": "Aranghata",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 50431
+        }
+      },
+      "summary": null
+    }
+  }
+}

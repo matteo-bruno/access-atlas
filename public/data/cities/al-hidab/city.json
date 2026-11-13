@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-hidab",
+  "createdAt": "2026-10-08T15:04:15.756Z",
+  "updatedAt": "2026-10-08T15:04:15.756Z",
+  "meta": {
+    "name": "Al Hidab",
+    "nameIt": "Al Hidab",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Hidab.geojson",
+      "sha256": "d4d3dd62af593b73302e335a37ac6298db6bf7fea65f2b944819764eea01d57a",
+      "size": 68533,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-hidab",
+    "name": "Al Hidab",
+    "nameIt": "Al Hidab",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE",
+    "center": [
+      43.60221,
+      17.06087
+    ],
+    "zoom": 12,
+    "population": 32498,
+    "grid": "cities/al-hidab/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-hidab/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-hidab",
+        "name": "Al Hidab",
+        "nameIt": "Al Hidab",
+        "region": "Yemen",
+        "regionIt": "Yemen",
+        "country": "YE",
+        "center": [
+          43.60221,
+          17.06087
+        ],
+        "zoom": 12,
+        "population": 32498,
+        "cells": 59,
+        "layer": "cities/al-hidab/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.60221,
+            17.06087
+          ]
+        },
+        "properties": {
+          "id": "al-hidab",
+          "name": "Al Hidab",
+          "country": "YE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 32498
+        }
+      },
+      "summary": null
+    }
+  }
+}

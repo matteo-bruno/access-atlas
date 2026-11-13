@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tomsk",
+  "createdAt": "2026-10-08T16:18:21.619Z",
+  "updatedAt": "2026-10-08T16:18:21.619Z",
+  "meta": {
+    "name": "Tomsk",
+    "nameIt": "Tomsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tomsk.geojson",
+      "sha256": "7136eaa1b3570d7520941851ca1149a3cfd1ba27aee18440939af4e8f620160a",
+      "size": 757558,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tomsk",
+    "name": "Tomsk",
+    "nameIt": "Tomsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      84.98783,
+      56.49437
+    ],
+    "zoom": 10.6,
+    "population": 466467,
+    "grid": "cities/tomsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tomsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tomsk",
+        "name": "Tomsk",
+        "nameIt": "Tomsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          84.98783,
+          56.49437
+        ],
+        "zoom": 10.6,
+        "population": 466467,
+        "cells": 666,
+        "layer": "cities/tomsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.98783,
+            56.49437
+          ]
+        },
+        "properties": {
+          "id": "tomsk",
+          "name": "Tomsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 10.3,
+          "population": 466467
+        }
+      },
+      "summary": null
+    }
+  }
+}

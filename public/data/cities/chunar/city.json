@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chunar",
+  "createdAt": "2026-10-08T15:25:17.406Z",
+  "updatedAt": "2026-10-08T15:25:17.406Z",
+  "meta": {
+    "name": "Chunar",
+    "nameIt": "Chunar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chunar.geojson",
+      "sha256": "6e516e779f697115eea9c79b1dd5a7ea0e81747adc58469ff37ee9ea2eb6345e",
+      "size": 294150,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chunar",
+    "name": "Chunar",
+    "nameIt": "Chunar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      82.88719,
+      25.11316
+    ],
+    "zoom": 11.2,
+    "population": 131125,
+    "grid": "cities/chunar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chunar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chunar",
+        "name": "Chunar",
+        "nameIt": "Chunar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          82.88719,
+          25.11316
+        ],
+        "zoom": 11.2,
+        "population": 131125,
+        "cells": 254,
+        "layer": "cities/chunar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            82.88719,
+            25.11316
+          ]
+        },
+        "properties": {
+          "id": "chunar",
+          "name": "Chunar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 131125
+        }
+      },
+      "summary": null
+    }
+  }
+}

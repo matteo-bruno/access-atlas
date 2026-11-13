@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "adre",
+  "createdAt": "2026-10-08T15:02:31.279Z",
+  "updatedAt": "2026-10-08T15:02:31.279Z",
+  "meta": {
+    "name": "Adré",
+    "nameIt": "Adré",
+    "region": "Chad",
+    "regionIt": "Ciad",
+    "country": "TD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Adré.geojson",
+      "sha256": "4e5d840544abf9834e3e47b367fe382839af4c134489dcca82661385486ccd7d",
+      "size": 125840,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "adre",
+    "name": "Adré",
+    "nameIt": "Adré",
+    "region": "Chad",
+    "regionIt": "Ciad",
+    "country": "TD",
+    "center": [
+      22.1961,
+      13.46493
+    ],
+    "zoom": 12,
+    "population": 41181,
+    "grid": "cities/adre/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/adre/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "adre",
+        "name": "Adré",
+        "nameIt": "Adré",
+        "region": "Chad",
+        "regionIt": "Ciad",
+        "country": "TD",
+        "center": [
+          22.1961,
+          13.46493
+        ],
+        "zoom": 12,
+        "population": 41181,
+        "cells": 108,
+        "layer": "cities/adre/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            22.1961,
+            13.46493
+          ]
+        },
+        "properties": {
+          "id": "adre",
+          "name": "Adré",
+          "country": "TD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 41181
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "phalodi",
+  "createdAt": "2026-10-08T16:05:12.771Z",
+  "updatedAt": "2026-10-08T16:05:12.771Z",
+  "meta": {
+    "name": "Phalodi",
+    "nameIt": "Phalodi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Phalodi.geojson",
+      "sha256": "040747dbddbe6bd9012095f23bb5b7add9fabf73bda796721527b64f74b58ac4",
+      "size": 137798,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "phalodi",
+    "name": "Phalodi",
+    "nameIt": "Phalodi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.36863,
+      27.12972
+    ],
+    "zoom": 11.9,
+    "population": 56356,
+    "grid": "cities/phalodi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/phalodi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "phalodi",
+        "name": "Phalodi",
+        "nameIt": "Phalodi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.36863,
+          27.12972
+        ],
+        "zoom": 11.9,
+        "population": 56356,
+        "cells": 119,
+        "layer": "cities/phalodi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.36863,
+            27.12972
+          ]
+        },
+        "properties": {
+          "id": "phalodi",
+          "name": "Phalodi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 56356
+        }
+      },
+      "summary": null
+    }
+  }
+}

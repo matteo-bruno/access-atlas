@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gudivada",
+  "createdAt": "2026-10-08T15:36:28.956Z",
+  "updatedAt": "2026-10-08T15:36:28.956Z",
+  "meta": {
+    "name": "Gudivada",
+    "nameIt": "Gudivada",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gudivada.geojson",
+      "sha256": "226d5edabd01af5151ed937b4d1dd4314a906eefcfce5e7c04e3a2e7c3279855",
+      "size": 150521,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gudivada",
+    "name": "Gudivada",
+    "nameIt": "Gudivada",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.99517,
+      16.433
+    ],
+    "zoom": 11.7,
+    "population": 106635,
+    "grid": "cities/gudivada/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gudivada/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gudivada",
+        "name": "Gudivada",
+        "nameIt": "Gudivada",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.99517,
+          16.433
+        ],
+        "zoom": 11.7,
+        "population": 106635,
+        "cells": 130,
+        "layer": "cities/gudivada/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.99517,
+            16.433
+          ]
+        },
+        "properties": {
+          "id": "gudivada",
+          "name": "Gudivada",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18.4,
+          "population": 106635
+        }
+      },
+      "summary": null
+    }
+  }
+}

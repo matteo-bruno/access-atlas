@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chenwang",
+  "createdAt": "2026-10-08T15:24:23.016Z",
+  "updatedAt": "2026-10-08T15:24:23.016Z",
+  "meta": {
+    "name": "Chenwang",
+    "nameIt": "Chenwang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chenwang.geojson",
+      "sha256": "0b36fe87e096c06bbef265b52b7919f826b9461219e9ae66e053fa2c437547b3",
+      "size": 473764,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chenwang",
+    "name": "Chenwang",
+    "nameIt": "Chenwang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      115.51922,
+      35.56002
+    ],
+    "zoom": 10.8,
+    "population": 169517,
+    "grid": "cities/chenwang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chenwang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chenwang",
+        "name": "Chenwang",
+        "nameIt": "Chenwang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          115.51922,
+          35.56002
+        ],
+        "zoom": 10.8,
+        "population": 169517,
+        "cells": 406,
+        "layer": "cities/chenwang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.51922,
+            35.56002
+          ]
+        },
+        "properties": {
+          "id": "chenwang",
+          "name": "Chenwang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 22.2,
+          "population": 169517
+        }
+      },
+      "summary": null
+    }
+  }
+}

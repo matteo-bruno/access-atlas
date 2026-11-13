@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abbottabad",
+  "createdAt": "2026-10-08T15:01:18.710Z",
+  "updatedAt": "2026-10-08T15:01:18.710Z",
+  "meta": {
+    "name": "Abbottabad",
+    "nameIt": "Abbottabad",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abbottabad.geojson",
+      "sha256": "70f9c00851a8b1438c5a76e19f3e3b3766e6699041e9cf97710049ad6ea58e46",
+      "size": 1034493,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abbottabad",
+    "name": "Abbottabad",
+    "nameIt": "Abbottabad",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      73.23458,
+      34.18887
+    ],
+    "zoom": 9.8,
+    "population": 507148,
+    "grid": "cities/abbottabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abbottabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abbottabad",
+        "name": "Abbottabad",
+        "nameIt": "Abbottabad",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          73.23458,
+          34.18887
+        ],
+        "zoom": 9.8,
+        "population": 507148,
+        "cells": 895,
+        "layer": "cities/abbottabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.23458,
+            34.18887
+          ]
+        },
+        "properties": {
+          "id": "abbottabad",
+          "name": "Abbottabad",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 35.9,
+          "population": 507148
+        }
+      },
+      "summary": null
+    }
+  }
+}

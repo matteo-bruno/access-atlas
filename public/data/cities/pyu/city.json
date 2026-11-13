@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pyu",
+  "createdAt": "2026-10-08T16:07:07.864Z",
+  "updatedAt": "2026-10-08T16:07:07.864Z",
+  "meta": {
+    "name": "Pyu",
+    "nameIt": "Pyu",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pyu.geojson",
+      "sha256": "638cb9683e61a9523ab89dbe24e2c8cad939d1e2ec7ba88ddcb1f4c96a6bbe74",
+      "size": 95043,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pyu",
+    "name": "Pyu",
+    "nameIt": "Pyu",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      96.43866,
+      18.48407
+    ],
+    "zoom": 11.9,
+    "population": 63761,
+    "grid": "cities/pyu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pyu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pyu",
+        "name": "Pyu",
+        "nameIt": "Pyu",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          96.43866,
+          18.48407
+        ],
+        "zoom": 11.9,
+        "population": 63761,
+        "cells": 82,
+        "layer": "cities/pyu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.43866,
+            18.48407
+          ]
+        },
+        "properties": {
+          "id": "pyu",
+          "name": "Pyu",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 63761
+        }
+      },
+      "summary": null
+    }
+  }
+}

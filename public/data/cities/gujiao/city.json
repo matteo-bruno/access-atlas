@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gujiao",
+  "createdAt": "2026-10-08T15:36:37.199Z",
+  "updatedAt": "2026-10-08T15:36:37.199Z",
+  "meta": {
+    "name": "Gujiao",
+    "nameIt": "Gujiao",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gujiao.geojson",
+      "sha256": "11a8c13adedd4284cf8ce207c3cf2242bd30ca01d7702490db10ff0eb66af295",
+      "size": 265807,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gujiao",
+    "name": "Gujiao",
+    "nameIt": "Gujiao",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.17334,
+      37.91038
+    ],
+    "zoom": 10.9,
+    "population": 106722,
+    "grid": "cities/gujiao/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gujiao/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gujiao",
+        "name": "Gujiao",
+        "nameIt": "Gujiao",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.17334,
+          37.91038
+        ],
+        "zoom": 10.9,
+        "population": 106722,
+        "cells": 228,
+        "layer": "cities/gujiao/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.17334,
+            37.91038
+          ]
+        },
+        "properties": {
+          "id": "gujiao",
+          "name": "Gujiao",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 37,
+          "population": 106722
+        }
+      },
+      "summary": null
+    }
+  }
+}

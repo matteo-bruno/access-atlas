@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "votuporanga",
+  "createdAt": "2026-10-08T16:21:04.648Z",
+  "updatedAt": "2026-10-08T16:21:04.648Z",
+  "meta": {
+    "name": "Votuporanga",
+    "nameIt": "Votuporanga",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Votuporanga.geojson",
+      "sha256": "d287243735bdb84d872d7e7f0541f54dcdeca05ed56334f15ed85a4cdd1111a2",
+      "size": 245963,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "votuporanga",
+    "name": "Votuporanga",
+    "nameIt": "Votuporanga",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -49.97366,
+      -20.41785
+    ],
+    "zoom": 11.4,
+    "population": 83002,
+    "grid": "cities/votuporanga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/votuporanga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "votuporanga",
+        "name": "Votuporanga",
+        "nameIt": "Votuporanga",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -49.97366,
+          -20.41785
+        ],
+        "zoom": 11.4,
+        "population": 83002,
+        "cells": 209,
+        "layer": "cities/votuporanga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.97366,
+            -20.41785
+          ]
+        },
+        "properties": {
+          "id": "votuporanga",
+          "name": "Votuporanga",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 83002
+        }
+      },
+      "summary": null
+    }
+  }
+}

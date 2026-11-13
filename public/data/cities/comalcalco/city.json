@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "comalcalco",
+  "createdAt": "2026-10-08T15:26:12.383Z",
+  "updatedAt": "2026-10-08T15:26:12.383Z",
+  "meta": {
+    "name": "Comalcalco",
+    "nameIt": "Comalcalco",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Comalcalco.geojson",
+      "sha256": "8ef11e0b05e7d3093736892e1ad1924b3c24999bd02573ca4c6ff7bf33484853",
+      "size": 151169,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "comalcalco",
+    "name": "Comalcalco",
+    "nameIt": "Comalcalco",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -93.22338,
+      18.26362
+    ],
+    "zoom": 11.4,
+    "population": 53716,
+    "grid": "cities/comalcalco/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/comalcalco/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "comalcalco",
+        "name": "Comalcalco",
+        "nameIt": "Comalcalco",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -93.22338,
+          18.26362
+        ],
+        "zoom": 11.4,
+        "population": 53716,
+        "cells": 130,
+        "layer": "cities/comalcalco/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -93.22338,
+            18.26362
+          ]
+        },
+        "properties": {
+          "id": "comalcalco",
+          "name": "Comalcalco",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 53716
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "seville",
+  "createdAt": "2026-10-08T16:12:09.017Z",
+  "updatedAt": "2026-10-08T16:12:09.017Z",
+  "meta": {
+    "name": "Seville",
+    "nameIt": "Seville",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Seville.geojson",
+      "sha256": "2b030b9b866afb4214fcd1b90861af15cdd4edd1de0e259c4cd29c8b23e1ba83",
+      "size": 818187,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "seville",
+    "name": "Seville",
+    "nameIt": "Seville",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -5.96573,
+      37.38803
+    ],
+    "zoom": 10.4,
+    "population": 657634,
+    "grid": "cities/seville/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/seville/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "seville",
+        "name": "Seville",
+        "nameIt": "Seville",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -5.96573,
+          37.38803
+        ],
+        "zoom": 10.4,
+        "population": 657634,
+        "cells": 714,
+        "layer": "cities/seville/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.96573,
+            37.38803
+          ]
+        },
+        "properties": {
+          "id": "seville",
+          "name": "Seville",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 6.8,
+          "population": 657634
+        }
+      },
+      "summary": null
+    }
+  }
+}

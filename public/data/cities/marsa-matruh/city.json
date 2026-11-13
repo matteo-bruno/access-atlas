@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "marsa-matruh",
+  "createdAt": "2026-10-08T15:55:21.241Z",
+  "updatedAt": "2026-10-08T15:55:21.241Z",
+  "meta": {
+    "name": "Marsa Matruh",
+    "nameIt": "Marsa Matruh",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Marsa Matruh.geojson",
+      "sha256": "0a2a28b804deb4bded48d434591dc3ff0e0a4d1b9ec6de49a8c00f8d1a06d59e",
+      "size": 535885,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "marsa-matruh",
+    "name": "Marsa Matruh",
+    "nameIt": "Marsa Matruh",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      27.24978,
+      31.34456
+    ],
+    "zoom": 10.4,
+    "population": 217213,
+    "grid": "cities/marsa-matruh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/marsa-matruh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "marsa-matruh",
+        "name": "Marsa Matruh",
+        "nameIt": "Marsa Matruh",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          27.24978,
+          31.34456
+        ],
+        "zoom": 10.4,
+        "population": 217213,
+        "cells": 460,
+        "layer": "cities/marsa-matruh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.24978,
+            31.34456
+          ]
+        },
+        "properties": {
+          "id": "marsa-matruh",
+          "name": "Marsa Matruh",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 23.2,
+          "population": 217213
+        }
+      },
+      "summary": null
+    }
+  }
+}

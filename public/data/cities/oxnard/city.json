@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oxnard",
+  "createdAt": "2026-10-08T16:03:25.748Z",
+  "updatedAt": "2026-10-08T16:03:25.748Z",
+  "meta": {
+    "name": "Oxnard",
+    "nameIt": "Oxnard",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Oxnard.geojson",
+      "sha256": "df8c657413e4988bf932a9badf6a1d1950206b3284f7a51ae09d90119a6523a5",
+      "size": 796911,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "oxnard",
+    "name": "Oxnard",
+    "nameIt": "Oxnard",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -119.18156,
+      34.19109
+    ],
+    "zoom": 10.5,
+    "population": 234845,
+    "grid": "cities/oxnard/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oxnard/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oxnard",
+        "name": "Oxnard",
+        "nameIt": "Oxnard",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -119.18156,
+          34.19109
+        ],
+        "zoom": 10.5,
+        "population": 234845,
+        "cells": 681,
+        "layer": "cities/oxnard/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -119.18156,
+            34.19109
+          ]
+        },
+        "properties": {
+          "id": "oxnard",
+          "name": "Oxnard",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 24.2,
+          "population": 234845
+        }
+      },
+      "summary": null
+    }
+  }
+}

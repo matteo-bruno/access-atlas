@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "banjarsari",
+  "createdAt": "2026-10-08T15:15:01.764Z",
+  "updatedAt": "2026-10-08T15:15:01.764Z",
+  "meta": {
+    "name": "Banjarsari",
+    "nameIt": "Banjarsari",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Banjarsari.geojson",
+      "sha256": "8bf4d4b38076e6a6d48d0398f7c6fc014fb49a2641a06e4e4768ddc678e26033",
+      "size": 227283,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "banjarsari",
+    "name": "Banjarsari",
+    "nameIt": "Banjarsari",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      108.62024,
+      -7.48765
+    ],
+    "zoom": 11.3,
+    "population": 62462,
+    "grid": "cities/banjarsari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/banjarsari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "banjarsari",
+        "name": "Banjarsari",
+        "nameIt": "Banjarsari",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          108.62024,
+          -7.48765
+        ],
+        "zoom": 11.3,
+        "population": 62462,
+        "cells": 194,
+        "layer": "cities/banjarsari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.62024,
+            -7.48765
+          ]
+        },
+        "properties": {
+          "id": "banjarsari",
+          "name": "Banjarsari",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 62462
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "venice-united-states",
+  "createdAt": "2026-10-08T16:20:35.005Z",
+  "updatedAt": "2026-10-08T16:20:35.005Z",
+  "meta": {
+    "name": "Venice (United States)",
+    "nameIt": "Venice (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Venice (United States).geojson",
+      "sha256": "6190f9e69218e5ca7469627167912b51511e78707928e006157d7564fbf9b0d0",
+      "size": 861045,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "venice-united-states",
+    "name": "Venice (United States)",
+    "nameIt": "Venice (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -82.43054,
+      27.0874
+    ],
+    "zoom": 9.9,
+    "population": 60771,
+    "grid": "cities/venice-united-states/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/venice-united-states/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "venice-united-states",
+        "name": "Venice (United States)",
+        "nameIt": "Venice (United States)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -82.43054,
+          27.0874
+        ],
+        "zoom": 9.9,
+        "population": 60771,
+        "cells": 739,
+        "layer": "cities/venice-united-states/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.43054,
+            27.0874
+          ]
+        },
+        "properties": {
+          "id": "venice-united-states",
+          "name": "Venice (United States)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 30.9,
+          "population": 60771
+        }
+      },
+      "summary": null
+    }
+  }
+}

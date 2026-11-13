@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kamyaran",
+  "createdAt": "2026-10-08T15:44:46.781Z",
+  "updatedAt": "2026-10-08T15:44:46.781Z",
+  "meta": {
+    "name": "Kamyaran",
+    "nameIt": "Kamyaran",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kamyaran.geojson",
+      "sha256": "fe1d5b0016ae3ef1b17da34585cb20e997e77964297b952c360368c2803d4690",
+      "size": 87807,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kamyaran",
+    "name": "Kamyaran",
+    "nameIt": "Kamyaran",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      46.93981,
+      34.79676
+    ],
+    "zoom": 12,
+    "population": 56814,
+    "grid": "cities/kamyaran/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kamyaran/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kamyaran",
+        "name": "Kamyaran",
+        "nameIt": "Kamyaran",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          46.93981,
+          34.79676
+        ],
+        "zoom": 12,
+        "population": 56814,
+        "cells": 76,
+        "layer": "cities/kamyaran/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            46.93981,
+            34.79676
+          ]
+        },
+        "properties": {
+          "id": "kamyaran",
+          "name": "Kamyaran",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 56814
+        }
+      },
+      "summary": null
+    }
+  }
+}

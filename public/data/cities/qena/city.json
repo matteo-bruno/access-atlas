@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "qena",
+  "createdAt": "2026-10-08T16:07:17.426Z",
+  "updatedAt": "2026-10-08T16:07:17.426Z",
+  "meta": {
+    "name": "Qena",
+    "nameIt": "Qena",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Qena.geojson",
+      "sha256": "8d462f447f84e36e0ea231e054c17b7506b0573d1a5435ed76cbab949b2b872b",
+      "size": 332289,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "qena",
+    "name": "Qena",
+    "nameIt": "Qena",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      32.7279,
+      26.16179
+    ],
+    "zoom": 11,
+    "population": 365530,
+    "grid": "cities/qena/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/qena/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "qena",
+        "name": "Qena",
+        "nameIt": "Qena",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          32.7279,
+          26.16179
+        ],
+        "zoom": 11,
+        "population": 365530,
+        "cells": 286,
+        "layer": "cities/qena/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.7279,
+            26.16179
+          ]
+        },
+        "properties": {
+          "id": "qena",
+          "name": "Qena",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 16.7,
+          "population": 365530
+        }
+      },
+      "summary": null
+    }
+  }
+}

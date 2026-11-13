@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bolo",
+  "createdAt": "2026-10-08T15:19:58.089Z",
+  "updatedAt": "2026-10-08T15:19:58.089Z",
+  "meta": {
+    "name": "Bolo",
+    "nameIt": "Bolo",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bolo.geojson",
+      "sha256": "bd6f82a30f1db32c46ce2f9ee059b4604b955bec42485ff3e725a7f2c509adca",
+      "size": 54069,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bolo",
+    "name": "Bolo",
+    "nameIt": "Bolo",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      7.22025,
+      4.66826
+    ],
+    "zoom": 12,
+    "population": 5353,
+    "grid": "cities/bolo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bolo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bolo",
+        "name": "Bolo",
+        "nameIt": "Bolo",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          7.22025,
+          4.66826
+        ],
+        "zoom": 12,
+        "population": 5353,
+        "cells": 47,
+        "layer": "cities/bolo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.22025,
+            4.66826
+          ]
+        },
+        "properties": {
+          "id": "bolo",
+          "name": "Bolo",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 5353
+        }
+      },
+      "summary": null
+    }
+  }
+}

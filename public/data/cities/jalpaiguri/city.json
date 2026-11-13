@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jalpaiguri",
+  "createdAt": "2026-10-08T15:41:51.146Z",
+  "updatedAt": "2026-10-08T15:41:51.146Z",
+  "meta": {
+    "name": "Jalpaiguri",
+    "nameIt": "Jalpaiguri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jalpaiguri.geojson",
+      "sha256": "2a5c50f037b859e7a404a130ab24cc1af0046acac334ac8a37ab7d1cd0dec9bf",
+      "size": 509402,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jalpaiguri",
+    "name": "Jalpaiguri",
+    "nameIt": "Jalpaiguri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.70749,
+      26.52969
+    ],
+    "zoom": 10.5,
+    "population": 306571,
+    "grid": "cities/jalpaiguri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jalpaiguri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jalpaiguri",
+        "name": "Jalpaiguri",
+        "nameIt": "Jalpaiguri",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.70749,
+          26.52969
+        ],
+        "zoom": 10.5,
+        "population": 306571,
+        "cells": 443,
+        "layer": "cities/jalpaiguri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.70749,
+            26.52969
+          ]
+        },
+        "properties": {
+          "id": "jalpaiguri",
+          "name": "Jalpaiguri",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 16.6,
+          "population": 306571
+        }
+      },
+      "summary": null
+    }
+  }
+}

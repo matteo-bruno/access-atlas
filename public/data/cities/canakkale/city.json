@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "canakkale",
+  "createdAt": "2026-10-08T16:25:51.731Z",
+  "updatedAt": "2026-10-08T16:25:51.731Z",
+  "meta": {
+    "name": "Çanakkale",
+    "nameIt": "Çanakkale",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Çanakkale.geojson",
+      "sha256": "fc1bf9f15124c8174ac9ca3489b9de541b58b7403b16b150c6eef74f05df50a8",
+      "size": 240606,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "canakkale",
+    "name": "Çanakkale",
+    "nameIt": "Çanakkale",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      26.41153,
+      40.13558
+    ],
+    "zoom": 10.8,
+    "population": 143055,
+    "grid": "cities/canakkale/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/canakkale/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "canakkale",
+        "name": "Çanakkale",
+        "nameIt": "Çanakkale",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          26.41153,
+          40.13558
+        ],
+        "zoom": 10.8,
+        "population": 143055,
+        "cells": 209,
+        "layer": "cities/canakkale/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.41153,
+            40.13558
+          ]
+        },
+        "properties": {
+          "id": "canakkale",
+          "name": "Çanakkale",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 14.4,
+          "population": 143055
+        }
+      },
+      "summary": null
+    }
+  }
+}

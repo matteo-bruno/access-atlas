@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vidisha",
+  "createdAt": "2026-10-08T16:20:39.634Z",
+  "updatedAt": "2026-10-08T16:20:39.634Z",
+  "meta": {
+    "name": "Vidisha",
+    "nameIt": "Vidisha",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vidisha.geojson",
+      "sha256": "be117ff7b44f796777dacba58dcc9cb40a86a7a0bf0d7de38462167d8984d5c5",
+      "size": 252745,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vidisha",
+    "name": "Vidisha",
+    "nameIt": "Vidisha",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.81328,
+      23.5218
+    ],
+    "zoom": 11.6,
+    "population": 156649,
+    "grid": "cities/vidisha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vidisha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vidisha",
+        "name": "Vidisha",
+        "nameIt": "Vidisha",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.81328,
+          23.5218
+        ],
+        "zoom": 11.6,
+        "population": 156649,
+        "cells": 218,
+        "layer": "cities/vidisha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.81328,
+            23.5218
+          ]
+        },
+        "properties": {
+          "id": "vidisha",
+          "name": "Vidisha",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20,
+          "population": 156649
+        }
+      },
+      "summary": null
+    }
+  }
+}

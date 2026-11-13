@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "assis",
+  "createdAt": "2026-10-08T15:10:27.474Z",
+  "updatedAt": "2026-10-08T15:10:27.474Z",
+  "meta": {
+    "name": "Assis",
+    "nameIt": "Assis",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Assis.geojson",
+      "sha256": "378d37e20ddaeb83d58c08913a2298566b75ac4d4ef554ea84f40d59096e7ade",
+      "size": 253827,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "assis",
+    "name": "Assis",
+    "nameIt": "Assis",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -50.42009,
+      -22.65902
+    ],
+    "zoom": 11.4,
+    "population": 92110,
+    "grid": "cities/assis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/assis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "assis",
+        "name": "Assis",
+        "nameIt": "Assis",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -50.42009,
+          -22.65902
+        ],
+        "zoom": 11.4,
+        "population": 92110,
+        "cells": 216,
+        "layer": "cities/assis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.42009,
+            -22.65902
+          ]
+        },
+        "properties": {
+          "id": "assis",
+          "name": "Assis",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 92110
+        }
+      },
+      "summary": null
+    }
+  }
+}

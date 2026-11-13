@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rionegro",
+  "createdAt": "2026-10-08T16:08:53.166Z",
+  "updatedAt": "2026-10-08T16:08:53.166Z",
+  "meta": {
+    "name": "Rionegro",
+    "nameIt": "Rionegro",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rionegro.geojson",
+      "sha256": "36a1b14c1342cdbab7ab3874cafdd39dc7c8d934d0bee92be0b8a85faa6bd11c",
+      "size": 134196,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rionegro",
+    "name": "Rionegro",
+    "nameIt": "Rionegro",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -75.37822,
+      6.149
+    ],
+    "zoom": 11.7,
+    "population": 98150,
+    "grid": "cities/rionegro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rionegro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rionegro",
+        "name": "Rionegro",
+        "nameIt": "Rionegro",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -75.37822,
+          6.149
+        ],
+        "zoom": 11.7,
+        "population": 98150,
+        "cells": 116,
+        "layer": "cities/rionegro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.37822,
+            6.149
+          ]
+        },
+        "properties": {
+          "id": "rionegro",
+          "name": "Rionegro",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 98150
+        }
+      },
+      "summary": null
+    }
+  }
+}

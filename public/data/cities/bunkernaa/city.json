@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bunkernaa",
+  "createdAt": "2026-10-08T15:20:53.624Z",
+  "updatedAt": "2026-10-08T15:20:53.624Z",
+  "meta": {
+    "name": "Bunkernaa",
+    "nameIt": "Bunkernaa",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bunkernaa.geojson",
+      "sha256": "c54f2945803a93b2385c4cdd121fe7620d468783ef493eba6242d389c639a44d",
+      "size": 427478,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bunkernaa",
+    "name": "Bunkernaa",
+    "nameIt": "Bunkernaa",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      39.61754,
+      52.56125
+    ],
+    "zoom": 10.9,
+    "population": 117867,
+    "grid": "cities/bunkernaa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bunkernaa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bunkernaa",
+        "name": "Bunkernaa",
+        "nameIt": "Bunkernaa",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          39.61754,
+          52.56125
+        ],
+        "zoom": 10.9,
+        "population": 117867,
+        "cells": 370,
+        "layer": "cities/bunkernaa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.61754,
+            52.56125
+          ]
+        },
+        "properties": {
+          "id": "bunkernaa",
+          "name": "Bunkernaa",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 21.4,
+          "population": 117867
+        }
+      },
+      "summary": null
+    }
+  }
+}

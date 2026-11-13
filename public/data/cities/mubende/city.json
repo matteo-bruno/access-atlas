@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mubende",
+  "createdAt": "2026-10-08T15:58:41.207Z",
+  "updatedAt": "2026-10-08T15:58:41.207Z",
+  "meta": {
+    "name": "Mubende",
+    "nameIt": "Mubende",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mubende.geojson",
+      "sha256": "545a2bba54f584376188412b3e0944fcfeef2a707418e7eef30023546b8c53a3",
+      "size": 97838,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mubende",
+    "name": "Mubende",
+    "nameIt": "Mubende",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG",
+    "center": [
+      31.39364,
+      0.55593
+    ],
+    "zoom": 12,
+    "population": 30735,
+    "grid": "cities/mubende/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mubende/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mubende",
+        "name": "Mubende",
+        "nameIt": "Mubende",
+        "region": "Uganda",
+        "regionIt": "Uganda",
+        "country": "UG",
+        "center": [
+          31.39364,
+          0.55593
+        ],
+        "zoom": 12,
+        "population": 30735,
+        "cells": 84,
+        "layer": "cities/mubende/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.39364,
+            0.55593
+          ]
+        },
+        "properties": {
+          "id": "mubende",
+          "name": "Mubende",
+          "country": "UG",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 30735
+        }
+      },
+      "summary": null
+    }
+  }
+}

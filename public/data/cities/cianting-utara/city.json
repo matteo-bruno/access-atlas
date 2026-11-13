@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cianting-utara",
+  "createdAt": "2026-10-08T15:25:26.221Z",
+  "updatedAt": "2026-10-08T15:25:26.221Z",
+  "meta": {
+    "name": "Cianting Utara",
+    "nameIt": "Cianting Utara",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cianting Utara.geojson",
+      "sha256": "497a22b809e63b718ba93970b63d239e9b95788f182bf8e3e86fe6f49a88397a",
+      "size": 287078,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cianting-utara",
+    "name": "Cianting Utara",
+    "nameIt": "Cianting Utara",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      107.39545,
+      -6.63113
+    ],
+    "zoom": 10.9,
+    "population": 94298,
+    "grid": "cities/cianting-utara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cianting-utara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cianting-utara",
+        "name": "Cianting Utara",
+        "nameIt": "Cianting Utara",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          107.39545,
+          -6.63113
+        ],
+        "zoom": 10.9,
+        "population": 94298,
+        "cells": 245,
+        "layer": "cities/cianting-utara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.39545,
+            -6.63113
+          ]
+        },
+        "properties": {
+          "id": "cianting-utara",
+          "name": "Cianting Utara",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 94298
+        }
+      },
+      "summary": null
+    }
+  }
+}

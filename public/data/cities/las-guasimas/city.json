@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "las-guasimas",
+  "createdAt": "2026-10-08T15:50:15.988Z",
+  "updatedAt": "2026-10-08T15:50:15.988Z",
+  "meta": {
+    "name": "Las Guásimas",
+    "nameIt": "Las Guásimas",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Las Guásimas.geojson",
+      "sha256": "fc6be3927fd33c4f73a8c6ca788f79a899e7e86fc93fe5c5397bfc37b9e1d917",
+      "size": 117863,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "las-guasimas",
+    "name": "Las Guásimas",
+    "nameIt": "Las Guásimas",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU",
+    "center": [
+      -82.30039,
+      23.00627
+    ],
+    "zoom": 11.5,
+    "population": 8060,
+    "grid": "cities/las-guasimas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/las-guasimas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "las-guasimas",
+        "name": "Las Guásimas",
+        "nameIt": "Las Guásimas",
+        "region": "Cuba",
+        "regionIt": "Cuba",
+        "country": "CU",
+        "center": [
+          -82.30039,
+          23.00627
+        ],
+        "zoom": 11.5,
+        "population": 8060,
+        "cells": 101,
+        "layer": "cities/las-guasimas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.30039,
+            23.00627
+          ]
+        },
+        "properties": {
+          "id": "las-guasimas",
+          "name": "Las Guásimas",
+          "country": "CU",
+          "isStudy": true,
+          "proximityMinutes": 9.4,
+          "population": 8060
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shanghai",
+  "createdAt": "2026-10-08T16:12:28.650Z",
+  "updatedAt": "2026-10-08T16:12:28.650Z",
+  "meta": {
+    "name": "Shanghai",
+    "nameIt": "Shanghai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shanghai.geojson",
+      "sha256": "85f36ee48c7f53e345517b068deddc167546de708bc0b7d26c7d86727bb68fd0",
+      "size": 45165445,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shanghai",
+    "name": "Shanghai",
+    "nameIt": "Shanghai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      121.43145,
+      31.21423
+    ],
+    "zoom": 8.5,
+    "population": 22360085,
+    "grid": "cities/shanghai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shanghai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shanghai",
+        "name": "Shanghai",
+        "nameIt": "Shanghai",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          121.43145,
+          31.21423
+        ],
+        "zoom": 8.5,
+        "population": 22360085,
+        "cells": 38858,
+        "layer": "cities/shanghai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.43145,
+            31.21423
+          ]
+        },
+        "properties": {
+          "id": "shanghai",
+          "name": "Shanghai",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 23,
+          "population": 22360085
+        }
+      },
+      "summary": null
+    }
+  }
+}

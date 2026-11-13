@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mengyin",
+  "createdAt": "2026-10-08T15:56:36.389Z",
+  "updatedAt": "2026-10-08T15:56:36.389Z",
+  "meta": {
+    "name": "Mengyin",
+    "nameIt": "Mengyin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mengyin.geojson",
+      "sha256": "f9902d9cc94f210a1aa9fc4051531db6492dd072abbe913a035adc7eddeab824",
+      "size": 601860,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mengyin",
+    "name": "Mengyin",
+    "nameIt": "Mengyin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.94534,
+      35.70911
+    ],
+    "zoom": 10.6,
+    "population": 209805,
+    "grid": "cities/mengyin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 172
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mengyin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mengyin",
+        "name": "Mengyin",
+        "nameIt": "Mengyin",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.94534,
+          35.70911
+        ],
+        "zoom": 10.6,
+        "population": 209805,
+        "cells": 516,
+        "layer": "cities/mengyin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 172
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.94534,
+            35.70911
+          ]
+        },
+        "properties": {
+          "id": "mengyin",
+          "name": "Mengyin",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 37,
+          "population": 209805
+        }
+      },
+      "summary": null
+    }
+  }
+}

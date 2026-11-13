@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "obninsk",
+  "createdAt": "2026-10-08T16:02:29.009Z",
+  "updatedAt": "2026-10-08T16:02:29.009Z",
+  "meta": {
+    "name": "Obninsk",
+    "nameIt": "Obninsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Obninsk.geojson",
+      "sha256": "d3ee5eec7267506da47fb756d8f5243faca55a1dc27053ae3cf229bf48a4b1ec",
+      "size": 281753,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "obninsk",
+    "name": "Obninsk",
+    "nameIt": "Obninsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      36.60502,
+      55.10915
+    ],
+    "zoom": 11.4,
+    "population": 111080,
+    "grid": "cities/obninsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/obninsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "obninsk",
+        "name": "Obninsk",
+        "nameIt": "Obninsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          36.60502,
+          55.10915
+        ],
+        "zoom": 11.4,
+        "population": 111080,
+        "cells": 247,
+        "layer": "cities/obninsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.60502,
+            55.10915
+          ]
+        },
+        "properties": {
+          "id": "obninsk",
+          "name": "Obninsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 9.9,
+          "population": 111080
+        }
+      },
+      "summary": null
+    }
+  }
+}

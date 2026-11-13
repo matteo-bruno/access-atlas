@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bergamo",
+  "createdAt": "2026-10-08T15:17:43.587Z",
+  "updatedAt": "2026-10-08T15:17:43.587Z",
+  "meta": {
+    "name": "Bergamo",
+    "nameIt": "Bergamo",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bergamo.geojson",
+      "sha256": "c16e2e0808d4634965cf3031c73827580b9f2ca851c7da9f1d16f5872515ba1c",
+      "size": 1920521,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bergamo",
+    "name": "Bergamo",
+    "nameIt": "Bergamo",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      9.65783,
+      45.69848
+    ],
+    "zoom": 9.6,
+    "population": 393457,
+    "grid": "cities/bergamo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bergamo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bergamo",
+        "name": "Bergamo",
+        "nameIt": "Bergamo",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          9.65783,
+          45.69848
+        ],
+        "zoom": 9.6,
+        "population": 393457,
+        "cells": 1688,
+        "layer": "cities/bergamo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.65783,
+            45.69848
+          ]
+        },
+        "properties": {
+          "id": "bergamo",
+          "name": "Bergamo",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 13.2,
+          "population": 393457
+        }
+      },
+      "summary": null
+    }
+  }
+}

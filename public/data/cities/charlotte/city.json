@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "charlotte",
+  "createdAt": "2026-10-08T15:24:01.588Z",
+  "updatedAt": "2026-10-08T15:24:01.588Z",
+  "meta": {
+    "name": "Charlotte",
+    "nameIt": "Charlotte",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Charlotte.geojson",
+      "sha256": "53e225b8d0bc0b048b0b944e1a5a95be808df24e3e70f56592c80e097c033d55",
+      "size": 1607946,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "charlotte",
+    "name": "Charlotte",
+    "nameIt": "Charlotte",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -80.79793,
+      35.21083
+    ],
+    "zoom": 9.9,
+    "population": 257349,
+    "grid": "cities/charlotte/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/charlotte/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "charlotte",
+        "name": "Charlotte",
+        "nameIt": "Charlotte",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -80.79793,
+          35.21083
+        ],
+        "zoom": 9.9,
+        "population": 257349,
+        "cells": 1396,
+        "layer": "cities/charlotte/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.79793,
+            35.21083
+          ]
+        },
+        "properties": {
+          "id": "charlotte",
+          "name": "Charlotte",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.6,
+          "population": 257349
+        }
+      },
+      "summary": null
+    }
+  }
+}

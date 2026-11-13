@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ankpa",
+  "createdAt": "2026-10-08T15:07:56.733Z",
+  "updatedAt": "2026-10-08T15:07:56.733Z",
+  "meta": {
+    "name": "Ankpa",
+    "nameIt": "Ankpa",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ankpa.geojson",
+      "sha256": "ea4c48d3abdc9e81b467cc9ba629160522717ace57b3468366e2faa8bcb10220",
+      "size": 322311,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ankpa",
+    "name": "Ankpa",
+    "nameIt": "Ankpa",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      7.62759,
+      7.4048
+    ],
+    "zoom": 11,
+    "population": 125209,
+    "grid": "cities/ankpa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ankpa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ankpa",
+        "name": "Ankpa",
+        "nameIt": "Ankpa",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          7.62759,
+          7.4048
+        ],
+        "zoom": 11,
+        "population": 125209,
+        "cells": 280,
+        "layer": "cities/ankpa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.62759,
+            7.4048
+          ]
+        },
+        "properties": {
+          "id": "ankpa",
+          "name": "Ankpa",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 125209
+        }
+      },
+      "summary": null
+    }
+  }
+}

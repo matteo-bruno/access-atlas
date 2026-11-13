@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "danli",
+  "createdAt": "2026-10-08T15:28:12.634Z",
+  "updatedAt": "2026-10-08T15:28:12.634Z",
+  "meta": {
+    "name": "Danlí",
+    "nameIt": "Danlí",
+    "region": "Honduras",
+    "regionIt": "Honduras",
+    "country": "HN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Danlí.geojson",
+      "sha256": "6b208b5407311d998446a8d5e7290b07dba709380d7f9f91c2973d0699a9d661",
+      "size": 149458,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "danli",
+    "name": "Danlí",
+    "nameIt": "Danlí",
+    "region": "Honduras",
+    "regionIt": "Honduras",
+    "country": "HN",
+    "center": [
+      -86.56926,
+      14.03804
+    ],
+    "zoom": 11.7,
+    "population": 19201,
+    "grid": "cities/danli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/danli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "danli",
+        "name": "Danlí",
+        "nameIt": "Danlí",
+        "region": "Honduras",
+        "regionIt": "Honduras",
+        "country": "HN",
+        "center": [
+          -86.56926,
+          14.03804
+        ],
+        "zoom": 11.7,
+        "population": 19201,
+        "cells": 128,
+        "layer": "cities/danli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -86.56926,
+            14.03804
+          ]
+        },
+        "properties": {
+          "id": "danli",
+          "name": "Danlí",
+          "country": "HN",
+          "isStudy": true,
+          "proximityMinutes": 16.8,
+          "population": 19201
+        }
+      },
+      "summary": null
+    }
+  }
+}

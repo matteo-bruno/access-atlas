@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "maraucha",
+  "createdAt": "2026-10-08T15:55:09.203Z",
+  "updatedAt": "2026-10-08T15:55:09.203Z",
+  "meta": {
+    "name": "Maraucha",
+    "nameIt": "Maraucha",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Maraucha.geojson",
+      "sha256": "aaade5a1ac48f3883f8aefd67094f6813916f4b362d93ca51c61bc3294a3fe12",
+      "size": 427298,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "maraucha",
+    "name": "Maraucha",
+    "nameIt": "Maraucha",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.53419,
+      27.44163
+    ],
+    "zoom": 10.6,
+    "population": 52329,
+    "grid": "cities/maraucha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/maraucha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "maraucha",
+        "name": "Maraucha",
+        "nameIt": "Maraucha",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.53419,
+          27.44163
+        ],
+        "zoom": 10.6,
+        "population": 52329,
+        "cells": 369,
+        "layer": "cities/maraucha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.53419,
+            27.44163
+          ]
+        },
+        "properties": {
+          "id": "maraucha",
+          "name": "Maraucha",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 52329
+        }
+      },
+      "summary": null
+    }
+  }
+}

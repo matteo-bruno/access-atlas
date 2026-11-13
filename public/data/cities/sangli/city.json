@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sangli",
+  "createdAt": "2026-10-08T16:10:54.788Z",
+  "updatedAt": "2026-10-08T16:10:54.788Z",
+  "meta": {
+    "name": "Sangli",
+    "nameIt": "Sangli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sangli.geojson",
+      "sha256": "f57be109e2b7c335dcaa26d67342fca2e0139575be839082fe3b385cee9340a9",
+      "size": 1025908,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sangli",
+    "name": "Sangli",
+    "nameIt": "Sangli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.60657,
+      16.85312
+    ],
+    "zoom": 10,
+    "population": 577750,
+    "grid": "cities/sangli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sangli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sangli",
+        "name": "Sangli",
+        "nameIt": "Sangli",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.60657,
+          16.85312
+        ],
+        "zoom": 10,
+        "population": 577750,
+        "cells": 885,
+        "layer": "cities/sangli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.60657,
+            16.85312
+          ]
+        },
+        "properties": {
+          "id": "sangli",
+          "name": "Sangli",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 38,
+          "population": 577750
+        }
+      },
+      "summary": null
+    }
+  }
+}

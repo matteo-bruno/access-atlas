@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sao-mateus",
+  "createdAt": "2026-10-08T16:15:39.907Z",
+  "updatedAt": "2026-10-08T16:15:39.907Z",
+  "meta": {
+    "name": "São Mateus",
+    "nameIt": "São Mateus",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/São Mateus.geojson",
+      "sha256": "610bc879f8ec52bfb00e1aa5bce4e89ed0c2d829fd307db89ddceeb5278d7bf3",
+      "size": 171777,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sao-mateus",
+    "name": "São Mateus",
+    "nameIt": "São Mateus",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -39.8648,
+      -18.72111
+    ],
+    "zoom": 11.3,
+    "population": 47901,
+    "grid": "cities/sao-mateus/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sao-mateus/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sao-mateus",
+        "name": "São Mateus",
+        "nameIt": "São Mateus",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -39.8648,
+          -18.72111
+        ],
+        "zoom": 11.3,
+        "population": 47901,
+        "cells": 146,
+        "layer": "cities/sao-mateus/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -39.8648,
+            -18.72111
+          ]
+        },
+        "properties": {
+          "id": "sao-mateus",
+          "name": "São Mateus",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 47901
+        }
+      },
+      "summary": null
+    }
+  }
+}

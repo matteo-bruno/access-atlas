@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tanay",
+  "createdAt": "2026-10-08T16:16:26.512Z",
+  "updatedAt": "2026-10-08T16:16:26.512Z",
+  "meta": {
+    "name": "Tanay",
+    "nameIt": "Tanay",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tanay.geojson",
+      "sha256": "c71994e9363e8dffc006ebab3d21ac85e0908cff7def49d8b43cd4c61238d093",
+      "size": 313701,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tanay",
+    "name": "Tanay",
+    "nameIt": "Tanay",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      121.29561,
+      14.49627
+    ],
+    "zoom": 11.2,
+    "population": 102122,
+    "grid": "cities/tanay/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tanay/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tanay",
+        "name": "Tanay",
+        "nameIt": "Tanay",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          121.29561,
+          14.49627
+        ],
+        "zoom": 11.2,
+        "population": 102122,
+        "cells": 269,
+        "layer": "cities/tanay/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.29561,
+            14.49627
+          ]
+        },
+        "properties": {
+          "id": "tanay",
+          "name": "Tanay",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 102122
+        }
+      },
+      "summary": null
+    }
+  }
+}

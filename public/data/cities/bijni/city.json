@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bijni",
+  "createdAt": "2026-10-08T15:18:47.668Z",
+  "updatedAt": "2026-10-08T15:18:47.668Z",
+  "meta": {
+    "name": "Bijni",
+    "nameIt": "Bijni",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bijni.geojson",
+      "sha256": "f47f3ad642115b4463ced6b64d966f3406c03c23cd1866848bffe8cc221c093f",
+      "size": 125076,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bijni",
+    "name": "Bijni",
+    "nameIt": "Bijni",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      90.70032,
+      26.49764
+    ],
+    "zoom": 11.9,
+    "population": 44017,
+    "grid": "cities/bijni/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bijni/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bijni",
+        "name": "Bijni",
+        "nameIt": "Bijni",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          90.70032,
+          26.49764
+        ],
+        "zoom": 11.9,
+        "population": 44017,
+        "cells": 108,
+        "layer": "cities/bijni/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            90.70032,
+            26.49764
+          ]
+        },
+        "properties": {
+          "id": "bijni",
+          "name": "Bijni",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 44017
+        }
+      },
+      "summary": null
+    }
+  }
+}

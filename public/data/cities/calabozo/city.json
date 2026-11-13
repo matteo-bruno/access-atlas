@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "calabozo",
+  "createdAt": "2026-10-08T15:21:50.789Z",
+  "updatedAt": "2026-10-08T15:21:50.789Z",
+  "meta": {
+    "name": "Calabozo",
+    "nameIt": "Calabozo",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Calabozo.geojson",
+      "sha256": "0d5f8de5815cef1870b0ba186cafa838c6b920ac8fe2f98043a2452ee2c5854b",
+      "size": 401058,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "calabozo",
+    "name": "Calabozo",
+    "nameIt": "Calabozo",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -67.42301,
+      8.91887
+    ],
+    "zoom": 11,
+    "population": 129943,
+    "grid": "cities/calabozo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/calabozo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "calabozo",
+        "name": "Calabozo",
+        "nameIt": "Calabozo",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -67.42301,
+          8.91887
+        ],
+        "zoom": 11,
+        "population": 129943,
+        "cells": 347,
+        "layer": "cities/calabozo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -67.42301,
+            8.91887
+          ]
+        },
+        "properties": {
+          "id": "calabozo",
+          "name": "Calabozo",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 24.4,
+          "population": 129943
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "liverpool-fua",
+  "createdAt": "2026-10-19T16:57:02.643Z",
+  "updatedAt": "2026-10-19T16:57:02.643Z",
+  "meta": {
+    "name": "Liverpool",
+    "nameIt": "Liverpool",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "liverpool-fua",
+    "name": "Liverpool",
+    "nameIt": "Liverpool",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "extent": "fua",
+    "core": "liverpool",
+    "center": [
+      -2.88623,
+      53.43596
+    ],
+    "zoom": 8.7,
+    "population": 1766253,
+    "grid": "cities/liverpool-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/liverpool-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "liverpool-fua",
+        "name": "Liverpool",
+        "nameIt": "Liverpool",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "extent": "fua",
+        "core": "liverpool",
+        "center": [
+          -2.88623,
+          53.43596
+        ],
+        "zoom": 8.7,
+        "population": 1766253,
+        "cells": 10950,
+        "layer": "cities/liverpool-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.88623,
+            53.43596
+          ]
+        },
+        "properties": {
+          "id": "liverpool-fua",
+          "name": "Liverpool",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 1766253
+        }
+      },
+      "summary": null
+    }
+  }
+}

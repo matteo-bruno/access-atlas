@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "omura",
+  "createdAt": "2026-10-08T16:02:50.539Z",
+  "updatedAt": "2026-10-08T16:02:50.539Z",
+  "meta": {
+    "name": "Omura",
+    "nameIt": "Omura",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Omura.geojson",
+      "sha256": "5f0c2a8e5a16200997602466b22f124909fcab21234fcbe7e6e72f71770af388",
+      "size": 481297,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "omura",
+    "name": "Omura",
+    "nameIt": "Omura",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      129.95609,
+      32.92221
+    ],
+    "zoom": 11.1,
+    "population": 76671,
+    "grid": "cities/omura/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/omura/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "omura",
+        "name": "Omura",
+        "nameIt": "Omura",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          129.95609,
+          32.92221
+        ],
+        "zoom": 11.1,
+        "population": 76671,
+        "cells": 418,
+        "layer": "cities/omura/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            129.95609,
+            32.92221
+          ]
+        },
+        "properties": {
+          "id": "omura",
+          "name": "Omura",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 10.7,
+          "population": 76671
+        }
+      },
+      "summary": null
+    }
+  }
+}

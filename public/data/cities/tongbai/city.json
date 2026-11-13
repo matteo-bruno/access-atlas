@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tongbai",
+  "createdAt": "2026-10-08T16:18:23.601Z",
+  "updatedAt": "2026-10-08T16:18:23.601Z",
+  "meta": {
+    "name": "Tongbai",
+    "nameIt": "Tongbai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tongbai.geojson",
+      "sha256": "50e8065444f18b5c30d41e087df6d4f2e5c6cc6729cc11880e3516fbbc514054",
+      "size": 223844,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tongbai",
+    "name": "Tongbai",
+    "nameIt": "Tongbai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.4077,
+      32.37552
+    ],
+    "zoom": 11.4,
+    "population": 101427,
+    "grid": "cities/tongbai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tongbai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tongbai",
+        "name": "Tongbai",
+        "nameIt": "Tongbai",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.4077,
+          32.37552
+        ],
+        "zoom": 11.4,
+        "population": 101427,
+        "cells": 192,
+        "layer": "cities/tongbai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.4077,
+            32.37552
+          ]
+        },
+        "properties": {
+          "id": "tongbai",
+          "name": "Tongbai",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 101427
+        }
+      },
+      "summary": null
+    }
+  }
+}

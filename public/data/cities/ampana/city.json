@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ampana",
+  "createdAt": "2026-10-08T15:07:03.077Z",
+  "updatedAt": "2026-10-08T15:07:03.077Z",
+  "meta": {
+    "name": "Ampana",
+    "nameIt": "Ampana",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ampana.geojson",
+      "sha256": "aa9e933e6cb7dd81583612eaa3dee8d79256812647a0b21f83577158656330bc",
+      "size": 148433,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ampana",
+    "name": "Ampana",
+    "nameIt": "Ampana",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      121.58196,
+      -0.87
+    ],
+    "zoom": 11.4,
+    "population": 35289,
+    "grid": "cities/ampana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ampana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ampana",
+        "name": "Ampana",
+        "nameIt": "Ampana",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          121.58196,
+          -0.87
+        ],
+        "zoom": 11.4,
+        "population": 35289,
+        "cells": 126,
+        "layer": "cities/ampana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.58196,
+            -0.87
+          ]
+        },
+        "properties": {
+          "id": "ampana",
+          "name": "Ampana",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 35289
+        }
+      },
+      "summary": null
+    }
+  }
+}

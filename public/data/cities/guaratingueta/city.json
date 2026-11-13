@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guaratingueta",
+  "createdAt": "2026-10-08T15:36:23.894Z",
+  "updatedAt": "2026-10-08T15:36:23.894Z",
+  "meta": {
+    "name": "Guaratinguetá",
+    "nameIt": "Guaratinguetá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guaratinguetá.geojson",
+      "sha256": "0e28ba8fcfea217d7c511b9bbcfc16489b6447a8bcf8edf86e0088381f57df19",
+      "size": 295120,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guaratingueta",
+    "name": "Guaratinguetá",
+    "nameIt": "Guaratinguetá",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -45.19298,
+      -22.80018
+    ],
+    "zoom": 11.4,
+    "population": 82155,
+    "grid": "cities/guaratingueta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guaratingueta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guaratingueta",
+        "name": "Guaratinguetá",
+        "nameIt": "Guaratinguetá",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -45.19298,
+          -22.80018
+        ],
+        "zoom": 11.4,
+        "population": 82155,
+        "cells": 251,
+        "layer": "cities/guaratingueta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -45.19298,
+            -22.80018
+          ]
+        },
+        "properties": {
+          "id": "guaratingueta",
+          "name": "Guaratinguetá",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 15.8,
+          "population": 82155
+        }
+      },
+      "summary": null
+    }
+  }
+}

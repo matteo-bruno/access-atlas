@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "thaton",
+  "createdAt": "2026-10-08T16:17:32.339Z",
+  "updatedAt": "2026-10-08T16:17:32.339Z",
+  "meta": {
+    "name": "Thaton",
+    "nameIt": "Thaton",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Thaton.geojson",
+      "sha256": "5ffd5cea3cc2fdb38571c490ff405bcad010ad23afe19646bab9760a95f78054",
+      "size": 96181,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "thaton",
+    "name": "Thaton",
+    "nameIt": "Thaton",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      97.36764,
+      16.91789
+    ],
+    "zoom": 11.9,
+    "population": 85386,
+    "grid": "cities/thaton/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/thaton/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "thaton",
+        "name": "Thaton",
+        "nameIt": "Thaton",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          97.36764,
+          16.91789
+        ],
+        "zoom": 11.9,
+        "population": 85386,
+        "cells": 83,
+        "layer": "cities/thaton/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            97.36764,
+            16.91789
+          ]
+        },
+        "properties": {
+          "id": "thaton",
+          "name": "Thaton",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 85386
+        }
+      },
+      "summary": null
+    }
+  }
+}

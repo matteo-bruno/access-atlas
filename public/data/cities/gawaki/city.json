@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gawaki",
+  "createdAt": "2026-10-08T15:34:44.309Z",
+  "updatedAt": "2026-10-08T15:34:44.309Z",
+  "meta": {
+    "name": "Gawaki",
+    "nameIt": "Gawaki",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gawaki.geojson",
+      "sha256": "c5fd7e036649670fc1e562b744098e7396996794704937c051cc032bfd83c501",
+      "size": 93566,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gawaki",
+    "name": "Gawaki",
+    "nameIt": "Gawaki",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF",
+    "center": [
+      65.1453,
+      35.68589
+    ],
+    "zoom": 11.5,
+    "population": 20814,
+    "grid": "cities/gawaki/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gawaki/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gawaki",
+        "name": "Gawaki",
+        "nameIt": "Gawaki",
+        "region": "Afghanistan",
+        "regionIt": "Afghanistan",
+        "country": "AF",
+        "center": [
+          65.1453,
+          35.68589
+        ],
+        "zoom": 11.5,
+        "population": 20814,
+        "cells": 81,
+        "layer": "cities/gawaki/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            65.1453,
+            35.68589
+          ]
+        },
+        "properties": {
+          "id": "gawaki",
+          "name": "Gawaki",
+          "country": "AF",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 20814
+        }
+      },
+      "summary": null
+    }
+  }
+}

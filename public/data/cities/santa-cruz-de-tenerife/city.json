@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santa-cruz-de-tenerife",
+  "createdAt": "2026-10-08T16:11:03.912Z",
+  "updatedAt": "2026-10-08T16:11:03.912Z",
+  "meta": {
+    "name": "Santa Cruz de Tenerife",
+    "nameIt": "Santa Cruz de Tenerife",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santa Cruz de Tenerife.geojson",
+      "sha256": "1ee62a2dd6e38c96703e22219ccb17c4beb9c359426afd99092f57066b537555",
+      "size": 560756,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santa-cruz-de-tenerife",
+    "name": "Santa Cruz de Tenerife",
+    "nameIt": "Santa Cruz de Tenerife",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -16.29024,
+      28.46011
+    ],
+    "zoom": 10.6,
+    "population": 336757,
+    "grid": "cities/santa-cruz-de-tenerife/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santa-cruz-de-tenerife/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santa-cruz-de-tenerife",
+        "name": "Santa Cruz de Tenerife",
+        "nameIt": "Santa Cruz de Tenerife",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -16.29024,
+          28.46011
+        ],
+        "zoom": 10.6,
+        "population": 336757,
+        "cells": 485,
+        "layer": "cities/santa-cruz-de-tenerife/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -16.29024,
+            28.46011
+          ]
+        },
+        "properties": {
+          "id": "santa-cruz-de-tenerife",
+          "name": "Santa Cruz de Tenerife",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 7.9,
+          "population": 336757
+        }
+      },
+      "summary": null
+    }
+  }
+}

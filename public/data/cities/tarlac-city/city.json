@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tarlac-city",
+  "createdAt": "2026-10-08T16:16:48.136Z",
+  "updatedAt": "2026-10-08T16:16:48.136Z",
+  "meta": {
+    "name": "Tarlac City",
+    "nameIt": "Tarlac City",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tarlac City.geojson",
+      "sha256": "6730499da19180be787dd27c3dc40699a566661f185ca125bb77cd8070417e5c",
+      "size": 585384,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tarlac-city",
+    "name": "Tarlac City",
+    "nameIt": "Tarlac City",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      120.59939,
+      15.48108
+    ],
+    "zoom": 10.5,
+    "population": 224932,
+    "grid": "cities/tarlac-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tarlac-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tarlac-city",
+        "name": "Tarlac City",
+        "nameIt": "Tarlac City",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          120.59939,
+          15.48108
+        ],
+        "zoom": 10.5,
+        "population": 224932,
+        "cells": 503,
+        "layer": "cities/tarlac-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.59939,
+            15.48108
+          ]
+        },
+        "properties": {
+          "id": "tarlac-city",
+          "name": "Tarlac City",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 21.3,
+          "population": 224932
+        }
+      },
+      "summary": null
+    }
+  }
+}

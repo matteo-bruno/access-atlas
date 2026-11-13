@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zelenodol-sk",
+  "createdAt": "2026-10-08T16:24:55.033Z",
+  "updatedAt": "2026-10-08T16:24:55.033Z",
+  "meta": {
+    "name": "Zelenodol'sk",
+    "nameIt": "Zelenodol'sk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zelenodol'sk.geojson",
+      "sha256": "4e154ab08e496558745c199ea633a0c1b888602ed8a9201a4e8421395627f547",
+      "size": 158522,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zelenodol-sk",
+    "name": "Zelenodol'sk",
+    "nameIt": "Zelenodol'sk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      48.53044,
+      55.85138
+    ],
+    "zoom": 11.5,
+    "population": 50448,
+    "grid": "cities/zelenodol-sk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zelenodol-sk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zelenodol-sk",
+        "name": "Zelenodol'sk",
+        "nameIt": "Zelenodol'sk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          48.53044,
+          55.85138
+        ],
+        "zoom": 11.5,
+        "population": 50448,
+        "cells": 138,
+        "layer": "cities/zelenodol-sk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.53044,
+            55.85138
+          ]
+        },
+        "properties": {
+          "id": "zelenodol-sk",
+          "name": "Zelenodol'sk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 50448
+        }
+      },
+      "summary": null
+    }
+  }
+}

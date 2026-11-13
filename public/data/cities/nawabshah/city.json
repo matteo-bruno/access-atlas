@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nawabshah",
+  "createdAt": "2026-10-08T16:00:42.309Z",
+  "updatedAt": "2026-10-08T16:00:42.309Z",
+  "meta": {
+    "name": "Nawabshah",
+    "nameIt": "Nawabshah",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nawabshah.geojson",
+      "sha256": "302111ee288b7a8e44d8e70c59d1ba91cdb71beb87fdf395aa2b2671b520a1bb",
+      "size": 296707,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nawabshah",
+    "name": "Nawabshah",
+    "nameIt": "Nawabshah",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      68.40538,
+      26.24657
+    ],
+    "zoom": 11.1,
+    "population": 252954,
+    "grid": "cities/nawabshah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nawabshah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nawabshah",
+        "name": "Nawabshah",
+        "nameIt": "Nawabshah",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          68.40538,
+          26.24657
+        ],
+        "zoom": 11.1,
+        "population": 252954,
+        "cells": 256,
+        "layer": "cities/nawabshah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            68.40538,
+            26.24657
+          ]
+        },
+        "properties": {
+          "id": "nawabshah",
+          "name": "Nawabshah",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 252954
+        }
+      },
+      "summary": null
+    }
+  }
+}

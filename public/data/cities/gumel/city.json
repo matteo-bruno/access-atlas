@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gumel",
+  "createdAt": "2026-10-08T15:36:41.379Z",
+  "updatedAt": "2026-10-08T15:36:41.379Z",
+  "meta": {
+    "name": "Gumel",
+    "nameIt": "Gumel",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gumel.geojson",
+      "sha256": "993e047ab92086915cc8d0d1a1b5514e312779f219f0d1122703fe9fb7230c30",
+      "size": 130850,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gumel",
+    "name": "Gumel",
+    "nameIt": "Gumel",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      9.38784,
+      12.62654
+    ],
+    "zoom": 12,
+    "population": 159388,
+    "grid": "cities/gumel/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gumel/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gumel",
+        "name": "Gumel",
+        "nameIt": "Gumel",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          9.38784,
+          12.62654
+        ],
+        "zoom": 12,
+        "population": 159388,
+        "cells": 113,
+        "layer": "cities/gumel/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.38784,
+            12.62654
+          ]
+        },
+        "properties": {
+          "id": "gumel",
+          "name": "Gumel",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 159388
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "como",
+  "createdAt": "2026-10-08T15:26:14.265Z",
+  "updatedAt": "2026-10-08T15:26:14.265Z",
+  "meta": {
+    "name": "Como",
+    "nameIt": "Como",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Como.geojson",
+      "sha256": "31505d01201d6b642dbf7328393968a6ef7a9897d18939cdfda9ce9f073a1db0",
+      "size": 712963,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "como",
+    "name": "Como",
+    "nameIt": "Como",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      9.07054,
+      45.79359
+    ],
+    "zoom": 10.1,
+    "population": 139080,
+    "grid": "cities/como/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/como/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "como",
+        "name": "Como",
+        "nameIt": "Como",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          9.07054,
+          45.79359
+        ],
+        "zoom": 10.1,
+        "population": 139080,
+        "cells": 627,
+        "layer": "cities/como/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.07054,
+            45.79359
+          ]
+        },
+        "properties": {
+          "id": "como",
+          "name": "Como",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 139080
+        }
+      },
+      "summary": null
+    }
+  }
+}

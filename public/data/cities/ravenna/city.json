@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ravenna",
+  "createdAt": "2026-10-08T16:08:26.599Z",
+  "updatedAt": "2026-10-08T16:08:26.599Z",
+  "meta": {
+    "name": "Ravenna",
+    "nameIt": "Ravenna",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ravenna.geojson",
+      "sha256": "86ab8ddbc42683b7270a11e6ff4da22bb2178a2eae8dedeb05db2fe6c07c9b14",
+      "size": 231470,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ravenna",
+    "name": "Ravenna",
+    "nameIt": "Ravenna",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      12.1992,
+      44.414
+    ],
+    "zoom": 11.7,
+    "population": 61970,
+    "grid": "cities/ravenna/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ravenna/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ravenna",
+        "name": "Ravenna",
+        "nameIt": "Ravenna",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          12.1992,
+          44.414
+        ],
+        "zoom": 11.7,
+        "population": 61970,
+        "cells": 202,
+        "layer": "cities/ravenna/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.1992,
+            44.414
+          ]
+        },
+        "properties": {
+          "id": "ravenna",
+          "name": "Ravenna",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 10.2,
+          "population": 61970
+        }
+      },
+      "summary": null
+    }
+  }
+}

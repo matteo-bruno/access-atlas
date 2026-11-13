@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guangling",
+  "createdAt": "2026-10-08T15:36:12.459Z",
+  "updatedAt": "2026-10-08T15:36:12.459Z",
+  "meta": {
+    "name": "Guangling",
+    "nameIt": "Guangling",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guangling.geojson",
+      "sha256": "8d532b369b114ed2c5608c49f224ef53c4da655196c4f8bd52715748883e1dd8",
+      "size": 151507,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guangling",
+    "name": "Guangling",
+    "nameIt": "Guangling",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.27962,
+      39.76493
+    ],
+    "zoom": 12,
+    "population": 66812,
+    "grid": "cities/guangling/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guangling/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guangling",
+        "name": "Guangling",
+        "nameIt": "Guangling",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.27962,
+          39.76493
+        ],
+        "zoom": 12,
+        "population": 66812,
+        "cells": 130,
+        "layer": "cities/guangling/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.27962,
+            39.76493
+          ]
+        },
+        "properties": {
+          "id": "guangling",
+          "name": "Guangling",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 21.4,
+          "population": 66812
+        }
+      },
+      "summary": null
+    }
+  }
+}

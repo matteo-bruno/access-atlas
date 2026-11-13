@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baalbek",
+  "createdAt": "2026-10-08T15:12:13.129Z",
+  "updatedAt": "2026-10-08T15:12:13.129Z",
+  "meta": {
+    "name": "Baalbek",
+    "nameIt": "Baalbek",
+    "region": "Lebanon",
+    "regionIt": "Libano",
+    "country": "LB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baalbek.geojson",
+      "sha256": "f28096f956ec1fb877882491f40c0e6f0679514ab30c5080d0a020495eb844f7",
+      "size": 147210,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baalbek",
+    "name": "Baalbek",
+    "nameIt": "Baalbek",
+    "region": "Lebanon",
+    "regionIt": "Libano",
+    "country": "LB",
+    "center": [
+      36.20816,
+      34.00572
+    ],
+    "zoom": 11.6,
+    "population": 60903,
+    "grid": "cities/baalbek/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baalbek/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baalbek",
+        "name": "Baalbek",
+        "nameIt": "Baalbek",
+        "region": "Lebanon",
+        "regionIt": "Libano",
+        "country": "LB",
+        "center": [
+          36.20816,
+          34.00572
+        ],
+        "zoom": 11.6,
+        "population": 60903,
+        "cells": 127,
+        "layer": "cities/baalbek/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.20816,
+            34.00572
+          ]
+        },
+        "properties": {
+          "id": "baalbek",
+          "name": "Baalbek",
+          "country": "LB",
+          "isStudy": true,
+          "proximityMinutes": 16.7,
+          "population": 60903
+        }
+      },
+      "summary": null
+    }
+  }
+}

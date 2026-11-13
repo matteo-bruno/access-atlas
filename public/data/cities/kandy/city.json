@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kandy",
+  "createdAt": "2026-10-08T15:44:54.421Z",
+  "updatedAt": "2026-10-08T15:44:54.421Z",
+  "meta": {
+    "name": "Kandy",
+    "nameIt": "Kandy",
+    "region": "Sri Lanka",
+    "regionIt": "Sri Lanka",
+    "country": "LK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kandy.geojson",
+      "sha256": "33767d097269d1b1f2bea0ad8a24d4d260aa4e7bcbe7b41f5007421ca89aa4f3",
+      "size": 2765657,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kandy",
+    "name": "Kandy",
+    "nameIt": "Kandy",
+    "region": "Sri Lanka",
+    "regionIt": "Sri Lanka",
+    "country": "LK",
+    "center": [
+      80.62007,
+      7.29439
+    ],
+    "zoom": 9.3,
+    "population": 726902,
+    "grid": "cities/kandy/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kandy/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kandy",
+        "name": "Kandy",
+        "nameIt": "Kandy",
+        "region": "Sri Lanka",
+        "regionIt": "Sri Lanka",
+        "country": "LK",
+        "center": [
+          80.62007,
+          7.29439
+        ],
+        "zoom": 9.3,
+        "population": 726902,
+        "cells": 2401,
+        "layer": "cities/kandy/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.62007,
+            7.29439
+          ]
+        },
+        "properties": {
+          "id": "kandy",
+          "name": "Kandy",
+          "country": "LK",
+          "isStudy": true,
+          "proximityMinutes": 71.2,
+          "population": 726902
+        }
+      },
+      "summary": null
+    }
+  }
+}

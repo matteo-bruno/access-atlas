@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "suzak",
+  "createdAt": "2026-10-08T16:15:27.024Z",
+  "updatedAt": "2026-10-08T16:15:27.024Z",
+  "meta": {
+    "name": "Suzak",
+    "nameIt": "Suzak",
+    "region": "Kyrgyzstan",
+    "regionIt": "Kirghizistan",
+    "country": "KG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Suzak.geojson",
+      "sha256": "0ce319b6c78577bde422dee29f978e29b60e492175413cd08dd0d1acbdd01250",
+      "size": 112002,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "suzak",
+    "name": "Suzak",
+    "nameIt": "Suzak",
+    "region": "Kyrgyzstan",
+    "regionIt": "Kirghizistan",
+    "country": "KG",
+    "center": [
+      72.90794,
+      40.89723
+    ],
+    "zoom": 11.7,
+    "population": 31957,
+    "grid": "cities/suzak/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/suzak/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "suzak",
+        "name": "Suzak",
+        "nameIt": "Suzak",
+        "region": "Kyrgyzstan",
+        "regionIt": "Kirghizistan",
+        "country": "KG",
+        "center": [
+          72.90794,
+          40.89723
+        ],
+        "zoom": 11.7,
+        "population": 31957,
+        "cells": 97,
+        "layer": "cities/suzak/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.90794,
+            40.89723
+          ]
+        },
+        "properties": {
+          "id": "suzak",
+          "name": "Suzak",
+          "country": "KG",
+          "isStudy": true,
+          "proximityMinutes": 24.8,
+          "population": 31957
+        }
+      },
+      "summary": null
+    }
+  }
+}

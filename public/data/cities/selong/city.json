@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "selong",
+  "createdAt": "2026-10-08T16:11:52.277Z",
+  "updatedAt": "2026-10-08T16:11:52.277Z",
+  "meta": {
+    "name": "Selong",
+    "nameIt": "Selong",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Selong.geojson",
+      "sha256": "4490896d85d8b15b483e4bc6d2e8939ddb108d55732ed9ca5167cff39e885f98",
+      "size": 1794770,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "selong",
+    "name": "Selong",
+    "nameIt": "Selong",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      116.51276,
+      -8.62025
+    ],
+    "zoom": 9.7,
+    "population": 451827,
+    "grid": "cities/selong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/selong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "selong",
+        "name": "Selong",
+        "nameIt": "Selong",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          116.51276,
+          -8.62025
+        ],
+        "zoom": 9.7,
+        "population": 451827,
+        "cells": 1532,
+        "layer": "cities/selong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.51276,
+            -8.62025
+          ]
+        },
+        "properties": {
+          "id": "selong",
+          "name": "Selong",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 57,
+          "population": 451827
+        }
+      },
+      "summary": null
+    }
+  }
+}

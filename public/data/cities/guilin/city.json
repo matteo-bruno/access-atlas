@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guilin",
+  "createdAt": "2026-10-08T15:36:34.670Z",
+  "updatedAt": "2026-10-08T15:36:34.670Z",
+  "meta": {
+    "name": "Guilin",
+    "nameIt": "Guilin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guilin.geojson",
+      "sha256": "231e5ddc9db43c7f0498f27e5209af4ac63f05e01d6697f61f99cbc6fea0eff3",
+      "size": 1848895,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guilin",
+    "name": "Guilin",
+    "nameIt": "Guilin",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      110.27396,
+      25.27373
+    ],
+    "zoom": 9.7,
+    "population": 1277064,
+    "grid": "cities/guilin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guilin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guilin",
+        "name": "Guilin",
+        "nameIt": "Guilin",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          110.27396,
+          25.27373
+        ],
+        "zoom": 9.7,
+        "population": 1277064,
+        "cells": 1591,
+        "layer": "cities/guilin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.27396,
+            25.27373
+          ]
+        },
+        "properties": {
+          "id": "guilin",
+          "name": "Guilin",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 38.1,
+          "population": 1277064
+        }
+      },
+      "summary": null
+    }
+  }
+}

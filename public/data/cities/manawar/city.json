@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "manawar",
+  "createdAt": "2026-10-08T15:54:26.287Z",
+  "updatedAt": "2026-10-08T15:54:26.287Z",
+  "meta": {
+    "name": "Manawar",
+    "nameIt": "Manawar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Manawar.geojson",
+      "sha256": "6ff552c54bd1ef7e9251ff7341f502098cf31a6655139e14e5eb0f14d877472f",
+      "size": 95002,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "manawar",
+    "name": "Manawar",
+    "nameIt": "Manawar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.08666,
+      22.2388
+    ],
+    "zoom": 11.9,
+    "population": 33606,
+    "grid": "cities/manawar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/manawar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "manawar",
+        "name": "Manawar",
+        "nameIt": "Manawar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.08666,
+          22.2388
+        ],
+        "zoom": 11.9,
+        "population": 33606,
+        "cells": 82,
+        "layer": "cities/manawar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.08666,
+            22.2388
+          ]
+        },
+        "properties": {
+          "id": "manawar",
+          "name": "Manawar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 33606
+        }
+      },
+      "summary": null
+    }
+  }
+}

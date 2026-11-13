@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gutian",
+  "createdAt": "2026-10-08T15:36:52.347Z",
+  "updatedAt": "2026-10-08T15:36:52.347Z",
+  "meta": {
+    "name": "Gutian",
+    "nameIt": "Gutian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gutian.geojson",
+      "sha256": "51af4dbb6ef20cc54bc098baeb27a42da72966e4ef61cc555c1a180b57d7dcc0",
+      "size": 168365,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gutian",
+    "name": "Gutian",
+    "nameIt": "Gutian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.7438,
+      26.58231
+    ],
+    "zoom": 11.7,
+    "population": 121929,
+    "grid": "cities/gutian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gutian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gutian",
+        "name": "Gutian",
+        "nameIt": "Gutian",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.7438,
+          26.58231
+        ],
+        "zoom": 11.7,
+        "population": 121929,
+        "cells": 144,
+        "layer": "cities/gutian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.7438,
+            26.58231
+          ]
+        },
+        "properties": {
+          "id": "gutian",
+          "name": "Gutian",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 8.7,
+          "population": 121929
+        }
+      },
+      "summary": null
+    }
+  }
+}

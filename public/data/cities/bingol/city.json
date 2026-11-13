@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bingol",
+  "createdAt": "2026-10-08T15:19:03.586Z",
+  "updatedAt": "2026-10-08T15:19:03.586Z",
+  "meta": {
+    "name": "Bingöl",
+    "nameIt": "Bingöl",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bingöl.geojson",
+      "sha256": "3356083f8d4b14d88bf06d3b0171521cd6d3b380a5455d3cce01bce666fdc7c6",
+      "size": 136529,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bingol",
+    "name": "Bingöl",
+    "nameIt": "Bingöl",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      40.49902,
+      38.89229
+    ],
+    "zoom": 12,
+    "population": 111095,
+    "grid": "cities/bingol/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bingol/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bingol",
+        "name": "Bingöl",
+        "nameIt": "Bingöl",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          40.49902,
+          38.89229
+        ],
+        "zoom": 12,
+        "population": 111095,
+        "cells": 118,
+        "layer": "cities/bingol/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.49902,
+            38.89229
+          ]
+        },
+        "properties": {
+          "id": "bingol",
+          "name": "Bingöl",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 111095
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nanjing-fujian-province",
+  "createdAt": "2026-10-08T16:00:03.814Z",
+  "updatedAt": "2026-10-08T16:00:03.814Z",
+  "meta": {
+    "name": "Nanjing (Fujian Province)",
+    "nameIt": "Nanjing (Fujian Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nanjing (Fujian Province).geojson",
+      "sha256": "4c9a85beb095e0814643c7e2be3b0a7257f1570422dd11b70c4912c63f30fb3f",
+      "size": 122622,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nanjing-fujian-province",
+    "name": "Nanjing (Fujian Province)",
+    "nameIt": "Nanjing (Fujian Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.36087,
+      24.51674
+    ],
+    "zoom": 12,
+    "population": 70450,
+    "grid": "cities/nanjing-fujian-province/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nanjing-fujian-province/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nanjing-fujian-province",
+        "name": "Nanjing (Fujian Province)",
+        "nameIt": "Nanjing (Fujian Province)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.36087,
+          24.51674
+        ],
+        "zoom": 12,
+        "population": 70450,
+        "cells": 105,
+        "layer": "cities/nanjing-fujian-province/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.36087,
+            24.51674
+          ]
+        },
+        "properties": {
+          "id": "nanjing-fujian-province",
+          "name": "Nanjing (Fujian Province)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 16.1,
+          "population": 70450
+        }
+      },
+      "summary": null
+    }
+  }
+}

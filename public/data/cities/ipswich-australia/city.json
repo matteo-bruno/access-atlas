@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ipswich-australia",
+  "createdAt": "2026-10-08T15:40:57.747Z",
+  "updatedAt": "2026-10-08T15:40:57.747Z",
+  "meta": {
+    "name": "Ipswich (Australia)",
+    "nameIt": "Ipswich (Australia)",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ipswich (Australia).geojson",
+      "sha256": "586a49b1903d96814a30dcb2bff7bdcc7045ca66ca13463af5de370075146038",
+      "size": 336916,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ipswich-australia",
+    "name": "Ipswich (Australia)",
+    "nameIt": "Ipswich (Australia)",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      152.77026,
+      -27.62149
+    ],
+    "zoom": 11,
+    "population": 51646,
+    "grid": "cities/ipswich-australia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ipswich-australia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ipswich-australia",
+        "name": "Ipswich (Australia)",
+        "nameIt": "Ipswich (Australia)",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          152.77026,
+          -27.62149
+        ],
+        "zoom": 11,
+        "population": 51646,
+        "cells": 290,
+        "layer": "cities/ipswich-australia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            152.77026,
+            -27.62149
+          ]
+        },
+        "properties": {
+          "id": "ipswich-australia",
+          "name": "Ipswich (Australia)",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 18.5,
+          "population": 51646
+        }
+      },
+      "summary": null
+    }
+  }
+}

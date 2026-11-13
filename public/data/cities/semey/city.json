@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "semey",
+  "createdAt": "2026-10-08T16:11:54.476Z",
+  "updatedAt": "2026-10-08T16:11:54.476Z",
+  "meta": {
+    "name": "Semey",
+    "nameIt": "Semey",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Semey.geojson",
+      "sha256": "f24f269d08b15c6ea796b801ccff28af24572e342ccf7187b015c4d7b5b910c9",
+      "size": 840302,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "semey",
+    "name": "Semey",
+    "nameIt": "Semey",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ",
+    "center": [
+      80.24564,
+      50.41061
+    ],
+    "zoom": 10.3,
+    "population": 203755,
+    "grid": "cities/semey/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/semey/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "semey",
+        "name": "Semey",
+        "nameIt": "Semey",
+        "region": "Kazakhstan",
+        "regionIt": "Kazakistan",
+        "country": "KZ",
+        "center": [
+          80.24564,
+          50.41061
+        ],
+        "zoom": 10.3,
+        "population": 203755,
+        "cells": 732,
+        "layer": "cities/semey/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.24564,
+            50.41061
+          ]
+        },
+        "properties": {
+          "id": "semey",
+          "name": "Semey",
+          "country": "KZ",
+          "isStudy": true,
+          "proximityMinutes": 29.9,
+          "population": 203755
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cary",
+  "createdAt": "2026-10-08T15:22:41.005Z",
+  "updatedAt": "2026-10-08T15:22:41.005Z",
+  "meta": {
+    "name": "Cary",
+    "nameIt": "Cary",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cary.geojson",
+      "sha256": "c379ce9c11e1202b490b580444f51a5c6eecdcba0a8381a5eae4f7ccab9330ac",
+      "size": 713453,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cary",
+    "name": "Cary",
+    "nameIt": "Cary",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -78.80988,
+      35.80062
+    ],
+    "zoom": 10.5,
+    "population": 94270,
+    "grid": "cities/cary/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cary/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cary",
+        "name": "Cary",
+        "nameIt": "Cary",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -78.80988,
+          35.80062
+        ],
+        "zoom": 10.5,
+        "population": 94270,
+        "cells": 620,
+        "layer": "cities/cary/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -78.80988,
+            35.80062
+          ]
+        },
+        "properties": {
+          "id": "cary",
+          "name": "Cary",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20.9,
+          "population": 94270
+        }
+      },
+      "summary": null
+    }
+  }
+}

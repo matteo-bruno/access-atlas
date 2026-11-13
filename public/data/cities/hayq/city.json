@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hayq",
+  "createdAt": "2026-10-08T15:38:08.433Z",
+  "updatedAt": "2026-10-08T15:38:08.433Z",
+  "meta": {
+    "name": "Hayq",
+    "nameIt": "Hayq",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hayq.geojson",
+      "sha256": "89d250fb8e9913b284828492b38f8cf9a036f0787815f1f2ebdec100cb0549b9",
+      "size": 81472,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hayq",
+    "name": "Hayq",
+    "nameIt": "Hayq",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      39.67937,
+      11.31124
+    ],
+    "zoom": 12,
+    "population": 24349,
+    "grid": "cities/hayq/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hayq/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hayq",
+        "name": "Hayq",
+        "nameIt": "Hayq",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          39.67937,
+          11.31124
+        ],
+        "zoom": 12,
+        "population": 24349,
+        "cells": 70,
+        "layer": "cities/hayq/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.67937,
+            11.31124
+          ]
+        },
+        "properties": {
+          "id": "hayq",
+          "name": "Hayq",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 24349
+        }
+      },
+      "summary": null
+    }
+  }
+}

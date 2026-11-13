@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shahapura",
+  "createdAt": "2026-10-08T16:12:14.379Z",
+  "updatedAt": "2026-10-08T16:12:14.379Z",
+  "meta": {
+    "name": "Shahapura",
+    "nameIt": "Shahapura",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shahapura.geojson",
+      "sha256": "29505a498ebb9611c26834c4ed9462f166837957b6a1cef13d8d556d777d38a0",
+      "size": 82299,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shahapura",
+    "name": "Shahapura",
+    "nameIt": "Shahapura",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.84048,
+      16.70348
+    ],
+    "zoom": 12,
+    "population": 35650,
+    "grid": "cities/shahapura/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shahapura/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shahapura",
+        "name": "Shahapura",
+        "nameIt": "Shahapura",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.84048,
+          16.70348
+        ],
+        "zoom": 12,
+        "population": 35650,
+        "cells": 71,
+        "layer": "cities/shahapura/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.84048,
+            16.70348
+          ]
+        },
+        "properties": {
+          "id": "shahapura",
+          "name": "Shahapura",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 35650
+        }
+      },
+      "summary": null
+    }
+  }
+}

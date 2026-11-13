@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lahore",
+  "createdAt": "2026-10-08T15:49:40.044Z",
+  "updatedAt": "2026-10-08T15:49:40.044Z",
+  "meta": {
+    "name": "Lahore",
+    "nameIt": "Lahore",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lahore.geojson",
+      "sha256": "55d66134352b887bef0184ab304ce06ca3e2ad77c3d388d852f151bd6fad0d8f",
+      "size": 8998433,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lahore",
+    "name": "Lahore",
+    "nameIt": "Lahore",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      74.30595,
+      31.52983
+    ],
+    "zoom": 8.5,
+    "population": 13877860,
+    "grid": "cities/lahore/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lahore/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lahore",
+        "name": "Lahore",
+        "nameIt": "Lahore",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          74.30595,
+          31.52983
+        ],
+        "zoom": 8.5,
+        "population": 13877860,
+        "cells": 7786,
+        "layer": "cities/lahore/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.30595,
+            31.52983
+          ]
+        },
+        "properties": {
+          "id": "lahore",
+          "name": "Lahore",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 35.2,
+          "population": 13877860
+        }
+      },
+      "summary": null
+    }
+  }
+}

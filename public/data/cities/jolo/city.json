@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jolo",
+  "createdAt": "2026-10-08T15:43:29.410Z",
+  "updatedAt": "2026-10-08T15:43:29.410Z",
+  "meta": {
+    "name": "Jolo",
+    "nameIt": "Jolo",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jolo.geojson",
+      "sha256": "433ac3cf6cc669c07e08a9fc0ee59a0f6e515a68a3b474d38fbdfdf22f7f37fa",
+      "size": 137911,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jolo",
+    "name": "Jolo",
+    "nameIt": "Jolo",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      121.00212,
+      6.04928
+    ],
+    "zoom": 11.6,
+    "population": 187973,
+    "grid": "cities/jolo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jolo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jolo",
+        "name": "Jolo",
+        "nameIt": "Jolo",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          121.00212,
+          6.04928
+        ],
+        "zoom": 11.6,
+        "population": 187973,
+        "cells": 119,
+        "layer": "cities/jolo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.00212,
+            6.04928
+          ]
+        },
+        "properties": {
+          "id": "jolo",
+          "name": "Jolo",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 9.3,
+          "population": 187973
+        }
+      },
+      "summary": null
+    }
+  }
+}

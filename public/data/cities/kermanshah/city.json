@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kermanshah",
+  "createdAt": "2026-10-08T15:46:14.995Z",
+  "updatedAt": "2026-10-08T15:46:14.995Z",
+  "meta": {
+    "name": "Kermanshah",
+    "nameIt": "Kermanshah",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kermanshah.geojson",
+      "sha256": "187fe97510140878a24a1d4fa529058534f9608d8b70edfd9db3528b7c6b7dad",
+      "size": 1260954,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kermanshah",
+    "name": "Kermanshah",
+    "nameIt": "Kermanshah",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      47.09191,
+      34.34213
+    ],
+    "zoom": 10,
+    "population": 989032,
+    "grid": "cities/kermanshah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kermanshah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kermanshah",
+        "name": "Kermanshah",
+        "nameIt": "Kermanshah",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          47.09191,
+          34.34213
+        ],
+        "zoom": 10,
+        "population": 989032,
+        "cells": 1099,
+        "layer": "cities/kermanshah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            47.09191,
+            34.34213
+          ]
+        },
+        "properties": {
+          "id": "kermanshah",
+          "name": "Kermanshah",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 19.6,
+          "population": 989032
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "antananarivo",
+  "createdAt": "2026-10-08T15:08:20.317Z",
+  "updatedAt": "2026-10-08T15:08:20.317Z",
+  "meta": {
+    "name": "Antananarivo",
+    "nameIt": "Antananarivo",
+    "region": "Madagascar",
+    "regionIt": "Madagascar",
+    "country": "MG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Antananarivo.geojson",
+      "sha256": "da3db17c1bd57f80cd5c5990204b23201dc3231a23ae864eb44fe03b7e65aaa8",
+      "size": 4749082,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "antananarivo",
+    "name": "Antananarivo",
+    "nameIt": "Antananarivo",
+    "region": "Madagascar",
+    "regionIt": "Madagascar",
+    "country": "MG",
+    "center": [
+      47.52414,
+      -18.90126
+    ],
+    "zoom": 8.9,
+    "population": 2793249,
+    "grid": "cities/antananarivo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/antananarivo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "antananarivo",
+        "name": "Antananarivo",
+        "nameIt": "Antananarivo",
+        "region": "Madagascar",
+        "regionIt": "Madagascar",
+        "country": "MG",
+        "center": [
+          47.52414,
+          -18.90126
+        ],
+        "zoom": 8.9,
+        "population": 2793249,
+        "cells": 4079,
+        "layer": "cities/antananarivo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            47.52414,
+            -18.90126
+          ]
+        },
+        "properties": {
+          "id": "antananarivo",
+          "name": "Antananarivo",
+          "country": "MG",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 2793249
+        }
+      },
+      "summary": null
+    }
+  }
+}

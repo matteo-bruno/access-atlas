@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mettur",
+  "createdAt": "2026-10-08T15:56:46.805Z",
+  "updatedAt": "2026-10-08T15:56:46.805Z",
+  "meta": {
+    "name": "Mettur",
+    "nameIt": "Mettur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mettur.geojson",
+      "sha256": "0e4b2fdbc84ebfd6fd8cf6e4b792ccd781a384f1450ef779020e22de99b1850f",
+      "size": 337564,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mettur",
+    "name": "Mettur",
+    "nameIt": "Mettur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.8214,
+      11.79758
+    ],
+    "zoom": 10.9,
+    "population": 121090,
+    "grid": "cities/mettur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mettur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mettur",
+        "name": "Mettur",
+        "nameIt": "Mettur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.8214,
+          11.79758
+        ],
+        "zoom": 10.9,
+        "population": 121090,
+        "cells": 291,
+        "layer": "cities/mettur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.8214,
+            11.79758
+          ]
+        },
+        "properties": {
+          "id": "mettur",
+          "name": "Mettur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 121090
+        }
+      },
+      "summary": null
+    }
+  }
+}

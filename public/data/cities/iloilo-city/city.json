@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "iloilo-city",
+  "createdAt": "2026-10-08T15:40:41.739Z",
+  "updatedAt": "2026-10-08T15:40:41.739Z",
+  "meta": {
+    "name": "Iloilo City",
+    "nameIt": "Iloilo City",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Iloilo City.geojson",
+      "sha256": "a48e08c0162e453c9b5c20a30acd70328d63b3df0329910ca555e84d5ac01f25",
+      "size": 1742466,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "iloilo-city",
+    "name": "Iloilo City",
+    "nameIt": "Iloilo City",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      122.53758,
+      10.72265
+    ],
+    "zoom": 9.2,
+    "population": 708349,
+    "grid": "cities/iloilo-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/iloilo-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "iloilo-city",
+        "name": "Iloilo City",
+        "nameIt": "Iloilo City",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          122.53758,
+          10.72265
+        ],
+        "zoom": 9.2,
+        "population": 708349,
+        "cells": 1505,
+        "layer": "cities/iloilo-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            122.53758,
+            10.72265
+          ]
+        },
+        "properties": {
+          "id": "iloilo-city",
+          "name": "Iloilo City",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 708349
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chesterfield",
+  "createdAt": "2026-10-08T15:24:32.478Z",
+  "updatedAt": "2026-10-08T15:24:32.478Z",
+  "meta": {
+    "name": "Chesterfield",
+    "nameIt": "Chesterfield",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chesterfield.geojson",
+      "sha256": "e0c12030559ff64366dd07824fd632a6fbdf53e357e1706ac2b24f51f8d3b28c",
+      "size": 416733,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chesterfield",
+    "name": "Chesterfield",
+    "nameIt": "Chesterfield",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.42581,
+      53.24379
+    ],
+    "zoom": 11.1,
+    "population": 85752,
+    "grid": "cities/chesterfield/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chesterfield/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chesterfield",
+        "name": "Chesterfield",
+        "nameIt": "Chesterfield",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.42581,
+          53.24379
+        ],
+        "zoom": 11.1,
+        "population": 85752,
+        "cells": 361,
+        "layer": "cities/chesterfield/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.42581,
+            53.24379
+          ]
+        },
+        "properties": {
+          "id": "chesterfield",
+          "name": "Chesterfield",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 13.2,
+          "population": 85752
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "buligenyi",
+  "createdAt": "2026-10-08T15:20:42.070Z",
+  "updatedAt": "2026-10-08T15:20:42.070Z",
+  "meta": {
+    "name": "Buligenyi",
+    "nameIt": "Buligenyi",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Buligenyi.geojson",
+      "sha256": "f377121790742c1765c33c122a09ae9c222849013a6d2b1f3525a659bd658a85",
+      "size": 550534,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "buligenyi",
+    "name": "Buligenyi",
+    "nameIt": "Buligenyi",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG",
+    "center": [
+      34.35104,
+      1.28002
+    ],
+    "zoom": 10.5,
+    "population": 103257,
+    "grid": "cities/buligenyi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/buligenyi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "buligenyi",
+        "name": "Buligenyi",
+        "nameIt": "Buligenyi",
+        "region": "Uganda",
+        "regionIt": "Uganda",
+        "country": "UG",
+        "center": [
+          34.35104,
+          1.28002
+        ],
+        "zoom": 10.5,
+        "population": 103257,
+        "cells": 474,
+        "layer": "cities/buligenyi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.35104,
+            1.28002
+          ]
+        },
+        "properties": {
+          "id": "buligenyi",
+          "name": "Buligenyi",
+          "country": "UG",
+          "isStudy": true,
+          "proximityMinutes": 76.5,
+          "population": 103257
+        }
+      },
+      "summary": null
+    }
+  }
+}

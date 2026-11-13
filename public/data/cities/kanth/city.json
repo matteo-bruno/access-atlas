@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kanth",
+  "createdAt": "2026-10-08T15:45:01.439Z",
+  "updatedAt": "2026-10-08T15:45:01.439Z",
+  "meta": {
+    "name": "Kanth",
+    "nameIt": "Kanth",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kanth.geojson",
+      "sha256": "000ded9d3d8f649cafba86c335b594297cc1430663e812b5d3438fb1edd5f7e5",
+      "size": 149466,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kanth",
+    "name": "Kanth",
+    "nameIt": "Kanth",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.6316,
+      29.07036
+    ],
+    "zoom": 11.4,
+    "population": 58672,
+    "grid": "cities/kanth/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kanth/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kanth",
+        "name": "Kanth",
+        "nameIt": "Kanth",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.6316,
+          29.07036
+        ],
+        "zoom": 11.4,
+        "population": 58672,
+        "cells": 129,
+        "layer": "cities/kanth/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.6316,
+            29.07036
+          ]
+        },
+        "properties": {
+          "id": "kanth",
+          "name": "Kanth",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 58672
+        }
+      },
+      "summary": null
+    }
+  }
+}

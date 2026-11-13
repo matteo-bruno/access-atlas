@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "garwel",
+  "createdAt": "2026-10-08T15:34:42.116Z",
+  "updatedAt": "2026-10-08T15:34:42.116Z",
+  "meta": {
+    "name": "Garwel",
+    "nameIt": "Garwel",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Garwel.geojson",
+      "sha256": "3c04935eaa405669e23b6c7978b15a1df892999f7aaaace011a3b5648b7d485d",
+      "size": 282826,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "garwel",
+    "name": "Garwel",
+    "nameIt": "Garwel",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.37612,
+      33.56504
+    ],
+    "zoom": 10.4,
+    "population": 20490,
+    "grid": "cities/garwel/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/garwel/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "garwel",
+        "name": "Garwel",
+        "nameIt": "Garwel",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.37612,
+          33.56504
+        ],
+        "zoom": 10.4,
+        "population": 20490,
+        "cells": 245,
+        "layer": "cities/garwel/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.37612,
+            33.56504
+          ]
+        },
+        "properties": {
+          "id": "garwel",
+          "name": "Garwel",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 20490
+        }
+      },
+      "summary": null
+    }
+  }
+}

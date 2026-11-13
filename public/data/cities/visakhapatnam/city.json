@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "visakhapatnam",
+  "createdAt": "2026-10-08T16:20:53.813Z",
+  "updatedAt": "2026-10-08T16:20:53.813Z",
+  "meta": {
+    "name": "Visakhapatnam",
+    "nameIt": "Visakhapatnam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Visakhapatnam.geojson",
+      "sha256": "6e1fea9fccd06bd1af6ba1793bbbdcf8fef029fcbdab8ff0dbb89ab822ba4a7a",
+      "size": 2111120,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "visakhapatnam",
+    "name": "Visakhapatnam",
+    "nameIt": "Visakhapatnam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.24438,
+      17.71805
+    ],
+    "zoom": 9.3,
+    "population": 1452051,
+    "grid": "cities/visakhapatnam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/visakhapatnam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "visakhapatnam",
+        "name": "Visakhapatnam",
+        "nameIt": "Visakhapatnam",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.24438,
+          17.71805
+        ],
+        "zoom": 9.3,
+        "population": 1452051,
+        "cells": 1836,
+        "layer": "cities/visakhapatnam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.24438,
+            17.71805
+          ]
+        },
+        "properties": {
+          "id": "visakhapatnam",
+          "name": "Visakhapatnam",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 27.2,
+          "population": 1452051
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huancayo",
+  "createdAt": "2026-10-08T15:39:26.469Z",
+  "updatedAt": "2026-10-08T15:39:26.469Z",
+  "meta": {
+    "name": "Huancayo",
+    "nameIt": "Huancayo",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huancayo.geojson",
+      "sha256": "db7b504e3f470d059c33ef878724beaa86a21632bdaa1f49ee3e35d10411f537",
+      "size": 611560,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huancayo",
+    "name": "Huancayo",
+    "nameIt": "Huancayo",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -75.21646,
+      -12.06349
+    ],
+    "zoom": 10.5,
+    "population": 454340,
+    "grid": "cities/huancayo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huancayo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huancayo",
+        "name": "Huancayo",
+        "nameIt": "Huancayo",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -75.21646,
+          -12.06349
+        ],
+        "zoom": 10.5,
+        "population": 454340,
+        "cells": 523,
+        "layer": "cities/huancayo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.21646,
+            -12.06349
+          ]
+        },
+        "properties": {
+          "id": "huancayo",
+          "name": "Huancayo",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 454340
+        }
+      },
+      "summary": null
+    }
+  }
+}

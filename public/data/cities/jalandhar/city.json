@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jalandhar",
+  "createdAt": "2026-10-08T15:41:48.621Z",
+  "updatedAt": "2026-10-08T15:41:48.621Z",
+  "meta": {
+    "name": "Jalandhar",
+    "nameIt": "Jalandhar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jalandhar.geojson",
+      "sha256": "086c897ab3b7164cd5acf073ddb2850c0f4c3ba87c4141a08b0dc9e4a95fc93a",
+      "size": 1459348,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jalandhar",
+    "name": "Jalandhar",
+    "nameIt": "Jalandhar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.5816,
+      31.3247
+    ],
+    "zoom": 10.1,
+    "population": 906078,
+    "grid": "cities/jalandhar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jalandhar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jalandhar",
+        "name": "Jalandhar",
+        "nameIt": "Jalandhar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.5816,
+          31.3247
+        ],
+        "zoom": 10.1,
+        "population": 906078,
+        "cells": 1258,
+        "layer": "cities/jalandhar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.5816,
+            31.3247
+          ]
+        },
+        "properties": {
+          "id": "jalandhar",
+          "name": "Jalandhar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 45.7,
+          "population": 906078
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "quibor",
+  "createdAt": "2026-10-08T16:07:42.592Z",
+  "updatedAt": "2026-10-08T16:07:42.592Z",
+  "meta": {
+    "name": "Quíbor",
+    "nameIt": "Quíbor",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Quíbor.geojson",
+      "sha256": "06b7bc7ffa8bf0bd5b28aac20501ed9ba556cf92ea916e03b6433d2889a45b6c",
+      "size": 146156,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "quibor",
+    "name": "Quíbor",
+    "nameIt": "Quíbor",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -69.62181,
+      9.92943
+    ],
+    "zoom": 11.9,
+    "population": 52867,
+    "grid": "cities/quibor/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/quibor/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "quibor",
+        "name": "Quíbor",
+        "nameIt": "Quíbor",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -69.62181,
+          9.92943
+        ],
+        "zoom": 11.9,
+        "population": 52867,
+        "cells": 126,
+        "layer": "cities/quibor/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -69.62181,
+            9.92943
+          ]
+        },
+        "properties": {
+          "id": "quibor",
+          "name": "Quíbor",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 52867
+        }
+      },
+      "summary": null
+    }
+  }
+}

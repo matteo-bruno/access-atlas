@@ -1,0 +1,98 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "moscow-fua",
+  "createdAt": "2026-10-08T15:58:27.818Z",
+  "updatedAt": "2026-10-08T15:58:27.818Z",
+  "meta": {
+    "name": "Moscow",
+    "nameIt": "Moscow",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Moscow_FUA.geojson",
+      "sha256": "a8c5771580fe7f99e979e645ffb656ccdf0e67ed35e798d4998f1e4ec04e5140",
+      "size": 98575968,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "moscow-fua",
+    "name": "Moscow",
+    "nameIt": "Moscow",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "extent": "fua",
+    "core": "moscow",
+    "center": [
+      37.62326,
+      55.73139
+    ],
+    "zoom": 8.5,
+    "population": 18958234,
+    "grid": "cities/moscow-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/moscow-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "moscow-fua",
+        "name": "Moscow",
+        "nameIt": "Moscow",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "extent": "fua",
+        "core": "moscow",
+        "center": [
+          37.62326,
+          55.73139
+        ],
+        "zoom": 8.5,
+        "population": 18958234,
+        "cells": 85530,
+        "layer": "cities/moscow-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.62326,
+            55.73139
+          ]
+        },
+        "properties": {
+          "id": "moscow-fua",
+          "name": "Moscow",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 8.8,
+          "population": 18958234
+        }
+      },
+      "summary": null
+    }
+  }
+}

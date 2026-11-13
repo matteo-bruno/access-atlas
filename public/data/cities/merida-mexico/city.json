@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "merida-mexico",
+  "createdAt": "2026-10-08T15:59:25.874Z",
+  "updatedAt": "2026-10-08T15:59:25.874Z",
+  "meta": {
+    "name": "Mérida (Mexico)",
+    "nameIt": "Mérida (Mexico)",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mérida (Mexico).geojson",
+      "sha256": "c96293d7933d679b4d420fa90c708f0b3ed1ed393e447ff24b1777d9287e8f72",
+      "size": 1901943,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "merida-mexico",
+    "name": "Mérida (Mexico)",
+    "nameIt": "Mérida (Mexico)",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -89.61294,
+      20.9762
+    ],
+    "zoom": 10,
+    "population": 987391,
+    "grid": "cities/merida-mexico/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/merida-mexico/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "merida-mexico",
+        "name": "Mérida (Mexico)",
+        "nameIt": "Mérida (Mexico)",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -89.61294,
+          20.9762
+        ],
+        "zoom": 10,
+        "population": 987391,
+        "cells": 1647,
+        "layer": "cities/merida-mexico/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -89.61294,
+            20.9762
+          ]
+        },
+        "properties": {
+          "id": "merida-mexico",
+          "name": "Mérida (Mexico)",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 15.9,
+          "population": 987391
+        }
+      },
+      "summary": null
+    }
+  }
+}

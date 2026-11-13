@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "markapur",
+  "createdAt": "2026-10-08T15:55:18.108Z",
+  "updatedAt": "2026-10-08T15:55:18.108Z",
+  "meta": {
+    "name": "Markapur",
+    "nameIt": "Markapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Markapur.geojson",
+      "sha256": "28f47769c023736f9f56c3e164f9996db354fcb589b08b2fadf01f692d74f361",
+      "size": 83565,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "markapur",
+    "name": "Markapur",
+    "nameIt": "Markapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.26746,
+      15.73624
+    ],
+    "zoom": 12,
+    "population": 47431,
+    "grid": "cities/markapur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/markapur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "markapur",
+        "name": "Markapur",
+        "nameIt": "Markapur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.26746,
+          15.73624
+        ],
+        "zoom": 12,
+        "population": 47431,
+        "cells": 72,
+        "layer": "cities/markapur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.26746,
+            15.73624
+          ]
+        },
+        "properties": {
+          "id": "markapur",
+          "name": "Markapur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 47431
+        }
+      },
+      "summary": null
+    }
+  }
+}

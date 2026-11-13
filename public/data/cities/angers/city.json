@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "angers",
+  "createdAt": "2026-10-08T15:07:38.050Z",
+  "updatedAt": "2026-10-08T15:07:38.050Z",
+  "meta": {
+    "name": "Angers",
+    "nameIt": "Angers",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Angers.geojson",
+      "sha256": "51a3f7eb0970ca4e38a096db647413fea879138a01973bd0adc57694bd7bd77f",
+      "size": 668900,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "angers",
+    "name": "Angers",
+    "nameIt": "Angers",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      -0.5445,
+      47.46745
+    ],
+    "zoom": 10.6,
+    "population": 191392,
+    "grid": "cities/angers/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/angers/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "angers",
+        "name": "Angers",
+        "nameIt": "Angers",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -0.5445,
+          47.46745
+        ],
+        "zoom": 10.6,
+        "population": 191392,
+        "cells": 581,
+        "layer": "cities/angers/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.5445,
+            47.46745
+          ]
+        },
+        "properties": {
+          "id": "angers",
+          "name": "Angers",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 6.7,
+          "population": 191392
+        }
+      },
+      "summary": null
+    }
+  }
+}

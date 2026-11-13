@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khujand",
+  "createdAt": "2026-10-08T15:46:52.713Z",
+  "updatedAt": "2026-10-08T15:46:52.713Z",
+  "meta": {
+    "name": "Khujand",
+    "nameIt": "Khujand",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khujand.geojson",
+      "sha256": "9a1369daa0271ddd73ae0b8dcc1495bf4edfadc1992bc80fec4c93868b02bcd8",
+      "size": 709073,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khujand",
+    "name": "Khujand",
+    "nameIt": "Khujand",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ",
+    "center": [
+      69.6393,
+      40.2807
+    ],
+    "zoom": 10.3,
+    "population": 330318,
+    "grid": "cities/khujand/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khujand/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khujand",
+        "name": "Khujand",
+        "nameIt": "Khujand",
+        "region": "Tajikistan",
+        "regionIt": "Tagikistan",
+        "country": "TJ",
+        "center": [
+          69.6393,
+          40.2807
+        ],
+        "zoom": 10.3,
+        "population": 330318,
+        "cells": 618,
+        "layer": "cities/khujand/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.6393,
+            40.2807
+          ]
+        },
+        "properties": {
+          "id": "khujand",
+          "name": "Khujand",
+          "country": "TJ",
+          "isStudy": true,
+          "proximityMinutes": 30,
+          "population": 330318
+        }
+      },
+      "summary": null
+    }
+  }
+}

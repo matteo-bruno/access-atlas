@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ipiales",
+  "createdAt": "2026-10-08T15:40:56.087Z",
+  "updatedAt": "2026-10-08T15:40:56.087Z",
+  "meta": {
+    "name": "Ipiales",
+    "nameIt": "Ipiales",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ipiales.geojson",
+      "sha256": "039c08a9fbe3e845538baee9d2e7ea314e3879c52798b1c3f91a8bec1979163a",
+      "size": 138402,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ipiales",
+    "name": "Ipiales",
+    "nameIt": "Ipiales",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -77.63859,
+      0.82717
+    ],
+    "zoom": 11.2,
+    "population": 87746,
+    "grid": "cities/ipiales/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ipiales/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ipiales",
+        "name": "Ipiales",
+        "nameIt": "Ipiales",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -77.63859,
+          0.82717
+        ],
+        "zoom": 11.2,
+        "population": 87746,
+        "cells": 119,
+        "layer": "cities/ipiales/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.63859,
+            0.82717
+          ]
+        },
+        "properties": {
+          "id": "ipiales",
+          "name": "Ipiales",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 87746
+        }
+      },
+      "summary": null
+    }
+  }
+}

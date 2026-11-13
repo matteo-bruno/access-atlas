@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "badajoz",
+  "createdAt": "2026-10-08T15:12:26.732Z",
+  "updatedAt": "2026-10-08T15:12:26.732Z",
+  "meta": {
+    "name": "Badajoz",
+    "nameIt": "Badajoz",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Badajoz.geojson",
+      "sha256": "a346c1e27136c50fe6924bb3c1f0b113b5a2ba56f868e9cbcdd51b72308570a3",
+      "size": 160422,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "badajoz",
+    "name": "Badajoz",
+    "nameIt": "Badajoz",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -6.97598,
+      38.87688
+    ],
+    "zoom": 11.8,
+    "population": 108698,
+    "grid": "cities/badajoz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/badajoz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "badajoz",
+        "name": "Badajoz",
+        "nameIt": "Badajoz",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -6.97598,
+          38.87688
+        ],
+        "zoom": 11.8,
+        "population": 108698,
+        "cells": 140,
+        "layer": "cities/badajoz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -6.97598,
+            38.87688
+          ]
+        },
+        "properties": {
+          "id": "badajoz",
+          "name": "Badajoz",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 7.9,
+          "population": 108698
+        }
+      },
+      "summary": null
+    }
+  }
+}

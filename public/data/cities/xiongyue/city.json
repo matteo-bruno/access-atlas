@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xiongyue",
+  "createdAt": "2026-10-08T16:22:57.338Z",
+  "updatedAt": "2026-10-08T16:22:57.338Z",
+  "meta": {
+    "name": "Xiongyue",
+    "nameIt": "Xiongyue",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xiongyue.geojson",
+      "sha256": "095ee745b97c52111bd36a7f153a2a2331e532f9d3a6365e72371be503f49ef8",
+      "size": 403397,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xiongyue",
+    "name": "Xiongyue",
+    "nameIt": "Xiongyue",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      122.12718,
+      40.18558
+    ],
+    "zoom": 11.1,
+    "population": 80103,
+    "grid": "cities/xiongyue/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 162
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xiongyue/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xiongyue",
+        "name": "Xiongyue",
+        "nameIt": "Xiongyue",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          122.12718,
+          40.18558
+        ],
+        "zoom": 11.1,
+        "population": 80103,
+        "cells": 346,
+        "layer": "cities/xiongyue/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 162
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            122.12718,
+            40.18558
+          ]
+        },
+        "properties": {
+          "id": "xiongyue",
+          "name": "Xiongyue",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 80103
+        }
+      },
+      "summary": null
+    }
+  }
+}

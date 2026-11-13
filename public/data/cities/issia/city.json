@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "issia",
+  "createdAt": "2026-10-08T15:41:14.912Z",
+  "updatedAt": "2026-10-08T15:41:14.912Z",
+  "meta": {
+    "name": "Issia",
+    "nameIt": "Issia",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Issia.geojson",
+      "sha256": "c0537ebec93a64044d8a4754c8b55fb15d460b8fc6cccc78d4ebba71e7a33235",
+      "size": 188198,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "issia",
+    "name": "Issia",
+    "nameIt": "Issia",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI",
+    "center": [
+      -6.58323,
+      6.49261
+    ],
+    "zoom": 12,
+    "population": 89799,
+    "grid": "cities/issia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/issia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "issia",
+        "name": "Issia",
+        "nameIt": "Issia",
+        "region": "Ivory Coast",
+        "regionIt": "Costa d'Avorio",
+        "country": "CI",
+        "center": [
+          -6.58323,
+          6.49261
+        ],
+        "zoom": 12,
+        "population": 89799,
+        "cells": 162,
+        "layer": "cities/issia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -6.58323,
+            6.49261
+          ]
+        },
+        "properties": {
+          "id": "issia",
+          "name": "Issia",
+          "country": "CI",
+          "isStudy": true,
+          "proximityMinutes": 18.5,
+          "population": 89799
+        }
+      },
+      "summary": null
+    }
+  }
+}

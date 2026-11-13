@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "belsand",
+  "createdAt": "2026-10-08T15:17:14.024Z",
+  "updatedAt": "2026-10-08T15:17:14.024Z",
+  "meta": {
+    "name": "Belsand",
+    "nameIt": "Belsand",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Belsand.geojson",
+      "sha256": "fa7f5515058198c99d8d9dc4dff2c29a4703fb2d93fc8f7ca5f8d51b00c3dd7e",
+      "size": 392660,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "belsand",
+    "name": "Belsand",
+    "nameIt": "Belsand",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.40915,
+      26.42583
+    ],
+    "zoom": 10.9,
+    "population": 79841,
+    "grid": "cities/belsand/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/belsand/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "belsand",
+        "name": "Belsand",
+        "nameIt": "Belsand",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.40915,
+          26.42583
+        ],
+        "zoom": 10.9,
+        "population": 79841,
+        "cells": 339,
+        "layer": "cities/belsand/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.40915,
+            26.42583
+          ]
+        },
+        "properties": {
+          "id": "belsand",
+          "name": "Belsand",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 79841
+        }
+      },
+      "summary": null
+    }
+  }
+}

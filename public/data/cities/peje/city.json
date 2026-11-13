@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "peje",
+  "createdAt": "2026-10-08T16:04:53.618Z",
+  "updatedAt": "2026-10-08T16:04:53.618Z",
+  "meta": {
+    "name": "Pejë",
+    "nameIt": "Pejë",
+    "region": "Kosovo",
+    "regionIt": "Kosovo",
+    "country": "XK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pejë.geojson",
+      "sha256": "1ee7d9d1699b555af77915713bcd912107c96d4dd7d0468c086b50fe6f02ca50",
+      "size": 108329,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "peje",
+    "name": "Pejë",
+    "nameIt": "Pejë",
+    "region": "Kosovo",
+    "regionIt": "Kosovo",
+    "country": "XK",
+    "center": [
+      20.29914,
+      42.6591
+    ],
+    "zoom": 11.8,
+    "population": 38654,
+    "grid": "cities/peje/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/peje/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "peje",
+        "name": "Pejë",
+        "nameIt": "Pejë",
+        "region": "Kosovo",
+        "regionIt": "Kosovo",
+        "country": "XK",
+        "center": [
+          20.29914,
+          42.6591
+        ],
+        "zoom": 11.8,
+        "population": 38654,
+        "cells": 94,
+        "layer": "cities/peje/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.29914,
+            42.6591
+          ]
+        },
+        "properties": {
+          "id": "peje",
+          "name": "Pejë",
+          "country": "XK",
+          "isStudy": true,
+          "proximityMinutes": 12.7,
+          "population": 38654
+        }
+      },
+      "summary": null
+    }
+  }
+}

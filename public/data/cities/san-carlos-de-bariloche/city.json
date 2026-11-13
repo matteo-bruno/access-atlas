@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-carlos-de-bariloche",
+  "createdAt": "2026-10-08T16:10:24.633Z",
+  "updatedAt": "2026-10-08T16:10:24.633Z",
+  "meta": {
+    "name": "San Carlos de Bariloche",
+    "nameIt": "San Carlos de Bariloche",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Carlos de Bariloche.geojson",
+      "sha256": "3ed28b075f468898e8c8a5141d1191db70762b2ff871d7709695eb0f647d7ad5",
+      "size": 309526,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-carlos-de-bariloche",
+    "name": "San Carlos de Bariloche",
+    "nameIt": "San Carlos de Bariloche",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -71.30374,
+      -41.14971
+    ],
+    "zoom": 11.1,
+    "population": 85279,
+    "grid": "cities/san-carlos-de-bariloche/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-carlos-de-bariloche/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-carlos-de-bariloche",
+        "name": "San Carlos de Bariloche",
+        "nameIt": "San Carlos de Bariloche",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -71.30374,
+          -41.14971
+        ],
+        "zoom": 11.1,
+        "population": 85279,
+        "cells": 267,
+        "layer": "cities/san-carlos-de-bariloche/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -71.30374,
+            -41.14971
+          ]
+        },
+        "properties": {
+          "id": "san-carlos-de-bariloche",
+          "name": "San Carlos de Bariloche",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 85279
+        }
+      },
+      "summary": null
+    }
+  }
+}

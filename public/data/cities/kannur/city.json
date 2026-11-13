@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kannur",
+  "createdAt": "2026-10-08T15:44:59.014Z",
+  "updatedAt": "2026-10-08T15:44:59.014Z",
+  "meta": {
+    "name": "Kannur",
+    "nameIt": "Kannur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kannur.geojson",
+      "sha256": "bbc626019457f87fa79a968be74a4c456024395f89d452db202fde0696152b06",
+      "size": 1022596,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kannur",
+    "name": "Kannur",
+    "nameIt": "Kannur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.37473,
+      11.88911
+    ],
+    "zoom": 10.2,
+    "population": 389741,
+    "grid": "cities/kannur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kannur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kannur",
+        "name": "Kannur",
+        "nameIt": "Kannur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.37473,
+          11.88911
+        ],
+        "zoom": 10.2,
+        "population": 389741,
+        "cells": 890,
+        "layer": "cities/kannur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.37473,
+            11.88911
+          ]
+        },
+        "properties": {
+          "id": "kannur",
+          "name": "Kannur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 23.1,
+          "population": 389741
+        }
+      },
+      "summary": null
+    }
+  }
+}

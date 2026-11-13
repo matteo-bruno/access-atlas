@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pingdingshan",
+  "createdAt": "2026-10-08T16:05:34.987Z",
+  "updatedAt": "2026-10-08T16:05:34.987Z",
+  "meta": {
+    "name": "Pingdingshan",
+    "nameIt": "Pingdingshan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pingdingshan.geojson",
+      "sha256": "2bc4aa584106c3593128f32d394bf4cbf0c22e8d1127e646a390669c5d41ea30",
+      "size": 1636786,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pingdingshan",
+    "name": "Pingdingshan",
+    "nameIt": "Pingdingshan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.3072,
+      33.73807
+    ],
+    "zoom": 9.8,
+    "population": 882646,
+    "grid": "cities/pingdingshan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pingdingshan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pingdingshan",
+        "name": "Pingdingshan",
+        "nameIt": "Pingdingshan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.3072,
+          33.73807
+        ],
+        "zoom": 9.8,
+        "population": 882646,
+        "cells": 1407,
+        "layer": "cities/pingdingshan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.3072,
+            33.73807
+          ]
+        },
+        "properties": {
+          "id": "pingdingshan",
+          "name": "Pingdingshan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 22.3,
+          "population": 882646
+        }
+      },
+      "summary": null
+    }
+  }
+}

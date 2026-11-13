@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "freiburg-im-uechtland",
+  "createdAt": "2026-10-08T15:33:44.931Z",
+  "updatedAt": "2026-10-08T15:33:44.931Z",
+  "meta": {
+    "name": "Freiburg im Üechtland",
+    "nameIt": "Freiburg im Üechtland",
+    "region": "Switzerland",
+    "regionIt": "Svizzera",
+    "country": "CH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Freiburg im Üechtland.geojson",
+      "sha256": "82ffb718c888049ec9e3cb12f017efc23494b423a0ac61814f8eddc0bb56340b",
+      "size": 204203,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "freiburg-im-uechtland",
+    "name": "Freiburg im Üechtland",
+    "nameIt": "Freiburg im Üechtland",
+    "region": "Switzerland",
+    "regionIt": "Svizzera",
+    "country": "CH",
+    "center": [
+      7.14867,
+      46.79972
+    ],
+    "zoom": 11.5,
+    "population": 60000,
+    "grid": "cities/freiburg-im-uechtland/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/freiburg-im-uechtland/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "freiburg-im-uechtland",
+        "name": "Freiburg im Üechtland",
+        "nameIt": "Freiburg im Üechtland",
+        "region": "Switzerland",
+        "regionIt": "Svizzera",
+        "country": "CH",
+        "center": [
+          7.14867,
+          46.79972
+        ],
+        "zoom": 11.5,
+        "population": 60000,
+        "cells": 180,
+        "layer": "cities/freiburg-im-uechtland/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.14867,
+            46.79972
+          ]
+        },
+        "properties": {
+          "id": "freiburg-im-uechtland",
+          "name": "Freiburg im Üechtland",
+          "country": "CH",
+          "isStudy": true,
+          "proximityMinutes": 7.8,
+          "population": 60000
+        }
+      },
+      "summary": null
+    }
+  }
+}

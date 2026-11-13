@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "buldhana",
+  "createdAt": "2026-10-08T15:20:40.576Z",
+  "updatedAt": "2026-10-08T15:20:40.576Z",
+  "meta": {
+    "name": "Buldhana",
+    "nameIt": "Buldhana",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Buldhana.geojson",
+      "sha256": "0c86a3c798c1f420e7ea7388cf03d150f8d8c71fa9fd27b4aaefdd0d5a650360",
+      "size": 217925,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "buldhana",
+    "name": "Buldhana",
+    "nameIt": "Buldhana",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.18193,
+      20.5276
+    ],
+    "zoom": 11.6,
+    "population": 109827,
+    "grid": "cities/buldhana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/buldhana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "buldhana",
+        "name": "Buldhana",
+        "nameIt": "Buldhana",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.18193,
+          20.5276
+        ],
+        "zoom": 11.6,
+        "population": 109827,
+        "cells": 188,
+        "layer": "cities/buldhana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.18193,
+            20.5276
+          ]
+        },
+        "properties": {
+          "id": "buldhana",
+          "name": "Buldhana",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 109827
+        }
+      },
+      "summary": null
+    }
+  }
+}

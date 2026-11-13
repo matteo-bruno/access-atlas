@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lichinga",
+  "createdAt": "2026-10-08T15:51:04.045Z",
+  "updatedAt": "2026-10-08T15:51:04.045Z",
+  "meta": {
+    "name": "Lichinga",
+    "nameIt": "Lichinga",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lichinga.geojson",
+      "sha256": "90ee392533e782035d329c24aec602b56ae2ab8dd1397c6e9567021f81e2124f",
+      "size": 393241,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lichinga",
+    "name": "Lichinga",
+    "nameIt": "Lichinga",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ",
+    "center": [
+      35.25405,
+      -13.3068
+    ],
+    "zoom": 10.9,
+    "population": 263491,
+    "grid": "cities/lichinga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lichinga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lichinga",
+        "name": "Lichinga",
+        "nameIt": "Lichinga",
+        "region": "Mozambique",
+        "regionIt": "Mozambico",
+        "country": "MZ",
+        "center": [
+          35.25405,
+          -13.3068
+        ],
+        "zoom": 10.9,
+        "population": 263491,
+        "cells": 335,
+        "layer": "cities/lichinga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.25405,
+            -13.3068
+          ]
+        },
+        "properties": {
+          "id": "lichinga",
+          "name": "Lichinga",
+          "country": "MZ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 263491
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "concepcion-paraguay",
+  "createdAt": "2026-10-08T15:26:19.696Z",
+  "updatedAt": "2026-10-08T15:26:19.696Z",
+  "meta": {
+    "name": "Concepción (Paraguay)",
+    "nameIt": "Concepción (Paraguay)",
+    "region": "Paraguay",
+    "regionIt": "Paraguay",
+    "country": "PY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Concepción (Paraguay).geojson",
+      "sha256": "182546e58c033f0663275b294c638d41d1b7eb3fb50d6c8b36a7d82185ba2978",
+      "size": 205542,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "concepcion-paraguay",
+    "name": "Concepción (Paraguay)",
+    "nameIt": "Concepción (Paraguay)",
+    "region": "Paraguay",
+    "regionIt": "Paraguay",
+    "country": "PY",
+    "center": [
+      -57.43835,
+      -23.40577
+    ],
+    "zoom": 11.6,
+    "population": 68555,
+    "grid": "cities/concepcion-paraguay/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/concepcion-paraguay/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "concepcion-paraguay",
+        "name": "Concepción (Paraguay)",
+        "nameIt": "Concepción (Paraguay)",
+        "region": "Paraguay",
+        "regionIt": "Paraguay",
+        "country": "PY",
+        "center": [
+          -57.43835,
+          -23.40577
+        ],
+        "zoom": 11.6,
+        "population": 68555,
+        "cells": 175,
+        "layer": "cities/concepcion-paraguay/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -57.43835,
+            -23.40577
+          ]
+        },
+        "properties": {
+          "id": "concepcion-paraguay",
+          "name": "Concepción (Paraguay)",
+          "country": "PY",
+          "isStudy": true,
+          "proximityMinutes": 10.1,
+          "population": 68555
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sreemangal",
+  "createdAt": "2026-10-08T16:14:40.893Z",
+  "updatedAt": "2026-10-08T16:14:40.893Z",
+  "meta": {
+    "name": "Sreemangal",
+    "nameIt": "Sreemangal",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sreemangal.geojson",
+      "sha256": "6a7380c5c54d537392fde132ca8b294a0e4191787fc7b65342d6a951436fd6b0",
+      "size": 354934,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sreemangal",
+    "name": "Sreemangal",
+    "nameIt": "Sreemangal",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      91.73393,
+      24.33153
+    ],
+    "zoom": 10.2,
+    "population": 106042,
+    "grid": "cities/sreemangal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sreemangal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sreemangal",
+        "name": "Sreemangal",
+        "nameIt": "Sreemangal",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          91.73393,
+          24.33153
+        ],
+        "zoom": 10.2,
+        "population": 106042,
+        "cells": 306,
+        "layer": "cities/sreemangal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.73393,
+            24.33153
+          ]
+        },
+        "properties": {
+          "id": "sreemangal",
+          "name": "Sreemangal",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 24.8,
+          "population": 106042
+        }
+      },
+      "summary": null
+    }
+  }
+}

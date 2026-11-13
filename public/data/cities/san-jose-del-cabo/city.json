@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-jose-del-cabo",
+  "createdAt": "2026-10-08T16:10:33.203Z",
+  "updatedAt": "2026-10-08T16:10:33.203Z",
+  "meta": {
+    "name": "San José del Cabo",
+    "nameIt": "San José del Cabo",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San José del Cabo.geojson",
+      "sha256": "053c42bedb4f7cfe4c5b1f3b6feaa016c4ea0ef5927278353de962c89830e7d6",
+      "size": 295462,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-jose-del-cabo",
+    "name": "San José del Cabo",
+    "nameIt": "San José del Cabo",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -109.71579,
+      23.08798
+    ],
+    "zoom": 10.7,
+    "population": 122684,
+    "grid": "cities/san-jose-del-cabo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-jose-del-cabo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-jose-del-cabo",
+        "name": "San José del Cabo",
+        "nameIt": "San José del Cabo",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -109.71579,
+          23.08798
+        ],
+        "zoom": 10.7,
+        "population": 122684,
+        "cells": 252,
+        "layer": "cities/san-jose-del-cabo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -109.71579,
+            23.08798
+          ]
+        },
+        "properties": {
+          "id": "san-jose-del-cabo",
+          "name": "San José del Cabo",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 20.1,
+          "population": 122684
+        }
+      },
+      "summary": null
+    }
+  }
+}

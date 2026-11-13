@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "krusevac",
+  "createdAt": "2026-10-08T15:48:29.937Z",
+  "updatedAt": "2026-10-08T15:48:29.937Z",
+  "meta": {
+    "name": "Kruševac",
+    "nameIt": "Kruševac",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kruševac.geojson",
+      "sha256": "13ab935dcaadea837858d289b98f97be0c3abbfe19beffa3f12282c0f159ce59",
+      "size": 136183,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "krusevac",
+    "name": "Kruševac",
+    "nameIt": "Kruševac",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS",
+    "center": [
+      21.32858,
+      43.57703
+    ],
+    "zoom": 11.8,
+    "population": 58255,
+    "grid": "cities/krusevac/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/krusevac/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "krusevac",
+        "name": "Kruševac",
+        "nameIt": "Kruševac",
+        "region": "Serbia",
+        "regionIt": "Serbia",
+        "country": "RS",
+        "center": [
+          21.32858,
+          43.57703
+        ],
+        "zoom": 11.8,
+        "population": 58255,
+        "cells": 118,
+        "layer": "cities/krusevac/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            21.32858,
+            43.57703
+          ]
+        },
+        "properties": {
+          "id": "krusevac",
+          "name": "Kruševac",
+          "country": "RS",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 58255
+        }
+      },
+      "summary": null
+    }
+  }
+}

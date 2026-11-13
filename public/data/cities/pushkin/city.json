@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pushkin",
+  "createdAt": "2026-10-08T16:07:02.035Z",
+  "updatedAt": "2026-10-08T16:07:02.035Z",
+  "meta": {
+    "name": "Pushkin",
+    "nameIt": "Pushkin",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pushkin.geojson",
+      "sha256": "a72c208ba27f8c978cdb757de594baf987a5924d6ea0e58b0703b5ac6fbe1da0",
+      "size": 355066,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pushkin",
+    "name": "Pushkin",
+    "nameIt": "Pushkin",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      30.41716,
+      59.71732
+    ],
+    "zoom": 11.3,
+    "population": 133472,
+    "grid": "cities/pushkin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pushkin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pushkin",
+        "name": "Pushkin",
+        "nameIt": "Pushkin",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          30.41716,
+          59.71732
+        ],
+        "zoom": 11.3,
+        "population": 133472,
+        "cells": 311,
+        "layer": "cities/pushkin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.41716,
+            59.71732
+          ]
+        },
+        "properties": {
+          "id": "pushkin",
+          "name": "Pushkin",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 8.3,
+          "population": 133472
+        }
+      },
+      "summary": null
+    }
+  }
+}

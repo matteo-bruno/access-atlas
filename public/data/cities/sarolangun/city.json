@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sarolangun",
+  "createdAt": "2026-10-08T16:11:31.340Z",
+  "updatedAt": "2026-10-08T16:11:31.340Z",
+  "meta": {
+    "name": "Sarolangun",
+    "nameIt": "Sarolangun",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sarolangun.geojson",
+      "sha256": "266072e42a17c57cde88b824210ba31eadaf23174a1a0c518e8b7088bcd04606",
+      "size": 99917,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sarolangun",
+    "name": "Sarolangun",
+    "nameIt": "Sarolangun",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      102.71748,
+      -2.29964
+    ],
+    "zoom": 12,
+    "population": 44994,
+    "grid": "cities/sarolangun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sarolangun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sarolangun",
+        "name": "Sarolangun",
+        "nameIt": "Sarolangun",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          102.71748,
+          -2.29964
+        ],
+        "zoom": 12,
+        "population": 44994,
+        "cells": 85,
+        "layer": "cities/sarolangun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            102.71748,
+            -2.29964
+          ]
+        },
+        "properties": {
+          "id": "sarolangun",
+          "name": "Sarolangun",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 18.4,
+          "population": 44994
+        }
+      },
+      "summary": null
+    }
+  }
+}

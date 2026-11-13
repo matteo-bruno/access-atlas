@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kwail",
+  "createdAt": "2026-10-08T15:49:05.763Z",
+  "updatedAt": "2026-10-08T15:49:05.763Z",
+  "meta": {
+    "name": "Kwail",
+    "nameIt": "Kwail",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kwail.geojson",
+      "sha256": "929829d7e8fac14149b9d045e7a4de282b1123873b5da728dd13490949259d73",
+      "size": 101349,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kwail",
+    "name": "Kwail",
+    "nameIt": "Kwail",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP",
+    "center": [
+      125.02011,
+      38.44413
+    ],
+    "zoom": 12,
+    "population": 60021,
+    "grid": "cities/kwail/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 164
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kwail/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kwail",
+        "name": "Kwail",
+        "nameIt": "Kwail",
+        "region": "North Korea",
+        "regionIt": "Corea del Nord",
+        "country": "KP",
+        "center": [
+          125.02011,
+          38.44413
+        ],
+        "zoom": 12,
+        "population": 60021,
+        "cells": 87,
+        "layer": "cities/kwail/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 164
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.02011,
+            38.44413
+          ]
+        },
+        "properties": {
+          "id": "kwail",
+          "name": "Kwail",
+          "country": "KP",
+          "isStudy": true,
+          "proximityMinutes": 17.1,
+          "population": 60021
+        }
+      },
+      "summary": null
+    }
+  }
+}

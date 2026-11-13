@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "punta-alta",
+  "createdAt": "2026-10-08T16:06:53.841Z",
+  "updatedAt": "2026-10-08T16:06:53.841Z",
+  "meta": {
+    "name": "Punta Alta",
+    "nameIt": "Punta Alta",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Punta Alta.geojson",
+      "sha256": "bb2a9a9d76bc81ff9904575333c300935826165c1157e299e6cc3cb0d51b9798",
+      "size": 197104,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "punta-alta",
+    "name": "Punta Alta",
+    "nameIt": "Punta Alta",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -62.07026,
+      -38.87869
+    ],
+    "zoom": 11.8,
+    "population": 46778,
+    "grid": "cities/punta-alta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 167
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/punta-alta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "punta-alta",
+        "name": "Punta Alta",
+        "nameIt": "Punta Alta",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -62.07026,
+          -38.87869
+        ],
+        "zoom": 11.8,
+        "population": 46778,
+        "cells": 168,
+        "layer": "cities/punta-alta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 167
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -62.07026,
+            -38.87869
+          ]
+        },
+        "properties": {
+          "id": "punta-alta",
+          "name": "Punta Alta",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 13.8,
+          "population": 46778
+        }
+      },
+      "summary": null
+    }
+  }
+}

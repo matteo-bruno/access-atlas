@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mohnapur",
+  "createdAt": "2026-10-08T15:57:49.133Z",
+  "updatedAt": "2026-10-08T15:57:49.133Z",
+  "meta": {
+    "name": "Mohnapur",
+    "nameIt": "Mohnapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mohnapur.geojson",
+      "sha256": "e538e3e55102c906ca4c0011f85f30c100298004225bc3582095f136df7bf171",
+      "size": 397334,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mohnapur",
+    "name": "Mohnapur",
+    "nameIt": "Mohnapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.36131,
+      27.2275
+    ],
+    "zoom": 10.3,
+    "population": 65541,
+    "grid": "cities/mohnapur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mohnapur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mohnapur",
+        "name": "Mohnapur",
+        "nameIt": "Mohnapur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.36131,
+          27.2275
+        ],
+        "zoom": 10.3,
+        "population": 65541,
+        "cells": 343,
+        "layer": "cities/mohnapur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.36131,
+            27.2275
+          ]
+        },
+        "properties": {
+          "id": "mohnapur",
+          "name": "Mohnapur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 65541
+        }
+      },
+      "summary": null
+    }
+  }
+}

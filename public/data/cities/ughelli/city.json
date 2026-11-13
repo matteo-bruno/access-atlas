@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ughelli",
+  "createdAt": "2026-10-08T16:19:40.555Z",
+  "updatedAt": "2026-10-08T16:19:40.555Z",
+  "meta": {
+    "name": "Ughelli",
+    "nameIt": "Ughelli",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ughelli.geojson",
+      "sha256": "864eaa7589ec46b6ddae34faee52c39d2517647099e451d8174073932ec8422f",
+      "size": 652181,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ughelli",
+    "name": "Ughelli",
+    "nameIt": "Ughelli",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      6.00165,
+      5.49751
+    ],
+    "zoom": 10.8,
+    "population": 293696,
+    "grid": "cities/ughelli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ughelli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ughelli",
+        "name": "Ughelli",
+        "nameIt": "Ughelli",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          6.00165,
+          5.49751
+        ],
+        "zoom": 10.8,
+        "population": 293696,
+        "cells": 566,
+        "layer": "cities/ughelli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.00165,
+            5.49751
+          ]
+        },
+        "properties": {
+          "id": "ughelli",
+          "name": "Ughelli",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 35.6,
+          "population": 293696
+        }
+      },
+      "summary": null
+    }
+  }
+}

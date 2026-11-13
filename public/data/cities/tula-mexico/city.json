@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tula-mexico",
+  "createdAt": "2026-10-08T16:19:06.001Z",
+  "updatedAt": "2026-10-08T16:19:06.001Z",
+  "meta": {
+    "name": "Tula (Mexico)",
+    "nameIt": "Tula (Mexico)",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tula (Mexico).geojson",
+      "sha256": "ed2404d9ce37a45c7c305500b1e7e862da997c8cc547c8dbbbf9e2128222cc52",
+      "size": 206008,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tula-mexico",
+    "name": "Tula (Mexico)",
+    "nameIt": "Tula (Mexico)",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -99.3381,
+      20.0501
+    ],
+    "zoom": 11.4,
+    "population": 53116,
+    "grid": "cities/tula-mexico/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tula-mexico/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tula-mexico",
+        "name": "Tula (Mexico)",
+        "nameIt": "Tula (Mexico)",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -99.3381,
+          20.0501
+        ],
+        "zoom": 11.4,
+        "population": 53116,
+        "cells": 177,
+        "layer": "cities/tula-mexico/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -99.3381,
+            20.0501
+          ]
+        },
+        "properties": {
+          "id": "tula-mexico",
+          "name": "Tula (Mexico)",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 17.6,
+          "population": 53116
+        }
+      },
+      "summary": null
+    }
+  }
+}

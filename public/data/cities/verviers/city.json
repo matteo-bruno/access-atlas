@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "verviers",
+  "createdAt": "2026-10-08T16:20:37.918Z",
+  "updatedAt": "2026-10-08T16:20:37.918Z",
+  "meta": {
+    "name": "Verviers",
+    "nameIt": "Verviers",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Verviers.geojson",
+      "sha256": "6450389801e28908bf91ee4c8df25de1a0655046046ee2e84c1afb1d31ba762c",
+      "size": 160123,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "verviers",
+    "name": "Verviers",
+    "nameIt": "Verviers",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE",
+    "center": [
+      5.8641,
+      50.58928
+    ],
+    "zoom": 11.8,
+    "population": 47417,
+    "grid": "cities/verviers/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/verviers/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "verviers",
+        "name": "Verviers",
+        "nameIt": "Verviers",
+        "region": "Belgium",
+        "regionIt": "Belgio",
+        "country": "BE",
+        "center": [
+          5.8641,
+          50.58928
+        ],
+        "zoom": 11.8,
+        "population": 47417,
+        "cells": 141,
+        "layer": "cities/verviers/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.8641,
+            50.58928
+          ]
+        },
+        "properties": {
+          "id": "verviers",
+          "name": "Verviers",
+          "country": "BE",
+          "isStudy": true,
+          "proximityMinutes": 10,
+          "population": 47417
+        }
+      },
+      "summary": null
+    }
+  }
+}

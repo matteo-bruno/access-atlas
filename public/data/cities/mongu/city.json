@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mongu",
+  "createdAt": "2026-10-08T15:58:00.945Z",
+  "updatedAt": "2026-10-08T15:58:00.945Z",
+  "meta": {
+    "name": "Mongu",
+    "nameIt": "Mongu",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mongu.geojson",
+      "sha256": "0249b4da18e95cc10fb62225fb0c95ce83fcc3a0c48e9d66d43246854e7f3738",
+      "size": 310628,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mongu",
+    "name": "Mongu",
+    "nameIt": "Mongu",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM",
+    "center": [
+      23.15208,
+      -15.26894
+    ],
+    "zoom": 11,
+    "population": 104160,
+    "grid": "cities/mongu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mongu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mongu",
+        "name": "Mongu",
+        "nameIt": "Mongu",
+        "region": "Zambia",
+        "regionIt": "Zambia",
+        "country": "ZM",
+        "center": [
+          23.15208,
+          -15.26894
+        ],
+        "zoom": 11,
+        "population": 104160,
+        "cells": 264,
+        "layer": "cities/mongu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.15208,
+            -15.26894
+          ]
+        },
+        "properties": {
+          "id": "mongu",
+          "name": "Mongu",
+          "country": "ZM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 104160
+        }
+      },
+      "summary": null
+    }
+  }
+}

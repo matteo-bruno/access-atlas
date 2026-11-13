@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "trois-rivieres",
+  "createdAt": "2026-10-08T16:18:51.883Z",
+  "updatedAt": "2026-10-08T16:18:51.883Z",
+  "meta": {
+    "name": "Trois-Rivières",
+    "nameIt": "Trois-Rivières",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Trois-Rivières.geojson",
+      "sha256": "dc2c0c6f799a1abd0c9637e27a6c7e5bc190a02846a3add2d22e264e0db279b9",
+      "size": 542300,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "trois-rivieres",
+    "name": "Trois-Rivières",
+    "nameIt": "Trois-Rivières",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -72.56591,
+      46.35798
+    ],
+    "zoom": 10.6,
+    "population": 102248,
+    "grid": "cities/trois-rivieres/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/trois-rivieres/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "trois-rivieres",
+        "name": "Trois-Rivières",
+        "nameIt": "Trois-Rivières",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -72.56591,
+          46.35798
+        ],
+        "zoom": 10.6,
+        "population": 102248,
+        "cells": 472,
+        "layer": "cities/trois-rivieres/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.56591,
+            46.35798
+          ]
+        },
+        "properties": {
+          "id": "trois-rivieres",
+          "name": "Trois-Rivières",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 102248
+        }
+      },
+      "summary": null
+    }
+  }
+}

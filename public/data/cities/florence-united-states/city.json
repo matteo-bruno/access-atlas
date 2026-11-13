@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "florence-united-states",
+  "createdAt": "2026-10-08T15:33:26.677Z",
+  "updatedAt": "2026-10-08T15:33:26.677Z",
+  "meta": {
+    "name": "Florence (United States)",
+    "nameIt": "Florence (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Florence (United States).geojson",
+      "sha256": "ac0a8710487eb31d6c551d0e2260da5292137739c370b517b1bf8b27f92960f6",
+      "size": 601259,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "florence-united-states",
+    "name": "Florence (United States)",
+    "nameIt": "Florence (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -84.63105,
+      38.99711
+    ],
+    "zoom": 10.3,
+    "population": 62581,
+    "grid": "cities/florence-united-states/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/florence-united-states/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "florence-united-states",
+        "name": "Florence (United States)",
+        "nameIt": "Florence (United States)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -84.63105,
+          38.99711
+        ],
+        "zoom": 10.3,
+        "population": 62581,
+        "cells": 518,
+        "layer": "cities/florence-united-states/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -84.63105,
+            38.99711
+          ]
+        },
+        "properties": {
+          "id": "florence-united-states",
+          "name": "Florence (United States)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 25.6,
+          "population": 62581
+        }
+      },
+      "summary": null
+    }
+  }
+}

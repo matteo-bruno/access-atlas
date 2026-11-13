@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sahly",
+  "createdAt": "2026-10-08T16:09:49.967Z",
+  "updatedAt": "2026-10-08T16:09:49.967Z",
+  "meta": {
+    "name": "Sahly",
+    "nameIt": "Sahly",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sahly.geojson",
+      "sha256": "e9c43a3580936bfc402bc1a854043fdffc42622f64bba699d9ea1c83cf5e6c0c",
+      "size": 412781,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sahly",
+    "name": "Sahly",
+    "nameIt": "Sahly",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      50.83918,
+      28.96697
+    ],
+    "zoom": 11.2,
+    "population": 96847,
+    "grid": "cities/sahly/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sahly/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sahly",
+        "name": "Sahly",
+        "nameIt": "Sahly",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          50.83918,
+          28.96697
+        ],
+        "zoom": 11.2,
+        "population": 96847,
+        "cells": 358,
+        "layer": "cities/sahly/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            50.83918,
+            28.96697
+          ]
+        },
+        "properties": {
+          "id": "sahly",
+          "name": "Sahly",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 15.2,
+          "population": 96847
+        }
+      },
+      "summary": null
+    }
+  }
+}

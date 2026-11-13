@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "brisbane-fua",
+  "createdAt": "2026-10-19T16:55:36.166Z",
+  "updatedAt": "2026-10-19T16:55:36.166Z",
+  "meta": {
+    "name": "Brisbane",
+    "nameIt": "Brisbane",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "brisbane-fua",
+    "name": "Brisbane",
+    "nameIt": "Brisbane",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "extent": "fua",
+    "core": "brisbane",
+    "center": [
+      153.0318,
+      -27.49047
+    ],
+    "zoom": 8.5,
+    "population": 2465117,
+    "grid": "cities/brisbane-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/brisbane-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "brisbane-fua",
+        "name": "Brisbane",
+        "nameIt": "Brisbane",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "extent": "fua",
+        "core": "brisbane",
+        "center": [
+          153.0318,
+          -27.49047
+        ],
+        "zoom": 8.5,
+        "population": 2465117,
+        "cells": 25223,
+        "layer": "cities/brisbane-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            153.0318,
+            -27.49047
+          ]
+        },
+        "properties": {
+          "id": "brisbane-fua",
+          "name": "Brisbane",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 19.4,
+          "population": 2465117
+        }
+      },
+      "summary": null
+    }
+  }
+}

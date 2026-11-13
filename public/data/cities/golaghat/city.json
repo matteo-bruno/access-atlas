@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "golaghat",
+  "createdAt": "2026-10-08T15:35:34.043Z",
+  "updatedAt": "2026-10-08T15:35:34.043Z",
+  "meta": {
+    "name": "Golaghat",
+    "nameIt": "Golaghat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Golaghat.geojson",
+      "sha256": "59a9fed042031d83fe2bc7cdebebb588605f55ed33059f091a276f00c7cb6799",
+      "size": 145968,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "golaghat",
+    "name": "Golaghat",
+    "nameIt": "Golaghat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      93.9708,
+      26.51184
+    ],
+    "zoom": 11.9,
+    "population": 65691,
+    "grid": "cities/golaghat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/golaghat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "golaghat",
+        "name": "Golaghat",
+        "nameIt": "Golaghat",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          93.9708,
+          26.51184
+        ],
+        "zoom": 11.9,
+        "population": 65691,
+        "cells": 126,
+        "layer": "cities/golaghat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            93.9708,
+            26.51184
+          ]
+        },
+        "properties": {
+          "id": "golaghat",
+          "name": "Golaghat",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 65691
+        }
+      },
+      "summary": null
+    }
+  }
+}

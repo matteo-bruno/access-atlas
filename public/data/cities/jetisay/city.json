@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jetisay",
+  "createdAt": "2026-10-08T15:42:20.366Z",
+  "updatedAt": "2026-10-08T15:42:20.366Z",
+  "meta": {
+    "name": "Jetisay",
+    "nameIt": "Jetisay",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jetisay.geojson",
+      "sha256": "91be018e7bffdfd4ac07995783db778cd64e96545526a93dbfc9e7f7ec54439c",
+      "size": 137939,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jetisay",
+    "name": "Jetisay",
+    "nameIt": "Jetisay",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ",
+    "center": [
+      68.32033,
+      40.77138
+    ],
+    "zoom": 11.8,
+    "population": 29542,
+    "grid": "cities/jetisay/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jetisay/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jetisay",
+        "name": "Jetisay",
+        "nameIt": "Jetisay",
+        "region": "Kazakhstan",
+        "regionIt": "Kazakistan",
+        "country": "KZ",
+        "center": [
+          68.32033,
+          40.77138
+        ],
+        "zoom": 11.8,
+        "population": 29542,
+        "cells": 120,
+        "layer": "cities/jetisay/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            68.32033,
+            40.77138
+          ]
+        },
+        "properties": {
+          "id": "jetisay",
+          "name": "Jetisay",
+          "country": "KZ",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 29542
+        }
+      },
+      "summary": null
+    }
+  }
+}

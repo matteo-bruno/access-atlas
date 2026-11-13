@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "raisen",
+  "createdAt": "2026-10-08T16:07:54.081Z",
+  "updatedAt": "2026-10-08T16:07:54.081Z",
+  "meta": {
+    "name": "Raisen",
+    "nameIt": "Raisen",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Raisen.geojson",
+      "sha256": "0162a0094366cdbc5b4f1013c50d91286144500381f8d76586b7cf7b118de5cd",
+      "size": 99612,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "raisen",
+    "name": "Raisen",
+    "nameIt": "Raisen",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.78685,
+      23.33018
+    ],
+    "zoom": 11.8,
+    "population": 44478,
+    "grid": "cities/raisen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/raisen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "raisen",
+        "name": "Raisen",
+        "nameIt": "Raisen",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.78685,
+          23.33018
+        ],
+        "zoom": 11.8,
+        "population": 44478,
+        "cells": 86,
+        "layer": "cities/raisen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.78685,
+            23.33018
+          ]
+        },
+        "properties": {
+          "id": "raisen",
+          "name": "Raisen",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 44478
+        }
+      },
+      "summary": null
+    }
+  }
+}

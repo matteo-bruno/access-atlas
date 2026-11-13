@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yingkou-hunan-province",
+  "createdAt": "2026-10-08T16:23:55.831Z",
+  "updatedAt": "2026-10-08T16:23:55.831Z",
+  "meta": {
+    "name": "Yingkou (Hunan Province)",
+    "nameIt": "Yingkou (Hunan Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yingkou (Hunan Province).geojson",
+      "sha256": "7c2065e046444a9ee8c7c9ccf8c14fe05c24f35dd20fc46f2264f96f1ac1bc50",
+      "size": 485424,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yingkou-hunan-province",
+    "name": "Yingkou (Hunan Province)",
+    "nameIt": "Yingkou (Hunan Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      109.96505,
+      27.54941
+    ],
+    "zoom": 10.7,
+    "population": 445822,
+    "grid": "cities/yingkou-hunan-province/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yingkou-hunan-province/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yingkou-hunan-province",
+        "name": "Yingkou (Hunan Province)",
+        "nameIt": "Yingkou (Hunan Province)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          109.96505,
+          27.54941
+        ],
+        "zoom": 10.7,
+        "population": 445822,
+        "cells": 415,
+        "layer": "cities/yingkou-hunan-province/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.96505,
+            27.54941
+          ]
+        },
+        "properties": {
+          "id": "yingkou-hunan-province",
+          "name": "Yingkou (Hunan Province)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 28.9,
+          "population": 445822
+        }
+      },
+      "summary": null
+    }
+  }
+}

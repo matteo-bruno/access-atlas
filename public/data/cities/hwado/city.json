@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hwado",
+  "createdAt": "2026-10-08T15:40:02.067Z",
+  "updatedAt": "2026-10-08T15:40:02.067Z",
+  "meta": {
+    "name": "Hwado",
+    "nameIt": "Hwado",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hwado.geojson",
+      "sha256": "b65506d53330273eba1ce04f97b560bc660fce5be8ad2a8ee3ff51c880f887ca",
+      "size": 503521,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hwado",
+    "name": "Hwado",
+    "nameIt": "Hwado",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      127.27516,
+      37.65235
+    ],
+    "zoom": 10.5,
+    "population": 181844,
+    "grid": "cities/hwado/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 169
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hwado/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hwado",
+        "name": "Hwado",
+        "nameIt": "Hwado",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          127.27516,
+          37.65235
+        ],
+        "zoom": 10.5,
+        "population": 181844,
+        "cells": 435,
+        "layer": "cities/hwado/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 169
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            127.27516,
+            37.65235
+          ]
+        },
+        "properties": {
+          "id": "hwado",
+          "name": "Hwado",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 181844
+        }
+      },
+      "summary": null
+    }
+  }
+}

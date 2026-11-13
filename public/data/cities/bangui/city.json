@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bangui",
+  "createdAt": "2026-10-08T15:14:50.815Z",
+  "updatedAt": "2026-10-08T15:14:50.815Z",
+  "meta": {
+    "name": "Bangui",
+    "nameIt": "Bangui",
+    "region": "Central African Republic",
+    "regionIt": "Repubblica Centrafricana",
+    "country": "CF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bangui.geojson",
+      "sha256": "9bbb07859d013e7546d341f46979b0ea94d1a7957a5b29b3001d42d379b3a844",
+      "size": 1345312,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bangui",
+    "name": "Bangui",
+    "nameIt": "Bangui",
+    "region": "Central African Republic",
+    "regionIt": "Repubblica Centrafricana",
+    "country": "CF",
+    "center": [
+      18.53818,
+      4.389
+    ],
+    "zoom": 9.9,
+    "population": 996068,
+    "grid": "cities/bangui/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bangui/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bangui",
+        "name": "Bangui",
+        "nameIt": "Bangui",
+        "region": "Central African Republic",
+        "regionIt": "Repubblica Centrafricana",
+        "country": "CF",
+        "center": [
+          18.53818,
+          4.389
+        ],
+        "zoom": 9.9,
+        "population": 996068,
+        "cells": 1161,
+        "layer": "cities/bangui/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.53818,
+            4.389
+          ]
+        },
+        "properties": {
+          "id": "bangui",
+          "name": "Bangui",
+          "country": "CF",
+          "isStudy": true,
+          "proximityMinutes": 48.2,
+          "population": 996068
+        }
+      },
+      "summary": null
+    }
+  }
+}

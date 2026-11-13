@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "najafabad",
+  "createdAt": "2026-10-08T15:59:49.523Z",
+  "updatedAt": "2026-10-08T15:59:49.523Z",
+  "meta": {
+    "name": "Najafabad",
+    "nameIt": "Najafabad",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Najafabad.geojson",
+      "sha256": "9b30dbf562715d31b85c290fe7de036bee026ec51a4386cee2bcdfeddcb86dad",
+      "size": 390811,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "najafabad",
+    "name": "Najafabad",
+    "nameIt": "Najafabad",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      51.3427,
+      32.6373
+    ],
+    "zoom": 10.7,
+    "population": 165808,
+    "grid": "cities/najafabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/najafabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "najafabad",
+        "name": "Najafabad",
+        "nameIt": "Najafabad",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          51.3427,
+          32.6373
+        ],
+        "zoom": 10.7,
+        "population": 165808,
+        "cells": 338,
+        "layer": "cities/najafabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            51.3427,
+            32.6373
+          ]
+        },
+        "properties": {
+          "id": "najafabad",
+          "name": "Najafabad",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 25.7,
+          "population": 165808
+        }
+      },
+      "summary": null
+    }
+  }
+}

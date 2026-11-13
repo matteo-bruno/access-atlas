@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dharmavaram",
+  "createdAt": "2026-10-08T15:29:31.511Z",
+  "updatedAt": "2026-10-08T15:29:31.511Z",
+  "meta": {
+    "name": "Dharmavaram",
+    "nameIt": "Dharmavaram",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dharmavaram.geojson",
+      "sha256": "ad40b73e0294e3fae6c9757f00bce13fa5433f7312e599ca4e07b53e02905186",
+      "size": 133437,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dharmavaram",
+    "name": "Dharmavaram",
+    "nameIt": "Dharmavaram",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.71811,
+      14.41722
+    ],
+    "zoom": 11.7,
+    "population": 80278,
+    "grid": "cities/dharmavaram/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dharmavaram/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dharmavaram",
+        "name": "Dharmavaram",
+        "nameIt": "Dharmavaram",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.71811,
+          14.41722
+        ],
+        "zoom": 11.7,
+        "population": 80278,
+        "cells": 115,
+        "layer": "cities/dharmavaram/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.71811,
+            14.41722
+          ]
+        },
+        "properties": {
+          "id": "dharmavaram",
+          "name": "Dharmavaram",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 80278
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "herat",
+  "createdAt": "2026-10-08T15:38:29.688Z",
+  "updatedAt": "2026-10-08T15:38:29.688Z",
+  "meta": {
+    "name": "Herat",
+    "nameIt": "Herat",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Herat.geojson",
+      "sha256": "ead4498cc1fb9606ab799f3b8e6f329c5bcef460ef8d3dd0519c5c7de4177def",
+      "size": 874708,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "herat",
+    "name": "Herat",
+    "nameIt": "Herat",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF",
+    "center": [
+      62.19942,
+      34.34864
+    ],
+    "zoom": 10.2,
+    "population": 821938,
+    "grid": "cities/herat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/herat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "herat",
+        "name": "Herat",
+        "nameIt": "Herat",
+        "region": "Afghanistan",
+        "regionIt": "Afghanistan",
+        "country": "AF",
+        "center": [
+          62.19942,
+          34.34864
+        ],
+        "zoom": 10.2,
+        "population": 821938,
+        "cells": 754,
+        "layer": "cities/herat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            62.19942,
+            34.34864
+          ]
+        },
+        "properties": {
+          "id": "herat",
+          "name": "Herat",
+          "country": "AF",
+          "isStudy": true,
+          "proximityMinutes": 44,
+          "population": 821938
+        }
+      },
+      "summary": null
+    }
+  }
+}

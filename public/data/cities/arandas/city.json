@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "arandas",
+  "createdAt": "2026-10-08T15:09:01.079Z",
+  "updatedAt": "2026-10-08T15:09:01.079Z",
+  "meta": {
+    "name": "Arandas",
+    "nameIt": "Arandas",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Arandas.geojson",
+      "sha256": "a8f7312c7b80551f6a0cc9210874e7b493e1acdbda23675796ca18e45677dc41",
+      "size": 92910,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "arandas",
+    "name": "Arandas",
+    "nameIt": "Arandas",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -102.3447,
+      20.70377
+    ],
+    "zoom": 11.8,
+    "population": 33850,
+    "grid": "cities/arandas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/arandas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "arandas",
+        "name": "Arandas",
+        "nameIt": "Arandas",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -102.3447,
+          20.70377
+        ],
+        "zoom": 11.8,
+        "population": 33850,
+        "cells": 79,
+        "layer": "cities/arandas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -102.3447,
+            20.70377
+          ]
+        },
+        "properties": {
+          "id": "arandas",
+          "name": "Arandas",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 12,
+          "population": 33850
+        }
+      },
+      "summary": null
+    }
+  }
+}

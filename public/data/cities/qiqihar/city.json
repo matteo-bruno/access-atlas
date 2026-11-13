@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "qiqihar",
+  "createdAt": "2026-10-08T16:07:30.215Z",
+  "updatedAt": "2026-10-08T16:07:30.215Z",
+  "meta": {
+    "name": "Qiqihar",
+    "nameIt": "Qiqihar",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Qiqihar.geojson",
+      "sha256": "d0ea3b450db535640014cd0ba64539059055809ea06e53672e1a110c521ebae3",
+      "size": 1456688,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "qiqihar",
+    "name": "Qiqihar",
+    "nameIt": "Qiqihar",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      123.96221,
+      47.33848
+    ],
+    "zoom": 10.2,
+    "population": 844467,
+    "grid": "cities/qiqihar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 182
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/qiqihar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "qiqihar",
+        "name": "Qiqihar",
+        "nameIt": "Qiqihar",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          123.96221,
+          47.33848
+        ],
+        "zoom": 10.2,
+        "population": 844467,
+        "cells": 1257,
+        "layer": "cities/qiqihar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 182
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.96221,
+            47.33848
+          ]
+        },
+        "properties": {
+          "id": "qiqihar",
+          "name": "Qiqihar",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 25.1,
+          "population": 844467
+        }
+      },
+      "summary": null
+    }
+  }
+}

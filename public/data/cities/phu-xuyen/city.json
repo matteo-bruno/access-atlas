@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "phu-xuyen",
+  "createdAt": "2026-10-08T16:05:19.118Z",
+  "updatedAt": "2026-10-08T16:05:19.118Z",
+  "meta": {
+    "name": "Phu Xuyen",
+    "nameIt": "Phu Xuyen",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Phu Xuyen.geojson",
+      "sha256": "62d560f63adee0cbddf4d94eecd7bc02fdfa44403a43eb558adf832f9af4e52e",
+      "size": 311996,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "phu-xuyen",
+    "name": "Phu Xuyen",
+    "nameIt": "Phu Xuyen",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      105.91529,
+      20.76072
+    ],
+    "zoom": 10.8,
+    "population": 83946,
+    "grid": "cities/phu-xuyen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/phu-xuyen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "phu-xuyen",
+        "name": "Phu Xuyen",
+        "nameIt": "Phu Xuyen",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          105.91529,
+          20.76072
+        ],
+        "zoom": 10.8,
+        "population": 83946,
+        "cells": 267,
+        "layer": "cities/phu-xuyen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.91529,
+            20.76072
+          ]
+        },
+        "properties": {
+          "id": "phu-xuyen",
+          "name": "Phu Xuyen",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 23,
+          "population": 83946
+        }
+      },
+      "summary": null
+    }
+  }
+}

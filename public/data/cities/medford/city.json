@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "medford",
+  "createdAt": "2026-10-08T15:56:12.486Z",
+  "updatedAt": "2026-10-08T15:56:12.486Z",
+  "meta": {
+    "name": "Medford",
+    "nameIt": "Medford",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Medford.geojson",
+      "sha256": "3236971849b8390223f906fa7e607fadf31b4df77380b96eabf1b69a1eb8b536",
+      "size": 531853,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "medford",
+    "name": "Medford",
+    "nameIt": "Medford",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -122.87423,
+      42.34055
+    ],
+    "zoom": 10.8,
+    "population": 82897,
+    "grid": "cities/medford/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/medford/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "medford",
+        "name": "Medford",
+        "nameIt": "Medford",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -122.87423,
+          42.34055
+        ],
+        "zoom": 10.8,
+        "population": 82897,
+        "cells": 459,
+        "layer": "cities/medford/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.87423,
+            42.34055
+          ]
+        },
+        "properties": {
+          "id": "medford",
+          "name": "Medford",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 17.6,
+          "population": 82897
+        }
+      },
+      "summary": null
+    }
+  }
+}

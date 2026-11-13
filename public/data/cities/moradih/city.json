@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "moradih",
+  "createdAt": "2026-10-08T15:58:13.915Z",
+  "updatedAt": "2026-10-08T15:58:13.915Z",
+  "meta": {
+    "name": "Moradih",
+    "nameIt": "Moradih",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Moradih.geojson",
+      "sha256": "07d1e5b3885409f7e72fbcd3a7c5fe8e674c0a3783c8acf95528d662c6bb84d9",
+      "size": 173744,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "moradih",
+    "name": "Moradih",
+    "nameIt": "Moradih",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.15987,
+      26.91059
+    ],
+    "zoom": 11.6,
+    "population": 21855,
+    "grid": "cities/moradih/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/moradih/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "moradih",
+        "name": "Moradih",
+        "nameIt": "Moradih",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.15987,
+          26.91059
+        ],
+        "zoom": 11.6,
+        "population": 21855,
+        "cells": 150,
+        "layer": "cities/moradih/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.15987,
+            26.91059
+          ]
+        },
+        "properties": {
+          "id": "moradih",
+          "name": "Moradih",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 21855
+        }
+      },
+      "summary": null
+    }
+  }
+}

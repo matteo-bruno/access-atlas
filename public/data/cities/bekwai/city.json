@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bekwai",
+  "createdAt": "2026-10-08T15:17:02.862Z",
+  "updatedAt": "2026-10-08T15:17:02.862Z",
+  "meta": {
+    "name": "Bekwai",
+    "nameIt": "Bekwai",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bekwai.geojson",
+      "sha256": "da2e1fc6fd92620631c80cff9050425c7e7b684f1fca1ec5a816b13274e9cc53",
+      "size": 198361,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bekwai",
+    "name": "Bekwai",
+    "nameIt": "Bekwai",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH",
+    "center": [
+      -1.58001,
+      6.45386
+    ],
+    "zoom": 11.6,
+    "population": 47679,
+    "grid": "cities/bekwai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bekwai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bekwai",
+        "name": "Bekwai",
+        "nameIt": "Bekwai",
+        "region": "Ghana",
+        "regionIt": "Ghana",
+        "country": "GH",
+        "center": [
+          -1.58001,
+          6.45386
+        ],
+        "zoom": 11.6,
+        "population": 47679,
+        "cells": 170,
+        "layer": "cities/bekwai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.58001,
+            6.45386
+          ]
+        },
+        "properties": {
+          "id": "bekwai",
+          "name": "Bekwai",
+          "country": "GH",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 47679
+        }
+      },
+      "summary": null
+    }
+  }
+}

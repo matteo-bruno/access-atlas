@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "band-rma",
+  "createdAt": "2026-10-08T15:14:41.792Z",
+  "updatedAt": "2026-10-08T15:14:41.792Z",
+  "meta": {
+    "name": "Bandırma",
+    "nameIt": "Bandırma",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bandırma.geojson",
+      "sha256": "54d78abb1f1327d93d065fb1c1d243a2de92f1f5593945abc56482432c18440d",
+      "size": 147229,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "band-rma",
+    "name": "Bandırma",
+    "nameIt": "Bandırma",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      27.97788,
+      40.34541
+    ],
+    "zoom": 11.8,
+    "population": 104452,
+    "grid": "cities/band-rma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/band-rma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "band-rma",
+        "name": "Bandırma",
+        "nameIt": "Bandırma",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          27.97788,
+          40.34541
+        ],
+        "zoom": 11.8,
+        "population": 104452,
+        "cells": 129,
+        "layer": "cities/band-rma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.97788,
+            40.34541
+          ]
+        },
+        "properties": {
+          "id": "band-rma",
+          "name": "Bandırma",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 6,
+          "population": 104452
+        }
+      },
+      "summary": null
+    }
+  }
+}

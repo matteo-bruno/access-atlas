@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yamunanagar",
+  "createdAt": "2026-10-08T16:23:17.912Z",
+  "updatedAt": "2026-10-08T16:23:17.912Z",
+  "meta": {
+    "name": "Yamunanagar",
+    "nameIt": "Yamunanagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yamunanagar.geojson",
+      "sha256": "768b70f6bc3b11fd1b23fb76725e141bea506ca1eafe4d5fc8f79987806a3414",
+      "size": 743245,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yamunanagar",
+    "name": "Yamunanagar",
+    "nameIt": "Yamunanagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.28849,
+      30.14096
+    ],
+    "zoom": 10.6,
+    "population": 409924,
+    "grid": "cities/yamunanagar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yamunanagar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yamunanagar",
+        "name": "Yamunanagar",
+        "nameIt": "Yamunanagar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.28849,
+          30.14096
+        ],
+        "zoom": 10.6,
+        "population": 409924,
+        "cells": 641,
+        "layer": "cities/yamunanagar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.28849,
+            30.14096
+          ]
+        },
+        "properties": {
+          "id": "yamunanagar",
+          "name": "Yamunanagar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 31.5,
+          "population": 409924
+        }
+      },
+      "summary": null
+    }
+  }
+}

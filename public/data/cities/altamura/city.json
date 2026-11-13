@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "altamura",
+  "createdAt": "2026-10-08T15:06:23.563Z",
+  "updatedAt": "2026-10-08T15:06:23.563Z",
+  "meta": {
+    "name": "Altamura",
+    "nameIt": "Altamura",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Altamura.geojson",
+      "sha256": "d89ff1135d872574ba73b20e40d5dee62c34f8cb1915f4b40f82934af8e0bc64",
+      "size": 91435,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "altamura",
+    "name": "Altamura",
+    "nameIt": "Altamura",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      16.55078,
+      40.82561
+    ],
+    "zoom": 11.9,
+    "population": 44130,
+    "grid": "cities/altamura/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/altamura/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "altamura",
+        "name": "Altamura",
+        "nameIt": "Altamura",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          16.55078,
+          40.82561
+        ],
+        "zoom": 11.9,
+        "population": 44130,
+        "cells": 79,
+        "layer": "cities/altamura/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.55078,
+            40.82561
+          ]
+        },
+        "properties": {
+          "id": "altamura",
+          "name": "Altamura",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 9.8,
+          "population": 44130
+        }
+      },
+      "summary": null
+    }
+  }
+}

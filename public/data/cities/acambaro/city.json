@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "acambaro",
+  "createdAt": "2026-10-08T15:02:12.619Z",
+  "updatedAt": "2026-10-08T15:02:12.619Z",
+  "meta": {
+    "name": "Acámbaro",
+    "nameIt": "Acámbaro",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Acámbaro.geojson",
+      "sha256": "b8852f22178707f6eb4c2b72d851bf2949d0eee26c18daf28ec6acd54685b8cc",
+      "size": 116631,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "acambaro",
+    "name": "Acámbaro",
+    "nameIt": "Acámbaro",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -100.72247,
+      20.02749
+    ],
+    "zoom": 11.7,
+    "population": 40941,
+    "grid": "cities/acambaro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/acambaro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "acambaro",
+        "name": "Acámbaro",
+        "nameIt": "Acámbaro",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -100.72247,
+          20.02749
+        ],
+        "zoom": 11.7,
+        "population": 40941,
+        "cells": 99,
+        "layer": "cities/acambaro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -100.72247,
+            20.02749
+          ]
+        },
+        "properties": {
+          "id": "acambaro",
+          "name": "Acámbaro",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 40941
+        }
+      },
+      "summary": null
+    }
+  }
+}

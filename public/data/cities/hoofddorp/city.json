@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hoofddorp",
+  "createdAt": "2026-10-08T15:39:03.832Z",
+  "updatedAt": "2026-10-08T15:39:03.832Z",
+  "meta": {
+    "name": "Hoofddorp",
+    "nameIt": "Hoofddorp",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hoofddorp.geojson",
+      "sha256": "80f076b8fd9b15a2b71b269aac3a66e108f76f313169492ce71511ec62b59fc3",
+      "size": 235463,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hoofddorp",
+    "name": "Hoofddorp",
+    "nameIt": "Hoofddorp",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      4.66947,
+      52.30578
+    ],
+    "zoom": 11.4,
+    "population": 50498,
+    "grid": "cities/hoofddorp/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hoofddorp/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hoofddorp",
+        "name": "Hoofddorp",
+        "nameIt": "Hoofddorp",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          4.66947,
+          52.30578
+        ],
+        "zoom": 11.4,
+        "population": 50498,
+        "cells": 206,
+        "layer": "cities/hoofddorp/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.66947,
+            52.30578
+          ]
+        },
+        "properties": {
+          "id": "hoofddorp",
+          "name": "Hoofddorp",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 11,
+          "population": 50498
+        }
+      },
+      "summary": null
+    }
+  }
+}

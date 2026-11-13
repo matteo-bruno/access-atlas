@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "slavyansk-na-kubani",
+  "createdAt": "2026-10-08T16:14:11.404Z",
+  "updatedAt": "2026-10-08T16:14:11.404Z",
+  "meta": {
+    "name": "Slavyansk-na-Kubani",
+    "nameIt": "Slavyansk-na-Kubani",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Slavyansk-na-Kubani.geojson",
+      "sha256": "245d5034a1fdfd59c37a2b10bf30387c836c4035d408ba04a4996ec3958c18e2",
+      "size": 262705,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "slavyansk-na-kubani",
+    "name": "Slavyansk-na-Kubani",
+    "nameIt": "Slavyansk-na-Kubani",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      38.1228,
+      45.25445
+    ],
+    "zoom": 11.1,
+    "population": 56725,
+    "grid": "cities/slavyansk-na-kubani/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/slavyansk-na-kubani/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "slavyansk-na-kubani",
+        "name": "Slavyansk-na-Kubani",
+        "nameIt": "Slavyansk-na-Kubani",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          38.1228,
+          45.25445
+        ],
+        "zoom": 11.1,
+        "population": 56725,
+        "cells": 228,
+        "layer": "cities/slavyansk-na-kubani/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.1228,
+            45.25445
+          ]
+        },
+        "properties": {
+          "id": "slavyansk-na-kubani",
+          "name": "Slavyansk-na-Kubani",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 20.1,
+          "population": 56725
+        }
+      },
+      "summary": null
+    }
+  }
+}

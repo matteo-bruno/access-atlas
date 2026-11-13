@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "antofagasta",
+  "createdAt": "2026-10-08T15:08:26.419Z",
+  "updatedAt": "2026-10-08T15:08:26.419Z",
+  "meta": {
+    "name": "Antofagasta",
+    "nameIt": "Antofagasta",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Antofagasta.geojson",
+      "sha256": "58e5861fa6abd2ee241ccc9dbf008018cabf68ff8f6287bde9ff0c6bad7627d3",
+      "size": 608438,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "antofagasta",
+    "name": "Antofagasta",
+    "nameIt": "Antofagasta",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL",
+    "center": [
+      -70.38972,
+      -23.61915
+    ],
+    "zoom": 9.7,
+    "population": 356538,
+    "grid": "cities/antofagasta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/antofagasta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "antofagasta",
+        "name": "Antofagasta",
+        "nameIt": "Antofagasta",
+        "region": "Chile",
+        "regionIt": "Cile",
+        "country": "CL",
+        "center": [
+          -70.38972,
+          -23.61915
+        ],
+        "zoom": 9.7,
+        "population": 356538,
+        "cells": 523,
+        "layer": "cities/antofagasta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -70.38972,
+            -23.61915
+          ]
+        },
+        "properties": {
+          "id": "antofagasta",
+          "name": "Antofagasta",
+          "country": "CL",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 356538
+        }
+      },
+      "summary": null
+    }
+  }
+}

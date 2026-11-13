@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sohma",
+  "createdAt": "2026-10-08T16:14:16.362Z",
+  "updatedAt": "2026-10-08T16:14:16.362Z",
+  "meta": {
+    "name": "Sohma",
+    "nameIt": "Sohma",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sohma.geojson",
+      "sha256": "3bf18a0e531b43295d70cfb1ef81d058214c034a981d234893afebec7031edf4",
+      "size": 194558,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sohma",
+    "name": "Sohma",
+    "nameIt": "Sohma",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.35309,
+      25.7217
+    ],
+    "zoom": 10.8,
+    "population": 27484,
+    "grid": "cities/sohma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sohma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sohma",
+        "name": "Sohma",
+        "nameIt": "Sohma",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.35309,
+          25.7217
+        ],
+        "zoom": 10.8,
+        "population": 27484,
+        "cells": 168,
+        "layer": "cities/sohma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.35309,
+            25.7217
+          ]
+        },
+        "properties": {
+          "id": "sohma",
+          "name": "Sohma",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 27484
+        }
+      },
+      "summary": null
+    }
+  }
+}

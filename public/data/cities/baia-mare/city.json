@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baia-mare",
+  "createdAt": "2026-10-08T15:13:23.630Z",
+  "updatedAt": "2026-10-08T15:13:23.630Z",
+  "meta": {
+    "name": "Baia Mare",
+    "nameIt": "Baia Mare",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baia Mare.geojson",
+      "sha256": "d8fb2a8d38ad79021811cf889b90adf0822a8698e6aba99d465fc810e252aedc",
+      "size": 204219,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baia-mare",
+    "name": "Baia Mare",
+    "nameIt": "Baia Mare",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO",
+    "center": [
+      23.56832,
+      47.6545
+    ],
+    "zoom": 11.2,
+    "population": 81706,
+    "grid": "cities/baia-mare/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baia-mare/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baia-mare",
+        "name": "Baia Mare",
+        "nameIt": "Baia Mare",
+        "region": "Romania",
+        "regionIt": "Romania",
+        "country": "RO",
+        "center": [
+          23.56832,
+          47.6545
+        ],
+        "zoom": 11.2,
+        "population": 81706,
+        "cells": 178,
+        "layer": "cities/baia-mare/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.56832,
+            47.6545
+          ]
+        },
+        "properties": {
+          "id": "baia-mare",
+          "name": "Baia Mare",
+          "country": "RO",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 81706
+        }
+      },
+      "summary": null
+    }
+  }
+}

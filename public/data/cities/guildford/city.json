@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guildford",
+  "createdAt": "2026-10-08T15:36:34.132Z",
+  "updatedAt": "2026-10-08T15:36:34.132Z",
+  "meta": {
+    "name": "Guildford",
+    "nameIt": "Guildford",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guildford.geojson",
+      "sha256": "d687fc69486458f25a7b7f1e273a8cae3a817b7de8c297caf4b62b84b0d13095",
+      "size": 262683,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guildford",
+    "name": "Guildford",
+    "nameIt": "Guildford",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.57589,
+      51.2476
+    ],
+    "zoom": 11.4,
+    "population": 73971,
+    "grid": "cities/guildford/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guildford/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guildford",
+        "name": "Guildford",
+        "nameIt": "Guildford",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.57589,
+          51.2476
+        ],
+        "zoom": 11.4,
+        "population": 73971,
+        "cells": 228,
+        "layer": "cities/guildford/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.57589,
+            51.2476
+          ]
+        },
+        "properties": {
+          "id": "guildford",
+          "name": "Guildford",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 73971
+        }
+      },
+      "summary": null
+    }
+  }
+}

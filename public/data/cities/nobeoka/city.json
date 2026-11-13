@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nobeoka",
+  "createdAt": "2026-10-08T16:01:53.532Z",
+  "updatedAt": "2026-10-08T16:01:53.532Z",
+  "meta": {
+    "name": "Nobeoka",
+    "nameIt": "Nobeoka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nobeoka.geojson",
+      "sha256": "2df9cfef76f9ef93f05165e8a09fde2dc140099a9b874ef9c26cc7ce419197f3",
+      "size": 486214,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nobeoka",
+    "name": "Nobeoka",
+    "nameIt": "Nobeoka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      131.67041,
+      32.57788
+    ],
+    "zoom": 10.8,
+    "population": 84649,
+    "grid": "cities/nobeoka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nobeoka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nobeoka",
+        "name": "Nobeoka",
+        "nameIt": "Nobeoka",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          131.67041,
+          32.57788
+        ],
+        "zoom": 10.8,
+        "population": 84649,
+        "cells": 420,
+        "layer": "cities/nobeoka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            131.67041,
+            32.57788
+          ]
+        },
+        "properties": {
+          "id": "nobeoka",
+          "name": "Nobeoka",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 84649
+        }
+      },
+      "summary": null
+    }
+  }
+}

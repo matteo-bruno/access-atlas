@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "worcester-south-africa",
+  "createdAt": "2026-10-08T16:21:50.404Z",
+  "updatedAt": "2026-10-08T16:21:50.404Z",
+  "meta": {
+    "name": "Worcester (South Africa)",
+    "nameIt": "Worcester (South Africa)",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Worcester (South Africa).geojson",
+      "sha256": "222c4343f4419b76b3196063a2b7476435e06799b584a3868f35fe6eba9137b2",
+      "size": 263050,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "worcester-south-africa",
+    "name": "Worcester (South Africa)",
+    "nameIt": "Worcester (South Africa)",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      19.45061,
+      -33.64607
+    ],
+    "zoom": 11.4,
+    "population": 74038,
+    "grid": "cities/worcester-south-africa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/worcester-south-africa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "worcester-south-africa",
+        "name": "Worcester (South Africa)",
+        "nameIt": "Worcester (South Africa)",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          19.45061,
+          -33.64607
+        ],
+        "zoom": 11.4,
+        "population": 74038,
+        "cells": 225,
+        "layer": "cities/worcester-south-africa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.45061,
+            -33.64607
+          ]
+        },
+        "properties": {
+          "id": "worcester-south-africa",
+          "name": "Worcester (South Africa)",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 16.8,
+          "population": 74038
+        }
+      },
+      "summary": null
+    }
+  }
+}

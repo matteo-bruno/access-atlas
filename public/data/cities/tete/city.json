@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tete",
+  "createdAt": "2026-10-08T16:17:25.605Z",
+  "updatedAt": "2026-10-08T16:17:25.605Z",
+  "meta": {
+    "name": "Tete",
+    "nameIt": "Tete",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tete.geojson",
+      "sha256": "74d218375fa5939cba5b563fc5d96edab1775cd7ad177e2c7b954f92c5281d31",
+      "size": 668385,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tete",
+    "name": "Tete",
+    "nameIt": "Tete",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ",
+    "center": [
+      33.5944,
+      -16.1578
+    ],
+    "zoom": 10.6,
+    "population": 362940,
+    "grid": "cities/tete/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tete/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tete",
+        "name": "Tete",
+        "nameIt": "Tete",
+        "region": "Mozambique",
+        "regionIt": "Mozambico",
+        "country": "MZ",
+        "center": [
+          33.5944,
+          -16.1578
+        ],
+        "zoom": 10.6,
+        "population": 362940,
+        "cells": 570,
+        "layer": "cities/tete/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.5944,
+            -16.1578
+          ]
+        },
+        "properties": {
+          "id": "tete",
+          "name": "Tete",
+          "country": "MZ",
+          "isStudy": true,
+          "proximityMinutes": 44.1,
+          "population": 362940
+        }
+      },
+      "summary": null
+    }
+  }
+}

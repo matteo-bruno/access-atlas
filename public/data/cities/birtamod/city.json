@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "birtamod",
+  "createdAt": "2026-10-08T15:19:18.234Z",
+  "updatedAt": "2026-10-08T15:19:18.234Z",
+  "meta": {
+    "name": "Birtamod",
+    "nameIt": "Birtamod",
+    "region": "Nepal",
+    "regionIt": "Nepal",
+    "country": "NP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Birtamod.geojson",
+      "sha256": "a87c7d8b49f07fe15889cd46b9818a387e0d3868aca7439c96f43f1d79e5d320",
+      "size": 108730,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "birtamod",
+    "name": "Birtamod",
+    "nameIt": "Birtamod",
+    "region": "Nepal",
+    "regionIt": "Nepal",
+    "country": "NP",
+    "center": [
+      87.98988,
+      26.64179
+    ],
+    "zoom": 11.9,
+    "population": 61008,
+    "grid": "cities/birtamod/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/birtamod/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "birtamod",
+        "name": "Birtamod",
+        "nameIt": "Birtamod",
+        "region": "Nepal",
+        "regionIt": "Nepal",
+        "country": "NP",
+        "center": [
+          87.98988,
+          26.64179
+        ],
+        "zoom": 11.9,
+        "population": 61008,
+        "cells": 94,
+        "layer": "cities/birtamod/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.98988,
+            26.64179
+          ]
+        },
+        "properties": {
+          "id": "birtamod",
+          "name": "Birtamod",
+          "country": "NP",
+          "isStudy": true,
+          "proximityMinutes": 14.6,
+          "population": 61008
+        }
+      },
+      "summary": null
+    }
+  }
+}

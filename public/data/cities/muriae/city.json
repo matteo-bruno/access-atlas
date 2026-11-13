@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "muriae",
+  "createdAt": "2026-10-08T15:59:03.304Z",
+  "updatedAt": "2026-10-08T15:59:03.304Z",
+  "meta": {
+    "name": "Muriaé",
+    "nameIt": "Muriaé",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Muriaé.geojson",
+      "sha256": "e0b7374e8009c698833c63d61f83ed31eceb66e0bd1300a8c4617c2e5b85921c",
+      "size": 169922,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "muriae",
+    "name": "Muriaé",
+    "nameIt": "Muriaé",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -42.37329,
+      -21.13359
+    ],
+    "zoom": 11.3,
+    "population": 66905,
+    "grid": "cities/muriae/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/muriae/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "muriae",
+        "name": "Muriaé",
+        "nameIt": "Muriaé",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -42.37329,
+          -21.13359
+        ],
+        "zoom": 11.3,
+        "population": 66905,
+        "cells": 144,
+        "layer": "cities/muriae/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -42.37329,
+            -21.13359
+          ]
+        },
+        "properties": {
+          "id": "muriae",
+          "name": "Muriaé",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 18.9,
+          "population": 66905
+        }
+      },
+      "summary": null
+    }
+  }
+}

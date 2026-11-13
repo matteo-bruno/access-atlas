@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dujiangyan",
+  "createdAt": "2026-10-08T15:31:15.174Z",
+  "updatedAt": "2026-10-08T15:31:15.174Z",
+  "meta": {
+    "name": "Dujiangyan",
+    "nameIt": "Dujiangyan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dujiangyan.geojson",
+      "sha256": "b2aaaa9daf31bcb5bf1963b2cf12d594fd6021338206fd9d61514f7ec55b447f",
+      "size": 812666,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dujiangyan",
+    "name": "Dujiangyan",
+    "nameIt": "Dujiangyan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      103.64234,
+      30.9979
+    ],
+    "zoom": 10.5,
+    "population": 456820,
+    "grid": "cities/dujiangyan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dujiangyan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dujiangyan",
+        "name": "Dujiangyan",
+        "nameIt": "Dujiangyan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          103.64234,
+          30.9979
+        ],
+        "zoom": 10.5,
+        "population": 456820,
+        "cells": 695,
+        "layer": "cities/dujiangyan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.64234,
+            30.9979
+          ]
+        },
+        "properties": {
+          "id": "dujiangyan",
+          "name": "Dujiangyan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 34.2,
+          "population": 456820
+        }
+      },
+      "summary": null
+    }
+  }
+}

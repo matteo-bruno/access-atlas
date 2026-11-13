@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ekero",
+  "createdAt": "2026-10-08T15:31:50.736Z",
+  "updatedAt": "2026-10-08T15:31:50.736Z",
+  "meta": {
+    "name": "Ekerö",
+    "nameIt": "Ekerö",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ekerö.geojson",
+      "sha256": "dcfdf4767476ece7136d14c1f059497b71c51ae87cd7a4cb0d9929d277b16ce8",
+      "size": 309803,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ekero",
+    "name": "Ekerö",
+    "nameIt": "Ekerö",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE",
+    "center": [
+      17.82977,
+      59.2516
+    ],
+    "zoom": 11.3,
+    "population": 53094,
+    "grid": "cities/ekero/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ekero/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ekero",
+        "name": "Ekerö",
+        "nameIt": "Ekerö",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          17.82977,
+          59.2516
+        ],
+        "zoom": 11.3,
+        "population": 53094,
+        "cells": 268,
+        "layer": "cities/ekero/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            17.82977,
+            59.2516
+          ]
+        },
+        "properties": {
+          "id": "ekero",
+          "name": "Ekerö",
+          "country": "SE",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 53094
+        }
+      },
+      "summary": null
+    }
+  }
+}

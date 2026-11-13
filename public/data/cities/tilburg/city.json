@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tilburg",
+  "createdAt": "2026-10-08T16:17:52.932Z",
+  "updatedAt": "2026-10-08T16:17:52.932Z",
+  "meta": {
+    "name": "Tilburg",
+    "nameIt": "Tilburg",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tilburg.geojson",
+      "sha256": "ac0f9d10ca31d76c0ae6c0dbae9c63feea9a866760930db704da9140ad973e99",
+      "size": 783579,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tilburg",
+    "name": "Tilburg",
+    "nameIt": "Tilburg",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      5.06161,
+      51.56609
+    ],
+    "zoom": 10.4,
+    "population": 214046,
+    "grid": "cities/tilburg/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tilburg/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tilburg",
+        "name": "Tilburg",
+        "nameIt": "Tilburg",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          5.06161,
+          51.56609
+        ],
+        "zoom": 10.4,
+        "population": 214046,
+        "cells": 689,
+        "layer": "cities/tilburg/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.06161,
+            51.56609
+          ]
+        },
+        "properties": {
+          "id": "tilburg",
+          "name": "Tilburg",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 12,
+          "population": 214046
+        }
+      },
+      "summary": null
+    }
+  }
+}

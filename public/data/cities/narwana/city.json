@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "narwana",
+  "createdAt": "2026-10-08T16:00:27.185Z",
+  "updatedAt": "2026-10-08T16:00:27.185Z",
+  "meta": {
+    "name": "Narwana",
+    "nameIt": "Narwana",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Narwana.geojson",
+      "sha256": "fac6990a6d2e45538c8ad56c715fd72f9eef649eea01a4875fc051429858edce",
+      "size": 93848,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "narwana",
+    "name": "Narwana",
+    "nameIt": "Narwana",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.11935,
+      29.59413
+    ],
+    "zoom": 12,
+    "population": 66645,
+    "grid": "cities/narwana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/narwana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "narwana",
+        "name": "Narwana",
+        "nameIt": "Narwana",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.11935,
+          29.59413
+        ],
+        "zoom": 12,
+        "population": 66645,
+        "cells": 81,
+        "layer": "cities/narwana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.11935,
+            29.59413
+          ]
+        },
+        "properties": {
+          "id": "narwana",
+          "name": "Narwana",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 66645
+        }
+      },
+      "summary": null
+    }
+  }
+}

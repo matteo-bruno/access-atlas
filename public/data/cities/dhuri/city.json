@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dhuri",
+  "createdAt": "2026-10-08T15:29:43.212Z",
+  "updatedAt": "2026-10-08T15:29:43.212Z",
+  "meta": {
+    "name": "Dhuri",
+    "nameIt": "Dhuri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dhuri.geojson",
+      "sha256": "bbbffc71fb2369d272b6d9dd1b56a98ea29fbad46ef5f475cb8bcbbe1b0a36ec",
+      "size": 112338,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dhuri",
+    "name": "Dhuri",
+    "nameIt": "Dhuri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.86135,
+      30.37236
+    ],
+    "zoom": 11.6,
+    "population": 50420,
+    "grid": "cities/dhuri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dhuri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dhuri",
+        "name": "Dhuri",
+        "nameIt": "Dhuri",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.86135,
+          30.37236
+        ],
+        "zoom": 11.6,
+        "population": 50420,
+        "cells": 97,
+        "layer": "cities/dhuri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.86135,
+            30.37236
+          ]
+        },
+        "properties": {
+          "id": "dhuri",
+          "name": "Dhuri",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 17.8,
+          "population": 50420
+        }
+      },
+      "summary": null
+    }
+  }
+}

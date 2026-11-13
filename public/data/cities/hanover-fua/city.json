@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hanover-fua",
+  "createdAt": "2026-10-19T16:56:23.841Z",
+  "updatedAt": "2026-10-19T16:56:23.841Z",
+  "meta": {
+    "name": "Hanover",
+    "nameIt": "Hanover",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "hanover-fua",
+    "name": "Hanover",
+    "nameIt": "Hanover",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "extent": "fua",
+    "core": "hanover",
+    "center": [
+      9.72794,
+      52.38249
+    ],
+    "zoom": 8.5,
+    "population": 1192343,
+    "grid": "cities/hanover-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hanover-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hanover-fua",
+        "name": "Hanover",
+        "nameIt": "Hanover",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "extent": "fua",
+        "core": "hanover",
+        "center": [
+          9.72794,
+          52.38249
+        ],
+        "zoom": 8.5,
+        "population": 1192343,
+        "cells": 20456,
+        "layer": "cities/hanover-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.72794,
+            52.38249
+          ]
+        },
+        "properties": {
+          "id": "hanover-fua",
+          "name": "Hanover",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 1192343
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ferrara",
+  "createdAt": "2026-10-08T15:33:19.223Z",
+  "updatedAt": "2026-10-08T15:33:19.223Z",
+  "meta": {
+    "name": "Ferrara",
+    "nameIt": "Ferrara",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ferrara.geojson",
+      "sha256": "9a65ded265da9d61011b3ebc86eb7481193a1bcb53d4424fb5f25be3439ec263",
+      "size": 331058,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ferrara",
+    "name": "Ferrara",
+    "nameIt": "Ferrara",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      11.61395,
+      44.84111
+    ],
+    "zoom": 10.6,
+    "population": 82931,
+    "grid": "cities/ferrara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ferrara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ferrara",
+        "name": "Ferrara",
+        "nameIt": "Ferrara",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          11.61395,
+          44.84111
+        ],
+        "zoom": 10.6,
+        "population": 82931,
+        "cells": 289,
+        "layer": "cities/ferrara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.61395,
+            44.84111
+          ]
+        },
+        "properties": {
+          "id": "ferrara",
+          "name": "Ferrara",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 10.3,
+          "population": 82931
+        }
+      },
+      "summary": null
+    }
+  }
+}

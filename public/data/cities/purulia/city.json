@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "purulia",
+  "createdAt": "2026-10-08T16:06:58.984Z",
+  "updatedAt": "2026-10-08T16:06:58.984Z",
+  "meta": {
+    "name": "Purulia",
+    "nameIt": "Purulia",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Purulia.geojson",
+      "sha256": "4b74f4a7479900b322811d817c8d77650c914639501e9636e7efbca2ced7e628",
+      "size": 273595,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "purulia",
+    "name": "Purulia",
+    "nameIt": "Purulia",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.3675,
+      23.33044
+    ],
+    "zoom": 11.2,
+    "population": 218067,
+    "grid": "cities/purulia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/purulia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "purulia",
+        "name": "Purulia",
+        "nameIt": "Purulia",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.3675,
+          23.33044
+        ],
+        "zoom": 11.2,
+        "population": 218067,
+        "cells": 236,
+        "layer": "cities/purulia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.3675,
+            23.33044
+          ]
+        },
+        "properties": {
+          "id": "purulia",
+          "name": "Purulia",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 218067
+        }
+      },
+      "summary": null
+    }
+  }
+}

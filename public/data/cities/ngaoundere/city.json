@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ngaoundere",
+  "createdAt": "2026-10-08T16:01:19.924Z",
+  "updatedAt": "2026-10-08T16:01:19.924Z",
+  "meta": {
+    "name": "Ngaoundéré",
+    "nameIt": "Ngaoundéré",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ngaoundéré.geojson",
+      "sha256": "1166a063953c119506577942909a1e1f97fe1cd6d5c34fd6bca4a7a477168e2c",
+      "size": 622540,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ngaoundere",
+    "name": "Ngaoundéré",
+    "nameIt": "Ngaoundéré",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      13.58199,
+      7.31836
+    ],
+    "zoom": 10.7,
+    "population": 270451,
+    "grid": "cities/ngaoundere/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ngaoundere/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ngaoundere",
+        "name": "Ngaoundéré",
+        "nameIt": "Ngaoundéré",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          13.58199,
+          7.31836
+        ],
+        "zoom": 10.7,
+        "population": 270451,
+        "cells": 539,
+        "layer": "cities/ngaoundere/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.58199,
+            7.31836
+          ]
+        },
+        "properties": {
+          "id": "ngaoundere",
+          "name": "Ngaoundéré",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 270451
+        }
+      },
+      "summary": null
+    }
+  }
+}

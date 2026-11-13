@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sikka",
+  "createdAt": "2026-10-08T16:13:39.025Z",
+  "updatedAt": "2026-10-08T16:13:39.025Z",
+  "meta": {
+    "name": "Sikka",
+    "nameIt": "Sikka",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sikka.geojson",
+      "sha256": "33988597fc15cdd87f7b4afd527cd0bfd91365aa43b7e07cadb0178678d40dbd",
+      "size": 272165,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sikka",
+    "name": "Sikka",
+    "nameIt": "Sikka",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      69.8475,
+      22.42694
+    ],
+    "zoom": 11.3,
+    "population": 84291,
+    "grid": "cities/sikka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sikka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sikka",
+        "name": "Sikka",
+        "nameIt": "Sikka",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          69.8475,
+          22.42694
+        ],
+        "zoom": 11.3,
+        "population": 84291,
+        "cells": 235,
+        "layer": "cities/sikka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.8475,
+            22.42694
+          ]
+        },
+        "properties": {
+          "id": "sikka",
+          "name": "Sikka",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 84291
+        }
+      },
+      "summary": null
+    }
+  }
+}

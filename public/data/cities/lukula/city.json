@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lukula",
+  "createdAt": "2026-10-08T15:52:38.104Z",
+  "updatedAt": "2026-10-08T15:52:38.104Z",
+  "meta": {
+    "name": "Lukula",
+    "nameIt": "Lukula",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lukula.geojson",
+      "sha256": "ba716277b131f402b17d6946c94c06cd220b8acbb2493ec0867ee7cb44218b4d",
+      "size": 74893,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lukula",
+    "name": "Lukula",
+    "nameIt": "Lukula",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      12.94672,
+      -5.39577
+    ],
+    "zoom": 12,
+    "population": 68445,
+    "grid": "cities/lukula/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lukula/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lukula",
+        "name": "Lukula",
+        "nameIt": "Lukula",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          12.94672,
+          -5.39577
+        ],
+        "zoom": 12,
+        "population": 68445,
+        "cells": 64,
+        "layer": "cities/lukula/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.94672,
+            -5.39577
+          ]
+        },
+        "properties": {
+          "id": "lukula",
+          "name": "Lukula",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 68445
+        }
+      },
+      "summary": null
+    }
+  }
+}

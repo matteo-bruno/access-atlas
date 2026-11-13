@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fayzabad",
+  "createdAt": "2026-10-08T15:33:01.512Z",
+  "updatedAt": "2026-10-08T15:33:01.512Z",
+  "meta": {
+    "name": "Fayzabad",
+    "nameIt": "Fayzabad",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fayzabad.geojson",
+      "sha256": "b148d10ed4fdd9663d5f1a413d5efdda1de17e5891d23861fb5cdae913569bdc",
+      "size": 309802,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fayzabad",
+    "name": "Fayzabad",
+    "nameIt": "Fayzabad",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF",
+    "center": [
+      70.55147,
+      37.10803
+    ],
+    "zoom": 11,
+    "population": 191951,
+    "grid": "cities/fayzabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fayzabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fayzabad",
+        "name": "Fayzabad",
+        "nameIt": "Fayzabad",
+        "region": "Afghanistan",
+        "regionIt": "Afghanistan",
+        "country": "AF",
+        "center": [
+          70.55147,
+          37.10803
+        ],
+        "zoom": 11,
+        "population": 191951,
+        "cells": 268,
+        "layer": "cities/fayzabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            70.55147,
+            37.10803
+          ]
+        },
+        "properties": {
+          "id": "fayzabad",
+          "name": "Fayzabad",
+          "country": "AF",
+          "isStudy": true,
+          "proximityMinutes": 26.1,
+          "population": 191951
+        }
+      },
+      "summary": null
+    }
+  }
+}

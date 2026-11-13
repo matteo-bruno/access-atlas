@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cank-r",
+  "createdAt": "2026-10-08T16:25:52.049Z",
+  "updatedAt": "2026-10-08T16:25:52.049Z",
+  "meta": {
+    "name": "Çankırı",
+    "nameIt": "Çankırı",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Çankırı.geojson",
+      "sha256": "01f9a183fd2f6324949c4de197f3f90006571ae60f9c703213db5c9dffb34dca",
+      "size": 118009,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cank-r",
+    "name": "Çankırı",
+    "nameIt": "Çankırı",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      33.61727,
+      40.59915
+    ],
+    "zoom": 11.8,
+    "population": 64385,
+    "grid": "cities/cank-r/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cank-r/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cank-r",
+        "name": "Çankırı",
+        "nameIt": "Çankırı",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          33.61727,
+          40.59915
+        ],
+        "zoom": 11.8,
+        "population": 64385,
+        "cells": 102,
+        "layer": "cities/cank-r/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.61727,
+            40.59915
+          ]
+        },
+        "properties": {
+          "id": "cank-r",
+          "name": "Çankırı",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 13.7,
+          "population": 64385
+        }
+      },
+      "summary": null
+    }
+  }
+}

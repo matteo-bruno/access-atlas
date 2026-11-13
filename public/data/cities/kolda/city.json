@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kolda",
+  "createdAt": "2026-10-08T15:47:42.136Z",
+  "updatedAt": "2026-10-08T15:47:42.136Z",
+  "meta": {
+    "name": "Kolda",
+    "nameIt": "Kolda",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kolda.geojson",
+      "sha256": "53e17e2d085bf6291ba0aa4cd77bbf7f6be5544302f655e9dc380944ed7cede7",
+      "size": 327407,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kolda",
+    "name": "Kolda",
+    "nameIt": "Kolda",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN",
+    "center": [
+      -14.93716,
+      12.89291
+    ],
+    "zoom": 11.2,
+    "population": 166420,
+    "grid": "cities/kolda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kolda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kolda",
+        "name": "Kolda",
+        "nameIt": "Kolda",
+        "region": "Senegal",
+        "regionIt": "Senegal",
+        "country": "SN",
+        "center": [
+          -14.93716,
+          12.89291
+        ],
+        "zoom": 11.2,
+        "population": 166420,
+        "cells": 278,
+        "layer": "cities/kolda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -14.93716,
+            12.89291
+          ]
+        },
+        "properties": {
+          "id": "kolda",
+          "name": "Kolda",
+          "country": "SN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 166420
+        }
+      },
+      "summary": null
+    }
+  }
+}

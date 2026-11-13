@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vadakara",
+  "createdAt": "2026-10-08T16:20:15.148Z",
+  "updatedAt": "2026-10-08T16:20:15.148Z",
+  "meta": {
+    "name": "Vadakara",
+    "nameIt": "Vadakara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vadakara.geojson",
+      "sha256": "4d9320184631acdaea17d627b8fdcd5302f57b890ca4f11a441391c55369a1d4",
+      "size": 1089163,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vadakara",
+    "name": "Vadakara",
+    "nameIt": "Vadakara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.6021,
+      11.5763
+    ],
+    "zoom": 9.5,
+    "population": 165368,
+    "grid": "cities/vadakara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vadakara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vadakara",
+        "name": "Vadakara",
+        "nameIt": "Vadakara",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.6021,
+          11.5763
+        ],
+        "zoom": 9.5,
+        "population": 165368,
+        "cells": 942,
+        "layer": "cities/vadakara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.6021,
+            11.5763
+          ]
+        },
+        "properties": {
+          "id": "vadakara",
+          "name": "Vadakara",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 31.5,
+          "population": 165368
+        }
+      },
+      "summary": null
+    }
+  }
+}

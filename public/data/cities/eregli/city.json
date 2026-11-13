@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "eregli",
+  "createdAt": "2026-10-08T15:32:23.720Z",
+  "updatedAt": "2026-10-08T15:32:23.720Z",
+  "meta": {
+    "name": "Eregli",
+    "nameIt": "Eregli",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Eregli.geojson",
+      "sha256": "c97c709ff50578eef5f5b6dde24f68acbd713b16d784d797cfd2c7c48f688913",
+      "size": 126884,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "eregli",
+    "name": "Eregli",
+    "nameIt": "Eregli",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      34.04777,
+      37.5109
+    ],
+    "zoom": 11.8,
+    "population": 75665,
+    "grid": "cities/eregli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/eregli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "eregli",
+        "name": "Eregli",
+        "nameIt": "Eregli",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          34.04777,
+          37.5109
+        ],
+        "zoom": 11.8,
+        "population": 75665,
+        "cells": 110,
+        "layer": "cities/eregli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.04777,
+            37.5109
+          ]
+        },
+        "properties": {
+          "id": "eregli",
+          "name": "Eregli",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 75665
+        }
+      },
+      "summary": null
+    }
+  }
+}

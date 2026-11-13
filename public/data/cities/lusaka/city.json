@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lusaka",
+  "createdAt": "2026-10-08T15:52:49.254Z",
+  "updatedAt": "2026-10-08T15:52:49.254Z",
+  "meta": {
+    "name": "Lusaka",
+    "nameIt": "Lusaka",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lusaka.geojson",
+      "sha256": "e3ebae7d68f954993251038495d4dcbb4e3e3e67bb35bca9339005a67e4de148",
+      "size": 3312663,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lusaka",
+    "name": "Lusaka",
+    "nameIt": "Lusaka",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM",
+    "center": [
+      28.29755,
+      -15.40371
+    ],
+    "zoom": 9.3,
+    "population": 2302117,
+    "grid": "cities/lusaka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lusaka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lusaka",
+        "name": "Lusaka",
+        "nameIt": "Lusaka",
+        "region": "Zambia",
+        "regionIt": "Zambia",
+        "country": "ZM",
+        "center": [
+          28.29755,
+          -15.40371
+        ],
+        "zoom": 9.3,
+        "population": 2302117,
+        "cells": 2836,
+        "layer": "cities/lusaka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.29755,
+            -15.40371
+          ]
+        },
+        "properties": {
+          "id": "lusaka",
+          "name": "Lusaka",
+          "country": "ZM",
+          "isStudy": true,
+          "proximityMinutes": 30.4,
+          "population": 2302117
+        }
+      },
+      "summary": null
+    }
+  }
+}

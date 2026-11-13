@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "idlib",
+  "createdAt": "2026-10-08T15:40:18.650Z",
+  "updatedAt": "2026-10-08T15:40:18.650Z",
+  "meta": {
+    "name": "Idlib",
+    "nameIt": "Idlib",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Idlib.geojson",
+      "sha256": "ef38424d37e4067b9f96da78c2f4f719f665ed197fff210d24d1b17d899fd9aa",
+      "size": 109722,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "idlib",
+    "name": "Idlib",
+    "nameIt": "Idlib",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY",
+    "center": [
+      36.63292,
+      35.92932
+    ],
+    "zoom": 12,
+    "population": 66209,
+    "grid": "cities/idlib/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/idlib/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "idlib",
+        "name": "Idlib",
+        "nameIt": "Idlib",
+        "region": "Syria",
+        "regionIt": "Siria",
+        "country": "SY",
+        "center": [
+          36.63292,
+          35.92932
+        ],
+        "zoom": 12,
+        "population": 66209,
+        "cells": 95,
+        "layer": "cities/idlib/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.63292,
+            35.92932
+          ]
+        },
+        "properties": {
+          "id": "idlib",
+          "name": "Idlib",
+          "country": "SY",
+          "isStudy": true,
+          "proximityMinutes": 12.1,
+          "population": 66209
+        }
+      },
+      "summary": null
+    }
+  }
+}

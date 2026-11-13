@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sagwara",
+  "createdAt": "2026-10-08T16:09:44.966Z",
+  "updatedAt": "2026-10-08T16:09:44.966Z",
+  "meta": {
+    "name": "Sagwara",
+    "nameIt": "Sagwara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sagwara.geojson",
+      "sha256": "6046fc13cae27b471ba5d267eaf850a9bbbc665306c00d3039bf7fff68ba148a",
+      "size": 116949,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sagwara",
+    "name": "Sagwara",
+    "nameIt": "Sagwara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.01407,
+      23.66655
+    ],
+    "zoom": 11.8,
+    "population": 33765,
+    "grid": "cities/sagwara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sagwara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sagwara",
+        "name": "Sagwara",
+        "nameIt": "Sagwara",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.01407,
+          23.66655
+        ],
+        "zoom": 11.8,
+        "population": 33765,
+        "cells": 101,
+        "layer": "cities/sagwara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.01407,
+            23.66655
+          ]
+        },
+        "properties": {
+          "id": "sagwara",
+          "name": "Sagwara",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 33765
+        }
+      },
+      "summary": null
+    }
+  }
+}

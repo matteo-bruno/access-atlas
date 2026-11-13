@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hell-ville",
+  "createdAt": "2026-10-08T15:38:19.034Z",
+  "updatedAt": "2026-10-08T15:38:19.034Z",
+  "meta": {
+    "name": "Hell-Ville",
+    "nameIt": "Hell-Ville",
+    "region": "Madagascar",
+    "regionIt": "Madagascar",
+    "country": "MG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hell-Ville.geojson",
+      "sha256": "8a95b3888c873716e0bbf01babf08420bf63f2f9e942f7f46be372784b590c8f",
+      "size": 122961,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hell-ville",
+    "name": "Hell-Ville",
+    "nameIt": "Hell-Ville",
+    "region": "Madagascar",
+    "regionIt": "Madagascar",
+    "country": "MG",
+    "center": [
+      48.26552,
+      -13.39876
+    ],
+    "zoom": 12,
+    "population": 51851,
+    "grid": "cities/hell-ville/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hell-ville/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hell-ville",
+        "name": "Hell-Ville",
+        "nameIt": "Hell-Ville",
+        "region": "Madagascar",
+        "regionIt": "Madagascar",
+        "country": "MG",
+        "center": [
+          48.26552,
+          -13.39876
+        ],
+        "zoom": 12,
+        "population": 51851,
+        "cells": 105,
+        "layer": "cities/hell-ville/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.26552,
+            -13.39876
+          ]
+        },
+        "properties": {
+          "id": "hell-ville",
+          "name": "Hell-Ville",
+          "country": "MG",
+          "isStudy": true,
+          "proximityMinutes": 15.8,
+          "population": 51851
+        }
+      },
+      "summary": null
+    }
+  }
+}

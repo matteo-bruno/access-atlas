@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yakoma",
+  "createdAt": "2026-10-08T16:23:14.210Z",
+  "updatedAt": "2026-10-08T16:23:14.210Z",
+  "meta": {
+    "name": "Yakoma",
+    "nameIt": "Yakoma",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yakoma.geojson",
+      "sha256": "e9de8bc24463d2bf97b5ffae49ce2b0c4888ef7a755c7ec3d16859c71ebe873f",
+      "size": 128489,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yakoma",
+    "name": "Yakoma",
+    "nameIt": "Yakoma",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      22.44667,
+      4.10002
+    ],
+    "zoom": 12,
+    "population": 82134,
+    "grid": "cities/yakoma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yakoma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yakoma",
+        "name": "Yakoma",
+        "nameIt": "Yakoma",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          22.44667,
+          4.10002
+        ],
+        "zoom": 12,
+        "population": 82134,
+        "cells": 111,
+        "layer": "cities/yakoma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            22.44667,
+            4.10002
+          ]
+        },
+        "properties": {
+          "id": "yakoma",
+          "name": "Yakoma",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 82134
+        }
+      },
+      "summary": null
+    }
+  }
+}

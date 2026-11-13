@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pitesti",
+  "createdAt": "2026-10-08T16:05:51.437Z",
+  "updatedAt": "2026-10-08T16:05:51.437Z",
+  "meta": {
+    "name": "Pitești",
+    "nameIt": "Pitești",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pitești.geojson",
+      "sha256": "fae9c4ac7b7c6c27464f5fc5be2bced8ff52d6fce522c770aec086d14e99c5c5",
+      "size": 293038,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pitesti",
+    "name": "Pitești",
+    "nameIt": "Pitești",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO",
+    "center": [
+      24.8679,
+      44.85703
+    ],
+    "zoom": 11,
+    "population": 135299,
+    "grid": "cities/pitesti/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pitesti/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pitesti",
+        "name": "Pitești",
+        "nameIt": "Pitești",
+        "region": "Romania",
+        "regionIt": "Romania",
+        "country": "RO",
+        "center": [
+          24.8679,
+          44.85703
+        ],
+        "zoom": 11,
+        "population": 135299,
+        "cells": 256,
+        "layer": "cities/pitesti/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            24.8679,
+            44.85703
+          ]
+        },
+        "properties": {
+          "id": "pitesti",
+          "name": "Pitești",
+          "country": "RO",
+          "isStudy": true,
+          "proximityMinutes": 12.3,
+          "population": 135299
+        }
+      },
+      "summary": null
+    }
+  }
+}

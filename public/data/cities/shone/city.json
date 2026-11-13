@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shone",
+  "createdAt": "2026-10-08T16:13:11.939Z",
+  "updatedAt": "2026-10-08T16:13:11.939Z",
+  "meta": {
+    "name": "Shone",
+    "nameIt": "Shone",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shone.geojson",
+      "sha256": "cc45b2bc4238d7b2e4e30d7c9500ecb50f5c62c33c20ec89777f5e52a4a90d94",
+      "size": 101592,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shone",
+    "name": "Shone",
+    "nameIt": "Shone",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      37.95351,
+      7.14114
+    ],
+    "zoom": 12,
+    "population": 61908,
+    "grid": "cities/shone/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shone/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shone",
+        "name": "Shone",
+        "nameIt": "Shone",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          37.95351,
+          7.14114
+        ],
+        "zoom": 12,
+        "population": 61908,
+        "cells": 88,
+        "layer": "cities/shone/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.95351,
+            7.14114
+          ]
+        },
+        "properties": {
+          "id": "shone",
+          "name": "Shone",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 61908
+        }
+      },
+      "summary": null
+    }
+  }
+}

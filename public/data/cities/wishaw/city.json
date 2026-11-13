@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wishaw",
+  "createdAt": "2026-10-08T16:21:45.261Z",
+  "updatedAt": "2026-10-08T16:21:45.261Z",
+  "meta": {
+    "name": "Wishaw",
+    "nameIt": "Wishaw",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wishaw.geojson",
+      "sha256": "72b339f168890bd4f8f432cb2af1255c0851f10f579314855e1490c073b1843f",
+      "size": 708756,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wishaw",
+    "name": "Wishaw",
+    "nameIt": "Wishaw",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -3.98949,
+      55.80034
+    ],
+    "zoom": 10.4,
+    "population": 141086,
+    "grid": "cities/wishaw/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wishaw/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wishaw",
+        "name": "Wishaw",
+        "nameIt": "Wishaw",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -3.98949,
+          55.80034
+        ],
+        "zoom": 10.4,
+        "population": 141086,
+        "cells": 615,
+        "layer": "cities/wishaw/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -3.98949,
+            55.80034
+          ]
+        },
+        "properties": {
+          "id": "wishaw",
+          "name": "Wishaw",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 16.8,
+          "population": 141086
+        }
+      },
+      "summary": null
+    }
+  }
+}

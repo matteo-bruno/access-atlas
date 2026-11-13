@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "digri",
+  "createdAt": "2026-10-08T15:29:55.679Z",
+  "updatedAt": "2026-10-08T15:29:55.679Z",
+  "meta": {
+    "name": "Digri",
+    "nameIt": "Digri",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Digri.geojson",
+      "sha256": "7567121715daac62a62d7edc15b48965c9b26df33782998c63e0fa7ee086029f",
+      "size": 67251,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "digri",
+    "name": "Digri",
+    "nameIt": "Digri",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      69.11158,
+      25.15515
+    ],
+    "zoom": 12,
+    "population": 33238,
+    "grid": "cities/digri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/digri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "digri",
+        "name": "Digri",
+        "nameIt": "Digri",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          69.11158,
+          25.15515
+        ],
+        "zoom": 12,
+        "population": 33238,
+        "cells": 58,
+        "layer": "cities/digri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.11158,
+            25.15515
+          ]
+        },
+        "properties": {
+          "id": "digri",
+          "name": "Digri",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 33238
+        }
+      },
+      "summary": null
+    }
+  }
+}

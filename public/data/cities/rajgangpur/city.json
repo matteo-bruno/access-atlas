@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rajgangpur",
+  "createdAt": "2026-10-08T16:07:57.803Z",
+  "updatedAt": "2026-10-08T16:07:57.803Z",
+  "meta": {
+    "name": "Rajgangpur",
+    "nameIt": "Rajgangpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rajgangpur.geojson",
+      "sha256": "e75b40d63607dbefac2ea108975dd85a7611f6f9e1681a18e1f26a157906ef22",
+      "size": 154151,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rajgangpur",
+    "name": "Rajgangpur",
+    "nameIt": "Rajgangpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.58135,
+      22.19658
+    ],
+    "zoom": 11.5,
+    "population": 111452,
+    "grid": "cities/rajgangpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rajgangpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rajgangpur",
+        "name": "Rajgangpur",
+        "nameIt": "Rajgangpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.58135,
+          22.19658
+        ],
+        "zoom": 11.5,
+        "population": 111452,
+        "cells": 133,
+        "layer": "cities/rajgangpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.58135,
+            22.19658
+          ]
+        },
+        "properties": {
+          "id": "rajgangpur",
+          "name": "Rajgangpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 111452
+        }
+      },
+      "summary": null
+    }
+  }
+}

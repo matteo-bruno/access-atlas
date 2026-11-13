@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tamaraivillu",
+  "createdAt": "2026-10-08T16:16:21.369Z",
+  "updatedAt": "2026-10-08T16:16:21.369Z",
+  "meta": {
+    "name": "Tamaraivillu",
+    "nameIt": "Tamaraivillu",
+    "region": "Sri Lanka",
+    "regionIt": "Sri Lanka",
+    "country": "LK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tamaraivillu.geojson",
+      "sha256": "bf81a954553f62e43f574de0fe79f892bf7ca23317ff7d2369cb81cd55293dd0",
+      "size": 202363,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tamaraivillu",
+    "name": "Tamaraivillu",
+    "nameIt": "Tamaraivillu",
+    "region": "Sri Lanka",
+    "regionIt": "Sri Lanka",
+    "country": "LK",
+    "center": [
+      81.17933,
+      8.49775
+    ],
+    "zoom": 11.4,
+    "population": 59250,
+    "grid": "cities/tamaraivillu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tamaraivillu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tamaraivillu",
+        "name": "Tamaraivillu",
+        "nameIt": "Tamaraivillu",
+        "region": "Sri Lanka",
+        "regionIt": "Sri Lanka",
+        "country": "LK",
+        "center": [
+          81.17933,
+          8.49775
+        ],
+        "zoom": 11.4,
+        "population": 59250,
+        "cells": 176,
+        "layer": "cities/tamaraivillu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.17933,
+            8.49775
+          ]
+        },
+        "properties": {
+          "id": "tamaraivillu",
+          "name": "Tamaraivillu",
+          "country": "LK",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 59250
+        }
+      },
+      "summary": null
+    }
+  }
+}

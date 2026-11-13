@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "morelia",
+  "createdAt": "2026-10-08T15:58:16.032Z",
+  "updatedAt": "2026-10-08T15:58:16.032Z",
+  "meta": {
+    "name": "Morelia",
+    "nameIt": "Morelia",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Morelia.geojson",
+      "sha256": "3dbba80a7ac4d23f0e53b78d845fa4cb492cd4490cd4de34b44e68c7713d0582",
+      "size": 1043291,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "morelia",
+    "name": "Morelia",
+    "nameIt": "Morelia",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -101.19815,
+      19.7046
+    ],
+    "zoom": 10,
+    "population": 688543,
+    "grid": "cities/morelia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/morelia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "morelia",
+        "name": "Morelia",
+        "nameIt": "Morelia",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -101.19815,
+          19.7046
+        ],
+        "zoom": 10,
+        "population": 688543,
+        "cells": 894,
+        "layer": "cities/morelia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -101.19815,
+            19.7046
+          ]
+        },
+        "properties": {
+          "id": "morelia",
+          "name": "Morelia",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 20.2,
+          "population": 688543
+        }
+      },
+      "summary": null
+    }
+  }
+}

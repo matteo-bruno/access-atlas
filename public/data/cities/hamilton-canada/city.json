@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hamilton-canada",
+  "createdAt": "2026-10-08T15:37:32.287Z",
+  "updatedAt": "2026-10-08T15:37:32.287Z",
+  "meta": {
+    "name": "Hamilton (Canada)",
+    "nameIt": "Hamilton (Canada)",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hamilton (Canada).geojson",
+      "sha256": "e5122d28f4adb708c1eeb519ced394f63a36b9a930c43cb4abaf0e02a1388f73",
+      "size": 1803049,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hamilton-canada",
+    "name": "Hamilton (Canada)",
+    "nameIt": "Hamilton (Canada)",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -79.84635,
+      43.23405
+    ],
+    "zoom": 9.3,
+    "population": 461579,
+    "grid": "cities/hamilton-canada/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hamilton-canada/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hamilton-canada",
+        "name": "Hamilton (Canada)",
+        "nameIt": "Hamilton (Canada)",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -79.84635,
+          43.23405
+        ],
+        "zoom": 9.3,
+        "population": 461579,
+        "cells": 1567,
+        "layer": "cities/hamilton-canada/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -79.84635,
+            43.23405
+          ]
+        },
+        "properties": {
+          "id": "hamilton-canada",
+          "name": "Hamilton (Canada)",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 461579
+        }
+      },
+      "summary": null
+    }
+  }
+}

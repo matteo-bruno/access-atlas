@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "giddalur",
+  "createdAt": "2026-10-08T15:35:12.763Z",
+  "updatedAt": "2026-10-08T15:35:12.763Z",
+  "meta": {
+    "name": "Giddalur",
+    "nameIt": "Giddalur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Giddalur.geojson",
+      "sha256": "9c6107f030ae9aac577ea3f6a287043e0e75d87c4215cd13ed5cb504f8bcb52d",
+      "size": 51089,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "giddalur",
+    "name": "Giddalur",
+    "nameIt": "Giddalur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.92696,
+      15.37669
+    ],
+    "zoom": 12,
+    "population": 28286,
+    "grid": "cities/giddalur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/giddalur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "giddalur",
+        "name": "Giddalur",
+        "nameIt": "Giddalur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.92696,
+          15.37669
+        ],
+        "zoom": 12,
+        "population": 28286,
+        "cells": 44,
+        "layer": "cities/giddalur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.92696,
+            15.37669
+          ]
+        },
+        "properties": {
+          "id": "giddalur",
+          "name": "Giddalur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 28286
+        }
+      },
+      "summary": null
+    }
+  }
+}

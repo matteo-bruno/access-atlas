@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lin-an-district",
+  "createdAt": "2026-10-08T15:51:13.269Z",
+  "updatedAt": "2026-10-08T15:51:13.269Z",
+  "meta": {
+    "name": "Lin'an District",
+    "nameIt": "Lin'an District",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lin'an District.geojson",
+      "sha256": "fdc8644fc90c0a01b355722bad49f2ab3a54317626016f23db3c050fde63b258",
+      "size": 548770,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lin-an-district",
+    "name": "Lin'an District",
+    "nameIt": "Lin'an District",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.7067,
+      30.23029
+    ],
+    "zoom": 10.8,
+    "population": 251425,
+    "grid": "cities/lin-an-district/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 179
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lin-an-district/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lin-an-district",
+        "name": "Lin'an District",
+        "nameIt": "Lin'an District",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.7067,
+          30.23029
+        ],
+        "zoom": 10.8,
+        "population": 251425,
+        "cells": 470,
+        "layer": "cities/lin-an-district/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 179
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.7067,
+            30.23029
+          ]
+        },
+        "properties": {
+          "id": "lin-an-district",
+          "name": "Lin'an District",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 22.4,
+          "population": 251425
+        }
+      },
+      "summary": null
+    }
+  }
+}

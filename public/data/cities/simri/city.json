@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "simri",
+  "createdAt": "2026-10-08T16:13:46.096Z",
+  "updatedAt": "2026-10-08T16:13:46.096Z",
+  "meta": {
+    "name": "Simri",
+    "nameIt": "Simri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Simri.geojson",
+      "sha256": "441cd9d59e2133a6015748166220d7cfb584304d3bd58167007e5602678b3e4c",
+      "size": 384880,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "simri",
+    "name": "Simri",
+    "nameIt": "Simri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.77705,
+      26.15981
+    ],
+    "zoom": 10.9,
+    "population": 109137,
+    "grid": "cities/simri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/simri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "simri",
+        "name": "Simri",
+        "nameIt": "Simri",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.77705,
+          26.15981
+        ],
+        "zoom": 10.9,
+        "population": 109137,
+        "cells": 332,
+        "layer": "cities/simri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.77705,
+            26.15981
+          ]
+        },
+        "properties": {
+          "id": "simri",
+          "name": "Simri",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 36.9,
+          "population": 109137
+        }
+      },
+      "summary": null
+    }
+  }
+}

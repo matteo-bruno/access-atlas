@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "asmara",
+  "createdAt": "2026-10-08T15:10:21.999Z",
+  "updatedAt": "2026-10-08T15:10:21.999Z",
+  "meta": {
+    "name": "Asmara",
+    "nameIt": "Asmara",
+    "region": "Eritrea",
+    "regionIt": "Eritrea",
+    "country": "ER"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Asmara.geojson",
+      "sha256": "bbb29a6ec2c0be5eafd218e4926b8914942a787c21316b6a780b6de145fb076e",
+      "size": 468764,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "asmara",
+    "name": "Asmara",
+    "nameIt": "Asmara",
+    "region": "Eritrea",
+    "regionIt": "Eritrea",
+    "country": "ER",
+    "center": [
+      38.92674,
+      15.33073
+    ],
+    "zoom": 10.7,
+    "population": 277525,
+    "grid": "cities/asmara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/asmara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "asmara",
+        "name": "Asmara",
+        "nameIt": "Asmara",
+        "region": "Eritrea",
+        "regionIt": "Eritrea",
+        "country": "ER",
+        "center": [
+          38.92674,
+          15.33073
+        ],
+        "zoom": 10.7,
+        "population": 277525,
+        "cells": 404,
+        "layer": "cities/asmara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.92674,
+            15.33073
+          ]
+        },
+        "properties": {
+          "id": "asmara",
+          "name": "Asmara",
+          "country": "ER",
+          "isStudy": true,
+          "proximityMinutes": 24.4,
+          "population": 277525
+        }
+      },
+      "summary": null
+    }
+  }
+}

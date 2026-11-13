@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bandar-lampung",
+  "createdAt": "2026-10-08T15:14:34.766Z",
+  "updatedAt": "2026-10-08T15:14:34.766Z",
+  "meta": {
+    "name": "Bandar Lampung",
+    "nameIt": "Bandar Lampung",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bandar Lampung.geojson",
+      "sha256": "c9802556d5cd67ad7a42722a5e9e875d456a5c309733d9f7e122935081447a04",
+      "size": 1869597,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bandar-lampung",
+    "name": "Bandar Lampung",
+    "nameIt": "Bandar Lampung",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      105.26496,
+      -5.39541
+    ],
+    "zoom": 9.5,
+    "population": 1297155,
+    "grid": "cities/bandar-lampung/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bandar-lampung/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bandar-lampung",
+        "name": "Bandar Lampung",
+        "nameIt": "Bandar Lampung",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          105.26496,
+          -5.39541
+        ],
+        "zoom": 9.5,
+        "population": 1297155,
+        "cells": 1599,
+        "layer": "cities/bandar-lampung/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.26496,
+            -5.39541
+          ]
+        },
+        "properties": {
+          "id": "bandar-lampung",
+          "name": "Bandar Lampung",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 35.7,
+          "population": 1297155
+        }
+      },
+      "summary": null
+    }
+  }
+}

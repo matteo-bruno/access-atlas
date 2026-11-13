@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "deroua",
+  "createdAt": "2026-10-08T15:29:01.425Z",
+  "updatedAt": "2026-10-08T15:29:01.425Z",
+  "meta": {
+    "name": "Deroua",
+    "nameIt": "Deroua",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Deroua.geojson",
+      "sha256": "24cb6df8f7bc8cee992c4226f7419e724de3cf5691d7fb7f3cf670ca45262950",
+      "size": 128133,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "deroua",
+    "name": "Deroua",
+    "nameIt": "Deroua",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -7.53501,
+      33.39411
+    ],
+    "zoom": 11.4,
+    "population": 37359,
+    "grid": "cities/deroua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/deroua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "deroua",
+        "name": "Deroua",
+        "nameIt": "Deroua",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -7.53501,
+          33.39411
+        ],
+        "zoom": 11.4,
+        "population": 37359,
+        "cells": 110,
+        "layer": "cities/deroua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -7.53501,
+            33.39411
+          ]
+        },
+        "properties": {
+          "id": "deroua",
+          "name": "Deroua",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 42.9,
+          "population": 37359
+        }
+      },
+      "summary": null
+    }
+  }
+}

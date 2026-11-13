@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baochi",
+  "createdAt": "2026-10-08T15:15:14.095Z",
+  "updatedAt": "2026-10-08T15:15:14.095Z",
+  "meta": {
+    "name": "Baochi",
+    "nameIt": "Baochi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baochi.geojson",
+      "sha256": "be70b947fa6b95f3bd19f4ac055a0c07f55e3e0338ffd5aaad48f16b39035908",
+      "size": 1044501,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baochi",
+    "name": "Baochi",
+    "nameIt": "Baochi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.29715,
+      39.72006
+    ],
+    "zoom": 10.5,
+    "population": 242980,
+    "grid": "cities/baochi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 169
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baochi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baochi",
+        "name": "Baochi",
+        "nameIt": "Baochi",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.29715,
+          39.72006
+        ],
+        "zoom": 10.5,
+        "population": 242980,
+        "cells": 898,
+        "layer": "cities/baochi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 169
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.29715,
+            39.72006
+          ]
+        },
+        "properties": {
+          "id": "baochi",
+          "name": "Baochi",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 17.6,
+          "population": 242980
+        }
+      },
+      "summary": null
+    }
+  }
+}

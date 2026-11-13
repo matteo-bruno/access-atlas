@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "drammen",
+  "createdAt": "2026-10-08T15:31:07.883Z",
+  "updatedAt": "2026-10-08T15:31:07.883Z",
+  "meta": {
+    "name": "Drammen",
+    "nameIt": "Drammen",
+    "region": "Norway",
+    "regionIt": "Norvegia",
+    "country": "NO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Drammen.geojson",
+      "sha256": "9f504deb234101461afb5fad4863b620881775f75f8f624bcddbc7be7a7f316a",
+      "size": 287112,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "drammen",
+    "name": "Drammen",
+    "nameIt": "Drammen",
+    "region": "Norway",
+    "regionIt": "Norvegia",
+    "country": "NO",
+    "center": [
+      10.18614,
+      59.74525
+    ],
+    "zoom": 11,
+    "population": 40827,
+    "grid": "cities/drammen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 172
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/drammen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "drammen",
+        "name": "Drammen",
+        "nameIt": "Drammen",
+        "region": "Norway",
+        "regionIt": "Norvegia",
+        "country": "NO",
+        "center": [
+          10.18614,
+          59.74525
+        ],
+        "zoom": 11,
+        "population": 40827,
+        "cells": 251,
+        "layer": "cities/drammen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 172
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.18614,
+            59.74525
+          ]
+        },
+        "properties": {
+          "id": "drammen",
+          "name": "Drammen",
+          "country": "NO",
+          "isStudy": true,
+          "proximityMinutes": 10.2,
+          "population": 40827
+        }
+      },
+      "summary": null
+    }
+  }
+}

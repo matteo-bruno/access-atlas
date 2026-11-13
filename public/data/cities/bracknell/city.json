@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bracknell",
+  "createdAt": "2026-10-08T15:20:18.086Z",
+  "updatedAt": "2026-10-08T15:20:18.086Z",
+  "meta": {
+    "name": "Bracknell",
+    "nameIt": "Bracknell",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bracknell.geojson",
+      "sha256": "62f0106a43fc18f1c70a2a49a6ac3541aec974beb2fab6b43da396d4ef03e08f",
+      "size": 272290,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bracknell",
+    "name": "Bracknell",
+    "nameIt": "Bracknell",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.75194,
+      51.40989
+    ],
+    "zoom": 11.6,
+    "population": 79741,
+    "grid": "cities/bracknell/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bracknell/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bracknell",
+        "name": "Bracknell",
+        "nameIt": "Bracknell",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.75194,
+          51.40989
+        ],
+        "zoom": 11.6,
+        "population": 79741,
+        "cells": 235,
+        "layer": "cities/bracknell/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.75194,
+            51.40989
+          ]
+        },
+        "properties": {
+          "id": "bracknell",
+          "name": "Bracknell",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 14.8,
+          "population": 79741
+        }
+      },
+      "summary": null
+    }
+  }
+}

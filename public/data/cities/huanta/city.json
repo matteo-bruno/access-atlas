@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huanta",
+  "createdAt": "2026-10-08T15:39:33.979Z",
+  "updatedAt": "2026-10-08T15:39:33.979Z",
+  "meta": {
+    "name": "Huanta",
+    "nameIt": "Huanta",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huanta.geojson",
+      "sha256": "937ef125bd7601b9b9cbdbbc5ebd7d26078fa8c9381a5abcd4c325249578d363",
+      "size": 87129,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huanta",
+    "name": "Huanta",
+    "nameIt": "Huanta",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -74.24998,
+      -12.93666
+    ],
+    "zoom": 12,
+    "population": 36978,
+    "grid": "cities/huanta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huanta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huanta",
+        "name": "Huanta",
+        "nameIt": "Huanta",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -74.24998,
+          -12.93666
+        ],
+        "zoom": 12,
+        "population": 36978,
+        "cells": 74,
+        "layer": "cities/huanta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.24998,
+            -12.93666
+          ]
+        },
+        "properties": {
+          "id": "huanta",
+          "name": "Huanta",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 10.3,
+          "population": 36978
+        }
+      },
+      "summary": null
+    }
+  }
+}

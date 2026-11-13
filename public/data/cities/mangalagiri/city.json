@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mangalagiri",
+  "createdAt": "2026-10-08T15:54:38.033Z",
+  "updatedAt": "2026-10-08T15:54:38.033Z",
+  "meta": {
+    "name": "Mangalagiri",
+    "nameIt": "Mangalagiri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mangalagiri.geojson",
+      "sha256": "e00ae6b6bd5384cce951075a788633806a87032eb752143fb6bec00613d1463e",
+      "size": 186594,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mangalagiri",
+    "name": "Mangalagiri",
+    "nameIt": "Mangalagiri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.57035,
+      16.43487
+    ],
+    "zoom": 11.5,
+    "population": 114157,
+    "grid": "cities/mangalagiri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mangalagiri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mangalagiri",
+        "name": "Mangalagiri",
+        "nameIt": "Mangalagiri",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.57035,
+          16.43487
+        ],
+        "zoom": 11.5,
+        "population": 114157,
+        "cells": 161,
+        "layer": "cities/mangalagiri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.57035,
+            16.43487
+          ]
+        },
+        "properties": {
+          "id": "mangalagiri",
+          "name": "Mangalagiri",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 21.7,
+          "population": 114157
+        }
+      },
+      "summary": null
+    }
+  }
+}

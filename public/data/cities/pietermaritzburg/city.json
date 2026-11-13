@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pietermaritzburg",
+  "createdAt": "2026-10-08T16:05:30.717Z",
+  "updatedAt": "2026-10-08T16:05:30.717Z",
+  "meta": {
+    "name": "Pietermaritzburg",
+    "nameIt": "Pietermaritzburg",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pietermaritzburg.geojson",
+      "sha256": "9ccdedb2ae0db1a841be1e175d74432c44a69e815011ee8ff9d61c3a9455b010",
+      "size": 1532418,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pietermaritzburg",
+    "name": "Pietermaritzburg",
+    "nameIt": "Pietermaritzburg",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      30.36477,
+      -29.62431
+    ],
+    "zoom": 9.8,
+    "population": 439647,
+    "grid": "cities/pietermaritzburg/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pietermaritzburg/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pietermaritzburg",
+        "name": "Pietermaritzburg",
+        "nameIt": "Pietermaritzburg",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          30.36477,
+          -29.62431
+        ],
+        "zoom": 9.8,
+        "population": 439647,
+        "cells": 1303,
+        "layer": "cities/pietermaritzburg/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.36477,
+            -29.62431
+          ]
+        },
+        "properties": {
+          "id": "pietermaritzburg",
+          "name": "Pietermaritzburg",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 57.7,
+          "population": 439647
+        }
+      },
+      "summary": null
+    }
+  }
+}

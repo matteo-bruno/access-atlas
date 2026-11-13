@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lodhran",
+  "createdAt": "2026-10-08T15:51:42.741Z",
+  "updatedAt": "2026-10-08T15:51:42.741Z",
+  "meta": {
+    "name": "Lodhran",
+    "nameIt": "Lodhran",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lodhran.geojson",
+      "sha256": "c4ef23d06488f118e7806d64143e350ec3ebee81099882345249db568384176b",
+      "size": 249152,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lodhran",
+    "name": "Lodhran",
+    "nameIt": "Lodhran",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      71.63241,
+      29.53302
+    ],
+    "zoom": 11.2,
+    "population": 122329,
+    "grid": "cities/lodhran/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lodhran/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lodhran",
+        "name": "Lodhran",
+        "nameIt": "Lodhran",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          71.63241,
+          29.53302
+        ],
+        "zoom": 11.2,
+        "population": 122329,
+        "cells": 215,
+        "layer": "cities/lodhran/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.63241,
+            29.53302
+          ]
+        },
+        "properties": {
+          "id": "lodhran",
+          "name": "Lodhran",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 122329
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khewra",
+  "createdAt": "2026-10-08T15:46:44.815Z",
+  "updatedAt": "2026-10-08T15:46:44.815Z",
+  "meta": {
+    "name": "Khewra",
+    "nameIt": "Khewra",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khewra.geojson",
+      "sha256": "425dc654c42c0d98a58cc9558e8dd3dfd0c2d88f27fb8af3588df218c7cbf92b",
+      "size": 87774,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khewra",
+    "name": "Khewra",
+    "nameIt": "Khewra",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      73.01274,
+      32.63251
+    ],
+    "zoom": 12,
+    "population": 43164,
+    "grid": "cities/khewra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khewra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khewra",
+        "name": "Khewra",
+        "nameIt": "Khewra",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          73.01274,
+          32.63251
+        ],
+        "zoom": 12,
+        "population": 43164,
+        "cells": 76,
+        "layer": "cities/khewra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.01274,
+            32.63251
+          ]
+        },
+        "properties": {
+          "id": "khewra",
+          "name": "Khewra",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 43164
+        }
+      },
+      "summary": null
+    }
+  }
+}

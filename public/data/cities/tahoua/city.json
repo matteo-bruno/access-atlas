@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tahoua",
+  "createdAt": "2026-10-08T16:15:58.603Z",
+  "updatedAt": "2026-10-08T16:15:58.603Z",
+  "meta": {
+    "name": "Tahoua",
+    "nameIt": "Tahoua",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tahoua.geojson",
+      "sha256": "6b2ea6c907c229699845ad8cc76da599a8f8ad6a1dee0fc2d5623b63ca72c723",
+      "size": 348001,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tahoua",
+    "name": "Tahoua",
+    "nameIt": "Tahoua",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE",
+    "center": [
+      5.26205,
+      14.88822
+    ],
+    "zoom": 11,
+    "population": 197579,
+    "grid": "cities/tahoua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tahoua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tahoua",
+        "name": "Tahoua",
+        "nameIt": "Tahoua",
+        "region": "Niger",
+        "regionIt": "Niger",
+        "country": "NE",
+        "center": [
+          5.26205,
+          14.88822
+        ],
+        "zoom": 11,
+        "population": 197579,
+        "cells": 301,
+        "layer": "cities/tahoua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.26205,
+            14.88822
+          ]
+        },
+        "properties": {
+          "id": "tahoua",
+          "name": "Tahoua",
+          "country": "NE",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 197579
+        }
+      },
+      "summary": null
+    }
+  }
+}

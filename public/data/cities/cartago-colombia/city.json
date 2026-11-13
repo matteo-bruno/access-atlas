@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cartago-colombia",
+  "createdAt": "2026-10-08T15:22:38.697Z",
+  "updatedAt": "2026-10-08T15:22:38.697Z",
+  "meta": {
+    "name": "Cartago (Colombia)",
+    "nameIt": "Cartago (Colombia)",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cartago (Colombia).geojson",
+      "sha256": "a79fe6751a7c06f79cb7fa307e102483b271573a942ae384ce648b05730b8d79",
+      "size": 172353,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cartago-colombia",
+    "name": "Cartago (Colombia)",
+    "nameIt": "Cartago (Colombia)",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -75.91773,
+      4.74807
+    ],
+    "zoom": 11.4,
+    "population": 131539,
+    "grid": "cities/cartago-colombia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cartago-colombia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cartago-colombia",
+        "name": "Cartago (Colombia)",
+        "nameIt": "Cartago (Colombia)",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -75.91773,
+          4.74807
+        ],
+        "zoom": 11.4,
+        "population": 131539,
+        "cells": 149,
+        "layer": "cities/cartago-colombia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.91773,
+            4.74807
+          ]
+        },
+        "properties": {
+          "id": "cartago-colombia",
+          "name": "Cartago (Colombia)",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 131539
+        }
+      },
+      "summary": null
+    }
+  }
+}

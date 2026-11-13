@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tsuruga",
+  "createdAt": "2026-10-08T16:18:58.687Z",
+  "updatedAt": "2026-10-08T16:18:58.687Z",
+  "meta": {
+    "name": "Tsuruga",
+    "nameIt": "Tsuruga",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tsuruga.geojson",
+      "sha256": "0be3afd2fcccd322d11d84097cd513b2094651032b54b5377d55edabc7c15e6d",
+      "size": 244605,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tsuruga",
+    "name": "Tsuruga",
+    "nameIt": "Tsuruga",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      136.0607,
+      35.64089
+    ],
+    "zoom": 11.6,
+    "population": 49417,
+    "grid": "cities/tsuruga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tsuruga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tsuruga",
+        "name": "Tsuruga",
+        "nameIt": "Tsuruga",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          136.0607,
+          35.64089
+        ],
+        "zoom": 11.6,
+        "population": 49417,
+        "cells": 211,
+        "layer": "cities/tsuruga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            136.0607,
+            35.64089
+          ]
+        },
+        "properties": {
+          "id": "tsuruga",
+          "name": "Tsuruga",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 16.4,
+          "population": 49417
+        }
+      },
+      "summary": null
+    }
+  }
+}

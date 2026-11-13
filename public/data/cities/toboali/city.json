@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "toboali",
+  "createdAt": "2026-10-08T16:18:13.966Z",
+  "updatedAt": "2026-10-08T16:18:13.966Z",
+  "meta": {
+    "name": "Toboali",
+    "nameIt": "Toboali",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Toboali.geojson",
+      "sha256": "52b952e43e2d54c4f8e0a78a6fe1858680326c8260470a80dfdef684ead174ae",
+      "size": 199781,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "toboali",
+    "name": "Toboali",
+    "nameIt": "Toboali",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      106.46204,
+      -3.00519
+    ],
+    "zoom": 11.5,
+    "population": 54753,
+    "grid": "cities/toboali/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/toboali/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "toboali",
+        "name": "Toboali",
+        "nameIt": "Toboali",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          106.46204,
+          -3.00519
+        ],
+        "zoom": 11.5,
+        "population": 54753,
+        "cells": 170,
+        "layer": "cities/toboali/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.46204,
+            -3.00519
+          ]
+        },
+        "properties": {
+          "id": "toboali",
+          "name": "Toboali",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 21.1,
+          "population": 54753
+        }
+      },
+      "summary": null
+    }
+  }
+}

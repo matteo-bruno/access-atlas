@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "milton-keynes",
+  "createdAt": "2026-10-08T15:57:06.998Z",
+  "updatedAt": "2026-10-08T15:57:06.998Z",
+  "meta": {
+    "name": "Milton Keynes",
+    "nameIt": "Milton Keynes",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Milton Keynes.geojson",
+      "sha256": "80741cf2ce610419f578e491985c462cf6fccf081c8df8a60df778e766360b7d",
+      "size": 896720,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "milton-keynes",
+    "name": "Milton Keynes",
+    "nameIt": "Milton Keynes",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.76721,
+      52.03259
+    ],
+    "zoom": 10.3,
+    "population": 214290,
+    "grid": "cities/milton-keynes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/milton-keynes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "milton-keynes",
+        "name": "Milton Keynes",
+        "nameIt": "Milton Keynes",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.76721,
+          52.03259
+        ],
+        "zoom": 10.3,
+        "population": 214290,
+        "cells": 777,
+        "layer": "cities/milton-keynes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.76721,
+            52.03259
+          ]
+        },
+        "properties": {
+          "id": "milton-keynes",
+          "name": "Milton Keynes",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 214290
+        }
+      },
+      "summary": null
+    }
+  }
+}

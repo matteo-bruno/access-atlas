@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "penjamo",
+  "createdAt": "2026-10-08T16:07:09.153Z",
+  "updatedAt": "2026-10-08T16:07:09.153Z",
+  "meta": {
+    "name": "Pénjamo",
+    "nameIt": "Pénjamo",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pénjamo.geojson",
+      "sha256": "2aa8085d9bd8b18a6fe5111bb14523b7b972e3cb38f31fb0b8c4663a92d2e688",
+      "size": 83751,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "penjamo",
+    "name": "Pénjamo",
+    "nameIt": "Pénjamo",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -101.72297,
+      20.43104
+    ],
+    "zoom": 12,
+    "population": 34502,
+    "grid": "cities/penjamo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/penjamo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "penjamo",
+        "name": "Pénjamo",
+        "nameIt": "Pénjamo",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -101.72297,
+          20.43104
+        ],
+        "zoom": 12,
+        "population": 34502,
+        "cells": 71,
+        "layer": "cities/penjamo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -101.72297,
+            20.43104
+          ]
+        },
+        "properties": {
+          "id": "penjamo",
+          "name": "Pénjamo",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 34502
+        }
+      },
+      "summary": null
+    }
+  }
+}

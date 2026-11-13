@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sakju",
+  "createdAt": "2026-10-08T16:09:59.557Z",
+  "updatedAt": "2026-10-08T16:09:59.557Z",
+  "meta": {
+    "name": "Sakju",
+    "nameIt": "Sakju",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sakju.geojson",
+      "sha256": "c51c7c4b536b3f87377dba94d49444e74f8cfcbae2f5932447615e18bf99646a",
+      "size": 50173,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sakju",
+    "name": "Sakju",
+    "nameIt": "Sakju",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP",
+    "center": [
+      125.0462,
+      40.38882
+    ],
+    "zoom": 12,
+    "population": 40737,
+    "grid": "cities/sakju/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 165
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sakju/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sakju",
+        "name": "Sakju",
+        "nameIt": "Sakju",
+        "region": "North Korea",
+        "regionIt": "Corea del Nord",
+        "country": "KP",
+        "center": [
+          125.0462,
+          40.38882
+        ],
+        "zoom": 12,
+        "population": 40737,
+        "cells": 43,
+        "layer": "cities/sakju/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 165
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.0462,
+            40.38882
+          ]
+        },
+        "properties": {
+          "id": "sakju",
+          "name": "Sakju",
+          "country": "KP",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 40737
+        }
+      },
+      "summary": null
+    }
+  }
+}

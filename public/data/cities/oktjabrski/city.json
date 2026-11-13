@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oktjabrski",
+  "createdAt": "2026-10-08T16:02:43.571Z",
+  "updatedAt": "2026-10-08T16:02:43.571Z",
+  "meta": {
+    "name": "Oktjabrski",
+    "nameIt": "Oktjabrski",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Oktjabrski.geojson",
+      "sha256": "0e7f82c56a865525952fb14e725c82e6f157508c8e350699d91c6771420da909",
+      "size": 249743,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "oktjabrski",
+    "name": "Oktjabrski",
+    "nameIt": "Oktjabrski",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      53.48738,
+      54.48396
+    ],
+    "zoom": 11.1,
+    "population": 94005,
+    "grid": "cities/oktjabrski/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oktjabrski/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oktjabrski",
+        "name": "Oktjabrski",
+        "nameIt": "Oktjabrski",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          53.48738,
+          54.48396
+        ],
+        "zoom": 11.1,
+        "population": 94005,
+        "cells": 217,
+        "layer": "cities/oktjabrski/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            53.48738,
+            54.48396
+          ]
+        },
+        "properties": {
+          "id": "oktjabrski",
+          "name": "Oktjabrski",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 94005
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "devakottai",
+  "createdAt": "2026-10-08T15:29:07.872Z",
+  "updatedAt": "2026-10-08T15:29:07.872Z",
+  "meta": {
+    "name": "Devakottai",
+    "nameIt": "Devakottai",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Devakottai.geojson",
+      "sha256": "32928c4b885f69370b5e919ffcbe774f457d610c5e334791bc1343e63808a837",
+      "size": 102428,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "devakottai",
+    "name": "Devakottai",
+    "nameIt": "Devakottai",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.8161,
+      9.9513
+    ],
+    "zoom": 12,
+    "population": 43294,
+    "grid": "cities/devakottai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/devakottai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "devakottai",
+        "name": "Devakottai",
+        "nameIt": "Devakottai",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.8161,
+          9.9513
+        ],
+        "zoom": 12,
+        "population": 43294,
+        "cells": 89,
+        "layer": "cities/devakottai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.8161,
+            9.9513
+          ]
+        },
+        "properties": {
+          "id": "devakottai",
+          "name": "Devakottai",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 14.5,
+          "population": 43294
+        }
+      },
+      "summary": null
+    }
+  }
+}

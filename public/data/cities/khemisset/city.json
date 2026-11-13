@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khemisset",
+  "createdAt": "2026-10-08T15:46:42.127Z",
+  "updatedAt": "2026-10-08T15:46:42.127Z",
+  "meta": {
+    "name": "Khemisset",
+    "nameIt": "Khemisset",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khemisset.geojson",
+      "sha256": "f071b438b46f04fcf1319f798b6320af77e724e331409545ceb4f083eae9d698",
+      "size": 157032,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khemisset",
+    "name": "Khemisset",
+    "nameIt": "Khemisset",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -6.07334,
+      33.8234
+    ],
+    "zoom": 11.6,
+    "population": 22105,
+    "grid": "cities/khemisset/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khemisset/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khemisset",
+        "name": "Khemisset",
+        "nameIt": "Khemisset",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -6.07334,
+          33.8234
+        ],
+        "zoom": 11.6,
+        "population": 22105,
+        "cells": 135,
+        "layer": "cities/khemisset/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -6.07334,
+            33.8234
+          ]
+        },
+        "properties": {
+          "id": "khemisset",
+          "name": "Khemisset",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 14.6,
+          "population": 22105
+        }
+      },
+      "summary": null
+    }
+  }
+}

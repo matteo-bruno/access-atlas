@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "luncang",
+  "createdAt": "2026-10-08T15:52:41.077Z",
+  "updatedAt": "2026-10-08T15:52:41.077Z",
+  "meta": {
+    "name": "Luncang",
+    "nameIt": "Luncang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Luncang.geojson",
+      "sha256": "4c6c8dc783fbdf617152aee007e69d40d1aae163a5afe84149d9d7f09bdec8c5",
+      "size": 210363,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "luncang",
+    "name": "Luncang",
+    "nameIt": "Luncang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.28197,
+      25.01497
+    ],
+    "zoom": 11.6,
+    "population": 56236,
+    "grid": "cities/luncang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/luncang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "luncang",
+        "name": "Luncang",
+        "nameIt": "Luncang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.28197,
+          25.01497
+        ],
+        "zoom": 11.6,
+        "population": 56236,
+        "cells": 180,
+        "layer": "cities/luncang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.28197,
+            25.01497
+          ]
+        },
+        "properties": {
+          "id": "luncang",
+          "name": "Luncang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 56236
+        }
+      },
+      "summary": null
+    }
+  }
+}

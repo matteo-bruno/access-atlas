@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khanewal",
+  "createdAt": "2026-10-08T15:46:29.978Z",
+  "updatedAt": "2026-10-08T15:46:29.978Z",
+  "meta": {
+    "name": "Khanewal",
+    "nameIt": "Khanewal",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khanewal.geojson",
+      "sha256": "41967ea0e86cb2a84a4d77d9712a68e3772866175904303cadef9a3df7f3b431",
+      "size": 468638,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khanewal",
+    "name": "Khanewal",
+    "nameIt": "Khanewal",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      71.92914,
+      30.29782
+    ],
+    "zoom": 10.9,
+    "population": 240613,
+    "grid": "cities/khanewal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khanewal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khanewal",
+        "name": "Khanewal",
+        "nameIt": "Khanewal",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          71.92914,
+          30.29782
+        ],
+        "zoom": 10.9,
+        "population": 240613,
+        "cells": 404,
+        "layer": "cities/khanewal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.92914,
+            30.29782
+          ]
+        },
+        "properties": {
+          "id": "khanewal",
+          "name": "Khanewal",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 26.7,
+          "population": 240613
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lawrence-kansas",
+  "createdAt": "2026-10-08T15:50:25.955Z",
+  "updatedAt": "2026-10-08T15:50:25.955Z",
+  "meta": {
+    "name": "Lawrence (Kansas)",
+    "nameIt": "Lawrence (Kansas)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lawrence (Kansas).geojson",
+      "sha256": "c65c9f34709ae693d4ac5fb8e7e4344f87136dc14456c35c0c9ea96cb6ebd90c",
+      "size": 397446,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lawrence-kansas",
+    "name": "Lawrence (Kansas)",
+    "nameIt": "Lawrence (Kansas)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -95.26107,
+      38.95452
+    ],
+    "zoom": 10.9,
+    "population": 63870,
+    "grid": "cities/lawrence-kansas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lawrence-kansas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lawrence-kansas",
+        "name": "Lawrence (Kansas)",
+        "nameIt": "Lawrence (Kansas)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -95.26107,
+          38.95452
+        ],
+        "zoom": 10.9,
+        "population": 63870,
+        "cells": 346,
+        "layer": "cities/lawrence-kansas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -95.26107,
+            38.95452
+          ]
+        },
+        "properties": {
+          "id": "lawrence-kansas",
+          "name": "Lawrence (Kansas)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 63870
+        }
+      },
+      "summary": null
+    }
+  }
+}

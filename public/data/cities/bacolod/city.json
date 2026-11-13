@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bacolod",
+  "createdAt": "2026-10-08T15:12:23.941Z",
+  "updatedAt": "2026-10-08T15:12:23.941Z",
+  "meta": {
+    "name": "Bacolod",
+    "nameIt": "Bacolod",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bacolod.geojson",
+      "sha256": "e005640829f8732366bb1c7708b1ac3cf21f581eb784412981dd5cb355ae736e",
+      "size": 1301875,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bacolod",
+    "name": "Bacolod",
+    "nameIt": "Bacolod",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      122.96141,
+      10.65972
+    ],
+    "zoom": 9.9,
+    "population": 646799,
+    "grid": "cities/bacolod/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bacolod/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bacolod",
+        "name": "Bacolod",
+        "nameIt": "Bacolod",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          122.96141,
+          10.65972
+        ],
+        "zoom": 9.9,
+        "population": 646799,
+        "cells": 1123,
+        "layer": "cities/bacolod/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            122.96141,
+            10.65972
+          ]
+        },
+        "properties": {
+          "id": "bacolod",
+          "name": "Bacolod",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 24.7,
+          "population": 646799
+        }
+      },
+      "summary": null
+    }
+  }
+}

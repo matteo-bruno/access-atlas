@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "belfast-fua",
+  "createdAt": "2026-10-19T16:55:23.479Z",
+  "updatedAt": "2026-10-19T16:55:23.479Z",
+  "meta": {
+    "name": "Belfast",
+    "nameIt": "Belfast",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "belfast-fua",
+    "name": "Belfast",
+    "nameIt": "Belfast",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "extent": "fua",
+    "core": "belfast",
+    "center": [
+      -6.02119,
+      54.58581
+    ],
+    "zoom": 8.5,
+    "population": 1002654,
+    "grid": "cities/belfast-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/belfast-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "belfast-fua",
+        "name": "Belfast",
+        "nameIt": "Belfast",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "extent": "fua",
+        "core": "belfast",
+        "center": [
+          -6.02119,
+          54.58581
+        ],
+        "zoom": 8.5,
+        "population": 1002654,
+        "cells": 29296,
+        "layer": "cities/belfast-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -6.02119,
+            54.58581
+          ]
+        },
+        "properties": {
+          "id": "belfast-fua",
+          "name": "Belfast",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 1002654
+        }
+      },
+      "summary": null
+    }
+  }
+}

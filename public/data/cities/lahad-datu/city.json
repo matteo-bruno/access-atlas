@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lahad-datu",
+  "createdAt": "2026-10-08T15:49:37.195Z",
+  "updatedAt": "2026-10-08T15:49:37.195Z",
+  "meta": {
+    "name": "Lahad Datu",
+    "nameIt": "Lahad Datu",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lahad Datu.geojson",
+      "sha256": "12833eac7a9d3fc05bd58a4fe0e2298a83a45fb1e3f9ff7433875c23e84a2b3c",
+      "size": 336913,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lahad-datu",
+    "name": "Lahad Datu",
+    "nameIt": "Lahad Datu",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      118.33003,
+      5.03031
+    ],
+    "zoom": 10.5,
+    "population": 82631,
+    "grid": "cities/lahad-datu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lahad-datu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lahad-datu",
+        "name": "Lahad Datu",
+        "nameIt": "Lahad Datu",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          118.33003,
+          5.03031
+        ],
+        "zoom": 10.5,
+        "population": 82631,
+        "cells": 290,
+        "layer": "cities/lahad-datu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.33003,
+            5.03031
+          ]
+        },
+        "properties": {
+          "id": "lahad-datu",
+          "name": "Lahad Datu",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 25.3,
+          "population": 82631
+        }
+      },
+      "summary": null
+    }
+  }
+}

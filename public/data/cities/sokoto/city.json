@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sokoto",
+  "createdAt": "2026-10-08T16:14:18.144Z",
+  "updatedAt": "2026-10-08T16:14:18.144Z",
+  "meta": {
+    "name": "Sokoto",
+    "nameIt": "Sokoto",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sokoto.geojson",
+      "sha256": "919c2bc9811b5209e4d85bb6ea94658973583cd0ff6b7457709c69577b4a639d",
+      "size": 1264958,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sokoto",
+    "name": "Sokoto",
+    "nameIt": "Sokoto",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      5.23632,
+      13.04006
+    ],
+    "zoom": 10.3,
+    "population": 1247814,
+    "grid": "cities/sokoto/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sokoto/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sokoto",
+        "name": "Sokoto",
+        "nameIt": "Sokoto",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          5.23632,
+          13.04006
+        ],
+        "zoom": 10.3,
+        "population": 1247814,
+        "cells": 1089,
+        "layer": "cities/sokoto/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.23632,
+            13.04006
+          ]
+        },
+        "properties": {
+          "id": "sokoto",
+          "name": "Sokoto",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 44.2,
+          "population": 1247814
+        }
+      },
+      "summary": null
+    }
+  }
+}

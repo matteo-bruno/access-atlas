@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yola",
+  "createdAt": "2026-10-08T16:24:05.437Z",
+  "updatedAt": "2026-10-08T16:24:05.437Z",
+  "meta": {
+    "name": "Yola",
+    "nameIt": "Yola",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yola.geojson",
+      "sha256": "d6cf97111796eec934f583f6dceadda99e1e88e4907e824a7f69c4943bc49929",
+      "size": 1247752,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yola",
+    "name": "Yola",
+    "nameIt": "Yola",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      12.4484,
+      9.24443
+    ],
+    "zoom": 10,
+    "population": 635981,
+    "grid": "cities/yola/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yola/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yola",
+        "name": "Yola",
+        "nameIt": "Yola",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          12.4484,
+          9.24443
+        ],
+        "zoom": 10,
+        "population": 635981,
+        "cells": 1076,
+        "layer": "cities/yola/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.4484,
+            9.24443
+          ]
+        },
+        "properties": {
+          "id": "yola",
+          "name": "Yola",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 47.2,
+          "population": 635981
+        }
+      },
+      "summary": null
+    }
+  }
+}

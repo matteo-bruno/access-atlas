@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "masaka",
+  "createdAt": "2026-10-08T15:55:25.408Z",
+  "updatedAt": "2026-10-08T15:55:25.408Z",
+  "meta": {
+    "name": "Masaka",
+    "nameIt": "Masaka",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Masaka.geojson",
+      "sha256": "87a47aaa039f084e2478cc332cbea2b15ccdf4db2ef5038a072b176d6b6b77e5",
+      "size": 328011,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "masaka",
+    "name": "Masaka",
+    "nameIt": "Masaka",
+    "region": "Uganda",
+    "regionIt": "Uganda",
+    "country": "UG",
+    "center": [
+      31.74641,
+      -0.33134
+    ],
+    "zoom": 11.1,
+    "population": 90061,
+    "grid": "cities/masaka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/masaka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "masaka",
+        "name": "Masaka",
+        "nameIt": "Masaka",
+        "region": "Uganda",
+        "regionIt": "Uganda",
+        "country": "UG",
+        "center": [
+          31.74641,
+          -0.33134
+        ],
+        "zoom": 11.1,
+        "population": 90061,
+        "cells": 279,
+        "layer": "cities/masaka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.74641,
+            -0.33134
+          ]
+        },
+        "properties": {
+          "id": "masaka",
+          "name": "Masaka",
+          "country": "UG",
+          "isStudy": true,
+          "proximityMinutes": 23.9,
+          "population": 90061
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cheongju-si",
+  "createdAt": "2026-10-08T15:24:25.476Z",
+  "updatedAt": "2026-10-08T15:24:25.476Z",
+  "meta": {
+    "name": "Cheongju-si",
+    "nameIt": "Cheongju-si",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cheongju-si.geojson",
+      "sha256": "c483b12ef101e113f96e0bd8318d1b85f49a765918c18b130483697494a7a50a",
+      "size": 1325614,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cheongju-si",
+    "name": "Cheongju-si",
+    "nameIt": "Cheongju-si",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      127.47205,
+      36.63159
+    ],
+    "zoom": 10.3,
+    "population": 654021,
+    "grid": "cities/cheongju-si/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 170
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cheongju-si/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cheongju-si",
+        "name": "Cheongju-si",
+        "nameIt": "Cheongju-si",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          127.47205,
+          36.63159
+        ],
+        "zoom": 10.3,
+        "population": 654021,
+        "cells": 1152,
+        "layer": "cities/cheongju-si/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 170
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            127.47205,
+            36.63159
+          ]
+        },
+        "properties": {
+          "id": "cheongju-si",
+          "name": "Cheongju-si",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 654021
+        }
+      },
+      "summary": null
+    }
+  }
+}

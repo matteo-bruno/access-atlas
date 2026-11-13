@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baniyas",
+  "createdAt": "2026-10-08T15:14:56.019Z",
+  "updatedAt": "2026-10-08T15:14:56.019Z",
+  "meta": {
+    "name": "Baniyas",
+    "nameIt": "Baniyas",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baniyas.geojson",
+      "sha256": "041cfa768401c9070d227a9d20c12522d21ec561638c962412b585658f21bf56",
+      "size": 203977,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baniyas",
+    "name": "Baniyas",
+    "nameIt": "Baniyas",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY",
+    "center": [
+      35.9501,
+      35.18623
+    ],
+    "zoom": 11.1,
+    "population": 158535,
+    "grid": "cities/baniyas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baniyas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baniyas",
+        "name": "Baniyas",
+        "nameIt": "Baniyas",
+        "region": "Syria",
+        "regionIt": "Siria",
+        "country": "SY",
+        "center": [
+          35.9501,
+          35.18623
+        ],
+        "zoom": 11.1,
+        "population": 158535,
+        "cells": 176,
+        "layer": "cities/baniyas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.9501,
+            35.18623
+          ]
+        },
+        "properties": {
+          "id": "baniyas",
+          "name": "Baniyas",
+          "country": "SY",
+          "isStudy": true,
+          "proximityMinutes": 29.7,
+          "population": 158535
+        }
+      },
+      "summary": null
+    }
+  }
+}

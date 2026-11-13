@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nis",
+  "createdAt": "2026-10-08T16:01:50.989Z",
+  "updatedAt": "2026-10-08T16:01:50.989Z",
+  "meta": {
+    "name": "Niš",
+    "nameIt": "Niš",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Niš.geojson",
+      "sha256": "97585f9ac5894b061a71c51ec314fcb5c119050d0c9ace321eba45c2d1b873da",
+      "size": 432185,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nis",
+    "name": "Niš",
+    "nameIt": "Niš",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS",
+    "center": [
+      21.90979,
+      43.32037
+    ],
+    "zoom": 10.7,
+    "population": 198342,
+    "grid": "cities/nis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nis",
+        "name": "Niš",
+        "nameIt": "Niš",
+        "region": "Serbia",
+        "regionIt": "Serbia",
+        "country": "RS",
+        "center": [
+          21.90979,
+          43.32037
+        ],
+        "zoom": 10.7,
+        "population": 198342,
+        "cells": 377,
+        "layer": "cities/nis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            21.90979,
+            43.32037
+          ]
+        },
+        "properties": {
+          "id": "nis",
+          "name": "Niš",
+          "country": "RS",
+          "isStudy": true,
+          "proximityMinutes": 10.2,
+          "population": 198342
+        }
+      },
+      "summary": null
+    }
+  }
+}

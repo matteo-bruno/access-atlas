@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhentou",
+  "createdAt": "2026-10-08T16:25:15.116Z",
+  "updatedAt": "2026-10-08T16:25:15.116Z",
+  "meta": {
+    "name": "Zhentou",
+    "nameIt": "Zhentou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhentou.geojson",
+      "sha256": "116fcd5ed33b739009be356f327699ead2c478faf009fb43f799b492a07e0c4b",
+      "size": 182235,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhentou",
+    "name": "Zhentou",
+    "nameIt": "Zhentou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.32869,
+      28.01539
+    ],
+    "zoom": 11.6,
+    "population": 17799,
+    "grid": "cities/zhentou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhentou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhentou",
+        "name": "Zhentou",
+        "nameIt": "Zhentou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.32869,
+          28.01539
+        ],
+        "zoom": 11.6,
+        "population": 17799,
+        "cells": 156,
+        "layer": "cities/zhentou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.32869,
+            28.01539
+          ]
+        },
+        "properties": {
+          "id": "zhentou",
+          "name": "Zhentou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 17799
+        }
+      },
+      "summary": null
+    }
+  }
+}

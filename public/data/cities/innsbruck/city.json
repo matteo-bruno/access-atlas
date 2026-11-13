@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "innsbruck",
+  "createdAt": "2026-10-08T15:40:52.670Z",
+  "updatedAt": "2026-10-08T15:40:52.670Z",
+  "meta": {
+    "name": "Innsbruck",
+    "nameIt": "Innsbruck",
+    "region": "Austria",
+    "regionIt": "Austria",
+    "country": "AT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Innsbruck.geojson",
+      "sha256": "b21c7baebc62d48bafdbe8d869d348d98950d5d1225540916c69543a25e86a16",
+      "size": 277172,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "innsbruck",
+    "name": "Innsbruck",
+    "nameIt": "Innsbruck",
+    "region": "Austria",
+    "regionIt": "Austria",
+    "country": "AT",
+    "center": [
+      11.40563,
+      47.26769
+    ],
+    "zoom": 11,
+    "population": 122505,
+    "grid": "cities/innsbruck/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/innsbruck/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "innsbruck",
+        "name": "Innsbruck",
+        "nameIt": "Innsbruck",
+        "region": "Austria",
+        "regionIt": "Austria",
+        "country": "AT",
+        "center": [
+          11.40563,
+          47.26769
+        ],
+        "zoom": 11,
+        "population": 122505,
+        "cells": 243,
+        "layer": "cities/innsbruck/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.40563,
+            47.26769
+          ]
+        },
+        "properties": {
+          "id": "innsbruck",
+          "name": "Innsbruck",
+          "country": "AT",
+          "isStudy": true,
+          "proximityMinutes": 5.6,
+          "population": 122505
+        }
+      },
+      "summary": null
+    }
+  }
+}

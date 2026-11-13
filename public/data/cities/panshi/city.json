@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "panshi",
+  "createdAt": "2026-10-08T16:04:08.014Z",
+  "updatedAt": "2026-10-08T16:04:08.014Z",
+  "meta": {
+    "name": "Panshi",
+    "nameIt": "Panshi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Panshi.geojson",
+      "sha256": "400ca1618bb67979f86b4b59e1cc4968f0307e7594443ef0da53aa304b348114",
+      "size": 233108,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "panshi",
+    "name": "Panshi",
+    "nameIt": "Panshi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      126.05266,
+      42.94166
+    ],
+    "zoom": 11.6,
+    "population": 111843,
+    "grid": "cities/panshi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/panshi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "panshi",
+        "name": "Panshi",
+        "nameIt": "Panshi",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          126.05266,
+          42.94166
+        ],
+        "zoom": 11.6,
+        "population": 111843,
+        "cells": 200,
+        "layer": "cities/panshi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            126.05266,
+            42.94166
+          ]
+        },
+        "properties": {
+          "id": "panshi",
+          "name": "Panshi",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 111843
+        }
+      },
+      "summary": null
+    }
+  }
+}

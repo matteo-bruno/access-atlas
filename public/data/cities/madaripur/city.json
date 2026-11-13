@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "madaripur",
+  "createdAt": "2026-10-08T15:53:20.646Z",
+  "updatedAt": "2026-10-08T15:53:20.646Z",
+  "meta": {
+    "name": "Madaripur",
+    "nameIt": "Madaripur",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Madaripur.geojson",
+      "sha256": "2bebb8797903c070b788dc90379d7a955357b5096a4e826083c8abad63b3c594",
+      "size": 261701,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "madaripur",
+    "name": "Madaripur",
+    "nameIt": "Madaripur",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      90.2025,
+      23.17028
+    ],
+    "zoom": 10.9,
+    "population": 89558,
+    "grid": "cities/madaripur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/madaripur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "madaripur",
+        "name": "Madaripur",
+        "nameIt": "Madaripur",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          90.2025,
+          23.17028
+        ],
+        "zoom": 10.9,
+        "population": 89558,
+        "cells": 226,
+        "layer": "cities/madaripur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            90.2025,
+            23.17028
+          ]
+        },
+        "properties": {
+          "id": "madaripur",
+          "name": "Madaripur",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 19.1,
+          "population": 89558
+        }
+      },
+      "summary": null
+    }
+  }
+}

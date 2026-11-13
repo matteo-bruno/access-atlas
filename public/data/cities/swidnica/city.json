@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "swidnica",
+  "createdAt": "2026-10-08T16:25:59.396Z",
+  "updatedAt": "2026-10-08T16:25:59.396Z",
+  "meta": {
+    "name": "Świdnica",
+    "nameIt": "Świdnica",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Świdnica.geojson",
+      "sha256": "e97ffbd8503ec6732815eb697254e2eb7a3141587b6d10be0686a8ed7a6a4ad2",
+      "size": 135737,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "swidnica",
+    "name": "Świdnica",
+    "nameIt": "Świdnica",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      16.48953,
+      50.84377
+    ],
+    "zoom": 11.9,
+    "population": 45470,
+    "grid": "cities/swidnica/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/swidnica/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "swidnica",
+        "name": "Świdnica",
+        "nameIt": "Świdnica",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          16.48953,
+          50.84377
+        ],
+        "zoom": 11.9,
+        "population": 45470,
+        "cells": 119,
+        "layer": "cities/swidnica/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.48953,
+            50.84377
+          ]
+        },
+        "properties": {
+          "id": "swidnica",
+          "name": "Świdnica",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 8.5,
+          "population": 45470
+        }
+      },
+      "summary": null
+    }
+  }
+}

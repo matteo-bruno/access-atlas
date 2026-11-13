@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bima",
+  "createdAt": "2026-10-08T15:18:57.678Z",
+  "updatedAt": "2026-10-08T15:18:57.678Z",
+  "meta": {
+    "name": "Bima",
+    "nameIt": "Bima",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bima.geojson",
+      "sha256": "a26cfd91e714ea03873a6119fcc2a93381fd1cbeb28f7c6be3d81ac7ad091f35",
+      "size": 337074,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bima",
+    "name": "Bima",
+    "nameIt": "Bima",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      118.74255,
+      -8.46056
+    ],
+    "zoom": 11,
+    "population": 128106,
+    "grid": "cities/bima/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bima/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bima",
+        "name": "Bima",
+        "nameIt": "Bima",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          118.74255,
+          -8.46056
+        ],
+        "zoom": 11,
+        "population": 128106,
+        "cells": 290,
+        "layer": "cities/bima/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.74255,
+            -8.46056
+          ]
+        },
+        "properties": {
+          "id": "bima",
+          "name": "Bima",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 13.7,
+          "population": 128106
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gurue",
+  "createdAt": "2026-10-08T15:36:50.070Z",
+  "updatedAt": "2026-10-08T15:36:50.070Z",
+  "meta": {
+    "name": "Gurue",
+    "nameIt": "Gurue",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gurue.geojson",
+      "sha256": "1c194f22b108b48ac50b04e1bfa2c93296a0837632cbe15acd77551550da93d9",
+      "size": 117273,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gurue",
+    "name": "Gurue",
+    "nameIt": "Gurue",
+    "region": "Mozambique",
+    "regionIt": "Mozambico",
+    "country": "MZ",
+    "center": [
+      36.98164,
+      -15.4699
+    ],
+    "zoom": 12,
+    "population": 69520,
+    "grid": "cities/gurue/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gurue/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gurue",
+        "name": "Gurue",
+        "nameIt": "Gurue",
+        "region": "Mozambique",
+        "regionIt": "Mozambico",
+        "country": "MZ",
+        "center": [
+          36.98164,
+          -15.4699
+        ],
+        "zoom": 12,
+        "population": 69520,
+        "cells": 100,
+        "layer": "cities/gurue/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.98164,
+            -15.4699
+          ]
+        },
+        "properties": {
+          "id": "gurue",
+          "name": "Gurue",
+          "country": "MZ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 69520
+        }
+      },
+      "summary": null
+    }
+  }
+}

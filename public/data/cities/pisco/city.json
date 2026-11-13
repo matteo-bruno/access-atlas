@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pisco",
+  "createdAt": "2026-10-08T16:05:50.205Z",
+  "updatedAt": "2026-10-08T16:05:50.205Z",
+  "meta": {
+    "name": "Pisco",
+    "nameIt": "Pisco",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pisco.geojson",
+      "sha256": "76a25e5b39d9da6d3ee5be2405a139a328cb7982f7b0505ef0132a67fc602c11",
+      "size": 131306,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pisco",
+    "name": "Pisco",
+    "nameIt": "Pisco",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -76.20606,
+      -13.71467
+    ],
+    "zoom": 11.8,
+    "population": 77160,
+    "grid": "cities/pisco/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pisco/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pisco",
+        "name": "Pisco",
+        "nameIt": "Pisco",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -76.20606,
+          -13.71467
+        ],
+        "zoom": 11.8,
+        "population": 77160,
+        "cells": 112,
+        "layer": "cities/pisco/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.20606,
+            -13.71467
+          ]
+        },
+        "properties": {
+          "id": "pisco",
+          "name": "Pisco",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 9.2,
+          "population": 77160
+        }
+      },
+      "summary": null
+    }
+  }
+}

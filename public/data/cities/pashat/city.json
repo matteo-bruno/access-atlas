@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pashat",
+  "createdAt": "2026-10-08T16:04:33.566Z",
+  "updatedAt": "2026-10-08T16:04:33.566Z",
+  "meta": {
+    "name": "Pashat",
+    "nameIt": "Pashat",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pashat.geojson",
+      "sha256": "aa67be4de71dcbf88568f8e58ea0d83042dc9b6b3e641fdd4b3cb7b9c90f04f1",
+      "size": 211490,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pashat",
+    "name": "Pashat",
+    "nameIt": "Pashat",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      71.51628,
+      34.86976
+    ],
+    "zoom": 11,
+    "population": 66880,
+    "grid": "cities/pashat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pashat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pashat",
+        "name": "Pashat",
+        "nameIt": "Pashat",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          71.51628,
+          34.86976
+        ],
+        "zoom": 11,
+        "population": 66880,
+        "cells": 183,
+        "layer": "cities/pashat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.51628,
+            34.86976
+          ]
+        },
+        "properties": {
+          "id": "pashat",
+          "name": "Pashat",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 66880
+        }
+      },
+      "summary": null
+    }
+  }
+}

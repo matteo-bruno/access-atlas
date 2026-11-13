@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "stary-oskol",
+  "createdAt": "2026-10-08T16:14:48.274Z",
+  "updatedAt": "2026-10-08T16:14:48.274Z",
+  "meta": {
+    "name": "Stary Oskol",
+    "nameIt": "Stary Oskol",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Stary Oskol.geojson",
+      "sha256": "30c97f14717227cd235c471d94a52231e099545a3055569e11e9b546370d3e0c",
+      "size": 348827,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "stary-oskol",
+    "name": "Stary Oskol",
+    "nameIt": "Stary Oskol",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      37.86448,
+      51.305
+    ],
+    "zoom": 10.8,
+    "population": 86757,
+    "grid": "cities/stary-oskol/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/stary-oskol/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "stary-oskol",
+        "name": "Stary Oskol",
+        "nameIt": "Stary Oskol",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          37.86448,
+          51.305
+        ],
+        "zoom": 10.8,
+        "population": 86757,
+        "cells": 306,
+        "layer": "cities/stary-oskol/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.86448,
+            51.305
+          ]
+        },
+        "properties": {
+          "id": "stary-oskol",
+          "name": "Stary Oskol",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 9.9,
+          "population": 86757
+        }
+      },
+      "summary": null
+    }
+  }
+}

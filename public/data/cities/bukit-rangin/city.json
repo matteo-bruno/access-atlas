@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bukit-rangin",
+  "createdAt": "2026-10-08T15:20:37.010Z",
+  "updatedAt": "2026-10-08T15:20:37.010Z",
+  "meta": {
+    "name": "Bukit Rangin",
+    "nameIt": "Bukit Rangin",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bukit Rangin.geojson",
+      "sha256": "fcf03966100b627d2adc572a1701cb03611eed0b8f38bbe55ecbb8789fd91fe7",
+      "size": 235359,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bukit-rangin",
+    "name": "Bukit Rangin",
+    "nameIt": "Bukit Rangin",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      103.25813,
+      3.78049
+    ],
+    "zoom": 11,
+    "population": 67751,
+    "grid": "cities/bukit-rangin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bukit-rangin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bukit-rangin",
+        "name": "Bukit Rangin",
+        "nameIt": "Bukit Rangin",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          103.25813,
+          3.78049
+        ],
+        "zoom": 11,
+        "population": 67751,
+        "cells": 202,
+        "layer": "cities/bukit-rangin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.25813,
+            3.78049
+          ]
+        },
+        "properties": {
+          "id": "bukit-rangin",
+          "name": "Bukit Rangin",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 26,
+          "population": 67751
+        }
+      },
+      "summary": null
+    }
+  }
+}

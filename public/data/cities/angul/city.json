@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "angul",
+  "createdAt": "2026-10-08T15:07:43.187Z",
+  "updatedAt": "2026-10-08T15:07:43.187Z",
+  "meta": {
+    "name": "Angul",
+    "nameIt": "Angul",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Angul.geojson",
+      "sha256": "785517623333dbfb0c9a6efcc8a71858604c710cc89921620314d4ec575faedf",
+      "size": 324680,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "angul",
+    "name": "Angul",
+    "nameIt": "Angul",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.11714,
+      20.83985
+    ],
+    "zoom": 10.8,
+    "population": 233134,
+    "grid": "cities/angul/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/angul/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "angul",
+        "name": "Angul",
+        "nameIt": "Angul",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.11714,
+          20.83985
+        ],
+        "zoom": 10.8,
+        "population": 233134,
+        "cells": 280,
+        "layer": "cities/angul/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.11714,
+            20.83985
+          ]
+        },
+        "properties": {
+          "id": "angul",
+          "name": "Angul",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 36.8,
+          "population": 233134
+        }
+      },
+      "summary": null
+    }
+  }
+}

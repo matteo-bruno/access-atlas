@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tucson",
+  "createdAt": "2026-10-08T16:19:02.852Z",
+  "updatedAt": "2026-10-08T16:19:02.852Z",
+  "meta": {
+    "name": "Tucson",
+    "nameIt": "Tucson",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tucson.geojson",
+      "sha256": "5ee395cda64a5bca5b3e56dad470e236c1c8c524d97a451fc46564e5e1ed43d4",
+      "size": 2224336,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tucson",
+    "name": "Tucson",
+    "nameIt": "Tucson",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -110.90221,
+      32.23351
+    ],
+    "zoom": 9.3,
+    "population": 484814,
+    "grid": "cities/tucson/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tucson/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tucson",
+        "name": "Tucson",
+        "nameIt": "Tucson",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -110.90221,
+          32.23351
+        ],
+        "zoom": 9.3,
+        "population": 484814,
+        "cells": 1918,
+        "layer": "cities/tucson/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -110.90221,
+            32.23351
+          ]
+        },
+        "properties": {
+          "id": "tucson",
+          "name": "Tucson",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 14.8,
+          "population": 484814
+        }
+      },
+      "summary": null
+    }
+  }
+}

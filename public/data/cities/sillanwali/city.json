@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sillanwali",
+  "createdAt": "2026-10-08T16:13:41.370Z",
+  "updatedAt": "2026-10-08T16:13:41.370Z",
+  "meta": {
+    "name": "Sillanwali",
+    "nameIt": "Sillanwali",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sillanwali.geojson",
+      "sha256": "043beee63e00d3309e12cad239876eed4496bfd2e6fc059c12020a690fe56da1",
+      "size": 99681,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sillanwali",
+    "name": "Sillanwali",
+    "nameIt": "Sillanwali",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      72.54065,
+      31.82494
+    ],
+    "zoom": 12,
+    "population": 57260,
+    "grid": "cities/sillanwali/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sillanwali/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sillanwali",
+        "name": "Sillanwali",
+        "nameIt": "Sillanwali",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          72.54065,
+          31.82494
+        ],
+        "zoom": 12,
+        "population": 57260,
+        "cells": 86,
+        "layer": "cities/sillanwali/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.54065,
+            31.82494
+          ]
+        },
+        "properties": {
+          "id": "sillanwali",
+          "name": "Sillanwali",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 57260
+        }
+      },
+      "summary": null
+    }
+  }
+}

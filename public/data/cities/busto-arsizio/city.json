@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "busto-arsizio",
+  "createdAt": "2026-10-08T15:21:13.011Z",
+  "updatedAt": "2026-10-08T15:21:13.011Z",
+  "meta": {
+    "name": "Busto Arsizio",
+    "nameIt": "Busto Arsizio",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Busto Arsizio.geojson",
+      "sha256": "563a7b9d8d3d9b11e498874a872723c8b0c6f02636df45819ec106a1a3db2423",
+      "size": 1158368,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "busto-arsizio",
+    "name": "Busto Arsizio",
+    "nameIt": "Busto Arsizio",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      8.89971,
+      45.60318
+    ],
+    "zoom": 10.1,
+    "population": 289487,
+    "grid": "cities/busto-arsizio/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/busto-arsizio/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "busto-arsizio",
+        "name": "Busto Arsizio",
+        "nameIt": "Busto Arsizio",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          8.89971,
+          45.60318
+        ],
+        "zoom": 10.1,
+        "population": 289487,
+        "cells": 1020,
+        "layer": "cities/busto-arsizio/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.89971,
+            45.60318
+          ]
+        },
+        "properties": {
+          "id": "busto-arsizio",
+          "name": "Busto Arsizio",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 289487
+        }
+      },
+      "summary": null
+    }
+  }
+}

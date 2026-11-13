@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "balsas",
+  "createdAt": "2026-10-08T15:14:15.437Z",
+  "updatedAt": "2026-10-08T15:14:15.437Z",
+  "meta": {
+    "name": "Balsas",
+    "nameIt": "Balsas",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Balsas.geojson",
+      "sha256": "dad35c4b5ed086f42ab403438244f9f951578a04337d9e080567cf3360cc9693",
+      "size": 181516,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "balsas",
+    "name": "Balsas",
+    "nameIt": "Balsas",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -46.04409,
+      -7.5263
+    ],
+    "zoom": 11.7,
+    "population": 67721,
+    "grid": "cities/balsas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/balsas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "balsas",
+        "name": "Balsas",
+        "nameIt": "Balsas",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -46.04409,
+          -7.5263
+        ],
+        "zoom": 11.7,
+        "population": 67721,
+        "cells": 155,
+        "layer": "cities/balsas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.04409,
+            -7.5263
+          ]
+        },
+        "properties": {
+          "id": "balsas",
+          "name": "Balsas",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 16.7,
+          "population": 67721
+        }
+      },
+      "summary": null
+    }
+  }
+}

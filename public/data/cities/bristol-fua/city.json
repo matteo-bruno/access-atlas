@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bristol-fua",
+  "createdAt": "2026-10-19T16:55:37.368Z",
+  "updatedAt": "2026-10-19T16:55:37.368Z",
+  "meta": {
+    "name": "Bristol",
+    "nameIt": "Bristol",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "bristol-fua",
+    "name": "Bristol",
+    "nameIt": "Bristol",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "extent": "fua",
+    "core": "bristol",
+    "center": [
+      -2.4971,
+      51.44727
+    ],
+    "zoom": 8.5,
+    "population": 1352904,
+    "grid": "cities/bristol-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bristol-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bristol-fua",
+        "name": "Bristol",
+        "nameIt": "Bristol",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "extent": "fua",
+        "core": "bristol",
+        "center": [
+          -2.4971,
+          51.44727
+        ],
+        "zoom": 8.5,
+        "population": 1352904,
+        "cells": 20077,
+        "layer": "cities/bristol-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.4971,
+            51.44727
+          ]
+        },
+        "properties": {
+          "id": "bristol-fua",
+          "name": "Bristol",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 1352904
+        }
+      },
+      "summary": null
+    }
+  }
+}

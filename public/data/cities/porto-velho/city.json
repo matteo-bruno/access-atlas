@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "porto-velho",
+  "createdAt": "2026-10-08T16:06:21.291Z",
+  "updatedAt": "2026-10-08T16:06:21.291Z",
+  "meta": {
+    "name": "Porto Velho",
+    "nameIt": "Porto Velho",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Porto Velho.geojson",
+      "sha256": "a4c8db6bb288abcb84726065868cccf3ad2ae3581a29c4ecdf91fd0e53b87f12",
+      "size": 963224,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "porto-velho",
+    "name": "Porto Velho",
+    "nameIt": "Porto Velho",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -63.86739,
+      -8.76692
+    ],
+    "zoom": 10.2,
+    "population": 364878,
+    "grid": "cities/porto-velho/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/porto-velho/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "porto-velho",
+        "name": "Porto Velho",
+        "nameIt": "Porto Velho",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -63.86739,
+          -8.76692
+        ],
+        "zoom": 10.2,
+        "population": 364878,
+        "cells": 824,
+        "layer": "cities/porto-velho/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -63.86739,
+            -8.76692
+          ]
+        },
+        "properties": {
+          "id": "porto-velho",
+          "name": "Porto Velho",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 31.2,
+          "population": 364878
+        }
+      },
+      "summary": null
+    }
+  }
+}

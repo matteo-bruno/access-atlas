@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khistevarz",
+  "createdAt": "2026-10-08T15:46:45.583Z",
+  "updatedAt": "2026-10-08T15:46:45.583Z",
+  "meta": {
+    "name": "Khistevarz",
+    "nameIt": "Khistevarz",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khistevarz.geojson",
+      "sha256": "3d0ee3e54234f3b29f38cdfffadd16e2612fc0fc1fdc6d5628227e8a569dfaa5",
+      "size": 129321,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khistevarz",
+    "name": "Khistevarz",
+    "nameIt": "Khistevarz",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ",
+    "center": [
+      69.81159,
+      40.19665
+    ],
+    "zoom": 11.4,
+    "population": 45686,
+    "grid": "cities/khistevarz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khistevarz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khistevarz",
+        "name": "Khistevarz",
+        "nameIt": "Khistevarz",
+        "region": "Tajikistan",
+        "regionIt": "Tagikistan",
+        "country": "TJ",
+        "center": [
+          69.81159,
+          40.19665
+        ],
+        "zoom": 11.4,
+        "population": 45686,
+        "cells": 112,
+        "layer": "cities/khistevarz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.81159,
+            40.19665
+          ]
+        },
+        "properties": {
+          "id": "khistevarz",
+          "name": "Khistevarz",
+          "country": "TJ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 45686
+        }
+      },
+      "summary": null
+    }
+  }
+}

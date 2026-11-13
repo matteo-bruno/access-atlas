@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "westhaven-trails",
+  "createdAt": "2026-10-08T16:21:37.428Z",
+  "updatedAt": "2026-10-08T16:21:37.428Z",
+  "meta": {
+    "name": "Westhaven Trails",
+    "nameIt": "Westhaven Trails",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Westhaven Trails.geojson",
+      "sha256": "7f0fec8031df92d3bb06901350540575ebdafc1494e5cedc8446689cbbfe1e49",
+      "size": 416901,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "westhaven-trails",
+    "name": "Westhaven Trails",
+    "nameIt": "Westhaven Trails",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -89.49929,
+      43.04258
+    ],
+    "zoom": 10.6,
+    "population": 64824,
+    "grid": "cities/westhaven-trails/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/westhaven-trails/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "westhaven-trails",
+        "name": "Westhaven Trails",
+        "nameIt": "Westhaven Trails",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -89.49929,
+          43.04258
+        ],
+        "zoom": 10.6,
+        "population": 64824,
+        "cells": 360,
+        "layer": "cities/westhaven-trails/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -89.49929,
+            43.04258
+          ]
+        },
+        "properties": {
+          "id": "westhaven-trails",
+          "name": "Westhaven Trails",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.3,
+          "population": 64824
+        }
+      },
+      "summary": null
+    }
+  }
+}

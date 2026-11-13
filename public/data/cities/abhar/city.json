@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abhar",
+  "createdAt": "2026-10-08T15:01:25.958Z",
+  "updatedAt": "2026-10-08T15:01:25.958Z",
+  "meta": {
+    "name": "Abhar",
+    "nameIt": "Abhar",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abhar.geojson",
+      "sha256": "1d0bcf5a49e37389684e87b912b3d0450b73bdc900a63e472bf5f87150a52140",
+      "size": 117963,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abhar",
+    "name": "Abhar",
+    "nameIt": "Abhar",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      49.22035,
+      36.14844
+    ],
+    "zoom": 11.7,
+    "population": 64599,
+    "grid": "cities/abhar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abhar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abhar",
+        "name": "Abhar",
+        "nameIt": "Abhar",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          49.22035,
+          36.14844
+        ],
+        "zoom": 11.7,
+        "population": 64599,
+        "cells": 102,
+        "layer": "cities/abhar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            49.22035,
+            36.14844
+          ]
+        },
+        "properties": {
+          "id": "abhar",
+          "name": "Abhar",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 64599
+        }
+      },
+      "summary": null
+    }
+  }
+}

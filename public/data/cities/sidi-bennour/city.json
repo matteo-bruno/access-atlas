@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sidi-bennour",
+  "createdAt": "2026-10-08T16:13:26.422Z",
+  "updatedAt": "2026-10-08T16:13:26.422Z",
+  "meta": {
+    "name": "Sidi Bennour",
+    "nameIt": "Sidi Bennour",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sidi Bennour.geojson",
+      "sha256": "1ef260ee0b3782c4d0655ede222504bfba3f8b185850b58c2011d44c871540c9",
+      "size": 90692,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sidi-bennour",
+    "name": "Sidi Bennour",
+    "nameIt": "Sidi Bennour",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -8.42663,
+      32.64904
+    ],
+    "zoom": 12,
+    "population": 39806,
+    "grid": "cities/sidi-bennour/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sidi-bennour/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sidi-bennour",
+        "name": "Sidi Bennour",
+        "nameIt": "Sidi Bennour",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -8.42663,
+          32.64904
+        ],
+        "zoom": 12,
+        "population": 39806,
+        "cells": 78,
+        "layer": "cities/sidi-bennour/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -8.42663,
+            32.64904
+          ]
+        },
+        "properties": {
+          "id": "sidi-bennour",
+          "name": "Sidi Bennour",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 39806
+        }
+      },
+      "summary": null
+    }
+  }
+}

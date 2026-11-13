@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ikorodu",
+  "createdAt": "2026-10-08T15:40:32.894Z",
+  "updatedAt": "2026-10-08T15:40:32.894Z",
+  "meta": {
+    "name": "Ikorodu",
+    "nameIt": "Ikorodu",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ikorodu.geojson",
+      "sha256": "304051c43b0ce3df139e26a81c06720a90a5c76f0953433090fa25814cc2544d",
+      "size": 4056956,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ikorodu",
+    "name": "Ikorodu",
+    "nameIt": "Ikorodu",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      3.5272,
+      6.63216
+    ],
+    "zoom": 9.3,
+    "population": 1355956,
+    "grid": "cities/ikorodu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ikorodu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ikorodu",
+        "name": "Ikorodu",
+        "nameIt": "Ikorodu",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          3.5272,
+          6.63216
+        ],
+        "zoom": 9.3,
+        "population": 1355956,
+        "cells": 3500,
+        "layer": "cities/ikorodu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.5272,
+            6.63216
+          ]
+        },
+        "properties": {
+          "id": "ikorodu",
+          "name": "Ikorodu",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 73,
+          "population": 1355956
+        }
+      },
+      "summary": null
+    }
+  }
+}

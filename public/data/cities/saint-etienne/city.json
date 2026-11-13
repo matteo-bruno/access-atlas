@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "saint-etienne",
+  "createdAt": "2026-10-08T16:09:56.313Z",
+  "updatedAt": "2026-10-08T16:09:56.313Z",
+  "meta": {
+    "name": "Saint-Étienne",
+    "nameIt": "Saint-Étienne",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Saint-Étienne.geojson",
+      "sha256": "c3317e5f545d7af8c5f792634d75bc931344f49bf500aab35a320150b6d3ced4",
+      "size": 561751,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "saint-etienne",
+    "name": "Saint-Étienne",
+    "nameIt": "Saint-Étienne",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      4.39549,
+      45.44078
+    ],
+    "zoom": 10.8,
+    "population": 202223,
+    "grid": "cities/saint-etienne/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/saint-etienne/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "saint-etienne",
+        "name": "Saint-Étienne",
+        "nameIt": "Saint-Étienne",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          4.39549,
+          45.44078
+        ],
+        "zoom": 10.8,
+        "population": 202223,
+        "cells": 495,
+        "layer": "cities/saint-etienne/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.39549,
+            45.44078
+          ]
+        },
+        "properties": {
+          "id": "saint-etienne",
+          "name": "Saint-Étienne",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 7.1,
+          "population": 202223
+        }
+      },
+      "summary": null
+    }
+  }
+}

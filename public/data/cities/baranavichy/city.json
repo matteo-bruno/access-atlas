@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baranavichy",
+  "createdAt": "2026-10-08T15:15:29.006Z",
+  "updatedAt": "2026-10-08T15:15:29.006Z",
+  "meta": {
+    "name": "Baranavichy",
+    "nameIt": "Baranavichy",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baranavichy.geojson",
+      "sha256": "a0df0ca9c48b1773b3d4eb9ee7e1ec5fffb371c8323e844b97925bfdd72c51f3",
+      "size": 511903,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baranavichy",
+    "name": "Baranavichy",
+    "nameIt": "Baranavichy",
+    "region": "Belarus",
+    "regionIt": "Bielorussia",
+    "country": "BY",
+    "center": [
+      26.01684,
+      53.12991
+    ],
+    "zoom": 10.8,
+    "population": 145798,
+    "grid": "cities/baranavichy/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baranavichy/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baranavichy",
+        "name": "Baranavichy",
+        "nameIt": "Baranavichy",
+        "region": "Belarus",
+        "regionIt": "Bielorussia",
+        "country": "BY",
+        "center": [
+          26.01684,
+          53.12991
+        ],
+        "zoom": 10.8,
+        "population": 145798,
+        "cells": 447,
+        "layer": "cities/baranavichy/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.01684,
+            53.12991
+          ]
+        },
+        "properties": {
+          "id": "baranavichy",
+          "name": "Baranavichy",
+          "country": "BY",
+          "isStudy": true,
+          "proximityMinutes": 14.5,
+          "population": 145798
+        }
+      },
+      "summary": null
+    }
+  }
+}

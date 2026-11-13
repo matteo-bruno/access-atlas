@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "el-vigia",
+  "createdAt": "2026-10-08T15:32:03.440Z",
+  "updatedAt": "2026-10-08T15:32:03.440Z",
+  "meta": {
+    "name": "El Vigía",
+    "nameIt": "El Vigía",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/El Vigía.geojson",
+      "sha256": "50f673b1634e1418a0ed5e58c69dae85982101d07bee60f0b51222f2137b86ec",
+      "size": 194716,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "el-vigia",
+    "name": "El Vigía",
+    "nameIt": "El Vigía",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -71.6578,
+      8.61213
+    ],
+    "zoom": 11.4,
+    "population": 71245,
+    "grid": "cities/el-vigia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/el-vigia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "el-vigia",
+        "name": "El Vigía",
+        "nameIt": "El Vigía",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -71.6578,
+          8.61213
+        ],
+        "zoom": 11.4,
+        "population": 71245,
+        "cells": 168,
+        "layer": "cities/el-vigia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -71.6578,
+            8.61213
+          ]
+        },
+        "properties": {
+          "id": "el-vigia",
+          "name": "El Vigía",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 20.8,
+          "population": 71245
+        }
+      },
+      "summary": null
+    }
+  }
+}

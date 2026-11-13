@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "haridwar",
+  "createdAt": "2026-10-08T15:37:52.121Z",
+  "updatedAt": "2026-10-08T15:37:52.121Z",
+  "meta": {
+    "name": "Haridwar",
+    "nameIt": "Haridwar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Haridwar.geojson",
+      "sha256": "c0501742377c688f4d7024415fa693b1c98b1c65e6cfeae7bd9a240d0e3eca22",
+      "size": 1018525,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "haridwar",
+    "name": "Haridwar",
+    "nameIt": "Haridwar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.10224,
+      29.93773
+    ],
+    "zoom": 10,
+    "population": 507963,
+    "grid": "cities/haridwar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/haridwar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "haridwar",
+        "name": "Haridwar",
+        "nameIt": "Haridwar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.10224,
+          29.93773
+        ],
+        "zoom": 10,
+        "population": 507963,
+        "cells": 878,
+        "layer": "cities/haridwar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.10224,
+            29.93773
+          ]
+        },
+        "properties": {
+          "id": "haridwar",
+          "name": "Haridwar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 68.7,
+          "population": 507963
+        }
+      },
+      "summary": null
+    }
+  }
+}

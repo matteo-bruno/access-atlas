@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bidar",
+  "createdAt": "2026-10-08T15:18:42.901Z",
+  "updatedAt": "2026-10-08T15:18:42.901Z",
+  "meta": {
+    "name": "Bidar",
+    "nameIt": "Bidar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bidar.geojson",
+      "sha256": "1f324c56a67ef1c0e82e5144d86d9d3b18c46d800353eca14a635d7c125bea2d",
+      "size": 433147,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bidar",
+    "name": "Bidar",
+    "nameIt": "Bidar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.51287,
+      17.90952
+    ],
+    "zoom": 11,
+    "population": 167536,
+    "grid": "cities/bidar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bidar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bidar",
+        "name": "Bidar",
+        "nameIt": "Bidar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.51287,
+          17.90952
+        ],
+        "zoom": 11,
+        "population": 167536,
+        "cells": 374,
+        "layer": "cities/bidar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.51287,
+            17.90952
+          ]
+        },
+        "properties": {
+          "id": "bidar",
+          "name": "Bidar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 26.6,
+          "population": 167536
+        }
+      },
+      "summary": null
+    }
+  }
+}

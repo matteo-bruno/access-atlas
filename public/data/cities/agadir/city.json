@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "agadir",
+  "createdAt": "2026-10-08T15:02:44.215Z",
+  "updatedAt": "2026-10-08T15:02:44.215Z",
+  "meta": {
+    "name": "Agadir",
+    "nameIt": "Agadir",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Agadir.geojson",
+      "sha256": "29de3d92faa3969f1a7b0647046dc33d7952b3a40e3ad71758c3bac297233227",
+      "size": 1156420,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "agadir",
+    "name": "Agadir",
+    "nameIt": "Agadir",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -9.53501,
+      30.39275
+    ],
+    "zoom": 9.4,
+    "population": 438065,
+    "grid": "cities/agadir/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/agadir/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "agadir",
+        "name": "Agadir",
+        "nameIt": "Agadir",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -9.53501,
+          30.39275
+        ],
+        "zoom": 9.4,
+        "population": 438065,
+        "cells": 1001,
+        "layer": "cities/agadir/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -9.53501,
+            30.39275
+          ]
+        },
+        "properties": {
+          "id": "agadir",
+          "name": "Agadir",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 22.3,
+          "population": 438065
+        }
+      },
+      "summary": null
+    }
+  }
+}

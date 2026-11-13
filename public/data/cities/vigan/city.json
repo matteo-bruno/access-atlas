@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vigan",
+  "createdAt": "2026-10-08T16:20:41.532Z",
+  "updatedAt": "2026-10-08T16:20:41.532Z",
+  "meta": {
+    "name": "Vigan",
+    "nameIt": "Vigan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vigan.geojson",
+      "sha256": "802d0b5069bcc8feceb8262f6654846d174c268a0fbd10a37ee923bdec084bc2",
+      "size": 489988,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vigan",
+    "name": "Vigan",
+    "nameIt": "Vigan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      120.38077,
+      17.56914
+    ],
+    "zoom": 10.8,
+    "population": 101523,
+    "grid": "cities/vigan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vigan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vigan",
+        "name": "Vigan",
+        "nameIt": "Vigan",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          120.38077,
+          17.56914
+        ],
+        "zoom": 10.8,
+        "population": 101523,
+        "cells": 421,
+        "layer": "cities/vigan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.38077,
+            17.56914
+          ]
+        },
+        "properties": {
+          "id": "vigan",
+          "name": "Vigan",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 22.4,
+          "population": 101523
+        }
+      },
+      "summary": null
+    }
+  }
+}

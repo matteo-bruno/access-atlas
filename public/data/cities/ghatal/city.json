@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ghatal",
+  "createdAt": "2026-10-08T15:35:05.243Z",
+  "updatedAt": "2026-10-08T15:35:05.243Z",
+  "meta": {
+    "name": "Ghatal",
+    "nameIt": "Ghatal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ghatal.geojson",
+      "sha256": "89fdb5ca76519582ee3a053be13d91d0eacb90df5500fddc2840f7f58f65f88f",
+      "size": 172638,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ghatal",
+    "name": "Ghatal",
+    "nameIt": "Ghatal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.72524,
+      22.66035
+    ],
+    "zoom": 11.4,
+    "population": 65558,
+    "grid": "cities/ghatal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ghatal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ghatal",
+        "name": "Ghatal",
+        "nameIt": "Ghatal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.72524,
+          22.66035
+        ],
+        "zoom": 11.4,
+        "population": 65558,
+        "cells": 149,
+        "layer": "cities/ghatal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.72524,
+            22.66035
+          ]
+        },
+        "properties": {
+          "id": "ghatal",
+          "name": "Ghatal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 65558
+        }
+      },
+      "summary": null
+    }
+  }
+}

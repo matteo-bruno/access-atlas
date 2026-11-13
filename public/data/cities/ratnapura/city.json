@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ratnapura",
+  "createdAt": "2026-10-08T16:08:25.694Z",
+  "updatedAt": "2026-10-08T16:08:25.694Z",
+  "meta": {
+    "name": "Ratnapura",
+    "nameIt": "Ratnapura",
+    "region": "Sri Lanka",
+    "regionIt": "Sri Lanka",
+    "country": "LK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ratnapura.geojson",
+      "sha256": "6ef297b4726d713626dea45a1356a629bad98c6cc688520e4a3db7c23eba566a",
+      "size": 246326,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ratnapura",
+    "name": "Ratnapura",
+    "nameIt": "Ratnapura",
+    "region": "Sri Lanka",
+    "regionIt": "Sri Lanka",
+    "country": "LK",
+    "center": [
+      80.39546,
+      6.6914
+    ],
+    "zoom": 11.1,
+    "population": 69631,
+    "grid": "cities/ratnapura/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ratnapura/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ratnapura",
+        "name": "Ratnapura",
+        "nameIt": "Ratnapura",
+        "region": "Sri Lanka",
+        "regionIt": "Sri Lanka",
+        "country": "LK",
+        "center": [
+          80.39546,
+          6.6914
+        ],
+        "zoom": 11.1,
+        "population": 69631,
+        "cells": 214,
+        "layer": "cities/ratnapura/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.39546,
+            6.6914
+          ]
+        },
+        "properties": {
+          "id": "ratnapura",
+          "name": "Ratnapura",
+          "country": "LK",
+          "isStudy": true,
+          "proximityMinutes": 28.9,
+          "population": 69631
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "parhati",
+  "createdAt": "2026-10-08T16:04:21.913Z",
+  "updatedAt": "2026-10-08T16:04:21.913Z",
+  "meta": {
+    "name": "Parhati",
+    "nameIt": "Parhati",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Parhati.geojson",
+      "sha256": "b7ea51754f8c9dced640991eb879c38a7ec018d668346b369505e13e07700285",
+      "size": 738781,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "parhati",
+    "name": "Parhati",
+    "nameIt": "Parhati",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.16164,
+      23.26512
+    ],
+    "zoom": 9.9,
+    "population": 130966,
+    "grid": "cities/parhati/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/parhati/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "parhati",
+        "name": "Parhati",
+        "nameIt": "Parhati",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.16164,
+          23.26512
+        ],
+        "zoom": 9.9,
+        "population": 130966,
+        "cells": 637,
+        "layer": "cities/parhati/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.16164,
+            23.26512
+          ]
+        },
+        "properties": {
+          "id": "parhati",
+          "name": "Parhati",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 40.6,
+          "population": 130966
+        }
+      },
+      "summary": null
+    }
+  }
+}

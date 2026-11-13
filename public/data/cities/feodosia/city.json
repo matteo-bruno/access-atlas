@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "feodosia",
+  "createdAt": "2026-10-08T15:33:16.485Z",
+  "updatedAt": "2026-10-08T15:33:16.485Z",
+  "meta": {
+    "name": "Feodosia",
+    "nameIt": "Feodosia",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Feodosia.geojson",
+      "sha256": "74f06c078aa802b495d1c55f2364fb1969306157f59e94a2fe38671b777c8033",
+      "size": 238652,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "feodosia",
+    "name": "Feodosia",
+    "nameIt": "Feodosia",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      35.37883,
+      45.04553
+    ],
+    "zoom": 11.1,
+    "population": 47378,
+    "grid": "cities/feodosia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/feodosia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "feodosia",
+        "name": "Feodosia",
+        "nameIt": "Feodosia",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          35.37883,
+          45.04553
+        ],
+        "zoom": 11.1,
+        "population": 47378,
+        "cells": 209,
+        "layer": "cities/feodosia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.37883,
+            45.04553
+          ]
+        },
+        "properties": {
+          "id": "feodosia",
+          "name": "Feodosia",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 47378
+        }
+      },
+      "summary": null
+    }
+  }
+}

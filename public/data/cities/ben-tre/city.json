@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ben-tre",
+  "createdAt": "2026-10-08T15:21:28.791Z",
+  "updatedAt": "2026-10-08T15:21:28.791Z",
+  "meta": {
+    "name": "Bến Tre",
+    "nameIt": "Bến Tre",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bến Tre.geojson",
+      "sha256": "f0d3f6fbe48a92c4aaf0db4dceb27d97f634ce4da0c18d395f384a9debb01b1a",
+      "size": 434997,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ben-tre",
+    "name": "Bến Tre",
+    "nameIt": "Bến Tre",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      106.36899,
+      10.25801
+    ],
+    "zoom": 10.3,
+    "population": 141938,
+    "grid": "cities/ben-tre/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ben-tre/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ben-tre",
+        "name": "Bến Tre",
+        "nameIt": "Bến Tre",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          106.36899,
+          10.25801
+        ],
+        "zoom": 10.3,
+        "population": 141938,
+        "cells": 372,
+        "layer": "cities/ben-tre/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.36899,
+            10.25801
+          ]
+        },
+        "properties": {
+          "id": "ben-tre",
+          "name": "Bến Tre",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 28,
+          "population": 141938
+        }
+      },
+      "summary": null
+    }
+  }
+}

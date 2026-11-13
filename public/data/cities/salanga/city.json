@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "salanga",
+  "createdAt": "2026-10-08T16:10:03.303Z",
+  "updatedAt": "2026-10-08T16:10:03.303Z",
+  "meta": {
+    "name": "Salanga",
+    "nameIt": "Salanga",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Salanga.geojson",
+      "sha256": "e892cb320d10511fa3a5eb4fec137d765b7c9f606c4d66925be69ceec03734e2",
+      "size": 928174,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "salanga",
+    "name": "Salanga",
+    "nameIt": "Salanga",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.54112,
+      24.41279
+    ],
+    "zoom": 10.2,
+    "population": 212232,
+    "grid": "cities/salanga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/salanga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "salanga",
+        "name": "Salanga",
+        "nameIt": "Salanga",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.54112,
+          24.41279
+        ],
+        "zoom": 10.2,
+        "population": 212232,
+        "cells": 801,
+        "layer": "cities/salanga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.54112,
+            24.41279
+          ]
+        },
+        "properties": {
+          "id": "salanga",
+          "name": "Salanga",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 212232
+        }
+      },
+      "summary": null
+    }
+  }
+}

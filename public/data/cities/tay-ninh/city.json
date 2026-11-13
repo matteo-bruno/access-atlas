@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tay-ninh",
+  "createdAt": "2026-10-08T16:19:28.614Z",
+  "updatedAt": "2026-10-08T16:19:28.614Z",
+  "meta": {
+    "name": "Tây Ninh",
+    "nameIt": "Tây Ninh",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tây Ninh.geojson",
+      "sha256": "a151c691e950a848740ebf87610390c13bd5a28668fac58b08ee9c7aed7745fe",
+      "size": 988434,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tay-ninh",
+    "name": "Tây Ninh",
+    "nameIt": "Tây Ninh",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      106.11402,
+      11.29837
+    ],
+    "zoom": 10,
+    "population": 319903,
+    "grid": "cities/tay-ninh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tay-ninh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tay-ninh",
+        "name": "Tây Ninh",
+        "nameIt": "Tây Ninh",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          106.11402,
+          11.29837
+        ],
+        "zoom": 10,
+        "population": 319903,
+        "cells": 846,
+        "layer": "cities/tay-ninh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.11402,
+            11.29837
+          ]
+        },
+        "properties": {
+          "id": "tay-ninh",
+          "name": "Tây Ninh",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 35,
+          "population": 319903
+        }
+      },
+      "summary": null
+    }
+  }
+}

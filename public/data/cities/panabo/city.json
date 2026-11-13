@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "panabo",
+  "createdAt": "2026-10-08T16:03:56.405Z",
+  "updatedAt": "2026-10-08T16:03:56.405Z",
+  "meta": {
+    "name": "Panabo",
+    "nameIt": "Panabo",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Panabo.geojson",
+      "sha256": "7d3dfc824fff60fd95cf2f36febeba0d9683b0c6f3c3eb3297f0392a4052cde3",
+      "size": 547180,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "panabo",
+    "name": "Panabo",
+    "nameIt": "Panabo",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      125.67903,
+      7.31213
+    ],
+    "zoom": 10.5,
+    "population": 148872,
+    "grid": "cities/panabo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/panabo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "panabo",
+        "name": "Panabo",
+        "nameIt": "Panabo",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          125.67903,
+          7.31213
+        ],
+        "zoom": 10.5,
+        "population": 148872,
+        "cells": 472,
+        "layer": "cities/panabo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.67903,
+            7.31213
+          ]
+        },
+        "properties": {
+          "id": "panabo",
+          "name": "Panabo",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 20.5,
+          "population": 148872
+        }
+      },
+      "summary": null
+    }
+  }
+}

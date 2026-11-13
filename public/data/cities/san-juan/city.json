@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-juan",
+  "createdAt": "2026-10-08T16:10:36.599Z",
+  "updatedAt": "2026-10-08T16:10:36.599Z",
+  "meta": {
+    "name": "San Juan",
+    "nameIt": "San Juan",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Juan.geojson",
+      "sha256": "255cbc8b6965bebdd68f9c2cc2d0dac9ddeae6db2d1128d5c8d2ed54ae853b29",
+      "size": 1368167,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-juan",
+    "name": "San Juan",
+    "nameIt": "San Juan",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -68.54237,
+      -31.53926
+    ],
+    "zoom": 10.2,
+    "population": 443774,
+    "grid": "cities/san-juan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-juan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-juan",
+        "name": "San Juan",
+        "nameIt": "San Juan",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -68.54237,
+          -31.53926
+        ],
+        "zoom": 10.2,
+        "population": 443774,
+        "cells": 1178,
+        "layer": "cities/san-juan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -68.54237,
+            -31.53926
+          ]
+        },
+        "properties": {
+          "id": "san-juan",
+          "name": "San Juan",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 443774
+        }
+      },
+      "summary": null
+    }
+  }
+}

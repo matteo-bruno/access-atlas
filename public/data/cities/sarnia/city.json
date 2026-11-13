@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sarnia",
+  "createdAt": "2026-10-08T16:11:31.022Z",
+  "updatedAt": "2026-10-08T16:11:31.022Z",
+  "meta": {
+    "name": "Sarnia",
+    "nameIt": "Sarnia",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sarnia.geojson",
+      "sha256": "98420a43df59b622454c4cf8f1ec01bfdc4143f71051b5801d1bffda6761a8d9",
+      "size": 453466,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sarnia",
+    "name": "Sarnia",
+    "nameIt": "Sarnia",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -82.38019,
+      42.98018
+    ],
+    "zoom": 10.9,
+    "population": 64269,
+    "grid": "cities/sarnia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sarnia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sarnia",
+        "name": "Sarnia",
+        "nameIt": "Sarnia",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -82.38019,
+          42.98018
+        ],
+        "zoom": 10.9,
+        "population": 64269,
+        "cells": 391,
+        "layer": "cities/sarnia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.38019,
+            42.98018
+          ]
+        },
+        "properties": {
+          "id": "sarnia",
+          "name": "Sarnia",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 16.4,
+          "population": 64269
+        }
+      },
+      "summary": null
+    }
+  }
+}

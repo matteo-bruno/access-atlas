@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "navoiy",
+  "createdAt": "2026-10-08T16:00:40.208Z",
+  "updatedAt": "2026-10-08T16:00:40.208Z",
+  "meta": {
+    "name": "Navoiy",
+    "nameIt": "Navoiy",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Navoiy.geojson",
+      "sha256": "eba14c39e01f32b30014b4a40017fed80220b31eb70825126cad3bc4c02424b9",
+      "size": 658451,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "navoiy",
+    "name": "Navoiy",
+    "nameIt": "Navoiy",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      65.34965,
+      40.12866
+    ],
+    "zoom": 10.4,
+    "population": 197361,
+    "grid": "cities/navoiy/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/navoiy/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "navoiy",
+        "name": "Navoiy",
+        "nameIt": "Navoiy",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          65.34965,
+          40.12866
+        ],
+        "zoom": 10.4,
+        "population": 197361,
+        "cells": 575,
+        "layer": "cities/navoiy/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            65.34965,
+            40.12866
+          ]
+        },
+        "properties": {
+          "id": "navoiy",
+          "name": "Navoiy",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 27.1,
+          "population": 197361
+        }
+      },
+      "summary": null
+    }
+  }
+}

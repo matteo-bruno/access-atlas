@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huaquillas",
+  "createdAt": "2026-10-08T15:39:34.758Z",
+  "updatedAt": "2026-10-08T15:39:34.758Z",
+  "meta": {
+    "name": "Huaquillas",
+    "nameIt": "Huaquillas",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huaquillas.geojson",
+      "sha256": "57917e4c850fedaa9ce12bd3292677fdb3388609e2efd939277009e2fc3641f5",
+      "size": 103962,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huaquillas",
+    "name": "Huaquillas",
+    "nameIt": "Huaquillas",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC",
+    "center": [
+      -80.22265,
+      -3.47685
+    ],
+    "zoom": 12,
+    "population": 47867,
+    "grid": "cities/huaquillas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huaquillas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huaquillas",
+        "name": "Huaquillas",
+        "nameIt": "Huaquillas",
+        "region": "Ecuador",
+        "regionIt": "Ecuador",
+        "country": "EC",
+        "center": [
+          -80.22265,
+          -3.47685
+        ],
+        "zoom": 12,
+        "population": 47867,
+        "cells": 89,
+        "layer": "cities/huaquillas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.22265,
+            -3.47685
+          ]
+        },
+        "properties": {
+          "id": "huaquillas",
+          "name": "Huaquillas",
+          "country": "EC",
+          "isStudy": true,
+          "proximityMinutes": 13.3,
+          "population": 47867
+        }
+      },
+      "summary": null
+    }
+  }
+}

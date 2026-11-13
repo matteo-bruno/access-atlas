@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "itupeva",
+  "createdAt": "2026-10-08T15:41:27.789Z",
+  "updatedAt": "2026-10-08T15:41:27.789Z",
+  "meta": {
+    "name": "Itupeva",
+    "nameIt": "Itupeva",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Itupeva.geojson",
+      "sha256": "c796d960e7089c8520322ae5f6a15212fa28581f225fd1eddb726b4eb00a8272",
+      "size": 437536,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "itupeva",
+    "name": "Itupeva",
+    "nameIt": "Itupeva",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -47.00285,
+      -23.1609
+    ],
+    "zoom": 10.6,
+    "population": 81335,
+    "grid": "cities/itupeva/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/itupeva/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "itupeva",
+        "name": "Itupeva",
+        "nameIt": "Itupeva",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -47.00285,
+          -23.1609
+        ],
+        "zoom": 10.6,
+        "population": 81335,
+        "cells": 371,
+        "layer": "cities/itupeva/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.00285,
+            -23.1609
+          ]
+        },
+        "properties": {
+          "id": "itupeva",
+          "name": "Itupeva",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 30.2,
+          "population": 81335
+        }
+      },
+      "summary": null
+    }
+  }
+}

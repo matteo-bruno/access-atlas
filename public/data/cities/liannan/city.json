@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "liannan",
+  "createdAt": "2026-10-08T15:50:56.774Z",
+  "updatedAt": "2026-10-08T15:50:56.774Z",
+  "meta": {
+    "name": "Liannan",
+    "nameIt": "Liannan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Liannan.geojson",
+      "sha256": "49e73140ea72b4ebafc96ca88011cf302b206ae502d8dded4b3fa6adde230494",
+      "size": 157749,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "liannan",
+    "name": "Liannan",
+    "nameIt": "Liannan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.28542,
+      24.72083
+    ],
+    "zoom": 11.7,
+    "population": 65772,
+    "grid": "cities/liannan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/liannan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "liannan",
+        "name": "Liannan",
+        "nameIt": "Liannan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.28542,
+          24.72083
+        ],
+        "zoom": 11.7,
+        "population": 65772,
+        "cells": 135,
+        "layer": "cities/liannan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.28542,
+            24.72083
+          ]
+        },
+        "properties": {
+          "id": "liannan",
+          "name": "Liannan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 65772
+        }
+      },
+      "summary": null
+    }
+  }
+}

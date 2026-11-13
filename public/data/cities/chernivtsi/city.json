@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chernivtsi",
+  "createdAt": "2026-10-08T15:24:29.923Z",
+  "updatedAt": "2026-10-08T15:24:29.923Z",
+  "meta": {
+    "name": "Chernivtsi",
+    "nameIt": "Chernivtsi",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chernivtsi.geojson",
+      "sha256": "c7bc7bbaf6bc0ac1f8012baa5947994fb4ca5c640142a0a4331360f19b7c55d2",
+      "size": 700623,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chernivtsi",
+    "name": "Chernivtsi",
+    "nameIt": "Chernivtsi",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      25.94235,
+      48.28684
+    ],
+    "zoom": 10.3,
+    "population": 182965,
+    "grid": "cities/chernivtsi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chernivtsi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chernivtsi",
+        "name": "Chernivtsi",
+        "nameIt": "Chernivtsi",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          25.94235,
+          48.28684
+        ],
+        "zoom": 10.3,
+        "population": 182965,
+        "cells": 611,
+        "layer": "cities/chernivtsi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.94235,
+            48.28684
+          ]
+        },
+        "properties": {
+          "id": "chernivtsi",
+          "name": "Chernivtsi",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 182965
+        }
+      },
+      "summary": null
+    }
+  }
+}

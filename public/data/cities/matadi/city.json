@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "matadi",
+  "createdAt": "2026-10-08T15:55:37.194Z",
+  "updatedAt": "2026-10-08T15:55:37.194Z",
+  "meta": {
+    "name": "Matadi",
+    "nameIt": "Matadi",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Matadi.geojson",
+      "sha256": "fc42c99ad070ade9592c49067b56a3ee68bb4e81656ac139c4611d0e1b8b9df1",
+      "size": 445943,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "matadi",
+    "name": "Matadi",
+    "nameIt": "Matadi",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      13.46716,
+      -5.83659
+    ],
+    "zoom": 10.8,
+    "population": 711361,
+    "grid": "cities/matadi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/matadi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "matadi",
+        "name": "Matadi",
+        "nameIt": "Matadi",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          13.46716,
+          -5.83659
+        ],
+        "zoom": 10.8,
+        "population": 711361,
+        "cells": 381,
+        "layer": "cities/matadi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.46716,
+            -5.83659
+          ]
+        },
+        "properties": {
+          "id": "matadi",
+          "name": "Matadi",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 26.6,
+          "population": 711361
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ica",
+  "createdAt": "2026-10-08T15:40:14.711Z",
+  "updatedAt": "2026-10-08T15:40:14.711Z",
+  "meta": {
+    "name": "Ica",
+    "nameIt": "Ica",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ica.geojson",
+      "sha256": "afdc39bc4f1d82c6021bf6c4a8a59e30b0fd03501802ff27cbe737d4deeec4c3",
+      "size": 289134,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ica",
+    "name": "Ica",
+    "nameIt": "Ica",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -75.7375,
+      -14.06028
+    ],
+    "zoom": 10.9,
+    "population": 194626,
+    "grid": "cities/ica/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ica/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ica",
+        "name": "Ica",
+        "nameIt": "Ica",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -75.7375,
+          -14.06028
+        ],
+        "zoom": 10.9,
+        "population": 194626,
+        "cells": 248,
+        "layer": "cities/ica/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.7375,
+            -14.06028
+          ]
+        },
+        "properties": {
+          "id": "ica",
+          "name": "Ica",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 10.8,
+          "population": 194626
+        }
+      },
+      "summary": null
+    }
+  }
+}

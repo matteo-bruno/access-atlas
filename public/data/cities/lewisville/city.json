@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lewisville",
+  "createdAt": "2026-10-08T15:50:50.088Z",
+  "updatedAt": "2026-10-08T15:50:50.088Z",
+  "meta": {
+    "name": "Lewisville",
+    "nameIt": "Lewisville",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lewisville.geojson",
+      "sha256": "52b4ef104394e4bd96fac092af013f47868758d61ef699fe6c0e9d0f9789d591",
+      "size": 1556152,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lewisville",
+    "name": "Lewisville",
+    "nameIt": "Lewisville",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -97.01776,
+      33.01116
+    ],
+    "zoom": 9.5,
+    "population": 231516,
+    "grid": "cities/lewisville/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lewisville/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lewisville",
+        "name": "Lewisville",
+        "nameIt": "Lewisville",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -97.01776,
+          33.01116
+        ],
+        "zoom": 9.5,
+        "population": 231516,
+        "cells": 1342,
+        "layer": "cities/lewisville/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.01776,
+            33.01116
+          ]
+        },
+        "properties": {
+          "id": "lewisville",
+          "name": "Lewisville",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 231516
+        }
+      },
+      "summary": null
+    }
+  }
+}

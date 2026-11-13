@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ranchi",
+  "createdAt": "2026-10-08T16:08:12.235Z",
+  "updatedAt": "2026-10-08T16:08:12.235Z",
+  "meta": {
+    "name": "Ranchi",
+    "nameIt": "Ranchi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ranchi.geojson",
+      "sha256": "8ed78dba22efafd6a210ff50a7830f9dfade5b0da2345c87baa033c05fb7055d",
+      "size": 2062697,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ranchi",
+    "name": "Ranchi",
+    "nameIt": "Ranchi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.32016,
+      23.36525
+    ],
+    "zoom": 9.5,
+    "population": 1774458,
+    "grid": "cities/ranchi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ranchi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ranchi",
+        "name": "Ranchi",
+        "nameIt": "Ranchi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.32016,
+          23.36525
+        ],
+        "zoom": 9.5,
+        "population": 1774458,
+        "cells": 1789,
+        "layer": "cities/ranchi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.32016,
+            23.36525
+          ]
+        },
+        "properties": {
+          "id": "ranchi",
+          "name": "Ranchi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 32.9,
+          "population": 1774458
+        }
+      },
+      "summary": null
+    }
+  }
+}

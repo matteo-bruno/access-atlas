@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "butuan",
+  "createdAt": "2026-10-08T15:21:16.202Z",
+  "updatedAt": "2026-10-08T15:21:16.202Z",
+  "meta": {
+    "name": "Butuan",
+    "nameIt": "Butuan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Butuan.geojson",
+      "sha256": "ad92a4ba975e501725bf12f5165033270e4e47c379e0322749fdc92813c47441",
+      "size": 453282,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "butuan",
+    "name": "Butuan",
+    "nameIt": "Butuan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      125.53381,
+      8.95745
+    ],
+    "zoom": 10.7,
+    "population": 175561,
+    "grid": "cities/butuan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/butuan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "butuan",
+        "name": "Butuan",
+        "nameIt": "Butuan",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          125.53381,
+          8.95745
+        ],
+        "zoom": 10.7,
+        "population": 175561,
+        "cells": 392,
+        "layer": "cities/butuan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.53381,
+            8.95745
+          ]
+        },
+        "properties": {
+          "id": "butuan",
+          "name": "Butuan",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 19.6,
+          "population": 175561
+        }
+      },
+      "summary": null
+    }
+  }
+}

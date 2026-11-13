@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chlef",
+  "createdAt": "2026-10-08T15:25:03.614Z",
+  "updatedAt": "2026-10-08T15:25:03.614Z",
+  "meta": {
+    "name": "Chlef",
+    "nameIt": "Chlef",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chlef.geojson",
+      "sha256": "d54e8b0068ebb51f85e2e01d7fe3013f84befad12c190cd81f615880c73e2eff",
+      "size": 373066,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chlef",
+    "name": "Chlef",
+    "nameIt": "Chlef",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      1.33206,
+      36.15379
+    ],
+    "zoom": 10.9,
+    "population": 206239,
+    "grid": "cities/chlef/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chlef/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chlef",
+        "name": "Chlef",
+        "nameIt": "Chlef",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          1.33206,
+          36.15379
+        ],
+        "zoom": 10.9,
+        "population": 206239,
+        "cells": 322,
+        "layer": "cities/chlef/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.33206,
+            36.15379
+          ]
+        },
+        "properties": {
+          "id": "chlef",
+          "name": "Chlef",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 23.5,
+          "population": 206239
+        }
+      },
+      "summary": null
+    }
+  }
+}

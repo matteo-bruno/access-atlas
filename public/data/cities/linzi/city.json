@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "linzi",
+  "createdAt": "2026-10-08T15:51:31.790Z",
+  "updatedAt": "2026-10-08T15:51:31.790Z",
+  "meta": {
+    "name": "Linzi",
+    "nameIt": "Linzi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Linzi.geojson",
+      "sha256": "7493617cd1f35cbbf36594cdff29a10bf64388d45f71c9b407ba11c285d2dcc4",
+      "size": 1427542,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "linzi",
+    "name": "Linzi",
+    "nameIt": "Linzi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.26323,
+      36.79759
+    ],
+    "zoom": 9.7,
+    "population": 350705,
+    "grid": "cities/linzi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 170
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/linzi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "linzi",
+        "name": "Linzi",
+        "nameIt": "Linzi",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.26323,
+          36.79759
+        ],
+        "zoom": 9.7,
+        "population": 350705,
+        "cells": 1223,
+        "layer": "cities/linzi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 170
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.26323,
+            36.79759
+          ]
+        },
+        "properties": {
+          "id": "linzi",
+          "name": "Linzi",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 42.8,
+          "population": 350705
+        }
+      },
+      "summary": null
+    }
+  }
+}

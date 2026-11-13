@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "taganrog",
+  "createdAt": "2026-10-08T16:15:56.858Z",
+  "updatedAt": "2026-10-08T16:15:56.858Z",
+  "meta": {
+    "name": "Taganrog",
+    "nameIt": "Taganrog",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Taganrog.geojson",
+      "sha256": "63e13a7aeb561c4ea7fe7b2367d18e8ae6a31ffd6a1f443c2d5fb04f85f98f9e",
+      "size": 861828,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "taganrog",
+    "name": "Taganrog",
+    "nameIt": "Taganrog",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      38.90139,
+      47.23214
+    ],
+    "zoom": 10.4,
+    "population": 225502,
+    "grid": "cities/taganrog/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/taganrog/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "taganrog",
+        "name": "Taganrog",
+        "nameIt": "Taganrog",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          38.90139,
+          47.23214
+        ],
+        "zoom": 10.4,
+        "population": 225502,
+        "cells": 754,
+        "layer": "cities/taganrog/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.90139,
+            47.23214
+          ]
+        },
+        "properties": {
+          "id": "taganrog",
+          "name": "Taganrog",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 225502
+        }
+      },
+      "summary": null
+    }
+  }
+}

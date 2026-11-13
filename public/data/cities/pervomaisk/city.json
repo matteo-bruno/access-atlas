@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pervomaisk",
+  "createdAt": "2026-10-08T16:05:05.545Z",
+  "updatedAt": "2026-10-08T16:05:05.545Z",
+  "meta": {
+    "name": "Pervomaisk",
+    "nameIt": "Pervomaisk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pervomaisk.geojson",
+      "sha256": "318589d8518421168a93692b39b73e3d551a126dbb7d07c08e0085f3a709f7db",
+      "size": 188322,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pervomaisk",
+    "name": "Pervomaisk",
+    "nameIt": "Pervomaisk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      30.85702,
+      48.04113
+    ],
+    "zoom": 11.7,
+    "population": 30358,
+    "grid": "cities/pervomaisk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pervomaisk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pervomaisk",
+        "name": "Pervomaisk",
+        "nameIt": "Pervomaisk",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          30.85702,
+          48.04113
+        ],
+        "zoom": 11.7,
+        "population": 30358,
+        "cells": 164,
+        "layer": "cities/pervomaisk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.85702,
+            48.04113
+          ]
+        },
+        "properties": {
+          "id": "pervomaisk",
+          "name": "Pervomaisk",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 30358
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "szeged",
+  "createdAt": "2026-10-08T16:15:36.036Z",
+  "updatedAt": "2026-10-08T16:15:36.036Z",
+  "meta": {
+    "name": "Szeged",
+    "nameIt": "Szeged",
+    "region": "Hungary",
+    "regionIt": "Ungheria",
+    "country": "HU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Szeged.geojson",
+      "sha256": "825140f5a5973adcf15c5036a50c520dcf25c1d76f9ab1ba7a9ad6c2d47ffb87",
+      "size": 343161,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "szeged",
+    "name": "Szeged",
+    "nameIt": "Szeged",
+    "region": "Hungary",
+    "regionIt": "Ungheria",
+    "country": "HU",
+    "center": [
+      20.15274,
+      46.25658
+    ],
+    "zoom": 11.2,
+    "population": 108782,
+    "grid": "cities/szeged/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/szeged/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "szeged",
+        "name": "Szeged",
+        "nameIt": "Szeged",
+        "region": "Hungary",
+        "regionIt": "Ungheria",
+        "country": "HU",
+        "center": [
+          20.15274,
+          46.25658
+        ],
+        "zoom": 11.2,
+        "population": 108782,
+        "cells": 301,
+        "layer": "cities/szeged/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.15274,
+            46.25658
+          ]
+        },
+        "properties": {
+          "id": "szeged",
+          "name": "Szeged",
+          "country": "HU",
+          "isStudy": true,
+          "proximityMinutes": 6.3,
+          "population": 108782
+        }
+      },
+      "summary": null
+    }
+  }
+}

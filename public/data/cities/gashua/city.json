@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gashua",
+  "createdAt": "2026-10-08T15:34:43.199Z",
+  "updatedAt": "2026-10-08T15:34:43.199Z",
+  "meta": {
+    "name": "Gashua",
+    "nameIt": "Gashua",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gashua.geojson",
+      "sha256": "67f800508ca9838727d4d37bb9b4e9f69eb089bc902e03462480a63d96ed1a64",
+      "size": 162433,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gashua",
+    "name": "Gashua",
+    "nameIt": "Gashua",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      11.03804,
+      12.87647
+    ],
+    "zoom": 11.6,
+    "population": 119911,
+    "grid": "cities/gashua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gashua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gashua",
+        "name": "Gashua",
+        "nameIt": "Gashua",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          11.03804,
+          12.87647
+        ],
+        "zoom": 11.6,
+        "population": 119911,
+        "cells": 139,
+        "layer": "cities/gashua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.03804,
+            12.87647
+          ]
+        },
+        "properties": {
+          "id": "gashua",
+          "name": "Gashua",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 119911
+        }
+      },
+      "summary": null
+    }
+  }
+}

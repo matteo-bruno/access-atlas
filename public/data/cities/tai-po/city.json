@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tai-po",
+  "createdAt": "2026-10-08T16:15:59.324Z",
+  "updatedAt": "2026-10-08T16:15:59.324Z",
+  "meta": {
+    "name": "Tai Po",
+    "nameIt": "Tai Po",
+    "region": "Hong Kong",
+    "regionIt": "Hong Kong",
+    "country": "HK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tai Po.geojson",
+      "sha256": "a28ec1fe85d279003ec1078c26bc833e7362c75ce6bc9f221e36e53146eed116",
+      "size": 313720,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tai-po",
+    "name": "Tai Po",
+    "nameIt": "Tai Po",
+    "region": "Hong Kong",
+    "regionIt": "Hong Kong",
+    "country": "HK",
+    "center": [
+      114.17896,
+      22.45592
+    ],
+    "zoom": 10.9,
+    "population": 0,
+    "grid": "cities/tai-po/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tai-po/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tai-po",
+        "name": "Tai Po",
+        "nameIt": "Tai Po",
+        "region": "Hong Kong",
+        "regionIt": "Hong Kong",
+        "country": "HK",
+        "center": [
+          114.17896,
+          22.45592
+        ],
+        "zoom": 10.9,
+        "population": 0,
+        "cells": 271,
+        "layer": "cities/tai-po/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.17896,
+            22.45592
+          ]
+        },
+        "properties": {
+          "id": "tai-po",
+          "name": "Tai Po",
+          "country": "HK",
+          "isStudy": true,
+          "proximityMinutes": 18.3,
+          "population": 0
+        }
+      },
+      "summary": null
+    }
+  }
+}

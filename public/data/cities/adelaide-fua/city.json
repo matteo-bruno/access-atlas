@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "adelaide-fua",
+  "createdAt": "2026-10-19T16:55:07.250Z",
+  "updatedAt": "2026-10-19T16:55:07.250Z",
+  "meta": {
+    "name": "Adelaide",
+    "nameIt": "Adelaide",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "adelaide-fua",
+    "name": "Adelaide",
+    "nameIt": "Adelaide",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "extent": "fua",
+    "core": "adelaide",
+    "center": [
+      138.61549,
+      -34.90507
+    ],
+    "zoom": 8.5,
+    "population": 1484413,
+    "grid": "cities/adelaide-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/adelaide-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "adelaide-fua",
+        "name": "Adelaide",
+        "nameIt": "Adelaide",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "extent": "fua",
+        "core": "adelaide",
+        "center": [
+          138.61549,
+          -34.90507
+        ],
+        "zoom": 8.5,
+        "population": 1484413,
+        "cells": 34047,
+        "layer": "cities/adelaide-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            138.61549,
+            -34.90507
+          ]
+        },
+        "properties": {
+          "id": "adelaide-fua",
+          "name": "Adelaide",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 18.3,
+          "population": 1484413
+        }
+      },
+      "summary": null
+    }
+  }
+}

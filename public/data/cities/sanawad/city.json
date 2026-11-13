@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sanawad",
+  "createdAt": "2026-10-08T16:10:49.334Z",
+  "updatedAt": "2026-10-08T16:10:49.334Z",
+  "meta": {
+    "name": "Sanawad",
+    "nameIt": "Sanawad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sanawad.geojson",
+      "sha256": "1e9e06e75ac50b935069470db77fe1441aa80770cd730eb73943f93bda417fbb",
+      "size": 91555,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sanawad",
+    "name": "Sanawad",
+    "nameIt": "Sanawad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.06859,
+      22.1787
+    ],
+    "zoom": 12,
+    "population": 46652,
+    "grid": "cities/sanawad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sanawad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sanawad",
+        "name": "Sanawad",
+        "nameIt": "Sanawad",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.06859,
+          22.1787
+        ],
+        "zoom": 12,
+        "population": 46652,
+        "cells": 79,
+        "layer": "cities/sanawad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.06859,
+            22.1787
+          ]
+        },
+        "properties": {
+          "id": "sanawad",
+          "name": "Sanawad",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 46652
+        }
+      },
+      "summary": null
+    }
+  }
+}

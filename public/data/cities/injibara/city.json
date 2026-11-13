@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "injibara",
+  "createdAt": "2026-10-08T15:40:52.218Z",
+  "updatedAt": "2026-10-08T15:40:52.218Z",
+  "meta": {
+    "name": "Injibara",
+    "nameIt": "Injibara",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Injibara.geojson",
+      "sha256": "9a622afb553bffdf76ade4e21a22dfa6bbc1ec092975f4e0800d3963a2abeb06",
+      "size": 126724,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "injibara",
+    "name": "Injibara",
+    "nameIt": "Injibara",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      36.92956,
+      10.95889
+    ],
+    "zoom": 12,
+    "population": 42064,
+    "grid": "cities/injibara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/injibara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "injibara",
+        "name": "Injibara",
+        "nameIt": "Injibara",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          36.92956,
+          10.95889
+        ],
+        "zoom": 12,
+        "population": 42064,
+        "cells": 109,
+        "layer": "cities/injibara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.92956,
+            10.95889
+          ]
+        },
+        "properties": {
+          "id": "injibara",
+          "name": "Injibara",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 42064
+        }
+      },
+      "summary": null
+    }
+  }
+}

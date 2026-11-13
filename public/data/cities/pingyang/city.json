@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pingyang",
+  "createdAt": "2026-10-08T16:05:41.583Z",
+  "updatedAt": "2026-10-08T16:05:41.583Z",
+  "meta": {
+    "name": "Pingyang",
+    "nameIt": "Pingyang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pingyang.geojson",
+      "sha256": "ee76c4c884e8712e098b63bdddccecb2345f87b5211566fb4ab9fb5ccf7d185b",
+      "size": 188132,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pingyang",
+    "name": "Pingyang",
+    "nameIt": "Pingyang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      120.55815,
+      27.67681
+    ],
+    "zoom": 11.6,
+    "population": 120377,
+    "grid": "cities/pingyang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pingyang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pingyang",
+        "name": "Pingyang",
+        "nameIt": "Pingyang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          120.55815,
+          27.67681
+        ],
+        "zoom": 11.6,
+        "population": 120377,
+        "cells": 161,
+        "layer": "cities/pingyang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.55815,
+            27.67681
+          ]
+        },
+        "properties": {
+          "id": "pingyang",
+          "name": "Pingyang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 120377
+        }
+      },
+      "summary": null
+    }
+  }
+}

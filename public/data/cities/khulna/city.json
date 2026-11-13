@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khulna",
+  "createdAt": "2026-10-08T15:46:53.757Z",
+  "updatedAt": "2026-10-08T15:46:53.757Z",
+  "meta": {
+    "name": "Khulna",
+    "nameIt": "Khulna",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khulna.geojson",
+      "sha256": "ff621d25c825ab6ba6f07ec7e0c8623713e2e8d885bea87bcf97781f30b4bc68",
+      "size": 1258138,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khulna",
+    "name": "Khulna",
+    "nameIt": "Khulna",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.54274,
+      22.84142
+    ],
+    "zoom": 9.9,
+    "population": 818136,
+    "grid": "cities/khulna/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khulna/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khulna",
+        "name": "Khulna",
+        "nameIt": "Khulna",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.54274,
+          22.84142
+        ],
+        "zoom": 9.9,
+        "population": 818136,
+        "cells": 1091,
+        "layer": "cities/khulna/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.54274,
+            22.84142
+          ]
+        },
+        "properties": {
+          "id": "khulna",
+          "name": "Khulna",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 36.1,
+          "population": 818136
+        }
+      },
+      "summary": null
+    }
+  }
+}

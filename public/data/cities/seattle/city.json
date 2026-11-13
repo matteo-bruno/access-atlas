@@ -3,7 +3,7 @@
   "version": 1,
   "id": "seattle",
   "createdAt": "2026-08-28T13:51:44.000Z",
-  "updatedAt": "2026-10-08T14:05:36.532Z",
+  "updatedAt": "2026-10-19T21:13:24.014Z",
   "meta": {
     "name": "Seattle",
     "nameIt": "Seattle",
@@ -20,30 +20,128 @@
     "regionIt": "Stati Uniti",
     "country": "US",
     "center": [
-      -122.33241,
-      47.62875
+      -122.27141,
+      47.63175
     ],
-    "zoom": 9.4,
-    "population": 643867,
+    "zoom": 8.5,
+    "population": 2064080,
     "grid": "cities/seattle/grid.json.gz",
     "cell": {
       "h3Resolution": 9,
       "cellRadiusM": 190
     },
     "layers": [
+      "fifteen",
+      "citychrone",
       "cardep",
       "pov"
     ],
     "layerData": {
+      "fifteen": "cities/seattle/fifteen.json.gz",
+      "citychrone": "cities/seattle/citychrone.json.gz",
       "cardep": "cities/seattle/cardep.json.gz",
       "pov": "cities/seattle/pov.json.gz"
     },
     "cartogramSources": {
+      "fifteen": "derived",
+      "citychrone": "derived",
       "cardep": "derived",
       "pov": "derived"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 2334,
+      "times": "cities/seattle/citychrone/times{hh}.bin"
     }
   },
   "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "seattle",
+        "name": "Seattle",
+        "nameIt": "Seattle",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -122.27572,
+          47.63157
+        ],
+        "zoom": 8.5,
+        "population": 2206994,
+        "cells": 12038,
+        "layer": "cities/seattle/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.27572,
+            47.63157
+          ]
+        },
+        "properties": {
+          "id": "seattle",
+          "name": "Seattle",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 2206994
+        }
+      },
+      "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "seattle",
+        "name": "Seattle",
+        "nameIt": "Seattle",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -122.33241,
+          47.62875
+        ],
+        "zoom": 9.4,
+        "population": 643867,
+        "cells": 2334,
+        "layer": "cities/seattle/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 2334,
+          "times": "cities/seattle/citychrone/times{hh}.bin"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.33241,
+            47.62875
+          ]
+        },
+        "properties": {
+          "id": "seattle",
+          "name": "Seattle",
+          "country": "US",
+          "isStudy": true,
+          "velocityScore": 5.13,
+          "population": 643867
+        }
+      },
+      "summary": null
+    },
     "cardep": {
       "row": {
         "id": "seattle",

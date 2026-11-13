@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "telford",
+  "createdAt": "2026-10-08T16:17:11.688Z",
+  "updatedAt": "2026-10-08T16:17:11.688Z",
+  "meta": {
+    "name": "Telford",
+    "nameIt": "Telford",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Telford.geojson",
+      "sha256": "3f4449c9bbabfa7b2ee87d310a553dad39b3f3bf66e8a45095f134cc841d6fcb",
+      "size": 704186,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "telford",
+    "name": "Telford",
+    "nameIt": "Telford",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -2.46876,
+      52.68475
+    ],
+    "zoom": 10.7,
+    "population": 153543,
+    "grid": "cities/telford/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/telford/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "telford",
+        "name": "Telford",
+        "nameIt": "Telford",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -2.46876,
+          52.68475
+        ],
+        "zoom": 10.7,
+        "population": 153543,
+        "cells": 611,
+        "layer": "cities/telford/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.46876,
+            52.68475
+          ]
+        },
+        "properties": {
+          "id": "telford",
+          "name": "Telford",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 153543
+        }
+      },
+      "summary": null
+    }
+  }
+}

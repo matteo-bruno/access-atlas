@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tumbes",
+  "createdAt": "2026-10-08T16:19:10.943Z",
+  "updatedAt": "2026-10-08T16:19:10.943Z",
+  "meta": {
+    "name": "Tumbes",
+    "nameIt": "Tumbes",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tumbes.geojson",
+      "sha256": "9ca00c3bfb5b232b83d458733da25eec0b449980e235f58eb74bff56a84b270c",
+      "size": 186206,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tumbes",
+    "name": "Tumbes",
+    "nameIt": "Tumbes",
+    "region": "Peru",
+    "regionIt": "Perù",
+    "country": "PE",
+    "center": [
+      -80.44129,
+      -3.56705
+    ],
+    "zoom": 11.4,
+    "population": 105313,
+    "grid": "cities/tumbes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tumbes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tumbes",
+        "name": "Tumbes",
+        "nameIt": "Tumbes",
+        "region": "Peru",
+        "regionIt": "Perù",
+        "country": "PE",
+        "center": [
+          -80.44129,
+          -3.56705
+        ],
+        "zoom": 11.4,
+        "population": 105313,
+        "cells": 159,
+        "layer": "cities/tumbes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.44129,
+            -3.56705
+          ]
+        },
+        "properties": {
+          "id": "tumbes",
+          "name": "Tumbes",
+          "country": "PE",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 105313
+        }
+      },
+      "summary": null
+    }
+  }
+}

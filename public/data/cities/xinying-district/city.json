@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xinying-district",
+  "createdAt": "2026-10-08T16:22:54.674Z",
+  "updatedAt": "2026-10-08T16:22:54.674Z",
+  "meta": {
+    "name": "Xinying District",
+    "nameIt": "Xinying District",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xinying District.geojson",
+      "sha256": "a4b581d8ff9185167b10d4c350daed03f4dbc2dd355787f2bad56f9f067f37e7",
+      "size": 171856,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xinying-district",
+    "name": "Xinying District",
+    "nameIt": "Xinying District",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW",
+    "center": [
+      120.30549,
+      23.30751
+    ],
+    "zoom": 11.4,
+    "population": 57711,
+    "grid": "cities/xinying-district/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xinying-district/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xinying-district",
+        "name": "Xinying District",
+        "nameIt": "Xinying District",
+        "region": "Taiwan",
+        "regionIt": "Taiwan",
+        "country": "TW",
+        "center": [
+          120.30549,
+          23.30751
+        ],
+        "zoom": 11.4,
+        "population": 57711,
+        "cells": 148,
+        "layer": "cities/xinying-district/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.30549,
+            23.30751
+          ]
+        },
+        "properties": {
+          "id": "xinying-district",
+          "name": "Xinying District",
+          "country": "TW",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 57711
+        }
+      },
+      "summary": null
+    }
+  }
+}

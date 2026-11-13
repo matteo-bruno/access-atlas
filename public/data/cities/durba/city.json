@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "durba",
+  "createdAt": "2026-10-08T15:31:26.655Z",
+  "updatedAt": "2026-10-08T15:31:26.655Z",
+  "meta": {
+    "name": "Durba",
+    "nameIt": "Durba",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Durba.geojson",
+      "sha256": "1e04584316123c5a756f2acdf93385d3fa69ce73eb9f969c46609c4f9f93754e",
+      "size": 298679,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "durba",
+    "name": "Durba",
+    "nameIt": "Durba",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      29.55625,
+      3.13432
+    ],
+    "zoom": 11.1,
+    "population": 185560,
+    "grid": "cities/durba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/durba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "durba",
+        "name": "Durba",
+        "nameIt": "Durba",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          29.55625,
+          3.13432
+        ],
+        "zoom": 11.1,
+        "population": 185560,
+        "cells": 257,
+        "layer": "cities/durba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.55625,
+            3.13432
+          ]
+        },
+        "properties": {
+          "id": "durba",
+          "name": "Durba",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 185560
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "igboho",
+  "createdAt": "2026-10-08T15:40:23.697Z",
+  "updatedAt": "2026-10-08T15:40:23.697Z",
+  "meta": {
+    "name": "Igboho",
+    "nameIt": "Igboho",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Igboho.geojson",
+      "sha256": "18b8713b45c32d1d1162a6604e63768c411b0e8f0202d0df7252adf506f168b8",
+      "size": 244523,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "igboho",
+    "name": "Igboho",
+    "nameIt": "Igboho",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      3.75743,
+      8.84044
+    ],
+    "zoom": 11.4,
+    "population": 67783,
+    "grid": "cities/igboho/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/igboho/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "igboho",
+        "name": "Igboho",
+        "nameIt": "Igboho",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          3.75743,
+          8.84044
+        ],
+        "zoom": 11.4,
+        "population": 67783,
+        "cells": 212,
+        "layer": "cities/igboho/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.75743,
+            8.84044
+          ]
+        },
+        "properties": {
+          "id": "igboho",
+          "name": "Igboho",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 67783
+        }
+      },
+      "summary": null
+    }
+  }
+}

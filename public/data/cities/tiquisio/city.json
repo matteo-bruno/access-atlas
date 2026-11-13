@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tiquisio",
+  "createdAt": "2026-10-08T16:18:00.562Z",
+  "updatedAt": "2026-10-08T16:18:00.562Z",
+  "meta": {
+    "name": "Tiquisio",
+    "nameIt": "Tiquisio",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tiquisio.geojson",
+      "sha256": "dff54bf3fb7804ef0de45e18b507c2994135f1ad86a739d14ce61fa90b65aa79",
+      "size": 33683,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tiquisio",
+    "name": "Tiquisio",
+    "nameIt": "Tiquisio",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -74.26343,
+      8.55726
+    ],
+    "zoom": 12,
+    "population": 7332,
+    "grid": "cities/tiquisio/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tiquisio/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tiquisio",
+        "name": "Tiquisio",
+        "nameIt": "Tiquisio",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -74.26343,
+          8.55726
+        ],
+        "zoom": 12,
+        "population": 7332,
+        "cells": 29,
+        "layer": "cities/tiquisio/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.26343,
+            8.55726
+          ]
+        },
+        "properties": {
+          "id": "tiquisio",
+          "name": "Tiquisio",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 7332
+        }
+      },
+      "summary": null
+    }
+  }
+}

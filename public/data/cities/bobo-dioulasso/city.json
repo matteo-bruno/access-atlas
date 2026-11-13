@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bobo-dioulasso",
+  "createdAt": "2026-10-08T15:19:44.319Z",
+  "updatedAt": "2026-10-08T15:19:44.319Z",
+  "meta": {
+    "name": "Bobo-Dioulasso",
+    "nameIt": "Bobo-Dioulasso",
+    "region": "Burkina Faso",
+    "regionIt": "Burkina Faso",
+    "country": "BF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bobo-Dioulasso.geojson",
+      "sha256": "c17f9db6ddf76d75c3791327bad17ba1dba08f4cbb23d2bbfe5147b08eaaa4dd",
+      "size": 2423805,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bobo-dioulasso",
+    "name": "Bobo-Dioulasso",
+    "nameIt": "Bobo-Dioulasso",
+    "region": "Burkina Faso",
+    "regionIt": "Burkina Faso",
+    "country": "BF",
+    "center": [
+      -4.2918,
+      11.18402
+    ],
+    "zoom": 9.9,
+    "population": 881551,
+    "grid": "cities/bobo-dioulasso/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bobo-dioulasso/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bobo-dioulasso",
+        "name": "Bobo-Dioulasso",
+        "nameIt": "Bobo-Dioulasso",
+        "region": "Burkina Faso",
+        "regionIt": "Burkina Faso",
+        "country": "BF",
+        "center": [
+          -4.2918,
+          11.18402
+        ],
+        "zoom": 9.9,
+        "population": 881551,
+        "cells": 2084,
+        "layer": "cities/bobo-dioulasso/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -4.2918,
+            11.18402
+          ]
+        },
+        "properties": {
+          "id": "bobo-dioulasso",
+          "name": "Bobo-Dioulasso",
+          "country": "BF",
+          "isStudy": true,
+          "proximityMinutes": 30.8,
+          "population": 881551
+        }
+      },
+      "summary": null
+    }
+  }
+}

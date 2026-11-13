@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yueyang-china",
+  "createdAt": "2026-10-08T16:24:24.649Z",
+  "updatedAt": "2026-10-08T16:24:24.649Z",
+  "meta": {
+    "name": "Yueyang (China)",
+    "nameIt": "Yueyang (China)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yueyang (China).geojson",
+      "sha256": "7d4998b7af5bb87468853151fd2e4faf26ef3fe4bc9c974d682956b31ad6406f",
+      "size": 4167027,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yueyang-china",
+    "name": "Yueyang (China)",
+    "nameIt": "Yueyang (China)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.13196,
+      29.34398
+    ],
+    "zoom": 8.8,
+    "population": 1045504,
+    "grid": "cities/yueyang-china/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yueyang-china/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yueyang-china",
+        "name": "Yueyang (China)",
+        "nameIt": "Yueyang (China)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.13196,
+          29.34398
+        ],
+        "zoom": 8.8,
+        "population": 1045504,
+        "cells": 3556,
+        "layer": "cities/yueyang-china/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.13196,
+            29.34398
+          ]
+        },
+        "properties": {
+          "id": "yueyang-china",
+          "name": "Yueyang (China)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 36.1,
+          "population": 1045504
+        }
+      },
+      "summary": null
+    }
+  }
+}

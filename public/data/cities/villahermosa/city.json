@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "villahermosa",
+  "createdAt": "2026-10-08T16:20:47.525Z",
+  "updatedAt": "2026-10-08T16:20:47.525Z",
+  "meta": {
+    "name": "Villahermosa",
+    "nameIt": "Villahermosa",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Villahermosa.geojson",
+      "sha256": "0b7ba6681ad57ccde365b925c9066516e6a61d3b4eddf60279ab7c638cafee77",
+      "size": 980868,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "villahermosa",
+    "name": "Villahermosa",
+    "nameIt": "Villahermosa",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -92.94199,
+      17.99382
+    ],
+    "zoom": 10.1,
+    "population": 446667,
+    "grid": "cities/villahermosa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/villahermosa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "villahermosa",
+        "name": "Villahermosa",
+        "nameIt": "Villahermosa",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -92.94199,
+          17.99382
+        ],
+        "zoom": 10.1,
+        "population": 446667,
+        "cells": 845,
+        "layer": "cities/villahermosa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -92.94199,
+            17.99382
+          ]
+        },
+        "properties": {
+          "id": "villahermosa",
+          "name": "Villahermosa",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 25.1,
+          "population": 446667
+        }
+      },
+      "summary": null
+    }
+  }
+}

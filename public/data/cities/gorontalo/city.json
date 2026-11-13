@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gorontalo",
+  "createdAt": "2026-10-08T15:35:47.261Z",
+  "updatedAt": "2026-10-08T15:35:47.261Z",
+  "meta": {
+    "name": "Gorontalo",
+    "nameIt": "Gorontalo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gorontalo.geojson",
+      "sha256": "b5db7bc3f67c78b630a2ff5b124e29d86abdd31084ad507959a79d75cdb0855e",
+      "size": 942724,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gorontalo",
+    "name": "Gorontalo",
+    "nameIt": "Gorontalo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      123.063,
+      0.56043
+    ],
+    "zoom": 10,
+    "population": 327196,
+    "grid": "cities/gorontalo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gorontalo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gorontalo",
+        "name": "Gorontalo",
+        "nameIt": "Gorontalo",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          123.063,
+          0.56043
+        ],
+        "zoom": 10,
+        "population": 327196,
+        "cells": 808,
+        "layer": "cities/gorontalo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.063,
+            0.56043
+          ]
+        },
+        "properties": {
+          "id": "gorontalo",
+          "name": "Gorontalo",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 29.2,
+          "population": 327196
+        }
+      },
+      "summary": null
+    }
+  }
+}

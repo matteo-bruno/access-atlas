@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "reutlingen",
+  "createdAt": "2026-10-08T16:08:43.109Z",
+  "updatedAt": "2026-10-08T16:08:43.109Z",
+  "meta": {
+    "name": "Reutlingen",
+    "nameIt": "Reutlingen",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Reutlingen.geojson",
+      "sha256": "fab4a9d85d7de0cf03bffc60e0604859ae7bd9187fcb93d9c216f197a5466531",
+      "size": 353350,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "reutlingen",
+    "name": "Reutlingen",
+    "nameIt": "Reutlingen",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      9.20852,
+      48.49488
+    ],
+    "zoom": 10.9,
+    "population": 97048,
+    "grid": "cities/reutlingen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/reutlingen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "reutlingen",
+        "name": "Reutlingen",
+        "nameIt": "Reutlingen",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.20852,
+          48.49488
+        ],
+        "zoom": 10.9,
+        "population": 97048,
+        "cells": 312,
+        "layer": "cities/reutlingen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.20852,
+            48.49488
+          ]
+        },
+        "properties": {
+          "id": "reutlingen",
+          "name": "Reutlingen",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 9.3,
+          "population": 97048
+        }
+      },
+      "summary": null
+    }
+  }
+}

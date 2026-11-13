@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tumen",
+  "createdAt": "2026-10-08T16:19:12.000Z",
+  "updatedAt": "2026-10-08T16:19:12.000Z",
+  "meta": {
+    "name": "Tumen",
+    "nameIt": "Tumen",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tumen.geojson",
+      "sha256": "21769b3b65ac6545f1566f2bf530d8b832e8328b26d234093d6bdb0e0cdae735",
+      "size": 115027,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tumen",
+    "name": "Tumen",
+    "nameIt": "Tumen",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      129.841,
+      42.96318
+    ],
+    "zoom": 12,
+    "population": 35886,
+    "grid": "cities/tumen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tumen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tumen",
+        "name": "Tumen",
+        "nameIt": "Tumen",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          129.841,
+          42.96318
+        ],
+        "zoom": 12,
+        "population": 35886,
+        "cells": 99,
+        "layer": "cities/tumen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            129.841,
+            42.96318
+          ]
+        },
+        "properties": {
+          "id": "tumen",
+          "name": "Tumen",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 8.5,
+          "population": 35886
+        }
+      },
+      "summary": null
+    }
+  }
+}

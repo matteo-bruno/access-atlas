@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guiping",
+  "createdAt": "2026-10-08T15:36:35.068Z",
+  "updatedAt": "2026-10-08T15:36:35.068Z",
+  "meta": {
+    "name": "Guiping",
+    "nameIt": "Guiping",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guiping.geojson",
+      "sha256": "56119ad6069c14c37615acc8d6ef136ac961e2762e365e404b830b3342a32b29",
+      "size": 568368,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guiping",
+    "name": "Guiping",
+    "nameIt": "Guiping",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      110.07171,
+      23.37576
+    ],
+    "zoom": 10.6,
+    "population": 317338,
+    "grid": "cities/guiping/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guiping/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guiping",
+        "name": "Guiping",
+        "nameIt": "Guiping",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          110.07171,
+          23.37576
+        ],
+        "zoom": 10.6,
+        "population": 317338,
+        "cells": 486,
+        "layer": "cities/guiping/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.07171,
+            23.37576
+          ]
+        },
+        "properties": {
+          "id": "guiping",
+          "name": "Guiping",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 27.3,
+          "population": 317338
+        }
+      },
+      "summary": null
+    }
+  }
+}

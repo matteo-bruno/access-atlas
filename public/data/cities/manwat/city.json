@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "manwat",
+  "createdAt": "2026-10-08T15:54:58.751Z",
+  "updatedAt": "2026-10-08T15:54:58.751Z",
+  "meta": {
+    "name": "Manwat",
+    "nameIt": "Manwat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Manwat.geojson",
+      "sha256": "e7f64b2b8ff73d87cc51a1a17c71abcbd289fe6e5a86a0e8d1f6682d50549de2",
+      "size": 54486,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "manwat",
+    "name": "Manwat",
+    "nameIt": "Manwat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.49551,
+      19.30248
+    ],
+    "zoom": 12,
+    "population": 24201,
+    "grid": "cities/manwat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/manwat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "manwat",
+        "name": "Manwat",
+        "nameIt": "Manwat",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.49551,
+          19.30248
+        ],
+        "zoom": 12,
+        "population": 24201,
+        "cells": 47,
+        "layer": "cities/manwat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.49551,
+            19.30248
+          ]
+        },
+        "properties": {
+          "id": "manwat",
+          "name": "Manwat",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 22.1,
+          "population": 24201
+        }
+      },
+      "summary": null
+    }
+  }
+}

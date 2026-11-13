@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-antonio-chile",
+  "createdAt": "2026-10-08T16:10:22.369Z",
+  "updatedAt": "2026-10-08T16:10:22.369Z",
+  "meta": {
+    "name": "San Antonio (Chile)",
+    "nameIt": "San Antonio (Chile)",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Antonio (Chile).geojson",
+      "sha256": "7a9c6915c5ba09b9df96f601f67bd223c61a0b152c62e2ca086a41e7c9727e53",
+      "size": 548439,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-antonio-chile",
+    "name": "San Antonio (Chile)",
+    "nameIt": "San Antonio (Chile)",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL",
+    "center": [
+      -71.60558,
+      -33.58439
+    ],
+    "zoom": 10.4,
+    "population": 107929,
+    "grid": "cities/san-antonio-chile/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-antonio-chile/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-antonio-chile",
+        "name": "San Antonio (Chile)",
+        "nameIt": "San Antonio (Chile)",
+        "region": "Chile",
+        "regionIt": "Cile",
+        "country": "CL",
+        "center": [
+          -71.60558,
+          -33.58439
+        ],
+        "zoom": 10.4,
+        "population": 107929,
+        "cells": 470,
+        "layer": "cities/san-antonio-chile/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -71.60558,
+            -33.58439
+          ]
+        },
+        "properties": {
+          "id": "san-antonio-chile",
+          "name": "San Antonio (Chile)",
+          "country": "CL",
+          "isStudy": true,
+          "proximityMinutes": 16.5,
+          "population": 107929
+        }
+      },
+      "summary": null
+    }
+  }
+}

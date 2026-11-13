@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tra-vinh",
+  "createdAt": "2026-10-08T16:18:54.822Z",
+  "updatedAt": "2026-10-08T16:18:54.822Z",
+  "meta": {
+    "name": "Trà Vinh",
+    "nameIt": "Trà Vinh",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Trà Vinh.geojson",
+      "sha256": "8cd096f4560ec2de86c77bc0c7e2f4b0cc5f4d624aea777ff588053253104817",
+      "size": 351813,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tra-vinh",
+    "name": "Trà Vinh",
+    "nameIt": "Trà Vinh",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      106.33825,
+      9.93244
+    ],
+    "zoom": 10.8,
+    "population": 125200,
+    "grid": "cities/tra-vinh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tra-vinh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tra-vinh",
+        "name": "Trà Vinh",
+        "nameIt": "Trà Vinh",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          106.33825,
+          9.93244
+        ],
+        "zoom": 10.8,
+        "population": 125200,
+        "cells": 303,
+        "layer": "cities/tra-vinh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.33825,
+            9.93244
+          ]
+        },
+        "properties": {
+          "id": "tra-vinh",
+          "name": "Trà Vinh",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 28.7,
+          "population": 125200
+        }
+      },
+      "summary": null
+    }
+  }
+}

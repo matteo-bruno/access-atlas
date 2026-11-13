@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hisor",
+  "createdAt": "2026-10-08T15:38:47.431Z",
+  "updatedAt": "2026-10-08T15:38:47.431Z",
+  "meta": {
+    "name": "Hisor",
+    "nameIt": "Hisor",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hisor.geojson",
+      "sha256": "a2bc7cf8359918763e63fab7c0ce319ec81bcb4da1ab0f850be378578b67805b",
+      "size": 338682,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hisor",
+    "name": "Hisor",
+    "nameIt": "Hisor",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ",
+    "center": [
+      68.55595,
+      38.53572
+    ],
+    "zoom": 10.9,
+    "population": 99048,
+    "grid": "cities/hisor/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hisor/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hisor",
+        "name": "Hisor",
+        "nameIt": "Hisor",
+        "region": "Tajikistan",
+        "regionIt": "Tagikistan",
+        "country": "TJ",
+        "center": [
+          68.55595,
+          38.53572
+        ],
+        "zoom": 10.9,
+        "population": 99048,
+        "cells": 293,
+        "layer": "cities/hisor/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            68.55595,
+            38.53572
+          ]
+        },
+        "properties": {
+          "id": "hisor",
+          "name": "Hisor",
+          "country": "TJ",
+          "isStudy": true,
+          "proximityMinutes": 29.7,
+          "population": 99048
+        }
+      },
+      "summary": null
+    }
+  }
+}

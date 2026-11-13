@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pringsewu",
+  "createdAt": "2026-10-08T16:06:34.665Z",
+  "updatedAt": "2026-10-08T16:06:34.665Z",
+  "meta": {
+    "name": "Pringsewu",
+    "nameIt": "Pringsewu",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pringsewu.geojson",
+      "sha256": "261538a41d889e7fca73237278b96d9f1b0045278c7a65f8071ffff60fa94d8a",
+      "size": 192302,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pringsewu",
+    "name": "Pringsewu",
+    "nameIt": "Pringsewu",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      104.97752,
+      -5.3539
+    ],
+    "zoom": 11.3,
+    "population": 71470,
+    "grid": "cities/pringsewu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pringsewu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pringsewu",
+        "name": "Pringsewu",
+        "nameIt": "Pringsewu",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          104.97752,
+          -5.3539
+        ],
+        "zoom": 11.3,
+        "population": 71470,
+        "cells": 164,
+        "layer": "cities/pringsewu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            104.97752,
+            -5.3539
+          ]
+        },
+        "properties": {
+          "id": "pringsewu",
+          "name": "Pringsewu",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 71470
+        }
+      },
+      "summary": null
+    }
+  }
+}

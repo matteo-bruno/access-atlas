@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "karaj",
+  "createdAt": "2026-10-08T15:45:12.623Z",
+  "updatedAt": "2026-10-08T15:45:12.623Z",
+  "meta": {
+    "name": "Karaj",
+    "nameIt": "Karaj",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Karaj.geojson",
+      "sha256": "a4b59cd1604a6940958ff802e2dc7d4ccb9ae7a36afcb8d04a6eeeafe23fb6b5",
+      "size": 3169311,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "karaj",
+    "name": "Karaj",
+    "nameIt": "Karaj",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      50.96708,
+      35.78726
+    ],
+    "zoom": 9.2,
+    "population": 2474057,
+    "grid": "cities/karaj/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/karaj/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "karaj",
+        "name": "Karaj",
+        "nameIt": "Karaj",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          50.96708,
+          35.78726
+        ],
+        "zoom": 9.2,
+        "population": 2474057,
+        "cells": 2758,
+        "layer": "cities/karaj/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            50.96708,
+            35.78726
+          ]
+        },
+        "properties": {
+          "id": "karaj",
+          "name": "Karaj",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 22.3,
+          "population": 2474057
+        }
+      },
+      "summary": null
+    }
+  }
+}

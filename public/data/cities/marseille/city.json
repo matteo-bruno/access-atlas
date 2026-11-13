@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "marseille",
+  "createdAt": "2026-10-08T15:55:21.879Z",
+  "updatedAt": "2026-10-08T15:55:21.879Z",
+  "meta": {
+    "name": "Marseille",
+    "nameIt": "Marseille",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Marseille.geojson",
+      "sha256": "f556c2bbfec68a2bce5ceb9cc3d0e405e173e5f5cf88586c2faa1e2fe3497a52",
+      "size": 2014049,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "marseille",
+    "name": "Marseille",
+    "nameIt": "Marseille",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      5.40778,
+      43.30475
+    ],
+    "zoom": 9.5,
+    "population": 965808,
+    "grid": "cities/marseille/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/marseille/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "marseille",
+        "name": "Marseille",
+        "nameIt": "Marseille",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          5.40778,
+          43.30475
+        ],
+        "zoom": 9.5,
+        "population": 965808,
+        "cells": 1773,
+        "layer": "cities/marseille/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.40778,
+            43.30475
+          ]
+        },
+        "properties": {
+          "id": "marseille",
+          "name": "Marseille",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 7.2,
+          "population": 965808
+        }
+      },
+      "summary": null
+    }
+  }
+}

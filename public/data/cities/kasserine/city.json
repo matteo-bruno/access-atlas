@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kasserine",
+  "createdAt": "2026-10-08T15:45:32.059Z",
+  "updatedAt": "2026-10-08T15:45:32.059Z",
+  "meta": {
+    "name": "Kasserine",
+    "nameIt": "Kasserine",
+    "region": "Tunisia",
+    "regionIt": "Tunisia",
+    "country": "TN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kasserine.geojson",
+      "sha256": "00cf5644a5b06c067d23a589a4952dd04f6a56b1c4f279ac88b05986eab7ab4d",
+      "size": 149266,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kasserine",
+    "name": "Kasserine",
+    "nameIt": "Kasserine",
+    "region": "Tunisia",
+    "regionIt": "Tunisia",
+    "country": "TN",
+    "center": [
+      8.83428,
+      35.16154
+    ],
+    "zoom": 11.5,
+    "population": 101139,
+    "grid": "cities/kasserine/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kasserine/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kasserine",
+        "name": "Kasserine",
+        "nameIt": "Kasserine",
+        "region": "Tunisia",
+        "regionIt": "Tunisia",
+        "country": "TN",
+        "center": [
+          8.83428,
+          35.16154
+        ],
+        "zoom": 11.5,
+        "population": 101139,
+        "cells": 130,
+        "layer": "cities/kasserine/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.83428,
+            35.16154
+          ]
+        },
+        "properties": {
+          "id": "kasserine",
+          "name": "Kasserine",
+          "country": "TN",
+          "isStudy": true,
+          "proximityMinutes": 10.7,
+          "population": 101139
+        }
+      },
+      "summary": null
+    }
+  }
+}

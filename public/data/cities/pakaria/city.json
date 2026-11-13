@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pakaria",
+  "createdAt": "2026-10-08T16:03:39.910Z",
+  "updatedAt": "2026-10-08T16:03:39.910Z",
+  "meta": {
+    "name": "Pakaria",
+    "nameIt": "Pakaria",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pakaria.geojson",
+      "sha256": "8696c0cad1a8149fa328e08e9f218d799301f648682878ccb68045aee551953b",
+      "size": 492205,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pakaria",
+    "name": "Pakaria",
+    "nameIt": "Pakaria",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.97412,
+      26.77622
+    ],
+    "zoom": 10.8,
+    "population": 79717,
+    "grid": "cities/pakaria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pakaria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pakaria",
+        "name": "Pakaria",
+        "nameIt": "Pakaria",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.97412,
+          26.77622
+        ],
+        "zoom": 10.8,
+        "population": 79717,
+        "cells": 425,
+        "layer": "cities/pakaria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.97412,
+            26.77622
+          ]
+        },
+        "properties": {
+          "id": "pakaria",
+          "name": "Pakaria",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 79717
+        }
+      },
+      "summary": null
+    }
+  }
+}

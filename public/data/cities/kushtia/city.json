@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kushtia",
+  "createdAt": "2026-10-08T15:48:59.125Z",
+  "updatedAt": "2026-10-08T15:48:59.125Z",
+  "meta": {
+    "name": "Kushtia",
+    "nameIt": "Kushtia",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kushtia.geojson",
+      "sha256": "b3f51ff888cc073ccc2a3085beb1d507023eabcc2e12bb16f0ff8a14b1c53b50",
+      "size": 689617,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kushtia",
+    "name": "Kushtia",
+    "nameIt": "Kushtia",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.1239,
+      23.90782
+    ],
+    "zoom": 10.4,
+    "population": 262722,
+    "grid": "cities/kushtia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kushtia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kushtia",
+        "name": "Kushtia",
+        "nameIt": "Kushtia",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.1239,
+          23.90782
+        ],
+        "zoom": 10.4,
+        "population": 262722,
+        "cells": 595,
+        "layer": "cities/kushtia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.1239,
+            23.90782
+          ]
+        },
+        "properties": {
+          "id": "kushtia",
+          "name": "Kushtia",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 38.1,
+          "population": 262722
+        }
+      },
+      "summary": null
+    }
+  }
+}

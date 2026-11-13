@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "saint-marc",
+  "createdAt": "2026-10-08T16:09:55.602Z",
+  "updatedAt": "2026-10-08T16:09:55.602Z",
+  "meta": {
+    "name": "Saint-Marc",
+    "nameIt": "Saint-Marc",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Saint-Marc.geojson",
+      "sha256": "71acfb0d28628f4296636454ca2a51b1a903dfeda6b8548dc851904482478053",
+      "size": 333608,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "saint-marc",
+    "name": "Saint-Marc",
+    "nameIt": "Saint-Marc",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT",
+    "center": [
+      -72.69729,
+      19.10267
+    ],
+    "zoom": 11.4,
+    "population": 106203,
+    "grid": "cities/saint-marc/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/saint-marc/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "saint-marc",
+        "name": "Saint-Marc",
+        "nameIt": "Saint-Marc",
+        "region": "Haiti",
+        "regionIt": "Haiti",
+        "country": "HT",
+        "center": [
+          -72.69729,
+          19.10267
+        ],
+        "zoom": 11.4,
+        "population": 106203,
+        "cells": 287,
+        "layer": "cities/saint-marc/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.69729,
+            19.10267
+          ]
+        },
+        "properties": {
+          "id": "saint-marc",
+          "name": "Saint-Marc",
+          "country": "HT",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 106203
+        }
+      },
+      "summary": null
+    }
+  }
+}

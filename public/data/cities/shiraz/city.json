@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shiraz",
+  "createdAt": "2026-10-08T16:13:07.502Z",
+  "updatedAt": "2026-10-08T16:13:07.502Z",
+  "meta": {
+    "name": "Shiraz",
+    "nameIt": "Shiraz",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shiraz.geojson",
+      "sha256": "acfe836b7a63cf3674be0a6d22610aad56e76c9b6fdfeafbb5afb44edcde4306",
+      "size": 1814085,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shiraz",
+    "name": "Shiraz",
+    "nameIt": "Shiraz",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      52.52747,
+      29.60538
+    ],
+    "zoom": 9.8,
+    "population": 1213337,
+    "grid": "cities/shiraz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shiraz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shiraz",
+        "name": "Shiraz",
+        "nameIt": "Shiraz",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          52.52747,
+          29.60538
+        ],
+        "zoom": 9.8,
+        "population": 1213337,
+        "cells": 1581,
+        "layer": "cities/shiraz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            52.52747,
+            29.60538
+          ]
+        },
+        "properties": {
+          "id": "shiraz",
+          "name": "Shiraz",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 16.1,
+          "population": 1213337
+        }
+      },
+      "summary": null
+    }
+  }
+}

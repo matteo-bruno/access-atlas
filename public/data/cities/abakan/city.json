@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "abakan",
+  "createdAt": "2026-10-08T15:01:14.744Z",
+  "updatedAt": "2026-10-08T15:01:14.744Z",
+  "meta": {
+    "name": "Abakan",
+    "nameIt": "Abakan",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Abakan.geojson",
+      "sha256": "e6ffd0164dbb74968da76f046ac1abb240afe9a94b72086285f56d57f6e737ad",
+      "size": 457059,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "abakan",
+    "name": "Abakan",
+    "nameIt": "Abakan",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      91.42455,
+      53.71465
+    ],
+    "zoom": 10.9,
+    "population": 158800,
+    "grid": "cities/abakan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/abakan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "abakan",
+        "name": "Abakan",
+        "nameIt": "Abakan",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          91.42455,
+          53.71465
+        ],
+        "zoom": 10.9,
+        "population": 158800,
+        "cells": 401,
+        "layer": "cities/abakan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.42455,
+            53.71465
+          ]
+        },
+        "properties": {
+          "id": "abakan",
+          "name": "Abakan",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14.6,
+          "population": 158800
+        }
+      },
+      "summary": null
+    }
+  }
+}

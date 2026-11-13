@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "salta",
+  "createdAt": "2026-10-08T16:10:10.631Z",
+  "updatedAt": "2026-10-08T16:10:10.631Z",
+  "meta": {
+    "name": "Salta",
+    "nameIt": "Salta",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Salta.geojson",
+      "sha256": "7f7663153e89c0a238a6ca7d12270bbd1422d379b69202ba89b1c72a3dd6db4f",
+      "size": 1369855,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "salta",
+    "name": "Salta",
+    "nameIt": "Salta",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -65.41711,
+      -24.79908
+    ],
+    "zoom": 10,
+    "population": 544374,
+    "grid": "cities/salta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/salta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "salta",
+        "name": "Salta",
+        "nameIt": "Salta",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -65.41711,
+          -24.79908
+        ],
+        "zoom": 10,
+        "population": 544374,
+        "cells": 1175,
+        "layer": "cities/salta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -65.41711,
+            -24.79908
+          ]
+        },
+        "properties": {
+          "id": "salta",
+          "name": "Salta",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 21.7,
+          "population": 544374
+        }
+      },
+      "summary": null
+    }
+  }
+}

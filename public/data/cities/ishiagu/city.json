@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ishiagu",
+  "createdAt": "2026-10-08T15:41:09.744Z",
+  "updatedAt": "2026-10-08T15:41:09.744Z",
+  "meta": {
+    "name": "Ishiagu",
+    "nameIt": "Ishiagu",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ishiagu.geojson",
+      "sha256": "d994ed6604e0087be91860b038ef20b6a983b6c874b0cf4ac8ab7be84b23b842",
+      "size": 165647,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ishiagu",
+    "name": "Ishiagu",
+    "nameIt": "Ishiagu",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      7.56397,
+      5.95259
+    ],
+    "zoom": 11.6,
+    "population": 48646,
+    "grid": "cities/ishiagu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ishiagu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ishiagu",
+        "name": "Ishiagu",
+        "nameIt": "Ishiagu",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          7.56397,
+          5.95259
+        ],
+        "zoom": 11.6,
+        "population": 48646,
+        "cells": 144,
+        "layer": "cities/ishiagu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.56397,
+            5.95259
+          ]
+        },
+        "properties": {
+          "id": "ishiagu",
+          "name": "Ishiagu",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 48646
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shouzhang",
+  "createdAt": "2026-10-08T16:13:13.726Z",
+  "updatedAt": "2026-10-08T16:13:13.726Z",
+  "meta": {
+    "name": "Shouzhang",
+    "nameIt": "Shouzhang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shouzhang.geojson",
+      "sha256": "41d0afcf7e4221d5d02a3afbc42adaeeaadafa44d11e0476826d8db39b751b5e",
+      "size": 368456,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shouzhang",
+    "name": "Shouzhang",
+    "nameIt": "Shouzhang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      115.85391,
+      35.98527
+    ],
+    "zoom": 11,
+    "population": 101304,
+    "grid": "cities/shouzhang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shouzhang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shouzhang",
+        "name": "Shouzhang",
+        "nameIt": "Shouzhang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          115.85391,
+          35.98527
+        ],
+        "zoom": 11,
+        "population": 101304,
+        "cells": 316,
+        "layer": "cities/shouzhang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            115.85391,
+            35.98527
+          ]
+        },
+        "properties": {
+          "id": "shouzhang",
+          "name": "Shouzhang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 101304
+        }
+      },
+      "summary": null
+    }
+  }
+}

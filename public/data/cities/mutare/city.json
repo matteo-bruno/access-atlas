@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mutare",
+  "createdAt": "2026-10-08T15:59:11.500Z",
+  "updatedAt": "2026-10-08T15:59:11.500Z",
+  "meta": {
+    "name": "Mutare",
+    "nameIt": "Mutare",
+    "region": "Zimbabwe",
+    "regionIt": "Zimbabwe",
+    "country": "ZW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mutare.geojson",
+      "sha256": "c5646b4bba24f6e8880b238fa0c236db783234c51e53c6976fe0cba9601ec87c",
+      "size": 397431,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mutare",
+    "name": "Mutare",
+    "nameIt": "Mutare",
+    "region": "Zimbabwe",
+    "regionIt": "Zimbabwe",
+    "country": "ZW",
+    "center": [
+      32.63534,
+      -18.97963
+    ],
+    "zoom": 10.7,
+    "population": 160545,
+    "grid": "cities/mutare/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mutare/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mutare",
+        "name": "Mutare",
+        "nameIt": "Mutare",
+        "region": "Zimbabwe",
+        "regionIt": "Zimbabwe",
+        "country": "ZW",
+        "center": [
+          32.63534,
+          -18.97963
+        ],
+        "zoom": 10.7,
+        "population": 160545,
+        "cells": 339,
+        "layer": "cities/mutare/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.63534,
+            -18.97963
+          ]
+        },
+        "properties": {
+          "id": "mutare",
+          "name": "Mutare",
+          "country": "ZW",
+          "isStudy": true,
+          "proximityMinutes": 51.3,
+          "population": 160545
+        }
+      },
+      "summary": null
+    }
+  }
+}

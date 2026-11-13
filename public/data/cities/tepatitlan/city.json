@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tepatitlan",
+  "createdAt": "2026-10-08T16:17:19.637Z",
+  "updatedAt": "2026-10-08T16:17:19.637Z",
+  "meta": {
+    "name": "Tepatitlán",
+    "nameIt": "Tepatitlán",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tepatitlán.geojson",
+      "sha256": "72b4519f5f2ce38c8e668df1f5ac395bd358f423ebf697ec956666b90df44f37",
+      "size": 234549,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tepatitlan",
+    "name": "Tepatitlán",
+    "nameIt": "Tepatitlán",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -102.7653,
+      20.81107
+    ],
+    "zoom": 11.4,
+    "population": 70503,
+    "grid": "cities/tepatitlan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tepatitlan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tepatitlan",
+        "name": "Tepatitlán",
+        "nameIt": "Tepatitlán",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -102.7653,
+          20.81107
+        ],
+        "zoom": 11.4,
+        "population": 70503,
+        "cells": 200,
+        "layer": "cities/tepatitlan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -102.7653,
+            20.81107
+          ]
+        },
+        "properties": {
+          "id": "tepatitlan",
+          "name": "Tepatitlán",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 70503
+        }
+      },
+      "summary": null
+    }
+  }
+}

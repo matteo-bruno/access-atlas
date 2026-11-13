@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "koumra",
+  "createdAt": "2026-10-08T15:48:13.455Z",
+  "updatedAt": "2026-10-08T15:48:13.455Z",
+  "meta": {
+    "name": "Koumra",
+    "nameIt": "Koumra",
+    "region": "Chad",
+    "regionIt": "Ciad",
+    "country": "TD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Koumra.geojson",
+      "sha256": "cdea8a0fd3f2e6da3cab78635ba3f34ae60b25d1d9b9c7f6aace23d820ff29b9",
+      "size": 159586,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "koumra",
+    "name": "Koumra",
+    "nameIt": "Koumra",
+    "region": "Chad",
+    "regionIt": "Ciad",
+    "country": "TD",
+    "center": [
+      17.54621,
+      8.91825
+    ],
+    "zoom": 11.9,
+    "population": 65980,
+    "grid": "cities/koumra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/koumra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "koumra",
+        "name": "Koumra",
+        "nameIt": "Koumra",
+        "region": "Chad",
+        "regionIt": "Ciad",
+        "country": "TD",
+        "center": [
+          17.54621,
+          8.91825
+        ],
+        "zoom": 11.9,
+        "population": 65980,
+        "cells": 138,
+        "layer": "cities/koumra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            17.54621,
+            8.91825
+          ]
+        },
+        "properties": {
+          "id": "koumra",
+          "name": "Koumra",
+          "country": "TD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 65980
+        }
+      },
+      "summary": null
+    }
+  }
+}

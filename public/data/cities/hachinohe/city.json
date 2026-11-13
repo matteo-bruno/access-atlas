@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hachinohe",
+  "createdAt": "2026-10-08T15:37:06.613Z",
+  "updatedAt": "2026-10-08T15:37:06.613Z",
+  "meta": {
+    "name": "Hachinohe",
+    "nameIt": "Hachinohe",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hachinohe.geojson",
+      "sha256": "d51e61a9835a8b4f151a616198e9a9af6b2c74df0c0a643fd3e77db6359e28cf",
+      "size": 720093,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hachinohe",
+    "name": "Hachinohe",
+    "nameIt": "Hachinohe",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      141.50544,
+      40.51463
+    ],
+    "zoom": 10.7,
+    "population": 162885,
+    "grid": "cities/hachinohe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hachinohe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hachinohe",
+        "name": "Hachinohe",
+        "nameIt": "Hachinohe",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          141.50544,
+          40.51463
+        ],
+        "zoom": 10.7,
+        "population": 162885,
+        "cells": 627,
+        "layer": "cities/hachinohe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            141.50544,
+            40.51463
+          ]
+        },
+        "properties": {
+          "id": "hachinohe",
+          "name": "Hachinohe",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 162885
+        }
+      },
+      "summary": null
+    }
+  }
+}

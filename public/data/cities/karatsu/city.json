@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "karatsu",
+  "createdAt": "2026-10-08T15:45:17.158Z",
+  "updatedAt": "2026-10-08T15:45:17.158Z",
+  "meta": {
+    "name": "Karatsu",
+    "nameIt": "Karatsu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Karatsu.geojson",
+      "sha256": "88895e13c194ddfa7a50f1d8c7389e9c595852e432ea85345f5f72a89e6be44c",
+      "size": 514332,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "karatsu",
+    "name": "Karatsu",
+    "nameIt": "Karatsu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      129.98092,
+      33.44419
+    ],
+    "zoom": 10.6,
+    "population": 61337,
+    "grid": "cities/karatsu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/karatsu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "karatsu",
+        "name": "Karatsu",
+        "nameIt": "Karatsu",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          129.98092,
+          33.44419
+        ],
+        "zoom": 10.6,
+        "population": 61337,
+        "cells": 447,
+        "layer": "cities/karatsu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            129.98092,
+            33.44419
+          ]
+        },
+        "properties": {
+          "id": "karatsu",
+          "name": "Karatsu",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 17.5,
+          "population": 61337
+        }
+      },
+      "summary": null
+    }
+  }
+}

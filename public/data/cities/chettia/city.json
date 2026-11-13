@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chettia",
+  "createdAt": "2026-10-08T15:24:32.872Z",
+  "updatedAt": "2026-10-08T15:24:32.872Z",
+  "meta": {
+    "name": "Chettia",
+    "nameIt": "Chettia",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chettia.geojson",
+      "sha256": "0d746cd0730f37588beed732fe2fa8d693c9b1623f28c063bdd9a38498bbd514",
+      "size": 168315,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chettia",
+    "name": "Chettia",
+    "nameIt": "Chettia",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      1.25996,
+      36.19762
+    ],
+    "zoom": 11.6,
+    "population": 91631,
+    "grid": "cities/chettia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chettia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chettia",
+        "name": "Chettia",
+        "nameIt": "Chettia",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          1.25996,
+          36.19762
+        ],
+        "zoom": 11.6,
+        "population": 91631,
+        "cells": 145,
+        "layer": "cities/chettia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.25996,
+            36.19762
+          ]
+        },
+        "properties": {
+          "id": "chettia",
+          "name": "Chettia",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 17.3,
+          "population": 91631
+        }
+      },
+      "summary": null
+    }
+  }
+}

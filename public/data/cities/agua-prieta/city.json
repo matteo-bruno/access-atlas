@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "agua-prieta",
+  "createdAt": "2026-10-08T15:03:01.100Z",
+  "updatedAt": "2026-10-08T15:03:01.100Z",
+  "meta": {
+    "name": "Agua Prieta",
+    "nameIt": "Agua Prieta",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Agua Prieta.geojson",
+      "sha256": "dba28f7741297b22c5d6623586c623774fc9d54fb33d2f2e1580cf5af7286895",
+      "size": 243700,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "agua-prieta",
+    "name": "Agua Prieta",
+    "nameIt": "Agua Prieta",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -109.54332,
+      31.3171
+    ],
+    "zoom": 11.2,
+    "population": 84636,
+    "grid": "cities/agua-prieta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/agua-prieta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "agua-prieta",
+        "name": "Agua Prieta",
+        "nameIt": "Agua Prieta",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -109.54332,
+          31.3171
+        ],
+        "zoom": 11.2,
+        "population": 84636,
+        "cells": 208,
+        "layer": "cities/agua-prieta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -109.54332,
+            31.3171
+          ]
+        },
+        "properties": {
+          "id": "agua-prieta",
+          "name": "Agua Prieta",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 16.9,
+          "population": 84636
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "behea",
+  "createdAt": "2026-10-08T15:16:40.949Z",
+  "updatedAt": "2026-10-08T15:16:40.949Z",
+  "meta": {
+    "name": "Behea",
+    "nameIt": "Behea",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Behea.geojson",
+      "sha256": "ca8468145cfcf6d77fca4669e37b260b8740648ee25c683a756aeffd13361a95",
+      "size": 53374,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "behea",
+    "name": "Behea",
+    "nameIt": "Behea",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.4545,
+      25.5587
+    ],
+    "zoom": 12,
+    "population": 43344,
+    "grid": "cities/behea/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/behea/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "behea",
+        "name": "Behea",
+        "nameIt": "Behea",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.4545,
+          25.5587
+        ],
+        "zoom": 12,
+        "population": 43344,
+        "cells": 46,
+        "layer": "cities/behea/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.4545,
+            25.5587
+          ]
+        },
+        "properties": {
+          "id": "behea",
+          "name": "Behea",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 43344
+        }
+      },
+      "summary": null
+    }
+  }
+}

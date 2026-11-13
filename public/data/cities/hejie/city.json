@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hejie",
+  "createdAt": "2026-10-08T15:38:17.596Z",
+  "updatedAt": "2026-10-08T15:38:17.596Z",
+  "meta": {
+    "name": "Hejie",
+    "nameIt": "Hejie",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hejie.geojson",
+      "sha256": "77a38894f30e45ab02dfc233f83300b5547f281f8a309f460aab605ad59b9076",
+      "size": 136618,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hejie",
+    "name": "Hejie",
+    "nameIt": "Hejie",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      111.66035,
+      24.33343
+    ],
+    "zoom": 11.8,
+    "population": 22285,
+    "grid": "cities/hejie/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hejie/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hejie",
+        "name": "Hejie",
+        "nameIt": "Hejie",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          111.66035,
+          24.33343
+        ],
+        "zoom": 11.8,
+        "population": 22285,
+        "cells": 117,
+        "layer": "cities/hejie/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.66035,
+            24.33343
+          ]
+        },
+        "properties": {
+          "id": "hejie",
+          "name": "Hejie",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 22285
+        }
+      },
+      "summary": null
+    }
+  }
+}

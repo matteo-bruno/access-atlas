@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yellandu",
+  "createdAt": "2026-10-08T16:23:43.052Z",
+  "updatedAt": "2026-10-08T16:23:43.052Z",
+  "meta": {
+    "name": "Yellandu",
+    "nameIt": "Yellandu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yellandu.geojson",
+      "sha256": "b7806e630e01f390895ebb74d4ec2e28aaaa0610584d83e40b867e31ee978bcc",
+      "size": 108908,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yellandu",
+    "name": "Yellandu",
+    "nameIt": "Yellandu",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.32559,
+      17.58832
+    ],
+    "zoom": 11.9,
+    "population": 52792,
+    "grid": "cities/yellandu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yellandu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yellandu",
+        "name": "Yellandu",
+        "nameIt": "Yellandu",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.32559,
+          17.58832
+        ],
+        "zoom": 11.9,
+        "population": 52792,
+        "cells": 94,
+        "layer": "cities/yellandu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.32559,
+            17.58832
+          ]
+        },
+        "properties": {
+          "id": "yellandu",
+          "name": "Yellandu",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 52792
+        }
+      },
+      "summary": null
+    }
+  }
+}

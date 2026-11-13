@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lwebo",
+  "createdAt": "2026-10-08T15:52:58.650Z",
+  "updatedAt": "2026-10-08T15:52:58.650Z",
+  "meta": {
+    "name": "Lwebo",
+    "nameIt": "Lwebo",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lwebo.geojson",
+      "sha256": "0058862d7b0b31c99cc471971062f927762b8416861c6c7b87d84c3257f1fe70",
+      "size": 86383,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lwebo",
+    "name": "Lwebo",
+    "nameIt": "Lwebo",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      21.4197,
+      -5.35128
+    ],
+    "zoom": 12,
+    "population": 59753,
+    "grid": "cities/lwebo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lwebo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lwebo",
+        "name": "Lwebo",
+        "nameIt": "Lwebo",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          21.4197,
+          -5.35128
+        ],
+        "zoom": 12,
+        "population": 59753,
+        "cells": 74,
+        "layer": "cities/lwebo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            21.4197,
+            -5.35128
+          ]
+        },
+        "properties": {
+          "id": "lwebo",
+          "name": "Lwebo",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 59753
+        }
+      },
+      "summary": null
+    }
+  }
+}

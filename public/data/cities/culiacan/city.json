@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "culiacan",
+  "createdAt": "2026-10-08T15:27:02.820Z",
+  "updatedAt": "2026-10-08T15:27:02.820Z",
+  "meta": {
+    "name": "Culiacán",
+    "nameIt": "Culiacán",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Culiacán.geojson",
+      "sha256": "0691e9ab59b51b433eccfc91376911b2d3be1f12873509401ae877fd1be3ad94",
+      "size": 1264278,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "culiacan",
+    "name": "Culiacán",
+    "nameIt": "Culiacán",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -107.4025,
+      24.79465
+    ],
+    "zoom": 9.8,
+    "population": 768125,
+    "grid": "cities/culiacan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/culiacan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "culiacan",
+        "name": "Culiacán",
+        "nameIt": "Culiacán",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -107.4025,
+          24.79465
+        ],
+        "zoom": 9.8,
+        "population": 768125,
+        "cells": 1077,
+        "layer": "cities/culiacan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.4025,
+            24.79465
+          ]
+        },
+        "properties": {
+          "id": "culiacan",
+          "name": "Culiacán",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 22.7,
+          "population": 768125
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "puerto-cortes",
+  "createdAt": "2026-10-08T16:06:43.244Z",
+  "updatedAt": "2026-10-08T16:06:43.244Z",
+  "meta": {
+    "name": "Puerto Cortés",
+    "nameIt": "Puerto Cortés",
+    "region": "Honduras",
+    "regionIt": "Honduras",
+    "country": "HN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Puerto Cortés.geojson",
+      "sha256": "bc6fa98842bbdbe2f6047f526050958c3fed65c2120539652da4d28ea20d1560",
+      "size": 327731,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "puerto-cortes",
+    "name": "Puerto Cortés",
+    "nameIt": "Puerto Cortés",
+    "region": "Honduras",
+    "regionIt": "Honduras",
+    "country": "HN",
+    "center": [
+      -87.93457,
+      15.83995
+    ],
+    "zoom": 11.2,
+    "population": 43612,
+    "grid": "cities/puerto-cortes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/puerto-cortes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "puerto-cortes",
+        "name": "Puerto Cortés",
+        "nameIt": "Puerto Cortés",
+        "region": "Honduras",
+        "regionIt": "Honduras",
+        "country": "HN",
+        "center": [
+          -87.93457,
+          15.83995
+        ],
+        "zoom": 11.2,
+        "population": 43612,
+        "cells": 280,
+        "layer": "cities/puerto-cortes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.93457,
+            15.83995
+          ]
+        },
+        "properties": {
+          "id": "puerto-cortes",
+          "name": "Puerto Cortés",
+          "country": "HN",
+          "isStudy": true,
+          "proximityMinutes": 30.8,
+          "population": 43612
+        }
+      },
+      "summary": null
+    }
+  }
+}

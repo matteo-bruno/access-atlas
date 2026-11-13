@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hazaribagh",
+  "createdAt": "2026-10-08T15:38:09.216Z",
+  "updatedAt": "2026-10-08T15:38:09.216Z",
+  "meta": {
+    "name": "Hazaribagh",
+    "nameIt": "Hazaribagh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hazaribagh.geojson",
+      "sha256": "053835f7c8688809484a349aba357b03ee5b5f827da1dec275fc456a31944412",
+      "size": 462377,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hazaribagh",
+    "name": "Hazaribagh",
+    "nameIt": "Hazaribagh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.3655,
+      23.99631
+    ],
+    "zoom": 11,
+    "population": 398966,
+    "grid": "cities/hazaribagh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hazaribagh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hazaribagh",
+        "name": "Hazaribagh",
+        "nameIt": "Hazaribagh",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.3655,
+          23.99631
+        ],
+        "zoom": 11,
+        "population": 398966,
+        "cells": 399,
+        "layer": "cities/hazaribagh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.3655,
+            23.99631
+          ]
+        },
+        "properties": {
+          "id": "hazaribagh",
+          "name": "Hazaribagh",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 24.6,
+          "population": 398966
+        }
+      },
+      "summary": null
+    }
+  }
+}

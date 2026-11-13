@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "taroudant",
+  "createdAt": "2026-10-08T16:16:49.811Z",
+  "updatedAt": "2026-10-08T16:16:49.811Z",
+  "meta": {
+    "name": "Taroudant",
+    "nameIt": "Taroudant",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Taroudant.geojson",
+      "sha256": "c1c76aed5ba34a05cfcc172e0874f5707ed1db607e5e80acc6c7e87727b82745",
+      "size": 70821,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "taroudant",
+    "name": "Taroudant",
+    "nameIt": "Taroudant",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -8.87588,
+      30.47197
+    ],
+    "zoom": 12,
+    "population": 5650,
+    "grid": "cities/taroudant/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/taroudant/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "taroudant",
+        "name": "Taroudant",
+        "nameIt": "Taroudant",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -8.87588,
+          30.47197
+        ],
+        "zoom": 12,
+        "population": 5650,
+        "cells": 61,
+        "layer": "cities/taroudant/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -8.87588,
+            30.47197
+          ]
+        },
+        "properties": {
+          "id": "taroudant",
+          "name": "Taroudant",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 11.9,
+          "population": 5650
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chenxi",
+  "createdAt": "2026-10-08T15:24:23.405Z",
+  "updatedAt": "2026-10-08T15:24:23.405Z",
+  "meta": {
+    "name": "Chenxi",
+    "nameIt": "Chenxi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chenxi.geojson",
+      "sha256": "2a451cc1b34fc8d00198a0a9049dcf93c6b1c219985be0ba3f12de279169bdf4",
+      "size": 128496,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chenxi",
+    "name": "Chenxi",
+    "nameIt": "Chenxi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      110.19351,
+      28.0084
+    ],
+    "zoom": 11.5,
+    "population": 127488,
+    "grid": "cities/chenxi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chenxi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chenxi",
+        "name": "Chenxi",
+        "nameIt": "Chenxi",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          110.19351,
+          28.0084
+        ],
+        "zoom": 11.5,
+        "population": 127488,
+        "cells": 110,
+        "layer": "cities/chenxi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.19351,
+            28.0084
+          ]
+        },
+        "properties": {
+          "id": "chenxi",
+          "name": "Chenxi",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 127488
+        }
+      },
+      "summary": null
+    }
+  }
+}

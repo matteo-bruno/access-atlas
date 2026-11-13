@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mathura",
+  "createdAt": "2026-10-08T15:55:43.217Z",
+  "updatedAt": "2026-10-08T15:55:43.217Z",
+  "meta": {
+    "name": "Mathura",
+    "nameIt": "Mathura",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mathura.geojson",
+      "sha256": "5658db2830253c237a789653321e8ce0910ddce0c9ee1481a088966a64737a70",
+      "size": 1124171,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mathura",
+    "name": "Mathura",
+    "nameIt": "Mathura",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.67449,
+      27.47922
+    ],
+    "zoom": 9.7,
+    "population": 1303380,
+    "grid": "cities/mathura/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mathura/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mathura",
+        "name": "Mathura",
+        "nameIt": "Mathura",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.67449,
+          27.47922
+        ],
+        "zoom": 9.7,
+        "population": 1303380,
+        "cells": 969,
+        "layer": "cities/mathura/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.67449,
+            27.47922
+          ]
+        },
+        "properties": {
+          "id": "mathura",
+          "name": "Mathura",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 52,
+          "population": 1303380
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "luanshya",
+  "createdAt": "2026-10-08T15:52:21.804Z",
+  "updatedAt": "2026-10-08T15:52:21.804Z",
+  "meta": {
+    "name": "Luanshya",
+    "nameIt": "Luanshya",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Luanshya.geojson",
+      "sha256": "3821da8d372fad9e250319814416b6377fd7469291cb21e5a8bb035fc0136368",
+      "size": 370461,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "luanshya",
+    "name": "Luanshya",
+    "nameIt": "Luanshya",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM",
+    "center": [
+      28.41354,
+      -13.14058
+    ],
+    "zoom": 10.8,
+    "population": 105054,
+    "grid": "cities/luanshya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/luanshya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "luanshya",
+        "name": "Luanshya",
+        "nameIt": "Luanshya",
+        "region": "Zambia",
+        "regionIt": "Zambia",
+        "country": "ZM",
+        "center": [
+          28.41354,
+          -13.14058
+        ],
+        "zoom": 10.8,
+        "population": 105054,
+        "cells": 315,
+        "layer": "cities/luanshya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.41354,
+            -13.14058
+          ]
+        },
+        "properties": {
+          "id": "luanshya",
+          "name": "Luanshya",
+          "country": "ZM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 105054
+        }
+      },
+      "summary": null
+    }
+  }
+}

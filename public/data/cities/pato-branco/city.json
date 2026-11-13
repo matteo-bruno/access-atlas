@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pato-branco",
+  "createdAt": "2026-10-08T16:04:41.766Z",
+  "updatedAt": "2026-10-08T16:04:41.766Z",
+  "meta": {
+    "name": "Pato Branco",
+    "nameIt": "Pato Branco",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pato Branco.geojson",
+      "sha256": "1959cc7e9283f9b36b5cec84946b4a6db495df83e7dfdbac163cf9579a13d008",
+      "size": 303229,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pato-branco",
+    "name": "Pato Branco",
+    "nameIt": "Pato Branco",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -52.6792,
+      -26.23879
+    ],
+    "zoom": 11.2,
+    "population": 72140,
+    "grid": "cities/pato-branco/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pato-branco/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pato-branco",
+        "name": "Pato Branco",
+        "nameIt": "Pato Branco",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -52.6792,
+          -26.23879
+        ],
+        "zoom": 11.2,
+        "population": 72140,
+        "cells": 258,
+        "layer": "cities/pato-branco/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -52.6792,
+            -26.23879
+          ]
+        },
+        "properties": {
+          "id": "pato-branco",
+          "name": "Pato Branco",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 72140
+        }
+      },
+      "summary": null
+    }
+  }
+}

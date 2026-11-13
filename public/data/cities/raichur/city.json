@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "raichur",
+  "createdAt": "2026-10-08T16:07:52.643Z",
+  "updatedAt": "2026-10-08T16:07:52.643Z",
+  "meta": {
+    "name": "Raichur",
+    "nameIt": "Raichur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Raichur.geojson",
+      "sha256": "9414399b1832f780ef274f51f567bdb5f7b8ed3c00d288fab9b1dbb0b5ebc483",
+      "size": 382602,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "raichur",
+    "name": "Raichur",
+    "nameIt": "Raichur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.35215,
+      16.20608
+    ],
+    "zoom": 10.9,
+    "population": 180259,
+    "grid": "cities/raichur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/raichur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "raichur",
+        "name": "Raichur",
+        "nameIt": "Raichur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.35215,
+          16.20608
+        ],
+        "zoom": 10.9,
+        "population": 180259,
+        "cells": 330,
+        "layer": "cities/raichur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.35215,
+            16.20608
+          ]
+        },
+        "properties": {
+          "id": "raichur",
+          "name": "Raichur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 27.3,
+          "population": 180259
+        }
+      },
+      "summary": null
+    }
+  }
+}

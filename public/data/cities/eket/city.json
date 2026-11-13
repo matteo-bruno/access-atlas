@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "eket",
+  "createdAt": "2026-10-08T15:31:51.153Z",
+  "updatedAt": "2026-10-08T15:31:51.153Z",
+  "meta": {
+    "name": "Eket",
+    "nameIt": "Eket",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Eket.geojson",
+      "sha256": "55bdf57d931196ac5240930c199a8a6811fcf6dd875b6a7b81f0a93747aa1582",
+      "size": 604657,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "eket",
+    "name": "Eket",
+    "nameIt": "Eket",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      7.94248,
+      4.65436
+    ],
+    "zoom": 10.6,
+    "population": 357590,
+    "grid": "cities/eket/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/eket/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "eket",
+        "name": "Eket",
+        "nameIt": "Eket",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          7.94248,
+          4.65436
+        ],
+        "zoom": 10.6,
+        "population": 357590,
+        "cells": 524,
+        "layer": "cities/eket/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.94248,
+            4.65436
+          ]
+        },
+        "properties": {
+          "id": "eket",
+          "name": "Eket",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 357590
+        }
+      },
+      "summary": null
+    }
+  }
+}

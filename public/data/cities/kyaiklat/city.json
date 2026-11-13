@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kyaiklat",
+  "createdAt": "2026-10-08T15:49:07.927Z",
+  "updatedAt": "2026-10-08T15:49:07.927Z",
+  "meta": {
+    "name": "Kyaiklat",
+    "nameIt": "Kyaiklat",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kyaiklat.geojson",
+      "sha256": "47944f5ce0e522969e86410dedf21e341282f0434d939e166baf56e6f56d154a",
+      "size": 113483,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kyaiklat",
+    "name": "Kyaiklat",
+    "nameIt": "Kyaiklat",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      95.72155,
+      16.44676
+    ],
+    "zoom": 11.9,
+    "population": 48606,
+    "grid": "cities/kyaiklat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kyaiklat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kyaiklat",
+        "name": "Kyaiklat",
+        "nameIt": "Kyaiklat",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          95.72155,
+          16.44676
+        ],
+        "zoom": 11.9,
+        "population": 48606,
+        "cells": 98,
+        "layer": "cities/kyaiklat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            95.72155,
+            16.44676
+          ]
+        },
+        "properties": {
+          "id": "kyaiklat",
+          "name": "Kyaiklat",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 48606
+        }
+      },
+      "summary": null
+    }
+  }
+}

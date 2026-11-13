@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rio-de-janeiro-fua",
+  "createdAt": "2026-10-19T16:58:11.629Z",
+  "updatedAt": "2026-10-19T16:58:11.629Z",
+  "meta": {
+    "name": "Rio de Janeiro",
+    "nameIt": "Rio de Janeiro",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "rio-de-janeiro-fua",
+    "name": "Rio de Janeiro",
+    "nameIt": "Rio de Janeiro",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "extent": "fua",
+    "core": "rio-de-janeiro",
+    "center": [
+      -43.40062,
+      -22.83032
+    ],
+    "zoom": 8.5,
+    "population": 10236552,
+    "grid": "cities/rio-de-janeiro-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rio-de-janeiro-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rio-de-janeiro-fua",
+        "name": "Rio de Janeiro",
+        "nameIt": "Rio de Janeiro",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "extent": "fua",
+        "core": "rio-de-janeiro",
+        "center": [
+          -43.40062,
+          -22.83032
+        ],
+        "zoom": 8.5,
+        "population": 10236552,
+        "cells": 32983,
+        "layer": "cities/rio-de-janeiro-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -43.40062,
+            -22.83032
+          ]
+        },
+        "properties": {
+          "id": "rio-de-janeiro-fua",
+          "name": "Rio de Janeiro",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 22.8,
+          "population": 10236552
+        }
+      },
+      "summary": null
+    }
+  }
+}

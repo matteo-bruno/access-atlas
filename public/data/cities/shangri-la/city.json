@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shangri-la",
+  "createdAt": "2026-10-08T16:12:31.729Z",
+  "updatedAt": "2026-10-08T16:12:31.729Z",
+  "meta": {
+    "name": "Shangri-La",
+    "nameIt": "Shangri-La",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shangri-La.geojson",
+      "sha256": "42dff388c8137b090ba415fc174308972f7b96fe6fee27dcec8dd2ba2020bb58",
+      "size": 166306,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shangri-la",
+    "name": "Shangri-La",
+    "nameIt": "Shangri-La",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      99.70876,
+      27.82977
+    ],
+    "zoom": 11.8,
+    "population": 128574,
+    "grid": "cities/shangri-la/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shangri-la/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shangri-la",
+        "name": "Shangri-La",
+        "nameIt": "Shangri-La",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          99.70876,
+          27.82977
+        ],
+        "zoom": 11.8,
+        "population": 128574,
+        "cells": 144,
+        "layer": "cities/shangri-la/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            99.70876,
+            27.82977
+          ]
+        },
+        "properties": {
+          "id": "shangri-la",
+          "name": "Shangri-La",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 128574
+        }
+      },
+      "summary": null
+    }
+  }
+}

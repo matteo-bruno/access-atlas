@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "coatbridge",
+  "createdAt": "2026-10-08T15:25:50.683Z",
+  "updatedAt": "2026-10-08T15:25:50.683Z",
+  "meta": {
+    "name": "Coatbridge",
+    "nameIt": "Coatbridge",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Coatbridge.geojson",
+      "sha256": "9ca2b1b278ae77ebd0fc84716d11bde3a49349e202336dd27b455b62a1583493",
+      "size": 362185,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "coatbridge",
+    "name": "Coatbridge",
+    "nameIt": "Coatbridge",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -4.00008,
+      55.85826
+    ],
+    "zoom": 11.1,
+    "population": 81089,
+    "grid": "cities/coatbridge/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/coatbridge/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "coatbridge",
+        "name": "Coatbridge",
+        "nameIt": "Coatbridge",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -4.00008,
+          55.85826
+        ],
+        "zoom": 11.1,
+        "population": 81089,
+        "cells": 315,
+        "layer": "cities/coatbridge/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -4.00008,
+            55.85826
+          ]
+        },
+        "properties": {
+          "id": "coatbridge",
+          "name": "Coatbridge",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 81089
+        }
+      },
+      "summary": null
+    }
+  }
+}

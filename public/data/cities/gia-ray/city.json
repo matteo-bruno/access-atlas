@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gia-ray",
+  "createdAt": "2026-10-08T15:35:11.410Z",
+  "updatedAt": "2026-10-08T15:35:11.410Z",
+  "meta": {
+    "name": "Gia Ray",
+    "nameIt": "Gia Ray",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gia Ray.geojson",
+      "sha256": "06c8782472cf2cc9473f7917f00e2c7a30e290ac3ced0197e7584fdf120e6545",
+      "size": 157973,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gia-ray",
+    "name": "Gia Ray",
+    "nameIt": "Gia Ray",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      107.39332,
+      10.91458
+    ],
+    "zoom": 10.9,
+    "population": 41527,
+    "grid": "cities/gia-ray/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gia-ray/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gia-ray",
+        "name": "Gia Ray",
+        "nameIt": "Gia Ray",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          107.39332,
+          10.91458
+        ],
+        "zoom": 10.9,
+        "population": 41527,
+        "cells": 135,
+        "layer": "cities/gia-ray/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.39332,
+            10.91458
+          ]
+        },
+        "properties": {
+          "id": "gia-ray",
+          "name": "Gia Ray",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 41527
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mansuriya",
+  "createdAt": "2026-10-08T15:54:56.779Z",
+  "updatedAt": "2026-10-08T15:54:56.779Z",
+  "meta": {
+    "name": "Mansuriya",
+    "nameIt": "Mansuriya",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mansuriya.geojson",
+      "sha256": "c99065db2c1f1c8b46c7f6d01f9cae643f9059573c2df698557f2682d31ddc2b",
+      "size": 54823,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mansuriya",
+    "name": "Mansuriya",
+    "nameIt": "Mansuriya",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      31.07303,
+      30.13609
+    ],
+    "zoom": 12,
+    "population": 96293,
+    "grid": "cities/mansuriya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mansuriya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mansuriya",
+        "name": "Mansuriya",
+        "nameIt": "Mansuriya",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          31.07303,
+          30.13609
+        ],
+        "zoom": 12,
+        "population": 96293,
+        "cells": 47,
+        "layer": "cities/mansuriya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.07303,
+            30.13609
+          ]
+        },
+        "properties": {
+          "id": "mansuriya",
+          "name": "Mansuriya",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 96293
+        }
+      },
+      "summary": null
+    }
+  }
+}

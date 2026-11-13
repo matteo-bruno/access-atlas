@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mopti",
+  "createdAt": "2026-10-08T15:58:12.282Z",
+  "updatedAt": "2026-10-08T15:58:12.282Z",
+  "meta": {
+    "name": "Mopti",
+    "nameIt": "Mopti",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mopti.geojson",
+      "sha256": "6f758aee9681330e495a718b27be5504165e5135977d3041e40510d8f7c3548d",
+      "size": 118117,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mopti",
+    "name": "Mopti",
+    "nameIt": "Mopti",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML",
+    "center": [
+      -4.19081,
+      14.49185
+    ],
+    "zoom": 11.9,
+    "population": 76453,
+    "grid": "cities/mopti/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mopti/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mopti",
+        "name": "Mopti",
+        "nameIt": "Mopti",
+        "region": "Mali",
+        "regionIt": "Mali",
+        "country": "ML",
+        "center": [
+          -4.19081,
+          14.49185
+        ],
+        "zoom": 11.9,
+        "population": 76453,
+        "cells": 101,
+        "layer": "cities/mopti/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -4.19081,
+            14.49185
+          ]
+        },
+        "properties": {
+          "id": "mopti",
+          "name": "Mopti",
+          "country": "ML",
+          "isStudy": true,
+          "proximityMinutes": 10.9,
+          "population": 76453
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cap-haitien",
+  "createdAt": "2026-10-08T15:22:22.797Z",
+  "updatedAt": "2026-10-08T15:22:22.797Z",
+  "meta": {
+    "name": "Cap-Haitien",
+    "nameIt": "Cap-Haitien",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cap-Haitien.geojson",
+      "sha256": "84253a7365e2296701cf1ef6c314dbe6d360346b75af7d189e35b8eb49691a18",
+      "size": 600443,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cap-haitien",
+    "name": "Cap-Haitien",
+    "nameIt": "Cap-Haitien",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT",
+    "center": [
+      -72.21138,
+      19.73678
+    ],
+    "zoom": 10.5,
+    "population": 313078,
+    "grid": "cities/cap-haitien/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cap-haitien/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cap-haitien",
+        "name": "Cap-Haitien",
+        "nameIt": "Cap-Haitien",
+        "region": "Haiti",
+        "regionIt": "Haiti",
+        "country": "HT",
+        "center": [
+          -72.21138,
+          19.73678
+        ],
+        "zoom": 10.5,
+        "population": 313078,
+        "cells": 518,
+        "layer": "cities/cap-haitien/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.21138,
+            19.73678
+          ]
+        },
+        "properties": {
+          "id": "cap-haitien",
+          "name": "Cap-Haitien",
+          "country": "HT",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 313078
+        }
+      },
+      "summary": null
+    }
+  }
+}

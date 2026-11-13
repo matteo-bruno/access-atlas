@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dunhua",
+  "createdAt": "2026-10-08T15:31:22.896Z",
+  "updatedAt": "2026-10-08T15:31:22.896Z",
+  "meta": {
+    "name": "Dunhua",
+    "nameIt": "Dunhua",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dunhua.geojson",
+      "sha256": "fc5b1d383c468f3f52726551b7e0600fbe9bbcfae69d809e8a1e41d741e14b14",
+      "size": 515889,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dunhua",
+    "name": "Dunhua",
+    "nameIt": "Dunhua",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      128.23088,
+      43.36144
+    ],
+    "zoom": 11.2,
+    "population": 191442,
+    "grid": "cities/dunhua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 173
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dunhua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dunhua",
+        "name": "Dunhua",
+        "nameIt": "Dunhua",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          128.23088,
+          43.36144
+        ],
+        "zoom": 11.2,
+        "population": 191442,
+        "cells": 444,
+        "layer": "cities/dunhua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 173
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            128.23088,
+            43.36144
+          ]
+        },
+        "properties": {
+          "id": "dunhua",
+          "name": "Dunhua",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 16.7,
+          "population": 191442
+        }
+      },
+      "summary": null
+    }
+  }
+}

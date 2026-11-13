@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guiyang-hunan-province",
+  "createdAt": "2026-10-08T15:36:36.073Z",
+  "updatedAt": "2026-10-08T15:36:36.073Z",
+  "meta": {
+    "name": "Guiyang (Hunan Province)",
+    "nameIt": "Guiyang (Hunan Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guiyang (Hunan Province).geojson",
+      "sha256": "dc2441ad0a8724a820258e8863f6d4e808ba6bd448c6d6ff1f75b7af51341e7a",
+      "size": 197385,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guiyang-hunan-province",
+    "name": "Guiyang (Hunan Province)",
+    "nameIt": "Guiyang (Hunan Province)",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.73089,
+      25.74595
+    ],
+    "zoom": 11.6,
+    "population": 207912,
+    "grid": "cities/guiyang-hunan-province/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guiyang-hunan-province/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guiyang-hunan-province",
+        "name": "Guiyang (Hunan Province)",
+        "nameIt": "Guiyang (Hunan Province)",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.73089,
+          25.74595
+        ],
+        "zoom": 11.6,
+        "population": 207912,
+        "cells": 169,
+        "layer": "cities/guiyang-hunan-province/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.73089,
+            25.74595
+          ]
+        },
+        "properties": {
+          "id": "guiyang-hunan-province",
+          "name": "Guiyang (Hunan Province)",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 207912
+        }
+      },
+      "summary": null
+    }
+  }
+}

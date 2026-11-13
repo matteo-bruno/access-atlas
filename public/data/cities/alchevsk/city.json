@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "alchevsk",
+  "createdAt": "2026-10-08T15:05:37.652Z",
+  "updatedAt": "2026-10-08T15:05:37.652Z",
+  "meta": {
+    "name": "Alchevsk",
+    "nameIt": "Alchevsk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Alchevsk.geojson",
+      "sha256": "6773caa7e692d107647d5b1e8bac7eef637af413b6a181b9e4a6913f4a86e2b9",
+      "size": 393356,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "alchevsk",
+    "name": "Alchevsk",
+    "nameIt": "Alchevsk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      38.8021,
+      48.46581
+    ],
+    "zoom": 11.2,
+    "population": 130823,
+    "grid": "cities/alchevsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/alchevsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "alchevsk",
+        "name": "Alchevsk",
+        "nameIt": "Alchevsk",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          38.8021,
+          48.46581
+        ],
+        "zoom": 11.2,
+        "population": 130823,
+        "cells": 341,
+        "layer": "cities/alchevsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.8021,
+            48.46581
+          ]
+        },
+        "properties": {
+          "id": "alchevsk",
+          "name": "Alchevsk",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 18.9,
+          "population": 130823
+        }
+      },
+      "summary": null
+    }
+  }
+}

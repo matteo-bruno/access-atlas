@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "formosa-argentina",
+  "createdAt": "2026-10-08T15:33:32.372Z",
+  "updatedAt": "2026-10-08T15:33:32.372Z",
+  "meta": {
+    "name": "Formosa (Argentina)",
+    "nameIt": "Formosa (Argentina)",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Formosa (Argentina).geojson",
+      "sha256": "1f9f1d47aea458ca63f6220c6b9cc7774dafe81a1bddc382b40337dd4bdcb0b4",
+      "size": 679978,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "formosa-argentina",
+    "name": "Formosa (Argentina)",
+    "nameIt": "Formosa (Argentina)",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -58.18807,
+      -26.17518
+    ],
+    "zoom": 10.5,
+    "population": 219420,
+    "grid": "cities/formosa-argentina/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/formosa-argentina/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "formosa-argentina",
+        "name": "Formosa (Argentina)",
+        "nameIt": "Formosa (Argentina)",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -58.18807,
+          -26.17518
+        ],
+        "zoom": 10.5,
+        "population": 219420,
+        "cells": 580,
+        "layer": "cities/formosa-argentina/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -58.18807,
+            -26.17518
+          ]
+        },
+        "properties": {
+          "id": "formosa-argentina",
+          "name": "Formosa (Argentina)",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 20.4,
+          "population": 219420
+        }
+      },
+      "summary": null
+    }
+  }
+}

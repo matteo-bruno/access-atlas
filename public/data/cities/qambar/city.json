@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "qambar",
+  "createdAt": "2026-10-08T16:07:12.773Z",
+  "updatedAt": "2026-10-08T16:07:12.773Z",
+  "meta": {
+    "name": "Qambar",
+    "nameIt": "Qambar",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Qambar.geojson",
+      "sha256": "181d72da38507ad786787e10a69a15e222c83dcc678021321547ec7f99d9bac2",
+      "size": 98533,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "qambar",
+    "name": "Qambar",
+    "nameIt": "Qambar",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      68.00234,
+      27.58943
+    ],
+    "zoom": 12,
+    "population": 125442,
+    "grid": "cities/qambar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/qambar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "qambar",
+        "name": "Qambar",
+        "nameIt": "Qambar",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          68.00234,
+          27.58943
+        ],
+        "zoom": 12,
+        "population": 125442,
+        "cells": 85,
+        "layer": "cities/qambar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            68.00234,
+            27.58943
+          ]
+        },
+        "properties": {
+          "id": "qambar",
+          "name": "Qambar",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 125442
+        }
+      },
+      "summary": null
+    }
+  }
+}

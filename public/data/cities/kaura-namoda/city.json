@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kaura-namoda",
+  "createdAt": "2026-10-08T15:45:47.058Z",
+  "updatedAt": "2026-10-08T15:45:47.058Z",
+  "meta": {
+    "name": "Kaura-Namoda",
+    "nameIt": "Kaura-Namoda",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kaura-Namoda.geojson",
+      "sha256": "b4ba3fb70767d5715e784a6791f56b46ba2b2881377647a05211890108c29d9c",
+      "size": 166976,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kaura-namoda",
+    "name": "Kaura-Namoda",
+    "nameIt": "Kaura-Namoda",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      6.58672,
+      12.59123
+    ],
+    "zoom": 12,
+    "population": 113389,
+    "grid": "cities/kaura-namoda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kaura-namoda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kaura-namoda",
+        "name": "Kaura-Namoda",
+        "nameIt": "Kaura-Namoda",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          6.58672,
+          12.59123
+        ],
+        "zoom": 12,
+        "population": 113389,
+        "cells": 144,
+        "layer": "cities/kaura-namoda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.58672,
+            12.59123
+          ]
+        },
+        "properties": {
+          "id": "kaura-namoda",
+          "name": "Kaura-Namoda",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 113389
+        }
+      },
+      "summary": null
+    }
+  }
+}

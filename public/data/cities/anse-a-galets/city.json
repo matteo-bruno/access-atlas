@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "anse-a-galets",
+  "createdAt": "2026-10-08T15:08:13.455Z",
+  "updatedAt": "2026-10-08T15:08:13.455Z",
+  "meta": {
+    "name": "Anse-à-Galets",
+    "nameIt": "Anse-à-Galets",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Anse-à-Galets.geojson",
+      "sha256": "e75c885daf6e717c991b06bd365703a43ac2085b8fff9f4c7d76cbb22ab38b0a",
+      "size": 99185,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "anse-a-galets",
+    "name": "Anse-à-Galets",
+    "nameIt": "Anse-à-Galets",
+    "region": "Haiti",
+    "regionIt": "Haiti",
+    "country": "HT",
+    "center": [
+      -72.87022,
+      18.83399
+    ],
+    "zoom": 12,
+    "population": 10941,
+    "grid": "cities/anse-a-galets/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/anse-a-galets/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "anse-a-galets",
+        "name": "Anse-à-Galets",
+        "nameIt": "Anse-à-Galets",
+        "region": "Haiti",
+        "regionIt": "Haiti",
+        "country": "HT",
+        "center": [
+          -72.87022,
+          18.83399
+        ],
+        "zoom": 12,
+        "population": 10941,
+        "cells": 85,
+        "layer": "cities/anse-a-galets/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.87022,
+            18.83399
+          ]
+        },
+        "properties": {
+          "id": "anse-a-galets",
+          "name": "Anse-à-Galets",
+          "country": "HT",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 10941
+        }
+      },
+      "summary": null
+    }
+  }
+}

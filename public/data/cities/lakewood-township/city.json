@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lakewood-township",
+  "createdAt": "2026-10-08T15:49:46.941Z",
+  "updatedAt": "2026-10-08T15:49:46.941Z",
+  "meta": {
+    "name": "Lakewood Township",
+    "nameIt": "Lakewood Township",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lakewood Township.geojson",
+      "sha256": "62f62eb42c1e0772da47b477a268448190e4cb6d90fbeaa40f0228db46b75010",
+      "size": 281590,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lakewood-township",
+    "name": "Lakewood Township",
+    "nameIt": "Lakewood Township",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -74.21869,
+      40.08978
+    ],
+    "zoom": 11.3,
+    "population": 101116,
+    "grid": "cities/lakewood-township/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lakewood-township/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lakewood-township",
+        "name": "Lakewood Township",
+        "nameIt": "Lakewood Township",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -74.21869,
+          40.08978
+        ],
+        "zoom": 11.3,
+        "population": 101116,
+        "cells": 242,
+        "layer": "cities/lakewood-township/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.21869,
+            40.08978
+          ]
+        },
+        "properties": {
+          "id": "lakewood-township",
+          "name": "Lakewood Township",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 21.9,
+          "population": 101116
+        }
+      },
+      "summary": null
+    }
+  }
+}

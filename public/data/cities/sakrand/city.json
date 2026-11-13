@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sakrand",
+  "createdAt": "2026-10-08T16:10:00.162Z",
+  "updatedAt": "2026-10-08T16:10:00.162Z",
+  "meta": {
+    "name": "Sakrand",
+    "nameIt": "Sakrand",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sakrand.geojson",
+      "sha256": "7d13296ba336435824ca7a0c1fca06bc8b560cf0992d8a36f35d720b9814850a",
+      "size": 140105,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sakrand",
+    "name": "Sakrand",
+    "nameIt": "Sakrand",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      68.27064,
+      26.13805
+    ],
+    "zoom": 11.8,
+    "population": 65162,
+    "grid": "cities/sakrand/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sakrand/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sakrand",
+        "name": "Sakrand",
+        "nameIt": "Sakrand",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          68.27064,
+          26.13805
+        ],
+        "zoom": 11.8,
+        "population": 65162,
+        "cells": 121,
+        "layer": "cities/sakrand/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            68.27064,
+            26.13805
+          ]
+        },
+        "properties": {
+          "id": "sakrand",
+          "name": "Sakrand",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 65162
+        }
+      },
+      "summary": null
+    }
+  }
+}

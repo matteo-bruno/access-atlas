@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "biskra",
+  "createdAt": "2026-10-08T15:19:24.600Z",
+  "updatedAt": "2026-10-08T15:19:24.600Z",
+  "meta": {
+    "name": "Biskra",
+    "nameIt": "Biskra",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Biskra.geojson",
+      "sha256": "d44a2d6c2ef225fa929b17ac9501139ee45b4d31103fdcb4418f29c855ba9e37",
+      "size": 477988,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "biskra",
+    "name": "Biskra",
+    "nameIt": "Biskra",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      5.73029,
+      34.84802
+    ],
+    "zoom": 10.7,
+    "population": 283863,
+    "grid": "cities/biskra/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/biskra/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "biskra",
+        "name": "Biskra",
+        "nameIt": "Biskra",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          5.73029,
+          34.84802
+        ],
+        "zoom": 10.7,
+        "population": 283863,
+        "cells": 417,
+        "layer": "cities/biskra/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.73029,
+            34.84802
+          ]
+        },
+        "properties": {
+          "id": "biskra",
+          "name": "Biskra",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 283863
+        }
+      },
+      "summary": null
+    }
+  }
+}

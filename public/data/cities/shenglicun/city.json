@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shenglicun",
+  "createdAt": "2026-10-08T16:12:48.466Z",
+  "updatedAt": "2026-10-08T16:12:48.466Z",
+  "meta": {
+    "name": "Shenglicun",
+    "nameIt": "Shenglicun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shenglicun.geojson",
+      "sha256": "0f7308a8667a6113df85bbfbc36183adb767c022b4ebbb1cee4b26120c746d6a",
+      "size": 620739,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shenglicun",
+    "name": "Shenglicun",
+    "nameIt": "Shenglicun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.33516,
+      23.01685
+    ],
+    "zoom": 10.8,
+    "population": 450777,
+    "grid": "cities/shenglicun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shenglicun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shenglicun",
+        "name": "Shenglicun",
+        "nameIt": "Shenglicun",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.33516,
+          23.01685
+        ],
+        "zoom": 10.8,
+        "population": 450777,
+        "cells": 531,
+        "layer": "cities/shenglicun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.33516,
+            23.01685
+          ]
+        },
+        "properties": {
+          "id": "shenglicun",
+          "name": "Shenglicun",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24.2,
+          "population": 450777
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ghimbi",
+  "createdAt": "2026-10-08T15:35:08.650Z",
+  "updatedAt": "2026-10-08T15:35:08.650Z",
+  "meta": {
+    "name": "Ghimbi",
+    "nameIt": "Ghimbi",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ghimbi.geojson",
+      "sha256": "67fea113843f903fc0f7faf032c3fc5adf2dd08999a867b44a79ded321d00b76",
+      "size": 148735,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ghimbi",
+    "name": "Ghimbi",
+    "nameIt": "Ghimbi",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      35.83204,
+      9.18116
+    ],
+    "zoom": 11.7,
+    "population": 43676,
+    "grid": "cities/ghimbi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ghimbi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ghimbi",
+        "name": "Ghimbi",
+        "nameIt": "Ghimbi",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          35.83204,
+          9.18116
+        ],
+        "zoom": 11.7,
+        "population": 43676,
+        "cells": 129,
+        "layer": "cities/ghimbi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.83204,
+            9.18116
+          ]
+        },
+        "properties": {
+          "id": "ghimbi",
+          "name": "Ghimbi",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 43676
+        }
+      },
+      "summary": null
+    }
+  }
+}

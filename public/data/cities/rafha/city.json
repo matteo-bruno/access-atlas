@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rafha",
+  "createdAt": "2026-10-08T16:07:49.217Z",
+  "updatedAt": "2026-10-08T16:07:49.217Z",
+  "meta": {
+    "name": "Rafha",
+    "nameIt": "Rafha",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rafha.geojson",
+      "sha256": "f2512d2dd5f19e0b5c00608382401a88b9070566140314015c894dc7803de1ed",
+      "size": 181164,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rafha",
+    "name": "Rafha",
+    "nameIt": "Rafha",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA",
+    "center": [
+      43.52949,
+      29.63313
+    ],
+    "zoom": 11.4,
+    "population": 35676,
+    "grid": "cities/rafha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rafha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rafha",
+        "name": "Rafha",
+        "nameIt": "Rafha",
+        "region": "Saudi Arabia",
+        "regionIt": "Arabia Saudita",
+        "country": "SA",
+        "center": [
+          43.52949,
+          29.63313
+        ],
+        "zoom": 11.4,
+        "population": 35676,
+        "cells": 156,
+        "layer": "cities/rafha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.52949,
+            29.63313
+          ]
+        },
+        "properties": {
+          "id": "rafha",
+          "name": "Rafha",
+          "country": "SA",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 35676
+        }
+      },
+      "summary": null
+    }
+  }
+}

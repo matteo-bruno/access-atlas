@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rajpipla",
+  "createdAt": "2026-10-08T16:08:01.462Z",
+  "updatedAt": "2026-10-08T16:08:01.462Z",
+  "meta": {
+    "name": "Rajpipla",
+    "nameIt": "Rajpipla",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rajpipla.geojson",
+      "sha256": "410009102aa9e957841d721097dedc2ec1c107b6d2592808227e22231ec71145",
+      "size": 96182,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rajpipla",
+    "name": "Rajpipla",
+    "nameIt": "Rajpipla",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.50932,
+      21.86868
+    ],
+    "zoom": 12,
+    "population": 32110,
+    "grid": "cities/rajpipla/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rajpipla/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rajpipla",
+        "name": "Rajpipla",
+        "nameIt": "Rajpipla",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.50932,
+          21.86868
+        ],
+        "zoom": 12,
+        "population": 32110,
+        "cells": 83,
+        "layer": "cities/rajpipla/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.50932,
+            21.86868
+          ]
+        },
+        "properties": {
+          "id": "rajpipla",
+          "name": "Rajpipla",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 12.7,
+          "population": 32110
+        }
+      },
+      "summary": null
+    }
+  }
+}

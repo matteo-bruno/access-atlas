@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "qudsayya",
+  "createdAt": "2026-10-08T16:07:35.062Z",
+  "updatedAt": "2026-10-08T16:07:35.062Z",
+  "meta": {
+    "name": "Qudsayya",
+    "nameIt": "Qudsayya",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Qudsayya.geojson",
+      "sha256": "b74542c81504a9a932459ddaf4c4cc96daadd045139e538bfb3eff32eaf2e3e5",
+      "size": 283747,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "qudsayya",
+    "name": "Qudsayya",
+    "nameIt": "Qudsayya",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY",
+    "center": [
+      36.22111,
+      33.53753
+    ],
+    "zoom": 11,
+    "population": 348508,
+    "grid": "cities/qudsayya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/qudsayya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "qudsayya",
+        "name": "Qudsayya",
+        "nameIt": "Qudsayya",
+        "region": "Syria",
+        "regionIt": "Siria",
+        "country": "SY",
+        "center": [
+          36.22111,
+          33.53753
+        ],
+        "zoom": 11,
+        "population": 348508,
+        "cells": 246,
+        "layer": "cities/qudsayya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.22111,
+            33.53753
+          ]
+        },
+        "properties": {
+          "id": "qudsayya",
+          "name": "Qudsayya",
+          "country": "SY",
+          "isStudy": true,
+          "proximityMinutes": 16.7,
+          "population": 348508
+        }
+      },
+      "summary": null
+    }
+  }
+}

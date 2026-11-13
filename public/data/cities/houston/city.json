@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "houston",
+  "createdAt": "2026-10-08T15:39:11.868Z",
+  "updatedAt": "2026-10-08T15:39:11.868Z",
+  "meta": {
+    "name": "Houston",
+    "nameIt": "Houston",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Houston.geojson",
+      "sha256": "ed8792f4e0c7658670fb750b03e5228a00f1f285cb2e459ea72cb846a4995297",
+      "size": 18223207,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "houston",
+    "name": "Houston",
+    "nameIt": "Houston",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -95.47047,
+      29.78476
+    ],
+    "zoom": 8.5,
+    "population": 3409954,
+    "grid": "cities/houston/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/houston/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "houston",
+        "name": "Houston",
+        "nameIt": "Houston",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -95.47047,
+          29.78476
+        ],
+        "zoom": 8.5,
+        "population": 3409954,
+        "cells": 15707,
+        "layer": "cities/houston/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -95.47047,
+            29.78476
+          ]
+        },
+        "properties": {
+          "id": "houston",
+          "name": "Houston",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 31.3,
+          "population": 3409954
+        }
+      },
+      "summary": null
+    }
+  }
+}

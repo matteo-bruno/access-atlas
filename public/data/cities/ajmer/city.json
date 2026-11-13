@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ajmer",
+  "createdAt": "2026-10-08T15:03:31.588Z",
+  "updatedAt": "2026-10-08T15:03:31.588Z",
+  "meta": {
+    "name": "Ajmer",
+    "nameIt": "Ajmer",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ajmer.geojson",
+      "sha256": "9da48b12caf075f5c2a8459ea4c8dae79a02481a79840a69970968f3ead2c860",
+      "size": 992404,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ajmer",
+    "name": "Ajmer",
+    "nameIt": "Ajmer",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.63765,
+      26.45299
+    ],
+    "zoom": 10.3,
+    "population": 489283,
+    "grid": "cities/ajmer/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ajmer/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ajmer",
+        "name": "Ajmer",
+        "nameIt": "Ajmer",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.63765,
+          26.45299
+        ],
+        "zoom": 10.3,
+        "population": 489283,
+        "cells": 856,
+        "layer": "cities/ajmer/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.63765,
+            26.45299
+          ]
+        },
+        "properties": {
+          "id": "ajmer",
+          "name": "Ajmer",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 45.2,
+          "population": 489283
+        }
+      },
+      "summary": null
+    }
+  }
+}

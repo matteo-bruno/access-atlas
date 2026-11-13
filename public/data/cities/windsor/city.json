@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "windsor",
+  "createdAt": "2026-10-08T16:21:43.533Z",
+  "updatedAt": "2026-10-08T16:21:43.533Z",
+  "meta": {
+    "name": "Windsor",
+    "nameIt": "Windsor",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Windsor.geojson",
+      "sha256": "6364d294a5a46249608691d0fdf962a3e6dbcf71c16515ac7190f6be84cba1af",
+      "size": 1296615,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "windsor",
+    "name": "Windsor",
+    "nameIt": "Windsor",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -82.98531,
+      42.29548
+    ],
+    "zoom": 9.8,
+    "population": 258206,
+    "grid": "cities/windsor/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/windsor/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "windsor",
+        "name": "Windsor",
+        "nameIt": "Windsor",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -82.98531,
+          42.29548
+        ],
+        "zoom": 9.8,
+        "population": 258206,
+        "cells": 1126,
+        "layer": "cities/windsor/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.98531,
+            42.29548
+          ]
+        },
+        "properties": {
+          "id": "windsor",
+          "name": "Windsor",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 20,
+          "population": 258206
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "puerto-barrios",
+  "createdAt": "2026-10-08T16:06:42.556Z",
+  "updatedAt": "2026-10-08T16:06:42.556Z",
+  "meta": {
+    "name": "Puerto Barrios",
+    "nameIt": "Puerto Barrios",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Puerto Barrios.geojson",
+      "sha256": "e1ac17b0ed6abccce92552ec94167d9c8fe1b5c5b38af45751fd47c50472a9a9",
+      "size": 200021,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "puerto-barrios",
+    "name": "Puerto Barrios",
+    "nameIt": "Puerto Barrios",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT",
+    "center": [
+      -88.58987,
+      15.71725
+    ],
+    "zoom": 11.2,
+    "population": 47869,
+    "grid": "cities/puerto-barrios/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/puerto-barrios/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "puerto-barrios",
+        "name": "Puerto Barrios",
+        "nameIt": "Puerto Barrios",
+        "region": "Guatemala",
+        "regionIt": "Guatemala",
+        "country": "GT",
+        "center": [
+          -88.58987,
+          15.71725
+        ],
+        "zoom": 11.2,
+        "population": 47869,
+        "cells": 171,
+        "layer": "cities/puerto-barrios/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.58987,
+            15.71725
+          ]
+        },
+        "properties": {
+          "id": "puerto-barrios",
+          "name": "Puerto Barrios",
+          "country": "GT",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 47869
+        }
+      },
+      "summary": null
+    }
+  }
+}

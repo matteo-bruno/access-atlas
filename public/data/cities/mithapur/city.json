@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mithapur",
+  "createdAt": "2026-10-08T15:57:29.712Z",
+  "updatedAt": "2026-10-08T15:57:29.712Z",
+  "meta": {
+    "name": "Mithapur",
+    "nameIt": "Mithapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mithapur.geojson",
+      "sha256": "9ebddef85d981548ae7d9b1318b0017bcbea91917955c829733db89e0d979b0f",
+      "size": 130802,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mithapur",
+    "name": "Mithapur",
+    "nameIt": "Mithapur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      69.01736,
+      22.41344
+    ],
+    "zoom": 12,
+    "population": 46929,
+    "grid": "cities/mithapur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mithapur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mithapur",
+        "name": "Mithapur",
+        "nameIt": "Mithapur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          69.01736,
+          22.41344
+        ],
+        "zoom": 12,
+        "population": 46929,
+        "cells": 113,
+        "layer": "cities/mithapur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.01736,
+            22.41344
+          ]
+        },
+        "properties": {
+          "id": "mithapur",
+          "name": "Mithapur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 46929
+        }
+      },
+      "summary": null
+    }
+  }
+}

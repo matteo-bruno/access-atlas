@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vila-jardim",
+  "createdAt": "2026-10-08T16:20:44.471Z",
+  "updatedAt": "2026-10-08T16:20:44.471Z",
+  "meta": {
+    "name": "Vila Jardim",
+    "nameIt": "Vila Jardim",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vila Jardim.geojson",
+      "sha256": "ca38ef79f57c8a5859219829e575fd097a666cebc61635a6865b46543e199df4",
+      "size": 118185,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vila-jardim",
+    "name": "Vila Jardim",
+    "nameIt": "Vila Jardim",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -39.09049,
+      -16.41981
+    ],
+    "zoom": 11.7,
+    "population": 54664,
+    "grid": "cities/vila-jardim/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vila-jardim/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vila-jardim",
+        "name": "Vila Jardim",
+        "nameIt": "Vila Jardim",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -39.09049,
+          -16.41981
+        ],
+        "zoom": 11.7,
+        "population": 54664,
+        "cells": 100,
+        "layer": "cities/vila-jardim/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -39.09049,
+            -16.41981
+          ]
+        },
+        "properties": {
+          "id": "vila-jardim",
+          "name": "Vila Jardim",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 12.3,
+          "population": 54664
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zhanghua-city",
+  "createdAt": "2026-10-08T16:24:58.754Z",
+  "updatedAt": "2026-10-08T16:24:58.754Z",
+  "meta": {
+    "name": "Zhanghua City",
+    "nameIt": "Zhanghua City",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zhanghua City.geojson",
+      "sha256": "196b72d33e76c75672e78819db8e9d8429783a899084211a52e1a8ed49266efd",
+      "size": 1663703,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zhanghua-city",
+    "name": "Zhanghua City",
+    "nameIt": "Zhanghua City",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW",
+    "center": [
+      120.51516,
+      24.07574
+    ],
+    "zoom": 9.8,
+    "population": 423580,
+    "grid": "cities/zhanghua-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zhanghua-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zhanghua-city",
+        "name": "Zhanghua City",
+        "nameIt": "Zhanghua City",
+        "region": "Taiwan",
+        "regionIt": "Taiwan",
+        "country": "TW",
+        "center": [
+          120.51516,
+          24.07574
+        ],
+        "zoom": 9.8,
+        "population": 423580,
+        "cells": 1440,
+        "layer": "cities/zhanghua-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.51516,
+            24.07574
+          ]
+        },
+        "properties": {
+          "id": "zhanghua-city",
+          "name": "Zhanghua City",
+          "country": "TW",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 423580
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fengkai",
+  "createdAt": "2026-10-08T15:33:09.554Z",
+  "updatedAt": "2026-10-08T15:33:09.554Z",
+  "meta": {
+    "name": "Fengkai",
+    "nameIt": "Fengkai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fengkai.geojson",
+      "sha256": "5f5c40b8077fcebc83d9b4d18055456872f3ca7ac6840bede541f9adb4e54717",
+      "size": 121458,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fengkai",
+    "name": "Fengkai",
+    "nameIt": "Fengkai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      111.50025,
+      23.43242
+    ],
+    "zoom": 11.9,
+    "population": 42110,
+    "grid": "cities/fengkai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fengkai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fengkai",
+        "name": "Fengkai",
+        "nameIt": "Fengkai",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          111.50025,
+          23.43242
+        ],
+        "zoom": 11.9,
+        "population": 42110,
+        "cells": 104,
+        "layer": "cities/fengkai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.50025,
+            23.43242
+          ]
+        },
+        "properties": {
+          "id": "fengkai",
+          "name": "Fengkai",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 42110
+        }
+      },
+      "summary": null
+    }
+  }
+}

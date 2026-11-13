@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "samara",
+  "createdAt": "2026-10-08T16:10:15.224Z",
+  "updatedAt": "2026-10-08T16:10:15.224Z",
+  "meta": {
+    "name": "Samara",
+    "nameIt": "Samara",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Samara.geojson",
+      "sha256": "d297f1805bbe70841dee4b57a33d07e5ee50cd04560520cdcd2b159e6da9b70e",
+      "size": 1463978,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "samara",
+    "name": "Samara",
+    "nameIt": "Samara",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      50.20784,
+      53.21755
+    ],
+    "zoom": 9.7,
+    "population": 884769,
+    "grid": "cities/samara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/samara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "samara",
+        "name": "Samara",
+        "nameIt": "Samara",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          50.20784,
+          53.21755
+        ],
+        "zoom": 9.7,
+        "population": 884769,
+        "cells": 1282,
+        "layer": "cities/samara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            50.20784,
+            53.21755
+          ]
+        },
+        "properties": {
+          "id": "samara",
+          "name": "Samara",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 9.3,
+          "population": 884769
+        }
+      },
+      "summary": null
+    }
+  }
+}

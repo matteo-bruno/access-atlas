@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "thayarwady",
+  "createdAt": "2026-10-08T16:17:33.285Z",
+  "updatedAt": "2026-10-08T16:17:33.285Z",
+  "meta": {
+    "name": "Thayarwady",
+    "nameIt": "Thayarwady",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Thayarwady.geojson",
+      "sha256": "2c98f8357677c2158db1464bbcce7d177dc727c34dc129c2d74b759d05c27c8d",
+      "size": 178307,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "thayarwady",
+    "name": "Thayarwady",
+    "nameIt": "Thayarwady",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      95.78894,
+      17.63738
+    ],
+    "zoom": 11.2,
+    "population": 61678,
+    "grid": "cities/thayarwady/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/thayarwady/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "thayarwady",
+        "name": "Thayarwady",
+        "nameIt": "Thayarwady",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          95.78894,
+          17.63738
+        ],
+        "zoom": 11.2,
+        "population": 61678,
+        "cells": 154,
+        "layer": "cities/thayarwady/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            95.78894,
+            17.63738
+          ]
+        },
+        "properties": {
+          "id": "thayarwady",
+          "name": "Thayarwady",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 61678
+        }
+      },
+      "summary": null
+    }
+  }
+}

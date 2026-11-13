@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "palencia",
+  "createdAt": "2026-10-08T16:03:46.781Z",
+  "updatedAt": "2026-10-08T16:03:46.781Z",
+  "meta": {
+    "name": "Palencia",
+    "nameIt": "Palencia",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Palencia.geojson",
+      "sha256": "9f134b0beecb8e971e4f8eeb0d2f76dc6d56575e6629aee8fd4b61e0fb2ee8ad",
+      "size": 124891,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "palencia",
+    "name": "Palencia",
+    "nameIt": "Palencia",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -4.52736,
+      42.00858
+    ],
+    "zoom": 11.8,
+    "population": 68241,
+    "grid": "cities/palencia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/palencia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "palencia",
+        "name": "Palencia",
+        "nameIt": "Palencia",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -4.52736,
+          42.00858
+        ],
+        "zoom": 11.8,
+        "population": 68241,
+        "cells": 109,
+        "layer": "cities/palencia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -4.52736,
+            42.00858
+          ]
+        },
+        "properties": {
+          "id": "palencia",
+          "name": "Palencia",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 5.8,
+          "population": 68241
+        }
+      },
+      "summary": null
+    }
+  }
+}

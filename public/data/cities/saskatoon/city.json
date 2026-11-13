@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "saskatoon",
+  "createdAt": "2026-10-08T16:11:33.398Z",
+  "updatedAt": "2026-10-08T16:11:33.398Z",
+  "meta": {
+    "name": "Saskatoon",
+    "nameIt": "Saskatoon",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Saskatoon.geojson",
+      "sha256": "4e7351747d8c9e90a0e441d2ddd048f258cb1e57c226b180f65c1b15bd17b826",
+      "size": 1209274,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "saskatoon",
+    "name": "Saskatoon",
+    "nameIt": "Saskatoon",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -106.64856,
+      52.1305
+    ],
+    "zoom": 10.2,
+    "population": 258651,
+    "grid": "cities/saskatoon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/saskatoon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "saskatoon",
+        "name": "Saskatoon",
+        "nameIt": "Saskatoon",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -106.64856,
+          52.1305
+        ],
+        "zoom": 10.2,
+        "population": 258651,
+        "cells": 1042,
+        "layer": "cities/saskatoon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.64856,
+            52.1305
+          ]
+        },
+        "properties": {
+          "id": "saskatoon",
+          "name": "Saskatoon",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 258651
+        }
+      },
+      "summary": null
+    }
+  }
+}

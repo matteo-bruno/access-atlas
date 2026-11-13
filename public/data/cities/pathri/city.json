@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pathri",
+  "createdAt": "2026-10-08T16:04:39.594Z",
+  "updatedAt": "2026-10-08T16:04:39.594Z",
+  "meta": {
+    "name": "Pathri",
+    "nameIt": "Pathri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pathri.geojson",
+      "sha256": "c1443f5b5001592c90fac1a8289ae3b8a050df9ab91d04cf769e500c174f92c6",
+      "size": 78778,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pathri",
+    "name": "Pathri",
+    "nameIt": "Pathri",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.43196,
+      19.26142
+    ],
+    "zoom": 12,
+    "population": 29127,
+    "grid": "cities/pathri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pathri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pathri",
+        "name": "Pathri",
+        "nameIt": "Pathri",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.43196,
+          19.26142
+        ],
+        "zoom": 12,
+        "population": 29127,
+        "cells": 68,
+        "layer": "cities/pathri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.43196,
+            19.26142
+          ]
+        },
+        "properties": {
+          "id": "pathri",
+          "name": "Pathri",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 29127
+        }
+      },
+      "summary": null
+    }
+  }
+}

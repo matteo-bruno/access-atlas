@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "malatya",
+  "createdAt": "2026-10-08T15:54:07.466Z",
+  "updatedAt": "2026-10-08T15:54:07.466Z",
+  "meta": {
+    "name": "Malatya",
+    "nameIt": "Malatya",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Malatya.geojson",
+      "sha256": "ff66f50ea1f5abdc6a13fb4cad86e5b338f0ecb412e0b3fcda85b17b15f3039c",
+      "size": 501056,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "malatya",
+    "name": "Malatya",
+    "nameIt": "Malatya",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      38.30316,
+      38.34742
+    ],
+    "zoom": 10.4,
+    "population": 471639,
+    "grid": "cities/malatya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/malatya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "malatya",
+        "name": "Malatya",
+        "nameIt": "Malatya",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          38.30316,
+          38.34742
+        ],
+        "zoom": 10.4,
+        "population": 471639,
+        "cells": 435,
+        "layer": "cities/malatya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.30316,
+            38.34742
+          ]
+        },
+        "properties": {
+          "id": "malatya",
+          "name": "Malatya",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 20.8,
+          "population": 471639
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rustenburg",
+  "createdAt": "2026-10-08T16:09:24.270Z",
+  "updatedAt": "2026-10-08T16:09:24.270Z",
+  "meta": {
+    "name": "Rustenburg",
+    "nameIt": "Rustenburg",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rustenburg.geojson",
+      "sha256": "b400e0e18cb5da7772bd12e5e13463cbbbab34130128ac2f24583bef2a1d35a7",
+      "size": 605849,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rustenburg",
+    "name": "Rustenburg",
+    "nameIt": "Rustenburg",
+    "region": "South Africa",
+    "regionIt": "Sudafrica",
+    "country": "ZA",
+    "center": [
+      27.22801,
+      -25.6657
+    ],
+    "zoom": 10.4,
+    "population": 130114,
+    "grid": "cities/rustenburg/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rustenburg/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rustenburg",
+        "name": "Rustenburg",
+        "nameIt": "Rustenburg",
+        "region": "South Africa",
+        "regionIt": "Sudafrica",
+        "country": "ZA",
+        "center": [
+          27.22801,
+          -25.6657
+        ],
+        "zoom": 10.4,
+        "population": 130114,
+        "cells": 518,
+        "layer": "cities/rustenburg/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.22801,
+            -25.6657
+          ]
+        },
+        "properties": {
+          "id": "rustenburg",
+          "name": "Rustenburg",
+          "country": "ZA",
+          "isStudy": true,
+          "proximityMinutes": 24.5,
+          "population": 130114
+        }
+      },
+      "summary": null
+    }
+  }
+}

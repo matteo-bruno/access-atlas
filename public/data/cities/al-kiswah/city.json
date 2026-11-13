@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-kiswah",
+  "createdAt": "2026-10-08T15:04:29.173Z",
+  "updatedAt": "2026-10-08T15:04:29.173Z",
+  "meta": {
+    "name": "Al Kiswah",
+    "nameIt": "Al Kiswah",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Kiswah.geojson",
+      "sha256": "6a41b49f545a6c38fbd3164b28c0c8105de8c70ceb5ccf867ff7152fb63bb037",
+      "size": 96099,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-kiswah",
+    "name": "Al Kiswah",
+    "nameIt": "Al Kiswah",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY",
+    "center": [
+      36.2462,
+      33.35735
+    ],
+    "zoom": 12,
+    "population": 62421,
+    "grid": "cities/al-kiswah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-kiswah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-kiswah",
+        "name": "Al Kiswah",
+        "nameIt": "Al Kiswah",
+        "region": "Syria",
+        "regionIt": "Siria",
+        "country": "SY",
+        "center": [
+          36.2462,
+          33.35735
+        ],
+        "zoom": 12,
+        "population": 62421,
+        "cells": 83,
+        "layer": "cities/al-kiswah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.2462,
+            33.35735
+          ]
+        },
+        "properties": {
+          "id": "al-kiswah",
+          "name": "Al Kiswah",
+          "country": "SY",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 62421
+        }
+      },
+      "summary": null
+    }
+  }
+}

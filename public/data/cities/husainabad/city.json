@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "husainabad",
+  "createdAt": "2026-10-08T15:39:58.498Z",
+  "updatedAt": "2026-10-08T15:39:58.498Z",
+  "meta": {
+    "name": "Husainabad",
+    "nameIt": "Husainabad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Husainabad.geojson",
+      "sha256": "2ef4415aba6c5f79bce1f2c6e42906c8eb85de42658f8e43bcb4a25835277b07",
+      "size": 159897,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "husainabad",
+    "name": "Husainabad",
+    "nameIt": "Husainabad",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.00273,
+      24.53245
+    ],
+    "zoom": 11.6,
+    "population": 51298,
+    "grid": "cities/husainabad/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/husainabad/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "husainabad",
+        "name": "Husainabad",
+        "nameIt": "Husainabad",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.00273,
+          24.53245
+        ],
+        "zoom": 11.6,
+        "population": 51298,
+        "cells": 138,
+        "layer": "cities/husainabad/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.00273,
+            24.53245
+          ]
+        },
+        "properties": {
+          "id": "husainabad",
+          "name": "Husainabad",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 51298
+        }
+      },
+      "summary": null
+    }
+  }
+}

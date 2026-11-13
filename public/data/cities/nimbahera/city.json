@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nimbahera",
+  "createdAt": "2026-10-08T16:01:34.783Z",
+  "updatedAt": "2026-10-08T16:01:34.783Z",
+  "meta": {
+    "name": "Nimbahera",
+    "nameIt": "Nimbahera",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nimbahera.geojson",
+      "sha256": "34ee755e0b94e5a3da85f012c2ca0a3de506d0262ca0ed2793d199ed814fd91b",
+      "size": 161017,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nimbahera",
+    "name": "Nimbahera",
+    "nameIt": "Nimbahera",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.68115,
+      24.62111
+    ],
+    "zoom": 11.2,
+    "population": 54151,
+    "grid": "cities/nimbahera/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nimbahera/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nimbahera",
+        "name": "Nimbahera",
+        "nameIt": "Nimbahera",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.68115,
+          24.62111
+        ],
+        "zoom": 11.2,
+        "population": 54151,
+        "cells": 139,
+        "layer": "cities/nimbahera/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.68115,
+            24.62111
+          ]
+        },
+        "properties": {
+          "id": "nimbahera",
+          "name": "Nimbahera",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 54151
+        }
+      },
+      "summary": null
+    }
+  }
+}

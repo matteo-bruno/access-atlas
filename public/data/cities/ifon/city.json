@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ifon",
+  "createdAt": "2026-10-08T15:40:20.842Z",
+  "updatedAt": "2026-10-08T15:40:20.842Z",
+  "meta": {
+    "name": "Ifon",
+    "nameIt": "Ifon",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ifon.geojson",
+      "sha256": "7cbb54566a533084cda179dbcafbf1481a1c5031458dbf095f87a98798a54bc8",
+      "size": 146113,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ifon",
+    "name": "Ifon",
+    "nameIt": "Ifon",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      5.77109,
+      6.93075
+    ],
+    "zoom": 12,
+    "population": 35331,
+    "grid": "cities/ifon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ifon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ifon",
+        "name": "Ifon",
+        "nameIt": "Ifon",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          5.77109,
+          6.93075
+        ],
+        "zoom": 12,
+        "population": 35331,
+        "cells": 127,
+        "layer": "cities/ifon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.77109,
+            6.93075
+          ]
+        },
+        "properties": {
+          "id": "ifon",
+          "name": "Ifon",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 35331
+        }
+      },
+      "summary": null
+    }
+  }
+}

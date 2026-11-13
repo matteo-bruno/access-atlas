@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chawinda",
+  "createdAt": "2026-10-08T15:24:06.635Z",
+  "updatedAt": "2026-10-08T15:24:06.635Z",
+  "meta": {
+    "name": "Chawinda",
+    "nameIt": "Chawinda",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chawinda.geojson",
+      "sha256": "97504921adac1e59b2a38a36622621840ec23ca4badb98b62bdeeec03999e3b5",
+      "size": 58925,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chawinda",
+    "name": "Chawinda",
+    "nameIt": "Chawinda",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      74.70482,
+      32.34521
+    ],
+    "zoom": 11.9,
+    "population": 38092,
+    "grid": "cities/chawinda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chawinda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chawinda",
+        "name": "Chawinda",
+        "nameIt": "Chawinda",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          74.70482,
+          32.34521
+        ],
+        "zoom": 11.9,
+        "population": 38092,
+        "cells": 51,
+        "layer": "cities/chawinda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.70482,
+            32.34521
+          ]
+        },
+        "properties": {
+          "id": "chawinda",
+          "name": "Chawinda",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 38092
+        }
+      },
+      "summary": null
+    }
+  }
+}

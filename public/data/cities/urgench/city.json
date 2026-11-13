@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "urgench",
+  "createdAt": "2026-10-08T16:20:03.703Z",
+  "updatedAt": "2026-10-08T16:20:03.703Z",
+  "meta": {
+    "name": "Urgench",
+    "nameIt": "Urgench",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Urgench.geojson",
+      "sha256": "786d942f25f3ff4fc6fa29772a442a504155dbd2de605d3d6fc24e3560bd49aa",
+      "size": 619360,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "urgench",
+    "name": "Urgench",
+    "nameIt": "Urgench",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      60.61946,
+      41.55245
+    ],
+    "zoom": 10.8,
+    "population": 231621,
+    "grid": "cities/urgench/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/urgench/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "urgench",
+        "name": "Urgench",
+        "nameIt": "Urgench",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          60.61946,
+          41.55245
+        ],
+        "zoom": 10.8,
+        "population": 231621,
+        "cells": 540,
+        "layer": "cities/urgench/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            60.61946,
+            41.55245
+          ]
+        },
+        "properties": {
+          "id": "urgench",
+          "name": "Urgench",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 21.3,
+          "population": 231621
+        }
+      },
+      "summary": null
+    }
+  }
+}

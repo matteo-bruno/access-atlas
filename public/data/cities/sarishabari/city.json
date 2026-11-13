@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sarishabari",
+  "createdAt": "2026-10-08T16:11:30.005Z",
+  "updatedAt": "2026-10-08T16:11:30.005Z",
+  "meta": {
+    "name": "Sarishabari",
+    "nameIt": "Sarishabari",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sarishabari.geojson",
+      "sha256": "a49d65676f94d15c06f6126c85563776368acc66d71fc2ba27cd942b912ff377",
+      "size": 213225,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sarishabari",
+    "name": "Sarishabari",
+    "nameIt": "Sarishabari",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.83701,
+      24.76114
+    ],
+    "zoom": 11.2,
+    "population": 57596,
+    "grid": "cities/sarishabari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sarishabari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sarishabari",
+        "name": "Sarishabari",
+        "nameIt": "Sarishabari",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.83701,
+          24.76114
+        ],
+        "zoom": 11.2,
+        "population": 57596,
+        "cells": 184,
+        "layer": "cities/sarishabari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.83701,
+            24.76114
+          ]
+        },
+        "properties": {
+          "id": "sarishabari",
+          "name": "Sarishabari",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 57596
+        }
+      },
+      "summary": null
+    }
+  }
+}

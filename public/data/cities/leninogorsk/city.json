@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "leninogorsk",
+  "createdAt": "2026-10-08T15:50:43.482Z",
+  "updatedAt": "2026-10-08T15:50:43.482Z",
+  "meta": {
+    "name": "Leninogorsk",
+    "nameIt": "Leninogorsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Leninogorsk.geojson",
+      "sha256": "1ef965e354ef9f06167fff25c91134ebf47de2b0374395c9445993d3fb8fd608",
+      "size": 141937,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "leninogorsk",
+    "name": "Leninogorsk",
+    "nameIt": "Leninogorsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      52.45464,
+      54.59652
+    ],
+    "zoom": 11.6,
+    "population": 42377,
+    "grid": "cities/leninogorsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/leninogorsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "leninogorsk",
+        "name": "Leninogorsk",
+        "nameIt": "Leninogorsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          52.45464,
+          54.59652
+        ],
+        "zoom": 11.6,
+        "population": 42377,
+        "cells": 123,
+        "layer": "cities/leninogorsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            52.45464,
+            54.59652
+          ]
+        },
+        "properties": {
+          "id": "leninogorsk",
+          "name": "Leninogorsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 42377
+        }
+      },
+      "summary": null
+    }
+  }
+}

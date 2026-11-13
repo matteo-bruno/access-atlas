@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fangcheng",
+  "createdAt": "2026-10-08T15:32:48.287Z",
+  "updatedAt": "2026-10-08T15:32:48.287Z",
+  "meta": {
+    "name": "Fangcheng",
+    "nameIt": "Fangcheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fangcheng.geojson",
+      "sha256": "f8212afe9da8bc4e12969bfd6f732c6b4e78f0cdfbcdeee0354dc0e19d029afc",
+      "size": 268989,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fangcheng",
+    "name": "Fangcheng",
+    "nameIt": "Fangcheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.00307,
+      33.25471
+    ],
+    "zoom": 11.4,
+    "population": 182906,
+    "grid": "cities/fangcheng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fangcheng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fangcheng",
+        "name": "Fangcheng",
+        "nameIt": "Fangcheng",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.00307,
+          33.25471
+        ],
+        "zoom": 11.4,
+        "population": 182906,
+        "cells": 231,
+        "layer": "cities/fangcheng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.00307,
+            33.25471
+          ]
+        },
+        "properties": {
+          "id": "fangcheng",
+          "name": "Fangcheng",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 17.4,
+          "population": 182906
+        }
+      },
+      "summary": null
+    }
+  }
+}

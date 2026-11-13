@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "brescia",
+  "createdAt": "2026-10-08T15:20:25.160Z",
+  "updatedAt": "2026-10-08T15:20:25.160Z",
+  "meta": {
+    "name": "Brescia",
+    "nameIt": "Brescia",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Brescia.geojson",
+      "sha256": "a69bd00443c5a5417aa55135e64c02fee7aa8838c58ea66dd52ccd5f48c71388",
+      "size": 890791,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "brescia",
+    "name": "Brescia",
+    "nameIt": "Brescia",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      10.20962,
+      45.53999
+    ],
+    "zoom": 10.2,
+    "population": 227409,
+    "grid": "cities/brescia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/brescia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "brescia",
+        "name": "Brescia",
+        "nameIt": "Brescia",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          10.20962,
+          45.53999
+        ],
+        "zoom": 10.2,
+        "population": 227409,
+        "cells": 778,
+        "layer": "cities/brescia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.20962,
+            45.53999
+          ]
+        },
+        "properties": {
+          "id": "brescia",
+          "name": "Brescia",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 10,
+          "population": 227409
+        }
+      },
+      "summary": null
+    }
+  }
+}

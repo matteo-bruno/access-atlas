@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kalibo",
+  "createdAt": "2026-10-08T15:44:27.683Z",
+  "updatedAt": "2026-10-08T15:44:27.683Z",
+  "meta": {
+    "name": "Kalibo",
+    "nameIt": "Kalibo",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kalibo.geojson",
+      "sha256": "8eb6e622afd9866622c3488a644f26d9d48f1522525997a58e1e35fdf16f6f94",
+      "size": 428302,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kalibo",
+    "name": "Kalibo",
+    "nameIt": "Kalibo",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      122.36474,
+      11.69609
+    ],
+    "zoom": 10.4,
+    "population": 107227,
+    "grid": "cities/kalibo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kalibo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kalibo",
+        "name": "Kalibo",
+        "nameIt": "Kalibo",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          122.36474,
+          11.69609
+        ],
+        "zoom": 10.4,
+        "population": 107227,
+        "cells": 369,
+        "layer": "cities/kalibo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            122.36474,
+            11.69609
+          ]
+        },
+        "properties": {
+          "id": "kalibo",
+          "name": "Kalibo",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 107227
+        }
+      },
+      "summary": null
+    }
+  }
+}

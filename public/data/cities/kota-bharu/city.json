@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kota-bharu",
+  "createdAt": "2026-10-08T15:48:03.893Z",
+  "updatedAt": "2026-10-08T15:48:03.893Z",
+  "meta": {
+    "name": "Kota Bharu",
+    "nameIt": "Kota Bharu",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kota Bharu.geojson",
+      "sha256": "d9396d7fab5f67ced80e05ea0ca5caf62ce1aac4f9cee566138d15ad8e8cfd1e",
+      "size": 1201820,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kota-bharu",
+    "name": "Kota Bharu",
+    "nameIt": "Kota Bharu",
+    "region": "Malaysia",
+    "regionIt": "Malaysia",
+    "country": "MY",
+    "center": [
+      102.26343,
+      6.11772
+    ],
+    "zoom": 10,
+    "population": 401969,
+    "grid": "cities/kota-bharu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kota-bharu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kota-bharu",
+        "name": "Kota Bharu",
+        "nameIt": "Kota Bharu",
+        "region": "Malaysia",
+        "regionIt": "Malaysia",
+        "country": "MY",
+        "center": [
+          102.26343,
+          6.11772
+        ],
+        "zoom": 10,
+        "population": 401969,
+        "cells": 1040,
+        "layer": "cities/kota-bharu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            102.26343,
+            6.11772
+          ]
+        },
+        "properties": {
+          "id": "kota-bharu",
+          "name": "Kota Bharu",
+          "country": "MY",
+          "isStudy": true,
+          "proximityMinutes": 35.6,
+          "population": 401969
+        }
+      },
+      "summary": null
+    }
+  }
+}

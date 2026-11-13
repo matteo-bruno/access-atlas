@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kindu",
+  "createdAt": "2026-10-08T15:47:07.144Z",
+  "updatedAt": "2026-10-08T15:47:07.144Z",
+  "meta": {
+    "name": "Kindu",
+    "nameIt": "Kindu",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kindu.geojson",
+      "sha256": "a3027e8450d6e696eb78f55a446f39e5fbfe4976b577481d7360d13e2c6fb5a4",
+      "size": 503998,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kindu",
+    "name": "Kindu",
+    "nameIt": "Kindu",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      25.9193,
+      -2.94625
+    ],
+    "zoom": 11,
+    "population": 409663,
+    "grid": "cities/kindu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kindu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kindu",
+        "name": "Kindu",
+        "nameIt": "Kindu",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          25.9193,
+          -2.94625
+        ],
+        "zoom": 11,
+        "population": 409663,
+        "cells": 430,
+        "layer": "cities/kindu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.9193,
+            -2.94625
+          ]
+        },
+        "properties": {
+          "id": "kindu",
+          "name": "Kindu",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 409663
+        }
+      },
+      "summary": null
+    }
+  }
+}

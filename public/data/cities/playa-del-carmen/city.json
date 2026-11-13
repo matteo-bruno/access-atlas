@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "playa-del-carmen",
+  "createdAt": "2026-10-08T16:05:54.438Z",
+  "updatedAt": "2026-10-08T16:05:54.438Z",
+  "meta": {
+    "name": "Playa del Carmen",
+    "nameIt": "Playa del Carmen",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Playa del Carmen.geojson",
+      "sha256": "18076ee76e8707fde5e6a2fe392854b7bd16efe18079aeadae757dda5ff35917",
+      "size": 435311,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "playa-del-carmen",
+    "name": "Playa del Carmen",
+    "nameIt": "Playa del Carmen",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -87.07301,
+      20.64768
+    ],
+    "zoom": 10.9,
+    "population": 224306,
+    "grid": "cities/playa-del-carmen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/playa-del-carmen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "playa-del-carmen",
+        "name": "Playa del Carmen",
+        "nameIt": "Playa del Carmen",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -87.07301,
+          20.64768
+        ],
+        "zoom": 10.9,
+        "population": 224306,
+        "cells": 377,
+        "layer": "cities/playa-del-carmen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.07301,
+            20.64768
+          ]
+        },
+        "properties": {
+          "id": "playa-del-carmen",
+          "name": "Playa del Carmen",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 224306
+        }
+      },
+      "summary": null
+    }
+  }
+}

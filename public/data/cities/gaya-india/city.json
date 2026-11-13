@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gaya-india",
+  "createdAt": "2026-10-08T15:34:44.829Z",
+  "updatedAt": "2026-10-08T15:34:44.829Z",
+  "meta": {
+    "name": "Gaya (India)",
+    "nameIt": "Gaya (India)",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gaya (India).geojson",
+      "sha256": "875c4989bf308fd09a6e59b6bfe9e9bad882af4dd675f216d6e45ec14aac0662",
+      "size": 1349238,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gaya-india",
+    "name": "Gaya (India)",
+    "nameIt": "Gaya (India)",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.99838,
+      24.77441
+    ],
+    "zoom": 9.9,
+    "population": 1140100,
+    "grid": "cities/gaya-india/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gaya-india/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gaya-india",
+        "name": "Gaya (India)",
+        "nameIt": "Gaya (India)",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.99838,
+          24.77441
+        ],
+        "zoom": 9.9,
+        "population": 1140100,
+        "cells": 1164,
+        "layer": "cities/gaya-india/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.99838,
+            24.77441
+          ]
+        },
+        "properties": {
+          "id": "gaya-india",
+          "name": "Gaya (India)",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 40.9,
+          "population": 1140100
+        }
+      },
+      "summary": null
+    }
+  }
+}

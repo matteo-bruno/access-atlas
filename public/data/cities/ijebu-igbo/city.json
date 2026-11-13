@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ijebu-igbo",
+  "createdAt": "2026-10-08T15:40:28.017Z",
+  "updatedAt": "2026-10-08T15:40:28.017Z",
+  "meta": {
+    "name": "Ijebu-Igbo",
+    "nameIt": "Ijebu-Igbo",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ijebu-Igbo.geojson",
+      "sha256": "5696fc29b243f79efc1154563b8063ff8421bccdb1bc633e9a2ee9dce44360e6",
+      "size": 297605,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ijebu-igbo",
+    "name": "Ijebu-Igbo",
+    "nameIt": "Ijebu-Igbo",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      4.00026,
+      6.97089
+    ],
+    "zoom": 11.4,
+    "population": 124544,
+    "grid": "cities/ijebu-igbo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ijebu-igbo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ijebu-igbo",
+        "name": "Ijebu-Igbo",
+        "nameIt": "Ijebu-Igbo",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          4.00026,
+          6.97089
+        ],
+        "zoom": 11.4,
+        "population": 124544,
+        "cells": 258,
+        "layer": "cities/ijebu-igbo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.00026,
+            6.97089
+          ]
+        },
+        "properties": {
+          "id": "ijebu-igbo",
+          "name": "Ijebu-Igbo",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 124544
+        }
+      },
+      "summary": null
+    }
+  }
+}

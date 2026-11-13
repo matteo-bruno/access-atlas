@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "najran",
+  "createdAt": "2026-10-08T15:59:49.998Z",
+  "updatedAt": "2026-10-08T15:59:49.998Z",
+  "meta": {
+    "name": "Najran",
+    "nameIt": "Najran",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Najran.geojson",
+      "sha256": "e9318144c6b49005933995185fff161bde02000c66b53394ede2a726d0a39ba2",
+      "size": 596183,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "najran",
+    "name": "Najran",
+    "nameIt": "Najran",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA",
+    "center": [
+      44.22071,
+      17.54808
+    ],
+    "zoom": 10.2,
+    "population": 91258,
+    "grid": "cities/najran/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/najran/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "najran",
+        "name": "Najran",
+        "nameIt": "Najran",
+        "region": "Saudi Arabia",
+        "regionIt": "Arabia Saudita",
+        "country": "SA",
+        "center": [
+          44.22071,
+          17.54808
+        ],
+        "zoom": 10.2,
+        "population": 91258,
+        "cells": 513,
+        "layer": "cities/najran/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.22071,
+            17.54808
+          ]
+        },
+        "properties": {
+          "id": "najran",
+          "name": "Najran",
+          "country": "SA",
+          "isStudy": true,
+          "proximityMinutes": 50.2,
+          "population": 91258
+        }
+      },
+      "summary": null
+    }
+  }
+}

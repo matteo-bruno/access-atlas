@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lozova",
+  "createdAt": "2026-10-08T15:52:17.699Z",
+  "updatedAt": "2026-10-08T15:52:17.699Z",
+  "meta": {
+    "name": "Lozova",
+    "nameIt": "Lozova",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lozova.geojson",
+      "sha256": "d130ff0799228fda42dcb765c373184456a3ee05d23ba01ae8582d4282f68dce",
+      "size": 150326,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lozova",
+    "name": "Lozova",
+    "nameIt": "Lozova",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      36.31299,
+      48.88864
+    ],
+    "zoom": 11.7,
+    "population": 33597,
+    "grid": "cities/lozova/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lozova/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lozova",
+        "name": "Lozova",
+        "nameIt": "Lozova",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          36.31299,
+          48.88864
+        ],
+        "zoom": 11.7,
+        "population": 33597,
+        "cells": 130,
+        "layer": "cities/lozova/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.31299,
+            48.88864
+          ]
+        },
+        "properties": {
+          "id": "lozova",
+          "name": "Lozova",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 17.5,
+          "population": 33597
+        }
+      },
+      "summary": null
+    }
+  }
+}

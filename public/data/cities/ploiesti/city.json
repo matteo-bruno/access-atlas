@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ploiesti",
+  "createdAt": "2026-10-08T16:05:55.773Z",
+  "updatedAt": "2026-10-08T16:05:55.773Z",
+  "meta": {
+    "name": "Ploiești",
+    "nameIt": "Ploiești",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ploiești.geojson",
+      "sha256": "5bb95d6f45b25954108f9fbcabd43a4ec1d195a22062c2c2e9392ca3c9fbdc91",
+      "size": 347775,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ploiesti",
+    "name": "Ploiești",
+    "nameIt": "Ploiești",
+    "region": "Romania",
+    "regionIt": "Romania",
+    "country": "RO",
+    "center": [
+      26.02349,
+      44.93958
+    ],
+    "zoom": 10.8,
+    "population": 161263,
+    "grid": "cities/ploiesti/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ploiesti/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ploiesti",
+        "name": "Ploiești",
+        "nameIt": "Ploiești",
+        "region": "Romania",
+        "regionIt": "Romania",
+        "country": "RO",
+        "center": [
+          26.02349,
+          44.93958
+        ],
+        "zoom": 10.8,
+        "population": 161263,
+        "cells": 304,
+        "layer": "cities/ploiesti/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.02349,
+            44.93958
+          ]
+        },
+        "properties": {
+          "id": "ploiesti",
+          "name": "Ploiești",
+          "country": "RO",
+          "isStudy": true,
+          "proximityMinutes": 9.5,
+          "population": 161263
+        }
+      },
+      "summary": null
+    }
+  }
+}

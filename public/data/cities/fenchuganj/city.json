@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fenchuganj",
+  "createdAt": "2026-10-08T15:33:05.732Z",
+  "updatedAt": "2026-10-08T15:33:05.732Z",
+  "meta": {
+    "name": "Fenchuganj",
+    "nameIt": "Fenchuganj",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fenchuganj.geojson",
+      "sha256": "a6d566ac8131d80c8fa66174d7aee682a9390fbb96378fd84ae521a61d86deeb",
+      "size": 609584,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fenchuganj",
+    "name": "Fenchuganj",
+    "nameIt": "Fenchuganj",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      91.94912,
+      24.67637
+    ],
+    "zoom": 10.5,
+    "population": 125321,
+    "grid": "cities/fenchuganj/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fenchuganj/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fenchuganj",
+        "name": "Fenchuganj",
+        "nameIt": "Fenchuganj",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          91.94912,
+          24.67637
+        ],
+        "zoom": 10.5,
+        "population": 125321,
+        "cells": 526,
+        "layer": "cities/fenchuganj/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.94912,
+            24.67637
+          ]
+        },
+        "properties": {
+          "id": "fenchuganj",
+          "name": "Fenchuganj",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 87.5,
+          "population": 125321
+        }
+      },
+      "summary": null
+    }
+  }
+}

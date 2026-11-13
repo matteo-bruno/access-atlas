@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aksehir",
+  "createdAt": "2026-10-08T15:03:59.363Z",
+  "updatedAt": "2026-10-08T15:03:59.363Z",
+  "meta": {
+    "name": "Akşehir",
+    "nameIt": "Akşehir",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Akşehir.geojson",
+      "sha256": "9918b08ef6d47aabee85288e3864e2068b3eb91a39e1d6b34d3a6408a9ef4b60",
+      "size": 108972,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aksehir",
+    "name": "Akşehir",
+    "nameIt": "Akşehir",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      31.421,
+      38.36057
+    ],
+    "zoom": 12,
+    "population": 53940,
+    "grid": "cities/aksehir/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aksehir/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aksehir",
+        "name": "Akşehir",
+        "nameIt": "Akşehir",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          31.421,
+          38.36057
+        ],
+        "zoom": 12,
+        "population": 53940,
+        "cells": 94,
+        "layer": "cities/aksehir/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.421,
+            38.36057
+          ]
+        },
+        "properties": {
+          "id": "aksehir",
+          "name": "Akşehir",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 53940
+        }
+      },
+      "summary": null
+    }
+  }
+}

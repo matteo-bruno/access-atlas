@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jhundo",
+  "createdAt": "2026-10-08T15:42:26.460Z",
+  "updatedAt": "2026-10-08T15:42:26.460Z",
+  "meta": {
+    "name": "Jhundo",
+    "nameIt": "Jhundo",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jhundo.geojson",
+      "sha256": "9c61964431290e38f257cb21c8657b3f3b52e0010f2328586e68d2ebed449481",
+      "size": 297553,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jhundo",
+    "name": "Jhundo",
+    "nameIt": "Jhundo",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.28094,
+      24.80573
+    ],
+    "zoom": 10.9,
+    "population": 45514,
+    "grid": "cities/jhundo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jhundo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jhundo",
+        "name": "Jhundo",
+        "nameIt": "Jhundo",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.28094,
+          24.80573
+        ],
+        "zoom": 10.9,
+        "population": 45514,
+        "cells": 257,
+        "layer": "cities/jhundo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.28094,
+            24.80573
+          ]
+        },
+        "properties": {
+          "id": "jhundo",
+          "name": "Jhundo",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 45514
+        }
+      },
+      "summary": null
+    }
+  }
+}

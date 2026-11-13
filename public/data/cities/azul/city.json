@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "azul",
+  "createdAt": "2026-10-08T15:12:07.115Z",
+  "updatedAt": "2026-10-08T15:12:07.115Z",
+  "meta": {
+    "name": "Azul",
+    "nameIt": "Azul",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Azul.geojson",
+      "sha256": "8d306affbb21b1be5c362508cf391d9b85feeb43b3ee8e7a97ad09a0076bb546",
+      "size": 261778,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "azul",
+    "name": "Azul",
+    "nameIt": "Azul",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -59.85998,
+      -36.77943
+    ],
+    "zoom": 11.8,
+    "population": 45694,
+    "grid": "cities/azul/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 167
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/azul/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "azul",
+        "name": "Azul",
+        "nameIt": "Azul",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -59.85998,
+          -36.77943
+        ],
+        "zoom": 11.8,
+        "population": 45694,
+        "cells": 224,
+        "layer": "cities/azul/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 167
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -59.85998,
+            -36.77943
+          ]
+        },
+        "properties": {
+          "id": "azul",
+          "name": "Azul",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 45694
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "le-port",
+  "createdAt": "2026-10-08T15:50:30.822Z",
+  "updatedAt": "2026-10-08T15:50:30.822Z",
+  "meta": {
+    "name": "Le Port",
+    "nameIt": "Le Port",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Le Port.geojson",
+      "sha256": "7f56750fdbb945a9fa39ce88d073023a9a0e46147077bef213bc36bea946e07f",
+      "size": 528116,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "le-port",
+    "name": "Le Port",
+    "nameIt": "Le Port",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      55.31966,
+      -20.95362
+    ],
+    "zoom": 10.8,
+    "population": 79959,
+    "grid": "cities/le-port/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/le-port/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "le-port",
+        "name": "Le Port",
+        "nameIt": "Le Port",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          55.31966,
+          -20.95362
+        ],
+        "zoom": 10.8,
+        "population": 79959,
+        "cells": 455,
+        "layer": "cities/le-port/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            55.31966,
+            -20.95362
+          ]
+        },
+        "properties": {
+          "id": "le-port",
+          "name": "Le Port",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 79959
+        }
+      },
+      "summary": null
+    }
+  }
+}

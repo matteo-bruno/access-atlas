@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "leme",
+  "createdAt": "2026-10-08T15:50:41.713Z",
+  "updatedAt": "2026-10-08T15:50:41.713Z",
+  "meta": {
+    "name": "Leme",
+    "nameIt": "Leme",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Leme.geojson",
+      "sha256": "819538a468122cf2af726dd20ed9d041196848ac7cda82c148b86dda9d028821",
+      "size": 279003,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "leme",
+    "name": "Leme",
+    "nameIt": "Leme",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -47.38241,
+      -22.1865
+    ],
+    "zoom": 11.4,
+    "population": 92723,
+    "grid": "cities/leme/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/leme/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "leme",
+        "name": "Leme",
+        "nameIt": "Leme",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -47.38241,
+          -22.1865
+        ],
+        "zoom": 11.4,
+        "population": 92723,
+        "cells": 237,
+        "layer": "cities/leme/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.38241,
+            -22.1865
+          ]
+        },
+        "properties": {
+          "id": "leme",
+          "name": "Leme",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 14.8,
+          "population": 92723
+        }
+      },
+      "summary": null
+    }
+  }
+}

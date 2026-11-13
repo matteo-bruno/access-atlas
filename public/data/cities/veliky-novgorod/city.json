@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "veliky-novgorod",
+  "createdAt": "2026-10-08T16:20:33.420Z",
+  "updatedAt": "2026-10-08T16:20:33.420Z",
+  "meta": {
+    "name": "Veliky Novgorod",
+    "nameIt": "Veliky Novgorod",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Veliky Novgorod.geojson",
+      "sha256": "34ba818eccf4be907dd42d440fd7084612ae2d6663dc2337a0ccb664fe04fe15",
+      "size": 522719,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "veliky-novgorod",
+    "name": "Veliky Novgorod",
+    "nameIt": "Veliky Novgorod",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      31.26016,
+      58.53452
+    ],
+    "zoom": 10.9,
+    "population": 197153,
+    "grid": "cities/veliky-novgorod/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/veliky-novgorod/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "veliky-novgorod",
+        "name": "Veliky Novgorod",
+        "nameIt": "Veliky Novgorod",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          31.26016,
+          58.53452
+        ],
+        "zoom": 10.9,
+        "population": 197153,
+        "cells": 457,
+        "layer": "cities/veliky-novgorod/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.26016,
+            58.53452
+          ]
+        },
+        "properties": {
+          "id": "veliky-novgorod",
+          "name": "Veliky Novgorod",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 9.9,
+          "population": 197153
+        }
+      },
+      "summary": null
+    }
+  }
+}

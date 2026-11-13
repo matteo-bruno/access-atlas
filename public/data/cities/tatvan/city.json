@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tatvan",
+  "createdAt": "2026-10-08T16:16:56.270Z",
+  "updatedAt": "2026-10-08T16:16:56.270Z",
+  "meta": {
+    "name": "Tatvan",
+    "nameIt": "Tatvan",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tatvan.geojson",
+      "sha256": "ce5d13a180fcda507e5b9f53fc70de906b395fb6bc14b1457c90f3836a1576e6",
+      "size": 138546,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tatvan",
+    "name": "Tatvan",
+    "nameIt": "Tatvan",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      42.2834,
+      38.50362
+    ],
+    "zoom": 11.8,
+    "population": 75718,
+    "grid": "cities/tatvan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tatvan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tatvan",
+        "name": "Tatvan",
+        "nameIt": "Tatvan",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          42.2834,
+          38.50362
+        ],
+        "zoom": 11.8,
+        "population": 75718,
+        "cells": 120,
+        "layer": "cities/tatvan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            42.2834,
+            38.50362
+          ]
+        },
+        "properties": {
+          "id": "tatvan",
+          "name": "Tatvan",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 12.8,
+          "population": 75718
+        }
+      },
+      "summary": null
+    }
+  }
+}

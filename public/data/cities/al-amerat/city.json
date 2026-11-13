@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-amerat",
+  "createdAt": "2026-10-08T15:04:04.783Z",
+  "updatedAt": "2026-10-08T15:04:04.783Z",
+  "meta": {
+    "name": "Al Amerat",
+    "nameIt": "Al Amerat",
+    "region": "Oman",
+    "regionIt": "Oman",
+    "country": "OM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Amerat.geojson",
+      "sha256": "df191a4d39e1f3bd5fad12cf6a2e6049c2110648747cf8cfbcd561e96033ce32",
+      "size": 319504,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-amerat",
+    "name": "Al Amerat",
+    "nameIt": "Al Amerat",
+    "region": "Oman",
+    "regionIt": "Oman",
+    "country": "OM",
+    "center": [
+      58.49039,
+      23.49513
+    ],
+    "zoom": 11,
+    "population": 44894,
+    "grid": "cities/al-amerat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-amerat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-amerat",
+        "name": "Al Amerat",
+        "nameIt": "Al Amerat",
+        "region": "Oman",
+        "regionIt": "Oman",
+        "country": "OM",
+        "center": [
+          58.49039,
+          23.49513
+        ],
+        "zoom": 11,
+        "population": 44894,
+        "cells": 275,
+        "layer": "cities/al-amerat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            58.49039,
+            23.49513
+          ]
+        },
+        "properties": {
+          "id": "al-amerat",
+          "name": "Al Amerat",
+          "country": "OM",
+          "isStudy": true,
+          "proximityMinutes": 41.2,
+          "population": 44894
+        }
+      },
+      "summary": null
+    }
+  }
+}

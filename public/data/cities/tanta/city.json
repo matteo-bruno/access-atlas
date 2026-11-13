@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tanta",
+  "createdAt": "2026-10-08T16:16:39.748Z",
+  "updatedAt": "2026-10-08T16:16:39.748Z",
+  "meta": {
+    "name": "Tanta",
+    "nameIt": "Tanta",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tanta.geojson",
+      "sha256": "aa7d00969ea60a123f2138ec7d57f1435a7cb6b1b813ca3c69b232904258d3ab",
+      "size": 580387,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tanta",
+    "name": "Tanta",
+    "nameIt": "Tanta",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      30.99653,
+      30.78837
+    ],
+    "zoom": 10.6,
+    "population": 972100,
+    "grid": "cities/tanta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tanta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tanta",
+        "name": "Tanta",
+        "nameIt": "Tanta",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          30.99653,
+          30.78837
+        ],
+        "zoom": 10.6,
+        "population": 972100,
+        "cells": 498,
+        "layer": "cities/tanta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.99653,
+            30.78837
+          ]
+        },
+        "properties": {
+          "id": "tanta",
+          "name": "Tanta",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 35.3,
+          "population": 972100
+        }
+      },
+      "summary": null
+    }
+  }
+}

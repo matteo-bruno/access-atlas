@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nan-county",
+  "createdAt": "2026-10-08T15:59:57.235Z",
+  "updatedAt": "2026-10-08T15:59:57.235Z",
+  "meta": {
+    "name": "Nan County",
+    "nameIt": "Nan County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nan County.geojson",
+      "sha256": "e17ad21725a60d62ae2ff59cfa03a022c51ac4f5fbdae301ec2cedc07fbb8253",
+      "size": 244318,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nan-county",
+    "name": "Nan County",
+    "nameIt": "Nan County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.39836,
+      29.36946
+    ],
+    "zoom": 11.4,
+    "population": 130356,
+    "grid": "cities/nan-county/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nan-county/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nan-county",
+        "name": "Nan County",
+        "nameIt": "Nan County",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.39836,
+          29.36946
+        ],
+        "zoom": 11.4,
+        "population": 130356,
+        "cells": 209,
+        "layer": "cities/nan-county/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.39836,
+            29.36946
+          ]
+        },
+        "properties": {
+          "id": "nan-county",
+          "name": "Nan County",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 23.7,
+          "population": 130356
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santander",
+  "createdAt": "2026-10-08T16:11:11.646Z",
+  "updatedAt": "2026-10-08T16:11:11.646Z",
+  "meta": {
+    "name": "Santander",
+    "nameIt": "Santander",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santander.geojson",
+      "sha256": "2e16c9b97b016d658f99ab63e8d9881982819b74344270bedff8be0fc406587c",
+      "size": 614405,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santander",
+    "name": "Santander",
+    "nameIt": "Santander",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -3.8247,
+      43.4523
+    ],
+    "zoom": 10.6,
+    "population": 201057,
+    "grid": "cities/santander/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santander/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santander",
+        "name": "Santander",
+        "nameIt": "Santander",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -3.8247,
+          43.4523
+        ],
+        "zoom": 10.6,
+        "population": 201057,
+        "cells": 534,
+        "layer": "cities/santander/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -3.8247,
+            43.4523
+          ]
+        },
+        "properties": {
+          "id": "santander",
+          "name": "Santander",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 6.6,
+          "population": 201057
+        }
+      },
+      "summary": null
+    }
+  }
+}

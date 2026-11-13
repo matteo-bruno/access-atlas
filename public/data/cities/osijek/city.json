@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "osijek",
+  "createdAt": "2026-10-08T16:03:08.078Z",
+  "updatedAt": "2026-10-08T16:03:08.078Z",
+  "meta": {
+    "name": "Osijek",
+    "nameIt": "Osijek",
+    "region": "Croatia",
+    "regionIt": "Croazia",
+    "country": "HR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Osijek.geojson",
+      "sha256": "614dc0ab3850cc54a071f2232d804c4f93d9b5d52199b24d3f5f4c24e999fb4e",
+      "size": 180449,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "osijek",
+    "name": "Osijek",
+    "nameIt": "Osijek",
+    "region": "Croatia",
+    "regionIt": "Croazia",
+    "country": "HR",
+    "center": [
+      18.69031,
+      45.55474
+    ],
+    "zoom": 11,
+    "population": 58246,
+    "grid": "cities/osijek/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/osijek/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "osijek",
+        "name": "Osijek",
+        "nameIt": "Osijek",
+        "region": "Croatia",
+        "regionIt": "Croazia",
+        "country": "HR",
+        "center": [
+          18.69031,
+          45.55474
+        ],
+        "zoom": 11,
+        "population": 58246,
+        "cells": 158,
+        "layer": "cities/osijek/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.69031,
+            45.55474
+          ]
+        },
+        "properties": {
+          "id": "osijek",
+          "name": "Osijek",
+          "country": "HR",
+          "isStudy": true,
+          "proximityMinutes": 8.9,
+          "population": 58246
+        }
+      },
+      "summary": null
+    }
+  }
+}

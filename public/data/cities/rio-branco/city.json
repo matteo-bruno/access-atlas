@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rio-branco",
+  "createdAt": "2026-10-08T16:08:49.405Z",
+  "updatedAt": "2026-10-08T16:08:49.405Z",
+  "meta": {
+    "name": "Rio Branco",
+    "nameIt": "Rio Branco",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rio Branco.geojson",
+      "sha256": "4738afec96afd216c9746b4a8071e9b331abb6b2462675feec0f9fa48cd1ca6c",
+      "size": 738838,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rio-branco",
+    "name": "Rio Branco",
+    "nameIt": "Rio Branco",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -67.8221,
+      -9.96657
+    ],
+    "zoom": 10.4,
+    "population": 288267,
+    "grid": "cities/rio-branco/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rio-branco/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rio-branco",
+        "name": "Rio Branco",
+        "nameIt": "Rio Branco",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -67.8221,
+          -9.96657
+        ],
+        "zoom": 10.4,
+        "population": 288267,
+        "cells": 636,
+        "layer": "cities/rio-branco/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -67.8221,
+            -9.96657
+          ]
+        },
+        "properties": {
+          "id": "rio-branco",
+          "name": "Rio Branco",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 25.8,
+          "population": 288267
+        }
+      },
+      "summary": null
+    }
+  }
+}

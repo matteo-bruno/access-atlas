@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bougouni",
+  "createdAt": "2026-10-08T15:20:12.535Z",
+  "updatedAt": "2026-10-08T15:20:12.535Z",
+  "meta": {
+    "name": "Bougouni",
+    "nameIt": "Bougouni",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bougouni.geojson",
+      "sha256": "4fab6c5184976cecb4196de14c107242a9623aed2224c32054cd67aa9ca67b04",
+      "size": 228181,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bougouni",
+    "name": "Bougouni",
+    "nameIt": "Bougouni",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML",
+    "center": [
+      -7.48481,
+      11.42294
+    ],
+    "zoom": 11.7,
+    "population": 172852,
+    "grid": "cities/bougouni/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bougouni/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bougouni",
+        "name": "Bougouni",
+        "nameIt": "Bougouni",
+        "region": "Mali",
+        "regionIt": "Mali",
+        "country": "ML",
+        "center": [
+          -7.48481,
+          11.42294
+        ],
+        "zoom": 11.7,
+        "population": 172852,
+        "cells": 195,
+        "layer": "cities/bougouni/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -7.48481,
+            11.42294
+          ]
+        },
+        "properties": {
+          "id": "bougouni",
+          "name": "Bougouni",
+          "country": "ML",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 172852
+        }
+      },
+      "summary": null
+    }
+  }
+}

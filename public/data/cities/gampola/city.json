@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gampola",
+  "createdAt": "2026-10-08T15:34:20.830Z",
+  "updatedAt": "2026-10-08T15:34:20.830Z",
+  "meta": {
+    "name": "Gampola",
+    "nameIt": "Gampola",
+    "region": "Sri Lanka",
+    "regionIt": "Sri Lanka",
+    "country": "LK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gampola.geojson",
+      "sha256": "6392fd7060e387277cc48325896c21aa1339dc0f59c1f58a73cbfcebd79084b5",
+      "size": 213046,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gampola",
+    "name": "Gampola",
+    "nameIt": "Gampola",
+    "region": "Sri Lanka",
+    "regionIt": "Sri Lanka",
+    "country": "LK",
+    "center": [
+      80.57018,
+      7.15631
+    ],
+    "zoom": 11.5,
+    "population": 67027,
+    "grid": "cities/gampola/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gampola/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gampola",
+        "name": "Gampola",
+        "nameIt": "Gampola",
+        "region": "Sri Lanka",
+        "regionIt": "Sri Lanka",
+        "country": "LK",
+        "center": [
+          80.57018,
+          7.15631
+        ],
+        "zoom": 11.5,
+        "population": 67027,
+        "cells": 185,
+        "layer": "cities/gampola/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.57018,
+            7.15631
+          ]
+        },
+        "properties": {
+          "id": "gampola",
+          "name": "Gampola",
+          "country": "LK",
+          "isStudy": true,
+          "proximityMinutes": 24.3,
+          "population": 67027
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "borca",
+  "createdAt": "2026-10-08T15:20:06.929Z",
+  "updatedAt": "2026-10-08T15:20:06.929Z",
+  "meta": {
+    "name": "Borca",
+    "nameIt": "Borca",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Borca.geojson",
+      "sha256": "0a67eb1dda7f8f6ff09f182ba514c67fa6104740159094ab5404b97ad0ef06aa",
+      "size": 237991,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "borca",
+    "name": "Borca",
+    "nameIt": "Borca",
+    "region": "Serbia",
+    "regionIt": "Serbia",
+    "country": "RS",
+    "center": [
+      20.47053,
+      44.86774
+    ],
+    "zoom": 11.3,
+    "population": 85983,
+    "grid": "cities/borca/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/borca/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "borca",
+        "name": "Borca",
+        "nameIt": "Borca",
+        "region": "Serbia",
+        "regionIt": "Serbia",
+        "country": "RS",
+        "center": [
+          20.47053,
+          44.86774
+        ],
+        "zoom": 11.3,
+        "population": 85983,
+        "cells": 206,
+        "layer": "cities/borca/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.47053,
+            44.86774
+          ]
+        },
+        "properties": {
+          "id": "borca",
+          "name": "Borca",
+          "country": "RS",
+          "isStudy": true,
+          "proximityMinutes": 17,
+          "population": 85983
+        }
+      },
+      "summary": null
+    }
+  }
+}

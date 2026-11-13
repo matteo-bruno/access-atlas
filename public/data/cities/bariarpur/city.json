@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bariarpur",
+  "createdAt": "2026-10-08T15:15:37.259Z",
+  "updatedAt": "2026-10-08T15:15:37.259Z",
+  "meta": {
+    "name": "Bariarpur",
+    "nameIt": "Bariarpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bariarpur.geojson",
+      "sha256": "bb6f1a0458b65960e9b794380d41da3bc1c0d35d995d80e59953cb3108227e90",
+      "size": 114604,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bariarpur",
+    "name": "Bariarpur",
+    "nameIt": "Bariarpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.57387,
+      25.29129
+    ],
+    "zoom": 11.6,
+    "population": 53308,
+    "grid": "cities/bariarpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bariarpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bariarpur",
+        "name": "Bariarpur",
+        "nameIt": "Bariarpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.57387,
+          25.29129
+        ],
+        "zoom": 11.6,
+        "population": 53308,
+        "cells": 99,
+        "layer": "cities/bariarpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.57387,
+            25.29129
+          ]
+        },
+        "properties": {
+          "id": "bariarpur",
+          "name": "Bariarpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 53308
+        }
+      },
+      "summary": null
+    }
+  }
+}

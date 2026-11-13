@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "antalya-fua",
+  "createdAt": "2026-10-19T16:55:10.986Z",
+  "updatedAt": "2026-10-19T16:55:10.986Z",
+  "meta": {
+    "name": "Antalya",
+    "nameIt": "Antalya",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "antalya-fua",
+    "name": "Antalya",
+    "nameIt": "Antalya",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "extent": "fua",
+    "core": "antalya",
+    "center": [
+      30.70887,
+      36.90811
+    ],
+    "zoom": 8.8,
+    "population": 1455751,
+    "grid": "cities/antalya-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/antalya-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "antalya-fua",
+        "name": "Antalya",
+        "nameIt": "Antalya",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "extent": "fua",
+        "core": "antalya",
+        "center": [
+          30.70887,
+          36.90811
+        ],
+        "zoom": 8.8,
+        "population": 1455751,
+        "cells": 5515,
+        "layer": "cities/antalya-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.70887,
+            36.90811
+          ]
+        },
+        "properties": {
+          "id": "antalya-fua",
+          "name": "Antalya",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 15.6,
+          "population": 1455751
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mokwa",
+  "createdAt": "2026-10-08T15:57:53.998Z",
+  "updatedAt": "2026-10-08T15:57:53.998Z",
+  "meta": {
+    "name": "Mokwa",
+    "nameIt": "Mokwa",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mokwa.geojson",
+      "sha256": "fdc00d7532903d4b62316fddf83496b877b3146fbaef64f1fd960d861277f01a",
+      "size": 160885,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mokwa",
+    "name": "Mokwa",
+    "nameIt": "Mokwa",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      5.0595,
+      9.29414
+    ],
+    "zoom": 11.4,
+    "population": 56437,
+    "grid": "cities/mokwa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mokwa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mokwa",
+        "name": "Mokwa",
+        "nameIt": "Mokwa",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          5.0595,
+          9.29414
+        ],
+        "zoom": 11.4,
+        "population": 56437,
+        "cells": 140,
+        "layer": "cities/mokwa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.0595,
+            9.29414
+          ]
+        },
+        "properties": {
+          "id": "mokwa",
+          "name": "Mokwa",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 56437
+        }
+      },
+      "summary": null
+    }
+  }
+}

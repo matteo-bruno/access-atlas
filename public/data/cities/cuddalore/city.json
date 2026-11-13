@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cuddalore",
+  "createdAt": "2026-10-08T15:26:58.296Z",
+  "updatedAt": "2026-10-08T15:26:58.296Z",
+  "meta": {
+    "name": "Cuddalore",
+    "nameIt": "Cuddalore",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cuddalore.geojson",
+      "sha256": "6d183ca6a80e7affd65888dbf0febf2eb4ae74d242ba1cec5bd6e134daf4d042",
+      "size": 808248,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cuddalore",
+    "name": "Cuddalore",
+    "nameIt": "Cuddalore",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.76333,
+      11.75862
+    ],
+    "zoom": 10,
+    "population": 284783,
+    "grid": "cities/cuddalore/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cuddalore/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cuddalore",
+        "name": "Cuddalore",
+        "nameIt": "Cuddalore",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.76333,
+          11.75862
+        ],
+        "zoom": 10,
+        "population": 284783,
+        "cells": 697,
+        "layer": "cities/cuddalore/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.76333,
+            11.75862
+          ]
+        },
+        "properties": {
+          "id": "cuddalore",
+          "name": "Cuddalore",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 44.4,
+          "population": 284783
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xiangshui",
+  "createdAt": "2026-10-08T16:22:19.853Z",
+  "updatedAt": "2026-10-08T16:22:19.853Z",
+  "meta": {
+    "name": "Xiangshui",
+    "nameIt": "Xiangshui",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xiangshui.geojson",
+      "sha256": "46c40b1e2d098955fa1936e1112e26b1fd170bd427b590aa16ba9db2f8c7998c",
+      "size": 396227,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xiangshui",
+    "name": "Xiangshui",
+    "nameIt": "Xiangshui",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.58108,
+      34.19869
+    ],
+    "zoom": 11.4,
+    "population": 141127,
+    "grid": "cities/xiangshui/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 173
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xiangshui/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xiangshui",
+        "name": "Xiangshui",
+        "nameIt": "Xiangshui",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.58108,
+          34.19869
+        ],
+        "zoom": 11.4,
+        "population": 141127,
+        "cells": 340,
+        "layer": "cities/xiangshui/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 173
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.58108,
+            34.19869
+          ]
+        },
+        "properties": {
+          "id": "xiangshui",
+          "name": "Xiangshui",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 21.5,
+          "population": 141127
+        }
+      },
+      "summary": null
+    }
+  }
+}

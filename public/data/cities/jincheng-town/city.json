@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jincheng-town",
+  "createdAt": "2026-10-08T15:42:55.120Z",
+  "updatedAt": "2026-10-08T15:42:55.120Z",
+  "meta": {
+    "name": "Jincheng Town",
+    "nameIt": "Jincheng Town",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jincheng Town.geojson",
+      "sha256": "2a0a980dfc5d1b4caded3a3226ec5168e0a99e6cc47328a808e16bedba4d2840",
+      "size": 776913,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jincheng-town",
+    "name": "Jincheng Town",
+    "nameIt": "Jincheng Town",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.58421,
+      31.7478
+    ],
+    "zoom": 10.5,
+    "population": 283713,
+    "grid": "cities/jincheng-town/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jincheng-town/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jincheng-town",
+        "name": "Jincheng Town",
+        "nameIt": "Jincheng Town",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.58421,
+          31.7478
+        ],
+        "zoom": 10.5,
+        "population": 283713,
+        "cells": 667,
+        "layer": "cities/jincheng-town/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.58421,
+            31.7478
+          ]
+        },
+        "properties": {
+          "id": "jincheng-town",
+          "name": "Jincheng Town",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 18.8,
+          "population": 283713
+        }
+      },
+      "summary": null
+    }
+  }
+}

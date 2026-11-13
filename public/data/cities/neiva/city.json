@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "neiva",
+  "createdAt": "2026-10-08T16:00:56.876Z",
+  "updatedAt": "2026-10-08T16:00:56.876Z",
+  "meta": {
+    "name": "Neiva",
+    "nameIt": "Neiva",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Neiva.geojson",
+      "sha256": "4996ec1a856c9f6c27b779fc3ec250883f55888be73fb572a73b9fa8d2b61017",
+      "size": 487802,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "neiva",
+    "name": "Neiva",
+    "nameIt": "Neiva",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -75.27509,
+      2.93779
+    ],
+    "zoom": 10.8,
+    "population": 344247,
+    "grid": "cities/neiva/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/neiva/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "neiva",
+        "name": "Neiva",
+        "nameIt": "Neiva",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -75.27509,
+          2.93779
+        ],
+        "zoom": 10.8,
+        "population": 344247,
+        "cells": 420,
+        "layer": "cities/neiva/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.27509,
+            2.93779
+          ]
+        },
+        "properties": {
+          "id": "neiva",
+          "name": "Neiva",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 23.9,
+          "population": 344247
+        }
+      },
+      "summary": null
+    }
+  }
+}

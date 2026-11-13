@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baksan",
+  "createdAt": "2026-10-08T15:13:49.582Z",
+  "updatedAt": "2026-10-08T15:13:49.582Z",
+  "meta": {
+    "name": "Baksan",
+    "nameIt": "Baksan",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baksan.geojson",
+      "sha256": "1908c55022890a1e021524a809ade5501b66f7d5420742a678f760291a64683e",
+      "size": 170938,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baksan",
+    "name": "Baksan",
+    "nameIt": "Baksan",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      43.54015,
+      43.68183
+    ],
+    "zoom": 11.6,
+    "population": 36833,
+    "grid": "cities/baksan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baksan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baksan",
+        "name": "Baksan",
+        "nameIt": "Baksan",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          43.54015,
+          43.68183
+        ],
+        "zoom": 11.6,
+        "population": 36833,
+        "cells": 148,
+        "layer": "cities/baksan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.54015,
+            43.68183
+          ]
+        },
+        "properties": {
+          "id": "baksan",
+          "name": "Baksan",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14.6,
+          "population": 36833
+        }
+      },
+      "summary": null
+    }
+  }
+}

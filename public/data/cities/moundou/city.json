@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "moundou",
+  "createdAt": "2026-10-08T15:58:32.818Z",
+  "updatedAt": "2026-10-08T15:58:32.818Z",
+  "meta": {
+    "name": "Moundou",
+    "nameIt": "Moundou",
+    "region": "Chad",
+    "regionIt": "Ciad",
+    "country": "TD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Moundou.geojson",
+      "sha256": "acbb3b640083292e0c38fb597d4e12c36abba2ccffb74abf4f4251b83b24b80c",
+      "size": 348224,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "moundou",
+    "name": "Moundou",
+    "nameIt": "Moundou",
+    "region": "Chad",
+    "regionIt": "Ciad",
+    "country": "TD",
+    "center": [
+      16.06925,
+      8.57127
+    ],
+    "zoom": 11.3,
+    "population": 207971,
+    "grid": "cities/moundou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/moundou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "moundou",
+        "name": "Moundou",
+        "nameIt": "Moundou",
+        "region": "Chad",
+        "regionIt": "Ciad",
+        "country": "TD",
+        "center": [
+          16.06925,
+          8.57127
+        ],
+        "zoom": 11.3,
+        "population": 207971,
+        "cells": 301,
+        "layer": "cities/moundou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.06925,
+            8.57127
+          ]
+        },
+        "properties": {
+          "id": "moundou",
+          "name": "Moundou",
+          "country": "TD",
+          "isStudy": true,
+          "proximityMinutes": 32,
+          "population": 207971
+        }
+      },
+      "summary": null
+    }
+  }
+}

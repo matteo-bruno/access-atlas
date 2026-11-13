@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "white-settlement",
+  "createdAt": "2026-10-08T16:21:39.056Z",
+  "updatedAt": "2026-10-08T16:21:39.056Z",
+  "meta": {
+    "name": "White Settlement",
+    "nameIt": "White Settlement",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/White Settlement.geojson",
+      "sha256": "6f3e84ef807620a499726ddd6073b61853b380bc3e70e3d449feacf72d982b99",
+      "size": 380685,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "white-settlement",
+    "name": "White Settlement",
+    "nameIt": "White Settlement",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -97.46496,
+      32.73606
+    ],
+    "zoom": 10.7,
+    "population": 69304,
+    "grid": "cities/white-settlement/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/white-settlement/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "white-settlement",
+        "name": "White Settlement",
+        "nameIt": "White Settlement",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -97.46496,
+          32.73606
+        ],
+        "zoom": 10.7,
+        "population": 69304,
+        "cells": 328,
+        "layer": "cities/white-settlement/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.46496,
+            32.73606
+          ]
+        },
+        "properties": {
+          "id": "white-settlement",
+          "name": "White Settlement",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20.7,
+          "population": 69304
+        }
+      },
+      "summary": null
+    }
+  }
+}

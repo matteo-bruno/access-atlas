@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khost",
+  "createdAt": "2026-10-08T15:46:50.826Z",
+  "updatedAt": "2026-10-08T15:46:50.826Z",
+  "meta": {
+    "name": "Khost",
+    "nameIt": "Khost",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khost.geojson",
+      "sha256": "6782d5e68ec914804fabee119289f2ebf9332fab3dccaeb5f20455b32476d6ce",
+      "size": 1250549,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khost",
+    "name": "Khost",
+    "nameIt": "Khost",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF",
+    "center": [
+      69.89001,
+      33.32475
+    ],
+    "zoom": 9.5,
+    "population": 194557,
+    "grid": "cities/khost/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khost/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khost",
+        "name": "Khost",
+        "nameIt": "Khost",
+        "region": "Afghanistan",
+        "regionIt": "Afghanistan",
+        "country": "AF",
+        "center": [
+          69.89001,
+          33.32475
+        ],
+        "zoom": 9.5,
+        "population": 194557,
+        "cells": 1081,
+        "layer": "cities/khost/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.89001,
+            33.32475
+          ]
+        },
+        "properties": {
+          "id": "khost",
+          "name": "Khost",
+          "country": "AF",
+          "isStudy": true,
+          "proximityMinutes": 83.7,
+          "population": 194557
+        }
+      },
+      "summary": null
+    }
+  }
+}

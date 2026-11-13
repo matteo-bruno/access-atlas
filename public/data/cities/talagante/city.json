@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "talagante",
+  "createdAt": "2026-10-08T16:16:14.077Z",
+  "updatedAt": "2026-10-08T16:16:14.077Z",
+  "meta": {
+    "name": "Talagante",
+    "nameIt": "Talagante",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Talagante.geojson",
+      "sha256": "26d7b8c52c71e90ecee6826f184eac2314c6d4678e735bbda54e8dbfc451be02",
+      "size": 138907,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "talagante",
+    "name": "Talagante",
+    "nameIt": "Talagante",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL",
+    "center": [
+      -70.93013,
+      -33.66561
+    ],
+    "zoom": 11.6,
+    "population": 46865,
+    "grid": "cities/talagante/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/talagante/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "talagante",
+        "name": "Talagante",
+        "nameIt": "Talagante",
+        "region": "Chile",
+        "regionIt": "Cile",
+        "country": "CL",
+        "center": [
+          -70.93013,
+          -33.66561
+        ],
+        "zoom": 11.6,
+        "population": 46865,
+        "cells": 119,
+        "layer": "cities/talagante/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -70.93013,
+            -33.66561
+          ]
+        },
+        "properties": {
+          "id": "talagante",
+          "name": "Talagante",
+          "country": "CL",
+          "isStudy": true,
+          "proximityMinutes": 11.3,
+          "population": 46865
+        }
+      },
+      "summary": null
+    }
+  }
+}

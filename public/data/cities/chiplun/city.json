@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chiplun",
+  "createdAt": "2026-10-08T15:24:53.955Z",
+  "updatedAt": "2026-10-08T15:24:53.955Z",
+  "meta": {
+    "name": "Chiplun",
+    "nameIt": "Chiplun",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chiplun.geojson",
+      "sha256": "05232407e30c8155d47814a3e9dc6c36ef17ed35c0d74bd3c42a8e2c2d55f965",
+      "size": 185286,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chiplun",
+    "name": "Chiplun",
+    "nameIt": "Chiplun",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.52463,
+      17.52654
+    ],
+    "zoom": 11.3,
+    "population": 71669,
+    "grid": "cities/chiplun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chiplun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chiplun",
+        "name": "Chiplun",
+        "nameIt": "Chiplun",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.52463,
+          17.52654
+        ],
+        "zoom": 11.3,
+        "population": 71669,
+        "cells": 160,
+        "layer": "cities/chiplun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.52463,
+            17.52654
+          ]
+        },
+        "properties": {
+          "id": "chiplun",
+          "name": "Chiplun",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 71669
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bilasipara",
+  "createdAt": "2026-10-08T15:18:51.370Z",
+  "updatedAt": "2026-10-08T15:18:51.370Z",
+  "meta": {
+    "name": "Bilasipara",
+    "nameIt": "Bilasipara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bilasipara.geojson",
+      "sha256": "f19eebe19323079ca54a2fe9f175c559ca710de3415450869a2d68471f9930b8",
+      "size": 753028,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bilasipara",
+    "name": "Bilasipara",
+    "nameIt": "Bilasipara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      90.20415,
+      26.22338
+    ],
+    "zoom": 9.9,
+    "population": 110000,
+    "grid": "cities/bilasipara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bilasipara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bilasipara",
+        "name": "Bilasipara",
+        "nameIt": "Bilasipara",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          90.20415,
+          26.22338
+        ],
+        "zoom": 9.9,
+        "population": 110000,
+        "cells": 650,
+        "layer": "cities/bilasipara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            90.20415,
+            26.22338
+          ]
+        },
+        "properties": {
+          "id": "bilasipara",
+          "name": "Bilasipara",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 110000
+        }
+      },
+      "summary": null
+    }
+  }
+}

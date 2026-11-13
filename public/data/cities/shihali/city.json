@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shihali",
+  "createdAt": "2026-10-08T16:13:02.074Z",
+  "updatedAt": "2026-10-08T16:13:02.074Z",
+  "meta": {
+    "name": "Shihali",
+    "nameIt": "Shihali",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shihali.geojson",
+      "sha256": "094e7acd2ee4ecda91ba95d4436601e9d6b581a4629e9e65ad638786bd2b4e87",
+      "size": 300005,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shihali",
+    "name": "Shihali",
+    "nameIt": "Shihali",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.21604,
+      24.96822
+    ],
+    "zoom": 11.2,
+    "population": 44901,
+    "grid": "cities/shihali/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shihali/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shihali",
+        "name": "Shihali",
+        "nameIt": "Shihali",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.21604,
+          24.96822
+        ],
+        "zoom": 11.2,
+        "population": 44901,
+        "cells": 259,
+        "layer": "cities/shihali/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.21604,
+            24.96822
+          ]
+        },
+        "properties": {
+          "id": "shihali",
+          "name": "Shihali",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 44901
+        }
+      },
+      "summary": null
+    }
+  }
+}

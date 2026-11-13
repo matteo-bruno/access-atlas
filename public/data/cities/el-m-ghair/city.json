@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "el-m-ghair",
+  "createdAt": "2026-10-08T15:31:58.234Z",
+  "updatedAt": "2026-10-08T15:31:58.234Z",
+  "meta": {
+    "name": "El M'Ghair",
+    "nameIt": "El M'Ghair",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/El M'Ghair.geojson",
+      "sha256": "a9622072b19c9f8af5622eaa4b959a96de4b6268871938b332b06a877a7754a2",
+      "size": 80824,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "el-m-ghair",
+    "name": "El M'Ghair",
+    "nameIt": "El M'Ghair",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      5.92178,
+      33.9507
+    ],
+    "zoom": 12,
+    "population": 57300,
+    "grid": "cities/el-m-ghair/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/el-m-ghair/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "el-m-ghair",
+        "name": "El M'Ghair",
+        "nameIt": "El M'Ghair",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          5.92178,
+          33.9507
+        ],
+        "zoom": 12,
+        "population": 57300,
+        "cells": 70,
+        "layer": "cities/el-m-ghair/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.92178,
+            33.9507
+          ]
+        },
+        "properties": {
+          "id": "el-m-ghair",
+          "name": "El M'Ghair",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 57300
+        }
+      },
+      "summary": null
+    }
+  }
+}

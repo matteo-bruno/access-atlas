@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shushtar",
+  "createdAt": "2026-10-08T16:13:19.849Z",
+  "updatedAt": "2026-10-08T16:13:19.849Z",
+  "meta": {
+    "name": "Shushtar",
+    "nameIt": "Shushtar",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shushtar.geojson",
+      "sha256": "a6d611707f9d687fe97fa1b6d70507f148e7f55f7667f335573d34f728cb2b1b",
+      "size": 277637,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shushtar",
+    "name": "Shushtar",
+    "nameIt": "Shushtar",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      48.84766,
+      32.04993
+    ],
+    "zoom": 11.2,
+    "population": 113881,
+    "grid": "cities/shushtar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shushtar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shushtar",
+        "name": "Shushtar",
+        "nameIt": "Shushtar",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          48.84766,
+          32.04993
+        ],
+        "zoom": 11.2,
+        "population": 113881,
+        "cells": 240,
+        "layer": "cities/shushtar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.84766,
+            32.04993
+          ]
+        },
+        "properties": {
+          "id": "shushtar",
+          "name": "Shushtar",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 25.3,
+          "population": 113881
+        }
+      },
+      "summary": null
+    }
+  }
+}

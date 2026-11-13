@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "helensvale",
+  "createdAt": "2026-10-08T15:38:18.685Z",
+  "updatedAt": "2026-10-08T15:38:18.685Z",
+  "meta": {
+    "name": "Helensvale",
+    "nameIt": "Helensvale",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Helensvale.geojson",
+      "sha256": "5d396c673db6c012d422bd9de05602ab800b19c304a06c6181a66a87ca2b3102",
+      "size": 253376,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "helensvale",
+    "name": "Helensvale",
+    "nameIt": "Helensvale",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      153.31304,
+      -27.92081
+    ],
+    "zoom": 11.2,
+    "population": 40394,
+    "grid": "cities/helensvale/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/helensvale/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "helensvale",
+        "name": "Helensvale",
+        "nameIt": "Helensvale",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          153.31304,
+          -27.92081
+        ],
+        "zoom": 11.2,
+        "population": 40394,
+        "cells": 216,
+        "layer": "cities/helensvale/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            153.31304,
+            -27.92081
+          ]
+        },
+        "properties": {
+          "id": "helensvale",
+          "name": "Helensvale",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 25,
+          "population": 40394
+        }
+      },
+      "summary": null
+    }
+  }
+}

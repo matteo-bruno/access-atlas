@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "roosendaal",
+  "createdAt": "2026-10-08T16:09:06.652Z",
+  "updatedAt": "2026-10-08T16:09:06.652Z",
+  "meta": {
+    "name": "Roosendaal",
+    "nameIt": "Roosendaal",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Roosendaal.geojson",
+      "sha256": "bbb471905d6fba669803a892cc2df9f05cc2b12edbbe055842e0c3364ce14032",
+      "size": 318043,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "roosendaal",
+    "name": "Roosendaal",
+    "nameIt": "Roosendaal",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      4.46542,
+      51.53133
+    ],
+    "zoom": 11.2,
+    "population": 56917,
+    "grid": "cities/roosendaal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/roosendaal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "roosendaal",
+        "name": "Roosendaal",
+        "nameIt": "Roosendaal",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          4.46542,
+          51.53133
+        ],
+        "zoom": 11.2,
+        "population": 56917,
+        "cells": 279,
+        "layer": "cities/roosendaal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.46542,
+            51.53133
+          ]
+        },
+        "properties": {
+          "id": "roosendaal",
+          "name": "Roosendaal",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 56917
+        }
+      },
+      "summary": null
+    }
+  }
+}

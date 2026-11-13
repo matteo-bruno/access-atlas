@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "karbala",
+  "createdAt": "2026-10-08T15:45:18.357Z",
+  "updatedAt": "2026-10-08T15:45:18.357Z",
+  "meta": {
+    "name": "Karbala",
+    "nameIt": "Karbala",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Karbala.geojson",
+      "sha256": "dee9c076bef5d24fed3e739b6068d05e6191136b4dee232f3d076e810842f7d7",
+      "size": 1117553,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "karbala",
+    "name": "Karbala",
+    "nameIt": "Karbala",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      44.01302,
+      32.60848
+    ],
+    "zoom": 10.2,
+    "population": 816945,
+    "grid": "cities/karbala/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/karbala/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "karbala",
+        "name": "Karbala",
+        "nameIt": "Karbala",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          44.01302,
+          32.60848
+        ],
+        "zoom": 10.2,
+        "population": 816945,
+        "cells": 974,
+        "layer": "cities/karbala/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.01302,
+            32.60848
+          ]
+        },
+        "properties": {
+          "id": "karbala",
+          "name": "Karbala",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 20.3,
+          "population": 816945
+        }
+      },
+      "summary": null
+    }
+  }
+}

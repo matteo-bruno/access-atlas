@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lanzhou",
+  "createdAt": "2026-10-08T15:50:09.508Z",
+  "updatedAt": "2026-10-08T15:50:09.508Z",
+  "meta": {
+    "name": "Lanzhou",
+    "nameIt": "Lanzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lanzhou.geojson",
+      "sha256": "5ca042fba5933bfbc14ca02f4d77070cc29fd01e4e5ef8c692692e2656faa3bb",
+      "size": 3128850,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lanzhou",
+    "name": "Lanzhou",
+    "nameIt": "Lanzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      103.78791,
+      36.06932
+    ],
+    "zoom": 9,
+    "population": 2879262,
+    "grid": "cities/lanzhou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lanzhou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lanzhou",
+        "name": "Lanzhou",
+        "nameIt": "Lanzhou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          103.78791,
+          36.06932
+        ],
+        "zoom": 9,
+        "population": 2879262,
+        "cells": 2705,
+        "layer": "cities/lanzhou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.78791,
+            36.06932
+          ]
+        },
+        "properties": {
+          "id": "lanzhou",
+          "name": "Lanzhou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 19.6,
+          "population": 2879262
+        }
+      },
+      "summary": null
+    }
+  }
+}

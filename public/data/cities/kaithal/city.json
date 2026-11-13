@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kaithal",
+  "createdAt": "2026-10-08T15:44:15.987Z",
+  "updatedAt": "2026-10-08T15:44:15.987Z",
+  "meta": {
+    "name": "Kaithal",
+    "nameIt": "Kaithal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kaithal.geojson",
+      "sha256": "ca0b096057370a2c969a4233f6ea841998fc5a8a6a0280a1490bb63bb028121a",
+      "size": 299055,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kaithal",
+    "name": "Kaithal",
+    "nameIt": "Kaithal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.4053,
+      29.79988
+    ],
+    "zoom": 11.3,
+    "population": 212579,
+    "grid": "cities/kaithal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kaithal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kaithal",
+        "name": "Kaithal",
+        "nameIt": "Kaithal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.4053,
+          29.79988
+        ],
+        "zoom": 11.3,
+        "population": 212579,
+        "cells": 258,
+        "layer": "cities/kaithal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.4053,
+            29.79988
+          ]
+        },
+        "properties": {
+          "id": "kaithal",
+          "name": "Kaithal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19,
+          "population": 212579
+        }
+      },
+      "summary": null
+    }
+  }
+}

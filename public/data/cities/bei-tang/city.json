@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bei-tang",
+  "createdAt": "2026-10-08T15:16:42.917Z",
+  "updatedAt": "2026-10-08T15:16:42.917Z",
+  "meta": {
+    "name": "Bei Tang",
+    "nameIt": "Bei Tang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bei Tang.geojson",
+      "sha256": "3c32f5b60681a49f5211161b70988b66a85e15f8b58994fb622af7d51feb13c1",
+      "size": 415961,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bei-tang",
+    "name": "Bei Tang",
+    "nameIt": "Bei Tang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.64377,
+      39.12643
+    ],
+    "zoom": 11.1,
+    "population": 11345,
+    "grid": "cities/bei-tang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 168
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bei-tang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bei-tang",
+        "name": "Bei Tang",
+        "nameIt": "Bei Tang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.64377,
+          39.12643
+        ],
+        "zoom": 11.1,
+        "population": 11345,
+        "cells": 357,
+        "layer": "cities/bei-tang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 168
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.64377,
+            39.12643
+          ]
+        },
+        "properties": {
+          "id": "bei-tang",
+          "name": "Bei Tang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 12.9,
+          "population": 11345
+        }
+      },
+      "summary": null
+    }
+  }
+}

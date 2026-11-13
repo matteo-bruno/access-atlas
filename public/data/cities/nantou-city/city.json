@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nantou-city",
+  "createdAt": "2026-10-08T16:00:11.785Z",
+  "updatedAt": "2026-10-08T16:00:11.785Z",
+  "meta": {
+    "name": "Nantou City",
+    "nameIt": "Nantou City",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nantou City.geojson",
+      "sha256": "c6bea2cc5709f8a7eedfeff40eaee3e9a676b33816851f9e9c9eb9120d38fe62",
+      "size": 642114,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nantou-city",
+    "name": "Nantou City",
+    "nameIt": "Nantou City",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW",
+    "center": [
+      120.6821,
+      23.94753
+    ],
+    "zoom": 10.5,
+    "population": 152155,
+    "grid": "cities/nantou-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nantou-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nantou-city",
+        "name": "Nantou City",
+        "nameIt": "Nantou City",
+        "region": "Taiwan",
+        "regionIt": "Taiwan",
+        "country": "TW",
+        "center": [
+          120.6821,
+          23.94753
+        ],
+        "zoom": 10.5,
+        "population": 152155,
+        "cells": 555,
+        "layer": "cities/nantou-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.6821,
+            23.94753
+          ]
+        },
+        "properties": {
+          "id": "nantou-city",
+          "name": "Nantou City",
+          "country": "TW",
+          "isStudy": true,
+          "proximityMinutes": 17.7,
+          "population": 152155
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ramtek",
+  "createdAt": "2026-10-08T16:08:10.513Z",
+  "updatedAt": "2026-10-08T16:08:10.513Z",
+  "meta": {
+    "name": "Ramtek",
+    "nameIt": "Ramtek",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ramtek.geojson",
+      "sha256": "c58b2212de3e0c80a2ee54c2f3c17a5fee42a2d9ebbbe3a376c1d689cd8be07f",
+      "size": 118138,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ramtek",
+    "name": "Ramtek",
+    "nameIt": "Ramtek",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.3172,
+      21.39513
+    ],
+    "zoom": 11.5,
+    "population": 35453,
+    "grid": "cities/ramtek/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ramtek/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ramtek",
+        "name": "Ramtek",
+        "nameIt": "Ramtek",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.3172,
+          21.39513
+        ],
+        "zoom": 11.5,
+        "population": 35453,
+        "cells": 102,
+        "layer": "cities/ramtek/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.3172,
+            21.39513
+          ]
+        },
+        "properties": {
+          "id": "ramtek",
+          "name": "Ramtek",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 21.3,
+          "population": 35453
+        }
+      },
+      "summary": null
+    }
+  }
+}

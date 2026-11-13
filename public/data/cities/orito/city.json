@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "orito",
+  "createdAt": "2026-10-08T16:02:59.829Z",
+  "updatedAt": "2026-10-08T16:02:59.829Z",
+  "meta": {
+    "name": "Orito",
+    "nameIt": "Orito",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Orito.geojson",
+      "sha256": "9ca1bfe57cbb03a992b0e248d15c8e38067a33df34b76d430b4c1fe8e7fdcf60",
+      "size": 89926,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "orito",
+    "name": "Orito",
+    "nameIt": "Orito",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -76.86949,
+      0.6638
+    ],
+    "zoom": 12,
+    "population": 24799,
+    "grid": "cities/orito/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/orito/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "orito",
+        "name": "Orito",
+        "nameIt": "Orito",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -76.86949,
+          0.6638
+        ],
+        "zoom": 12,
+        "population": 24799,
+        "cells": 77,
+        "layer": "cities/orito/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.86949,
+            0.6638
+          ]
+        },
+        "properties": {
+          "id": "orito",
+          "name": "Orito",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 24799
+        }
+      },
+      "summary": null
+    }
+  }
+}

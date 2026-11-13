@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kirkby-in-ashfield",
+  "createdAt": "2026-10-08T15:47:12.446Z",
+  "updatedAt": "2026-10-08T15:47:12.446Z",
+  "meta": {
+    "name": "Kirkby-in-Ashfield",
+    "nameIt": "Kirkby-in-Ashfield",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kirkby-in-Ashfield.geojson",
+      "sha256": "392632e0042fd7ab6785332c1d5fa24f3b9ba6101fbb5df1221e9478b61686de",
+      "size": 316822,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kirkby-in-ashfield",
+    "name": "Kirkby-in-Ashfield",
+    "nameIt": "Kirkby-in-Ashfield",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.26099,
+      53.11782
+    ],
+    "zoom": 11.2,
+    "population": 68857,
+    "grid": "cities/kirkby-in-ashfield/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kirkby-in-ashfield/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kirkby-in-ashfield",
+        "name": "Kirkby-in-Ashfield",
+        "nameIt": "Kirkby-in-Ashfield",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.26099,
+          53.11782
+        ],
+        "zoom": 11.2,
+        "population": 68857,
+        "cells": 273,
+        "layer": "cities/kirkby-in-ashfield/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.26099,
+            53.11782
+          ]
+        },
+        "properties": {
+          "id": "kirkby-in-ashfield",
+          "name": "Kirkby-in-Ashfield",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 68857
+        }
+      },
+      "summary": null
+    }
+  }
+}

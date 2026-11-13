@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "davanagere",
+  "createdAt": "2026-10-08T15:28:38.260Z",
+  "updatedAt": "2026-10-08T15:28:38.260Z",
+  "meta": {
+    "name": "Davanagere",
+    "nameIt": "Davanagere",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Davanagere.geojson",
+      "sha256": "5f5a6c0b4eae03d54469e35ebf8abe975a3b4a8159d198e680a4abf42c4b4c4c",
+      "size": 475510,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "davanagere",
+    "name": "Davanagere",
+    "nameIt": "Davanagere",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.91839,
+      14.45772
+    ],
+    "zoom": 10.9,
+    "population": 287135,
+    "grid": "cities/davanagere/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/davanagere/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "davanagere",
+        "name": "Davanagere",
+        "nameIt": "Davanagere",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.91839,
+          14.45772
+        ],
+        "zoom": 10.9,
+        "population": 287135,
+        "cells": 411,
+        "layer": "cities/davanagere/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.91839,
+            14.45772
+          ]
+        },
+        "properties": {
+          "id": "davanagere",
+          "name": "Davanagere",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.8,
+          "population": 287135
+        }
+      },
+      "summary": null
+    }
+  }
+}

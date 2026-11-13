@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "linkoping",
+  "createdAt": "2026-10-08T15:51:26.321Z",
+  "updatedAt": "2026-10-08T15:51:26.321Z",
+  "meta": {
+    "name": "Linköping",
+    "nameIt": "Linköping",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Linköping.geojson",
+      "sha256": "a9bc5ead467b291db94af0c1d5e4ab63fe1e660767c4fea69fa9535ac0f71b36",
+      "size": 366700,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "linkoping",
+    "name": "Linköping",
+    "nameIt": "Linköping",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE",
+    "center": [
+      15.6207,
+      58.40451
+    ],
+    "zoom": 10.9,
+    "population": 88485,
+    "grid": "cities/linkoping/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/linkoping/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "linkoping",
+        "name": "Linköping",
+        "nameIt": "Linköping",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          15.6207,
+          58.40451
+        ],
+        "zoom": 10.9,
+        "population": 88485,
+        "cells": 321,
+        "layer": "cities/linkoping/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            15.6207,
+            58.40451
+          ]
+        },
+        "properties": {
+          "id": "linkoping",
+          "name": "Linköping",
+          "country": "SE",
+          "isStudy": true,
+          "proximityMinutes": 8.7,
+          "population": 88485
+        }
+      },
+      "summary": null
+    }
+  }
+}

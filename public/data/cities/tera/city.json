@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tera",
+  "createdAt": "2026-10-08T16:19:28.910Z",
+  "updatedAt": "2026-10-08T16:19:28.910Z",
+  "meta": {
+    "name": "Téra",
+    "nameIt": "Téra",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Téra.geojson",
+      "sha256": "070e93b9699b7d707687c20ae15a4f63dd5885c0e5bba4d645aa40df6df063af",
+      "size": 100275,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tera",
+    "name": "Téra",
+    "nameIt": "Téra",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE",
+    "center": [
+      0.75216,
+      14.00582
+    ],
+    "zoom": 12,
+    "population": 32893,
+    "grid": "cities/tera/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tera/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tera",
+        "name": "Téra",
+        "nameIt": "Téra",
+        "region": "Niger",
+        "regionIt": "Niger",
+        "country": "NE",
+        "center": [
+          0.75216,
+          14.00582
+        ],
+        "zoom": 12,
+        "population": 32893,
+        "cells": 86,
+        "layer": "cities/tera/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.75216,
+            14.00582
+          ]
+        },
+        "properties": {
+          "id": "tera",
+          "name": "Téra",
+          "country": "NE",
+          "isStudy": true,
+          "proximityMinutes": 10.2,
+          "population": 32893
+        }
+      },
+      "summary": null
+    }
+  }
+}

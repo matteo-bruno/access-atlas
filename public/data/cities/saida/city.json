@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "saida",
+  "createdAt": "2026-10-08T16:09:50.570Z",
+  "updatedAt": "2026-10-08T16:09:50.570Z",
+  "meta": {
+    "name": "Saida",
+    "nameIt": "Saida",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Saida.geojson",
+      "sha256": "b99875febbdc8a6d70de84ef5cc01a5b87d17389e7f6b8aa2c4047bd9662c37e",
+      "size": 290132,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "saida",
+    "name": "Saida",
+    "nameIt": "Saida",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      0.15101,
+      34.84581
+    ],
+    "zoom": 11,
+    "population": 184628,
+    "grid": "cities/saida/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/saida/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "saida",
+        "name": "Saida",
+        "nameIt": "Saida",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          0.15101,
+          34.84581
+        ],
+        "zoom": 11,
+        "population": 184628,
+        "cells": 249,
+        "layer": "cities/saida/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.15101,
+            34.84581
+          ]
+        },
+        "properties": {
+          "id": "saida",
+          "name": "Saida",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 16.1,
+          "population": 184628
+        }
+      },
+      "summary": null
+    }
+  }
+}

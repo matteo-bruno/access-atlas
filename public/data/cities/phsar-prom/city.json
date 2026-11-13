@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "phsar-prom",
+  "createdAt": "2026-10-08T16:05:18.811Z",
+  "updatedAt": "2026-10-08T16:05:18.811Z",
+  "meta": {
+    "name": "Phsar Prom",
+    "nameIt": "Phsar Prom",
+    "region": "Cambodia",
+    "regionIt": "Cambogia",
+    "country": "KH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Phsar Prom.geojson",
+      "sha256": "be1c05e8ef12c516f8b22b0aa449a97bb3dc858e795123fe560fb1065ac75d78",
+      "size": 80694,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "phsar-prom",
+    "name": "Phsar Prom",
+    "nameIt": "Phsar Prom",
+    "region": "Cambodia",
+    "regionIt": "Cambogia",
+    "country": "KH",
+    "center": [
+      102.50919,
+      12.93124
+    ],
+    "zoom": 11.5,
+    "population": 7923,
+    "grid": "cities/phsar-prom/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/phsar-prom/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "phsar-prom",
+        "name": "Phsar Prom",
+        "nameIt": "Phsar Prom",
+        "region": "Cambodia",
+        "regionIt": "Cambogia",
+        "country": "KH",
+        "center": [
+          102.50919,
+          12.93124
+        ],
+        "zoom": 11.5,
+        "population": 7923,
+        "cells": 69,
+        "layer": "cities/phsar-prom/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            102.50919,
+            12.93124
+          ]
+        },
+        "properties": {
+          "id": "phsar-prom",
+          "name": "Phsar Prom",
+          "country": "KH",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 7923
+        }
+      },
+      "summary": null
+    }
+  }
+}

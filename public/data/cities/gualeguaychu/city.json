@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gualeguaychu",
+  "createdAt": "2026-10-08T15:36:07.580Z",
+  "updatedAt": "2026-10-08T15:36:07.580Z",
+  "meta": {
+    "name": "Gualeguaychu",
+    "nameIt": "Gualeguaychu",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gualeguaychu.geojson",
+      "sha256": "32cb46e51fcd6df4cd34bd94466ed3cd56dab802fab64dbaf4460a4b5bffc541",
+      "size": 240877,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gualeguaychu",
+    "name": "Gualeguaychu",
+    "nameIt": "Gualeguaychu",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -58.52452,
+      -33.01014
+    ],
+    "zoom": 11.7,
+    "population": 59580,
+    "grid": "cities/gualeguaychu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 173
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gualeguaychu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gualeguaychu",
+        "name": "Gualeguaychu",
+        "nameIt": "Gualeguaychu",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -58.52452,
+          -33.01014
+        ],
+        "zoom": 11.7,
+        "population": 59580,
+        "cells": 208,
+        "layer": "cities/gualeguaychu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 173
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -58.52452,
+            -33.01014
+          ]
+        },
+        "properties": {
+          "id": "gualeguaychu",
+          "name": "Gualeguaychu",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 9.9,
+          "population": 59580
+        }
+      },
+      "summary": null
+    }
+  }
+}

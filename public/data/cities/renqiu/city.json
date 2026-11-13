@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "renqiu",
+  "createdAt": "2026-10-08T16:08:40.148Z",
+  "updatedAt": "2026-10-08T16:08:40.148Z",
+  "meta": {
+    "name": "Renqiu",
+    "nameIt": "Renqiu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Renqiu.geojson",
+      "sha256": "d03f8baf2ff5eafa2cc207ddb2ce299d5b4e3ffd9506f9958689701d16c14fcd",
+      "size": 1514484,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "renqiu",
+    "name": "Renqiu",
+    "nameIt": "Renqiu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.09614,
+      38.69442
+    ],
+    "zoom": 10.1,
+    "population": 400706,
+    "grid": "cities/renqiu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 170
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/renqiu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "renqiu",
+        "name": "Renqiu",
+        "nameIt": "Renqiu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.09614,
+          38.69442
+        ],
+        "zoom": 10.1,
+        "population": 400706,
+        "cells": 1298,
+        "layer": "cities/renqiu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 170
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.09614,
+            38.69442
+          ]
+        },
+        "properties": {
+          "id": "renqiu",
+          "name": "Renqiu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 32.5,
+          "population": 400706
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "akatsi",
+  "createdAt": "2026-10-08T15:03:34.842Z",
+  "updatedAt": "2026-10-08T15:03:34.842Z",
+  "meta": {
+    "name": "Akatsi",
+    "nameIt": "Akatsi",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Akatsi.geojson",
+      "sha256": "f88a4416625796b5087fbd4c079272017027c58df645bb6ca956101255e5cb8e",
+      "size": 179457,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "akatsi",
+    "name": "Akatsi",
+    "nameIt": "Akatsi",
+    "region": "Ghana",
+    "regionIt": "Ghana",
+    "country": "GH",
+    "center": [
+      0.80193,
+      6.12829
+    ],
+    "zoom": 11.9,
+    "population": 47214,
+    "grid": "cities/akatsi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/akatsi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "akatsi",
+        "name": "Akatsi",
+        "nameIt": "Akatsi",
+        "region": "Ghana",
+        "regionIt": "Ghana",
+        "country": "GH",
+        "center": [
+          0.80193,
+          6.12829
+        ],
+        "zoom": 11.9,
+        "population": 47214,
+        "cells": 155,
+        "layer": "cities/akatsi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0.80193,
+            6.12829
+          ]
+        },
+        "properties": {
+          "id": "akatsi",
+          "name": "Akatsi",
+          "country": "GH",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 47214
+        }
+      },
+      "summary": null
+    }
+  }
+}

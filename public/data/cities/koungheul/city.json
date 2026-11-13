@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "koungheul",
+  "createdAt": "2026-10-08T15:48:13.818Z",
+  "updatedAt": "2026-10-08T15:48:13.818Z",
+  "meta": {
+    "name": "Koungheul",
+    "nameIt": "Koungheul",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Koungheul.geojson",
+      "sha256": "3b4ee3900fe03444ff24ad78f66115d3362e8e71e00798d3ef22c6a68c7b6e22",
+      "size": 95457,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "koungheul",
+    "name": "Koungheul",
+    "nameIt": "Koungheul",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN",
+    "center": [
+      -14.80373,
+      13.97763
+    ],
+    "zoom": 12,
+    "population": 63934,
+    "grid": "cities/koungheul/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/koungheul/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "koungheul",
+        "name": "Koungheul",
+        "nameIt": "Koungheul",
+        "region": "Senegal",
+        "regionIt": "Senegal",
+        "country": "SN",
+        "center": [
+          -14.80373,
+          13.97763
+        ],
+        "zoom": 12,
+        "population": 63934,
+        "cells": 81,
+        "layer": "cities/koungheul/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -14.80373,
+            13.97763
+          ]
+        },
+        "properties": {
+          "id": "koungheul",
+          "name": "Koungheul",
+          "country": "SN",
+          "isStudy": true,
+          "proximityMinutes": 10.7,
+          "population": 63934
+        }
+      },
+      "summary": null
+    }
+  }
+}

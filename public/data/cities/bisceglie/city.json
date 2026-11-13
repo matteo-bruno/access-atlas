@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bisceglie",
+  "createdAt": "2026-10-08T15:19:20.387Z",
+  "updatedAt": "2026-10-08T15:19:20.387Z",
+  "meta": {
+    "name": "Bisceglie",
+    "nameIt": "Bisceglie",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bisceglie.geojson",
+      "sha256": "b36edcc3a790e2a19dfe9b6b417abc3985c304bc18b29580a7fa83257d8f9933",
+      "size": 108030,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bisceglie",
+    "name": "Bisceglie",
+    "nameIt": "Bisceglie",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      16.49908,
+      41.23885
+    ],
+    "zoom": 11.9,
+    "population": 39085,
+    "grid": "cities/bisceglie/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bisceglie/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bisceglie",
+        "name": "Bisceglie",
+        "nameIt": "Bisceglie",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          16.49908,
+          41.23885
+        ],
+        "zoom": 11.9,
+        "population": 39085,
+        "cells": 94,
+        "layer": "cities/bisceglie/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.49908,
+            41.23885
+          ]
+        },
+        "properties": {
+          "id": "bisceglie",
+          "name": "Bisceglie",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 8.5,
+          "population": 39085
+        }
+      },
+      "summary": null
+    }
+  }
+}

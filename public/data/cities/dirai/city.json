@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dirai",
+  "createdAt": "2026-10-08T15:30:12.525Z",
+  "updatedAt": "2026-10-08T15:30:12.525Z",
+  "meta": {
+    "name": "Dirai",
+    "nameIt": "Dirai",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dirai.geojson",
+      "sha256": "421cba30f3c84b364511ec1f4215c116e0147a6e8fa115c1e27b7e32a2d81bfe",
+      "size": 192292,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dirai",
+    "name": "Dirai",
+    "nameIt": "Dirai",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      91.35783,
+      24.79236
+    ],
+    "zoom": 11.4,
+    "population": 42102,
+    "grid": "cities/dirai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dirai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dirai",
+        "name": "Dirai",
+        "nameIt": "Dirai",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          91.35783,
+          24.79236
+        ],
+        "zoom": 11.4,
+        "population": 42102,
+        "cells": 166,
+        "layer": "cities/dirai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.35783,
+            24.79236
+          ]
+        },
+        "properties": {
+          "id": "dirai",
+          "name": "Dirai",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 42102
+        }
+      },
+      "summary": null
+    }
+  }
+}

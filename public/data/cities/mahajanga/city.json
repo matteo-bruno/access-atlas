@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mahajanga",
+  "createdAt": "2026-10-08T15:53:37.235Z",
+  "updatedAt": "2026-10-08T15:53:37.235Z",
+  "meta": {
+    "name": "Mahajanga",
+    "nameIt": "Mahajanga",
+    "region": "Madagascar",
+    "regionIt": "Madagascar",
+    "country": "MG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mahajanga.geojson",
+      "sha256": "b9d1dc1c72f8c1628a73b36974b8127aa2c43c117cb4717ba4328d4ca91c7ad2",
+      "size": 363311,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mahajanga",
+    "name": "Mahajanga",
+    "nameIt": "Mahajanga",
+    "region": "Madagascar",
+    "regionIt": "Madagascar",
+    "country": "MG",
+    "center": [
+      46.33371,
+      -15.7111
+    ],
+    "zoom": 10.5,
+    "population": 220353,
+    "grid": "cities/mahajanga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mahajanga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mahajanga",
+        "name": "Mahajanga",
+        "nameIt": "Mahajanga",
+        "region": "Madagascar",
+        "regionIt": "Madagascar",
+        "country": "MG",
+        "center": [
+          46.33371,
+          -15.7111
+        ],
+        "zoom": 10.5,
+        "population": 220353,
+        "cells": 312,
+        "layer": "cities/mahajanga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            46.33371,
+            -15.7111
+          ]
+        },
+        "properties": {
+          "id": "mahajanga",
+          "name": "Mahajanga",
+          "country": "MG",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 220353
+        }
+      },
+      "summary": null
+    }
+  }
+}

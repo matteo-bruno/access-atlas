@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "maychew",
+  "createdAt": "2026-10-08T15:55:57.335Z",
+  "updatedAt": "2026-10-08T15:55:57.335Z",
+  "meta": {
+    "name": "Maychew",
+    "nameIt": "Maychew",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Maychew.geojson",
+      "sha256": "2eaa7ce1a6c3688f99f3c23cf23c03275d85090920d26d3c3c51dcd429fbc35e",
+      "size": 104702,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "maychew",
+    "name": "Maychew",
+    "nameIt": "Maychew",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      39.54345,
+      12.78442
+    ],
+    "zoom": 12,
+    "population": 41330,
+    "grid": "cities/maychew/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/maychew/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "maychew",
+        "name": "Maychew",
+        "nameIt": "Maychew",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          39.54345,
+          12.78442
+        ],
+        "zoom": 12,
+        "population": 41330,
+        "cells": 90,
+        "layer": "cities/maychew/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.54345,
+            12.78442
+          ]
+        },
+        "properties": {
+          "id": "maychew",
+          "name": "Maychew",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 41330
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-pedro-de-jujuy",
+  "createdAt": "2026-10-08T16:10:44.293Z",
+  "updatedAt": "2026-10-08T16:10:44.293Z",
+  "meta": {
+    "name": "San Pedro de Jujuy",
+    "nameIt": "San Pedro de Jujuy",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Pedro de Jujuy.geojson",
+      "sha256": "76efa3d904c88b26d986bf60c5eb660182a8c4f15437e2df4c3b8ffe900bdfdd",
+      "size": 139496,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-pedro-de-jujuy",
+    "name": "San Pedro de Jujuy",
+    "nameIt": "San Pedro de Jujuy",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -64.86701,
+      -24.23342
+    ],
+    "zoom": 11.9,
+    "population": 60319,
+    "grid": "cities/san-pedro-de-jujuy/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-pedro-de-jujuy/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-pedro-de-jujuy",
+        "name": "San Pedro de Jujuy",
+        "nameIt": "San Pedro de Jujuy",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -64.86701,
+          -24.23342
+        ],
+        "zoom": 11.9,
+        "population": 60319,
+        "cells": 119,
+        "layer": "cities/san-pedro-de-jujuy/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -64.86701,
+            -24.23342
+          ]
+        },
+        "properties": {
+          "id": "san-pedro-de-jujuy",
+          "name": "San Pedro de Jujuy",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 11.7,
+          "population": 60319
+        }
+      },
+      "summary": null
+    }
+  }
+}

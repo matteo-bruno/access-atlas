@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "liangmatai",
+  "createdAt": "2026-10-08T15:50:54.413Z",
+  "updatedAt": "2026-10-08T15:50:54.413Z",
+  "meta": {
+    "name": "Liangmatai",
+    "nameIt": "Liangmatai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Liangmatai.geojson",
+      "sha256": "93d094f5e17891a736861c45248684d6fd383927c07bf57ae47a2812373ad644",
+      "size": 532721,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "liangmatai",
+    "name": "Liangmatai",
+    "nameIt": "Liangmatai",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.03189,
+      39.11999
+    ],
+    "zoom": 11,
+    "population": 159661,
+    "grid": "cities/liangmatai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/liangmatai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "liangmatai",
+        "name": "Liangmatai",
+        "nameIt": "Liangmatai",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.03189,
+          39.11999
+        ],
+        "zoom": 11,
+        "population": 159661,
+        "cells": 457,
+        "layer": "cities/liangmatai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.03189,
+            39.11999
+          ]
+        },
+        "properties": {
+          "id": "liangmatai",
+          "name": "Liangmatai",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 159661
+        }
+      },
+      "summary": null
+    }
+  }
+}

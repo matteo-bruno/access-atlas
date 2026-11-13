@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mota-jordan",
+  "createdAt": "2026-10-08T15:58:30.758Z",
+  "updatedAt": "2026-10-08T15:58:30.758Z",
+  "meta": {
+    "name": "Mota (Jordan)",
+    "nameIt": "Mota (Jordan)",
+    "region": "Jordan",
+    "regionIt": "Giordania",
+    "country": "JO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mota (Jordan).geojson",
+      "sha256": "1e69bf30df59ac28d0773f16a844fd4cfa3e5c54a08fe8ed54d17e4b1aab9a73",
+      "size": 134645,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mota-jordan",
+    "name": "Mota (Jordan)",
+    "nameIt": "Mota (Jordan)",
+    "region": "Jordan",
+    "regionIt": "Giordania",
+    "country": "JO",
+    "center": [
+      35.69859,
+      31.08319
+    ],
+    "zoom": 11.6,
+    "population": 66463,
+    "grid": "cities/mota-jordan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mota-jordan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mota-jordan",
+        "name": "Mota (Jordan)",
+        "nameIt": "Mota (Jordan)",
+        "region": "Jordan",
+        "regionIt": "Giordania",
+        "country": "JO",
+        "center": [
+          35.69859,
+          31.08319
+        ],
+        "zoom": 11.6,
+        "population": 66463,
+        "cells": 116,
+        "layer": "cities/mota-jordan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.69859,
+            31.08319
+          ]
+        },
+        "properties": {
+          "id": "mota-jordan",
+          "name": "Mota (Jordan)",
+          "country": "JO",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 66463
+        }
+      },
+      "summary": null
+    }
+  }
+}

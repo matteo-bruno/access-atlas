@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kassala",
+  "createdAt": "2026-10-08T15:45:31.129Z",
+  "updatedAt": "2026-10-08T15:45:31.129Z",
+  "meta": {
+    "name": "Kassala",
+    "nameIt": "Kassala",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kassala.geojson",
+      "sha256": "09951dbd1283c0e5369419e911e9bf8ba1da434b07c4fd6405a927d1e34b8c4d",
+      "size": 687942,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kassala",
+    "name": "Kassala",
+    "nameIt": "Kassala",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      36.39157,
+      15.45274
+    ],
+    "zoom": 10.4,
+    "population": 955120,
+    "grid": "cities/kassala/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kassala/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kassala",
+        "name": "Kassala",
+        "nameIt": "Kassala",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          36.39157,
+          15.45274
+        ],
+        "zoom": 10.4,
+        "population": 955120,
+        "cells": 591,
+        "layer": "cities/kassala/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.39157,
+            15.45274
+          ]
+        },
+        "properties": {
+          "id": "kassala",
+          "name": "Kassala",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 34.9,
+          "population": 955120
+        }
+      },
+      "summary": null
+    }
+  }
+}

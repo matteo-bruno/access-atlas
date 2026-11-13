@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "djibo",
+  "createdAt": "2026-10-08T15:30:21.382Z",
+  "updatedAt": "2026-10-08T15:30:21.382Z",
+  "meta": {
+    "name": "Djibo",
+    "nameIt": "Djibo",
+    "region": "Burkina Faso",
+    "regionIt": "Burkina Faso",
+    "country": "BF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Djibo.geojson",
+      "sha256": "9466fa215c17d2b28d14274ac896b1e8fcf84f2f8ebd767dc7df80a79f8ab781",
+      "size": 168057,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "djibo",
+    "name": "Djibo",
+    "nameIt": "Djibo",
+    "region": "Burkina Faso",
+    "regionIt": "Burkina Faso",
+    "country": "BF",
+    "center": [
+      -1.62994,
+      14.09738
+    ],
+    "zoom": 11.9,
+    "population": 32065,
+    "grid": "cities/djibo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/djibo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "djibo",
+        "name": "Djibo",
+        "nameIt": "Djibo",
+        "region": "Burkina Faso",
+        "regionIt": "Burkina Faso",
+        "country": "BF",
+        "center": [
+          -1.62994,
+          14.09738
+        ],
+        "zoom": 11.9,
+        "population": 32065,
+        "cells": 143,
+        "layer": "cities/djibo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.62994,
+            14.09738
+          ]
+        },
+        "properties": {
+          "id": "djibo",
+          "name": "Djibo",
+          "country": "BF",
+          "isStudy": true,
+          "proximityMinutes": 19.8,
+          "population": 32065
+        }
+      },
+      "summary": null
+    }
+  }
+}

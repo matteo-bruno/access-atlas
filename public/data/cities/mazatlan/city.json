@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mazatlan",
+  "createdAt": "2026-10-08T15:56:01.112Z",
+  "updatedAt": "2026-10-08T15:56:01.112Z",
+  "meta": {
+    "name": "Mazatlán",
+    "nameIt": "Mazatlán",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mazatlán.geojson",
+      "sha256": "421c86ce319eba85d60208a8244287e2683b0b97824c45a439a24ce43f65b490",
+      "size": 784177,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mazatlan",
+    "name": "Mazatlán",
+    "nameIt": "Mazatlán",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -106.40973,
+      23.24322
+    ],
+    "zoom": 10.5,
+    "population": 417492,
+    "grid": "cities/mazatlan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mazatlan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mazatlan",
+        "name": "Mazatlán",
+        "nameIt": "Mazatlán",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -106.40973,
+          23.24322
+        ],
+        "zoom": 10.5,
+        "population": 417492,
+        "cells": 669,
+        "layer": "cities/mazatlan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.40973,
+            23.24322
+          ]
+        },
+        "properties": {
+          "id": "mazatlan",
+          "name": "Mazatlán",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 22.2,
+          "population": 417492
+        }
+      },
+      "summary": null
+    }
+  }
+}

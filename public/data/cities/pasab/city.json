@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pasab",
+  "createdAt": "2026-10-08T16:04:32.711Z",
+  "updatedAt": "2026-10-08T16:04:32.711Z",
+  "meta": {
+    "name": "Pasab",
+    "nameIt": "Pasab",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pasab.geojson",
+      "sha256": "c8cafebde43b729b8e9056693145538743720421a3c048b4014bf78131421def",
+      "size": 60258,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pasab",
+    "name": "Pasab",
+    "nameIt": "Pasab",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF",
+    "center": [
+      65.43648,
+      31.58962
+    ],
+    "zoom": 12,
+    "population": 10258,
+    "grid": "cities/pasab/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pasab/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pasab",
+        "name": "Pasab",
+        "nameIt": "Pasab",
+        "region": "Afghanistan",
+        "regionIt": "Afghanistan",
+        "country": "AF",
+        "center": [
+          65.43648,
+          31.58962
+        ],
+        "zoom": 12,
+        "population": 10258,
+        "cells": 52,
+        "layer": "cities/pasab/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            65.43648,
+            31.58962
+          ]
+        },
+        "properties": {
+          "id": "pasab",
+          "name": "Pasab",
+          "country": "AF",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 10258
+        }
+      },
+      "summary": null
+    }
+  }
+}

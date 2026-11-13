@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "awomama",
+  "createdAt": "2026-10-08T15:11:45.246Z",
+  "updatedAt": "2026-10-08T15:11:45.246Z",
+  "meta": {
+    "name": "Awomama",
+    "nameIt": "Awomama",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Awomama.geojson",
+      "sha256": "a64040ac10d6604431fa268b5120454f8ec38c6a219cc0ea626df747c2585251",
+      "size": 382148,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "awomama",
+    "name": "Awomama",
+    "nameIt": "Awomama",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      6.93641,
+      5.6865
+    ],
+    "zoom": 11,
+    "population": 87171,
+    "grid": "cities/awomama/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/awomama/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "awomama",
+        "name": "Awomama",
+        "nameIt": "Awomama",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          6.93641,
+          5.6865
+        ],
+        "zoom": 11,
+        "population": 87171,
+        "cells": 332,
+        "layer": "cities/awomama/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.93641,
+            5.6865
+          ]
+        },
+        "properties": {
+          "id": "awomama",
+          "name": "Awomama",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 87171
+        }
+      },
+      "summary": null
+    }
+  }
+}

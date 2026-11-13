@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ajab-shir",
+  "createdAt": "2026-10-08T15:03:25.634Z",
+  "updatedAt": "2026-10-08T15:03:25.634Z",
+  "meta": {
+    "name": "Ajab Shir",
+    "nameIt": "Ajab Shir",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ajab Shir.geojson",
+      "sha256": "b20f97a4381c90e13bf7705fb8ccdb8b3242b6a26e9c59ec93a35ff971d7ebeb",
+      "size": 100752,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ajab-shir",
+    "name": "Ajab Shir",
+    "nameIt": "Ajab Shir",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      45.89154,
+      37.47759
+    ],
+    "zoom": 11.8,
+    "population": 32651,
+    "grid": "cities/ajab-shir/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ajab-shir/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ajab-shir",
+        "name": "Ajab Shir",
+        "nameIt": "Ajab Shir",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          45.89154,
+          37.47759
+        ],
+        "zoom": 11.8,
+        "population": 32651,
+        "cells": 87,
+        "layer": "cities/ajab-shir/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            45.89154,
+            37.47759
+          ]
+        },
+        "properties": {
+          "id": "ajab-shir",
+          "name": "Ajab Shir",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 11.3,
+          "population": 32651
+        }
+      },
+      "summary": null
+    }
+  }
+}

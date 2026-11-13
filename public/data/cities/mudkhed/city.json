@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mudkhed",
+  "createdAt": "2026-10-08T15:58:43.768Z",
+  "updatedAt": "2026-10-08T15:58:43.768Z",
+  "meta": {
+    "name": "Mudkhed",
+    "nameIt": "Mudkhed",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mudkhed.geojson",
+      "sha256": "4a1871650ceea392467c2e9033767ab415ae3a5acf58936a874a615d0af80cae",
+      "size": 98413,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mudkhed",
+    "name": "Mudkhed",
+    "nameIt": "Mudkhed",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.50529,
+      19.14932
+    ],
+    "zoom": 12,
+    "population": 21190,
+    "grid": "cities/mudkhed/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mudkhed/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mudkhed",
+        "name": "Mudkhed",
+        "nameIt": "Mudkhed",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.50529,
+          19.14932
+        ],
+        "zoom": 12,
+        "population": 21190,
+        "cells": 85,
+        "layer": "cities/mudkhed/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.50529,
+            19.14932
+          ]
+        },
+        "properties": {
+          "id": "mudkhed",
+          "name": "Mudkhed",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 21190
+        }
+      },
+      "summary": null
+    }
+  }
+}

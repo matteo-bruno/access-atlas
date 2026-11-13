@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kambove",
+  "createdAt": "2026-10-08T15:44:39.312Z",
+  "updatedAt": "2026-10-08T15:44:39.312Z",
+  "meta": {
+    "name": "Kambove",
+    "nameIt": "Kambove",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kambove.geojson",
+      "sha256": "ddfc1e8c1f9c29c1e24eb5934db71753f2a55b6ac6afaff53de4afc57a5e6621",
+      "size": 110575,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kambove",
+    "name": "Kambove",
+    "nameIt": "Kambove",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      26.59564,
+      -10.87219
+    ],
+    "zoom": 12,
+    "population": 58911,
+    "grid": "cities/kambove/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kambove/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kambove",
+        "name": "Kambove",
+        "nameIt": "Kambove",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          26.59564,
+          -10.87219
+        ],
+        "zoom": 12,
+        "population": 58911,
+        "cells": 94,
+        "layer": "cities/kambove/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.59564,
+            -10.87219
+          ]
+        },
+        "properties": {
+          "id": "kambove",
+          "name": "Kambove",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 58911
+        }
+      },
+      "summary": null
+    }
+  }
+}

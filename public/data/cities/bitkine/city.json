@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bitkine",
+  "createdAt": "2026-10-08T15:19:27.502Z",
+  "updatedAt": "2026-10-08T15:19:27.502Z",
+  "meta": {
+    "name": "Bitkine",
+    "nameIt": "Bitkine",
+    "region": "Chad",
+    "regionIt": "Ciad",
+    "country": "TD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bitkine.geojson",
+      "sha256": "b8ebdcb7543d7dc982915250dc4337585bdd1c96b8bfba01119e469454344099",
+      "size": 73452,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bitkine",
+    "name": "Bitkine",
+    "nameIt": "Bitkine",
+    "region": "Chad",
+    "regionIt": "Ciad",
+    "country": "TD",
+    "center": [
+      18.21123,
+      11.98053
+    ],
+    "zoom": 12,
+    "population": 26409,
+    "grid": "cities/bitkine/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bitkine/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bitkine",
+        "name": "Bitkine",
+        "nameIt": "Bitkine",
+        "region": "Chad",
+        "regionIt": "Ciad",
+        "country": "TD",
+        "center": [
+          18.21123,
+          11.98053
+        ],
+        "zoom": 12,
+        "population": 26409,
+        "cells": 63,
+        "layer": "cities/bitkine/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.21123,
+            11.98053
+          ]
+        },
+        "properties": {
+          "id": "bitkine",
+          "name": "Bitkine",
+          "country": "TD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 26409
+        }
+      },
+      "summary": null
+    }
+  }
+}

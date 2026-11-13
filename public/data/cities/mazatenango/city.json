@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mazatenango",
+  "createdAt": "2026-10-08T15:56:00.595Z",
+  "updatedAt": "2026-10-08T15:56:00.595Z",
+  "meta": {
+    "name": "Mazatenango",
+    "nameIt": "Mazatenango",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mazatenango.geojson",
+      "sha256": "b399cb1f49f4b12e08710256889fc5e3fb668f30d539cd01bb3fcf9e4a4bb82b",
+      "size": 201284,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mazatenango",
+    "name": "Mazatenango",
+    "nameIt": "Mazatenango",
+    "region": "Guatemala",
+    "regionIt": "Guatemala",
+    "country": "GT",
+    "center": [
+      -91.50542,
+      14.53168
+    ],
+    "zoom": 11.4,
+    "population": 56695,
+    "grid": "cities/mazatenango/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mazatenango/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mazatenango",
+        "name": "Mazatenango",
+        "nameIt": "Mazatenango",
+        "region": "Guatemala",
+        "regionIt": "Guatemala",
+        "country": "GT",
+        "center": [
+          -91.50542,
+          14.53168
+        ],
+        "zoom": 11.4,
+        "population": 56695,
+        "cells": 173,
+        "layer": "cities/mazatenango/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -91.50542,
+            14.53168
+          ]
+        },
+        "properties": {
+          "id": "mazatenango",
+          "name": "Mazatenango",
+          "country": "GT",
+          "isStudy": true,
+          "proximityMinutes": 13.9,
+          "population": 56695
+        }
+      },
+      "summary": null
+    }
+  }
+}

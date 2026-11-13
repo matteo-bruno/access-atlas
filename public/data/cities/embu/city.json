@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "embu",
+  "createdAt": "2026-10-08T15:32:12.666Z",
+  "updatedAt": "2026-10-08T15:32:12.666Z",
+  "meta": {
+    "name": "Embu",
+    "nameIt": "Embu",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Embu.geojson",
+      "sha256": "64e4c6f0089f502f6d83fe704962554922fb4898cd938f587d4d974f1b8e9845",
+      "size": 869203,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "embu",
+    "name": "Embu",
+    "nameIt": "Embu",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE",
+    "center": [
+      37.47681,
+      -0.5058
+    ],
+    "zoom": 10,
+    "population": 114360,
+    "grid": "cities/embu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/embu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "embu",
+        "name": "Embu",
+        "nameIt": "Embu",
+        "region": "Kenya",
+        "regionIt": "Kenya",
+        "country": "KE",
+        "center": [
+          37.47681,
+          -0.5058
+        ],
+        "zoom": 10,
+        "population": 114360,
+        "cells": 740,
+        "layer": "cities/embu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.47681,
+            -0.5058
+          ]
+        },
+        "properties": {
+          "id": "embu",
+          "name": "Embu",
+          "country": "KE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 114360
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bunia",
+  "createdAt": "2026-10-08T15:20:52.648Z",
+  "updatedAt": "2026-10-08T15:20:52.648Z",
+  "meta": {
+    "name": "Bunia",
+    "nameIt": "Bunia",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bunia.geojson",
+      "sha256": "7eb89c6ce98fdc34bd368de954a26d7982948ece7a5f0ebed0afa82043feacd9",
+      "size": 638164,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bunia",
+    "name": "Bunia",
+    "nameIt": "Bunia",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      30.24684,
+      1.55745
+    ],
+    "zoom": 10.6,
+    "population": 557632,
+    "grid": "cities/bunia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bunia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bunia",
+        "name": "Bunia",
+        "nameIt": "Bunia",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          30.24684,
+          1.55745
+        ],
+        "zoom": 10.6,
+        "population": 557632,
+        "cells": 549,
+        "layer": "cities/bunia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.24684,
+            1.55745
+          ]
+        },
+        "properties": {
+          "id": "bunia",
+          "name": "Bunia",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 24,
+          "population": 557632
+        }
+      },
+      "summary": null
+    }
+  }
+}

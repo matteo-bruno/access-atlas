@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kotabumi",
+  "createdAt": "2026-10-08T15:48:06.890Z",
+  "updatedAt": "2026-10-08T15:48:06.890Z",
+  "meta": {
+    "name": "Kotabumi",
+    "nameIt": "Kotabumi",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kotabumi.geojson",
+      "sha256": "940278d1157db5e28ed321b9e82058a4899431b69d36bd1f6e91855b21268944",
+      "size": 337701,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kotabumi",
+    "name": "Kotabumi",
+    "nameIt": "Kotabumi",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      104.89274,
+      -4.83619
+    ],
+    "zoom": 10.9,
+    "population": 129679,
+    "grid": "cities/kotabumi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kotabumi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kotabumi",
+        "name": "Kotabumi",
+        "nameIt": "Kotabumi",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          104.89274,
+          -4.83619
+        ],
+        "zoom": 10.9,
+        "population": 129679,
+        "cells": 288,
+        "layer": "cities/kotabumi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            104.89274,
+            -4.83619
+          ]
+        },
+        "properties": {
+          "id": "kotabumi",
+          "name": "Kotabumi",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 23.3,
+          "population": 129679
+        }
+      },
+      "summary": null
+    }
+  }
+}

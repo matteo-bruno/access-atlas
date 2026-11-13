@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kolkata-fua",
+  "createdAt": "2026-10-19T16:56:50.017Z",
+  "updatedAt": "2026-10-19T16:56:50.017Z",
+  "meta": {
+    "name": "Kolkata",
+    "nameIt": "Kolkata",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "kolkata-fua",
+    "name": "Kolkata",
+    "nameIt": "Kolkata",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "extent": "fua",
+    "core": "kolkata",
+    "center": [
+      88.34728,
+      22.606
+    ],
+    "zoom": 8.5,
+    "population": 26015552,
+    "grid": "cities/kolkata-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kolkata-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kolkata-fua",
+        "name": "Kolkata",
+        "nameIt": "Kolkata",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "extent": "fua",
+        "core": "kolkata",
+        "center": [
+          88.34728,
+          22.606
+        ],
+        "zoom": 8.5,
+        "population": 26015552,
+        "cells": 62592,
+        "layer": "cities/kolkata-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.34728,
+            22.606
+          ]
+        },
+        "properties": {
+          "id": "kolkata-fua",
+          "name": "Kolkata",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 70.1,
+          "population": 26015552
+        }
+      },
+      "summary": null
+    }
+  }
+}

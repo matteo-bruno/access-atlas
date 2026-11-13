@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nasiriyah",
+  "createdAt": "2026-10-08T16:00:29.657Z",
+  "updatedAt": "2026-10-08T16:00:29.657Z",
+  "meta": {
+    "name": "Nasiriyah",
+    "nameIt": "Nasiriyah",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nasiriyah.geojson",
+      "sha256": "0637d8bc6868f283948eb9393d9b82e857b6d4ee29489adeab0a7ab21f12c244",
+      "size": 760046,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nasiriyah",
+    "name": "Nasiriyah",
+    "nameIt": "Nasiriyah",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      46.25679,
+      31.0478
+    ],
+    "zoom": 10.4,
+    "population": 557968,
+    "grid": "cities/nasiriyah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nasiriyah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nasiriyah",
+        "name": "Nasiriyah",
+        "nameIt": "Nasiriyah",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          46.25679,
+          31.0478
+        ],
+        "zoom": 10.4,
+        "population": 557968,
+        "cells": 657,
+        "layer": "cities/nasiriyah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            46.25679,
+            31.0478
+          ]
+        },
+        "properties": {
+          "id": "nasiriyah",
+          "name": "Nasiriyah",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 557968
+        }
+      },
+      "summary": null
+    }
+  }
+}

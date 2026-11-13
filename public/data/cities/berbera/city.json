@@ -1,0 +1,84 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "berbera",
+  "createdAt": "2026-10-08T15:17:37.968Z",
+  "updatedAt": "2026-10-08T15:17:37.968Z",
+  "meta": {
+    "name": "Berbera",
+    "nameIt": "Berbera"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Berbera.geojson",
+      "sha256": "caca4bdec0067ab9ba0d8ce998743811f02a0b58b71bb0af8fec389b623d5dc7",
+      "size": 217498,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "berbera",
+    "name": "Berbera",
+    "nameIt": "Berbera",
+    "center": [
+      45.0126,
+      10.43586
+    ],
+    "zoom": 11.7,
+    "population": 135519,
+    "grid": "cities/berbera/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/berbera/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "berbera",
+        "name": "Berbera",
+        "nameIt": "Berbera",
+        "center": [
+          45.0126,
+          10.43586
+        ],
+        "zoom": 11.7,
+        "population": 135519,
+        "cells": 187,
+        "layer": "cities/berbera/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            45.0126,
+            10.43586
+          ]
+        },
+        "properties": {
+          "id": "berbera",
+          "name": "Berbera",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 135519
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sabir",
+  "createdAt": "2026-10-08T16:09:35.350Z",
+  "updatedAt": "2026-10-08T16:09:35.350Z",
+  "meta": {
+    "name": "Sabir",
+    "nameIt": "Sabir",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sabir.geojson",
+      "sha256": "eb7574a7df0716f7443379b1e5f1c52e518af36c80275cfeb716fc1e1c028b1e",
+      "size": 74461,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sabir",
+    "name": "Sabir",
+    "nameIt": "Sabir",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE",
+    "center": [
+      44.91669,
+      12.99581
+    ],
+    "zoom": 12,
+    "population": 30551,
+    "grid": "cities/sabir/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sabir/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sabir",
+        "name": "Sabir",
+        "nameIt": "Sabir",
+        "region": "Yemen",
+        "regionIt": "Yemen",
+        "country": "YE",
+        "center": [
+          44.91669,
+          12.99581
+        ],
+        "zoom": 12,
+        "population": 30551,
+        "cells": 64,
+        "layer": "cities/sabir/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.91669,
+            12.99581
+          ]
+        },
+        "properties": {
+          "id": "sabir",
+          "name": "Sabir",
+          "country": "YE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 30551
+        }
+      },
+      "summary": null
+    }
+  }
+}

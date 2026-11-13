@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vancouver",
+  "createdAt": "2026-10-08T16:20:26.519Z",
+  "updatedAt": "2026-10-08T16:20:26.519Z",
+  "meta": {
+    "name": "Vancouver",
+    "nameIt": "Vancouver",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vancouver.geojson",
+      "sha256": "3be18a42de1f8609cd4d8f2481cbc7268f59e082249dcdfafc446e9fa76fe60f",
+      "size": 8428055,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vancouver",
+    "name": "Vancouver",
+    "nameIt": "Vancouver",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -122.99377,
+      49.22794
+    ],
+    "zoom": 8.9,
+    "population": 2155882,
+    "grid": "cities/vancouver/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vancouver/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vancouver",
+        "name": "Vancouver",
+        "nameIt": "Vancouver",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -122.99377,
+          49.22794
+        ],
+        "zoom": 8.9,
+        "population": 2155882,
+        "cells": 7266,
+        "layer": "cities/vancouver/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.99377,
+            49.22794
+          ]
+        },
+        "properties": {
+          "id": "vancouver",
+          "name": "Vancouver",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 11.3,
+          "population": 2155882
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bisalpur",
+  "createdAt": "2026-10-08T15:19:19.046Z",
+  "updatedAt": "2026-10-08T15:19:19.046Z",
+  "meta": {
+    "name": "Bisalpur",
+    "nameIt": "Bisalpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bisalpur.geojson",
+      "sha256": "19ac0f685a0b0e8a4da41ff8162d9b678a1bd5f6a9a0f3a7eabe5bfc87951376",
+      "size": 105445,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bisalpur",
+    "name": "Bisalpur",
+    "nameIt": "Bisalpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.80356,
+      28.292
+    ],
+    "zoom": 12,
+    "population": 73506,
+    "grid": "cities/bisalpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bisalpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bisalpur",
+        "name": "Bisalpur",
+        "nameIt": "Bisalpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.80356,
+          28.292
+        ],
+        "zoom": 12,
+        "population": 73506,
+        "cells": 91,
+        "layer": "cities/bisalpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.80356,
+            28.292
+          ]
+        },
+        "properties": {
+          "id": "bisalpur",
+          "name": "Bisalpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 73506
+        }
+      },
+      "summary": null
+    }
+  }
+}

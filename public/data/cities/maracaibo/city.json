@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "maracaibo",
+  "createdAt": "2026-10-08T15:55:05.440Z",
+  "updatedAt": "2026-10-08T15:55:05.440Z",
+  "meta": {
+    "name": "Maracaibo",
+    "nameIt": "Maracaibo",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Maracaibo.geojson",
+      "sha256": "ca96d165d7539fab5329a8beeeac07ceb0c523ab939c6af597208aaca2aa813f",
+      "size": 3523410,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "maracaibo",
+    "name": "Maracaibo",
+    "nameIt": "Maracaibo",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -71.65376,
+      10.63531
+    ],
+    "zoom": 9.3,
+    "population": 2422033,
+    "grid": "cities/maracaibo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/maracaibo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "maracaibo",
+        "name": "Maracaibo",
+        "nameIt": "Maracaibo",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -71.65376,
+          10.63531
+        ],
+        "zoom": 9.3,
+        "population": 2422033,
+        "cells": 3027,
+        "layer": "cities/maracaibo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -71.65376,
+            10.63531
+          ]
+        },
+        "properties": {
+          "id": "maracaibo",
+          "name": "Maracaibo",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 38.7,
+          "population": 2422033
+        }
+      },
+      "summary": null
+    }
+  }
+}

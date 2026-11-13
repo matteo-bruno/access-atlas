@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "calabar",
+  "createdAt": "2026-10-08T15:21:50.201Z",
+  "updatedAt": "2026-10-08T15:21:50.201Z",
+  "meta": {
+    "name": "Calabar",
+    "nameIt": "Calabar",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Calabar.geojson",
+      "sha256": "074605d12f119a0a64443837a5b4f14a4ecc14946bc75536e9674af888331a33",
+      "size": 1329237,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "calabar",
+    "name": "Calabar",
+    "nameIt": "Calabar",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      8.33913,
+      4.98666
+    ],
+    "zoom": 9.8,
+    "population": 1101874,
+    "grid": "cities/calabar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/calabar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "calabar",
+        "name": "Calabar",
+        "nameIt": "Calabar",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          8.33913,
+          4.98666
+        ],
+        "zoom": 9.8,
+        "population": 1101874,
+        "cells": 1155,
+        "layer": "cities/calabar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.33913,
+            4.98666
+          ]
+        },
+        "properties": {
+          "id": "calabar",
+          "name": "Calabar",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 50.4,
+          "population": 1101874
+        }
+      },
+      "summary": null
+    }
+  }
+}

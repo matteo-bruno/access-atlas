@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huancheng",
+  "createdAt": "2026-10-08T15:39:26.968Z",
+  "updatedAt": "2026-10-08T15:39:26.968Z",
+  "meta": {
+    "name": "Huancheng",
+    "nameIt": "Huancheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huancheng.geojson",
+      "sha256": "01c5929a042571dc9743716b5c768eb6039ab96cf9d0b0aeddfeb1bf66004a81",
+      "size": 1283335,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huancheng",
+    "name": "Huancheng",
+    "nameIt": "Huancheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.10318,
+      34.9252
+    ],
+    "zoom": 10.2,
+    "population": 142556,
+    "grid": "cities/huancheng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 175
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huancheng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huancheng",
+        "name": "Huancheng",
+        "nameIt": "Huancheng",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.10318,
+          34.9252
+        ],
+        "zoom": 10.2,
+        "population": 142556,
+        "cells": 1100,
+        "layer": "cities/huancheng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.10318,
+            34.9252
+          ]
+        },
+        "properties": {
+          "id": "huancheng",
+          "name": "Huancheng",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 70.3,
+          "population": 142556
+        }
+      },
+      "summary": null
+    }
+  }
+}

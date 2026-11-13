@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "penco",
+  "createdAt": "2026-10-08T16:04:57.875Z",
+  "updatedAt": "2026-10-08T16:04:57.875Z",
+  "meta": {
+    "name": "Penco",
+    "nameIt": "Penco",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Penco.geojson",
+      "sha256": "361b5d29d552dc942f9f2ee3e305259309bd2b3dfd0a22de64b252a194058652",
+      "size": 186793,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "penco",
+    "name": "Penco",
+    "nameIt": "Penco",
+    "region": "Chile",
+    "regionIt": "Cile",
+    "country": "CL",
+    "center": [
+      -72.9888,
+      -36.73261
+    ],
+    "zoom": 11.6,
+    "population": 45663,
+    "grid": "cities/penco/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/penco/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "penco",
+        "name": "Penco",
+        "nameIt": "Penco",
+        "region": "Chile",
+        "regionIt": "Cile",
+        "country": "CL",
+        "center": [
+          -72.9888,
+          -36.73261
+        ],
+        "zoom": 11.6,
+        "population": 45663,
+        "cells": 160,
+        "layer": "cities/penco/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.9888,
+            -36.73261
+          ]
+        },
+        "properties": {
+          "id": "penco",
+          "name": "Penco",
+          "country": "CL",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 45663
+        }
+      },
+      "summary": null
+    }
+  }
+}

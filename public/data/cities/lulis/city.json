@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lulis",
+  "createdAt": "2026-10-08T15:52:39.160Z",
+  "updatedAt": "2026-10-08T15:52:39.160Z",
+  "meta": {
+    "name": "Lulis",
+    "nameIt": "Lulis",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lulis.geojson",
+      "sha256": "56819aa45496f165e6da9217bdca67afe3a320871f33f9dad4abb5569b0c000e",
+      "size": 33520,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lulis",
+    "name": "Lulis",
+    "nameIt": "Lulis",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE",
+    "center": [
+      40.33513,
+      4.02302
+    ],
+    "zoom": 12,
+    "population": 3088,
+    "grid": "cities/lulis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lulis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lulis",
+        "name": "Lulis",
+        "nameIt": "Lulis",
+        "region": "Kenya",
+        "regionIt": "Kenya",
+        "country": "KE",
+        "center": [
+          40.33513,
+          4.02302
+        ],
+        "zoom": 12,
+        "population": 3088,
+        "cells": 29,
+        "layer": "cities/lulis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.33513,
+            4.02302
+          ]
+        },
+        "properties": {
+          "id": "lulis",
+          "name": "Lulis",
+          "country": "KE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 3088
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hardoi",
+  "createdAt": "2026-10-08T15:37:50.781Z",
+  "updatedAt": "2026-10-08T15:37:50.781Z",
+  "meta": {
+    "name": "Hardoi",
+    "nameIt": "Hardoi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hardoi.geojson",
+      "sha256": "cf9eb4640eda196092910d9389e1aa426175bdac94683909db467d6c0c605d0b",
+      "size": 441483,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hardoi",
+    "name": "Hardoi",
+    "nameIt": "Hardoi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.13417,
+      27.39258
+    ],
+    "zoom": 11,
+    "population": 346716,
+    "grid": "cities/hardoi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hardoi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hardoi",
+        "name": "Hardoi",
+        "nameIt": "Hardoi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.13417,
+          27.39258
+        ],
+        "zoom": 11,
+        "population": 346716,
+        "cells": 381,
+        "layer": "cities/hardoi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.13417,
+            27.39258
+          ]
+        },
+        "properties": {
+          "id": "hardoi",
+          "name": "Hardoi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 346716
+        }
+      },
+      "summary": null
+    }
+  }
+}

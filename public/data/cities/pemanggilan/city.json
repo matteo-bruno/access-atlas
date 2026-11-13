@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pemanggilan",
+  "createdAt": "2026-10-08T16:04:56.283Z",
+  "updatedAt": "2026-10-08T16:04:56.283Z",
+  "meta": {
+    "name": "Pemanggilan",
+    "nameIt": "Pemanggilan",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pemanggilan.geojson",
+      "sha256": "905725589d869641d1fb2a9300644489520192de74482fa4c4d5afe4bf70aed5",
+      "size": 380981,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pemanggilan",
+    "name": "Pemanggilan",
+    "nameIt": "Pemanggilan",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      105.19244,
+      -5.28321
+    ],
+    "zoom": 10.2,
+    "population": 99503,
+    "grid": "cities/pemanggilan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pemanggilan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pemanggilan",
+        "name": "Pemanggilan",
+        "nameIt": "Pemanggilan",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          105.19244,
+          -5.28321
+        ],
+        "zoom": 10.2,
+        "population": 99503,
+        "cells": 325,
+        "layer": "cities/pemanggilan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.19244,
+            -5.28321
+          ]
+        },
+        "properties": {
+          "id": "pemanggilan",
+          "name": "Pemanggilan",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 99503
+        }
+      },
+      "summary": null
+    }
+  }
+}

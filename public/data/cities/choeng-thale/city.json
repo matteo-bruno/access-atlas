@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "choeng-thale",
+  "createdAt": "2026-10-08T15:25:04.446Z",
+  "updatedAt": "2026-10-08T15:25:04.446Z",
+  "meta": {
+    "name": "Choeng Thale",
+    "nameIt": "Choeng Thale",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Choeng Thale.geojson",
+      "sha256": "9cf164b968363e04f30d62d9d13057395c291733c7fd841aa7be24abd3aee835",
+      "size": 478443,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "choeng-thale",
+    "name": "Choeng Thale",
+    "nameIt": "Choeng Thale",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      98.32872,
+      7.99884
+    ],
+    "zoom": 10.4,
+    "population": 102177,
+    "grid": "cities/choeng-thale/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/choeng-thale/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "choeng-thale",
+        "name": "Choeng Thale",
+        "nameIt": "Choeng Thale",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          98.32872,
+          7.99884
+        ],
+        "zoom": 10.4,
+        "population": 102177,
+        "cells": 417,
+        "layer": "cities/choeng-thale/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            98.32872,
+            7.99884
+          ]
+        },
+        "properties": {
+          "id": "choeng-thale",
+          "name": "Choeng Thale",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 26.2,
+          "population": 102177
+        }
+      },
+      "summary": null
+    }
+  }
+}

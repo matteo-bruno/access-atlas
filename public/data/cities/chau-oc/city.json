@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chau-oc",
+  "createdAt": "2026-10-08T15:25:22.989Z",
+  "updatedAt": "2026-10-08T15:25:22.989Z",
+  "meta": {
+    "name": "Châu Đốc",
+    "nameIt": "Châu Đốc",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Châu Đốc.geojson",
+      "sha256": "6102449e841c9bb4b4ca5b40c788f3a7b11f799456df0a2a12caa9b27973010a",
+      "size": 397990,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chau-oc",
+    "name": "Châu Đốc",
+    "nameIt": "Châu Đốc",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      105.13311,
+      10.70641
+    ],
+    "zoom": 10.5,
+    "population": 116081,
+    "grid": "cities/chau-oc/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chau-oc/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chau-oc",
+        "name": "Châu Đốc",
+        "nameIt": "Châu Đốc",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          105.13311,
+          10.70641
+        ],
+        "zoom": 10.5,
+        "population": 116081,
+        "cells": 340,
+        "layer": "cities/chau-oc/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.13311,
+            10.70641
+          ]
+        },
+        "properties": {
+          "id": "chau-oc",
+          "name": "Châu Đốc",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 31.2,
+          "population": 116081
+        }
+      },
+      "summary": null
+    }
+  }
+}

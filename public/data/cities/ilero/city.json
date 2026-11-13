@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ilero",
+  "createdAt": "2026-10-08T15:40:38.539Z",
+  "updatedAt": "2026-10-08T15:40:38.539Z",
+  "meta": {
+    "name": "Ilero",
+    "nameIt": "Ilero",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ilero.geojson",
+      "sha256": "521146906b3589436553eef9b6cb94fb54d7329e080aa77f0b06f592c1c00e1f",
+      "size": 115203,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ilero",
+    "name": "Ilero",
+    "nameIt": "Ilero",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      3.34887,
+      8.08904
+    ],
+    "zoom": 12,
+    "population": 25396,
+    "grid": "cities/ilero/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ilero/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ilero",
+        "name": "Ilero",
+        "nameIt": "Ilero",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          3.34887,
+          8.08904
+        ],
+        "zoom": 12,
+        "population": 25396,
+        "cells": 100,
+        "layer": "cities/ilero/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.34887,
+            8.08904
+          ]
+        },
+        "properties": {
+          "id": "ilero",
+          "name": "Ilero",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 25396
+        }
+      },
+      "summary": null
+    }
+  }
+}

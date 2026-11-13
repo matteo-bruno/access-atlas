@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "greve-strand",
+  "createdAt": "2026-10-08T15:36:02.652Z",
+  "updatedAt": "2026-10-08T15:36:02.652Z",
+  "meta": {
+    "name": "Greve Strand",
+    "nameIt": "Greve Strand",
+    "region": "Denmark",
+    "regionIt": "Danimarca",
+    "country": "DK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Greve Strand.geojson",
+      "sha256": "cfcf738d1dbf78dc844be07ab7dd2a9d6a5f4d79084f7f46524eb4d9dba865f6",
+      "size": 596664,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "greve-strand",
+    "name": "Greve Strand",
+    "nameIt": "Greve Strand",
+    "region": "Denmark",
+    "regionIt": "Danimarca",
+    "country": "DK",
+    "center": [
+      12.33819,
+      55.60252
+    ],
+    "zoom": 10.4,
+    "population": 82213,
+    "grid": "cities/greve-strand/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/greve-strand/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "greve-strand",
+        "name": "Greve Strand",
+        "nameIt": "Greve Strand",
+        "region": "Denmark",
+        "regionIt": "Danimarca",
+        "country": "DK",
+        "center": [
+          12.33819,
+          55.60252
+        ],
+        "zoom": 10.4,
+        "population": 82213,
+        "cells": 520,
+        "layer": "cities/greve-strand/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.33819,
+            55.60252
+          ]
+        },
+        "properties": {
+          "id": "greve-strand",
+          "name": "Greve Strand",
+          "country": "DK",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 82213
+        }
+      },
+      "summary": null
+    }
+  }
+}

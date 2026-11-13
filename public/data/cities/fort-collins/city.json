@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fort-collins",
+  "createdAt": "2026-10-08T15:33:33.598Z",
+  "updatedAt": "2026-10-08T15:33:33.598Z",
+  "meta": {
+    "name": "Fort Collins",
+    "nameIt": "Fort Collins",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fort Collins.geojson",
+      "sha256": "8859057f8bceea43cf8b043c1b22d5910ef8eb5cea8ecae08d9bddd737d75cc8",
+      "size": 780641,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fort-collins",
+    "name": "Fort Collins",
+    "nameIt": "Fort Collins",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -105.07746,
+      40.55227
+    ],
+    "zoom": 10.6,
+    "population": 121915,
+    "grid": "cities/fort-collins/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fort-collins/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fort-collins",
+        "name": "Fort Collins",
+        "nameIt": "Fort Collins",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -105.07746,
+          40.55227
+        ],
+        "zoom": 10.6,
+        "population": 121915,
+        "cells": 674,
+        "layer": "cities/fort-collins/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -105.07746,
+            40.55227
+          ]
+        },
+        "properties": {
+          "id": "fort-collins",
+          "name": "Fort Collins",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 121915
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "loughborough",
+  "createdAt": "2026-10-08T15:52:13.207Z",
+  "updatedAt": "2026-10-08T15:52:13.207Z",
+  "meta": {
+    "name": "Loughborough",
+    "nameIt": "Loughborough",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Loughborough.geojson",
+      "sha256": "ddf9f785a84407707f79be5631846c8f38efc2ba6fc9602e8e7b0027e0b315aa",
+      "size": 220442,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "loughborough",
+    "name": "Loughborough",
+    "nameIt": "Loughborough",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.21978,
+      52.76824
+    ],
+    "zoom": 11.9,
+    "population": 63407,
+    "grid": "cities/loughborough/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/loughborough/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "loughborough",
+        "name": "Loughborough",
+        "nameIt": "Loughborough",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.21978,
+          52.76824
+        ],
+        "zoom": 11.9,
+        "population": 63407,
+        "cells": 191,
+        "layer": "cities/loughborough/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.21978,
+            52.76824
+          ]
+        },
+        "properties": {
+          "id": "loughborough",
+          "name": "Loughborough",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 10.4,
+          "population": 63407
+        }
+      },
+      "summary": null
+    }
+  }
+}

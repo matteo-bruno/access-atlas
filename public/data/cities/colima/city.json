@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "colima",
+  "createdAt": "2026-10-08T15:26:00.196Z",
+  "updatedAt": "2026-10-08T15:26:00.196Z",
+  "meta": {
+    "name": "Colima",
+    "nameIt": "Colima",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Colima.geojson",
+      "sha256": "e53d6401fa47dd982c49bda7c6f1b1b60d4554c0464d643452e5ee44279a655e",
+      "size": 546968,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "colima",
+    "name": "Colima",
+    "nameIt": "Colima",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -103.73083,
+      19.25481
+    ],
+    "zoom": 10.6,
+    "population": 275088,
+    "grid": "cities/colima/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/colima/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "colima",
+        "name": "Colima",
+        "nameIt": "Colima",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -103.73083,
+          19.25481
+        ],
+        "zoom": 10.6,
+        "population": 275088,
+        "cells": 471,
+        "layer": "cities/colima/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -103.73083,
+            19.25481
+          ]
+        },
+        "properties": {
+          "id": "colima",
+          "name": "Colima",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 275088
+        }
+      },
+      "summary": null
+    }
+  }
+}

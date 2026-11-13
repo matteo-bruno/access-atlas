@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santa-rosa-argentina",
+  "createdAt": "2026-10-08T16:11:08.706Z",
+  "updatedAt": "2026-10-08T16:11:08.706Z",
+  "meta": {
+    "name": "Santa Rosa (Argentina)",
+    "nameIt": "Santa Rosa (Argentina)",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santa Rosa (Argentina).geojson",
+      "sha256": "26226de35e2d1d0140987f7ba06e196ccf9a877235e1ee66683ca0c39612f3f3",
+      "size": 524089,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santa-rosa-argentina",
+    "name": "Santa Rosa (Argentina)",
+    "nameIt": "Santa Rosa (Argentina)",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -64.28883,
+      -36.62312
+    ],
+    "zoom": 11,
+    "population": 106750,
+    "grid": "cities/santa-rosa-argentina/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santa-rosa-argentina/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santa-rosa-argentina",
+        "name": "Santa Rosa (Argentina)",
+        "nameIt": "Santa Rosa (Argentina)",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -64.28883,
+          -36.62312
+        ],
+        "zoom": 11,
+        "population": 106750,
+        "cells": 452,
+        "layer": "cities/santa-rosa-argentina/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -64.28883,
+            -36.62312
+          ]
+        },
+        "properties": {
+          "id": "santa-rosa-argentina",
+          "name": "Santa Rosa (Argentina)",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 106750
+        }
+      },
+      "summary": null
+    }
+  }
+}

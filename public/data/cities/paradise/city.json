@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "paradise",
+  "createdAt": "2026-10-08T16:04:13.849Z",
+  "updatedAt": "2026-10-08T16:04:13.849Z",
+  "meta": {
+    "name": "Paradise",
+    "nameIt": "Paradise",
+    "region": "Guyana",
+    "regionIt": "Guyana",
+    "country": "GY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Paradise.geojson",
+      "sha256": "c0ace12ce04047503f55a8edcd457bf474e3df7ea546d2efe8658676486b0f5e",
+      "size": 449510,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "paradise",
+    "name": "Paradise",
+    "nameIt": "Paradise",
+    "region": "Guyana",
+    "regionIt": "Guyana",
+    "country": "GY",
+    "center": [
+      -58.0424,
+      6.79242
+    ],
+    "zoom": 10.1,
+    "population": 86474,
+    "grid": "cities/paradise/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/paradise/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "paradise",
+        "name": "Paradise",
+        "nameIt": "Paradise",
+        "region": "Guyana",
+        "regionIt": "Guyana",
+        "country": "GY",
+        "center": [
+          -58.0424,
+          6.79242
+        ],
+        "zoom": 10.1,
+        "population": 86474,
+        "cells": 387,
+        "layer": "cities/paradise/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -58.0424,
+            6.79242
+          ]
+        },
+        "properties": {
+          "id": "paradise",
+          "name": "Paradise",
+          "country": "GY",
+          "isStudy": true,
+          "proximityMinutes": 30,
+          "population": 86474
+        }
+      },
+      "summary": null
+    }
+  }
+}

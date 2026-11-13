@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kunda",
+  "createdAt": "2026-10-08T15:48:47.563Z",
+  "updatedAt": "2026-10-08T15:48:47.563Z",
+  "meta": {
+    "name": "Kunda",
+    "nameIt": "Kunda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kunda.geojson",
+      "sha256": "346e13b59bfa2c6e453504f9a85d5b952cd33c51d6a0473c8948011db7d97654",
+      "size": 398547,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kunda",
+    "name": "Kunda",
+    "nameIt": "Kunda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.52381,
+      25.72073
+    ],
+    "zoom": 11.1,
+    "population": 106805,
+    "grid": "cities/kunda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kunda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kunda",
+        "name": "Kunda",
+        "nameIt": "Kunda",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.52381,
+          25.72073
+        ],
+        "zoom": 11.1,
+        "population": 106805,
+        "cells": 344,
+        "layer": "cities/kunda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.52381,
+            25.72073
+          ]
+        },
+        "properties": {
+          "id": "kunda",
+          "name": "Kunda",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 106805
+        }
+      },
+      "summary": null
+    }
+  }
+}

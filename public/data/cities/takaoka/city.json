@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "takaoka",
+  "createdAt": "2026-10-08T16:16:10.295Z",
+  "updatedAt": "2026-10-08T16:16:10.295Z",
+  "meta": {
+    "name": "Takaoka",
+    "nameIt": "Takaoka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Takaoka.geojson",
+      "sha256": "18a106740e09342e17e289693549e03a165437d2f1bdcd673200c0de32057c0f",
+      "size": 1124909,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "takaoka",
+    "name": "Takaoka",
+    "nameIt": "Takaoka",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      137.04084,
+      36.755
+    ],
+    "zoom": 9.9,
+    "population": 156439,
+    "grid": "cities/takaoka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/takaoka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "takaoka",
+        "name": "Takaoka",
+        "nameIt": "Takaoka",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          137.04084,
+          36.755
+        ],
+        "zoom": 9.9,
+        "population": 156439,
+        "cells": 976,
+        "layer": "cities/takaoka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            137.04084,
+            36.755
+          ]
+        },
+        "properties": {
+          "id": "takaoka",
+          "name": "Takaoka",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 21.6,
+          "population": 156439
+        }
+      },
+      "summary": null
+    }
+  }
+}

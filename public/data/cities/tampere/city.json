@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tampere",
+  "createdAt": "2026-10-08T16:16:25.499Z",
+  "updatedAt": "2026-10-08T16:16:25.499Z",
+  "meta": {
+    "name": "Tampere",
+    "nameIt": "Tampere",
+    "region": "Finland",
+    "regionIt": "Finlandia",
+    "country": "FI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tampere.geojson",
+      "sha256": "27e0f009992c12067f0aaa4f42c355675f4562117859fdfda18fe565a7dab82f",
+      "size": 991868,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tampere",
+    "name": "Tampere",
+    "nameIt": "Tampere",
+    "region": "Finland",
+    "regionIt": "Finlandia",
+    "country": "FI",
+    "center": [
+      23.78642,
+      61.48557
+    ],
+    "zoom": 10.5,
+    "population": 139290,
+    "grid": "cities/tampere/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tampere/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tampere",
+        "name": "Tampere",
+        "nameIt": "Tampere",
+        "region": "Finland",
+        "regionIt": "Finlandia",
+        "country": "FI",
+        "center": [
+          23.78642,
+          61.48557
+        ],
+        "zoom": 10.5,
+        "population": 139290,
+        "cells": 868,
+        "layer": "cities/tampere/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.78642,
+            61.48557
+          ]
+        },
+        "properties": {
+          "id": "tampere",
+          "name": "Tampere",
+          "country": "FI",
+          "isStudy": true,
+          "proximityMinutes": 13.2,
+          "population": 139290
+        }
+      },
+      "summary": null
+    }
+  }
+}

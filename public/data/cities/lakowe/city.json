@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lakowe",
+  "createdAt": "2026-10-08T15:49:50.474Z",
+  "updatedAt": "2026-10-08T15:49:50.474Z",
+  "meta": {
+    "name": "Lakowe",
+    "nameIt": "Lakowe",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lakowe.geojson",
+      "sha256": "42604abdd9a4a35a1e1f25b95c04673b7a9c99b7c816c546875cdfac2162c718",
+      "size": 316511,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lakowe",
+    "name": "Lakowe",
+    "nameIt": "Lakowe",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      3.72635,
+      6.47315
+    ],
+    "zoom": 10.6,
+    "population": 108272,
+    "grid": "cities/lakowe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lakowe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lakowe",
+        "name": "Lakowe",
+        "nameIt": "Lakowe",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          3.72635,
+          6.47315
+        ],
+        "zoom": 10.6,
+        "population": 108272,
+        "cells": 274,
+        "layer": "cities/lakowe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.72635,
+            6.47315
+          ]
+        },
+        "properties": {
+          "id": "lakowe",
+          "name": "Lakowe",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 108272
+        }
+      },
+      "summary": null
+    }
+  }
+}

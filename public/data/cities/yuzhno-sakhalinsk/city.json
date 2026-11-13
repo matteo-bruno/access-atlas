@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yuzhno-sakhalinsk",
+  "createdAt": "2026-10-08T16:24:37.669Z",
+  "updatedAt": "2026-10-08T16:24:37.669Z",
+  "meta": {
+    "name": "Yuzhno-Sakhalinsk",
+    "nameIt": "Yuzhno-Sakhalinsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yuzhno-Sakhalinsk.geojson",
+      "sha256": "c89a700405a3994b661da631d9f45f3f30aded82e27adf23dd415c58988f864a",
+      "size": 371938,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yuzhno-sakhalinsk",
+    "name": "Yuzhno-Sakhalinsk",
+    "nameIt": "Yuzhno-Sakhalinsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      142.7345,
+      46.95717
+    ],
+    "zoom": 10.9,
+    "population": 106405,
+    "grid": "cities/yuzhno-sakhalinsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yuzhno-sakhalinsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yuzhno-sakhalinsk",
+        "name": "Yuzhno-Sakhalinsk",
+        "nameIt": "Yuzhno-Sakhalinsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          142.7345,
+          46.95717
+        ],
+        "zoom": 10.9,
+        "population": 106405,
+        "cells": 324,
+        "layer": "cities/yuzhno-sakhalinsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            142.7345,
+            46.95717
+          ]
+        },
+        "properties": {
+          "id": "yuzhno-sakhalinsk",
+          "name": "Yuzhno-Sakhalinsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 10.2,
+          "population": 106405
+        }
+      },
+      "summary": null
+    }
+  }
+}

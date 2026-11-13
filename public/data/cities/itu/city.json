@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "itu",
+  "createdAt": "2026-10-08T15:41:26.632Z",
+  "updatedAt": "2026-10-08T15:41:26.632Z",
+  "meta": {
+    "name": "Itu",
+    "nameIt": "Itu",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Itu.geojson",
+      "sha256": "f6b7f41b90f7ef312f958da472859f4b137bce683c9656f091794df9b6967348",
+      "size": 305932,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "itu",
+    "name": "Itu",
+    "nameIt": "Itu",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -47.29674,
+      -23.27132
+    ],
+    "zoom": 11.4,
+    "population": 102623,
+    "grid": "cities/itu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/itu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "itu",
+        "name": "Itu",
+        "nameIt": "Itu",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -47.29674,
+          -23.27132
+        ],
+        "zoom": 11.4,
+        "population": 102623,
+        "cells": 260,
+        "layer": "cities/itu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.29674,
+            -23.27132
+          ]
+        },
+        "properties": {
+          "id": "itu",
+          "name": "Itu",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 102623
+        }
+      },
+      "summary": null
+    }
+  }
+}

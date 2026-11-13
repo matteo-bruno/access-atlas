@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zonguldak",
+  "createdAt": "2026-10-08T16:25:37.961Z",
+  "updatedAt": "2026-10-08T16:25:37.961Z",
+  "meta": {
+    "name": "Zonguldak",
+    "nameIt": "Zonguldak",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zonguldak.geojson",
+      "sha256": "f267626e87d506b0a7433e113949e9ff9a1c1309985cc6c0e39435a550277f41",
+      "size": 362542,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zonguldak",
+    "name": "Zonguldak",
+    "nameIt": "Zonguldak",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      31.78755,
+      41.45312
+    ],
+    "zoom": 10.5,
+    "population": 152404,
+    "grid": "cities/zonguldak/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zonguldak/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zonguldak",
+        "name": "Zonguldak",
+        "nameIt": "Zonguldak",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          31.78755,
+          41.45312
+        ],
+        "zoom": 10.5,
+        "population": 152404,
+        "cells": 313,
+        "layer": "cities/zonguldak/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.78755,
+            41.45312
+          ]
+        },
+        "properties": {
+          "id": "zonguldak",
+          "name": "Zonguldak",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 32.5,
+          "population": 152404
+        }
+      },
+      "summary": null
+    }
+  }
+}

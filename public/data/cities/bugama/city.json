@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bugama",
+  "createdAt": "2026-10-08T15:20:27.593Z",
+  "updatedAt": "2026-10-08T15:20:27.593Z",
+  "meta": {
+    "name": "Bugama",
+    "nameIt": "Bugama",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bugama.geojson",
+      "sha256": "282e89cd9b525e6070d596f5322383c8e7b245e0041deb3649cddbb4fa9c3688",
+      "size": 88512,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bugama",
+    "name": "Bugama",
+    "nameIt": "Bugama",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      6.85967,
+      4.73763
+    ],
+    "zoom": 12,
+    "population": 20865,
+    "grid": "cities/bugama/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bugama/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bugama",
+        "name": "Bugama",
+        "nameIt": "Bugama",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          6.85967,
+          4.73763
+        ],
+        "zoom": 12,
+        "population": 20865,
+        "cells": 77,
+        "layer": "cities/bugama/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.85967,
+            4.73763
+          ]
+        },
+        "properties": {
+          "id": "bugama",
+          "name": "Bugama",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 9.2,
+          "population": 20865
+        }
+      },
+      "summary": null
+    }
+  }
+}

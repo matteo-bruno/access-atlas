@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "duzce",
+  "createdAt": "2026-10-08T15:31:36.503Z",
+  "updatedAt": "2026-10-08T15:31:36.503Z",
+  "meta": {
+    "name": "Düzce",
+    "nameIt": "Düzce",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Düzce.geojson",
+      "sha256": "0446b45d4e5eaeddcc4ea6f598b3393e3f7ffca134769d326f7f227ad8073c80",
+      "size": 289781,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "duzce",
+    "name": "Düzce",
+    "nameIt": "Düzce",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      31.15907,
+      40.84286
+    ],
+    "zoom": 11,
+    "population": 145896,
+    "grid": "cities/duzce/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/duzce/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "duzce",
+        "name": "Düzce",
+        "nameIt": "Düzce",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          31.15907,
+          40.84286
+        ],
+        "zoom": 11,
+        "population": 145896,
+        "cells": 251,
+        "layer": "cities/duzce/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.15907,
+            40.84286
+          ]
+        },
+        "properties": {
+          "id": "duzce",
+          "name": "Düzce",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 12.9,
+          "population": 145896
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huiyang",
+  "createdAt": "2026-10-08T15:39:47.862Z",
+  "updatedAt": "2026-10-08T15:39:47.862Z",
+  "meta": {
+    "name": "Huiyang",
+    "nameIt": "Huiyang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huiyang.geojson",
+      "sha256": "da8be07646d23143f143831bf456bf65f3c41f79460af6576925c919cc72b7d0",
+      "size": 1582049,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huiyang",
+    "name": "Huiyang",
+    "nameIt": "Huiyang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.43143,
+      22.77249
+    ],
+    "zoom": 10.1,
+    "population": 860349,
+    "grid": "cities/huiyang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huiyang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huiyang",
+        "name": "Huiyang",
+        "nameIt": "Huiyang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.43143,
+          22.77249
+        ],
+        "zoom": 10.1,
+        "population": 860349,
+        "cells": 1358,
+        "layer": "cities/huiyang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.43143,
+            22.77249
+          ]
+        },
+        "properties": {
+          "id": "huiyang",
+          "name": "Huiyang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 37.1,
+          "population": 860349
+        }
+      },
+      "summary": null
+    }
+  }
+}

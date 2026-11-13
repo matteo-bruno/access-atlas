@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-hasakah",
+  "createdAt": "2026-10-08T15:05:02.056Z",
+  "updatedAt": "2026-10-08T15:05:02.056Z",
+  "meta": {
+    "name": "Al-Hasakah",
+    "nameIt": "Al-Hasakah",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al-Hasakah.geojson",
+      "sha256": "be292d27e5e01a50133bbc67668cc5ffefb70efd60306bff53af36ad9334b33f",
+      "size": 387947,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-hasakah",
+    "name": "Al-Hasakah",
+    "nameIt": "Al-Hasakah",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY",
+    "center": [
+      40.74559,
+      36.50669
+    ],
+    "zoom": 10.8,
+    "population": 375859,
+    "grid": "cities/al-hasakah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-hasakah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-hasakah",
+        "name": "Al-Hasakah",
+        "nameIt": "Al-Hasakah",
+        "region": "Syria",
+        "regionIt": "Siria",
+        "country": "SY",
+        "center": [
+          40.74559,
+          36.50669
+        ],
+        "zoom": 10.8,
+        "population": 375859,
+        "cells": 335,
+        "layer": "cities/al-hasakah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.74559,
+            36.50669
+          ]
+        },
+        "properties": {
+          "id": "al-hasakah",
+          "name": "Al-Hasakah",
+          "country": "SY",
+          "isStudy": true,
+          "proximityMinutes": 18.3,
+          "population": 375859
+        }
+      },
+      "summary": null
+    }
+  }
+}

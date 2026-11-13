@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tangqi",
+  "createdAt": "2026-10-08T16:16:33.899Z",
+  "updatedAt": "2026-10-08T16:16:33.899Z",
+  "meta": {
+    "name": "Tangqi",
+    "nameIt": "Tangqi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tangqi.geojson",
+      "sha256": "9487ad47c1fd734e82e81b1124a1359df07da998cdc58be3441a85bda400310d",
+      "size": 371060,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tangqi",
+    "name": "Tangqi",
+    "nameIt": "Tangqi",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      120.16918,
+      30.46903
+    ],
+    "zoom": 11.2,
+    "population": 111567,
+    "grid": "cities/tangqi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tangqi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tangqi",
+        "name": "Tangqi",
+        "nameIt": "Tangqi",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          120.16918,
+          30.46903
+        ],
+        "zoom": 11.2,
+        "population": 111567,
+        "cells": 318,
+        "layer": "cities/tangqi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.16918,
+            30.46903
+          ]
+        },
+        "properties": {
+          "id": "tangqi",
+          "name": "Tangqi",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 19.4,
+          "population": 111567
+        }
+      },
+      "summary": null
+    }
+  }
+}

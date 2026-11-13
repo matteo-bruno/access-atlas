@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "villarrica",
+  "createdAt": "2026-10-08T16:20:48.158Z",
+  "updatedAt": "2026-10-08T16:20:48.158Z",
+  "meta": {
+    "name": "Villarrica",
+    "nameIt": "Villarrica",
+    "region": "Paraguay",
+    "regionIt": "Paraguay",
+    "country": "PY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Villarrica.geojson",
+      "sha256": "efe9b7bc22a450d98821563da39b749020c27e4df55a71971581ab1c5618b030",
+      "size": 175553,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "villarrica",
+    "name": "Villarrica",
+    "nameIt": "Villarrica",
+    "region": "Paraguay",
+    "regionIt": "Paraguay",
+    "country": "PY",
+    "center": [
+      -56.44696,
+      -25.78084
+    ],
+    "zoom": 11.9,
+    "population": 62318,
+    "grid": "cities/villarrica/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/villarrica/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "villarrica",
+        "name": "Villarrica",
+        "nameIt": "Villarrica",
+        "region": "Paraguay",
+        "regionIt": "Paraguay",
+        "country": "PY",
+        "center": [
+          -56.44696,
+          -25.78084
+        ],
+        "zoom": 11.9,
+        "population": 62318,
+        "cells": 149,
+        "layer": "cities/villarrica/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -56.44696,
+            -25.78084
+          ]
+        },
+        "properties": {
+          "id": "villarrica",
+          "name": "Villarrica",
+          "country": "PY",
+          "isStudy": true,
+          "proximityMinutes": 12.3,
+          "population": 62318
+        }
+      },
+      "summary": null
+    }
+  }
+}

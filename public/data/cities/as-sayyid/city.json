@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "as-sayyid",
+  "createdAt": "2026-10-08T15:09:56.620Z",
+  "updatedAt": "2026-10-08T15:09:56.620Z",
+  "meta": {
+    "name": "As Sayyid",
+    "nameIt": "As Sayyid",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/As Sayyid.geojson",
+      "sha256": "c4570f053152b0b1a65d8b7360ac47256a28fdb49f9ea0d75be0db974492aa2d",
+      "size": 96492,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "as-sayyid",
+    "name": "As Sayyid",
+    "nameIt": "As Sayyid",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE",
+    "center": [
+      44.13244,
+      13.75795
+    ],
+    "zoom": 12,
+    "population": 176734,
+    "grid": "cities/as-sayyid/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/as-sayyid/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "as-sayyid",
+        "name": "As Sayyid",
+        "nameIt": "As Sayyid",
+        "region": "Yemen",
+        "regionIt": "Yemen",
+        "country": "YE",
+        "center": [
+          44.13244,
+          13.75795
+        ],
+        "zoom": 12,
+        "population": 176734,
+        "cells": 83,
+        "layer": "cities/as-sayyid/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.13244,
+            13.75795
+          ]
+        },
+        "properties": {
+          "id": "as-sayyid",
+          "name": "As Sayyid",
+          "country": "YE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 176734
+        }
+      },
+      "summary": null
+    }
+  }
+}

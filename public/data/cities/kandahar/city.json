@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kandahar",
+  "createdAt": "2026-10-08T15:44:50.982Z",
+  "updatedAt": "2026-10-08T15:44:50.982Z",
+  "meta": {
+    "name": "Kandahar",
+    "nameIt": "Kandahar",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kandahar.geojson",
+      "sha256": "55e51e5898eaf56eb80bba8ff705a2d4eb33f7780d2bc5351761a64b3eda17eb",
+      "size": 931712,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kandahar",
+    "name": "Kandahar",
+    "nameIt": "Kandahar",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF",
+    "center": [
+      65.71814,
+      31.61943
+    ],
+    "zoom": 9.8,
+    "population": 457775,
+    "grid": "cities/kandahar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kandahar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kandahar",
+        "name": "Kandahar",
+        "nameIt": "Kandahar",
+        "region": "Afghanistan",
+        "regionIt": "Afghanistan",
+        "country": "AF",
+        "center": [
+          65.71814,
+          31.61943
+        ],
+        "zoom": 9.8,
+        "population": 457775,
+        "cells": 804,
+        "layer": "cities/kandahar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            65.71814,
+            31.61943
+          ]
+        },
+        "properties": {
+          "id": "kandahar",
+          "name": "Kandahar",
+          "country": "AF",
+          "isStudy": true,
+          "proximityMinutes": 41.7,
+          "population": 457775
+        }
+      },
+      "summary": null
+    }
+  }
+}

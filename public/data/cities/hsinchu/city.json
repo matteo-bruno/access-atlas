@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hsinchu",
+  "createdAt": "2026-10-08T15:39:15.146Z",
+  "updatedAt": "2026-10-08T15:39:15.146Z",
+  "meta": {
+    "name": "Hsinchu",
+    "nameIt": "Hsinchu",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hsinchu.geojson",
+      "sha256": "3cf847d5e8281053da18d62f8ac43da1f1cee6572e8ce59567473d04fff38fa3",
+      "size": 1821380,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hsinchu",
+    "name": "Hsinchu",
+    "nameIt": "Hsinchu",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW",
+    "center": [
+      120.9961,
+      24.81622
+    ],
+    "zoom": 9.9,
+    "population": 780465,
+    "grid": "cities/hsinchu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hsinchu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hsinchu",
+        "name": "Hsinchu",
+        "nameIt": "Hsinchu",
+        "region": "Taiwan",
+        "regionIt": "Taiwan",
+        "country": "TW",
+        "center": [
+          120.9961,
+          24.81622
+        ],
+        "zoom": 9.9,
+        "population": 780465,
+        "cells": 1580,
+        "layer": "cities/hsinchu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.9961,
+            24.81622
+          ]
+        },
+        "properties": {
+          "id": "hsinchu",
+          "name": "Hsinchu",
+          "country": "TW",
+          "isStudy": true,
+          "proximityMinutes": 9.9,
+          "population": 780465
+        }
+      },
+      "summary": null
+    }
+  }
+}

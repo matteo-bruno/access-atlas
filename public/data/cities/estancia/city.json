@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "estancia",
+  "createdAt": "2026-10-08T15:32:35.172Z",
+  "updatedAt": "2026-10-08T15:32:35.172Z",
+  "meta": {
+    "name": "Estância",
+    "nameIt": "Estância",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Estância.geojson",
+      "sha256": "824ee34814ec868f1956d658ab3a98b3022923af81c08d5023b5ae0997b795e0",
+      "size": 131121,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "estancia",
+    "name": "Estância",
+    "nameIt": "Estância",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -37.43562,
+      -11.26007
+    ],
+    "zoom": 11.7,
+    "population": 37862,
+    "grid": "cities/estancia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/estancia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "estancia",
+        "name": "Estância",
+        "nameIt": "Estância",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -37.43562,
+          -11.26007
+        ],
+        "zoom": 11.7,
+        "population": 37862,
+        "cells": 111,
+        "layer": "cities/estancia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -37.43562,
+            -11.26007
+          ]
+        },
+        "properties": {
+          "id": "estancia",
+          "name": "Estância",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 13.8,
+          "population": 37862
+        }
+      },
+      "summary": null
+    }
+  }
+}

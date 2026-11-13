@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bouake",
+  "createdAt": "2026-10-08T15:20:12.106Z",
+  "updatedAt": "2026-10-08T15:20:12.106Z",
+  "meta": {
+    "name": "Bouaké",
+    "nameIt": "Bouaké",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bouaké.geojson",
+      "sha256": "fe7a63a7eb0f84d0696186debc26b441fc6926f61ea521f37b2064c04763c9ec",
+      "size": 1619786,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bouake",
+    "name": "Bouaké",
+    "nameIt": "Bouaké",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI",
+    "center": [
+      -5.03215,
+      7.69949
+    ],
+    "zoom": 10.2,
+    "population": 816186,
+    "grid": "cities/bouake/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 172
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bouake/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bouake",
+        "name": "Bouaké",
+        "nameIt": "Bouaké",
+        "region": "Ivory Coast",
+        "regionIt": "Costa d'Avorio",
+        "country": "CI",
+        "center": [
+          -5.03215,
+          7.69949
+        ],
+        "zoom": 10.2,
+        "population": 816186,
+        "cells": 1405,
+        "layer": "cities/bouake/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 172
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.03215,
+            7.69949
+          ]
+        },
+        "properties": {
+          "id": "bouake",
+          "name": "Bouaké",
+          "country": "CI",
+          "isStudy": true,
+          "proximityMinutes": 23.3,
+          "population": 816186
+        }
+      },
+      "summary": null
+    }
+  }
+}

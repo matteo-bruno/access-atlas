@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "larissa",
+  "createdAt": "2026-10-08T15:50:13.968Z",
+  "updatedAt": "2026-10-08T15:50:13.968Z",
+  "meta": {
+    "name": "Larissa",
+    "nameIt": "Larissa",
+    "region": "Greece",
+    "regionIt": "Grecia",
+    "country": "GR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Larissa.geojson",
+      "sha256": "42aff0639a9ec88b389470f91cce8b33382f1b83349bdb3415d6fea75c7e5077",
+      "size": 211529,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "larissa",
+    "name": "Larissa",
+    "nameIt": "Larissa",
+    "region": "Greece",
+    "regionIt": "Grecia",
+    "country": "GR",
+    "center": [
+      22.41808,
+      39.63107
+    ],
+    "zoom": 11.5,
+    "population": 119489,
+    "grid": "cities/larissa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/larissa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "larissa",
+        "name": "Larissa",
+        "nameIt": "Larissa",
+        "region": "Greece",
+        "regionIt": "Grecia",
+        "country": "GR",
+        "center": [
+          22.41808,
+          39.63107
+        ],
+        "zoom": 11.5,
+        "population": 119489,
+        "cells": 185,
+        "layer": "cities/larissa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            22.41808,
+            39.63107
+          ]
+        },
+        "properties": {
+          "id": "larissa",
+          "name": "Larissa",
+          "country": "GR",
+          "isStudy": true,
+          "proximityMinutes": 8.8,
+          "population": 119489
+        }
+      },
+      "summary": null
+    }
+  }
+}

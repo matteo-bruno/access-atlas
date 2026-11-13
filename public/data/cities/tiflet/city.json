@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tiflet",
+  "createdAt": "2026-10-08T16:17:50.123Z",
+  "updatedAt": "2026-10-08T16:17:50.123Z",
+  "meta": {
+    "name": "Tiflet",
+    "nameIt": "Tiflet",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tiflet.geojson",
+      "sha256": "6ed7b3609b9ac756a7d12aa75729675525d54d59ed070f2bd628ee3b39cdb5d5",
+      "size": 111813,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tiflet",
+    "name": "Tiflet",
+    "nameIt": "Tiflet",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -6.32619,
+      33.89261
+    ],
+    "zoom": 12,
+    "population": 11009,
+    "grid": "cities/tiflet/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tiflet/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tiflet",
+        "name": "Tiflet",
+        "nameIt": "Tiflet",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -6.32619,
+          33.89261
+        ],
+        "zoom": 12,
+        "population": 11009,
+        "cells": 96,
+        "layer": "cities/tiflet/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -6.32619,
+            33.89261
+          ]
+        },
+        "properties": {
+          "id": "tiflet",
+          "name": "Tiflet",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 13.3,
+          "population": 11009
+        }
+      },
+      "summary": null
+    }
+  }
+}

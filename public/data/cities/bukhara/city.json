@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bukhara",
+  "createdAt": "2026-10-08T15:20:35.740Z",
+  "updatedAt": "2026-10-08T15:20:35.740Z",
+  "meta": {
+    "name": "Bukhara",
+    "nameIt": "Bukhara",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bukhara.geojson",
+      "sha256": "940df12079faa64fa1e362edfa05014b05149ed3491cf303fb03ed6d89489fdc",
+      "size": 615539,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bukhara",
+    "name": "Bukhara",
+    "nameIt": "Bukhara",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      64.42775,
+      39.76751
+    ],
+    "zoom": 10.5,
+    "population": 209034,
+    "grid": "cities/bukhara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bukhara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bukhara",
+        "name": "Bukhara",
+        "nameIt": "Bukhara",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          64.42775,
+          39.76751
+        ],
+        "zoom": 10.5,
+        "population": 209034,
+        "cells": 538,
+        "layer": "cities/bukhara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            64.42775,
+            39.76751
+          ]
+        },
+        "properties": {
+          "id": "bukhara",
+          "name": "Bukhara",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 19.8,
+          "population": 209034
+        }
+      },
+      "summary": null
+    }
+  }
+}

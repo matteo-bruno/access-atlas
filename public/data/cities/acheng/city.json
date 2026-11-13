@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "acheng",
+  "createdAt": "2026-10-08T15:02:10.133Z",
+  "updatedAt": "2026-10-08T15:02:10.133Z",
+  "meta": {
+    "name": "Acheng",
+    "nameIt": "Acheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Acheng.geojson",
+      "sha256": "e51d8d0962f6c6e432ce60a7008bb85812f875a833a6d6c9b23b272cf9598437",
+      "size": 444276,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "acheng",
+    "name": "Acheng",
+    "nameIt": "Acheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      126.9698,
+      45.54194
+    ],
+    "zoom": 10.9,
+    "population": 189862,
+    "grid": "cities/acheng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/acheng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "acheng",
+        "name": "Acheng",
+        "nameIt": "Acheng",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          126.9698,
+          45.54194
+        ],
+        "zoom": 10.9,
+        "population": 189862,
+        "cells": 381,
+        "layer": "cities/acheng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            126.9698,
+            45.54194
+          ]
+        },
+        "properties": {
+          "id": "acheng",
+          "name": "Acheng",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 41.8,
+          "population": 189862
+        }
+      },
+      "summary": null
+    }
+  }
+}

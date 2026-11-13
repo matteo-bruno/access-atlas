@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sasaram",
+  "createdAt": "2026-10-08T16:11:32.643Z",
+  "updatedAt": "2026-10-08T16:11:32.643Z",
+  "meta": {
+    "name": "Sasaram",
+    "nameIt": "Sasaram",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sasaram.geojson",
+      "sha256": "7e4c2ba6f9fa0f06ccb04e0e44b9e7086d8b6f0d41bce3b96156bb6ce97b7592",
+      "size": 418837,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sasaram",
+    "name": "Sasaram",
+    "nameIt": "Sasaram",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.03043,
+      24.952
+    ],
+    "zoom": 10.1,
+    "population": 355776,
+    "grid": "cities/sasaram/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sasaram/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sasaram",
+        "name": "Sasaram",
+        "nameIt": "Sasaram",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.03043,
+          24.952
+        ],
+        "zoom": 10.1,
+        "population": 355776,
+        "cells": 361,
+        "layer": "cities/sasaram/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.03043,
+            24.952
+          ]
+        },
+        "properties": {
+          "id": "sasaram",
+          "name": "Sasaram",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 36.4,
+          "population": 355776
+        }
+      },
+      "summary": null
+    }
+  }
+}

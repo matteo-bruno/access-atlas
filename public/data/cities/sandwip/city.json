@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sandwip",
+  "createdAt": "2026-10-08T16:10:51.988Z",
+  "updatedAt": "2026-10-08T16:10:51.988Z",
+  "meta": {
+    "name": "Sandwip",
+    "nameIt": "Sandwip",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sandwip.geojson",
+      "sha256": "3c46249af323e6282d175676128ddf9578503f030c1dd09701c2a6f02409ddc4",
+      "size": 1268614,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sandwip",
+    "name": "Sandwip",
+    "nameIt": "Sandwip",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      91.47624,
+      22.4857
+    ],
+    "zoom": 9.8,
+    "population": 366149,
+    "grid": "cities/sandwip/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sandwip/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sandwip",
+        "name": "Sandwip",
+        "nameIt": "Sandwip",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          91.47624,
+          22.4857
+        ],
+        "zoom": 9.8,
+        "population": 366149,
+        "cells": 1095,
+        "layer": "cities/sandwip/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.47624,
+            22.4857
+          ]
+        },
+        "properties": {
+          "id": "sandwip",
+          "name": "Sandwip",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 1.7,
+          "population": 366149
+        }
+      },
+      "summary": null
+    }
+  }
+}

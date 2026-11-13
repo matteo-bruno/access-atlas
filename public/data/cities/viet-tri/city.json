@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "viet-tri",
+  "createdAt": "2026-10-08T16:20:58.119Z",
+  "updatedAt": "2026-10-08T16:20:58.119Z",
+  "meta": {
+    "name": "Việt Trì",
+    "nameIt": "Việt Trì",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Việt Trì.geojson",
+      "sha256": "0fb741ea46b82ff4a33bc067e14fdef20cde5a12ecd68071c6d78ece59f02a32",
+      "size": 316365,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "viet-tri",
+    "name": "Việt Trì",
+    "nameIt": "Việt Trì",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      105.39288,
+      21.3223
+    ],
+    "zoom": 10.8,
+    "population": 154337,
+    "grid": "cities/viet-tri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/viet-tri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "viet-tri",
+        "name": "Việt Trì",
+        "nameIt": "Việt Trì",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          105.39288,
+          21.3223
+        ],
+        "zoom": 10.8,
+        "population": 154337,
+        "cells": 271,
+        "layer": "cities/viet-tri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.39288,
+            21.3223
+          ]
+        },
+        "properties": {
+          "id": "viet-tri",
+          "name": "Việt Trì",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 26.8,
+          "population": 154337
+        }
+      },
+      "summary": null
+    }
+  }
+}

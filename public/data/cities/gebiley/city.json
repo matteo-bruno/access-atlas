@@ -1,0 +1,84 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gebiley",
+  "createdAt": "2026-10-08T15:34:50.057Z",
+  "updatedAt": "2026-10-08T15:34:50.057Z",
+  "meta": {
+    "name": "Gebiley",
+    "nameIt": "Gebiley"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gebiley.geojson",
+      "sha256": "f57c89181415587102d1ce2727a5dd444a4d36f842c3538bb2eb8d2335da0a6e",
+      "size": 89853,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gebiley",
+    "name": "Gebiley",
+    "nameIt": "Gebiley",
+    "center": [
+      43.62232,
+      9.70055
+    ],
+    "zoom": 12,
+    "population": 16667,
+    "grid": "cities/gebiley/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gebiley/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gebiley",
+        "name": "Gebiley",
+        "nameIt": "Gebiley",
+        "center": [
+          43.62232,
+          9.70055
+        ],
+        "zoom": 12,
+        "population": 16667,
+        "cells": 78,
+        "layer": "cities/gebiley/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.62232,
+            9.70055
+          ]
+        },
+        "properties": {
+          "id": "gebiley",
+          "name": "Gebiley",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 16667
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "phulidumar",
+  "createdAt": "2026-10-08T16:05:20.769Z",
+  "updatedAt": "2026-10-08T16:05:20.769Z",
+  "meta": {
+    "name": "Phulidumar",
+    "nameIt": "Phulidumar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Phulidumar.geojson",
+      "sha256": "54d0850f6a018041516e7214eda4a47d27f743ec6255ce57aed1f4765b63afef",
+      "size": 391398,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "phulidumar",
+    "name": "Phulidumar",
+    "nameIt": "Phulidumar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.82547,
+      25.0043
+    ],
+    "zoom": 10.4,
+    "population": 53744,
+    "grid": "cities/phulidumar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/phulidumar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "phulidumar",
+        "name": "Phulidumar",
+        "nameIt": "Phulidumar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.82547,
+          25.0043
+        ],
+        "zoom": 10.4,
+        "population": 53744,
+        "cells": 338,
+        "layer": "cities/phulidumar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.82547,
+            25.0043
+          ]
+        },
+        "properties": {
+          "id": "phulidumar",
+          "name": "Phulidumar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 53744
+        }
+      },
+      "summary": null
+    }
+  }
+}

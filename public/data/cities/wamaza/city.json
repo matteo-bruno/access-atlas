@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wamaza",
+  "createdAt": "2026-10-08T16:21:17.040Z",
+  "updatedAt": "2026-10-08T16:21:17.040Z",
+  "meta": {
+    "name": "Wamaza",
+    "nameIt": "Wamaza",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wamaza.geojson",
+      "sha256": "1a9f05ec9c8b18fc2f83ecbb5cac000a9df0b4f6af1dce41e44d2f0dc84743d2",
+      "size": 75911,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wamaza",
+    "name": "Wamaza",
+    "nameIt": "Wamaza",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      27.11543,
+      -4.2126
+    ],
+    "zoom": 12,
+    "population": 47665,
+    "grid": "cities/wamaza/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wamaza/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wamaza",
+        "name": "Wamaza",
+        "nameIt": "Wamaza",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          27.11543,
+          -4.2126
+        ],
+        "zoom": 12,
+        "population": 47665,
+        "cells": 65,
+        "layer": "cities/wamaza/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.11543,
+            -4.2126
+          ]
+        },
+        "properties": {
+          "id": "wamaza",
+          "name": "Wamaza",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 47665
+        }
+      },
+      "summary": null
+    }
+  }
+}

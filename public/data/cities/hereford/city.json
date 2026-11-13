@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hereford",
+  "createdAt": "2026-10-08T15:38:30.125Z",
+  "updatedAt": "2026-10-08T15:38:30.125Z",
+  "meta": {
+    "name": "Hereford",
+    "nameIt": "Hereford",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hereford.geojson",
+      "sha256": "e74d660e54d0dd09cf94643eedcad60bc03fe1e1bdfa8caa62170e593677b6ae",
+      "size": 213965,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hereford",
+    "name": "Hereford",
+    "nameIt": "Hereford",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -2.71848,
+      52.05354
+    ],
+    "zoom": 11.6,
+    "population": 52968,
+    "grid": "cities/hereford/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hereford/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hereford",
+        "name": "Hereford",
+        "nameIt": "Hereford",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -2.71848,
+          52.05354
+        ],
+        "zoom": 11.6,
+        "population": 52968,
+        "cells": 186,
+        "layer": "cities/hereford/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.71848,
+            52.05354
+          ]
+        },
+        "properties": {
+          "id": "hereford",
+          "name": "Hereford",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 52968
+        }
+      },
+      "summary": null
+    }
+  }
+}

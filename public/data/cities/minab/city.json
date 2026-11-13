@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "minab",
+  "createdAt": "2026-10-08T15:57:09.144Z",
+  "updatedAt": "2026-10-08T15:57:09.144Z",
+  "meta": {
+    "name": "Minab",
+    "nameIt": "Minab",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Minab.geojson",
+      "sha256": "6e7de6083db4eadced96f145d0ea7285e7c96fe4c3a6941e142bed2ff175f550",
+      "size": 160732,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "minab",
+    "name": "Minab",
+    "nameIt": "Minab",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      57.08071,
+      27.13995
+    ],
+    "zoom": 11.2,
+    "population": 59471,
+    "grid": "cities/minab/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/minab/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "minab",
+        "name": "Minab",
+        "nameIt": "Minab",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          57.08071,
+          27.13995
+        ],
+        "zoom": 11.2,
+        "population": 59471,
+        "cells": 139,
+        "layer": "cities/minab/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            57.08071,
+            27.13995
+          ]
+        },
+        "properties": {
+          "id": "minab",
+          "name": "Minab",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 14.1,
+          "population": 59471
+        }
+      },
+      "summary": null
+    }
+  }
+}

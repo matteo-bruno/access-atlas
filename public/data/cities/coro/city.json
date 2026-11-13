@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "coro",
+  "createdAt": "2026-10-08T15:26:35.659Z",
+  "updatedAt": "2026-10-08T15:26:35.659Z",
+  "meta": {
+    "name": "Coro",
+    "nameIt": "Coro",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Coro.geojson",
+      "sha256": "ed2b72f445da4dd211971b1bba99b3446b67444885751a649e8cf7e239867c70",
+      "size": 398973,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "coro",
+    "name": "Coro",
+    "nameIt": "Coro",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -69.67093,
+      11.40147
+    ],
+    "zoom": 10.9,
+    "population": 183664,
+    "grid": "cities/coro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/coro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "coro",
+        "name": "Coro",
+        "nameIt": "Coro",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -69.67093,
+          11.40147
+        ],
+        "zoom": 10.9,
+        "population": 183664,
+        "cells": 341,
+        "layer": "cities/coro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -69.67093,
+            11.40147
+          ]
+        },
+        "properties": {
+          "id": "coro",
+          "name": "Coro",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 27.7,
+          "population": 183664
+        }
+      },
+      "summary": null
+    }
+  }
+}

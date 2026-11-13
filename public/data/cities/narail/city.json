@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "narail",
+  "createdAt": "2026-10-08T16:00:20.431Z",
+  "updatedAt": "2026-10-08T16:00:20.431Z",
+  "meta": {
+    "name": "Narail",
+    "nameIt": "Narail",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Narail.geojson",
+      "sha256": "d5f97529684fd5e987199c842f8a74a0c9c010a200259a77b7ed7091b2d3df91",
+      "size": 89144,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "narail",
+    "name": "Narail",
+    "nameIt": "Narail",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.50373,
+      23.17158
+    ],
+    "zoom": 12,
+    "population": 33080,
+    "grid": "cities/narail/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/narail/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "narail",
+        "name": "Narail",
+        "nameIt": "Narail",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.50373,
+          23.17158
+        ],
+        "zoom": 12,
+        "population": 33080,
+        "cells": 77,
+        "layer": "cities/narail/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.50373,
+            23.17158
+          ]
+        },
+        "properties": {
+          "id": "narail",
+          "name": "Narail",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 12.8,
+          "population": 33080
+        }
+      },
+      "summary": null
+    }
+  }
+}

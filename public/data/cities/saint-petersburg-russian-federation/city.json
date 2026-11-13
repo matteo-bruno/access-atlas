@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "saint-petersburg-russian-federation",
+  "createdAt": "2026-10-08T16:09:52.906Z",
+  "updatedAt": "2026-10-08T16:09:52.906Z",
+  "meta": {
+    "name": "Saint Petersburg (Russian Federation)",
+    "nameIt": "Saint Petersburg (Russian Federation)",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Saint Petersburg (Russian Federation).geojson",
+      "sha256": "4b72cd80c2737418f5b1a6771f24d58c3c3e615e42d6dc235c6f29897d8178ee",
+      "size": 7151259,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "saint-petersburg-russian-federation",
+    "name": "Saint Petersburg (Russian Federation)",
+    "nameIt": "Saint Petersburg (Russian Federation)",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      30.33984,
+      59.93444
+    ],
+    "zoom": 9,
+    "population": 4922797,
+    "grid": "cities/saint-petersburg-russian-federation/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/saint-petersburg-russian-federation/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "saint-petersburg-russian-federation",
+        "name": "Saint Petersburg (Russian Federation)",
+        "nameIt": "Saint Petersburg (Russian Federation)",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          30.33984,
+          59.93444
+        ],
+        "zoom": 9,
+        "population": 4922797,
+        "cells": 6251,
+        "layer": "cities/saint-petersburg-russian-federation/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.33984,
+            59.93444
+          ]
+        },
+        "properties": {
+          "id": "saint-petersburg-russian-federation",
+          "name": "Saint Petersburg (Russian Federation)",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 7.3,
+          "population": 4922797
+        }
+      },
+      "summary": null
+    }
+  }
+}

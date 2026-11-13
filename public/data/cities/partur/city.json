@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "partur",
+  "createdAt": "2026-10-08T16:04:31.846Z",
+  "updatedAt": "2026-10-08T16:04:31.846Z",
+  "meta": {
+    "name": "Partur",
+    "nameIt": "Partur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Partur.geojson",
+      "sha256": "d7bcaea80dfa8446e6b1aead1831dd9cfe62275a07ad10a1c5492b4740bc6735",
+      "size": 86861,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "partur",
+    "name": "Partur",
+    "nameIt": "Partur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.2142,
+      19.58925
+    ],
+    "zoom": 12,
+    "population": 28861,
+    "grid": "cities/partur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/partur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "partur",
+        "name": "Partur",
+        "nameIt": "Partur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.2142,
+          19.58925
+        ],
+        "zoom": 12,
+        "population": 28861,
+        "cells": 75,
+        "layer": "cities/partur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.2142,
+            19.58925
+          ]
+        },
+        "properties": {
+          "id": "partur",
+          "name": "Partur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 28861
+        }
+      },
+      "summary": null
+    }
+  }
+}

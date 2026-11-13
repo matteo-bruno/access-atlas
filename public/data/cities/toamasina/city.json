@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "toamasina",
+  "createdAt": "2026-10-08T16:18:12.986Z",
+  "updatedAt": "2026-10-08T16:18:12.986Z",
+  "meta": {
+    "name": "Toamasina",
+    "nameIt": "Toamasina",
+    "region": "Madagascar",
+    "regionIt": "Madagascar",
+    "country": "MG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Toamasina.geojson",
+      "sha256": "9e365ef27cdb84be0886904524f33d92a3c3c0e8111577380408e5fdec3bd0a2",
+      "size": 398400,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "toamasina",
+    "name": "Toamasina",
+    "nameIt": "Toamasina",
+    "region": "Madagascar",
+    "regionIt": "Madagascar",
+    "country": "MG",
+    "center": [
+      49.39743,
+      -18.14798
+    ],
+    "zoom": 11.1,
+    "population": 414522,
+    "grid": "cities/toamasina/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/toamasina/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "toamasina",
+        "name": "Toamasina",
+        "nameIt": "Toamasina",
+        "region": "Madagascar",
+        "regionIt": "Madagascar",
+        "country": "MG",
+        "center": [
+          49.39743,
+          -18.14798
+        ],
+        "zoom": 11.1,
+        "population": 414522,
+        "cells": 341,
+        "layer": "cities/toamasina/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            49.39743,
+            -18.14798
+          ]
+        },
+        "properties": {
+          "id": "toamasina",
+          "name": "Toamasina",
+          "country": "MG",
+          "isStudy": true,
+          "proximityMinutes": 23.2,
+          "population": 414522
+        }
+      },
+      "summary": null
+    }
+  }
+}

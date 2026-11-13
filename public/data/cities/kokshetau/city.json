@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kokshetau",
+  "createdAt": "2026-10-08T15:47:39.972Z",
+  "updatedAt": "2026-10-08T15:47:39.972Z",
+  "meta": {
+    "name": "Kokshetau",
+    "nameIt": "Kokshetau",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kokshetau.geojson",
+      "sha256": "ff574a4f97a3cfa919ad0609a13ccfaf15b96cd5411e7e6bf42a95d578505deb",
+      "size": 315349,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kokshetau",
+    "name": "Kokshetau",
+    "nameIt": "Kokshetau",
+    "region": "Kazakhstan",
+    "regionIt": "Kazakistan",
+    "country": "KZ",
+    "center": [
+      69.3996,
+      53.28237
+    ],
+    "zoom": 11.2,
+    "population": 115300,
+    "grid": "cities/kokshetau/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kokshetau/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kokshetau",
+        "name": "Kokshetau",
+        "nameIt": "Kokshetau",
+        "region": "Kazakhstan",
+        "regionIt": "Kazakistan",
+        "country": "KZ",
+        "center": [
+          69.3996,
+          53.28237
+        ],
+        "zoom": 11.2,
+        "population": 115300,
+        "cells": 276,
+        "layer": "cities/kokshetau/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            69.3996,
+            53.28237
+          ]
+        },
+        "properties": {
+          "id": "kokshetau",
+          "name": "Kokshetau",
+          "country": "KZ",
+          "isStudy": true,
+          "proximityMinutes": 18,
+          "population": 115300
+        }
+      },
+      "summary": null
+    }
+  }
+}

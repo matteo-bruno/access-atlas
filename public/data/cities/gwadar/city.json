@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gwadar",
+  "createdAt": "2026-10-08T15:36:59.279Z",
+  "updatedAt": "2026-10-08T15:36:59.279Z",
+  "meta": {
+    "name": "Gwādar",
+    "nameIt": "Gwādar",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gwādar.geojson",
+      "sha256": "106dbbab274bf2b4751825474701321ab47dbaaad96d5bbee69e2d40d20f6a3a",
+      "size": 224193,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gwadar",
+    "name": "Gwādar",
+    "nameIt": "Gwādar",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      62.32571,
+      25.14196
+    ],
+    "zoom": 11,
+    "population": 87116,
+    "grid": "cities/gwadar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gwadar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gwadar",
+        "name": "Gwādar",
+        "nameIt": "Gwādar",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          62.32571,
+          25.14196
+        ],
+        "zoom": 11,
+        "population": 87116,
+        "cells": 193,
+        "layer": "cities/gwadar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            62.32571,
+            25.14196
+          ]
+        },
+        "properties": {
+          "id": "gwadar",
+          "name": "Gwādar",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 25,
+          "population": 87116
+        }
+      },
+      "summary": null
+    }
+  }
+}

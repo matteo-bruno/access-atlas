@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gonda",
+  "createdAt": "2026-10-08T15:35:39.100Z",
+  "updatedAt": "2026-10-08T15:35:39.100Z",
+  "meta": {
+    "name": "Gonda",
+    "nameIt": "Gonda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gonda.geojson",
+      "sha256": "d0b5907a337c799113aedbc0cd605b950cd2e91d06a2a47795c30803f7c5f5c0",
+      "size": 619499,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gonda",
+    "name": "Gonda",
+    "nameIt": "Gonda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.96321,
+      27.13554
+    ],
+    "zoom": 10.7,
+    "population": 399300,
+    "grid": "cities/gonda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gonda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gonda",
+        "name": "Gonda",
+        "nameIt": "Gonda",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.96321,
+          27.13554
+        ],
+        "zoom": 10.7,
+        "population": 399300,
+        "cells": 534,
+        "layer": "cities/gonda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.96321,
+            27.13554
+          ]
+        },
+        "properties": {
+          "id": "gonda",
+          "name": "Gonda",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 33.3,
+          "population": 399300
+        }
+      },
+      "summary": null
+    }
+  }
+}

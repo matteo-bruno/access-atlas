@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bankura",
+  "createdAt": "2026-10-08T15:15:03.266Z",
+  "updatedAt": "2026-10-08T15:15:03.266Z",
+  "meta": {
+    "name": "Bankura",
+    "nameIt": "Bankura",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bankura.geojson",
+      "sha256": "9f73ed0fdf86657bb8f9c4ae71b7f5d1a35a3b5771609b20ba60190096326479",
+      "size": 326939,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bankura",
+    "name": "Bankura",
+    "nameIt": "Bankura",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.05839,
+      23.23513
+    ],
+    "zoom": 11.2,
+    "population": 270152,
+    "grid": "cities/bankura/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bankura/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bankura",
+        "name": "Bankura",
+        "nameIt": "Bankura",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.05839,
+          23.23513
+        ],
+        "zoom": 11.2,
+        "population": 270152,
+        "cells": 282,
+        "layer": "cities/bankura/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.05839,
+            23.23513
+          ]
+        },
+        "properties": {
+          "id": "bankura",
+          "name": "Bankura",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19.9,
+          "population": 270152
+        }
+      },
+      "summary": null
+    }
+  }
+}

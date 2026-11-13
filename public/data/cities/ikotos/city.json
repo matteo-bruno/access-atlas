@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ikotos",
+  "createdAt": "2026-10-08T15:40:34.505Z",
+  "updatedAt": "2026-10-08T15:40:34.505Z",
+  "meta": {
+    "name": "Ikotos",
+    "nameIt": "Ikotos",
+    "region": "South Sudan",
+    "regionIt": "Sudan del Sud",
+    "country": "SS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ikotos.geojson",
+      "sha256": "fef27e3e8fb723afabc17ea98b6c910d631736b62ac21ed24d203577bfe1972f",
+      "size": 77379,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ikotos",
+    "name": "Ikotos",
+    "nameIt": "Ikotos",
+    "region": "South Sudan",
+    "regionIt": "Sudan del Sud",
+    "country": "SS",
+    "center": [
+      33.10645,
+      4.0775
+    ],
+    "zoom": 12,
+    "population": 13474,
+    "grid": "cities/ikotos/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ikotos/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ikotos",
+        "name": "Ikotos",
+        "nameIt": "Ikotos",
+        "region": "South Sudan",
+        "regionIt": "Sudan del Sud",
+        "country": "SS",
+        "center": [
+          33.10645,
+          4.0775
+        ],
+        "zoom": 12,
+        "population": 13474,
+        "cells": 67,
+        "layer": "cities/ikotos/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.10645,
+            4.0775
+          ]
+        },
+        "properties": {
+          "id": "ikotos",
+          "name": "Ikotos",
+          "country": "SS",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 13474
+        }
+      },
+      "summary": null
+    }
+  }
+}

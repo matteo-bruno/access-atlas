@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kakamega",
+  "createdAt": "2026-10-08T15:44:17.977Z",
+  "updatedAt": "2026-10-08T15:44:17.977Z",
+  "meta": {
+    "name": "Kakamega",
+    "nameIt": "Kakamega",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kakamega.geojson",
+      "sha256": "c594a6f45408bed8580b18e33d04be811e3f5b80d41aaf488fd3367f99786b02",
+      "size": 313919,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kakamega",
+    "name": "Kakamega",
+    "nameIt": "Kakamega",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE",
+    "center": [
+      34.7501,
+      0.28591
+    ],
+    "zoom": 11.2,
+    "population": 106609,
+    "grid": "cities/kakamega/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kakamega/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kakamega",
+        "name": "Kakamega",
+        "nameIt": "Kakamega",
+        "region": "Kenya",
+        "regionIt": "Kenya",
+        "country": "KE",
+        "center": [
+          34.7501,
+          0.28591
+        ],
+        "zoom": 11.2,
+        "population": 106609,
+        "cells": 269,
+        "layer": "cities/kakamega/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.7501,
+            0.28591
+          ]
+        },
+        "properties": {
+          "id": "kakamega",
+          "name": "Kakamega",
+          "country": "KE",
+          "isStudy": true,
+          "proximityMinutes": 29.3,
+          "population": 106609
+        }
+      },
+      "summary": null
+    }
+  }
+}

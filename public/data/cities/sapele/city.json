@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sapele",
+  "createdAt": "2026-10-08T16:11:19.592Z",
+  "updatedAt": "2026-10-08T16:11:19.592Z",
+  "meta": {
+    "name": "Sapele",
+    "nameIt": "Sapele",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sapele.geojson",
+      "sha256": "81989280f0d1a32d29b6ddef0ae37870cbb4bf286b9482243a70dddd85f90955",
+      "size": 624052,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sapele",
+    "name": "Sapele",
+    "nameIt": "Sapele",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      5.6879,
+      5.87925
+    ],
+    "zoom": 10.1,
+    "population": 318371,
+    "grid": "cities/sapele/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sapele/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sapele",
+        "name": "Sapele",
+        "nameIt": "Sapele",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          5.6879,
+          5.87925
+        ],
+        "zoom": 10.1,
+        "population": 318371,
+        "cells": 542,
+        "layer": "cities/sapele/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.6879,
+            5.87925
+          ]
+        },
+        "properties": {
+          "id": "sapele",
+          "name": "Sapele",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 318371
+        }
+      },
+      "summary": null
+    }
+  }
+}

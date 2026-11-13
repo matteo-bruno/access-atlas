@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "syracuse-united-states",
+  "createdAt": "2026-10-08T16:15:34.822Z",
+  "updatedAt": "2026-10-08T16:15:34.822Z",
+  "meta": {
+    "name": "Syracuse (United States)",
+    "nameIt": "Syracuse (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Syracuse (United States).geojson",
+      "sha256": "871b467a35d6e7864343eb957fa7ecdb2ad16e794f5f836be363b2b2f7b86a41",
+      "size": 687494,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "syracuse-united-states",
+    "name": "Syracuse (United States)",
+    "nameIt": "Syracuse (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -76.1384,
+      43.04724
+    ],
+    "zoom": 10.5,
+    "population": 140027,
+    "grid": "cities/syracuse-united-states/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/syracuse-united-states/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "syracuse-united-states",
+        "name": "Syracuse (United States)",
+        "nameIt": "Syracuse (United States)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -76.1384,
+          43.04724
+        ],
+        "zoom": 10.5,
+        "population": 140027,
+        "cells": 598,
+        "layer": "cities/syracuse-united-states/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.1384,
+            43.04724
+          ]
+        },
+        "properties": {
+          "id": "syracuse-united-states",
+          "name": "Syracuse (United States)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 140027
+        }
+      },
+      "summary": null
+    }
+  }
+}

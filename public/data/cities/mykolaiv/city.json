@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mykolaiv",
+  "createdAt": "2026-10-08T15:59:21.761Z",
+  "updatedAt": "2026-10-08T15:59:21.761Z",
+  "meta": {
+    "name": "Mykolaiv",
+    "nameIt": "Mykolaiv",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mykolaiv.geojson",
+      "sha256": "f09304ffc695edded576a34435384d1d3e7fb0cecd54c91b4c0c47fb9615a719",
+      "size": 1020122,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mykolaiv",
+    "name": "Mykolaiv",
+    "nameIt": "Mykolaiv",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      32.01527,
+      46.96253
+    ],
+    "zoom": 10.2,
+    "population": 231610,
+    "grid": "cities/mykolaiv/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mykolaiv/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mykolaiv",
+        "name": "Mykolaiv",
+        "nameIt": "Mykolaiv",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          32.01527,
+          46.96253
+        ],
+        "zoom": 10.2,
+        "population": 231610,
+        "cells": 891,
+        "layer": "cities/mykolaiv/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.01527,
+            46.96253
+          ]
+        },
+        "properties": {
+          "id": "mykolaiv",
+          "name": "Mykolaiv",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 231610
+        }
+      },
+      "summary": null
+    }
+  }
+}

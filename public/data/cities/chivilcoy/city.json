@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chivilcoy",
+  "createdAt": "2026-10-08T15:25:01.833Z",
+  "updatedAt": "2026-10-08T15:25:01.833Z",
+  "meta": {
+    "name": "Chivilcoy",
+    "nameIt": "Chivilcoy",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chivilcoy.geojson",
+      "sha256": "1fd44525be17f1c15a7465761a7faa9b8372171cdafe31f52588754c440d3230",
+      "size": 222045,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chivilcoy",
+    "name": "Chivilcoy",
+    "nameIt": "Chivilcoy",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -60.01525,
+      -34.89804
+    ],
+    "zoom": 11.8,
+    "population": 42996,
+    "grid": "cities/chivilcoy/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chivilcoy/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chivilcoy",
+        "name": "Chivilcoy",
+        "nameIt": "Chivilcoy",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -60.01525,
+          -34.89804
+        ],
+        "zoom": 11.8,
+        "population": 42996,
+        "cells": 189,
+        "layer": "cities/chivilcoy/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -60.01525,
+            -34.89804
+          ]
+        },
+        "properties": {
+          "id": "chivilcoy",
+          "name": "Chivilcoy",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 42996
+        }
+      },
+      "summary": null
+    }
+  }
+}

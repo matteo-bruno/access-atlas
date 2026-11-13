@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "springfield-missouri",
+  "createdAt": "2026-10-08T16:14:40.228Z",
+  "updatedAt": "2026-10-08T16:14:40.228Z",
+  "meta": {
+    "name": "Springfield (Missouri)",
+    "nameIt": "Springfield (Missouri)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Springfield (Missouri).geojson",
+      "sha256": "e3b107487a8b94f3e74182c8a47fa3724aa63d24a789c529547a49af6631b1ba",
+      "size": 924831,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "springfield-missouri",
+    "name": "Springfield (Missouri)",
+    "nameIt": "Springfield (Missouri)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -93.2892,
+      37.19282
+    ],
+    "zoom": 10.3,
+    "population": 116734,
+    "grid": "cities/springfield-missouri/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/springfield-missouri/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "springfield-missouri",
+        "name": "Springfield (Missouri)",
+        "nameIt": "Springfield (Missouri)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -93.2892,
+          37.19282
+        ],
+        "zoom": 10.3,
+        "population": 116734,
+        "cells": 804,
+        "layer": "cities/springfield-missouri/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -93.2892,
+            37.19282
+          ]
+        },
+        "properties": {
+          "id": "springfield-missouri",
+          "name": "Springfield (Missouri)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.6,
+          "population": 116734
+        }
+      },
+      "summary": null
+    }
+  }
+}

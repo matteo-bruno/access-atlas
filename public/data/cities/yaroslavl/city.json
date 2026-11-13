@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yaroslavl",
+  "createdAt": "2026-10-08T16:23:35.607Z",
+  "updatedAt": "2026-10-08T16:23:35.607Z",
+  "meta": {
+    "name": "Yaroslavl",
+    "nameIt": "Yaroslavl",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yaroslavl.geojson",
+      "sha256": "2e66807c1df5f0afb5f3765bbe85bfccad2306f0aefa94089d7404afb4a1430e",
+      "size": 1326168,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yaroslavl",
+    "name": "Yaroslavl",
+    "nameIt": "Yaroslavl",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      39.86082,
+      57.62837
+    ],
+    "zoom": 9.9,
+    "population": 480921,
+    "grid": "cities/yaroslavl/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yaroslavl/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yaroslavl",
+        "name": "Yaroslavl",
+        "nameIt": "Yaroslavl",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          39.86082,
+          57.62837
+        ],
+        "zoom": 9.9,
+        "population": 480921,
+        "cells": 1160,
+        "layer": "cities/yaroslavl/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.86082,
+            57.62837
+          ]
+        },
+        "properties": {
+          "id": "yaroslavl",
+          "name": "Yaroslavl",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 480921
+        }
+      },
+      "summary": null
+    }
+  }
+}

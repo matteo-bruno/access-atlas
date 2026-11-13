@@ -3,7 +3,7 @@
   "version": 1,
   "id": "nantes",
   "createdAt": "2026-08-28T13:51:44.000Z",
-  "updatedAt": "2026-10-08T14:05:35.533Z",
+  "updatedAt": "2026-10-19T21:06:00.195Z",
   "meta": {
     "name": "Nantes",
     "nameIt": "Nantes",
@@ -20,30 +20,128 @@
     "regionIt": "Francia",
     "country": "FR",
     "center": [
-      -1.55358,
-      47.22516
+      -1.55289,
+      47.22056
     ],
-    "zoom": 10.4,
-    "population": 276956,
+    "zoom": 10,
+    "population": 466044,
     "grid": "cities/nantes/grid.json.gz",
     "cell": {
       "h3Resolution": 9,
       "cellRadiusM": 197
     },
     "layers": [
+      "fifteen",
+      "citychrone",
       "cardep",
       "pov"
     ],
     "layerData": {
+      "fifteen": "cities/nantes/fifteen.json.gz",
+      "citychrone": "cities/nantes/citychrone.json.gz",
       "cardep": "cities/nantes/cardep.json.gz",
       "pov": "cities/nantes/pov.json.gz"
     },
     "cartogramSources": {
+      "fifteen": "derived",
+      "citychrone": "derived",
       "cardep": "derived",
       "pov": "derived"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 656,
+      "times": "cities/nantes/citychrone/times{hh}.bin"
     }
   },
   "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nantes",
+        "name": "Nantes",
+        "nameIt": "Nantes",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -1.55498,
+          47.22143
+        ],
+        "zoom": 10,
+        "population": 512055,
+        "cells": 1426,
+        "layer": "cities/nantes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.55498,
+            47.22143
+          ]
+        },
+        "properties": {
+          "id": "nantes",
+          "name": "Nantes",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 6.8,
+          "population": 512055
+        }
+      },
+      "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "nantes",
+        "name": "Nantes",
+        "nameIt": "Nantes",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -1.55358,
+          47.22516
+        ],
+        "zoom": 10.4,
+        "population": 276956,
+        "cells": 656,
+        "layer": "cities/nantes/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 656,
+          "times": "cities/nantes/citychrone/times{hh}.bin"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.55358,
+            47.22516
+          ]
+        },
+        "properties": {
+          "id": "nantes",
+          "name": "Nantes",
+          "country": "FR",
+          "isStudy": true,
+          "velocityScore": 4.62,
+          "population": 276956
+        }
+      },
+      "summary": null
+    },
     "cardep": {
       "row": {
         "id": "nantes",

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bagelen",
+  "createdAt": "2026-10-08T15:12:45.651Z",
+  "updatedAt": "2026-10-08T15:12:45.651Z",
+  "meta": {
+    "name": "Bagelen",
+    "nameIt": "Bagelen",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bagelen.geojson",
+      "sha256": "db1e0c310bf0f83f1552c64c730823fbb1f46684dd2eb9300c64f92fbf9438bb",
+      "size": 339601,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bagelen",
+    "name": "Bagelen",
+    "nameIt": "Bagelen",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      105.08126,
+      -5.37878
+    ],
+    "zoom": 10.3,
+    "population": 93266,
+    "grid": "cities/bagelen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bagelen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bagelen",
+        "name": "Bagelen",
+        "nameIt": "Bagelen",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          105.08126,
+          -5.37878
+        ],
+        "zoom": 10.3,
+        "population": 93266,
+        "cells": 290,
+        "layer": "cities/bagelen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.08126,
+            -5.37878
+          ]
+        },
+        "properties": {
+          "id": "bagelen",
+          "name": "Bagelen",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 23,
+          "population": 93266
+        }
+      },
+      "summary": null
+    }
+  }
+}

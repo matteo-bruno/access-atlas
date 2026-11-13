@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kita",
+  "createdAt": "2026-10-08T15:47:21.701Z",
+  "updatedAt": "2026-10-08T15:47:21.701Z",
+  "meta": {
+    "name": "Kita",
+    "nameIt": "Kita",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kita.geojson",
+      "sha256": "e45c7ce42a878a38c3c53948604c5fa982a969fb97cb482d685c008667c30819",
+      "size": 196573,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kita",
+    "name": "Kita",
+    "nameIt": "Kita",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML",
+    "center": [
+      -9.48844,
+      13.03742
+    ],
+    "zoom": 11.7,
+    "population": 126068,
+    "grid": "cities/kita/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kita/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kita",
+        "name": "Kita",
+        "nameIt": "Kita",
+        "region": "Mali",
+        "regionIt": "Mali",
+        "country": "ML",
+        "center": [
+          -9.48844,
+          13.03742
+        ],
+        "zoom": 11.7,
+        "population": 126068,
+        "cells": 169,
+        "layer": "cities/kita/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -9.48844,
+            13.03742
+          ]
+        },
+        "properties": {
+          "id": "kita",
+          "name": "Kita",
+          "country": "ML",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 126068
+        }
+      },
+      "summary": null
+    }
+  }
+}

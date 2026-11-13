@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "enschede",
+  "createdAt": "2026-10-08T15:32:18.052Z",
+  "updatedAt": "2026-10-08T15:32:18.052Z",
+  "meta": {
+    "name": "Enschede",
+    "nameIt": "Enschede",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Enschede.geojson",
+      "sha256": "ca022e04d79267fb94eb801e8c04b3e296cb9033482e1fa7ab8290dff9f9a6af",
+      "size": 451744,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "enschede",
+    "name": "Enschede",
+    "nameIt": "Enschede",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      6.88407,
+      52.21577
+    ],
+    "zoom": 11.2,
+    "population": 115989,
+    "grid": "cities/enschede/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/enschede/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "enschede",
+        "name": "Enschede",
+        "nameIt": "Enschede",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          6.88407,
+          52.21577
+        ],
+        "zoom": 11.2,
+        "population": 115989,
+        "cells": 398,
+        "layer": "cities/enschede/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.88407,
+            52.21577
+          ]
+        },
+        "properties": {
+          "id": "enschede",
+          "name": "Enschede",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 10.3,
+          "population": 115989
+        }
+      },
+      "summary": null
+    }
+  }
+}

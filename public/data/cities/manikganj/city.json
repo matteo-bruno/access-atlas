@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "manikganj",
+  "createdAt": "2026-10-08T15:54:43.882Z",
+  "updatedAt": "2026-10-08T15:54:43.882Z",
+  "meta": {
+    "name": "Manikganj",
+    "nameIt": "Manikganj",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Manikganj.geojson",
+      "sha256": "f48bda0ea017260174a9e0292b79b8a3443e90424bc2a42f378f73ed5aaf75f5",
+      "size": 787510,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "manikganj",
+    "name": "Manikganj",
+    "nameIt": "Manikganj",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.99109,
+      23.84736
+    ],
+    "zoom": 10.4,
+    "population": 165442,
+    "grid": "cities/manikganj/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/manikganj/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "manikganj",
+        "name": "Manikganj",
+        "nameIt": "Manikganj",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.99109,
+          23.84736
+        ],
+        "zoom": 10.4,
+        "population": 165442,
+        "cells": 680,
+        "layer": "cities/manikganj/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.99109,
+            23.84736
+          ]
+        },
+        "properties": {
+          "id": "manikganj",
+          "name": "Manikganj",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 43.2,
+          "population": 165442
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "varginha",
+  "createdAt": "2026-10-08T16:20:30.068Z",
+  "updatedAt": "2026-10-08T16:20:30.068Z",
+  "meta": {
+    "name": "Varginha",
+    "nameIt": "Varginha",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Varginha.geojson",
+      "sha256": "0a3ce4e75c10529a9d9ca35e3db2aa322e79f3e8b023b63bea4769f1e9720699",
+      "size": 321357,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "varginha",
+    "name": "Varginha",
+    "nameIt": "Varginha",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -45.4357,
+      -21.56039
+    ],
+    "zoom": 11,
+    "population": 117773,
+    "grid": "cities/varginha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/varginha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "varginha",
+        "name": "Varginha",
+        "nameIt": "Varginha",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -45.4357,
+          -21.56039
+        ],
+        "zoom": 11,
+        "population": 117773,
+        "cells": 273,
+        "layer": "cities/varginha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -45.4357,
+            -21.56039
+          ]
+        },
+        "properties": {
+          "id": "varginha",
+          "name": "Varginha",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 17.5,
+          "population": 117773
+        }
+      },
+      "summary": null
+    }
+  }
+}

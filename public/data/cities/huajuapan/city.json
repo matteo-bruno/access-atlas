@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huajuapan",
+  "createdAt": "2026-10-08T15:39:24.365Z",
+  "updatedAt": "2026-10-08T15:39:24.365Z",
+  "meta": {
+    "name": "Huajuapan",
+    "nameIt": "Huajuapan",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huajuapan.geojson",
+      "sha256": "bab0fac925f1e5e0ca02c1fc2e00d38c6316cdba719736aa870df6737a25d568",
+      "size": 184810,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huajuapan",
+    "name": "Huajuapan",
+    "nameIt": "Huajuapan",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -97.78036,
+      17.80813
+    ],
+    "zoom": 11.6,
+    "population": 61012,
+    "grid": "cities/huajuapan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huajuapan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huajuapan",
+        "name": "Huajuapan",
+        "nameIt": "Huajuapan",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -97.78036,
+          17.80813
+        ],
+        "zoom": 11.6,
+        "population": 61012,
+        "cells": 159,
+        "layer": "cities/huajuapan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.78036,
+            17.80813
+          ]
+        },
+        "properties": {
+          "id": "huajuapan",
+          "name": "Huajuapan",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 15.9,
+          "population": 61012
+        }
+      },
+      "summary": null
+    }
+  }
+}

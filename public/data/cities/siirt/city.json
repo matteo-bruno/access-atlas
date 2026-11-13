@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "siirt",
+  "createdAt": "2026-10-08T16:13:36.044Z",
+  "updatedAt": "2026-10-08T16:13:36.044Z",
+  "meta": {
+    "name": "Siirt",
+    "nameIt": "Siirt",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Siirt.geojson",
+      "sha256": "69d5b82ca976e09bb6c85ba1d6ed83139990e472db0e0128178853d0801c818c",
+      "size": 159509,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "siirt",
+    "name": "Siirt",
+    "nameIt": "Siirt",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      41.93672,
+      37.93136
+    ],
+    "zoom": 11.6,
+    "population": 150782,
+    "grid": "cities/siirt/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/siirt/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "siirt",
+        "name": "Siirt",
+        "nameIt": "Siirt",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          41.93672,
+          37.93136
+        ],
+        "zoom": 11.6,
+        "population": 150782,
+        "cells": 138,
+        "layer": "cities/siirt/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            41.93672,
+            37.93136
+          ]
+        },
+        "properties": {
+          "id": "siirt",
+          "name": "Siirt",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 14.2,
+          "population": 150782
+        }
+      },
+      "summary": null
+    }
+  }
+}

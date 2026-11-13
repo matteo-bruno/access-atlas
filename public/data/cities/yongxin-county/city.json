@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yongxin-county",
+  "createdAt": "2026-10-08T16:24:12.441Z",
+  "updatedAt": "2026-10-08T16:24:12.441Z",
+  "meta": {
+    "name": "Yongxin County",
+    "nameIt": "Yongxin County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yongxin County.geojson",
+      "sha256": "5ef4bfa17178c554453e0975eaa3224b1273c4e8af3dfab29d550be14e944582",
+      "size": 142528,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yongxin-county",
+    "name": "Yongxin County",
+    "nameIt": "Yongxin County",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.23824,
+      26.95437
+    ],
+    "zoom": 12,
+    "population": 86816,
+    "grid": "cities/yongxin-county/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yongxin-county/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yongxin-county",
+        "name": "Yongxin County",
+        "nameIt": "Yongxin County",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.23824,
+          26.95437
+        ],
+        "zoom": 12,
+        "population": 86816,
+        "cells": 122,
+        "layer": "cities/yongxin-county/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.23824,
+            26.95437
+          ]
+        },
+        "properties": {
+          "id": "yongxin-county",
+          "name": "Yongxin County",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 86816
+        }
+      },
+      "summary": null
+    }
+  }
+}

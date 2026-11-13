@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mount-annan",
+  "createdAt": "2026-10-08T15:58:33.197Z",
+  "updatedAt": "2026-10-08T15:58:33.197Z",
+  "meta": {
+    "name": "Mount Annan",
+    "nameIt": "Mount Annan",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mount Annan.geojson",
+      "sha256": "d9ca30730fd7293a46d743f817fcbedc95a861d653fed7171fe79aaff401b66d",
+      "size": 205914,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mount-annan",
+    "name": "Mount Annan",
+    "nameIt": "Mount Annan",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      150.74479,
+      -34.04985
+    ],
+    "zoom": 11.2,
+    "population": 44191,
+    "grid": "cities/mount-annan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mount-annan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mount-annan",
+        "name": "Mount Annan",
+        "nameIt": "Mount Annan",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          150.74479,
+          -34.04985
+        ],
+        "zoom": 11.2,
+        "population": 44191,
+        "cells": 176,
+        "layer": "cities/mount-annan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            150.74479,
+            -34.04985
+          ]
+        },
+        "properties": {
+          "id": "mount-annan",
+          "name": "Mount Annan",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 19.4,
+          "population": 44191
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bhagalpur",
+  "createdAt": "2026-10-08T15:18:06.756Z",
+  "updatedAt": "2026-10-08T15:18:06.756Z",
+  "meta": {
+    "name": "Bhagalpur",
+    "nameIt": "Bhagalpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bhagalpur.geojson",
+      "sha256": "2f1abcc8a324d53a89dafc95dd08a8404dbe6a57ed9e1e1861d83625a818bd7d",
+      "size": 516975,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bhagalpur",
+    "name": "Bhagalpur",
+    "nameIt": "Bhagalpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.98102,
+      25.24236
+    ],
+    "zoom": 10.3,
+    "population": 783763,
+    "grid": "cities/bhagalpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bhagalpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bhagalpur",
+        "name": "Bhagalpur",
+        "nameIt": "Bhagalpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.98102,
+          25.24236
+        ],
+        "zoom": 10.3,
+        "population": 783763,
+        "cells": 446,
+        "layer": "cities/bhagalpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.98102,
+            25.24236
+          ]
+        },
+        "properties": {
+          "id": "bhagalpur",
+          "name": "Bhagalpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 30.8,
+          "population": 783763
+        }
+      },
+      "summary": null
+    }
+  }
+}

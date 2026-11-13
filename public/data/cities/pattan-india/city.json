@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pattan-india",
+  "createdAt": "2026-10-08T16:04:44.183Z",
+  "updatedAt": "2026-10-08T16:04:44.183Z",
+  "meta": {
+    "name": "Pattan (India)",
+    "nameIt": "Pattan (India)",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pattan (India).geojson",
+      "sha256": "df079f499694afb8adf167ceb9df27898a7b26f8387476c6afb931f0107ef686",
+      "size": 225228,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pattan-india",
+    "name": "Pattan (India)",
+    "nameIt": "Pattan (India)",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.58842,
+      34.1515
+    ],
+    "zoom": 10.8,
+    "population": 38902,
+    "grid": "cities/pattan-india/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pattan-india/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pattan-india",
+        "name": "Pattan (India)",
+        "nameIt": "Pattan (India)",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.58842,
+          34.1515
+        ],
+        "zoom": 10.8,
+        "population": 38902,
+        "cells": 195,
+        "layer": "cities/pattan-india/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.58842,
+            34.1515
+          ]
+        },
+        "properties": {
+          "id": "pattan-india",
+          "name": "Pattan (India)",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 38902
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "linqu",
+  "createdAt": "2026-10-08T15:51:27.221Z",
+  "updatedAt": "2026-10-08T15:51:27.221Z",
+  "meta": {
+    "name": "Linqu",
+    "nameIt": "Linqu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Linqu.geojson",
+      "sha256": "3e31340bcdfcf1777dcff6525347a48f11fd800bcc72c60e9de80e034fd0eb27",
+      "size": 1597168,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "linqu",
+    "name": "Linqu",
+    "nameIt": "Linqu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.54232,
+      36.50858
+    ],
+    "zoom": 10.3,
+    "population": 362780,
+    "grid": "cities/linqu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 170
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/linqu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "linqu",
+        "name": "Linqu",
+        "nameIt": "Linqu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.54232,
+          36.50858
+        ],
+        "zoom": 10.3,
+        "population": 362780,
+        "cells": 1369,
+        "layer": "cities/linqu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 170
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.54232,
+            36.50858
+          ]
+        },
+        "properties": {
+          "id": "linqu",
+          "name": "Linqu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 34.8,
+          "population": 362780
+        }
+      },
+      "summary": null
+    }
+  }
+}

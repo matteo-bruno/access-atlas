@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chingo",
+  "createdAt": "2026-10-08T15:24:50.685Z",
+  "updatedAt": "2026-10-08T15:24:50.685Z",
+  "meta": {
+    "name": "Chingo",
+    "nameIt": "Chingo",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chingo.geojson",
+      "sha256": "d5df52f6830b8fb3c20e431e971ed88489b46fd3f5287288140b0d8fb16b54ac",
+      "size": 203738,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chingo",
+    "name": "Chingo",
+    "nameIt": "Chingo",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO",
+    "center": [
+      13.86239,
+      -11.18138
+    ],
+    "zoom": 11.6,
+    "population": 111288,
+    "grid": "cities/chingo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chingo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chingo",
+        "name": "Chingo",
+        "nameIt": "Chingo",
+        "region": "Angola",
+        "regionIt": "Angola",
+        "country": "AO",
+        "center": [
+          13.86239,
+          -11.18138
+        ],
+        "zoom": 11.6,
+        "population": 111288,
+        "cells": 173,
+        "layer": "cities/chingo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.86239,
+            -11.18138
+          ]
+        },
+        "properties": {
+          "id": "chingo",
+          "name": "Chingo",
+          "country": "AO",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 111288
+        }
+      },
+      "summary": null
+    }
+  }
+}

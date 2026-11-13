@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hamedan",
+  "createdAt": "2026-10-08T15:37:30.883Z",
+  "updatedAt": "2026-10-08T15:37:30.883Z",
+  "meta": {
+    "name": "Hamedan",
+    "nameIt": "Hamedan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hamedan.geojson",
+      "sha256": "7810b078fe94eee78a693414803c264d6f93277d7fcf6c1ae19f9b0a56d6cec4",
+      "size": 843799,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hamedan",
+    "name": "Hamedan",
+    "nameIt": "Hamedan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      48.51686,
+      34.80387
+    ],
+    "zoom": 10.5,
+    "population": 560289,
+    "grid": "cities/hamedan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hamedan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hamedan",
+        "name": "Hamedan",
+        "nameIt": "Hamedan",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          48.51686,
+          34.80387
+        ],
+        "zoom": 10.5,
+        "population": 560289,
+        "cells": 733,
+        "layer": "cities/hamedan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.51686,
+            34.80387
+          ]
+        },
+        "properties": {
+          "id": "hamedan",
+          "name": "Hamedan",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 27.2,
+          "population": 560289
+        }
+      },
+      "summary": null
+    }
+  }
+}

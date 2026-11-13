@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "honjo",
+  "createdAt": "2026-10-08T15:39:02.592Z",
+  "updatedAt": "2026-10-08T15:39:02.592Z",
+  "meta": {
+    "name": "Honjo",
+    "nameIt": "Honjo",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Honjo.geojson",
+      "sha256": "8c3f2ef7a12b09177733c36683c5e4bae29a3e40918100a25b2889f8ab07c148",
+      "size": 347042,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "honjo",
+    "name": "Honjo",
+    "nameIt": "Honjo",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      139.16884,
+      36.23725
+    ],
+    "zoom": 11,
+    "population": 72747,
+    "grid": "cities/honjo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/honjo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "honjo",
+        "name": "Honjo",
+        "nameIt": "Honjo",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          139.16884,
+          36.23725
+        ],
+        "zoom": 11,
+        "population": 72747,
+        "cells": 300,
+        "layer": "cities/honjo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.16884,
+            36.23725
+          ]
+        },
+        "properties": {
+          "id": "honjo",
+          "name": "Honjo",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 72747
+        }
+      },
+      "summary": null
+    }
+  }
+}

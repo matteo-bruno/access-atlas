@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chapeco",
+  "createdAt": "2026-10-08T15:23:54.614Z",
+  "updatedAt": "2026-10-08T15:23:54.614Z",
+  "meta": {
+    "name": "Chapecó",
+    "nameIt": "Chapecó",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chapecó.geojson",
+      "sha256": "8825c1c5fec6697996802cc1d7f43a9d03e4d07e70af46286ded9b100ae020fd",
+      "size": 672146,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chapeco",
+    "name": "Chapecó",
+    "nameIt": "Chapecó",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -52.62507,
+      -27.09748
+    ],
+    "zoom": 10.5,
+    "population": 225599,
+    "grid": "cities/chapeco/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chapeco/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chapeco",
+        "name": "Chapecó",
+        "nameIt": "Chapecó",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -52.62507,
+          -27.09748
+        ],
+        "zoom": 10.5,
+        "population": 225599,
+        "cells": 576,
+        "layer": "cities/chapeco/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -52.62507,
+            -27.09748
+          ]
+        },
+        "properties": {
+          "id": "chapeco",
+          "name": "Chapecó",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 225599
+        }
+      },
+      "summary": null
+    }
+  }
+}

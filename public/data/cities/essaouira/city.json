@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "essaouira",
+  "createdAt": "2026-10-08T15:32:33.418Z",
+  "updatedAt": "2026-10-08T15:32:33.418Z",
+  "meta": {
+    "name": "Essaouira",
+    "nameIt": "Essaouira",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Essaouira.geojson",
+      "sha256": "2f9b1b3157d2ac7809d0ab385211a9178daf01bd86cb8aa5f0a54aafe4c580fd",
+      "size": 100615,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "essaouira",
+    "name": "Essaouira",
+    "nameIt": "Essaouira",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -9.75883,
+      31.50925
+    ],
+    "zoom": 12,
+    "population": 3761,
+    "grid": "cities/essaouira/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/essaouira/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "essaouira",
+        "name": "Essaouira",
+        "nameIt": "Essaouira",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -9.75883,
+          31.50925
+        ],
+        "zoom": 12,
+        "population": 3761,
+        "cells": 87,
+        "layer": "cities/essaouira/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -9.75883,
+            31.50925
+          ]
+        },
+        "properties": {
+          "id": "essaouira",
+          "name": "Essaouira",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 8.9,
+          "population": 3761
+        }
+      },
+      "summary": null
+    }
+  }
+}

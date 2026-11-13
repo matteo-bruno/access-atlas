@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jiaocheng",
+  "createdAt": "2026-10-08T15:42:41.684Z",
+  "updatedAt": "2026-10-08T15:42:41.684Z",
+  "meta": {
+    "name": "Jiaocheng",
+    "nameIt": "Jiaocheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jiaocheng.geojson",
+      "sha256": "58a008965bf4128c1fcb002a51a4375b697a7baac035e9fe144dcd0961a76168",
+      "size": 1380255,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jiaocheng",
+    "name": "Jiaocheng",
+    "nameIt": "Jiaocheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.24417,
+      37.57622
+    ],
+    "zoom": 9.6,
+    "population": 314998,
+    "grid": "cities/jiaocheng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jiaocheng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jiaocheng",
+        "name": "Jiaocheng",
+        "nameIt": "Jiaocheng",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.24417,
+          37.57622
+        ],
+        "zoom": 9.6,
+        "population": 314998,
+        "cells": 1184,
+        "layer": "cities/jiaocheng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.24417,
+            37.57622
+          ]
+        },
+        "properties": {
+          "id": "jiaocheng",
+          "name": "Jiaocheng",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 314998
+        }
+      },
+      "summary": null
+    }
+  }
+}

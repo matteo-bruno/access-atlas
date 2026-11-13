@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pouytenga",
+  "createdAt": "2026-10-08T16:06:26.315Z",
+  "updatedAt": "2026-10-08T16:06:26.315Z",
+  "meta": {
+    "name": "Pouytenga",
+    "nameIt": "Pouytenga",
+    "region": "Burkina Faso",
+    "regionIt": "Burkina Faso",
+    "country": "BF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pouytenga.geojson",
+      "sha256": "89ee6ed5981ec59788684ba2a06165b110474a808b1c0c4d822c333d134a761f",
+      "size": 225504,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pouytenga",
+    "name": "Pouytenga",
+    "nameIt": "Pouytenga",
+    "region": "Burkina Faso",
+    "regionIt": "Burkina Faso",
+    "country": "BF",
+    "center": [
+      -0.42739,
+      12.25237
+    ],
+    "zoom": 11.9,
+    "population": 83427,
+    "grid": "cities/pouytenga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pouytenga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pouytenga",
+        "name": "Pouytenga",
+        "nameIt": "Pouytenga",
+        "region": "Burkina Faso",
+        "regionIt": "Burkina Faso",
+        "country": "BF",
+        "center": [
+          -0.42739,
+          12.25237
+        ],
+        "zoom": 11.9,
+        "population": 83427,
+        "cells": 191,
+        "layer": "cities/pouytenga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.42739,
+            12.25237
+          ]
+        },
+        "properties": {
+          "id": "pouytenga",
+          "name": "Pouytenga",
+          "country": "BF",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 83427
+        }
+      },
+      "summary": null
+    }
+  }
+}

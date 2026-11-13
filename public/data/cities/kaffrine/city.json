@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kaffrine",
+  "createdAt": "2026-10-08T15:44:00.783Z",
+  "updatedAt": "2026-10-08T15:44:00.783Z",
+  "meta": {
+    "name": "Kaffrine",
+    "nameIt": "Kaffrine",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kaffrine.geojson",
+      "sha256": "9ee8973fdd03523f7afadfc0e660ea3af7daa78411a6eec72deb16f86f5f06fe",
+      "size": 140222,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kaffrine",
+    "name": "Kaffrine",
+    "nameIt": "Kaffrine",
+    "region": "Senegal",
+    "regionIt": "Senegal",
+    "country": "SN",
+    "center": [
+      -15.54725,
+      14.10191
+    ],
+    "zoom": 12,
+    "population": 84906,
+    "grid": "cities/kaffrine/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kaffrine/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kaffrine",
+        "name": "Kaffrine",
+        "nameIt": "Kaffrine",
+        "region": "Senegal",
+        "regionIt": "Senegal",
+        "country": "SN",
+        "center": [
+          -15.54725,
+          14.10191
+        ],
+        "zoom": 12,
+        "population": 84906,
+        "cells": 119,
+        "layer": "cities/kaffrine/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -15.54725,
+            14.10191
+          ]
+        },
+        "properties": {
+          "id": "kaffrine",
+          "name": "Kaffrine",
+          "country": "SN",
+          "isStudy": true,
+          "proximityMinutes": 15.1,
+          "population": 84906
+        }
+      },
+      "summary": null
+    }
+  }
+}

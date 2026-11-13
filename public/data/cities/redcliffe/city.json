@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "redcliffe",
+  "createdAt": "2026-10-08T16:08:32.641Z",
+  "updatedAt": "2026-10-08T16:08:32.641Z",
+  "meta": {
+    "name": "Redcliffe",
+    "nameIt": "Redcliffe",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Redcliffe.geojson",
+      "sha256": "37f0e10465ab2fc3d34f06835945a03ef3056429ff2a193db6fca4150bc8b36a",
+      "size": 357802,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "redcliffe",
+    "name": "Redcliffe",
+    "nameIt": "Redcliffe",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      153.09829,
+      -27.22772
+    ],
+    "zoom": 11,
+    "population": 57131,
+    "grid": "cities/redcliffe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/redcliffe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "redcliffe",
+        "name": "Redcliffe",
+        "nameIt": "Redcliffe",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          153.09829,
+          -27.22772
+        ],
+        "zoom": 11,
+        "population": 57131,
+        "cells": 307,
+        "layer": "cities/redcliffe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            153.09829,
+            -27.22772
+          ]
+        },
+        "properties": {
+          "id": "redcliffe",
+          "name": "Redcliffe",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 15.5,
+          "population": 57131
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "akkalkot",
+  "createdAt": "2026-10-08T15:03:44.442Z",
+  "updatedAt": "2026-10-08T15:03:44.442Z",
+  "meta": {
+    "name": "Akkalkot",
+    "nameIt": "Akkalkot",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Akkalkot.geojson",
+      "sha256": "3bc26794ae0a6f8afbf7f111287f035b2cd94cf879e3418f861a669af728c1e9",
+      "size": 78758,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "akkalkot",
+    "name": "Akkalkot",
+    "nameIt": "Akkalkot",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.20072,
+      17.52159
+    ],
+    "zoom": 12,
+    "population": 36949,
+    "grid": "cities/akkalkot/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/akkalkot/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "akkalkot",
+        "name": "Akkalkot",
+        "nameIt": "Akkalkot",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.20072,
+          17.52159
+        ],
+        "zoom": 12,
+        "population": 36949,
+        "cells": 68,
+        "layer": "cities/akkalkot/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.20072,
+            17.52159
+          ]
+        },
+        "properties": {
+          "id": "akkalkot",
+          "name": "Akkalkot",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 36949
+        }
+      },
+      "summary": null
+    }
+  }
+}

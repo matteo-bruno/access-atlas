@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "grozny",
+  "createdAt": "2026-10-08T15:36:04.675Z",
+  "updatedAt": "2026-10-08T15:36:04.675Z",
+  "meta": {
+    "name": "Grozny",
+    "nameIt": "Grozny",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Grozny.geojson",
+      "sha256": "26699ecf88c143f0ddcbe2a79986153fdbf9a7f39fcf5813ed2ef6233f314968",
+      "size": 572255,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "grozny",
+    "name": "Grozny",
+    "nameIt": "Grozny",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      45.70052,
+      43.31302
+    ],
+    "zoom": 10.8,
+    "population": 267049,
+    "grid": "cities/grozny/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/grozny/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "grozny",
+        "name": "Grozny",
+        "nameIt": "Grozny",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          45.70052,
+          43.31302
+        ],
+        "zoom": 10.8,
+        "population": 267049,
+        "cells": 498,
+        "layer": "cities/grozny/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            45.70052,
+            43.31302
+          ]
+        },
+        "properties": {
+          "id": "grozny",
+          "name": "Grozny",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 22.2,
+          "population": 267049
+        }
+      },
+      "summary": null
+    }
+  }
+}

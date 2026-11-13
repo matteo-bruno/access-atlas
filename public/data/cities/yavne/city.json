@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yavne",
+  "createdAt": "2026-10-08T16:23:37.960Z",
+  "updatedAt": "2026-10-08T16:23:37.960Z",
+  "meta": {
+    "name": "Yavne",
+    "nameIt": "Yavne",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yavne.geojson",
+      "sha256": "5ac94022e35564e32e08bf42aa8640bbe75a3fa6114c96d53e37d81d5e98f657",
+      "size": 103795,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yavne",
+    "name": "Yavne",
+    "nameIt": "Yavne",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL",
+    "center": [
+      34.73803,
+      31.87148
+    ],
+    "zoom": 11.6,
+    "population": 51929,
+    "grid": "cities/yavne/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yavne/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yavne",
+        "name": "Yavne",
+        "nameIt": "Yavne",
+        "region": "Israel",
+        "regionIt": "Israele",
+        "country": "IL",
+        "center": [
+          34.73803,
+          31.87148
+        ],
+        "zoom": 11.6,
+        "population": 51929,
+        "cells": 90,
+        "layer": "cities/yavne/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.73803,
+            31.87148
+          ]
+        },
+        "properties": {
+          "id": "yavne",
+          "name": "Yavne",
+          "country": "IL",
+          "isStudy": true,
+          "proximityMinutes": 7.6,
+          "population": 51929
+        }
+      },
+      "summary": null
+    }
+  }
+}

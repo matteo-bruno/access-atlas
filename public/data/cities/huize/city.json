@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huize",
+  "createdAt": "2026-10-08T15:39:48.254Z",
+  "updatedAt": "2026-10-08T15:39:48.254Z",
+  "meta": {
+    "name": "Huize",
+    "nameIt": "Huize",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huize.geojson",
+      "sha256": "8478d86e18a8d26ae5a68df8fe1c96c2931741c8c982a86a9943a0c5d54c0fe6",
+      "size": 361226,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huize",
+    "name": "Huize",
+    "nameIt": "Huize",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      103.28698,
+      26.41644
+    ],
+    "zoom": 10.7,
+    "population": 260057,
+    "grid": "cities/huize/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huize/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huize",
+        "name": "Huize",
+        "nameIt": "Huize",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          103.28698,
+          26.41644
+        ],
+        "zoom": 10.7,
+        "population": 260057,
+        "cells": 309,
+        "layer": "cities/huize/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            103.28698,
+            26.41644
+          ]
+        },
+        "properties": {
+          "id": "huize",
+          "name": "Huize",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 18.4,
+          "population": 260057
+        }
+      },
+      "summary": null
+    }
+  }
+}

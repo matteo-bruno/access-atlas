@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yizhang",
+  "createdAt": "2026-10-08T16:24:03.253Z",
+  "updatedAt": "2026-10-08T16:24:03.253Z",
+  "meta": {
+    "name": "Yizhang",
+    "nameIt": "Yizhang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yizhang.geojson",
+      "sha256": "9d6938234feb739062680ed07afd64c33e9bcd9b6ad7393513756995843af12b",
+      "size": 128518,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yizhang",
+    "name": "Yizhang",
+    "nameIt": "Yizhang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      112.94504,
+      25.39988
+    ],
+    "zoom": 11.9,
+    "population": 105031,
+    "grid": "cities/yizhang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yizhang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yizhang",
+        "name": "Yizhang",
+        "nameIt": "Yizhang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          112.94504,
+          25.39988
+        ],
+        "zoom": 11.9,
+        "population": 105031,
+        "cells": 110,
+        "layer": "cities/yizhang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.94504,
+            25.39988
+          ]
+        },
+        "properties": {
+          "id": "yizhang",
+          "name": "Yizhang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 12.8,
+          "population": 105031
+        }
+      },
+      "summary": null
+    }
+  }
+}

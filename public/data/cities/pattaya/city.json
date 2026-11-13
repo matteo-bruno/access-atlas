@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pattaya",
+  "createdAt": "2026-10-08T16:04:45.160Z",
+  "updatedAt": "2026-10-08T16:04:45.160Z",
+  "meta": {
+    "name": "Pattaya",
+    "nameIt": "Pattaya",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pattaya.geojson",
+      "sha256": "d012a1ad4b27649620ff2fad79071a77e1e55ec8f3ddc30fac1f534eb4dd6dfe",
+      "size": 887417,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pattaya",
+    "name": "Pattaya",
+    "nameIt": "Pattaya",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      100.90495,
+      12.93217
+    ],
+    "zoom": 10.2,
+    "population": 386154,
+    "grid": "cities/pattaya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pattaya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pattaya",
+        "name": "Pattaya",
+        "nameIt": "Pattaya",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          100.90495,
+          12.93217
+        ],
+        "zoom": 10.2,
+        "population": 386154,
+        "cells": 767,
+        "layer": "cities/pattaya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            100.90495,
+            12.93217
+          ]
+        },
+        "properties": {
+          "id": "pattaya",
+          "name": "Pattaya",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 19.6,
+          "population": 386154
+        }
+      },
+      "summary": null
+    }
+  }
+}

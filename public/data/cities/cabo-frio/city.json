@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cabo-frio",
+  "createdAt": "2026-10-08T15:21:33.830Z",
+  "updatedAt": "2026-10-08T15:21:33.830Z",
+  "meta": {
+    "name": "Cabo Frio",
+    "nameIt": "Cabo Frio",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cabo Frio.geojson",
+      "sha256": "227bfc83b956a901361ee20410ddd728ea9582ad741782ea5cf0f3d23731dac1",
+      "size": 549032,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cabo-frio",
+    "name": "Cabo Frio",
+    "nameIt": "Cabo Frio",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -42.03478,
+      -22.86236
+    ],
+    "zoom": 10.9,
+    "population": 159818,
+    "grid": "cities/cabo-frio/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cabo-frio/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cabo-frio",
+        "name": "Cabo Frio",
+        "nameIt": "Cabo Frio",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -42.03478,
+          -22.86236
+        ],
+        "zoom": 10.9,
+        "population": 159818,
+        "cells": 466,
+        "layer": "cities/cabo-frio/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -42.03478,
+            -22.86236
+          ]
+        },
+        "properties": {
+          "id": "cabo-frio",
+          "name": "Cabo Frio",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 23.1,
+          "population": 159818
+        }
+      },
+      "summary": null
+    }
+  }
+}

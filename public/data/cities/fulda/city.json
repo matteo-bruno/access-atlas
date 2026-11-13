@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "fulda",
+  "createdAt": "2026-10-08T15:33:56.404Z",
+  "updatedAt": "2026-10-08T15:33:56.404Z",
+  "meta": {
+    "name": "Fulda",
+    "nameIt": "Fulda",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Fulda.geojson",
+      "sha256": "d8420bd9825abd5460d00f817a98b157fc6a12b3947d91e67ab07f240840dc42",
+      "size": 213811,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "fulda",
+    "name": "Fulda",
+    "nameIt": "Fulda",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      9.69056,
+      50.5538
+    ],
+    "zoom": 11.5,
+    "population": 50518,
+    "grid": "cities/fulda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/fulda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "fulda",
+        "name": "Fulda",
+        "nameIt": "Fulda",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.69056,
+          50.5538
+        ],
+        "zoom": 11.5,
+        "population": 50518,
+        "cells": 189,
+        "layer": "cities/fulda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.69056,
+            50.5538
+          ]
+        },
+        "properties": {
+          "id": "fulda",
+          "name": "Fulda",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 9.2,
+          "population": 50518
+        }
+      },
+      "summary": null
+    }
+  }
+}

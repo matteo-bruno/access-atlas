@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "barcelona-spain-fua",
+  "createdAt": "2026-10-19T16:55:18.753Z",
+  "updatedAt": "2026-10-19T16:55:18.753Z",
+  "meta": {
+    "name": "Barcelona (Spain)",
+    "nameIt": "Barcelona (Spain)",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "barcelona-spain-fua",
+    "name": "Barcelona (Spain)",
+    "nameIt": "Barcelona (Spain)",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "extent": "fua",
+    "core": "barcelona-spain",
+    "center": [
+      2.14801,
+      41.45032
+    ],
+    "zoom": 8.5,
+    "population": 4925442,
+    "grid": "cities/barcelona-spain-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/barcelona-spain-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "barcelona-spain-fua",
+        "name": "Barcelona (Spain)",
+        "nameIt": "Barcelona (Spain)",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "extent": "fua",
+        "core": "barcelona-spain",
+        "center": [
+          2.14801,
+          41.45032
+        ],
+        "zoom": 8.5,
+        "population": 4925442,
+        "cells": 19221,
+        "layer": "cities/barcelona-spain-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.14801,
+            41.45032
+          ]
+        },
+        "properties": {
+          "id": "barcelona-spain-fua",
+          "name": "Barcelona (Spain)",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 6.3,
+          "population": 4925442
+        }
+      },
+      "summary": null
+    }
+  }
+}

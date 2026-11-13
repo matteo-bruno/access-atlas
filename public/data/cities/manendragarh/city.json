@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "manendragarh",
+  "createdAt": "2026-10-08T15:54:36.048Z",
+  "updatedAt": "2026-10-08T15:54:36.048Z",
+  "meta": {
+    "name": "Manendragarh",
+    "nameIt": "Manendragarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Manendragarh.geojson",
+      "sha256": "ad77ff273180d822af6df8ca1ab24aaaa2cb841789f7a895c7984377576cec6e",
+      "size": 96188,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "manendragarh",
+    "name": "Manendragarh",
+    "nameIt": "Manendragarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      82.203,
+      23.21541
+    ],
+    "zoom": 12,
+    "population": 49755,
+    "grid": "cities/manendragarh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/manendragarh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "manendragarh",
+        "name": "Manendragarh",
+        "nameIt": "Manendragarh",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          82.203,
+          23.21541
+        ],
+        "zoom": 12,
+        "population": 49755,
+        "cells": 83,
+        "layer": "cities/manendragarh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            82.203,
+            23.21541
+          ]
+        },
+        "properties": {
+          "id": "manendragarh",
+          "name": "Manendragarh",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 49755
+        }
+      },
+      "summary": null
+    }
+  }
+}

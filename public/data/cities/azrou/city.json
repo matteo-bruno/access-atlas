@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "azrou",
+  "createdAt": "2026-10-08T15:12:05.424Z",
+  "updatedAt": "2026-10-08T15:12:05.424Z",
+  "meta": {
+    "name": "Azrou",
+    "nameIt": "Azrou",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Azrou.geojson",
+      "sha256": "4e19debd5a11a7dca555123d3005b81f03745cd79e2301a7bb3aadecacdbdf84",
+      "size": 73415,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "azrou",
+    "name": "Azrou",
+    "nameIt": "Azrou",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -5.22368,
+      33.4392
+    ],
+    "zoom": 12,
+    "population": 24038,
+    "grid": "cities/azrou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/azrou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "azrou",
+        "name": "Azrou",
+        "nameIt": "Azrou",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -5.22368,
+          33.4392
+        ],
+        "zoom": 12,
+        "population": 24038,
+        "cells": 63,
+        "layer": "cities/azrou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.22368,
+            33.4392
+          ]
+        },
+        "properties": {
+          "id": "azrou",
+          "name": "Azrou",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 24038
+        }
+      },
+      "summary": null
+    }
+  }
+}

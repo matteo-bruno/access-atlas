@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "andalyp",
+  "createdAt": "2026-10-08T15:07:26.541Z",
+  "updatedAt": "2026-10-08T15:07:26.541Z",
+  "meta": {
+    "name": "Andalyp",
+    "nameIt": "Andalyp",
+    "region": "Turkmenistan",
+    "regionIt": "Turkmenistan",
+    "country": "TM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Andalyp.geojson",
+      "sha256": "45da80201da0a1199b8ac1fb1e02bdd30fb2f8c50dffaedb0de9dd2d7f6dbc3b",
+      "size": 236334,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "andalyp",
+    "name": "Andalyp",
+    "nameIt": "Andalyp",
+    "region": "Turkmenistan",
+    "regionIt": "Turkmenistan",
+    "country": "TM",
+    "center": [
+      59.62831,
+      41.87738
+    ],
+    "zoom": 11.1,
+    "population": 53731,
+    "grid": "cities/andalyp/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/andalyp/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "andalyp",
+        "name": "Andalyp",
+        "nameIt": "Andalyp",
+        "region": "Turkmenistan",
+        "regionIt": "Turkmenistan",
+        "country": "TM",
+        "center": [
+          59.62831,
+          41.87738
+        ],
+        "zoom": 11.1,
+        "population": 53731,
+        "cells": 204,
+        "layer": "cities/andalyp/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            59.62831,
+            41.87738
+          ]
+        },
+        "properties": {
+          "id": "andalyp",
+          "name": "Andalyp",
+          "country": "TM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 53731
+        }
+      },
+      "summary": null
+    }
+  }
+}

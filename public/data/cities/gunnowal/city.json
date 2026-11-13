@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gunnowal",
+  "createdAt": "2026-10-08T15:36:44.414Z",
+  "updatedAt": "2026-10-08T15:36:44.414Z",
+  "meta": {
+    "name": "Gunnowal",
+    "nameIt": "Gunnowal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gunnowal.geojson",
+      "sha256": "d5dfc0c388d4b78abb860b57605e4cfed47f0344a50dd8f80bb2bb44f65a36d4",
+      "size": 229292,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gunnowal",
+    "name": "Gunnowal",
+    "nameIt": "Gunnowal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.03613,
+      31.56745
+    ],
+    "zoom": 11,
+    "population": 45220,
+    "grid": "cities/gunnowal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gunnowal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gunnowal",
+        "name": "Gunnowal",
+        "nameIt": "Gunnowal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.03613,
+          31.56745
+        ],
+        "zoom": 11,
+        "population": 45220,
+        "cells": 198,
+        "layer": "cities/gunnowal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.03613,
+            31.56745
+          ]
+        },
+        "properties": {
+          "id": "gunnowal",
+          "name": "Gunnowal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 45220
+        }
+      },
+      "summary": null
+    }
+  }
+}

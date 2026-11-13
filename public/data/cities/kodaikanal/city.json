@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kodaikanal",
+  "createdAt": "2026-10-08T15:47:34.773Z",
+  "updatedAt": "2026-10-08T15:47:34.773Z",
+  "meta": {
+    "name": "Kodaikanal",
+    "nameIt": "Kodaikanal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kodaikanal.geojson",
+      "sha256": "1be0fa79f684d3172c024dfd18d3587e1f36b8767334db7e1672dfaf5a4bf713",
+      "size": 150664,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kodaikanal",
+    "name": "Kodaikanal",
+    "nameIt": "Kodaikanal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.4887,
+      10.23881
+    ],
+    "zoom": 11.6,
+    "population": 34956,
+    "grid": "cities/kodaikanal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kodaikanal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kodaikanal",
+        "name": "Kodaikanal",
+        "nameIt": "Kodaikanal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.4887,
+          10.23881
+        ],
+        "zoom": 11.6,
+        "population": 34956,
+        "cells": 130,
+        "layer": "cities/kodaikanal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.4887,
+            10.23881
+          ]
+        },
+        "properties": {
+          "id": "kodaikanal",
+          "name": "Kodaikanal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19.8,
+          "population": 34956
+        }
+      },
+      "summary": null
+    }
+  }
+}

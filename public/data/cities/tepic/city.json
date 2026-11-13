@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tepic",
+  "createdAt": "2026-10-08T16:17:20.934Z",
+  "updatedAt": "2026-10-08T16:17:20.934Z",
+  "meta": {
+    "name": "Tepic",
+    "nameIt": "Tepic",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tepic.geojson",
+      "sha256": "1974740a7ec8f7c5e05a6a850c23d680785f43cf40158602da361273578f3a32",
+      "size": 590568,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tepic",
+    "name": "Tepic",
+    "nameIt": "Tepic",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -104.88325,
+      21.50083
+    ],
+    "zoom": 10.4,
+    "population": 378644,
+    "grid": "cities/tepic/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tepic/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tepic",
+        "name": "Tepic",
+        "nameIt": "Tepic",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -104.88325,
+          21.50083
+        ],
+        "zoom": 10.4,
+        "population": 378644,
+        "cells": 507,
+        "layer": "cities/tepic/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -104.88325,
+            21.50083
+          ]
+        },
+        "properties": {
+          "id": "tepic",
+          "name": "Tepic",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 378644
+        }
+      },
+      "summary": null
+    }
+  }
+}

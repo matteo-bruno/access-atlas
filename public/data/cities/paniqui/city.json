@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "paniqui",
+  "createdAt": "2026-10-08T16:04:05.473Z",
+  "updatedAt": "2026-10-08T16:04:05.473Z",
+  "meta": {
+    "name": "Paniqui",
+    "nameIt": "Paniqui",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Paniqui.geojson",
+      "sha256": "25ef300b03cb47b8312bcbf0a605469b92965660dfebb0f74ee2727af8b07c1e",
+      "size": 215783,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "paniqui",
+    "name": "Paniqui",
+    "nameIt": "Paniqui",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      120.58082,
+      15.67239
+    ],
+    "zoom": 11.4,
+    "population": 51950,
+    "grid": "cities/paniqui/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/paniqui/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "paniqui",
+        "name": "Paniqui",
+        "nameIt": "Paniqui",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          120.58082,
+          15.67239
+        ],
+        "zoom": 11.4,
+        "population": 51950,
+        "cells": 185,
+        "layer": "cities/paniqui/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.58082,
+            15.67239
+          ]
+        },
+        "properties": {
+          "id": "paniqui",
+          "name": "Paniqui",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 51950
+        }
+      },
+      "summary": null
+    }
+  }
+}

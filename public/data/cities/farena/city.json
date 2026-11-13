@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "farena",
+  "createdAt": "2026-10-08T15:32:52.910Z",
+  "updatedAt": "2026-10-08T15:32:52.910Z",
+  "meta": {
+    "name": "Farena",
+    "nameIt": "Farena",
+    "region": "Nepal",
+    "regionIt": "Nepal",
+    "country": "NP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Farena.geojson",
+      "sha256": "df343dc8e4d5f9d5229b6b0ed7d09f53ea06ed5b850efd2276a856b8beff1071",
+      "size": 213016,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "farena",
+    "name": "Farena",
+    "nameIt": "Farena",
+    "region": "Nepal",
+    "regionIt": "Nepal",
+    "country": "NP",
+    "center": [
+      83.3006,
+      27.39678
+    ],
+    "zoom": 11.4,
+    "population": 17796,
+    "grid": "cities/farena/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/farena/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "farena",
+        "name": "Farena",
+        "nameIt": "Farena",
+        "region": "Nepal",
+        "regionIt": "Nepal",
+        "country": "NP",
+        "center": [
+          83.3006,
+          27.39678
+        ],
+        "zoom": 11.4,
+        "population": 17796,
+        "cells": 184,
+        "layer": "cities/farena/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.3006,
+            27.39678
+          ]
+        },
+        "properties": {
+          "id": "farena",
+          "name": "Farena",
+          "country": "NP",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 17796
+        }
+      },
+      "summary": null
+    }
+  }
+}

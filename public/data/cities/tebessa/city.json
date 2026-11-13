@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tebessa",
+  "createdAt": "2026-10-08T16:17:03.645Z",
+  "updatedAt": "2026-10-08T16:17:03.645Z",
+  "meta": {
+    "name": "Tebessa",
+    "nameIt": "Tebessa",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tebessa.geojson",
+      "sha256": "5694d96ad6add4785084703532b6b9920c919f8c4e1836a136263a25ca2611a3",
+      "size": 308397,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tebessa",
+    "name": "Tebessa",
+    "nameIt": "Tebessa",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      8.1087,
+      35.40856
+    ],
+    "zoom": 10.9,
+    "population": 253553,
+    "grid": "cities/tebessa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tebessa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tebessa",
+        "name": "Tebessa",
+        "nameIt": "Tebessa",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          8.1087,
+          35.40856
+        ],
+        "zoom": 10.9,
+        "population": 253553,
+        "cells": 268,
+        "layer": "cities/tebessa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.1087,
+            35.40856
+          ]
+        },
+        "properties": {
+          "id": "tebessa",
+          "name": "Tebessa",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 20.6,
+          "population": 253553
+        }
+      },
+      "summary": null
+    }
+  }
+}

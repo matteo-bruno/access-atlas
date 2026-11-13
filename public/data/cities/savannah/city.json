@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "savannah",
+  "createdAt": "2026-10-08T16:11:40.980Z",
+  "updatedAt": "2026-10-08T16:11:40.980Z",
+  "meta": {
+    "name": "Savannah",
+    "nameIt": "Savannah",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Savannah.geojson",
+      "sha256": "4b3d1e72bac0d31750324828ff811b2269c7de357f3781060c70de23a5c5221c",
+      "size": 800697,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "savannah",
+    "name": "Savannah",
+    "nameIt": "Savannah",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -81.10207,
+      32.03493
+    ],
+    "zoom": 10.1,
+    "population": 93107,
+    "grid": "cities/savannah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/savannah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "savannah",
+        "name": "Savannah",
+        "nameIt": "Savannah",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -81.10207,
+          32.03493
+        ],
+        "zoom": 10.1,
+        "population": 93107,
+        "cells": 694,
+        "layer": "cities/savannah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.10207,
+            32.03493
+          ]
+        },
+        "properties": {
+          "id": "savannah",
+          "name": "Savannah",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 25.4,
+          "population": 93107
+        }
+      },
+      "summary": null
+    }
+  }
+}

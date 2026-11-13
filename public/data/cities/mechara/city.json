@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mechara",
+  "createdAt": "2026-10-08T15:56:08.266Z",
+  "updatedAt": "2026-10-08T15:56:08.266Z",
+  "meta": {
+    "name": "Mechara",
+    "nameIt": "Mechara",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mechara.geojson",
+      "sha256": "884eebf0b4e6ef36b35427b19e0b171b788cdbcb6b0fa56dd23300e186d3ce1c",
+      "size": 111745,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mechara",
+    "name": "Mechara",
+    "nameIt": "Mechara",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      40.32131,
+      8.60594
+    ],
+    "zoom": 12,
+    "population": 11338,
+    "grid": "cities/mechara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mechara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mechara",
+        "name": "Mechara",
+        "nameIt": "Mechara",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          40.32131,
+          8.60594
+        ],
+        "zoom": 12,
+        "population": 11338,
+        "cells": 97,
+        "layer": "cities/mechara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.32131,
+            8.60594
+          ]
+        },
+        "properties": {
+          "id": "mechara",
+          "name": "Mechara",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 11338
+        }
+      },
+      "summary": null
+    }
+  }
+}

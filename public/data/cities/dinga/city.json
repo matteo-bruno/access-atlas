@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dinga",
+  "createdAt": "2026-10-08T15:30:05.085Z",
+  "updatedAt": "2026-10-08T15:30:05.085Z",
+  "meta": {
+    "name": "Dinga",
+    "nameIt": "Dinga",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dinga.geojson",
+      "sha256": "380fadefa532866b343fba841375f80cc3338da5f81ea3276687d08be7b2e048",
+      "size": 127065,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dinga",
+    "name": "Dinga",
+    "nameIt": "Dinga",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      73.72313,
+      32.64073
+    ],
+    "zoom": 11.9,
+    "population": 70540,
+    "grid": "cities/dinga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dinga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dinga",
+        "name": "Dinga",
+        "nameIt": "Dinga",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          73.72313,
+          32.64073
+        ],
+        "zoom": 11.9,
+        "population": 70540,
+        "cells": 110,
+        "layer": "cities/dinga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.72313,
+            32.64073
+          ]
+        },
+        "properties": {
+          "id": "dinga",
+          "name": "Dinga",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 70540
+        }
+      },
+      "summary": null
+    }
+  }
+}

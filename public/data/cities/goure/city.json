@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "goure",
+  "createdAt": "2026-10-08T15:35:50.951Z",
+  "updatedAt": "2026-10-08T15:35:50.951Z",
+  "meta": {
+    "name": "Gouré",
+    "nameIt": "Gouré",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gouré.geojson",
+      "sha256": "1c69313d8b0df4e765cda41dc86e77c4e3ee2355460361a08076887c06fa23b4",
+      "size": 72369,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "goure",
+    "name": "Gouré",
+    "nameIt": "Gouré",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE",
+    "center": [
+      10.26506,
+      13.98579
+    ],
+    "zoom": 12,
+    "population": 24906,
+    "grid": "cities/goure/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/goure/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "goure",
+        "name": "Gouré",
+        "nameIt": "Gouré",
+        "region": "Niger",
+        "regionIt": "Niger",
+        "country": "NE",
+        "center": [
+          10.26506,
+          13.98579
+        ],
+        "zoom": 12,
+        "population": 24906,
+        "cells": 62,
+        "layer": "cities/goure/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.26506,
+            13.98579
+          ]
+        },
+        "properties": {
+          "id": "goure",
+          "name": "Gouré",
+          "country": "NE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 24906
+        }
+      },
+      "summary": null
+    }
+  }
+}

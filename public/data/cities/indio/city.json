@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "indio",
+  "createdAt": "2026-10-08T15:40:48.729Z",
+  "updatedAt": "2026-10-08T15:40:48.729Z",
+  "meta": {
+    "name": "Indio",
+    "nameIt": "Indio",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Indio.geojson",
+      "sha256": "987019c99d236aa987acacd3dc1805a17bf2c709f76129996d7b4fa272ae8218",
+      "size": 965366,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "indio",
+    "name": "Indio",
+    "nameIt": "Indio",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -116.23631,
+      33.71424
+    ],
+    "zoom": 9.8,
+    "population": 167827,
+    "grid": "cities/indio/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/indio/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "indio",
+        "name": "Indio",
+        "nameIt": "Indio",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -116.23631,
+          33.71424
+        ],
+        "zoom": 9.8,
+        "population": 167827,
+        "cells": 824,
+        "layer": "cities/indio/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -116.23631,
+            33.71424
+          ]
+        },
+        "properties": {
+          "id": "indio",
+          "name": "Indio",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 28.1,
+          "population": 167827
+        }
+      },
+      "summary": null
+    }
+  }
+}

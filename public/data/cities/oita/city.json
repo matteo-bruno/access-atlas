@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oita",
+  "createdAt": "2026-10-08T16:02:37.554Z",
+  "updatedAt": "2026-10-08T16:02:37.554Z",
+  "meta": {
+    "name": "Oita",
+    "nameIt": "Oita",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Oita.geojson",
+      "sha256": "136cd773e051e26106995c55216b58a9f92b9657e02a41c4a6636869fe8579ef",
+      "size": 2116039,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "oita",
+    "name": "Oita",
+    "nameIt": "Oita",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      131.63849,
+      33.22823
+    ],
+    "zoom": 9.5,
+    "population": 406073,
+    "grid": "cities/oita/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oita/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oita",
+        "name": "Oita",
+        "nameIt": "Oita",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          131.63849,
+          33.22823
+        ],
+        "zoom": 9.5,
+        "population": 406073,
+        "cells": 1837,
+        "layer": "cities/oita/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            131.63849,
+            33.22823
+          ]
+        },
+        "properties": {
+          "id": "oita",
+          "name": "Oita",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 17.7,
+          "population": 406073
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "saltillo",
+  "createdAt": "2026-10-08T16:10:11.061Z",
+  "updatedAt": "2026-10-08T16:10:11.061Z",
+  "meta": {
+    "name": "Saltillo",
+    "nameIt": "Saltillo",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Saltillo.geojson",
+      "sha256": "b815df7c7cb56ae43b1623475e81005297226f6f19e9ecd44af75ededfec4a81",
+      "size": 1420287,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "saltillo",
+    "name": "Saltillo",
+    "nameIt": "Saltillo",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -100.98216,
+      25.4227
+    ],
+    "zoom": 9.8,
+    "population": 834281,
+    "grid": "cities/saltillo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/saltillo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "saltillo",
+        "name": "Saltillo",
+        "nameIt": "Saltillo",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -100.98216,
+          25.4227
+        ],
+        "zoom": 9.8,
+        "population": 834281,
+        "cells": 1215,
+        "layer": "cities/saltillo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -100.98216,
+            25.4227
+          ]
+        },
+        "properties": {
+          "id": "saltillo",
+          "name": "Saltillo",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 26.6,
+          "population": 834281
+        }
+      },
+      "summary": null
+    }
+  }
+}

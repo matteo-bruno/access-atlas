@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sangmelima",
+  "createdAt": "2026-10-08T16:10:55.121Z",
+  "updatedAt": "2026-10-08T16:10:55.121Z",
+  "meta": {
+    "name": "Sangmélima",
+    "nameIt": "Sangmélima",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sangmélima.geojson",
+      "sha256": "e9c739f5335081ceb9e65f4e7cb5962322b2197271aceccc6b473a848103a7e2",
+      "size": 201271,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sangmelima",
+    "name": "Sangmélima",
+    "nameIt": "Sangmélima",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      11.98072,
+      2.93751
+    ],
+    "zoom": 11.7,
+    "population": 49902,
+    "grid": "cities/sangmelima/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sangmelima/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sangmelima",
+        "name": "Sangmélima",
+        "nameIt": "Sangmélima",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          11.98072,
+          2.93751
+        ],
+        "zoom": 11.7,
+        "population": 49902,
+        "cells": 173,
+        "layer": "cities/sangmelima/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.98072,
+            2.93751
+          ]
+        },
+        "properties": {
+          "id": "sangmelima",
+          "name": "Sangmélima",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 49902
+        }
+      },
+      "summary": null
+    }
+  }
+}

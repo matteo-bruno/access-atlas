@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nanaimo",
+  "createdAt": "2026-10-08T15:59:57.990Z",
+  "updatedAt": "2026-10-08T15:59:57.990Z",
+  "meta": {
+    "name": "Nanaimo",
+    "nameIt": "Nanaimo",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nanaimo.geojson",
+      "sha256": "77c470aeae5337595a8fdae64003e6ea91842ababe771295287fd61ed5f4f27a",
+      "size": 638968,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nanaimo",
+    "name": "Nanaimo",
+    "nameIt": "Nanaimo",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -123.98442,
+      49.19468
+    ],
+    "zoom": 10.4,
+    "population": 84095,
+    "grid": "cities/nanaimo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nanaimo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nanaimo",
+        "name": "Nanaimo",
+        "nameIt": "Nanaimo",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -123.98442,
+          49.19468
+        ],
+        "zoom": 10.4,
+        "population": 84095,
+        "cells": 551,
+        "layer": "cities/nanaimo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -123.98442,
+            49.19468
+          ]
+        },
+        "properties": {
+          "id": "nanaimo",
+          "name": "Nanaimo",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 15.2,
+          "population": 84095
+        }
+      },
+      "summary": null
+    }
+  }
+}

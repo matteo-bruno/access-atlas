@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bart-n",
+  "createdAt": "2026-10-08T15:15:44.935Z",
+  "updatedAt": "2026-10-08T15:15:44.935Z",
+  "meta": {
+    "name": "Bartın",
+    "nameIt": "Bartın",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bartın.geojson",
+      "sha256": "a8cabe96b8b221de5adffead0d273299fded3ccca6e5fb439ec8c552f45b08cd",
+      "size": 135016,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bart-n",
+    "name": "Bartın",
+    "nameIt": "Bartın",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      32.33683,
+      41.62975
+    ],
+    "zoom": 11.7,
+    "population": 78339,
+    "grid": "cities/bart-n/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bart-n/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bart-n",
+        "name": "Bartın",
+        "nameIt": "Bartın",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          32.33683,
+          41.62975
+        ],
+        "zoom": 11.7,
+        "population": 78339,
+        "cells": 117,
+        "layer": "cities/bart-n/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.33683,
+            41.62975
+          ]
+        },
+        "properties": {
+          "id": "bart-n",
+          "name": "Bartın",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 78339
+        }
+      },
+      "summary": null
+    }
+  }
+}

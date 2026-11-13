@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kolea",
+  "createdAt": "2026-10-08T15:47:48.024Z",
+  "updatedAt": "2026-10-08T15:47:48.024Z",
+  "meta": {
+    "name": "Koléa",
+    "nameIt": "Koléa",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Koléa.geojson",
+      "sha256": "a98b69be581747eb0d8fe8fde898fd8e80a0930012e0a27a3b4cee5ce1e5ca91",
+      "size": 682987,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kolea",
+    "name": "Koléa",
+    "nameIt": "Koléa",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      2.74032,
+      36.64773
+    ],
+    "zoom": 10.2,
+    "population": 254784,
+    "grid": "cities/kolea/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kolea/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kolea",
+        "name": "Koléa",
+        "nameIt": "Koléa",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          2.74032,
+          36.64773
+        ],
+        "zoom": 10.2,
+        "population": 254784,
+        "cells": 596,
+        "layer": "cities/kolea/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.74032,
+            36.64773
+          ]
+        },
+        "properties": {
+          "id": "kolea",
+          "name": "Koléa",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 21.3,
+          "population": 254784
+        }
+      },
+      "summary": null
+    }
+  }
+}

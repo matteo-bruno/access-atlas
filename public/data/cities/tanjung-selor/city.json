@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tanjung-selor",
+  "createdAt": "2026-10-08T16:16:38.455Z",
+  "updatedAt": "2026-10-08T16:16:38.455Z",
+  "meta": {
+    "name": "Tanjung Selor",
+    "nameIt": "Tanjung Selor",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tanjung Selor.geojson",
+      "sha256": "0ab560802a377c41316ba19475c9a13ded299c22034ff625f1c583558ae6d480",
+      "size": 124362,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tanjung-selor",
+    "name": "Tanjung Selor",
+    "nameIt": "Tanjung Selor",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      117.3653,
+      2.84503
+    ],
+    "zoom": 11.9,
+    "population": 31402,
+    "grid": "cities/tanjung-selor/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tanjung-selor/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tanjung-selor",
+        "name": "Tanjung Selor",
+        "nameIt": "Tanjung Selor",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          117.3653,
+          2.84503
+        ],
+        "zoom": 11.9,
+        "population": 31402,
+        "cells": 107,
+        "layer": "cities/tanjung-selor/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.3653,
+            2.84503
+          ]
+        },
+        "properties": {
+          "id": "tanjung-selor",
+          "name": "Tanjung Selor",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 31402
+        }
+      },
+      "summary": null
+    }
+  }
+}

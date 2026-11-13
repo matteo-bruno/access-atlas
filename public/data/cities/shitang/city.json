@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shitang",
+  "createdAt": "2026-10-08T16:13:09.175Z",
+  "updatedAt": "2026-10-08T16:13:09.175Z",
+  "meta": {
+    "name": "Shitang",
+    "nameIt": "Shitang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shitang.geojson",
+      "sha256": "e6846d205e4477f71723fe9286ec57ced60f53d89bd1905d592f88d4ee994c96",
+      "size": 429730,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shitang",
+    "name": "Shitang",
+    "nameIt": "Shitang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      121.5972,
+      28.27562
+    ],
+    "zoom": 11.2,
+    "population": 36480,
+    "grid": "cities/shitang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 183
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shitang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shitang",
+        "name": "Shitang",
+        "nameIt": "Shitang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          121.5972,
+          28.27562
+        ],
+        "zoom": 11.2,
+        "population": 36480,
+        "cells": 368,
+        "layer": "cities/shitang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 183
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.5972,
+            28.27562
+          ]
+        },
+        "properties": {
+          "id": "shitang",
+          "name": "Shitang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 36480
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "eskisehir",
+  "createdAt": "2026-10-08T15:32:31.055Z",
+  "updatedAt": "2026-10-08T15:32:31.055Z",
+  "meta": {
+    "name": "Eskisehir",
+    "nameIt": "Eskisehir",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Eskisehir.geojson",
+      "sha256": "aaf23ca52ad5c8e34afcf2ca7c1d15a5c17ee51cec128ebd82d5fbbfa18cbf48",
+      "size": 681075,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "eskisehir",
+    "name": "Eskisehir",
+    "nameIt": "Eskisehir",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      30.51646,
+      39.77307
+    ],
+    "zoom": 10.2,
+    "population": 609691,
+    "grid": "cities/eskisehir/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/eskisehir/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "eskisehir",
+        "name": "Eskisehir",
+        "nameIt": "Eskisehir",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          30.51646,
+          39.77307
+        ],
+        "zoom": 10.2,
+        "population": 609691,
+        "cells": 594,
+        "layer": "cities/eskisehir/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.51646,
+            39.77307
+          ]
+        },
+        "properties": {
+          "id": "eskisehir",
+          "name": "Eskisehir",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 14.7,
+          "population": 609691
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "americana",
+  "createdAt": "2026-10-08T15:06:57.782Z",
+  "updatedAt": "2026-10-08T15:06:57.782Z",
+  "meta": {
+    "name": "Americana",
+    "nameIt": "Americana",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Americana.geojson",
+      "sha256": "da5da4083a9f14a06100a9170f976af9b380ab227d68e9222172d40f6c6af2c2",
+      "size": 1108048,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "americana",
+    "name": "Americana",
+    "nameIt": "Americana",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -47.35615,
+      -22.7421
+    ],
+    "zoom": 10.1,
+    "population": 402016,
+    "grid": "cities/americana/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/americana/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "americana",
+        "name": "Americana",
+        "nameIt": "Americana",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -47.35615,
+          -22.7421
+        ],
+        "zoom": 10.1,
+        "population": 402016,
+        "cells": 949,
+        "layer": "cities/americana/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.35615,
+            -22.7421
+          ]
+        },
+        "properties": {
+          "id": "americana",
+          "name": "Americana",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 17.4,
+          "population": 402016
+        }
+      },
+      "summary": null
+    }
+  }
+}

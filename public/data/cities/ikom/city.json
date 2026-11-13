@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ikom",
+  "createdAt": "2026-10-08T15:40:31.871Z",
+  "updatedAt": "2026-10-08T15:40:31.871Z",
+  "meta": {
+    "name": "Ikom",
+    "nameIt": "Ikom",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ikom.geojson",
+      "sha256": "bac57d4fc467b3f280c0957abba9e1ca220575a788e29c9551478fc463f371f5",
+      "size": 205864,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ikom",
+    "name": "Ikom",
+    "nameIt": "Ikom",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      8.72591,
+      5.9668
+    ],
+    "zoom": 11.6,
+    "population": 113446,
+    "grid": "cities/ikom/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ikom/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ikom",
+        "name": "Ikom",
+        "nameIt": "Ikom",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          8.72591,
+          5.9668
+        ],
+        "zoom": 11.6,
+        "population": 113446,
+        "cells": 179,
+        "layer": "cities/ikom/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.72591,
+            5.9668
+          ]
+        },
+        "properties": {
+          "id": "ikom",
+          "name": "Ikom",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 113446
+        }
+      },
+      "summary": null
+    }
+  }
+}

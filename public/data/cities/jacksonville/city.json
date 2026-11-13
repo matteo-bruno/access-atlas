@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jacksonville",
+  "createdAt": "2026-10-08T15:41:36.750Z",
+  "updatedAt": "2026-10-08T15:41:36.750Z",
+  "meta": {
+    "name": "Jacksonville",
+    "nameIt": "Jacksonville",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jacksonville.geojson",
+      "sha256": "9c752216b36097239b0e72388c60f7bb462edcea8be43b56b8ddc4bccdc79837",
+      "size": 3483349,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jacksonville",
+    "name": "Jacksonville",
+    "nameIt": "Jacksonville",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -81.6547,
+      30.30035
+    ],
+    "zoom": 9.5,
+    "population": 402140,
+    "grid": "cities/jacksonville/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jacksonville/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jacksonville",
+        "name": "Jacksonville",
+        "nameIt": "Jacksonville",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -81.6547,
+          30.30035
+        ],
+        "zoom": 9.5,
+        "population": 402140,
+        "cells": 3005,
+        "layer": "cities/jacksonville/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.6547,
+            30.30035
+          ]
+        },
+        "properties": {
+          "id": "jacksonville",
+          "name": "Jacksonville",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 35.8,
+          "population": 402140
+        }
+      },
+      "summary": null
+    }
+  }
+}

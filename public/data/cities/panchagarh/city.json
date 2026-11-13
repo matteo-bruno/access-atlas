@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "panchagarh",
+  "createdAt": "2026-10-08T16:03:57.988Z",
+  "updatedAt": "2026-10-08T16:03:57.988Z",
+  "meta": {
+    "name": "Panchagarh",
+    "nameIt": "Panchagarh",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Panchagarh.geojson",
+      "sha256": "3c48b37c9ee7e37793ac35c223b50aa5f3e6f3fe8e74bcc90603db630413fba7",
+      "size": 149422,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "panchagarh",
+    "name": "Panchagarh",
+    "nameIt": "Panchagarh",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      88.55718,
+      26.33572
+    ],
+    "zoom": 11.6,
+    "population": 49658,
+    "grid": "cities/panchagarh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/panchagarh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "panchagarh",
+        "name": "Panchagarh",
+        "nameIt": "Panchagarh",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          88.55718,
+          26.33572
+        ],
+        "zoom": 11.6,
+        "population": 49658,
+        "cells": 129,
+        "layer": "cities/panchagarh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.55718,
+            26.33572
+          ]
+        },
+        "properties": {
+          "id": "panchagarh",
+          "name": "Panchagarh",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 29.9,
+          "population": 49658
+        }
+      },
+      "summary": null
+    }
+  }
+}

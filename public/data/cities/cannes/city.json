@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cannes",
+  "createdAt": "2026-10-08T15:22:16.690Z",
+  "updatedAt": "2026-10-08T15:22:16.690Z",
+  "meta": {
+    "name": "Cannes",
+    "nameIt": "Cannes",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cannes.geojson",
+      "sha256": "66a7332bb2547552d1fd7630b3fadf4f9e91dc5e982514e38d8ccb6b42d52426",
+      "size": 932871,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cannes",
+    "name": "Cannes",
+    "nameIt": "Cannes",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      7.04701,
+      43.57189
+    ],
+    "zoom": 10.2,
+    "population": 229611,
+    "grid": "cities/cannes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cannes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cannes",
+        "name": "Cannes",
+        "nameIt": "Cannes",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          7.04701,
+          43.57189
+        ],
+        "zoom": 10.2,
+        "population": 229611,
+        "cells": 821,
+        "layer": "cities/cannes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.04701,
+            43.57189
+          ]
+        },
+        "properties": {
+          "id": "cannes",
+          "name": "Cannes",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 229611
+        }
+      },
+      "summary": null
+    }
+  }
+}

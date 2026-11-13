@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bundi",
+  "createdAt": "2026-10-08T15:20:49.855Z",
+  "updatedAt": "2026-10-08T15:20:49.855Z",
+  "meta": {
+    "name": "Bundi",
+    "nameIt": "Bundi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bundi.geojson",
+      "sha256": "a62a68245d2135cbb3cdd40d3de362dcb3736180fb3804bad47c68593a65744d",
+      "size": 176066,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bundi",
+    "name": "Bundi",
+    "nameIt": "Bundi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.64435,
+      25.43532
+    ],
+    "zoom": 11.7,
+    "population": 81631,
+    "grid": "cities/bundi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bundi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bundi",
+        "name": "Bundi",
+        "nameIt": "Bundi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.64435,
+          25.43532
+        ],
+        "zoom": 11.7,
+        "population": 81631,
+        "cells": 152,
+        "layer": "cities/bundi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.64435,
+            25.43532
+          ]
+        },
+        "properties": {
+          "id": "bundi",
+          "name": "Bundi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18.5,
+          "population": 81631
+        }
+      },
+      "summary": null
+    }
+  }
+}

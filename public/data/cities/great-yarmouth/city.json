@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "great-yarmouth",
+  "createdAt": "2026-10-08T15:35:59.019Z",
+  "updatedAt": "2026-10-08T15:35:59.019Z",
+  "meta": {
+    "name": "Great Yarmouth",
+    "nameIt": "Great Yarmouth",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Great Yarmouth.geojson",
+      "sha256": "2323ea92bce33fb89ac1bc76861c69b79d57470ec26fb84a0118b2a0d014d544",
+      "size": 340896,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "great-yarmouth",
+    "name": "Great Yarmouth",
+    "nameIt": "Great Yarmouth",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      1.7213,
+      52.59044
+    ],
+    "zoom": 11,
+    "population": 62780,
+    "grid": "cities/great-yarmouth/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/great-yarmouth/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "great-yarmouth",
+        "name": "Great Yarmouth",
+        "nameIt": "Great Yarmouth",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          1.7213,
+          52.59044
+        ],
+        "zoom": 11,
+        "population": 62780,
+        "cells": 298,
+        "layer": "cities/great-yarmouth/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.7213,
+            52.59044
+          ]
+        },
+        "properties": {
+          "id": "great-yarmouth",
+          "name": "Great Yarmouth",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 62780
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kasaragod",
+  "createdAt": "2026-10-08T15:45:25.227Z",
+  "updatedAt": "2026-10-08T15:45:25.227Z",
+  "meta": {
+    "name": "Kasaragod",
+    "nameIt": "Kasaragod",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kasaragod.geojson",
+      "sha256": "78c5ab8498b169a7e5c7b3ca91b0c2df18c0cfd320c181dd79c55fa6ecf4f6c2",
+      "size": 460783,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kasaragod",
+    "name": "Kasaragod",
+    "nameIt": "Kasaragod",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.0088,
+      12.51109
+    ],
+    "zoom": 10.6,
+    "population": 168292,
+    "grid": "cities/kasaragod/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kasaragod/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kasaragod",
+        "name": "Kasaragod",
+        "nameIt": "Kasaragod",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.0088,
+          12.51109
+        ],
+        "zoom": 10.6,
+        "population": 168292,
+        "cells": 400,
+        "layer": "cities/kasaragod/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.0088,
+            12.51109
+          ]
+        },
+        "properties": {
+          "id": "kasaragod",
+          "name": "Kasaragod",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.2,
+          "population": 168292
+        }
+      },
+      "summary": null
+    }
+  }
+}

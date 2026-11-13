@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "daule",
+  "createdAt": "2026-10-08T15:28:35.378Z",
+  "updatedAt": "2026-10-08T15:28:35.378Z",
+  "meta": {
+    "name": "Daule",
+    "nameIt": "Daule",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Daule.geojson",
+      "sha256": "c94d0de4e2d27f01be0dbe6dc1be50e0cfbb10f9955b3ec896667ea8f8c2aa47",
+      "size": 78929,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "daule",
+    "name": "Daule",
+    "nameIt": "Daule",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC",
+    "center": [
+      -79.97962,
+      -1.86373
+    ],
+    "zoom": 12,
+    "population": 35180,
+    "grid": "cities/daule/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/daule/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "daule",
+        "name": "Daule",
+        "nameIt": "Daule",
+        "region": "Ecuador",
+        "regionIt": "Ecuador",
+        "country": "EC",
+        "center": [
+          -79.97962,
+          -1.86373
+        ],
+        "zoom": 12,
+        "population": 35180,
+        "cells": 67,
+        "layer": "cities/daule/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -79.97962,
+            -1.86373
+          ]
+        },
+        "properties": {
+          "id": "daule",
+          "name": "Daule",
+          "country": "EC",
+          "isStudy": true,
+          "proximityMinutes": 12.2,
+          "population": 35180
+        }
+      },
+      "summary": null
+    }
+  }
+}

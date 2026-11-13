@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "meizhou",
+  "createdAt": "2026-10-08T15:56:23.586Z",
+  "updatedAt": "2026-10-08T15:56:23.586Z",
+  "meta": {
+    "name": "Meizhou",
+    "nameIt": "Meizhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Meizhou.geojson",
+      "sha256": "9e8e5b479b406c2e929b8a4a1120db05e7c52965242c2f309323615c5ed94b73",
+      "size": 1378968,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "meizhou",
+    "name": "Meizhou",
+    "nameIt": "Meizhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      116.10731,
+      24.29576
+    ],
+    "zoom": 10,
+    "population": 566189,
+    "grid": "cities/meizhou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/meizhou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "meizhou",
+        "name": "Meizhou",
+        "nameIt": "Meizhou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          116.10731,
+          24.29576
+        ],
+        "zoom": 10,
+        "population": 566189,
+        "cells": 1190,
+        "layer": "cities/meizhou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.10731,
+            24.29576
+          ]
+        },
+        "properties": {
+          "id": "meizhou",
+          "name": "Meizhou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 566189
+        }
+      },
+      "summary": null
+    }
+  }
+}

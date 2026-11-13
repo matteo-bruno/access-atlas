@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khazan-gedid",
+  "createdAt": "2026-10-08T15:46:40.980Z",
+  "updatedAt": "2026-10-08T15:46:40.980Z",
+  "meta": {
+    "name": "Khazan Gedid",
+    "nameIt": "Khazan Gedid",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khazan Gedid.geojson",
+      "sha256": "9c024f2d95bf5a6bf82131cb03efb6a1ea9ccae33e628ab2036ea3370e9683a0",
+      "size": 123523,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khazan-gedid",
+    "name": "Khazan Gedid",
+    "nameIt": "Khazan Gedid",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      25.71877,
+      12.65542
+    ],
+    "zoom": 12,
+    "population": 48687,
+    "grid": "cities/khazan-gedid/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khazan-gedid/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khazan-gedid",
+        "name": "Khazan Gedid",
+        "nameIt": "Khazan Gedid",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          25.71877,
+          12.65542
+        ],
+        "zoom": 12,
+        "population": 48687,
+        "cells": 106,
+        "layer": "cities/khazan-gedid/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.71877,
+            12.65542
+          ]
+        },
+        "properties": {
+          "id": "khazan-gedid",
+          "name": "Khazan Gedid",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 48687
+        }
+      },
+      "summary": null
+    }
+  }
+}

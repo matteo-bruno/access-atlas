@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "araucaria",
+  "createdAt": "2026-10-08T15:09:10.106Z",
+  "updatedAt": "2026-10-08T15:09:10.106Z",
+  "meta": {
+    "name": "Araucária",
+    "nameIt": "Araucária",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Araucária.geojson",
+      "sha256": "05240e4056e568607f90bea7cf6f3960a7ac4a7fcb9e7e46843e67d86745a15a",
+      "size": 562912,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "araucaria",
+    "name": "Araucária",
+    "nameIt": "Araucária",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -49.39104,
+      -25.58193
+    ],
+    "zoom": 10.6,
+    "population": 124653,
+    "grid": "cities/araucaria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/araucaria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "araucaria",
+        "name": "Araucária",
+        "nameIt": "Araucária",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -49.39104,
+          -25.58193
+        ],
+        "zoom": 10.6,
+        "population": 124653,
+        "cells": 477,
+        "layer": "cities/araucaria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.39104,
+            -25.58193
+          ]
+        },
+        "properties": {
+          "id": "araucaria",
+          "name": "Araucária",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 29.4,
+          "population": 124653
+        }
+      },
+      "summary": null
+    }
+  }
+}

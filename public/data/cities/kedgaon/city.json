@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kedgaon",
+  "createdAt": "2026-10-08T15:46:01.314Z",
+  "updatedAt": "2026-10-08T15:46:01.314Z",
+  "meta": {
+    "name": "Kedgaon",
+    "nameIt": "Kedgaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kedgaon.geojson",
+      "sha256": "fc77d48794f1dfa22b51e6246bbcc0ec8e656b4759dcaef25885ed6f9dd09f0e",
+      "size": 839960,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kedgaon",
+    "name": "Kedgaon",
+    "nameIt": "Kedgaon",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.72384,
+      19.11435
+    ],
+    "zoom": 10.2,
+    "population": 470450,
+    "grid": "cities/kedgaon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kedgaon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kedgaon",
+        "name": "Kedgaon",
+        "nameIt": "Kedgaon",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.72384,
+          19.11435
+        ],
+        "zoom": 10.2,
+        "population": 470450,
+        "cells": 725,
+        "layer": "cities/kedgaon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.72384,
+            19.11435
+          ]
+        },
+        "properties": {
+          "id": "kedgaon",
+          "name": "Kedgaon",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 32.5,
+          "population": 470450
+        }
+      },
+      "summary": null
+    }
+  }
+}

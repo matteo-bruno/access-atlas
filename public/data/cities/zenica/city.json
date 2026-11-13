@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zenica",
+  "createdAt": "2026-10-08T16:24:56.112Z",
+  "updatedAt": "2026-10-08T16:24:56.112Z",
+  "meta": {
+    "name": "Zenica",
+    "nameIt": "Zenica",
+    "region": "Bosnia and Herzegovina",
+    "regionIt": "Bosnia ed Erzegovina",
+    "country": "BA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zenica.geojson",
+      "sha256": "21a83afda92ce892f42042641e43bf453623e959c9518259a5844e961049e356",
+      "size": 162488,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zenica",
+    "name": "Zenica",
+    "nameIt": "Zenica",
+    "region": "Bosnia and Herzegovina",
+    "regionIt": "Bosnia ed Erzegovina",
+    "country": "BA",
+    "center": [
+      17.91538,
+      44.20713
+    ],
+    "zoom": 11.7,
+    "population": 52007,
+    "grid": "cities/zenica/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zenica/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zenica",
+        "name": "Zenica",
+        "nameIt": "Zenica",
+        "region": "Bosnia and Herzegovina",
+        "regionIt": "Bosnia ed Erzegovina",
+        "country": "BA",
+        "center": [
+          17.91538,
+          44.20713
+        ],
+        "zoom": 11.7,
+        "population": 52007,
+        "cells": 141,
+        "layer": "cities/zenica/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            17.91538,
+            44.20713
+          ]
+        },
+        "properties": {
+          "id": "zenica",
+          "name": "Zenica",
+          "country": "BA",
+          "isStudy": true,
+          "proximityMinutes": 17.4,
+          "population": 52007
+        }
+      },
+      "summary": null
+    }
+  }
+}

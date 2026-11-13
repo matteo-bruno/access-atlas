@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ivanovo",
+  "createdAt": "2026-10-08T15:41:29.082Z",
+  "updatedAt": "2026-10-08T15:41:29.082Z",
+  "meta": {
+    "name": "Ivanovo",
+    "nameIt": "Ivanovo",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ivanovo.geojson",
+      "sha256": "dc81845ce3b666c7e3f4005876d249b492c7414cef9ed4ebed988665dd0d2e74",
+      "size": 852891,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ivanovo",
+    "name": "Ivanovo",
+    "nameIt": "Ivanovo",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      40.97827,
+      56.99659
+    ],
+    "zoom": 10.6,
+    "population": 308148,
+    "grid": "cities/ivanovo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ivanovo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ivanovo",
+        "name": "Ivanovo",
+        "nameIt": "Ivanovo",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          40.97827,
+          56.99659
+        ],
+        "zoom": 10.6,
+        "population": 308148,
+        "cells": 746,
+        "layer": "cities/ivanovo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.97827,
+            56.99659
+          ]
+        },
+        "properties": {
+          "id": "ivanovo",
+          "name": "Ivanovo",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 14,
+          "population": 308148
+        }
+      },
+      "summary": null
+    }
+  }
+}

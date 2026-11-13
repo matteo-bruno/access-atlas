@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ottapalam",
+  "createdAt": "2026-10-08T16:03:14.079Z",
+  "updatedAt": "2026-10-08T16:03:14.079Z",
+  "meta": {
+    "name": "Ottapalam",
+    "nameIt": "Ottapalam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ottapalam.geojson",
+      "sha256": "3f15f7ba9ac26123df64d90820e073e34b5509e629d57b32ebc9f37fe6536820",
+      "size": 368216,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ottapalam",
+    "name": "Ottapalam",
+    "nameIt": "Ottapalam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.39375,
+      10.77644
+    ],
+    "zoom": 10.4,
+    "population": 85389,
+    "grid": "cities/ottapalam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ottapalam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ottapalam",
+        "name": "Ottapalam",
+        "nameIt": "Ottapalam",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.39375,
+          10.77644
+        ],
+        "zoom": 10.4,
+        "population": 85389,
+        "cells": 319,
+        "layer": "cities/ottapalam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.39375,
+            10.77644
+          ]
+        },
+        "properties": {
+          "id": "ottapalam",
+          "name": "Ottapalam",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 20.9,
+          "population": 85389
+        }
+      },
+      "summary": null
+    }
+  }
+}

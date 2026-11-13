@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bantaeng",
+  "createdAt": "2026-10-08T15:15:09.452Z",
+  "updatedAt": "2026-10-08T15:15:09.452Z",
+  "meta": {
+    "name": "Bantaeng",
+    "nameIt": "Bantaeng",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bantaeng.geojson",
+      "sha256": "6d673780978f3a0252624d504c5c0475ff6db7a3fdd3cc9af5944fc82256bf37",
+      "size": 282609,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bantaeng",
+    "name": "Bantaeng",
+    "nameIt": "Bantaeng",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      119.95976,
+      -5.54796
+    ],
+    "zoom": 10.4,
+    "population": 54974,
+    "grid": "cities/bantaeng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bantaeng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bantaeng",
+        "name": "Bantaeng",
+        "nameIt": "Bantaeng",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          119.95976,
+          -5.54796
+        ],
+        "zoom": 10.4,
+        "population": 54974,
+        "cells": 242,
+        "layer": "cities/bantaeng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.95976,
+            -5.54796
+          ]
+        },
+        "properties": {
+          "id": "bantaeng",
+          "name": "Bantaeng",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 19.7,
+          "population": 54974
+        }
+      },
+      "summary": null
+    }
+  }
+}

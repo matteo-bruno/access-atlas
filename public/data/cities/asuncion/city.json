@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "asuncion",
+  "createdAt": "2026-10-08T15:10:35.275Z",
+  "updatedAt": "2026-10-08T15:10:35.275Z",
+  "meta": {
+    "name": "Asuncion",
+    "nameIt": "Asuncion",
+    "region": "Paraguay",
+    "regionIt": "Paraguay",
+    "country": "PY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Asuncion.geojson",
+      "sha256": "4123b4dce9046ec2273c83c2fea54b1615418b98658a6227aa07a8cec7c00856",
+      "size": 4779472,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "asuncion",
+    "name": "Asuncion",
+    "nameIt": "Asuncion",
+    "region": "Paraguay",
+    "regionIt": "Paraguay",
+    "country": "PY",
+    "center": [
+      -57.55143,
+      -25.32415
+    ],
+    "zoom": 9.3,
+    "population": 2022375,
+    "grid": "cities/asuncion/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/asuncion/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "asuncion",
+        "name": "Asuncion",
+        "nameIt": "Asuncion",
+        "region": "Paraguay",
+        "regionIt": "Paraguay",
+        "country": "PY",
+        "center": [
+          -57.55143,
+          -25.32415
+        ],
+        "zoom": 9.3,
+        "population": 2022375,
+        "cells": 4090,
+        "layer": "cities/asuncion/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -57.55143,
+            -25.32415
+          ]
+        },
+        "properties": {
+          "id": "asuncion",
+          "name": "Asuncion",
+          "country": "PY",
+          "isStudy": true,
+          "proximityMinutes": 17.3,
+          "population": 2022375
+        }
+      },
+      "summary": null
+    }
+  }
+}

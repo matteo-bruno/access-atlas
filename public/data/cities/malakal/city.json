@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "malakal",
+  "createdAt": "2026-10-08T15:54:04.269Z",
+  "updatedAt": "2026-10-08T15:54:04.269Z",
+  "meta": {
+    "name": "Malakal",
+    "nameIt": "Malakal",
+    "region": "South Sudan",
+    "regionIt": "Sudan del Sud",
+    "country": "SS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Malakal.geojson",
+      "sha256": "76228450d0d060728621309c4bf292b3cedd7e666e5a3fbb3d654bb1b6615e51",
+      "size": 183982,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "malakal",
+    "name": "Malakal",
+    "nameIt": "Malakal",
+    "region": "South Sudan",
+    "regionIt": "Sudan del Sud",
+    "country": "SS",
+    "center": [
+      31.66177,
+      9.52781
+    ],
+    "zoom": 11.5,
+    "population": 112887,
+    "grid": "cities/malakal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/malakal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "malakal",
+        "name": "Malakal",
+        "nameIt": "Malakal",
+        "region": "South Sudan",
+        "regionIt": "Sudan del Sud",
+        "country": "SS",
+        "center": [
+          31.66177,
+          9.52781
+        ],
+        "zoom": 11.5,
+        "population": 112887,
+        "cells": 159,
+        "layer": "cities/malakal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.66177,
+            9.52781
+          ]
+        },
+        "properties": {
+          "id": "malakal",
+          "name": "Malakal",
+          "country": "SS",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 112887
+        }
+      },
+      "summary": null
+    }
+  }
+}

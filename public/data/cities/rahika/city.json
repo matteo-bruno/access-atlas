@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rahika",
+  "createdAt": "2026-10-08T16:07:51.623Z",
+  "updatedAt": "2026-10-08T16:07:51.623Z",
+  "meta": {
+    "name": "Rahika",
+    "nameIt": "Rahika",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rahika.geojson",
+      "sha256": "f17779eb137691d4e544505e83a645353022056bde774d9d3fe3fafb9e87486c",
+      "size": 2070722,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rahika",
+    "name": "Rahika",
+    "nameIt": "Rahika",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.93352,
+      26.33196
+    ],
+    "zoom": 9.7,
+    "population": 424071,
+    "grid": "cities/rahika/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rahika/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rahika",
+        "name": "Rahika",
+        "nameIt": "Rahika",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.93352,
+          26.33196
+        ],
+        "zoom": 9.7,
+        "population": 424071,
+        "cells": 1784,
+        "layer": "cities/rahika/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.93352,
+            26.33196
+          ]
+        },
+        "properties": {
+          "id": "rahika",
+          "name": "Rahika",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 66.6,
+          "population": 424071
+        }
+      },
+      "summary": null
+    }
+  }
+}

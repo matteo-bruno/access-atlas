@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xichuan",
+  "createdAt": "2026-10-08T16:22:30.510Z",
+  "updatedAt": "2026-10-08T16:22:30.510Z",
+  "meta": {
+    "name": "Xichuan",
+    "nameIt": "Xichuan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xichuan.geojson",
+      "sha256": "dde9121703b6835a1294fbdc7b6a9123bc66fd2116826320bb1d06a663a4376f",
+      "size": 325297,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xichuan",
+    "name": "Xichuan",
+    "nameIt": "Xichuan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      111.48694,
+      33.1309
+    ],
+    "zoom": 10.9,
+    "population": 181935,
+    "grid": "cities/xichuan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xichuan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xichuan",
+        "name": "Xichuan",
+        "nameIt": "Xichuan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          111.48694,
+          33.1309
+        ],
+        "zoom": 10.9,
+        "population": 181935,
+        "cells": 279,
+        "layer": "cities/xichuan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            111.48694,
+            33.1309
+          ]
+        },
+        "properties": {
+          "id": "xichuan",
+          "name": "Xichuan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 26.5,
+          "population": 181935
+        }
+      },
+      "summary": null
+    }
+  }
+}

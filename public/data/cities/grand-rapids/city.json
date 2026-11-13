@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "grand-rapids",
+  "createdAt": "2026-10-08T15:35:56.160Z",
+  "updatedAt": "2026-10-08T15:35:56.160Z",
+  "meta": {
+    "name": "Grand Rapids",
+    "nameIt": "Grand Rapids",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Grand Rapids.geojson",
+      "sha256": "0da65577a50d5af279a34567f3ac405c0cb79b93b604b4163c8810f8d0d2741f",
+      "size": 1826757,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "grand-rapids",
+    "name": "Grand Rapids",
+    "nameIt": "Grand Rapids",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -85.6576,
+      42.93006
+    ],
+    "zoom": 9.8,
+    "population": 317141,
+    "grid": "cities/grand-rapids/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/grand-rapids/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "grand-rapids",
+        "name": "Grand Rapids",
+        "nameIt": "Grand Rapids",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -85.6576,
+          42.93006
+        ],
+        "zoom": 9.8,
+        "population": 317141,
+        "cells": 1584,
+        "layer": "cities/grand-rapids/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.6576,
+            42.93006
+          ]
+        },
+        "properties": {
+          "id": "grand-rapids",
+          "name": "Grand Rapids",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 24.2,
+          "population": 317141
+        }
+      },
+      "summary": null
+    }
+  }
+}

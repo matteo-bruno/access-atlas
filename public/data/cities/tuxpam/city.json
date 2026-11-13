@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tuxpam",
+  "createdAt": "2026-10-08T16:19:29.879Z",
+  "updatedAt": "2026-10-08T16:19:29.879Z",
+  "meta": {
+    "name": "Túxpam",
+    "nameIt": "Túxpam",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Túxpam.geojson",
+      "sha256": "efab4a39993fc3a2243d44b2a8ceb31ffb5d8c455d0b92245e5f995938f5b0c2",
+      "size": 308415,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tuxpam",
+    "name": "Túxpam",
+    "nameIt": "Túxpam",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -97.40777,
+      20.95565
+    ],
+    "zoom": 10.7,
+    "population": 101165,
+    "grid": "cities/tuxpam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tuxpam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tuxpam",
+        "name": "Túxpam",
+        "nameIt": "Túxpam",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -97.40777,
+          20.95565
+        ],
+        "zoom": 10.7,
+        "population": 101165,
+        "cells": 264,
+        "layer": "cities/tuxpam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.40777,
+            20.95565
+          ]
+        },
+        "properties": {
+          "id": "tuxpam",
+          "name": "Túxpam",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 25.6,
+          "population": 101165
+        }
+      },
+      "summary": null
+    }
+  }
+}

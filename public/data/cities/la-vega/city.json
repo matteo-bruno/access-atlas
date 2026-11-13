@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "la-vega",
+  "createdAt": "2026-10-08T15:49:26.744Z",
+  "updatedAt": "2026-10-08T15:49:26.744Z",
+  "meta": {
+    "name": "La Vega",
+    "nameIt": "La Vega",
+    "region": "Dominican Republic",
+    "regionIt": "Repubblica Dominicana",
+    "country": "DO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/La Vega.geojson",
+      "sha256": "740bff017f371e4f6241142fd7f8c77ca51ab76b648a3ddb660e818041d38c24",
+      "size": 374446,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "la-vega",
+    "name": "La Vega",
+    "nameIt": "La Vega",
+    "region": "Dominican Republic",
+    "regionIt": "Repubblica Dominicana",
+    "country": "DO",
+    "center": [
+      -70.52727,
+      19.22481
+    ],
+    "zoom": 11.3,
+    "population": 84396,
+    "grid": "cities/la-vega/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/la-vega/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "la-vega",
+        "name": "La Vega",
+        "nameIt": "La Vega",
+        "region": "Dominican Republic",
+        "regionIt": "Repubblica Dominicana",
+        "country": "DO",
+        "center": [
+          -70.52727,
+          19.22481
+        ],
+        "zoom": 11.3,
+        "population": 84396,
+        "cells": 322,
+        "layer": "cities/la-vega/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -70.52727,
+            19.22481
+          ]
+        },
+        "properties": {
+          "id": "la-vega",
+          "name": "La Vega",
+          "country": "DO",
+          "isStudy": true,
+          "proximityMinutes": 15.1,
+          "population": 84396
+        }
+      },
+      "summary": null
+    }
+  }
+}

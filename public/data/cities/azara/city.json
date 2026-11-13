@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "azara",
+  "createdAt": "2026-10-08T15:12:02.173Z",
+  "updatedAt": "2026-10-08T15:12:02.173Z",
+  "meta": {
+    "name": "Azara",
+    "nameIt": "Azara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Azara.geojson",
+      "sha256": "0a506a1976698bb5e2b08b41046a363f7a12fc571cdb58c8a4d232663400a72b",
+      "size": 294154,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "azara",
+    "name": "Azara",
+    "nameIt": "Azara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      91.50337,
+      26.09713
+    ],
+    "zoom": 10.9,
+    "population": 84571,
+    "grid": "cities/azara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/azara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "azara",
+        "name": "Azara",
+        "nameIt": "Azara",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          91.50337,
+          26.09713
+        ],
+        "zoom": 10.9,
+        "population": 84571,
+        "cells": 254,
+        "layer": "cities/azara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.50337,
+            26.09713
+          ]
+        },
+        "properties": {
+          "id": "azara",
+          "name": "Azara",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 84571
+        }
+      },
+      "summary": null
+    }
+  }
+}

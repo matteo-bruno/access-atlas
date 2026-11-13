@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "phuket",
+  "createdAt": "2026-10-08T16:05:19.498Z",
+  "updatedAt": "2026-10-08T16:05:19.498Z",
+  "meta": {
+    "name": "Phuket",
+    "nameIt": "Phuket",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Phuket.geojson",
+      "sha256": "4fc1881df846048b13f529f51648170ce407090cc640ddd4380452486c1ca17a",
+      "size": 1108938,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "phuket",
+    "name": "Phuket",
+    "nameIt": "Phuket",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      98.36668,
+      7.87716
+    ],
+    "zoom": 9.6,
+    "population": 574951,
+    "grid": "cities/phuket/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/phuket/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "phuket",
+        "name": "Phuket",
+        "nameIt": "Phuket",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          98.36668,
+          7.87716
+        ],
+        "zoom": 9.6,
+        "population": 574951,
+        "cells": 973,
+        "layer": "cities/phuket/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            98.36668,
+            7.87716
+          ]
+        },
+        "properties": {
+          "id": "phuket",
+          "name": "Phuket",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 22.4,
+          "population": 574951
+        }
+      },
+      "summary": null
+    }
+  }
+}

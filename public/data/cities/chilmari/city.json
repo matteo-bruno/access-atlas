@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chilmari",
+  "createdAt": "2026-10-08T15:24:47.603Z",
+  "updatedAt": "2026-10-08T15:24:47.603Z",
+  "meta": {
+    "name": "Chilmari",
+    "nameIt": "Chilmari",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chilmari.geojson",
+      "sha256": "a7c6c5b9bbdff86007170484a21adcee02f143cd4feed424882a248cb9fa13fa",
+      "size": 523604,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chilmari",
+    "name": "Chilmari",
+    "nameIt": "Chilmari",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      89.66384,
+      25.59169
+    ],
+    "zoom": 10.4,
+    "population": 64839,
+    "grid": "cities/chilmari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chilmari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chilmari",
+        "name": "Chilmari",
+        "nameIt": "Chilmari",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          89.66384,
+          25.59169
+        ],
+        "zoom": 10.4,
+        "population": 64839,
+        "cells": 452,
+        "layer": "cities/chilmari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            89.66384,
+            25.59169
+          ]
+        },
+        "properties": {
+          "id": "chilmari",
+          "name": "Chilmari",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 23.8,
+          "population": 64839
+        }
+      },
+      "summary": null
+    }
+  }
+}

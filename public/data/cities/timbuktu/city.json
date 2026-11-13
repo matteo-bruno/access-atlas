@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "timbuktu",
+  "createdAt": "2026-10-08T16:17:55.417Z",
+  "updatedAt": "2026-10-08T16:17:55.417Z",
+  "meta": {
+    "name": "Timbuktu",
+    "nameIt": "Timbuktu",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Timbuktu.geojson",
+      "sha256": "39a75cef1bd93a797fbc187e23c210d45bf7f68635cccdd2f3d301806f3bb0e0",
+      "size": 154646,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "timbuktu",
+    "name": "Timbuktu",
+    "nameIt": "Timbuktu",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML",
+    "center": [
+      -3.00511,
+      16.77303
+    ],
+    "zoom": 11.9,
+    "population": 174702,
+    "grid": "cities/timbuktu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/timbuktu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "timbuktu",
+        "name": "Timbuktu",
+        "nameIt": "Timbuktu",
+        "region": "Mali",
+        "regionIt": "Mali",
+        "country": "ML",
+        "center": [
+          -3.00511,
+          16.77303
+        ],
+        "zoom": 11.9,
+        "population": 174702,
+        "cells": 132,
+        "layer": "cities/timbuktu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -3.00511,
+            16.77303
+          ]
+        },
+        "properties": {
+          "id": "timbuktu",
+          "name": "Timbuktu",
+          "country": "ML",
+          "isStudy": true,
+          "proximityMinutes": 11.8,
+          "population": 174702
+        }
+      },
+      "summary": null
+    }
+  }
+}

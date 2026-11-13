@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kovilpatti",
+  "createdAt": "2026-10-08T15:48:16.128Z",
+  "updatedAt": "2026-10-08T15:48:16.128Z",
+  "meta": {
+    "name": "Kovilpatti",
+    "nameIt": "Kovilpatti",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kovilpatti.geojson",
+      "sha256": "de5e9bbdfc762338e4ced2e5124d09054d60dd4693d5f8ae46dbb68532eaf2ea",
+      "size": 256728,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kovilpatti",
+    "name": "Kovilpatti",
+    "nameIt": "Kovilpatti",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.87236,
+      9.17292
+    ],
+    "zoom": 11.3,
+    "population": 116742,
+    "grid": "cities/kovilpatti/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kovilpatti/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kovilpatti",
+        "name": "Kovilpatti",
+        "nameIt": "Kovilpatti",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.87236,
+          9.17292
+        ],
+        "zoom": 11.3,
+        "population": 116742,
+        "cells": 223,
+        "layer": "cities/kovilpatti/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.87236,
+            9.17292
+          ]
+        },
+        "properties": {
+          "id": "kovilpatti",
+          "name": "Kovilpatti",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19.8,
+          "population": 116742
+        }
+      },
+      "summary": null
+    }
+  }
+}

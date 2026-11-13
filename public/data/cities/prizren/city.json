@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "prizren",
+  "createdAt": "2026-10-08T16:06:35.312Z",
+  "updatedAt": "2026-10-08T16:06:35.312Z",
+  "meta": {
+    "name": "Prizren",
+    "nameIt": "Prizren",
+    "region": "Kosovo",
+    "regionIt": "Kosovo",
+    "country": "XK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Prizren.geojson",
+      "sha256": "cf65c75923484d9ac2877f9a0ec3f80396757132a122938e55f423cac98cf6d4",
+      "size": 205427,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "prizren",
+    "name": "Prizren",
+    "nameIt": "Prizren",
+    "region": "Kosovo",
+    "regionIt": "Kosovo",
+    "country": "XK",
+    "center": [
+      20.73297,
+      42.22038
+    ],
+    "zoom": 11.5,
+    "population": 93827,
+    "grid": "cities/prizren/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/prizren/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "prizren",
+        "name": "Prizren",
+        "nameIt": "Prizren",
+        "region": "Kosovo",
+        "regionIt": "Kosovo",
+        "country": "XK",
+        "center": [
+          20.73297,
+          42.22038
+        ],
+        "zoom": 11.5,
+        "population": 93827,
+        "cells": 178,
+        "layer": "cities/prizren/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.73297,
+            42.22038
+          ]
+        },
+        "properties": {
+          "id": "prizren",
+          "name": "Prizren",
+          "country": "XK",
+          "isStudy": true,
+          "proximityMinutes": 14.3,
+          "population": 93827
+        }
+      },
+      "summary": null
+    }
+  }
+}

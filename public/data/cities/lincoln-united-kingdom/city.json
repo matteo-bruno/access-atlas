@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lincoln-united-kingdom",
+  "createdAt": "2026-10-08T15:51:15.205Z",
+  "updatedAt": "2026-10-08T15:51:15.205Z",
+  "meta": {
+    "name": "Lincoln (United Kingdom)",
+    "nameIt": "Lincoln (United Kingdom)",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lincoln (United Kingdom).geojson",
+      "sha256": "e7d4c17b9cf6f2ed24e7b011a0dc42f1bf278271b824c05bc1c2cb5c2203f786",
+      "size": 512258,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lincoln-united-kingdom",
+    "name": "Lincoln (United Kingdom)",
+    "nameIt": "Lincoln (United Kingdom)",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.55876,
+      53.21827
+    ],
+    "zoom": 11,
+    "population": 126527,
+    "grid": "cities/lincoln-united-kingdom/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lincoln-united-kingdom/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lincoln-united-kingdom",
+        "name": "Lincoln (United Kingdom)",
+        "nameIt": "Lincoln (United Kingdom)",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.55876,
+          53.21827
+        ],
+        "zoom": 11,
+        "population": 126527,
+        "cells": 443,
+        "layer": "cities/lincoln-united-kingdom/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.55876,
+            53.21827
+          ]
+        },
+        "properties": {
+          "id": "lincoln-united-kingdom",
+          "name": "Lincoln (United Kingdom)",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 126527
+        }
+      },
+      "summary": null
+    }
+  }
+}

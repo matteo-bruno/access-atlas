@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sheberghan",
+  "createdAt": "2026-10-08T16:12:44.565Z",
+  "updatedAt": "2026-10-08T16:12:44.565Z",
+  "meta": {
+    "name": "Sheberghan",
+    "nameIt": "Sheberghan",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sheberghan.geojson",
+      "sha256": "177150fed4b02f2e32772b6e6513964af10a248d40648fac55bc11ae881ee781",
+      "size": 262342,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sheberghan",
+    "name": "Sheberghan",
+    "nameIt": "Sheberghan",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF",
+    "center": [
+      65.75484,
+      36.66581
+    ],
+    "zoom": 11.3,
+    "population": 136005,
+    "grid": "cities/sheberghan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sheberghan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sheberghan",
+        "name": "Sheberghan",
+        "nameIt": "Sheberghan",
+        "region": "Afghanistan",
+        "regionIt": "Afghanistan",
+        "country": "AF",
+        "center": [
+          65.75484,
+          36.66581
+        ],
+        "zoom": 11.3,
+        "population": 136005,
+        "cells": 227,
+        "layer": "cities/sheberghan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            65.75484,
+            36.66581
+          ]
+        },
+        "properties": {
+          "id": "sheberghan",
+          "name": "Sheberghan",
+          "country": "AF",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 136005
+        }
+      },
+      "summary": null
+    }
+  }
+}

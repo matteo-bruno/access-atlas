@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "beijing-fua",
+  "createdAt": "2026-10-19T16:55:22.026Z",
+  "updatedAt": "2026-10-19T16:55:22.026Z",
+  "meta": {
+    "name": "Beijing",
+    "nameIt": "Beijing",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "beijing-fua",
+    "name": "Beijing",
+    "nameIt": "Beijing",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "extent": "fua",
+    "core": "beijing",
+    "center": [
+      116.38733,
+      39.93009
+    ],
+    "zoom": 8.5,
+    "population": 20249751,
+    "grid": "cities/beijing-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/beijing-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "beijing-fua",
+        "name": "Beijing",
+        "nameIt": "Beijing",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "extent": "fua",
+        "core": "beijing",
+        "center": [
+          116.38733,
+          39.93009
+        ],
+        "zoom": 8.5,
+        "population": 20249751,
+        "cells": 73485,
+        "layer": "cities/beijing-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.38733,
+            39.93009
+          ]
+        },
+        "properties": {
+          "id": "beijing-fua",
+          "name": "Beijing",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24.4,
+          "population": 20249751
+        }
+      },
+      "summary": null
+    }
+  }
+}

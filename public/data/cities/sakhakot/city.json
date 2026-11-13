@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sakhakot",
+  "createdAt": "2026-10-08T16:09:58.302Z",
+  "updatedAt": "2026-10-08T16:09:58.302Z",
+  "meta": {
+    "name": "Sakhakot",
+    "nameIt": "Sakhakot",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sakhakot.geojson",
+      "sha256": "8530d79084fec9121340c674208b9fb4e5bf791424cb60e1471a2a460141740e",
+      "size": 568777,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sakhakot",
+    "name": "Sakhakot",
+    "nameIt": "Sakhakot",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      71.90134,
+      34.48371
+    ],
+    "zoom": 10.2,
+    "population": 160194,
+    "grid": "cities/sakhakot/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sakhakot/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sakhakot",
+        "name": "Sakhakot",
+        "nameIt": "Sakhakot",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          71.90134,
+          34.48371
+        ],
+        "zoom": 10.2,
+        "population": 160194,
+        "cells": 492,
+        "layer": "cities/sakhakot/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.90134,
+            34.48371
+          ]
+        },
+        "properties": {
+          "id": "sakhakot",
+          "name": "Sakhakot",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 160194
+        }
+      },
+      "summary": null
+    }
+  }
+}

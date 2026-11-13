@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chennai",
+  "createdAt": "2026-10-08T15:24:22.556Z",
+  "updatedAt": "2026-10-08T15:24:22.556Z",
+  "meta": {
+    "name": "Chennai",
+    "nameIt": "Chennai",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chennai.geojson",
+      "sha256": "894ace86b44709ac06d01e67019226039490839fd7294b0b4f2c19ff9b0f2736",
+      "size": 10744492,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chennai",
+    "name": "Chennai",
+    "nameIt": "Chennai",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.18608,
+      13.0338
+    ],
+    "zoom": 8.5,
+    "population": 6404969,
+    "grid": "cities/chennai/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chennai/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chennai",
+        "name": "Chennai",
+        "nameIt": "Chennai",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.18608,
+          13.0338
+        ],
+        "zoom": 8.5,
+        "population": 6404969,
+        "cells": 9312,
+        "layer": "cities/chennai/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.18608,
+            13.0338
+          ]
+        },
+        "properties": {
+          "id": "chennai",
+          "name": "Chennai",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 29.6,
+          "population": 6404969
+        }
+      },
+      "summary": null
+    }
+  }
+}

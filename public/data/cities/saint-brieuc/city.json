@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "saint-brieuc",
+  "createdAt": "2026-10-08T16:09:54.258Z",
+  "updatedAt": "2026-10-08T16:09:54.258Z",
+  "meta": {
+    "name": "Saint-Brieuc",
+    "nameIt": "Saint-Brieuc",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Saint-Brieuc.geojson",
+      "sha256": "7daf2e2c842cdd7bc4ddfa0238182fa5660eed66d24d5df26e8d903796376ae6",
+      "size": 280122,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "saint-brieuc",
+    "name": "Saint-Brieuc",
+    "nameIt": "Saint-Brieuc",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      -2.755,
+      48.50907
+    ],
+    "zoom": 11.4,
+    "population": 58316,
+    "grid": "cities/saint-brieuc/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/saint-brieuc/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "saint-brieuc",
+        "name": "Saint-Brieuc",
+        "nameIt": "Saint-Brieuc",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -2.755,
+          48.50907
+        ],
+        "zoom": 11.4,
+        "population": 58316,
+        "cells": 244,
+        "layer": "cities/saint-brieuc/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.755,
+            48.50907
+          ]
+        },
+        "properties": {
+          "id": "saint-brieuc",
+          "name": "Saint-Brieuc",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 8.7,
+          "population": 58316
+        }
+      },
+      "summary": null
+    }
+  }
+}

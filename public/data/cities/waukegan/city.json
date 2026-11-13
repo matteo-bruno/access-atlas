@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "waukegan",
+  "createdAt": "2026-10-08T16:21:27.454Z",
+  "updatedAt": "2026-10-08T16:21:27.454Z",
+  "meta": {
+    "name": "Waukegan",
+    "nameIt": "Waukegan",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Waukegan.geojson",
+      "sha256": "812aed367d596299c72c1670e0dd0897336385d3f3f05774b6b8fdb144fc435c",
+      "size": 806732,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "waukegan",
+    "name": "Waukegan",
+    "nameIt": "Waukegan",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -87.85883,
+      42.35908
+    ],
+    "zoom": 10.3,
+    "population": 128066,
+    "grid": "cities/waukegan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/waukegan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "waukegan",
+        "name": "Waukegan",
+        "nameIt": "Waukegan",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -87.85883,
+          42.35908
+        ],
+        "zoom": 10.3,
+        "population": 128066,
+        "cells": 700,
+        "layer": "cities/waukegan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.85883,
+            42.35908
+          ]
+        },
+        "properties": {
+          "id": "waukegan",
+          "name": "Waukegan",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20.2,
+          "population": 128066
+        }
+      },
+      "summary": null
+    }
+  }
+}

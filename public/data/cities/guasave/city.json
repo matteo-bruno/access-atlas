@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guasave",
+  "createdAt": "2026-10-08T15:36:24.692Z",
+  "updatedAt": "2026-10-08T15:36:24.692Z",
+  "meta": {
+    "name": "Guasave",
+    "nameIt": "Guasave",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guasave.geojson",
+      "sha256": "b66afb466740dde6a9b328792252355df381bce07725fa92351fe4e0a8912c30",
+      "size": 189162,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guasave",
+    "name": "Guasave",
+    "nameIt": "Guasave",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -108.46946,
+      25.5683
+    ],
+    "zoom": 11.6,
+    "population": 95946,
+    "grid": "cities/guasave/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guasave/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guasave",
+        "name": "Guasave",
+        "nameIt": "Guasave",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -108.46946,
+          25.5683
+        ],
+        "zoom": 11.6,
+        "population": 95946,
+        "cells": 161,
+        "layer": "cities/guasave/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -108.46946,
+            25.5683
+          ]
+        },
+        "properties": {
+          "id": "guasave",
+          "name": "Guasave",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 14.2,
+          "population": 95946
+        }
+      },
+      "summary": null
+    }
+  }
+}

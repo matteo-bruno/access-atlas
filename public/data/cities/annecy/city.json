@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "annecy",
+  "createdAt": "2026-10-08T15:08:02.074Z",
+  "updatedAt": "2026-10-08T15:08:02.074Z",
+  "meta": {
+    "name": "Annecy",
+    "nameIt": "Annecy",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Annecy.geojson",
+      "sha256": "78340f6ead671fc86eb44dfa911445f3a69b886e260aeea89286f2fc66215080",
+      "size": 385272,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "annecy",
+    "name": "Annecy",
+    "nameIt": "Annecy",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      6.11966,
+      45.90785
+    ],
+    "zoom": 11,
+    "population": 131611,
+    "grid": "cities/annecy/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/annecy/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "annecy",
+        "name": "Annecy",
+        "nameIt": "Annecy",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          6.11966,
+          45.90785
+        ],
+        "zoom": 11,
+        "population": 131611,
+        "cells": 340,
+        "layer": "cities/annecy/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.11966,
+            45.90785
+          ]
+        },
+        "properties": {
+          "id": "annecy",
+          "name": "Annecy",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 5.7,
+          "population": 131611
+        }
+      },
+      "summary": null
+    }
+  }
+}

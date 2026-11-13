@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hata",
+  "createdAt": "2026-10-08T15:38:02.339Z",
+  "updatedAt": "2026-10-08T15:38:02.339Z",
+  "meta": {
+    "name": "Hata",
+    "nameIt": "Hata",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hata.geojson",
+      "sha256": "e333cb9bb29af391766325b932e5aa88e8b6434e97d475819b851b9cbfdf02c0",
+      "size": 637956,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hata",
+    "name": "Hata",
+    "nameIt": "Hata",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.70391,
+      26.73501
+    ],
+    "zoom": 10.1,
+    "population": 149785,
+    "grid": "cities/hata/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hata/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hata",
+        "name": "Hata",
+        "nameIt": "Hata",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.70391,
+          26.73501
+        ],
+        "zoom": 10.1,
+        "population": 149785,
+        "cells": 550,
+        "layer": "cities/hata/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.70391,
+            26.73501
+          ]
+        },
+        "properties": {
+          "id": "hata",
+          "name": "Hata",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 30.6,
+          "population": 149785
+        }
+      },
+      "summary": null
+    }
+  }
+}

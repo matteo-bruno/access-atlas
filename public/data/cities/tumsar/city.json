@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tumsar",
+  "createdAt": "2026-10-08T16:19:12.300Z",
+  "updatedAt": "2026-10-08T16:19:12.300Z",
+  "meta": {
+    "name": "Tumsar",
+    "nameIt": "Tumsar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tumsar.geojson",
+      "sha256": "74694ce47edc03290710e3905afb35cf2a63cfcfd824483217310cca07e1e0d8",
+      "size": 74168,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tumsar",
+    "name": "Tumsar",
+    "nameIt": "Tumsar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.74512,
+      21.38158
+    ],
+    "zoom": 12,
+    "population": 43811,
+    "grid": "cities/tumsar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tumsar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tumsar",
+        "name": "Tumsar",
+        "nameIt": "Tumsar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.74512,
+          21.38158
+        ],
+        "zoom": 12,
+        "population": 43811,
+        "cells": 64,
+        "layer": "cities/tumsar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.74512,
+            21.38158
+          ]
+        },
+        "properties": {
+          "id": "tumsar",
+          "name": "Tumsar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 43811
+        }
+      },
+      "summary": null
+    }
+  }
+}

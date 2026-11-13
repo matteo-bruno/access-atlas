@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bokaro",
+  "createdAt": "2026-10-08T15:19:54.703Z",
+  "updatedAt": "2026-10-08T15:19:54.703Z",
+  "meta": {
+    "name": "Bokaro",
+    "nameIt": "Bokaro",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bokaro.geojson",
+      "sha256": "88fc6e8a91b8ab377732c32cb12a1ef802e57eeb388d9527f7e078abb8a861b2",
+      "size": 1023156,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bokaro",
+    "name": "Bokaro",
+    "nameIt": "Bokaro",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      86.14286,
+      23.65697
+    ],
+    "zoom": 10.1,
+    "population": 736410,
+    "grid": "cities/bokaro/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bokaro/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bokaro",
+        "name": "Bokaro",
+        "nameIt": "Bokaro",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          86.14286,
+          23.65697
+        ],
+        "zoom": 10.1,
+        "population": 736410,
+        "cells": 882,
+        "layer": "cities/bokaro/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            86.14286,
+            23.65697
+          ]
+        },
+        "properties": {
+          "id": "bokaro",
+          "name": "Bokaro",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 41.6,
+          "population": 736410
+        }
+      },
+      "summary": null
+    }
+  }
+}

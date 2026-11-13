@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "caycuma",
+  "createdAt": "2026-10-08T16:25:52.661Z",
+  "updatedAt": "2026-10-08T16:25:52.661Z",
+  "meta": {
+    "name": "Çaycuma",
+    "nameIt": "Çaycuma",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Çaycuma.geojson",
+      "sha256": "417b29b48297ff4f472e91e6b0b4867f01d41e704228c3c3b563e6f2bfe34bf9",
+      "size": 93768,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "caycuma",
+    "name": "Çaycuma",
+    "nameIt": "Çaycuma",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      32.08273,
+      41.4249
+    ],
+    "zoom": 12,
+    "population": 31748,
+    "grid": "cities/caycuma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/caycuma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "caycuma",
+        "name": "Çaycuma",
+        "nameIt": "Çaycuma",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          32.08273,
+          41.4249
+        ],
+        "zoom": 12,
+        "population": 31748,
+        "cells": 81,
+        "layer": "cities/caycuma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.08273,
+            41.4249
+          ]
+        },
+        "properties": {
+          "id": "caycuma",
+          "name": "Çaycuma",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 31748
+        }
+      },
+      "summary": null
+    }
+  }
+}

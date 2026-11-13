@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "itaperuna",
+  "createdAt": "2026-10-08T15:41:22.649Z",
+  "updatedAt": "2026-10-08T15:41:22.649Z",
+  "meta": {
+    "name": "Itaperuna",
+    "nameIt": "Itaperuna",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Itaperuna.geojson",
+      "sha256": "e5d6ed475aa1053a588d760585b3cc3d99d86a64c89f85f25c6f65a9a90154bb",
+      "size": 232130,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "itaperuna",
+    "name": "Itaperuna",
+    "nameIt": "Itaperuna",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -41.89057,
+      -21.20324
+    ],
+    "zoom": 11.5,
+    "population": 66782,
+    "grid": "cities/itaperuna/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/itaperuna/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "itaperuna",
+        "name": "Itaperuna",
+        "nameIt": "Itaperuna",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -41.89057,
+          -21.20324
+        ],
+        "zoom": 11.5,
+        "population": 66782,
+        "cells": 197,
+        "layer": "cities/itaperuna/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -41.89057,
+            -21.20324
+          ]
+        },
+        "properties": {
+          "id": "itaperuna",
+          "name": "Itaperuna",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 20.2,
+          "population": 66782
+        }
+      },
+      "summary": null
+    }
+  }
+}

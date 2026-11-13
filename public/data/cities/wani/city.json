@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wani",
+  "createdAt": "2026-10-08T16:21:19.508Z",
+  "updatedAt": "2026-10-08T16:21:19.508Z",
+  "meta": {
+    "name": "Wani",
+    "nameIt": "Wani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wani.geojson",
+      "sha256": "5669645e0f3e9030ae11fa3fdb896f28c7a3b863591b59aa1a49502950950685",
+      "size": 139984,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wani",
+    "name": "Wani",
+    "nameIt": "Wani",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.95463,
+      20.05452
+    ],
+    "zoom": 11.9,
+    "population": 83467,
+    "grid": "cities/wani/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wani/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wani",
+        "name": "Wani",
+        "nameIt": "Wani",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.95463,
+          20.05452
+        ],
+        "zoom": 11.9,
+        "population": 83467,
+        "cells": 121,
+        "layer": "cities/wani/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.95463,
+            20.05452
+          ]
+        },
+        "properties": {
+          "id": "wani",
+          "name": "Wani",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 83467
+        }
+      },
+      "summary": null
+    }
+  }
+}

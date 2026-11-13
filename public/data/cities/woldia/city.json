@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "woldia",
+  "createdAt": "2026-10-08T16:21:45.957Z",
+  "updatedAt": "2026-10-08T16:21:45.957Z",
+  "meta": {
+    "name": "Woldia",
+    "nameIt": "Woldia",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Woldia.geojson",
+      "sha256": "187ac829551719aafb024e0ede64fa425f8a6bb05113c130808c29289099c6be",
+      "size": 196581,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "woldia",
+    "name": "Woldia",
+    "nameIt": "Woldia",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      39.59399,
+      11.82727
+    ],
+    "zoom": 11.7,
+    "population": 152647,
+    "grid": "cities/woldia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/woldia/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "woldia",
+        "name": "Woldia",
+        "nameIt": "Woldia",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          39.59399,
+          11.82727
+        ],
+        "zoom": 11.7,
+        "population": 152647,
+        "cells": 169,
+        "layer": "cities/woldia/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.59399,
+            11.82727
+          ]
+        },
+        "properties": {
+          "id": "woldia",
+          "name": "Woldia",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 152647
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "landshut",
+  "createdAt": "2026-10-08T15:50:01.961Z",
+  "updatedAt": "2026-10-08T15:50:01.961Z",
+  "meta": {
+    "name": "Landshut",
+    "nameIt": "Landshut",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Landshut.geojson",
+      "sha256": "57b20860312e3f2520795674bd71f652574bdc590da4481eda5f2fe222b8198b",
+      "size": 291283,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "landshut",
+    "name": "Landshut",
+    "nameIt": "Landshut",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      12.14505,
+      48.54448
+    ],
+    "zoom": 11.3,
+    "population": 77004,
+    "grid": "cities/landshut/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/landshut/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "landshut",
+        "name": "Landshut",
+        "nameIt": "Landshut",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          12.14505,
+          48.54448
+        ],
+        "zoom": 11.3,
+        "population": 77004,
+        "cells": 255,
+        "layer": "cities/landshut/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.14505,
+            48.54448
+          ]
+        },
+        "properties": {
+          "id": "landshut",
+          "name": "Landshut",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 10,
+          "population": 77004
+        }
+      },
+      "summary": null
+    }
+  }
+}

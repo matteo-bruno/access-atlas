@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jijiga",
+  "createdAt": "2026-10-08T15:42:50.262Z",
+  "updatedAt": "2026-10-08T15:42:50.262Z",
+  "meta": {
+    "name": "Jijiga",
+    "nameIt": "Jijiga",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jijiga.geojson",
+      "sha256": "f589db111ce65dce824e136e64653e3100859c70bd1c3717537c2b539ccd6a2e",
+      "size": 505981,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jijiga",
+    "name": "Jijiga",
+    "nameIt": "Jijiga",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      42.79571,
+      9.35498
+    ],
+    "zoom": 10.9,
+    "population": 516851,
+    "grid": "cities/jijiga/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jijiga/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jijiga",
+        "name": "Jijiga",
+        "nameIt": "Jijiga",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          42.79571,
+          9.35498
+        ],
+        "zoom": 10.9,
+        "population": 516851,
+        "cells": 438,
+        "layer": "cities/jijiga/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            42.79571,
+            9.35498
+          ]
+        },
+        "properties": {
+          "id": "jijiga",
+          "name": "Jijiga",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 26.7,
+          "population": 516851
+        }
+      },
+      "summary": null
+    }
+  }
+}

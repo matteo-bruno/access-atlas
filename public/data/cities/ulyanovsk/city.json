@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ulyanovsk",
+  "createdAt": "2026-10-08T16:19:46.756Z",
+  "updatedAt": "2026-10-08T16:19:46.756Z",
+  "meta": {
+    "name": "Ulyanovsk",
+    "nameIt": "Ulyanovsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ulyanovsk.geojson",
+      "sha256": "af8a22c0d7290c83173dac74f43b8624cb09c9353fdd3540229cc4aba4c26575",
+      "size": 1033861,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ulyanovsk",
+    "name": "Ulyanovsk",
+    "nameIt": "Ulyanovsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      48.33775,
+      54.30092
+    ],
+    "zoom": 10,
+    "population": 371897,
+    "grid": "cities/ulyanovsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ulyanovsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ulyanovsk",
+        "name": "Ulyanovsk",
+        "nameIt": "Ulyanovsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          48.33775,
+          54.30092
+        ],
+        "zoom": 10,
+        "population": 371897,
+        "cells": 906,
+        "layer": "cities/ulyanovsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.33775,
+            54.30092
+          ]
+        },
+        "properties": {
+          "id": "ulyanovsk",
+          "name": "Ulyanovsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 9,
+          "population": 371897
+        }
+      },
+      "summary": null
+    }
+  }
+}

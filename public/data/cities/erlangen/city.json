@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "erlangen",
+  "createdAt": "2026-10-08T15:32:25.961Z",
+  "updatedAt": "2026-10-08T15:32:25.961Z",
+  "meta": {
+    "name": "Erlangen",
+    "nameIt": "Erlangen",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Erlangen.geojson",
+      "sha256": "11b127c7aa65ba95beafdd2c5df631f3b1b631409188629e3ef740074378a575",
+      "size": 452095,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "erlangen",
+    "name": "Erlangen",
+    "nameIt": "Erlangen",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      11.00255,
+      49.58895
+    ],
+    "zoom": 10.9,
+    "population": 100769,
+    "grid": "cities/erlangen/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/erlangen/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "erlangen",
+        "name": "Erlangen",
+        "nameIt": "Erlangen",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          11.00255,
+          49.58895
+        ],
+        "zoom": 10.9,
+        "population": 100769,
+        "cells": 396,
+        "layer": "cities/erlangen/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.00255,
+            49.58895
+          ]
+        },
+        "properties": {
+          "id": "erlangen",
+          "name": "Erlangen",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 7.5,
+          "population": 100769
+        }
+      },
+      "summary": null
+    }
+  }
+}

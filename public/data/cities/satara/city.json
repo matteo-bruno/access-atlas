@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "satara",
+  "createdAt": "2026-10-08T16:11:35.024Z",
+  "updatedAt": "2026-10-08T16:11:35.024Z",
+  "meta": {
+    "name": "Satara",
+    "nameIt": "Satara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Satara.geojson",
+      "sha256": "db7e3fcc9d0e076d7cd4dec80ab4bb8f2464450b1e0c9f10a541e6d0a0e6edcd",
+      "size": 452025,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "satara",
+    "name": "Satara",
+    "nameIt": "Satara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.00985,
+      17.68607
+    ],
+    "zoom": 10.8,
+    "population": 268980,
+    "grid": "cities/satara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/satara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "satara",
+        "name": "Satara",
+        "nameIt": "Satara",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.00985,
+          17.68607
+        ],
+        "zoom": 10.8,
+        "population": 268980,
+        "cells": 390,
+        "layer": "cities/satara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.00985,
+            17.68607
+          ]
+        },
+        "properties": {
+          "id": "satara",
+          "name": "Satara",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 24.1,
+          "population": 268980
+        }
+      },
+      "summary": null
+    }
+  }
+}

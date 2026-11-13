@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "balod",
+  "createdAt": "2026-10-08T15:14:11.535Z",
+  "updatedAt": "2026-10-08T15:14:11.535Z",
+  "meta": {
+    "name": "Balod",
+    "nameIt": "Balod",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Balod.geojson",
+      "sha256": "bab4d9621661b669d8654d4a08acc24fd7f528f1a652a8053abf9b001574b6d5",
+      "size": 104184,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "balod",
+    "name": "Balod",
+    "nameIt": "Balod",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      81.20283,
+      20.7294
+    ],
+    "zoom": 12,
+    "population": 32814,
+    "grid": "cities/balod/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/balod/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "balod",
+        "name": "Balod",
+        "nameIt": "Balod",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          81.20283,
+          20.7294
+        ],
+        "zoom": 12,
+        "population": 32814,
+        "cells": 90,
+        "layer": "cities/balod/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            81.20283,
+            20.7294
+          ]
+        },
+        "properties": {
+          "id": "balod",
+          "name": "Balod",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 32814
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baras",
+  "createdAt": "2026-10-08T15:15:30.082Z",
+  "updatedAt": "2026-10-08T15:15:30.082Z",
+  "meta": {
+    "name": "Baras",
+    "nameIt": "Baras",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baras.geojson",
+      "sha256": "13a8c3bf51d4e79f6edd341fb894736f3cd56f6f2c143b381cde878a18de0dd2",
+      "size": 175242,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baras",
+    "name": "Baras",
+    "nameIt": "Baras",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      121.25041,
+      14.5244
+    ],
+    "zoom": 11.7,
+    "population": 61877,
+    "grid": "cities/baras/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baras/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baras",
+        "name": "Baras",
+        "nameIt": "Baras",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          121.25041,
+          14.5244
+        ],
+        "zoom": 11.7,
+        "population": 61877,
+        "cells": 150,
+        "layer": "cities/baras/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.25041,
+            14.5244
+          ]
+        },
+        "properties": {
+          "id": "baras",
+          "name": "Baras",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 61877
+        }
+      },
+      "summary": null
+    }
+  }
+}

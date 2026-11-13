@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "melilla",
+  "createdAt": "2026-10-08T15:56:29.855Z",
+  "updatedAt": "2026-10-08T15:56:29.855Z",
+  "meta": {
+    "name": "Melilla",
+    "nameIt": "Melilla",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Melilla.geojson",
+      "sha256": "83673f6391b6e752da630bdc3866530318eb4795ec9ad8f9d6d64c38ca2b28fc",
+      "size": 86755,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "melilla",
+    "name": "Melilla",
+    "nameIt": "Melilla",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -2.94777,
+      35.293
+    ],
+    "zoom": 12,
+    "population": 59824,
+    "grid": "cities/melilla/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/melilla/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "melilla",
+        "name": "Melilla",
+        "nameIt": "Melilla",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -2.94777,
+          35.293
+        ],
+        "zoom": 12,
+        "population": 59824,
+        "cells": 75,
+        "layer": "cities/melilla/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.94777,
+            35.293
+          ]
+        },
+        "properties": {
+          "id": "melilla",
+          "name": "Melilla",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 9,
+          "population": 59824
+        }
+      },
+      "summary": null
+    }
+  }
+}

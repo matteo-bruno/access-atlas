@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "manizales",
+  "createdAt": "2026-10-08T15:54:46.929Z",
+  "updatedAt": "2026-10-08T15:54:46.929Z",
+  "meta": {
+    "name": "Manizales",
+    "nameIt": "Manizales",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Manizales.geojson",
+      "sha256": "d7916192fdd2b4a987cea03bb19213a7aa52ff7aec4d5fe3d7a2b8c38bd2b7e5",
+      "size": 568197,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "manizales",
+    "name": "Manizales",
+    "nameIt": "Manizales",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -75.50157,
+      5.06047
+    ],
+    "zoom": 10.4,
+    "population": 510154,
+    "grid": "cities/manizales/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/manizales/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "manizales",
+        "name": "Manizales",
+        "nameIt": "Manizales",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -75.50157,
+          5.06047
+        ],
+        "zoom": 10.4,
+        "population": 510154,
+        "cells": 494,
+        "layer": "cities/manizales/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.50157,
+            5.06047
+          ]
+        },
+        "properties": {
+          "id": "manizales",
+          "name": "Manizales",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 510154
+        }
+      },
+      "summary": null
+    }
+  }
+}

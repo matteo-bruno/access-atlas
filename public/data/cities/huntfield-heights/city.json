@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huntfield-heights",
+  "createdAt": "2026-10-08T15:39:54.239Z",
+  "updatedAt": "2026-10-08T15:39:54.239Z",
+  "meta": {
+    "name": "Huntfield Heights",
+    "nameIt": "Huntfield Heights",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huntfield Heights.geojson",
+      "sha256": "1bc6a03400347765213f34f0c1c145572e53f824fe9cf54518c9fe689f797782",
+      "size": 756535,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huntfield-heights",
+    "name": "Huntfield Heights",
+    "nameIt": "Huntfield Heights",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      138.5241,
+      -35.10983
+    ],
+    "zoom": 10.5,
+    "population": 101923,
+    "grid": "cities/huntfield-heights/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huntfield-heights/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huntfield-heights",
+        "name": "Huntfield Heights",
+        "nameIt": "Huntfield Heights",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          138.5241,
+          -35.10983
+        ],
+        "zoom": 10.5,
+        "population": 101923,
+        "cells": 649,
+        "layer": "cities/huntfield-heights/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            138.5241,
+            -35.10983
+          ]
+        },
+        "properties": {
+          "id": "huntfield-heights",
+          "name": "Huntfield Heights",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 17.5,
+          "population": 101923
+        }
+      },
+      "summary": null
+    }
+  }
+}

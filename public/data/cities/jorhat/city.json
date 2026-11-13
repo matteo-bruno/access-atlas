@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jorhat",
+  "createdAt": "2026-10-08T15:43:31.496Z",
+  "updatedAt": "2026-10-08T15:43:31.496Z",
+  "meta": {
+    "name": "Jorhat",
+    "nameIt": "Jorhat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jorhat.geojson",
+      "sha256": "cc7abf2ff8f55c5d8acee898cb60e8ab9f384d14122f58fee57ba54733d1ec81",
+      "size": 539796,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jorhat",
+    "name": "Jorhat",
+    "nameIt": "Jorhat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      94.19974,
+      26.74882
+    ],
+    "zoom": 10.2,
+    "population": 230896,
+    "grid": "cities/jorhat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jorhat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jorhat",
+        "name": "Jorhat",
+        "nameIt": "Jorhat",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          94.19974,
+          26.74882
+        ],
+        "zoom": 10.2,
+        "population": 230896,
+        "cells": 466,
+        "layer": "cities/jorhat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            94.19974,
+            26.74882
+          ]
+        },
+        "properties": {
+          "id": "jorhat",
+          "name": "Jorhat",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 34.2,
+          "population": 230896
+        }
+      },
+      "summary": null
+    }
+  }
+}

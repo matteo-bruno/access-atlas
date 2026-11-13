@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "katiola",
+  "createdAt": "2026-10-08T15:45:40.078Z",
+  "updatedAt": "2026-10-08T15:45:40.078Z",
+  "meta": {
+    "name": "Katiola",
+    "nameIt": "Katiola",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Katiola.geojson",
+      "sha256": "d33c49a513ed2e21e51b9823eb9d3018a00e11772c29daaca830f7f42c0c5d4b",
+      "size": 198277,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "katiola",
+    "name": "Katiola",
+    "nameIt": "Katiola",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI",
+    "center": [
+      -5.10138,
+      8.13651
+    ],
+    "zoom": 11.9,
+    "population": 69701,
+    "grid": "cities/katiola/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 173
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/katiola/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "katiola",
+        "name": "Katiola",
+        "nameIt": "Katiola",
+        "region": "Ivory Coast",
+        "regionIt": "Costa d'Avorio",
+        "country": "CI",
+        "center": [
+          -5.10138,
+          8.13651
+        ],
+        "zoom": 11.9,
+        "population": 69701,
+        "cells": 171,
+        "layer": "cities/katiola/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 173
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.10138,
+            8.13651
+          ]
+        },
+        "properties": {
+          "id": "katiola",
+          "name": "Katiola",
+          "country": "CI",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 69701
+        }
+      },
+      "summary": null
+    }
+  }
+}

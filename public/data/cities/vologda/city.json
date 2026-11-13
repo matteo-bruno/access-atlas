@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vologda",
+  "createdAt": "2026-10-08T16:21:01.804Z",
+  "updatedAt": "2026-10-08T16:21:01.804Z",
+  "meta": {
+    "name": "Vologda",
+    "nameIt": "Vologda",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vologda.geojson",
+      "sha256": "7291d0a75963c1301d3ddf3905b449d5335745f8d86ca820745f00813acd07c6",
+      "size": 573871,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vologda",
+    "name": "Vologda",
+    "nameIt": "Vologda",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      39.88168,
+      59.21279
+    ],
+    "zoom": 10.7,
+    "population": 269319,
+    "grid": "cities/vologda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vologda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vologda",
+        "name": "Vologda",
+        "nameIt": "Vologda",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          39.88168,
+          59.21279
+        ],
+        "zoom": 10.7,
+        "population": 269319,
+        "cells": 503,
+        "layer": "cities/vologda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.88168,
+            59.21279
+          ]
+        },
+        "properties": {
+          "id": "vologda",
+          "name": "Vologda",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 10.6,
+          "population": 269319
+        }
+      },
+      "summary": null
+    }
+  }
+}

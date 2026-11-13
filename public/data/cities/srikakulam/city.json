@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "srikakulam",
+  "createdAt": "2026-10-08T16:14:42.520Z",
+  "updatedAt": "2026-10-08T16:14:42.520Z",
+  "meta": {
+    "name": "Srikakulam",
+    "nameIt": "Srikakulam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Srikakulam.geojson",
+      "sha256": "8165ad2820146ca03e8a5a7b4f5297a9ff97d5aa3a6191a0500f034a4837a103",
+      "size": 250518,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "srikakulam",
+    "name": "Srikakulam",
+    "nameIt": "Srikakulam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.89423,
+      18.29776
+    ],
+    "zoom": 11,
+    "population": 160410,
+    "grid": "cities/srikakulam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/srikakulam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "srikakulam",
+        "name": "Srikakulam",
+        "nameIt": "Srikakulam",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.89423,
+          18.29776
+        ],
+        "zoom": 11,
+        "population": 160410,
+        "cells": 217,
+        "layer": "cities/srikakulam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.89423,
+            18.29776
+          ]
+        },
+        "properties": {
+          "id": "srikakulam",
+          "name": "Srikakulam",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 17.4,
+          "population": 160410
+        }
+      },
+      "summary": null
+    }
+  }
+}

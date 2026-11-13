@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "qeysar",
+  "createdAt": "2026-10-08T16:07:17.693Z",
+  "updatedAt": "2026-10-08T16:07:17.693Z",
+  "meta": {
+    "name": "Qeysar",
+    "nameIt": "Qeysar",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Qeysar.geojson",
+      "sha256": "ba148f0ecee200203ff73deabd341f69a30c3be4dc23d50d3e388e851c73fa2d",
+      "size": 87780,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "qeysar",
+    "name": "Qeysar",
+    "nameIt": "Qeysar",
+    "region": "Afghanistan",
+    "regionIt": "Afghanistan",
+    "country": "AF",
+    "center": [
+      64.29333,
+      35.69111
+    ],
+    "zoom": 11.9,
+    "population": 14165,
+    "grid": "cities/qeysar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/qeysar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "qeysar",
+        "name": "Qeysar",
+        "nameIt": "Qeysar",
+        "region": "Afghanistan",
+        "regionIt": "Afghanistan",
+        "country": "AF",
+        "center": [
+          64.29333,
+          35.69111
+        ],
+        "zoom": 11.9,
+        "population": 14165,
+        "cells": 76,
+        "layer": "cities/qeysar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            64.29333,
+            35.69111
+          ]
+        },
+        "properties": {
+          "id": "qeysar",
+          "name": "Qeysar",
+          "country": "AF",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 14165
+        }
+      },
+      "summary": null
+    }
+  }
+}

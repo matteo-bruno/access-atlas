@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mineralnye-vody",
+  "createdAt": "2026-10-08T15:57:12.955Z",
+  "updatedAt": "2026-10-08T15:57:12.955Z",
+  "meta": {
+    "name": "Mineralnye Vody",
+    "nameIt": "Mineralnye Vody",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mineralnye Vody.geojson",
+      "sha256": "50dde78d646c03b387d014391806dd8e49798f9517856d6b5691f4e366201ffe",
+      "size": 273034,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mineralnye-vody",
+    "name": "Mineralnye Vody",
+    "nameIt": "Mineralnye Vody",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      43.12855,
+      44.21096
+    ],
+    "zoom": 11.4,
+    "population": 67151,
+    "grid": "cities/mineralnye-vody/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mineralnye-vody/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mineralnye-vody",
+        "name": "Mineralnye Vody",
+        "nameIt": "Mineralnye Vody",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          43.12855,
+          44.21096
+        ],
+        "zoom": 11.4,
+        "population": 67151,
+        "cells": 238,
+        "layer": "cities/mineralnye-vody/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            43.12855,
+            44.21096
+          ]
+        },
+        "properties": {
+          "id": "mineralnye-vody",
+          "name": "Mineralnye Vody",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 67151
+        }
+      },
+      "summary": null
+    }
+  }
+}

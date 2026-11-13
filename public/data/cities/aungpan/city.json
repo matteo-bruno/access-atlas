@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aungpan",
+  "createdAt": "2026-10-08T15:11:24.828Z",
+  "updatedAt": "2026-10-08T15:11:24.828Z",
+  "meta": {
+    "name": "Aungpan",
+    "nameIt": "Aungpan",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aungpan.geojson",
+      "sha256": "6ed3106be4a9a757406f5e496bd6369edf74753594e34702b83f77e2c11a7afe",
+      "size": 96148,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aungpan",
+    "name": "Aungpan",
+    "nameIt": "Aungpan",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      96.63517,
+      20.65972
+    ],
+    "zoom": 11.8,
+    "population": 65459,
+    "grid": "cities/aungpan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aungpan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aungpan",
+        "name": "Aungpan",
+        "nameIt": "Aungpan",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          96.63517,
+          20.65972
+        ],
+        "zoom": 11.8,
+        "population": 65459,
+        "cells": 83,
+        "layer": "cities/aungpan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.63517,
+            20.65972
+          ]
+        },
+        "properties": {
+          "id": "aungpan",
+          "name": "Aungpan",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 65459
+        }
+      },
+      "summary": null
+    }
+  }
+}

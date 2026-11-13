@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "arcoverde",
+  "createdAt": "2026-10-08T15:09:13.897Z",
+  "updatedAt": "2026-10-08T15:09:13.897Z",
+  "meta": {
+    "name": "Arcoverde",
+    "nameIt": "Arcoverde",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Arcoverde.geojson",
+      "sha256": "da76dc6317ee6e8ab25e454b932cebe4c86a1055bc8333dcbcf420b3f273e80a",
+      "size": 120507,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "arcoverde",
+    "name": "Arcoverde",
+    "nameIt": "Arcoverde",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -37.06124,
+      -8.41914
+    ],
+    "zoom": 11.7,
+    "population": 65361,
+    "grid": "cities/arcoverde/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/arcoverde/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "arcoverde",
+        "name": "Arcoverde",
+        "nameIt": "Arcoverde",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -37.06124,
+          -8.41914
+        ],
+        "zoom": 11.7,
+        "population": 65361,
+        "cells": 103,
+        "layer": "cities/arcoverde/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -37.06124,
+            -8.41914
+          ]
+        },
+        "properties": {
+          "id": "arcoverde",
+          "name": "Arcoverde",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 65361
+        }
+      },
+      "summary": null
+    }
+  }
+}

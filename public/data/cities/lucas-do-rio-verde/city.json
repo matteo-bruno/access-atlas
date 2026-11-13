@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lucas-do-rio-verde",
+  "createdAt": "2026-10-08T15:52:27.892Z",
+  "updatedAt": "2026-10-08T15:52:27.892Z",
+  "meta": {
+    "name": "Lucas do Rio Verde",
+    "nameIt": "Lucas do Rio Verde",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lucas do Rio Verde.geojson",
+      "sha256": "eb7896272ca95ed21451c671c12caed800178745a3454c8d79cf0c3551770551",
+      "size": 220070,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lucas-do-rio-verde",
+    "name": "Lucas do Rio Verde",
+    "nameIt": "Lucas do Rio Verde",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -55.91712,
+      -13.07383
+    ],
+    "zoom": 11.4,
+    "population": 70131,
+    "grid": "cities/lucas-do-rio-verde/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lucas-do-rio-verde/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lucas-do-rio-verde",
+        "name": "Lucas do Rio Verde",
+        "nameIt": "Lucas do Rio Verde",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -55.91712,
+          -13.07383
+        ],
+        "zoom": 11.4,
+        "population": 70131,
+        "cells": 187,
+        "layer": "cities/lucas-do-rio-verde/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -55.91712,
+            -13.07383
+          ]
+        },
+        "properties": {
+          "id": "lucas-do-rio-verde",
+          "name": "Lucas do Rio Verde",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 17.1,
+          "population": 70131
+        }
+      },
+      "summary": null
+    }
+  }
+}

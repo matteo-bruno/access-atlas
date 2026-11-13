@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nathdwara",
+  "createdAt": "2026-10-08T16:00:33.648Z",
+  "updatedAt": "2026-10-08T16:00:33.648Z",
+  "meta": {
+    "name": "Nathdwara",
+    "nameIt": "Nathdwara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nathdwara.geojson",
+      "sha256": "5291dc180b95d686fba9be05005d2cf7a14c89440d1c9fdc08890b3b224276b2",
+      "size": 112312,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nathdwara",
+    "name": "Nathdwara",
+    "nameIt": "Nathdwara",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.82213,
+      24.92948
+    ],
+    "zoom": 12,
+    "population": 42668,
+    "grid": "cities/nathdwara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nathdwara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nathdwara",
+        "name": "Nathdwara",
+        "nameIt": "Nathdwara",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.82213,
+          24.92948
+        ],
+        "zoom": 12,
+        "population": 42668,
+        "cells": 97,
+        "layer": "cities/nathdwara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.82213,
+            24.92948
+          ]
+        },
+        "properties": {
+          "id": "nathdwara",
+          "name": "Nathdwara",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 42668
+        }
+      },
+      "summary": null
+    }
+  }
+}

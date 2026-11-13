@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "netanya",
+  "createdAt": "2026-10-08T16:01:00.432Z",
+  "updatedAt": "2026-10-08T16:01:00.432Z",
+  "meta": {
+    "name": "Netanya",
+    "nameIt": "Netanya",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Netanya.geojson",
+      "sha256": "b774591880b59bd82475724227ef6d975de6e4a852b1b5381c74d9d4cb3910a9",
+      "size": 342985,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "netanya",
+    "name": "Netanya",
+    "nameIt": "Netanya",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL",
+    "center": [
+      34.85878,
+      32.31114
+    ],
+    "zoom": 10.8,
+    "population": 223267,
+    "grid": "cities/netanya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/netanya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "netanya",
+        "name": "Netanya",
+        "nameIt": "Netanya",
+        "region": "Israel",
+        "regionIt": "Israele",
+        "country": "IL",
+        "center": [
+          34.85878,
+          32.31114
+        ],
+        "zoom": 10.8,
+        "population": 223267,
+        "cells": 300,
+        "layer": "cities/netanya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.85878,
+            32.31114
+          ]
+        },
+        "properties": {
+          "id": "netanya",
+          "name": "Netanya",
+          "country": "IL",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 223267
+        }
+      },
+      "summary": null
+    }
+  }
+}

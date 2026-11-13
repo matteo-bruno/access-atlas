@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vakhsh",
+  "createdAt": "2026-10-08T16:20:17.536Z",
+  "updatedAt": "2026-10-08T16:20:17.536Z",
+  "meta": {
+    "name": "Vakhsh",
+    "nameIt": "Vakhsh",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vakhsh.geojson",
+      "sha256": "7ede33ba0dd7378d7fefecfe8f8c2733c676bb3c834325c3f3321291d3ebe52b",
+      "size": 179020,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vakhsh",
+    "name": "Vakhsh",
+    "nameIt": "Vakhsh",
+    "region": "Tajikistan",
+    "regionIt": "Tagikistan",
+    "country": "TJ",
+    "center": [
+      68.83387,
+      37.7081
+    ],
+    "zoom": 11.3,
+    "population": 45401,
+    "grid": "cities/vakhsh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vakhsh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vakhsh",
+        "name": "Vakhsh",
+        "nameIt": "Vakhsh",
+        "region": "Tajikistan",
+        "regionIt": "Tagikistan",
+        "country": "TJ",
+        "center": [
+          68.83387,
+          37.7081
+        ],
+        "zoom": 11.3,
+        "population": 45401,
+        "cells": 155,
+        "layer": "cities/vakhsh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            68.83387,
+            37.7081
+          ]
+        },
+        "properties": {
+          "id": "vakhsh",
+          "name": "Vakhsh",
+          "country": "TJ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 45401
+        }
+      },
+      "summary": null
+    }
+  }
+}

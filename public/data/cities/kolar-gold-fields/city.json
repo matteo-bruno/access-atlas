@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kolar-gold-fields",
+  "createdAt": "2026-10-08T15:47:41.041Z",
+  "updatedAt": "2026-10-08T15:47:41.041Z",
+  "meta": {
+    "name": "Kolar Gold Fields",
+    "nameIt": "Kolar Gold Fields",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kolar Gold Fields.geojson",
+      "sha256": "a56d2a3d84df51c7f4c6397faad7502a0dcf9c102f4729893da06dbe7fd49176",
+      "size": 228490,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kolar-gold-fields",
+    "name": "Kolar Gold Fields",
+    "nameIt": "Kolar Gold Fields",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.26844,
+      12.95049
+    ],
+    "zoom": 11.4,
+    "population": 86237,
+    "grid": "cities/kolar-gold-fields/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kolar-gold-fields/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kolar-gold-fields",
+        "name": "Kolar Gold Fields",
+        "nameIt": "Kolar Gold Fields",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.26844,
+          12.95049
+        ],
+        "zoom": 11.4,
+        "population": 86237,
+        "cells": 197,
+        "layer": "cities/kolar-gold-fields/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.26844,
+            12.95049
+          ]
+        },
+        "properties": {
+          "id": "kolar-gold-fields",
+          "name": "Kolar Gold Fields",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 21.8,
+          "population": 86237
+        }
+      },
+      "summary": null
+    }
+  }
+}

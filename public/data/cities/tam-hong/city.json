@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tam-hong",
+  "createdAt": "2026-10-08T16:16:19.339Z",
+  "updatedAt": "2026-10-08T16:16:19.339Z",
+  "meta": {
+    "name": "Tam Hồng",
+    "nameIt": "Tam Hồng",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tam Hồng.geojson",
+      "sha256": "d9f80219344be64d7ff027680316da2c316a29a070307ee714a989d44102b9f7",
+      "size": 617471,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tam-hong",
+    "name": "Tam Hồng",
+    "nameIt": "Tam Hồng",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      105.52985,
+      21.25655
+    ],
+    "zoom": 10.3,
+    "population": 155912,
+    "grid": "cities/tam-hong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tam-hong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tam-hong",
+        "name": "Tam Hồng",
+        "nameIt": "Tam Hồng",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          105.52985,
+          21.25655
+        ],
+        "zoom": 10.3,
+        "population": 155912,
+        "cells": 528,
+        "layer": "cities/tam-hong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            105.52985,
+            21.25655
+          ]
+        },
+        "properties": {
+          "id": "tam-hong",
+          "name": "Tam Hồng",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 56.5,
+          "population": 155912
+        }
+      },
+      "summary": null
+    }
+  }
+}

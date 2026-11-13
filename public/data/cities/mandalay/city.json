@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mandalay",
+  "createdAt": "2026-10-08T15:54:29.988Z",
+  "updatedAt": "2026-10-08T15:54:29.988Z",
+  "meta": {
+    "name": "Mandalay",
+    "nameIt": "Mandalay",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mandalay.geojson",
+      "sha256": "c6cfdc4e2e53393c169dd84dfff5ce9e5d0c5b72f5ea3de6bd036d54e16b8981",
+      "size": 1978997,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mandalay",
+    "name": "Mandalay",
+    "nameIt": "Mandalay",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      96.09464,
+      21.94519
+    ],
+    "zoom": 9.4,
+    "population": 1574458,
+    "grid": "cities/mandalay/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mandalay/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mandalay",
+        "name": "Mandalay",
+        "nameIt": "Mandalay",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          96.09464,
+          21.94519
+        ],
+        "zoom": 9.4,
+        "population": 1574458,
+        "cells": 1721,
+        "layer": "cities/mandalay/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.09464,
+            21.94519
+          ]
+        },
+        "properties": {
+          "id": "mandalay",
+          "name": "Mandalay",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 21.4,
+          "population": 1574458
+        }
+      },
+      "summary": null
+    }
+  }
+}

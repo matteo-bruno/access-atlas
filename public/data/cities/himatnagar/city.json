@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "himatnagar",
+  "createdAt": "2026-10-08T15:38:40.584Z",
+  "updatedAt": "2026-10-08T15:38:40.584Z",
+  "meta": {
+    "name": "Himatnagar",
+    "nameIt": "Himatnagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Himatnagar.geojson",
+      "sha256": "5a6f59b9523176f05f1eec5b8b78e593b19eef507a62e58d9f58847807fd578c",
+      "size": 332812,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "himatnagar",
+    "name": "Himatnagar",
+    "nameIt": "Himatnagar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.96542,
+      23.59834
+    ],
+    "zoom": 11.2,
+    "population": 168573,
+    "grid": "cities/himatnagar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/himatnagar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "himatnagar",
+        "name": "Himatnagar",
+        "nameIt": "Himatnagar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.96542,
+          23.59834
+        ],
+        "zoom": 11.2,
+        "population": 168573,
+        "cells": 287,
+        "layer": "cities/himatnagar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.96542,
+            23.59834
+          ]
+        },
+        "properties": {
+          "id": "himatnagar",
+          "name": "Himatnagar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 24,
+          "population": 168573
+        }
+      },
+      "summary": null
+    }
+  }
+}

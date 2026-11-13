@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ain-el-melh",
+  "createdAt": "2026-10-08T15:03:12.013Z",
+  "updatedAt": "2026-10-08T15:03:12.013Z",
+  "meta": {
+    "name": "Ain El Melh",
+    "nameIt": "Ain El Melh",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ain El Melh.geojson",
+      "sha256": "2328f1364dda35e8472dd52eca51f155a73ff0b567831925eb1901b87d05044c",
+      "size": 95775,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ain-el-melh",
+    "name": "Ain El Melh",
+    "nameIt": "Ain El Melh",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      4.16275,
+      34.8456
+    ],
+    "zoom": 12,
+    "population": 41002,
+    "grid": "cities/ain-el-melh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ain-el-melh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ain-el-melh",
+        "name": "Ain El Melh",
+        "nameIt": "Ain El Melh",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          4.16275,
+          34.8456
+        ],
+        "zoom": 12,
+        "population": 41002,
+        "cells": 83,
+        "layer": "cities/ain-el-melh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.16275,
+            34.8456
+          ]
+        },
+        "properties": {
+          "id": "ain-el-melh",
+          "name": "Ain El Melh",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 12,
+          "population": 41002
+        }
+      },
+      "summary": null
+    }
+  }
+}

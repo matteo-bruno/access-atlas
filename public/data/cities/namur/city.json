@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "namur",
+  "createdAt": "2026-10-08T15:59:57.011Z",
+  "updatedAt": "2026-10-08T15:59:57.011Z",
+  "meta": {
+    "name": "Namur",
+    "nameIt": "Namur",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Namur.geojson",
+      "sha256": "2d180303035d6f5696bfaf6ec6095e186ad78659f57cae249a33135d0bb9f686",
+      "size": 246045,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "namur",
+    "name": "Namur",
+    "nameIt": "Namur",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE",
+    "center": [
+      4.85763,
+      50.46474
+    ],
+    "zoom": 11.4,
+    "population": 61855,
+    "grid": "cities/namur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/namur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "namur",
+        "name": "Namur",
+        "nameIt": "Namur",
+        "region": "Belgium",
+        "regionIt": "Belgio",
+        "country": "BE",
+        "center": [
+          4.85763,
+          50.46474
+        ],
+        "zoom": 11.4,
+        "population": 61855,
+        "cells": 217,
+        "layer": "cities/namur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.85763,
+            50.46474
+          ]
+        },
+        "properties": {
+          "id": "namur",
+          "name": "Namur",
+          "country": "BE",
+          "isStudy": true,
+          "proximityMinutes": 8.8,
+          "population": 61855
+        }
+      },
+      "summary": null
+    }
+  }
+}

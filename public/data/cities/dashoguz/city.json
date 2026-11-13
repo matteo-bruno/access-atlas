@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dashoguz",
+  "createdAt": "2026-10-08T15:28:29.615Z",
+  "updatedAt": "2026-10-08T15:28:29.615Z",
+  "meta": {
+    "name": "Dashoguz",
+    "nameIt": "Dashoguz",
+    "region": "Turkmenistan",
+    "regionIt": "Turkmenistan",
+    "country": "TM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dashoguz.geojson",
+      "sha256": "3a9ed2f9dac296cac9dd3e3a31d1417a134efff7655e47f0184bf3005a3b1e03",
+      "size": 416432,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dashoguz",
+    "name": "Dashoguz",
+    "nameIt": "Dashoguz",
+    "region": "Turkmenistan",
+    "regionIt": "Turkmenistan",
+    "country": "TM",
+    "center": [
+      59.96379,
+      41.83929
+    ],
+    "zoom": 10.8,
+    "population": 146688,
+    "grid": "cities/dashoguz/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dashoguz/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dashoguz",
+        "name": "Dashoguz",
+        "nameIt": "Dashoguz",
+        "region": "Turkmenistan",
+        "regionIt": "Turkmenistan",
+        "country": "TM",
+        "center": [
+          59.96379,
+          41.83929
+        ],
+        "zoom": 10.8,
+        "population": 146688,
+        "cells": 360,
+        "layer": "cities/dashoguz/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            59.96379,
+            41.83929
+          ]
+        },
+        "properties": {
+          "id": "dashoguz",
+          "name": "Dashoguz",
+          "country": "TM",
+          "isStudy": true,
+          "proximityMinutes": 28.4,
+          "population": 146688
+        }
+      },
+      "summary": null
+    }
+  }
+}

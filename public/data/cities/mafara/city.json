@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mafara",
+  "createdAt": "2026-10-08T15:53:28.053Z",
+  "updatedAt": "2026-10-08T15:53:28.053Z",
+  "meta": {
+    "name": "Mafara",
+    "nameIt": "Mafara",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mafara.geojson",
+      "sha256": "8dfeb07036bad93e63ce7d6ce6f7dbc1cf016cfc7a1bba9887d7fd8773aeb221",
+      "size": 134510,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mafara",
+    "name": "Mafara",
+    "nameIt": "Mafara",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      6.06148,
+      12.56511
+    ],
+    "zoom": 12,
+    "population": 107940,
+    "grid": "cities/mafara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mafara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mafara",
+        "name": "Mafara",
+        "nameIt": "Mafara",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          6.06148,
+          12.56511
+        ],
+        "zoom": 12,
+        "population": 107940,
+        "cells": 116,
+        "layer": "cities/mafara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.06148,
+            12.56511
+          ]
+        },
+        "properties": {
+          "id": "mafara",
+          "name": "Mafara",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 107940
+        }
+      },
+      "summary": null
+    }
+  }
+}

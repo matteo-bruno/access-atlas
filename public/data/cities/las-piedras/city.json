@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "las-piedras",
+  "createdAt": "2026-10-08T15:50:17.195Z",
+  "updatedAt": "2026-10-08T15:50:17.195Z",
+  "meta": {
+    "name": "Las Piedras",
+    "nameIt": "Las Piedras",
+    "region": "Uruguay",
+    "regionIt": "Uruguay",
+    "country": "UY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Las Piedras.geojson",
+      "sha256": "0d9baea5c6a34e25446b65f3a39228df672cff941a8c19d81741947a30af78ce",
+      "size": 439508,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "las-piedras",
+    "name": "Las Piedras",
+    "nameIt": "Las Piedras",
+    "region": "Uruguay",
+    "regionIt": "Uruguay",
+    "country": "UY",
+    "center": [
+      -56.21876,
+      -34.72641
+    ],
+    "zoom": 10.7,
+    "population": 114915,
+    "grid": "cities/las-piedras/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/las-piedras/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "las-piedras",
+        "name": "Las Piedras",
+        "nameIt": "Las Piedras",
+        "region": "Uruguay",
+        "regionIt": "Uruguay",
+        "country": "UY",
+        "center": [
+          -56.21876,
+          -34.72641
+        ],
+        "zoom": 10.7,
+        "population": 114915,
+        "cells": 375,
+        "layer": "cities/las-piedras/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -56.21876,
+            -34.72641
+          ]
+        },
+        "properties": {
+          "id": "las-piedras",
+          "name": "Las Piedras",
+          "country": "UY",
+          "isStudy": true,
+          "proximityMinutes": 17.3,
+          "population": 114915
+        }
+      },
+      "summary": null
+    }
+  }
+}

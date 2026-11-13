@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "andria",
+  "createdAt": "2026-10-08T15:07:31.994Z",
+  "updatedAt": "2026-10-08T15:07:31.994Z",
+  "meta": {
+    "name": "Andria",
+    "nameIt": "Andria",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Andria.geojson",
+      "sha256": "ed71ce2a08e563a291fbd9d07c99ea3515fa18cf6f68bf70b02486d5f4b2c4f4",
+      "size": 106691,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "andria",
+    "name": "Andria",
+    "nameIt": "Andria",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      16.29781,
+      41.22862
+    ],
+    "zoom": 12,
+    "population": 64842,
+    "grid": "cities/andria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/andria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "andria",
+        "name": "Andria",
+        "nameIt": "Andria",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          16.29781,
+          41.22862
+        ],
+        "zoom": 12,
+        "population": 64842,
+        "cells": 93,
+        "layer": "cities/andria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.29781,
+            41.22862
+          ]
+        },
+        "properties": {
+          "id": "andria",
+          "name": "Andria",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 9.8,
+          "population": 64842
+        }
+      },
+      "summary": null
+    }
+  }
+}

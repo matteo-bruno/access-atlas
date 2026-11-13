@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "takamatsu",
+  "createdAt": "2026-10-08T16:16:09.908Z",
+  "updatedAt": "2026-10-08T16:16:09.908Z",
+  "meta": {
+    "name": "Takamatsu",
+    "nameIt": "Takamatsu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Takamatsu.geojson",
+      "sha256": "e178465850705b157d67989b7e32cba85faaebabf741cc3f3e35b2d4bc12047b",
+      "size": 1984551,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "takamatsu",
+    "name": "Takamatsu",
+    "nameIt": "Takamatsu",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      134.05561,
+      34.31282
+    ],
+    "zoom": 10,
+    "population": 341122,
+    "grid": "cities/takamatsu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 182
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/takamatsu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "takamatsu",
+        "name": "Takamatsu",
+        "nameIt": "Takamatsu",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          134.05561,
+          34.31282
+        ],
+        "zoom": 10,
+        "population": 341122,
+        "cells": 1727,
+        "layer": "cities/takamatsu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 182
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            134.05561,
+            34.31282
+          ]
+        },
+        "properties": {
+          "id": "takamatsu",
+          "name": "Takamatsu",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 13.8,
+          "population": 341122
+        }
+      },
+      "summary": null
+    }
+  }
+}

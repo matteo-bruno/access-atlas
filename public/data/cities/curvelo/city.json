@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "curvelo",
+  "createdAt": "2026-10-08T15:27:07.126Z",
+  "updatedAt": "2026-10-08T15:27:07.126Z",
+  "meta": {
+    "name": "Curvelo",
+    "nameIt": "Curvelo",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Curvelo.geojson",
+      "sha256": "65fd9269de1efcc239feb9202241408d50c198a1d6e56b3a89fde68a0ba3dd20",
+      "size": 164218,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "curvelo",
+    "name": "Curvelo",
+    "nameIt": "Curvelo",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -44.43237,
+      -18.75887
+    ],
+    "zoom": 11.4,
+    "population": 47380,
+    "grid": "cities/curvelo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/curvelo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "curvelo",
+        "name": "Curvelo",
+        "nameIt": "Curvelo",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -44.43237,
+          -18.75887
+        ],
+        "zoom": 11.4,
+        "population": 47380,
+        "cells": 139,
+        "layer": "cities/curvelo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -44.43237,
+            -18.75887
+          ]
+        },
+        "properties": {
+          "id": "curvelo",
+          "name": "Curvelo",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 47380
+        }
+      },
+      "summary": null
+    }
+  }
+}

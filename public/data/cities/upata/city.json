@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "upata",
+  "createdAt": "2026-10-08T16:19:59.691Z",
+  "updatedAt": "2026-10-08T16:19:59.691Z",
+  "meta": {
+    "name": "Upata",
+    "nameIt": "Upata",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Upata.geojson",
+      "sha256": "a989397ac3931798b985794d5d37ed740d9b9a172bcb38aff279c0ff7e5eb072",
+      "size": 215327,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "upata",
+    "name": "Upata",
+    "nameIt": "Upata",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -62.39965,
+      8.00882
+    ],
+    "zoom": 11.6,
+    "population": 102308,
+    "grid": "cities/upata/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/upata/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "upata",
+        "name": "Upata",
+        "nameIt": "Upata",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -62.39965,
+          8.00882
+        ],
+        "zoom": 11.6,
+        "population": 102308,
+        "cells": 185,
+        "layer": "cities/upata/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -62.39965,
+            8.00882
+          ]
+        },
+        "properties": {
+          "id": "upata",
+          "name": "Upata",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 24.6,
+          "population": 102308
+        }
+      },
+      "summary": null
+    }
+  }
+}

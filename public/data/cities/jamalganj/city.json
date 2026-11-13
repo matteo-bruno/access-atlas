@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jamalganj",
+  "createdAt": "2026-10-08T15:41:51.790Z",
+  "updatedAt": "2026-10-08T15:41:51.790Z",
+  "meta": {
+    "name": "Jamalganj",
+    "nameIt": "Jamalganj",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jamalganj.geojson",
+      "sha256": "44e8085d19086664f0d901455bd39d24f289c677aeac837a33944b923a398581",
+      "size": 468097,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jamalganj",
+    "name": "Jamalganj",
+    "nameIt": "Jamalganj",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      91.21874,
+      24.98919
+    ],
+    "zoom": 10.4,
+    "population": 60291,
+    "grid": "cities/jamalganj/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jamalganj/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jamalganj",
+        "name": "Jamalganj",
+        "nameIt": "Jamalganj",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          91.21874,
+          24.98919
+        ],
+        "zoom": 10.4,
+        "population": 60291,
+        "cells": 404,
+        "layer": "cities/jamalganj/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.21874,
+            24.98919
+          ]
+        },
+        "properties": {
+          "id": "jamalganj",
+          "name": "Jamalganj",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 50.4,
+          "population": 60291
+        }
+      },
+      "summary": null
+    }
+  }
+}

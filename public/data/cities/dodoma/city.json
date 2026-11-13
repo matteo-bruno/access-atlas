@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dodoma",
+  "createdAt": "2026-10-08T15:30:27.786Z",
+  "updatedAt": "2026-10-08T15:30:27.786Z",
+  "meta": {
+    "name": "Dodoma",
+    "nameIt": "Dodoma",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dodoma.geojson",
+      "sha256": "6bb6eb7f70bd6f2ee4780e2212e5cc45652028cdc5c2f3717f558052dc3fbbd7",
+      "size": 755568,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dodoma",
+    "name": "Dodoma",
+    "nameIt": "Dodoma",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      35.74716,
+      -6.16405
+    ],
+    "zoom": 10.5,
+    "population": 388621,
+    "grid": "cities/dodoma/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dodoma/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dodoma",
+        "name": "Dodoma",
+        "nameIt": "Dodoma",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          35.74716,
+          -6.16405
+        ],
+        "zoom": 10.5,
+        "population": 388621,
+        "cells": 650,
+        "layer": "cities/dodoma/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.74716,
+            -6.16405
+          ]
+        },
+        "properties": {
+          "id": "dodoma",
+          "name": "Dodoma",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 27.9,
+          "population": 388621
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rostock",
+  "createdAt": "2026-10-08T16:09:10.427Z",
+  "updatedAt": "2026-10-08T16:09:10.427Z",
+  "meta": {
+    "name": "Rostock",
+    "nameIt": "Rostock",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rostock.geojson",
+      "sha256": "9cac405c588afc197fbfa06c581752329d3314edbbab5d8556b5f5a1dfde3acf",
+      "size": 896934,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rostock",
+    "name": "Rostock",
+    "nameIt": "Rostock",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      12.10104,
+      54.11343
+    ],
+    "zoom": 10.4,
+    "population": 168070,
+    "grid": "cities/rostock/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rostock/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rostock",
+        "name": "Rostock",
+        "nameIt": "Rostock",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          12.10104,
+          54.11343
+        ],
+        "zoom": 10.4,
+        "population": 168070,
+        "cells": 783,
+        "layer": "cities/rostock/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.10104,
+            54.11343
+          ]
+        },
+        "properties": {
+          "id": "rostock",
+          "name": "Rostock",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 8.9,
+          "population": 168070
+        }
+      },
+      "summary": null
+    }
+  }
+}

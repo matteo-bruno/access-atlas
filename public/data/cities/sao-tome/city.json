@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sao-tome",
+  "createdAt": "2026-10-08T16:15:43.239Z",
+  "updatedAt": "2026-10-08T16:15:43.239Z",
+  "meta": {
+    "name": "São Tomé",
+    "nameIt": "São Tomé",
+    "region": "São Tomé and Príncipe",
+    "regionIt": "São Tomé e Príncipe",
+    "country": "ST"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/São Tomé.geojson",
+      "sha256": "b08a407d49b4ef2a60f68bd31804f6eebf6fe9fa1d0804894cb1198485131c59",
+      "size": 441466,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sao-tome",
+    "name": "São Tomé",
+    "nameIt": "São Tomé",
+    "region": "São Tomé and Príncipe",
+    "regionIt": "São Tomé e Príncipe",
+    "country": "ST",
+    "center": [
+      6.72395,
+      0.33396
+    ],
+    "zoom": 10.9,
+    "population": 103942,
+    "grid": "cities/sao-tome/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sao-tome/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sao-tome",
+        "name": "São Tomé",
+        "nameIt": "São Tomé",
+        "region": "São Tomé and Príncipe",
+        "regionIt": "São Tomé e Príncipe",
+        "country": "ST",
+        "center": [
+          6.72395,
+          0.33396
+        ],
+        "zoom": 10.9,
+        "population": 103942,
+        "cells": 381,
+        "layer": "cities/sao-tome/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.72395,
+            0.33396
+          ]
+        },
+        "properties": {
+          "id": "sao-tome",
+          "name": "São Tomé",
+          "country": "ST",
+          "isStudy": true,
+          "proximityMinutes": 24,
+          "population": 103942
+        }
+      },
+      "summary": null
+    }
+  }
+}

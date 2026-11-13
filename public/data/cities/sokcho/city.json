@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sokcho",
+  "createdAt": "2026-10-08T16:14:17.351Z",
+  "updatedAt": "2026-10-08T16:14:17.351Z",
+  "meta": {
+    "name": "Sokcho",
+    "nameIt": "Sokcho",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sokcho.geojson",
+      "sha256": "bff130a0c4e7b2bf485d7cd4a5ed4981ba97e63eed9cf22572d8b297f6195c35",
+      "size": 363990,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sokcho",
+    "name": "Sokcho",
+    "nameIt": "Sokcho",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      128.58359,
+      38.19632
+    ],
+    "zoom": 11.3,
+    "population": 73877,
+    "grid": "cities/sokcho/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 172
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sokcho/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sokcho",
+        "name": "Sokcho",
+        "nameIt": "Sokcho",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          128.58359,
+          38.19632
+        ],
+        "zoom": 11.3,
+        "population": 73877,
+        "cells": 315,
+        "layer": "cities/sokcho/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 172
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            128.58359,
+            38.19632
+          ]
+        },
+        "properties": {
+          "id": "sokcho",
+          "name": "Sokcho",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 13.6,
+          "population": 73877
+        }
+      },
+      "summary": null
+    }
+  }
+}

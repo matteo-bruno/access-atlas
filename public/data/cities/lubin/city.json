@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lubin",
+  "createdAt": "2026-10-08T15:52:24.410Z",
+  "updatedAt": "2026-10-08T15:52:24.410Z",
+  "meta": {
+    "name": "Lubin",
+    "nameIt": "Lubin",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lubin.geojson",
+      "sha256": "86e17e1b63ed9924e05a34eeefda4b15629ec5dda6a3a99ea8eb12f05a841f78",
+      "size": 174636,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lubin",
+    "name": "Lubin",
+    "nameIt": "Lubin",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      16.19734,
+      51.3982
+    ],
+    "zoom": 11.9,
+    "population": 60325,
+    "grid": "cities/lubin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lubin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lubin",
+        "name": "Lubin",
+        "nameIt": "Lubin",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          16.19734,
+          51.3982
+        ],
+        "zoom": 11.9,
+        "population": 60325,
+        "cells": 153,
+        "layer": "cities/lubin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.19734,
+            51.3982
+          ]
+        },
+        "properties": {
+          "id": "lubin",
+          "name": "Lubin",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 8.9,
+          "population": 60325
+        }
+      },
+      "summary": null
+    }
+  }
+}

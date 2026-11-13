@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "daytona-beach",
+  "createdAt": "2026-10-08T15:28:43.206Z",
+  "updatedAt": "2026-10-08T15:28:43.206Z",
+  "meta": {
+    "name": "Daytona Beach",
+    "nameIt": "Daytona Beach",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Daytona Beach.geojson",
+      "sha256": "4a10db97316c2d9e4652d0c21586b0ca61b26fafba6058b0d5c557f8c69b9c26",
+      "size": 1414134,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "daytona-beach",
+    "name": "Daytona Beach",
+    "nameIt": "Daytona Beach",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -81.03947,
+      29.22998
+    ],
+    "zoom": 9.3,
+    "population": 141813,
+    "grid": "cities/daytona-beach/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/daytona-beach/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "daytona-beach",
+        "name": "Daytona Beach",
+        "nameIt": "Daytona Beach",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -81.03947,
+          29.22998
+        ],
+        "zoom": 9.3,
+        "population": 141813,
+        "cells": 1222,
+        "layer": "cities/daytona-beach/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.03947,
+            29.22998
+          ]
+        },
+        "properties": {
+          "id": "daytona-beach",
+          "name": "Daytona Beach",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 31.7,
+          "population": 141813
+        }
+      },
+      "summary": null
+    }
+  }
+}

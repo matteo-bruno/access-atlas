@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ngabang",
+  "createdAt": "2026-10-08T16:01:17.612Z",
+  "updatedAt": "2026-10-08T16:01:17.612Z",
+  "meta": {
+    "name": "Ngabang",
+    "nameIt": "Ngabang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ngabang.geojson",
+      "sha256": "29ba07d63751a4b9f677a5730b107e87a1b3675560a03e927a2a6bc66ef3f10a",
+      "size": 123127,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ngabang",
+    "name": "Ngabang",
+    "nameIt": "Ngabang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      109.9535,
+      0.38564
+    ],
+    "zoom": 12,
+    "population": 43484,
+    "grid": "cities/ngabang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ngabang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ngabang",
+        "name": "Ngabang",
+        "nameIt": "Ngabang",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          109.9535,
+          0.38564
+        ],
+        "zoom": 12,
+        "population": 43484,
+        "cells": 105,
+        "layer": "cities/ngabang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.9535,
+            0.38564
+          ]
+        },
+        "properties": {
+          "id": "ngabang",
+          "name": "Ngabang",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 43484
+        }
+      },
+      "summary": null
+    }
+  }
+}

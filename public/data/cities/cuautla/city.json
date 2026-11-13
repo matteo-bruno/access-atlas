@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cuautla",
+  "createdAt": "2026-10-08T15:26:56.459Z",
+  "updatedAt": "2026-10-08T15:26:56.459Z",
+  "meta": {
+    "name": "Cuautla",
+    "nameIt": "Cuautla",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cuautla.geojson",
+      "sha256": "fdaa623dc20808f03564669f277bfc40f28e8869fd13d2b15de95ba55c3310f6",
+      "size": 515245,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cuautla",
+    "name": "Cuautla",
+    "nameIt": "Cuautla",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -98.94321,
+      18.8308
+    ],
+    "zoom": 10.6,
+    "population": 209733,
+    "grid": "cities/cuautla/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cuautla/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cuautla",
+        "name": "Cuautla",
+        "nameIt": "Cuautla",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -98.94321,
+          18.8308
+        ],
+        "zoom": 10.6,
+        "population": 209733,
+        "cells": 442,
+        "layer": "cities/cuautla/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -98.94321,
+            18.8308
+          ]
+        },
+        "properties": {
+          "id": "cuautla",
+          "name": "Cuautla",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 28.3,
+          "population": 209733
+        }
+      },
+      "summary": null
+    }
+  }
+}

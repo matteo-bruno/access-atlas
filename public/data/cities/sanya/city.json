@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sanya",
+  "createdAt": "2026-10-08T16:11:18.109Z",
+  "updatedAt": "2026-10-08T16:11:18.109Z",
+  "meta": {
+    "name": "Sanya",
+    "nameIt": "Sanya",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sanya.geojson",
+      "sha256": "a9ee56b535e3219330289c18a50b44f4d594270b406baffc76f3da6a665cfcdd",
+      "size": 735380,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sanya",
+    "name": "Sanya",
+    "nameIt": "Sanya",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      109.50535,
+      18.27222
+    ],
+    "zoom": 10.4,
+    "population": 442385,
+    "grid": "cities/sanya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sanya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sanya",
+        "name": "Sanya",
+        "nameIt": "Sanya",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          109.50535,
+          18.27222
+        ],
+        "zoom": 10.4,
+        "population": 442385,
+        "cells": 632,
+        "layer": "cities/sanya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.50535,
+            18.27222
+          ]
+        },
+        "properties": {
+          "id": "sanya",
+          "name": "Sanya",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 25,
+          "population": 442385
+        }
+      },
+      "summary": null
+    }
+  }
+}

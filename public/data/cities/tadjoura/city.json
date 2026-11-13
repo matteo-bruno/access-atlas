@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tadjoura",
+  "createdAt": "2026-10-08T16:15:54.545Z",
+  "updatedAt": "2026-10-08T16:15:54.545Z",
+  "meta": {
+    "name": "Tadjoura",
+    "nameIt": "Tadjoura",
+    "region": "Djibouti",
+    "regionIt": "Gibuti",
+    "country": "DJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tadjoura.geojson",
+      "sha256": "4bacc726297b89ebbbe6cac98a8002bbfe2d15fff4b3638a2757b2ae4d01f951",
+      "size": 89460,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tadjoura",
+    "name": "Tadjoura",
+    "nameIt": "Tadjoura",
+    "region": "Djibouti",
+    "regionIt": "Gibuti",
+    "country": "DJ",
+    "center": [
+      42.88155,
+      11.78791
+    ],
+    "zoom": 12,
+    "population": 40580,
+    "grid": "cities/tadjoura/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tadjoura/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tadjoura",
+        "name": "Tadjoura",
+        "nameIt": "Tadjoura",
+        "region": "Djibouti",
+        "regionIt": "Gibuti",
+        "country": "DJ",
+        "center": [
+          42.88155,
+          11.78791
+        ],
+        "zoom": 12,
+        "population": 40580,
+        "cells": 77,
+        "layer": "cities/tadjoura/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            42.88155,
+            11.78791
+          ]
+        },
+        "properties": {
+          "id": "tadjoura",
+          "name": "Tadjoura",
+          "country": "DJ",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 40580
+        }
+      },
+      "summary": null
+    }
+  }
+}

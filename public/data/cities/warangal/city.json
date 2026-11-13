@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "warangal",
+  "createdAt": "2026-10-08T16:21:22.034Z",
+  "updatedAt": "2026-10-08T16:21:22.034Z",
+  "meta": {
+    "name": "Warangal",
+    "nameIt": "Warangal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Warangal.geojson",
+      "sha256": "b6994bafcb8d18e2390f4f36d15a69f63a9beb9839bb717d58a117f188e4a030",
+      "size": 1061099,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "warangal",
+    "name": "Warangal",
+    "nameIt": "Warangal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.57302,
+      17.98876
+    ],
+    "zoom": 9.8,
+    "population": 901138,
+    "grid": "cities/warangal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/warangal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "warangal",
+        "name": "Warangal",
+        "nameIt": "Warangal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.57302,
+          17.98876
+        ],
+        "zoom": 9.8,
+        "population": 901138,
+        "cells": 920,
+        "layer": "cities/warangal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.57302,
+            17.98876
+          ]
+        },
+        "properties": {
+          "id": "warangal",
+          "name": "Warangal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 27.1,
+          "population": 901138
+        }
+      },
+      "summary": null
+    }
+  }
+}

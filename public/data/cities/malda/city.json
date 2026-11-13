@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "malda",
+  "createdAt": "2026-10-08T15:54:08.329Z",
+  "updatedAt": "2026-10-08T15:54:08.329Z",
+  "meta": {
+    "name": "Malda",
+    "nameIt": "Malda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Malda.geojson",
+      "sha256": "eb44570502dbf8e212e98362901bdd50c9e740c7b01506e6c6496ea104abbc5a",
+      "size": 384861,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "malda",
+    "name": "Malda",
+    "nameIt": "Malda",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.13941,
+      25.0077
+    ],
+    "zoom": 10.7,
+    "population": 295796,
+    "grid": "cities/malda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/malda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "malda",
+        "name": "Malda",
+        "nameIt": "Malda",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.13941,
+          25.0077
+        ],
+        "zoom": 10.7,
+        "population": 295796,
+        "cells": 332,
+        "layer": "cities/malda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.13941,
+            25.0077
+          ]
+        },
+        "properties": {
+          "id": "malda",
+          "name": "Malda",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 26.6,
+          "population": 295796
+        }
+      },
+      "summary": null
+    }
+  }
+}

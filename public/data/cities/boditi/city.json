@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "boditi",
+  "createdAt": "2026-10-08T15:19:46.239Z",
+  "updatedAt": "2026-10-08T15:19:46.239Z",
+  "meta": {
+    "name": "Boditi",
+    "nameIt": "Boditi",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Boditi.geojson",
+      "sha256": "3680dc971dac52d2d969f13cb1048b56cdea8e88bd50aff88ff3fffb2f4edbd1",
+      "size": 127079,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "boditi",
+    "name": "Boditi",
+    "nameIt": "Boditi",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      37.85777,
+      6.95342
+    ],
+    "zoom": 11.9,
+    "population": 50101,
+    "grid": "cities/boditi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/boditi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "boditi",
+        "name": "Boditi",
+        "nameIt": "Boditi",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          37.85777,
+          6.95342
+        ],
+        "zoom": 11.9,
+        "population": 50101,
+        "cells": 110,
+        "layer": "cities/boditi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.85777,
+            6.95342
+          ]
+        },
+        "properties": {
+          "id": "boditi",
+          "name": "Boditi",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 50101
+        }
+      },
+      "summary": null
+    }
+  }
+}

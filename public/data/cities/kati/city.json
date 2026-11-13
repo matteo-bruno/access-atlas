@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kati",
+  "createdAt": "2026-10-08T15:45:38.612Z",
+  "updatedAt": "2026-10-08T15:45:38.612Z",
+  "meta": {
+    "name": "Kati",
+    "nameIt": "Kati",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kati.geojson",
+      "sha256": "5f9773b9fb94d5b593cc42cbe040b1c10ab22aa1fa22a3215d8313f97cddf449",
+      "size": 512505,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kati",
+    "name": "Kati",
+    "nameIt": "Kati",
+    "region": "Mali",
+    "regionIt": "Mali",
+    "country": "ML",
+    "center": [
+      -8.07053,
+      12.73654
+    ],
+    "zoom": 10.8,
+    "population": 150114,
+    "grid": "cities/kati/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kati/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kati",
+        "name": "Kati",
+        "nameIt": "Kati",
+        "region": "Mali",
+        "regionIt": "Mali",
+        "country": "ML",
+        "center": [
+          -8.07053,
+          12.73654
+        ],
+        "zoom": 10.8,
+        "population": 150114,
+        "cells": 440,
+        "layer": "cities/kati/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -8.07053,
+            12.73654
+          ]
+        },
+        "properties": {
+          "id": "kati",
+          "name": "Kati",
+          "country": "ML",
+          "isStudy": true,
+          "proximityMinutes": 26.6,
+          "population": 150114
+        }
+      },
+      "summary": null
+    }
+  }
+}

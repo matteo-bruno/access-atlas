@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jogikuti",
+  "createdAt": "2026-10-08T15:43:24.814Z",
+  "updatedAt": "2026-10-08T15:43:24.814Z",
+  "meta": {
+    "name": "Jogīkuti",
+    "nameIt": "Jogīkuti",
+    "region": "Nepal",
+    "regionIt": "Nepal",
+    "country": "NP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jogīkuti.geojson",
+      "sha256": "2fb5fb8812888f7c4304cdf7714c8402dcbdcf5931cb3b2adf8be8a61938d9d5",
+      "size": 346648,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jogikuti",
+    "name": "Jogīkuti",
+    "nameIt": "Jogīkuti",
+    "region": "Nepal",
+    "regionIt": "Nepal",
+    "country": "NP",
+    "center": [
+      83.45746,
+      27.67079
+    ],
+    "zoom": 10.7,
+    "population": 150904,
+    "grid": "cities/jogikuti/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jogikuti/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jogikuti",
+        "name": "Jogīkuti",
+        "nameIt": "Jogīkuti",
+        "region": "Nepal",
+        "regionIt": "Nepal",
+        "country": "NP",
+        "center": [
+          83.45746,
+          27.67079
+        ],
+        "zoom": 10.7,
+        "population": 150904,
+        "cells": 300,
+        "layer": "cities/jogikuti/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.45746,
+            27.67079
+          ]
+        },
+        "properties": {
+          "id": "jogikuti",
+          "name": "Jogīkuti",
+          "country": "NP",
+          "isStudy": true,
+          "proximityMinutes": 22.3,
+          "population": 150904
+        }
+      },
+      "summary": null
+    }
+  }
+}

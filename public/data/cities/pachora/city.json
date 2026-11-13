@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pachora",
+  "createdAt": "2026-10-08T16:03:32.076Z",
+  "updatedAt": "2026-10-08T16:03:32.076Z",
+  "meta": {
+    "name": "Pachora",
+    "nameIt": "Pachora",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pachora.geojson",
+      "sha256": "a3ddef2dad539d94bc33dca3d1df8263d8eee324df0e4b53cd1ec8968dd4e5c2",
+      "size": 136615,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pachora",
+    "name": "Pachora",
+    "nameIt": "Pachora",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.3468,
+      20.66413
+    ],
+    "zoom": 11.7,
+    "population": 69642,
+    "grid": "cities/pachora/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pachora/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pachora",
+        "name": "Pachora",
+        "nameIt": "Pachora",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.3468,
+          20.66413
+        ],
+        "zoom": 11.7,
+        "population": 69642,
+        "cells": 118,
+        "layer": "cities/pachora/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.3468,
+            20.66413
+          ]
+        },
+        "properties": {
+          "id": "pachora",
+          "name": "Pachora",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 69642
+        }
+      },
+      "summary": null
+    }
+  }
+}

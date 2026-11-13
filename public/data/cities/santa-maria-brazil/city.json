@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "santa-maria-brazil",
+  "createdAt": "2026-10-08T16:11:07.043Z",
+  "updatedAt": "2026-10-08T16:11:07.043Z",
+  "meta": {
+    "name": "Santa Maria (Brazil)",
+    "nameIt": "Santa Maria (Brazil)",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Santa Maria (Brazil).geojson",
+      "sha256": "56627af2ed80f181b464531dda10ff6e0a40f9a9f1599075213759e267025f84",
+      "size": 603706,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "santa-maria-brazil",
+    "name": "Santa Maria (Brazil)",
+    "nameIt": "Santa Maria (Brazil)",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -53.82481,
+      -29.69214
+    ],
+    "zoom": 10.8,
+    "population": 189804,
+    "grid": "cities/santa-maria-brazil/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/santa-maria-brazil/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "santa-maria-brazil",
+        "name": "Santa Maria (Brazil)",
+        "nameIt": "Santa Maria (Brazil)",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -53.82481,
+          -29.69214
+        ],
+        "zoom": 10.8,
+        "population": 189804,
+        "cells": 518,
+        "layer": "cities/santa-maria-brazil/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -53.82481,
+            -29.69214
+          ]
+        },
+        "properties": {
+          "id": "santa-maria-brazil",
+          "name": "Santa Maria (Brazil)",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 189804
+        }
+      },
+      "summary": null
+    }
+  }
+}

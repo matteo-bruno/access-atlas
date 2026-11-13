@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ciudad-mante",
+  "createdAt": "2026-10-08T15:25:40.383Z",
+  "updatedAt": "2026-10-08T15:25:40.383Z",
+  "meta": {
+    "name": "Ciudad Mante",
+    "nameIt": "Ciudad Mante",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ciudad Mante.geojson",
+      "sha256": "ecea332bb50a0ccf7f18cc6070f71fb00c510fd0023fe4fdf841f0fdd4b133c7",
+      "size": 208925,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ciudad-mante",
+    "name": "Ciudad Mante",
+    "nameIt": "Ciudad Mante",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -98.97529,
+      22.74366
+    ],
+    "zoom": 11.3,
+    "population": 66230,
+    "grid": "cities/ciudad-mante/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ciudad-mante/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ciudad-mante",
+        "name": "Ciudad Mante",
+        "nameIt": "Ciudad Mante",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -98.97529,
+          22.74366
+        ],
+        "zoom": 11.3,
+        "population": 66230,
+        "cells": 179,
+        "layer": "cities/ciudad-mante/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -98.97529,
+            22.74366
+          ]
+        },
+        "properties": {
+          "id": "ciudad-mante",
+          "name": "Ciudad Mante",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 20.1,
+          "population": 66230
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pingliang",
+  "createdAt": "2026-10-08T16:05:37.511Z",
+  "updatedAt": "2026-10-08T16:05:37.511Z",
+  "meta": {
+    "name": "Pingliang",
+    "nameIt": "Pingliang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pingliang.geojson",
+      "sha256": "f4517b7e565abd59b650750933450d9238cde1ac41e477495a5af4fba56d9064",
+      "size": 351525,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pingliang",
+    "name": "Pingliang",
+    "nameIt": "Pingliang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      106.67635,
+      35.5423
+    ],
+    "zoom": 11,
+    "population": 295834,
+    "grid": "cities/pingliang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pingliang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pingliang",
+        "name": "Pingliang",
+        "nameIt": "Pingliang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          106.67635,
+          35.5423
+        ],
+        "zoom": 11,
+        "population": 295834,
+        "cells": 302,
+        "layer": "cities/pingliang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.67635,
+            35.5423
+          ]
+        },
+        "properties": {
+          "id": "pingliang",
+          "name": "Pingliang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 21.3,
+          "population": 295834
+        }
+      },
+      "summary": null
+    }
+  }
+}

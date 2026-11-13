@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ceuta",
+  "createdAt": "2026-10-08T15:23:03.097Z",
+  "updatedAt": "2026-10-08T15:23:03.097Z",
+  "meta": {
+    "name": "Ceuta",
+    "nameIt": "Ceuta",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ceuta.geojson",
+      "sha256": "edc9811c132bf4aeecbaf3d87beaaf6eb2fc66d856f1bb4dbb7c154ab23dfdce",
+      "size": 206769,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ceuta",
+    "name": "Ceuta",
+    "nameIt": "Ceuta",
+    "region": "Morocco",
+    "regionIt": "Marocco",
+    "country": "MA",
+    "center": [
+      -5.32837,
+      35.88674
+    ],
+    "zoom": 11.3,
+    "population": 81527,
+    "grid": "cities/ceuta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ceuta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ceuta",
+        "name": "Ceuta",
+        "nameIt": "Ceuta",
+        "region": "Morocco",
+        "regionIt": "Marocco",
+        "country": "MA",
+        "center": [
+          -5.32837,
+          35.88674
+        ],
+        "zoom": 11.3,
+        "population": 81527,
+        "cells": 179,
+        "layer": "cities/ceuta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -5.32837,
+            35.88674
+          ]
+        },
+        "properties": {
+          "id": "ceuta",
+          "name": "Ceuta",
+          "country": "MA",
+          "isStudy": true,
+          "proximityMinutes": 15.8,
+          "population": 81527
+        }
+      },
+      "summary": null
+    }
+  }
+}

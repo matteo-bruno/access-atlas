@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "makein",
+  "createdAt": "2026-10-08T15:53:57.661Z",
+  "updatedAt": "2026-10-08T15:53:57.661Z",
+  "meta": {
+    "name": "Makein",
+    "nameIt": "Makein",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Makein.geojson",
+      "sha256": "0074ef409c896953f0e1aee5f60e73b76bedf226cb13072ac68cbc8a640eab26",
+      "size": 167593,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "makein",
+    "name": "Makein",
+    "nameIt": "Makein",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      30.80748,
+      27.87686
+    ],
+    "zoom": 11.3,
+    "population": 93166,
+    "grid": "cities/makein/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/makein/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "makein",
+        "name": "Makein",
+        "nameIt": "Makein",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          30.80748,
+          27.87686
+        ],
+        "zoom": 11.3,
+        "population": 93166,
+        "cells": 144,
+        "layer": "cities/makein/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.80748,
+            27.87686
+          ]
+        },
+        "properties": {
+          "id": "makein",
+          "name": "Makein",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 93166
+        }
+      },
+      "summary": null
+    }
+  }
+}

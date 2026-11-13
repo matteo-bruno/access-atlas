@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pingtung-city",
+  "createdAt": "2026-10-08T16:05:40.730Z",
+  "updatedAt": "2026-10-08T16:05:40.730Z",
+  "meta": {
+    "name": "Pingtung City",
+    "nameIt": "Pingtung City",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pingtung City.geojson",
+      "sha256": "2f2c230a2b954ac45571d4269cd24b99480bf8c2c619c0469730b044c2a3e4fc",
+      "size": 547157,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pingtung-city",
+    "name": "Pingtung City",
+    "nameIt": "Pingtung City",
+    "region": "Taiwan",
+    "regionIt": "Taiwan",
+    "country": "TW",
+    "center": [
+      120.48841,
+      22.66671
+    ],
+    "zoom": 10.5,
+    "population": 204642,
+    "grid": "cities/pingtung-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pingtung-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pingtung-city",
+        "name": "Pingtung City",
+        "nameIt": "Pingtung City",
+        "region": "Taiwan",
+        "regionIt": "Taiwan",
+        "country": "TW",
+        "center": [
+          120.48841,
+          22.66671
+        ],
+        "zoom": 10.5,
+        "population": 204642,
+        "cells": 474,
+        "layer": "cities/pingtung-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.48841,
+            22.66671
+          ]
+        },
+        "properties": {
+          "id": "pingtung-city",
+          "name": "Pingtung City",
+          "country": "TW",
+          "isStudy": true,
+          "proximityMinutes": 12.4,
+          "population": 204642
+        }
+      },
+      "summary": null
+    }
+  }
+}

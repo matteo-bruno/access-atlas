@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yogyakarta",
+  "createdAt": "2026-10-08T16:24:04.767Z",
+  "updatedAt": "2026-10-08T16:24:04.767Z",
+  "meta": {
+    "name": "Yogyakarta",
+    "nameIt": "Yogyakarta",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yogyakarta.geojson",
+      "sha256": "cc0f3dfadcec9977531f5c21d5db9e100661c2329bb7956f9c2ef733557ffaff",
+      "size": 7455820,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yogyakarta",
+    "name": "Yogyakarta",
+    "nameIt": "Yogyakarta",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      110.43072,
+      -7.77502
+    ],
+    "zoom": 8.5,
+    "population": 2518519,
+    "grid": "cities/yogyakarta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yogyakarta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yogyakarta",
+        "name": "Yogyakarta",
+        "nameIt": "Yogyakarta",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          110.43072,
+          -7.77502
+        ],
+        "zoom": 8.5,
+        "population": 2518519,
+        "cells": 6409,
+        "layer": "cities/yogyakarta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.43072,
+            -7.77502
+          ]
+        },
+        "properties": {
+          "id": "yogyakarta",
+          "name": "Yogyakarta",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 25.5,
+          "population": 2518519
+        }
+      },
+      "summary": null
+    }
+  }
+}

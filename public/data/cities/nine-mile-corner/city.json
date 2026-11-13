@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nine-mile-corner",
+  "createdAt": "2026-10-08T16:01:36.310Z",
+  "updatedAt": "2026-10-08T16:01:36.310Z",
+  "meta": {
+    "name": "Nine Mile Corner",
+    "nameIt": "Nine Mile Corner",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nine Mile Corner.geojson",
+      "sha256": "cabbc8e5871c7789800d55f9f976f4ed39e9881c4c7c8aaa6a82c6b4e5ff71cb",
+      "size": 212904,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nine-mile-corner",
+    "name": "Nine Mile Corner",
+    "nameIt": "Nine Mile Corner",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      7.42204,
+      6.4318
+    ],
+    "zoom": 11.1,
+    "population": 68411,
+    "grid": "cities/nine-mile-corner/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nine-mile-corner/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nine-mile-corner",
+        "name": "Nine Mile Corner",
+        "nameIt": "Nine Mile Corner",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          7.42204,
+          6.4318
+        ],
+        "zoom": 11.1,
+        "population": 68411,
+        "cells": 185,
+        "layer": "cities/nine-mile-corner/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.42204,
+            6.4318
+          ]
+        },
+        "properties": {
+          "id": "nine-mile-corner",
+          "name": "Nine Mile Corner",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 68411
+        }
+      },
+      "summary": null
+    }
+  }
+}

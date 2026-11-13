@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "asbury-park",
+  "createdAt": "2026-10-08T15:10:07.446Z",
+  "updatedAt": "2026-10-08T15:10:07.446Z",
+  "meta": {
+    "name": "Asbury Park",
+    "nameIt": "Asbury Park",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Asbury Park.geojson",
+      "sha256": "f4ac6e6d25809c4fe78a7badbed764323c0a5c892a793c00d5c74de2ee9ea4a1",
+      "size": 455320,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "asbury-park",
+    "name": "Asbury Park",
+    "nameIt": "Asbury Park",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -74.0259,
+      40.20235
+    ],
+    "zoom": 10.8,
+    "population": 61438,
+    "grid": "cities/asbury-park/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/asbury-park/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "asbury-park",
+        "name": "Asbury Park",
+        "nameIt": "Asbury Park",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -74.0259,
+          40.20235
+        ],
+        "zoom": 10.8,
+        "population": 61438,
+        "cells": 393,
+        "layer": "cities/asbury-park/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.0259,
+            40.20235
+          ]
+        },
+        "properties": {
+          "id": "asbury-park",
+          "name": "Asbury Park",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 17.7,
+          "population": 61438
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yopal",
+  "createdAt": "2026-10-08T16:24:13.472Z",
+  "updatedAt": "2026-10-08T16:24:13.472Z",
+  "meta": {
+    "name": "Yopal",
+    "nameIt": "Yopal",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yopal.geojson",
+      "sha256": "885cf62fce02ca9e2d24a5e9bb2b00a3f2af50f146f8fffa81aa5f81b87b6f74",
+      "size": 223330,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yopal",
+    "name": "Yopal",
+    "nameIt": "Yopal",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -72.39427,
+      5.33067
+    ],
+    "zoom": 11.7,
+    "population": 136604,
+    "grid": "cities/yopal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yopal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yopal",
+        "name": "Yopal",
+        "nameIt": "Yopal",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -72.39427,
+          5.33067
+        ],
+        "zoom": 11.7,
+        "population": 136604,
+        "cells": 194,
+        "layer": "cities/yopal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.39427,
+            5.33067
+          ]
+        },
+        "properties": {
+          "id": "yopal",
+          "name": "Yopal",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 8.7,
+          "population": 136604
+        }
+      },
+      "summary": null
+    }
+  }
+}

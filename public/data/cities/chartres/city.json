@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chartres",
+  "createdAt": "2026-10-08T15:24:02.447Z",
+  "updatedAt": "2026-10-08T15:24:02.447Z",
+  "meta": {
+    "name": "Chartres",
+    "nameIt": "Chartres",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chartres.geojson",
+      "sha256": "37942ae3538b619b56a4b4f6ba66d8916e49abecc2e5bed53b3a24afac173267",
+      "size": 285527,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chartres",
+    "name": "Chartres",
+    "nameIt": "Chartres",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      1.47877,
+      48.44044
+    ],
+    "zoom": 11.4,
+    "population": 70641,
+    "grid": "cities/chartres/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chartres/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chartres",
+        "name": "Chartres",
+        "nameIt": "Chartres",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          1.47877,
+          48.44044
+        ],
+        "zoom": 11.4,
+        "population": 70641,
+        "cells": 250,
+        "layer": "cities/chartres/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.47877,
+            48.44044
+          ]
+        },
+        "properties": {
+          "id": "chartres",
+          "name": "Chartres",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 10.8,
+          "population": 70641
+        }
+      },
+      "summary": null
+    }
+  }
+}

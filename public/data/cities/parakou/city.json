@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "parakou",
+  "createdAt": "2026-10-08T16:04:14.842Z",
+  "updatedAt": "2026-10-08T16:04:14.842Z",
+  "meta": {
+    "name": "Parakou",
+    "nameIt": "Parakou",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Parakou.geojson",
+      "sha256": "f355ae8feb446040ca8d9c6db668acef26d6947a7aa0dba0a6acef874e00d7a6",
+      "size": 1006622,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "parakou",
+    "name": "Parakou",
+    "nameIt": "Parakou",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ",
+    "center": [
+      2.62368,
+      9.349
+    ],
+    "zoom": 10.6,
+    "population": 568595,
+    "grid": "cities/parakou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/parakou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "parakou",
+        "name": "Parakou",
+        "nameIt": "Parakou",
+        "region": "Benin",
+        "regionIt": "Benin",
+        "country": "BJ",
+        "center": [
+          2.62368,
+          9.349
+        ],
+        "zoom": 10.6,
+        "population": 568595,
+        "cells": 876,
+        "layer": "cities/parakou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.62368,
+            9.349
+          ]
+        },
+        "properties": {
+          "id": "parakou",
+          "name": "Parakou",
+          "country": "BJ",
+          "isStudy": true,
+          "proximityMinutes": 19.7,
+          "population": 568595
+        }
+      },
+      "summary": null
+    }
+  }
+}

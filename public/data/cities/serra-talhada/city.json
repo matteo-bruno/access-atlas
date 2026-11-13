@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "serra-talhada",
+  "createdAt": "2026-10-08T16:12:03.961Z",
+  "updatedAt": "2026-10-08T16:12:03.961Z",
+  "meta": {
+    "name": "Serra Talhada",
+    "nameIt": "Serra Talhada",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Serra Talhada.geojson",
+      "sha256": "5c3c7b2212eaeac1d7cb958cb7475aaf2a61954a2379791ba3fde41b9d6f872e",
+      "size": 106571,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "serra-talhada",
+    "name": "Serra Talhada",
+    "nameIt": "Serra Talhada",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -38.29299,
+      -7.98632
+    ],
+    "zoom": 12,
+    "population": 52115,
+    "grid": "cities/serra-talhada/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/serra-talhada/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "serra-talhada",
+        "name": "Serra Talhada",
+        "nameIt": "Serra Talhada",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -38.29299,
+          -7.98632
+        ],
+        "zoom": 12,
+        "population": 52115,
+        "cells": 91,
+        "layer": "cities/serra-talhada/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -38.29299,
+            -7.98632
+          ]
+        },
+        "properties": {
+          "id": "serra-talhada",
+          "name": "Serra Talhada",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 14.9,
+          "population": 52115
+        }
+      },
+      "summary": null
+    }
+  }
+}

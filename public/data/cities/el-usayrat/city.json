@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "el-usayrat",
+  "createdAt": "2026-10-08T15:32:04.846Z",
+  "updatedAt": "2026-10-08T15:32:04.846Z",
+  "meta": {
+    "name": "El-Usayrat",
+    "nameIt": "El-Usayrat",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/El-Usayrat.geojson",
+      "sha256": "63d26f032ae8ad4a234654932fc4bf9115a719a6349ca4b7d3b98d76aaba4f81",
+      "size": 312084,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "el-usayrat",
+    "name": "El-Usayrat",
+    "nameIt": "El-Usayrat",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      31.82922,
+      26.38506
+    ],
+    "zoom": 11,
+    "population": 181625,
+    "grid": "cities/el-usayrat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/el-usayrat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "el-usayrat",
+        "name": "El-Usayrat",
+        "nameIt": "El-Usayrat",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          31.82922,
+          26.38506
+        ],
+        "zoom": 11,
+        "population": 181625,
+        "cells": 268,
+        "layer": "cities/el-usayrat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.82922,
+            26.38506
+          ]
+        },
+        "properties": {
+          "id": "el-usayrat",
+          "name": "El-Usayrat",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 181625
+        }
+      },
+      "summary": null
+    }
+  }
+}

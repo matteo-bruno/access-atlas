@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hasanpur",
+  "createdAt": "2026-10-08T15:37:58.475Z",
+  "updatedAt": "2026-10-08T15:37:58.475Z",
+  "meta": {
+    "name": "Hasanpur",
+    "nameIt": "Hasanpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hasanpur.geojson",
+      "sha256": "246d30cd7c430c6ae04b1d5878699cb4a19756f34a2aadedfa219dbcca2da630",
+      "size": 62624,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hasanpur",
+    "name": "Hasanpur",
+    "nameIt": "Hasanpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.2852,
+      28.72286
+    ],
+    "zoom": 12,
+    "population": 47102,
+    "grid": "cities/hasanpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hasanpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hasanpur",
+        "name": "Hasanpur",
+        "nameIt": "Hasanpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.2852,
+          28.72286
+        ],
+        "zoom": 12,
+        "population": 47102,
+        "cells": 54,
+        "layer": "cities/hasanpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.2852,
+            28.72286
+          ]
+        },
+        "properties": {
+          "id": "hasanpur",
+          "name": "Hasanpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 9.3,
+          "population": 47102
+        }
+      },
+      "summary": null
+    }
+  }
+}

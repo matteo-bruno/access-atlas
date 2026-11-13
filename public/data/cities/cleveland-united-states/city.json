@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cleveland-united-states",
+  "createdAt": "2026-10-08T15:25:49.087Z",
+  "updatedAt": "2026-10-08T15:25:49.087Z",
+  "meta": {
+    "name": "Cleveland (United States)",
+    "nameIt": "Cleveland (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cleveland (United States).geojson",
+      "sha256": "58977b1450b84864faeacfab2f0303c066e0a3d6e1ca71843a1dde4eb9a09c34",
+      "size": 4433927,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cleveland-united-states",
+    "name": "Cleveland (United States)",
+    "nameIt": "Cleveland (United States)",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -81.66821,
+      41.47165
+    ],
+    "zoom": 9.1,
+    "population": 705744,
+    "grid": "cities/cleveland-united-states/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cleveland-united-states/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cleveland-united-states",
+        "name": "Cleveland (United States)",
+        "nameIt": "Cleveland (United States)",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -81.66821,
+          41.47165
+        ],
+        "zoom": 9.1,
+        "population": 705744,
+        "cells": 3846,
+        "layer": "cities/cleveland-united-states/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.66821,
+            41.47165
+          ]
+        },
+        "properties": {
+          "id": "cleveland-united-states",
+          "name": "Cleveland (United States)",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 18.9,
+          "population": 705744
+        }
+      },
+      "summary": null
+    }
+  }
+}

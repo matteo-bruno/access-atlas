@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tanjung-piayu",
+  "createdAt": "2026-10-08T16:16:37.496Z",
+  "updatedAt": "2026-10-08T16:16:37.496Z",
+  "meta": {
+    "name": "Tanjung Piayu",
+    "nameIt": "Tanjung Piayu",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tanjung Piayu.geojson",
+      "sha256": "0f88232e06a85eab5080712547d5170f9d14457207e04cd739b77c5c1634f97f",
+      "size": 98021,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tanjung-piayu",
+    "name": "Tanjung Piayu",
+    "nameIt": "Tanjung Piayu",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      104.05623,
+      1.03143
+    ],
+    "zoom": 12,
+    "population": 44682,
+    "grid": "cities/tanjung-piayu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tanjung-piayu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tanjung-piayu",
+        "name": "Tanjung Piayu",
+        "nameIt": "Tanjung Piayu",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          104.05623,
+          1.03143
+        ],
+        "zoom": 12,
+        "population": 44682,
+        "cells": 84,
+        "layer": "cities/tanjung-piayu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            104.05623,
+            1.03143
+          ]
+        },
+        "properties": {
+          "id": "tanjung-piayu",
+          "name": "Tanjung Piayu",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 14.4,
+          "population": 44682
+        }
+      },
+      "summary": null
+    }
+  }
+}

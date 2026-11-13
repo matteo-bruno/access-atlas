@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sanhur",
+  "createdAt": "2026-10-08T16:10:56.842Z",
+  "updatedAt": "2026-10-08T16:10:56.842Z",
+  "meta": {
+    "name": "Sanhur",
+    "nameIt": "Sanhur",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sanhur.geojson",
+      "sha256": "7b5344f3ce3d95c05033e13db60dd259d43e24ebd6ed312bc6d7a6c8fcb9c399",
+      "size": 904569,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sanhur",
+    "name": "Sanhur",
+    "nameIt": "Sanhur",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      30.71428,
+      29.3842
+    ],
+    "zoom": 10.3,
+    "population": 481026,
+    "grid": "cities/sanhur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sanhur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sanhur",
+        "name": "Sanhur",
+        "nameIt": "Sanhur",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          30.71428,
+          29.3842
+        ],
+        "zoom": 10.3,
+        "population": 481026,
+        "cells": 777,
+        "layer": "cities/sanhur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.71428,
+            29.3842
+          ]
+        },
+        "properties": {
+          "id": "sanhur",
+          "name": "Sanhur",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 481026
+        }
+      },
+      "summary": null
+    }
+  }
+}

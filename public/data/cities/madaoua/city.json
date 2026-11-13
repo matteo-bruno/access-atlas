@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "madaoua",
+  "createdAt": "2026-10-08T15:53:19.867Z",
+  "updatedAt": "2026-10-08T15:53:19.867Z",
+  "meta": {
+    "name": "Madaoua",
+    "nameIt": "Madaoua",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Madaoua.geojson",
+      "sha256": "cd75ef0749f00cf2f1419c5886103e422e55e588eca806340b256a68252e3edf",
+      "size": 125183,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "madaoua",
+    "name": "Madaoua",
+    "nameIt": "Madaoua",
+    "region": "Niger",
+    "regionIt": "Niger",
+    "country": "NE",
+    "center": [
+      5.95642,
+      14.071
+    ],
+    "zoom": 12,
+    "population": 92209,
+    "grid": "cities/madaoua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/madaoua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "madaoua",
+        "name": "Madaoua",
+        "nameIt": "Madaoua",
+        "region": "Niger",
+        "regionIt": "Niger",
+        "country": "NE",
+        "center": [
+          5.95642,
+          14.071
+        ],
+        "zoom": 12,
+        "population": 92209,
+        "cells": 108,
+        "layer": "cities/madaoua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.95642,
+            14.071
+          ]
+        },
+        "properties": {
+          "id": "madaoua",
+          "name": "Madaoua",
+          "country": "NE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 92209
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "balti",
+  "createdAt": "2026-10-08T15:21:26.146Z",
+  "updatedAt": "2026-10-08T15:21:26.146Z",
+  "meta": {
+    "name": "Bălți",
+    "nameIt": "Bălți",
+    "region": "Moldova",
+    "regionIt": "Moldavia",
+    "country": "MD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bălți.geojson",
+      "sha256": "b8e31a2f7d6a0c539a75589f543d0a835d3e2fb920a0a2a6ee8c7fcb2197ae8a",
+      "size": 229555,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "balti",
+    "name": "Bălți",
+    "nameIt": "Bălți",
+    "region": "Moldova",
+    "regionIt": "Moldavia",
+    "country": "MD",
+    "center": [
+      27.91253,
+      47.76417
+    ],
+    "zoom": 11.5,
+    "population": 61317,
+    "grid": "cities/balti/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/balti/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "balti",
+        "name": "Bălți",
+        "nameIt": "Bălți",
+        "region": "Moldova",
+        "regionIt": "Moldavia",
+        "country": "MD",
+        "center": [
+          27.91253,
+          47.76417
+        ],
+        "zoom": 11.5,
+        "population": 61317,
+        "cells": 199,
+        "layer": "cities/balti/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.91253,
+            47.76417
+          ]
+        },
+        "properties": {
+          "id": "balti",
+          "name": "Bălți",
+          "country": "MD",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 61317
+        }
+      },
+      "summary": null
+    }
+  }
+}

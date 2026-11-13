@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "termez",
+  "createdAt": "2026-10-08T16:17:22.689Z",
+  "updatedAt": "2026-10-08T16:17:22.689Z",
+  "meta": {
+    "name": "Termez",
+    "nameIt": "Termez",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Termez.geojson",
+      "sha256": "da8995868499497ecde98c80c685871b4ec704a5a2589725e81712fe311263cc",
+      "size": 486292,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "termez",
+    "name": "Termez",
+    "nameIt": "Termez",
+    "region": "Uzbekistan",
+    "regionIt": "Uzbekistan",
+    "country": "UZ",
+    "center": [
+      67.28676,
+      37.23718
+    ],
+    "zoom": 10.7,
+    "population": 80866,
+    "grid": "cities/termez/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/termez/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "termez",
+        "name": "Termez",
+        "nameIt": "Termez",
+        "region": "Uzbekistan",
+        "regionIt": "Uzbekistan",
+        "country": "UZ",
+        "center": [
+          67.28676,
+          37.23718
+        ],
+        "zoom": 10.7,
+        "population": 80866,
+        "cells": 422,
+        "layer": "cities/termez/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            67.28676,
+            37.23718
+          ]
+        },
+        "properties": {
+          "id": "termez",
+          "name": "Termez",
+          "country": "UZ",
+          "isStudy": true,
+          "proximityMinutes": 25.5,
+          "population": 80866
+        }
+      },
+      "summary": null
+    }
+  }
+}

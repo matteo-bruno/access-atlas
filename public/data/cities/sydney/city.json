@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sydney",
+  "createdAt": "2026-10-08T16:15:33.052Z",
+  "updatedAt": "2026-10-08T16:15:33.052Z",
+  "meta": {
+    "name": "Sydney",
+    "nameIt": "Sydney",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sydney.geojson",
+      "sha256": "f898f93153ad8d28244b2da5e92de91a98117a51312497989a01045321671b16",
+      "size": 12577855,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sydney",
+    "name": "Sydney",
+    "nameIt": "Sydney",
+    "region": "Australia",
+    "regionIt": "Australia",
+    "country": "AU",
+    "center": [
+      151.07276,
+      -33.85598
+    ],
+    "zoom": 8.5,
+    "population": 4148157,
+    "grid": "cities/sydney/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sydney/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sydney",
+        "name": "Sydney",
+        "nameIt": "Sydney",
+        "region": "Australia",
+        "regionIt": "Australia",
+        "country": "AU",
+        "center": [
+          151.07276,
+          -33.85598
+        ],
+        "zoom": 8.5,
+        "population": 4148157,
+        "cells": 10843,
+        "layer": "cities/sydney/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            151.07276,
+            -33.85598
+          ]
+        },
+        "properties": {
+          "id": "sydney",
+          "name": "Sydney",
+          "country": "AU",
+          "isStudy": true,
+          "proximityMinutes": 13.8,
+          "population": 4148157
+        }
+      },
+      "summary": null
+    }
+  }
+}

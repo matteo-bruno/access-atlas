@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "schenectady",
+  "createdAt": "2026-10-08T16:11:45.056Z",
+  "updatedAt": "2026-10-08T16:11:45.056Z",
+  "meta": {
+    "name": "Schenectady",
+    "nameIt": "Schenectady",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Schenectady.geojson",
+      "sha256": "ed87d41567bad361eabf80639d0394d62dcf1c4e373cfa6573edf1d0472e84d1",
+      "size": 378103,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "schenectady",
+    "name": "Schenectady",
+    "nameIt": "Schenectady",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -73.93312,
+      42.80118
+    ],
+    "zoom": 10.9,
+    "population": 77865,
+    "grid": "cities/schenectady/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/schenectady/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "schenectady",
+        "name": "Schenectady",
+        "nameIt": "Schenectady",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -73.93312,
+          42.80118
+        ],
+        "zoom": 10.9,
+        "population": 77865,
+        "cells": 329,
+        "layer": "cities/schenectady/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.93312,
+            42.80118
+          ]
+        },
+        "properties": {
+          "id": "schenectady",
+          "name": "Schenectady",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 77865
+        }
+      },
+      "summary": null
+    }
+  }
+}

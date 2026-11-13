@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nawanshahr",
+  "createdAt": "2026-10-08T16:00:44.510Z",
+  "updatedAt": "2026-10-08T16:00:44.510Z",
+  "meta": {
+    "name": "Nawanshahr",
+    "nameIt": "Nawanshahr",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nawanshahr.geojson",
+      "sha256": "89b263b16fb694bc271a7bcb69d2dbcf13c5ed7854e3cc9e73fd02c768494829",
+      "size": 132026,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nawanshahr",
+    "name": "Nawanshahr",
+    "nameIt": "Nawanshahr",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.11976,
+      31.12313
+    ],
+    "zoom": 12,
+    "population": 58310,
+    "grid": "cities/nawanshahr/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nawanshahr/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nawanshahr",
+        "name": "Nawanshahr",
+        "nameIt": "Nawanshahr",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.11976,
+          31.12313
+        ],
+        "zoom": 12,
+        "population": 58310,
+        "cells": 114,
+        "layer": "cities/nawanshahr/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.11976,
+            31.12313
+          ]
+        },
+        "properties": {
+          "id": "nawanshahr",
+          "name": "Nawanshahr",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 13.1,
+          "population": 58310
+        }
+      },
+      "summary": null
+    }
+  }
+}

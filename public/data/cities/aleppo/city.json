@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aleppo",
+  "createdAt": "2026-10-08T15:05:40.039Z",
+  "updatedAt": "2026-10-08T15:05:40.039Z",
+  "meta": {
+    "name": "Aleppo",
+    "nameIt": "Aleppo",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aleppo.geojson",
+      "sha256": "8d33d9da4ca00e503edf45d8228814b6f23a05e6cdf222866508d08ca85c1785",
+      "size": 2413631,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aleppo",
+    "name": "Aleppo",
+    "nameIt": "Aleppo",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY",
+    "center": [
+      37.14063,
+      36.2023
+    ],
+    "zoom": 9.2,
+    "population": 1952045,
+    "grid": "cities/aleppo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aleppo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aleppo",
+        "name": "Aleppo",
+        "nameIt": "Aleppo",
+        "region": "Syria",
+        "regionIt": "Siria",
+        "country": "SY",
+        "center": [
+          37.14063,
+          36.2023
+        ],
+        "zoom": 9.2,
+        "population": 1952045,
+        "cells": 2095,
+        "layer": "cities/aleppo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.14063,
+            36.2023
+          ]
+        },
+        "properties": {
+          "id": "aleppo",
+          "name": "Aleppo",
+          "country": "SY",
+          "isStudy": true,
+          "proximityMinutes": 16.8,
+          "population": 1952045
+        }
+      },
+      "summary": null
+    }
+  }
+}

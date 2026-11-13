@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xinchang",
+  "createdAt": "2026-10-08T16:22:35.320Z",
+  "updatedAt": "2026-10-08T16:22:35.320Z",
+  "meta": {
+    "name": "Xinchang",
+    "nameIt": "Xinchang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xinchang.geojson",
+      "sha256": "fb6b79545bfebc0fad6a19263ceccbe4c0ced59d6a6ee10876fbdfe979ab8b8d",
+      "size": 453903,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xinchang",
+    "name": "Xinchang",
+    "nameIt": "Xinchang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      120.87803,
+      29.50804
+    ],
+    "zoom": 10.6,
+    "population": 211263,
+    "grid": "cities/xinchang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 180
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xinchang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xinchang",
+        "name": "Xinchang",
+        "nameIt": "Xinchang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          120.87803,
+          29.50804
+        ],
+        "zoom": 10.6,
+        "population": 211263,
+        "cells": 388,
+        "layer": "cities/xinchang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 180
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.87803,
+            29.50804
+          ]
+        },
+        "properties": {
+          "id": "xinchang",
+          "name": "Xinchang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 30.9,
+          "population": 211263
+        }
+      },
+      "summary": null
+    }
+  }
+}

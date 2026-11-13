@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ocosingo",
+  "createdAt": "2026-10-08T16:02:30.621Z",
+  "updatedAt": "2026-10-08T16:02:30.621Z",
+  "meta": {
+    "name": "Ocosingo",
+    "nameIt": "Ocosingo",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ocosingo.geojson",
+      "sha256": "9e1906de930b2e0000fcf357b567aff8294a22d03e7f958ed968ee20e7d7e0b0",
+      "size": 136796,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ocosingo",
+    "name": "Ocosingo",
+    "nameIt": "Ocosingo",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -92.0931,
+      16.90596
+    ],
+    "zoom": 11.9,
+    "population": 56650,
+    "grid": "cities/ocosingo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ocosingo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ocosingo",
+        "name": "Ocosingo",
+        "nameIt": "Ocosingo",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -92.0931,
+          16.90596
+        ],
+        "zoom": 11.9,
+        "population": 56650,
+        "cells": 117,
+        "layer": "cities/ocosingo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -92.0931,
+            16.90596
+          ]
+        },
+        "properties": {
+          "id": "ocosingo",
+          "name": "Ocosingo",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 13.5,
+          "population": 56650
+        }
+      },
+      "summary": null
+    }
+  }
+}

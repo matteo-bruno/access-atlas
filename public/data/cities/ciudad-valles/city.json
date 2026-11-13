@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ciudad-valles",
+  "createdAt": "2026-10-08T15:25:42.638Z",
+  "updatedAt": "2026-10-08T15:25:42.638Z",
+  "meta": {
+    "name": "Ciudad Valles",
+    "nameIt": "Ciudad Valles",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ciudad Valles.geojson",
+      "sha256": "6688d1cfbee6f2e44879e8bb83620a5da5b3809c4bfb473d237d1904dfe0d558",
+      "size": 301472,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ciudad-valles",
+    "name": "Ciudad Valles",
+    "nameIt": "Ciudad Valles",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -99.01005,
+      21.99629
+    ],
+    "zoom": 10.7,
+    "population": 121234,
+    "grid": "cities/ciudad-valles/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ciudad-valles/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ciudad-valles",
+        "name": "Ciudad Valles",
+        "nameIt": "Ciudad Valles",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -99.01005,
+          21.99629
+        ],
+        "zoom": 10.7,
+        "population": 121234,
+        "cells": 262,
+        "layer": "cities/ciudad-valles/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -99.01005,
+            21.99629
+          ]
+        },
+        "properties": {
+          "id": "ciudad-valles",
+          "name": "Ciudad Valles",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 10.6,
+          "population": 121234
+        }
+      },
+      "summary": null
+    }
+  }
+}

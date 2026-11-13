@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "weinan",
+  "createdAt": "2026-10-08T16:21:29.937Z",
+  "updatedAt": "2026-10-08T16:21:29.937Z",
+  "meta": {
+    "name": "Weinan",
+    "nameIt": "Weinan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Weinan.geojson",
+      "sha256": "bee24198a9d6730314758d9305311730b8daf35277a4750492b58614144cf8bb",
+      "size": 615063,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "weinan",
+    "name": "Weinan",
+    "nameIt": "Weinan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      109.47675,
+      34.49984
+    ],
+    "zoom": 10.3,
+    "population": 436755,
+    "grid": "cities/weinan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/weinan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "weinan",
+        "name": "Weinan",
+        "nameIt": "Weinan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          109.47675,
+          34.49984
+        ],
+        "zoom": 10.3,
+        "population": 436755,
+        "cells": 528,
+        "layer": "cities/weinan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.47675,
+            34.49984
+          ]
+        },
+        "properties": {
+          "id": "weinan",
+          "name": "Weinan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 21.3,
+          "population": 436755
+        }
+      },
+      "summary": null
+    }
+  }
+}

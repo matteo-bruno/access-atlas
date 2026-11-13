@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oswaldtwistle",
+  "createdAt": "2026-10-08T16:03:11.806Z",
+  "updatedAt": "2026-10-08T16:03:11.806Z",
+  "meta": {
+    "name": "Oswaldtwistle",
+    "nameIt": "Oswaldtwistle",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Oswaldtwistle.geojson",
+      "sha256": "9b79ed861daf43ba3142c32fd46ea714f98bc97afcf3ff355458c878603c5e09",
+      "size": 280700,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "oswaldtwistle",
+    "name": "Oswaldtwistle",
+    "nameIt": "Oswaldtwistle",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -2.38057,
+      53.75905
+    ],
+    "zoom": 11.4,
+    "population": 65911,
+    "grid": "cities/oswaldtwistle/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oswaldtwistle/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oswaldtwistle",
+        "name": "Oswaldtwistle",
+        "nameIt": "Oswaldtwistle",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -2.38057,
+          53.75905
+        ],
+        "zoom": 11.4,
+        "population": 65911,
+        "cells": 242,
+        "layer": "cities/oswaldtwistle/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.38057,
+            53.75905
+          ]
+        },
+        "properties": {
+          "id": "oswaldtwistle",
+          "name": "Oswaldtwistle",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 10.9,
+          "population": 65911
+        }
+      },
+      "summary": null
+    }
+  }
+}

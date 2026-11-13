@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "quba",
+  "createdAt": "2026-10-08T16:07:34.474Z",
+  "updatedAt": "2026-10-08T16:07:34.474Z",
+  "meta": {
+    "name": "Quba",
+    "nameIt": "Quba",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Quba.geojson",
+      "sha256": "b0abf03f47ab6fc451a2da625f5d5ecca96a0fca9b578aad4bc0a4905bd185bd",
+      "size": 123749,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "quba",
+    "name": "Quba",
+    "nameIt": "Quba",
+    "region": "Azerbaijan",
+    "regionIt": "Azerbaigian",
+    "country": "AZ",
+    "center": [
+      48.52374,
+      41.36439
+    ],
+    "zoom": 11.4,
+    "population": 40136,
+    "grid": "cities/quba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/quba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "quba",
+        "name": "Quba",
+        "nameIt": "Quba",
+        "region": "Azerbaijan",
+        "regionIt": "Azerbaigian",
+        "country": "AZ",
+        "center": [
+          48.52374,
+          41.36439
+        ],
+        "zoom": 11.4,
+        "population": 40136,
+        "cells": 107,
+        "layer": "cities/quba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            48.52374,
+            41.36439
+          ]
+        },
+        "properties": {
+          "id": "quba",
+          "name": "Quba",
+          "country": "AZ",
+          "isStudy": true,
+          "proximityMinutes": 18.9,
+          "population": 40136
+        }
+      },
+      "summary": null
+    }
+  }
+}

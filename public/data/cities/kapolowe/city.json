@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kapolowe",
+  "createdAt": "2026-10-08T15:45:06.302Z",
+  "updatedAt": "2026-10-08T15:45:06.302Z",
+  "meta": {
+    "name": "Kapolowe",
+    "nameIt": "Kapolowe",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kapolowe.geojson",
+      "sha256": "564f3abaaf81e0027d4ad4e60194dcf2eeba5a050177c3e83d39c6b827f022f0",
+      "size": 55285,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kapolowe",
+    "name": "Kapolowe",
+    "nameIt": "Kapolowe",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      26.95331,
+      -10.93869
+    ],
+    "zoom": 12,
+    "population": 12641,
+    "grid": "cities/kapolowe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kapolowe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kapolowe",
+        "name": "Kapolowe",
+        "nameIt": "Kapolowe",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          26.95331,
+          -10.93869
+        ],
+        "zoom": 12,
+        "population": 12641,
+        "cells": 47,
+        "layer": "cities/kapolowe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.95331,
+            -10.93869
+          ]
+        },
+        "properties": {
+          "id": "kapolowe",
+          "name": "Kapolowe",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 12641
+        }
+      },
+      "summary": null
+    }
+  }
+}

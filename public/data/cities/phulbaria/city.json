@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "phulbaria",
+  "createdAt": "2026-10-08T16:05:20.414Z",
+  "updatedAt": "2026-10-08T16:05:20.414Z",
+  "meta": {
+    "name": "Phulbaria",
+    "nameIt": "Phulbaria",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Phulbaria.geojson",
+      "sha256": "b8e0480b125cd919aef22ee8200c488c13fd8a5ac8ae300b4f8b7d0d4ec6e479",
+      "size": 490216,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "phulbaria",
+    "name": "Phulbaria",
+    "nameIt": "Phulbaria",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      90.26218,
+      24.62937
+    ],
+    "zoom": 10.7,
+    "population": 105660,
+    "grid": "cities/phulbaria/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/phulbaria/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "phulbaria",
+        "name": "Phulbaria",
+        "nameIt": "Phulbaria",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          90.26218,
+          24.62937
+        ],
+        "zoom": 10.7,
+        "population": 105660,
+        "cells": 423,
+        "layer": "cities/phulbaria/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            90.26218,
+            24.62937
+          ]
+        },
+        "properties": {
+          "id": "phulbaria",
+          "name": "Phulbaria",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 105660
+        }
+      },
+      "summary": null
+    }
+  }
+}

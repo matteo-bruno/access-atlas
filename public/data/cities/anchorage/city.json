@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "anchorage",
+  "createdAt": "2026-10-08T15:07:24.512Z",
+  "updatedAt": "2026-10-08T15:07:24.512Z",
+  "meta": {
+    "name": "Anchorage",
+    "nameIt": "Anchorage",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Anchorage.geojson",
+      "sha256": "7cc5f58ed3c6bc165caa61adbbc187def842c8449506ed72ad116812c0d316b9",
+      "size": 1486591,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "anchorage",
+    "name": "Anchorage",
+    "nameIt": "Anchorage",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -149.84547,
+      61.18417
+    ],
+    "zoom": 10.1,
+    "population": 198275,
+    "grid": "cities/anchorage/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/anchorage/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "anchorage",
+        "name": "Anchorage",
+        "nameIt": "Anchorage",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -149.84547,
+          61.18417
+        ],
+        "zoom": 10.1,
+        "population": 198275,
+        "cells": 1281,
+        "layer": "cities/anchorage/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -149.84547,
+            61.18417
+          ]
+        },
+        "properties": {
+          "id": "anchorage",
+          "name": "Anchorage",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20.8,
+          "population": 198275
+        }
+      },
+      "summary": null
+    }
+  }
+}

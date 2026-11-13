@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "karak",
+  "createdAt": "2026-10-08T15:45:12.991Z",
+  "updatedAt": "2026-10-08T15:45:12.991Z",
+  "meta": {
+    "name": "Karak",
+    "nameIt": "Karak",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Karak.geojson",
+      "sha256": "c4ef146fd6eea1c70198d6f183cd6829aaa1489d9db5a5c7a16436d5fb74e613",
+      "size": 147867,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "karak",
+    "name": "Karak",
+    "nameIt": "Karak",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      71.11225,
+      33.11864
+    ],
+    "zoom": 10.8,
+    "population": 56225,
+    "grid": "cities/karak/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/karak/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "karak",
+        "name": "Karak",
+        "nameIt": "Karak",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          71.11225,
+          33.11864
+        ],
+        "zoom": 10.8,
+        "population": 56225,
+        "cells": 128,
+        "layer": "cities/karak/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            71.11225,
+            33.11864
+          ]
+        },
+        "properties": {
+          "id": "karak",
+          "name": "Karak",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 56225
+        }
+      },
+      "summary": null
+    }
+  }
+}

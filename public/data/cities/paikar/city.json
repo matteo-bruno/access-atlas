@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "paikar",
+  "createdAt": "2026-10-08T16:03:37.659Z",
+  "updatedAt": "2026-10-08T16:03:37.659Z",
+  "meta": {
+    "name": "Paikar",
+    "nameIt": "Paikar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Paikar.geojson",
+      "sha256": "b0f124b8d3657159157f2a9412fc983d874032d2f038a899e41620feee7e81a1",
+      "size": 179461,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "paikar",
+    "name": "Paikar",
+    "nameIt": "Paikar",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.93548,
+      24.42794
+    ],
+    "zoom": 11.2,
+    "population": 53529,
+    "grid": "cities/paikar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/paikar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "paikar",
+        "name": "Paikar",
+        "nameIt": "Paikar",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.93548,
+          24.42794
+        ],
+        "zoom": 11.2,
+        "population": 53529,
+        "cells": 155,
+        "layer": "cities/paikar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.93548,
+            24.42794
+          ]
+        },
+        "properties": {
+          "id": "paikar",
+          "name": "Paikar",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 53529
+        }
+      },
+      "summary": null
+    }
+  }
+}

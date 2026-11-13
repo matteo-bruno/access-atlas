@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "salamanca-mexico",
+  "createdAt": "2026-10-08T16:10:02.358Z",
+  "updatedAt": "2026-10-08T16:10:02.358Z",
+  "meta": {
+    "name": "Salamanca (Mexico)",
+    "nameIt": "Salamanca (Mexico)",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Salamanca (Mexico).geojson",
+      "sha256": "bfedcf245a2ad2aac39bc13d75e12de337c5a4fc159ef5fed69d37c9d2ae3756",
+      "size": 312533,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "salamanca-mexico",
+    "name": "Salamanca (Mexico)",
+    "nameIt": "Salamanca (Mexico)",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -101.19803,
+      20.56912
+    ],
+    "zoom": 11.2,
+    "population": 158825,
+    "grid": "cities/salamanca-mexico/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/salamanca-mexico/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "salamanca-mexico",
+        "name": "Salamanca (Mexico)",
+        "nameIt": "Salamanca (Mexico)",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -101.19803,
+          20.56912
+        ],
+        "zoom": 11.2,
+        "population": 158825,
+        "cells": 265,
+        "layer": "cities/salamanca-mexico/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -101.19803,
+            20.56912
+          ]
+        },
+        "properties": {
+          "id": "salamanca-mexico",
+          "name": "Salamanca (Mexico)",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 23,
+          "population": 158825
+        }
+      },
+      "summary": null
+    }
+  }
+}

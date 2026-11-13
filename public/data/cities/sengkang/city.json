@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sengkang",
+  "createdAt": "2026-10-08T16:11:57.759Z",
+  "updatedAt": "2026-10-08T16:11:57.759Z",
+  "meta": {
+    "name": "Sengkang",
+    "nameIt": "Sengkang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sengkang.geojson",
+      "sha256": "95ac70e2f0e6bf622a400d724408e528583c7524e0956f59e33225251c7f384f",
+      "size": 234156,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sengkang",
+    "name": "Sengkang",
+    "nameIt": "Sengkang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      120.03219,
+      -4.12659
+    ],
+    "zoom": 11.2,
+    "population": 65969,
+    "grid": "cities/sengkang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sengkang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sengkang",
+        "name": "Sengkang",
+        "nameIt": "Sengkang",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          120.03219,
+          -4.12659
+        ],
+        "zoom": 11.2,
+        "population": 65969,
+        "cells": 200,
+        "layer": "cities/sengkang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.03219,
+            -4.12659
+          ]
+        },
+        "properties": {
+          "id": "sengkang",
+          "name": "Sengkang",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 19.9,
+          "population": 65969
+        }
+      },
+      "summary": null
+    }
+  }
+}

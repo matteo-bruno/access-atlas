@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "skikda",
+  "createdAt": "2026-10-08T16:14:10.311Z",
+  "updatedAt": "2026-10-08T16:14:10.311Z",
+  "meta": {
+    "name": "Skikda",
+    "nameIt": "Skikda",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Skikda.geojson",
+      "sha256": "fdbf8a36b37855005e12a994e488d1d4c6e4b5dac6501ae301fd6c76b8a395ee",
+      "size": 601557,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "skikda",
+    "name": "Skikda",
+    "nameIt": "Skikda",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      6.92663,
+      36.86718
+    ],
+    "zoom": 10.5,
+    "population": 262439,
+    "grid": "cities/skikda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/skikda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "skikda",
+        "name": "Skikda",
+        "nameIt": "Skikda",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          6.92663,
+          36.86718
+        ],
+        "zoom": 10.5,
+        "population": 262439,
+        "cells": 523,
+        "layer": "cities/skikda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.92663,
+            36.86718
+          ]
+        },
+        "properties": {
+          "id": "skikda",
+          "name": "Skikda",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 28.3,
+          "population": 262439
+        }
+      },
+      "summary": null
+    }
+  }
+}

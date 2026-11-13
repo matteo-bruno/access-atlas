@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wum",
+  "createdAt": "2026-10-08T16:22:01.060Z",
+  "updatedAt": "2026-10-08T16:22:01.060Z",
+  "meta": {
+    "name": "Wum",
+    "nameIt": "Wum",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wum.geojson",
+      "sha256": "272e860d7b9a3376f89ba3e59f195d59efe7f4bcc61f8bc6edeaf3442d01ad0f",
+      "size": 135674,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wum",
+    "name": "Wum",
+    "nameIt": "Wum",
+    "region": "Cameroon",
+    "regionIt": "Camerun",
+    "country": "CM",
+    "center": [
+      10.0763,
+      6.39107
+    ],
+    "zoom": 12,
+    "population": 38988,
+    "grid": "cities/wum/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wum/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wum",
+        "name": "Wum",
+        "nameIt": "Wum",
+        "region": "Cameroon",
+        "regionIt": "Camerun",
+        "country": "CM",
+        "center": [
+          10.0763,
+          6.39107
+        ],
+        "zoom": 12,
+        "population": 38988,
+        "cells": 117,
+        "layer": "cities/wum/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.0763,
+            6.39107
+          ]
+        },
+        "properties": {
+          "id": "wum",
+          "name": "Wum",
+          "country": "CM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 38988
+        }
+      },
+      "summary": null
+    }
+  }
+}

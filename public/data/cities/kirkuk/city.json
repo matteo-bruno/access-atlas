@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kirkuk",
+  "createdAt": "2026-10-08T15:47:12.992Z",
+  "updatedAt": "2026-10-08T15:47:12.992Z",
+  "meta": {
+    "name": "Kirkuk",
+    "nameIt": "Kirkuk",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kirkuk.geojson",
+      "sha256": "c91b5f6818f23afb471dbd2265fcc639979b7b1dbfba702d43e3f9a650c7f494",
+      "size": 1261003,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kirkuk",
+    "name": "Kirkuk",
+    "nameIt": "Kirkuk",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      44.38983,
+      35.44331
+    ],
+    "zoom": 10,
+    "population": 1072077,
+    "grid": "cities/kirkuk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kirkuk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kirkuk",
+        "name": "Kirkuk",
+        "nameIt": "Kirkuk",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          44.38983,
+          35.44331
+        ],
+        "zoom": 10,
+        "population": 1072077,
+        "cells": 1100,
+        "layer": "cities/kirkuk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.38983,
+            35.44331
+          ]
+        },
+        "properties": {
+          "id": "kirkuk",
+          "name": "Kirkuk",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 18.5,
+          "population": 1072077
+        }
+      },
+      "summary": null
+    }
+  }
+}

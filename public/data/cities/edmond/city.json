@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "edmond",
+  "createdAt": "2026-10-08T15:31:43.979Z",
+  "updatedAt": "2026-10-08T15:31:43.979Z",
+  "meta": {
+    "name": "Edmond",
+    "nameIt": "Edmond",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Edmond.geojson",
+      "sha256": "4666bd0f57dfa74d7b4f822cfc6fb8e6a50bdfb03e08a6804873dd49946a1179",
+      "size": 612886,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "edmond",
+    "name": "Edmond",
+    "nameIt": "Edmond",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -97.49673,
+      35.64357
+    ],
+    "zoom": 10.8,
+    "population": 73216,
+    "grid": "cities/edmond/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/edmond/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "edmond",
+        "name": "Edmond",
+        "nameIt": "Edmond",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -97.49673,
+          35.64357
+        ],
+        "zoom": 10.8,
+        "population": 73216,
+        "cells": 528,
+        "layer": "cities/edmond/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.49673,
+            35.64357
+          ]
+        },
+        "properties": {
+          "id": "edmond",
+          "name": "Edmond",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 23.8,
+          "population": 73216
+        }
+      },
+      "summary": null
+    }
+  }
+}

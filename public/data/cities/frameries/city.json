@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "frameries",
+  "createdAt": "2026-10-08T15:33:40.512Z",
+  "updatedAt": "2026-10-08T15:33:40.512Z",
+  "meta": {
+    "name": "Frameries",
+    "nameIt": "Frameries",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Frameries.geojson",
+      "sha256": "073bf44fd4cd9360feb1b7a38fe395cea30dad061dae6a6529b3c36f952a2d3f",
+      "size": 363746,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "frameries",
+    "name": "Frameries",
+    "nameIt": "Frameries",
+    "region": "Belgium",
+    "regionIt": "Belgio",
+    "country": "BE",
+    "center": [
+      3.86609,
+      50.42514
+    ],
+    "zoom": 11.2,
+    "population": 70804,
+    "grid": "cities/frameries/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/frameries/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "frameries",
+        "name": "Frameries",
+        "nameIt": "Frameries",
+        "region": "Belgium",
+        "regionIt": "Belgio",
+        "country": "BE",
+        "center": [
+          3.86609,
+          50.42514
+        ],
+        "zoom": 11.2,
+        "population": 70804,
+        "cells": 319,
+        "layer": "cities/frameries/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.86609,
+            50.42514
+          ]
+        },
+        "properties": {
+          "id": "frameries",
+          "name": "Frameries",
+          "country": "BE",
+          "isStudy": true,
+          "proximityMinutes": 12.5,
+          "population": 70804
+        }
+      },
+      "summary": null
+    }
+  }
+}

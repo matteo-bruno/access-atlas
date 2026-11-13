@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "porto-fua",
+  "createdAt": "2026-10-19T16:58:05.808Z",
+  "updatedAt": "2026-10-19T16:58:05.808Z",
+  "meta": {
+    "name": "Porto",
+    "nameIt": "Porto",
+    "region": "Portugal",
+    "regionIt": "Portogallo",
+    "country": "PT"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "porto-fua",
+    "name": "Porto",
+    "nameIt": "Porto",
+    "region": "Portugal",
+    "regionIt": "Portogallo",
+    "country": "PT",
+    "extent": "fua",
+    "core": "porto",
+    "center": [
+      -8.56087,
+      41.15241
+    ],
+    "zoom": 8.5,
+    "population": 1632105,
+    "grid": "cities/porto-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/porto-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "porto-fua",
+        "name": "Porto",
+        "nameIt": "Porto",
+        "region": "Portugal",
+        "regionIt": "Portogallo",
+        "country": "PT",
+        "extent": "fua",
+        "core": "porto",
+        "center": [
+          -8.56087,
+          41.15241
+        ],
+        "zoom": 8.5,
+        "population": 1632105,
+        "cells": 13000,
+        "layer": "cities/porto-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -8.56087,
+            41.15241
+          ]
+        },
+        "properties": {
+          "id": "porto-fua",
+          "name": "Porto",
+          "country": "PT",
+          "isStudy": true,
+          "proximityMinutes": 13.7,
+          "population": 1632105
+        }
+      },
+      "summary": null
+    }
+  }
+}

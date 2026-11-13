@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dakingari",
+  "createdAt": "2026-10-08T15:27:36.180Z",
+  "updatedAt": "2026-10-08T15:27:36.180Z",
+  "meta": {
+    "name": "Dakingari",
+    "nameIt": "Dakingari",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dakingari.geojson",
+      "sha256": "68d571fd5495a697dce39e2adfb3287410d8c5d543bb46edb51f74e8ba072b10",
+      "size": 79995,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dakingari",
+    "name": "Dakingari",
+    "nameIt": "Dakingari",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      4.06237,
+      11.64825
+    ],
+    "zoom": 12,
+    "population": 36376,
+    "grid": "cities/dakingari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dakingari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dakingari",
+        "name": "Dakingari",
+        "nameIt": "Dakingari",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          4.06237,
+          11.64825
+        ],
+        "zoom": 12,
+        "population": 36376,
+        "cells": 69,
+        "layer": "cities/dakingari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.06237,
+            11.64825
+          ]
+        },
+        "properties": {
+          "id": "dakingari",
+          "name": "Dakingari",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 36376
+        }
+      },
+      "summary": null
+    }
+  }
+}

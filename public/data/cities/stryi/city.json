@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "stryi",
+  "createdAt": "2026-10-08T16:14:53.115Z",
+  "updatedAt": "2026-10-08T16:14:53.115Z",
+  "meta": {
+    "name": "Stryi",
+    "nameIt": "Stryi",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Stryi.geojson",
+      "sha256": "6576cb4348a3cdfd43c75f499b94546be09774cf9f9d34d45614b68a0ea63518",
+      "size": 168533,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "stryi",
+    "name": "Stryi",
+    "nameIt": "Stryi",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      23.84581,
+      49.25837
+    ],
+    "zoom": 11.7,
+    "population": 50199,
+    "grid": "cities/stryi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/stryi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "stryi",
+        "name": "Stryi",
+        "nameIt": "Stryi",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          23.84581,
+          49.25837
+        ],
+        "zoom": 11.7,
+        "population": 50199,
+        "cells": 146,
+        "layer": "cities/stryi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.84581,
+            49.25837
+          ]
+        },
+        "properties": {
+          "id": "stryi",
+          "name": "Stryi",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 50199
+        }
+      },
+      "summary": null
+    }
+  }
+}

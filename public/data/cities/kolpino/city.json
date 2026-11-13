@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kolpino",
+  "createdAt": "2026-10-08T15:47:47.094Z",
+  "updatedAt": "2026-10-08T15:47:47.094Z",
+  "meta": {
+    "name": "Kolpino",
+    "nameIt": "Kolpino",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kolpino.geojson",
+      "sha256": "be7add5f279dd79fdc16822d206526677ca793f6b08d7f5210b1c4041ebcb0e5",
+      "size": 328549,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kolpino",
+    "name": "Kolpino",
+    "nameIt": "Kolpino",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      30.58648,
+      59.74953
+    ],
+    "zoom": 11.4,
+    "population": 106393,
+    "grid": "cities/kolpino/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kolpino/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kolpino",
+        "name": "Kolpino",
+        "nameIt": "Kolpino",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          30.58648,
+          59.74953
+        ],
+        "zoom": 11.4,
+        "population": 106393,
+        "cells": 287,
+        "layer": "cities/kolpino/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.58648,
+            59.74953
+          ]
+        },
+        "properties": {
+          "id": "kolpino",
+          "name": "Kolpino",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 8.2,
+          "population": 106393
+        }
+      },
+      "summary": null
+    }
+  }
+}

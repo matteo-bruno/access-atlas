@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "minhou",
+  "createdAt": "2026-10-08T15:57:15.863Z",
+  "updatedAt": "2026-10-08T15:57:15.863Z",
+  "meta": {
+    "name": "Minhou",
+    "nameIt": "Minhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Minhou.geojson",
+      "sha256": "cc3f5bef4c7bd3c5510f68b58e47fa2cf750ec1bca94e3a768f49637416ba034",
+      "size": 340875,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "minhou",
+    "name": "Minhou",
+    "nameIt": "Minhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      119.15514,
+      26.14367
+    ],
+    "zoom": 10.8,
+    "population": 157278,
+    "grid": "cities/minhou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/minhou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "minhou",
+        "name": "Minhou",
+        "nameIt": "Minhou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          119.15514,
+          26.14367
+        ],
+        "zoom": 10.8,
+        "population": 157278,
+        "cells": 292,
+        "layer": "cities/minhou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            119.15514,
+            26.14367
+          ]
+        },
+        "properties": {
+          "id": "minhou",
+          "name": "Minhou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 23.2,
+          "population": 157278
+        }
+      },
+      "summary": null
+    }
+  }
+}

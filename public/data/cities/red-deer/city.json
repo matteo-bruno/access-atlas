@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "red-deer",
+  "createdAt": "2026-10-08T16:08:32.322Z",
+  "updatedAt": "2026-10-08T16:08:32.322Z",
+  "meta": {
+    "name": "Red Deer",
+    "nameIt": "Red Deer",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Red Deer.geojson",
+      "sha256": "5cbe816a6a7a84d56ea2089422cb0d80cdb157619e58984b4840170a227c0da7",
+      "size": 543316,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "red-deer",
+    "name": "Red Deer",
+    "nameIt": "Red Deer",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -113.80088,
+      52.27018
+    ],
+    "zoom": 10.7,
+    "population": 93120,
+    "grid": "cities/red-deer/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/red-deer/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "red-deer",
+        "name": "Red Deer",
+        "nameIt": "Red Deer",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -113.80088,
+          52.27018
+        ],
+        "zoom": 10.7,
+        "population": 93120,
+        "cells": 468,
+        "layer": "cities/red-deer/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -113.80088,
+            52.27018
+          ]
+        },
+        "properties": {
+          "id": "red-deer",
+          "name": "Red Deer",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 20,
+          "population": 93120
+        }
+      },
+      "summary": null
+    }
+  }
+}

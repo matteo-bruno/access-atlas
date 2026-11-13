@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "balangir",
+  "createdAt": "2026-10-08T15:13:55.035Z",
+  "updatedAt": "2026-10-08T15:13:55.035Z",
+  "meta": {
+    "name": "Balangir",
+    "nameIt": "Balangir",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Balangir.geojson",
+      "sha256": "bfc91e927b6f3f04719146b8099f97df67b889d006620faa55e3f22f6adde8b2",
+      "size": 224880,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "balangir",
+    "name": "Balangir",
+    "nameIt": "Balangir",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      83.48259,
+      20.70188
+    ],
+    "zoom": 11.4,
+    "population": 172930,
+    "grid": "cities/balangir/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/balangir/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "balangir",
+        "name": "Balangir",
+        "nameIt": "Balangir",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          83.48259,
+          20.70188
+        ],
+        "zoom": 11.4,
+        "population": 172930,
+        "cells": 194,
+        "layer": "cities/balangir/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.48259,
+            20.70188
+          ]
+        },
+        "properties": {
+          "id": "balangir",
+          "name": "Balangir",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 18.1,
+          "population": 172930
+        }
+      },
+      "summary": null
+    }
+  }
+}

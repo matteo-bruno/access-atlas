@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kadirli",
+  "createdAt": "2026-10-08T15:43:57.185Z",
+  "updatedAt": "2026-10-08T15:43:57.185Z",
+  "meta": {
+    "name": "Kadirli",
+    "nameIt": "Kadirli",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kadirli.geojson",
+      "sha256": "e39d45b4bcc121f0b5e3b41d495a392468e01a42e9769c313b89016ee5096101",
+      "size": 158519,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kadirli",
+    "name": "Kadirli",
+    "nameIt": "Kadirli",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      36.09295,
+      37.36755
+    ],
+    "zoom": 11.7,
+    "population": 98317,
+    "grid": "cities/kadirli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kadirli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kadirli",
+        "name": "Kadirli",
+        "nameIt": "Kadirli",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          36.09295,
+          37.36755
+        ],
+        "zoom": 11.7,
+        "population": 98317,
+        "cells": 137,
+        "layer": "cities/kadirli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.09295,
+            37.36755
+          ]
+        },
+        "properties": {
+          "id": "kadirli",
+          "name": "Kadirli",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 18.2,
+          "population": 98317
+        }
+      },
+      "summary": null
+    }
+  }
+}

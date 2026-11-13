@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "north-college-hill",
+  "createdAt": "2026-10-08T16:02:01.145Z",
+  "updatedAt": "2026-10-08T16:02:01.145Z",
+  "meta": {
+    "name": "North College Hill",
+    "nameIt": "North College Hill",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/North College Hill.geojson",
+      "sha256": "531b515d94e9ce1b099c1205f65361d875470aafaabdd4f20f7298dd6b3bdecf",
+      "size": 374831,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "north-college-hill",
+    "name": "North College Hill",
+    "nameIt": "North College Hill",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -84.55894,
+      39.21165
+    ],
+    "zoom": 11.1,
+    "population": 59893,
+    "grid": "cities/north-college-hill/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/north-college-hill/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "north-college-hill",
+        "name": "North College Hill",
+        "nameIt": "North College Hill",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -84.55894,
+          39.21165
+        ],
+        "zoom": 11.1,
+        "population": 59893,
+        "cells": 324,
+        "layer": "cities/north-college-hill/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -84.55894,
+            39.21165
+          ]
+        },
+        "properties": {
+          "id": "north-college-hill",
+          "name": "North College Hill",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 20.9,
+          "population": 59893
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "colonia-santa-teresa",
+  "createdAt": "2026-10-08T15:26:07.571Z",
+  "updatedAt": "2026-10-08T15:26:07.571Z",
+  "meta": {
+    "name": "Colonia Santa Teresa",
+    "nameIt": "Colonia Santa Teresa",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Colonia Santa Teresa.geojson",
+      "sha256": "a98aa0483ff4c4bac013b1caba4a23d97b667fb389b68847996e3d046cdaab11",
+      "size": 100528,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "colonia-santa-teresa",
+    "name": "Colonia Santa Teresa",
+    "nameIt": "Colonia Santa Teresa",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -99.2413,
+      19.84761
+    ],
+    "zoom": 11.7,
+    "population": 49821,
+    "grid": "cities/colonia-santa-teresa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/colonia-santa-teresa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "colonia-santa-teresa",
+        "name": "Colonia Santa Teresa",
+        "nameIt": "Colonia Santa Teresa",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -99.2413,
+          19.84761
+        ],
+        "zoom": 11.7,
+        "population": 49821,
+        "cells": 86,
+        "layer": "cities/colonia-santa-teresa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -99.2413,
+            19.84761
+          ]
+        },
+        "properties": {
+          "id": "colonia-santa-teresa",
+          "name": "Colonia Santa Teresa",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 49821
+        }
+      },
+      "summary": null
+    }
+  }
+}

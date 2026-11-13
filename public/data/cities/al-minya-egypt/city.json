@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-minya-egypt",
+  "createdAt": "2026-10-08T15:04:38.569Z",
+  "updatedAt": "2026-10-08T15:04:38.569Z",
+  "meta": {
+    "name": "Al Minya Egypt",
+    "nameIt": "Al Minya Egypt",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Minya.geojson",
+      "sha256": "4573dee7baf1a5aafcaea75c932d605a169f4258a3184fb5cb1178e9afa5a745",
+      "size": 514899,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-minya-egypt",
+    "name": "Al Minya Egypt",
+    "nameIt": "Al Minya Egypt",
+    "region": "Egypt",
+    "regionIt": "Egitto",
+    "country": "EG",
+    "center": [
+      30.75842,
+      28.08675
+    ],
+    "zoom": 10.4,
+    "population": 505925,
+    "grid": "cities/al-minya-egypt/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-minya-egypt/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-minya-egypt",
+        "name": "Al Minya Egypt",
+        "nameIt": "Al Minya Egypt",
+        "region": "Egypt",
+        "regionIt": "Egitto",
+        "country": "EG",
+        "center": [
+          30.75842,
+          28.08675
+        ],
+        "zoom": 10.4,
+        "population": 505925,
+        "cells": 442,
+        "layer": "cities/al-minya-egypt/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.75842,
+            28.08675
+          ]
+        },
+        "properties": {
+          "id": "al-minya-egypt",
+          "name": "Al Minya Egypt",
+          "country": "EG",
+          "isStudy": true,
+          "proximityMinutes": 29.9,
+          "population": 505925
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "taliparamba",
+  "createdAt": "2026-10-08T16:16:17.545Z",
+  "updatedAt": "2026-10-08T16:16:17.545Z",
+  "meta": {
+    "name": "Taliparamba",
+    "nameIt": "Taliparamba",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Taliparamba.geojson",
+      "sha256": "5509171c5d657205f765cf3278eca1f52b4a25d5bc0e0fad21584399893d401c",
+      "size": 250506,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "taliparamba",
+    "name": "Taliparamba",
+    "nameIt": "Taliparamba",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.36574,
+      12.04017
+    ],
+    "zoom": 11.2,
+    "population": 81214,
+    "grid": "cities/taliparamba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/taliparamba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "taliparamba",
+        "name": "Taliparamba",
+        "nameIt": "Taliparamba",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.36574,
+          12.04017
+        ],
+        "zoom": 11.2,
+        "population": 81214,
+        "cells": 217,
+        "layer": "cities/taliparamba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.36574,
+            12.04017
+          ]
+        },
+        "properties": {
+          "id": "taliparamba",
+          "name": "Taliparamba",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 16.5,
+          "population": 81214
+        }
+      },
+      "summary": null
+    }
+  }
+}

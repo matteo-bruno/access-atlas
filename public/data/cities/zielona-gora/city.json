@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zielona-gora",
+  "createdAt": "2026-10-08T16:25:31.098Z",
+  "updatedAt": "2026-10-08T16:25:31.098Z",
+  "meta": {
+    "name": "Zielona Góra",
+    "nameIt": "Zielona Góra",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zielona Góra.geojson",
+      "sha256": "23088d8cca1362194c7326342c3b61ff059d323b6061c45c090cb38e799dc419",
+      "size": 370082,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "zielona-gora",
+    "name": "Zielona Góra",
+    "nameIt": "Zielona Góra",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "center": [
+      15.50331,
+      51.93918
+    ],
+    "zoom": 11,
+    "population": 96129,
+    "grid": "cities/zielona-gora/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/zielona-gora/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zielona-gora",
+        "name": "Zielona Góra",
+        "nameIt": "Zielona Góra",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "center": [
+          15.50331,
+          51.93918
+        ],
+        "zoom": 11,
+        "population": 96129,
+        "cells": 324,
+        "layer": "cities/zielona-gora/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            15.50331,
+            51.93918
+          ]
+        },
+        "properties": {
+          "id": "zielona-gora",
+          "name": "Zielona Góra",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 6.9,
+          "population": 96129
+        }
+      },
+      "summary": null
+    }
+  }
+}

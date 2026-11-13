@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sultanpur",
+  "createdAt": "2026-10-08T16:15:07.834Z",
+  "updatedAt": "2026-10-08T16:15:07.834Z",
+  "meta": {
+    "name": "Sultanpur",
+    "nameIt": "Sultanpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sultanpur.geojson",
+      "sha256": "c0d15f400b7cb27fe0a0e8beaae048d1edeff4bba8d2c912605eb079451b3c36",
+      "size": 963190,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sultanpur",
+    "name": "Sultanpur",
+    "nameIt": "Sultanpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      82.06723,
+      26.25292
+    ],
+    "zoom": 10.1,
+    "population": 421494,
+    "grid": "cities/sultanpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sultanpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sultanpur",
+        "name": "Sultanpur",
+        "nameIt": "Sultanpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          82.06723,
+          26.25292
+        ],
+        "zoom": 10.1,
+        "population": 421494,
+        "cells": 831,
+        "layer": "cities/sultanpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            82.06723,
+            26.25292
+          ]
+        },
+        "properties": {
+          "id": "sultanpur",
+          "name": "Sultanpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 32.3,
+          "population": 421494
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "riobamba",
+  "createdAt": "2026-10-08T16:08:52.574Z",
+  "updatedAt": "2026-10-08T16:08:52.574Z",
+  "meta": {
+    "name": "Riobamba",
+    "nameIt": "Riobamba",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Riobamba.geojson",
+      "sha256": "b82fdca82bdaef7ae797cd0a49d084ace90e49015273f1b9e163ccef02a0f260",
+      "size": 335104,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "riobamba",
+    "name": "Riobamba",
+    "nameIt": "Riobamba",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC",
+    "center": [
+      -78.65506,
+      -1.667
+    ],
+    "zoom": 11.2,
+    "population": 180360,
+    "grid": "cities/riobamba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/riobamba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "riobamba",
+        "name": "Riobamba",
+        "nameIt": "Riobamba",
+        "region": "Ecuador",
+        "regionIt": "Ecuador",
+        "country": "EC",
+        "center": [
+          -78.65506,
+          -1.667
+        ],
+        "zoom": 11.2,
+        "population": 180360,
+        "cells": 289,
+        "layer": "cities/riobamba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -78.65506,
+            -1.667
+          ]
+        },
+        "properties": {
+          "id": "riobamba",
+          "name": "Riobamba",
+          "country": "EC",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 180360
+        }
+      },
+      "summary": null
+    }
+  }
+}

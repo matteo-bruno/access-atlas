@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kundulun",
+  "createdAt": "2026-10-08T15:43:48.429Z",
+  "updatedAt": "2026-10-08T15:43:48.429Z",
+  "meta": {
+    "name": "KUNDULUN",
+    "nameIt": "KUNDULUN",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/KUNDULUN.geojson",
+      "sha256": "3ea3d99e9047a5e528a51a84de90d6db7dcde0188e2874bb62aaff233ccd89c8",
+      "size": 880385,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kundulun",
+    "name": "KUNDULUN",
+    "nameIt": "KUNDULUN",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      11.16591,
+      10.28258
+    ],
+    "zoom": 10.2,
+    "population": 603006,
+    "grid": "cities/kundulun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kundulun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kundulun",
+        "name": "KUNDULUN",
+        "nameIt": "KUNDULUN",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          11.16591,
+          10.28258
+        ],
+        "zoom": 10.2,
+        "population": 603006,
+        "cells": 754,
+        "layer": "cities/kundulun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.16591,
+            10.28258
+          ]
+        },
+        "properties": {
+          "id": "kundulun",
+          "name": "KUNDULUN",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 33.9,
+          "population": 603006
+        }
+      },
+      "summary": null
+    }
+  }
+}

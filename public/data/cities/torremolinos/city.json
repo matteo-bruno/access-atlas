@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "torremolinos",
+  "createdAt": "2026-10-08T16:18:35.693Z",
+  "updatedAt": "2026-10-08T16:18:35.693Z",
+  "meta": {
+    "name": "Torremolinos",
+    "nameIt": "Torremolinos",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Torremolinos.geojson",
+      "sha256": "6c9723b29add225f61aa8dcc45966d3e6f45e2cede97ce61d82913762255a724",
+      "size": 395596,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "torremolinos",
+    "name": "Torremolinos",
+    "nameIt": "Torremolinos",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -4.52055,
+      36.61519
+    ],
+    "zoom": 10.5,
+    "population": 151745,
+    "grid": "cities/torremolinos/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/torremolinos/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "torremolinos",
+        "name": "Torremolinos",
+        "nameIt": "Torremolinos",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -4.52055,
+          36.61519
+        ],
+        "zoom": 10.5,
+        "population": 151745,
+        "cells": 345,
+        "layer": "cities/torremolinos/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -4.52055,
+            36.61519
+          ]
+        },
+        "properties": {
+          "id": "torremolinos",
+          "name": "Torremolinos",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 9.3,
+          "population": 151745
+        }
+      },
+      "summary": null
+    }
+  }
+}

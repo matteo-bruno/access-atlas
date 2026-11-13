@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "essen-fua",
+  "createdAt": "2026-10-19T16:56:08.778Z",
+  "updatedAt": "2026-10-19T16:56:08.778Z",
+  "meta": {
+    "name": "Essen",
+    "nameIt": "Essen",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "essen-fua",
+    "name": "Essen",
+    "nameIt": "Essen",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "extent": "fua",
+    "core": "essen",
+    "center": [
+      7.11864,
+      51.49298
+    ],
+    "zoom": 8.5,
+    "population": 5912921,
+    "grid": "cities/essen-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/essen-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "essen-fua",
+        "name": "Essen",
+        "nameIt": "Essen",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "extent": "fua",
+        "core": "essen",
+        "center": [
+          7.11864,
+          51.49298
+        ],
+        "zoom": 8.5,
+        "population": 5912921,
+        "cells": 68572,
+        "layer": "cities/essen-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.11864,
+            51.49298
+          ]
+        },
+        "properties": {
+          "id": "essen-fua",
+          "name": "Essen",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 5912921
+        }
+      },
+      "summary": null
+    }
+  }
+}

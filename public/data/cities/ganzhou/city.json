@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ganzhou",
+  "createdAt": "2026-10-08T15:34:29.944Z",
+  "updatedAt": "2026-10-08T15:34:29.944Z",
+  "meta": {
+    "name": "Ganzhou",
+    "nameIt": "Ganzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ganzhou.geojson",
+      "sha256": "bc6d97d320df7044e5e74b03858b0e6824daa2593adbdba091d799d1e843a319",
+      "size": 1791908,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ganzhou",
+    "name": "Ganzhou",
+    "nameIt": "Ganzhou",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.94286,
+      25.84949
+    ],
+    "zoom": 9.7,
+    "population": 1157754,
+    "grid": "cities/ganzhou/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ganzhou/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ganzhou",
+        "name": "Ganzhou",
+        "nameIt": "Ganzhou",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.94286,
+          25.84949
+        ],
+        "zoom": 9.7,
+        "population": 1157754,
+        "cells": 1543,
+        "layer": "cities/ganzhou/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.94286,
+            25.84949
+          ]
+        },
+        "properties": {
+          "id": "ganzhou",
+          "name": "Ganzhou",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 29.9,
+          "population": 1157754
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kakching",
+  "createdAt": "2026-10-08T15:44:19.098Z",
+  "updatedAt": "2026-10-08T15:44:19.098Z",
+  "meta": {
+    "name": "Kakching",
+    "nameIt": "Kakching",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kakching.geojson",
+      "sha256": "95691d6c0647dd5723248bd2de689c7a2b6d45775266730df3f08c4ba027c5da",
+      "size": 69466,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kakching",
+    "name": "Kakching",
+    "nameIt": "Kakching",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      93.9829,
+      24.49769
+    ],
+    "zoom": 12,
+    "population": 30936,
+    "grid": "cities/kakching/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kakching/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kakching",
+        "name": "Kakching",
+        "nameIt": "Kakching",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          93.9829,
+          24.49769
+        ],
+        "zoom": 12,
+        "population": 30936,
+        "cells": 60,
+        "layer": "cities/kakching/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            93.9829,
+            24.49769
+          ]
+        },
+        "properties": {
+          "id": "kakching",
+          "name": "Kakching",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 30936
+        }
+      },
+      "summary": null
+    }
+  }
+}

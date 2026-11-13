@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kunming",
+  "createdAt": "2026-10-08T15:48:51.901Z",
+  "updatedAt": "2026-10-08T15:48:51.901Z",
+  "meta": {
+    "name": "Kunming",
+    "nameIt": "Kunming",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kunming.geojson",
+      "sha256": "804636b036ca0e8bbe3293fb1fdbf6bd48deaefa3bd25d50fd95c590825da6f5",
+      "size": 3727220,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kunming",
+    "name": "Kunming",
+    "nameIt": "Kunming",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      102.72281,
+      25.03595
+    ],
+    "zoom": 9.3,
+    "population": 4217589,
+    "grid": "cities/kunming/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kunming/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kunming",
+        "name": "Kunming",
+        "nameIt": "Kunming",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          102.72281,
+          25.03595
+        ],
+        "zoom": 9.3,
+        "population": 4217589,
+        "cells": 3213,
+        "layer": "cities/kunming/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            102.72281,
+            25.03595
+          ]
+        },
+        "properties": {
+          "id": "kunming",
+          "name": "Kunming",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 22.8,
+          "population": 4217589
+        }
+      },
+      "summary": null
+    }
+  }
+}

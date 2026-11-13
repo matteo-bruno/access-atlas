@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nampa",
+  "createdAt": "2026-10-08T15:59:56.175Z",
+  "updatedAt": "2026-10-08T15:59:56.175Z",
+  "meta": {
+    "name": "Nampa",
+    "nameIt": "Nampa",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nampa.geojson",
+      "sha256": "9499f5240381f6c0e6d1138b3157b4df855e93ae4d22bfc4f9f05933fa1afb0b",
+      "size": 576436,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nampa",
+    "name": "Nampa",
+    "nameIt": "Nampa",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -116.57008,
+      43.56986
+    ],
+    "zoom": 10.9,
+    "population": 72568,
+    "grid": "cities/nampa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nampa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nampa",
+        "name": "Nampa",
+        "nameIt": "Nampa",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -116.57008,
+          43.56986
+        ],
+        "zoom": 10.9,
+        "population": 72568,
+        "cells": 493,
+        "layer": "cities/nampa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -116.57008,
+            43.56986
+          ]
+        },
+        "properties": {
+          "id": "nampa",
+          "name": "Nampa",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 21.5,
+          "population": 72568
+        }
+      },
+      "summary": null
+    }
+  }
+}

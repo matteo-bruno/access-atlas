@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hartlepool",
+  "createdAt": "2026-10-08T15:37:57.697Z",
+  "updatedAt": "2026-10-08T15:37:57.697Z",
+  "meta": {
+    "name": "Hartlepool",
+    "nameIt": "Hartlepool",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hartlepool.geojson",
+      "sha256": "6316313745f2a951a5139169daa3e6d9a08145a10b3b758c30b0323b8c32bb84",
+      "size": 493385,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hartlepool",
+    "name": "Hartlepool",
+    "nameIt": "Hartlepool",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.22599,
+      54.68261
+    ],
+    "zoom": 10.8,
+    "population": 85878,
+    "grid": "cities/hartlepool/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hartlepool/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hartlepool",
+        "name": "Hartlepool",
+        "nameIt": "Hartlepool",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.22599,
+          54.68261
+        ],
+        "zoom": 10.8,
+        "population": 85878,
+        "cells": 427,
+        "layer": "cities/hartlepool/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.22599,
+            54.68261
+          ]
+        },
+        "properties": {
+          "id": "hartlepool",
+          "name": "Hartlepool",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 85878
+        }
+      },
+      "summary": null
+    }
+  }
+}

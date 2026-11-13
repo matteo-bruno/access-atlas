@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tlaxcala",
+  "createdAt": "2026-10-08T16:18:12.240Z",
+  "updatedAt": "2026-10-08T16:18:12.240Z",
+  "meta": {
+    "name": "Tlaxcala",
+    "nameIt": "Tlaxcala",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tlaxcala.geojson",
+      "sha256": "5f5735ca42c259860c2b9f95a6e9f751461be1c9d6213f6d039674e189744c87",
+      "size": 591636,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tlaxcala",
+    "name": "Tlaxcala",
+    "nameIt": "Tlaxcala",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -98.21041,
+      19.32002
+    ],
+    "zoom": 10.2,
+    "population": 225520,
+    "grid": "cities/tlaxcala/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tlaxcala/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tlaxcala",
+        "name": "Tlaxcala",
+        "nameIt": "Tlaxcala",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -98.21041,
+          19.32002
+        ],
+        "zoom": 10.2,
+        "population": 225520,
+        "cells": 511,
+        "layer": "cities/tlaxcala/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -98.21041,
+            19.32002
+          ]
+        },
+        "properties": {
+          "id": "tlaxcala",
+          "name": "Tlaxcala",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 24.7,
+          "population": 225520
+        }
+      },
+      "summary": null
+    }
+  }
+}

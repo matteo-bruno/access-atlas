@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mehari",
+  "createdAt": "2026-10-08T15:56:15.725Z",
+  "updatedAt": "2026-10-08T15:56:15.725Z",
+  "meta": {
+    "name": "Mehari",
+    "nameIt": "Mehari",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mehari.geojson",
+      "sha256": "f6801004896b7d983eff69e343312ed081c2a6a0164bdd93e6b631ec6b1ab797",
+      "size": 202777,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mehari",
+    "name": "Mehari",
+    "nameIt": "Mehari",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      91.07625,
+      23.75422
+    ],
+    "zoom": 11.2,
+    "population": 63156,
+    "grid": "cities/mehari/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mehari/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mehari",
+        "name": "Mehari",
+        "nameIt": "Mehari",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          91.07625,
+          23.75422
+        ],
+        "zoom": 11.2,
+        "population": 63156,
+        "cells": 175,
+        "layer": "cities/mehari/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            91.07625,
+            23.75422
+          ]
+        },
+        "properties": {
+          "id": "mehari",
+          "name": "Mehari",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 57.5,
+          "population": 63156
+        }
+      },
+      "summary": null
+    }
+  }
+}

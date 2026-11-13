@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bawal",
+  "createdAt": "2026-10-08T15:16:17.141Z",
+  "updatedAt": "2026-10-08T15:16:17.141Z",
+  "meta": {
+    "name": "Bawal",
+    "nameIt": "Bawal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bawal.geojson",
+      "sha256": "bd80342753b3da92b056f1299e25de89ee3fed86d93b44a042282f994f17498d",
+      "size": 214359,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bawal",
+    "name": "Bawal",
+    "nameIt": "Bawal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.59488,
+      28.09395
+    ],
+    "zoom": 11.3,
+    "population": 89183,
+    "grid": "cities/bawal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bawal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bawal",
+        "name": "Bawal",
+        "nameIt": "Bawal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.59488,
+          28.09395
+        ],
+        "zoom": 11.3,
+        "population": 89183,
+        "cells": 185,
+        "layer": "cities/bawal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.59488,
+            28.09395
+          ]
+        },
+        "properties": {
+          "id": "bawal",
+          "name": "Bawal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 89183
+        }
+      },
+      "summary": null
+    }
+  }
+}

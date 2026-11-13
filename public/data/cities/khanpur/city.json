@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "khanpur",
+  "createdAt": "2026-10-08T15:46:31.487Z",
+  "updatedAt": "2026-10-08T15:46:31.487Z",
+  "meta": {
+    "name": "Khanpur",
+    "nameIt": "Khanpur",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Khanpur.geojson",
+      "sha256": "5509bced8df7db5369f570bfa8692477018074bb1ea9bcbdeb39fe00ac1f7fcc",
+      "size": 295497,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "khanpur",
+    "name": "Khanpur",
+    "nameIt": "Khanpur",
+    "region": "Pakistan",
+    "regionIt": "Pakistan",
+    "country": "PK",
+    "center": [
+      70.65614,
+      28.64921
+    ],
+    "zoom": 11.2,
+    "population": 190070,
+    "grid": "cities/khanpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/khanpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "khanpur",
+        "name": "Khanpur",
+        "nameIt": "Khanpur",
+        "region": "Pakistan",
+        "regionIt": "Pakistan",
+        "country": "PK",
+        "center": [
+          70.65614,
+          28.64921
+        ],
+        "zoom": 11.2,
+        "population": 190070,
+        "cells": 255,
+        "layer": "cities/khanpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            70.65614,
+            28.64921
+          ]
+        },
+        "properties": {
+          "id": "khanpur",
+          "name": "Khanpur",
+          "country": "PK",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 190070
+        }
+      },
+      "summary": null
+    }
+  }
+}

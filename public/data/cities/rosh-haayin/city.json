@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rosh-haayin",
+  "createdAt": "2026-10-08T16:09:09.710Z",
+  "updatedAt": "2026-10-08T16:09:09.710Z",
+  "meta": {
+    "name": "Rosh HaAyin",
+    "nameIt": "Rosh HaAyin",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rosh HaAyin.geojson",
+      "sha256": "1446ed5004c035909e11d1e2efc32e3bb67923d1e3e1f0d4c1e7a282303d1022",
+      "size": 228454,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "rosh-haayin",
+    "name": "Rosh HaAyin",
+    "nameIt": "Rosh HaAyin",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL",
+    "center": [
+      34.96378,
+      32.1017
+    ],
+    "zoom": 11.5,
+    "population": 90549,
+    "grid": "cities/rosh-haayin/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/rosh-haayin/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rosh-haayin",
+        "name": "Rosh HaAyin",
+        "nameIt": "Rosh HaAyin",
+        "region": "Israel",
+        "regionIt": "Israele",
+        "country": "IL",
+        "center": [
+          34.96378,
+          32.1017
+        ],
+        "zoom": 11.5,
+        "population": 90549,
+        "cells": 198,
+        "layer": "cities/rosh-haayin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.96378,
+            32.1017
+          ]
+        },
+        "properties": {
+          "id": "rosh-haayin",
+          "name": "Rosh HaAyin",
+          "country": "IL",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 90549
+        }
+      },
+      "summary": null
+    }
+  }
+}

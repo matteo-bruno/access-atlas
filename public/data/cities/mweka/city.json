@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mweka",
+  "createdAt": "2026-10-08T15:59:17.562Z",
+  "updatedAt": "2026-10-08T15:59:17.562Z",
+  "meta": {
+    "name": "Mweka",
+    "nameIt": "Mweka",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mweka.geojson",
+      "sha256": "8784d24ce9c4ad06a3d7094e9035ff68553c5627d7b1460df988968fa11c297d",
+      "size": 146036,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mweka",
+    "name": "Mweka",
+    "nameIt": "Mweka",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      21.56012,
+      -4.84938
+    ],
+    "zoom": 11.9,
+    "population": 132959,
+    "grid": "cities/mweka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mweka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mweka",
+        "name": "Mweka",
+        "nameIt": "Mweka",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          21.56012,
+          -4.84938
+        ],
+        "zoom": 11.9,
+        "population": 132959,
+        "cells": 125,
+        "layer": "cities/mweka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            21.56012,
+            -4.84938
+          ]
+        },
+        "properties": {
+          "id": "mweka",
+          "name": "Mweka",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 132959
+        }
+      },
+      "summary": null
+    }
+  }
+}

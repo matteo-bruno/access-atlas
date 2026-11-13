@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ruicheng",
+  "createdAt": "2026-10-08T16:09:19.065Z",
+  "updatedAt": "2026-10-08T16:09:19.065Z",
+  "meta": {
+    "name": "Ruicheng",
+    "nameIt": "Ruicheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ruicheng.geojson",
+      "sha256": "c531653364d40d74822c51301887e4a2e4f8cb3117289fd45a8644bfe10f5bb6",
+      "size": 202801,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ruicheng",
+    "name": "Ruicheng",
+    "nameIt": "Ruicheng",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      110.68587,
+      34.69689
+    ],
+    "zoom": 11.4,
+    "population": 94831,
+    "grid": "cities/ruicheng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 184
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ruicheng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ruicheng",
+        "name": "Ruicheng",
+        "nameIt": "Ruicheng",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          110.68587,
+          34.69689
+        ],
+        "zoom": 11.4,
+        "population": 94831,
+        "cells": 174,
+        "layer": "cities/ruicheng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 184
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.68587,
+            34.69689
+          ]
+        },
+        "properties": {
+          "id": "ruicheng",
+          "name": "Ruicheng",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 15.2,
+          "population": 94831
+        }
+      },
+      "summary": null
+    }
+  }
+}

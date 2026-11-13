@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kiambu",
+  "createdAt": "2026-10-08T15:46:58.286Z",
+  "updatedAt": "2026-10-08T15:46:58.286Z",
+  "meta": {
+    "name": "Kiambu",
+    "nameIt": "Kiambu",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kiambu.geojson",
+      "sha256": "96ef21a5bc1073387600d83906a6eb4b9ec3e026dc1c7530488e636bfaff66ff",
+      "size": 236469,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kiambu",
+    "name": "Kiambu",
+    "nameIt": "Kiambu",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE",
+    "center": [
+      36.82064,
+      -1.15808
+    ],
+    "zoom": 11.4,
+    "population": 84085,
+    "grid": "cities/kiambu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kiambu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kiambu",
+        "name": "Kiambu",
+        "nameIt": "Kiambu",
+        "region": "Kenya",
+        "regionIt": "Kenya",
+        "country": "KE",
+        "center": [
+          36.82064,
+          -1.15808
+        ],
+        "zoom": 11.4,
+        "population": 84085,
+        "cells": 202,
+        "layer": "cities/kiambu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.82064,
+            -1.15808
+          ]
+        },
+        "properties": {
+          "id": "kiambu",
+          "name": "Kiambu",
+          "country": "KE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 84085
+        }
+      },
+      "summary": null
+    }
+  }
+}

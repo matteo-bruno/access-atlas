@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "alkalere",
+  "createdAt": "2026-10-08T15:06:02.525Z",
+  "updatedAt": "2026-10-08T15:06:02.525Z",
+  "meta": {
+    "name": "Alkalere",
+    "nameIt": "Alkalere",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Alkalere.geojson",
+      "sha256": "8c92541855a8153cf98c3b73aa46d040768e46021795e55546fa04032d1d0ab5",
+      "size": 87553,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "alkalere",
+    "name": "Alkalere",
+    "nameIt": "Alkalere",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      10.33269,
+      10.26845
+    ],
+    "zoom": 12,
+    "population": 77110,
+    "grid": "cities/alkalere/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/alkalere/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "alkalere",
+        "name": "Alkalere",
+        "nameIt": "Alkalere",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          10.33269,
+          10.26845
+        ],
+        "zoom": 12,
+        "population": 77110,
+        "cells": 75,
+        "layer": "cities/alkalere/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.33269,
+            10.26845
+          ]
+        },
+        "properties": {
+          "id": "alkalere",
+          "name": "Alkalere",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 77110
+        }
+      },
+      "summary": null
+    }
+  }
+}

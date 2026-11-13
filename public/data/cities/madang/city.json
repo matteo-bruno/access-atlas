@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "madang",
+  "createdAt": "2026-10-08T15:53:19.018Z",
+  "updatedAt": "2026-10-08T15:53:19.018Z",
+  "meta": {
+    "name": "Madang",
+    "nameIt": "Madang",
+    "region": "Papua New Guinea",
+    "regionIt": "Papua Nuova Guinea",
+    "country": "PG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Madang.geojson",
+      "sha256": "5f3cf8ca1b67ee48abe0f0a4271f8f9108e084bcb370939c3f469c7b872e7992",
+      "size": 242704,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "madang",
+    "name": "Madang",
+    "nameIt": "Madang",
+    "region": "Papua New Guinea",
+    "regionIt": "Papua Nuova Guinea",
+    "country": "PG",
+    "center": [
+      145.79264,
+      -5.22632
+    ],
+    "zoom": 11.2,
+    "population": 34198,
+    "grid": "cities/madang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/madang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "madang",
+        "name": "Madang",
+        "nameIt": "Madang",
+        "region": "Papua New Guinea",
+        "regionIt": "Papua Nuova Guinea",
+        "country": "PG",
+        "center": [
+          145.79264,
+          -5.22632
+        ],
+        "zoom": 11.2,
+        "population": 34198,
+        "cells": 208,
+        "layer": "cities/madang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            145.79264,
+            -5.22632
+          ]
+        },
+        "properties": {
+          "id": "madang",
+          "name": "Madang",
+          "country": "PG",
+          "isStudy": true,
+          "proximityMinutes": 24.3,
+          "population": 34198
+        }
+      },
+      "summary": null
+    }
+  }
+}

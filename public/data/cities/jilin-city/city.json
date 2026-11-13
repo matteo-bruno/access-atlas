@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jilin-city",
+  "createdAt": "2026-10-08T15:42:51.219Z",
+  "updatedAt": "2026-10-08T15:42:51.219Z",
+  "meta": {
+    "name": "Jilin City",
+    "nameIt": "Jilin City",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jilin City.geojson",
+      "sha256": "a0ace141c25dba88bf4cbbc834f26263876e25e634868a8e15216b1fa2df11a2",
+      "size": 2101661,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jilin-city",
+    "name": "Jilin City",
+    "nameIt": "Jilin City",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      126.55245,
+      43.85057
+    ],
+    "zoom": 10,
+    "population": 1198494,
+    "grid": "cities/jilin-city/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 173
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jilin-city/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jilin-city",
+        "name": "Jilin City",
+        "nameIt": "Jilin City",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          126.55245,
+          43.85057
+        ],
+        "zoom": 10,
+        "population": 1198494,
+        "cells": 1802,
+        "layer": "cities/jilin-city/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 173
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            126.55245,
+            43.85057
+          ]
+        },
+        "properties": {
+          "id": "jilin-city",
+          "name": "Jilin City",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 45.8,
+          "population": 1198494
+        }
+      },
+      "summary": null
+    }
+  }
+}

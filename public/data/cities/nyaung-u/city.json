@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nyaung-u",
+  "createdAt": "2026-10-08T16:02:23.635Z",
+  "updatedAt": "2026-10-08T16:02:23.635Z",
+  "meta": {
+    "name": "Nyaung-U",
+    "nameIt": "Nyaung-U",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nyaung-U.geojson",
+      "sha256": "0d563125763e4f208e8b9f50eb02738b28219130162aadf558ba09e29050afe1",
+      "size": 67017,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nyaung-u",
+    "name": "Nyaung-U",
+    "nameIt": "Nyaung-U",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      94.90519,
+      21.19637
+    ],
+    "zoom": 12,
+    "population": 54155,
+    "grid": "cities/nyaung-u/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nyaung-u/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nyaung-u",
+        "name": "Nyaung-U",
+        "nameIt": "Nyaung-U",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          94.90519,
+          21.19637
+        ],
+        "zoom": 12,
+        "population": 54155,
+        "cells": 58,
+        "layer": "cities/nyaung-u/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            94.90519,
+            21.19637
+          ]
+        },
+        "properties": {
+          "id": "nyaung-u",
+          "name": "Nyaung-U",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 54155
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aiyete",
+  "createdAt": "2026-10-08T15:03:21.885Z",
+  "updatedAt": "2026-10-08T15:03:21.885Z",
+  "meta": {
+    "name": "Aiyete",
+    "nameIt": "Aiyete",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aiyete.geojson",
+      "sha256": "62c7cc3188baa63134c64bf29e3c650f28fd3889839e25964799aa5482dcd831",
+      "size": 159267,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aiyete",
+    "name": "Aiyete",
+    "nameIt": "Aiyete",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      3.22525,
+      7.55108
+    ],
+    "zoom": 11.5,
+    "population": 26400,
+    "grid": "cities/aiyete/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aiyete/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aiyete",
+        "name": "Aiyete",
+        "nameIt": "Aiyete",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          3.22525,
+          7.55108
+        ],
+        "zoom": 11.5,
+        "population": 26400,
+        "cells": 138,
+        "layer": "cities/aiyete/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.22525,
+            7.55108
+          ]
+        },
+        "properties": {
+          "id": "aiyete",
+          "name": "Aiyete",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 26400
+        }
+      },
+      "summary": null
+    }
+  }
+}

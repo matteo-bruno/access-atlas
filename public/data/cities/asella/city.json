@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "asella",
+  "createdAt": "2026-10-08T15:10:08.933Z",
+  "updatedAt": "2026-10-08T15:10:08.933Z",
+  "meta": {
+    "name": "Asella",
+    "nameIt": "Asella",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Asella.geojson",
+      "sha256": "947127d56c883a8f5452b019b16a5b0c30baba295c9ca938b219b02c0ee22690",
+      "size": 286657,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "asella",
+    "name": "Asella",
+    "nameIt": "Asella",
+    "region": "Ethiopia",
+    "regionIt": "Etiopia",
+    "country": "ET",
+    "center": [
+      39.13194,
+      7.95587
+    ],
+    "zoom": 10.9,
+    "population": 108723,
+    "grid": "cities/asella/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/asella/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "asella",
+        "name": "Asella",
+        "nameIt": "Asella",
+        "region": "Ethiopia",
+        "regionIt": "Etiopia",
+        "country": "ET",
+        "center": [
+          39.13194,
+          7.95587
+        ],
+        "zoom": 10.9,
+        "population": 108723,
+        "cells": 248,
+        "layer": "cities/asella/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.13194,
+            7.95587
+          ]
+        },
+        "properties": {
+          "id": "asella",
+          "name": "Asella",
+          "country": "ET",
+          "isStudy": true,
+          "proximityMinutes": 30.8,
+          "population": 108723
+        }
+      },
+      "summary": null
+    }
+  }
+}

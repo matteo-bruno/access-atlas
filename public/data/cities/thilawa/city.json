@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "thilawa",
+  "createdAt": "2026-10-08T16:17:35.739Z",
+  "updatedAt": "2026-10-08T16:17:35.739Z",
+  "meta": {
+    "name": "Thilawa",
+    "nameIt": "Thilawa",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Thilawa.geojson",
+      "sha256": "f5be52d64f154e02791b9657c033bd6b5884ac159f57c013167da55b18bf04d2",
+      "size": 132002,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "thilawa",
+    "name": "Thilawa",
+    "nameIt": "Thilawa",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      96.26854,
+      16.67308
+    ],
+    "zoom": 11.5,
+    "population": 31709,
+    "grid": "cities/thilawa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/thilawa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "thilawa",
+        "name": "Thilawa",
+        "nameIt": "Thilawa",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          96.26854,
+          16.67308
+        ],
+        "zoom": 11.5,
+        "population": 31709,
+        "cells": 114,
+        "layer": "cities/thilawa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.26854,
+            16.67308
+          ]
+        },
+        "properties": {
+          "id": "thilawa",
+          "name": "Thilawa",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 31709
+        }
+      },
+      "summary": null
+    }
+  }
+}

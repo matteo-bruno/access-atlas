@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ramgarh",
+  "createdAt": "2026-10-08T16:08:07.335Z",
+  "updatedAt": "2026-10-08T16:08:07.335Z",
+  "meta": {
+    "name": "Ramgarh",
+    "nameIt": "Ramgarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ramgarh.geojson",
+      "sha256": "691746eab42f764c876f65ce7a3e4b38d7b6b49fab474ece2a40def6237f28a2",
+      "size": 498831,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ramgarh",
+    "name": "Ramgarh",
+    "nameIt": "Ramgarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.52134,
+      23.64061
+    ],
+    "zoom": 10.5,
+    "population": 209944,
+    "grid": "cities/ramgarh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ramgarh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ramgarh",
+        "name": "Ramgarh",
+        "nameIt": "Ramgarh",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.52134,
+          23.64061
+        ],
+        "zoom": 10.5,
+        "population": 209944,
+        "cells": 430,
+        "layer": "cities/ramgarh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.52134,
+            23.64061
+          ]
+        },
+        "properties": {
+          "id": "ramgarh",
+          "name": "Ramgarh",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 26.8,
+          "population": 209944
+        }
+      },
+      "summary": null
+    }
+  }
+}

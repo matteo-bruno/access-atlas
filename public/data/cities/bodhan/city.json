@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bodhan",
+  "createdAt": "2026-10-08T15:19:45.494Z",
+  "updatedAt": "2026-10-08T15:19:45.494Z",
+  "meta": {
+    "name": "Bodhan",
+    "nameIt": "Bodhan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bodhan.geojson",
+      "sha256": "df9a8ad42b96d0bda71eb8f4983e9de28b27cb8bb95f1bb9c2d35a2bc05e8a05",
+      "size": 144821,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bodhan",
+    "name": "Bodhan",
+    "nameIt": "Bodhan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.89372,
+      18.65733
+    ],
+    "zoom": 11.9,
+    "population": 83676,
+    "grid": "cities/bodhan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bodhan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bodhan",
+        "name": "Bodhan",
+        "nameIt": "Bodhan",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.89372,
+          18.65733
+        ],
+        "zoom": 11.9,
+        "population": 83676,
+        "cells": 125,
+        "layer": "cities/bodhan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.89372,
+            18.65733
+          ]
+        },
+        "properties": {
+          "id": "bodhan",
+          "name": "Bodhan",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 15.8,
+          "population": 83676
+        }
+      },
+      "summary": null
+    }
+  }
+}

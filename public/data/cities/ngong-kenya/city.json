@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ngong-kenya",
+  "createdAt": "2026-10-08T16:01:22.437Z",
+  "updatedAt": "2026-10-08T16:01:22.437Z",
+  "meta": {
+    "name": "Ngong (Kenya)",
+    "nameIt": "Ngong (Kenya)",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ngong (Kenya).geojson",
+      "sha256": "7d50313c3d68e6a68ba9c046f1945d6d56dcfab0b0188172cbac3dc8ed4d550c",
+      "size": 172024,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ngong-kenya",
+    "name": "Ngong (Kenya)",
+    "nameIt": "Ngong (Kenya)",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE",
+    "center": [
+      36.66424,
+      -1.35512
+    ],
+    "zoom": 11.5,
+    "population": 93651,
+    "grid": "cities/ngong-kenya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ngong-kenya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ngong-kenya",
+        "name": "Ngong (Kenya)",
+        "nameIt": "Ngong (Kenya)",
+        "region": "Kenya",
+        "regionIt": "Kenya",
+        "country": "KE",
+        "center": [
+          36.66424,
+          -1.35512
+        ],
+        "zoom": 11.5,
+        "population": 93651,
+        "cells": 147,
+        "layer": "cities/ngong-kenya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.66424,
+            -1.35512
+          ]
+        },
+        "properties": {
+          "id": "ngong-kenya",
+          "name": "Ngong (Kenya)",
+          "country": "KE",
+          "isStudy": true,
+          "proximityMinutes": 20.5,
+          "population": 93651
+        }
+      },
+      "summary": null
+    }
+  }
+}

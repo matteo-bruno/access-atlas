@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "portsmouth",
+  "createdAt": "2026-10-08T16:06:22.994Z",
+  "updatedAt": "2026-10-08T16:06:22.994Z",
+  "meta": {
+    "name": "Portsmouth",
+    "nameIt": "Portsmouth",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Portsmouth.geojson",
+      "sha256": "48ff2ad8dced1a66cfb350b97cc0695933372cd16840835cb850d26efc7f2790",
+      "size": 1892838,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "portsmouth",
+    "name": "Portsmouth",
+    "nameIt": "Portsmouth",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.09058,
+      50.83014
+    ],
+    "zoom": 9.8,
+    "population": 471579,
+    "grid": "cities/portsmouth/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/portsmouth/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "portsmouth",
+        "name": "Portsmouth",
+        "nameIt": "Portsmouth",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.09058,
+          50.83014
+        ],
+        "zoom": 9.8,
+        "population": 471579,
+        "cells": 1639,
+        "layer": "cities/portsmouth/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.09058,
+            50.83014
+          ]
+        },
+        "properties": {
+          "id": "portsmouth",
+          "name": "Portsmouth",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 12,
+          "population": 471579
+        }
+      },
+      "summary": null
+    }
+  }
+}

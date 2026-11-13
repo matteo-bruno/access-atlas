@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kano",
+  "createdAt": "2026-10-08T15:44:59.819Z",
+  "updatedAt": "2026-10-08T15:44:59.819Z",
+  "meta": {
+    "name": "Kano",
+    "nameIt": "Kano",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kano.geojson",
+      "sha256": "53d138779a4ab64e7b0d9eedcc01820e5b69f707fb7114ae9e595201325ba9b4",
+      "size": 4712762,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kano",
+    "name": "Kano",
+    "nameIt": "Kano",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      8.52423,
+      11.98975
+    ],
+    "zoom": 9.1,
+    "population": 4878223,
+    "grid": "cities/kano/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kano/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kano",
+        "name": "Kano",
+        "nameIt": "Kano",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          8.52423,
+          11.98975
+        ],
+        "zoom": 9.1,
+        "population": 4878223,
+        "cells": 4059,
+        "layer": "cities/kano/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.52423,
+            11.98975
+          ]
+        },
+        "properties": {
+          "id": "kano",
+          "name": "Kano",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 51.5,
+          "population": 4878223
+        }
+      },
+      "summary": null
+    }
+  }
+}

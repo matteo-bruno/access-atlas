@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "narayanpur",
+  "createdAt": "2026-10-08T16:00:22.165Z",
+  "updatedAt": "2026-10-08T16:00:22.165Z",
+  "meta": {
+    "name": "Narayanpur",
+    "nameIt": "Narayanpur",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Narayanpur.geojson",
+      "sha256": "ecb4965337b25388ee4db2b9a66c94c71308212df0ca4c60aa60fd18ddb4223e",
+      "size": 540346,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "narayanpur",
+    "name": "Narayanpur",
+    "nameIt": "Narayanpur",
+    "region": "Bangladesh",
+    "regionIt": "Bangladesh",
+    "country": "BD",
+    "center": [
+      90.77221,
+      23.4014
+    ],
+    "zoom": 10.5,
+    "population": 132003,
+    "grid": "cities/narayanpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/narayanpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "narayanpur",
+        "name": "Narayanpur",
+        "nameIt": "Narayanpur",
+        "region": "Bangladesh",
+        "regionIt": "Bangladesh",
+        "country": "BD",
+        "center": [
+          90.77221,
+          23.4014
+        ],
+        "zoom": 10.5,
+        "population": 132003,
+        "cells": 466,
+        "layer": "cities/narayanpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            90.77221,
+            23.4014
+          ]
+        },
+        "properties": {
+          "id": "narayanpur",
+          "name": "Narayanpur",
+          "country": "BD",
+          "isStudy": true,
+          "proximityMinutes": 58.6,
+          "population": 132003
+        }
+      },
+      "summary": null
+    }
+  }
+}

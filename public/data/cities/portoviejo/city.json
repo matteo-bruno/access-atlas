@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "portoviejo",
+  "createdAt": "2026-10-08T16:06:22.540Z",
+  "updatedAt": "2026-10-08T16:06:22.540Z",
+  "meta": {
+    "name": "Portoviejo",
+    "nameIt": "Portoviejo",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Portoviejo.geojson",
+      "sha256": "f9a4d3e859881aea56677d2a09ad3a981bdb5350a9f2eb2e9090b72e7dc5a395",
+      "size": 446273,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "portoviejo",
+    "name": "Portoviejo",
+    "nameIt": "Portoviejo",
+    "region": "Ecuador",
+    "regionIt": "Ecuador",
+    "country": "EC",
+    "center": [
+      -80.46589,
+      -1.05245
+    ],
+    "zoom": 10.9,
+    "population": 197086,
+    "grid": "cities/portoviejo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/portoviejo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "portoviejo",
+        "name": "Portoviejo",
+        "nameIt": "Portoviejo",
+        "region": "Ecuador",
+        "regionIt": "Ecuador",
+        "country": "EC",
+        "center": [
+          -80.46589,
+          -1.05245
+        ],
+        "zoom": 10.9,
+        "population": 197086,
+        "cells": 382,
+        "layer": "cities/portoviejo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.46589,
+            -1.05245
+          ]
+        },
+        "properties": {
+          "id": "portoviejo",
+          "name": "Portoviejo",
+          "country": "EC",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 197086
+        }
+      },
+      "summary": null
+    }
+  }
+}

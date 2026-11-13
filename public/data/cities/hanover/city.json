@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hanover",
+  "createdAt": "2026-10-08T15:37:43.567Z",
+  "updatedAt": "2026-10-08T15:37:43.567Z",
+  "meta": {
+    "name": "Hanover",
+    "nameIt": "Hanover",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hanover.geojson",
+      "sha256": "3cb8d42d623b47fc3c8618d1f0d904fe59887a4f194243a56eb855f3e131f407",
+      "size": 2508391,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hanover",
+    "name": "Hanover",
+    "nameIt": "Hanover",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      9.74376,
+      52.38201
+    ],
+    "zoom": 9.7,
+    "population": 659979,
+    "grid": "cities/hanover/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hanover/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hanover",
+        "name": "Hanover",
+        "nameIt": "Hanover",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.74376,
+          52.38201
+        ],
+        "zoom": 9.7,
+        "population": 659979,
+        "cells": 2212,
+        "layer": "cities/hanover/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.74376,
+            52.38201
+          ]
+        },
+        "properties": {
+          "id": "hanover",
+          "name": "Hanover",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 9.3,
+          "population": 659979
+        }
+      },
+      "summary": null
+    }
+  }
+}

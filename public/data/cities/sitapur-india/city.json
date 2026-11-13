@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sitapur-india",
+  "createdAt": "2026-10-08T16:14:04.148Z",
+  "updatedAt": "2026-10-08T16:14:04.148Z",
+  "meta": {
+    "name": "Sitapur India",
+    "nameIt": "Sitapur India",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sitapur.geojson",
+      "sha256": "8ad1109b6a9029f32783c820adf2528449fa53d514891004a66de18b923d5e59",
+      "size": 579683,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sitapur-india",
+    "name": "Sitapur India",
+    "nameIt": "Sitapur India",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      80.6955,
+      27.56029
+    ],
+    "zoom": 10.3,
+    "population": 372544,
+    "grid": "cities/sitapur-india/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sitapur-india/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sitapur-india",
+        "name": "Sitapur India",
+        "nameIt": "Sitapur India",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          80.6955,
+          27.56029
+        ],
+        "zoom": 10.3,
+        "population": 372544,
+        "cells": 500,
+        "layer": "cities/sitapur-india/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            80.6955,
+            27.56029
+          ]
+        },
+        "properties": {
+          "id": "sitapur-india",
+          "name": "Sitapur India",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 24.5,
+          "population": 372544
+        }
+      },
+      "summary": null
+    }
+  }
+}

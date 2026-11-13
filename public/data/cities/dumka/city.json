@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dumka",
+  "createdAt": "2026-10-08T15:31:17.547Z",
+  "updatedAt": "2026-10-08T15:31:17.547Z",
+  "meta": {
+    "name": "Dumka",
+    "nameIt": "Dumka",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dumka.geojson",
+      "sha256": "e1944260cf1f5726ecb28d415797832693b83e57db30415105c3680c00f75033",
+      "size": 241151,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dumka",
+    "name": "Dumka",
+    "nameIt": "Dumka",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      87.24863,
+      24.27089
+    ],
+    "zoom": 11.3,
+    "population": 187682,
+    "grid": "cities/dumka/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dumka/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dumka",
+        "name": "Dumka",
+        "nameIt": "Dumka",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          87.24863,
+          24.27089
+        ],
+        "zoom": 11.3,
+        "population": 187682,
+        "cells": 208,
+        "layer": "cities/dumka/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            87.24863,
+            24.27089
+          ]
+        },
+        "properties": {
+          "id": "dumka",
+          "name": "Dumka",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 21.9,
+          "population": 187682
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nansio",
+  "createdAt": "2026-10-08T16:00:09.656Z",
+  "updatedAt": "2026-10-08T16:00:09.656Z",
+  "meta": {
+    "name": "Nansio",
+    "nameIt": "Nansio",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nansio.geojson",
+      "sha256": "775e76d3d79a0900ea81c2c12bbdf5035e153f521174dc3f91568c403f8bb3a7",
+      "size": 144898,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nansio",
+    "name": "Nansio",
+    "nameIt": "Nansio",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      33.08773,
+      -2.09872
+    ],
+    "zoom": 11.6,
+    "population": 63912,
+    "grid": "cities/nansio/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nansio/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nansio",
+        "name": "Nansio",
+        "nameIt": "Nansio",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          33.08773,
+          -2.09872
+        ],
+        "zoom": 11.6,
+        "population": 63912,
+        "cells": 124,
+        "layer": "cities/nansio/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.08773,
+            -2.09872
+          ]
+        },
+        "properties": {
+          "id": "nansio",
+          "name": "Nansio",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 13.7,
+          "population": 63912
+        }
+      },
+      "summary": null
+    }
+  }
+}

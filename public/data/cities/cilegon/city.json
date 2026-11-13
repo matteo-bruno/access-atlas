@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cilegon",
+  "createdAt": "2026-10-08T15:25:31.157Z",
+  "updatedAt": "2026-10-08T15:25:31.157Z",
+  "meta": {
+    "name": "Cilegon",
+    "nameIt": "Cilegon",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cilegon.geojson",
+      "sha256": "8d59d28592b4875a9cd3d94eaabf1ac2ef3ccb95ddc7d7303d47050137cf4865",
+      "size": 2039089,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cilegon",
+    "name": "Cilegon",
+    "nameIt": "Cilegon",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      106.03462,
+      -6.01418
+    ],
+    "zoom": 9.5,
+    "population": 597269,
+    "grid": "cities/cilegon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cilegon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cilegon",
+        "name": "Cilegon",
+        "nameIt": "Cilegon",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          106.03462,
+          -6.01418
+        ],
+        "zoom": 9.5,
+        "population": 597269,
+        "cells": 1738,
+        "layer": "cities/cilegon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.03462,
+            -6.01418
+          ]
+        },
+        "properties": {
+          "id": "cilegon",
+          "name": "Cilegon",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 45.1,
+          "population": 597269
+        }
+      },
+      "summary": null
+    }
+  }
+}

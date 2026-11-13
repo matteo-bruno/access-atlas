@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "umea",
+  "createdAt": "2026-10-08T16:19:50.252Z",
+  "updatedAt": "2026-10-08T16:19:50.252Z",
+  "meta": {
+    "name": "Umeå",
+    "nameIt": "Umeå",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Umeå.geojson",
+      "sha256": "f6a8c243ee46bf3f1941a439f76008398453793d2b890ab23a8df9b38b1eaf00",
+      "size": 457390,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "umea",
+    "name": "Umeå",
+    "nameIt": "Umeå",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE",
+    "center": [
+      20.29711,
+      63.82677
+    ],
+    "zoom": 11,
+    "population": 70618,
+    "grid": "cities/umea/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/umea/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "umea",
+        "name": "Umeå",
+        "nameIt": "Umeå",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          20.29711,
+          63.82677
+        ],
+        "zoom": 11,
+        "population": 70618,
+        "cells": 400,
+        "layer": "cities/umea/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.29711,
+            63.82677
+          ]
+        },
+        "properties": {
+          "id": "umea",
+          "name": "Umeå",
+          "country": "SE",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 70618
+        }
+      },
+      "summary": null
+    }
+  }
+}

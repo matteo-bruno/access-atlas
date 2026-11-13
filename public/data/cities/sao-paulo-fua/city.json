@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sao-paulo-fua",
+  "createdAt": "2026-10-19T16:58:42.603Z",
+  "updatedAt": "2026-10-19T16:58:42.603Z",
+  "meta": {
+    "name": "São Paulo",
+    "nameIt": "São Paulo",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "sao-paulo-fua",
+    "name": "São Paulo",
+    "nameIt": "São Paulo",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "extent": "fua",
+    "core": "sao-paulo",
+    "center": [
+      -46.61849,
+      -23.55472
+    ],
+    "zoom": 8.5,
+    "population": 22376380,
+    "grid": "cities/sao-paulo-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sao-paulo-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sao-paulo-fua",
+        "name": "São Paulo",
+        "nameIt": "São Paulo",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "extent": "fua",
+        "core": "sao-paulo",
+        "center": [
+          -46.61849,
+          -23.55472
+        ],
+        "zoom": 8.5,
+        "population": 22376380,
+        "cells": 56981,
+        "layer": "cities/sao-paulo-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.61849,
+            -23.55472
+          ]
+        },
+        "properties": {
+          "id": "sao-paulo-fua",
+          "name": "São Paulo",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 18.2,
+          "population": 22376380
+        }
+      },
+      "summary": null
+    }
+  }
+}

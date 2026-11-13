@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tezpur",
+  "createdAt": "2026-10-08T16:17:27.344Z",
+  "updatedAt": "2026-10-08T16:17:27.344Z",
+  "meta": {
+    "name": "Tezpur",
+    "nameIt": "Tezpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tezpur.geojson",
+      "sha256": "45a6f7b39284b76b0046b54182fb589a80894e466f0f7f617aad88deb9406b2c",
+      "size": 570265,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tezpur",
+    "name": "Tezpur",
+    "nameIt": "Tezpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      92.78775,
+      26.64304
+    ],
+    "zoom": 10.6,
+    "population": 210613,
+    "grid": "cities/tezpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tezpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tezpur",
+        "name": "Tezpur",
+        "nameIt": "Tezpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          92.78775,
+          26.64304
+        ],
+        "zoom": 10.6,
+        "population": 210613,
+        "cells": 492,
+        "layer": "cities/tezpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            92.78775,
+            26.64304
+          ]
+        },
+        "properties": {
+          "id": "tezpur",
+          "name": "Tezpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 34.8,
+          "population": 210613
+        }
+      },
+      "summary": null
+    }
+  }
+}

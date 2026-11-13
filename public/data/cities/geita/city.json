@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "geita",
+  "createdAt": "2026-10-08T15:34:52.303Z",
+  "updatedAt": "2026-10-08T15:34:52.303Z",
+  "meta": {
+    "name": "Geita",
+    "nameIt": "Geita",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Geita.geojson",
+      "sha256": "ce0703440f2fa5e401a0370869faf649f7ffe4e5b5e051ec27a37764e8312e17",
+      "size": 379027,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "geita",
+    "name": "Geita",
+    "nameIt": "Geita",
+    "region": "Tanzania",
+    "regionIt": "Tanzania",
+    "country": "TZ",
+    "center": [
+      32.23876,
+      -2.88314
+    ],
+    "zoom": 10.9,
+    "population": 191666,
+    "grid": "cities/geita/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/geita/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "geita",
+        "name": "Geita",
+        "nameIt": "Geita",
+        "region": "Tanzania",
+        "regionIt": "Tanzania",
+        "country": "TZ",
+        "center": [
+          32.23876,
+          -2.88314
+        ],
+        "zoom": 10.9,
+        "population": 191666,
+        "cells": 324,
+        "layer": "cities/geita/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.23876,
+            -2.88314
+          ]
+        },
+        "properties": {
+          "id": "geita",
+          "name": "Geita",
+          "country": "TZ",
+          "isStudy": true,
+          "proximityMinutes": 17.3,
+          "population": 191666
+        }
+      },
+      "summary": null
+    }
+  }
+}

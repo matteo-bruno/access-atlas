@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hai-duong",
+  "createdAt": "2026-10-08T15:40:07.408Z",
+  "updatedAt": "2026-10-08T15:40:07.408Z",
+  "meta": {
+    "name": "Hải Dương",
+    "nameIt": "Hải Dương",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hải Dương.geojson",
+      "sha256": "ad757f35ee3dd5e4cf0f6d14a6734386880f2c9c4d7d3baa55f6c0124c43f363",
+      "size": 782955,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hai-duong",
+    "name": "Hải Dương",
+    "nameIt": "Hải Dương",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      106.30315,
+      20.93291
+    ],
+    "zoom": 9.7,
+    "population": 286884,
+    "grid": "cities/hai-duong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hai-duong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hai-duong",
+        "name": "Hải Dương",
+        "nameIt": "Hải Dương",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          106.30315,
+          20.93291
+        ],
+        "zoom": 9.7,
+        "population": 286884,
+        "cells": 670,
+        "layer": "cities/hai-duong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.30315,
+            20.93291
+          ]
+        },
+        "properties": {
+          "id": "hai-duong",
+          "name": "Hải Dương",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 29.8,
+          "population": 286884
+        }
+      },
+      "summary": null
+    }
+  }
+}

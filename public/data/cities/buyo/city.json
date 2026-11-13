@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "buyo",
+  "createdAt": "2026-10-08T15:21:18.683Z",
+  "updatedAt": "2026-10-08T15:21:18.683Z",
+  "meta": {
+    "name": "Buyo",
+    "nameIt": "Buyo",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Buyo.geojson",
+      "sha256": "9af742720cc0dc3dc555fd6097026442ab779a632118b4e98ecb8ae1968c6d19",
+      "size": 155487,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "buyo",
+    "name": "Buyo",
+    "nameIt": "Buyo",
+    "region": "Ivory Coast",
+    "regionIt": "Costa d'Avorio",
+    "country": "CI",
+    "center": [
+      -7.0045,
+      6.25322
+    ],
+    "zoom": 11.9,
+    "population": 36159,
+    "grid": "cities/buyo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/buyo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "buyo",
+        "name": "Buyo",
+        "nameIt": "Buyo",
+        "region": "Ivory Coast",
+        "regionIt": "Costa d'Avorio",
+        "country": "CI",
+        "center": [
+          -7.0045,
+          6.25322
+        ],
+        "zoom": 11.9,
+        "population": 36159,
+        "cells": 134,
+        "layer": "cities/buyo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -7.0045,
+            6.25322
+          ]
+        },
+        "properties": {
+          "id": "buyo",
+          "name": "Buyo",
+          "country": "CI",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 36159
+        }
+      },
+      "summary": null
+    }
+  }
+}

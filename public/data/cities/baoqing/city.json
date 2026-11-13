@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "baoqing",
+  "createdAt": "2026-10-08T15:15:18.818Z",
+  "updatedAt": "2026-10-08T15:15:18.818Z",
+  "meta": {
+    "name": "Baoqing",
+    "nameIt": "Baoqing",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Baoqing.geojson",
+      "sha256": "a050d64f277eb5b861fe0ad662214ac2ce04f60dc2e8e7073d489bd7d9481410",
+      "size": 250158,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "baoqing",
+    "name": "Baoqing",
+    "nameIt": "Baoqing",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      132.19479,
+      46.32517
+    ],
+    "zoom": 11.5,
+    "population": 101116,
+    "grid": "cities/baoqing/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/baoqing/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "baoqing",
+        "name": "Baoqing",
+        "nameIt": "Baoqing",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          132.19479,
+          46.32517
+        ],
+        "zoom": 11.5,
+        "population": 101116,
+        "cells": 215,
+        "layer": "cities/baoqing/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            132.19479,
+            46.32517
+          ]
+        },
+        "properties": {
+          "id": "baoqing",
+          "name": "Baoqing",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 15.2,
+          "population": 101116
+        }
+      },
+      "summary": null
+    }
+  }
+}

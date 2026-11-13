@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ceylanp-nar",
+  "createdAt": "2026-10-08T15:23:04.496Z",
+  "updatedAt": "2026-10-08T15:23:04.496Z",
+  "meta": {
+    "name": "Ceylanpınar",
+    "nameIt": "Ceylanpınar",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ceylanpınar.geojson",
+      "sha256": "866d4b4d9913a3049d12bcceaa645c43077f4d6459c65cb0a7435310ce33d964",
+      "size": 92710,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ceylanp-nar",
+    "name": "Ceylanpınar",
+    "nameIt": "Ceylanpınar",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      40.04752,
+      36.85343
+    ],
+    "zoom": 12,
+    "population": 51657,
+    "grid": "cities/ceylanp-nar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ceylanp-nar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ceylanp-nar",
+        "name": "Ceylanpınar",
+        "nameIt": "Ceylanpınar",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          40.04752,
+          36.85343
+        ],
+        "zoom": 12,
+        "population": 51657,
+        "cells": 80,
+        "layer": "cities/ceylanp-nar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.04752,
+            36.85343
+          ]
+        },
+        "properties": {
+          "id": "ceylanp-nar",
+          "name": "Ceylanpınar",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 16.4,
+          "population": 51657
+        }
+      },
+      "summary": null
+    }
+  }
+}

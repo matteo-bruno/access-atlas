@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mudanya",
+  "createdAt": "2026-10-08T15:58:42.682Z",
+  "updatedAt": "2026-10-08T15:58:42.682Z",
+  "meta": {
+    "name": "Mudanya",
+    "nameIt": "Mudanya",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mudanya.geojson",
+      "sha256": "9413a402bd026d80babd092dde04ea54f3978493c77ab539e75f6f03d78ce641",
+      "size": 179626,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mudanya",
+    "name": "Mudanya",
+    "nameIt": "Mudanya",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      28.90335,
+      40.36334
+    ],
+    "zoom": 11,
+    "population": 57943,
+    "grid": "cities/mudanya/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mudanya/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mudanya",
+        "name": "Mudanya",
+        "nameIt": "Mudanya",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          28.90335,
+          40.36334
+        ],
+        "zoom": 11,
+        "population": 57943,
+        "cells": 155,
+        "layer": "cities/mudanya/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.90335,
+            40.36334
+          ]
+        },
+        "properties": {
+          "id": "mudanya",
+          "name": "Mudanya",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 24.7,
+          "population": 57943
+        }
+      },
+      "summary": null
+    }
+  }
+}

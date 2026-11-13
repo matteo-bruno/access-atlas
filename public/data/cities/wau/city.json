@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wau",
+  "createdAt": "2026-10-08T16:21:27.188Z",
+  "updatedAt": "2026-10-08T16:21:27.188Z",
+  "meta": {
+    "name": "Wau",
+    "nameIt": "Wau",
+    "region": "South Sudan",
+    "regionIt": "Sudan del Sud",
+    "country": "SS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wau.geojson",
+      "sha256": "42888a058fc5b5ef61939f886233e2189a14b7825249498b9b158b6085c25441",
+      "size": 349590,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wau",
+    "name": "Wau",
+    "nameIt": "Wau",
+    "region": "South Sudan",
+    "regionIt": "Sudan del Sud",
+    "country": "SS",
+    "center": [
+      27.98626,
+      7.70281
+    ],
+    "zoom": 11.3,
+    "population": 222780,
+    "grid": "cities/wau/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wau/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wau",
+        "name": "Wau",
+        "nameIt": "Wau",
+        "region": "South Sudan",
+        "regionIt": "Sudan del Sud",
+        "country": "SS",
+        "center": [
+          27.98626,
+          7.70281
+        ],
+        "zoom": 11.3,
+        "population": 222780,
+        "cells": 301,
+        "layer": "cities/wau/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.98626,
+            7.70281
+          ]
+        },
+        "properties": {
+          "id": "wau",
+          "name": "Wau",
+          "country": "SS",
+          "isStudy": true,
+          "proximityMinutes": 25.2,
+          "population": 222780
+        }
+      },
+      "summary": null
+    }
+  }
+}

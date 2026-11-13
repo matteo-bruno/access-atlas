@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "choluteca",
+  "createdAt": "2026-10-08T15:25:04.961Z",
+  "updatedAt": "2026-10-08T15:25:04.961Z",
+  "meta": {
+    "name": "Choluteca",
+    "nameIt": "Choluteca",
+    "region": "Honduras",
+    "regionIt": "Honduras",
+    "country": "HN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Choluteca.geojson",
+      "sha256": "09f1fbac6576f8564f4cc244c083e09fae70a13407be557aa62d1d2d67bf75e2",
+      "size": 406332,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "choluteca",
+    "name": "Choluteca",
+    "nameIt": "Choluteca",
+    "region": "Honduras",
+    "regionIt": "Honduras",
+    "country": "HN",
+    "center": [
+      -87.17138,
+      13.30753
+    ],
+    "zoom": 10.9,
+    "population": 66670,
+    "grid": "cities/choluteca/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/choluteca/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "choluteca",
+        "name": "Choluteca",
+        "nameIt": "Choluteca",
+        "region": "Honduras",
+        "regionIt": "Honduras",
+        "country": "HN",
+        "center": [
+          -87.17138,
+          13.30753
+        ],
+        "zoom": 10.9,
+        "population": 66670,
+        "cells": 348,
+        "layer": "cities/choluteca/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.17138,
+            13.30753
+          ]
+        },
+        "properties": {
+          "id": "choluteca",
+          "name": "Choluteca",
+          "country": "HN",
+          "isStudy": true,
+          "proximityMinutes": 26.5,
+          "population": 66670
+        }
+      },
+      "summary": null
+    }
+  }
+}

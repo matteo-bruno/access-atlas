@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jombang",
+  "createdAt": "2026-10-08T15:43:29.929Z",
+  "updatedAt": "2026-10-08T15:43:29.929Z",
+  "meta": {
+    "name": "Jombang",
+    "nameIt": "Jombang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jombang.geojson",
+      "sha256": "b3cc8967ea4b5a781b7743328eef832762ca3224fbbdfbe9680e47bb4867b249",
+      "size": 1560396,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jombang",
+    "name": "Jombang",
+    "nameIt": "Jombang",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      112.24964,
+      -7.55686
+    ],
+    "zoom": 10.2,
+    "population": 448484,
+    "grid": "cities/jombang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jombang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jombang",
+        "name": "Jombang",
+        "nameIt": "Jombang",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          112.24964,
+          -7.55686
+        ],
+        "zoom": 10.2,
+        "population": 448484,
+        "cells": 1331,
+        "layer": "cities/jombang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.24964,
+            -7.55686
+          ]
+        },
+        "properties": {
+          "id": "jombang",
+          "name": "Jombang",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 48.7,
+          "population": 448484
+        }
+      },
+      "summary": null
+    }
+  }
+}

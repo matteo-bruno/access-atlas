@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gdansk-fua",
+  "createdAt": "2026-10-19T16:56:12.116Z",
+  "updatedAt": "2026-10-19T16:56:12.116Z",
+  "meta": {
+    "name": "Gdansk",
+    "nameIt": "Gdansk",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "gdansk-fua",
+    "name": "Gdansk",
+    "nameIt": "Gdansk",
+    "region": "Poland",
+    "regionIt": "Polonia",
+    "country": "PL",
+    "extent": "fua",
+    "core": "gdansk",
+    "center": [
+      18.54457,
+      54.40702
+    ],
+    "zoom": 8.5,
+    "population": 1050267,
+    "grid": "cities/gdansk-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gdansk-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gdansk-fua",
+        "name": "Gdansk",
+        "nameIt": "Gdansk",
+        "region": "Poland",
+        "regionIt": "Polonia",
+        "country": "PL",
+        "extent": "fua",
+        "core": "gdansk",
+        "center": [
+          18.54457,
+          54.40702
+        ],
+        "zoom": 8.5,
+        "population": 1050267,
+        "cells": 16113,
+        "layer": "cities/gdansk-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.54457,
+            54.40702
+          ]
+        },
+        "properties": {
+          "id": "gdansk-fua",
+          "name": "Gdansk",
+          "country": "PL",
+          "isStudy": true,
+          "proximityMinutes": 10.1,
+          "population": 1050267
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "huadu",
+  "createdAt": "2026-10-08T15:39:18.285Z",
+  "updatedAt": "2026-10-08T15:39:18.285Z",
+  "meta": {
+    "name": "Huadu",
+    "nameIt": "Huadu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Huadu.geojson",
+      "sha256": "0f7071bcadddf856fbdbad6c8036cc0c67578a7dcde412906321d3b229135453",
+      "size": 1858665,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "huadu",
+    "name": "Huadu",
+    "nameIt": "Huadu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.21292,
+      23.38627
+    ],
+    "zoom": 9.9,
+    "population": 1010267,
+    "grid": "cities/huadu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/huadu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "huadu",
+        "name": "Huadu",
+        "nameIt": "Huadu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.21292,
+          23.38627
+        ],
+        "zoom": 9.9,
+        "population": 1010267,
+        "cells": 1590,
+        "layer": "cities/huadu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.21292,
+            23.38627
+          ]
+        },
+        "properties": {
+          "id": "huadu",
+          "name": "Huadu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 43.1,
+          "population": 1010267
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sault-ste-marie",
+  "createdAt": "2026-10-08T16:11:39.401Z",
+  "updatedAt": "2026-10-08T16:11:39.401Z",
+  "meta": {
+    "name": "Sault Ste. Marie",
+    "nameIt": "Sault Ste. Marie",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sault Ste. Marie.geojson",
+      "sha256": "0c093a179c91174708a7097155a13851093831a6a0f8e090d8178ad60ce6e514",
+      "size": 350203,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sault-ste-marie",
+    "name": "Sault Ste. Marie",
+    "nameIt": "Sault Ste. Marie",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -84.32028,
+      46.52308
+    ],
+    "zoom": 10.6,
+    "population": 60146,
+    "grid": "cities/sault-ste-marie/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sault-ste-marie/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sault-ste-marie",
+        "name": "Sault Ste. Marie",
+        "nameIt": "Sault Ste. Marie",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -84.32028,
+          46.52308
+        ],
+        "zoom": 10.6,
+        "population": 60146,
+        "cells": 302,
+        "layer": "cities/sault-ste-marie/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -84.32028,
+            46.52308
+          ]
+        },
+        "properties": {
+          "id": "sault-ste-marie",
+          "name": "Sault Ste. Marie",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 19.1,
+          "population": 60146
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "purwakarta",
+  "createdAt": "2026-10-08T16:06:59.798Z",
+  "updatedAt": "2026-10-08T16:06:59.798Z",
+  "meta": {
+    "name": "Purwakarta",
+    "nameIt": "Purwakarta",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Purwakarta.geojson",
+      "sha256": "9f6651d56e750d0130ddd836a17e169c568d90fb2da633b6686630a78cdf4515",
+      "size": 1144959,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "purwakarta",
+    "name": "Purwakarta",
+    "nameIt": "Purwakarta",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      107.45798,
+      -6.53263
+    ],
+    "zoom": 9.8,
+    "population": 457849,
+    "grid": "cities/purwakarta/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/purwakarta/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "purwakarta",
+        "name": "Purwakarta",
+        "nameIt": "Purwakarta",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          107.45798,
+          -6.53263
+        ],
+        "zoom": 9.8,
+        "population": 457849,
+        "cells": 976,
+        "layer": "cities/purwakarta/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.45798,
+            -6.53263
+          ]
+        },
+        "properties": {
+          "id": "purwakarta",
+          "name": "Purwakarta",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 71.3,
+          "population": 457849
+        }
+      },
+      "summary": null
+    }
+  }
+}

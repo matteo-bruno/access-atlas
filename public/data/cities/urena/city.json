@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "urena",
+  "createdAt": "2026-10-08T16:20:03.350Z",
+  "updatedAt": "2026-10-08T16:20:03.350Z",
+  "meta": {
+    "name": "Ureña",
+    "nameIt": "Ureña",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ureña.geojson",
+      "sha256": "41fac8ab979c295bb0f749fd30261fed3e50924a34512437df323058f89c512c",
+      "size": 110341,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "urena",
+    "name": "Ureña",
+    "nameIt": "Ureña",
+    "region": "Venezuela",
+    "regionIt": "Venezuela",
+    "country": "VE",
+    "center": [
+      -72.44252,
+      7.92035
+    ],
+    "zoom": 12,
+    "population": 38051,
+    "grid": "cities/urena/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/urena/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "urena",
+        "name": "Ureña",
+        "nameIt": "Ureña",
+        "region": "Venezuela",
+        "regionIt": "Venezuela",
+        "country": "VE",
+        "center": [
+          -72.44252,
+          7.92035
+        ],
+        "zoom": 12,
+        "population": 38051,
+        "cells": 95,
+        "layer": "cities/urena/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.44252,
+            7.92035
+          ]
+        },
+        "properties": {
+          "id": "urena",
+          "name": "Ureña",
+          "country": "VE",
+          "isStudy": true,
+          "proximityMinutes": 19.6,
+          "population": 38051
+        }
+      },
+      "summary": null
+    }
+  }
+}

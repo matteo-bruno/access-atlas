@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "boxing",
+  "createdAt": "2026-10-08T15:20:15.934Z",
+  "updatedAt": "2026-10-08T15:20:15.934Z",
+  "meta": {
+    "name": "Boxing",
+    "nameIt": "Boxing",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Boxing.geojson",
+      "sha256": "9f545fe1dfed31f7065ba7da3fcd4b8ac01c406a31717e88b81039cf889b640a",
+      "size": 688752,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "boxing",
+    "name": "Boxing",
+    "nameIt": "Boxing",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      118.13257,
+      37.14862
+    ],
+    "zoom": 10.7,
+    "population": 158389,
+    "grid": "cities/boxing/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 169
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/boxing/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "boxing",
+        "name": "Boxing",
+        "nameIt": "Boxing",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          118.13257,
+          37.14862
+        ],
+        "zoom": 10.7,
+        "population": 158389,
+        "cells": 591,
+        "layer": "cities/boxing/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 169
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            118.13257,
+            37.14862
+          ]
+        },
+        "properties": {
+          "id": "boxing",
+          "name": "Boxing",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 24.5,
+          "population": 158389
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "manresa",
+  "createdAt": "2026-10-08T15:54:53.370Z",
+  "updatedAt": "2026-10-08T15:54:53.370Z",
+  "meta": {
+    "name": "Manresa",
+    "nameIt": "Manresa",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Manresa.geojson",
+      "sha256": "8c0487a0beec12f21c94dde1fcabac257956d437dfd7bab4297a8300f098fa94",
+      "size": 123496,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "manresa",
+    "name": "Manresa",
+    "nameIt": "Manresa",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      1.83158,
+      41.72812
+    ],
+    "zoom": 12,
+    "population": 70101,
+    "grid": "cities/manresa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/manresa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "manresa",
+        "name": "Manresa",
+        "nameIt": "Manresa",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          1.83158,
+          41.72812
+        ],
+        "zoom": 12,
+        "population": 70101,
+        "cells": 108,
+        "layer": "cities/manresa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            1.83158,
+            41.72812
+          ]
+        },
+        "properties": {
+          "id": "manresa",
+          "name": "Manresa",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 6.1,
+          "population": 70101
+        }
+      },
+      "summary": null
+    }
+  }
+}

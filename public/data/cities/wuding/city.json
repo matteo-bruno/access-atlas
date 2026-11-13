@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wuding",
+  "createdAt": "2026-10-08T16:21:54.732Z",
+  "updatedAt": "2026-10-08T16:21:54.732Z",
+  "meta": {
+    "name": "Wuding",
+    "nameIt": "Wuding",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wuding.geojson",
+      "sha256": "ca3ca79e1234879c84963e6db654ff83eac32cc3e9cb9d5e4129bf69ef9c21aa",
+      "size": 63171,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wuding",
+    "name": "Wuding",
+    "nameIt": "Wuding",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      102.40471,
+      25.53342
+    ],
+    "zoom": 12,
+    "population": 91751,
+    "grid": "cities/wuding/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wuding/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wuding",
+        "name": "Wuding",
+        "nameIt": "Wuding",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          102.40471,
+          25.53342
+        ],
+        "zoom": 12,
+        "population": 91751,
+        "cells": 54,
+        "layer": "cities/wuding/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            102.40471,
+            25.53342
+          ]
+        },
+        "properties": {
+          "id": "wuding",
+          "name": "Wuding",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 91751
+        }
+      },
+      "summary": null
+    }
+  }
+}

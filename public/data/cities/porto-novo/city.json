@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "porto-novo",
+  "createdAt": "2026-10-08T16:06:21.756Z",
+  "updatedAt": "2026-10-08T16:06:21.756Z",
+  "meta": {
+    "name": "Porto-Novo",
+    "nameIt": "Porto-Novo",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Porto-Novo.geojson",
+      "sha256": "649913bbe1f0d1a6195a2348f56e6b124f42fb8edbce1f86d12fff2c8c23218d",
+      "size": 2021784,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "porto-novo",
+    "name": "Porto-Novo",
+    "nameIt": "Porto-Novo",
+    "region": "Benin",
+    "regionIt": "Benin",
+    "country": "BJ",
+    "center": [
+      2.62223,
+      6.50748
+    ],
+    "zoom": 9.9,
+    "population": 1130206,
+    "grid": "cities/porto-novo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 182
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/porto-novo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "porto-novo",
+        "name": "Porto-Novo",
+        "nameIt": "Porto-Novo",
+        "region": "Benin",
+        "regionIt": "Benin",
+        "country": "BJ",
+        "center": [
+          2.62223,
+          6.50748
+        ],
+        "zoom": 9.9,
+        "population": 1130206,
+        "cells": 1752,
+        "layer": "cities/porto-novo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 182
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.62223,
+            6.50748
+          ]
+        },
+        "properties": {
+          "id": "porto-novo",
+          "name": "Porto-Novo",
+          "country": "BJ",
+          "isStudy": true,
+          "proximityMinutes": 25.8,
+          "population": 1130206
+        }
+      },
+      "summary": null
+    }
+  }
+}

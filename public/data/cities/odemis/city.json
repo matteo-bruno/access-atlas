@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "odemis",
+  "createdAt": "2026-10-08T16:25:54.333Z",
+  "updatedAt": "2026-10-08T16:25:54.333Z",
+  "meta": {
+    "name": "Ödemiş",
+    "nameIt": "Ödemiş",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ödemiş.geojson",
+      "sha256": "7f7253f33045ba01cc9b151765679bb0e9e0f44c19aed55602a92b9ba5869df8",
+      "size": 95908,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "odemis",
+    "name": "Ödemiş",
+    "nameIt": "Ödemiş",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      27.9762,
+      38.22991
+    ],
+    "zoom": 12,
+    "population": 68035,
+    "grid": "cities/odemis/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/odemis/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "odemis",
+        "name": "Ödemiş",
+        "nameIt": "Ödemiş",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          27.9762,
+          38.22991
+        ],
+        "zoom": 12,
+        "population": 68035,
+        "cells": 83,
+        "layer": "cities/odemis/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            27.9762,
+            38.22991
+          ]
+        },
+        "properties": {
+          "id": "odemis",
+          "name": "Ödemiş",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 11.5,
+          "population": 68035
+        }
+      },
+      "summary": null
+    }
+  }
+}

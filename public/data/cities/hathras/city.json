@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hathras",
+  "createdAt": "2026-10-08T15:38:03.219Z",
+  "updatedAt": "2026-10-08T15:38:03.219Z",
+  "meta": {
+    "name": "Hathras",
+    "nameIt": "Hathras",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hathras.geojson",
+      "sha256": "11e7c2fec2c991972d70e7f96845dbd751281ebcd3696ec79f03e3c02008933e",
+      "size": 368748,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hathras",
+    "name": "Hathras",
+    "nameIt": "Hathras",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.05147,
+      27.59573
+    ],
+    "zoom": 10.7,
+    "population": 350252,
+    "grid": "cities/hathras/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hathras/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hathras",
+        "name": "Hathras",
+        "nameIt": "Hathras",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.05147,
+          27.59573
+        ],
+        "zoom": 10.7,
+        "population": 350252,
+        "cells": 318,
+        "layer": "cities/hathras/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.05147,
+            27.59573
+          ]
+        },
+        "properties": {
+          "id": "hathras",
+          "name": "Hathras",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 54.5,
+          "population": 350252
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "morena",
+  "createdAt": "2026-10-08T15:58:16.464Z",
+  "updatedAt": "2026-10-08T15:58:16.464Z",
+  "meta": {
+    "name": "Morena",
+    "nameIt": "Morena",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Morena.geojson",
+      "sha256": "7fd2dc058a469cec08925afe07d410eef95636c489646b0fd6846d7405ab29a7",
+      "size": 299055,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "morena",
+    "name": "Morena",
+    "nameIt": "Morena",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.99062,
+      26.494
+    ],
+    "zoom": 10.9,
+    "population": 208387,
+    "grid": "cities/morena/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/morena/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "morena",
+        "name": "Morena",
+        "nameIt": "Morena",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.99062,
+          26.494
+        ],
+        "zoom": 10.9,
+        "population": 208387,
+        "cells": 258,
+        "layer": "cities/morena/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.99062,
+            26.494
+          ]
+        },
+        "properties": {
+          "id": "morena",
+          "name": "Morena",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 208387
+        }
+      },
+      "summary": null
+    }
+  }
+}

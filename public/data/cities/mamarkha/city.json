@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mamarkha",
+  "createdAt": "2026-10-08T15:54:17.073Z",
+  "updatedAt": "2026-10-08T15:54:17.073Z",
+  "meta": {
+    "name": "Mamarkha",
+    "nameIt": "Mamarkha",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mamarkha.geojson",
+      "sha256": "c4aa6364e5d9d58c905e9100f7d9c289fb9013cdbf6e6dd828d954b7fbba0ad4",
+      "size": 420494,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mamarkha",
+    "name": "Mamarkha",
+    "nameIt": "Mamarkha",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      84.56993,
+      26.55221
+    ],
+    "zoom": 10.5,
+    "population": 91515,
+    "grid": "cities/mamarkha/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mamarkha/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mamarkha",
+        "name": "Mamarkha",
+        "nameIt": "Mamarkha",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          84.56993,
+          26.55221
+        ],
+        "zoom": 10.5,
+        "population": 91515,
+        "cells": 363,
+        "layer": "cities/mamarkha/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            84.56993,
+            26.55221
+          ]
+        },
+        "properties": {
+          "id": "mamarkha",
+          "name": "Mamarkha",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 91515
+        }
+      },
+      "summary": null
+    }
+  }
+}

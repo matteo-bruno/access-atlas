@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "san-fernando-philippines",
+  "createdAt": "2026-10-08T16:10:27.750Z",
+  "updatedAt": "2026-10-08T16:10:27.750Z",
+  "meta": {
+    "name": "San Fernando (Philippines)",
+    "nameIt": "San Fernando (Philippines)",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/San Fernando (Philippines).geojson",
+      "sha256": "43f71d58bc8491906d6c3351f7c8d1bc7b12be00755388d73c63680ef9bc36c9",
+      "size": 542003,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "san-fernando-philippines",
+    "name": "San Fernando (Philippines)",
+    "nameIt": "San Fernando (Philippines)",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      120.3191,
+      16.60461
+    ],
+    "zoom": 10.3,
+    "population": 130614,
+    "grid": "cities/san-fernando-philippines/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/san-fernando-philippines/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "san-fernando-philippines",
+        "name": "San Fernando (Philippines)",
+        "nameIt": "San Fernando (Philippines)",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          120.3191,
+          16.60461
+        ],
+        "zoom": 10.3,
+        "population": 130614,
+        "cells": 466,
+        "layer": "cities/san-fernando-philippines/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.3191,
+            16.60461
+          ]
+        },
+        "properties": {
+          "id": "san-fernando-philippines",
+          "name": "San Fernando (Philippines)",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 21.7,
+          "population": 130614
+        }
+      },
+      "summary": null
+    }
+  }
+}

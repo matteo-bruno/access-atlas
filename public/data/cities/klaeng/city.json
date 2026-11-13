@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "klaeng",
+  "createdAt": "2026-10-08T15:47:27.598Z",
+  "updatedAt": "2026-10-08T15:47:27.598Z",
+  "meta": {
+    "name": "Klaeng",
+    "nameIt": "Klaeng",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Klaeng.geojson",
+      "sha256": "56add8feca912ec4e2842ac7b7a451c33ac142d4fb223e7c508f37fa675c10b7",
+      "size": 128705,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "klaeng",
+    "name": "Klaeng",
+    "nameIt": "Klaeng",
+    "region": "Thailand",
+    "regionIt": "Thailandia",
+    "country": "TH",
+    "center": [
+      101.65187,
+      12.77843
+    ],
+    "zoom": 11.6,
+    "population": 25054,
+    "grid": "cities/klaeng/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/klaeng/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "klaeng",
+        "name": "Klaeng",
+        "nameIt": "Klaeng",
+        "region": "Thailand",
+        "regionIt": "Thailandia",
+        "country": "TH",
+        "center": [
+          101.65187,
+          12.77843
+        ],
+        "zoom": 11.6,
+        "population": 25054,
+        "cells": 110,
+        "layer": "cities/klaeng/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            101.65187,
+            12.77843
+          ]
+        },
+        "properties": {
+          "id": "klaeng",
+          "name": "Klaeng",
+          "country": "TH",
+          "isStudy": true,
+          "proximityMinutes": 21.2,
+          "population": 25054
+        }
+      },
+      "summary": null
+    }
+  }
+}

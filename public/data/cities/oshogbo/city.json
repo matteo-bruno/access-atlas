@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "oshogbo",
+  "createdAt": "2026-10-08T16:03:07.778Z",
+  "updatedAt": "2026-10-08T16:03:07.778Z",
+  "meta": {
+    "name": "Oshogbo",
+    "nameIt": "Oshogbo",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Oshogbo.geojson",
+      "sha256": "dee4ec6b5dac5439628420087195c160a3dbf485d1f5fe4f9a4921f0694d1f46",
+      "size": 2000686,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "oshogbo",
+    "name": "Oshogbo",
+    "nameIt": "Oshogbo",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      4.53924,
+      7.79534
+    ],
+    "zoom": 9.9,
+    "population": 1089432,
+    "grid": "cities/oshogbo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 187
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/oshogbo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "oshogbo",
+        "name": "Oshogbo",
+        "nameIt": "Oshogbo",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          4.53924,
+          7.79534
+        ],
+        "zoom": 9.9,
+        "population": 1089432,
+        "cells": 1734,
+        "layer": "cities/oshogbo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 187
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.53924,
+            7.79534
+          ]
+        },
+        "properties": {
+          "id": "oshogbo",
+          "name": "Oshogbo",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 63.1,
+          "population": 1089432
+        }
+      },
+      "summary": null
+    }
+  }
+}

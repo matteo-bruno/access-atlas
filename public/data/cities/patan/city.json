@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "patan",
+  "createdAt": "2026-10-08T16:04:36.751Z",
+  "updatedAt": "2026-10-08T16:04:36.751Z",
+  "meta": {
+    "name": "Patan",
+    "nameIt": "Patan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Patan.geojson",
+      "sha256": "6710a20981468550c4ae7d7be27f86738a61521dade17608ca49bf01959365ee",
+      "size": 217827,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "patan",
+    "name": "Patan",
+    "nameIt": "Patan",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      72.12851,
+      23.84866
+    ],
+    "zoom": 11.6,
+    "population": 118569,
+    "grid": "cities/patan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/patan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "patan",
+        "name": "Patan",
+        "nameIt": "Patan",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          72.12851,
+          23.84866
+        ],
+        "zoom": 11.6,
+        "population": 118569,
+        "cells": 188,
+        "layer": "cities/patan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            72.12851,
+            23.84866
+          ]
+        },
+        "properties": {
+          "id": "patan",
+          "name": "Patan",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 36.6,
+          "population": 118569
+        }
+      },
+      "summary": null
+    }
+  }
+}

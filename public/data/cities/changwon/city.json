@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "changwon",
+  "createdAt": "2026-10-08T15:23:46.239Z",
+  "updatedAt": "2026-10-08T15:23:46.239Z",
+  "meta": {
+    "name": "Changwon",
+    "nameIt": "Changwon",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Changwon.geojson",
+      "sha256": "fa1caa586d96cacffaf16853dd3c37be66e24057c19d8e8c5d3482b34261c773",
+      "size": 1622683,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "changwon",
+    "name": "Changwon",
+    "nameIt": "Changwon",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      128.63024,
+      35.22471
+    ],
+    "zoom": 10,
+    "population": 650040,
+    "grid": "cities/changwon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/changwon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "changwon",
+        "name": "Changwon",
+        "nameIt": "Changwon",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          128.63024,
+          35.22471
+        ],
+        "zoom": 10,
+        "population": 650040,
+        "cells": 1410,
+        "layer": "cities/changwon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            128.63024,
+            35.22471
+          ]
+        },
+        "properties": {
+          "id": "changwon",
+          "name": "Changwon",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 650040
+        }
+      },
+      "summary": null
+    }
+  }
+}

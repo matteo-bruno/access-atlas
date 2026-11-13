@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "trimohini",
+  "createdAt": "2026-10-08T16:18:48.553Z",
+  "updatedAt": "2026-10-08T16:18:48.553Z",
+  "meta": {
+    "name": "Trimohini",
+    "nameIt": "Trimohini",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Trimohini.geojson",
+      "sha256": "5ffc99b5e989e08948b27b5f8af7be2192c1e94c2eb43e66a4bbc628e687131f",
+      "size": 216552,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "trimohini",
+    "name": "Trimohini",
+    "nameIt": "Trimohini",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      88.37612,
+      23.93115
+    ],
+    "zoom": 11.3,
+    "population": 37895,
+    "grid": "cities/trimohini/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 209
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/trimohini/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "trimohini",
+        "name": "Trimohini",
+        "nameIt": "Trimohini",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          88.37612,
+          23.93115
+        ],
+        "zoom": 11.3,
+        "population": 37895,
+        "cells": 187,
+        "layer": "cities/trimohini/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 209
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.37612,
+            23.93115
+          ]
+        },
+        "properties": {
+          "id": "trimohini",
+          "name": "Trimohini",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 37895
+        }
+      },
+      "summary": null
+    }
+  }
+}

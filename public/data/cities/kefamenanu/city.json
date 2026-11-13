@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kefamenanu",
+  "createdAt": "2026-10-08T15:46:02.576Z",
+  "updatedAt": "2026-10-08T15:46:02.576Z",
+  "meta": {
+    "name": "Kefamenanu",
+    "nameIt": "Kefamenanu",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kefamenanu.geojson",
+      "sha256": "5ebdc056df2ecd0b531755b4fb4c02b807bd059fbaffc3e088162a9c4b17a204",
+      "size": 184843,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kefamenanu",
+    "name": "Kefamenanu",
+    "nameIt": "Kefamenanu",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      124.48273,
+      -9.46576
+    ],
+    "zoom": 11.1,
+    "population": 47384,
+    "grid": "cities/kefamenanu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kefamenanu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kefamenanu",
+        "name": "Kefamenanu",
+        "nameIt": "Kefamenanu",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          124.48273,
+          -9.46576
+        ],
+        "zoom": 11.1,
+        "population": 47384,
+        "cells": 158,
+        "layer": "cities/kefamenanu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            124.48273,
+            -9.46576
+          ]
+        },
+        "properties": {
+          "id": "kefamenanu",
+          "name": "Kefamenanu",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 47384
+        }
+      },
+      "summary": null
+    }
+  }
+}

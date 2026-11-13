@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hubli",
+  "createdAt": "2026-10-08T15:39:40.527Z",
+  "updatedAt": "2026-10-08T15:39:40.527Z",
+  "meta": {
+    "name": "Hubli",
+    "nameIt": "Hubli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hubli.geojson",
+      "sha256": "35330eef82b879d11e7b5307280baace458f358075066d7c844c87ca07c2ab3d",
+      "size": 386352,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hubli",
+    "name": "Hubli",
+    "nameIt": "Hubli",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      75.13086,
+      15.35399
+    ],
+    "zoom": 11.2,
+    "population": 309326,
+    "grid": "cities/hubli/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hubli/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hubli",
+        "name": "Hubli",
+        "nameIt": "Hubli",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          75.13086,
+          15.35399
+        ],
+        "zoom": 11.2,
+        "population": 309326,
+        "cells": 335,
+        "layer": "cities/hubli/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.13086,
+            15.35399
+          ]
+        },
+        "properties": {
+          "id": "hubli",
+          "name": "Hubli",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 24.6,
+          "population": 309326
+        }
+      },
+      "summary": null
+    }
+  }
+}

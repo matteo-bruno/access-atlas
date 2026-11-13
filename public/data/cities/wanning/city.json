@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wanning",
+  "createdAt": "2026-10-08T16:21:20.286Z",
+  "updatedAt": "2026-10-08T16:21:20.286Z",
+  "meta": {
+    "name": "Wanning",
+    "nameIt": "Wanning",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wanning.geojson",
+      "sha256": "8ce0d2c6c0bf0bc41e2edce10a0f97518d9ea32465df399b647317cc57596a59",
+      "size": 288742,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wanning",
+    "name": "Wanning",
+    "nameIt": "Wanning",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      110.3849,
+      18.80387
+    ],
+    "zoom": 11.2,
+    "population": 158477,
+    "grid": "cities/wanning/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wanning/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wanning",
+        "name": "Wanning",
+        "nameIt": "Wanning",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          110.3849,
+          18.80387
+        ],
+        "zoom": 11.2,
+        "population": 158477,
+        "cells": 247,
+        "layer": "cities/wanning/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.3849,
+            18.80387
+          ]
+        },
+        "properties": {
+          "id": "wanning",
+          "name": "Wanning",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 158477
+        }
+      },
+      "summary": null
+    }
+  }
+}

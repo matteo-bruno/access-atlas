@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "concord",
+  "createdAt": "2026-10-08T15:26:21.685Z",
+  "updatedAt": "2026-10-08T15:26:21.685Z",
+  "meta": {
+    "name": "Concord",
+    "nameIt": "Concord",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Concord.geojson",
+      "sha256": "8194fe065e8adfd1fd76d6dc336a758720eb853e6cb5b1099d569b2101e450e6",
+      "size": 1494238,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "concord",
+    "name": "Concord",
+    "nameIt": "Concord",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -122.04318,
+      37.95289
+    ],
+    "zoom": 9.7,
+    "population": 300039,
+    "grid": "cities/concord/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/concord/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "concord",
+        "name": "Concord",
+        "nameIt": "Concord",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -122.04318,
+          37.95289
+        ],
+        "zoom": 9.7,
+        "population": 300039,
+        "cells": 1287,
+        "layer": "cities/concord/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.04318,
+            37.95289
+          ]
+        },
+        "properties": {
+          "id": "concord",
+          "name": "Concord",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 300039
+        }
+      },
+      "summary": null
+    }
+  }
+}

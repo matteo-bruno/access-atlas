@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tobolsk",
+  "createdAt": "2026-10-08T16:18:14.273Z",
+  "updatedAt": "2026-10-08T16:18:14.273Z",
+  "meta": {
+    "name": "Tobolsk",
+    "nameIt": "Tobolsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tobolsk.geojson",
+      "sha256": "5f42c6039913abb08378b355fc53b7cb046b655dd6485785940846578f063df5",
+      "size": 121488,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tobolsk",
+    "name": "Tobolsk",
+    "nameIt": "Tobolsk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      68.26925,
+      58.21101
+    ],
+    "zoom": 11.4,
+    "population": 50059,
+    "grid": "cities/tobolsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tobolsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tobolsk",
+        "name": "Tobolsk",
+        "nameIt": "Tobolsk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          68.26925,
+          58.21101
+        ],
+        "zoom": 11.4,
+        "population": 50059,
+        "cells": 107,
+        "layer": "cities/tobolsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            68.26925,
+            58.21101
+          ]
+        },
+        "properties": {
+          "id": "tobolsk",
+          "name": "Tobolsk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 9,
+          "population": 50059
+        }
+      },
+      "summary": null
+    }
+  }
+}

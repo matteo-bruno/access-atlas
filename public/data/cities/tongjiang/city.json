@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tongjiang",
+  "createdAt": "2026-10-08T16:18:26.356Z",
+  "updatedAt": "2026-10-08T16:18:26.356Z",
+  "meta": {
+    "name": "Tongjiang",
+    "nameIt": "Tongjiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tongjiang.geojson",
+      "sha256": "524d254b9e6cd99ada1a806dc0f5fc186e1926270637b6f07066ba978737eafe",
+      "size": 131513,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tongjiang",
+    "name": "Tongjiang",
+    "nameIt": "Tongjiang",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      132.50805,
+      47.65072
+    ],
+    "zoom": 12,
+    "population": 42943,
+    "grid": "cities/tongjiang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 185
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tongjiang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tongjiang",
+        "name": "Tongjiang",
+        "nameIt": "Tongjiang",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          132.50805,
+          47.65072
+        ],
+        "zoom": 12,
+        "population": 42943,
+        "cells": 113,
+        "layer": "cities/tongjiang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 185
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            132.50805,
+            47.65072
+          ]
+        },
+        "properties": {
+          "id": "tongjiang",
+          "name": "Tongjiang",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 42943
+        }
+      },
+      "summary": null
+    }
+  }
+}

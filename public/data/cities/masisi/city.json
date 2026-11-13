@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "masisi",
+  "createdAt": "2026-10-08T15:55:33.383Z",
+  "updatedAt": "2026-10-08T15:55:33.383Z",
+  "meta": {
+    "name": "Masisi",
+    "nameIt": "Masisi",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Masisi.geojson",
+      "sha256": "bc814ed2a5b5d8c0a217f1fcb21fbe209460da429034926a5945d7a09bc94967",
+      "size": 38832,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "masisi",
+    "name": "Masisi",
+    "nameIt": "Masisi",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      28.81933,
+      -1.39856
+    ],
+    "zoom": 12,
+    "population": 25809,
+    "grid": "cities/masisi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/masisi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "masisi",
+        "name": "Masisi",
+        "nameIt": "Masisi",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          28.81933,
+          -1.39856
+        ],
+        "zoom": 12,
+        "population": 25809,
+        "cells": 33,
+        "layer": "cities/masisi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.81933,
+            -1.39856
+          ]
+        },
+        "properties": {
+          "id": "masisi",
+          "name": "Masisi",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 25809
+        }
+      },
+      "summary": null
+    }
+  }
+}

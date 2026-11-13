@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ceyhan",
+  "createdAt": "2026-10-08T15:23:03.842Z",
+  "updatedAt": "2026-10-08T15:23:03.842Z",
+  "meta": {
+    "name": "Ceyhan",
+    "nameIt": "Ceyhan",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ceyhan.geojson",
+      "sha256": "cc2fbfc603c5ac0cda116310ab45e8a2e1a38f2f02448b7a53b36f81277ad400",
+      "size": 141030,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ceyhan",
+    "name": "Ceyhan",
+    "nameIt": "Ceyhan",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      35.81852,
+      37.02676
+    ],
+    "zoom": 11.8,
+    "population": 92375,
+    "grid": "cities/ceyhan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ceyhan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ceyhan",
+        "name": "Ceyhan",
+        "nameIt": "Ceyhan",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          35.81852,
+          37.02676
+        ],
+        "zoom": 11.8,
+        "population": 92375,
+        "cells": 122,
+        "layer": "cities/ceyhan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.81852,
+            37.02676
+          ]
+        },
+        "properties": {
+          "id": "ceyhan",
+          "name": "Ceyhan",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 15.3,
+          "population": 92375
+        }
+      },
+      "summary": null
+    }
+  }
+}

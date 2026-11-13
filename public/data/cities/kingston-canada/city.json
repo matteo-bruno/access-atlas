@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kingston-canada",
+  "createdAt": "2026-10-08T15:47:07.872Z",
+  "updatedAt": "2026-10-08T15:47:07.872Z",
+  "meta": {
+    "name": "Kingston (Canada)",
+    "nameIt": "Kingston (Canada)",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kingston (Canada).geojson",
+      "sha256": "73fb2ae0dc8a5567dddd54adcd365850d2b8f10e054980d25fcb00edd9e43d5e",
+      "size": 438246,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kingston-canada",
+    "name": "Kingston (Canada)",
+    "nameIt": "Kingston (Canada)",
+    "region": "Canada",
+    "regionIt": "Canada",
+    "country": "CA",
+    "center": [
+      -76.53896,
+      44.2431
+    ],
+    "zoom": 10.5,
+    "population": 99725,
+    "grid": "cities/kingston-canada/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kingston-canada/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kingston-canada",
+        "name": "Kingston (Canada)",
+        "nameIt": "Kingston (Canada)",
+        "region": "Canada",
+        "regionIt": "Canada",
+        "country": "CA",
+        "center": [
+          -76.53896,
+          44.2431
+        ],
+        "zoom": 10.5,
+        "population": 99725,
+        "cells": 382,
+        "layer": "cities/kingston-canada/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.53896,
+            44.2431
+          ]
+        },
+        "properties": {
+          "id": "kingston-canada",
+          "name": "Kingston (Canada)",
+          "country": "CA",
+          "isStudy": true,
+          "proximityMinutes": 16.4,
+          "population": 99725
+        }
+      },
+      "summary": null
+    }
+  }
+}

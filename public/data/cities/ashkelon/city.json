@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ashkelon",
+  "createdAt": "2026-10-08T15:10:17.040Z",
+  "updatedAt": "2026-10-08T15:10:17.040Z",
+  "meta": {
+    "name": "Ashkelon",
+    "nameIt": "Ashkelon",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ashkelon.geojson",
+      "sha256": "7c941fa090b155933a06dbbff6eea2f73dabda954af8967a3e739fec2171f114",
+      "size": 217687,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ashkelon",
+    "name": "Ashkelon",
+    "nameIt": "Ashkelon",
+    "region": "Israel",
+    "regionIt": "Israele",
+    "country": "IL",
+    "center": [
+      34.5712,
+      31.67
+    ],
+    "zoom": 11.5,
+    "population": 137526,
+    "grid": "cities/ashkelon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ashkelon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ashkelon",
+        "name": "Ashkelon",
+        "nameIt": "Ashkelon",
+        "region": "Israel",
+        "regionIt": "Israele",
+        "country": "IL",
+        "center": [
+          34.5712,
+          31.67
+        ],
+        "zoom": 11.5,
+        "population": 137526,
+        "cells": 189,
+        "layer": "cities/ashkelon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.5712,
+            31.67
+          ]
+        },
+        "properties": {
+          "id": "ashkelon",
+          "name": "Ashkelon",
+          "country": "IL",
+          "isStudy": true,
+          "proximityMinutes": 13.2,
+          "population": 137526
+        }
+      },
+      "summary": null
+    }
+  }
+}

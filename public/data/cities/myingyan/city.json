@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "myingyan",
+  "createdAt": "2026-10-08T15:59:20.730Z",
+  "updatedAt": "2026-10-08T15:59:20.730Z",
+  "meta": {
+    "name": "Myingyan",
+    "nameIt": "Myingyan",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Myingyan.geojson",
+      "sha256": "7b7af47f2b08e8ba81200c0cc35b6f831d15a9bc8bcd1af340a65558496ce4d5",
+      "size": 181788,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "myingyan",
+    "name": "Myingyan",
+    "nameIt": "Myingyan",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      95.39008,
+      21.45663
+    ],
+    "zoom": 11.4,
+    "population": 147590,
+    "grid": "cities/myingyan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/myingyan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "myingyan",
+        "name": "Myingyan",
+        "nameIt": "Myingyan",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          95.39008,
+          21.45663
+        ],
+        "zoom": 11.4,
+        "population": 147590,
+        "cells": 157,
+        "layer": "cities/myingyan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            95.39008,
+            21.45663
+          ]
+        },
+        "properties": {
+          "id": "myingyan",
+          "name": "Myingyan",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 147590
+        }
+      },
+      "summary": null
+    }
+  }
+}

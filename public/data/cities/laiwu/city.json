@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "laiwu",
+  "createdAt": "2026-10-08T15:49:42.522Z",
+  "updatedAt": "2026-10-08T15:49:42.522Z",
+  "meta": {
+    "name": "Laiwu",
+    "nameIt": "Laiwu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Laiwu.geojson",
+      "sha256": "6bc047897ad00f244fe92e9a79505c39adeed9061b17ad9258978e15da001e19",
+      "size": 2008017,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "laiwu",
+    "name": "Laiwu",
+    "nameIt": "Laiwu",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      117.67207,
+      36.21493
+    ],
+    "zoom": 10.1,
+    "population": 484021,
+    "grid": "cities/laiwu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 172
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/laiwu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "laiwu",
+        "name": "Laiwu",
+        "nameIt": "Laiwu",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          117.67207,
+          36.21493
+        ],
+        "zoom": 10.1,
+        "population": 484021,
+        "cells": 1723,
+        "layer": "cities/laiwu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 172
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            117.67207,
+            36.21493
+          ]
+        },
+        "properties": {
+          "id": "laiwu",
+          "name": "Laiwu",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 28.8,
+          "population": 484021
+        }
+      },
+      "summary": null
+    }
+  }
+}

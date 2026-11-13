@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kennewick",
+  "createdAt": "2026-10-08T15:46:11.247Z",
+  "updatedAt": "2026-10-08T15:46:11.247Z",
+  "meta": {
+    "name": "Kennewick",
+    "nameIt": "Kennewick",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kennewick.geojson",
+      "sha256": "95f8b20d272adb7c4518818ce9cbb6925897a2be32933eb5510b1aabb17434a1",
+      "size": 837364,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kennewick",
+    "name": "Kennewick",
+    "nameIt": "Kennewick",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -119.16426,
+      46.21433
+    ],
+    "zoom": 9.8,
+    "population": 109119,
+    "grid": "cities/kennewick/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 195
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kennewick/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kennewick",
+        "name": "Kennewick",
+        "nameIt": "Kennewick",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -119.16426,
+          46.21433
+        ],
+        "zoom": 9.8,
+        "population": 109119,
+        "cells": 722,
+        "layer": "cities/kennewick/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 195
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -119.16426,
+            46.21433
+          ]
+        },
+        "properties": {
+          "id": "kennewick",
+          "name": "Kennewick",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 17.9,
+          "population": 109119
+        }
+      },
+      "summary": null
+    }
+  }
+}

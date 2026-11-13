@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "amarah",
+  "createdAt": "2026-10-08T15:06:33.214Z",
+  "updatedAt": "2026-10-08T15:06:33.214Z",
+  "meta": {
+    "name": "Amarah",
+    "nameIt": "Amarah",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Amarah.geojson",
+      "sha256": "d953bf80b589c97558202b5167bac41869eb0a2f74b6fa940ec940b934806374",
+      "size": 735002,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "amarah",
+    "name": "Amarah",
+    "nameIt": "Amarah",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      47.14602,
+      31.84447
+    ],
+    "zoom": 10.8,
+    "population": 509501,
+    "grid": "cities/amarah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/amarah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "amarah",
+        "name": "Amarah",
+        "nameIt": "Amarah",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          47.14602,
+          31.84447
+        ],
+        "zoom": 10.8,
+        "population": 509501,
+        "cells": 634,
+        "layer": "cities/amarah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            47.14602,
+            31.84447
+          ]
+        },
+        "properties": {
+          "id": "amarah",
+          "name": "Amarah",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 26.5,
+          "population": 509501
+        }
+      },
+      "summary": null
+    }
+  }
+}

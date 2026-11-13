@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ad-damer",
+  "createdAt": "2026-10-08T16:25:49.016Z",
+  "updatedAt": "2026-10-08T16:25:49.016Z",
+  "meta": {
+    "name": "ad-Damer",
+    "nameIt": "ad-Damer",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/ad-Damer.geojson",
+      "sha256": "12b788aca5a91743af3cecb5001caf867ebdfce5e858ad5776f182dc2c50fad3",
+      "size": 219678,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ad-damer",
+    "name": "ad-Damer",
+    "nameIt": "ad-Damer",
+    "region": "Sudan",
+    "regionIt": "Sudan",
+    "country": "SD",
+    "center": [
+      33.96833,
+      17.58637
+    ],
+    "zoom": 11.3,
+    "population": 106168,
+    "grid": "cities/ad-damer/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ad-damer/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ad-damer",
+        "name": "ad-Damer",
+        "nameIt": "ad-Damer",
+        "region": "Sudan",
+        "regionIt": "Sudan",
+        "country": "SD",
+        "center": [
+          33.96833,
+          17.58637
+        ],
+        "zoom": 11.3,
+        "population": 106168,
+        "cells": 189,
+        "layer": "cities/ad-damer/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            33.96833,
+            17.58637
+          ]
+        },
+        "properties": {
+          "id": "ad-damer",
+          "name": "ad-Damer",
+          "country": "SD",
+          "isStudy": true,
+          "proximityMinutes": 31.2,
+          "population": 106168
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "amparo",
+  "createdAt": "2026-10-08T15:07:04.398Z",
+  "updatedAt": "2026-10-08T15:07:04.398Z",
+  "meta": {
+    "name": "Amparo",
+    "nameIt": "Amparo",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Amparo.geojson",
+      "sha256": "62923408ca6e63a0e626122375eb284939f755d295abb1688fbb0ac5d063b5ef",
+      "size": 171831,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "amparo",
+    "name": "Amparo",
+    "nameIt": "Amparo",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -46.77798,
+      -22.70858
+    ],
+    "zoom": 11.2,
+    "population": 44257,
+    "grid": "cities/amparo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/amparo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "amparo",
+        "name": "Amparo",
+        "nameIt": "Amparo",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -46.77798,
+          -22.70858
+        ],
+        "zoom": 11.2,
+        "population": 44257,
+        "cells": 147,
+        "layer": "cities/amparo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.77798,
+            -22.70858
+          ]
+        },
+        "properties": {
+          "id": "amparo",
+          "name": "Amparo",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 13.4,
+          "population": 44257
+        }
+      },
+      "summary": null
+    }
+  }
+}

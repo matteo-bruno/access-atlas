@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dordrecht",
+  "createdAt": "2026-10-08T15:31:00.253Z",
+  "updatedAt": "2026-10-08T15:31:00.253Z",
+  "meta": {
+    "name": "Dordrecht",
+    "nameIt": "Dordrecht",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dordrecht.geojson",
+      "sha256": "050e8c36609ee18e4cac99ed420f989b37eda6a5ddaebf2226963acc95acde3d",
+      "size": 1097607,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dordrecht",
+    "name": "Dordrecht",
+    "nameIt": "Dordrecht",
+    "region": "Netherlands",
+    "regionIt": "Paesi Bassi",
+    "country": "NL",
+    "center": [
+      4.67582,
+      51.81579
+    ],
+    "zoom": 10.3,
+    "population": 260163,
+    "grid": "cities/dordrecht/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dordrecht/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dordrecht",
+        "name": "Dordrecht",
+        "nameIt": "Dordrecht",
+        "region": "Netherlands",
+        "regionIt": "Paesi Bassi",
+        "country": "NL",
+        "center": [
+          4.67582,
+          51.81579
+        ],
+        "zoom": 10.3,
+        "population": 260163,
+        "cells": 964,
+        "layer": "cities/dordrecht/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.67582,
+            51.81579
+          ]
+        },
+        "properties": {
+          "id": "dordrecht",
+          "name": "Dordrecht",
+          "country": "NL",
+          "isStudy": true,
+          "proximityMinutes": 15.4,
+          "population": 260163
+        }
+      },
+      "summary": null
+    }
+  }
+}

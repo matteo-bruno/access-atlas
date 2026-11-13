@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "wonosobo",
+  "createdAt": "2026-10-08T16:21:49.145Z",
+  "updatedAt": "2026-10-08T16:21:49.145Z",
+  "meta": {
+    "name": "Wonosobo",
+    "nameIt": "Wonosobo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Wonosobo.geojson",
+      "sha256": "717137a33a76cee0b4d9fcc82c619576197f85f042fe4dec63a5330c2947a993",
+      "size": 752532,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "wonosobo",
+    "name": "Wonosobo",
+    "nameIt": "Wonosobo",
+    "region": "Indonesia",
+    "regionIt": "Indonesia",
+    "country": "ID",
+    "center": [
+      109.92501,
+      -7.35938
+    ],
+    "zoom": 10.4,
+    "population": 261320,
+    "grid": "cities/wonosobo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/wonosobo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "wonosobo",
+        "name": "Wonosobo",
+        "nameIt": "Wonosobo",
+        "region": "Indonesia",
+        "regionIt": "Indonesia",
+        "country": "ID",
+        "center": [
+          109.92501,
+          -7.35938
+        ],
+        "zoom": 10.4,
+        "population": 261320,
+        "cells": 642,
+        "layer": "cities/wonosobo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            109.92501,
+            -7.35938
+          ]
+        },
+        "properties": {
+          "id": "wonosobo",
+          "name": "Wonosobo",
+          "country": "ID",
+          "isStudy": true,
+          "proximityMinutes": 39.1,
+          "population": 261320
+        }
+      },
+      "summary": null
+    }
+  }
+}

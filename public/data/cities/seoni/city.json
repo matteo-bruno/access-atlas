@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "seoni",
+  "createdAt": "2026-10-08T16:11:59.597Z",
+  "updatedAt": "2026-10-08T16:11:59.597Z",
+  "meta": {
+    "name": "Seoni",
+    "nameIt": "Seoni",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Seoni.geojson",
+      "sha256": "ac11ba283dd696e0536a5c10eaf2a3984a6b138e64d352328ef08a52463804b7",
+      "size": 193483,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "seoni",
+    "name": "Seoni",
+    "nameIt": "Seoni",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.54982,
+      22.08979
+    ],
+    "zoom": 11.6,
+    "population": 104348,
+    "grid": "cities/seoni/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/seoni/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "seoni",
+        "name": "Seoni",
+        "nameIt": "Seoni",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.54982,
+          22.08979
+        ],
+        "zoom": 11.6,
+        "population": 104348,
+        "cells": 167,
+        "layer": "cities/seoni/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.54982,
+            22.08979
+          ]
+        },
+        "properties": {
+          "id": "seoni",
+          "name": "Seoni",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 104348
+        }
+      },
+      "summary": null
+    }
+  }
+}

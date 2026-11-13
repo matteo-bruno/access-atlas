@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aisegba",
+  "createdAt": "2026-10-08T15:03:19.009Z",
+  "updatedAt": "2026-10-08T15:03:19.009Z",
+  "meta": {
+    "name": "Aisegba",
+    "nameIt": "Aisegba",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aisegba.geojson",
+      "sha256": "977385d270693c7699d811e2848775a8df45886b8fc50217dcf303254f5f99fa",
+      "size": 82816,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aisegba",
+    "name": "Aisegba",
+    "nameIt": "Aisegba",
+    "region": "Nigeria",
+    "regionIt": "Nigeria",
+    "country": "NG",
+    "center": [
+      5.48305,
+      7.60175
+    ],
+    "zoom": 12,
+    "population": 30823,
+    "grid": "cities/aisegba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aisegba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aisegba",
+        "name": "Aisegba",
+        "nameIt": "Aisegba",
+        "region": "Nigeria",
+        "regionIt": "Nigeria",
+        "country": "NG",
+        "center": [
+          5.48305,
+          7.60175
+        ],
+        "zoom": 12,
+        "population": 30823,
+        "cells": 72,
+        "layer": "cities/aisegba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.48305,
+            7.60175
+          ]
+        },
+        "properties": {
+          "id": "aisegba",
+          "name": "Aisegba",
+          "country": "NG",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 30823
+        }
+      },
+      "summary": null
+    }
+  }
+}

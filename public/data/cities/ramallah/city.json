@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ramallah",
+  "createdAt": "2026-10-08T16:08:05.168Z",
+  "updatedAt": "2026-10-08T16:08:05.168Z",
+  "meta": {
+    "name": "Ramallah",
+    "nameIt": "Ramallah",
+    "region": "Palestine",
+    "regionIt": "Palestina",
+    "country": "PS"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ramallah.geojson",
+      "sha256": "384819d729aad9c07a870b6380c7af6e2847961ddbce5e219180981b507e9e06",
+      "size": 1700651,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ramallah",
+    "name": "Ramallah",
+    "nameIt": "Ramallah",
+    "region": "Palestine",
+    "regionIt": "Palestina",
+    "country": "PS",
+    "center": [
+      35.22209,
+      31.80781
+    ],
+    "zoom": 9.1,
+    "population": 642493,
+    "grid": "cities/ramallah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 215
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ramallah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ramallah",
+        "name": "Ramallah",
+        "nameIt": "Ramallah",
+        "region": "Palestine",
+        "regionIt": "Palestina",
+        "country": "PS",
+        "center": [
+          35.22209,
+          31.80781
+        ],
+        "zoom": 9.1,
+        "population": 642493,
+        "cells": 1478,
+        "layer": "cities/ramallah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 215
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.22209,
+            31.80781
+          ]
+        },
+        "properties": {
+          "id": "ramallah",
+          "name": "Ramallah",
+          "country": "PS",
+          "isStudy": true,
+          "proximityMinutes": 21.1,
+          "population": 642493
+        }
+      },
+      "summary": null
+    }
+  }
+}

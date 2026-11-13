@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "changyuan",
+  "createdAt": "2026-10-08T15:23:48.422Z",
+  "updatedAt": "2026-10-08T15:23:48.422Z",
+  "meta": {
+    "name": "Changyuan",
+    "nameIt": "Changyuan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Changyuan.geojson",
+      "sha256": "7f7527a272c7b98e813c108572722816ca709e30b39b0e33de636886d0d01923",
+      "size": 585443,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "changyuan",
+    "name": "Changyuan",
+    "nameIt": "Changyuan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      114.67344,
+      35.19404
+    ],
+    "zoom": 10.9,
+    "population": 314520,
+    "grid": "cities/changyuan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/changyuan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "changyuan",
+        "name": "Changyuan",
+        "nameIt": "Changyuan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          114.67344,
+          35.19404
+        ],
+        "zoom": 10.9,
+        "population": 314520,
+        "cells": 502,
+        "layer": "cities/changyuan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            114.67344,
+            35.19404
+          ]
+        },
+        "properties": {
+          "id": "changyuan",
+          "name": "Changyuan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 23.5,
+          "population": 314520
+        }
+      },
+      "summary": null
+    }
+  }
+}

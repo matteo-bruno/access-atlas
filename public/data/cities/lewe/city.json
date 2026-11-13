@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "lewe",
+  "createdAt": "2026-10-08T15:50:49.522Z",
+  "updatedAt": "2026-10-08T15:50:49.522Z",
+  "meta": {
+    "name": "Lewe",
+    "nameIt": "Lewe",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lewe.geojson",
+      "sha256": "6fd83d45ab7fcc40f6f9b6975507e9e1a86d4ba12340a476a4ff3fce18ece723",
+      "size": 184280,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "lewe",
+    "name": "Lewe",
+    "nameIt": "Lewe",
+    "region": "Myanmar",
+    "regionIt": "Birmania",
+    "country": "MM",
+    "center": [
+      96.10705,
+      19.64593
+    ],
+    "zoom": 11.4,
+    "population": 77948,
+    "grid": "cities/lewe/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/lewe/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "lewe",
+        "name": "Lewe",
+        "nameIt": "Lewe",
+        "region": "Myanmar",
+        "regionIt": "Birmania",
+        "country": "MM",
+        "center": [
+          96.10705,
+          19.64593
+        ],
+        "zoom": 11.4,
+        "population": 77948,
+        "cells": 159,
+        "layer": "cities/lewe/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.10705,
+            19.64593
+          ]
+        },
+        "properties": {
+          "id": "lewe",
+          "name": "Lewe",
+          "country": "MM",
+          "isStudy": true,
+          "proximityMinutes": 25.7,
+          "population": 77948
+        }
+      },
+      "summary": null
+    }
+  }
+}

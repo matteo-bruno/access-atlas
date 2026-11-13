@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "suratgarh",
+  "createdAt": "2026-10-08T16:15:23.346Z",
+  "updatedAt": "2026-10-08T16:15:23.346Z",
+  "meta": {
+    "name": "Suratgarh",
+    "nameIt": "Suratgarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Suratgarh.geojson",
+      "sha256": "8e56c1d63edb251aa0349c14f4d46f1b27d16bad8a265672b97473401dd6d1ca",
+      "size": 151792,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "suratgarh",
+    "name": "Suratgarh",
+    "nameIt": "Suratgarh",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      73.90276,
+      29.31896
+    ],
+    "zoom": 11.9,
+    "population": 82482,
+    "grid": "cities/suratgarh/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 207
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/suratgarh/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "suratgarh",
+        "name": "Suratgarh",
+        "nameIt": "Suratgarh",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          73.90276,
+          29.31896
+        ],
+        "zoom": 11.9,
+        "population": 82482,
+        "cells": 131,
+        "layer": "cities/suratgarh/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 207
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            73.90276,
+            29.31896
+          ]
+        },
+        "properties": {
+          "id": "suratgarh",
+          "name": "Suratgarh",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 82482
+        }
+      },
+      "summary": null
+    }
+  }
+}

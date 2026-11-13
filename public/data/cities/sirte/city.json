@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sirte",
+  "createdAt": "2026-10-08T16:14:01.705Z",
+  "updatedAt": "2026-10-08T16:14:01.705Z",
+  "meta": {
+    "name": "Sirte",
+    "nameIt": "Sirte",
+    "region": "Libya",
+    "regionIt": "Libia",
+    "country": "LY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sirte.geojson",
+      "sha256": "a1aefd953162fc1d9dc3431ecc5886c6f2f4e70d0a0f6ff5d18b015fedf26382",
+      "size": 213349,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sirte",
+    "name": "Sirte",
+    "nameIt": "Sirte",
+    "region": "Libya",
+    "regionIt": "Libia",
+    "country": "LY",
+    "center": [
+      16.58005,
+      31.2022
+    ],
+    "zoom": 10.9,
+    "population": 27398,
+    "grid": "cities/sirte/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 219
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sirte/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sirte",
+        "name": "Sirte",
+        "nameIt": "Sirte",
+        "region": "Libya",
+        "regionIt": "Libia",
+        "country": "LY",
+        "center": [
+          16.58005,
+          31.2022
+        ],
+        "zoom": 10.9,
+        "population": 27398,
+        "cells": 184,
+        "layer": "cities/sirte/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 219
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.58005,
+            31.2022
+          ]
+        },
+        "properties": {
+          "id": "sirte",
+          "name": "Sirte",
+          "country": "LY",
+          "isStudy": true,
+          "proximityMinutes": 18.2,
+          "population": 27398
+        }
+      },
+      "summary": null
+    }
+  }
+}

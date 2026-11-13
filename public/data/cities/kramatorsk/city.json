@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kramatorsk",
+  "createdAt": "2026-10-08T15:48:24.012Z",
+  "updatedAt": "2026-10-08T15:48:24.012Z",
+  "meta": {
+    "name": "Kramatorsk",
+    "nameIt": "Kramatorsk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kramatorsk.geojson",
+      "sha256": "cccb6ac3f33e738d009f841ee144baddb149d8cafb76f6f3b98faa5e145546f9",
+      "size": 353654,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kramatorsk",
+    "name": "Kramatorsk",
+    "nameIt": "Kramatorsk",
+    "region": "Ukraine",
+    "regionIt": "Ucraina",
+    "country": "UA",
+    "center": [
+      37.58763,
+      48.73817
+    ],
+    "zoom": 11,
+    "population": 67843,
+    "grid": "cities/kramatorsk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 196
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kramatorsk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kramatorsk",
+        "name": "Kramatorsk",
+        "nameIt": "Kramatorsk",
+        "region": "Ukraine",
+        "regionIt": "Ucraina",
+        "country": "UA",
+        "center": [
+          37.58763,
+          48.73817
+        ],
+        "zoom": 11,
+        "population": 67843,
+        "cells": 310,
+        "layer": "cities/kramatorsk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 196
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.58763,
+            48.73817
+          ]
+        },
+        "properties": {
+          "id": "kramatorsk",
+          "name": "Kramatorsk",
+          "country": "UA",
+          "isStudy": true,
+          "proximityMinutes": 13,
+          "population": 67843
+        }
+      },
+      "summary": null
+    }
+  }
+}

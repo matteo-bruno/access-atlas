@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "shrnak",
+  "createdAt": "2026-10-08T16:13:14.481Z",
+  "updatedAt": "2026-10-08T16:13:14.481Z",
+  "meta": {
+    "name": "Shrnak",
+    "nameIt": "Shrnak",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Shrnak.geojson",
+      "sha256": "74001031cd7340b8143487340c46c69d1457660a345aeceedf22343120b736bc",
+      "size": 94956,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "shrnak",
+    "name": "Shrnak",
+    "nameIt": "Shrnak",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      42.45566,
+      37.51909
+    ],
+    "zoom": 12,
+    "population": 69272,
+    "grid": "cities/shrnak/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/shrnak/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "shrnak",
+        "name": "Shrnak",
+        "nameIt": "Shrnak",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          42.45566,
+          37.51909
+        ],
+        "zoom": 12,
+        "population": 69272,
+        "cells": 82,
+        "layer": "cities/shrnak/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            42.45566,
+            37.51909
+          ]
+        },
+        "properties": {
+          "id": "shrnak",
+          "name": "Shrnak",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 69272
+        }
+      },
+      "summary": null
+    }
+  }
+}

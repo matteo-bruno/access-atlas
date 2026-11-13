@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mezhdurechensk",
+  "createdAt": "2026-10-08T15:56:51.173Z",
+  "updatedAt": "2026-10-08T15:56:51.173Z",
+  "meta": {
+    "name": "Mezhdurechensk",
+    "nameIt": "Mezhdurechensk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mezhdurechensk.geojson",
+      "sha256": "66afa7f92d9a71846c3c83f8eff0adf37994d3601320beb4e05ae22b570c5636",
+      "size": 122853,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mezhdurechensk",
+    "name": "Mezhdurechensk",
+    "nameIt": "Mezhdurechensk",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      88.06235,
+      53.68877
+    ],
+    "zoom": 11.3,
+    "population": 56227,
+    "grid": "cities/mezhdurechensk/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mezhdurechensk/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mezhdurechensk",
+        "name": "Mezhdurechensk",
+        "nameIt": "Mezhdurechensk",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          88.06235,
+          53.68877
+        ],
+        "zoom": 11.3,
+        "population": 56227,
+        "cells": 107,
+        "layer": "cities/mezhdurechensk/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            88.06235,
+            53.68877
+          ]
+        },
+        "properties": {
+          "id": "mezhdurechensk",
+          "name": "Mezhdurechensk",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 11.6,
+          "population": 56227
+        }
+      },
+      "summary": null
+    }
+  }
+}

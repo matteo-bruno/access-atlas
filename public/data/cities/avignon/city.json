@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "avignon",
+  "createdAt": "2026-10-08T15:11:37.467Z",
+  "updatedAt": "2026-10-08T15:11:37.467Z",
+  "meta": {
+    "name": "Avignon",
+    "nameIt": "Avignon",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Avignon.geojson",
+      "sha256": "b77648fc486f3f70054b37d7a715468fb7723a29aa577d4685ec954e484d68b6",
+      "size": 334774,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "avignon",
+    "name": "Avignon",
+    "nameIt": "Avignon",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      4.82343,
+      43.94383
+    ],
+    "zoom": 10.9,
+    "population": 92171,
+    "grid": "cities/avignon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/avignon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "avignon",
+        "name": "Avignon",
+        "nameIt": "Avignon",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          4.82343,
+          43.94383
+        ],
+        "zoom": 10.9,
+        "population": 92171,
+        "cells": 295,
+        "layer": "cities/avignon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.82343,
+            43.94383
+          ]
+        },
+        "properties": {
+          "id": "avignon",
+          "name": "Avignon",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 8.2,
+          "population": 92171
+        }
+      },
+      "summary": null
+    }
+  }
+}

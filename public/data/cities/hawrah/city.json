@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hawrah",
+  "createdAt": "2026-10-08T15:38:07.379Z",
+  "updatedAt": "2026-10-08T15:38:07.379Z",
+  "meta": {
+    "name": "Hawrah",
+    "nameIt": "Hawrah",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hawrah.geojson",
+      "sha256": "eb01221cd4900d14fd27ccdd6a801312b2bcfdd70bed2d07703f869d0600111c",
+      "size": 384873,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hawrah",
+    "name": "Hawrah",
+    "nameIt": "Hawrah",
+    "region": "Yemen",
+    "regionIt": "Yemen",
+    "country": "YE",
+    "center": [
+      44.16576,
+      13.34498
+    ],
+    "zoom": 10.7,
+    "population": 88792,
+    "grid": "cities/hawrah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hawrah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hawrah",
+        "name": "Hawrah",
+        "nameIt": "Hawrah",
+        "region": "Yemen",
+        "regionIt": "Yemen",
+        "country": "YE",
+        "center": [
+          44.16576,
+          13.34498
+        ],
+        "zoom": 10.7,
+        "population": 88792,
+        "cells": 331,
+        "layer": "cities/hawrah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.16576,
+            13.34498
+          ]
+        },
+        "properties": {
+          "id": "hawrah",
+          "name": "Hawrah",
+          "country": "YE",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 88792
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "belo-horizonte",
+  "createdAt": "2026-10-08T15:17:11.780Z",
+  "updatedAt": "2026-10-08T15:17:11.780Z",
+  "meta": {
+    "name": "Belo Horizonte",
+    "nameIt": "Belo Horizonte",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Belo Horizonte.geojson",
+      "sha256": "53a2219542b99dac2d6e7489b75b958e881720faff16464c8bf395dd57d7f11f",
+      "size": 6248217,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "belo-horizonte",
+    "name": "Belo Horizonte",
+    "nameIt": "Belo Horizonte",
+    "region": "Brazil",
+    "regionIt": "Brasile",
+    "country": "BR",
+    "center": [
+      -43.99843,
+      -19.89845
+    ],
+    "zoom": 8.8,
+    "population": 3792377,
+    "grid": "cities/belo-horizonte/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/belo-horizonte/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "belo-horizonte",
+        "name": "Belo Horizonte",
+        "nameIt": "Belo Horizonte",
+        "region": "Brazil",
+        "regionIt": "Brasile",
+        "country": "BR",
+        "center": [
+          -43.99843,
+          -19.89845
+        ],
+        "zoom": 8.8,
+        "population": 3792377,
+        "cells": 5338,
+        "layer": "cities/belo-horizonte/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -43.99843,
+            -19.89845
+          ]
+        },
+        "properties": {
+          "id": "belo-horizonte",
+          "name": "Belo Horizonte",
+          "country": "BR",
+          "isStudy": true,
+          "proximityMinutes": 20.1,
+          "population": 3792377
+        }
+      },
+      "summary": null
+    }
+  }
+}

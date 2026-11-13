@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "xiangyuan",
+  "createdAt": "2026-10-08T16:22:21.817Z",
+  "updatedAt": "2026-10-08T16:22:21.817Z",
+  "meta": {
+    "name": "Xiangyuan",
+    "nameIt": "Xiangyuan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Xiangyuan.geojson",
+      "sha256": "c9c01a00b08b307ebc8c41a3fb82844ab7bcea31b509e2a0eb21ca625f3a5bcd",
+      "size": 203842,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "xiangyuan",
+    "name": "Xiangyuan",
+    "nameIt": "Xiangyuan",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.03533,
+      36.53055
+    ],
+    "zoom": 11.7,
+    "population": 71727,
+    "grid": "cities/xiangyuan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/xiangyuan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "xiangyuan",
+        "name": "Xiangyuan",
+        "nameIt": "Xiangyuan",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.03533,
+          36.53055
+        ],
+        "zoom": 11.7,
+        "population": 71727,
+        "cells": 175,
+        "layer": "cities/xiangyuan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.03533,
+            36.53055
+          ]
+        },
+        "properties": {
+          "id": "xiangyuan",
+          "name": "Xiangyuan",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 71727
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gobindpur",
+  "createdAt": "2026-10-08T15:35:27.586Z",
+  "updatedAt": "2026-10-08T15:35:27.586Z",
+  "meta": {
+    "name": "Gobindpur",
+    "nameIt": "Gobindpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gobindpur.geojson",
+      "sha256": "88f479cf49406c93a81618e2f46ad0d34a6868a4ab571562c5cce5a09355908c",
+      "size": 231430,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gobindpur",
+    "name": "Gobindpur",
+    "nameIt": "Gobindpur",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      85.6834,
+      24.77283
+    ],
+    "zoom": 11.2,
+    "population": 40478,
+    "grid": "cities/gobindpur/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gobindpur/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gobindpur",
+        "name": "Gobindpur",
+        "nameIt": "Gobindpur",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          85.6834,
+          24.77283
+        ],
+        "zoom": 11.2,
+        "population": 40478,
+        "cells": 200,
+        "layer": "cities/gobindpur/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.6834,
+            24.77283
+          ]
+        },
+        "properties": {
+          "id": "gobindpur",
+          "name": "Gobindpur",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 40478
+        }
+      },
+      "summary": null
+    }
+  }
+}

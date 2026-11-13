@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "sirsi",
+  "createdAt": "2026-10-08T16:14:01.392Z",
+  "updatedAt": "2026-10-08T16:14:01.392Z",
+  "meta": {
+    "name": "Sirsi",
+    "nameIt": "Sirsi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Sirsi.geojson",
+      "sha256": "850b580e2ea0b4fe98efa06ac069e25f4a916bcb1072dcb17cd752e39b8a1389",
+      "size": 172825,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "sirsi",
+    "name": "Sirsi",
+    "nameIt": "Sirsi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      74.83972,
+      14.61892
+    ],
+    "zoom": 11.7,
+    "population": 59569,
+    "grid": "cities/sirsi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 199
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/sirsi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "sirsi",
+        "name": "Sirsi",
+        "nameIt": "Sirsi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          74.83972,
+          14.61892
+        ],
+        "zoom": 11.7,
+        "population": 59569,
+        "cells": 149,
+        "layer": "cities/sirsi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            74.83972,
+            14.61892
+          ]
+        },
+        "properties": {
+          "id": "sirsi",
+          "name": "Sirsi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 16.2,
+          "population": 59569
+        }
+      },
+      "summary": null
+    }
+  }
+}

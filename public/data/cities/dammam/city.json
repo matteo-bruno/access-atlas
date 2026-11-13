@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "dammam",
+  "createdAt": "2026-10-08T15:28:02.060Z",
+  "updatedAt": "2026-10-08T15:28:02.060Z",
+  "meta": {
+    "name": "Dammam",
+    "nameIt": "Dammam",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Dammam.geojson",
+      "sha256": "26e188a0aad89e14527c3656a0247c5e400aec46fd32564a3979de8a66ab9b44",
+      "size": 6054727,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "dammam",
+    "name": "Dammam",
+    "nameIt": "Dammam",
+    "region": "Saudi Arabia",
+    "regionIt": "Arabia Saudita",
+    "country": "SA",
+    "center": [
+      50.10639,
+      26.40262
+    ],
+    "zoom": 8.8,
+    "population": 2014290,
+    "grid": "cities/dammam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 194
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/dammam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "dammam",
+        "name": "Dammam",
+        "nameIt": "Dammam",
+        "region": "Saudi Arabia",
+        "regionIt": "Arabia Saudita",
+        "country": "SA",
+        "center": [
+          50.10639,
+          26.40262
+        ],
+        "zoom": 8.8,
+        "population": 2014290,
+        "cells": 5227,
+        "layer": "cities/dammam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            50.10639,
+            26.40262
+          ]
+        },
+        "properties": {
+          "id": "dammam",
+          "name": "Dammam",
+          "country": "SA",
+          "isStudy": true,
+          "proximityMinutes": 52.6,
+          "population": 2014290
+        }
+      },
+      "summary": null
+    }
+  }
+}

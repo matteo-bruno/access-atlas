@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "stoke-on-trent",
+  "createdAt": "2026-10-08T16:14:51.624Z",
+  "updatedAt": "2026-10-08T16:14:51.624Z",
+  "meta": {
+    "name": "Stoke-on-Trent",
+    "nameIt": "Stoke-on-Trent",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Stoke-on-Trent.geojson",
+      "sha256": "e9fb115268715e2bf4ffd159122972349018f26f7b8bf200e86f4a4172300bfa",
+      "size": 1359170,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "stoke-on-trent",
+    "name": "Stoke-on-Trent",
+    "nameIt": "Stoke-on-Trent",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -2.17475,
+      53.0163
+    ],
+    "zoom": 10.2,
+    "population": 327046,
+    "grid": "cities/stoke-on-trent/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/stoke-on-trent/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "stoke-on-trent",
+        "name": "Stoke-on-Trent",
+        "nameIt": "Stoke-on-Trent",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -2.17475,
+          53.0163
+        ],
+        "zoom": 10.2,
+        "population": 327046,
+        "cells": 1179,
+        "layer": "cities/stoke-on-trent/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -2.17475,
+            53.0163
+          ]
+        },
+        "properties": {
+          "id": "stoke-on-trent",
+          "name": "Stoke-on-Trent",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 14.5,
+          "population": 327046
+        }
+      },
+      "summary": null
+    }
+  }
+}

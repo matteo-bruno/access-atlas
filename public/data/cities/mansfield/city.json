@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mansfield",
+  "createdAt": "2026-10-08T15:54:55.857Z",
+  "updatedAt": "2026-10-08T15:54:55.857Z",
+  "meta": {
+    "name": "Mansfield",
+    "nameIt": "Mansfield",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Mansfield.geojson",
+      "sha256": "cba68a4743f7f8271a4314779edd24fd699894e32ffaa80b696ef087ec3b85c5",
+      "size": 345853,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mansfield",
+    "name": "Mansfield",
+    "nameIt": "Mansfield",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -1.19106,
+      53.14964
+    ],
+    "zoom": 11.4,
+    "population": 87755,
+    "grid": "cities/mansfield/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mansfield/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mansfield",
+        "name": "Mansfield",
+        "nameIt": "Mansfield",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -1.19106,
+          53.14964
+        ],
+        "zoom": 11.4,
+        "population": 87755,
+        "cells": 300,
+        "layer": "cities/mansfield/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.19106,
+            53.14964
+          ]
+        },
+        "properties": {
+          "id": "mansfield",
+          "name": "Mansfield",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 11.7,
+          "population": 87755
+        }
+      },
+      "summary": null
+    }
+  }
+}

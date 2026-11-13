@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aarhus",
+  "createdAt": "2026-10-08T15:01:09.580Z",
+  "updatedAt": "2026-10-08T15:01:09.580Z",
+  "meta": {
+    "name": "Aarhus",
+    "nameIt": "Aarhus",
+    "region": "Denmark",
+    "regionIt": "Danimarca",
+    "country": "DK"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aarhus.geojson",
+      "sha256": "8e59ce9ad9d9582973ea1f3075daccf92cd4759abf09298f9ae69be8f03b1728",
+      "size": 1214826,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aarhus",
+    "name": "Aarhus",
+    "nameIt": "Aarhus",
+    "region": "Denmark",
+    "regionIt": "Danimarca",
+    "country": "DK",
+    "center": [
+      10.18356,
+      56.15912
+    ],
+    "zoom": 10.5,
+    "population": 252325,
+    "grid": "cities/aarhus/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aarhus/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aarhus",
+        "name": "Aarhus",
+        "nameIt": "Aarhus",
+        "region": "Denmark",
+        "regionIt": "Danimarca",
+        "country": "DK",
+        "center": [
+          10.18356,
+          56.15912
+        ],
+        "zoom": 10.5,
+        "population": 252325,
+        "cells": 1061,
+        "layer": "cities/aarhus/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.18356,
+            56.15912
+          ]
+        },
+        "properties": {
+          "id": "aarhus",
+          "name": "Aarhus",
+          "country": "DK",
+          "isStudy": true,
+          "proximityMinutes": 10,
+          "population": 252325
+        }
+      },
+      "summary": null
+    }
+  }
+}

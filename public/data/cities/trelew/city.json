@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "trelew",
+  "createdAt": "2026-10-08T16:18:45.425Z",
+  "updatedAt": "2026-10-08T16:18:45.425Z",
+  "meta": {
+    "name": "Trelew",
+    "nameIt": "Trelew",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Trelew.geojson",
+      "sha256": "398c04c63401415f7715eed1b0f94a491824eb8b9124b654c38c2eab6099a64c",
+      "size": 312696,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "trelew",
+    "name": "Trelew",
+    "nameIt": "Trelew",
+    "region": "Argentina",
+    "regionIt": "Argentina",
+    "country": "AR",
+    "center": [
+      -65.31105,
+      -43.25683
+    ],
+    "zoom": 11.2,
+    "population": 88521,
+    "grid": "cities/trelew/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/trelew/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "trelew",
+        "name": "Trelew",
+        "nameIt": "Trelew",
+        "region": "Argentina",
+        "regionIt": "Argentina",
+        "country": "AR",
+        "center": [
+          -65.31105,
+          -43.25683
+        ],
+        "zoom": 11.2,
+        "population": 88521,
+        "cells": 269,
+        "layer": "cities/trelew/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -65.31105,
+            -43.25683
+          ]
+        },
+        "properties": {
+          "id": "trelew",
+          "name": "Trelew",
+          "country": "AR",
+          "isStudy": true,
+          "proximityMinutes": 15.1,
+          "population": 88521
+        }
+      },
+      "summary": null
+    }
+  }
+}

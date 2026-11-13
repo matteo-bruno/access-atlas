@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "konch",
+  "createdAt": "2026-10-08T15:47:50.364Z",
+  "updatedAt": "2026-10-08T15:47:50.364Z",
+  "meta": {
+    "name": "Konch",
+    "nameIt": "Konch",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Konch.geojson",
+      "sha256": "29f76b2111b968faf63f1f862d39f0c2d464422814b1b9dff09cbbc827eaf6be",
+      "size": 111113,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "konch",
+    "name": "Konch",
+    "nameIt": "Konch",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      79.15452,
+      25.99431
+    ],
+    "zoom": 11.6,
+    "population": 85692,
+    "grid": "cities/konch/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/konch/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "konch",
+        "name": "Konch",
+        "nameIt": "Konch",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          79.15452,
+          25.99431
+        ],
+        "zoom": 11.6,
+        "population": 85692,
+        "cells": 96,
+        "layer": "cities/konch/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            79.15452,
+            25.99431
+          ]
+        },
+        "properties": {
+          "id": "konch",
+          "name": "Konch",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 85692
+        }
+      },
+      "summary": null
+    }
+  }
+}

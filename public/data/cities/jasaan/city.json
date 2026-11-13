@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "jasaan",
+  "createdAt": "2026-10-08T15:42:03.479Z",
+  "updatedAt": "2026-10-08T15:42:03.479Z",
+  "meta": {
+    "name": "Jasaan",
+    "nameIt": "Jasaan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Jasaan.geojson",
+      "sha256": "32d23542d0e9b1cf1d6b97bf2af2b8f1ebc084af0465e73ecae50668f85b9760",
+      "size": 278260,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "jasaan",
+    "name": "Jasaan",
+    "nameIt": "Jasaan",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      124.75905,
+      8.63241
+    ],
+    "zoom": 10.2,
+    "population": 66061,
+    "grid": "cities/jasaan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/jasaan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "jasaan",
+        "name": "Jasaan",
+        "nameIt": "Jasaan",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          124.75905,
+          8.63241
+        ],
+        "zoom": 10.2,
+        "population": 66061,
+        "cells": 240,
+        "layer": "cities/jasaan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            124.75905,
+            8.63241
+          ]
+        },
+        "properties": {
+          "id": "jasaan",
+          "name": "Jasaan",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 66061
+        }
+      },
+      "summary": null
+    }
+  }
+}

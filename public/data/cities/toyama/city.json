@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "toyama",
+  "createdAt": "2026-10-08T16:18:41.552Z",
+  "updatedAt": "2026-10-08T16:18:41.552Z",
+  "meta": {
+    "name": "Toyama",
+    "nameIt": "Toyama",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Toyama.geojson",
+      "sha256": "26d4d94b5376edc5642b16be1dba458449fd3bf0d2ed17e4a88e8ed6c95f2b74",
+      "size": 1188317,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "toyama",
+    "name": "Toyama",
+    "nameIt": "Toyama",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      137.22306,
+      36.69164
+    ],
+    "zoom": 10.1,
+    "population": 271782,
+    "grid": "cities/toyama/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/toyama/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "toyama",
+        "name": "Toyama",
+        "nameIt": "Toyama",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          137.22306,
+          36.69164
+        ],
+        "zoom": 10.1,
+        "population": 271782,
+        "cells": 1033,
+        "layer": "cities/toyama/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            137.22306,
+            36.69164
+          ]
+        },
+        "properties": {
+          "id": "toyama",
+          "name": "Toyama",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 18.6,
+          "population": 271782
+        }
+      },
+      "summary": null
+    }
+  }
+}

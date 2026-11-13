@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "elda",
+  "createdAt": "2026-10-08T15:32:06.641Z",
+  "updatedAt": "2026-10-08T15:32:06.641Z",
+  "meta": {
+    "name": "Elda",
+    "nameIt": "Elda",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Elda.geojson",
+      "sha256": "ba827284c99a1c6c97ba77fd024c665ea53dde5124ad9112965e9eb2fa2c9e33",
+      "size": 122093,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "elda",
+    "name": "Elda",
+    "nameIt": "Elda",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -0.78736,
+      38.47693
+    ],
+    "zoom": 12,
+    "population": 67697,
+    "grid": "cities/elda/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/elda/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "elda",
+        "name": "Elda",
+        "nameIt": "Elda",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -0.78736,
+          38.47693
+        ],
+        "zoom": 12,
+        "population": 67697,
+        "cells": 106,
+        "layer": "cities/elda/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.78736,
+            38.47693
+          ]
+        },
+        "properties": {
+          "id": "elda",
+          "name": "Elda",
+          "country": "ES",
+          "isStudy": true,
+          "proximityMinutes": 6.4,
+          "population": 67697
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bender",
+  "createdAt": "2026-10-08T15:17:19.171Z",
+  "updatedAt": "2026-10-08T15:17:19.171Z",
+  "meta": {
+    "name": "Bender",
+    "nameIt": "Bender",
+    "region": "Moldova",
+    "regionIt": "Moldavia",
+    "country": "MD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Bender.geojson",
+      "sha256": "295907a4cb679ef541eb38909200a5e37c1bcb3e32329cabd2b36314f8002c51",
+      "size": 247464,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "bender",
+    "name": "Bender",
+    "nameIt": "Bender",
+    "region": "Moldova",
+    "regionIt": "Moldavia",
+    "country": "MD",
+    "center": [
+      29.4727,
+      46.82452
+    ],
+    "zoom": 10.9,
+    "population": 69182,
+    "grid": "cities/bender/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/bender/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "bender",
+        "name": "Bender",
+        "nameIt": "Bender",
+        "region": "Moldova",
+        "regionIt": "Moldavia",
+        "country": "MD",
+        "center": [
+          29.4727,
+          46.82452
+        ],
+        "zoom": 10.9,
+        "population": 69182,
+        "cells": 216,
+        "layer": "cities/bender/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            29.4727,
+            46.82452
+          ]
+        },
+        "properties": {
+          "id": "bender",
+          "name": "Bender",
+          "country": "MD",
+          "isStudy": true,
+          "proximityMinutes": 13.3,
+          "population": 69182
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "machakos",
+  "createdAt": "2026-10-08T15:53:13.786Z",
+  "updatedAt": "2026-10-08T15:53:13.786Z",
+  "meta": {
+    "name": "Machakos",
+    "nameIt": "Machakos",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Machakos.geojson",
+      "sha256": "1cd797c49949441ea89149b21600bb1941fec18cad8b6c12879239f301425ca8",
+      "size": 211996,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "machakos",
+    "name": "Machakos",
+    "nameIt": "Machakos",
+    "region": "Kenya",
+    "regionIt": "Kenya",
+    "country": "KE",
+    "center": [
+      37.26345,
+      -1.51105
+    ],
+    "zoom": 10.9,
+    "population": 67446,
+    "grid": "cities/machakos/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/machakos/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "machakos",
+        "name": "Machakos",
+        "nameIt": "Machakos",
+        "region": "Kenya",
+        "regionIt": "Kenya",
+        "country": "KE",
+        "center": [
+          37.26345,
+          -1.51105
+        ],
+        "zoom": 10.9,
+        "population": 67446,
+        "cells": 181,
+        "layer": "cities/machakos/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.26345,
+            -1.51105
+          ]
+        },
+        "properties": {
+          "id": "machakos",
+          "name": "Machakos",
+          "country": "KE",
+          "isStudy": true,
+          "proximityMinutes": 27.1,
+          "population": 67446
+        }
+      },
+      "summary": null
+    }
+  }
+}

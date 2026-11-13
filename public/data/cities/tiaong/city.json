@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tiaong",
+  "createdAt": "2026-10-08T16:17:47.231Z",
+  "updatedAt": "2026-10-08T16:17:47.231Z",
+  "meta": {
+    "name": "Tiaong",
+    "nameIt": "Tiaong",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tiaong.geojson",
+      "sha256": "9863f11382dd688ff7a371eb2b7aa2db246de96b442416e4629838b891c67777",
+      "size": 430849,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "tiaong",
+    "name": "Tiaong",
+    "nameIt": "Tiaong",
+    "region": "Philippines",
+    "regionIt": "Filippine",
+    "country": "PH",
+    "center": [
+      121.33935,
+      13.95854
+    ],
+    "zoom": 10.9,
+    "population": 72478,
+    "grid": "cities/tiaong/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tiaong/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tiaong",
+        "name": "Tiaong",
+        "nameIt": "Tiaong",
+        "region": "Philippines",
+        "regionIt": "Filippine",
+        "country": "PH",
+        "center": [
+          121.33935,
+          13.95854
+        ],
+        "zoom": 10.9,
+        "population": 72478,
+        "cells": 369,
+        "layer": "cities/tiaong/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.33935,
+            13.95854
+          ]
+        },
+        "properties": {
+          "id": "tiaong",
+          "name": "Tiaong",
+          "country": "PH",
+          "isStudy": true,
+          "proximityMinutes": 21.3,
+          "population": 72478
+        }
+      },
+      "summary": null
+    }
+  }
+}

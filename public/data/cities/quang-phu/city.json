@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "quang-phu",
+  "createdAt": "2026-10-08T16:07:43.259Z",
+  "updatedAt": "2026-10-08T16:07:43.259Z",
+  "meta": {
+    "name": "Quảng Phú",
+    "nameIt": "Quảng Phú",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Quảng Phú.geojson",
+      "sha256": "4fd6e7fda03a24c732a89d25c0e87f773694eb3d2c9c688e29a63c25807dc6d6",
+      "size": 85374,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "quang-phu",
+    "name": "Quảng Phú",
+    "nameIt": "Quảng Phú",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      108.07903,
+      12.81733
+    ],
+    "zoom": 12,
+    "population": 39190,
+    "grid": "cities/quang-phu/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 214
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/quang-phu/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "quang-phu",
+        "name": "Quảng Phú",
+        "nameIt": "Quảng Phú",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          108.07903,
+          12.81733
+        ],
+        "zoom": 12,
+        "population": 39190,
+        "cells": 73,
+        "layer": "cities/quang-phu/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 214
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.07903,
+            12.81733
+          ]
+        },
+        "properties": {
+          "id": "quang-phu",
+          "name": "Quảng Phú",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 39190
+        }
+      },
+      "summary": null
+    }
+  }
+}

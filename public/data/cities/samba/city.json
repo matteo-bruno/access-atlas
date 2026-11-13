@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "samba",
+  "createdAt": "2026-10-08T16:10:17.367Z",
+  "updatedAt": "2026-10-08T16:10:17.367Z",
+  "meta": {
+    "name": "Samba",
+    "nameIt": "Samba",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Samba.geojson",
+      "sha256": "4276426d1409e5bfb7328fdcc63e8393c8fe9d2c8a9e9a91f88832fc22bfcaaf",
+      "size": 65471,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "samba",
+    "name": "Samba",
+    "nameIt": "Samba",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      26.36106,
+      -4.64068
+    ],
+    "zoom": 12,
+    "population": 55306,
+    "grid": "cities/samba/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 217
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/samba/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "samba",
+        "name": "Samba",
+        "nameIt": "Samba",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          26.36106,
+          -4.64068
+        ],
+        "zoom": 12,
+        "population": 55306,
+        "cells": 56,
+        "layer": "cities/samba/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 217
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.36106,
+            -4.64068
+          ]
+        },
+        "properties": {
+          "id": "samba",
+          "name": "Samba",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 55306
+        }
+      },
+      "summary": null
+    }
+  }
+}

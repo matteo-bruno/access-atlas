@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "matanzas",
+  "createdAt": "2026-10-08T15:55:40.010Z",
+  "updatedAt": "2026-10-08T15:55:40.010Z",
+  "meta": {
+    "name": "Matanzas",
+    "nameIt": "Matanzas",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Matanzas.geojson",
+      "sha256": "934b185ced1108a49f480090793abf565b9d0375039815280bdc6d08c80186f2",
+      "size": 299329,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "matanzas",
+    "name": "Matanzas",
+    "nameIt": "Matanzas",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU",
+    "center": [
+      -81.57262,
+      23.04129
+    ],
+    "zoom": 10.8,
+    "population": 107176,
+    "grid": "cities/matanzas/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/matanzas/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "matanzas",
+        "name": "Matanzas",
+        "nameIt": "Matanzas",
+        "region": "Cuba",
+        "regionIt": "Cuba",
+        "country": "CU",
+        "center": [
+          -81.57262,
+          23.04129
+        ],
+        "zoom": 10.8,
+        "population": 107176,
+        "cells": 260,
+        "layer": "cities/matanzas/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.57262,
+            23.04129
+          ]
+        },
+        "properties": {
+          "id": "matanzas",
+          "name": "Matanzas",
+          "country": "CU",
+          "isStudy": true,
+          "proximityMinutes": 11.7,
+          "population": 107176
+        }
+      },
+      "summary": null
+    }
+  }
+}

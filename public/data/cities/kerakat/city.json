@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kerakat",
+  "createdAt": "2026-10-08T15:46:12.499Z",
+  "updatedAt": "2026-10-08T15:46:12.499Z",
+  "meta": {
+    "name": "Kerakat",
+    "nameIt": "Kerakat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kerakat.geojson",
+      "sha256": "73bed4d8f43c34c21df6c27851aca1eab2c6666b2c5b47289fd31aedba746cc8",
+      "size": 479550,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kerakat",
+    "name": "Kerakat",
+    "nameIt": "Kerakat",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      82.89866,
+      25.63653
+    ],
+    "zoom": 10.7,
+    "population": 129090,
+    "grid": "cities/kerakat/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kerakat/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kerakat",
+        "name": "Kerakat",
+        "nameIt": "Kerakat",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          82.89866,
+          25.63653
+        ],
+        "zoom": 10.7,
+        "population": 129090,
+        "cells": 414,
+        "layer": "cities/kerakat/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            82.89866,
+            25.63653
+          ]
+        },
+        "properties": {
+          "id": "kerakat",
+          "name": "Kerakat",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 129090
+        }
+      },
+      "summary": null
+    }
+  }
+}

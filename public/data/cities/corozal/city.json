@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "corozal",
+  "createdAt": "2026-10-08T15:26:37.547Z",
+  "updatedAt": "2026-10-08T15:26:37.547Z",
+  "meta": {
+    "name": "Corozal",
+    "nameIt": "Corozal",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Corozal.geojson",
+      "sha256": "e7f6add965d4ca7649c7688705d5148bafdbda51410318ca86973d1a3ac252df",
+      "size": 110926,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "corozal",
+    "name": "Corozal",
+    "nameIt": "Corozal",
+    "region": "Colombia",
+    "regionIt": "Colombia",
+    "country": "CO",
+    "center": [
+      -75.29551,
+      9.3218
+    ],
+    "zoom": 11.9,
+    "population": 72784,
+    "grid": "cities/corozal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/corozal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "corozal",
+        "name": "Corozal",
+        "nameIt": "Corozal",
+        "region": "Colombia",
+        "regionIt": "Colombia",
+        "country": "CO",
+        "center": [
+          -75.29551,
+          9.3218
+        ],
+        "zoom": 11.9,
+        "population": 72784,
+        "cells": 96,
+        "layer": "cities/corozal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.29551,
+            9.3218
+          ]
+        },
+        "properties": {
+          "id": "corozal",
+          "name": "Corozal",
+          "country": "CO",
+          "isStudy": true,
+          "proximityMinutes": 11.7,
+          "population": 72784
+        }
+      },
+      "summary": null
+    }
+  }
+}

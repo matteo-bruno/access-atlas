@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kottayam",
+  "createdAt": "2026-10-08T15:48:11.764Z",
+  "updatedAt": "2026-10-08T15:48:11.764Z",
+  "meta": {
+    "name": "Kottayam",
+    "nameIt": "Kottayam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kottayam.geojson",
+      "sha256": "e61d2e958b5212f4d64c86b0542ac805338c280d1c567661315e533c11a1482c",
+      "size": 2380540,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kottayam",
+    "name": "Kottayam",
+    "nameIt": "Kottayam",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      76.54599,
+      9.52613
+    ],
+    "zoom": 8.8,
+    "population": 941989,
+    "grid": "cities/kottayam/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kottayam/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kottayam",
+        "name": "Kottayam",
+        "nameIt": "Kottayam",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          76.54599,
+          9.52613
+        ],
+        "zoom": 8.8,
+        "population": 941989,
+        "cells": 2094,
+        "layer": "cities/kottayam/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.54599,
+            9.52613
+          ]
+        },
+        "properties": {
+          "id": "kottayam",
+          "name": "Kottayam",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 19.2,
+          "population": 941989
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "a-nang",
+  "createdAt": "2026-10-08T16:25:56.700Z",
+  "updatedAt": "2026-10-08T16:25:56.700Z",
+  "meta": {
+    "name": "Đà Nẵng",
+    "nameIt": "Đà Nẵng",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Đà Nẵng.geojson",
+      "sha256": "a0aa5455b44a60f13b5712f16158c13e1093bbff91544d50001268bd5c33a6e3",
+      "size": 2221736,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "a-nang",
+    "name": "Đà Nẵng",
+    "nameIt": "Đà Nẵng",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      108.20416,
+      16.04576
+    ],
+    "zoom": 9.4,
+    "population": 1161069,
+    "grid": "cities/a-nang/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 213
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/a-nang/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "a-nang",
+        "name": "Đà Nẵng",
+        "nameIt": "Đà Nẵng",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          108.20416,
+          16.04576
+        ],
+        "zoom": 9.4,
+        "population": 1161069,
+        "cells": 1915,
+        "layer": "cities/a-nang/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 213
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            108.20416,
+            16.04576
+          ]
+        },
+        "properties": {
+          "id": "a-nang",
+          "name": "Đà Nẵng",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 19.3,
+          "population": 1161069
+        }
+      },
+      "summary": null
+    }
+  }
+}

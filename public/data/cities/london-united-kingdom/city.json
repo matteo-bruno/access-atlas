@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "london-united-kingdom",
+  "createdAt": "2026-10-08T15:51:46.915Z",
+  "updatedAt": "2026-10-08T15:51:46.915Z",
+  "meta": {
+    "name": "London (United Kingdom)",
+    "nameIt": "London (United Kingdom)",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/London (United Kingdom).geojson",
+      "sha256": "1f229d04cff0a175cf499f0a13937187eba571368d4ff0abfb3e7a1000666ec3",
+      "size": 20259173,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "london-united-kingdom",
+    "name": "London (United Kingdom)",
+    "nameIt": "London (United Kingdom)",
+    "region": "United Kingdom",
+    "regionIt": "Regno Unito",
+    "country": "GB",
+    "center": [
+      -0.12413,
+      51.5099
+    ],
+    "zoom": 8.5,
+    "population": 9871784,
+    "grid": "cities/london-united-kingdom/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/london-united-kingdom/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "london-united-kingdom",
+        "name": "London (United Kingdom)",
+        "nameIt": "London (United Kingdom)",
+        "region": "United Kingdom",
+        "regionIt": "Regno Unito",
+        "country": "GB",
+        "center": [
+          -0.12413,
+          51.5099
+        ],
+        "zoom": 8.5,
+        "population": 9871784,
+        "cells": 17469,
+        "layer": "cities/london-united-kingdom/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.12413,
+            51.5099
+          ]
+        },
+        "properties": {
+          "id": "london-united-kingdom",
+          "name": "London (United Kingdom)",
+          "country": "GB",
+          "isStudy": true,
+          "proximityMinutes": 8.9,
+          "population": 9871784
+        }
+      },
+      "summary": null
+    }
+  }
+}

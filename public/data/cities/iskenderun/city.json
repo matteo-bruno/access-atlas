@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "iskenderun",
+  "createdAt": "2026-10-08T16:25:58.990Z",
+  "updatedAt": "2026-10-08T16:25:58.990Z",
+  "meta": {
+    "name": "İskenderun",
+    "nameIt": "İskenderun",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/İskenderun.geojson",
+      "sha256": "51d7c0f4214eda4cc9b8b001fd63d2b3ae04256856002f06a79674a35e9e57db",
+      "size": 693596,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "iskenderun",
+    "name": "İskenderun",
+    "nameIt": "İskenderun",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      36.17006,
+      36.57929
+    ],
+    "zoom": 10.2,
+    "population": 262993,
+    "grid": "cities/iskenderun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/iskenderun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "iskenderun",
+        "name": "İskenderun",
+        "nameIt": "İskenderun",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          36.17006,
+          36.57929
+        ],
+        "zoom": 10.2,
+        "population": 262993,
+        "cells": 600,
+        "layer": "cities/iskenderun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.17006,
+            36.57929
+          ]
+        },
+        "properties": {
+          "id": "iskenderun",
+          "name": "İskenderun",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 22.3,
+          "population": 262993
+        }
+      },
+      "summary": null
+    }
+  }
+}

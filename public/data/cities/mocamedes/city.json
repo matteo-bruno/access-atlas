@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "mocamedes",
+  "createdAt": "2026-10-08T15:58:35.703Z",
+  "updatedAt": "2026-10-08T15:58:35.703Z",
+  "meta": {
+    "name": "Moçâmedes",
+    "nameIt": "Moçâmedes",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Moçâmedes.geojson",
+      "sha256": "8d336d5df2d9aa21702a20e2a34518e6ecbad47a1b0520c8d1e6cb289983ef4d",
+      "size": 397138,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "mocamedes",
+    "name": "Moçâmedes",
+    "nameIt": "Moçâmedes",
+    "region": "Angola",
+    "regionIt": "Angola",
+    "country": "AO",
+    "center": [
+      12.15478,
+      -15.20564
+    ],
+    "zoom": 11,
+    "population": 293644,
+    "grid": "cities/mocamedes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/mocamedes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "mocamedes",
+        "name": "Moçâmedes",
+        "nameIt": "Moçâmedes",
+        "region": "Angola",
+        "regionIt": "Angola",
+        "country": "AO",
+        "center": [
+          12.15478,
+          -15.20564
+        ],
+        "zoom": 11,
+        "population": 293644,
+        "cells": 338,
+        "layer": "cities/mocamedes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.15478,
+            -15.20564
+          ]
+        },
+        "properties": {
+          "id": "mocamedes",
+          "name": "Moçâmedes",
+          "country": "AO",
+          "isStudy": true,
+          "proximityMinutes": 19.9,
+          "population": 293644
+        }
+      },
+      "summary": null
+    }
+  }
+}

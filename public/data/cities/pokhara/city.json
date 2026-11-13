@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "pokhara",
+  "createdAt": "2026-10-08T16:06:01.420Z",
+  "updatedAt": "2026-10-08T16:06:01.420Z",
+  "meta": {
+    "name": "Pokhara",
+    "nameIt": "Pokhara",
+    "region": "Nepal",
+    "regionIt": "Nepal",
+    "country": "NP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Pokhara.geojson",
+      "sha256": "1720291b0f89abc9511cd6c914f935556deaf5741ed93990f06602deff3e5942",
+      "size": 490733,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "pokhara",
+    "name": "Pokhara",
+    "nameIt": "Pokhara",
+    "region": "Nepal",
+    "regionIt": "Nepal",
+    "country": "NP",
+    "center": [
+      83.98846,
+      28.21016
+    ],
+    "zoom": 10.9,
+    "population": 273644,
+    "grid": "cities/pokhara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/pokhara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "pokhara",
+        "name": "Pokhara",
+        "nameIt": "Pokhara",
+        "region": "Nepal",
+        "regionIt": "Nepal",
+        "country": "NP",
+        "center": [
+          83.98846,
+          28.21016
+        ],
+        "zoom": 10.9,
+        "population": 273644,
+        "cells": 430,
+        "layer": "cities/pokhara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            83.98846,
+            28.21016
+          ]
+        },
+        "properties": {
+          "id": "pokhara",
+          "name": "Pokhara",
+          "country": "NP",
+          "isStudy": true,
+          "proximityMinutes": 10,
+          "population": 273644
+        }
+      },
+      "summary": null
+    }
+  }
+}

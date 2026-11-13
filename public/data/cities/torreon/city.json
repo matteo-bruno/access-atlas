@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "torreon",
+  "createdAt": "2026-10-08T16:18:36.518Z",
+  "updatedAt": "2026-10-08T16:18:36.518Z",
+  "meta": {
+    "name": "Torreón",
+    "nameIt": "Torreón",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Torreón.geojson",
+      "sha256": "82cb4c8e041473cdf1ba9a46a839082bfbe737ec1e2fd335cf000d237ca92054",
+      "size": 2168623,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "torreon",
+    "name": "Torreón",
+    "nameIt": "Torreón",
+    "region": "Mexico",
+    "regionIt": "Messico",
+    "country": "MX",
+    "center": [
+      -103.43669,
+      25.55117
+    ],
+    "zoom": 9.4,
+    "population": 1116340,
+    "grid": "cities/torreon/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 220
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/torreon/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "torreon",
+        "name": "Torreón",
+        "nameIt": "Torreón",
+        "region": "Mexico",
+        "regionIt": "Messico",
+        "country": "MX",
+        "center": [
+          -103.43669,
+          25.55117
+        ],
+        "zoom": 9.4,
+        "population": 1116340,
+        "cells": 1852,
+        "layer": "cities/torreon/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 220
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -103.43669,
+            25.55117
+          ]
+        },
+        "properties": {
+          "id": "torreon",
+          "name": "Torreón",
+          "country": "MX",
+          "isStudy": true,
+          "proximityMinutes": 26.3,
+          "population": 1116340
+        }
+      },
+      "summary": null
+    }
+  }
+}

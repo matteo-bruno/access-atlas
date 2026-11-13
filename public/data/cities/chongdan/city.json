@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chongdan",
+  "createdAt": "2026-10-08T15:25:07.246Z",
+  "updatedAt": "2026-10-08T15:25:07.246Z",
+  "meta": {
+    "name": "Chongdan",
+    "nameIt": "Chongdan",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Chongdan.geojson",
+      "sha256": "dd36429eee2a391dd0285dc09509565a99e91de66fe05eac3a9fe6719ab1ac77",
+      "size": 97860,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "chongdan",
+    "name": "Chongdan",
+    "nameIt": "Chongdan",
+    "region": "North Korea",
+    "regionIt": "Corea del Nord",
+    "country": "KP",
+    "center": [
+      125.93684,
+      37.97262
+    ],
+    "zoom": 12,
+    "population": 70344,
+    "grid": "cities/chongdan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 166
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/chongdan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "chongdan",
+        "name": "Chongdan",
+        "nameIt": "Chongdan",
+        "region": "North Korea",
+        "regionIt": "Corea del Nord",
+        "country": "KP",
+        "center": [
+          125.93684,
+          37.97262
+        ],
+        "zoom": 12,
+        "population": 70344,
+        "cells": 84,
+        "layer": "cities/chongdan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 166
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            125.93684,
+            37.97262
+          ]
+        },
+        "properties": {
+          "id": "chongdan",
+          "name": "Chongdan",
+          "country": "KP",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 70344
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gunsan-si",
+  "createdAt": "2026-10-08T15:36:44.930Z",
+  "updatedAt": "2026-10-08T15:36:44.930Z",
+  "meta": {
+    "name": "Gunsan-si",
+    "nameIt": "Gunsan-si",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gunsan-si.geojson",
+      "sha256": "ace1d42887f0710354c8cf6ac90f98aac9f8acada03b0172964a9d3170b4b431",
+      "size": 1345268,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gunsan-si",
+    "name": "Gunsan-si",
+    "nameIt": "Gunsan-si",
+    "region": "South Korea",
+    "regionIt": "Corea del Sud",
+    "country": "KR",
+    "center": [
+      126.70365,
+      35.96718
+    ],
+    "zoom": 9.6,
+    "population": 207543,
+    "grid": "cities/gunsan-si/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 171
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gunsan-si/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gunsan-si",
+        "name": "Gunsan-si",
+        "nameIt": "Gunsan-si",
+        "region": "South Korea",
+        "regionIt": "Corea del Sud",
+        "country": "KR",
+        "center": [
+          126.70365,
+          35.96718
+        ],
+        "zoom": 9.6,
+        "population": 207543,
+        "cells": 1164,
+        "layer": "cities/gunsan-si/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 171
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            126.70365,
+            35.96718
+          ]
+        },
+        "properties": {
+          "id": "gunsan-si",
+          "name": "Gunsan-si",
+          "country": "KR",
+          "isStudy": true,
+          "proximityMinutes": 11.2,
+          "population": 207543
+        }
+      },
+      "summary": null
+    }
+  }
+}

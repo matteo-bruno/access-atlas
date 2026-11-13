@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ankara",
+  "createdAt": "2026-10-08T15:07:53.252Z",
+  "updatedAt": "2026-10-08T15:07:53.252Z",
+  "meta": {
+    "name": "Ankara",
+    "nameIt": "Ankara",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ankara.geojson",
+      "sha256": "0087fd6780aaf283157839b51ed56c53c7debadba6b7e69fec52fa8f4217ed3b",
+      "size": 3535593,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ankara",
+    "name": "Ankara",
+    "nameIt": "Ankara",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      32.85084,
+      39.95332
+    ],
+    "zoom": 9.3,
+    "population": 3558648,
+    "grid": "cities/ankara/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 211
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ankara/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ankara",
+        "name": "Ankara",
+        "nameIt": "Ankara",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          32.85084,
+          39.95332
+        ],
+        "zoom": 9.3,
+        "population": 3558648,
+        "cells": 3087,
+        "layer": "cities/ankara/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 211
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            32.85084,
+            39.95332
+          ]
+        },
+        "properties": {
+          "id": "ankara",
+          "name": "Ankara",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 14.2,
+          "population": 3558648
+        }
+      },
+      "summary": null
+    }
+  }
+}

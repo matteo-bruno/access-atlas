@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "yarkand",
+  "createdAt": "2026-10-08T16:23:35.160Z",
+  "updatedAt": "2026-10-08T16:23:35.160Z",
+  "meta": {
+    "name": "Yarkand",
+    "nameIt": "Yarkand",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Yarkand.geojson",
+      "sha256": "d66f87c265548cea7484dff87438bc4d60f2193dfa0da5f6fc03825e28477f2f",
+      "size": 355763,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "yarkand",
+    "name": "Yarkand",
+    "nameIt": "Yarkand",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      77.24589,
+      38.41249
+    ],
+    "zoom": 11,
+    "population": 439971,
+    "grid": "cities/yarkand/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 218
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/yarkand/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "yarkand",
+        "name": "Yarkand",
+        "nameIt": "Yarkand",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          77.24589,
+          38.41249
+        ],
+        "zoom": 11,
+        "population": 439971,
+        "cells": 308,
+        "layer": "cities/yarkand/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 218
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.24589,
+            38.41249
+          ]
+        },
+        "properties": {
+          "id": "yarkand",
+          "name": "Yarkand",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 26.6,
+          "population": 439971
+        }
+      },
+      "summary": null
+    }
+  }
+}

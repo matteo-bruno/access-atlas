@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cu-chi",
+  "createdAt": "2026-10-08T15:27:17.179Z",
+  "updatedAt": "2026-10-08T15:27:17.179Z",
+  "meta": {
+    "name": "Củ Chi",
+    "nameIt": "Củ Chi",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Củ Chi.geojson",
+      "sha256": "1690eb59f555b621ff76f542d08f6a88b58e5523439d36d7461632b2ee4bbfb6",
+      "size": 440362,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cu-chi",
+    "name": "Củ Chi",
+    "nameIt": "Củ Chi",
+    "region": "Vietnam",
+    "regionIt": "Vietnam",
+    "country": "VN",
+    "center": [
+      106.5151,
+      10.96002
+    ],
+    "zoom": 10.5,
+    "population": 160501,
+    "grid": "cities/cu-chi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cu-chi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cu-chi",
+        "name": "Củ Chi",
+        "nameIt": "Củ Chi",
+        "region": "Vietnam",
+        "regionIt": "Vietnam",
+        "country": "VN",
+        "center": [
+          106.5151,
+          10.96002
+        ],
+        "zoom": 10.5,
+        "population": 160501,
+        "cells": 376,
+        "layer": "cities/cu-chi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            106.5151,
+            10.96002
+          ]
+        },
+        "properties": {
+          "id": "cu-chi",
+          "name": "Củ Chi",
+          "country": "VN",
+          "isStudy": true,
+          "proximityMinutes": 30.8,
+          "population": 160501
+        }
+      },
+      "summary": null
+    }
+  }
+}

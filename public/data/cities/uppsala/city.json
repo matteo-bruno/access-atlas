@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "uppsala",
+  "createdAt": "2026-10-08T16:20:01.321Z",
+  "updatedAt": "2026-10-08T16:20:01.321Z",
+  "meta": {
+    "name": "Uppsala",
+    "nameIt": "Uppsala",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Uppsala.geojson",
+      "sha256": "e07c4aaaebdee6271a8b2abf094140524ab8a928eb87c8c6863a1964609529cb",
+      "size": 537843,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "uppsala",
+    "name": "Uppsala",
+    "nameIt": "Uppsala",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE",
+    "center": [
+      17.63848,
+      59.85749
+    ],
+    "zoom": 10.7,
+    "population": 148076,
+    "grid": "cities/uppsala/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 174
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/uppsala/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "uppsala",
+        "name": "Uppsala",
+        "nameIt": "Uppsala",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          17.63848,
+          59.85749
+        ],
+        "zoom": 10.7,
+        "population": 148076,
+        "cells": 471,
+        "layer": "cities/uppsala/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 174
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            17.63848,
+            59.85749
+          ]
+        },
+        "properties": {
+          "id": "uppsala",
+          "name": "Uppsala",
+          "country": "SE",
+          "isStudy": true,
+          "proximityMinutes": 9.9,
+          "population": 148076
+        }
+      },
+      "summary": null
+    }
+  }
+}

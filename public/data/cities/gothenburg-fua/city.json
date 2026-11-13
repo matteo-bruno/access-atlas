@@ -1,0 +1,90 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gothenburg-fua",
+  "createdAt": "2026-10-19T16:56:15.704Z",
+  "updatedAt": "2026-10-19T16:56:15.704Z",
+  "meta": {
+    "name": "Gothenburg",
+    "nameIt": "Gothenburg",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "gothenburg-fua",
+    "name": "Gothenburg",
+    "nameIt": "Gothenburg",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE",
+    "extent": "fua",
+    "core": "gothenburg",
+    "center": [
+      12.00188,
+      57.71209
+    ],
+    "zoom": 8.5,
+    "population": 982177,
+    "grid": "cities/gothenburg-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 178
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gothenburg-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gothenburg-fua",
+        "name": "Gothenburg",
+        "nameIt": "Gothenburg",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "extent": "fua",
+        "core": "gothenburg",
+        "center": [
+          12.00188,
+          57.71209
+        ],
+        "zoom": 8.5,
+        "population": 982177,
+        "cells": 32607,
+        "layer": "cities/gothenburg-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 178
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.00188,
+            57.71209
+          ]
+        },
+        "properties": {
+          "id": "gothenburg-fua",
+          "name": "Gothenburg",
+          "country": "SE",
+          "isStudy": true,
+          "proximityMinutes": 15,
+          "population": 982177
+        }
+      },
+      "summary": null
+    }
+  }
+}

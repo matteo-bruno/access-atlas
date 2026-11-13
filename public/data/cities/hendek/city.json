@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hendek",
+  "createdAt": "2026-10-08T15:38:22.216Z",
+  "updatedAt": "2026-10-08T15:38:22.216Z",
+  "meta": {
+    "name": "Hendek",
+    "nameIt": "Hendek",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hendek.geojson",
+      "sha256": "36f23e2283d611522e0bffadf340f38125fdcacc297da15c2061cf2b76e16c61",
+      "size": 89304,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hendek",
+    "name": "Hendek",
+    "nameIt": "Hendek",
+    "region": "Turkey",
+    "regionIt": "Turchia",
+    "country": "TR",
+    "center": [
+      30.74107,
+      40.7939
+    ],
+    "zoom": 12,
+    "population": 45096,
+    "grid": "cities/hendek/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 212
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hendek/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hendek",
+        "name": "Hendek",
+        "nameIt": "Hendek",
+        "region": "Turkey",
+        "regionIt": "Turchia",
+        "country": "TR",
+        "center": [
+          30.74107,
+          40.7939
+        ],
+        "zoom": 12,
+        "population": 45096,
+        "cells": 77,
+        "layer": "cities/hendek/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 212
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.74107,
+            40.7939
+          ]
+        },
+        "properties": {
+          "id": "hendek",
+          "name": "Hendek",
+          "country": "TR",
+          "isStudy": true,
+          "proximityMinutes": 12.6,
+          "population": 45096
+        }
+      },
+      "summary": null
+    }
+  }
+}

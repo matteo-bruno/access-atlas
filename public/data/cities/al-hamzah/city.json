@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "al-hamzah",
+  "createdAt": "2026-10-08T15:04:11.905Z",
+  "updatedAt": "2026-10-08T15:04:11.905Z",
+  "meta": {
+    "name": "Al Hamzah",
+    "nameIt": "Al Hamzah",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Al Hamzah.geojson",
+      "sha256": "031e9bc7b44f62afb8188a2ef8457d489323eaeb6bc33d1577699628be6372b1",
+      "size": 118489,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "al-hamzah",
+    "name": "Al Hamzah",
+    "nameIt": "Al Hamzah",
+    "region": "Iraq",
+    "regionIt": "Iraq",
+    "country": "IQ",
+    "center": [
+      44.97654,
+      31.72264
+    ],
+    "zoom": 12,
+    "population": 82468,
+    "grid": "cities/al-hamzah/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 203
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/al-hamzah/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "al-hamzah",
+        "name": "Al Hamzah",
+        "nameIt": "Al Hamzah",
+        "region": "Iraq",
+        "regionIt": "Iraq",
+        "country": "IQ",
+        "center": [
+          44.97654,
+          31.72264
+        ],
+        "zoom": 12,
+        "population": 82468,
+        "cells": 102,
+        "layer": "cities/al-hamzah/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 203
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            44.97654,
+            31.72264
+          ]
+        },
+        "properties": {
+          "id": "al-hamzah",
+          "name": "Al Hamzah",
+          "country": "IQ",
+          "isStudy": true,
+          "proximityMinutes": 15.7,
+          "population": 82468
+        }
+      },
+      "summary": null
+    }
+  }
+}

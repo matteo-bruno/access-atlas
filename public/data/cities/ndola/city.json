@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ndola",
+  "createdAt": "2026-10-08T16:00:50.150Z",
+  "updatedAt": "2026-10-08T16:00:50.150Z",
+  "meta": {
+    "name": "Ndola",
+    "nameIt": "Ndola",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Ndola.geojson",
+      "sha256": "82e8be5edbc037925847c516cb2377405f7416b7d7cfc7e4bd2db0978b99925e",
+      "size": 1013540,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ndola",
+    "name": "Ndola",
+    "nameIt": "Ndola",
+    "region": "Zambia",
+    "regionIt": "Zambia",
+    "country": "ZM",
+    "center": [
+      28.63076,
+      -12.97551
+    ],
+    "zoom": 10,
+    "population": 463005,
+    "grid": "cities/ndola/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 221
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ndola/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ndola",
+        "name": "Ndola",
+        "nameIt": "Ndola",
+        "region": "Zambia",
+        "regionIt": "Zambia",
+        "country": "ZM",
+        "center": [
+          28.63076,
+          -12.97551
+        ],
+        "zoom": 10,
+        "population": 463005,
+        "cells": 861,
+        "layer": "cities/ndola/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 221
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            28.63076,
+            -12.97551
+          ]
+        },
+        "properties": {
+          "id": "ndola",
+          "name": "Ndola",
+          "country": "ZM",
+          "isStudy": true,
+          "proximityMinutes": 44.5,
+          "population": 463005
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "troyes",
+  "createdAt": "2026-10-08T16:18:53.352Z",
+  "updatedAt": "2026-10-08T16:18:53.352Z",
+  "meta": {
+    "name": "Troyes",
+    "nameIt": "Troyes",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Troyes.geojson",
+      "sha256": "3b182bff72eec0a0532e5c5d882e5b0d5d2e2a6ecb78b5bccc28d1ffc3c82214",
+      "size": 383264,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "troyes",
+    "name": "Troyes",
+    "nameIt": "Troyes",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      4.06766,
+      48.29313
+    ],
+    "zoom": 11.2,
+    "population": 108866,
+    "grid": "cities/troyes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 192
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/troyes/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "troyes",
+        "name": "Troyes",
+        "nameIt": "Troyes",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          4.06766,
+          48.29313
+        ],
+        "zoom": 11.2,
+        "population": 108866,
+        "cells": 338,
+        "layer": "cities/troyes/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 192
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            4.06766,
+            48.29313
+          ]
+        },
+        "properties": {
+          "id": "troyes",
+          "name": "Troyes",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 8.7,
+          "population": 108866
+        }
+      },
+      "summary": null
+    }
+  }
+}

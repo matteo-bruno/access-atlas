@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "manbij",
+  "createdAt": "2026-10-08T15:54:27.099Z",
+  "updatedAt": "2026-10-08T15:54:27.099Z",
+  "meta": {
+    "name": "Manbij",
+    "nameIt": "Manbij",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Manbij.geojson",
+      "sha256": "49d1ef240c9f1cf510e308bc96f74dc88e3147e9a37503d4861cc3c1f0c44442",
+      "size": 239550,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "manbij",
+    "name": "Manbij",
+    "nameIt": "Manbij",
+    "region": "Syria",
+    "regionIt": "Siria",
+    "country": "SY",
+    "center": [
+      37.95387,
+      36.52433
+    ],
+    "zoom": 11,
+    "population": 219795,
+    "grid": "cities/manbij/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/manbij/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "manbij",
+        "name": "Manbij",
+        "nameIt": "Manbij",
+        "region": "Syria",
+        "regionIt": "Siria",
+        "country": "SY",
+        "center": [
+          37.95387,
+          36.52433
+        ],
+        "zoom": 11,
+        "population": 219795,
+        "cells": 207,
+        "layer": "cities/manbij/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            37.95387,
+            36.52433
+          ]
+        },
+        "properties": {
+          "id": "manbij",
+          "name": "Manbij",
+          "country": "SY",
+          "isStudy": true,
+          "proximityMinutes": 15.2,
+          "population": 219795
+        }
+      },
+      "summary": null
+    }
+  }
+}

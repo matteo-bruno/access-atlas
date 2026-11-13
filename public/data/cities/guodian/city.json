@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "guodian",
+  "createdAt": "2026-10-08T15:36:47.159Z",
+  "updatedAt": "2026-10-08T15:36:47.159Z",
+  "meta": {
+    "name": "Guodian",
+    "nameIt": "Guodian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Guodian.geojson",
+      "sha256": "59b355ab0655b6378ac91a369040f0edc15d0b61d9edc4dd1c23d8ff06b1dd57",
+      "size": 361226,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "guodian",
+    "name": "Guodian",
+    "nameIt": "Guodian",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      113.67645,
+      34.53511
+    ],
+    "zoom": 10.9,
+    "population": 63679,
+    "grid": "cities/guodian/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 181
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/guodian/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "guodian",
+        "name": "Guodian",
+        "nameIt": "Guodian",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          113.67645,
+          34.53511
+        ],
+        "zoom": 10.9,
+        "population": 63679,
+        "cells": 310,
+        "layer": "cities/guodian/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 181
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            113.67645,
+            34.53511
+          ]
+        },
+        "properties": {
+          "id": "guodian",
+          "name": "Guodian",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 63679
+        }
+      },
+      "summary": null
+    }
+  }
+}

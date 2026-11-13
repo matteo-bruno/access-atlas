@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vilnius",
+  "createdAt": "2026-10-08T16:20:49.282Z",
+  "updatedAt": "2026-10-08T16:20:49.282Z",
+  "meta": {
+    "name": "Vilnius",
+    "nameIt": "Vilnius",
+    "region": "Lithuania",
+    "regionIt": "Lituania",
+    "country": "LT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Vilnius.geojson",
+      "sha256": "bcd5d58bdcd0100469106ebc58eaf8a74257f488248d531618def6a29606289c",
+      "size": 1123359,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "vilnius",
+    "name": "Vilnius",
+    "nameIt": "Vilnius",
+    "region": "Lithuania",
+    "regionIt": "Lituania",
+    "country": "LT",
+    "center": [
+      25.2529,
+      54.70315
+    ],
+    "zoom": 10.2,
+    "population": 394629,
+    "grid": "cities/vilnius/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/vilnius/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "vilnius",
+        "name": "Vilnius",
+        "nameIt": "Vilnius",
+        "region": "Lithuania",
+        "regionIt": "Lituania",
+        "country": "LT",
+        "center": [
+          25.2529,
+          54.70315
+        ],
+        "zoom": 10.2,
+        "population": 394629,
+        "cells": 984,
+        "layer": "cities/vilnius/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            25.2529,
+            54.70315
+          ]
+        },
+        "properties": {
+          "id": "vilnius",
+          "name": "Vilnius",
+          "country": "LT",
+          "isStudy": true,
+          "proximityMinutes": 8.2,
+          "population": 394629
+        }
+      },
+      "summary": null
+    }
+  }
+}

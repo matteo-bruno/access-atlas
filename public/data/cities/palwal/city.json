@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "palwal",
+  "createdAt": "2026-10-08T16:03:54.131Z",
+  "updatedAt": "2026-10-08T16:03:54.131Z",
+  "meta": {
+    "name": "Palwal",
+    "nameIt": "Palwal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Palwal.geojson",
+      "sha256": "cbd0e839f1776691d63d847e5c2c12675f715ab647da87c50628e4d2926f62ff",
+      "size": 275937,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "palwal",
+    "name": "Palwal",
+    "nameIt": "Palwal",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      77.33201,
+      28.13993
+    ],
+    "zoom": 11.4,
+    "population": 142637,
+    "grid": "cities/palwal/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/palwal/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "palwal",
+        "name": "Palwal",
+        "nameIt": "Palwal",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          77.33201,
+          28.13993
+        ],
+        "zoom": 11.4,
+        "population": 142637,
+        "cells": 238,
+        "layer": "cities/palwal/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.33201,
+            28.13993
+          ]
+        },
+        "properties": {
+          "id": "palwal",
+          "name": "Palwal",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 16.3,
+          "population": 142637
+        }
+      },
+      "summary": null
+    }
+  }
+}

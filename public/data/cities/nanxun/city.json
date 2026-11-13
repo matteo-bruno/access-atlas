@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nanxun",
+  "createdAt": "2026-10-08T16:00:13.484Z",
+  "updatedAt": "2026-10-08T16:00:13.484Z",
+  "meta": {
+    "name": "Nanxun",
+    "nameIt": "Nanxun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Nanxun.geojson",
+      "sha256": "bfda4fd3ae45e67d2d7be015f2382593613459f280dbf77d9a1930020d27f317",
+      "size": 682904,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "nanxun",
+    "name": "Nanxun",
+    "nameIt": "Nanxun",
+    "region": "People's Republic of China",
+    "regionIt": "Cina",
+    "country": "CN",
+    "center": [
+      120.41163,
+      30.87474
+    ],
+    "zoom": 10.6,
+    "population": 198629,
+    "grid": "cities/nanxun/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/nanxun/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "nanxun",
+        "name": "Nanxun",
+        "nameIt": "Nanxun",
+        "region": "People's Republic of China",
+        "regionIt": "Cina",
+        "country": "CN",
+        "center": [
+          120.41163,
+          30.87474
+        ],
+        "zoom": 10.6,
+        "population": 198629,
+        "cells": 584,
+        "layer": "cities/nanxun/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            120.41163,
+            30.87474
+          ]
+        },
+        "properties": {
+          "id": "nanxun",
+          "name": "Nanxun",
+          "country": "CN",
+          "isStudy": true,
+          "proximityMinutes": 37.3,
+          "population": 198629
+        }
+      },
+      "summary": null
+    }
+  }
+}

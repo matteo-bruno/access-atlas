@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hildesheim",
+  "createdAt": "2026-10-08T15:38:39.090Z",
+  "updatedAt": "2026-10-08T15:38:39.090Z",
+  "meta": {
+    "name": "Hildesheim",
+    "nameIt": "Hildesheim",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hildesheim.geojson",
+      "sha256": "4d78de7c2c08453e6763f41061816a2804f2fc259976f8ea2a7cacc7c87f6f06",
+      "size": 331089,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hildesheim",
+    "name": "Hildesheim",
+    "nameIt": "Hildesheim",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      9.94772,
+      52.15457
+    ],
+    "zoom": 11.4,
+    "population": 72673,
+    "grid": "cities/hildesheim/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/hildesheim/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hildesheim",
+        "name": "Hildesheim",
+        "nameIt": "Hildesheim",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.94772,
+          52.15457
+        ],
+        "zoom": 11.4,
+        "population": 72673,
+        "cells": 292,
+        "layer": "cities/hildesheim/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.94772,
+            52.15457
+          ]
+        },
+        "properties": {
+          "id": "hildesheim",
+          "name": "Hildesheim",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 10.6,
+          "population": 72673
+        }
+      },
+      "summary": null
+    }
+  }
+}

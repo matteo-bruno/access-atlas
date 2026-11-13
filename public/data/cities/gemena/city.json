@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gemena",
+  "createdAt": "2026-10-08T15:34:54.474Z",
+  "updatedAt": "2026-10-08T15:34:54.474Z",
+  "meta": {
+    "name": "Gemena",
+    "nameIt": "Gemena",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gemena.geojson",
+      "sha256": "fa4dfb66a0788102065663b8d1e3ae196383d6876e247dd291a7db159e8c1dcd",
+      "size": 398790,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gemena",
+    "name": "Gemena",
+    "nameIt": "Gemena",
+    "region": "Democratic Republic of the Congo",
+    "regionIt": "Repubblica Democratica del Congo",
+    "country": "CD",
+    "center": [
+      19.77867,
+      3.24696
+    ],
+    "zoom": 11.1,
+    "population": 273745,
+    "grid": "cities/gemena/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 204
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gemena/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gemena",
+        "name": "Gemena",
+        "nameIt": "Gemena",
+        "region": "Democratic Republic of the Congo",
+        "regionIt": "Repubblica Democratica del Congo",
+        "country": "CD",
+        "center": [
+          19.77867,
+          3.24696
+        ],
+        "zoom": 11.1,
+        "population": 273745,
+        "cells": 343,
+        "layer": "cities/gemena/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 204
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.77867,
+            3.24696
+          ]
+        },
+        "properties": {
+          "id": "gemena",
+          "name": "Gemena",
+          "country": "CD",
+          "isStudy": true,
+          "proximityMinutes": 99999,
+          "population": 273745
+        }
+      },
+      "summary": null
+    }
+  }
+}

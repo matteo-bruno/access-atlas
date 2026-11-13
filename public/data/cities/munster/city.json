@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "munster",
+  "createdAt": "2026-10-08T15:59:27.705Z",
+  "updatedAt": "2026-10-08T15:59:27.705Z",
+  "meta": {
+    "name": "Münster",
+    "nameIt": "Münster",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Münster.geojson",
+      "sha256": "17c4b92341ad35dd2734a2b2670680ca76d8ffb711ba316e46ddddffad866c76",
+      "size": 944037,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "munster",
+    "name": "Münster",
+    "nameIt": "Münster",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      7.6266,
+      51.95114
+    ],
+    "zoom": 10.4,
+    "population": 229270,
+    "grid": "cities/munster/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 188
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/munster/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "munster",
+        "name": "Münster",
+        "nameIt": "Münster",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          7.6266,
+          51.95114
+        ],
+        "zoom": 10.4,
+        "population": 229270,
+        "cells": 832,
+        "layer": "cities/munster/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 188
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.6266,
+            51.95114
+          ]
+        },
+        "properties": {
+          "id": "munster",
+          "name": "Münster",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 9.4,
+          "population": 229270
+        }
+      },
+      "summary": null
+    }
+  }
+}

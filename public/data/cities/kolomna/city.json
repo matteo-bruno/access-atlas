@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kolomna",
+  "createdAt": "2026-10-08T15:47:46.706Z",
+  "updatedAt": "2026-10-08T15:47:46.706Z",
+  "meta": {
+    "name": "Kolomna",
+    "nameIt": "Kolomna",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kolomna.geojson",
+      "sha256": "0193135dea924644a8c76345ec9542b5117c015c3e3504bf583c1fa3c7f74308",
+      "size": 304517,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kolomna",
+    "name": "Kolomna",
+    "nameIt": "Kolomna",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      38.77437,
+      55.08505
+    ],
+    "zoom": 11.3,
+    "population": 79616,
+    "grid": "cities/kolomna/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kolomna/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kolomna",
+        "name": "Kolomna",
+        "nameIt": "Kolomna",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          38.77437,
+          55.08505
+        ],
+        "zoom": 11.3,
+        "population": 79616,
+        "cells": 267,
+        "layer": "cities/kolomna/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            38.77437,
+            55.08505
+          ]
+        },
+        "properties": {
+          "id": "kolomna",
+          "name": "Kolomna",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 10.3,
+          "population": 79616
+        }
+      },
+      "summary": null
+    }
+  }
+}

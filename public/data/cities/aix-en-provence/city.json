@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "aix-en-provence",
+  "createdAt": "2026-10-08T15:03:20.253Z",
+  "updatedAt": "2026-10-08T15:03:20.253Z",
+  "meta": {
+    "name": "Aix-en-Provence",
+    "nameIt": "Aix-en-Provence",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Aix-en-Provence.geojson",
+      "sha256": "84da0b84205c27047f728f9ef1da9e22357756ef816e8a02d25b8b87fdf9b8d8",
+      "size": 232426,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "aix-en-provence",
+    "name": "Aix-en-Provence",
+    "nameIt": "Aix-en-Provence",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      5.44191,
+      43.52733
+    ],
+    "zoom": 11.6,
+    "population": 106412,
+    "grid": "cities/aix-en-provence/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/aix-en-provence/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "aix-en-provence",
+        "name": "Aix-en-Provence",
+        "nameIt": "Aix-en-Provence",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          5.44191,
+          43.52733
+        ],
+        "zoom": 11.6,
+        "population": 106412,
+        "cells": 205,
+        "layer": "cities/aix-en-provence/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.44191,
+            43.52733
+          ]
+        },
+        "properties": {
+          "id": "aix-en-provence",
+          "name": "Aix-en-Provence",
+          "country": "FR",
+          "isStudy": true,
+          "proximityMinutes": 6.1,
+          "population": 106412
+        }
+      },
+      "summary": null
+    }
+  }
+}

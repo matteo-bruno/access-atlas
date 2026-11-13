@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "kurgan",
+  "createdAt": "2026-10-08T15:48:54.750Z",
+  "updatedAt": "2026-10-08T15:48:54.750Z",
+  "meta": {
+    "name": "Kurgan",
+    "nameIt": "Kurgan",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Kurgan.geojson",
+      "sha256": "015b3206d553f6eef4a6db1248e04774c349974773165babcc1d4b113c2b2f63",
+      "size": 486834,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "kurgan",
+    "name": "Kurgan",
+    "nameIt": "Kurgan",
+    "region": "Russia",
+    "regionIt": "Russia",
+    "country": "RU",
+    "center": [
+      65.33657,
+      55.45308
+    ],
+    "zoom": 10.6,
+    "population": 173782,
+    "grid": "cities/kurgan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 216
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/kurgan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "kurgan",
+        "name": "Kurgan",
+        "nameIt": "Kurgan",
+        "region": "Russia",
+        "regionIt": "Russia",
+        "country": "RU",
+        "center": [
+          65.33657,
+          55.45308
+        ],
+        "zoom": 10.6,
+        "population": 173782,
+        "cells": 426,
+        "layer": "cities/kurgan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 216
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            65.33657,
+            55.45308
+          ]
+        },
+        "properties": {
+          "id": "kurgan",
+          "name": "Kurgan",
+          "country": "RU",
+          "isStudy": true,
+          "proximityMinutes": 22.2,
+          "population": 173782
+        }
+      },
+      "summary": null
+    }
+  }
+}

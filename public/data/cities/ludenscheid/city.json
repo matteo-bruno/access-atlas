@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "ludenscheid",
+  "createdAt": "2026-10-08T15:53:04.398Z",
+  "updatedAt": "2026-10-08T15:53:04.398Z",
+  "meta": {
+    "name": "Lüdenscheid",
+    "nameIt": "Lüdenscheid",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Lüdenscheid.geojson",
+      "sha256": "08947b2d71d7b0f44d16a79510818b6231bd6b85a71cf42441c273545b35fe6e",
+      "size": 234813,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "ludenscheid",
+    "name": "Lüdenscheid",
+    "nameIt": "Lüdenscheid",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      7.62993,
+      51.22025
+    ],
+    "zoom": 11.6,
+    "population": 51226,
+    "grid": "cities/ludenscheid/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/ludenscheid/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "ludenscheid",
+        "name": "Lüdenscheid",
+        "nameIt": "Lüdenscheid",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          7.62993,
+          51.22025
+        ],
+        "zoom": 11.6,
+        "population": 51226,
+        "cells": 207,
+        "layer": "cities/ludenscheid/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.62993,
+            51.22025
+          ]
+        },
+        "properties": {
+          "id": "ludenscheid",
+          "name": "Lüdenscheid",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 9.6,
+          "population": 51226
+        }
+      },
+      "summary": null
+    }
+  }
+}

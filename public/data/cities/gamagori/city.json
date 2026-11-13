@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "gamagori",
+  "createdAt": "2026-10-08T15:34:18.665Z",
+  "updatedAt": "2026-10-08T15:34:18.665Z",
+  "meta": {
+    "name": "Gamagori",
+    "nameIt": "Gamagori",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Gamagori.geojson",
+      "sha256": "377597353b2b33e2ae710507179918af148017d18425a154f6531783447fbf4d",
+      "size": 401359,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "gamagori",
+    "name": "Gamagori",
+    "nameIt": "Gamagori",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      137.2169,
+      34.81973
+    ],
+    "zoom": 10.9,
+    "population": 65777,
+    "grid": "cities/gamagori/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 189
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/gamagori/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "gamagori",
+        "name": "Gamagori",
+        "nameIt": "Gamagori",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          137.2169,
+          34.81973
+        ],
+        "zoom": 10.9,
+        "population": 65777,
+        "cells": 346,
+        "layer": "cities/gamagori/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 189
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            137.2169,
+            34.81973
+          ]
+        },
+        "properties": {
+          "id": "gamagori",
+          "name": "Gamagori",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 21.5,
+          "population": 65777
+        }
+      },
+      "summary": null
+    }
+  }
+}

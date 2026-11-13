@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "davenport",
+  "createdAt": "2026-10-08T15:28:39.127Z",
+  "updatedAt": "2026-10-08T15:28:39.127Z",
+  "meta": {
+    "name": "Davenport",
+    "nameIt": "Davenport",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Davenport.geojson",
+      "sha256": "f366c132d43848e10834e693c4337e45e2cfb69a83c4515b5b867bbc69107703",
+      "size": 673769,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "davenport",
+    "name": "Davenport",
+    "nameIt": "Davenport",
+    "region": "United States of America",
+    "regionIt": "Stati Uniti d'America",
+    "country": "US",
+    "center": [
+      -90.56533,
+      41.51761
+    ],
+    "zoom": 10.5,
+    "population": 80070,
+    "grid": "cities/davenport/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/davenport/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "davenport",
+        "name": "Davenport",
+        "nameIt": "Davenport",
+        "region": "United States of America",
+        "regionIt": "Stati Uniti d'America",
+        "country": "US",
+        "center": [
+          -90.56533,
+          41.51761
+        ],
+        "zoom": 10.5,
+        "population": 80070,
+        "cells": 582,
+        "layer": "cities/davenport/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -90.56533,
+            41.51761
+          ]
+        },
+        "properties": {
+          "id": "davenport",
+          "name": "Davenport",
+          "country": "US",
+          "isStudy": true,
+          "proximityMinutes": 16,
+          "population": 80070
+        }
+      },
+      "summary": null
+    }
+  }
+}

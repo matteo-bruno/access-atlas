@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "cremona",
+  "createdAt": "2026-10-08T15:26:50.566Z",
+  "updatedAt": "2026-10-08T15:26:50.566Z",
+  "meta": {
+    "name": "Cremona",
+    "nameIt": "Cremona",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Cremona.geojson",
+      "sha256": "dcebc837ac05600053df91571287416f14accc27f1c649cf2ec358cb794ec929",
+      "size": 140750,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "cremona",
+    "name": "Cremona",
+    "nameIt": "Cremona",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      10.02392,
+      45.13826
+    ],
+    "zoom": 11.8,
+    "population": 53253,
+    "grid": "cities/cremona/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/cremona/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "cremona",
+        "name": "Cremona",
+        "nameIt": "Cremona",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          10.02392,
+          45.13826
+        ],
+        "zoom": 11.8,
+        "population": 53253,
+        "cells": 123,
+        "layer": "cities/cremona/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.02392,
+            45.13826
+          ]
+        },
+        "properties": {
+          "id": "cremona",
+          "name": "Cremona",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 10.4,
+          "population": 53253
+        }
+      },
+      "summary": null
+    }
+  }
+}

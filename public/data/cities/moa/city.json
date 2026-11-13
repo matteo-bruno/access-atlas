@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "moa",
+  "createdAt": "2026-10-08T15:57:35.099Z",
+  "updatedAt": "2026-10-08T15:57:35.099Z",
+  "meta": {
+    "name": "Moa",
+    "nameIt": "Moa",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Moa.geojson",
+      "sha256": "71d8e49d1bb3432c209b105f6e5df4db12f5e77ea8dbdf99c3f8399926b5a7d5",
+      "size": 176519,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "moa",
+    "name": "Moa",
+    "nameIt": "Moa",
+    "region": "Cuba",
+    "regionIt": "Cuba",
+    "country": "CU",
+    "center": [
+      -74.94356,
+      20.65574
+    ],
+    "zoom": 12,
+    "population": 47251,
+    "grid": "cities/moa/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 177
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/moa/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "moa",
+        "name": "Moa",
+        "nameIt": "Moa",
+        "region": "Cuba",
+        "regionIt": "Cuba",
+        "country": "CU",
+        "center": [
+          -74.94356,
+          20.65574
+        ],
+        "zoom": 12,
+        "population": 47251,
+        "cells": 152,
+        "layer": "cities/moa/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 177
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.94356,
+            20.65574
+          ]
+        },
+        "properties": {
+          "id": "moa",
+          "name": "Moa",
+          "country": "CU",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 47251
+        }
+      },
+      "summary": null
+    }
+  }
+}

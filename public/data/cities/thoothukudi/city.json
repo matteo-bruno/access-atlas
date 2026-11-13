@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "thoothukudi",
+  "createdAt": "2026-10-08T16:17:38.845Z",
+  "updatedAt": "2026-10-08T16:17:38.845Z",
+  "meta": {
+    "name": "Thoothukudi",
+    "nameIt": "Thoothukudi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Thoothukudi.geojson",
+      "sha256": "c2b02bacbc68e6130b367188060235127f956400153ed7874b4b6864c0484001",
+      "size": 501644,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "thoothukudi",
+    "name": "Thoothukudi",
+    "nameIt": "Thoothukudi",
+    "region": "India",
+    "regionIt": "India",
+    "country": "IN",
+    "center": [
+      78.13391,
+      8.80671
+    ],
+    "zoom": 10.8,
+    "population": 259058,
+    "grid": "cities/thoothukudi/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 206
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/thoothukudi/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "thoothukudi",
+        "name": "Thoothukudi",
+        "nameIt": "Thoothukudi",
+        "region": "India",
+        "regionIt": "India",
+        "country": "IN",
+        "center": [
+          78.13391,
+          8.80671
+        ],
+        "zoom": 10.8,
+        "population": 259058,
+        "cells": 437,
+        "layer": "cities/thoothukudi/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            78.13391,
+            8.80671
+          ]
+        },
+        "properties": {
+          "id": "thoothukudi",
+          "name": "Thoothukudi",
+          "country": "IN",
+          "isStudy": true,
+          "proximityMinutes": 21.7,
+          "population": 259058
+        }
+      },
+      "summary": null
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "roudan",
+  "createdAt": "2026-10-08T16:09:11.994Z",
+  "updatedAt": "2026-10-08T16:09:11.994Z",
+  "meta": {
+    "name": "Roudan",
+    "nameIt": "Roudan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Roudan.geojson",
+      "sha256": "35221c50879774b9e744972438954c093423a5b79c48c4d6c683b6ff3d88e465",
+      "size": 135874,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "roudan",
+    "name": "Roudan",
+    "nameIt": "Roudan",
+    "region": "Iran",
+    "regionIt": "Iran",
+    "country": "IR",
+    "center": [
+      57.18729,
+      27.44529
+    ],
+    "zoom": 11.7,
+    "population": 48595,
+    "grid": "cities/roudan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/roudan/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "roudan",
+        "name": "Roudan",
+        "nameIt": "Roudan",
+        "region": "Iran",
+        "regionIt": "Iran",
+        "country": "IR",
+        "center": [
+          57.18729,
+          27.44529
+        ],
+        "zoom": 11.7,
+        "population": 48595,
+        "cells": 117,
+        "layer": "cities/roudan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            57.18729,
+            27.44529
+          ]
+        },
+        "properties": {
+          "id": "roudan",
+          "name": "Roudan",
+          "country": "IR",
+          "isStudy": true,
+          "proximityMinutes": 40.2,
+          "population": 48595
+        }
+      },
+      "summary": null
+    }
+  }
+}

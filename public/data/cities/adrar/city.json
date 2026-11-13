@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "adrar",
+  "createdAt": "2026-10-08T15:02:30.647Z",
+  "updatedAt": "2026-10-08T15:02:30.647Z",
+  "meta": {
+    "name": "Adrar",
+    "nameIt": "Adrar",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Adrar.geojson",
+      "sha256": "5d3d103152228f1b6bdd485fa31f75b9747675e75c90805d9f3ce8bb6365abd2",
+      "size": 235842,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "adrar",
+    "name": "Adrar",
+    "nameIt": "Adrar",
+    "region": "Algeria",
+    "regionIt": "Algeria",
+    "country": "DZ",
+    "center": [
+      -0.28782,
+      27.87859
+    ],
+    "zoom": 11.4,
+    "population": 87016,
+    "grid": "cities/adrar/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/adrar/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "adrar",
+        "name": "Adrar",
+        "nameIt": "Adrar",
+        "region": "Algeria",
+        "regionIt": "Algeria",
+        "country": "DZ",
+        "center": [
+          -0.28782,
+          27.87859
+        ],
+        "zoom": 11.4,
+        "population": 87016,
+        "cells": 201,
+        "layer": "cities/adrar/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.28782,
+            27.87859
+          ]
+        },
+        "properties": {
+          "id": "adrar",
+          "name": "Adrar",
+          "country": "DZ",
+          "isStudy": true,
+          "proximityMinutes": 16.7,
+          "population": 87016
+        }
+      },
+      "summary": null
+    }
+  }
+}
