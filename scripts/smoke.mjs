@@ -300,20 +300,22 @@ for (const [route, name] of ROUTES) {
   const summary = await page.$$eval('.aa-summary__row dd', (els) =>
     els.map((e) => e.textContent.trim()),
   );
-  // The index is continuous, so the panel states its scale as a ramp rather
-  // than a share per band — ±1 are the bounds of the index's own definition.
+  // The index opens as a ratio, car ÷ transit, on a logarithmic ramp with
+  // 1× (balanced) in the middle and its ends open (≤ / ≥), since a ratio
+  // has no bound of its own.
   const ticks = await page.$$eval('.aa-ramp__tick', (els) => els.map((e) => e.textContent.trim()));
   check(
-    'Car Dependency states the bounded index as a ramp',
-    ticks.length === 5 && /^−1/.test(ticks[0]) && /^\+1/.test(ticks[4]),
+    'Car Dependency states the ratio as a ramp, balanced at 1×',
+    ticks.length >= 5 && /^≤/.test(ticks[0]) && /^≥/.test(ticks.at(-1)) && ticks.includes('1×'),
     ticks.join(' / '),
   );
   check('Car Dependency cell count from the published file', summary[0] === '11,409', summary[0]);
   // The index is signed; losing the sign would invert the reading entirely.
   check(
-    'Car Dependency index keeps its sign',
-    // Cells, area, the index for the average resident, population.
-    /^[+−]/.test(summary[2]),
+    'Car Dependency summary: the median ratio, then the signed normalised mean',
+    // Cells, area, the median resident's ratio, the normalised index for the
+    // average resident (signed: losing the sign would invert it), population.
+    /×$|^∞$/.test(summary[2]) && /^[+−]/.test(summary[3]),
     summary.join(' | '),
   );
   await page.close();
