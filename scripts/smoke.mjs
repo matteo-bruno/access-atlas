@@ -56,7 +56,6 @@ const ROUTES = [
   ['/consulting', 'Consulting'],
   ['/research', 'Research'],
   ['/blog', 'Blog index'],
-  ['/blog/what-the-atlas-measures', 'Blog post'],
   ['/blog/layer-15-minute-city', 'Layer post — 15-minute city'],
   ['/blog/layer-accessibility-pov', 'Layer post — P.O.V.'],
   ['/work-with-us', 'Work with us'],

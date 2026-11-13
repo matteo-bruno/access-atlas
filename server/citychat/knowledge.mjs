@@ -88,7 +88,7 @@ let cached = null;
 function corpus() {
   if (cached) return cached;
   const platforms = PLATFORMS.map((p) => `- ${p.id}: ${p.name}`).join('\n');
-  const layerPosts = POSTS.filter((p) => p.layer || p.slug === 'what-the-atlas-measures').map(postText);
+  const layerPosts = POSTS.filter((p) => p.layer).map(postText);
   const copy = [
     ...flatten(en.platform, 'platform'),
     ...flatten(en.fifteen, 'fifteen'),
