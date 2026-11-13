@@ -1,20 +1,23 @@
 // Blog posts. Long-form copy lives here rather than in the i18n dictionaries:
 // the dictionaries are flat UI strings, and an article is a structured
-// document. Each post carries both locales; `body` is a list of blocks the
-// post page renders — `h2`, `p`, `ul`, `note`, or `links` (a row of outward
-// links: the platform itself, the paper behind it).
+// document. The posts are in English only (`en`); the page marks them as
+// English in every other language (`postCopy` in Blog.jsx).
 //
 // The four `layer-…` posts are what the home page's cards open. Each one
-// introduces a single layer of the Atlas and hands the reader on to the
-// platform and to the paper that defines its method — so a card can say
-// "More info" and mean it, rather than dropping a first-time visitor
-// straight into someone else's viewer.
+// introduces a single layer of the Atlas, with examples, maps and charts,
+// and hands the reader on to the city view and to the paper behind it.
 //
-// Figures quoted in the prose are computed from the published datasets in
-// public/data/ — the compare rows in <platform>/summary.json.gz, written by
-// the importers (scripts/lib/bundle.mjs, describeLayer).
-
-import { BRAND } from './brand.js';
+// No number in a post is typed here. A paragraph names a value as `{key}`
+// and a block `{ figure: id }` names a map or chart; both come from
+// public/blog-figures/figures.json, which `npm run blog`
+// (scripts/build-blog.mjs) computes from the published data and draws the
+// maps for. Re-run it after a data change; `test:data` fails if a post names
+// a key or a figure the file does not have.
+//
+// Blocks: `p` (with **bold** and {key}), `h2` (with `badge`), `ul`, `note`,
+// `pull` (a quote set large), `formula`, `facts` (three figures in a row),
+// `figure` (`title`, `sub`, `caption`, `wide`, `bare`, `badge`), and `links`
+// (onward: `to` for a page of the site, `url` for another site).
 
 // Whether the site points readers at the blog: the nav tab, the footer link
 // and the home page's layer cards. Turning it off hides all three; the
@@ -25,86 +28,82 @@ export const POSTS = [
   {
     slug: 'layer-15-minute-city',
     date: '2026-08-04',
-    readingTime: 4,
+    readingTime: 7,
     accent: '#b94e3b',
     // Which platform card opens this post; see src/data/platforms.js.
     layer: 'fifteen',
-
     en: {
-      title: '15-minute city: the layer that measures proximity',
-      lede: 'How long it takes to walk or cycle to the things a day is made of — nine categories of everyday service, cell by cell, read against the 15-minute reference.',
+      kicker: 'Layer · Proximity',
+      title: 'The 15-minute city:',
+      titleAccent: 'how close is what you need',
+      lede: 'Nine categories of everyday service, cell by cell, on foot and by bicycle, read against the threshold the idea is named after. From Paris to Houston, the same question gets opposite answers.',
       body: [
+        { figure: 'fifteen.hero', wide: true, bare: true },
         {
-          p: 'The proximity layer answers one question for every 200 m cell of a city: how long does it take, from here, to reach the nearest pharmacy, school, bakery, park, gym, bus stop? It answers it nine times over — once per category of service — and twice again, on foot and by bicycle.',
+          p: 'For every cell of about 200 metres the layer asks one question: how long does it take, from here, to reach the nearest pharmacy, school, supermarket, park? It answers nine times, once per category, and twice more, on foot and by bicycle. Times run on the real street network from OpenStreetMap, so a river with no bridge, a rail yard with no crossing or a highway with no pavement cost what they cost in practice.',
         },
         {
-          p: 'The times are not straight-line distances. They are computed on the real street network from OpenStreetMap with OSRM, so a river without a bridge, a railway without a crossing, or a motorway with no pavement all cost what they cost in practice.',
+          facts: [
+            { value: '{fifteen.paris.15}%', text: 'of Paris’s residents reach the services within 15 minutes on foot, on average' },
+            { value: '{fifteen.bogota.15}%', text: 'in Bogotá, a city of {fifteen.bogota.millions} million' },
+            { value: '{fifteen.houston.15}%', text: 'in Houston, where the median resident is {fifteen.houston.median} away on foot' },
+          ],
         },
         { h2: 'Reading the map' },
         {
-          p: 'White sits at 15 minutes — the reference the idea is named after. Cooler colours are quicker than that, warmer ones slower, and the scale keeps darkening past 30 minutes rather than stopping there, because in most cities a real share of cells sit well beyond half an hour from some category of service.',
+          p: 'White sits at 15 minutes. Blue is quicker, red slower, and the scale keeps darkening past half an hour instead of stopping there. A colour means the same number of minutes in every city and for every category, so moving from Bogotá to Houston, or from healthcare to groceries, shows a difference rather than a new scale.',
         },
         {
-          p: 'One scale serves all nine categories and both modes. That is deliberate: a colour means the same number of minutes whatever is selected, so switching from healthcare to schools shows you a difference rather than recolouring the same city.',
+          figure: 'fifteen.six',
+          wide: true,
+          title: 'Six cities, six continents, one scale',
+          sub: 'Average walk to the nine services, a 34 km window, inhabited cells only',
+          caption: 'Paris and Tokyo are almost entirely blue. In Houston blue survives in a few islands of a city measured in half hours. Where OpenStreetMap is less complete, times grow for that reason too, which is worth keeping in mind when reading Nairobi.',
         },
-        { h2: 'What it does not say' },
+        { h2: 'One city, two lives' },
         {
-          ul: [
-            'It counts what is reachable, never how good it is. Four schools within ten minutes is not a claim about those schools.',
-            'It assumes an average walker. Someone with a pram, a wheelchair or a heavy shopping bag is in a different city, which is a separate project rather than a correction factor.',
-            'Coverage follows the data: a city needs good OpenStreetMap coverage before any of this is worth publishing.',
-          ],
-        },
-        {
-          note: 'Proximity is one of the three dimensions of the framework — the other two are opportunity and value. What a city can offer within walking distance is not the same as what it can offer at all.',
+          p: 'An average hides almost everything. Take two cells in Rome. The first is the most populated within 2 km of the centre, {fifteen.rome.in.residents} residents: its furthest service is {fifteen.rome.in.furthest} away. The second is the most populated between 12 and 16 km out, {fifteen.rome.out.residents} residents {fifteen.rome.out.km} km from the centre: here the furthest category, {fifteen.rome.out.category}, takes {fifteen.rome.out.furthest} on foot.',
         },
         {
-          links: [
-            { label: 'Open the 15-minute city platform ↗', url: 'https://whatif.sonycsl.it/15mincity' },
-            {
-              label: 'A universal framework for inclusive 15-minute cities — Nature Cities (2024) ↗',
-              url: 'https://doi.org/10.1038/s44284-024-00119-4',
-            },
-          ],
+          figure: 'fifteen.romeCells',
+          title: 'Minutes on foot, category by category',
+          sub: 'Two cells in Rome, values from the layer file',
+          caption: 'Open them on the map: [the central cell](/atlas/rome?layer=fifteen&cell={fifteen.rome.in.cell}) and [the outer one](/atlas/rome?layer=fifteen&cell={fifteen.rome.out.cell}).',
         },
-      ],
-    },
-
-    it: {
-      title: 'Città dei 15 minuti: il layer che misura la prossimità',
-      lede: 'Quanto ci vuole, a piedi o in bicicletta, per raggiungere le cose di cui è fatta una giornata — nove categorie di servizi quotidiani, cella per cella, lette rispetto al riferimento dei 15 minuti.',
-      body: [
+        { h2: 'Not every service is equally close' },
         {
-          p: 'Il layer della prossimità risponde a una domanda per ogni cella da 200 m di una città: quanto ci vuole, da qui, per raggiungere la farmacia, la scuola, il forno, il parco, la palestra, la fermata più vicini? Risponde nove volte — una per categoria di servizio — e altre due, a piedi e in bicicletta.',
+          p: 'The same resident lives at very different distances depending on what they are looking for, and the gap between cities changes from one category to the next. In Paris the median resident walks {fifteen.paris.healthcare} to healthcare, in Houston {fifteen.houston.healthcare}.',
         },
         {
-          p: 'I tempi non sono distanze in linea d’aria: sono calcolati sulla rete stradale reale di OpenStreetMap con OSRM, quindi un fiume senza ponte, una ferrovia senza attraversamento o una tangenziale senza marciapiede costano quello che costano davvero.',
+          figure: 'fifteen.categories',
+          title: 'The median resident’s walk, by category',
+          sub: 'Minutes; the dashed line is the 15-minute threshold',
+          caption: 'Hover a dot for the exact value.',
         },
-        { h2: 'Come si legge la mappa' },
+        { h2: 'From the compact city to the suburb' },
         {
-          p: 'Il bianco sta a 15 minuti — il riferimento da cui l’idea prende il nome. I colori freddi sono più rapidi, quelli caldi più lenti, e la scala continua a scurirsi oltre i 30 minuti invece di fermarsi lì: nella maggior parte delle città una quota reale di celle sta ben oltre la mezz’ora da qualche categoria di servizio.',
-        },
-        {
-          p: 'Una sola scala vale per tutte e nove le categorie e per entrambe le modalità. È voluto: un colore significa lo stesso numero di minuti qualunque cosa sia selezionata, così passare dalla sanità alle scuole mostra una differenza invece di ricolorare la stessa città.',
-        },
-        { h2: 'Cosa non dice' },
-        {
-          ul: [
-            'Conta ciò che è raggiungibile, mai quanto sia buono. Quattro scuole a dieci minuti non sono un giudizio su quelle scuole.',
-            'Assume una persona che cammina a velocità media. Chi spinge un passeggino, usa una sedia a rotelle o porta la spesa vive un’altra città: è un progetto a sé, non un fattore correttivo.',
-            'La copertura segue i dati: serve una buona mappatura OpenStreetMap prima che valga la pena pubblicare qualcosa.',
-          ],
+          p: 'Counting people rather than cells is what makes cities of different shapes comparable. The curves below rise with the minutes: at 15 minutes Paris already has {fifteen.paris.15}% of its residents, Tokyo {fifteen.tokyo.15}%. Sydney sits halfway, at {fifteen.sydney.15}%. In cities built around the car the curve flattens: Phoenix reaches {fifteen.phoenix.15}%, Houston {fifteen.houston.15}%, and in Houston not even 30 minutes covers half the residents ({fifteen.houston.30}%).',
         },
         {
-          note: 'La prossimità è una delle tre dimensioni del quadro teorico — le altre sono opportunità e valore. Ciò che una città offre a distanza pedonale non è ciò che una città offre.',
+          figure: 'fifteen.curves',
+          title: 'Residents within N minutes on foot',
+          sub: 'Average of the nine categories, % of residents',
+          caption: 'These are the five published points, joined by a line: between two points the data says nothing.',
+        },
+        {
+          p: 'Widen the view to all {fifteen.big.count} cities of over a million residents and the picture by continent is stark. The middle European city has {fifteen.big.europe}% of its residents within 15 minutes; the middle North American one, {fifteen.big.northAmerica}%.',
+        },
+        {
+          figure: 'fifteen.world',
+          title: 'Residents within 15 minutes on foot, cities of over a million',
+          sub: 'One dot per city; the cities in this post are marked',
+          caption: 'Cities on their urban-centre boundary (GHS Urban Centre). {fifteen.big.hidden} cities of over a million are left out, as everywhere on the site: fewer than 10,000 residents covered, or a median walk over 60 minutes, a sign of data too thin to compare. A share near zero can also reflect incomplete OpenStreetMap mapping.',
         },
         {
           links: [
-            { label: 'Apri la piattaforma 15-minute city ↗', url: 'https://whatif.sonycsl.it/15mincity' },
-            {
-              label: 'A universal framework for inclusive 15-minute cities — Nature Cities (2024) ↗',
-              url: 'https://doi.org/10.1038/s44284-024-00119-4',
-            },
+            { label: 'Open Bogotá', to: '/atlas/bogota?layer=fifteen' },
+            { label: 'Compare cities', to: '/stats' },
+            { label: 'A universal framework for inclusive 15-minute cities · Nature Cities (2024) ↗', url: 'https://doi.org/10.1038/s44284-024-00119-4' },
           ],
         },
       ],
@@ -114,73 +113,59 @@ export const POSTS = [
   {
     slug: 'layer-citychrone',
     date: '2026-08-03',
-    readingTime: 4,
-    accent: BRAND.navy,
+    readingTime: 6,
+    accent: '#1A1F4E',
     layer: 'citychrone',
-
     en: {
-      title: 'CityChrone++: the layer that measures opportunity',
-      lede: 'A city measured in minutes of public transport rather than in kilometres — hour by hour, because a timetable is not a map.',
+      kicker: 'Layer · Opportunity',
+      title: 'CityChrone++:',
+      titleAccent: 'the city hour by hour',
+      lede: 'How far public transport takes you from every cell, and how many people it puts within reach. Two scores, twenty-four hours.',
       body: [
+        { figure: 'citychrone.hero', wide: true, bare: true },
         {
-          p: 'Some things a city has few of: hospitals, universities, concert halls, most jobs. They cannot be within walking distance of everyone, so what matters is not how near they are but how quickly public transport gets you to them. That is opportunity, and it is what this layer measures.',
+          p: 'CityChrone gives every cell two scores for every hour of the day. **Velocity** says how quickly you get away from there by public transport, waits included. **Sociality** counts, with a weight, the people within reach. Neither is a time nor an exact number of people: they are scores, and the site calls them that.',
         },
         {
-          p: 'Two scores per cell. The velocity score describes how fast transport moves you outward from that cell — a km/h-like figure, and the one this layer opens on. The sociality score is a weighted count of the people transport puts within reach of it; it is a score, never a headcount.',
-        },
-        { h2: 'Why the hour matters' },
-        {
-          p: 'The layer is published once per hour of the day, all twenty-four. A network is not a fixed object: the same cell can be twenty minutes from the centre at 8 a.m. and an hour from it at 11 p.m., and a single daily average hides exactly the difference that decides whether a night shift is reachable without a car.',
+          p: 'Transit runs on the operators’ real timetables (GTFS). A line every fifteen minutes and a line twice a day look the same on a network map; here they do not.',
         },
         {
-          p: 'Timetables are read as timetables — actual departures from GTFS feeds, evaluated with the Connection Scan Algorithm, waiting time included. A line running four times an hour and one running twice a day look identical on a route map and are not the same city to live in.',
-        },
-        { h2: 'Isochrones' },
-        {
-          p: 'The third view drops the scores and answers a simpler question: from this cell, at this hour, how long does it take to reach everywhere else? Click a cell and the city redraws itself in minutes from it.',
-        },
-        {
-          links: [
-            { label: 'Open the CityChrone platform ↗', url: 'https://whatif.sonycsl.it/citychrone' },
-            {
-              label:
-                'General scores for accessibility and inequality measures in urban areas — R. Soc. Open Sci. (2019) ↗',
-              url: 'https://doi.org/10.1098/rsos.190979',
-            },
+          facts: [
+            { value: '{citychrone.tokyo.8}', text: 'the median Tokyo resident’s velocity at 8:00, against {citychrone.paris.8} in Paris' },
+            { value: '{citychrone.newYork.peak}', text: 'in New York at {citychrone.newYork.peakHour}, the peak of its day' },
+            { value: '{citychrone.newYork.low}', text: 'in New York at {citychrone.newYork.lowHour}, when service is thinnest' },
           ],
         },
-      ],
-    },
-
-    it: {
-      title: 'CityChrone++: il layer che misura le opportunità',
-      lede: 'Una città misurata in minuti di trasporto pubblico invece che in chilometri — ora per ora, perché un orario non è una mappa.',
-      body: [
+        { h2: 'One city at four hours' },
         {
-          p: 'Di alcune cose una città ha pochi esemplari: ospedali, università, teatri, gran parte dei posti di lavoro. Non possono essere a distanza pedonale da tutti, quindi non conta quanto siano vicini ma quanto in fretta il trasporto pubblico ci porti. Questa è l’opportunità, ed è ciò che misura questo layer.',
+          figure: 'citychrone.hours',
+          wide: true,
+          title: 'New York, public transport velocity',
+          sub: 'One scale for every hour: a colour means the same score at any time',
+        },
+        { h2: 'A whole day in one curve' },
+        {
+          p: 'Every city has a day of its own. New York’s median resident goes from {citychrone.newYork.low} at {citychrone.newYork.lowHour} to {citychrone.newYork.peak} at {citychrone.newYork.peakHour}. The band around New York’s curve is the middle half of its residents: where it widens, the city splits between the well served and the rest.',
         },
         {
-          p: 'Due punteggi per cella. Il punteggio di velocità descrive quanto rapidamente il trasporto pubblico ti allontana da quella cella — una grandezza simile a dei km/h, ed è quella con cui il layer si apre. Il punteggio di socialità è un conteggio pesato delle persone che il trasporto pubblico mette alla sua portata: è un punteggio, mai un numero di persone.',
+          figure: 'citychrone.day',
+          title: 'The median resident’s velocity, hour by hour',
+          sub: 'The band is New York’s 25th to 75th percentile of residents',
         },
-        { h2: 'Perché conta l’ora' },
+        { h2: 'Three cities at 8 in the morning' },
         {
-          p: 'Il layer è pubblicato una volta per ogni ora del giorno, tutte e ventiquattro. Una rete non è un oggetto fisso: la stessa cella può stare a venti minuti dal centro alle 8 e a un’ora alle 23, e una media giornaliera nasconde proprio la differenza che decide se un turno di notte sia raggiungibile senza auto.',
+          figure: 'citychrone.three',
+          wide: true,
+          title: 'Velocity at 8:00, one scale and one 36 km window',
         },
+        { h2: 'Try it: isochrones' },
         {
-          p: 'Gli orari sono letti come orari — partenze reali dai feed GTFS, valutate con il Connection Scan Algorithm, attesa compresa. Una linea che passa quattro volte all’ora e una che passa due volte al giorno sono identiche su una mappa di rete e non sono la stessa città in cui vivere.',
-        },
-        { h2: 'Isocrone' },
-        {
-          p: 'La terza vista lascia da parte i punteggi e risponde a una domanda più semplice: da questa cella, a quest’ora, quanto ci vuole per raggiungere tutto il resto? Si clicca una cella e la città si ridisegna in minuti da lì.',
+          p: 'On a city’s map, **Isochrones** picks a cell and colours the rest of the city by travel time, up to 120 minutes. Change the hour and watch the reachable area shrink.',
         },
         {
           links: [
-            { label: 'Apri la piattaforma CityChrone ↗', url: 'https://whatif.sonycsl.it/citychrone' },
-            {
-              label:
-                'General scores for accessibility and inequality measures in urban areas — R. Soc. Open Sci. (2019) ↗',
-              url: 'https://doi.org/10.1098/rsos.190979',
-            },
+            { label: 'Open Tokyo', to: '/atlas/tokyo?layer=citychrone' },
+            { label: 'General scores for accessibility and inequality measures in urban areas · R. Soc. Open Sci. (2019) ↗', url: 'https://doi.org/10.1098/rsos.190979' },
           ],
         },
       ],
@@ -190,77 +175,71 @@ export const POSTS = [
   {
     slug: 'layer-car-dependency',
     date: '2026-08-02',
-    readingTime: 4,
+    readingTime: 8,
     accent: '#a04640',
     layer: 'cardep',
-
     en: {
-      title: 'Car Dependency Index: the layer that compares the two',
-      lede: 'One number per cell for a question everyone in a city has an opinion about: does the car reach more than public transport does, and by how much?',
+      kicker: 'Layer · Car against public transport',
+      title: 'Car Dependency Index:',
+      titleAccent: 'how many times more a car reaches',
+      lede: 'From the same doorstep, in the same time, how much can you reach by car and how much by public transport? The index reads as one ratio: 1 where the two are even, 2 where the car reaches twice as much.',
       body: [
+        { figure: 'cardep.hero', wide: true, bare: true },
+        { h2: 'Two scores, compared' },
         {
-          p: 'The index compares what a car can reach with what public transport can reach from the same cell in the same time budget, and writes the comparison as a single number:',
+          p: 'The layer starts from two opportunity scores for every cell: how many points of interest, of many kinds, can be reached **by car** within a time budget, and how many **by public transport** in the same time, added up with weights. Both are on the map as views of their own. Side by side, New York shows why the comparison matters: the car’s map is dark almost everywhere, while transit’s is paler throughout and fades further toward the city’s edges. The median resident reaches {cardep.newYork.car} by car and {cardep.newYork.transit} by transit.',
         },
         {
-          p: 'CDI = (O_car − O_PT) / (O_car + O_PT)',
+          figure: 'cardep.carTransit',
+          wide: true,
+          badge: 'New view',
+          title: 'New York, opportunities by car and by transit',
+          sub: 'One logarithmic scale for both, 100 to 10,000, so the two read against each other',
+          caption: 'Weighted counts of reachable places: scores, not metres or jobs.',
+        },
+        { h2: 'From −1 to +1, or from 0 to infinity' },
+        {
+          p: 'The index divides one by the other: **car ÷ transit**. It is 1 where the two reach the same, 2 where a car reaches twice as much, ½ where transit does, and it grows without limit where transit reaches almost nothing. Read on a logarithmic scale, twice as much either way is the same distance from 1.',
         },
         {
-          p: 'It runs from −1, where transit reaches everything and the car almost nothing, through 0 where the two are balanced, to +1 where the car reaches everything and transit almost nothing. It is a normalised difference, not a ratio: it does not say "the car reaches three times as much", and it cannot be read that way.',
-        },
-        { h2: 'Reading the map' },
-        {
-          p: 'Blue is transit-favoured, white is balanced, red is car-dependent. The scale is fixed across every published city rather than fitted to each, so the same colour is the same index in Paris and in Palermo — a city is never recoloured to fill the palette.',
+          p: 'Its normalised form, (car − transit) ÷ (car + transit), runs from −1 to +1 and says the same thing in other units. The site still offers it, a switch away, and the conversion is exact:',
         },
         {
-          p: 'The car side is not a straight-line optimum either: driving times carry city-specific traffic delays and a parking buffer, because a car journey ends with finding somewhere to leave the car.',
+          figure: 'cardep.ratioTable',
+          title: 'The ratio and the normalised index',
+          caption: 'Normalised = (ratio − 1) ÷ (ratio + 1).',
         },
-        { h2: 'Cells and people are different stories' },
+        { h2: 'An example in numbers' },
         {
-          p: 'Half a city’s cells can be car-dependent while most of its residents are not, because the car-dependent ones are large and thinly populated. The panel therefore reports the index for the average resident — every cell weighted by the people in it — alongside the median cell, and the two are worth reading together.',
+          p: 'In Midtown Manhattan, the most populated cell within 1.5 km of Times Square, car and subway reach similar amounts: the ratio is {cardep.newYork.in.ratio}. In the most populated cell between 22 and 30 km out, {cardep.newYork.out.km} km away, transit reaches {cardep.newYork.out.transit} against the car’s {cardep.newYork.out.car}: the car reaches {cardep.newYork.out.ratio} times as much.',
         },
+        {
+          figure: 'cardep.nyCells',
+          title: 'Two New York cells',
+          caption: 'The ratio from the published, rounded scores; the normalised column is the published index.',
+        },
+        {
+          figure: 'cardep.six',
+          wide: true,
+          title: 'Six cities on one scale',
+          sub: 'Car ÷ transit, a 34 km window, inhabited cells',
+        },
+        { h2: 'The picture across {cardep.cities} cities' },
+        {
+          p: 'For the median resident the car reaches more than transit in {cardep.carWins} of {cardep.cities} cities: almost everywhere the car is not competing with public transport, it is winning. {cardep.exceptions} The middle European city sits at {cardep.europe}, the middle North American one at {cardep.northAmerica}; Tokyo’s median resident is at {cardep.tokyo.median}. The spread matters as much as the median: in Rome the tenth of residents most dependent on a car live where it reaches more than {cardep.rome.p90} times as much.',
+        },
+        {
+          figure: 'cardep.cities',
+          title: 'Car ÷ transit, the residents of each city',
+          sub: 'Dot: median resident · thick bar: middle half · thin line: 10th to 90th percentile · logarithmic',
+          caption: 'Cities on their urban-centre boundary (GHS Urban Centre).',
+        },
+        { pull: 'In {cardep.carWins} cities out of {cardep.cities}, the typical resident can reach more by car than by public transport.' },
         {
           links: [
-            { label: 'Open the Car Dependency Index platform ↗', url: 'https://mat701.github.io/CDI' },
-            {
-              label: 'Car Dependency in Urban Accessibility — arXiv:2604.01019 ↗',
-              url: 'https://arxiv.org/abs/2604.01019',
-            },
-          ],
-        },
-      ],
-    },
-
-    it: {
-      title: 'Car Dependency Index: il layer che mette a confronto i due',
-      lede: 'Un numero per cella su una domanda su cui in città hanno tutti un’opinione: l’auto raggiunge più cose del trasporto pubblico, e di quanto?',
-      body: [
-        {
-          p: 'L’indice confronta ciò che raggiunge un’auto con ciò che raggiunge il trasporto pubblico dalla stessa cella nello stesso tempo, e scrive il confronto come un numero solo:',
-        },
-        {
-          p: 'CDI = (O_auto − O_TP) / (O_auto + O_TP)',
-        },
-        {
-          p: 'Va da −1, dove il trasporto pubblico raggiunge tutto e l’auto quasi nulla, passa per lo 0 dell’equilibrio e arriva a +1, dove l’auto raggiunge tutto e il trasporto pubblico quasi nulla. È una differenza normalizzata, non un rapporto: non dice “l’auto raggiunge tre volte tanto”, e non si può leggere così.',
-        },
-        { h2: 'Come si legge la mappa' },
-        {
-          p: 'Il blu è a favore del trasporto pubblico, il bianco è equilibrio, il rosso è dipendenza dall’auto. La scala è fissa su tutte le città pubblicate invece di essere adattata a ciascuna: lo stesso colore è lo stesso indice a Parigi e a Palermo, e nessuna città viene ricolorata per riempire la tavolozza.',
-        },
-        {
-          p: 'Nemmeno il lato auto è un ottimo teorico: i tempi di guida includono i ritardi da traffico specifici della città e un margine per il parcheggio, perché un viaggio in auto finisce quando si trova dove lasciarla.',
-        },
-        { h2: 'Celle e persone raccontano cose diverse' },
-        {
-          p: 'Metà delle celle di una città possono essere car-dependent mentre la maggior parte di chi ci vive non lo è, perché quelle celle sono ampie e poco popolate. Il pannello riporta perciò l’indice per l’abitante medio — ogni cella pesata per le persone che ci vivono — accanto alla cella mediana: vanno letti insieme.',
-        },
-        {
-          links: [
-            { label: 'Apri la piattaforma Car Dependency Index ↗', url: 'https://mat701.github.io/CDI' },
-            {
-              label: 'Car Dependency in Urban Accessibility — arXiv:2604.01019 ↗',
-              url: 'https://arxiv.org/abs/2604.01019',
-            },
+            { label: 'Open New York', to: '/atlas/new-york?layer=cardep' },
+            { label: 'Compare cities', to: '/platforms/cardep/compare' },
+            { label: 'Car Dependency in Urban Accessibility · arXiv:2604.01019 ↗', url: 'https://arxiv.org/abs/2604.01019' },
           ],
         },
       ],
@@ -270,95 +249,72 @@ export const POSTS = [
   {
     slug: 'layer-accessibility-pov',
     date: '2026-08-01',
-    readingTime: 5,
-    accent: BRAND.navy,
+    readingTime: 8,
+    accent: '#3b8a4f',
     layer: 'pov',
-
     en: {
-      title: 'Urban Accessibility P.O.V.: the layer that puts them together',
-      lede: 'Proximity on one axis, opportunity on the other, and four zones instead of a ranking — because being cut off from the shops and being cut off from the city are different problems.',
+      kicker: 'Layer · Proximity and opportunity together',
+      title: 'Close & Connected:',
+      titleAccent: 'what is near, and what transit reaches',
+      lede: 'A lively street a long way from the metro. A station with nothing around it. Close & Connected keeps the two kinds of access apart, and shows where a city has both.',
       body: [
+        { figure: 'pov.hero', wide: true, bare: true },
         {
-          p: 'P.O.V. stands for Proximity, Opportunity, Value: the three dimensions of the framework the Atlas is built on. This layer measures the first two for every cell and classifies each one against the city’s own thresholds.',
+          p: 'The layer, until now called Urban Accessibility P.O.V., puts the Atlas’s two dimensions side by side. **Proximity** is what is close by on foot, the dimension of the 15-minute city. **Opportunity** is what public transport connects you to across the city, the dimension of CityChrone. Both are scored on the same cells by the P.O.V. framework: how many services a person reaches by walking in a short time, and by public transport in a longer one.',
+        },
+        { h2: 'Four zones, new names' },
+        {
+          p: 'Split at the city’s medians, every cell falls in one of four zones. The names now say what a place has rather than what it lacks.',
         },
         {
-          p: 'A cell is counted as high on an axis when it sits above that city’s population-weighted median — weighted, so the threshold reflects where people actually live rather than the geometry of the mesh. Two yes/no answers give four zones.',
+          figure: 'pov.quadrants',
+          caption: 'The medians are weighted by residents, not taken over cells: in Rome, proximity {pov.rome.proximity} and opportunity {pov.rome.opportunity}. The paper’s names were inclusion, spatial isolation, social isolation and total isolation.',
         },
         {
-          ul: [
-            '**Inclusion** — served locally and connected city-wide.',
-            '**Spatial isolation** — everything nearby, but poorly linked to the rest of the city.',
-            '**Social isolation** — good transit into the centre, little within walking distance.',
-            '**Total isolation** — neither. Typically the periphery, and typically where a car stops being a convenience.',
-          ],
+          p: 'The four are not a ranking with Close & Connected on top. A place that is Close needs transit; a place that is Connected needs shops, schools and services where today there is only a station. One score for both would prescribe the same cure to each.',
         },
-        { h2: 'Why four zones and not one score' },
+        { h2: 'Both scores at once', badge: 'New view' },
         {
-          p: 'Collapse access into a single number and spatial isolation and social isolation come out the same. They are not: one is solved by transport, the other by land use. A single score would recommend the same intervention for both and be wrong for one of them.',
-        },
-        { h2: 'Zones compare within a city, not between cities' },
-        {
-          p: 'The thresholds are city-specific, so a cell classed as inclusion in a sparse city might rank as isolated in a dense one. Comparing cities is what the underlying scores are for — and they are weighted counts of reachable points of interest, which is why they carry no unit: not metres, not jobs.',
+          p: 'Zones draw hard edges: a cell just above the median and one far above it get the same colour. The **Both** view drops the edges. Each score is ranked among the city’s residents, and the two ranks mix into one colour: light blue where a place has more close by than most of the city, pink where transit connects it to more, deep indigo where it has both, pale where it has little of either.',
         },
         {
-          note: 'The third dimension, value, is set out in the framework and is not yet quantified. Nothing in this layer claims to measure how good the reachable things are.',
+          figure: 'pov.zonesBoth',
+          wide: true,
+          title: 'New York, zones and Both',
+          sub: 'The same cells, a 30 km window',
+          caption: 'The dashed lines across the square are the city’s medians, where the zones split it. Like the zones, the colours compare places within a city, not cities.',
+        },
+        { h2: 'The plot', badge: 'New view' },
+        {
+          p: 'The map shows where; the plot shows how far. It places every inhabited cell by its two scores instead of its location: opportunity along the bottom, proximity up the side, each dot sized by its residents and coloured by its zone. The dashed lines are the city’s medians, so each quarter of the plot is one zone. Here are Rome’s {pov.rome.cells} inhabited cells.',
+        },
+        {
+          figure: 'pov.scatter',
+          title: 'Rome, every inhabited cell by its two scores',
+          sub: 'Dot area proportional to residents; dashed lines at the city’s medians',
+          caption: 'On the site the plot is a view of the city map, on a computer: hovering a dot reads it, clicking selects its cell on the map.',
+        },
+        { h2: 'Cells and residents tell different stories' },
+        {
+          p: 'In Rome {pov.rome.totalCells}% of cells are in total isolation, but only {pov.rome.totalResidents}% of residents live in them: isolated cells are large and thinly settled. In New York the figures are {pov.newYork.totalCells}% of cells and {pov.newYork.totalResidents}% of residents, in Paris {pov.paris.totalCells}% and {pov.paris.totalResidents}%. The site always publishes both and says which one it shows.',
+        },
+        {
+          figure: 'pov.cellsResidents',
+          title: 'Shares of cells and of residents by zone',
+          sub: 'Zones at each city’s own medians',
+        },
+        {
+          figure: 'pov.six',
+          wide: true,
+          title: 'Six cities, each on its own medians',
+          sub: 'A 34 km window. Zones compare places within a city, not cities with each other.',
+          caption: 'In all six, Close & Connected holds the centre and total isolation the edges. In Chicago the core follows the lakefront; in Seattle it stretches between the two shores; Paris, which stops at the city limits, is nearly all core.',
         },
         {
           links: [
-            {
-              label: 'Open the Urban Accessibility P.O.V. platform ↗',
-              url: 'https://mat701.github.io/accessibility-pov',
-            },
-            {
-              label:
-                'The dimensions of accessibility: proximity, opportunities, values — EPJ Data Science (2026) ↗',
-              url: 'https://doi.org/10.1140/epjds/s13688-026-00623-8',
-            },
-          ],
-        },
-      ],
-    },
-
-    it: {
-      title: 'Urban Accessibility P.O.V.: il layer che li mette insieme',
-      lede: 'Prossimità su un asse, opportunità sull’altro, e quattro zone invece di una classifica — perché essere tagliati fuori dai negozi ed essere tagliati fuori dalla città sono problemi diversi.',
-      body: [
-        {
-          p: 'P.O.V. sta per Proximity, Opportunity, Value: le tre dimensioni del quadro teorico su cui è costruito l’Atlante. Questo layer misura le prime due per ogni cella e classifica ciascuna rispetto alle soglie della sua città.',
-        },
-        {
-          p: 'Una cella è considerata alta su un asse quando sta sopra la mediana pesata sulla popolazione di quella città — pesata, così la soglia riflette dove le persone vivono davvero e non la geometria della maglia. Due risposte sì/no danno quattro zone.',
-        },
-        {
-          ul: [
-            '**Inclusione** — servita localmente e collegata al resto della città.',
-            '**Isolamento spaziale** — tutto vicino, ma mal collegata al resto della città.',
-            '**Isolamento sociale** — buon collegamento verso il centro, poco a distanza pedonale.',
-            '**Isolamento totale** — nessuno dei due. Di norma la periferia, e di norma dove l’auto smette di essere una comodità.',
-          ],
-        },
-        { h2: 'Perché quattro zone e non un punteggio' },
-        {
-          p: 'Se si riduce l’accesso a un numero solo, isolamento spaziale e isolamento sociale risultano uguali. Non lo sono: uno si risolve col trasporto, l’altro con l’uso del suolo. Un punteggio unico suggerirebbe lo stesso intervento per entrambi, sbagliando su uno dei due.',
-        },
-        { h2: 'Le zone confrontano dentro una città, non fra città' },
-        {
-          p: 'Le soglie sono specifiche di ogni città, quindi una cella classificata come inclusione in una città rada potrebbe risultare isolata in una densa. A confrontare le città servono i punteggi — che sono conteggi pesati di punti di interesse raggiungibili, ed è per questo che non portano unità: non metri, non posti di lavoro.',
-        },
-        {
-          note: 'La terza dimensione, il valore, è definita nel quadro teorico e non è ancora quantificata. Nulla in questo layer pretende di misurare quanto siano buone le cose raggiungibili.',
-        },
-        {
-          links: [
-            {
-              label: 'Apri la piattaforma Urban Accessibility P.O.V. ↗',
-              url: 'https://mat701.github.io/accessibility-pov',
-            },
-            {
-              label:
-                'The dimensions of accessibility: proximity, opportunities, values — EPJ Data Science (2026) ↗',
-              url: 'https://doi.org/10.1140/epjds/s13688-026-00623-8',
-            },
+            { label: 'Open Paris', to: '/atlas/paris?layer=pov' },
+            { label: 'Compare cities', to: '/platforms/pov/compare' },
+            { label: 'The dimensions of accessibility: proximity, opportunities, values · EPJ Data Science (2026) ↗', url: 'https://doi.org/10.1140/epjds/s13688-026-00623-8' },
           ],
         },
       ],

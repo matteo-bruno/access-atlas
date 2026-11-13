@@ -1270,8 +1270,9 @@ function AtlasScreen({ cityId, view }) {
       targets: [controls, legendBox, { selector: '.aa-mapbox--selected' }],
     },
     citychrone: { bullets: ['velocity', 'sociality', 'isochrone', 'hour'], targets: [controls] },
-    cardep: { bullets: ['colors', 'blue', 'views', 'filter'], targets: [legendBox, controls], version: 2 },
-    pov: { bullets: ['scores', 'zones'], targets: [controls, legendBox] },
+    cardep: { bullets: ['colors', 'blue', 'views', 'filter'], targets: [legendBox, controls], version: 3 },
+    // The plot is not offered on a phone, so its tour does not mention it there.
+    pov: { bullets: ['scores', phone ? 'zonesPhone' : 'zones'], targets: [controls, legendBox], version: 2 },
   };
   const layerTour = layerTours[layer] ?? null;
   // Bumped when a layer's screen changes, so a reader who saw it sees it again.
@@ -1939,6 +1940,20 @@ function AtlasScreen({ cityId, view }) {
                   )}
                   {layer === 'cardep' && (
                     <>
+                      {/* The median resident's index read as the map reads
+                          it, car ÷ transit: a median carries over exactly,
+                          since the ratio rises with the normalised index.
+                          A mean does not, so the mean below stays
+                          normalised and says so. */}
+                      {!shown && unified && (
+                        <SummaryRow
+                          label={t('city.summary.medianRatio')}
+                          value={(() => {
+                            const median = atlas.data?.layers.cardep.medianCdi;
+                            return median == null ? '—' : formatRatio(median >= 1 ? Infinity : (1 + median) / (1 - median), n);
+                          })()}
+                        />
+                      )}
                       <SummaryRow
                         label={shown ? `${t('city.summary.weightedCdi')} · ${scenarioName}` : t('city.summary.weightedCdi')}
                         value={signedOrDash(

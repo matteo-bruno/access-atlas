@@ -426,7 +426,7 @@ export default {
     compare: 'Compare cities',
     zoneType: 'Zone',
     cdiHint:
-      'Negative where public transport reaches more than a car, positive where the car reaches more. The index is a normalised difference bounded at ±1, not a ratio.',
+      'The Car Dependency Index in its normalised form, (car − transit) ÷ (car + transit): negative where public transport reaches more than a car, positive where the car reaches more, bounded at ±1.',
     zones: {
       // The layer's own names; `old` is the P.O.V. paper's, which the
       // "about this layer" dialog keeps in brackets.
@@ -457,7 +457,8 @@ export default {
       area: 'Area covered',
       proximity: 'Median proximity score',
       medianCdi: 'Median CDI (per cell)',
-      weightedCdi: 'CDI for the average resident',
+      weightedCdi: 'Normalised CDI, average resident',
+      medianRatio: 'CDI for the median resident',
       opportunity: 'Median opportunity score',
       population: 'Population covered',
     },
@@ -505,7 +506,7 @@ export default {
     explain: {
       map: {
         pov:
-          'Each cell takes the colour of the zone it falls in: green above the city median on both Proximity and Opportunity, red below on both, and the two mixed cases between.',
+          'Each cell takes the colour of the zone it falls in: green, Close & Connected, above the city median on both Proximity and Opportunity; red, total isolation, below on both; blue, Close, with plenty on foot but little by transit; yellow, Connected, with good transit but little close by.',
         cardep:
           'Green where public transport reaches more opportunities than a car, white where the two are balanced, orange where the car reaches more.',
         fifteen:
@@ -522,7 +523,7 @@ export default {
       },
       summary: {
         pov: 'Cells counts what the published dataset covers. Each median is the median resident’s score: half the city’s residents live in cells scoring lower, half higher. The scores are weighted counts of reachable points of interest, which is why neither carries a unit: they are not metres and not jobs. Population is the dataset’s own sum over its cells, not an official figure for the city.',
-        cardep: 'Median CDI is the index of the median resident: half the city’s residents live in cells with a lower one. CDI for the average resident weights every cell by the people living in it, and is the figure the platform ranks cities on. Both count residents, not cells: half a city’s cells can be car-dependent while most of its residents live in the other half.',
+        cardep: 'CDI for the median resident is the ratio, car ÷ transit, of the resident in the middle: half the city’s residents live in cells with a lower one. The normalised CDI for the average resident, from −1 to +1, weights every cell by the people living in it, and is the figure the platform ranks cities on; a mean of ratios would be pulled up by the few cells transit barely reaches, which is why it stays normalised. Both count residents, not cells: half a city’s cells can be car-dependent while most of its residents live in the other half.',
         fifteen: 'The median is the median resident’s time for the category and mode on screen: half the residents live in cells reached faster, half slower. Every cell counts as many times as people live in it, so thinly settled outer cells do not outvote the places most people live. Population is the dataset’s own sum.',
         atlas: 'Figures are recomputed for the layer on screen. Cells is the union mesh — every cell any platform measures — so a layer that covers fewer says so on its own row.',
       },
@@ -633,7 +634,7 @@ export default {
       cardep: 'Cities ranked by index',
       pov: 'Zone mix by city',
       aboutCardep: 'Each bar is the index for that city’s average resident: every cell weighted by the people living in it. Left of the line is a city where public transport reaches more than a car for the typical resident; right of it, one where the car does. Bars use the same scale as the maps.',
-      aboutPov: 'The share of each city that falls in each of the four zones. Zones are decided against that city’s own population-weighted medians, so this compares the mix within cities and not the level between them — a city can be half inclusion and still be poorly served overall. Switch between counting cells and counting residents: isolated cells are large and thinly populated, so the two tell different stories.',
+      aboutPov: 'The share of each city that falls in each of the four zones. Zones are decided against that city’s own population-weighted medians, so this compares the mix within cities and not the level between them — a city can be half Close & Connected and still be poorly served overall. Switch between counting cells and counting residents: isolated cells are large and thinly populated, so the two tell different stories.',
     },
     scatter: {
       cardep: 'What a car reaches against what transit reaches',
@@ -779,7 +780,7 @@ export default {
         'What share of residents in {city} live in total isolation, and what does that mean?',
       ],
       research: [
-        'How are the P.O.V. zone thresholds computed?',
+        'How are the Close & Connected zone thresholds computed?',
         'What is the difference between cell shares and resident shares in {city}?',
         'How does public transport velocity in {city} change through the day?',
       ],
@@ -869,8 +870,8 @@ export default {
           body: 'A share of residents “above 5,000” or “within 15 minutes” means the same thing in every city. The thresholds are round numbers spanning the published range, chosen once, not adjusted to the cities on screen.',
         },
         zones: {
-          title: 'P.O.V.’s own zones compare places within a city',
-          body: 'P.O.V. splits each city at its own population-weighted medians, so its four zones say how a place compares with the rest of its city, and every city has about half its residents above each line. To compare cities, the Atlas also splits every city at the medians of all its P.O.V. residents together (the zones on the Atlas median): a resident in “inclusion” there is better off than half the Atlas’s residents on both scores.',
+          title: 'Close & Connected’s own zones compare places within a city',
+          body: 'Close & Connected splits each city at its own population-weighted medians, so its four zones say how a place compares with the rest of its city, and every city has about half its residents above each line. To compare cities, the Atlas also splits every city at the medians of all its Close & Connected residents together (the zones on the Atlas median): a resident who is “Close & Connected” there is better off than half the Atlas’s residents on both scores.',
         },
         countries: {
           title: 'A country is its published cities, pooled',
@@ -939,9 +940,9 @@ export default {
     about: {
       proximity: 'How many points of interest a resident can reach on foot from their cell, weighted. A score, not a distance.',
       opportunity: 'How many points of interest a resident can reach across the city by walking and public transport, weighted. A score, not a count of jobs.',
-      zonesCommon: 'P.O.V.’s four zones, split for every city at the same two lines: the median proximity and the median opportunity of all the Atlas’s P.O.V. residents together. “Inclusion” means better than half the Atlas’s residents on both scores, so the share of residents in each zone compares one city with another.',
-      zonesCity: 'P.O.V.’s four zones as the platform publishes them, split at each city’s own population-weighted medians. They describe places within a city: every city has about half its residents on each side of each line.',
-      cdi: 'The normalised difference between what a car and public transport reach from a cell, from −1 (transit reaches more) to +1 (the car reaches more). Not a ratio.',
+      zonesCommon: 'Close & Connected’s four zones, split for every city at the same two lines: the median proximity and the median opportunity of all the Atlas’s Close & Connected residents together. “Close & Connected” means better than half the Atlas’s residents on both scores, so the share of residents in each zone compares one city with another.',
+      zonesCity: 'Close & Connected’s four zones as the platform publishes them, split at each city’s own population-weighted medians. They describe places within a city: every city has about half its residents on each side of each line.',
+      cdi: 'The Car Dependency Index in its normalised form, (car − transit) ÷ (car + transit), from −1 (transit reaches more) to +1 (the car reaches more). The city map reads the same index as a ratio, car ÷ transit, with 1 where the two are balanced.',
       car: 'Opportunities reachable by car from a cell, as Car Dependency counts them: a weighted score.',
       pt: 'Opportunities reachable by public transport from a cell, as Car Dependency counts them: a weighted score.',
       fifteen: 'Travel time from a cell to the nearest services of the category, on foot or by bicycle. “Average across all services” is the mean of the nine categories.',
@@ -1086,7 +1087,7 @@ export default {
     },
     note: {
       withinCity: 'These zones are drawn at each city’s own medians, so they compare places within a city, not cities. For a comparison between cities use the zones on common thresholds.',
-      zonesCommon: 'Common zones are split at the median of all {count} cities’ P.O.V. residents: proximity {proximity}, opportunity {opportunity}. They move a little whenever a city is added.',
+      zonesCommon: 'Common zones are split at the median of all {count} cities’ Close & Connected residents: proximity {proximity}, opportunity {opportunity}. They move a little whenever a city is added.',
       thresholds: 'Thresholds are fixed and the same in every city.',
       correlation: 'A correlation describes how two measures go together inside one city. It says nothing about which city is better served.',
       citychrone: 'CityChrone’s scores have no verified unit conversion: compare them between cities, not with outside figures.',
@@ -1223,6 +1224,8 @@ export default {
     backToBlog: '← All posts',
     published: 'Published',
     postsLabel: 'Posts',
+    figuresFailed: 'The figures of this post could not be loaded, so its numbers show as “…”.',
+    figuresAsOf: 'Figures computed from the Atlas data of {date}.',
   },
 
   work: {
@@ -1357,6 +1360,7 @@ export default {
         title: 'Close & Connected',
         scores: 'Proximity and opportunity: the services within reach close by (on foot) and further away (by public transport). “Both” draws the two at once on one colour square.',
         zones: 'Zones: the classification relative to the city’s own median, so it says which places are better or worse served than the city on average. “Plot” places every cell by its two scores instead of on the map.',
+        zonesPhone: 'Zones: the classification relative to the city’s own median, so it says which places are better or worse served than the city on average.',
       },
     },
   },

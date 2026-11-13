@@ -1,4 +1,4 @@
-# Working on the Accessibility Atlas
+# Working on the Opportunity Atlas
 
 Notes for anyone — human or model — picking this up cold. `README.md` covers
 structure, build and deployment; this file covers the things that are easy to
@@ -448,8 +448,12 @@ serif is a bug in the other.
 `src/map/ramps.js` holds one ramp per measure, and two rules keep them
 readable:
 
-- **Continuous measures get continuous ramps.** Only P.O.V.'s four zones are
-  categorical. P.O.V. also draws its two scores (`pov=proximity|opportunity`,
+- **Continuous measures get continuous ramps.** Only Close & Connected's four
+  zones are categorical, and its **Both** view (`pov=both`) is the four zones
+  without their edges: each score ranked among the city's residents and the
+  two ranks mixed into one colour (`src/map/bivariate.js`, four corners
+  checked for colour blindness), so the middle of each axis is exactly where
+  the zones split. Like the zones it compares places within a city. P.O.V. also draws its two scores (`pov=proximity|opportunity`,
   the zones stay the default), and Car Dependency the two opportunity scores
   its index compares (`cdi=car|transit`, the index stays the default: the
   points of interest of many kinds reachable in the time budget, added up),
@@ -513,10 +517,29 @@ nowhere on the legend. The isochrone ramp does the same past 120.
 
 ## Facts that are easy to get wrong
 
-- **CDI = (O_car − O_PT) / (O_car + O_PT)**, bounded in [−1, +1]. A normalised
-  difference, *not* a ratio. The site once scaled it 1.5–6 and described it as
-  "how many more places a car reaches" — a quantity the index does not measure.
-- **P.O.V. zone thresholds are population-weighted medians**, not plain
+- **The CDI is a ratio now, car ÷ transit (O_car / O_PT), from 0 up**, with 1
+  where the two reach the same, 2 where a car reaches twice as much, ½ where
+  transit does, and no finite value where transit reaches nothing. The city
+  map and its world-map dots read it on a logarithmic ramp (`cdiRatio`), so
+  twice as much either way is the same step from white. Its **normalised
+  form, (O_car − O_PT) / (O_car + O_PT)**, bounded in [−1, +1], is what the
+  files store (`cdi`), what the Stats page, the compare view and the
+  scenarios use, and what the city view offers one switch away ("Normalised
+  measure"); `ratioOfCdi` converts, (1 + CDI) / (1 − CDI). A **median or a
+  quantile converts exactly** (the ratio rises with the index), so the city
+  summary gives the median resident's ratio; **a mean does not** (a mean of
+  ratios is pulled up by the few cells transit barely reaches), so the mean
+  stays normalised and says so ("Normalised CDI, average resident"). Copy
+  that names a figure says which of the two it is.
+- **P.O.V. is called Close & Connected on the site**, and its zones have the
+  layer's names: Close & Connected (the paper's inclusion), Close (spatial
+  isolation: plenty on foot, little by transit), Connected (social isolation:
+  good transit, little close by) and Total isolation. The paper's names stay
+  in brackets in the "about this layer" dialog (`city.zones.<id>.old`). The
+  first three are names, like the layer's, and stay in English in every
+  language; Total isolation is translated. "P.O.V." is still the framework
+  the scores come from, and the importer, the files and the ids keep `pov`.
+- **Close & Connected zone thresholds are population-weighted medians**, not plain
   medians. Verified: classifying against them reproduces the upstream
   `cell_type` for all 47,902 published cells. The P.O.V. importer re-derives
   every cell; where an export's label disagrees it publishes the recomputed
@@ -1060,12 +1083,15 @@ the first time that layer is opened; on a first visit it follows the city's,
 in one tour, so opening Rome on CityChrone explains the screen and then
 CityChrone. What a layer's screen lights is marked in the panel with
 `.aa-tourctl`. Seen is remembered in localStorage (`tour:atlas-v2`,
-`tour:city-v2`, `tour:layer-<id>-v<version>`, Car Dependency's at v2 since
-its views; bump an id to show a changed tour again), and a small button brings it back (the round "?" above the zoom,
+`tour:city-v2`, `tour:layer-<id>-v<version>`: Car Dependency's at v3 since
+the ratio, Close & Connected's at v2 since its names, Both and the plot;
+bump an id to show a changed tour again, and the ids in `skipTours`), and a small button brings it back (the round "?" above the zoom,
 "Guide" beside full screen): on a city it replays the city's steps and the
 open layer's, and leaves the other layers' as they were. **A phone gets
 the same tours, told for its layout**: the copy that says where things are
-has a phone version (`tour.city.introPhone`, `cellPhone`, …), the sheet is
+has a phone version (`tour.city.introPhone`, `cellPhone`, …, and
+`tour.layer.pov.zonesPhone`, which leaves out the plot a phone is not
+offered), the sheet is
 closed for the city's steps and opened for the layer's, whose controls are in
 it (a step's `onEnter`), and closed again after; a lit part is clipped to the
 screen and the card is measured and kept on it. The browser
@@ -1089,9 +1115,30 @@ went with the landing's copy of it, and `SectionHeading` no longer takes a
 `hint`: the italic note at the far right of a heading restated the section
 under it in three words.
 
-**The blog is unlisted for now** (`BLOG_LISTED` in `src/data/blog.js`): no
-nav tab, no footer link, and the platform cards open the layer's map. Its
-routes and posts are kept; turning the flag on restores all three.
+**The blog is listed** (`BLOG_LISTED` in `src/data/blog.js`): the nav tab,
+the footer link, and the platform cards open the layer's post. Turning the
+flag off hides all three and keeps the routes and the posts.
+
+**The blog is four posts, one per layer, in English only**, and nothing in
+them is typed by hand. The prose is in `src/data/blog.js`; every number it
+quotes is a `{key}` and every map, chart and table a `{ figure: id }`, both
+from `public/blog-figures/figures.json`, which `npm run blog`
+(`scripts/build-blog.mjs`) computes from the published files and the
+statistics, with the maps drawn as the city view draws them (MapLibre in
+Chromium over the site's basemap, the site's own ramps and bivariate
+colours) and saved as WebP beside it. The charts are SVG strings
+(`scripts/lib/blog-charts.mjs`) styled by `.aa-bfig` in `Blog.css`, whose
+class names are the contract between the two. Re-run it after a data
+change: the post says what date its figures are from, `test:data` fails if
+a post names a key or a figure the file does not have or a map is missing
+from disk, and `smoke.mjs` checks a post fetched the file and its images.
+The maps need Playwright and the basemap host; `--no-maps` recomputes the
+rest and keeps them. Its assets are under `blog-figures/`, not `blog/`: a
+directory named like a route makes a server answer the route with the
+directory. Examples are chosen by a rule, never by hand-picking the
+extreme (the most populated cell in a band of distance, not the slowest),
+because the extreme was what a first draft picked. The general post on
+what the Atlas measures was retired.
 
 **A platform card opens the Atlas's own introduction to that layer, not the
 upstream viewer**, while the blog is listed. Each of the four has a post in `src/data/blog.js` carrying
@@ -1136,6 +1183,20 @@ its country and nothing else ("Rome – Italy", the country in the accent),
 and "About this layer". The boundary on screen is the
 pressed half of the boundary switch, not part of the title. The top-right
 stack stops above the full-screen button and scrolls inside that room.
+
+**Close & Connected has a plot as well as a map** ("Show as: Map / Plot"):
+every inhabited cell by its two scores, opportunity across and proximity
+up, dots sized by residents and coloured as the map colours them, the
+city's medians dashed so each quarter is a zone (`PovScatter.jsx`). It
+covers the map rather than replacing it, so leaving it is instant, and it
+is **not offered on a phone** (`scatterOffered`): under the sheet and the
+boxes it would be a strip a few dots tall. Copy that mentions it has a phone
+version without it.
+
+**Car Dependency opens on the ratio** (car ÷ transit, `cdiRatio`), with the
+normalised index one switch away ("Normalised measure"), and its summary
+gives the median resident's ratio beside the normalised mean (see "Facts
+that are easy to get wrong" for why the mean stays normalised).
 
 **It opens on the cartogram**, on every layer that has one: where nobody
 lives shrinks away, so the first picture is of the residents a measure is
@@ -1261,10 +1322,9 @@ tracking breaks the joins of a cursive script.
 **What stays in English, in every language**: the Atlas's name, platform and
 dataset names, the postal address and the citations. City and country names
 come from the catalogue, which carries English and Italian only. Blog posts
-have no versions beyond English and Italian; the fallback copy is marked
-`lang="en" dir="ltr"` (`postCopy` in `Blog.jsx`) so it is not laid out right
-to left in Arabic, and each blog lede says the posts are in English and
-Italian. Roboto and Instrument Serif have no CJK or Arabic glyphs: `tokens.css`
+are in English only; in every other language they are marked
+`lang="en" dir="ltr"` (`postCopy` in `Blog.jsx`) so they are not laid out
+right to left in Arabic, and each blog lede says the posts are in English. Roboto and Instrument Serif have no CJK or Arabic glyphs: `tokens.css`
 puts the system's faces behind them per language, and downloads nothing.
 Numbers never appear in the dictionaries; they are formatted with `Intl` from
 `src/data/*.js`, so `156,627` becomes `156.627` in Italian for free.

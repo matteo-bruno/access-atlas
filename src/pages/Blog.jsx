@@ -43,7 +43,7 @@ export default function Blog() {
                   <span>{t('blog.readingTime', { count: n(post.readingTime) })}</span>
                 </div>
                 <h2 className="aa-postcard__title" {...attrs}>
-                  <Link to={`/blog/${post.slug}`}>{copy.title}</Link>
+                  <Link to={`/blog/${post.slug}`}>{postTitle(copy)}</Link>
                 </h2>
                 <p className="aa-postcard__lede" {...attrs}>
                   {copy.lede}
@@ -70,6 +70,11 @@ export default function Blog() {
 export function postCopy(post, lang) {
   const own = post[lang];
   return { copy: own ?? post.en, attrs: own || lang === 'en' ? {} : { lang: 'en', dir: 'ltr' } };
+}
+
+// A post's title in one line: the run-up and the coloured half together.
+export function postTitle(copy) {
+  return copy.titleAccent ? `${copy.title} ${copy.titleAccent}` : copy.title;
 }
 
 export function formatDate(iso, lang) {

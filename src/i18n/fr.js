@@ -11,13 +11,13 @@ export default {
   },
 
   nav: {
-    title: 'Accessibility Atlas',
-    tagline: 'Sony CSL · Rome — Villes durables',
+    title: 'Opportunity Atlas',
+    tagline: 'Sony CSL · Rome',
     atlas: 'Accueil',
     platforms: 'Atlas',
     citychat: 'CityChat',
     stats: 'Statistiques',
-    about: 'Villes durables',
+    about: 'Mission',
     consulting: 'Conseil',
     research: 'Recherche',
     blog: 'Blog',
@@ -32,7 +32,7 @@ export default {
   home: {
     hero: {
       eyebrow: 'Plateformes de recherche ouvertes · Sony CSL Rome',
-      title: 'Accessibility',
+      title: 'Opportunity',
       titleAccent: 'Atlas',
       subtitle: 'Cartographier l’accès urbain, ville par ville.',
       headline: 'Un atlas pour mesurer',
@@ -90,7 +90,7 @@ export default {
           'Une géographie des temps de trajet : la ville redessinée pour que la distance se mesure en minutes de transports en commun.',
         cardep:
           'De combien l’accès aux opportunités en voiture dépasse l’accès en transports en commun, cellule par cellule.',
-        pov: 'La proximité croisée avec l’opportunité, pour diviser la ville en quatre zones d’accès.',
+        pov: 'Proximité et opportunité ensemble : ce qui est proche à pied et ce à quoi les transports en commun vous relient, pour diviser la ville en quatre zones.',
       },
     },
     table: {
@@ -150,7 +150,7 @@ export default {
 
     all: {
       name: 'Toutes les couches',
-      welcome: 'Bienvenue sur l’Accessibility Atlas',
+      welcome: 'Bienvenue dans l’Opportunity Atlas',
       label: 'Couverture publiée',
       pick: 'Choisir une carte',
       intro:
@@ -183,17 +183,17 @@ export default {
     cardep: {
       label: 'Voiture ou transports en commun',
       intro:
-        'Le Car Dependency Index compare les opportunités accessibles en voiture à celles accessibles en transports en commun dans le même temps : CDI = (O_voiture − O_TC) / (O_voiture + O_TC). Il va de −1, où les transports en commun atteignent davantage, à +1, où la voiture atteint tout et les transports en commun presque rien, en passant par 0, où les deux s’équilibrent.',
+        'Le Car Dependency Index compare les opportunités accessibles en voiture à celles accessibles en transports en commun dans le même temps : CDI = O_voiture / O_TC. Il vaut 1 là où les deux s’équilibrent, moins de 1 là où les transports en commun atteignent davantage, et 2 là où la voiture atteint le double. Sa forme normalisée, (O_voiture − O_TC) / (O_voiture + O_TC), va de −1 à +1, avec 0 là où les deux s’équilibrent.',
       legendUnit: 'Car Dependency Index (habitant médian)',
       tooltip: '{name} · CDI {value} (habitant médian)',
       legend: ['Favorable aux transports en commun', 'Équilibré', 'Dépendant de la voiture'],
     },
     pov: {
-      label: 'Proximité · Opportunité · Valeur',
+      label: 'Proximité + opportunité',
       intro:
-        'En reliant Proximité et Opportunité, ce cadre combine la mesure d’un quartier actif (forte proximité) et celle d’un nœud de transport public rapide (forte opportunité). Les scores mesurent à combien de services une personne a accès, en transports publics en un temps long (score d’opportunité) ou à pied en un temps court (score de proximité). Les lieux denses peuvent avoir les deux et sont étiquetés lieux d’Inclusion, tandis que l’isolement spatial dans les transports publics ou l’isolement social d’un quartier vide valent encore mieux que l’isolement total des lieux coupés du reste de la ville et avec peu d’opportunités locales. Un troisième axe serait l’insaisissable Valeur des lieux.',
+        'Close & Connected place côte à côte les deux dimensions de l’Atlas : la proximité, ce qui est proche à pied, la dimension de la ville du quart d’heure, et l’opportunité, ce à quoi les transports en commun vous relient dans toute la ville, la dimension de CityChrone. Les deux sont mesurées sur les mêmes cellules par le cadre P.O.V., en comptant combien de services une personne atteint à pied en peu de temps (score de proximité) ou en transports en commun en un temps plus long (score d’opportunité). Les lieux qui ont les deux sont Close & Connected ; un quartier animé que les transports laissent de côté est Close, un quartier bien desservi mais vide est Connected, et chacun vaut encore mieux que l’isolement total des lieux qui n’ont ni l’un ni l’autre. Un troisième axe serait l’insaisissable Valeur des lieux.',
       legendUnit: 'Zone',
-      legend: ['Inclusion', 'Isolement spatial', 'Isolement social', 'Isolement total'],
+      legend: ['Close & Connected', 'Close', 'Connected', 'Isolement total'],
       // Under the world map's legend: what the zones are measured against.
     },
   },
@@ -281,14 +281,17 @@ export default {
       zones: 'Zones',
       proximity: 'Proximité',
       opportunity: 'Opportunité',
+      both: 'Les deux',
     },
     povLegend: {
       proximity: 'Score de proximité',
       opportunity: 'Score d’opportunité',
+      both: 'Proximité et opportunité',
     },
     povHint: {
       proximity: 'Combien de services chaque cellule atteint à pied en peu de temps : ce qui est proche. Un score pondéré, pas un nombre de lieux.',
       opportunity: 'Combien de services chaque cellule atteint en transports en commun en un temps plus long : ce qui est plus loin mais accessible. Un score pondéré, pas un nombre de lieux.',
+      both: 'Les deux scores à la fois, sans les quatre bords des zones : bleu clair là où un lieu a plus de choses à proximité que la majeure partie de la ville, rose là où les transports en commun le relient à davantage, indigo foncé là où il a les deux, pâle là où il a peu de l’un comme de l’autre. Chaque score est classé parmi les habitants de la ville, si bien que les lignes pointillées du carré sont les médianes de la ville, là où les zones la divisent. Comme les zones, les couleurs comparent des lieux d’une même ville, pas des villes.',
     },
     scenario: {
       label: 'Scénario',
@@ -298,7 +301,7 @@ export default {
       legendDiff: 'Variation : {scenario} moins actuel',
       change: 'Variation',
       diffAbout: {
-        cardep: 'Sous zéro, le scénario rend la cellule moins dépendante de la voiture : les transports en commun atteignent relativement plus de ce qu’atteint la voiture. Les cellules blanches ne changent pas.',
+        cardep: 'Sous zéro (vert), le scénario rend une cellule moins dépendante de la voiture : les transports en commun atteignent relativement plus de ce qu’atteint la voiture. Les cellules blanches ne changent pas.',
         fifteen: 'Sous zéro, le scénario rapproche les services : des minutes gagnées. Au-dessus de zéro, il les éloigne. Les cellules blanches ne changent pas.',
       },
     },
@@ -361,6 +364,31 @@ export default {
     legacyHint:
       'Cette ville n’est pas encore exportée sur la grille commune : chaque visualisation charge le maillage de sa propre plateforme.',
     error: 'Le maillage publié n’a pas pu être chargé.',
+    bivariate: {
+      axisX: 'Opportunité →',
+      axisY: 'Proximité →',
+      both: 'Élevés tous deux',
+      proximity: 'Proximité seule',
+      opportunity: 'Opportunité seule',
+      neither: 'Faibles tous deux',
+    },
+    scatter: {
+      label: 'Afficher en',
+      map: 'Carte',
+      plot: 'Graphique',
+      about: 'Le graphique place chaque cellule selon ses deux scores plutôt que selon sa position : l’opportunité à l’horizontale, la proximité à la verticale, chaque point dimensionné selon ses habitants et coloré comme la carte le colorerait. Les lignes pointillées sont les médianes de la ville, si bien que chaque quart du graphique est une zone. Survolez un point pour le lire, cliquez pour sélectionner aussi sa cellule sur la carte.',
+      x: 'Score d’opportunité →',
+      y: 'Score de proximité →',
+      median: 'Médiane de la ville',
+      note: 'Chaque point est une cellule habitée, dimensionnée selon ses habitants. Les lignes pointillées sont les médianes de la ville, si bien que chaque quart est une zone. Cliquez sur un point pour sélectionner sa cellule.',
+    },
+    cdiRatio: {
+      toggle: 'Mesure normalisée',
+      legend: 'Car Dependency Index (CDI)',
+      legendNormalised: 'Car Dependency Index, normalisé',
+      about: 'Le Car Dependency Index : les opportunités qu’atteint la voiture divisées par celles qu’atteignent les transports en commun, dans le même temps. 1 là où les deux sont égales, 2 là où la voiture atteint le double, ½ là où ce sont les transports en commun. L’échelle est logarithmique : le double dans un sens ou dans l’autre est le même pas depuis le blanc. Une cellule où les transports en commun n’atteignent rien n’a pas d’indice fini et prend la dernière couleur.',
+      toggleAbout: 'Le même indice sous une autre forme : (voiture − transports) ÷ (voiture + transports), de −1 là où seuls les transports en commun atteignent quelque chose, à 0 là où les deux s’équilibrent, jusqu’à +1 là où seule la voiture le fait. Le rapport va de 0 vers le haut, avec 1 là où les deux s’équilibrent.',
+    },
   },
 
   city: {
@@ -369,23 +397,27 @@ export default {
     compare: 'Comparer les villes',
     zoneType: 'Zone',
     cdiHint:
-      'Négatif là où les transports en commun atteignent davantage que la voiture, positif là où la voiture atteint davantage. L’indice est une différence normalisée bornée à ±1, pas un rapport.',
+      'Le Car Dependency Index sous sa forme normalisée, (voiture − transports) ÷ (voiture + transports) : négatif là où les transports en commun atteignent plus que la voiture, positif là où la voiture atteint davantage, borné à ±1.',
     zones: {
       inclusion: {
-        name: 'Inclusion',
+        name: 'Close & Connected',
         desc: 'Au-dessus de la médiane sur les deux axes, bien desservie localement et reliée à toute la ville',
+        old: 'Inclusion',
       },
       spatial: {
-        name: 'Isolement spatial',
+        name: 'Close',
         desc: 'Des services à proximité, mais une faible desserte vers le reste de la ville',
+        old: 'Isolement spatial',
       },
       social: {
-        name: 'Isolement social',
+        name: 'Connected',
         desc: 'Une bonne desserte, mais peu de services accessibles à pied',
+        old: 'Isolement social',
       },
       total: {
         name: 'Isolement total',
         desc: 'En dessous de la médiane sur les deux axes, exclue de la vie de la ville',
+        old: 'Isolement total',
       },
     },
     summary: {
@@ -394,9 +426,10 @@ export default {
       area: 'Surface couverte',
       proximity: 'Score médian de proximité',
       medianCdi: 'CDI médian (par cellule)',
-      weightedCdi: 'CDI de l’habitant moyen',
+      weightedCdi: 'CDI normalisé, habitant moyen',
       opportunity: 'Score médian d’opportunité',
       population: 'Population couverte',
+      medianRatio: 'CDI de l’habitant médian',
     },
     filter: {
       title: 'Filtrer par indice',
@@ -413,7 +446,7 @@ export default {
       zone: 'Zone',
       proximity: 'Score de proximité',
       opportunity: 'Score d’opportunité',
-      cdi: 'Car Dependency Index',
+      cdi: 'CDI, normalisé',
       byCar: 'Accessible en voiture',
       byTransit: 'Accessible en transports en commun',
       population: 'Habitants',
@@ -424,13 +457,14 @@ export default {
       sociality: 'Score de socialité',
       grid: 'Cellule H3',
       gridAbout: 'Un Standard Hexagonal Hierarchical Spatial Index (index spatial hiérarchique hexagonal).',
+      ratio: 'Car Dependency Index',
     },
     explain: {
       map: {
         pov:
-          'Chaque cellule prend la couleur de la zone où elle se trouve : vert au-dessus de la médiane de la ville en Proximité comme en Opportunité, rouge en dessous des deux, et les deux cas mixtes entre les deux.',
+          'Chaque cellule prend la couleur de sa zone : vert, Close & Connected, au-dessus de la médiane de la ville en Proximité comme en Opportunité ; rouge, isolement total, en dessous sur les deux ; bleu, Close, beaucoup à pied mais peu en transports ; jaune, Connected, de bons transports mais peu à proximité.',
         cardep:
-          'Bleu là où les transports publics atteignent plus d’opportunités que la voiture, blanc là où les deux s’équilibrent, rouge là où la voiture en atteint plus.',
+          'Vert là où les transports en commun atteignent plus d’opportunités que la voiture, blanc là où les deux s’équilibrent, orange là où la voiture atteint davantage.',
         fifteen:
           'La couleur des cellules représente le temps nécessaire pour atteindre les services de la catégorie choisie, à pied ou à vélo. Les zones bleues sont des lieux à 15 minutes, où la ville du quart d’heure est réalisée ; dans les zones rouges, les services sont en moyenne à plus de 15 minutes ; les cellules blanches sont proches du seuil des 15 minutes.',
         citychrone:
@@ -439,13 +473,13 @@ export default {
       // The legend's "?": the colours, then what a white and a blue area mean.
       legend: {
         pov:
-          'En reliant Proximité et Opportunité, ce cadre combine la mesure d’un quartier actif (forte proximité) et celle d’un nœud de transport public rapide (forte opportunité). Les lieux denses peuvent avoir les deux et sont étiquetés lieux d’Inclusion, tandis que l’isolement spatial dans les transports publics ou l’isolement social d’un quartier vide valent encore mieux que l’isolement total des lieux coupés du reste de la ville et avec peu d’opportunités locales. Un troisième axe serait l’insaisissable Valeur des lieux.',
+          'En reliant Proximité et Opportunité, ce cadre combine la mesure d’un quartier actif (forte proximité) et celle d’un nœud de transport rapide (forte opportunité). Les lieux denses peuvent avoir les deux et sont Close & Connected, tandis qu’un lieu seulement Close (isolé des transports en commun) ou seulement Connected (un quartier vide sur une bonne ligne) vaut encore mieux que l’isolement total des lieux coupés du reste de la ville et pauvres en opportunités locales. Un troisième axe serait l’insaisissable Valeur des lieux.',
         cardep:
-          'Bleu là où les transports publics atteignent plus d’opportunités que la voiture, blanc là où les deux s’équilibrent, rouge là où la voiture en atteint plus. Une zone blanche offre les mêmes opportunités et suffit déjà pour vivre sans voiture ; une zone bleue est plus rare, et apparaît quand les transports publics sont optimaux et que le trafic, les zones piétonnes et le temps de stationnement rendent la voiture peu pratique.',
+          'Vert là où les transports en commun atteignent plus d’opportunités que la voiture, blanc là où les deux s’équilibrent, orange là où la voiture atteint davantage. Une zone blanche offre les mêmes opportunités et suffit déjà pour vivre sans voiture ; une zone verte est plus rare, et apparaît quand les transports en commun sont excellents et que la circulation, les zones piétonnes et le temps de stationnement rendent la voiture peu pratique.',
       },
       summary: {
         pov: 'Cellules compte ce que couvre le jeu de données publié. Chaque médiane est le score de l’habitant médian : la moitié des habitants de la ville vit dans des cellules au score plus bas, l’autre moitié plus haut. Les scores sont des comptes pondérés de points d’intérêt accessibles, d’où l’absence d’unité : ce ne sont ni des mètres ni des emplois. La population est la somme du jeu de données sur ses cellules, pas un chiffre officiel pour la ville.',
-        cardep: 'Le CDI médian est l’indice de l’habitant médian : la moitié des habitants de la ville vit dans des cellules à l’indice plus bas. Le CDI de l’habitant moyen pondère chaque cellule par le nombre de personnes qui y vivent, et c’est le chiffre sur lequel la plateforme classe les villes. Les deux comptent des habitants, pas des cellules : la moitié des cellules d’une ville peut dépendre de la voiture alors que la plupart des habitants vivent dans l’autre moitié.',
+        cardep: 'Le CDI de l’habitant médian est le rapport, voiture ÷ transports, de l’habitant situé au milieu : la moitié des habitants de la ville vit dans des cellules dont la valeur est plus basse. Le CDI normalisé de l’habitant moyen, de −1 à +1, pondère chaque cellule par les personnes qui y vivent, et c’est sur lui que la plateforme classe les villes ; une moyenne de rapports serait tirée vers le haut par les quelques cellules que les transports en commun atteignent à peine, c’est pourquoi elle reste normalisée. Les deux comptent des habitants, pas des cellules : la moitié des cellules d’une ville peut dépendre de la voiture alors que la plupart de ses habitants vivent dans l’autre moitié.',
         fifteen: 'La médiane est le temps de l’habitant médian pour la catégorie et le mode affichés : la moitié des habitants vit dans des cellules atteintes plus vite, l’autre moitié plus lentement. Chaque cellule compte autant de fois qu’elle a d’habitants, si bien que les cellules périphériques peu peuplées ne l’emportent pas sur les lieux où vit la plupart des gens. La population est la somme du jeu de données.',
         atlas: 'Les chiffres sont recalculés pour la couche affichée. « Cellules » désigne le maillage union, c’est-à-dire toutes les cellules mesurées par au moins une plateforme : une couche qui en couvre moins l’indique sur sa propre ligne.',
       },
@@ -539,7 +573,7 @@ export default {
       weightedCdi: 'Indice de l’habitant moyen',
       medianCdi: 'Indice de l’habitant médian',
       ptShare: 'Cellules favorables aux transports en commun',
-      inclusion: 'Inclusion',
+      inclusion: 'Close & Connected',
       proximity: 'Proximité médiane',
       opportunity: 'Opportunité médiane',
     },
@@ -548,7 +582,7 @@ export default {
       cardep: 'Villes classées par indice',
       pov: 'Répartition des zones par ville',
       aboutCardep: 'Chaque barre est l’indice de l’habitant moyen de cette ville : chaque cellule pondérée par le nombre de personnes qui y vivent. À gauche de la ligne, les villes où, pour l’habitant type, les transports en commun atteignent davantage que la voiture ; à droite, celles où c’est la voiture. Les barres utilisent la même échelle que les cartes.',
-      aboutPov: 'La part de chaque ville qui tombe dans chacune des quatre zones. Les zones sont fixées par rapport aux médianes pondérées par la population de cette même ville : on compare donc ici la répartition interne, et non le niveau d’une ville à l’autre. Une ville peut être pour moitié en inclusion et rester mal desservie dans l’ensemble. Vous pouvez compter par cellules ou par habitants : les cellules isolées sont grandes et peu peuplées, et les deux lectures racontent des histoires différentes.',
+      aboutPov: 'La part de chaque ville qui tombe dans chacune des quatre zones. Les zones sont fixées sur les médianes pondérées par la population de la ville elle-même : cela compare la composition à l’intérieur des villes, pas le niveau entre elles. Une ville peut être à moitié Close & Connected et rester mal desservie dans l’ensemble. Passez du comptage des cellules à celui des habitants : les cellules isolées sont grandes et peu peuplées, les deux racontent donc des histoires différentes.',
     },
     scatter: {
       cardep: 'Ce que la voiture atteint face aux transports en commun',
@@ -571,9 +605,9 @@ export default {
       carCells: 'Cellules voiture',
       proximity: 'Proximité méd.',
       opportunity: 'Opportunité méd.',
-      inclusion: 'Inclusion',
-      spatial: 'Isol. spatial',
-      social: 'Isol. social',
+      inclusion: 'Close & Conn.',
+      spatial: 'Close',
+      social: 'Connected',
       total: 'Isol. total',
     },
     loading: 'Chargement des villes publiées…',
@@ -636,6 +670,12 @@ export default {
         desc: 'Nous créons pour les villes des versions affinées de nos plateformes, au service d’une planification urbaine et des transports éclairée.',
         cta: 'Parlons-en.',
       },
+      cycle: {
+        replicate: 'reproduire',
+        refine: 'affiner',
+        questions: 'nouvelles questions',
+        centre: 'Villes',
+      },
     },
 
     topicsTitle: 'Thèmes',
@@ -686,7 +726,7 @@ export default {
         'Quelle part des habitants de {city} vit en isolement total, et qu\'est-ce que cela signifie ?',
       ],
       research: [
-        'Comment sont calculés les seuils des zones de P.O.V. ?',
+        'Comment sont calculés les seuils des zones de Close & Connected ?',
         'Quelle différence entre parts de cellules et parts d’habitants à {city} ?',
         'Comment la vitesse des transports en commun à {city} évolue-t-elle au fil de la journée ?',
       ],
@@ -773,8 +813,8 @@ export default {
           body: 'Une part de résidents « au-dessus de 5 000 » ou « à moins de 15 minutes » signifie la même chose dans chaque ville. Les seuils sont des nombres ronds couvrant la plage publiée, choisis une fois et non ajustés aux villes affichées.',
         },
         zones: {
-          title: 'Les zones de P.O.V. comparent des lieux au sein d’une ville',
-          body: 'P.O.V. découpe chaque ville selon ses propres médianes pondérées par la population : ses quatre zones disent comment un lieu se situe par rapport au reste de sa ville, et chaque ville a environ la moitié de ses résidents au-dessus de chaque ligne. Pour comparer les villes, l’Atlas découpe aussi chaque ville aux médianes de tous ses résidents P.O.V. ensemble (les zones sur la médiane de l’Atlas) : un résident en « inclusion » y est mieux loti que la moitié des résidents de l’Atlas sur les deux scores.',
+          title: 'Les zones de Close & Connected comparent des lieux au sein d’une ville',
+          body: 'Close & Connected divise chaque ville selon ses propres médianes pondérées par la population : ses quatre zones disent donc comment un lieu se compare au reste de sa ville, et chaque ville a environ la moitié de ses habitants au-dessus de chaque ligne. Pour comparer les villes, l’Atlas divise aussi chaque ville selon les médianes de tous ses habitants de Close & Connected réunis (les zones sur la médiane de l’Atlas) : un habitant « Close & Connected » y est mieux loti que la moitié des habitants de l’Atlas sur les deux scores.',
         },
         countries: {
           title: 'Un pays, ce sont ses villes publiées, regroupées',
@@ -843,9 +883,9 @@ export default {
     about: {
       proximity: 'Combien de points d’intérêt un résident peut atteindre à pied depuis sa cellule, pondérés. Un score, pas une distance.',
       opportunity: 'Combien de points d’intérêt un résident peut atteindre dans toute la ville à pied et en transports publics, pondérés. Un score, pas un nombre d’emplois.',
-      zonesCommon: 'Les quatre zones de P.O.V., découpées pour chaque ville aux deux mêmes lignes : la médiane de proximité et la médiane d’opportunité de tous les résidents P.O.V. de l’Atlas ensemble. « Inclusion » signifie mieux que la moitié des résidents de l’Atlas sur les deux scores, donc la part des résidents de chaque zone compare une ville à une autre.',
-      zonesCity: 'Les quatre zones de P.O.V. telles que la plateforme les publie, découpées selon les médianes pondérées de chaque ville. Elles décrivent des lieux au sein d’une ville : chaque ville a environ la moitié de ses résidents de chaque côté de chaque ligne.',
-      cdi: 'La différence normalisée entre ce qu’atteignent depuis une cellule la voiture et les transports publics, de −1 (les transports atteignent plus) à +1 (la voiture atteint plus). Pas un rapport.',
+      zonesCommon: 'Les quatre zones de Close & Connected, divisées pour chaque ville par les deux mêmes lignes : la proximité médiane et l’opportunité médiane de tous les habitants de Close & Connected de l’Atlas réunis. « Close & Connected » signifie mieux que la moitié des habitants de l’Atlas sur les deux scores, si bien que la part d’habitants dans chaque zone compare une ville à une autre.',
+      zonesCity: 'Les quatre zones de Close & Connected telles que la plateforme les publie, divisées selon les médianes pondérées par la population de chaque ville. Elles décrivent des lieux au sein d’une ville : chaque ville a environ la moitié de ses habitants de chaque côté de chaque ligne.',
+      cdi: 'Le Car Dependency Index sous sa forme normalisée, (voiture − transports) ÷ (voiture + transports), de −1 (les transports en commun atteignent davantage) à +1 (la voiture atteint davantage). La carte de la ville lit le même indice comme un rapport, voiture ÷ transports, avec 1 là où les deux s’équilibrent.',
       car: 'Les opportunités accessibles en voiture depuis une cellule, telles que les compte Car Dependency : un score pondéré.',
       pt: 'Les opportunités accessibles en transports publics depuis une cellule, telles que les compte Car Dependency : un score pondéré.',
       fifteen: 'Le temps de trajet d’une cellule aux services les plus proches de la catégorie, à pied ou à vélo. « Moyenne de tous les services » est la moyenne des neuf catégories.',
@@ -990,7 +1030,7 @@ export default {
     },
     note: {
       withinCity: 'Ces zones sont tracées selon les médianes de chaque ville : elles comparent des lieux au sein d’une ville, pas des villes. Pour comparer des villes, utilisez les zones à seuils communs.',
-      zonesCommon: 'Les zones communes sont découpées à la médiane des résidents P.O.V. des {count} villes : proximité {proximity}, opportunité {opportunity}. Elles bougent un peu chaque fois qu’une ville est ajoutée.',
+      zonesCommon: 'Les zones communes sont divisées à la médiane des habitants de Close & Connected des {count} villes : proximité {proximity}, opportunité {opportunity}. Elles bougent un peu à chaque ville ajoutée.',
       thresholds: 'Les seuils sont fixes et identiques dans chaque ville.',
       correlation: 'Une corrélation décrit comment deux mesures vont ensemble au sein d’une ville. Elle ne dit pas quelle ville est la mieux desservie.',
       citychrone: 'Les scores de CityChrone n’ont pas de conversion d’unité vérifiée : comparez-les entre villes, pas avec des valeurs extérieures.',
@@ -1118,11 +1158,13 @@ export default {
     eyebrow: 'Blog',
     headline: 'Carnets',
     headlineAccent: 'de l’Atlas.',
-    lede: 'Des textes plus longs sur ce que nous mesurons, comment nous le mesurons, et ce que les cartes montrent ou ne montrent pas. Les articles sont en anglais et en italien.',
+    lede: 'Des textes plus longs sur ce que nous mesurons, comment nous le mesurons, et ce que les cartes montrent ou ne montrent pas. Les articles sont en anglais.',
     readingTime: '{count} min de lecture',
     backToBlog: '← Tous les articles',
     published: 'Publié le',
     postsLabel: 'Articles',
+    figuresFailed: 'Les figures de cet article n’ont pas pu être chargées : ses chiffres s’affichent comme « … ».',
+    figuresAsOf: 'Chiffres calculés à partir des données de l’Atlas du {date}.',
   },
 
   work: {
@@ -1211,7 +1253,7 @@ export default {
         fifteen: 'la proximité des services à pied.',
         citychrone: 'la vitesse des transports en commun.',
         cardep: 'si se déplacer en ville dépend de la voiture.',
-        pov: 'plusieurs aspects de l’accessibilité à la fois.',
+        pov: 'ce qui est proche et ce à quoi les transports en commun vous relient, ensemble.',
       },
       cell: {
         title: 'Cliquez sur une cellule',
@@ -1248,15 +1290,16 @@ export default {
       },
       cardep: {
         title: 'Car Dependency Index',
-        colors: 'Vous voyez la différence normalisée entre les opportunités accessibles en transports en commun et en voiture.',
-        blue: 'Les lieux bleus, où les transports en commun l’emportent, sont rares : la voiture est souvent plus rapide.',
+        colors: 'Vous voyez les opportunités accessibles en voiture divisées par celles accessibles en transports en commun : 1 là où elles s’équilibrent. « Mesure normalisée » montre le même indice de −1 à +1.',
+        blue: 'Les lieux verts, où les transports en commun l’emportent, sont rares : la voiture est souvent plus rapide.',
         views: "Vous pouvez aussi voir les deux scores d’opportunité que compare l’indice : les points d’intérêt accessibles en voiture et en transports en commun.",
         filter: 'Le filtre ne montre que les cellules dans une plage de l’indice.',
       },
       pov: {
-        title: 'Urban Accessibility P.O.V.',
-        scores: 'Proximité et opportunité : les services accessibles près (à pied) et loin (en transports en commun).',
-        zones: 'Zones : la classification par rapport à la médiane de la ville elle-même, elle dit donc quels lieux sont mieux ou moins bien desservis que la moyenne de la ville.',
+        title: 'Close & Connected',
+        scores: 'Proximité et opportunité : les services accessibles tout près (à pied) et plus loin (en transports en commun). « Les deux » les dessine ensemble sur un seul carré de couleurs.',
+        zones: 'Zones : la classification par rapport à la médiane de la ville elle-même, qui dit donc quels lieux sont mieux ou moins bien desservis que la moyenne de la ville. « Graphique » place chaque cellule selon ses deux scores au lieu de la carte.',
+        zonesPhone: 'Zones : la classification par rapport à la médiane de la ville elle-même, qui dit donc quels lieux sont mieux ou moins bien desservis que la moyenne de la ville.',
       },
     },
   },

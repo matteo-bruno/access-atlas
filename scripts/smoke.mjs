@@ -57,7 +57,7 @@ const ROUTES = [
   ['/research', 'Research'],
   ['/blog', 'Blog index'],
   ['/blog/layer-15-minute-city', 'Layer post — 15-minute city'],
-  ['/blog/layer-accessibility-pov', 'Layer post — P.O.V.'],
+  ['/blog/layer-accessibility-pov', 'Layer post — Close & Connected'],
   ['/work-with-us', 'Work with us'],
   ['/faq', 'FAQ'],
   ['/contact', 'Contact'],
@@ -143,7 +143,7 @@ const browser = await chromium.launch({
 // here but the one about them runs as a returning reader.
 const skipTours = () => {
   try {
-    for (const id of ['atlas-v2', 'city-v2', 'layer-fifteen-v1', 'layer-citychrone-v1', 'layer-cardep-v2', 'layer-pov-v1']) localStorage.setItem(`tour:${id}`, '1');
+    for (const id of ['atlas-v2', 'city-v2', 'layer-fifteen-v1', 'layer-citychrone-v1', 'layer-cardep-v3', 'layer-pov-v2']) localStorage.setItem(`tour:${id}`, '1');
   } catch {
     // No storage: the tours would show, and the checks would say so.
   }
@@ -204,6 +204,37 @@ for (const [route, name] of ROUTES) {
     'CityChat says it is off, and asks nothing of a missing service',
     /not enabled/i.test(status) && disabled && calls.length === 0 && /CityChat/.test(tab),
     `${status} · textarea disabled=${disabled} · requests=${calls.length} · tab=${tab.replace(/\n/g, ' ')}`,
+  );
+  await page.close();
+}
+
+// ── A blog post reads its numbers and maps from the figures file ─────
+// Provenance, not values: the file was fetched, no number is the "…" that
+// stands in for a missing one, and the maps arrived as images (a wrong path
+// would be index.html with a 200, decoded as a broken image).
+{
+  const page = await context.newPage();
+  const fetched = [];
+  page.on('response', (r) => r.url().includes('/blog-figures/') && fetched.push(`${r.status()} ${r.url()}`));
+  await page.goto(`${BASE}/blog/layer-car-dependency`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-bfig__body img', { timeout: 15000 }).catch(() => {});
+  await page.evaluate(async () => {
+    for (let y = 0; y < document.body.scrollHeight; y += 600) {
+      window.scrollTo(0, y);
+      await new Promise((r) => setTimeout(r, 120));
+    }
+  });
+  await page.waitForTimeout(1500);
+  const info = await page.evaluate(() => ({
+    text: document.querySelector('.aa-post__body')?.innerText ?? '',
+    images: [...document.querySelectorAll('.aa-bfig__body img')].map((img) => img.complete && img.naturalWidth > 0),
+    charts: document.querySelectorAll('.aa-bfig__body svg').length,
+  }));
+  const file = fetched.find((f) => f.includes('figures.json'));
+  check(
+    'Blog post: numbers and maps come from the figures file',
+    Boolean(file?.startsWith('200')) && !info.text.includes('…') && info.images.length > 0 && info.images.every(Boolean) && info.charts > 0,
+    `${file ?? 'figures.json not fetched'} · ${info.images.filter(Boolean).length}/${info.images.length} maps · ${info.charts} charts`,
   );
   await page.close();
 }

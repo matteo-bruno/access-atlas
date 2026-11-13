@@ -806,5 +806,32 @@ if (catalogue.stats) {
   }
 }
 
+// The blog's posts name their numbers and figures by key, from the file
+// `npm run blog` writes (scripts/build-blog.mjs). A key a post names and the
+// file lacks would print "…" on the page; a map the file names and the disk
+// lacks would be a broken image behind the SPA fallback's 200.
+{
+  const { POSTS } = await import('../src/data/blog.js');
+  const file = path.join(process.cwd(), 'public', 'blog-figures', 'figures.json');
+  const doc = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
+  check('Blog figures file is there', Boolean(doc?.values && doc?.figures), 'run npm run blog');
+  if (doc) {
+    const missing = [];
+    const strings = (node) => (typeof node === 'string' ? [node] : node && typeof node === 'object' ? Object.values(node).flatMap(strings) : []);
+    for (const post of POSTS) {
+      for (const block of post.en.body) {
+        if (block.figure && !doc.figures[block.figure]) missing.push(`${post.slug}: figure ${block.figure}`);
+        for (const text of strings(block)) for (const [, key] of text.matchAll(/\{([\w.-]+)\}/g)) if (!(key in doc.values)) missing.push(`${post.slug}: value ${key}`);
+      }
+    }
+    check('Every value and figure a blog post names is in the figures file', !missing.length, missing.slice(0, 4).join(' | '));
+    const maps = Object.values(doc.maps ?? {});
+    const absent = maps.filter((name) => !fs.existsSync(path.join(path.dirname(file), 'maps', name)));
+    const named = Object.values(doc.figures).join('').match(/blog-figures\/maps\/[^"]+/g) ?? [];
+    const unlisted = named.filter((src) => !maps.includes(src.split('/').pop()));
+    check('Every blog map is on disk', !absent.length && !unlisted.length, [...absent, ...unlisted].slice(0, 4).join(' | '));
+  }
+}
+
 console.log(failures ? `\n${failures} check(s) failed` : '\nAll data checks passed');
 process.exit(failures ? 1 : 0);
