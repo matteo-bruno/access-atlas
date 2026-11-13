@@ -1062,7 +1062,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     'The landing leaves a viewport of the site backdrop under its copy',
     (await page.locator('.aa-backdrop canvas').count()) === 1 &&
       /Home/.test(tab) &&
-      headline === 'Accessibility Atlas' &&
+      headline === 'Opportunity Atlas' &&
       (await page.locator('.aa-picker').count()) === 0,
     `${tab} · ${headline}`,
   );
