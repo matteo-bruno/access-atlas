@@ -60,8 +60,8 @@ const HALF_HEIGHT = -UNIT([0, 90])[1];
  * function's output, not an independent design choice — if the frame is
  * wrong, the padding or the clamp below is what wants changing.
  */
-export const WORLD_ZOOM_BOOST = 0.33;
-export const WORLD_CENTER = [14.27, 46.7];
+export const WORLD_ZOOM_BOOST = 0;
+export const WORLD_CENTER = [2.35, 4.67];
 
 /**
  * How much wider than the coverage itself the frame is drawn.
