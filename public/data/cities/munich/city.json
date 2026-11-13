@@ -3,7 +3,7 @@
   "version": 1,
   "id": "munich",
   "createdAt": "2026-08-28T13:51:44.000Z",
-  "updatedAt": "2026-10-08T14:05:35.519Z",
+  "updatedAt": "2026-10-19T21:05:19.563Z",
   "meta": {
     "name": "Munich",
     "nameIt": "Monaco di Baviera",
@@ -20,30 +20,128 @@
     "regionIt": "Germania",
     "country": "DE",
     "center": [
-      11.55614,
-      48.14381
+      11.55113,
+      48.1475
     ],
-    "zoom": 9.4,
-    "population": 1606031,
+    "zoom": 8.5,
+    "population": 2693175,
     "grid": "cities/munich/grid.json.gz",
     "cell": {
       "h3Resolution": 9,
       "cellRadiusM": 198
     },
     "layers": [
+      "fifteen",
+      "citychrone",
       "cardep",
       "pov"
     ],
     "layerData": {
+      "fifteen": "cities/munich/fifteen.json.gz",
+      "citychrone": "cities/munich/citychrone.json.gz",
       "cardep": "cities/munich/cardep.json.gz",
       "pov": "cities/munich/pov.json.gz"
     },
     "cartogramSources": {
+      "fifteen": "derived",
+      "citychrone": "derived",
       "cardep": "derived",
       "pov": "derived"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 25899,
+      "times": "cities/munich/citychrone/times{hh}.bin"
     }
   },
   "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "munich",
+        "name": "Munich",
+        "nameIt": "Monaco di Baviera",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          11.55969,
+          48.13797
+        ],
+        "zoom": 9.4,
+        "population": 1704497,
+        "cells": 3389,
+        "layer": "cities/munich/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.55969,
+            48.13797
+          ]
+        },
+        "properties": {
+          "id": "munich",
+          "name": "Munich",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 7.2,
+          "population": 1704497
+        }
+      },
+      "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "munich",
+        "name": "Munich",
+        "nameIt": "Monaco di Baviera",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          11.55101,
+          48.14718
+        ],
+        "zoom": 8.5,
+        "population": 2631765,
+        "cells": 25899,
+        "layer": "cities/munich/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 25899,
+          "times": "cities/munich/citychrone/times{hh}.bin"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.55101,
+            48.14718
+          ]
+        },
+        "properties": {
+          "id": "munich",
+          "name": "Munich",
+          "country": "DE",
+          "isStudy": true,
+          "velocityScore": 6.16,
+          "population": 2631765
+        }
+      },
+      "summary": null
+    },
     "cardep": {
       "row": {
         "id": "munich",

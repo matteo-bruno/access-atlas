@@ -3,7 +3,7 @@
   "version": 1,
   "id": "berlin",
   "createdAt": "2026-08-28T13:51:44.000Z",
-  "updatedAt": "2026-10-08T14:05:34.900Z",
+  "updatedAt": "2026-10-19T22:26:11.586Z",
   "meta": {
     "name": "Berlin",
     "nameIt": "Berlino",
@@ -20,30 +20,178 @@
     "regionIt": "Germania",
     "country": "DE",
     "center": [
-      13.4032,
-      52.50437
+      13.38709,
+      52.50029
     ],
-    "zoom": 8.6,
-    "population": 3482138,
+    "zoom": 8.5,
+    "population": 4565368,
     "grid": "cities/berlin/grid.json.gz",
     "cell": {
       "h3Resolution": 9,
       "cellRadiusM": 191
     },
     "layers": [
+      "fifteen",
+      "citychrone",
       "cardep",
       "pov"
     ],
     "layerData": {
+      "fifteen": "cities/berlin/fifteen.json.gz",
+      "citychrone": "cities/berlin/citychrone.json.gz",
       "cardep": "cities/berlin/cardep.json.gz",
       "pov": "cities/berlin/pov.json.gz"
     },
     "cartogramSources": {
+      "fifteen": "derived",
+      "citychrone": "derived",
       "cardep": "derived",
       "pov": "derived"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 38010,
+      "times": "cities/berlin/citychrone/times{hh}.bin",
+      "timesHours": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ]
     }
   },
   "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "berlin",
+        "name": "Berlin",
+        "nameIt": "Berlino",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          13.40299,
+          52.50195
+        ],
+        "zoom": 8.9,
+        "population": 3709334,
+        "cells": 7247,
+        "layer": "cities/berlin/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.40299,
+            52.50195
+          ]
+        },
+        "properties": {
+          "id": "berlin",
+          "name": "Berlin",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 7.5,
+          "population": 3709334
+        }
+      },
+      "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "berlin",
+        "name": "Berlin",
+        "nameIt": "Berlino",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          13.38789,
+          52.49915
+        ],
+        "zoom": 8.5,
+        "population": 4915340,
+        "cells": 38010,
+        "layer": "cities/berlin/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 38010,
+          "times": "cities/berlin/citychrone/times{hh}.bin",
+          "timesHours": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ]
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.38789,
+            52.49915
+          ]
+        },
+        "properties": {
+          "id": "berlin",
+          "name": "Berlin",
+          "country": "DE",
+          "isStudy": true,
+          "velocityScore": 6.38,
+          "population": 4915340
+        }
+      },
+      "summary": null
+    },
     "cardep": {
       "row": {
         "id": "berlin",

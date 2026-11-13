@@ -3,7 +3,7 @@
   "version": 1,
   "id": "stockholm",
   "createdAt": "2026-08-28T13:51:44.000Z",
-  "updatedAt": "2026-10-08T14:05:36.584Z",
+  "updatedAt": "2026-10-19T21:22:14.602Z",
   "meta": {
     "name": "Stockholm",
     "nameIt": "Stoccolma",
@@ -20,30 +20,128 @@
     "regionIt": "Svezia",
     "country": "SE",
     "center": [
-      18.01134,
-      59.32144
+      18.01698,
+      59.34049
     ],
-    "zoom": 9.5,
-    "population": 996902,
+    "zoom": 8.5,
+    "population": 2235971,
     "grid": "cities/stockholm/grid.json.gz",
     "cell": {
       "h3Resolution": 9,
-      "cellRadiusM": 176
+      "cellRadiusM": 175
     },
     "layers": [
+      "fifteen",
+      "citychrone",
       "cardep",
       "pov"
     ],
     "layerData": {
+      "fifteen": "cities/stockholm/fifteen.json.gz",
+      "citychrone": "cities/stockholm/citychrone.json.gz",
       "cardep": "cities/stockholm/cardep.json.gz",
       "pov": "cities/stockholm/pov.json.gz"
     },
     "cartogramSources": {
+      "fifteen": "derived",
+      "citychrone": "derived",
       "cardep": "derived",
       "pov": "derived"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 31999,
+      "times": "cities/stockholm/citychrone/times{hh}.bin"
     }
   },
   "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "stockholm",
+        "name": "Stockholm",
+        "nameIt": "Stoccolma",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          18.0039,
+          59.33285
+        ],
+        "zoom": 9.2,
+        "population": 1401021,
+        "cells": 4275,
+        "layer": "cities/stockholm/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.0039,
+            59.33285
+          ]
+        },
+        "properties": {
+          "id": "stockholm",
+          "name": "Stockholm",
+          "country": "SE",
+          "isStudy": true,
+          "proximityMinutes": 10,
+          "population": 1401021
+        }
+      },
+      "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "stockholm",
+        "name": "Stockholm",
+        "nameIt": "Stoccolma",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          18.01598,
+          59.34059
+        ],
+        "zoom": 8.5,
+        "population": 2232360,
+        "cells": 31999,
+        "layer": "cities/stockholm/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 175
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 31999,
+          "times": "cities/stockholm/citychrone/times{hh}.bin"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.01598,
+            59.34059
+          ]
+        },
+        "properties": {
+          "id": "stockholm",
+          "name": "Stockholm",
+          "country": "SE",
+          "isStudy": true,
+          "velocityScore": 6.7,
+          "population": 2232360
+        }
+      },
+      "summary": null
+    },
     "cardep": {
       "row": {
         "id": "stockholm",
@@ -62,7 +160,7 @@
         "layer": "cities/stockholm/cardep.json.gz",
         "cell": {
           "h3Resolution": 9,
-          "cellRadiusM": 176
+          "cellRadiusM": 175
         }
       },
       "marker": {
@@ -199,7 +297,7 @@
         "layer": "cities/stockholm/pov.json.gz",
         "cell": {
           "h3Resolution": 9,
-          "cellRadiusM": 176
+          "cellRadiusM": 175
         },
         "thresholds": {
           "proximity": 2854.4,

@@ -3,7 +3,7 @@
   "version": 1,
   "id": "tokyo",
   "createdAt": "2026-10-07T15:41:07.363Z",
-  "updatedAt": "2026-10-07T15:41:07.363Z",
+  "updatedAt": "2026-10-19T22:32:12.078Z",
   "meta": {
     "name": "Tokyo",
     "nameIt": "Tokyo",
@@ -28,24 +28,38 @@
     "regionIt": "Giappone",
     "country": "JP",
     "center": [
-      139.6591,
-      35.67185
+      139.6738,
+      35.68866
     ],
     "zoom": 8.5,
-    "population": 33277420,
+    "population": 36354124,
     "grid": "cities/tokyo/grid.json.gz",
     "cell": {
       "h3Resolution": 9,
       "cellRadiusM": 193
     },
     "layers": [
-      "fifteen"
+      "fifteen",
+      "citychrone",
+      "cardep",
+      "pov"
     ],
     "layerData": {
-      "fifteen": "cities/tokyo/fifteen.json.gz"
+      "fifteen": "cities/tokyo/fifteen.json.gz",
+      "citychrone": "cities/tokyo/citychrone.json.gz",
+      "cardep": "cities/tokyo/cardep.json.gz",
+      "pov": "cities/tokyo/pov.json.gz"
     },
     "cartogramSources": {
-      "fifteen": "derived"
+      "fifteen": "derived",
+      "citychrone": "derived",
+      "cardep": "derived",
+      "pov": "derived"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 123555,
+      "times": "cities/tokyo/citychrone/times{hh}.bin"
     }
   },
   "platforms": {
@@ -89,6 +103,259 @@
         }
       },
       "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "tokyo",
+        "name": "Tokyo",
+        "nameIt": "Tokyo",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          139.6738,
+          35.68866
+        ],
+        "zoom": 8.5,
+        "population": 36354124,
+        "cells": 123555,
+        "layer": "cities/tokyo/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 123555,
+          "times": "cities/tokyo/citychrone/times{hh}.bin"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.6738,
+            35.68866
+          ]
+        },
+        "properties": {
+          "id": "tokyo",
+          "name": "Tokyo",
+          "country": "JP",
+          "isStudy": true,
+          "velocityScore": 4.93,
+          "population": 36354124
+        }
+      },
+      "summary": null
+    },
+    "cardep": {
+      "row": {
+        "id": "tokyo",
+        "name": "Tokyo",
+        "nameIt": "Tokyo",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          139.6738,
+          35.68866
+        ],
+        "zoom": 8.5,
+        "population": 36354124,
+        "cells": 123555,
+        "layer": "cities/tokyo/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.6738,
+            35.68866
+          ]
+        },
+        "properties": {
+          "id": "tokyo",
+          "name": "Tokyo",
+          "country": "JP",
+          "isStudy": true,
+          "cdi": 0.451,
+          "population": 36354124
+        }
+      },
+      "summary": {
+        "id": "tokyo",
+        "cells": 123555,
+        "population": 36354124,
+        "medianCdi": 0.451,
+        "weightedCdi": 0.573,
+        "ptShare": 0,
+        "carShare": 100,
+        "weightedByCar": 5845,
+        "weightedByTransit": 2142.2,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0.1,
+            0.003
+          ],
+          [
+            0.2,
+            0.041
+          ],
+          [
+            0.3,
+            0.2
+          ],
+          [
+            0.4,
+            0.408
+          ],
+          [
+            0.5,
+            0.561
+          ],
+          [
+            0.6,
+            0.63
+          ],
+          [
+            0.7,
+            0.662
+          ],
+          [
+            0.8,
+            0.683
+          ],
+          [
+            0.9,
+            0.704
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "tokyo",
+        "name": "Tokyo",
+        "nameIt": "Tokyo",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          139.6738,
+          35.68866
+        ],
+        "zoom": 8.5,
+        "population": 36354124,
+        "cells": 123555,
+        "layer": "cities/tokyo/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        },
+        "thresholds": {
+          "proximity": 354,
+          "opportunity": 1716
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.6738,
+            35.68866
+          ]
+        },
+        "properties": {
+          "id": "tokyo",
+          "name": "Tokyo",
+          "country": "JP",
+          "isStudy": true,
+          "zone": 0,
+          "population": 36354124,
+          "inclusionShare": 8.7
+        }
+      },
+      "summary": {
+        "id": "tokyo",
+        "cells": 123555,
+        "population": 36354124,
+        "medianProximity": 354,
+        "medianOpportunity": 1716,
+        "weightedProximity": 432.1,
+        "weightedOpportunity": 2000.7,
+        "zoneShares": [
+          8.7,
+          4,
+          3.6,
+          83.7
+        ],
+        "zonePopulationShares": [
+          39.9,
+          10.1,
+          10.1,
+          39.9
+        ],
+        "thresholds": {
+          "proximity": 354,
+          "opportunity": 1716
+        }
+      }
     }
   }
 }
