@@ -1,0 +1,361 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "hamburg",
+  "createdAt": "2026-10-08T15:37:30.442Z",
+  "updatedAt": "2026-10-19T17:05:22.583Z",
+  "meta": {
+    "name": "Hamburg",
+    "nameIt": "Hamburg",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Hamburg.geojson",
+      "sha256": "dfad4db8625ca30f8ae92f3ac08ace0d3236c8f03d4675ab8a5a44fa58507622",
+      "size": 6079561,
+      "importer": "290958329e1fb3cb",
+      "importedAt": "2026-10-08T16:30:14.089Z"
+    }
+  },
+  "atlas": {
+    "id": "hamburg",
+    "name": "Hamburg",
+    "nameIt": "Hamburg",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      9.99629,
+      53.57895
+    ],
+    "zoom": 8.5,
+    "population": 2950878,
+    "grid": "cities/hamburg/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 186
+    },
+    "layers": [
+      "fifteen",
+      "citychrone",
+      "cardep",
+      "pov"
+    ],
+    "layerData": {
+      "fifteen": "cities/hamburg/fifteen.json.gz",
+      "citychrone": "cities/hamburg/citychrone.json.gz",
+      "cardep": "cities/hamburg/cardep.json.gz",
+      "pov": "cities/hamburg/pov.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived",
+      "citychrone": "derived",
+      "cardep": "derived",
+      "pov": "derived"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 35721,
+      "times": "cities/hamburg/citychrone/times{hh}.bin"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "hamburg",
+        "name": "Hamburg",
+        "nameIt": "Hamburg",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.99964,
+          53.57926
+        ],
+        "zoom": 9,
+        "population": 1773312,
+        "cells": 5335,
+        "layer": "cities/hamburg/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.99964,
+            53.57926
+          ]
+        },
+        "properties": {
+          "id": "hamburg",
+          "name": "Hamburg",
+          "country": "DE",
+          "isStudy": true,
+          "proximityMinutes": 8.8,
+          "population": 1773312
+        }
+      },
+      "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "hamburg",
+        "name": "Hamburg",
+        "nameIt": "Hamburg",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.99629,
+          53.57895
+        ],
+        "zoom": 8.5,
+        "population": 2950878,
+        "cells": 35721,
+        "layer": "cities/hamburg/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 35721,
+          "times": "cities/hamburg/citychrone/times{hh}.bin"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.99629,
+            53.57895
+          ]
+        },
+        "properties": {
+          "id": "hamburg",
+          "name": "Hamburg",
+          "country": "DE",
+          "isStudy": true,
+          "velocityScore": 5.66,
+          "population": 2950878
+        }
+      },
+      "summary": null
+    },
+    "cardep": {
+      "row": {
+        "id": "hamburg",
+        "name": "Hamburg",
+        "nameIt": "Hamburg",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.99629,
+          53.57895
+        ],
+        "zoom": 8.5,
+        "population": 2950878,
+        "cells": 35721,
+        "layer": "cities/hamburg/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.99629,
+            53.57895
+          ]
+        },
+        "properties": {
+          "id": "hamburg",
+          "name": "Hamburg",
+          "country": "DE",
+          "isStudy": true,
+          "cdi": 0.124,
+          "population": 2950878
+        }
+      },
+      "summary": {
+        "id": "hamburg",
+        "cells": 35721,
+        "population": 2950878,
+        "medianCdi": 0.124,
+        "weightedCdi": 0.195,
+        "ptShare": 3.3,
+        "carShare": 92.8,
+        "weightedByCar": 2268.3,
+        "weightedByTransit": 1792.8,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0.017
+          ],
+          [
+            -0.1,
+            0.112
+          ],
+          [
+            0,
+            0.251
+          ],
+          [
+            0.1,
+            0.466
+          ],
+          [
+            0.2,
+            0.618
+          ],
+          [
+            0.3,
+            0.724
+          ],
+          [
+            0.4,
+            0.797
+          ],
+          [
+            0.5,
+            0.849
+          ],
+          [
+            0.6,
+            0.887
+          ],
+          [
+            0.7,
+            0.924
+          ],
+          [
+            0.8,
+            0.951
+          ],
+          [
+            0.9,
+            0.973
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "hamburg",
+        "name": "Hamburg",
+        "nameIt": "Hamburg",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          9.99629,
+          53.57895
+        ],
+        "zoom": 8.5,
+        "population": 2950878,
+        "cells": 35721,
+        "layer": "cities/hamburg/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 186
+        },
+        "thresholds": {
+          "proximity": 297,
+          "opportunity": 1730.5
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.99629,
+            53.57895
+          ]
+        },
+        "properties": {
+          "id": "hamburg",
+          "name": "Hamburg",
+          "country": "DE",
+          "isStudy": true,
+          "zone": 0,
+          "population": 2950878,
+          "inclusionShare": 8.9
+        }
+      },
+      "summary": {
+        "id": "hamburg",
+        "cells": 35721,
+        "population": 2950878,
+        "medianProximity": 297,
+        "medianOpportunity": 1730.5,
+        "weightedProximity": 440.5,
+        "weightedOpportunity": 1779.7,
+        "zoneShares": [
+          8.9,
+          2.1,
+          1.5,
+          87.4
+        ],
+        "zonePopulationShares": [
+          45.1,
+          4.9,
+          4.9,
+          45.1
+        ],
+        "thresholds": {
+          "proximity": 297,
+          "opportunity": 1730.5
+        }
+      }
+    }
+  }
+}
