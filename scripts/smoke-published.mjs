@@ -20,6 +20,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
 import { gridDisk, latLngToCell } from 'h3-js';
+import { skipTours } from './lib/tours.mjs';
 
 const BASE = process.env.SMOKE_URL ?? 'http://localhost:4321';
 const DIST = process.env.DIST ?? 'dist';
@@ -154,14 +155,7 @@ const browser = await chromium.launch({
   args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader', '--no-sandbox'],
 });
 // The guided tours open on a first visit and cover the page; every check
-// here but the one about them runs as a returning reader.
-const skipTours = () => {
-  try {
-    for (const id of ['atlas-v2', 'city-v2', 'layer-fifteen-v1', 'layer-citychrone-v1', 'layer-cardep-v2', 'layer-pov-v1']) localStorage.setItem(`tour:${id}`, '1');
-  } catch {
-    // No storage: the tours would show, and the checks would say so.
-  }
-};
+// here but the one about them runs as a returning reader (lib/tours.mjs).
 const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
 await context.addInitScript(skipTours);
 

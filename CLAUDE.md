@@ -1085,7 +1085,7 @@ CityChrone. What a layer's screen lights is marked in the panel with
 `.aa-tourctl`. Seen is remembered in localStorage (`tour:atlas-v2`,
 `tour:city-v2`, `tour:layer-<id>-v<version>`: Car Dependency's at v3 since
 the ratio, Close & Connected's at v2 since its names, Both and the plot;
-bump an id to show a changed tour again, and the ids in `skipTours`), and a small button brings it back (the round "?" above the zoom,
+bump an id to show a changed tour again, and the ids in `scripts/lib/tours.mjs`, which both browser suites read), and a small button brings it back (the round "?" above the zoom,
 "Guide" beside full screen): on a city it replays the city's steps and the
 open layer's, and leaves the other layers' as they were. **A phone gets
 the same tours, told for its layout**: the copy that says where things are

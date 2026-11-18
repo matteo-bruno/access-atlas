@@ -11,6 +11,7 @@
 // with SMOKE_URL.
 
 import { chromium } from 'playwright';
+import { skipTours } from './lib/tours.mjs';
 // The checks below reproject cities with the very function the world maps
 // are posed with, over the coverage the page itself was given.
 import {
@@ -140,14 +141,7 @@ const browser = await chromium.launch({
   args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader', '--no-sandbox'],
 });
 // The guided tours open on a first visit and cover the page; every check
-// here but the one about them runs as a returning reader.
-const skipTours = () => {
-  try {
-    for (const id of ['atlas-v2', 'city-v2', 'layer-fifteen-v1', 'layer-citychrone-v1', 'layer-cardep-v3', 'layer-pov-v2']) localStorage.setItem(`tour:${id}`, '1');
-  } catch {
-    // No storage: the tours would show, and the checks would say so.
-  }
-};
+// here but the one about them runs as a returning reader (lib/tours.mjs).
 const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
 await context.addInitScript(skipTours);
 
