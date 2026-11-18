@@ -3,7 +3,7 @@ title: CityChrone++:
 accent: the opportunities of moving by public transport
 kicker: Layer · Opportunity
 lede: How far public transport takes you, and how many people you can reach, at different times of the day.
-date: 2026-08-03
+date: 2026-11-15
 layer: citychrone
 color: #1A1F4E
 ---
