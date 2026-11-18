@@ -20,6 +20,8 @@ import { ProviderError } from '../server/citychat/llm/http.mjs';
 import { rankFlashModels } from '../server/citychat/llm/gemini.mjs';
 import { readDataJSON } from './lib/datafile.mjs';
 import { readCatalogue } from './lib/bundle.mjs';
+import { readPosts } from './lib/blog-posts.mjs';
+import { postPlainText } from '../src/data/blogMarkdown.js';
 
 let failures = 0;
 const check = (name, ok, detail = '') => {
@@ -73,7 +75,9 @@ for (const id of ['milan', 'rome', 'zurich']) {
 
 const byName = await runTool('city_overview', { city: 'Milano' });
 check('A city resolves by its Italian name', byName.city === 'milan');
-const unknown = await runTool('city_overview', { city: 'atlantis' });
+// Not a place name: with thousands of cities published, any real-sounding
+// one may exist (Atlantis, South Africa, does).
+const unknown = await runTool('city_overview', { city: 'no-such-city-zz' });
 check('An unknown city is an error the model can read', /find_cities/.test(unknown.error ?? ''));
 const badMetric = await runTool('rank_cells', { city: 'milan', layer: 'fifteen', metric: 'nope', order: 'lowest' });
 check('A bad metric names the valid ones', /healthcare/.test(badMetric.error ?? ''));
@@ -105,7 +109,18 @@ for (const [text, expected] of cases) {
   const got = unverifiedNumbers(text, allowed);
   check(`numbers: "${text}"`, JSON.stringify(got) === JSON.stringify(expected), JSON.stringify(got));
 }
-check('The system prompt carries the rules and the copy', /normalised difference/.test(systemPrompt()) && /15-minute city: the layer/.test(systemPrompt()));
+{
+  // The rules, and every layer post as the prompt is built from it: read
+  // from the posts, so editing a post's wording does not fail the check.
+  const prompt = systemPrompt();
+  const posts = readPosts().filter((p) => p.layer && !p.draft);
+  const missing = posts.filter((p) => !prompt.includes(postPlainText(p))).map((p) => p.slug);
+  check(
+    'The system prompt carries the rules and the copy',
+    prompt.includes('(O_car − O_PT) / (O_car + O_PT)') && posts.length === 4 && missing.length === 0,
+    `${posts.length} layer posts${missing.length ? `, missing ${missing.join(', ')}` : ''}`,
+  );
+}
 
 // ── The loop, with a scripted model ──────────────────────────────────
 function scripted(turns) {
