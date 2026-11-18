@@ -715,9 +715,11 @@ if (catalogue.stats) {
   for (const [id, row] of summaries.cardep ?? []) {
     if (cdi.get(id) && !close(cdi.get(id).mean, row.weightedCdi, 0.0006)) disagree.push(`${id} CDI ${cdi.get(id).mean} vs ${row.weightedCdi}`);
   }
+  // Both are medians rounded to 0.1, so they may sit one step apart; the
+  // epsilon keeps that step, 18.3 - 18.2 = 0.10000000000000142, inside it.
   const walk = column('fifteen.proximity_time.foot');
   for (const [id, marker] of markers('fifteen')) {
-    if (walk.get(id) && !near(walk.get(id).q[2], marker.proximityMinutes, 0.1)) disagree.push(`${id} walk ${walk.get(id).q[2]} vs marker ${marker.proximityMinutes}`);
+    if (walk.get(id) && !near(walk.get(id).q[2], marker.proximityMinutes, 0.1 + 1e-9)) disagree.push(`${id} walk ${walk.get(id).q[2]} vs marker ${marker.proximityMinutes}`);
   }
   // Every median in a compare row is the median resident's too.
   const proximity = column('pov.proximity');
