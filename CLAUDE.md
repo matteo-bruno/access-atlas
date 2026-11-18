@@ -959,7 +959,7 @@ The previous home page is **not deleted** — it is routed at `/overview`, so
 the landing can be reverted by pointing `/` back at it.
 
 The world map at `/platforms` has no bar above it either: the search
-(`CitySearch`, which owns its own ⌘K and its own CSS so it can sit anywhere)
+(`CitySearch`, which owns its own CSS so it can sit anywhere)
 and the source link float on the map, and the legend sits below the
 search rather than under it. The welcome card (top left) is a short,
 translucent introduction with nothing to act on but its close button: the two

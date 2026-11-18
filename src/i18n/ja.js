@@ -141,7 +141,6 @@ export default {
 
   platform: {
     search: '都市を検索…',
-    searchHint: '⌘K',
     searchClear: '検索をクリア',
     paper: '論文 ↗',
     welcome: '{name} へようこそ',
@@ -752,7 +751,6 @@ export default {
     assistant: 'CityChat',
     working: 'データを読み込んでいます…',
     answeredBy: '回答モデル：{model}',
-    switching: '{model} に切り替えています…',
     verifying: '数値を確認中',
     checking: '数値を確認しています…',
     consulted: '計算元',
@@ -769,8 +767,6 @@ export default {
     },
     status: {
       checking: 'サービスに接続しています…',
-      online: 'モデル：{provider}',
-      reserve: '（予備 {count} 件）',
       offline: 'このサイトのコピーからは CityChat サービスに接続できません。',
       disabled: 'このサイトのコピーでは CityChat が有効になっていません。',
     },

@@ -131,7 +131,6 @@ export default {
 
   platform: {
     search: '搜索您的城市…',
-    searchHint: '⌘K',
     searchClear: '清除搜索',
     paper: '论文 ↗',
     welcome: '欢迎来到 {name}',
@@ -733,7 +732,6 @@ export default {
     assistant: 'CityChat',
     working: '正在读取数据…',
     answeredBy: '回答模型：{model}',
-    switching: '改由 {model} 回答…',
     verifying: '数字核对中',
     checking: '正在核对数字…',
     consulted: '计算依据',
@@ -750,8 +748,6 @@ export default {
     },
     status: {
       checking: '正在连接服务…',
-      online: '模型：{provider}',
-      reserve: '（另有 {count} 个备用）',
       offline: '从本站点副本无法访问 CityChat 服务。',
       disabled: '本站点副本未启用 CityChat。',
     },

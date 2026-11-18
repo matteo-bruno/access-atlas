@@ -133,7 +133,6 @@ export default {
 
   platform: {
     search: 'Busque sua cidade…',
-    searchHint: '⌘K',
     searchClear: 'Limpar a busca',
     paper: 'Artigo ↗',
     welcome: 'Boas-vindas ao {name}',
@@ -742,7 +741,6 @@ export default {
     assistant: 'CityChat',
     working: 'Lendo os dados…',
     answeredBy: 'Resposta de {model}',
-    switching: '{model} assume…',
     verifying: 'Números em verificação',
     checking: 'Conferindo os números…',
     consulted: 'Calculado a partir de',
@@ -759,8 +757,6 @@ export default {
     },
     status: {
       checking: 'Conectando ao serviço…',
-      online: 'Modelo: {provider}',
-      reserve: '(+{count} de reserva)',
       offline: 'O serviço CityChat não está acessível a partir desta cópia do site.',
       disabled: 'O CityChat não está ativado nesta cópia do site.',
     },

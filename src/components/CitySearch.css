@@ -38,17 +38,6 @@
   appearance: none;
 }
 
-.aa-search__kbd {
-  flex: none;
-  padding: 2px 7px;
-  background: var(--card);
-  border: 1px solid var(--hair);
-  border-radius: 4px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--ink-3);
-}
-
 .aa-search__results {
   position: absolute;
   top: calc(100% + 6px);
@@ -95,7 +84,7 @@
   color: var(--ink-3);
 }
 
-/* Clears the box; takes the hint's place once there is something to clear. */
+/* Clears the box, once there is something to clear. */
 .aa-search__clear {
   display: grid;
   place-items: center;
@@ -112,13 +101,6 @@
 
 .aa-search__clear:hover {
   background: var(--paper-alt);
-}
-
-/* A keyboard shortcut means nothing on a touch screen. */
-@media (pointer: coarse) {
-  .aa-search__kbd {
-    display: none;
-  }
 }
 
 .aa-search__empty {

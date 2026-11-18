@@ -83,23 +83,20 @@ function CityChatScreen() {
     return city ? cityLabel(city, lang, t) : id;
   };
 
-  // Whether the service is there, and which model it runs.
-  const [service, setService] = useState({
-    status: CITYCHAT_ENABLED ? 'checking' : 'disabled',
-    provider: null,
-  });
+  // Whether the service is there.
+  const [service, setService] = useState({ status: CITYCHAT_ENABLED ? 'checking' : 'disabled' });
   useEffect(() => {
     if (!CITYCHAT_ENABLED) return undefined;
     const controller = new AbortController();
     probeCityChat({ signal: controller.signal }).then((provider) => {
-      if (!controller.signal.aborted) setService({ status: provider ? 'online' : 'offline', provider });
+      if (!controller.signal.aborted) setService({ status: provider ? 'online' : 'offline' });
     });
     return () => controller.abort();
   }, []);
 
   const [messages, setMessages] = useState([]);
   const [draft, setDraft] = useState('');
-  const [pending, setPending] = useState(null); // { tools, text, checking, switching }
+  const [pending, setPending] = useState(null); // { tools, text, checking }
   const abortRef = useRef(null);
   const listRef = useRef(null);
   const inputRef = useRef(null);
@@ -137,7 +134,7 @@ function CityChatScreen() {
           if (event.type === 'status' && event.status === 'fallback') {
             // The turn starts over on the next model: what the last one
             // looked up is not what this answer will be built from.
-            setPending((p) => p && { tools: [], text: '', checking: false, switching: modelName(event.to) });
+            setPending((p) => p && { tools: [], text: '', checking: false });
           } else if (event.type === 'status') setPending((p) => p && { ...p, text: '', checking: true });
         },
       });
@@ -313,11 +310,7 @@ function CityChatScreen() {
                   ) : (
                     <div className="aa-chat__bubble aa-chat__bubble--pending">
                       <span className="aa-chat__dots" aria-hidden="true" />
-                      {pending.checking
-                        ? t('citychat.checking')
-                        : pending.switching
-                          ? t('citychat.switching', { model: pending.switching })
-                          : t('citychat.working')}
+                      {pending.checking ? t('citychat.checking') : t('citychat.working')}
                       {pending.tools.length > 0 && <ToolTrace tools={pending.tools} cityName={cityName} live />}
                     </div>
                   )}
@@ -367,11 +360,13 @@ function CityChatScreen() {
               </div>
             </form>
 
-            <div className="aa-chat__foot">
-              <span className={`aa-chat__status aa-chat__status--${service.status}`}>
-                {t(`citychat.status.${service.status}`, { provider: describeChain(service.provider, t) })}
-              </span>
-            </div>
+            {service.status !== 'online' && (
+              <div className="aa-chat__foot">
+                <span className={`aa-chat__status aa-chat__status--${service.status}`}>
+                  {t(`citychat.status.${service.status}`)}
+                </span>
+              </div>
+            )}
           </div>
 
           <aside className="aa-chat__aside">
@@ -407,13 +402,6 @@ function CityChatScreen() {
 /** "gemini:gemini-2.5-flash" or "openai:qwen3@host" → the model's own name. */
 function modelName(name) {
   return String(name ?? '').replace(/^[a-z]+:/, '').replace(/@.*$/, '');
-}
-
-/** The service's chain of models: the first, and how many stand behind it. */
-function describeChain(name, t) {
-  const models = String(name ?? '').split(' > ').filter(Boolean);
-  if (models.length <= 1) return modelName(models[0] ?? name);
-  return `${modelName(models[0])} ${t('citychat.status.reserve', { count: models.length - 1 })}`;
 }
 
 /** Which data an answer was computed from, as the tools were called. */

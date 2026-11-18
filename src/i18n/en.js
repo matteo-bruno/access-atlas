@@ -149,7 +149,6 @@ export default {
 
   platform: {
     search: 'Search your city…',
-    searchHint: '⌘K',
     searchClear: 'Clear search',
     paper: 'Paper ↗',
     welcome: 'Welcome to {name}',
@@ -798,7 +797,6 @@ export default {
     assistant: 'CityChat',
     working: 'Reading the data…',
     answeredBy: 'Answered by {model}',
-    switching: '{model} is taking over…',
     verifying: 'Figures being checked',
     checking: 'Checking the figures…',
     consulted: 'Computed from',
@@ -815,8 +813,6 @@ export default {
     },
     status: {
       checking: 'Connecting to the service…',
-      online: 'Model: {provider}',
-      reserve: '(+{count} in reserve)',
       offline: 'The CityChat service is not reachable from this copy of the site.',
       disabled: 'CityChat is not enabled on this copy of the site.',
     },

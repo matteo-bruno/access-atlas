@@ -131,7 +131,6 @@ export default {
 
   platform: {
     search: '도시 검색…',
-    searchHint: '⌘K',
     searchClear: '검색 지우기',
     paper: '논문 ↗',
     welcome: '{name}에 오신 것을 환영합니다',
@@ -733,7 +732,6 @@ export default {
     assistant: 'CityChat',
     working: '데이터를 읽는 중…',
     answeredBy: '답변 모델: {model}',
-    switching: '{model}(으)로 전환 중…',
     verifying: '수치 확인 중',
     checking: '수치를 확인하는 중…',
     consulted: '계산 근거',
@@ -750,8 +748,6 @@ export default {
     },
     status: {
       checking: '서비스에 연결하는 중…',
-      online: '모델: {provider}',
-      reserve: '(예비 {count}개)',
       offline: '이 사이트 사본에서는 CityChat 서비스에 연결할 수 없습니다.',
       disabled: '이 사이트 사본에서는 CityChat이 활성화되어 있지 않습니다.',
     },

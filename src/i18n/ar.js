@@ -133,7 +133,6 @@ export default {
 
   platform: {
     search: 'ابحث عن مدينتك…',
-    searchHint: '⌘K',
     searchClear: 'مسح البحث',
     paper: 'الورقة البحثية ↗',
     welcome: 'مرحبًا بك في {name}',
@@ -736,7 +735,6 @@ export default {
     assistant: 'CityChat',
     working: 'جارٍ قراءة البيانات…',
     answeredBy: 'أجاب {model}',
-    switching: 'يتولى {model} الإجابة…',
     verifying: 'الأرقام قيد التحقق',
     checking: 'جارٍ التحقق من الأرقام…',
     consulted: 'محسوب من',
@@ -753,8 +751,6 @@ export default {
     },
     status: {
       checking: 'جارٍ الاتصال بالخدمة…',
-      online: 'النموذج: {provider}',
-      reserve: '(+{count} احتياطي)',
       offline: 'لا يمكن الوصول إلى خدمة CityChat من هذه النسخة من الموقع.',
       disabled: 'CityChat غير مفعَّل في هذه النسخة من الموقع.',
     },

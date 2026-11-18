@@ -7,9 +7,6 @@ import './CitySearch.css';
 
 const MAX_RESULTS = 8;
 
-const IS_APPLE =
-  typeof navigator !== 'undefined' && /mac|iphone|ipad|ipod/i.test(navigator.platform || navigator.userAgent);
-
 /**
  * Find a city and open it. The one control the world map cannot do without:
  * twenty pins on a world map are hard to hit and impossible to scan.
@@ -19,8 +16,7 @@ const IS_APPLE =
  * language the catalogue carries, without accents, and by country.
  *
  * A combobox in the ARIA sense: the arrows move through the results, Enter
- * opens the one highlighted, Escape clears and then leaves. ⌘K / Ctrl-K
- * focuses it from anywhere on the page, as the hint beside it promises.
+ * opens the one highlighted, Escape clears and then leaves.
  *
  * @param {object[]} props.cities  `{ id, name, nameIt?, region?, regionIt?,
  *                                  country?, extent?, population? }`
@@ -55,18 +51,6 @@ export function CitySearch({ cities, onOpen, onActive, inputRef: externalRef }) 
     onActiveRef.current?.(current);
   }, [current]);
 
-  useEffect(() => {
-    const onKey = (event) => {
-      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
-        event.preventDefault();
-        inputRef.current?.focus();
-        inputRef.current?.select();
-      }
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [inputRef]);
-
   const choose = (city) => {
     if (!city) return;
     setQuery('');
@@ -99,8 +83,6 @@ export function CitySearch({ cities, onOpen, onActive, inputRef: externalRef }) 
     }
   };
 
-  const hint = IS_APPLE ? t('platform.searchHint') : t('platform.searchHint').replace('⌘', 'Ctrl ');
-
   return (
     <div className={`aa-search${shown ? ' aa-search--open' : ''}`}>
       <Icon name="search" size={14} color="var(--ink-3)" />
@@ -126,7 +108,7 @@ export function CitySearch({ cities, onOpen, onActive, inputRef: externalRef }) 
         onBlur={() => setOpen(false)}
         onKeyDown={onKeyDown}
       />
-      {query ? (
+      {query && (
         <button
           type="button"
           className="aa-search__clear"
@@ -140,8 +122,6 @@ export function CitySearch({ cities, onOpen, onActive, inputRef: externalRef }) 
         >
           <Icon name="close" size={12} color="var(--ink-3)" />
         </button>
-      ) : (
-        <kbd className="aa-search__kbd">{hint}</kbd>
       )}
 
       {shown && (
