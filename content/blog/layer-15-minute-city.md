@@ -46,13 +46,11 @@ An average hides almost everything. Take two cells in Rome. The first is the mos
 | Healthcare | 7:48 | 33:42 |
 | Cultural activities | 6:24 | 31:36 |
 
-*Open them on the map: [the central cell](/atlas/rome?layer=fifteen&cell=891e8050c37ffff) and [the outer one](/atlas/rome?layer=fifteen&cell=891e8055dd3ffff).*
-
 ## Not every service is equally close
 
 The same resident lives at very different distances depending on what they are looking for, and the gap between cities changes from one category to the next. In Paris the median resident walks 9:36 to healthcare, in Houston 42:12.
 
-![The median resident’s walk, by category](15-minute-city/categories.webp "Hover a dot for the exact value.")
+![The median resident’s walk, by category](15-minute-city/categories.webp)
 
 ## From the compact city to the suburb
 
