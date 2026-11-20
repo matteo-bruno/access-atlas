@@ -1204,7 +1204,7 @@ export default {
 
   footer: {
     description:
-      'Sony Computer Science Laboratories\u00a0-\u2060\u00a0Rome の Sustainable Cities 研究ラインが制作\nSapienza Università di Roma、Centro Ricerche Enrico Fermi との共同研究。',
+      'Sony Computer Science Laboratories\u00a0-\u2060\u00a0Rome の Sustainable Cities 研究ラインが制作。Sapienza Università di Roma、Centro Ricerche Enrico Fermi との共同研究。',
     platforms: 'プラットフォーム',
     platformLinks: ['アトラス', 'CityChat', '統計'],
     research: '研究',

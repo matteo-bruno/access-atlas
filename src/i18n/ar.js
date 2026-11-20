@@ -1184,7 +1184,7 @@ export default {
 
   footer: {
     description:
-      'أنشأه خط البحث Sustainable Cities في Sony Computer Science Laboratories\u00a0-\u2060\u00a0Rome\nبالتعاون مع Sapienza Università di Roma وCentro Ricerche Enrico Fermi.',
+      'أنشأه خط البحث Sustainable Cities في Sony Computer Science Laboratories\u00a0-\u2060\u00a0Rome بالتعاون مع Sapienza Università di Roma وCentro Ricerche Enrico Fermi.',
     platforms: 'المنصة',
     platformLinks: ['الأطلس', 'CityChat', 'الإحصاءات'],
     research: 'البحث',

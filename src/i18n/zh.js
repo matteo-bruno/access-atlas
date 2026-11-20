@@ -1181,7 +1181,7 @@ export default {
 
   footer: {
     description:
-      '由 Sony Computer Science Laboratories\u00a0-\u2060\u00a0Rome 的 Sustainable Cities 研究方向创建，\n与 Sapienza Università di Roma 和 Centro Ricerche Enrico Fermi 合作。',
+      '由 Sony Computer Science Laboratories\u00a0-\u2060\u00a0Rome 的 Sustainable Cities 研究方向创建，与 Sapienza Università di Roma 和 Centro Ricerche Enrico Fermi 合作。',
     platforms: '平台',
     platformLinks: ['地图集', 'CityChat', '统计'],
     research: '研究',

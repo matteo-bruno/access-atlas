@@ -1192,7 +1192,7 @@ export default {
 
   footer: {
     description:
-      'Criado pela linha de pesquisa Sustainable Cities da Sony Computer Science Laboratories\u00a0-\u2060\u00a0Roma\nem colaboração com Sapienza Università di Roma e Centro Ricerche Enrico Fermi.',
+      'Criado pela linha de pesquisa Sustainable Cities da Sony Computer Science Laboratories\u00a0-\u2060\u00a0Roma em colaboração com Sapienza Università di Roma e Centro Ricerche Enrico Fermi.',
     platforms: 'Plataforma',
     platformLinks: ['Atlas', 'CityChat', 'Estatísticas'],
     research: 'Pesquisa',
