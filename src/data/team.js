@@ -1,4 +1,4 @@
-// Sustainable Cities team, Sony CSL Rome. `roleKey` indexes contact.roles in
+// Sustainable Cities team, Sony CSL - Rome. `roleKey` indexes contact.roles in
 // the dictionaries so job titles translate; names do not.
 //
 // Italian agent nouns agree in gender, so the gendered roles carry a `M`/`F`

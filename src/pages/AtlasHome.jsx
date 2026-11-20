@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer.jsx';
 import { Icon } from '../components/Icon.jsx';
-import { Logo } from '../components/Logo.jsx';
 import { HomeSections } from './Home.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import './AtlasHome.css';
@@ -83,14 +82,6 @@ export default function AtlasHome() {
 
             {SHOWCASE_QR && <ShowcaseQr />}
 
-            {/* Whose Atlas this is. The corner of the first screen, where a
-                credit belongs — not above the name. */}
-            <div className="aa-landing__foot aa-fadein aa-fadein--slow">
-              <p className="aa-landing__by">
-                <Logo variant="symbol" tone="color" height={18} alt="" />
-                {t('home.landing.by')}
-              </p>
-            </div>
           </div>
         </section>
 

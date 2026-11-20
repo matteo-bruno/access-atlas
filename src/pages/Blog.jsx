@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer.jsx';
-import { Eyebrow } from '../components/SectionHeading.jsx';
-import { Icon } from '../components/Icon.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { localeFor } from '../i18n/locales.js';
 import { POSTS } from '../data/blog.js';
@@ -11,51 +9,42 @@ export default function Blog() {
   const { t, n, lang } = useI18n();
   const posts = [...POSTS].sort((a, b) => b.date.localeCompare(a.date));
 
+  // Laid out as the Research page is: the title on one line, then the posts
+  // as cards, each card the link.
   return (
     <div className="aa-page">
-
-      <main className="aa-main aa-blog" id="main">
-        <div className="aa-blog__aside">
-          <Eyebrow>{t('blog.eyebrow')}</Eyebrow>
+      <main className="aa-main" id="main">
+        <section className="aa-shell aa-blog__intro">
           <h1 className="aa-blog__headline">
-            {t('blog.headline')}
-            <br />
-            <span className="aa-accent">{t('blog.headlineAccent')}</span>
+            {t('blog.headline')} <span className="aa-accent">{t('blog.headlineAccent')}</span>
           </h1>
           <p className="aa-blog__lede">{t('blog.lede')}</p>
-          <dl className="aa-blog__meta">
-            <div className="aa-blog__metarow">
-              <dt>{t('blog.postsLabel')}</dt>
-              <dd className="aa-mono">{n(posts.length)}</dd>
-            </div>
-          </dl>
-        </div>
+        </section>
 
-        <div className="aa-blog__list">
-          {posts.map((post) => {
-            const { copy, attrs } = postCopy(post, lang);
-            return (
-              <article key={post.slug} className="aa-card aa-lift aa-postcard">
-                <div className="aa-postcard__kicker">
-                  <span className="aa-dot" style={{ background: post.accent }} />
-                  <time dateTime={post.date}>{formatDate(post.date, lang)}</time>
-                  <span aria-hidden="true">·</span>
-                  <span>{t('blog.readingTime', { count: n(post.readingTime) })}</span>
-                </div>
-                <h2 className="aa-postcard__title" {...attrs}>
-                  <Link to={`/blog/${post.slug}`}>{postTitle(copy)}</Link>
-                </h2>
-                <p className="aa-postcard__lede" {...attrs}>
-                  {copy.lede}
-                </p>
-                <Link className="aa-postcard__more" to={`/blog/${post.slug}`}>
-                  {t('platform.learnMore')}
-                  <Icon name="arrow" size={13} color="var(--ink-3)" />
+        <section className="aa-shell aa-block">
+          <div className="aa-blog__list">
+            {posts.map((post) => {
+              const { copy, attrs } = postCopy(post, lang);
+              return (
+                <Link key={post.slug} className="aa-card aa-lift aa-postcard" to={`/blog/${post.slug}`}>
+                  <div className="aa-postcard__kicker">
+                    <span className="aa-dot aa-dot--sm" style={{ background: post.accent }} />
+                    <time dateTime={post.date}>{formatDate(post.date, lang)}</time>
+                    <span aria-hidden="true">·</span>
+                    <span>{t('blog.readingTime', { count: n(post.readingTime) })}</span>
+                  </div>
+                  <h2 className="aa-postcard__title" {...attrs}>
+                    {postTitle(copy)}
+                  </h2>
+                  <p className="aa-postcard__lede" {...attrs}>
+                    {copy.lede}
+                  </p>
+                  <div className="aa-postcard__more">{t('platform.learnMore')}</div>
                 </Link>
-              </article>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </section>
       </main>
 
       <Footer />

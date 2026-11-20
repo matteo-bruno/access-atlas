@@ -14,7 +14,7 @@ export default {
 
   nav: {
     title: 'Opportunity Atlas',
-    tagline: 'Sony CSL · روما',
+    tagline: 'Sony CSL - روما',
     atlas: 'الرئيسية',
     platforms: 'الأطلس',
     citychat: 'CityChat',
@@ -33,7 +33,7 @@ export default {
 
   home: {
     hero: {
-      eyebrow: 'منصات بحثية مفتوحة · Sony CSL روما',
+      eyebrow: 'منصات بحثية مفتوحة · Sony CSL - روما',
       title: 'Opportunity',
       titleAccent: 'Atlas',
       subtitle: 'نرسم خرائط الوصول الحضري، مدينةً بعد مدينة.',
@@ -58,7 +58,6 @@ export default {
     },
     landing: {
       mapLabel: 'كل المدن التي نشرها الأطلس',
-      by: 'مشروع من Sony CSL · روما',
     },
     premise: {
       lines: [
@@ -138,7 +137,7 @@ export default {
     welcome: 'مرحبًا بك في {name}',
     dismiss: 'إغلاق',
     learnMore: 'اعرف المزيد ←',
-    attribution: 'الخريطة الأساسية: Natural Earth · البيانات © Sony CSL Rome · CC BY-NC 4.0',
+    attribution: 'الخريطة الأساسية: Natural Earth · البيانات © Sony CSL - Rome · CC BY-NC 4.0',
     cityCount: '{count} مدينة',
     zoomIn: 'تكبير',
     zoomOut: 'تصغير',
@@ -642,7 +641,7 @@ export default {
   about: {
     headline: 'سيناريوهات من أجل',
     headlineAccent: 'مدن مستدامة',
-    lede: 'نحن فريق بحثي غير ربحي، وأحد الخطوط البحثية في Sony Computer Science Laboratories بروما، ونعمل مع متعاونين في جامعة سابينزا في روما ومركز إنريكو فيرمي للأبحاث (CREF) ومعاهد أخرى. والأطلس واحد من ثمار هذا العمل.',
+    lede: 'نحن فريق بحثي غير ربحي، وأحد الخطوط البحثية في Sony Computer Science Laboratories - Rome، ونعمل مع متعاونين في جامعة سابينزا في روما ومركز إنريكو فيرمي للأبحاث (CREF) ومعاهد أخرى. والأطلس واحد من ثمار هذا العمل.',
     labLink: 'Sony CSL ↗',
     teamLink: 'الفريق ←',
 
@@ -1093,7 +1092,7 @@ export default {
       phone: 'الهاتف',
     },
     addressValue:
-      'Sony Computer Science Laboratories, Rome\nJoint Initiative CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Roma\nEntrance: Piazza del Viminale, 1, Roma',
+      'Sony Computer Science Laboratories - Rome\nJoint Initiative CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Roma\nEntrance: Piazza del Viminale, 1, Roma',
     teamTitle: 'الفريق',
     roles: {
       director: 'الباحث الرئيسي المشارك والمدير',
@@ -1150,7 +1149,6 @@ export default {
     readingTime: 'قراءة في {count} د',
     backToBlog: 'كل المقالات →',
     published: 'نُشر في',
-    postsLabel: 'المقالات',
   },
 
   work: {
@@ -1185,7 +1183,8 @@ export default {
   },
 
   footer: {
-    description: 'بحث مفتوح عن إمكانية الوصول والتنقل في المدن يجريه فريق المدن المستدامة في Sony CSL بروما.',
+    description:
+      'أنشأه خط البحث Sustainable Cities في Sony Computer Science Laboratories\u00a0-\u2060\u00a0Rome\nبالتعاون مع Sapienza Università di Roma وCentro Ricerche Enrico Fermi.',
     platforms: 'المنصة',
     platformLinks: ['الأطلس', 'CityChat', 'الإحصاءات'],
     research: 'البحث',
@@ -1195,7 +1194,7 @@ export default {
     touch: 'ابقَ على تواصل',
     touchLinks: ['اتصل بنا', 'اعمل معنا'],
     workCta: 'اعمل معنا',
-    copyright: '© 2026 Sony Computer Science Laboratories · Rome',
+    copyright: '© 2026 Sony Computer Science Laboratories - Rome',
   },
 
   tour: {

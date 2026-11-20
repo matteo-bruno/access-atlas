@@ -42,6 +42,22 @@ function CityRedirect() {
   return <Navigate to={`/atlas/${cityId}${platform ? `?layer=${platform.id}` : ''}`} replace />;
 }
 
+/**
+ * An address the site used to have → the one it has now, keeping the rest of
+ * the path and the query string. Links to the old ones are out there.
+ */
+const MOVED = [
+  ['/platforms/accessibility-pov', '/platforms/close-connected'],
+  ['/blog/layer-accessibility-pov', '/blog/layer-close-connected'],
+  ['/sustainable-cities', '/mission'],
+];
+
+function Moved() {
+  const { pathname, search, hash } = useLocation();
+  const [from, to] = MOVED.find(([prefix]) => pathname.startsWith(prefix));
+  return <Navigate to={`${to}${pathname.slice(from.length)}${search}${hash}`} replace />;
+}
+
 // Long enough to register as a fade, short enough to stay out of the way.
 // Matched to the transition on .aa-fade in global.css.
 const FADE_MS = 170;
@@ -131,7 +147,7 @@ const TABS = [
   ['/platforms', 'platforms'],
   ['/atlas', 'platforms'],
   ['/citychat', 'citychat'],
-  ['/sustainable-cities', 'about'],
+  ['/mission', 'about'],
   ['/stats', 'stats'],
   ['/consulting', 'consulting'],
   ['/research', 'research'],
@@ -213,7 +229,10 @@ export default function App() {
           {/* The combined viewer: one city, all four visualisations. Layer
               and options ride the query string so any view is linkable. */}
           <Route path="/atlas/:cityId" element={<AtlasCityPage />} />
-          <Route path="/sustainable-cities" element={<SustainableCities />} />
+          <Route path="/mission" element={<SustainableCities />} />
+          {MOVED.map(([from]) => (
+            <Route key={from} path={`${from}/*`} element={<Moved />} />
+          ))}
           <Route path="/citychat" element={<CityChat />} />
           <Route path="/stats" element={<Stats />} />
           <Route path="/consulting" element={<Consulting />} />

@@ -603,7 +603,7 @@ function PovFocus({ stats, rowsOf, slots, onToggle, ctx }) {
       <Section
         title={t('stats.focus.pov.zones')}
         about={cut ? t('stats.focus.pov.zonesAbout', { proximity: n(cut.proximity), opportunity: n(cut.opportunity), count: n(cut.cities) }) : null}
-        more={<More slug="accessibility-pov" ctx={ctx} />}
+        more={<More slug="close-connected" ctx={ctx} />}
       >
         <div className="aa-focus__legend">
           {ZONES.map((zone) => (

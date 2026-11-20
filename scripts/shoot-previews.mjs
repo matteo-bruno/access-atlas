@@ -40,7 +40,7 @@ const SCALE = 2;
 const SHOTS = [
   { id: 'fifteen', route: '/platforms/15min-city/milan', target: '.aa-city__canvas' },
   { id: 'cardep', route: '/platforms/car-dependency-index/rome', target: '.aa-city__canvas' },
-  { id: 'pov', route: '/platforms/accessibility-pov/rome', target: '.aa-city__canvas' },
+  { id: 'pov', route: '/platforms/close-connected/rome', target: '.aa-city__canvas' },
   // The camera centres on the metro-wide population centre; CityChrone's
   // mask is the tighter core south-west of it, so the clip shifts to keep the
   // mesh in frame. Fractions of the target's width/height.

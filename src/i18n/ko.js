@@ -12,7 +12,7 @@ export default {
 
   nav: {
     title: 'Opportunity Atlas',
-    tagline: 'Sony CSL · 로마',
+    tagline: 'Sony CSL - 로마',
     atlas: '홈',
     platforms: '아틀라스',
     citychat: 'CityChat',
@@ -31,7 +31,7 @@ export default {
 
   home: {
     hero: {
-      eyebrow: '개방형 연구 플랫폼 · Sony CSL 로마',
+      eyebrow: '개방형 연구 플랫폼 · Sony CSL - 로마',
       title: 'Opportunity',
       titleAccent: 'Atlas',
       subtitle: '도시마다, 도시의 접근성을 지도로 그립니다.',
@@ -56,7 +56,6 @@ export default {
     },
     landing: {
       mapLabel: '아틀라스가 공개한 모든 도시',
-      by: 'Sony CSL · 로마의 프로젝트',
     },
     premise: {
       lines: [
@@ -136,7 +135,7 @@ export default {
     welcome: '{name}에 오신 것을 환영합니다',
     dismiss: '닫기',
     learnMore: '자세히 보기 →',
-    attribution: '기본 지도: Natural Earth · 데이터 © Sony CSL Rome · CC BY-NC 4.0',
+    attribution: '기본 지도: Natural Earth · 데이터 © Sony CSL - Rome · CC BY-NC 4.0',
     cityCount: '{count}개 도시',
     zoomIn: '확대',
     zoomOut: '축소',
@@ -639,7 +638,7 @@ export default {
   about: {
     headline: '지속 가능한 도시를 위한',
     headlineAccent: '시나리오',
-    lede: '저희는 비영리 연구팀으로, Sony Computer Science Laboratories 로마의 연구 분야 중 하나입니다. 로마 라 사피엔차 대학교, 엔리코 페르미 연구센터(CREF) 등 여러 기관의 공동 연구자들과 함께 일합니다. 아틀라스는 이 연구에서 나온 결과물 중 하나입니다.',
+    lede: '저희는 비영리 연구팀으로, Sony Computer Science Laboratories - Rome의 연구 분야 중 하나입니다. 로마 라 사피엔차 대학교, 엔리코 페르미 연구센터(CREF) 등 여러 기관의 공동 연구자들과 함께 일합니다. 아틀라스는 이 연구에서 나온 결과물 중 하나입니다.',
     labLink: 'Sony CSL ↗',
     teamLink: '팀 소개 →',
 
@@ -1090,7 +1089,7 @@ export default {
       phone: '전화',
     },
     addressValue:
-      'Sony Computer Science Laboratories, Rome\nJoint Initiative CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Roma\nEntrance: Piazza del Viminale, 1, Roma',
+      'Sony Computer Science Laboratories - Rome\nJoint Initiative CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Roma\nEntrance: Piazza del Viminale, 1, Roma',
     teamTitle: '팀',
     roles: {
       director: '공동 책임연구자 겸 소장',
@@ -1147,7 +1146,6 @@ export default {
     readingTime: '{count}분 분량',
     backToBlog: '← 모든 글',
     published: '게시일',
-    postsLabel: '글',
   },
 
   work: {
@@ -1182,7 +1180,8 @@ export default {
   },
 
   footer: {
-    description: 'Sony CSL 로마의 지속 가능한 도시 팀이 수행하는 도시 접근성과 이동성에 관한 개방형 연구.',
+    description:
+      'Sony Computer Science Laboratories\u00a0-\u2060\u00a0Rome의 Sustainable Cities 연구 라인이 만들었습니다.\nSapienza Università di Roma, Centro Ricerche Enrico Fermi와 협력.',
     platforms: '플랫폼',
     platformLinks: ['아틀라스', 'CityChat', '통계'],
     research: '연구',
@@ -1192,7 +1191,7 @@ export default {
     touch: '소식 받기',
     touchLinks: ['문의', '함께 일하기'],
     workCta: '함께 일하기',
-    copyright: '© 2026 Sony Computer Science Laboratories · Rome',
+    copyright: '© 2026 Sony Computer Science Laboratories - Rome',
   },
 
   tour: {

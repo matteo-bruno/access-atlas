@@ -16,7 +16,7 @@ export function Nav({ active = 'atlas', sticky = true }) {
     { key: 'platforms', to: '/platforms', label: t('nav.platforms') },
     { key: 'citychat', to: '/citychat', label: t('nav.citychat'), badge: t('citychat.beta') },
     { key: 'stats', to: '/stats', label: t('nav.stats') },
-    { key: 'about', to: '/sustainable-cities', label: t('nav.about') },
+    { key: 'about', to: '/mission', label: t('nav.about') },
     { key: 'consulting', to: '/consulting', label: t('nav.consulting') },
     { key: 'research', to: '/research', label: t('nav.research') },
     ...(BLOG_LISTED ? [{ key: 'blog', to: '/blog', label: t('nav.blog') }] : []),

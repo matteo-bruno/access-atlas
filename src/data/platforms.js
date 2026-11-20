@@ -92,9 +92,10 @@ export const PLATFORMS = [
   },
   {
     id: 'pov',
-    // The slug keeps the platform's old name, so links already out there
-    // still open it.
-    slug: 'accessibility-pov',
+    // The layer's own name. The old slug still resolves (`formerSlugs`), and
+    // its addresses forward here (MOVED in App.jsx, ComparePage).
+    slug: 'close-connected',
+    formerSlugs: ['accessibility-pov'],
     tag: '04',
     // Proximity (close by on foot) and opportunity (connected by transit)
     // together. The framework and its paper keep their name, P.O.V.
@@ -119,7 +120,10 @@ export const PLATFORMS = [
 ];
 
 export const PLATFORMS_BY_ID = Object.fromEntries(PLATFORMS.map((p) => [p.id, p]));
-export const PLATFORMS_BY_SLUG = Object.fromEntries(PLATFORMS.map((p) => [p.slug, p]));
+// A former slug resolves too, so a link from before a rename still lands.
+export const PLATFORMS_BY_SLUG = Object.fromEntries(
+  PLATFORMS.flatMap((p) => [p.slug, ...(p.formerSlugs ?? [])].map((slug) => [slug, p])),
+);
 
 // P.O.V. zone taxonomy — shared by the platform legend, the Rome city page and
 // the worker that classifies the hex mesh.

@@ -11,7 +11,7 @@ export default {
 
   nav: {
     title: 'Opportunity Atlas',
-    tagline: 'Sony CSL · Roma',
+    tagline: 'Sony CSL - Roma',
     atlas: 'Início',
     platforms: 'Atlas',
     citychat: 'CityChat',
@@ -30,7 +30,7 @@ export default {
 
   home: {
     hero: {
-      eyebrow: 'Plataformas de pesquisa abertas · Sony CSL Roma',
+      eyebrow: 'Plataformas de pesquisa abertas · Sony CSL - Roma',
       title: 'Opportunity',
       titleAccent: 'Atlas',
       subtitle: 'Mapeando o acesso urbano, cidade por cidade.',
@@ -55,7 +55,6 @@ export default {
     },
     landing: {
       mapLabel: 'Todas as cidades publicadas pelo Atlas',
-      by: 'Um projeto da Sony CSL · Roma',
     },
     premise: {
       lines: [
@@ -138,7 +137,7 @@ export default {
     welcome: 'Boas-vindas ao {name}',
     dismiss: 'Fechar',
     learnMore: 'Saiba mais →',
-    attribution: 'Mapa base: Natural Earth · Dados © Sony CSL Roma · CC BY-NC 4.0',
+    attribution: 'Mapa base: Natural Earth · Dados © Sony CSL - Roma · CC BY-NC 4.0',
     cityCount: '{count} cidades',
     zoomIn: 'Aproximar',
     zoomOut: 'Afastar',
@@ -1099,7 +1098,7 @@ export default {
       phone: 'Telefone',
     },
     addressValue:
-      'Sony Computer Science Laboratories, Rome\nJoint Initiative CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Roma\nEntrada: Piazza del Viminale, 1, Roma',
+      'Sony Computer Science Laboratories - Rome\nJoint Initiative CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Roma\nEntrada: Piazza del Viminale, 1, Roma',
     teamTitle: 'A equipe',
     roles: {
       director: 'Copesquisador principal e diretor',
@@ -1156,7 +1155,6 @@ export default {
     readingTime: '{count} min de leitura',
     backToBlog: '← Todos os textos',
     published: 'Publicado em',
-    postsLabel: 'Textos',
   },
 
   work: {
@@ -1193,7 +1191,8 @@ export default {
   },
 
   footer: {
-    description: 'Pesquisa aberta sobre acessibilidade e mobilidade urbanas da equipe Cidades Sustentáveis da Sony CSL\u00a0-\u2060\u00a0Roma.',
+    description:
+      'Criado pela linha de pesquisa Sustainable Cities da Sony Computer Science Laboratories\u00a0-\u2060\u00a0Roma\nem colaboração com Sapienza Università di Roma e Centro Ricerche Enrico Fermi.',
     platforms: 'Plataforma',
     platformLinks: ['Atlas', 'CityChat', 'Estatísticas'],
     research: 'Pesquisa',
@@ -1203,7 +1202,7 @@ export default {
     touch: 'Fique em contato',
     touchLinks: ['Contato', 'Trabalhe conosco'],
     workCta: 'Trabalhe conosco',
-    copyright: '© 2026 Sony Computer Science Laboratories · Roma',
+    copyright: '© 2026 Sony Computer Science Laboratories - Roma',
   },
 
   tour: {

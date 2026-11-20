@@ -12,7 +12,7 @@ export default {
 
   nav: {
     title: 'Opportunity Atlas',
-    tagline: 'Sony CSL · 罗马',
+    tagline: 'Sony CSL - 罗马',
     atlas: '首页',
     platforms: '地图集',
     citychat: 'CityChat',
@@ -31,7 +31,7 @@ export default {
 
   home: {
     hero: {
-      eyebrow: '开放研究平台 · Sony CSL 罗马',
+      eyebrow: '开放研究平台 · Sony CSL - 罗马',
       title: 'Opportunity',
       titleAccent: 'Atlas',
       subtitle: '逐个城市，绘制城市可达性。',
@@ -56,7 +56,6 @@ export default {
     },
     landing: {
       mapLabel: '地图集已发布的所有城市',
-      by: 'Sony CSL · 罗马的项目',
     },
     premise: {
       lines: [
@@ -136,7 +135,7 @@ export default {
     welcome: '欢迎来到 {name}',
     dismiss: '关闭',
     learnMore: '了解更多 →',
-    attribution: '底图：Natural Earth · 数据 © Sony CSL Rome · CC BY-NC 4.0',
+    attribution: '底图：Natural Earth · 数据 © Sony CSL - Rome · CC BY-NC 4.0',
     cityCount: '{count} 座城市',
     zoomIn: '放大',
     zoomOut: '缩小',
@@ -639,7 +638,7 @@ export default {
   about: {
     headline: '面向可持续城市的',
     headlineAccent: '发展情景',
-    lede: '我们是一个非营利研究团队，是 Sony Computer Science Laboratories 罗马分部的研究方向之一，与罗马大学（Sapienza）、恩里科·费米研究中心（CREF）及其他研究机构的合作者共同开展研究。地图集是这项工作的成果之一。',
+    lede: '我们是一个非营利研究团队，是 Sony Computer Science Laboratories - Rome 的研究方向之一，与罗马大学（Sapienza）、恩里科·费米研究中心（CREF）及其他研究机构的合作者共同开展研究。地图集是这项工作的成果之一。',
     labLink: 'Sony CSL ↗',
     teamLink: '团队成员 →',
 
@@ -1090,7 +1089,7 @@ export default {
       phone: '电话',
     },
     addressValue:
-      'Sony Computer Science Laboratories, Rome\nJoint Initiative CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Roma\nEntrance: Piazza del Viminale, 1, Roma',
+      'Sony Computer Science Laboratories - Rome\nJoint Initiative CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Roma\nEntrance: Piazza del Viminale, 1, Roma',
     teamTitle: '团队',
     roles: {
       director: '联合首席研究员、主任',
@@ -1147,7 +1146,6 @@ export default {
     readingTime: '阅读约 {count} 分钟',
     backToBlog: '← 全部文章',
     published: '发布于',
-    postsLabel: '文章',
   },
 
   work: {
@@ -1182,7 +1180,8 @@ export default {
   },
 
   footer: {
-    description: 'Sony CSL 罗马分部可持续城市团队关于城市可达性与出行的开放研究。',
+    description:
+      '由 Sony Computer Science Laboratories\u00a0-\u2060\u00a0Rome 的 Sustainable Cities 研究方向创建，\n与 Sapienza Università di Roma 和 Centro Ricerche Enrico Fermi 合作。',
     platforms: '平台',
     platformLinks: ['地图集', 'CityChat', '统计'],
     research: '研究',
@@ -1192,7 +1191,7 @@ export default {
     touch: '保持联系',
     touchLinks: ['联系我们', '加入我们'],
     workCta: '加入我们',
-    copyright: '© 2026 Sony Computer Science Laboratories · Rome',
+    copyright: '© 2026 Sony Computer Science Laboratories - Rome',
   },
 
   tour: {

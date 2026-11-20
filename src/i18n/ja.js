@@ -18,7 +18,7 @@ export default {
 
   nav: {
     title: 'Opportunity Atlas',
-    tagline: 'Sony CSL · Rome',
+    tagline: 'Sony CSL - Rome',
     atlas: 'ホーム',
     platforms: 'アトラス',
     citychat: 'CityChat',
@@ -37,7 +37,7 @@ export default {
 
   home: {
     hero: {
-      eyebrow: 'オープンな研究プラットフォーム · Sony CSL Rome',
+      eyebrow: 'オープンな研究プラットフォーム · Sony CSL - Rome',
       // The Atlas's name stays in English, as on the landing in every locale.
       title: 'Opportunity',
       titleAccent: 'Atlas',
@@ -63,7 +63,6 @@ export default {
     },
     landing: {
       mapLabel: 'アトラスが公開したすべての都市',
-      by: 'Sony CSL · Rome のプロジェクト',
     },
     premise: {
       lines: [
@@ -146,7 +145,7 @@ export default {
     welcome: '{name} へようこそ',
     dismiss: '閉じる',
     learnMore: '詳しく見る →',
-    attribution: 'ベースマップ：Natural Earth · データ © Sony CSL Rome · CC BY-NC 4.0',
+    attribution: 'ベースマップ：Natural Earth · データ © Sony CSL - Rome · CC BY-NC 4.0',
     cityCount: '{count}都市',
     zoomIn: '拡大',
     zoomOut: '縮小',
@@ -658,7 +657,7 @@ export default {
   about: {
     headline: '持続可能な都市のための',
     headlineAccent: 'シナリオ',
-    lede: '私たちは非営利の研究チームであり、Sony Computer Science Laboratories（ローマ）の研究ラインの1つです。ローマ・ラ・サピエンツァ大学、エンリコ・フェルミ研究センター（CREF）などの研究機関の共同研究者とともに活動しています。アトラスは、その研究から生まれたものの1つです。',
+    lede: '私たちは非営利の研究チームであり、Sony Computer Science Laboratories - Rome の研究ラインの1つです。ローマ・ラ・サピエンツァ大学、エンリコ・フェルミ研究センター（CREF）などの研究機関の共同研究者とともに活動しています。アトラスは、その研究から生まれたものの1つです。',
     labLink: 'Sony CSL ↗',
     teamLink: 'メンバー →',
 
@@ -1110,7 +1109,7 @@ export default {
     },
     // A postal address: kept as it is written, in English.
     addressValue:
-      'Sony Computer Science Laboratories, Rome\nJoint Initiative CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Rome\nEntrance: Piazza del Viminale, 1, Rome',
+      'Sony Computer Science Laboratories - Rome\nJoint Initiative CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Rome\nEntrance: Piazza del Viminale, 1, Rome',
     teamTitle: 'チーム',
     // Japanese has no gender agreement either; the M/F pairs keep the shape.
     roles: {
@@ -1168,7 +1167,6 @@ export default {
     readingTime: '約{count}分で読めます',
     backToBlog: '← すべての記事',
     published: '公開日',
-    postsLabel: '記事',
   },
 
   work: {
@@ -1205,7 +1203,8 @@ export default {
   },
 
   footer: {
-    description: 'Sony CSL（ローマ）の「持続可能な都市」チームによる、都市のアクセシビリティとモビリティについてのオープンな研究。',
+    description:
+      'Sony Computer Science Laboratories\u00a0-\u2060\u00a0Rome の Sustainable Cities 研究ラインが制作\nSapienza Università di Roma、Centro Ricerche Enrico Fermi との共同研究。',
     platforms: 'プラットフォーム',
     platformLinks: ['アトラス', 'CityChat', '統計'],
     research: '研究',
@@ -1215,7 +1214,7 @@ export default {
     touch: 'つながる',
     touchLinks: ['連絡先', '一緒に働く'],
     workCta: '一緒に働く',
-    copyright: '© 2026 Sony Computer Science Laboratories · Rome',
+    copyright: '© 2026 Sony Computer Science Laboratories - Rome',
   },
 
   tour: {

@@ -16,7 +16,7 @@ export function Footer() {
   // The blog is kept off the footer while it is off the nav (BLOG_LISTED).
   const hiddenTo = new Set(BLOG_LISTED ? [] : ['/blog']);
   const platformTo = ['/platforms', '/citychat', '/stats'];
-  const aboutTo = ['/sustainable-cities', '/contact', '/consulting'];
+  const aboutTo = ['/mission', '/contact', '/consulting'];
   const touchTo = ['/contact', '/work-with-us'];
 
   const columns = [

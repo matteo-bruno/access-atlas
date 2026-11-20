@@ -27,7 +27,9 @@
 }
 
 .aa-footer__desc {
-  max-width: 300px;
+  /* Two sentences on two lines: the dictionaries break it with \n. */
+  white-space: pre-line;
+  max-width: 340px;
   font-size: 13px;
   line-height: 1.6;
   color: var(--ink-3);

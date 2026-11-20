@@ -10,7 +10,7 @@ export default {
   nav: {
     // Il nome è il nome, anche in italiano: è così che l'Atlante si chiama.
     title: 'Opportunity Atlas',
-    tagline: 'Sony CSL · Roma',
+    tagline: 'Sony CSL - Roma',
     atlas: 'Home',
     platforms: 'Atlante',
     citychat: 'CityChat',
@@ -29,7 +29,7 @@ export default {
 
   home: {
     hero: {
-      eyebrow: 'Piattaforme di ricerca aperte · Sony CSL Roma',
+      eyebrow: 'Piattaforme di ricerca aperte · Sony CSL - Roma',
       // La pagina d'ingresso: il nome dell'Atlante e una riga su cosa fa.
       title: 'Opportunity',
       // La metà colorata del nome; vedi .aa-accent in global.css.
@@ -58,7 +58,6 @@ export default {
     // La pagina d’ingresso: la mappa di copertura con le parole sopra.
     landing: {
       mapLabel: 'Tutte le città pubblicate dall’Atlante',
-      by: 'Un progetto Sony CSL · Roma',
     },
     // Perché tutto questo viene misurato. Tre frasi, in quest'ordine: sono una
     // sequenza, e l'argomento della pagina poggia sull'ultima.
@@ -147,7 +146,7 @@ export default {
     welcome: 'Benvenuti in {name}',
     dismiss: 'Chiudi',
     learnMore: 'Scopri di più →',
-    attribution: 'Cartografia di base: Natural Earth · Dati © Sony CSL Roma · CC BY-NC 4.0',
+    attribution: 'Cartografia di base: Natural Earth · Dati © Sony CSL - Roma · CC BY-NC 4.0',
     cityCount: '{count} città',
     zoomIn: 'Ingrandisci',
     zoomOut: 'Riduci',
@@ -1143,7 +1142,7 @@ export default {
       phone: 'Telefono',
     },
     addressValue:
-      'Sony Computer Science Laboratories, Roma\nIniziativa congiunta CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Roma\nIngresso: Piazza del Viminale, 1, Roma',
+      'Sony Computer Science Laboratories - Roma\nIniziativa congiunta CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Roma\nIngresso: Piazza del Viminale, 1, Roma',
     teamTitle: 'Il team',
     // Agent nouns agree in gender; each person's form is stated in team.js.
     // "Assistente" and "manager" are invariable, and the two function-named
@@ -1203,7 +1202,6 @@ export default {
     readingTime: '{count} min di lettura',
     backToBlog: '← Tutti gli articoli',
     published: 'Pubblicato',
-    postsLabel: 'Articoli',
   },
 
   work: {
@@ -1240,7 +1238,8 @@ export default {
   },
 
   footer: {
-    description: 'Ricerca aperta su accessibilità e mobilità urbana dal team Città Sostenibili di Sony CSL\u00a0-\u2060\u00a0Roma.',
+    description:
+      'Realizzato dalla linea di ricerca Sustainable Cities di Sony Computer Science Laboratories\u00a0-\u2060\u00a0Roma\nin collaborazione con Sapienza Università di Roma e Centro Ricerche Enrico Fermi.',
     platforms: 'Piattaforma',
     platformLinks: ['Atlante', 'CityChat', 'Statistiche'],
     research: 'Ricerca',
@@ -1250,7 +1249,7 @@ export default {
     touch: 'Resta in contatto',
     touchLinks: ['Contatti', 'Lavora con noi'],
     workCta: 'Lavora con noi',
-    copyright: '© 2026 Sony Computer Science Laboratories · Roma',
+    copyright: '© 2026 Sony Computer Science Laboratories - Roma',
   },
 
   tour: {

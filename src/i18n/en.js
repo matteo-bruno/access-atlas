@@ -16,7 +16,7 @@ export default {
 
   nav: {
     title: 'Opportunity Atlas',
-    tagline: 'Sony CSL · Rome',
+    tagline: 'Sony CSL - Rome',
     atlas: 'Home',
     platforms: 'Atlas',
     citychat: 'CityChat',
@@ -35,7 +35,7 @@ export default {
 
   home: {
     hero: {
-      eyebrow: 'Open research platforms · Sony CSL Rome',
+      eyebrow: 'Open research platforms · Sony CSL - Rome',
       // The landing: the Atlas's name, and one line saying what it does.
       title: 'Opportunity',
       // The coloured half of the name; see .aa-accent in global.css.
@@ -64,8 +64,6 @@ export default {
     // The landing: the coverage map with the words over it.
     landing: {
       mapLabel: 'Every city the Atlas has published',
-      // The corner of the first screen, beside the Sony CSL mark.
-      by: 'A Sony CSL · Rome project',
     },
     // Why any of this is measured. Three sentences, in this order: they are a
     // sequence, and the page's argument rests on the last one.
@@ -154,7 +152,7 @@ export default {
     welcome: 'Welcome to {name}',
     dismiss: 'Dismiss',
     learnMore: 'Learn more →',
-    attribution: 'Basemap: Natural Earth · Data © Sony CSL Rome · CC BY-NC 4.0',
+    attribution: 'Basemap: Natural Earth · Data © Sony CSL - Rome · CC BY-NC 4.0',
     cityCount: '{count} cities',
     zoomIn: 'Zoom in',
     zoomOut: 'Zoom out',
@@ -1159,7 +1157,7 @@ export default {
       phone: 'Phone',
     },
     addressValue:
-      'Sony Computer Science Laboratories, Rome\nJoint Initiative CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Rome\nEntrance: Piazza del Viminale, 1, Rome',
+      'Sony Computer Science Laboratories - Rome\nJoint Initiative CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Rome\nEntrance: Piazza del Viminale, 1, Rome',
     teamTitle: 'The team',
     // English has no gender agreement, so the M/F pairs the Italian needs are
     // the same string here. They stay as pairs rather than collapsing to one
@@ -1219,7 +1217,6 @@ export default {
     readingTime: '{count} min read',
     backToBlog: '← All posts',
     published: 'Published',
-    postsLabel: 'Posts',
   },
 
   work: {
@@ -1256,7 +1253,8 @@ export default {
   },
 
   footer: {
-    description: 'Open research on urban accessibility and mobility from the Sustainable Cities team at Sony CSL\u00a0-\u2060\u00a0Rome.',
+    description:
+      'Created by the Sustainable Cities research line at Sony Computer Science Laboratories\u00a0-\u2060\u00a0Rome\nin collaboration with Sapienza Università di Roma and Centro Ricerche Enrico Fermi.',
     platforms: 'Platform',
     platformLinks: ['Atlas', 'CityChat', 'Statistics'],
     research: 'Research',
@@ -1266,7 +1264,7 @@ export default {
     touch: 'Stay in touch',
     touchLinks: ['Contact', 'Work with us'],
     workCta: 'Work with us',
-    copyright: '© 2026 Sony Computer Science Laboratories · Rome',
+    copyright: '© 2026 Sony Computer Science Laboratories - Rome',
   },
 
   tour: {

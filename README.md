@@ -1,7 +1,7 @@
 # Opportunity Atlas
 
 An atlas that measures how accessible cities are — the public site for the
-Sustainable Cities team's research at **Sony CSL Rome**.
+Sustainable Cities team's research at **Sony CSL - Rome**.
 
 It brings four open research platforms under one identity:
 
@@ -112,13 +112,13 @@ Outstanding before launch:
 | `/work-with-us`            | Open positions, PhD / thesis / internship routes |
 | `/faq`                     | Common questions |
 | `/contact`                 | Team, address, collaboration |
-| `/sustainable-cities`      | Who we are — the research line, the lab, other projects |
+| `/mission`                 | Who we are — the research line, the lab, other projects (`/sustainable-cities` forwards) |
 | `/stats`                   | Every city on every measure: ranking, map, scatter, matrix, curves, by city or by country, filtered by country and population; state in the query string |
 | `/consulting`              | For policy makers and companies who want to ask |
 | `/citychat`                | CityChat (beta) — questions about the layers, answered from the published data by a model with tools; needs the service in `server/citychat/` |
 
 Platform slugs: `15min-city`, `citychrone`, `car-dependency-index`,
-`accessibility-pov`.
+`close-connected` (the former `accessibility-pov` forwards, `MOVED` in `App.jsx`).
 
 ## Layout
 

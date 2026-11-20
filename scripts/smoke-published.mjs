@@ -174,7 +174,7 @@ try {
       if (tail) fetched.push(tail);
     });
 
-    await page.goto(`${BASE}/platforms/accessibility-pov/rome`, { waitUntil: 'load' });
+    await page.goto(`${BASE}/platforms/close-connected/rome`, { waitUntil: 'load' });
     await page.waitForTimeout(5000);
 
     // The catalogue carries a `?v=<build id>` cache-buster, so match on the
@@ -233,7 +233,7 @@ try {
   // Coverage replaces the seed city list for search and the world map.
   {
     const page = await context.newPage();
-    await page.goto(`${BASE}/platforms/accessibility-pov`, { waitUntil: 'load' });
+    await page.goto(`${BASE}/platforms/close-connected`, { waitUntil: 'load' });
     await page.waitForTimeout(2500);
     await page.fill('.aa-search__input', 'testop');
     await page.waitForTimeout(400);

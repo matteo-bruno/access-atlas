@@ -24,6 +24,9 @@ export default function ComparePage() {
   const summary = usePlatformSummary(platform?.id);
 
   if (!platform) return <Navigate to="/platforms" replace />;
+  // `/platforms/:slug/compare` outranks the forwarding routes in App.jsx, so a
+  // former slug is forwarded here.
+  if (platform.slug !== slug) return <Navigate to={`/platforms/${platform.slug}/compare`} replace />;
   return <CompareScreen platform={platform} summary={summary} />;
 }
 

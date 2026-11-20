@@ -778,8 +778,10 @@ title is unchanged — that rule holds for every page.
 The screen **counts nothing**: the list of cities, platforms, countries, cells
 and researchers that sat at its foot, and again a screen below it, is gone from
 both. `atlasMetrics()` in `src/data/home.js` still counts them from the
-catalogue — nothing renders it, and putting it back is one block of JSX. What is in the
-corner instead is the credit: the Sony CSL mark and one line, bottom right.
+catalogue — nothing renders it, and putting it back is one block of JSX. The corner is
+empty too: the credit moved to the footer, which names the research line,
+the lab and its partners. The lab is always written "Sony CSL - Rome", with
+a dash and spaces, never a middle dot.
 
 Two ways past the copy, answering different questions: **scrolling** reads the
 rest of the home page, directly underneath (`HomeSections`, exported from
@@ -1155,7 +1157,7 @@ block is where the platform and its paper are handed over. A card labelled
 "More info" that dropped a first-time reader straight into someone else's
 viewer was the thing this replaced.
 
-Two tabs exist mostly to be filled in: `/sustainable-cities` says who the
+Two tabs exist mostly to be filled in: `/mission` says who the
 group is and `/consulting` gives an address. `/stats` is the statistics
 dashboard (see "Statistics" above), with the per-platform comparisons linked
 under it. They share `Prose.css`.

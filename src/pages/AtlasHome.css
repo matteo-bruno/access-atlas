@@ -41,7 +41,7 @@
 
 /* One column, on the centre line of the viewport — the map is the backdrop to
    a title, not a header with a map under it. `auto` margins centre it
-   vertically and leave the credit pinned to the foot. */
+   vertically. */
 .aa-landing__middle {
   display: flex;
   justify-content: center;
@@ -134,20 +134,6 @@
 
 /* Whose Atlas this is: the foot of the first screen, on the far side from the
    nav's own mark. */
-.aa-landing__foot {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.aa-landing__by {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  color: var(--ink-3);
-  font-size: 12px;
-  letter-spacing: 0.02em;
-}
-
 @media (max-width: 860px) {
   .aa-landing__stage {
     height: auto;
@@ -155,9 +141,6 @@
   }
   .aa-landing__middle {
     margin: 32px 0;
-  }
-  .aa-landing__foot {
-    justify-content: flex-start;
   }
 }
 

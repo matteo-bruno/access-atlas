@@ -30,8 +30,10 @@ const ROUTES = [
   ['/platforms/15min-city', '15-minute city landing'],
   ['/platforms/citychrone', 'CityChrone landing'],
   ['/platforms/car-dependency-index', 'Car Dependency landing'],
-  ['/platforms/accessibility-pov', 'P.O.V. landing'],
-  ['/platforms/accessibility-pov/compare', 'P.O.V. city comparison'],
+  ['/platforms/close-connected', 'Close & Connected landing'],
+  ['/platforms/close-connected/compare', 'Close & Connected city comparison'],
+  // The layer's former slug, still in the wild: it forwards.
+  ['/platforms/accessibility-pov/compare', 'Former Close & Connected slug (forwards)'],
   ['/platforms/car-dependency-index/compare', 'Car Dependency city comparison'],
   // One city view now. The per-platform city URLs are still in the wild, so
   // they forward to it rather than 404.
@@ -40,7 +42,8 @@ const ROUTES = [
   ['/atlas/rome?layer=cardep', 'Rome, Car Dependency layer'],
   ['/atlas/milan', 'Milan combined viewer'],
   ['/atlas/milan?layer=citychrone&view=isochrone', 'Milan combined viewer, CityChrone isochrones'],
-  ['/sustainable-cities', 'Sustainable cities — who we are'],
+  ['/mission', 'Mission — who we are'],
+  ['/sustainable-cities', 'Former mission address (forwards)'],
   ['/stats', 'Stats: ranking'],
   ['/stats?view=map', 'Stats: map'],
   ['/stats?view=curves&sel=rome,milan', 'Stats: cumulative curves'],
@@ -58,7 +61,8 @@ const ROUTES = [
   ['/research', 'Research'],
   ['/blog', 'Blog index'],
   ['/blog/layer-15-minute-city', 'Layer post — 15-minute city'],
-  ['/blog/layer-accessibility-pov', 'Layer post — Close & Connected'],
+  ['/blog/layer-close-connected', 'Layer post — Close & Connected'],
+  ['/blog/layer-accessibility-pov', 'Former Close & Connected post address (forwards)'],
   ['/work-with-us', 'Work with us'],
   ['/faq', 'FAQ'],
   ['/contact', 'Contact'],
@@ -424,7 +428,7 @@ for (const [route, name] of ROUTES) {
   const povLegends = await page.$$eval('.aa-legend', (els) => els.length);
   check(
     'P.O.V.’s world map draws its cities with no legend',
-    page.url().endsWith('/platforms/accessibility-pov') && povLegends === 0,
+    page.url().endsWith('/platforms/close-connected') && povLegends === 0,
     `${page.url().replace(BASE, '')} · ${povLegends} legend(s)`,
   );
   await page.close();
@@ -484,7 +488,7 @@ for (const [route, name] of ROUTES) {
 // ── City search navigates to a city page ─────────────────────────────
 {
   const page = await context.newPage();
-  await page.goto(`${BASE}/platforms/accessibility-pov`, { waitUntil: 'load' });
+  await page.goto(`${BASE}/platforms/close-connected`, { waitUntil: 'load' });
   await page.waitForTimeout(2500);
   await page.fill('.aa-search__input', 'rom');
   await page.waitForTimeout(300);
@@ -509,7 +513,7 @@ for (const [route, name] of ROUTES) {
     '15min-city': /^\/stats\?view=focus/,
     citychrone: /^\/stats\?view=focus.*m=citychrone/,
     'car-dependency-index': /^\/platforms\/car-dependency-index\/compare$/,
-    'accessibility-pov': /^\/platforms\/accessibility-pov\/compare$/,
+    'close-connected': /^\/platforms\/close-connected\/compare$/,
   };
   const seen = {};
   for (const slug of Object.keys(expected)) {
@@ -714,7 +718,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
 
 {
   const page = await context.newPage();
-  await page.goto(`${BASE}/platforms/accessibility-pov/compare`, { waitUntil: 'load' });
+  await page.goto(`${BASE}/platforms/close-connected/compare`, { waitUntil: 'load' });
   await page.waitForTimeout(1800);
   const row = () =>
     page.locator('.aa-compare__table tbody tr', { hasText: 'Milan' }).first().innerText();
@@ -1016,7 +1020,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   const wide = [];
   for (const route of [
     '/platforms/car-dependency-index/compare',
-    '/platforms/accessibility-pov/compare',
+    '/platforms/close-connected/compare',
     '/atlas/milan',
     '/atlas/rome?layer=pov',
   ]) {
@@ -1075,20 +1079,15 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     ).toFixed(1)}px`,
   );
 
-  // Whose Atlas it is, in the corner — and nothing counting itself on the way
-  // in: the figures that used to sit at the foot of this screen, and again a
-  // screen below it, are gone from both.
-  const stageBox = await page.locator('.aa-landing__stage').boundingBox();
-  const creditBox = await page.locator('.aa-landing__by').boundingBox();
+  // Nothing in the corner and nothing counting itself on the way in: the
+  // credit moved to the footer, and the figures that used to sit at the foot
+  // of this screen, and again a screen below it, are gone from both.
   check(
-    'A credit in the corner, and no figures counted at the door',
-    (await page.locator('.aa-landing__by img').count()) === 1 &&
-      middle(creditBox) > middle(stageBox) &&
-      creditBox.y > stageBox.y + stageBox.height * 0.7 &&
+    'No credit in the corner, and no figures counted at the door',
+    (await page.locator('.aa-landing__by').count()) === 0 &&
       (await page.locator('.aa-landing__metric').count()) === 0 &&
       (await page.locator('.aa-metrics').count()) === 0 &&
       (await page.locator('.aa-section-head__hint').count()) === 0,
-    await page.$eval('.aa-landing__by', (e) => e.innerText.trim()),
   );
 
   // The rest of the home page is directly underneath, not behind a link, and
