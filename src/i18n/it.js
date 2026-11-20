@@ -1245,7 +1245,7 @@ export default {
     research: 'Ricerca',
     researchLinks: ['Articoli', 'Dataset', 'Blog', 'FAQ'],
     about: 'Chi siamo',
-    aboutLinks: ['Città sostenibili', 'Team', 'Consulenza'],
+    aboutLinks: ['Missione', 'Team', 'Consulenza'],
     touch: 'Resta in contatto',
     touchLinks: ['Contatti', 'Lavora con noi'],
     workCta: 'Lavora con noi',

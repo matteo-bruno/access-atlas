@@ -1187,7 +1187,7 @@ export default {
     research: '연구',
     researchLinks: ['논문', '데이터셋', '블로그', 'FAQ'],
     about: '소개',
-    aboutLinks: ['지속 가능한 도시', '팀', '컨설팅'],
+    aboutLinks: ['미션', '팀', '컨설팅'],
     touch: '소식 받기',
     touchLinks: ['문의', '함께 일하기'],
     workCta: '함께 일하기',

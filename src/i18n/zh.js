@@ -1187,7 +1187,7 @@ export default {
     research: '研究',
     researchLinks: ['论文', '数据集', '博客', '常见问题'],
     about: '关于',
-    aboutLinks: ['可持续城市', '团队', '咨询'],
+    aboutLinks: ['使命', '团队', '咨询'],
     touch: '保持联系',
     touchLinks: ['联系我们', '加入我们'],
     workCta: '加入我们',

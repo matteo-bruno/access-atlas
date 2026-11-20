@@ -1200,7 +1200,7 @@ export default {
     research: 'Recherche',
     researchLinks: ['Articles', 'Données', 'Blog', 'FAQ'],
     about: 'À propos',
-    aboutLinks: ['Villes durables', 'Équipe', 'Conseil'],
+    aboutLinks: ['Mission', 'Équipe', 'Conseil'],
     touch: 'Rester en contact',
     touchLinks: ['Contact', 'Travailler avec nous'],
     workCta: 'Travailler avec nous',

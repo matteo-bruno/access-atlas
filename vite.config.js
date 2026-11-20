@@ -171,16 +171,17 @@ export default defineConfig({
   // MapLibre spawns its worker with `{ type: 'module' }`, so Vite must emit
   // workers as ES modules rather than the default IIFE.
   worker: { format: 'es' },
-  // The published data and the exports it is imported from are a directory
-  // per city, and the dev server watching each one exhausts Linux's inotify
-  // limit (ENOSPC) as the Atlas grows. Neither is code: a re-import is seen
-  // by reloading the page, which re-reads the catalogue anyway.
+  // The published data, the exports it is imported from and the statistics'
+  // history (statistics/, a file per city) are thousands of files, and the
+  // dev server watching each one exhausts Linux's inotify limit (ENOSPC) as
+  // the Atlas grows. None of them is code: a re-import is seen by reloading
+  // the page, which re-reads the catalogue anyway.
   //
   // One `server` key, holding both: an object literal keeps only the last of
   // two, without a word, and a second `server` here once dropped the
   // CityChat proxy from `npm run dev`.
   server: {
-    watch: { ignored: ['**/public/data/**', '**/input_data/**'] },
+    watch: { ignored: ['**/public/data/**', '**/input_data/**', '**/statistics/**', '**/dist/**'] },
     // CityChat's service (server/citychat/) in development: `npm run citychat`
     // beside `npm run dev`. In production the web server proxies the same path.
     proxy: citychatProxy,
